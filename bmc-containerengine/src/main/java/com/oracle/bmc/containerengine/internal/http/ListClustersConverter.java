@@ -16,13 +16,15 @@ public class ListClustersConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListClustersRequest interceptRequest(ListClustersRequest request) {
+    public static com.oracle.bmc.containerengine.requests.ListClustersRequest interceptRequest(
+            com.oracle.bmc.containerengine.requests.ListClustersRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListClustersRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.containerengine.requests.ListClustersRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -95,16 +97,22 @@ public class ListClustersConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListClustersResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.containerengine.responses.ListClustersResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListClustersResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.containerengine.responses.ListClustersResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListClustersResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.containerengine.responses.ListClustersResponse>() {
                             @Override
-                            public ListClustersResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListClustersResponse");
+                            public com.oracle.bmc.containerengine.responses.ListClustersResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.containerengine.responses.ListClustersResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -121,8 +129,11 @@ public class ListClustersConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListClustersResponse.Builder builder =
-                                        ListClustersResponse.builder();
+                                com.oracle.bmc.containerengine.responses.ListClustersResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.containerengine.responses
+                                                        .ListClustersResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -150,7 +161,8 @@ public class ListClustersConverter {
                                                     String.class));
                                 }
 
-                                ListClustersResponse responseWrapper = builder.build();
+                                com.oracle.bmc.containerengine.responses.ListClustersResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

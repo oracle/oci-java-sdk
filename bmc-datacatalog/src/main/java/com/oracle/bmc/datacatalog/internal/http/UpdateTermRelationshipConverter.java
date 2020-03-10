@@ -16,14 +16,16 @@ public class UpdateTermRelationshipConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateTermRelationshipRequest interceptRequest(
-            UpdateTermRelationshipRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.UpdateTermRelationshipRequest
+            interceptRequest(
+                    com.oracle.bmc.datacatalog.requests.UpdateTermRelationshipRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateTermRelationshipRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.UpdateTermRelationshipRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -70,18 +72,23 @@ public class UpdateTermRelationshipConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateTermRelationshipResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.UpdateTermRelationshipResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateTermRelationshipResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.UpdateTermRelationshipResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateTermRelationshipResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses
+                                        .UpdateTermRelationshipResponse>() {
                             @Override
-                            public UpdateTermRelationshipResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses
+                                            .UpdateTermRelationshipResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateTermRelationshipResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.UpdateTermRelationshipResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -95,8 +102,11 @@ public class UpdateTermRelationshipConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateTermRelationshipResponse.Builder builder =
-                                        UpdateTermRelationshipResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.UpdateTermRelationshipResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .UpdateTermRelationshipResponse.builder();
 
                                 builder.termRelationship(response.getItem());
 
@@ -121,7 +131,8 @@ public class UpdateTermRelationshipConverter {
                                                     String.class));
                                 }
 
-                                UpdateTermRelationshipResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.UpdateTermRelationshipResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

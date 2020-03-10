@@ -16,15 +16,16 @@ public class ChangeVirtualCircuitCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeVirtualCircuitCompartmentRequest interceptRequest(
-            ChangeVirtualCircuitCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeVirtualCircuitCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeVirtualCircuitCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeVirtualCircuitCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeVirtualCircuitCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
         Validate.notNull(
@@ -57,19 +58,23 @@ public class ChangeVirtualCircuitCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeVirtualCircuitCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeVirtualCircuitCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeVirtualCircuitCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeVirtualCircuitCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeVirtualCircuitCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeVirtualCircuitCompartmentResponse>() {
                             @Override
-                            public ChangeVirtualCircuitCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeVirtualCircuitCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeVirtualCircuitCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeVirtualCircuitCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -80,8 +85,12 @@ public class ChangeVirtualCircuitCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeVirtualCircuitCompartmentResponse.Builder builder =
-                                        ChangeVirtualCircuitCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeVirtualCircuitCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeVirtualCircuitCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -104,8 +113,9 @@ public class ChangeVirtualCircuitCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeVirtualCircuitCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeVirtualCircuitCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

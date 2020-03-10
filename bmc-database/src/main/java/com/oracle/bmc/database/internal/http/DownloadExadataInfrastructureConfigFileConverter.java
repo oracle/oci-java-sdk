@@ -15,15 +15,18 @@ public class DownloadExadataInfrastructureConfigFileConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DownloadExadataInfrastructureConfigFileRequest interceptRequest(
-            DownloadExadataInfrastructureConfigFileRequest request) {
+    public static com.oracle.bmc.database.requests.DownloadExadataInfrastructureConfigFileRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.DownloadExadataInfrastructureConfigFileRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DownloadExadataInfrastructureConfigFileRequest request) {
+            com.oracle.bmc.database.requests.DownloadExadataInfrastructureConfigFileRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
@@ -54,19 +57,25 @@ public class DownloadExadataInfrastructureConfigFileConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DownloadExadataInfrastructureConfigFileResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses
+                            .DownloadExadataInfrastructureConfigFileResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DownloadExadataInfrastructureConfigFileResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .DownloadExadataInfrastructureConfigFileResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DownloadExadataInfrastructureConfigFileResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .DownloadExadataInfrastructureConfigFileResponse>() {
                             @Override
-                            public DownloadExadataInfrastructureConfigFileResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .DownloadExadataInfrastructureConfigFileResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DownloadExadataInfrastructureConfigFileResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DownloadExadataInfrastructureConfigFileResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -80,8 +89,13 @@ public class DownloadExadataInfrastructureConfigFileConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DownloadExadataInfrastructureConfigFileResponse.Builder builder =
-                                        DownloadExadataInfrastructureConfigFileResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .DownloadExadataInfrastructureConfigFileResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DownloadExadataInfrastructureConfigFileResponse
+                                                        .builder();
 
                                 builder.inputStream(response.getItem());
 
@@ -130,8 +144,9 @@ public class DownloadExadataInfrastructureConfigFileConverter {
                                                     java.util.Date.class));
                                 }
 
-                                DownloadExadataInfrastructureConfigFileResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .DownloadExadataInfrastructureConfigFileResponse
+                                        responseWrapper = builder.build();
 
                                 return responseWrapper;
                             }

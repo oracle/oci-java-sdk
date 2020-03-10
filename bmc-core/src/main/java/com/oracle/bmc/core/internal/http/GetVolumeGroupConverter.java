@@ -16,13 +16,15 @@ public class GetVolumeGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetVolumeGroupRequest interceptRequest(GetVolumeGroupRequest request) {
+    public static com.oracle.bmc.core.requests.GetVolumeGroupRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetVolumeGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetVolumeGroupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetVolumeGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeGroupId(), "volumeGroupId must not be blank");
 
@@ -41,16 +43,21 @@ public class GetVolumeGroupConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetVolumeGroupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetVolumeGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetVolumeGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetVolumeGroupResponse>() {
                             @Override
-                            public GetVolumeGroupResponse apply(
+                            public com.oracle.bmc.core.responses.GetVolumeGroupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetVolumeGroupResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetVolumeGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -64,8 +71,10 @@ public class GetVolumeGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetVolumeGroupResponse.Builder builder =
-                                        GetVolumeGroupResponse.builder();
+                                com.oracle.bmc.core.responses.GetVolumeGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses.GetVolumeGroupResponse
+                                                        .builder();
 
                                 builder.volumeGroup(response.getItem());
 
@@ -90,7 +99,8 @@ public class GetVolumeGroupConverter {
                                                     String.class));
                                 }
 
-                                GetVolumeGroupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetVolumeGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

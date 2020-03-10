@@ -16,13 +16,15 @@ public class GetPathRouteSetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetPathRouteSetRequest interceptRequest(GetPathRouteSetRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.GetPathRouteSetRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.GetPathRouteSetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetPathRouteSetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.GetPathRouteSetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
         Validate.notBlank(request.getPathRouteSetName(), "pathRouteSetName must not be blank");
@@ -51,16 +53,21 @@ public class GetPathRouteSetConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetPathRouteSetResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.GetPathRouteSetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPathRouteSetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.GetPathRouteSetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetPathRouteSetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.GetPathRouteSetResponse>() {
                             @Override
-                            public GetPathRouteSetResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetPathRouteSetResponse");
+                            public com.oracle.bmc.loadbalancer.responses.GetPathRouteSetResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.GetPathRouteSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +81,11 @@ public class GetPathRouteSetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetPathRouteSetResponse.Builder builder =
-                                        GetPathRouteSetResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.GetPathRouteSetResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .GetPathRouteSetResponse.builder();
 
                                 builder.pathRouteSet(response.getItem());
 
@@ -91,7 +101,8 @@ public class GetPathRouteSetConverter {
                                                     String.class));
                                 }
 
-                                GetPathRouteSetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.GetPathRouteSetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

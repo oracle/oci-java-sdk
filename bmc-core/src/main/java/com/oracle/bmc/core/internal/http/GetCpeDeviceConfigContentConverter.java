@@ -15,15 +15,15 @@ public class GetCpeDeviceConfigContentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetCpeDeviceConfigContentRequest interceptRequest(
-            GetCpeDeviceConfigContentRequest request) {
+    public static com.oracle.bmc.core.requests.GetCpeDeviceConfigContentRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetCpeDeviceConfigContentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetCpeDeviceConfigContentRequest request) {
+            com.oracle.bmc.core.requests.GetCpeDeviceConfigContentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
 
@@ -48,18 +48,21 @@ public class GetCpeDeviceConfigContentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetCpeDeviceConfigContentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetCpeDeviceConfigContentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetCpeDeviceConfigContentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetCpeDeviceConfigContentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetCpeDeviceConfigContentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetCpeDeviceConfigContentResponse>() {
                             @Override
-                            public GetCpeDeviceConfigContentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.GetCpeDeviceConfigContentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetCpeDeviceConfigContentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetCpeDeviceConfigContentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +76,12 @@ public class GetCpeDeviceConfigContentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetCpeDeviceConfigContentResponse.Builder builder =
-                                        GetCpeDeviceConfigContentResponse.builder();
+                                com.oracle.bmc.core.responses.GetCpeDeviceConfigContentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetCpeDeviceConfigContentResponse
+                                                        .builder();
 
                                 builder.inputStream(response.getItem());
 
@@ -90,7 +97,8 @@ public class GetCpeDeviceConfigContentConverter {
                                                     String.class));
                                 }
 
-                                GetCpeDeviceConfigContentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetCpeDeviceConfigContentResponse
+                                        responseWrapper = builder.build();
 
                                 return responseWrapper;
                             }

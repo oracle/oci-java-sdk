@@ -16,13 +16,15 @@ public class UpdateScheduledJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateScheduledJobRequest interceptRequest(UpdateScheduledJobRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.UpdateScheduledJobRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.UpdateScheduledJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateScheduledJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.UpdateScheduledJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getScheduledJobId(), "scheduledJobId must not be blank");
         Validate.notNull(
@@ -52,17 +54,22 @@ public class UpdateScheduledJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateScheduledJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.UpdateScheduledJobResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateScheduledJobResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.UpdateScheduledJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateScheduledJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .UpdateScheduledJobResponse>() {
                             @Override
-                            public UpdateScheduledJobResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses.UpdateScheduledJobResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateScheduledJobResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.UpdateScheduledJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +83,11 @@ public class UpdateScheduledJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateScheduledJobResponse.Builder builder =
-                                        UpdateScheduledJobResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.UpdateScheduledJobResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .UpdateScheduledJobResponse.builder();
 
                                 builder.scheduledJob(response.getItem());
 
@@ -102,7 +112,8 @@ public class UpdateScheduledJobConverter {
                                                     String.class));
                                 }
 
-                                UpdateScheduledJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.UpdateScheduledJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

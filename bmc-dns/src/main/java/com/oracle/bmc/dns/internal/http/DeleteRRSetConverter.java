@@ -16,13 +16,15 @@ public class DeleteRRSetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteRRSetRequest interceptRequest(DeleteRRSetRequest request) {
+    public static com.oracle.bmc.dns.requests.DeleteRRSetRequest interceptRequest(
+            com.oracle.bmc.dns.requests.DeleteRRSetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteRRSetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.DeleteRRSetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getZoneNameOrId(), "zoneNameOrId must not be blank");
         Validate.notBlank(request.getDomain(), "domain must not be blank");
@@ -70,16 +72,20 @@ public class DeleteRRSetConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRRSetResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.DeleteRRSetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRRSetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.DeleteRRSetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteRRSetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.DeleteRRSetResponse>() {
                             @Override
-                            public DeleteRRSetResponse apply(
+                            public com.oracle.bmc.dns.responses.DeleteRRSetResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteRRSetResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.DeleteRRSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -90,7 +96,8 @@ public class DeleteRRSetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteRRSetResponse.Builder builder = DeleteRRSetResponse.builder();
+                                com.oracle.bmc.dns.responses.DeleteRRSetResponse.Builder builder =
+                                        com.oracle.bmc.dns.responses.DeleteRRSetResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -104,7 +111,8 @@ public class DeleteRRSetConverter {
                                                     String.class));
                                 }
 
-                                DeleteRRSetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.DeleteRRSetResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

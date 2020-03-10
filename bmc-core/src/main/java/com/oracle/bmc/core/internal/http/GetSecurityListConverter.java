@@ -16,13 +16,15 @@ public class GetSecurityListConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetSecurityListRequest interceptRequest(GetSecurityListRequest request) {
+    public static com.oracle.bmc.core.requests.GetSecurityListRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetSecurityListRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetSecurityListRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetSecurityListRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
 
@@ -42,16 +44,21 @@ public class GetSecurityListConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetSecurityListResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetSecurityListResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityListResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetSecurityListResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetSecurityListResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetSecurityListResponse>() {
                             @Override
-                            public GetSecurityListResponse apply(
+                            public com.oracle.bmc.core.responses.GetSecurityListResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetSecurityListResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetSecurityListResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -65,8 +72,10 @@ public class GetSecurityListConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetSecurityListResponse.Builder builder =
-                                        GetSecurityListResponse.builder();
+                                com.oracle.bmc.core.responses.GetSecurityListResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetSecurityListResponse.builder();
 
                                 builder.securityList(response.getItem());
 
@@ -91,7 +100,8 @@ public class GetSecurityListConverter {
                                                     String.class));
                                 }
 
-                                GetSecurityListResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetSecurityListResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

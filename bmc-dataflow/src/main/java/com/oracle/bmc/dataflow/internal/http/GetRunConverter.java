@@ -16,13 +16,15 @@ public class GetRunConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetRunRequest interceptRequest(GetRunRequest request) {
+    public static com.oracle.bmc.dataflow.requests.GetRunRequest interceptRequest(
+            com.oracle.bmc.dataflow.requests.GetRunRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetRunRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dataflow.requests.GetRunRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getRunId(), "runId must not be blank");
 
@@ -45,15 +47,20 @@ public class GetRunConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetRunResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dataflow.responses.GetRunResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRunResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.dataflow.responses.GetRunResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetRunResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dataflow.responses.GetRunResponse>() {
                             @Override
-                            public GetRunResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetRunResponse");
+                            public com.oracle.bmc.dataflow.responses.GetRunResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dataflow.responses.GetRunResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Run>>
@@ -64,7 +71,8 @@ public class GetRunConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetRunResponse.Builder builder = GetRunResponse.builder();
+                                com.oracle.bmc.dataflow.responses.GetRunResponse.Builder builder =
+                                        com.oracle.bmc.dataflow.responses.GetRunResponse.builder();
 
                                 builder.run(response.getItem());
 
@@ -89,7 +97,8 @@ public class GetRunConverter {
                                                     String.class));
                                 }
 
-                                GetRunResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dataflow.responses.GetRunResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

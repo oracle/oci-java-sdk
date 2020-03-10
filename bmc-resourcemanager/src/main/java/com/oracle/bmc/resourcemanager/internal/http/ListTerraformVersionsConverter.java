@@ -16,14 +16,16 @@ public class ListTerraformVersionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTerraformVersionsRequest interceptRequest(
-            ListTerraformVersionsRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.ListTerraformVersionsRequest
+            interceptRequest(
+                    com.oracle.bmc.resourcemanager.requests.ListTerraformVersionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTerraformVersionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.ListTerraformVersionsRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -49,18 +51,23 @@ public class ListTerraformVersionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListTerraformVersionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.ListTerraformVersionsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTerraformVersionsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.ListTerraformVersionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTerraformVersionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses
+                                        .ListTerraformVersionsResponse>() {
                             @Override
-                            public ListTerraformVersionsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.resourcemanager.responses
+                                            .ListTerraformVersionsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListTerraformVersionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.ListTerraformVersionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +81,11 @@ public class ListTerraformVersionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTerraformVersionsResponse.Builder builder =
-                                        ListTerraformVersionsResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses
+                                                .ListTerraformVersionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .ListTerraformVersionsResponse.builder();
 
                                 builder.terraformVersionCollection(response.getItem());
 
@@ -91,7 +101,9 @@ public class ListTerraformVersionsConverter {
                                                     String.class));
                                 }
 
-                                ListTerraformVersionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses
+                                                .ListTerraformVersionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

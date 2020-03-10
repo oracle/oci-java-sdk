@@ -16,13 +16,15 @@ public class UpdateAlarmConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateAlarmRequest interceptRequest(UpdateAlarmRequest request) {
+    public static com.oracle.bmc.monitoring.requests.UpdateAlarmRequest interceptRequest(
+            com.oracle.bmc.monitoring.requests.UpdateAlarmRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateAlarmRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.monitoring.requests.UpdateAlarmRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAlarmId(), "alarmId must not be blank");
         Validate.notNull(request.getUpdateAlarmDetails(), "updateAlarmDetails is required");
@@ -50,16 +52,22 @@ public class UpdateAlarmConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAlarmResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.monitoring.responses.UpdateAlarmResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAlarmResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.monitoring.responses.UpdateAlarmResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateAlarmResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.monitoring.responses.UpdateAlarmResponse>() {
                             @Override
-                            public UpdateAlarmResponse apply(
+                            public com.oracle.bmc.monitoring.responses.UpdateAlarmResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateAlarmResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.monitoring.responses.UpdateAlarmResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Alarm>>
@@ -71,7 +79,10 @@ public class UpdateAlarmConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateAlarmResponse.Builder builder = UpdateAlarmResponse.builder();
+                                com.oracle.bmc.monitoring.responses.UpdateAlarmResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.monitoring.responses
+                                                        .UpdateAlarmResponse.builder();
 
                                 builder.alarm(response.getItem());
 
@@ -96,7 +107,8 @@ public class UpdateAlarmConverter {
                                                     String.class));
                                 }
 
-                                UpdateAlarmResponse responseWrapper = builder.build();
+                                com.oracle.bmc.monitoring.responses.UpdateAlarmResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

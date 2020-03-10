@@ -16,15 +16,16 @@ public class DeleteRemotePeeringConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteRemotePeeringConnectionRequest interceptRequest(
-            DeleteRemotePeeringConnectionRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteRemotePeeringConnectionRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.DeleteRemotePeeringConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteRemotePeeringConnectionRequest request) {
+            com.oracle.bmc.core.requests.DeleteRemotePeeringConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getRemotePeeringConnectionId(),
@@ -50,19 +51,23 @@ public class DeleteRemotePeeringConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteRemotePeeringConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteRemotePeeringConnectionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteRemotePeeringConnectionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteRemotePeeringConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DeleteRemotePeeringConnectionResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .DeleteRemotePeeringConnectionResponse>() {
                             @Override
-                            public DeleteRemotePeeringConnectionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .DeleteRemotePeeringConnectionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteRemotePeeringConnectionResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteRemotePeeringConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +78,12 @@ public class DeleteRemotePeeringConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteRemotePeeringConnectionResponse.Builder builder =
-                                        DeleteRemotePeeringConnectionResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteRemotePeeringConnectionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteRemotePeeringConnectionResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -88,8 +97,8 @@ public class DeleteRemotePeeringConnectionConverter {
                                                     String.class));
                                 }
 
-                                DeleteRemotePeeringConnectionResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.DeleteRemotePeeringConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

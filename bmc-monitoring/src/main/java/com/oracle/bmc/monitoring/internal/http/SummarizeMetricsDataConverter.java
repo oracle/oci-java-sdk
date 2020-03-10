@@ -16,14 +16,15 @@ public class SummarizeMetricsDataConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static SummarizeMetricsDataRequest interceptRequest(
-            SummarizeMetricsDataRequest request) {
+    public static com.oracle.bmc.monitoring.requests.SummarizeMetricsDataRequest interceptRequest(
+            com.oracle.bmc.monitoring.requests.SummarizeMetricsDataRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, SummarizeMetricsDataRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.monitoring.requests.SummarizeMetricsDataRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(
@@ -63,18 +64,22 @@ public class SummarizeMetricsDataConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, SummarizeMetricsDataResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.monitoring.responses.SummarizeMetricsDataResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SummarizeMetricsDataResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.monitoring.responses.SummarizeMetricsDataResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, SummarizeMetricsDataResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.monitoring.responses
+                                        .SummarizeMetricsDataResponse>() {
                             @Override
-                            public SummarizeMetricsDataResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.monitoring.responses.SummarizeMetricsDataResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for SummarizeMetricsDataResponse");
+                                        "Transform function invoked for com.oracle.bmc.monitoring.responses.SummarizeMetricsDataResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -89,8 +94,11 @@ public class SummarizeMetricsDataConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                SummarizeMetricsDataResponse.Builder builder =
-                                        SummarizeMetricsDataResponse.builder();
+                                com.oracle.bmc.monitoring.responses.SummarizeMetricsDataResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.monitoring.responses
+                                                        .SummarizeMetricsDataResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -106,7 +114,8 @@ public class SummarizeMetricsDataConverter {
                                                     String.class));
                                 }
 
-                                SummarizeMetricsDataResponse responseWrapper = builder.build();
+                                com.oracle.bmc.monitoring.responses.SummarizeMetricsDataResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class GetUserUIPasswordInformationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetUserUIPasswordInformationRequest interceptRequest(
-            GetUserUIPasswordInformationRequest request) {
+    public static com.oracle.bmc.identity.requests.GetUserUIPasswordInformationRequest
+            interceptRequest(
+                    com.oracle.bmc.identity.requests.GetUserUIPasswordInformationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetUserUIPasswordInformationRequest request) {
+            com.oracle.bmc.identity.requests.GetUserUIPasswordInformationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -45,18 +46,23 @@ public class GetUserUIPasswordInformationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetUserUIPasswordInformationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.GetUserUIPasswordInformationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetUserUIPasswordInformationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetUserUIPasswordInformationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetUserUIPasswordInformationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .GetUserUIPasswordInformationResponse>() {
                             @Override
-                            public GetUserUIPasswordInformationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses
+                                            .GetUserUIPasswordInformationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetUserUIPasswordInformationResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetUserUIPasswordInformationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,12 @@ public class GetUserUIPasswordInformationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetUserUIPasswordInformationResponse.Builder builder =
-                                        GetUserUIPasswordInformationResponse.builder();
+                                com.oracle.bmc.identity.responses
+                                                .GetUserUIPasswordInformationResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .GetUserUIPasswordInformationResponse
+                                                        .builder();
 
                                 builder.uIPasswordInformation(response.getItem());
 
@@ -96,8 +106,9 @@ public class GetUserUIPasswordInformationConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetUserUIPasswordInformationResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.identity.responses
+                                                .GetUserUIPasswordInformationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

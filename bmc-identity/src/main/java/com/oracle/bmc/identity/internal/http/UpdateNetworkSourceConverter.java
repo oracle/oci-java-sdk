@@ -16,13 +16,15 @@ public class UpdateNetworkSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateNetworkSourceRequest interceptRequest(UpdateNetworkSourceRequest request) {
+    public static com.oracle.bmc.identity.requests.UpdateNetworkSourceRequest interceptRequest(
+            com.oracle.bmc.identity.requests.UpdateNetworkSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateNetworkSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.UpdateNetworkSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNetworkSourceId(), "networkSourceId must not be blank");
         Validate.notNull(
@@ -48,18 +50,21 @@ public class UpdateNetworkSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateNetworkSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.UpdateNetworkSourceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkSourceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.UpdateNetworkSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateNetworkSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.UpdateNetworkSourceResponse>() {
                             @Override
-                            public UpdateNetworkSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.UpdateNetworkSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateNetworkSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.UpdateNetworkSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +78,11 @@ public class UpdateNetworkSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateNetworkSourceResponse.Builder builder =
-                                        UpdateNetworkSourceResponse.builder();
+                                com.oracle.bmc.identity.responses.UpdateNetworkSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .UpdateNetworkSourceResponse.builder();
 
                                 builder.networkSources(response.getItem());
 
@@ -99,7 +107,8 @@ public class UpdateNetworkSourceConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateNetworkSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.UpdateNetworkSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

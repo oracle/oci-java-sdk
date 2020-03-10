@@ -16,15 +16,15 @@ public class GetInstanceConfigurationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetInstanceConfigurationRequest interceptRequest(
-            GetInstanceConfigurationRequest request) {
+    public static com.oracle.bmc.core.requests.GetInstanceConfigurationRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetInstanceConfigurationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetInstanceConfigurationRequest request) {
+            com.oracle.bmc.core.requests.GetInstanceConfigurationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
@@ -45,18 +45,21 @@ public class GetInstanceConfigurationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetInstanceConfigurationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetInstanceConfigurationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetInstanceConfigurationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetInstanceConfigurationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetInstanceConfigurationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetInstanceConfigurationResponse>() {
                             @Override
-                            public GetInstanceConfigurationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.GetInstanceConfigurationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetInstanceConfigurationResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetInstanceConfigurationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +73,11 @@ public class GetInstanceConfigurationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetInstanceConfigurationResponse.Builder builder =
-                                        GetInstanceConfigurationResponse.builder();
+                                com.oracle.bmc.core.responses.GetInstanceConfigurationResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetInstanceConfigurationResponse.builder();
 
                                 builder.instanceConfiguration(response.getItem());
 
@@ -96,7 +102,8 @@ public class GetInstanceConfigurationConverter {
                                                     String.class));
                                 }
 
-                                GetInstanceConfigurationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetInstanceConfigurationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

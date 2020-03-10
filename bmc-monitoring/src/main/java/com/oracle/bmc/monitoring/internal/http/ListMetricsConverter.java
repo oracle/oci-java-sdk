@@ -16,13 +16,15 @@ public class ListMetricsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListMetricsRequest interceptRequest(ListMetricsRequest request) {
+    public static com.oracle.bmc.monitoring.requests.ListMetricsRequest interceptRequest(
+            com.oracle.bmc.monitoring.requests.ListMetricsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListMetricsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.monitoring.requests.ListMetricsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getListMetricsDetails(), "listMetricsDetails is required");
@@ -75,16 +77,22 @@ public class ListMetricsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListMetricsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.monitoring.responses.ListMetricsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListMetricsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.monitoring.responses.ListMetricsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListMetricsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.monitoring.responses.ListMetricsResponse>() {
                             @Override
-                            public ListMetricsResponse apply(
+                            public com.oracle.bmc.monitoring.responses.ListMetricsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListMetricsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.monitoring.responses.ListMetricsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -99,7 +107,10 @@ public class ListMetricsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListMetricsResponse.Builder builder = ListMetricsResponse.builder();
+                                com.oracle.bmc.monitoring.responses.ListMetricsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.monitoring.responses
+                                                        .ListMetricsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -127,7 +138,8 @@ public class ListMetricsConverter {
                                                     String.class));
                                 }
 
-                                ListMetricsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.monitoring.responses.ListMetricsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

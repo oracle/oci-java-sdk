@@ -16,13 +16,15 @@ public class DeleteCertificateConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteCertificateRequest interceptRequest(DeleteCertificateRequest request) {
+    public static com.oracle.bmc.waas.requests.DeleteCertificateRequest interceptRequest(
+            com.oracle.bmc.waas.requests.DeleteCertificateRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteCertificateRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.DeleteCertificateRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
 
@@ -54,17 +56,21 @@ public class DeleteCertificateConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteCertificateResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.DeleteCertificateResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.DeleteCertificateResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteCertificateResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.DeleteCertificateResponse>() {
                             @Override
-                            public DeleteCertificateResponse apply(
+                            public com.oracle.bmc.waas.responses.DeleteCertificateResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteCertificateResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.DeleteCertificateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +81,10 @@ public class DeleteCertificateConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteCertificateResponse.Builder builder =
-                                        DeleteCertificateResponse.builder();
+                                com.oracle.bmc.waas.responses.DeleteCertificateResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .DeleteCertificateResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -90,7 +98,8 @@ public class DeleteCertificateConverter {
                                                     String.class));
                                 }
 
-                                DeleteCertificateResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.DeleteCertificateResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

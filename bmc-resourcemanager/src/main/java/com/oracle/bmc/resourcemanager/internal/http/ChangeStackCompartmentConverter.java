@@ -16,14 +16,16 @@ public class ChangeStackCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeStackCompartmentRequest interceptRequest(
-            ChangeStackCompartmentRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.ChangeStackCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.resourcemanager.requests.ChangeStackCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeStackCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.ChangeStackCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStackId(), "stackId must not be blank");
         Validate.notNull(
@@ -60,18 +62,23 @@ public class ChangeStackCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeStackCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.ChangeStackCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeStackCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.ChangeStackCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeStackCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses
+                                        .ChangeStackCompartmentResponse>() {
                             @Override
-                            public ChangeStackCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.resourcemanager.responses
+                                            .ChangeStackCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeStackCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.ChangeStackCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +89,11 @@ public class ChangeStackCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeStackCompartmentResponse.Builder builder =
-                                        ChangeStackCompartmentResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses
+                                                .ChangeStackCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .ChangeStackCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -109,7 +119,9 @@ public class ChangeStackCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeStackCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses
+                                                .ChangeStackCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

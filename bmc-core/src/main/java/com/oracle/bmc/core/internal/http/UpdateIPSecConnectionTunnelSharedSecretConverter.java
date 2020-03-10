@@ -16,15 +16,17 @@ public class UpdateIPSecConnectionTunnelSharedSecretConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateIPSecConnectionTunnelSharedSecretRequest interceptRequest(
-            UpdateIPSecConnectionTunnelSharedSecretRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelSharedSecretRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelSharedSecretRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateIPSecConnectionTunnelSharedSecretRequest request) {
+            com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelSharedSecretRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
@@ -57,19 +59,24 @@ public class UpdateIPSecConnectionTunnelSharedSecretConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelSharedSecretResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelSharedSecretResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelSharedSecretResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses
+                                .UpdateIPSecConnectionTunnelSharedSecretResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                UpdateIPSecConnectionTunnelSharedSecretResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .UpdateIPSecConnectionTunnelSharedSecretResponse>() {
                             @Override
-                            public UpdateIPSecConnectionTunnelSharedSecretResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .UpdateIPSecConnectionTunnelSharedSecretResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateIPSecConnectionTunnelSharedSecretResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelSharedSecretResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -84,8 +91,13 @@ public class UpdateIPSecConnectionTunnelSharedSecretConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateIPSecConnectionTunnelSharedSecretResponse.Builder builder =
-                                        UpdateIPSecConnectionTunnelSharedSecretResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .UpdateIPSecConnectionTunnelSharedSecretResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateIPSecConnectionTunnelSharedSecretResponse
+                                                        .builder();
 
                                 builder.iPSecConnectionTunnelSharedSecret(response.getItem());
 
@@ -110,8 +122,9 @@ public class UpdateIPSecConnectionTunnelSharedSecretConverter {
                                                     String.class));
                                 }
 
-                                UpdateIPSecConnectionTunnelSharedSecretResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .UpdateIPSecConnectionTunnelSharedSecretResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

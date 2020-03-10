@@ -16,15 +16,16 @@ public class ChangeDeploymentCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeDeploymentCompartmentRequest interceptRequest(
-            ChangeDeploymentCompartmentRequest request) {
+    public static com.oracle.bmc.apigateway.requests.ChangeDeploymentCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.apigateway.requests.ChangeDeploymentCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeDeploymentCompartmentRequest request) {
+            com.oracle.bmc.apigateway.requests.ChangeDeploymentCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
         Validate.notNull(
@@ -61,18 +62,23 @@ public class ChangeDeploymentCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.apigateway.responses.ChangeDeploymentCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.apigateway.responses.ChangeDeploymentCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeDeploymentCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.apigateway.responses
+                                        .ChangeDeploymentCompartmentResponse>() {
                             @Override
-                            public ChangeDeploymentCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.apigateway.responses
+                                            .ChangeDeploymentCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeDeploymentCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.apigateway.responses.ChangeDeploymentCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +89,12 @@ public class ChangeDeploymentCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeDeploymentCompartmentResponse.Builder builder =
-                                        ChangeDeploymentCompartmentResponse.builder();
+                                com.oracle.bmc.apigateway.responses
+                                                .ChangeDeploymentCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.apigateway.responses
+                                                        .ChangeDeploymentCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -110,8 +120,9 @@ public class ChangeDeploymentCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeDeploymentCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.apigateway.responses
+                                                .ChangeDeploymentCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

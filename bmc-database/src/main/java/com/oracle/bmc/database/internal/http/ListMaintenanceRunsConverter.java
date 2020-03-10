@@ -16,13 +16,15 @@ public class ListMaintenanceRunsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListMaintenanceRunsRequest interceptRequest(ListMaintenanceRunsRequest request) {
+    public static com.oracle.bmc.database.requests.ListMaintenanceRunsRequest interceptRequest(
+            com.oracle.bmc.database.requests.ListMaintenanceRunsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListMaintenanceRunsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.ListMaintenanceRunsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -115,18 +117,21 @@ public class ListMaintenanceRunsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListMaintenanceRunsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListMaintenanceRunsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListMaintenanceRunsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListMaintenanceRunsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListMaintenanceRunsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.ListMaintenanceRunsResponse>() {
                             @Override
-                            public ListMaintenanceRunsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.ListMaintenanceRunsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListMaintenanceRunsResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListMaintenanceRunsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -143,8 +148,11 @@ public class ListMaintenanceRunsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListMaintenanceRunsResponse.Builder builder =
-                                        ListMaintenanceRunsResponse.builder();
+                                com.oracle.bmc.database.responses.ListMaintenanceRunsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListMaintenanceRunsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -172,7 +180,8 @@ public class ListMaintenanceRunsConverter {
                                                     String.class));
                                 }
 
-                                ListMaintenanceRunsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ListMaintenanceRunsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

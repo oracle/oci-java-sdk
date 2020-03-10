@@ -16,13 +16,15 @@ public class ListClusterNetworksConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListClusterNetworksRequest interceptRequest(ListClusterNetworksRequest request) {
+    public static com.oracle.bmc.core.requests.ListClusterNetworksRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListClusterNetworksRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListClusterNetworksRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListClusterNetworksRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -91,18 +93,21 @@ public class ListClusterNetworksConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListClusterNetworksResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListClusterNetworksResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListClusterNetworksResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListClusterNetworksResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListClusterNetworksResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListClusterNetworksResponse>() {
                             @Override
-                            public ListClusterNetworksResponse apply(
+                            public com.oracle.bmc.core.responses.ListClusterNetworksResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListClusterNetworksResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListClusterNetworksResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -119,8 +124,10 @@ public class ListClusterNetworksConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListClusterNetworksResponse.Builder builder =
-                                        ListClusterNetworksResponse.builder();
+                                com.oracle.bmc.core.responses.ListClusterNetworksResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListClusterNetworksResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -148,7 +155,8 @@ public class ListClusterNetworksConverter {
                                                     String.class));
                                 }
 
-                                ListClusterNetworksResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListClusterNetworksResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

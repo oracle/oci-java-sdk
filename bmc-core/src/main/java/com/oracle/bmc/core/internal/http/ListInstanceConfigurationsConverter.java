@@ -16,15 +16,15 @@ public class ListInstanceConfigurationsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListInstanceConfigurationsRequest interceptRequest(
-            ListInstanceConfigurationsRequest request) {
+    public static com.oracle.bmc.core.requests.ListInstanceConfigurationsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListInstanceConfigurationsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListInstanceConfigurationsRequest request) {
+            com.oracle.bmc.core.requests.ListInstanceConfigurationsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -77,18 +77,22 @@ public class ListInstanceConfigurationsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListInstanceConfigurationsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListInstanceConfigurationsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListInstanceConfigurationsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListInstanceConfigurationsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListInstanceConfigurationsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .ListInstanceConfigurationsResponse>() {
                             @Override
-                            public ListInstanceConfigurationsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListInstanceConfigurationsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListInstanceConfigurationsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListInstanceConfigurationsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -106,8 +110,12 @@ public class ListInstanceConfigurationsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListInstanceConfigurationsResponse.Builder builder =
-                                        ListInstanceConfigurationsResponse.builder();
+                                com.oracle.bmc.core.responses.ListInstanceConfigurationsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListInstanceConfigurationsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -135,8 +143,8 @@ public class ListInstanceConfigurationsConverter {
                                                     String.class));
                                 }
 
-                                ListInstanceConfigurationsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.ListInstanceConfigurationsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

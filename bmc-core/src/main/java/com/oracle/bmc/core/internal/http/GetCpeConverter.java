@@ -16,13 +16,15 @@ public class GetCpeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetCpeRequest interceptRequest(GetCpeRequest request) {
+    public static com.oracle.bmc.core.requests.GetCpeRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetCpeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetCpeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetCpeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
 
@@ -41,15 +43,20 @@ public class GetCpeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetCpeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetCpeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetCpeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetCpeResponse>() {
                             @Override
-                            public GetCpeResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetCpeResponse");
+                            public com.oracle.bmc.core.responses.GetCpeResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetCpeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Cpe>>
@@ -60,7 +67,8 @@ public class GetCpeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetCpeResponse.Builder builder = GetCpeResponse.builder();
+                                com.oracle.bmc.core.responses.GetCpeResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.GetCpeResponse.builder();
 
                                 builder.cpe(response.getItem());
 
@@ -85,7 +93,8 @@ public class GetCpeConverter {
                                                     String.class));
                                 }
 
-                                GetCpeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetCpeResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

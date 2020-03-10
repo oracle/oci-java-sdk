@@ -16,13 +16,15 @@ public class GetProtectionRuleConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetProtectionRuleRequest interceptRequest(GetProtectionRuleRequest request) {
+    public static com.oracle.bmc.waas.requests.GetProtectionRuleRequest interceptRequest(
+            com.oracle.bmc.waas.requests.GetProtectionRuleRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetProtectionRuleRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.GetProtectionRuleRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
         Validate.notBlank(request.getProtectionRuleKey(), "protectionRuleKey must not be blank");
@@ -52,17 +54,21 @@ public class GetProtectionRuleConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetProtectionRuleResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.GetProtectionRuleResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetProtectionRuleResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.GetProtectionRuleResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetProtectionRuleResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.GetProtectionRuleResponse>() {
                             @Override
-                            public GetProtectionRuleResponse apply(
+                            public com.oracle.bmc.waas.responses.GetProtectionRuleResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetProtectionRuleResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.GetProtectionRuleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +82,10 @@ public class GetProtectionRuleConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetProtectionRuleResponse.Builder builder =
-                                        GetProtectionRuleResponse.builder();
+                                com.oracle.bmc.waas.responses.GetProtectionRuleResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .GetProtectionRuleResponse.builder();
 
                                 builder.protectionRule(response.getItem());
 
@@ -102,7 +110,8 @@ public class GetProtectionRuleConverter {
                                                     String.class));
                                 }
 
-                                GetProtectionRuleResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.GetProtectionRuleResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

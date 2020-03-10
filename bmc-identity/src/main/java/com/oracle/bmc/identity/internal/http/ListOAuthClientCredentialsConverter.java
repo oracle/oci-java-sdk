@@ -16,15 +16,16 @@ public class ListOAuthClientCredentialsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListOAuthClientCredentialsRequest interceptRequest(
-            ListOAuthClientCredentialsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListOAuthClientCredentialsRequest
+            interceptRequest(
+                    com.oracle.bmc.identity.requests.ListOAuthClientCredentialsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListOAuthClientCredentialsRequest request) {
+            com.oracle.bmc.identity.requests.ListOAuthClientCredentialsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -69,18 +70,23 @@ public class ListOAuthClientCredentialsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListOAuthClientCredentialsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListOAuthClientCredentialsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListOAuthClientCredentialsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListOAuthClientCredentialsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListOAuthClientCredentialsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .ListOAuthClientCredentialsResponse>() {
                             @Override
-                            public ListOAuthClientCredentialsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses
+                                            .ListOAuthClientCredentialsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListOAuthClientCredentialsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListOAuthClientCredentialsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -98,8 +104,12 @@ public class ListOAuthClientCredentialsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListOAuthClientCredentialsResponse.Builder builder =
-                                        ListOAuthClientCredentialsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListOAuthClientCredentialsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListOAuthClientCredentialsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -127,8 +137,8 @@ public class ListOAuthClientCredentialsConverter {
                                                     String.class));
                                 }
 
-                                ListOAuthClientCredentialsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.identity.responses.ListOAuthClientCredentialsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

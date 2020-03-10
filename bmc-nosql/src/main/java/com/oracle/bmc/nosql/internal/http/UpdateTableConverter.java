@@ -16,13 +16,15 @@ public class UpdateTableConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateTableRequest interceptRequest(UpdateTableRequest request) {
+    public static com.oracle.bmc.nosql.requests.UpdateTableRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.UpdateTableRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateTableRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.UpdateTableRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
         Validate.notNull(request.getUpdateTableDetails(), "updateTableDetails is required");
@@ -50,16 +52,21 @@ public class UpdateTableConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTableResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.UpdateTableResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTableResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.UpdateTableResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateTableResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.UpdateTableResponse>() {
                             @Override
-                            public UpdateTableResponse apply(
+                            public com.oracle.bmc.nosql.responses.UpdateTableResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateTableResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.UpdateTableResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,7 +77,9 @@ public class UpdateTableConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateTableResponse.Builder builder = UpdateTableResponse.builder();
+                                com.oracle.bmc.nosql.responses.UpdateTableResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.UpdateTableResponse
+                                                .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -96,7 +105,8 @@ public class UpdateTableConverter {
                                                     String.class));
                                 }
 
-                                UpdateTableResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.UpdateTableResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class DeleteCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteCompartmentRequest interceptRequest(DeleteCompartmentRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteCompartmentRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCompartmentId(), "compartmentId must not be blank");
 
@@ -46,17 +48,21 @@ public class DeleteCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteCompartmentResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCompartmentResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteCompartmentResponse>() {
                             @Override
-                            public DeleteCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.DeleteCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class DeleteCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteCompartmentResponse.Builder builder =
-                                        DeleteCompartmentResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -94,7 +102,8 @@ public class DeleteCompartmentConverter {
                                                     String.class));
                                 }
 
-                                DeleteCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

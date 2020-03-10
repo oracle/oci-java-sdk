@@ -28,43 +28,7 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * The sort order to use, either 'asc' or 'desc'.
      */
-    private SortOrder sortOrder;
-
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     **/
-    public enum SortOrder {
-        Asc("ASC"),
-        Desc("DESC"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortOrder> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortOrder v : SortOrder.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortOrder(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortOrder create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new RuntimeException("Invalid SortOrder: " + key);
-        }
-    };
+    private com.oracle.bmc.budget.model.SortOrder sortOrder;
 
     /**
      * The field to sort by. If not specified, the default is timeCreated.
@@ -72,12 +36,12 @@ public class ListAlertRulesRequest extends com.oracle.bmc.requests.BmcRequest {
      * The default sort order for displayName is ASC in alphanumeric order.
      *
      */
-    private String sortBy;
+    private com.oracle.bmc.budget.model.SortBy sortBy;
 
     /**
      * The current state of the resource to filter by.
      */
-    private String lifecycleState;
+    private com.oracle.bmc.budget.model.LifecycleState lifecycleState;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.

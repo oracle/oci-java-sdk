@@ -16,13 +16,15 @@ public class DeleteScheduledJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteScheduledJobRequest interceptRequest(DeleteScheduledJobRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.DeleteScheduledJobRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.DeleteScheduledJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteScheduledJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.DeleteScheduledJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getScheduledJobId(), "scheduledJobId must not be blank");
 
@@ -50,17 +52,22 @@ public class DeleteScheduledJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteScheduledJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.DeleteScheduledJobResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteScheduledJobResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.DeleteScheduledJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteScheduledJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .DeleteScheduledJobResponse>() {
                             @Override
-                            public DeleteScheduledJobResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses.DeleteScheduledJobResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteScheduledJobResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.DeleteScheduledJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +78,11 @@ public class DeleteScheduledJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteScheduledJobResponse.Builder builder =
-                                        DeleteScheduledJobResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.DeleteScheduledJobResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .DeleteScheduledJobResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +96,8 @@ public class DeleteScheduledJobConverter {
                                                     String.class));
                                 }
 
-                                DeleteScheduledJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.DeleteScheduledJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

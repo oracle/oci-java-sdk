@@ -16,15 +16,17 @@ public class ListNetworkSecurityGroupSecurityRulesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListNetworkSecurityGroupSecurityRulesRequest interceptRequest(
-            ListNetworkSecurityGroupSecurityRulesRequest request) {
+    public static com.oracle.bmc.core.requests.ListNetworkSecurityGroupSecurityRulesRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ListNetworkSecurityGroupSecurityRulesRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListNetworkSecurityGroupSecurityRulesRequest request) {
+            com.oracle.bmc.core.requests.ListNetworkSecurityGroupSecurityRulesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
@@ -86,19 +88,23 @@ public class ListNetworkSecurityGroupSecurityRulesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListNetworkSecurityGroupSecurityRulesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListNetworkSecurityGroupSecurityRulesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListNetworkSecurityGroupSecurityRulesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListNetworkSecurityGroupSecurityRulesResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListNetworkSecurityGroupSecurityRulesResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ListNetworkSecurityGroupSecurityRulesResponse>() {
                             @Override
-                            public ListNetworkSecurityGroupSecurityRulesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ListNetworkSecurityGroupSecurityRulesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListNetworkSecurityGroupSecurityRulesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListNetworkSecurityGroupSecurityRulesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -114,8 +120,13 @@ public class ListNetworkSecurityGroupSecurityRulesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListNetworkSecurityGroupSecurityRulesResponse.Builder builder =
-                                        ListNetworkSecurityGroupSecurityRulesResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ListNetworkSecurityGroupSecurityRulesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListNetworkSecurityGroupSecurityRulesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -143,8 +154,9 @@ public class ListNetworkSecurityGroupSecurityRulesConverter {
                                                     String.class));
                                 }
 
-                                ListNetworkSecurityGroupSecurityRulesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ListNetworkSecurityGroupSecurityRulesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

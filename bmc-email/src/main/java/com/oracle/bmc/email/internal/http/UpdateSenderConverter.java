@@ -16,13 +16,15 @@ public class UpdateSenderConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateSenderRequest interceptRequest(UpdateSenderRequest request) {
+    public static com.oracle.bmc.email.requests.UpdateSenderRequest interceptRequest(
+            com.oracle.bmc.email.requests.UpdateSenderRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateSenderRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.email.requests.UpdateSenderRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSenderId(), "senderId must not be blank");
         Validate.notNull(request.getUpdateSenderDetails(), "updateSenderDetails is required");
@@ -50,16 +52,21 @@ public class UpdateSenderConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSenderResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.email.responses.UpdateSenderResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSenderResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.email.responses.UpdateSenderResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateSenderResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.email.responses.UpdateSenderResponse>() {
                             @Override
-                            public UpdateSenderResponse apply(
+                            public com.oracle.bmc.email.responses.UpdateSenderResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateSenderResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.email.responses.UpdateSenderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Sender>>
@@ -71,8 +78,10 @@ public class UpdateSenderConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateSenderResponse.Builder builder =
-                                        UpdateSenderResponse.builder();
+                                com.oracle.bmc.email.responses.UpdateSenderResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.email.responses.UpdateSenderResponse
+                                                        .builder();
 
                                 builder.sender(response.getItem());
 
@@ -97,7 +106,8 @@ public class UpdateSenderConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateSenderResponse responseWrapper = builder.build();
+                                com.oracle.bmc.email.responses.UpdateSenderResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

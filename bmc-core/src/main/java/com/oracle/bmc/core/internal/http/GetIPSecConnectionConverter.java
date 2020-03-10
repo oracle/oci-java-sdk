@@ -16,13 +16,15 @@ public class GetIPSecConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetIPSecConnectionRequest interceptRequest(GetIPSecConnectionRequest request) {
+    public static com.oracle.bmc.core.requests.GetIPSecConnectionRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetIPSecConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetIPSecConnectionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetIPSecConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
@@ -42,17 +44,21 @@ public class GetIPSecConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetIPSecConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetIPSecConnectionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetIPSecConnectionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetIPSecConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetIPSecConnectionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetIPSecConnectionResponse>() {
                             @Override
-                            public GetIPSecConnectionResponse apply(
+                            public com.oracle.bmc.core.responses.GetIPSecConnectionResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetIPSecConnectionResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetIPSecConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class GetIPSecConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetIPSecConnectionResponse.Builder builder =
-                                        GetIPSecConnectionResponse.builder();
+                                com.oracle.bmc.core.responses.GetIPSecConnectionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetIPSecConnectionResponse.builder();
 
                                 builder.iPSecConnection(response.getItem());
 
@@ -92,7 +100,8 @@ public class GetIPSecConnectionConverter {
                                                     String.class));
                                 }
 
-                                GetIPSecConnectionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetIPSecConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

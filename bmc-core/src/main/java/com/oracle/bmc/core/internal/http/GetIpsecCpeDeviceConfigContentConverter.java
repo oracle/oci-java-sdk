@@ -15,15 +15,16 @@ public class GetIpsecCpeDeviceConfigContentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetIpsecCpeDeviceConfigContentRequest interceptRequest(
-            GetIpsecCpeDeviceConfigContentRequest request) {
+    public static com.oracle.bmc.core.requests.GetIpsecCpeDeviceConfigContentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.GetIpsecCpeDeviceConfigContentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetIpsecCpeDeviceConfigContentRequest request) {
+            com.oracle.bmc.core.requests.GetIpsecCpeDeviceConfigContentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
@@ -48,19 +49,23 @@ public class GetIpsecCpeDeviceConfigContentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetIpsecCpeDeviceConfigContentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetIpsecCpeDeviceConfigContentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetIpsecCpeDeviceConfigContentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetIpsecCpeDeviceConfigContentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetIpsecCpeDeviceConfigContentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .GetIpsecCpeDeviceConfigContentResponse>() {
                             @Override
-                            public GetIpsecCpeDeviceConfigContentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .GetIpsecCpeDeviceConfigContentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetIpsecCpeDeviceConfigContentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetIpsecCpeDeviceConfigContentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +79,12 @@ public class GetIpsecCpeDeviceConfigContentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetIpsecCpeDeviceConfigContentResponse.Builder builder =
-                                        GetIpsecCpeDeviceConfigContentResponse.builder();
+                                com.oracle.bmc.core.responses.GetIpsecCpeDeviceConfigContentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetIpsecCpeDeviceConfigContentResponse
+                                                        .builder();
 
                                 builder.inputStream(response.getItem());
 
@@ -91,8 +100,8 @@ public class GetIpsecCpeDeviceConfigContentConverter {
                                                     String.class));
                                 }
 
-                                GetIpsecCpeDeviceConfigContentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.GetIpsecCpeDeviceConfigContentResponse
+                                        responseWrapper = builder.build();
 
                                 return responseWrapper;
                             }

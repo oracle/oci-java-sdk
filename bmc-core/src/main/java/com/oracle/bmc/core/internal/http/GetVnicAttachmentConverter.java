@@ -16,13 +16,15 @@ public class GetVnicAttachmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetVnicAttachmentRequest interceptRequest(GetVnicAttachmentRequest request) {
+    public static com.oracle.bmc.core.requests.GetVnicAttachmentRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetVnicAttachmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetVnicAttachmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetVnicAttachmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVnicAttachmentId(), "vnicAttachmentId must not be blank");
 
@@ -42,17 +44,21 @@ public class GetVnicAttachmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetVnicAttachmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetVnicAttachmentResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicAttachmentResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetVnicAttachmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetVnicAttachmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetVnicAttachmentResponse>() {
                             @Override
-                            public GetVnicAttachmentResponse apply(
+                            public com.oracle.bmc.core.responses.GetVnicAttachmentResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetVnicAttachmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetVnicAttachmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class GetVnicAttachmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetVnicAttachmentResponse.Builder builder =
-                                        GetVnicAttachmentResponse.builder();
+                                com.oracle.bmc.core.responses.GetVnicAttachmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetVnicAttachmentResponse.builder();
 
                                 builder.vnicAttachment(response.getItem());
 
@@ -92,7 +100,8 @@ public class GetVnicAttachmentConverter {
                                                     String.class));
                                 }
 
-                                GetVnicAttachmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetVnicAttachmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

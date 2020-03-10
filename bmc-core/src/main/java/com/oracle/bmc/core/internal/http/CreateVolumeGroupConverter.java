@@ -16,13 +16,15 @@ public class CreateVolumeGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateVolumeGroupRequest interceptRequest(CreateVolumeGroupRequest request) {
+    public static com.oracle.bmc.core.requests.CreateVolumeGroupRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateVolumeGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateVolumeGroupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateVolumeGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateVolumeGroupDetails(), "createVolumeGroupDetails is required");
@@ -42,17 +44,21 @@ public class CreateVolumeGroupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateVolumeGroupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateVolumeGroupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateVolumeGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateVolumeGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateVolumeGroupResponse>() {
                             @Override
-                            public CreateVolumeGroupResponse apply(
+                            public com.oracle.bmc.core.responses.CreateVolumeGroupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateVolumeGroupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateVolumeGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateVolumeGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateVolumeGroupResponse.Builder builder =
-                                        CreateVolumeGroupResponse.builder();
+                                com.oracle.bmc.core.responses.CreateVolumeGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateVolumeGroupResponse.builder();
 
                                 builder.volumeGroup(response.getItem());
 
@@ -92,7 +100,8 @@ public class CreateVolumeGroupConverter {
                                                     String.class));
                                 }
 
-                                CreateVolumeGroupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateVolumeGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

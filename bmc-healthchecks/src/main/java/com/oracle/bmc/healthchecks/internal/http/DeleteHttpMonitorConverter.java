@@ -16,13 +16,15 @@ public class DeleteHttpMonitorConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteHttpMonitorRequest interceptRequest(DeleteHttpMonitorRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.DeleteHttpMonitorRequest interceptRequest(
+            com.oracle.bmc.healthchecks.requests.DeleteHttpMonitorRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteHttpMonitorRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.healthchecks.requests.DeleteHttpMonitorRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getMonitorId(), "monitorId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteHttpMonitorConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteHttpMonitorResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.DeleteHttpMonitorResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHttpMonitorResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.DeleteHttpMonitorResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteHttpMonitorResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses.DeleteHttpMonitorResponse>() {
                             @Override
-                            public DeleteHttpMonitorResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses.DeleteHttpMonitorResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteHttpMonitorResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.DeleteHttpMonitorResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,11 @@ public class DeleteHttpMonitorConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteHttpMonitorResponse.Builder builder =
-                                        DeleteHttpMonitorResponse.builder();
+                                com.oracle.bmc.healthchecks.responses.DeleteHttpMonitorResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .DeleteHttpMonitorResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +95,8 @@ public class DeleteHttpMonitorConverter {
                                                     String.class));
                                 }
 
-                                DeleteHttpMonitorResponse responseWrapper = builder.build();
+                                com.oracle.bmc.healthchecks.responses.DeleteHttpMonitorResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

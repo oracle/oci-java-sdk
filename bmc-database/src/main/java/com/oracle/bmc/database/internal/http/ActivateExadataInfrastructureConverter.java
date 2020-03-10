@@ -16,15 +16,16 @@ public class ActivateExadataInfrastructureConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ActivateExadataInfrastructureRequest interceptRequest(
-            ActivateExadataInfrastructureRequest request) {
+    public static com.oracle.bmc.database.requests.ActivateExadataInfrastructureRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ActivateExadataInfrastructureRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ActivateExadataInfrastructureRequest request) {
+            com.oracle.bmc.database.requests.ActivateExadataInfrastructureRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
@@ -58,19 +59,23 @@ public class ActivateExadataInfrastructureConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ActivateExadataInfrastructureResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ActivateExadataInfrastructureResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ActivateExadataInfrastructureResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ActivateExadataInfrastructureResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ActivateExadataInfrastructureResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .ActivateExadataInfrastructureResponse>() {
                             @Override
-                            public ActivateExadataInfrastructureResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ActivateExadataInfrastructureResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ActivateExadataInfrastructureResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ActivateExadataInfrastructureResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -84,8 +89,12 @@ public class ActivateExadataInfrastructureConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ActivateExadataInfrastructureResponse.Builder builder =
-                                        ActivateExadataInfrastructureResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .ActivateExadataInfrastructureResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ActivateExadataInfrastructureResponse
+                                                        .builder();
 
                                 builder.exadataInfrastructure(response.getItem());
 
@@ -122,8 +131,9 @@ public class ActivateExadataInfrastructureConverter {
                                                     String.class));
                                 }
 
-                                ActivateExadataInfrastructureResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .ActivateExadataInfrastructureResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

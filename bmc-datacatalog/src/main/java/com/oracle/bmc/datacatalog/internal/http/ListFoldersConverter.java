@@ -16,13 +16,15 @@ public class ListFoldersConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListFoldersRequest interceptRequest(ListFoldersRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListFoldersRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListFoldersRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListFoldersRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListFoldersRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -180,16 +182,22 @@ public class ListFoldersConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListFoldersResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListFoldersResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFoldersResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListFoldersResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListFoldersResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ListFoldersResponse>() {
                             @Override
-                            public ListFoldersResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.ListFoldersResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListFoldersResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListFoldersResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -203,7 +211,10 @@ public class ListFoldersConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListFoldersResponse.Builder builder = ListFoldersResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListFoldersResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListFoldersResponse.builder();
 
                                 builder.folderCollection(response.getItem());
 
@@ -231,7 +242,8 @@ public class ListFoldersConverter {
                                                     String.class));
                                 }
 
-                                ListFoldersResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListFoldersResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

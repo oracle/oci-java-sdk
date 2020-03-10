@@ -16,13 +16,15 @@ public class ListDhcpOptionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDhcpOptionsRequest interceptRequest(ListDhcpOptionsRequest request) {
+    public static com.oracle.bmc.core.requests.ListDhcpOptionsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListDhcpOptionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListDhcpOptionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListDhcpOptionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getVcnId(), "vcnId is required");
@@ -98,16 +100,21 @@ public class ListDhcpOptionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDhcpOptionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListDhcpOptionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDhcpOptionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListDhcpOptionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDhcpOptionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListDhcpOptionsResponse>() {
                             @Override
-                            public ListDhcpOptionsResponse apply(
+                            public com.oracle.bmc.core.responses.ListDhcpOptionsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListDhcpOptionsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListDhcpOptionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -123,8 +130,10 @@ public class ListDhcpOptionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDhcpOptionsResponse.Builder builder =
-                                        ListDhcpOptionsResponse.builder();
+                                com.oracle.bmc.core.responses.ListDhcpOptionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListDhcpOptionsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -152,7 +161,8 @@ public class ListDhcpOptionsConverter {
                                                     String.class));
                                 }
 
-                                ListDhcpOptionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListDhcpOptionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

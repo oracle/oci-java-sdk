@@ -16,13 +16,15 @@ public class GetExportConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetExportRequest interceptRequest(GetExportRequest request) {
+    public static com.oracle.bmc.filestorage.requests.GetExportRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.GetExportRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetExportRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.GetExportRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getExportId(), "exportId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetExportConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetExportResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.GetExportResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetExportResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.GetExportResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetExportResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.GetExportResponse>() {
                             @Override
-                            public GetExportResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetExportResponse");
+                            public com.oracle.bmc.filestorage.responses.GetExportResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.GetExportResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Export>>
@@ -65,7 +74,10 @@ public class GetExportConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetExportResponse.Builder builder = GetExportResponse.builder();
+                                com.oracle.bmc.filestorage.responses.GetExportResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .GetExportResponse.builder();
 
                                 builder.export(response.getItem());
 
@@ -90,7 +102,8 @@ public class GetExportConverter {
                                                     String.class));
                                 }
 
-                                GetExportResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.GetExportResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,17 @@ public class ListPreauthenticatedRequestsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListPreauthenticatedRequestsRequest interceptRequest(
-            ListPreauthenticatedRequestsRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.ListPreauthenticatedRequestsRequest
+            interceptRequest(
+                    com.oracle.bmc.objectstorage.requests.ListPreauthenticatedRequestsRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListPreauthenticatedRequestsRequest request) {
+            com.oracle.bmc.objectstorage.requests.ListPreauthenticatedRequestsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -78,18 +80,23 @@ public class ListPreauthenticatedRequestsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListPreauthenticatedRequestsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.ListPreauthenticatedRequestsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListPreauthenticatedRequestsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.ListPreauthenticatedRequestsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListPreauthenticatedRequestsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses
+                                        .ListPreauthenticatedRequestsResponse>() {
                             @Override
-                            public ListPreauthenticatedRequestsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.objectstorage.responses
+                                            .ListPreauthenticatedRequestsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListPreauthenticatedRequestsResponse");
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.ListPreauthenticatedRequestsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -107,8 +114,12 @@ public class ListPreauthenticatedRequestsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListPreauthenticatedRequestsResponse.Builder builder =
-                                        ListPreauthenticatedRequestsResponse.builder();
+                                com.oracle.bmc.objectstorage.responses
+                                                .ListPreauthenticatedRequestsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .ListPreauthenticatedRequestsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -148,8 +159,9 @@ public class ListPreauthenticatedRequestsConverter {
                                                     String.class));
                                 }
 
-                                ListPreauthenticatedRequestsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.objectstorage.responses
+                                                .ListPreauthenticatedRequestsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

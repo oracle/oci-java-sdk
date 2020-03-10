@@ -16,15 +16,16 @@ public class ListDataGuardAssociationsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDataGuardAssociationsRequest interceptRequest(
-            ListDataGuardAssociationsRequest request) {
+    public static com.oracle.bmc.database.requests.ListDataGuardAssociationsRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ListDataGuardAssociationsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListDataGuardAssociationsRequest request) {
+            com.oracle.bmc.database.requests.ListDataGuardAssociationsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
 
@@ -61,18 +62,23 @@ public class ListDataGuardAssociationsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDataGuardAssociationsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListDataGuardAssociationsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDataGuardAssociationsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListDataGuardAssociationsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDataGuardAssociationsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .ListDataGuardAssociationsResponse>() {
                             @Override
-                            public ListDataGuardAssociationsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ListDataGuardAssociationsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDataGuardAssociationsResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListDataGuardAssociationsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -90,8 +96,12 @@ public class ListDataGuardAssociationsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDataGuardAssociationsResponse.Builder builder =
-                                        ListDataGuardAssociationsResponse.builder();
+                                com.oracle.bmc.database.responses.ListDataGuardAssociationsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListDataGuardAssociationsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -119,7 +129,8 @@ public class ListDataGuardAssociationsConverter {
                                                     String.class));
                                 }
 
-                                ListDataGuardAssociationsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ListDataGuardAssociationsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

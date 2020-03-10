@@ -16,13 +16,15 @@ public class UpdateGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateGatewayRequest interceptRequest(UpdateGatewayRequest request) {
+    public static com.oracle.bmc.apigateway.requests.UpdateGatewayRequest interceptRequest(
+            com.oracle.bmc.apigateway.requests.UpdateGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.apigateway.requests.UpdateGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getGatewayId(), "gatewayId must not be blank");
         Validate.notNull(request.getUpdateGatewayDetails(), "updateGatewayDetails is required");
@@ -50,16 +52,22 @@ public class UpdateGatewayConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGatewayResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.apigateway.responses.UpdateGatewayResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGatewayResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.apigateway.responses.UpdateGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.apigateway.responses.UpdateGatewayResponse>() {
                             @Override
-                            public UpdateGatewayResponse apply(
+                            public com.oracle.bmc.apigateway.responses.UpdateGatewayResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateGatewayResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.apigateway.responses.UpdateGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,8 +78,10 @@ public class UpdateGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateGatewayResponse.Builder builder =
-                                        UpdateGatewayResponse.builder();
+                                com.oracle.bmc.apigateway.responses.UpdateGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.apigateway.responses
+                                                        .UpdateGatewayResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -97,7 +107,8 @@ public class UpdateGatewayConverter {
                                                     String.class));
                                 }
 
-                                UpdateGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.apigateway.responses.UpdateGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

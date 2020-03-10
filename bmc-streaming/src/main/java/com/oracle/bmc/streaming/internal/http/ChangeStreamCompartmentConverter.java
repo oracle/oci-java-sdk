@@ -16,15 +16,15 @@ public class ChangeStreamCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeStreamCompartmentRequest interceptRequest(
-            ChangeStreamCompartmentRequest request) {
+    public static com.oracle.bmc.streaming.requests.ChangeStreamCompartmentRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.ChangeStreamCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeStreamCompartmentRequest request) {
+            com.oracle.bmc.streaming.requests.ChangeStreamCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
         Validate.notNull(
@@ -57,18 +57,23 @@ public class ChangeStreamCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeStreamCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.ChangeStreamCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeStreamCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.ChangeStreamCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeStreamCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses
+                                        .ChangeStreamCompartmentResponse>() {
                             @Override
-                            public ChangeStreamCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.streaming.responses
+                                            .ChangeStreamCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeStreamCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.ChangeStreamCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +84,11 @@ public class ChangeStreamCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeStreamCompartmentResponse.Builder builder =
-                                        ChangeStreamCompartmentResponse.builder();
+                                com.oracle.bmc.streaming.responses.ChangeStreamCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .ChangeStreamCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -94,7 +102,8 @@ public class ChangeStreamCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeStreamCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.ChangeStreamCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

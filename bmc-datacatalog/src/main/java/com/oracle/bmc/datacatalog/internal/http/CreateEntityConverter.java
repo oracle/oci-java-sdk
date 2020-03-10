@@ -16,13 +16,15 @@ public class CreateEntityConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateEntityRequest interceptRequest(CreateEntityRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.CreateEntityRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.CreateEntityRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateEntityRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.CreateEntityRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -56,16 +58,22 @@ public class CreateEntityConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.CreateEntityResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.CreateEntityResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateEntityResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.CreateEntityResponse>() {
                             @Override
-                            public CreateEntityResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.CreateEntityResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateEntityResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.CreateEntityResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Entity>>
@@ -77,8 +85,10 @@ public class CreateEntityConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateEntityResponse.Builder builder =
-                                        CreateEntityResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.CreateEntityResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .CreateEntityResponse.builder();
 
                                 builder.entity(response.getItem());
 
@@ -103,7 +113,8 @@ public class CreateEntityConverter {
                                                     String.class));
                                 }
 
-                                CreateEntityResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.CreateEntityResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

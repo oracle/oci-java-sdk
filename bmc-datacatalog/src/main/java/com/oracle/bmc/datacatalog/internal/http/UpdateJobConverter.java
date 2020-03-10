@@ -16,13 +16,15 @@ public class UpdateJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateJobRequest interceptRequest(UpdateJobRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.UpdateJobRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.UpdateJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.UpdateJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getJobKey(), "jobKey must not be blank");
@@ -55,15 +57,22 @@ public class UpdateJobConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.UpdateJobResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateJobResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.UpdateJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.UpdateJobResponse>() {
                             @Override
-                            public UpdateJobResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateJobResponse");
+                            public com.oracle.bmc.datacatalog.responses.UpdateJobResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.UpdateJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Job>>
@@ -74,7 +83,10 @@ public class UpdateJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateJobResponse.Builder builder = UpdateJobResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.UpdateJobResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .UpdateJobResponse.builder();
 
                                 builder.job(response.getItem());
 
@@ -99,7 +111,8 @@ public class UpdateJobConverter {
                                                     String.class));
                                 }
 
-                                UpdateJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.UpdateJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

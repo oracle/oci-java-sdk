@@ -16,13 +16,15 @@ public class GetDynamicGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDynamicGroupRequest interceptRequest(GetDynamicGroupRequest request) {
+    public static com.oracle.bmc.identity.requests.GetDynamicGroupRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetDynamicGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDynamicGroupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GetDynamicGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDynamicGroupId(), "dynamicGroupId must not be blank");
 
@@ -42,16 +44,21 @@ public class GetDynamicGroupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetDynamicGroupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.GetDynamicGroupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDynamicGroupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetDynamicGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDynamicGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.GetDynamicGroupResponse>() {
                             @Override
-                            public GetDynamicGroupResponse apply(
+                            public com.oracle.bmc.identity.responses.GetDynamicGroupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetDynamicGroupResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetDynamicGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -65,8 +72,10 @@ public class GetDynamicGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDynamicGroupResponse.Builder builder =
-                                        GetDynamicGroupResponse.builder();
+                                com.oracle.bmc.identity.responses.GetDynamicGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .GetDynamicGroupResponse.builder();
 
                                 builder.dynamicGroup(response.getItem());
 
@@ -91,7 +100,8 @@ public class GetDynamicGroupConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetDynamicGroupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetDynamicGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

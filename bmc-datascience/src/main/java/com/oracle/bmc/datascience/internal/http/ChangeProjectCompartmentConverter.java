@@ -16,15 +16,16 @@ public class ChangeProjectCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeProjectCompartmentRequest interceptRequest(
-            ChangeProjectCompartmentRequest request) {
+    public static com.oracle.bmc.datascience.requests.ChangeProjectCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.datascience.requests.ChangeProjectCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeProjectCompartmentRequest request) {
+            com.oracle.bmc.datascience.requests.ChangeProjectCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getProjectId(), "projectId must not be blank");
         Validate.notNull(
@@ -61,18 +62,23 @@ public class ChangeProjectCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.ChangeProjectCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.ChangeProjectCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses
+                                        .ChangeProjectCompartmentResponse>() {
                             @Override
-                            public ChangeProjectCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses
+                                            .ChangeProjectCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeProjectCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.ChangeProjectCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +89,11 @@ public class ChangeProjectCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeProjectCompartmentResponse.Builder builder =
-                                        ChangeProjectCompartmentResponse.builder();
+                                com.oracle.bmc.datascience.responses
+                                                .ChangeProjectCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .ChangeProjectCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -98,7 +107,9 @@ public class ChangeProjectCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeProjectCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses
+                                                .ChangeProjectCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

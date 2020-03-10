@@ -16,13 +16,15 @@ public class UpdateNatGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateNatGatewayRequest interceptRequest(UpdateNatGatewayRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateNatGatewayRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateNatGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateNatGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateNatGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
         Validate.notNull(
@@ -48,17 +50,21 @@ public class UpdateNatGatewayConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateNatGatewayResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateNatGatewayResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNatGatewayResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateNatGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateNatGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateNatGatewayResponse>() {
                             @Override
-                            public UpdateNatGatewayResponse apply(
+                            public com.oracle.bmc.core.responses.UpdateNatGatewayResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateNatGatewayResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateNatGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -72,8 +78,10 @@ public class UpdateNatGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateNatGatewayResponse.Builder builder =
-                                        UpdateNatGatewayResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateNatGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateNatGatewayResponse.builder();
 
                                 builder.natGateway(response.getItem());
 
@@ -98,7 +106,8 @@ public class UpdateNatGatewayConverter {
                                                     String.class));
                                 }
 
-                                UpdateNatGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateNatGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

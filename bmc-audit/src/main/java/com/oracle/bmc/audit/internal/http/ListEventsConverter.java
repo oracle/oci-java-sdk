@@ -16,13 +16,15 @@ public class ListEventsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListEventsRequest interceptRequest(ListEventsRequest request) {
+    public static com.oracle.bmc.audit.requests.ListEventsRequest interceptRequest(
+            com.oracle.bmc.audit.requests.ListEventsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListEventsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.audit.requests.ListEventsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getStartTime(), "startTime is required");
@@ -68,15 +70,21 @@ public class ListEventsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.audit.responses.ListEventsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.audit.responses.ListEventsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListEventsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.audit.responses.ListEventsResponse>() {
                             @Override
-                            public ListEventsResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListEventsResponse");
+                            public com.oracle.bmc.audit.responses.ListEventsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.audit.responses.ListEventsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -91,7 +99,8 @@ public class ListEventsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListEventsResponse.Builder builder = ListEventsResponse.builder();
+                                com.oracle.bmc.audit.responses.ListEventsResponse.Builder builder =
+                                        com.oracle.bmc.audit.responses.ListEventsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -119,7 +128,8 @@ public class ListEventsConverter {
                                                     String.class));
                                 }
 
-                                ListEventsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.audit.responses.ListEventsResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

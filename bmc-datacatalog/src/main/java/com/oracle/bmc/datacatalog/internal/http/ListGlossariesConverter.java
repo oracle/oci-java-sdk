@@ -16,13 +16,15 @@ public class ListGlossariesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListGlossariesRequest interceptRequest(ListGlossariesRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListGlossariesRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListGlossariesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListGlossariesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListGlossariesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
 
@@ -135,16 +137,22 @@ public class ListGlossariesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListGlossariesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListGlossariesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListGlossariesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListGlossariesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListGlossariesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ListGlossariesResponse>() {
                             @Override
-                            public ListGlossariesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListGlossariesResponse");
+                            public com.oracle.bmc.datacatalog.responses.ListGlossariesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListGlossariesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -158,8 +166,10 @@ public class ListGlossariesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListGlossariesResponse.Builder builder =
-                                        ListGlossariesResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListGlossariesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListGlossariesResponse.builder();
 
                                 builder.glossaryCollection(response.getItem());
 
@@ -187,7 +197,8 @@ public class ListGlossariesConverter {
                                                     String.class));
                                 }
 
-                                ListGlossariesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListGlossariesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class GetSubscriptionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetSubscriptionRequest interceptRequest(GetSubscriptionRequest request) {
+    public static com.oracle.bmc.ons.requests.GetSubscriptionRequest interceptRequest(
+            com.oracle.bmc.ons.requests.GetSubscriptionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetSubscriptionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.ons.requests.GetSubscriptionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
 
@@ -46,16 +48,20 @@ public class GetSubscriptionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetSubscriptionResponse>
+                    javax.ws.rs.core.Response, com.oracle.bmc.ons.responses.GetSubscriptionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.ons.responses.GetSubscriptionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetSubscriptionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.ons.responses.GetSubscriptionResponse>() {
                             @Override
-                            public GetSubscriptionResponse apply(
+                            public com.oracle.bmc.ons.responses.GetSubscriptionResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetSubscriptionResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.ons.responses.GetSubscriptionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +75,10 @@ public class GetSubscriptionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetSubscriptionResponse.Builder builder =
-                                        GetSubscriptionResponse.builder();
+                                com.oracle.bmc.ons.responses.GetSubscriptionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.ons.responses.GetSubscriptionResponse
+                                                        .builder();
 
                                 builder.subscription(response.getItem());
 
@@ -95,7 +103,8 @@ public class GetSubscriptionConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetSubscriptionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.ons.responses.GetSubscriptionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

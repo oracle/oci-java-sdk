@@ -16,13 +16,15 @@ public class DeleteCpeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteCpeRequest interceptRequest(DeleteCpeRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteCpeRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteCpeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteCpeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteCpeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
 
@@ -45,15 +47,20 @@ public class DeleteCpeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCpeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DeleteCpeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCpeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DeleteCpeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteCpeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteCpeResponse>() {
                             @Override
-                            public DeleteCpeResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteCpeResponse");
+                            public com.oracle.bmc.core.responses.DeleteCpeResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteCpeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -64,7 +71,8 @@ public class DeleteCpeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteCpeResponse.Builder builder = DeleteCpeResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteCpeResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.DeleteCpeResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -78,7 +86,8 @@ public class DeleteCpeConverter {
                                                     String.class));
                                 }
 
-                                DeleteCpeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteCpeResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,16 @@ public class ListAnnouncementsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAnnouncementsRequest interceptRequest(ListAnnouncementsRequest request) {
+    public static com.oracle.bmc.announcementsservice.requests.ListAnnouncementsRequest
+            interceptRequest(
+                    com.oracle.bmc.announcementsservice.requests.ListAnnouncementsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAnnouncementsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.announcementsservice.requests.ListAnnouncementsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -119,17 +122,23 @@ public class ListAnnouncementsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAnnouncementsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.announcementsservice.responses.ListAnnouncementsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.announcementsservice.responses.ListAnnouncementsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAnnouncementsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.announcementsservice.responses
+                                        .ListAnnouncementsResponse>() {
                             @Override
-                            public ListAnnouncementsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.announcementsservice.responses
+                                            .ListAnnouncementsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAnnouncementsResponse");
+                                        "Transform function invoked for com.oracle.bmc.announcementsservice.responses.ListAnnouncementsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -143,8 +152,11 @@ public class ListAnnouncementsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAnnouncementsResponse.Builder builder =
-                                        ListAnnouncementsResponse.builder();
+                                com.oracle.bmc.announcementsservice.responses
+                                                .ListAnnouncementsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.announcementsservice.responses
+                                                        .ListAnnouncementsResponse.builder();
 
                                 builder.announcementsCollection(response.getItem());
 
@@ -172,7 +184,9 @@ public class ListAnnouncementsConverter {
                                                     String.class));
                                 }
 
-                                ListAnnouncementsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.announcementsservice.responses
+                                                .ListAnnouncementsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

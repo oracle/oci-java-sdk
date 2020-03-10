@@ -16,13 +16,15 @@ public class SearchCriteriaConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static SearchCriteriaRequest interceptRequest(SearchCriteriaRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.SearchCriteriaRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.SearchCriteriaRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, SearchCriteriaRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.SearchCriteriaRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
 
@@ -110,16 +112,22 @@ public class SearchCriteriaConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, SearchCriteriaResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.SearchCriteriaResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SearchCriteriaResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.SearchCriteriaResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, SearchCriteriaResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.SearchCriteriaResponse>() {
                             @Override
-                            public SearchCriteriaResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for SearchCriteriaResponse");
+                            public com.oracle.bmc.datacatalog.responses.SearchCriteriaResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.SearchCriteriaResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -133,8 +141,10 @@ public class SearchCriteriaConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                SearchCriteriaResponse.Builder builder =
-                                        SearchCriteriaResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.SearchCriteriaResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .SearchCriteriaResponse.builder();
 
                                 builder.searchResultCollection(response.getItem());
 
@@ -162,7 +172,8 @@ public class SearchCriteriaConverter {
                                                     String.class));
                                 }
 
-                                SearchCriteriaResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.SearchCriteriaResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

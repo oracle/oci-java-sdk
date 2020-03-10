@@ -16,13 +16,15 @@ public class GenerateTotpSeedConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GenerateTotpSeedRequest interceptRequest(GenerateTotpSeedRequest request) {
+    public static com.oracle.bmc.identity.requests.GenerateTotpSeedRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GenerateTotpSeedRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GenerateTotpSeedRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GenerateTotpSeedRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notBlank(request.getMfaTotpDeviceId(), "mfaTotpDeviceId must not be blank");
@@ -53,17 +55,21 @@ public class GenerateTotpSeedConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GenerateTotpSeedResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.GenerateTotpSeedResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GenerateTotpSeedResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GenerateTotpSeedResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GenerateTotpSeedResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.GenerateTotpSeedResponse>() {
                             @Override
-                            public GenerateTotpSeedResponse apply(
+                            public com.oracle.bmc.identity.responses.GenerateTotpSeedResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GenerateTotpSeedResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GenerateTotpSeedResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -77,8 +83,10 @@ public class GenerateTotpSeedConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GenerateTotpSeedResponse.Builder builder =
-                                        GenerateTotpSeedResponse.builder();
+                                com.oracle.bmc.identity.responses.GenerateTotpSeedResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .GenerateTotpSeedResponse.builder();
 
                                 builder.mfaTotpDevice(response.getItem());
 
@@ -103,7 +111,8 @@ public class GenerateTotpSeedConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GenerateTotpSeedResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GenerateTotpSeedResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

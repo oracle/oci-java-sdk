@@ -16,15 +16,16 @@ public class CreateAutonomousDataWarehouseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateAutonomousDataWarehouseRequest interceptRequest(
-            CreateAutonomousDataWarehouseRequest request) {
+    public static com.oracle.bmc.database.requests.CreateAutonomousDataWarehouseRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.CreateAutonomousDataWarehouseRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateAutonomousDataWarehouseRequest request) {
+            com.oracle.bmc.database.requests.CreateAutonomousDataWarehouseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateAutonomousDataWarehouseDetails(),
@@ -45,19 +46,23 @@ public class CreateAutonomousDataWarehouseConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateAutonomousDataWarehouseResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.CreateAutonomousDataWarehouseResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAutonomousDataWarehouseResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.CreateAutonomousDataWarehouseResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                CreateAutonomousDataWarehouseResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .CreateAutonomousDataWarehouseResponse>() {
                             @Override
-                            public CreateAutonomousDataWarehouseResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .CreateAutonomousDataWarehouseResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateAutonomousDataWarehouseResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.CreateAutonomousDataWarehouseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -71,8 +76,12 @@ public class CreateAutonomousDataWarehouseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateAutonomousDataWarehouseResponse.Builder builder =
-                                        CreateAutonomousDataWarehouseResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .CreateAutonomousDataWarehouseResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .CreateAutonomousDataWarehouseResponse
+                                                        .builder();
 
                                 builder.autonomousDataWarehouse(response.getItem());
 
@@ -97,8 +106,9 @@ public class CreateAutonomousDataWarehouseConverter {
                                                     String.class));
                                 }
 
-                                CreateAutonomousDataWarehouseResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .CreateAutonomousDataWarehouseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

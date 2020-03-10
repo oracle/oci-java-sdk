@@ -16,15 +16,16 @@ public class DeleteAutonomousDataWarehouseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteAutonomousDataWarehouseRequest interceptRequest(
-            DeleteAutonomousDataWarehouseRequest request) {
+    public static com.oracle.bmc.database.requests.DeleteAutonomousDataWarehouseRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.DeleteAutonomousDataWarehouseRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteAutonomousDataWarehouseRequest request) {
+            com.oracle.bmc.database.requests.DeleteAutonomousDataWarehouseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousDataWarehouseId(),
@@ -50,19 +51,23 @@ public class DeleteAutonomousDataWarehouseConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteAutonomousDataWarehouseResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DeleteAutonomousDataWarehouseResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteAutonomousDataWarehouseResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.DeleteAutonomousDataWarehouseResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DeleteAutonomousDataWarehouseResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .DeleteAutonomousDataWarehouseResponse>() {
                             @Override
-                            public DeleteAutonomousDataWarehouseResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .DeleteAutonomousDataWarehouseResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteAutonomousDataWarehouseResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DeleteAutonomousDataWarehouseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +78,12 @@ public class DeleteAutonomousDataWarehouseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteAutonomousDataWarehouseResponse.Builder builder =
-                                        DeleteAutonomousDataWarehouseResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .DeleteAutonomousDataWarehouseResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DeleteAutonomousDataWarehouseResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -88,8 +97,9 @@ public class DeleteAutonomousDataWarehouseConverter {
                                                     String.class));
                                 }
 
-                                DeleteAutonomousDataWarehouseResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .DeleteAutonomousDataWarehouseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class ChangeTsigKeyCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeTsigKeyCompartmentRequest interceptRequest(
-            ChangeTsigKeyCompartmentRequest request) {
+    public static com.oracle.bmc.dns.requests.ChangeTsigKeyCompartmentRequest interceptRequest(
+            com.oracle.bmc.dns.requests.ChangeTsigKeyCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeTsigKeyCompartmentRequest request) {
+            com.oracle.bmc.dns.requests.ChangeTsigKeyCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTsigKeyId(), "tsigKeyId must not be blank");
         Validate.notNull(
@@ -61,18 +61,21 @@ public class ChangeTsigKeyCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeTsigKeyCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.ChangeTsigKeyCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeTsigKeyCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.ChangeTsigKeyCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeTsigKeyCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.ChangeTsigKeyCompartmentResponse>() {
                             @Override
-                            public ChangeTsigKeyCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dns.responses.ChangeTsigKeyCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeTsigKeyCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.ChangeTsigKeyCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +86,11 @@ public class ChangeTsigKeyCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeTsigKeyCompartmentResponse.Builder builder =
-                                        ChangeTsigKeyCompartmentResponse.builder();
+                                com.oracle.bmc.dns.responses.ChangeTsigKeyCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .ChangeTsigKeyCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -98,7 +104,8 @@ public class ChangeTsigKeyCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeTsigKeyCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.ChangeTsigKeyCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

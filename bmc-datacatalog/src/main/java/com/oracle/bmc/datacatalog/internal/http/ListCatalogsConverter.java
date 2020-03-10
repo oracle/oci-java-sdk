@@ -16,13 +16,15 @@ public class ListCatalogsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCatalogsRequest interceptRequest(ListCatalogsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListCatalogsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListCatalogsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListCatalogsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListCatalogsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -94,16 +96,22 @@ public class ListCatalogsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListCatalogsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListCatalogsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCatalogsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListCatalogsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCatalogsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ListCatalogsResponse>() {
                             @Override
-                            public ListCatalogsResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.ListCatalogsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListCatalogsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListCatalogsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -120,8 +128,10 @@ public class ListCatalogsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCatalogsResponse.Builder builder =
-                                        ListCatalogsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListCatalogsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListCatalogsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -149,7 +159,8 @@ public class ListCatalogsConverter {
                                                     String.class));
                                 }
 
-                                ListCatalogsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListCatalogsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

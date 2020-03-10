@@ -16,15 +16,16 @@ public class ChangeHttpRedirectCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeHttpRedirectCompartmentRequest interceptRequest(
-            ChangeHttpRedirectCompartmentRequest request) {
+    public static com.oracle.bmc.waas.requests.ChangeHttpRedirectCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.waas.requests.ChangeHttpRedirectCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeHttpRedirectCompartmentRequest request) {
+            com.oracle.bmc.waas.requests.ChangeHttpRedirectCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getHttpRedirectId(), "httpRedirectId must not be blank");
         Validate.notNull(
@@ -61,19 +62,23 @@ public class ChangeHttpRedirectCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeHttpRedirectCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ChangeHttpRedirectCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeHttpRedirectCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ChangeHttpRedirectCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeHttpRedirectCompartmentResponse>() {
+                                com.oracle.bmc.waas.responses
+                                        .ChangeHttpRedirectCompartmentResponse>() {
                             @Override
-                            public ChangeHttpRedirectCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses
+                                            .ChangeHttpRedirectCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeHttpRedirectCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ChangeHttpRedirectCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +89,12 @@ public class ChangeHttpRedirectCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeHttpRedirectCompartmentResponse.Builder builder =
-                                        ChangeHttpRedirectCompartmentResponse.builder();
+                                com.oracle.bmc.waas.responses.ChangeHttpRedirectCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ChangeHttpRedirectCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -99,8 +108,8 @@ public class ChangeHttpRedirectCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeHttpRedirectCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.waas.responses.ChangeHttpRedirectCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

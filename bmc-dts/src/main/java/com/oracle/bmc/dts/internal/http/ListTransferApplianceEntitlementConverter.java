@@ -16,15 +16,16 @@ public class ListTransferApplianceEntitlementConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTransferApplianceEntitlementRequest interceptRequest(
-            ListTransferApplianceEntitlementRequest request) {
+    public static com.oracle.bmc.dts.requests.ListTransferApplianceEntitlementRequest
+            interceptRequest(
+                    com.oracle.bmc.dts.requests.ListTransferApplianceEntitlementRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListTransferApplianceEntitlementRequest request) {
+            com.oracle.bmc.dts.requests.ListTransferApplianceEntitlementRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -65,19 +66,23 @@ public class ListTransferApplianceEntitlementConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListTransferApplianceEntitlementResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.ListTransferApplianceEntitlementResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTransferApplianceEntitlementResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.ListTransferApplianceEntitlementResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListTransferApplianceEntitlementResponse>() {
+                                com.oracle.bmc.dts.responses
+                                        .ListTransferApplianceEntitlementResponse>() {
                             @Override
-                            public ListTransferApplianceEntitlementResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses
+                                            .ListTransferApplianceEntitlementResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListTransferApplianceEntitlementResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.ListTransferApplianceEntitlementResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -95,8 +100,12 @@ public class ListTransferApplianceEntitlementConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTransferApplianceEntitlementResponse.Builder builder =
-                                        ListTransferApplianceEntitlementResponse.builder();
+                                com.oracle.bmc.dts.responses
+                                                .ListTransferApplianceEntitlementResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .ListTransferApplianceEntitlementResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -112,8 +121,9 @@ public class ListTransferApplianceEntitlementConverter {
                                                     String.class));
                                 }
 
-                                ListTransferApplianceEntitlementResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dts.responses
+                                                .ListTransferApplianceEntitlementResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

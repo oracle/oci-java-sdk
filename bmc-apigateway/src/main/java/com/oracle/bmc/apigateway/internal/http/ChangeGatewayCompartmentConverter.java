@@ -16,15 +16,16 @@ public class ChangeGatewayCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeGatewayCompartmentRequest interceptRequest(
-            ChangeGatewayCompartmentRequest request) {
+    public static com.oracle.bmc.apigateway.requests.ChangeGatewayCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.apigateway.requests.ChangeGatewayCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeGatewayCompartmentRequest request) {
+            com.oracle.bmc.apigateway.requests.ChangeGatewayCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getGatewayId(), "gatewayId must not be blank");
         Validate.notNull(
@@ -61,18 +62,23 @@ public class ChangeGatewayCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeGatewayCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.apigateway.responses.ChangeGatewayCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeGatewayCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.apigateway.responses.ChangeGatewayCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeGatewayCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.apigateway.responses
+                                        .ChangeGatewayCompartmentResponse>() {
                             @Override
-                            public ChangeGatewayCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.apigateway.responses
+                                            .ChangeGatewayCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeGatewayCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.apigateway.responses.ChangeGatewayCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +89,11 @@ public class ChangeGatewayCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeGatewayCompartmentResponse.Builder builder =
-                                        ChangeGatewayCompartmentResponse.builder();
+                                com.oracle.bmc.apigateway.responses.ChangeGatewayCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.apigateway.responses
+                                                        .ChangeGatewayCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -110,7 +119,8 @@ public class ChangeGatewayCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeGatewayCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.apigateway.responses.ChangeGatewayCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

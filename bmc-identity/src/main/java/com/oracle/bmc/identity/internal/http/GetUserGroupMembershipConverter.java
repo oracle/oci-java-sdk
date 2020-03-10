@@ -16,14 +16,15 @@ public class GetUserGroupMembershipConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetUserGroupMembershipRequest interceptRequest(
-            GetUserGroupMembershipRequest request) {
+    public static com.oracle.bmc.identity.requests.GetUserGroupMembershipRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetUserGroupMembershipRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetUserGroupMembershipRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GetUserGroupMembershipRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getUserGroupMembershipId(), "userGroupMembershipId must not be blank");
@@ -44,18 +45,22 @@ public class GetUserGroupMembershipConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.GetUserGroupMembershipResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetUserGroupMembershipResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetUserGroupMembershipResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .GetUserGroupMembershipResponse>() {
                             @Override
-                            public GetUserGroupMembershipResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.GetUserGroupMembershipResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetUserGroupMembershipResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetUserGroupMembershipResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +74,11 @@ public class GetUserGroupMembershipConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetUserGroupMembershipResponse.Builder builder =
-                                        GetUserGroupMembershipResponse.builder();
+                                com.oracle.bmc.identity.responses.GetUserGroupMembershipResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .GetUserGroupMembershipResponse.builder();
 
                                 builder.userGroupMembership(response.getItem());
 
@@ -95,7 +103,8 @@ public class GetUserGroupMembershipConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetUserGroupMembershipResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetUserGroupMembershipResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

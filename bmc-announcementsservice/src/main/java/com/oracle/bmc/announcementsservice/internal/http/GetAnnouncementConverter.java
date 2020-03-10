@@ -16,13 +16,16 @@ public class GetAnnouncementConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetAnnouncementRequest interceptRequest(GetAnnouncementRequest request) {
+    public static com.oracle.bmc.announcementsservice.requests.GetAnnouncementRequest
+            interceptRequest(
+                    com.oracle.bmc.announcementsservice.requests.GetAnnouncementRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetAnnouncementRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.announcementsservice.requests.GetAnnouncementRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAnnouncementId(), "announcementId must not be blank");
 
@@ -46,16 +49,23 @@ public class GetAnnouncementConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetAnnouncementResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.announcementsservice.responses.GetAnnouncementResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAnnouncementResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.announcementsservice.responses.GetAnnouncementResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetAnnouncementResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.announcementsservice.responses
+                                        .GetAnnouncementResponse>() {
                             @Override
-                            public GetAnnouncementResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetAnnouncementResponse");
+                            public com.oracle.bmc.announcementsservice.responses
+                                            .GetAnnouncementResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.announcementsservice.responses.GetAnnouncementResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +79,11 @@ public class GetAnnouncementConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetAnnouncementResponse.Builder builder =
-                                        GetAnnouncementResponse.builder();
+                                com.oracle.bmc.announcementsservice.responses
+                                                .GetAnnouncementResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.announcementsservice.responses
+                                                        .GetAnnouncementResponse.builder();
 
                                 builder.announcement(response.getItem());
 
@@ -86,7 +99,9 @@ public class GetAnnouncementConverter {
                                                     String.class));
                                 }
 
-                                GetAnnouncementResponse responseWrapper = builder.build();
+                                com.oracle.bmc.announcementsservice.responses
+                                                .GetAnnouncementResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

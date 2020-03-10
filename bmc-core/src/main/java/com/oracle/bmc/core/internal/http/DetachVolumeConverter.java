@@ -16,13 +16,15 @@ public class DetachVolumeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DetachVolumeRequest interceptRequest(DetachVolumeRequest request) {
+    public static com.oracle.bmc.core.requests.DetachVolumeRequest interceptRequest(
+            com.oracle.bmc.core.requests.DetachVolumeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DetachVolumeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DetachVolumeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeAttachmentId(), "volumeAttachmentId must not be blank");
 
@@ -45,16 +47,21 @@ public class DetachVolumeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DetachVolumeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DetachVolumeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachVolumeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DetachVolumeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DetachVolumeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DetachVolumeResponse>() {
                             @Override
-                            public DetachVolumeResponse apply(
+                            public com.oracle.bmc.core.responses.DetachVolumeResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DetachVolumeResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DetachVolumeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -65,8 +72,9 @@ public class DetachVolumeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DetachVolumeResponse.Builder builder =
-                                        DetachVolumeResponse.builder();
+                                com.oracle.bmc.core.responses.DetachVolumeResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.DetachVolumeResponse
+                                                .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -80,7 +88,8 @@ public class DetachVolumeConverter {
                                                     String.class));
                                 }
 
-                                DetachVolumeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DetachVolumeResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

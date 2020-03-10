@@ -16,15 +16,17 @@ public class SkipNextScheduledJobExecutionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static SkipNextScheduledJobExecutionRequest interceptRequest(
-            SkipNextScheduledJobExecutionRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.SkipNextScheduledJobExecutionRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.SkipNextScheduledJobExecutionRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            SkipNextScheduledJobExecutionRequest request) {
+            com.oracle.bmc.osmanagement.requests.SkipNextScheduledJobExecutionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getScheduledJobId(), "scheduledJobId must not be blank");
 
@@ -58,19 +60,23 @@ public class SkipNextScheduledJobExecutionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, SkipNextScheduledJobExecutionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.SkipNextScheduledJobExecutionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SkipNextScheduledJobExecutionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.SkipNextScheduledJobExecutionResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                SkipNextScheduledJobExecutionResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .SkipNextScheduledJobExecutionResponse>() {
                             @Override
-                            public SkipNextScheduledJobExecutionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .SkipNextScheduledJobExecutionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for SkipNextScheduledJobExecutionResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.SkipNextScheduledJobExecutionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -81,8 +87,12 @@ public class SkipNextScheduledJobExecutionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                SkipNextScheduledJobExecutionResponse.Builder builder =
-                                        SkipNextScheduledJobExecutionResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .SkipNextScheduledJobExecutionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .SkipNextScheduledJobExecutionResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -105,8 +115,9 @@ public class SkipNextScheduledJobExecutionConverter {
                                                     String.class));
                                 }
 
-                                SkipNextScheduledJobExecutionResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .SkipNextScheduledJobExecutionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

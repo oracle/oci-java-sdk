@@ -16,13 +16,15 @@ public class CreateCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateCompartmentRequest interceptRequest(CreateCompartmentRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateCompartmentRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreateCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateCompartmentDetails(), "createCompartmentDetails is required");
@@ -42,17 +44,21 @@ public class CreateCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateCompartmentResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.CreateCompartmentResponse>() {
                             @Override
-                            public CreateCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.CreateCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateCompartmentResponse.Builder builder =
-                                        CreateCompartmentResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateCompartmentResponse.builder();
 
                                 builder.compartment(response.getItem());
 
@@ -92,7 +100,8 @@ public class CreateCompartmentConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

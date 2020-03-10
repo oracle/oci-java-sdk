@@ -16,15 +16,15 @@ public class ChangeOceInstanceCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeOceInstanceCompartmentRequest interceptRequest(
-            ChangeOceInstanceCompartmentRequest request) {
+    public static com.oracle.bmc.oce.requests.ChangeOceInstanceCompartmentRequest interceptRequest(
+            com.oracle.bmc.oce.requests.ChangeOceInstanceCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeOceInstanceCompartmentRequest request) {
+            com.oracle.bmc.oce.requests.ChangeOceInstanceCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getOceInstanceId(), "oceInstanceId must not be blank");
         Validate.notNull(
@@ -61,18 +61,22 @@ public class ChangeOceInstanceCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeOceInstanceCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.oce.responses.ChangeOceInstanceCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeOceInstanceCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oce.responses.ChangeOceInstanceCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeOceInstanceCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oce.responses
+                                        .ChangeOceInstanceCompartmentResponse>() {
                             @Override
-                            public ChangeOceInstanceCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.oce.responses.ChangeOceInstanceCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeOceInstanceCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.oce.responses.ChangeOceInstanceCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +87,12 @@ public class ChangeOceInstanceCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeOceInstanceCompartmentResponse.Builder builder =
-                                        ChangeOceInstanceCompartmentResponse.builder();
+                                com.oracle.bmc.oce.responses.ChangeOceInstanceCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.oce.responses
+                                                        .ChangeOceInstanceCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -110,8 +118,8 @@ public class ChangeOceInstanceCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeOceInstanceCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.oce.responses.ChangeOceInstanceCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

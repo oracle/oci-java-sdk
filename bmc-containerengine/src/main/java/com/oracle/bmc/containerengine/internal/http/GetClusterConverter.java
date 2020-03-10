@@ -16,13 +16,15 @@ public class GetClusterConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetClusterRequest interceptRequest(GetClusterRequest request) {
+    public static com.oracle.bmc.containerengine.requests.GetClusterRequest interceptRequest(
+            com.oracle.bmc.containerengine.requests.GetClusterRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetClusterRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.containerengine.requests.GetClusterRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetClusterConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.containerengine.responses.GetClusterResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.containerengine.responses.GetClusterResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetClusterResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.containerengine.responses.GetClusterResponse>() {
                             @Override
-                            public GetClusterResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetClusterResponse");
+                            public com.oracle.bmc.containerengine.responses.GetClusterResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.containerengine.responses.GetClusterResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Cluster>>
@@ -65,7 +74,10 @@ public class GetClusterConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetClusterResponse.Builder builder = GetClusterResponse.builder();
+                                com.oracle.bmc.containerengine.responses.GetClusterResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.containerengine.responses
+                                                        .GetClusterResponse.builder();
 
                                 builder.cluster(response.getItem());
 
@@ -90,7 +102,8 @@ public class GetClusterConverter {
                                                     String.class));
                                 }
 
-                                GetClusterResponse responseWrapper = builder.build();
+                                com.oracle.bmc.containerengine.responses.GetClusterResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

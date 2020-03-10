@@ -16,13 +16,15 @@ public class MoveCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static MoveCompartmentRequest interceptRequest(MoveCompartmentRequest request) {
+    public static com.oracle.bmc.identity.requests.MoveCompartmentRequest interceptRequest(
+            com.oracle.bmc.identity.requests.MoveCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, MoveCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.MoveCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCompartmentId(), "compartmentId must not be blank");
         Validate.notNull(request.getMoveCompartmentDetails(), "moveCompartmentDetails is required");
@@ -57,16 +59,21 @@ public class MoveCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, MoveCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.MoveCompartmentResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, MoveCompartmentResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.MoveCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, MoveCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.MoveCompartmentResponse>() {
                             @Override
-                            public MoveCompartmentResponse apply(
+                            public com.oracle.bmc.identity.responses.MoveCompartmentResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for MoveCompartmentResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.MoveCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -77,8 +84,10 @@ public class MoveCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                MoveCompartmentResponse.Builder builder =
-                                        MoveCompartmentResponse.builder();
+                                com.oracle.bmc.identity.responses.MoveCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .MoveCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -104,7 +113,8 @@ public class MoveCompartmentConverter {
                                                     String.class));
                                 }
 
-                                MoveCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.MoveCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

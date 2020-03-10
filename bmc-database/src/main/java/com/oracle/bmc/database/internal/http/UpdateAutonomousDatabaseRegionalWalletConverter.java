@@ -16,15 +16,18 @@ public class UpdateAutonomousDatabaseRegionalWalletConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateAutonomousDatabaseRegionalWalletRequest interceptRequest(
-            UpdateAutonomousDatabaseRegionalWalletRequest request) {
+    public static com.oracle.bmc.database.requests.UpdateAutonomousDatabaseRegionalWalletRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.UpdateAutonomousDatabaseRegionalWalletRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateAutonomousDatabaseRegionalWalletRequest request) {
+            com.oracle.bmc.database.requests.UpdateAutonomousDatabaseRegionalWalletRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getUpdateAutonomousDatabaseWalletDetails(),
@@ -45,19 +48,25 @@ public class UpdateAutonomousDatabaseRegionalWalletConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateAutonomousDatabaseRegionalWalletResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses
+                            .UpdateAutonomousDatabaseRegionalWalletResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAutonomousDatabaseRegionalWalletResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .UpdateAutonomousDatabaseRegionalWalletResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                UpdateAutonomousDatabaseRegionalWalletResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .UpdateAutonomousDatabaseRegionalWalletResponse>() {
                             @Override
-                            public UpdateAutonomousDatabaseRegionalWalletResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .UpdateAutonomousDatabaseRegionalWalletResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateAutonomousDatabaseRegionalWalletResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.UpdateAutonomousDatabaseRegionalWalletResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -68,8 +77,13 @@ public class UpdateAutonomousDatabaseRegionalWalletConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateAutonomousDatabaseRegionalWalletResponse.Builder builder =
-                                        UpdateAutonomousDatabaseRegionalWalletResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .UpdateAutonomousDatabaseRegionalWalletResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .UpdateAutonomousDatabaseRegionalWalletResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -95,8 +109,9 @@ public class UpdateAutonomousDatabaseRegionalWalletConverter {
                                                     String.class));
                                 }
 
-                                UpdateAutonomousDatabaseRegionalWalletResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .UpdateAutonomousDatabaseRegionalWalletResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

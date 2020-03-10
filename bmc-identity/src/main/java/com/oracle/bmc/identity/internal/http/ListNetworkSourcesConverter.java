@@ -16,13 +16,15 @@ public class ListNetworkSourcesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListNetworkSourcesRequest interceptRequest(ListNetworkSourcesRequest request) {
+    public static com.oracle.bmc.identity.requests.ListNetworkSourcesRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListNetworkSourcesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListNetworkSourcesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListNetworkSourcesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -59,17 +61,21 @@ public class ListNetworkSourcesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListNetworkSourcesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListNetworkSourcesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListNetworkSourcesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListNetworkSourcesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListNetworkSourcesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListNetworkSourcesResponse>() {
                             @Override
-                            public ListNetworkSourcesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ListNetworkSourcesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListNetworkSourcesResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListNetworkSourcesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -86,8 +92,10 @@ public class ListNetworkSourcesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListNetworkSourcesResponse.Builder builder =
-                                        ListNetworkSourcesResponse.builder();
+                                com.oracle.bmc.identity.responses.ListNetworkSourcesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListNetworkSourcesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -115,7 +123,8 @@ public class ListNetworkSourcesConverter {
                                                     String.class));
                                 }
 
-                                ListNetworkSourcesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListNetworkSourcesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

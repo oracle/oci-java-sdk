@@ -16,13 +16,15 @@ public class SummarizeStatementConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static SummarizeStatementRequest interceptRequest(SummarizeStatementRequest request) {
+    public static com.oracle.bmc.nosql.requests.SummarizeStatementRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.SummarizeStatementRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, SummarizeStatementRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.SummarizeStatementRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getStatement(), "statement is required");
@@ -54,17 +56,21 @@ public class SummarizeStatementConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, SummarizeStatementResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.nosql.responses.SummarizeStatementResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SummarizeStatementResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.SummarizeStatementResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, SummarizeStatementResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.SummarizeStatementResponse>() {
                             @Override
-                            public SummarizeStatementResponse apply(
+                            public com.oracle.bmc.nosql.responses.SummarizeStatementResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for SummarizeStatementResponse");
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.SummarizeStatementResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +84,10 @@ public class SummarizeStatementConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                SummarizeStatementResponse.Builder builder =
-                                        SummarizeStatementResponse.builder();
+                                com.oracle.bmc.nosql.responses.SummarizeStatementResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.nosql.responses
+                                                        .SummarizeStatementResponse.builder();
 
                                 builder.statementSummary(response.getItem());
 
@@ -95,7 +103,8 @@ public class SummarizeStatementConverter {
                                                     String.class));
                                 }
 
-                                SummarizeStatementResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.SummarizeStatementResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class UpdateAddressListConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateAddressListRequest interceptRequest(UpdateAddressListRequest request) {
+    public static com.oracle.bmc.waas.requests.UpdateAddressListRequest interceptRequest(
+            com.oracle.bmc.waas.requests.UpdateAddressListRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateAddressListRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.UpdateAddressListRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAddressListId(), "addressListId must not be blank");
 
@@ -50,17 +52,21 @@ public class UpdateAddressListConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateAddressListResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.UpdateAddressListResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAddressListResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.UpdateAddressListResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateAddressListResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.UpdateAddressListResponse>() {
                             @Override
-                            public UpdateAddressListResponse apply(
+                            public com.oracle.bmc.waas.responses.UpdateAddressListResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateAddressListResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.UpdateAddressListResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +80,10 @@ public class UpdateAddressListConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateAddressListResponse.Builder builder =
-                                        UpdateAddressListResponse.builder();
+                                com.oracle.bmc.waas.responses.UpdateAddressListResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .UpdateAddressListResponse.builder();
 
                                 builder.addressList(response.getItem());
 
@@ -100,7 +108,8 @@ public class UpdateAddressListConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateAddressListResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.UpdateAddressListResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

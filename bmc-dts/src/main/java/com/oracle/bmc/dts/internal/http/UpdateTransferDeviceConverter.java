@@ -16,14 +16,15 @@ public class UpdateTransferDeviceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateTransferDeviceRequest interceptRequest(
-            UpdateTransferDeviceRequest request) {
+    public static com.oracle.bmc.dts.requests.UpdateTransferDeviceRequest interceptRequest(
+            com.oracle.bmc.dts.requests.UpdateTransferDeviceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateTransferDeviceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dts.requests.UpdateTransferDeviceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
         Validate.notBlank(
@@ -56,18 +57,21 @@ public class UpdateTransferDeviceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateTransferDeviceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.UpdateTransferDeviceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateTransferDeviceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.UpdateTransferDeviceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateTransferDeviceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.UpdateTransferDeviceResponse>() {
                             @Override
-                            public UpdateTransferDeviceResponse apply(
+                            public com.oracle.bmc.dts.responses.UpdateTransferDeviceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateTransferDeviceResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.UpdateTransferDeviceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -81,8 +85,10 @@ public class UpdateTransferDeviceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateTransferDeviceResponse.Builder builder =
-                                        UpdateTransferDeviceResponse.builder();
+                                com.oracle.bmc.dts.responses.UpdateTransferDeviceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .UpdateTransferDeviceResponse.builder();
 
                                 builder.transferDevice(response.getItem());
 
@@ -107,7 +113,8 @@ public class UpdateTransferDeviceConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateTransferDeviceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.UpdateTransferDeviceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

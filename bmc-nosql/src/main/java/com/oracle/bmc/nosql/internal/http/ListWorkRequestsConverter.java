@@ -16,13 +16,15 @@ public class ListWorkRequestsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListWorkRequestsRequest interceptRequest(ListWorkRequestsRequest request) {
+    public static com.oracle.bmc.nosql.requests.ListWorkRequestsRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.ListWorkRequestsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListWorkRequestsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.ListWorkRequestsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -63,17 +65,21 @@ public class ListWorkRequestsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.nosql.responses.ListWorkRequestsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.ListWorkRequestsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListWorkRequestsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.ListWorkRequestsResponse>() {
                             @Override
-                            public ListWorkRequestsResponse apply(
+                            public com.oracle.bmc.nosql.responses.ListWorkRequestsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListWorkRequestsResponse");
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.ListWorkRequestsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -87,8 +93,10 @@ public class ListWorkRequestsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListWorkRequestsResponse.Builder builder =
-                                        ListWorkRequestsResponse.builder();
+                                com.oracle.bmc.nosql.responses.ListWorkRequestsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.nosql.responses
+                                                        .ListWorkRequestsResponse.builder();
 
                                 builder.workRequestCollection(response.getItem());
 
@@ -116,7 +124,8 @@ public class ListWorkRequestsConverter {
                                                     String.class));
                                 }
 
-                                ListWorkRequestsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.ListWorkRequestsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

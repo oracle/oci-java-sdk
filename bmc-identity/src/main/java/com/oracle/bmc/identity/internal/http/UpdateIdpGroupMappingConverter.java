@@ -16,14 +16,15 @@ public class UpdateIdpGroupMappingConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateIdpGroupMappingRequest interceptRequest(
-            UpdateIdpGroupMappingRequest request) {
+    public static com.oracle.bmc.identity.requests.UpdateIdpGroupMappingRequest interceptRequest(
+            com.oracle.bmc.identity.requests.UpdateIdpGroupMappingRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateIdpGroupMappingRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.UpdateIdpGroupMappingRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIdentityProviderId(), "identityProviderId must not be blank");
         Validate.notBlank(request.getMappingId(), "mappingId must not be blank");
@@ -55,18 +56,21 @@ public class UpdateIdpGroupMappingConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.UpdateIdpGroupMappingResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.UpdateIdpGroupMappingResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.UpdateIdpGroupMappingResponse>() {
                             @Override
-                            public UpdateIdpGroupMappingResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.UpdateIdpGroupMappingResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateIdpGroupMappingResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.UpdateIdpGroupMappingResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -80,8 +84,11 @@ public class UpdateIdpGroupMappingConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateIdpGroupMappingResponse.Builder builder =
-                                        UpdateIdpGroupMappingResponse.builder();
+                                com.oracle.bmc.identity.responses.UpdateIdpGroupMappingResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .UpdateIdpGroupMappingResponse.builder();
 
                                 builder.idpGroupMapping(response.getItem());
 
@@ -106,7 +113,8 @@ public class UpdateIdpGroupMappingConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateIdpGroupMappingResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.UpdateIdpGroupMappingResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

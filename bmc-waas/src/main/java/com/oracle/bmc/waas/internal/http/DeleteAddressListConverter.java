@@ -16,13 +16,15 @@ public class DeleteAddressListConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteAddressListRequest interceptRequest(DeleteAddressListRequest request) {
+    public static com.oracle.bmc.waas.requests.DeleteAddressListRequest interceptRequest(
+            com.oracle.bmc.waas.requests.DeleteAddressListRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteAddressListRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.DeleteAddressListRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAddressListId(), "addressListId must not be blank");
 
@@ -54,17 +56,21 @@ public class DeleteAddressListConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteAddressListResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.DeleteAddressListResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAddressListResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.DeleteAddressListResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteAddressListResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.DeleteAddressListResponse>() {
                             @Override
-                            public DeleteAddressListResponse apply(
+                            public com.oracle.bmc.waas.responses.DeleteAddressListResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteAddressListResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.DeleteAddressListResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +81,10 @@ public class DeleteAddressListConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteAddressListResponse.Builder builder =
-                                        DeleteAddressListResponse.builder();
+                                com.oracle.bmc.waas.responses.DeleteAddressListResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .DeleteAddressListResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -90,7 +98,8 @@ public class DeleteAddressListConverter {
                                                     String.class));
                                 }
 
-                                DeleteAddressListResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.DeleteAddressListResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

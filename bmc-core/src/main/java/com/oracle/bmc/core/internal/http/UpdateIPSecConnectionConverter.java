@@ -16,14 +16,15 @@ public class UpdateIPSecConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateIPSecConnectionRequest interceptRequest(
-            UpdateIPSecConnectionRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateIPSecConnectionRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateIPSecConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateIPSecConnectionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateIPSecConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
         Validate.notNull(
@@ -50,18 +51,21 @@ public class UpdateIPSecConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse>() {
                             @Override
-                            public UpdateIPSecConnectionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateIPSecConnectionResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -75,8 +79,10 @@ public class UpdateIPSecConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateIPSecConnectionResponse.Builder builder =
-                                        UpdateIPSecConnectionResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateIPSecConnectionResponse.builder();
 
                                 builder.iPSecConnection(response.getItem());
 
@@ -101,7 +107,8 @@ public class UpdateIPSecConnectionConverter {
                                                     String.class));
                                 }
 
-                                UpdateIPSecConnectionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class GetUserConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetUserRequest interceptRequest(GetUserRequest request) {
+    public static com.oracle.bmc.identity.requests.GetUserRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetUserRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetUserRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GetUserRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -41,15 +43,21 @@ public class GetUserConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.identity.responses.GetUserResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetUserResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetUserResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.GetUserResponse>() {
                             @Override
-                            public GetUserResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetUserResponse");
+                            public com.oracle.bmc.identity.responses.GetUserResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetUserResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<User>>
@@ -60,7 +68,8 @@ public class GetUserConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetUserResponse.Builder builder = GetUserResponse.builder();
+                                com.oracle.bmc.identity.responses.GetUserResponse.Builder builder =
+                                        com.oracle.bmc.identity.responses.GetUserResponse.builder();
 
                                 builder.user(response.getItem());
 
@@ -85,7 +94,8 @@ public class GetUserConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetUserResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetUserResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

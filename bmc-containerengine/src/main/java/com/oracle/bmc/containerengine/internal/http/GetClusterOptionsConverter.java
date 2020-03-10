@@ -16,13 +16,15 @@ public class GetClusterOptionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetClusterOptionsRequest interceptRequest(GetClusterOptionsRequest request) {
+    public static com.oracle.bmc.containerengine.requests.GetClusterOptionsRequest interceptRequest(
+            com.oracle.bmc.containerengine.requests.GetClusterOptionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetClusterOptionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.containerengine.requests.GetClusterOptionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getClusterOptionId(), "clusterOptionId must not be blank");
 
@@ -54,17 +56,23 @@ public class GetClusterOptionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetClusterOptionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.containerengine.responses.GetClusterOptionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterOptionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.containerengine.responses.GetClusterOptionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetClusterOptionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.containerengine.responses
+                                        .GetClusterOptionsResponse>() {
                             @Override
-                            public GetClusterOptionsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.containerengine.responses
+                                            .GetClusterOptionsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetClusterOptionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.containerengine.responses.GetClusterOptionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +86,11 @@ public class GetClusterOptionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetClusterOptionsResponse.Builder builder =
-                                        GetClusterOptionsResponse.builder();
+                                com.oracle.bmc.containerengine.responses.GetClusterOptionsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.containerengine.responses
+                                                        .GetClusterOptionsResponse.builder();
 
                                 builder.clusterOptions(response.getItem());
 
@@ -95,7 +106,8 @@ public class GetClusterOptionsConverter {
                                                     String.class));
                                 }
 
-                                GetClusterOptionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.containerengine.responses.GetClusterOptionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

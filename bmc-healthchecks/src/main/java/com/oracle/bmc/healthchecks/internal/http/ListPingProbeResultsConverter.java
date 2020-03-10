@@ -16,14 +16,15 @@ public class ListPingProbeResultsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListPingProbeResultsRequest interceptRequest(
-            ListPingProbeResultsRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.ListPingProbeResultsRequest interceptRequest(
+            com.oracle.bmc.healthchecks.requests.ListPingProbeResultsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListPingProbeResultsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.healthchecks.requests.ListPingProbeResultsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getProbeConfigurationId(), "probeConfigurationId must not be blank");
@@ -96,18 +97,23 @@ public class ListPingProbeResultsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListPingProbeResultsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.ListPingProbeResultsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListPingProbeResultsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.ListPingProbeResultsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListPingProbeResultsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses
+                                        .ListPingProbeResultsResponse>() {
                             @Override
-                            public ListPingProbeResultsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses
+                                            .ListPingProbeResultsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListPingProbeResultsResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.ListPingProbeResultsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -124,8 +130,11 @@ public class ListPingProbeResultsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListPingProbeResultsResponse.Builder builder =
-                                        ListPingProbeResultsResponse.builder();
+                                com.oracle.bmc.healthchecks.responses.ListPingProbeResultsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .ListPingProbeResultsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -153,7 +162,8 @@ public class ListPingProbeResultsConverter {
                                                     String.class));
                                 }
 
-                                ListPingProbeResultsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.healthchecks.responses.ListPingProbeResultsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

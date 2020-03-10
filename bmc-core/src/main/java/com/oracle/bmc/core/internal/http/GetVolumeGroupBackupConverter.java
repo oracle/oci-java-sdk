@@ -16,14 +16,15 @@ public class GetVolumeGroupBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetVolumeGroupBackupRequest interceptRequest(
-            GetVolumeGroupBackupRequest request) {
+    public static com.oracle.bmc.core.requests.GetVolumeGroupBackupRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetVolumeGroupBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetVolumeGroupBackupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetVolumeGroupBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getVolumeGroupBackupId(), "volumeGroupBackupId must not be blank");
@@ -44,18 +45,21 @@ public class GetVolumeGroupBackupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetVolumeGroupBackupResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetVolumeGroupBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetVolumeGroupBackupResponse>() {
                             @Override
-                            public GetVolumeGroupBackupResponse apply(
+                            public com.oracle.bmc.core.responses.GetVolumeGroupBackupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetVolumeGroupBackupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetVolumeGroupBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +73,10 @@ public class GetVolumeGroupBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetVolumeGroupBackupResponse.Builder builder =
-                                        GetVolumeGroupBackupResponse.builder();
+                                com.oracle.bmc.core.responses.GetVolumeGroupBackupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetVolumeGroupBackupResponse.builder();
 
                                 builder.volumeGroupBackup(response.getItem());
 
@@ -95,7 +101,8 @@ public class GetVolumeGroupBackupConverter {
                                                     String.class));
                                 }
 
-                                GetVolumeGroupBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetVolumeGroupBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

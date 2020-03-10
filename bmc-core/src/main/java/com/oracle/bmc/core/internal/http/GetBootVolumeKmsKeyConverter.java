@@ -16,13 +16,15 @@ public class GetBootVolumeKmsKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetBootVolumeKmsKeyRequest interceptRequest(GetBootVolumeKmsKeyRequest request) {
+    public static com.oracle.bmc.core.requests.GetBootVolumeKmsKeyRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetBootVolumeKmsKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetBootVolumeKmsKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetBootVolumeKmsKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBootVolumeId(), "bootVolumeId must not be blank");
 
@@ -47,18 +49,21 @@ public class GetBootVolumeKmsKeyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetBootVolumeKmsKeyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetBootVolumeKmsKeyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetBootVolumeKmsKeyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetBootVolumeKmsKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetBootVolumeKmsKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetBootVolumeKmsKeyResponse>() {
                             @Override
-                            public GetBootVolumeKmsKeyResponse apply(
+                            public com.oracle.bmc.core.responses.GetBootVolumeKmsKeyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetBootVolumeKmsKeyResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetBootVolumeKmsKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -72,8 +77,10 @@ public class GetBootVolumeKmsKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetBootVolumeKmsKeyResponse.Builder builder =
-                                        GetBootVolumeKmsKeyResponse.builder();
+                                com.oracle.bmc.core.responses.GetBootVolumeKmsKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetBootVolumeKmsKeyResponse.builder();
 
                                 builder.bootVolumeKmsKey(response.getItem());
 
@@ -98,7 +105,8 @@ public class GetBootVolumeKmsKeyConverter {
                                                     String.class));
                                 }
 
-                                GetBootVolumeKmsKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetBootVolumeKmsKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class DeleteObjectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteObjectRequest interceptRequest(DeleteObjectRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.DeleteObjectRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.DeleteObjectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteObjectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.DeleteObjectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -59,16 +61,22 @@ public class DeleteObjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteObjectResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.DeleteObjectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteObjectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.DeleteObjectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteObjectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.DeleteObjectResponse>() {
                             @Override
-                            public DeleteObjectResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteObjectResponse");
+                            public com.oracle.bmc.objectstorage.responses.DeleteObjectResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.DeleteObjectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +87,10 @@ public class DeleteObjectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteObjectResponse.Builder builder =
-                                        DeleteObjectResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.DeleteObjectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .DeleteObjectResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
@@ -118,7 +128,8 @@ public class DeleteObjectConverter {
                                                     java.util.Date.class));
                                 }
 
-                                DeleteObjectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.DeleteObjectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

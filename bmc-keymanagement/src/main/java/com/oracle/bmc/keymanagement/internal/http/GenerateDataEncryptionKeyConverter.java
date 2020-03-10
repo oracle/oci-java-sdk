@@ -16,15 +16,17 @@ public class GenerateDataEncryptionKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GenerateDataEncryptionKeyRequest interceptRequest(
-            GenerateDataEncryptionKeyRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.GenerateDataEncryptionKeyRequest
+            interceptRequest(
+                    com.oracle.bmc.keymanagement.requests.GenerateDataEncryptionKeyRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GenerateDataEncryptionKeyRequest request) {
+            com.oracle.bmc.keymanagement.requests.GenerateDataEncryptionKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getGenerateKeyDetails(), "generateKeyDetails is required");
 
@@ -43,18 +45,23 @@ public class GenerateDataEncryptionKeyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.GenerateDataEncryptionKeyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.GenerateDataEncryptionKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses
+                                        .GenerateDataEncryptionKeyResponse>() {
                             @Override
-                            public GenerateDataEncryptionKeyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.keymanagement.responses
+                                            .GenerateDataEncryptionKeyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GenerateDataEncryptionKeyResponse");
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.GenerateDataEncryptionKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +75,12 @@ public class GenerateDataEncryptionKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GenerateDataEncryptionKeyResponse.Builder builder =
-                                        GenerateDataEncryptionKeyResponse.builder();
+                                com.oracle.bmc.keymanagement.responses
+                                                .GenerateDataEncryptionKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .GenerateDataEncryptionKeyResponse
+                                                        .builder();
 
                                 builder.generatedKey(response.getItem());
 
@@ -85,7 +96,9 @@ public class GenerateDataEncryptionKeyConverter {
                                                     String.class));
                                 }
 
-                                GenerateDataEncryptionKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses
+                                                .GenerateDataEncryptionKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

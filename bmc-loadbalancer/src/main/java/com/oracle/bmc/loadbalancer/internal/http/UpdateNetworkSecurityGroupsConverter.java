@@ -16,15 +16,17 @@ public class UpdateNetworkSecurityGroupsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateNetworkSecurityGroupsRequest interceptRequest(
-            UpdateNetworkSecurityGroupsRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.UpdateNetworkSecurityGroupsRequest
+            interceptRequest(
+                    com.oracle.bmc.loadbalancer.requests.UpdateNetworkSecurityGroupsRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateNetworkSecurityGroupsRequest request) {
+            com.oracle.bmc.loadbalancer.requests.UpdateNetworkSecurityGroupsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getUpdateNetworkSecurityGroupsDetails(),
@@ -56,18 +58,23 @@ public class UpdateNetworkSecurityGroupsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.UpdateNetworkSecurityGroupsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.UpdateNetworkSecurityGroupsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateNetworkSecurityGroupsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses
+                                        .UpdateNetworkSecurityGroupsResponse>() {
                             @Override
-                            public UpdateNetworkSecurityGroupsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.loadbalancer.responses
+                                            .UpdateNetworkSecurityGroupsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateNetworkSecurityGroupsResponse");
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.UpdateNetworkSecurityGroupsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -78,8 +85,12 @@ public class UpdateNetworkSecurityGroupsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateNetworkSecurityGroupsResponse.Builder builder =
-                                        UpdateNetworkSecurityGroupsResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses
+                                                .UpdateNetworkSecurityGroupsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .UpdateNetworkSecurityGroupsResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -105,8 +116,9 @@ public class UpdateNetworkSecurityGroupsConverter {
                                                     String.class));
                                 }
 
-                                UpdateNetworkSecurityGroupsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.loadbalancer.responses
+                                                .UpdateNetworkSecurityGroupsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

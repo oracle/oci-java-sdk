@@ -16,13 +16,15 @@ public class DeleteBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteBackupRequest interceptRequest(DeleteBackupRequest request) {
+    public static com.oracle.bmc.database.requests.DeleteBackupRequest interceptRequest(
+            com.oracle.bmc.database.requests.DeleteBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteBackupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.DeleteBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBackupId(), "backupId must not be blank");
 
@@ -45,16 +47,22 @@ public class DeleteBackupConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DeleteBackupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.DeleteBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.DeleteBackupResponse>() {
                             @Override
-                            public DeleteBackupResponse apply(
+                            public com.oracle.bmc.database.responses.DeleteBackupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteBackupResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DeleteBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -65,8 +73,10 @@ public class DeleteBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteBackupResponse.Builder builder =
-                                        DeleteBackupResponse.builder();
+                                com.oracle.bmc.database.responses.DeleteBackupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DeleteBackupResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -92,7 +102,8 @@ public class DeleteBackupConverter {
                                                     String.class));
                                 }
 
-                                DeleteBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.DeleteBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class ReinstateDataGuardAssociationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ReinstateDataGuardAssociationRequest interceptRequest(
-            ReinstateDataGuardAssociationRequest request) {
+    public static com.oracle.bmc.database.requests.ReinstateDataGuardAssociationRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ReinstateDataGuardAssociationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ReinstateDataGuardAssociationRequest request) {
+            com.oracle.bmc.database.requests.ReinstateDataGuardAssociationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
         Validate.notBlank(
@@ -59,19 +60,23 @@ public class ReinstateDataGuardAssociationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ReinstateDataGuardAssociationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ReinstateDataGuardAssociationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ReinstateDataGuardAssociationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ReinstateDataGuardAssociationResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ReinstateDataGuardAssociationResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .ReinstateDataGuardAssociationResponse>() {
                             @Override
-                            public ReinstateDataGuardAssociationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ReinstateDataGuardAssociationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ReinstateDataGuardAssociationResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ReinstateDataGuardAssociationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -85,8 +90,12 @@ public class ReinstateDataGuardAssociationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ReinstateDataGuardAssociationResponse.Builder builder =
-                                        ReinstateDataGuardAssociationResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .ReinstateDataGuardAssociationResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ReinstateDataGuardAssociationResponse
+                                                        .builder();
 
                                 builder.dataGuardAssociation(response.getItem());
 
@@ -123,8 +132,9 @@ public class ReinstateDataGuardAssociationConverter {
                                                     String.class));
                                 }
 
-                                ReinstateDataGuardAssociationResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .ReinstateDataGuardAssociationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

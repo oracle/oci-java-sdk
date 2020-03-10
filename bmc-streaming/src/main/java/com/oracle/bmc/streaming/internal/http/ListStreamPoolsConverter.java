@@ -16,13 +16,15 @@ public class ListStreamPoolsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListStreamPoolsRequest interceptRequest(ListStreamPoolsRequest request) {
+    public static com.oracle.bmc.streaming.requests.ListStreamPoolsRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.ListStreamPoolsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListStreamPoolsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.ListStreamPoolsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -103,16 +105,21 @@ public class ListStreamPoolsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListStreamPoolsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.ListStreamPoolsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListStreamPoolsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.ListStreamPoolsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListStreamPoolsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.ListStreamPoolsResponse>() {
                             @Override
-                            public ListStreamPoolsResponse apply(
+                            public com.oracle.bmc.streaming.responses.ListStreamPoolsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListStreamPoolsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.ListStreamPoolsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -129,8 +136,10 @@ public class ListStreamPoolsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListStreamPoolsResponse.Builder builder =
-                                        ListStreamPoolsResponse.builder();
+                                com.oracle.bmc.streaming.responses.ListStreamPoolsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .ListStreamPoolsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -170,7 +179,8 @@ public class ListStreamPoolsConverter {
                                                     String.class));
                                 }
 
-                                ListStreamPoolsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.ListStreamPoolsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

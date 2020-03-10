@@ -16,13 +16,15 @@ public class DeleteWorkRequestConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteWorkRequestRequest interceptRequest(DeleteWorkRequestRequest request) {
+    public static com.oracle.bmc.analytics.requests.DeleteWorkRequestRequest interceptRequest(
+            com.oracle.bmc.analytics.requests.DeleteWorkRequestRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteWorkRequestRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.analytics.requests.DeleteWorkRequestRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteWorkRequestConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.analytics.responses.DeleteWorkRequestResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.analytics.responses.DeleteWorkRequestResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteWorkRequestResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.analytics.responses.DeleteWorkRequestResponse>() {
                             @Override
-                            public DeleteWorkRequestResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.analytics.responses.DeleteWorkRequestResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteWorkRequestResponse");
+                                        "Transform function invoked for com.oracle.bmc.analytics.responses.DeleteWorkRequestResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,10 @@ public class DeleteWorkRequestConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteWorkRequestResponse.Builder builder =
-                                        DeleteWorkRequestResponse.builder();
+                                com.oracle.bmc.analytics.responses.DeleteWorkRequestResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.analytics.responses
+                                                        .DeleteWorkRequestResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +94,8 @@ public class DeleteWorkRequestConverter {
                                                     String.class));
                                 }
 
-                                DeleteWorkRequestResponse responseWrapper = builder.build();
+                                com.oracle.bmc.analytics.responses.DeleteWorkRequestResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

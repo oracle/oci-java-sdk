@@ -16,13 +16,15 @@ public class CreateVolumeBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateVolumeBackupRequest interceptRequest(CreateVolumeBackupRequest request) {
+    public static com.oracle.bmc.core.requests.CreateVolumeBackupRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateVolumeBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateVolumeBackupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateVolumeBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateVolumeBackupDetails(), "createVolumeBackupDetails is required");
@@ -42,17 +44,21 @@ public class CreateVolumeBackupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateVolumeBackupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateVolumeBackupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateVolumeBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateVolumeBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateVolumeBackupResponse>() {
                             @Override
-                            public CreateVolumeBackupResponse apply(
+                            public com.oracle.bmc.core.responses.CreateVolumeBackupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateVolumeBackupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateVolumeBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateVolumeBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateVolumeBackupResponse.Builder builder =
-                                        CreateVolumeBackupResponse.builder();
+                                com.oracle.bmc.core.responses.CreateVolumeBackupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateVolumeBackupResponse.builder();
 
                                 builder.volumeBackup(response.getItem());
 
@@ -92,7 +100,8 @@ public class CreateVolumeBackupConverter {
                                                     String.class));
                                 }
 
-                                CreateVolumeBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateVolumeBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class GetStackConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetStackRequest interceptRequest(GetStackRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.GetStackRequest interceptRequest(
+            com.oracle.bmc.resourcemanager.requests.GetStackRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetStackRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.GetStackRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStackId(), "stackId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetStackConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetStackResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.GetStackResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetStackResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.GetStackResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetStackResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses.GetStackResponse>() {
                             @Override
-                            public GetStackResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetStackResponse");
+                            public com.oracle.bmc.resourcemanager.responses.GetStackResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.GetStackResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Stack>>
@@ -65,7 +74,10 @@ public class GetStackConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetStackResponse.Builder builder = GetStackResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses.GetStackResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .GetStackResponse.builder();
 
                                 builder.stack(response.getItem());
 
@@ -90,7 +102,8 @@ public class GetStackConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetStackResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses.GetStackResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class UpdateAutoScalingPolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateAutoScalingPolicyRequest interceptRequest(
-            UpdateAutoScalingPolicyRequest request) {
+    public static com.oracle.bmc.autoscaling.requests.UpdateAutoScalingPolicyRequest
+            interceptRequest(
+                    com.oracle.bmc.autoscaling.requests.UpdateAutoScalingPolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateAutoScalingPolicyRequest request) {
+            com.oracle.bmc.autoscaling.requests.UpdateAutoScalingPolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutoScalingConfigurationId(),
@@ -67,18 +68,23 @@ public class UpdateAutoScalingPolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateAutoScalingPolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.autoscaling.responses.UpdateAutoScalingPolicyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAutoScalingPolicyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.autoscaling.responses.UpdateAutoScalingPolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateAutoScalingPolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.autoscaling.responses
+                                        .UpdateAutoScalingPolicyResponse>() {
                             @Override
-                            public UpdateAutoScalingPolicyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.autoscaling.responses
+                                            .UpdateAutoScalingPolicyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateAutoScalingPolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.autoscaling.responses.UpdateAutoScalingPolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -92,8 +98,11 @@ public class UpdateAutoScalingPolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateAutoScalingPolicyResponse.Builder builder =
-                                        UpdateAutoScalingPolicyResponse.builder();
+                                com.oracle.bmc.autoscaling.responses.UpdateAutoScalingPolicyResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.autoscaling.responses
+                                                        .UpdateAutoScalingPolicyResponse.builder();
 
                                 builder.autoScalingPolicy(response.getItem());
 
@@ -118,7 +127,8 @@ public class UpdateAutoScalingPolicyConverter {
                                                     String.class));
                                 }
 
-                                UpdateAutoScalingPolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.autoscaling.responses.UpdateAutoScalingPolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

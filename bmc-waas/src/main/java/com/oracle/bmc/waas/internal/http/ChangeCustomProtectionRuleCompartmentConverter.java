@@ -16,15 +16,17 @@ public class ChangeCustomProtectionRuleCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeCustomProtectionRuleCompartmentRequest interceptRequest(
-            ChangeCustomProtectionRuleCompartmentRequest request) {
+    public static com.oracle.bmc.waas.requests.ChangeCustomProtectionRuleCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.waas.requests.ChangeCustomProtectionRuleCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeCustomProtectionRuleCompartmentRequest request) {
+            com.oracle.bmc.waas.requests.ChangeCustomProtectionRuleCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getCustomProtectionRuleId(), "customProtectionRuleId must not be blank");
@@ -62,19 +64,23 @@ public class ChangeCustomProtectionRuleCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeCustomProtectionRuleCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ChangeCustomProtectionRuleCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeCustomProtectionRuleCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ChangeCustomProtectionRuleCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeCustomProtectionRuleCompartmentResponse>() {
+                                com.oracle.bmc.waas.responses
+                                        .ChangeCustomProtectionRuleCompartmentResponse>() {
                             @Override
-                            public ChangeCustomProtectionRuleCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses
+                                            .ChangeCustomProtectionRuleCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeCustomProtectionRuleCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ChangeCustomProtectionRuleCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -85,8 +91,13 @@ public class ChangeCustomProtectionRuleCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeCustomProtectionRuleCompartmentResponse.Builder builder =
-                                        ChangeCustomProtectionRuleCompartmentResponse.builder();
+                                com.oracle.bmc.waas.responses
+                                                .ChangeCustomProtectionRuleCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ChangeCustomProtectionRuleCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -100,8 +111,9 @@ public class ChangeCustomProtectionRuleCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeCustomProtectionRuleCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.waas.responses
+                                                .ChangeCustomProtectionRuleCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

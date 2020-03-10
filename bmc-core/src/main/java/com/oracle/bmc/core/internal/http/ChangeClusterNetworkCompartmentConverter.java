@@ -16,15 +16,16 @@ public class ChangeClusterNetworkCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeClusterNetworkCompartmentRequest interceptRequest(
-            ChangeClusterNetworkCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeClusterNetworkCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeClusterNetworkCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeClusterNetworkCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeClusterNetworkCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
         Validate.notNull(
@@ -61,19 +62,23 @@ public class ChangeClusterNetworkCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeClusterNetworkCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeClusterNetworkCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeClusterNetworkCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeClusterNetworkCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeClusterNetworkCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeClusterNetworkCompartmentResponse>() {
                             @Override
-                            public ChangeClusterNetworkCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeClusterNetworkCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeClusterNetworkCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeClusterNetworkCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +89,12 @@ public class ChangeClusterNetworkCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeClusterNetworkCompartmentResponse.Builder builder =
-                                        ChangeClusterNetworkCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeClusterNetworkCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeClusterNetworkCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -108,8 +117,9 @@ public class ChangeClusterNetworkCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeClusterNetworkCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeClusterNetworkCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

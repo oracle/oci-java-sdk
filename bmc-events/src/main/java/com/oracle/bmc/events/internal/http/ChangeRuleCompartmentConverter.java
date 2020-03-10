@@ -16,14 +16,15 @@ public class ChangeRuleCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeRuleCompartmentRequest interceptRequest(
-            ChangeRuleCompartmentRequest request) {
+    public static com.oracle.bmc.events.requests.ChangeRuleCompartmentRequest interceptRequest(
+            com.oracle.bmc.events.requests.ChangeRuleCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeRuleCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.events.requests.ChangeRuleCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
         Validate.notNull(
@@ -60,18 +61,21 @@ public class ChangeRuleCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeRuleCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.events.responses.ChangeRuleCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeRuleCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.events.responses.ChangeRuleCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeRuleCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.events.responses.ChangeRuleCompartmentResponse>() {
                             @Override
-                            public ChangeRuleCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.events.responses.ChangeRuleCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeRuleCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.events.responses.ChangeRuleCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +86,11 @@ public class ChangeRuleCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeRuleCompartmentResponse.Builder builder =
-                                        ChangeRuleCompartmentResponse.builder();
+                                com.oracle.bmc.events.responses.ChangeRuleCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.events.responses
+                                                        .ChangeRuleCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -97,7 +104,8 @@ public class ChangeRuleCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeRuleCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.events.responses.ChangeRuleCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

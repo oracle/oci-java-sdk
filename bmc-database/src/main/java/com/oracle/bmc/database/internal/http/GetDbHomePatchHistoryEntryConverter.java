@@ -16,15 +16,16 @@ public class GetDbHomePatchHistoryEntryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDbHomePatchHistoryEntryRequest interceptRequest(
-            GetDbHomePatchHistoryEntryRequest request) {
+    public static com.oracle.bmc.database.requests.GetDbHomePatchHistoryEntryRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.GetDbHomePatchHistoryEntryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetDbHomePatchHistoryEntryRequest request) {
+            com.oracle.bmc.database.requests.GetDbHomePatchHistoryEntryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbHomeId(), "dbHomeId must not be blank");
         Validate.notBlank(
@@ -50,18 +51,23 @@ public class GetDbHomePatchHistoryEntryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetDbHomePatchHistoryEntryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetDbHomePatchHistoryEntryResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDbHomePatchHistoryEntryResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetDbHomePatchHistoryEntryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDbHomePatchHistoryEntryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .GetDbHomePatchHistoryEntryResponse>() {
                             @Override
-                            public GetDbHomePatchHistoryEntryResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .GetDbHomePatchHistoryEntryResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetDbHomePatchHistoryEntryResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetDbHomePatchHistoryEntryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -75,8 +81,12 @@ public class GetDbHomePatchHistoryEntryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDbHomePatchHistoryEntryResponse.Builder builder =
-                                        GetDbHomePatchHistoryEntryResponse.builder();
+                                com.oracle.bmc.database.responses.GetDbHomePatchHistoryEntryResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetDbHomePatchHistoryEntryResponse
+                                                        .builder();
 
                                 builder.patchHistoryEntry(response.getItem());
 
@@ -101,8 +111,8 @@ public class GetDbHomePatchHistoryEntryConverter {
                                                     String.class));
                                 }
 
-                                GetDbHomePatchHistoryEntryResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses.GetDbHomePatchHistoryEntryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

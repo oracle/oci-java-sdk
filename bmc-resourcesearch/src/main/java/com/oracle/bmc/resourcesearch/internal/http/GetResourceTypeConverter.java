@@ -16,13 +16,15 @@ public class GetResourceTypeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetResourceTypeRequest interceptRequest(GetResourceTypeRequest request) {
+    public static com.oracle.bmc.resourcesearch.requests.GetResourceTypeRequest interceptRequest(
+            com.oracle.bmc.resourcesearch.requests.GetResourceTypeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetResourceTypeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcesearch.requests.GetResourceTypeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getName(), "name must not be blank");
 
@@ -46,16 +48,21 @@ public class GetResourceTypeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetResourceTypeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcesearch.responses.GetResourceTypeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetResourceTypeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcesearch.responses.GetResourceTypeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetResourceTypeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcesearch.responses.GetResourceTypeResponse>() {
                             @Override
-                            public GetResourceTypeResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetResourceTypeResponse");
+                            public com.oracle.bmc.resourcesearch.responses.GetResourceTypeResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.resourcesearch.responses.GetResourceTypeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +76,11 @@ public class GetResourceTypeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetResourceTypeResponse.Builder builder =
-                                        GetResourceTypeResponse.builder();
+                                com.oracle.bmc.resourcesearch.responses.GetResourceTypeResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.resourcesearch.responses
+                                                        .GetResourceTypeResponse.builder();
 
                                 builder.resourceType(response.getItem());
 
@@ -86,7 +96,8 @@ public class GetResourceTypeConverter {
                                                     String.class));
                                 }
 
-                                GetResourceTypeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcesearch.responses.GetResourceTypeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

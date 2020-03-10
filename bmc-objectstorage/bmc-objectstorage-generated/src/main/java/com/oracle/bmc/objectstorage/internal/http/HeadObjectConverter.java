@@ -16,13 +16,15 @@ public class HeadObjectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static HeadObjectRequest interceptRequest(HeadObjectRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.HeadObjectRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.HeadObjectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, HeadObjectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.HeadObjectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -63,15 +65,22 @@ public class HeadObjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, HeadObjectResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.HeadObjectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, HeadObjectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.HeadObjectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, HeadObjectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.HeadObjectResponse>() {
                             @Override
-                            public HeadObjectResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for HeadObjectResponse");
+                            public com.oracle.bmc.objectstorage.responses.HeadObjectResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.HeadObjectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,7 +91,10 @@ public class HeadObjectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                HeadObjectResponse.Builder builder = HeadObjectResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.HeadObjectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .HeadObjectResponse.builder();
 
                                 if (response.getStatusCode() != 304) {
                                     builder.isNotModified(false);
@@ -270,7 +282,8 @@ public class HeadObjectConverter {
                                                     java.util.Date.class));
                                 }
 
-                                HeadObjectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.HeadObjectResponse
+                                        responseWrapper = builder.build();
                                 responseWrapper =
                                         ObjectMetadataInterceptor.intercept(responseWrapper);
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);

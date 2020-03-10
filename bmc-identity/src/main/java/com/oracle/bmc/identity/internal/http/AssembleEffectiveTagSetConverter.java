@@ -16,15 +16,15 @@ public class AssembleEffectiveTagSetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static AssembleEffectiveTagSetRequest interceptRequest(
-            AssembleEffectiveTagSetRequest request) {
+    public static com.oracle.bmc.identity.requests.AssembleEffectiveTagSetRequest interceptRequest(
+            com.oracle.bmc.identity.requests.AssembleEffectiveTagSetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            AssembleEffectiveTagSetRequest request) {
+            com.oracle.bmc.identity.requests.AssembleEffectiveTagSetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -57,18 +57,22 @@ public class AssembleEffectiveTagSetConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, AssembleEffectiveTagSetResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.AssembleEffectiveTagSetResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AssembleEffectiveTagSetResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.AssembleEffectiveTagSetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, AssembleEffectiveTagSetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .AssembleEffectiveTagSetResponse>() {
                             @Override
-                            public AssembleEffectiveTagSetResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.AssembleEffectiveTagSetResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for AssembleEffectiveTagSetResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.AssembleEffectiveTagSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -85,8 +89,11 @@ public class AssembleEffectiveTagSetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                AssembleEffectiveTagSetResponse.Builder builder =
-                                        AssembleEffectiveTagSetResponse.builder();
+                                com.oracle.bmc.identity.responses.AssembleEffectiveTagSetResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .AssembleEffectiveTagSetResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -114,7 +121,8 @@ public class AssembleEffectiveTagSetConverter {
                                                     String.class));
                                 }
 
-                                AssembleEffectiveTagSetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.AssembleEffectiveTagSetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

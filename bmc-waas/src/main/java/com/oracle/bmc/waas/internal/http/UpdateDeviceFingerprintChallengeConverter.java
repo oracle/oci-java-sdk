@@ -16,15 +16,16 @@ public class UpdateDeviceFingerprintChallengeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateDeviceFingerprintChallengeRequest interceptRequest(
-            UpdateDeviceFingerprintChallengeRequest request) {
+    public static com.oracle.bmc.waas.requests.UpdateDeviceFingerprintChallengeRequest
+            interceptRequest(
+                    com.oracle.bmc.waas.requests.UpdateDeviceFingerprintChallengeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateDeviceFingerprintChallengeRequest request) {
+            com.oracle.bmc.waas.requests.UpdateDeviceFingerprintChallengeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
         Validate.notNull(
@@ -61,19 +62,23 @@ public class UpdateDeviceFingerprintChallengeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateDeviceFingerprintChallengeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.UpdateDeviceFingerprintChallengeResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateDeviceFingerprintChallengeResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.UpdateDeviceFingerprintChallengeResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                UpdateDeviceFingerprintChallengeResponse>() {
+                                com.oracle.bmc.waas.responses
+                                        .UpdateDeviceFingerprintChallengeResponse>() {
                             @Override
-                            public UpdateDeviceFingerprintChallengeResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses
+                                            .UpdateDeviceFingerprintChallengeResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateDeviceFingerprintChallengeResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.UpdateDeviceFingerprintChallengeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +89,12 @@ public class UpdateDeviceFingerprintChallengeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateDeviceFingerprintChallengeResponse.Builder builder =
-                                        UpdateDeviceFingerprintChallengeResponse.builder();
+                                com.oracle.bmc.waas.responses
+                                                .UpdateDeviceFingerprintChallengeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .UpdateDeviceFingerprintChallengeResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -111,8 +120,9 @@ public class UpdateDeviceFingerprintChallengeConverter {
                                                     String.class));
                                 }
 
-                                UpdateDeviceFingerprintChallengeResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.waas.responses
+                                                .UpdateDeviceFingerprintChallengeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

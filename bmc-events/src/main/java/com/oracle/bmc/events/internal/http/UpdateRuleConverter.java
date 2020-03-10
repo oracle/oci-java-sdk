@@ -16,13 +16,15 @@ public class UpdateRuleConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateRuleRequest interceptRequest(UpdateRuleRequest request) {
+    public static com.oracle.bmc.events.requests.UpdateRuleRequest interceptRequest(
+            com.oracle.bmc.events.requests.UpdateRuleRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateRuleRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.events.requests.UpdateRuleRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
         Validate.notNull(request.getUpdateRuleDetails(), "updateRuleDetails is required");
@@ -50,15 +52,21 @@ public class UpdateRuleConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.events.responses.UpdateRuleResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.events.responses.UpdateRuleResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateRuleResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.events.responses.UpdateRuleResponse>() {
                             @Override
-                            public UpdateRuleResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateRuleResponse");
+                            public com.oracle.bmc.events.responses.UpdateRuleResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.events.responses.UpdateRuleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Rule>>
@@ -69,7 +77,9 @@ public class UpdateRuleConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateRuleResponse.Builder builder = UpdateRuleResponse.builder();
+                                com.oracle.bmc.events.responses.UpdateRuleResponse.Builder builder =
+                                        com.oracle.bmc.events.responses.UpdateRuleResponse
+                                                .builder();
 
                                 builder.rule(response.getItem());
 
@@ -94,7 +104,8 @@ public class UpdateRuleConverter {
                                                     String.class));
                                 }
 
-                                UpdateRuleResponse responseWrapper = builder.build();
+                                com.oracle.bmc.events.responses.UpdateRuleResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

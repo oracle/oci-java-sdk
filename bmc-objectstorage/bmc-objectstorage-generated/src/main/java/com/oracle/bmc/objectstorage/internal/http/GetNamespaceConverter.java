@@ -16,13 +16,15 @@ public class GetNamespaceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetNamespaceRequest interceptRequest(GetNamespaceRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.GetNamespaceRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.GetNamespaceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetNamespaceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.GetNamespaceRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -47,16 +49,22 @@ public class GetNamespaceConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.GetNamespaceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.GetNamespaceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetNamespaceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.GetNamespaceResponse>() {
                             @Override
-                            public GetNamespaceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetNamespaceResponse");
+                            public com.oracle.bmc.objectstorage.responses.GetNamespaceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.GetNamespaceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<String>>
@@ -68,12 +76,15 @@ public class GetNamespaceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetNamespaceResponse.Builder builder =
-                                        GetNamespaceResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.GetNamespaceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .GetNamespaceResponse.builder();
 
                                 builder.value(response.getItem());
 
-                                GetNamespaceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.GetNamespaceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

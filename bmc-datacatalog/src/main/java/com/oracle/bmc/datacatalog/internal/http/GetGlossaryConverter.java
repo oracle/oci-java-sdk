@@ -16,13 +16,15 @@ public class GetGlossaryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetGlossaryRequest interceptRequest(GetGlossaryRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetGlossaryRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetGlossaryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetGlossaryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetGlossaryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -59,16 +61,22 @@ public class GetGlossaryConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetGlossaryResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.GetGlossaryResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetGlossaryResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetGlossaryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetGlossaryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.GetGlossaryResponse>() {
                             @Override
-                            public GetGlossaryResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.GetGlossaryResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetGlossaryResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetGlossaryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Glossary>>
@@ -80,7 +88,10 @@ public class GetGlossaryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetGlossaryResponse.Builder builder = GetGlossaryResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetGlossaryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .GetGlossaryResponse.builder();
 
                                 builder.glossary(response.getItem());
 
@@ -105,7 +116,8 @@ public class GetGlossaryConverter {
                                                     String.class));
                                 }
 
-                                GetGlossaryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetGlossaryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

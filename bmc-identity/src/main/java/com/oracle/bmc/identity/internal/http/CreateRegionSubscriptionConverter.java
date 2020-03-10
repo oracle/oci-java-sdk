@@ -16,15 +16,15 @@ public class CreateRegionSubscriptionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateRegionSubscriptionRequest interceptRequest(
-            CreateRegionSubscriptionRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateRegionSubscriptionRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateRegionSubscriptionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateRegionSubscriptionRequest request) {
+            com.oracle.bmc.identity.requests.CreateRegionSubscriptionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateRegionSubscriptionDetails(),
@@ -52,18 +52,23 @@ public class CreateRegionSubscriptionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateRegionSubscriptionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateRegionSubscriptionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .CreateRegionSubscriptionResponse>() {
                             @Override
-                            public CreateRegionSubscriptionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses
+                                            .CreateRegionSubscriptionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateRegionSubscriptionResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateRegionSubscriptionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -77,8 +82,11 @@ public class CreateRegionSubscriptionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateRegionSubscriptionResponse.Builder builder =
-                                        CreateRegionSubscriptionResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateRegionSubscriptionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateRegionSubscriptionResponse.builder();
 
                                 builder.regionSubscription(response.getItem());
 
@@ -94,7 +102,8 @@ public class CreateRegionSubscriptionConverter {
                                                     String.class));
                                 }
 
-                                CreateRegionSubscriptionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateRegionSubscriptionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

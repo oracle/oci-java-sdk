@@ -16,13 +16,15 @@ public class CreateTransferJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateTransferJobRequest interceptRequest(CreateTransferJobRequest request) {
+    public static com.oracle.bmc.dts.requests.CreateTransferJobRequest interceptRequest(
+            com.oracle.bmc.dts.requests.CreateTransferJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateTransferJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dts.requests.CreateTransferJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateTransferJobDetails(), "createTransferJobDetails is required");
@@ -46,17 +48,21 @@ public class CreateTransferJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateTransferJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.CreateTransferJobResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTransferJobResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.CreateTransferJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateTransferJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.CreateTransferJobResponse>() {
                             @Override
-                            public CreateTransferJobResponse apply(
+                            public com.oracle.bmc.dts.responses.CreateTransferJobResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateTransferJobResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.CreateTransferJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,10 @@ public class CreateTransferJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateTransferJobResponse.Builder builder =
-                                        CreateTransferJobResponse.builder();
+                                com.oracle.bmc.dts.responses.CreateTransferJobResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .CreateTransferJobResponse.builder();
 
                                 builder.transferJob(response.getItem());
 
@@ -96,7 +104,8 @@ public class CreateTransferJobConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateTransferJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.CreateTransferJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

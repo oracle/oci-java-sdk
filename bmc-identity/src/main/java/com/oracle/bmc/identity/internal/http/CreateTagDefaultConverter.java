@@ -16,13 +16,15 @@ public class CreateTagDefaultConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateTagDefaultRequest interceptRequest(CreateTagDefaultRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateTagDefaultRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateTagDefaultRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateTagDefaultRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreateTagDefaultRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateTagDefaultDetails(), "createTagDefaultDetails is required");
@@ -46,17 +48,21 @@ public class CreateTagDefaultConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateTagDefaultResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateTagDefaultResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagDefaultResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateTagDefaultResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateTagDefaultResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.CreateTagDefaultResponse>() {
                             @Override
-                            public CreateTagDefaultResponse apply(
+                            public com.oracle.bmc.identity.responses.CreateTagDefaultResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateTagDefaultResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateTagDefaultResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,10 @@ public class CreateTagDefaultConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateTagDefaultResponse.Builder builder =
-                                        CreateTagDefaultResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateTagDefaultResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateTagDefaultResponse.builder();
 
                                 builder.tagDefault(response.getItem());
 
@@ -96,7 +104,8 @@ public class CreateTagDefaultConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateTagDefaultResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateTagDefaultResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

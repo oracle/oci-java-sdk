@@ -16,13 +16,15 @@ public class DeactivateModelConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeactivateModelRequest interceptRequest(DeactivateModelRequest request) {
+    public static com.oracle.bmc.datascience.requests.DeactivateModelRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.DeactivateModelRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeactivateModelRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.DeactivateModelRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
 
@@ -52,16 +54,21 @@ public class DeactivateModelConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeactivateModelResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.DeactivateModelResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeactivateModelResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.DeactivateModelResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeactivateModelResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.DeactivateModelResponse>() {
                             @Override
-                            public DeactivateModelResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeactivateModelResponse");
+                            public com.oracle.bmc.datascience.responses.DeactivateModelResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.DeactivateModelResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Model>>
@@ -73,8 +80,10 @@ public class DeactivateModelConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeactivateModelResponse.Builder builder =
-                                        DeactivateModelResponse.builder();
+                                com.oracle.bmc.datascience.responses.DeactivateModelResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .DeactivateModelResponse.builder();
 
                                 builder.model(response.getItem());
 
@@ -99,7 +108,8 @@ public class DeactivateModelConverter {
                                                     String.class));
                                 }
 
-                                DeactivateModelResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.DeactivateModelResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

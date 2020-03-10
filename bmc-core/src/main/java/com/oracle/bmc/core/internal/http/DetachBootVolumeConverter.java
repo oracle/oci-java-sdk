@@ -16,13 +16,15 @@ public class DetachBootVolumeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DetachBootVolumeRequest interceptRequest(DetachBootVolumeRequest request) {
+    public static com.oracle.bmc.core.requests.DetachBootVolumeRequest interceptRequest(
+            com.oracle.bmc.core.requests.DetachBootVolumeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DetachBootVolumeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DetachBootVolumeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getBootVolumeAttachmentId(), "bootVolumeAttachmentId must not be blank");
@@ -47,17 +49,21 @@ public class DetachBootVolumeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DetachBootVolumeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DetachBootVolumeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachBootVolumeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DetachBootVolumeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DetachBootVolumeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DetachBootVolumeResponse>() {
                             @Override
-                            public DetachBootVolumeResponse apply(
+                            public com.oracle.bmc.core.responses.DetachBootVolumeResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DetachBootVolumeResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DetachBootVolumeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -68,8 +74,10 @@ public class DetachBootVolumeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DetachBootVolumeResponse.Builder builder =
-                                        DetachBootVolumeResponse.builder();
+                                com.oracle.bmc.core.responses.DetachBootVolumeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DetachBootVolumeResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -83,7 +91,8 @@ public class DetachBootVolumeConverter {
                                                     String.class));
                                 }
 
-                                DetachBootVolumeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DetachBootVolumeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

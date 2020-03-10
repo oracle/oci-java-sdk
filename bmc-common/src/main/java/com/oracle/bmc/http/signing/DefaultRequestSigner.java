@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 /**
  * Class that exposes a way to create a {@link RequestSigner} for use with OCI.
  * The returned signers implement signing strategies outlined by <a href=
- * "https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm">the
+ * "https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm">the
  * signing guidelines</a>.
  * <p>
  * This is only exposed so clients can write REST calls directly against OCI

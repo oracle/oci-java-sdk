@@ -16,13 +16,15 @@ public class GetCrossConnectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetCrossConnectRequest interceptRequest(GetCrossConnectRequest request) {
+    public static com.oracle.bmc.core.requests.GetCrossConnectRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetCrossConnectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetCrossConnectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetCrossConnectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
 
@@ -42,16 +44,21 @@ public class GetCrossConnectConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetCrossConnectResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetCrossConnectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetCrossConnectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetCrossConnectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetCrossConnectResponse>() {
                             @Override
-                            public GetCrossConnectResponse apply(
+                            public com.oracle.bmc.core.responses.GetCrossConnectResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetCrossConnectResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetCrossConnectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -65,8 +72,10 @@ public class GetCrossConnectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetCrossConnectResponse.Builder builder =
-                                        GetCrossConnectResponse.builder();
+                                com.oracle.bmc.core.responses.GetCrossConnectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetCrossConnectResponse.builder();
 
                                 builder.crossConnect(response.getItem());
 
@@ -91,7 +100,8 @@ public class GetCrossConnectConverter {
                                                     String.class));
                                 }
 
-                                GetCrossConnectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetCrossConnectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

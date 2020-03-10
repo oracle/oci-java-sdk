@@ -16,15 +16,16 @@ public class ChangeCatalogCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeCatalogCompartmentRequest interceptRequest(
-            ChangeCatalogCompartmentRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ChangeCatalogCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.datacatalog.requests.ChangeCatalogCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeCatalogCompartmentRequest request) {
+            com.oracle.bmc.datacatalog.requests.ChangeCatalogCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getChangeCatalogCompartmentDetails(),
@@ -57,18 +58,23 @@ public class ChangeCatalogCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeCatalogCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ChangeCatalogCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeCatalogCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ChangeCatalogCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeCatalogCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses
+                                        .ChangeCatalogCompartmentResponse>() {
                             @Override
-                            public ChangeCatalogCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses
+                                            .ChangeCatalogCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeCatalogCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ChangeCatalogCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +85,11 @@ public class ChangeCatalogCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeCatalogCompartmentResponse.Builder builder =
-                                        ChangeCatalogCompartmentResponse.builder();
+                                com.oracle.bmc.datacatalog.responses
+                                                .ChangeCatalogCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ChangeCatalogCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -106,7 +115,9 @@ public class ChangeCatalogCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeCatalogCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses
+                                                .ChangeCatalogCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

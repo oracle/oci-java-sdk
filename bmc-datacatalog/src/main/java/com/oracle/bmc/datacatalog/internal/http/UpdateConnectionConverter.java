@@ -16,13 +16,15 @@ public class UpdateConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateConnectionRequest interceptRequest(UpdateConnectionRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.UpdateConnectionRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.UpdateConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateConnectionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.UpdateConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -62,17 +64,21 @@ public class UpdateConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.UpdateConnectionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConnectionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.UpdateConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateConnectionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.UpdateConnectionResponse>() {
                             @Override
-                            public UpdateConnectionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.UpdateConnectionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateConnectionResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.UpdateConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -86,8 +92,11 @@ public class UpdateConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateConnectionResponse.Builder builder =
-                                        UpdateConnectionResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.UpdateConnectionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .UpdateConnectionResponse.builder();
 
                                 builder.connection(response.getItem());
 
@@ -112,7 +121,8 @@ public class UpdateConnectionConverter {
                                                     String.class));
                                 }
 
-                                UpdateConnectionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.UpdateConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

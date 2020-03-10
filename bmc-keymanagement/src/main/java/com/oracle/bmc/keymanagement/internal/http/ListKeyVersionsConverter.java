@@ -16,13 +16,15 @@ public class ListKeyVersionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListKeyVersionsRequest interceptRequest(ListKeyVersionsRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.ListKeyVersionsRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.ListKeyVersionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListKeyVersionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.ListKeyVersionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getKeyId(), "keyId must not be blank");
 
@@ -80,16 +82,21 @@ public class ListKeyVersionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListKeyVersionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.ListKeyVersionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListKeyVersionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.ListKeyVersionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListKeyVersionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.ListKeyVersionsResponse>() {
                             @Override
-                            public ListKeyVersionsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListKeyVersionsResponse");
+                            public com.oracle.bmc.keymanagement.responses.ListKeyVersionsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.ListKeyVersionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -106,8 +113,11 @@ public class ListKeyVersionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListKeyVersionsResponse.Builder builder =
-                                        ListKeyVersionsResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.ListKeyVersionsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .ListKeyVersionsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -135,7 +145,8 @@ public class ListKeyVersionsConverter {
                                                     String.class));
                                 }
 
-                                ListKeyVersionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.ListKeyVersionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListSwiftPasswordsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListSwiftPasswordsRequest interceptRequest(ListSwiftPasswordsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListSwiftPasswordsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListSwiftPasswordsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListSwiftPasswordsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListSwiftPasswordsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -43,17 +45,21 @@ public class ListSwiftPasswordsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListSwiftPasswordsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListSwiftPasswordsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListSwiftPasswordsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListSwiftPasswordsResponse>() {
                             @Override
-                            public ListSwiftPasswordsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ListSwiftPasswordsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListSwiftPasswordsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListSwiftPasswordsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,10 @@ public class ListSwiftPasswordsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListSwiftPasswordsResponse.Builder builder =
-                                        ListSwiftPasswordsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListSwiftPasswordsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListSwiftPasswordsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -99,7 +107,8 @@ public class ListSwiftPasswordsConverter {
                                                     String.class));
                                 }
 
-                                ListSwiftPasswordsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListSwiftPasswordsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

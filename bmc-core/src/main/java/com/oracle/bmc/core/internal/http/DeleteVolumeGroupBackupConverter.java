@@ -16,15 +16,15 @@ public class DeleteVolumeGroupBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteVolumeGroupBackupRequest interceptRequest(
-            DeleteVolumeGroupBackupRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteVolumeGroupBackupRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteVolumeGroupBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteVolumeGroupBackupRequest request) {
+            com.oracle.bmc.core.requests.DeleteVolumeGroupBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getVolumeGroupBackupId(), "volumeGroupBackupId must not be blank");
@@ -49,18 +49,21 @@ public class DeleteVolumeGroupBackupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteVolumeGroupBackupResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteVolumeGroupBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteVolumeGroupBackupResponse>() {
                             @Override
-                            public DeleteVolumeGroupBackupResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.DeleteVolumeGroupBackupResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteVolumeGroupBackupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteVolumeGroupBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +74,11 @@ public class DeleteVolumeGroupBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteVolumeGroupBackupResponse.Builder builder =
-                                        DeleteVolumeGroupBackupResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteVolumeGroupBackupResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteVolumeGroupBackupResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +92,8 @@ public class DeleteVolumeGroupBackupConverter {
                                                     String.class));
                                 }
 
-                                DeleteVolumeGroupBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteVolumeGroupBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

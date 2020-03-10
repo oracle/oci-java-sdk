@@ -16,13 +16,15 @@ public class GetPolicyConfigConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetPolicyConfigRequest interceptRequest(GetPolicyConfigRequest request) {
+    public static com.oracle.bmc.waas.requests.GetPolicyConfigRequest interceptRequest(
+            com.oracle.bmc.waas.requests.GetPolicyConfigRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetPolicyConfigRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.GetPolicyConfigRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -47,16 +49,21 @@ public class GetPolicyConfigConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetPolicyConfigResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.GetPolicyConfigResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyConfigResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.GetPolicyConfigResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetPolicyConfigResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.GetPolicyConfigResponse>() {
                             @Override
-                            public GetPolicyConfigResponse apply(
+                            public com.oracle.bmc.waas.responses.GetPolicyConfigResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetPolicyConfigResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.GetPolicyConfigResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +77,10 @@ public class GetPolicyConfigConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetPolicyConfigResponse.Builder builder =
-                                        GetPolicyConfigResponse.builder();
+                                com.oracle.bmc.waas.responses.GetPolicyConfigResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .GetPolicyConfigResponse.builder();
 
                                 builder.policyConfig(response.getItem());
 
@@ -96,7 +105,8 @@ public class GetPolicyConfigConverter {
                                                     String.class));
                                 }
 
-                                GetPolicyConfigResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.GetPolicyConfigResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

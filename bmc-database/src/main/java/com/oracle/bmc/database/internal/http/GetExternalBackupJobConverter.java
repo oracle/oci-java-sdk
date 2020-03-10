@@ -16,14 +16,15 @@ public class GetExternalBackupJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetExternalBackupJobRequest interceptRequest(
-            GetExternalBackupJobRequest request) {
+    public static com.oracle.bmc.database.requests.GetExternalBackupJobRequest interceptRequest(
+            com.oracle.bmc.database.requests.GetExternalBackupJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetExternalBackupJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.GetExternalBackupJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBackupId(), "backupId must not be blank");
 
@@ -43,18 +44,21 @@ public class GetExternalBackupJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetExternalBackupJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetExternalBackupJobResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetExternalBackupJobResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetExternalBackupJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetExternalBackupJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.GetExternalBackupJobResponse>() {
                             @Override
-                            public GetExternalBackupJobResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.GetExternalBackupJobResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetExternalBackupJobResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetExternalBackupJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +72,11 @@ public class GetExternalBackupJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetExternalBackupJobResponse.Builder builder =
-                                        GetExternalBackupJobResponse.builder();
+                                com.oracle.bmc.database.responses.GetExternalBackupJobResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetExternalBackupJobResponse.builder();
 
                                 builder.externalBackupJob(response.getItem());
 
@@ -94,7 +101,8 @@ public class GetExternalBackupJobConverter {
                                                     String.class));
                                 }
 
-                                GetExternalBackupJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.GetExternalBackupJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

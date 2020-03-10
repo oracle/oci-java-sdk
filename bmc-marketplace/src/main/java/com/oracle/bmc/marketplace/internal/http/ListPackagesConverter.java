@@ -16,13 +16,15 @@ public class ListPackagesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListPackagesRequest interceptRequest(ListPackagesRequest request) {
+    public static com.oracle.bmc.marketplace.requests.ListPackagesRequest interceptRequest(
+            com.oracle.bmc.marketplace.requests.ListPackagesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListPackagesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.marketplace.requests.ListPackagesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getListingId(), "listingId must not be blank");
 
@@ -94,16 +96,22 @@ public class ListPackagesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListPackagesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.marketplace.responses.ListPackagesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPackagesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.marketplace.responses.ListPackagesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListPackagesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.marketplace.responses.ListPackagesResponse>() {
                             @Override
-                            public ListPackagesResponse apply(
+                            public com.oracle.bmc.marketplace.responses.ListPackagesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListPackagesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.marketplace.responses.ListPackagesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -120,8 +128,10 @@ public class ListPackagesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListPackagesResponse.Builder builder =
-                                        ListPackagesResponse.builder();
+                                com.oracle.bmc.marketplace.responses.ListPackagesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.marketplace.responses
+                                                        .ListPackagesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -149,7 +159,8 @@ public class ListPackagesConverter {
                                                     String.class));
                                 }
 
-                                ListPackagesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.marketplace.responses.ListPackagesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

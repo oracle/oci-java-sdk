@@ -16,13 +16,15 @@ public class DetachVnicConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DetachVnicRequest interceptRequest(DetachVnicRequest request) {
+    public static com.oracle.bmc.core.requests.DetachVnicRequest interceptRequest(
+            com.oracle.bmc.core.requests.DetachVnicRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DetachVnicRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DetachVnicRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVnicAttachmentId(), "vnicAttachmentId must not be blank");
 
@@ -45,15 +47,20 @@ public class DetachVnicConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DetachVnicResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DetachVnicResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachVnicResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DetachVnicResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DetachVnicResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DetachVnicResponse>() {
                             @Override
-                            public DetachVnicResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DetachVnicResponse");
+                            public com.oracle.bmc.core.responses.DetachVnicResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DetachVnicResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -64,7 +71,8 @@ public class DetachVnicConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DetachVnicResponse.Builder builder = DetachVnicResponse.builder();
+                                com.oracle.bmc.core.responses.DetachVnicResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.DetachVnicResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -78,7 +86,8 @@ public class DetachVnicConverter {
                                                     String.class));
                                 }
 
-                                DetachVnicResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DetachVnicResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

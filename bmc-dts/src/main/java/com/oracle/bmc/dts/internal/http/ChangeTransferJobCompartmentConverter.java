@@ -16,15 +16,15 @@ public class ChangeTransferJobCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeTransferJobCompartmentRequest interceptRequest(
-            ChangeTransferJobCompartmentRequest request) {
+    public static com.oracle.bmc.dts.requests.ChangeTransferJobCompartmentRequest interceptRequest(
+            com.oracle.bmc.dts.requests.ChangeTransferJobCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeTransferJobCompartmentRequest request) {
+            com.oracle.bmc.dts.requests.ChangeTransferJobCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTransferJobId(), "transferJobId must not be blank");
         Validate.notNull(
@@ -61,18 +61,22 @@ public class ChangeTransferJobCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeTransferJobCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.ChangeTransferJobCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeTransferJobCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.ChangeTransferJobCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeTransferJobCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses
+                                        .ChangeTransferJobCompartmentResponse>() {
                             @Override
-                            public ChangeTransferJobCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses.ChangeTransferJobCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeTransferJobCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.ChangeTransferJobCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +87,12 @@ public class ChangeTransferJobCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeTransferJobCompartmentResponse.Builder builder =
-                                        ChangeTransferJobCompartmentResponse.builder();
+                                com.oracle.bmc.dts.responses.ChangeTransferJobCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .ChangeTransferJobCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -107,8 +115,8 @@ public class ChangeTransferJobCompartmentConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                ChangeTransferJobCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dts.responses.ChangeTransferJobCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

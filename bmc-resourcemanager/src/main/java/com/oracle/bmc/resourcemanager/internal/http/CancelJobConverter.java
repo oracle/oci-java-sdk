@@ -16,13 +16,15 @@ public class CancelJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CancelJobRequest interceptRequest(CancelJobRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.CancelJobRequest interceptRequest(
+            com.oracle.bmc.resourcemanager.requests.CancelJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CancelJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.CancelJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
 
@@ -49,15 +51,22 @@ public class CancelJobConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CancelJobResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.CancelJobResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelJobResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.CancelJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CancelJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses.CancelJobResponse>() {
                             @Override
-                            public CancelJobResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CancelJobResponse");
+                            public com.oracle.bmc.resourcemanager.responses.CancelJobResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.CancelJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -68,7 +77,10 @@ public class CancelJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CancelJobResponse.Builder builder = CancelJobResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses.CancelJobResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .CancelJobResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +94,8 @@ public class CancelJobConverter {
                                                     String.class));
                                 }
 
-                                CancelJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses.CancelJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

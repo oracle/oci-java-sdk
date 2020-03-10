@@ -16,13 +16,15 @@ public class GetZoneRecordsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetZoneRecordsRequest interceptRequest(GetZoneRecordsRequest request) {
+    public static com.oracle.bmc.dns.requests.GetZoneRecordsRequest interceptRequest(
+            com.oracle.bmc.dns.requests.GetZoneRecordsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetZoneRecordsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.GetZoneRecordsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getZoneNameOrId(), "zoneNameOrId must not be blank");
 
@@ -126,16 +128,21 @@ public class GetZoneRecordsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneRecordsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.GetZoneRecordsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneRecordsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.GetZoneRecordsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetZoneRecordsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.GetZoneRecordsResponse>() {
                             @Override
-                            public GetZoneRecordsResponse apply(
+                            public com.oracle.bmc.dns.responses.GetZoneRecordsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetZoneRecordsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.GetZoneRecordsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -149,8 +156,10 @@ public class GetZoneRecordsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetZoneRecordsResponse.Builder builder =
-                                        GetZoneRecordsResponse.builder();
+                                com.oracle.bmc.dns.responses.GetZoneRecordsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses.GetZoneRecordsResponse
+                                                        .builder();
 
                                 builder.recordCollection(response.getItem());
 
@@ -199,7 +208,8 @@ public class GetZoneRecordsConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                GetZoneRecordsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.GetZoneRecordsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

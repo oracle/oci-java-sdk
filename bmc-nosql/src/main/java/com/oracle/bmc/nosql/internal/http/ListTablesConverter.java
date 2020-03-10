@@ -16,13 +16,15 @@ public class ListTablesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTablesRequest interceptRequest(ListTablesRequest request) {
+    public static com.oracle.bmc.nosql.requests.ListTablesRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.ListTablesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTablesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.ListTablesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -94,15 +96,21 @@ public class ListTablesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListTablesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.ListTablesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTablesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.ListTablesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTablesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.ListTablesResponse>() {
                             @Override
-                            public ListTablesResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListTablesResponse");
+                            public com.oracle.bmc.nosql.responses.ListTablesResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.ListTablesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -116,7 +124,8 @@ public class ListTablesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTablesResponse.Builder builder = ListTablesResponse.builder();
+                                com.oracle.bmc.nosql.responses.ListTablesResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.ListTablesResponse.builder();
 
                                 builder.tableCollection(response.getItem());
 
@@ -144,7 +153,8 @@ public class ListTablesConverter {
                                                     String.class));
                                 }
 
-                                ListTablesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.ListTablesResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,14 +16,15 @@ public class DeleteSoftwareSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSoftwareSourceRequest interceptRequest(
-            DeleteSoftwareSourceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.DeleteSoftwareSourceRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.DeleteSoftwareSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteSoftwareSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.DeleteSoftwareSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
 
@@ -51,18 +52,23 @@ public class DeleteSoftwareSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.DeleteSoftwareSourceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.DeleteSoftwareSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .DeleteSoftwareSourceResponse>() {
                             @Override
-                            public DeleteSoftwareSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .DeleteSoftwareSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteSoftwareSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.DeleteSoftwareSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +79,11 @@ public class DeleteSoftwareSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSoftwareSourceResponse.Builder builder =
-                                        DeleteSoftwareSourceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.DeleteSoftwareSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .DeleteSoftwareSourceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -88,7 +97,8 @@ public class DeleteSoftwareSourceConverter {
                                                     String.class));
                                 }
 
-                                DeleteSoftwareSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.DeleteSoftwareSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

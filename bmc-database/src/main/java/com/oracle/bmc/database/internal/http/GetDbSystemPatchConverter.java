@@ -16,13 +16,15 @@ public class GetDbSystemPatchConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDbSystemPatchRequest interceptRequest(GetDbSystemPatchRequest request) {
+    public static com.oracle.bmc.database.requests.GetDbSystemPatchRequest interceptRequest(
+            com.oracle.bmc.database.requests.GetDbSystemPatchRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDbSystemPatchRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.GetDbSystemPatchRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
         Validate.notBlank(request.getPatchId(), "patchId must not be blank");
@@ -47,17 +49,21 @@ public class GetDbSystemPatchConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetDbSystemPatchResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetDbSystemPatchResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemPatchResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetDbSystemPatchResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDbSystemPatchResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.GetDbSystemPatchResponse>() {
                             @Override
-                            public GetDbSystemPatchResponse apply(
+                            public com.oracle.bmc.database.responses.GetDbSystemPatchResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetDbSystemPatchResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetDbSystemPatchResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Patch>>
@@ -69,8 +75,10 @@ public class GetDbSystemPatchConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDbSystemPatchResponse.Builder builder =
-                                        GetDbSystemPatchResponse.builder();
+                                com.oracle.bmc.database.responses.GetDbSystemPatchResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetDbSystemPatchResponse.builder();
 
                                 builder.patch(response.getItem());
 
@@ -86,7 +94,8 @@ public class GetDbSystemPatchConverter {
                                                     String.class));
                                 }
 
-                                GetDbSystemPatchResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.GetDbSystemPatchResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

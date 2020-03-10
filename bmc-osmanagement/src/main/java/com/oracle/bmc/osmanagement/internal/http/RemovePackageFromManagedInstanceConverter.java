@@ -16,15 +16,17 @@ public class RemovePackageFromManagedInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static RemovePackageFromManagedInstanceRequest interceptRequest(
-            RemovePackageFromManagedInstanceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.RemovePackageFromManagedInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.RemovePackageFromManagedInstanceRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            RemovePackageFromManagedInstanceRequest request) {
+            com.oracle.bmc.osmanagement.requests.RemovePackageFromManagedInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
         Validate.notNull(request.getSoftwarePackageName(), "softwarePackageName is required");
@@ -62,19 +64,24 @@ public class RemovePackageFromManagedInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, RemovePackageFromManagedInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.RemovePackageFromManagedInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RemovePackageFromManagedInstanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses
+                                .RemovePackageFromManagedInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                RemovePackageFromManagedInstanceResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .RemovePackageFromManagedInstanceResponse>() {
                             @Override
-                            public RemovePackageFromManagedInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .RemovePackageFromManagedInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for RemovePackageFromManagedInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.RemovePackageFromManagedInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -85,8 +92,12 @@ public class RemovePackageFromManagedInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                RemovePackageFromManagedInstanceResponse.Builder builder =
-                                        RemovePackageFromManagedInstanceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .RemovePackageFromManagedInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .RemovePackageFromManagedInstanceResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -112,8 +123,9 @@ public class RemovePackageFromManagedInstanceConverter {
                                                     String.class));
                                 }
 
-                                RemovePackageFromManagedInstanceResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .RemovePackageFromManagedInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

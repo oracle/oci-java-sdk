@@ -16,14 +16,15 @@ public class UpdateConnectHarnessConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateConnectHarnessRequest interceptRequest(
-            UpdateConnectHarnessRequest request) {
+    public static com.oracle.bmc.streaming.requests.UpdateConnectHarnessRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.UpdateConnectHarnessRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateConnectHarnessRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.UpdateConnectHarnessRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getConnectHarnessId(), "connectHarnessId must not be blank");
         Validate.notNull(
@@ -54,18 +55,21 @@ public class UpdateConnectHarnessConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateConnectHarnessResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.UpdateConnectHarnessResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateConnectHarnessResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.UpdateConnectHarnessResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateConnectHarnessResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.UpdateConnectHarnessResponse>() {
                             @Override
-                            public UpdateConnectHarnessResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.streaming.responses.UpdateConnectHarnessResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateConnectHarnessResponse");
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.UpdateConnectHarnessResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -79,8 +83,11 @@ public class UpdateConnectHarnessConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateConnectHarnessResponse.Builder builder =
-                                        UpdateConnectHarnessResponse.builder();
+                                com.oracle.bmc.streaming.responses.UpdateConnectHarnessResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .UpdateConnectHarnessResponse.builder();
 
                                 builder.connectHarness(response.getItem());
 
@@ -105,7 +112,8 @@ public class UpdateConnectHarnessConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateConnectHarnessResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.UpdateConnectHarnessResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

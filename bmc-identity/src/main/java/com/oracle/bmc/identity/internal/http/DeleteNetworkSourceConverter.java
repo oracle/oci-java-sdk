@@ -16,13 +16,15 @@ public class DeleteNetworkSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteNetworkSourceRequest interceptRequest(DeleteNetworkSourceRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteNetworkSourceRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteNetworkSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteNetworkSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteNetworkSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNetworkSourceId(), "networkSourceId must not be blank");
 
@@ -46,18 +48,21 @@ public class DeleteNetworkSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteNetworkSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteNetworkSourceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteNetworkSourceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteNetworkSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteNetworkSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteNetworkSourceResponse>() {
                             @Override
-                            public DeleteNetworkSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.DeleteNetworkSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteNetworkSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteNetworkSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -68,8 +73,11 @@ public class DeleteNetworkSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteNetworkSourceResponse.Builder builder =
-                                        DeleteNetworkSourceResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteNetworkSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteNetworkSourceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -83,7 +91,8 @@ public class DeleteNetworkSourceConverter {
                                                     String.class));
                                 }
 
-                                DeleteNetworkSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteNetworkSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

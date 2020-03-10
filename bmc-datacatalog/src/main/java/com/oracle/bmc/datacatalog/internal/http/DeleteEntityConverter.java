@@ -16,13 +16,15 @@ public class DeleteEntityConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteEntityRequest interceptRequest(DeleteEntityRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.DeleteEntityRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.DeleteEntityRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteEntityRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.DeleteEntityRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -59,16 +61,22 @@ public class DeleteEntityConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEntityResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.DeleteEntityResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteEntityResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.DeleteEntityResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteEntityResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.DeleteEntityResponse>() {
                             @Override
-                            public DeleteEntityResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.DeleteEntityResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteEntityResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.DeleteEntityResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +87,10 @@ public class DeleteEntityConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteEntityResponse.Builder builder =
-                                        DeleteEntityResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.DeleteEntityResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .DeleteEntityResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -94,7 +104,8 @@ public class DeleteEntityConverter {
                                                     String.class));
                                 }
 
-                                DeleteEntityResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.DeleteEntityResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

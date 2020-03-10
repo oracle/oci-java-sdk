@@ -16,13 +16,15 @@ public class CreateApplicationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateApplicationRequest interceptRequest(CreateApplicationRequest request) {
+    public static com.oracle.bmc.functions.requests.CreateApplicationRequest interceptRequest(
+            com.oracle.bmc.functions.requests.CreateApplicationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateApplicationRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.functions.requests.CreateApplicationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateApplicationDetails(), "createApplicationDetails is required");
@@ -42,17 +44,21 @@ public class CreateApplicationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateApplicationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.functions.responses.CreateApplicationResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.functions.responses.CreateApplicationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateApplicationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.functions.responses.CreateApplicationResponse>() {
                             @Override
-                            public CreateApplicationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.functions.responses.CreateApplicationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateApplicationResponse");
+                                        "Transform function invoked for com.oracle.bmc.functions.responses.CreateApplicationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateApplicationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateApplicationResponse.Builder builder =
-                                        CreateApplicationResponse.builder();
+                                com.oracle.bmc.functions.responses.CreateApplicationResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.functions.responses
+                                                        .CreateApplicationResponse.builder();
 
                                 builder.application(response.getItem());
 
@@ -92,7 +100,8 @@ public class CreateApplicationConverter {
                                                     String.class));
                                 }
 
-                                CreateApplicationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.functions.responses.CreateApplicationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListDbSystemShapesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDbSystemShapesRequest interceptRequest(ListDbSystemShapesRequest request) {
+    public static com.oracle.bmc.database.requests.ListDbSystemShapesRequest interceptRequest(
+            com.oracle.bmc.database.requests.ListDbSystemShapesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListDbSystemShapesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.ListDbSystemShapesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -67,17 +69,21 @@ public class ListDbSystemShapesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDbSystemShapesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListDbSystemShapesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemShapesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListDbSystemShapesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDbSystemShapesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.ListDbSystemShapesResponse>() {
                             @Override
-                            public ListDbSystemShapesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.ListDbSystemShapesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDbSystemShapesResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListDbSystemShapesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -94,8 +100,10 @@ public class ListDbSystemShapesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDbSystemShapesResponse.Builder builder =
-                                        ListDbSystemShapesResponse.builder();
+                                com.oracle.bmc.database.responses.ListDbSystemShapesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListDbSystemShapesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -123,7 +131,8 @@ public class ListDbSystemShapesConverter {
                                                     String.class));
                                 }
 
-                                ListDbSystemShapesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ListDbSystemShapesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

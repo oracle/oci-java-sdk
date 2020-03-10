@@ -16,15 +16,15 @@ public class ListInstancePoolInstancesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListInstancePoolInstancesRequest interceptRequest(
-            ListInstancePoolInstancesRequest request) {
+    public static com.oracle.bmc.core.requests.ListInstancePoolInstancesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListInstancePoolInstancesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListInstancePoolInstancesRequest request) {
+            com.oracle.bmc.core.requests.ListInstancePoolInstancesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
@@ -92,18 +92,21 @@ public class ListInstancePoolInstancesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListInstancePoolInstancesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListInstancePoolInstancesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListInstancePoolInstancesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListInstancePoolInstancesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListInstancePoolInstancesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListInstancePoolInstancesResponse>() {
                             @Override
-                            public ListInstancePoolInstancesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListInstancePoolInstancesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListInstancePoolInstancesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListInstancePoolInstancesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -120,8 +123,12 @@ public class ListInstancePoolInstancesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListInstancePoolInstancesResponse.Builder builder =
-                                        ListInstancePoolInstancesResponse.builder();
+                                com.oracle.bmc.core.responses.ListInstancePoolInstancesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListInstancePoolInstancesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -149,7 +156,8 @@ public class ListInstancePoolInstancesConverter {
                                                     String.class));
                                 }
 
-                                ListInstancePoolInstancesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListInstancePoolInstancesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

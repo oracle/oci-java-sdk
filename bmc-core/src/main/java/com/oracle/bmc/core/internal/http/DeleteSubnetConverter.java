@@ -16,13 +16,15 @@ public class DeleteSubnetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSubnetRequest interceptRequest(DeleteSubnetRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteSubnetRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteSubnetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteSubnetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteSubnetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
 
@@ -45,16 +47,21 @@ public class DeleteSubnetConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubnetResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DeleteSubnetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubnetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteSubnetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteSubnetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteSubnetResponse>() {
                             @Override
-                            public DeleteSubnetResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteSubnetResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteSubnetResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteSubnetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -65,8 +72,9 @@ public class DeleteSubnetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSubnetResponse.Builder builder =
-                                        DeleteSubnetResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteSubnetResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.DeleteSubnetResponse
+                                                .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -80,7 +88,8 @@ public class DeleteSubnetConverter {
                                                     String.class));
                                 }
 
-                                DeleteSubnetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteSubnetResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

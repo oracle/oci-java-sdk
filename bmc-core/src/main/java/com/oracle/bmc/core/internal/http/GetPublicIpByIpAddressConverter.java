@@ -16,14 +16,15 @@ public class GetPublicIpByIpAddressConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetPublicIpByIpAddressRequest interceptRequest(
-            GetPublicIpByIpAddressRequest request) {
+    public static com.oracle.bmc.core.requests.GetPublicIpByIpAddressRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetPublicIpByIpAddressRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetPublicIpByIpAddressRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetPublicIpByIpAddressRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getGetPublicIpByIpAddressDetails(),
@@ -44,18 +45,21 @@ public class GetPublicIpByIpAddressConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetPublicIpByIpAddressResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetPublicIpByIpAddressResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetPublicIpByIpAddressResponse>() {
                             @Override
-                            public GetPublicIpByIpAddressResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.GetPublicIpByIpAddressResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetPublicIpByIpAddressResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetPublicIpByIpAddressResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<PublicIp>>
@@ -67,8 +71,10 @@ public class GetPublicIpByIpAddressConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetPublicIpByIpAddressResponse.Builder builder =
-                                        GetPublicIpByIpAddressResponse.builder();
+                                com.oracle.bmc.core.responses.GetPublicIpByIpAddressResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetPublicIpByIpAddressResponse.builder();
 
                                 builder.publicIp(response.getItem());
 
@@ -93,7 +99,8 @@ public class GetPublicIpByIpAddressConverter {
                                                     String.class));
                                 }
 
-                                GetPublicIpByIpAddressResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetPublicIpByIpAddressResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

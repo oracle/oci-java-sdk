@@ -16,13 +16,15 @@ public class HeadModelArtifactConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static HeadModelArtifactRequest interceptRequest(HeadModelArtifactRequest request) {
+    public static com.oracle.bmc.datascience.requests.HeadModelArtifactRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.HeadModelArtifactRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, HeadModelArtifactRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.HeadModelArtifactRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
 
@@ -48,17 +50,21 @@ public class HeadModelArtifactConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, HeadModelArtifactResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.HeadModelArtifactResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, HeadModelArtifactResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.HeadModelArtifactResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, HeadModelArtifactResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.HeadModelArtifactResponse>() {
                             @Override
-                            public HeadModelArtifactResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses.HeadModelArtifactResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for HeadModelArtifactResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.HeadModelArtifactResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +75,11 @@ public class HeadModelArtifactConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                HeadModelArtifactResponse.Builder builder =
-                                        HeadModelArtifactResponse.builder();
+                                com.oracle.bmc.datascience.responses.HeadModelArtifactResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .HeadModelArtifactResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -141,7 +150,8 @@ public class HeadModelArtifactConverter {
                                                     java.util.Date.class));
                                 }
 
-                                HeadModelArtifactResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.HeadModelArtifactResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListImagesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListImagesRequest interceptRequest(ListImagesRequest request) {
+    public static com.oracle.bmc.core.requests.ListImagesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListImagesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListImagesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListImagesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -114,15 +116,20 @@ public class ListImagesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListImagesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListImagesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListImagesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListImagesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListImagesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListImagesResponse>() {
                             @Override
-                            public ListImagesResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListImagesResponse");
+                            public com.oracle.bmc.core.responses.ListImagesResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListImagesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -137,7 +144,8 @@ public class ListImagesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListImagesResponse.Builder builder = ListImagesResponse.builder();
+                                com.oracle.bmc.core.responses.ListImagesResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.ListImagesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -165,7 +173,8 @@ public class ListImagesConverter {
                                                     String.class));
                                 }
 
-                                ListImagesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListImagesResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

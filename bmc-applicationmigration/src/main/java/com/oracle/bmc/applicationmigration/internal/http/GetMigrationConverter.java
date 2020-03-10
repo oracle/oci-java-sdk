@@ -16,13 +16,15 @@ public class GetMigrationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetMigrationRequest interceptRequest(GetMigrationRequest request) {
+    public static com.oracle.bmc.applicationmigration.requests.GetMigrationRequest interceptRequest(
+            com.oracle.bmc.applicationmigration.requests.GetMigrationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetMigrationRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.applicationmigration.requests.GetMigrationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
 
@@ -45,16 +47,24 @@ public class GetMigrationConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetMigrationResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.applicationmigration.responses.GetMigrationResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetMigrationResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.applicationmigration.responses.GetMigrationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetMigrationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.applicationmigration.responses
+                                        .GetMigrationResponse>() {
                             @Override
-                            public GetMigrationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetMigrationResponse");
+                            public com.oracle.bmc.applicationmigration.responses
+                                            .GetMigrationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.applicationmigration.responses.GetMigrationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Migration>>
@@ -66,8 +76,11 @@ public class GetMigrationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetMigrationResponse.Builder builder =
-                                        GetMigrationResponse.builder();
+                                com.oracle.bmc.applicationmigration.responses.GetMigrationResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.applicationmigration.responses
+                                                        .GetMigrationResponse.builder();
 
                                 builder.migration(response.getItem());
 
@@ -92,7 +105,8 @@ public class GetMigrationConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetMigrationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.applicationmigration.responses.GetMigrationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

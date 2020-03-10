@@ -16,15 +16,15 @@ public class DeleteTransferApplianceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteTransferApplianceRequest interceptRequest(
-            DeleteTransferApplianceRequest request) {
+    public static com.oracle.bmc.dts.requests.DeleteTransferApplianceRequest interceptRequest(
+            com.oracle.bmc.dts.requests.DeleteTransferApplianceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteTransferApplianceRequest request) {
+            com.oracle.bmc.dts.requests.DeleteTransferApplianceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
         Validate.notBlank(
@@ -50,18 +50,21 @@ public class DeleteTransferApplianceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteTransferApplianceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.DeleteTransferApplianceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteTransferApplianceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.DeleteTransferApplianceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteTransferApplianceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.DeleteTransferApplianceResponse>() {
                             @Override
-                            public DeleteTransferApplianceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses.DeleteTransferApplianceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteTransferApplianceResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.DeleteTransferApplianceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -72,8 +75,10 @@ public class DeleteTransferApplianceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteTransferApplianceResponse.Builder builder =
-                                        DeleteTransferApplianceResponse.builder();
+                                com.oracle.bmc.dts.responses.DeleteTransferApplianceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .DeleteTransferApplianceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -87,7 +92,8 @@ public class DeleteTransferApplianceConverter {
                                                     String.class));
                                 }
 
-                                DeleteTransferApplianceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.DeleteTransferApplianceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

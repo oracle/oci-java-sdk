@@ -16,15 +16,15 @@ public class UpdateIPSecConnectionTunnelConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateIPSecConnectionTunnelRequest interceptRequest(
-            UpdateIPSecConnectionTunnelRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateIPSecConnectionTunnelRequest request) {
+            com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
@@ -60,18 +60,22 @@ public class UpdateIPSecConnectionTunnelConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .UpdateIPSecConnectionTunnelResponse>() {
                             @Override
-                            public UpdateIPSecConnectionTunnelResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateIPSecConnectionTunnelResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -85,8 +89,12 @@ public class UpdateIPSecConnectionTunnelConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateIPSecConnectionTunnelResponse.Builder builder =
-                                        UpdateIPSecConnectionTunnelResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateIPSecConnectionTunnelResponse
+                                                        .builder();
 
                                 builder.iPSecConnectionTunnel(response.getItem());
 
@@ -111,8 +119,8 @@ public class UpdateIPSecConnectionTunnelConverter {
                                                     String.class));
                                 }
 
-                                UpdateIPSecConnectionTunnelResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,14 +16,15 @@ public class ListInternetGatewaysConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListInternetGatewaysRequest interceptRequest(
-            ListInternetGatewaysRequest request) {
+    public static com.oracle.bmc.core.requests.ListInternetGatewaysRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListInternetGatewaysRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListInternetGatewaysRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListInternetGatewaysRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getVcnId(), "vcnId is required");
@@ -99,18 +100,21 @@ public class ListInternetGatewaysConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListInternetGatewaysResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListInternetGatewaysResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListInternetGatewaysResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListInternetGatewaysResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListInternetGatewaysResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListInternetGatewaysResponse>() {
                             @Override
-                            public ListInternetGatewaysResponse apply(
+                            public com.oracle.bmc.core.responses.ListInternetGatewaysResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListInternetGatewaysResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListInternetGatewaysResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -127,8 +131,10 @@ public class ListInternetGatewaysConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListInternetGatewaysResponse.Builder builder =
-                                        ListInternetGatewaysResponse.builder();
+                                com.oracle.bmc.core.responses.ListInternetGatewaysResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListInternetGatewaysResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -156,7 +162,8 @@ public class ListInternetGatewaysConverter {
                                                     String.class));
                                 }
 
-                                ListInternetGatewaysResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListInternetGatewaysResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

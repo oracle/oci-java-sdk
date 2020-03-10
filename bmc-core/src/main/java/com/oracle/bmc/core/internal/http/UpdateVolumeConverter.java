@@ -16,13 +16,15 @@ public class UpdateVolumeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateVolumeRequest interceptRequest(UpdateVolumeRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateVolumeRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateVolumeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateVolumeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateVolumeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeId(), "volumeId must not be blank");
         Validate.notNull(request.getUpdateVolumeDetails(), "updateVolumeDetails is required");
@@ -46,16 +48,21 @@ public class UpdateVolumeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.UpdateVolumeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateVolumeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateVolumeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateVolumeResponse>() {
                             @Override
-                            public UpdateVolumeResponse apply(
+                            public com.oracle.bmc.core.responses.UpdateVolumeResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateVolumeResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateVolumeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Volume>>
@@ -67,8 +74,9 @@ public class UpdateVolumeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateVolumeResponse.Builder builder =
-                                        UpdateVolumeResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateVolumeResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.UpdateVolumeResponse
+                                                .builder();
 
                                 builder.volume(response.getItem());
 
@@ -93,7 +101,8 @@ public class UpdateVolumeConverter {
                                                     String.class));
                                 }
 
-                                UpdateVolumeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateVolumeResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

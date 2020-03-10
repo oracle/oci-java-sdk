@@ -16,13 +16,15 @@ public class UpdateVnicConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateVnicRequest interceptRequest(UpdateVnicRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateVnicRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateVnicRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateVnicRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateVnicRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVnicId(), "vnicId must not be blank");
         Validate.notNull(request.getUpdateVnicDetails(), "updateVnicDetails is required");
@@ -46,15 +48,20 @@ public class UpdateVnicConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVnicResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.UpdateVnicResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVnicResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.UpdateVnicResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateVnicResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateVnicResponse>() {
                             @Override
-                            public UpdateVnicResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateVnicResponse");
+                            public com.oracle.bmc.core.responses.UpdateVnicResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateVnicResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Vnic>>
@@ -65,7 +72,8 @@ public class UpdateVnicConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateVnicResponse.Builder builder = UpdateVnicResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateVnicResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.UpdateVnicResponse.builder();
 
                                 builder.vnic(response.getItem());
 
@@ -90,7 +98,8 @@ public class UpdateVnicConverter {
                                                     String.class));
                                 }
 
-                                UpdateVnicResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateVnicResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

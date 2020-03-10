@@ -16,13 +16,15 @@ public class ListInstancePoolsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListInstancePoolsRequest interceptRequest(ListInstancePoolsRequest request) {
+    public static com.oracle.bmc.core.requests.ListInstancePoolsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListInstancePoolsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListInstancePoolsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListInstancePoolsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -91,17 +93,21 @@ public class ListInstancePoolsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListInstancePoolsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListInstancePoolsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListInstancePoolsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListInstancePoolsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListInstancePoolsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListInstancePoolsResponse>() {
                             @Override
-                            public ListInstancePoolsResponse apply(
+                            public com.oracle.bmc.core.responses.ListInstancePoolsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListInstancePoolsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListInstancePoolsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -118,8 +124,10 @@ public class ListInstancePoolsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListInstancePoolsResponse.Builder builder =
-                                        ListInstancePoolsResponse.builder();
+                                com.oracle.bmc.core.responses.ListInstancePoolsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListInstancePoolsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -147,7 +155,8 @@ public class ListInstancePoolsConverter {
                                                     String.class));
                                 }
 
-                                ListInstancePoolsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListInstancePoolsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

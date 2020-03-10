@@ -16,14 +16,15 @@ public class ChangeVcnCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeVcnCompartmentRequest interceptRequest(
-            ChangeVcnCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeVcnCompartmentRequest interceptRequest(
+            com.oracle.bmc.core.requests.ChangeVcnCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeVcnCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ChangeVcnCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
         Validate.notNull(
@@ -56,18 +57,21 @@ public class ChangeVcnCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeVcnCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeVcnCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ChangeVcnCompartmentResponse>() {
                             @Override
-                            public ChangeVcnCompartmentResponse apply(
+                            public com.oracle.bmc.core.responses.ChangeVcnCompartmentResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeVcnCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeVcnCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -78,8 +82,10 @@ public class ChangeVcnCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeVcnCompartmentResponse.Builder builder =
-                                        ChangeVcnCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses.ChangeVcnCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeVcnCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -114,7 +120,8 @@ public class ChangeVcnCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeVcnCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ChangeVcnCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

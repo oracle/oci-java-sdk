@@ -16,13 +16,15 @@ public class ListQuotasConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListQuotasRequest interceptRequest(ListQuotasRequest request) {
+    public static com.oracle.bmc.limits.requests.ListQuotasRequest interceptRequest(
+            com.oracle.bmc.limits.requests.ListQuotasRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListQuotasRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.limits.requests.ListQuotasRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -94,15 +96,21 @@ public class ListQuotasConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListQuotasResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.limits.responses.ListQuotasResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListQuotasResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.limits.responses.ListQuotasResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListQuotasResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.limits.responses.ListQuotasResponse>() {
                             @Override
-                            public ListQuotasResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListQuotasResponse");
+                            public com.oracle.bmc.limits.responses.ListQuotasResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.limits.responses.ListQuotasResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -118,7 +126,9 @@ public class ListQuotasConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListQuotasResponse.Builder builder = ListQuotasResponse.builder();
+                                com.oracle.bmc.limits.responses.ListQuotasResponse.Builder builder =
+                                        com.oracle.bmc.limits.responses.ListQuotasResponse
+                                                .builder();
 
                                 builder.items(response.getItem());
 
@@ -146,7 +156,8 @@ public class ListQuotasConverter {
                                                     String.class));
                                 }
 
-                                ListQuotasResponse responseWrapper = builder.build();
+                                com.oracle.bmc.limits.responses.ListQuotasResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

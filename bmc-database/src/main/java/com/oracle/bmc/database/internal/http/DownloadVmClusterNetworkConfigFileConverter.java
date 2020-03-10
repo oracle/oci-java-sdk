@@ -15,15 +15,17 @@ public class DownloadVmClusterNetworkConfigFileConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DownloadVmClusterNetworkConfigFileRequest interceptRequest(
-            DownloadVmClusterNetworkConfigFileRequest request) {
+    public static com.oracle.bmc.database.requests.DownloadVmClusterNetworkConfigFileRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.DownloadVmClusterNetworkConfigFileRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DownloadVmClusterNetworkConfigFileRequest request) {
+            com.oracle.bmc.database.requests.DownloadVmClusterNetworkConfigFileRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
@@ -59,19 +61,24 @@ public class DownloadVmClusterNetworkConfigFileConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DownloadVmClusterNetworkConfigFileResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DownloadVmClusterNetworkConfigFileResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DownloadVmClusterNetworkConfigFileResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .DownloadVmClusterNetworkConfigFileResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DownloadVmClusterNetworkConfigFileResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .DownloadVmClusterNetworkConfigFileResponse>() {
                             @Override
-                            public DownloadVmClusterNetworkConfigFileResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .DownloadVmClusterNetworkConfigFileResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DownloadVmClusterNetworkConfigFileResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DownloadVmClusterNetworkConfigFileResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -85,8 +92,12 @@ public class DownloadVmClusterNetworkConfigFileConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DownloadVmClusterNetworkConfigFileResponse.Builder builder =
-                                        DownloadVmClusterNetworkConfigFileResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .DownloadVmClusterNetworkConfigFileResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DownloadVmClusterNetworkConfigFileResponse
+                                                        .builder();
 
                                 builder.inputStream(response.getItem());
 
@@ -135,8 +146,9 @@ public class DownloadVmClusterNetworkConfigFileConverter {
                                                     java.util.Date.class));
                                 }
 
-                                DownloadVmClusterNetworkConfigFileResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .DownloadVmClusterNetworkConfigFileResponse
+                                        responseWrapper = builder.build();
 
                                 return responseWrapper;
                             }

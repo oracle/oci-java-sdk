@@ -16,13 +16,15 @@ public class ListDrgAttachmentsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDrgAttachmentsRequest interceptRequest(ListDrgAttachmentsRequest request) {
+    public static com.oracle.bmc.core.requests.ListDrgAttachmentsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListDrgAttachmentsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListDrgAttachmentsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListDrgAttachmentsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -75,17 +77,21 @@ public class ListDrgAttachmentsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListDrgAttachmentsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListDrgAttachmentsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDrgAttachmentsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListDrgAttachmentsResponse>() {
                             @Override
-                            public ListDrgAttachmentsResponse apply(
+                            public com.oracle.bmc.core.responses.ListDrgAttachmentsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDrgAttachmentsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListDrgAttachmentsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -102,8 +108,10 @@ public class ListDrgAttachmentsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDrgAttachmentsResponse.Builder builder =
-                                        ListDrgAttachmentsResponse.builder();
+                                com.oracle.bmc.core.responses.ListDrgAttachmentsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListDrgAttachmentsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -131,7 +139,8 @@ public class ListDrgAttachmentsConverter {
                                                     String.class));
                                 }
 
-                                ListDrgAttachmentsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListDrgAttachmentsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

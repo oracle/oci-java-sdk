@@ -16,13 +16,15 @@ public class DeleteTagDefaultConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteTagDefaultRequest interceptRequest(DeleteTagDefaultRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteTagDefaultRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteTagDefaultRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteTagDefaultRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteTagDefaultRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTagDefaultId(), "tagDefaultId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteTagDefaultConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteTagDefaultResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteTagDefaultResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagDefaultResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteTagDefaultResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteTagDefaultResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteTagDefaultResponse>() {
                             @Override
-                            public DeleteTagDefaultResponse apply(
+                            public com.oracle.bmc.identity.responses.DeleteTagDefaultResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteTagDefaultResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteTagDefaultResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,10 @@ public class DeleteTagDefaultConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteTagDefaultResponse.Builder builder =
-                                        DeleteTagDefaultResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteTagDefaultResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteTagDefaultResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +94,8 @@ public class DeleteTagDefaultConverter {
                                                     String.class));
                                 }
 
-                                DeleteTagDefaultResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteTagDefaultResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

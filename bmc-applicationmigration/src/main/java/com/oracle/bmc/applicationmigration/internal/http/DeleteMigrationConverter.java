@@ -16,13 +16,16 @@ public class DeleteMigrationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteMigrationRequest interceptRequest(DeleteMigrationRequest request) {
+    public static com.oracle.bmc.applicationmigration.requests.DeleteMigrationRequest
+            interceptRequest(
+                    com.oracle.bmc.applicationmigration.requests.DeleteMigrationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteMigrationRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.applicationmigration.requests.DeleteMigrationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
 
@@ -50,16 +53,23 @@ public class DeleteMigrationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteMigrationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.applicationmigration.responses.DeleteMigrationResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMigrationResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.applicationmigration.responses.DeleteMigrationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteMigrationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.applicationmigration.responses
+                                        .DeleteMigrationResponse>() {
                             @Override
-                            public DeleteMigrationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteMigrationResponse");
+                            public com.oracle.bmc.applicationmigration.responses
+                                            .DeleteMigrationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.applicationmigration.responses.DeleteMigrationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,8 +80,11 @@ public class DeleteMigrationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteMigrationResponse.Builder builder =
-                                        DeleteMigrationResponse.builder();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .DeleteMigrationResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.applicationmigration.responses
+                                                        .DeleteMigrationResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -97,7 +110,9 @@ public class DeleteMigrationConverter {
                                                     String.class));
                                 }
 
-                                DeleteMigrationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .DeleteMigrationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

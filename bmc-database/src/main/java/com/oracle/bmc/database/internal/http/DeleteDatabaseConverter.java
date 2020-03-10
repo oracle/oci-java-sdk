@@ -16,13 +16,15 @@ public class DeleteDatabaseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteDatabaseRequest interceptRequest(DeleteDatabaseRequest request) {
+    public static com.oracle.bmc.database.requests.DeleteDatabaseRequest interceptRequest(
+            com.oracle.bmc.database.requests.DeleteDatabaseRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteDatabaseRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.DeleteDatabaseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
 
@@ -57,16 +59,22 @@ public class DeleteDatabaseConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDatabaseResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DeleteDatabaseResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDatabaseResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.DeleteDatabaseResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteDatabaseResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.DeleteDatabaseResponse>() {
                             @Override
-                            public DeleteDatabaseResponse apply(
+                            public com.oracle.bmc.database.responses.DeleteDatabaseResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteDatabaseResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DeleteDatabaseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -77,8 +85,10 @@ public class DeleteDatabaseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteDatabaseResponse.Builder builder =
-                                        DeleteDatabaseResponse.builder();
+                                com.oracle.bmc.database.responses.DeleteDatabaseResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DeleteDatabaseResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -104,7 +114,8 @@ public class DeleteDatabaseConverter {
                                                     String.class));
                                 }
 
-                                DeleteDatabaseResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.DeleteDatabaseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

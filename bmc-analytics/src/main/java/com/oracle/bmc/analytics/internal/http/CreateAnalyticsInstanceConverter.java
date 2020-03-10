@@ -16,15 +16,15 @@ public class CreateAnalyticsInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateAnalyticsInstanceRequest interceptRequest(
-            CreateAnalyticsInstanceRequest request) {
+    public static com.oracle.bmc.analytics.requests.CreateAnalyticsInstanceRequest interceptRequest(
+            com.oracle.bmc.analytics.requests.CreateAnalyticsInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateAnalyticsInstanceRequest request) {
+            com.oracle.bmc.analytics.requests.CreateAnalyticsInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateAnalyticsInstanceDetails(),
@@ -49,18 +49,23 @@ public class CreateAnalyticsInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateAnalyticsInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.analytics.responses.CreateAnalyticsInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAnalyticsInstanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.analytics.responses.CreateAnalyticsInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateAnalyticsInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.analytics.responses
+                                        .CreateAnalyticsInstanceResponse>() {
                             @Override
-                            public CreateAnalyticsInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.analytics.responses
+                                            .CreateAnalyticsInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateAnalyticsInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.analytics.responses.CreateAnalyticsInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +79,11 @@ public class CreateAnalyticsInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateAnalyticsInstanceResponse.Builder builder =
-                                        CreateAnalyticsInstanceResponse.builder();
+                                com.oracle.bmc.analytics.responses.CreateAnalyticsInstanceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.analytics.responses
+                                                        .CreateAnalyticsInstanceResponse.builder();
 
                                 builder.analyticsInstance(response.getItem());
 
@@ -124,7 +132,8 @@ public class CreateAnalyticsInstanceConverter {
                                                     String.class));
                                 }
 
-                                CreateAnalyticsInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.analytics.responses.CreateAnalyticsInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

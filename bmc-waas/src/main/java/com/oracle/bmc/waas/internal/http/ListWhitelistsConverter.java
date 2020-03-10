@@ -16,13 +16,15 @@ public class ListWhitelistsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListWhitelistsRequest interceptRequest(ListWhitelistsRequest request) {
+    public static com.oracle.bmc.waas.requests.ListWhitelistsRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListWhitelistsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListWhitelistsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListWhitelistsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -63,16 +65,21 @@ public class ListWhitelistsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListWhitelistsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.waas.responses.ListWhitelistsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWhitelistsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListWhitelistsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListWhitelistsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListWhitelistsResponse>() {
                             @Override
-                            public ListWhitelistsResponse apply(
+                            public com.oracle.bmc.waas.responses.ListWhitelistsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListWhitelistsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListWhitelistsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -87,8 +94,10 @@ public class ListWhitelistsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListWhitelistsResponse.Builder builder =
-                                        ListWhitelistsResponse.builder();
+                                com.oracle.bmc.waas.responses.ListWhitelistsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses.ListWhitelistsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -125,7 +134,8 @@ public class ListWhitelistsConverter {
                                                     String.class));
                                 }
 
-                                ListWhitelistsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListWhitelistsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

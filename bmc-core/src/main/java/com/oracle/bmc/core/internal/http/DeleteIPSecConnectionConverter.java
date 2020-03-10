@@ -16,14 +16,15 @@ public class DeleteIPSecConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteIPSecConnectionRequest interceptRequest(
-            DeleteIPSecConnectionRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteIPSecConnectionRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteIPSecConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteIPSecConnectionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteIPSecConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
@@ -47,18 +48,21 @@ public class DeleteIPSecConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteIPSecConnectionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteIPSecConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteIPSecConnectionResponse>() {
                             @Override
-                            public DeleteIPSecConnectionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.DeleteIPSecConnectionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteIPSecConnectionResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteIPSecConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +73,10 @@ public class DeleteIPSecConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteIPSecConnectionResponse.Builder builder =
-                                        DeleteIPSecConnectionResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteIPSecConnectionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteIPSecConnectionResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +90,8 @@ public class DeleteIPSecConnectionConverter {
                                                     String.class));
                                 }
 
-                                DeleteIPSecConnectionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteIPSecConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class CreateModelArtifactConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateModelArtifactRequest interceptRequest(CreateModelArtifactRequest request) {
+    public static com.oracle.bmc.datascience.requests.CreateModelArtifactRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.CreateModelArtifactRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateModelArtifactRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.CreateModelArtifactRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
         Validate.notNull(request.getModelArtifact(), "modelArtifact is required");
@@ -60,18 +62,22 @@ public class CreateModelArtifactConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateModelArtifactResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.CreateModelArtifactResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateModelArtifactResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.CreateModelArtifactResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateModelArtifactResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses
+                                        .CreateModelArtifactResponse>() {
                             @Override
-                            public CreateModelArtifactResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses.CreateModelArtifactResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateModelArtifactResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.CreateModelArtifactResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +88,11 @@ public class CreateModelArtifactConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateModelArtifactResponse.Builder builder =
-                                        CreateModelArtifactResponse.builder();
+                                com.oracle.bmc.datascience.responses.CreateModelArtifactResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .CreateModelArtifactResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -106,7 +115,8 @@ public class CreateModelArtifactConverter {
                                                     String.class));
                                 }
 
-                                CreateModelArtifactResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.CreateModelArtifactResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

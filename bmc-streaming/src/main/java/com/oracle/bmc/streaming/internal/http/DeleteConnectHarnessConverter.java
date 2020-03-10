@@ -16,14 +16,15 @@ public class DeleteConnectHarnessConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteConnectHarnessRequest interceptRequest(
-            DeleteConnectHarnessRequest request) {
+    public static com.oracle.bmc.streaming.requests.DeleteConnectHarnessRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.DeleteConnectHarnessRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteConnectHarnessRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.DeleteConnectHarnessRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getConnectHarnessId(), "connectHarnessId must not be blank");
 
@@ -51,18 +52,21 @@ public class DeleteConnectHarnessConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteConnectHarnessResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.DeleteConnectHarnessResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteConnectHarnessResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.DeleteConnectHarnessResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteConnectHarnessResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.DeleteConnectHarnessResponse>() {
                             @Override
-                            public DeleteConnectHarnessResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.streaming.responses.DeleteConnectHarnessResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteConnectHarnessResponse");
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.DeleteConnectHarnessResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +77,11 @@ public class DeleteConnectHarnessConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteConnectHarnessResponse.Builder builder =
-                                        DeleteConnectHarnessResponse.builder();
+                                com.oracle.bmc.streaming.responses.DeleteConnectHarnessResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .DeleteConnectHarnessResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -88,7 +95,8 @@ public class DeleteConnectHarnessConverter {
                                                     String.class));
                                 }
 
-                                DeleteConnectHarnessResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.DeleteConnectHarnessResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

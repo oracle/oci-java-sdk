@@ -74,7 +74,7 @@ public class ResponseHelper {
             String opcRequestId = response.getHeaderString(OPC_REQUEST_ID_HEADER);
 
             // If the response Content-Type is not application/json, then don't bother parsing the response body.
-            if (!MediaType.APPLICATION_JSON_TYPE.equals(response.getMediaType())) {
+            if (!typeEqual(MediaType.APPLICATION_JSON_TYPE, response.getMediaType())) {
                 String responseBody = "Cannot read response body!";
                 try {
                     responseBody = response.readEntity(String.class);
@@ -326,6 +326,16 @@ public class ResponseHelper {
                 closeResponseSilently(response);
             }
         }
+    }
+
+    private static boolean typeEqual(MediaType m1, MediaType m2) {
+        if (m1 == m2) {
+            return true;
+        } else if (m1 == null || m2 == null) {
+            return false;
+        }
+        return m1.getSubtype().equalsIgnoreCase(m2.getSubtype())
+                && m1.getType().equalsIgnoreCase(m2.getType());
     }
 
     /**

@@ -16,14 +16,15 @@ public class ExpandTreeForGlossaryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ExpandTreeForGlossaryRequest interceptRequest(
-            ExpandTreeForGlossaryRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ExpandTreeForGlossaryRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ExpandTreeForGlossaryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ExpandTreeForGlossaryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ExpandTreeForGlossaryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -58,18 +59,23 @@ public class ExpandTreeForGlossaryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ExpandTreeForGlossaryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ExpandTreeForGlossaryResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ExpandTreeForGlossaryResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ExpandTreeForGlossaryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ExpandTreeForGlossaryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses
+                                        .ExpandTreeForGlossaryResponse>() {
                             @Override
-                            public ExpandTreeForGlossaryResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses
+                                            .ExpandTreeForGlossaryResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ExpandTreeForGlossaryResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ExpandTreeForGlossaryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -86,8 +92,11 @@ public class ExpandTreeForGlossaryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ExpandTreeForGlossaryResponse.Builder builder =
-                                        ExpandTreeForGlossaryResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ExpandTreeForGlossaryResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ExpandTreeForGlossaryResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -112,7 +121,8 @@ public class ExpandTreeForGlossaryConverter {
                                                     String.class));
                                 }
 
-                                ExpandTreeForGlossaryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ExpandTreeForGlossaryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

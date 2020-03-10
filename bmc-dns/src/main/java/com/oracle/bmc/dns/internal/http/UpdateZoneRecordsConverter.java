@@ -16,13 +16,15 @@ public class UpdateZoneRecordsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateZoneRecordsRequest interceptRequest(UpdateZoneRecordsRequest request) {
+    public static com.oracle.bmc.dns.requests.UpdateZoneRecordsRequest interceptRequest(
+            com.oracle.bmc.dns.requests.UpdateZoneRecordsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateZoneRecordsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.UpdateZoneRecordsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getZoneNameOrId(), "zoneNameOrId must not be blank");
         Validate.notNull(
@@ -65,17 +67,21 @@ public class UpdateZoneRecordsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateZoneRecordsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateZoneRecordsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateZoneRecordsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse>() {
                             @Override
-                            public UpdateZoneRecordsResponse apply(
+                            public com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateZoneRecordsResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -89,8 +95,10 @@ public class UpdateZoneRecordsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateZoneRecordsResponse.Builder builder =
-                                        UpdateZoneRecordsResponse.builder();
+                                com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .UpdateZoneRecordsResponse.builder();
 
                                 builder.recordCollection(response.getItem());
 
@@ -139,7 +147,8 @@ public class UpdateZoneRecordsConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateZoneRecordsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

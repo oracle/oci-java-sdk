@@ -16,13 +16,15 @@ public class GetTermRelationshipConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetTermRelationshipRequest interceptRequest(GetTermRelationshipRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetTermRelationshipRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetTermRelationshipRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetTermRelationshipRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetTermRelationshipRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -71,18 +73,22 @@ public class GetTermRelationshipConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetTermRelationshipResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.GetTermRelationshipResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetTermRelationshipResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetTermRelationshipResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetTermRelationshipResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses
+                                        .GetTermRelationshipResponse>() {
                             @Override
-                            public GetTermRelationshipResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.GetTermRelationshipResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetTermRelationshipResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetTermRelationshipResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -96,8 +102,11 @@ public class GetTermRelationshipConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetTermRelationshipResponse.Builder builder =
-                                        GetTermRelationshipResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetTermRelationshipResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .GetTermRelationshipResponse.builder();
 
                                 builder.termRelationship(response.getItem());
 
@@ -122,7 +131,8 @@ public class GetTermRelationshipConverter {
                                                     String.class));
                                 }
 
-                                GetTermRelationshipResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetTermRelationshipResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

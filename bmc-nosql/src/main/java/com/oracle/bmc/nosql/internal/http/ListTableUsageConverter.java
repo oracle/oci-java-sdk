@@ -16,13 +16,15 @@ public class ListTableUsageConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTableUsageRequest interceptRequest(ListTableUsageRequest request) {
+    public static com.oracle.bmc.nosql.requests.ListTableUsageRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.ListTableUsageRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTableUsageRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.ListTableUsageRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
 
@@ -86,16 +88,22 @@ public class ListTableUsageConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListTableUsageResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.nosql.responses.ListTableUsageResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTableUsageResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.ListTableUsageResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTableUsageResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.ListTableUsageResponse>() {
                             @Override
-                            public ListTableUsageResponse apply(
+                            public com.oracle.bmc.nosql.responses.ListTableUsageResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListTableUsageResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.ListTableUsageResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -109,8 +117,10 @@ public class ListTableUsageConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTableUsageResponse.Builder builder =
-                                        ListTableUsageResponse.builder();
+                                com.oracle.bmc.nosql.responses.ListTableUsageResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.nosql.responses
+                                                        .ListTableUsageResponse.builder();
 
                                 builder.tableUsageCollection(response.getItem());
 
@@ -138,7 +148,8 @@ public class ListTableUsageConverter {
                                                     String.class));
                                 }
 
-                                ListTableUsageResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.ListTableUsageResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

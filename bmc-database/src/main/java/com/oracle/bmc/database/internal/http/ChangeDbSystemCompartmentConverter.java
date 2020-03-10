@@ -16,15 +16,16 @@ public class ChangeDbSystemCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeDbSystemCompartmentRequest interceptRequest(
-            ChangeDbSystemCompartmentRequest request) {
+    public static com.oracle.bmc.database.requests.ChangeDbSystemCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ChangeDbSystemCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeDbSystemCompartmentRequest request) {
+            com.oracle.bmc.database.requests.ChangeDbSystemCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getChangeCompartmentDetails(), "changeCompartmentDetails is required");
@@ -60,18 +61,23 @@ public class ChangeDbSystemCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeDbSystemCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ChangeDbSystemCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDbSystemCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ChangeDbSystemCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeDbSystemCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .ChangeDbSystemCompartmentResponse>() {
                             @Override
-                            public ChangeDbSystemCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ChangeDbSystemCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeDbSystemCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ChangeDbSystemCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +88,12 @@ public class ChangeDbSystemCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeDbSystemCompartmentResponse.Builder builder =
-                                        ChangeDbSystemCompartmentResponse.builder();
+                                com.oracle.bmc.database.responses.ChangeDbSystemCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ChangeDbSystemCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -118,7 +128,8 @@ public class ChangeDbSystemCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeDbSystemCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ChangeDbSystemCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class ChangeWaasPolicyCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeWaasPolicyCompartmentRequest interceptRequest(
-            ChangeWaasPolicyCompartmentRequest request) {
+    public static com.oracle.bmc.waas.requests.ChangeWaasPolicyCompartmentRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ChangeWaasPolicyCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeWaasPolicyCompartmentRequest request) {
+            com.oracle.bmc.waas.requests.ChangeWaasPolicyCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
         Validate.notNull(
@@ -61,18 +61,22 @@ public class ChangeWaasPolicyCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeWaasPolicyCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ChangeWaasPolicyCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeWaasPolicyCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ChangeWaasPolicyCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeWaasPolicyCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses
+                                        .ChangeWaasPolicyCompartmentResponse>() {
                             @Override
-                            public ChangeWaasPolicyCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses.ChangeWaasPolicyCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeWaasPolicyCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ChangeWaasPolicyCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +87,12 @@ public class ChangeWaasPolicyCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeWaasPolicyCompartmentResponse.Builder builder =
-                                        ChangeWaasPolicyCompartmentResponse.builder();
+                                com.oracle.bmc.waas.responses.ChangeWaasPolicyCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ChangeWaasPolicyCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -98,8 +106,8 @@ public class ChangeWaasPolicyCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeWaasPolicyCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.waas.responses.ChangeWaasPolicyCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

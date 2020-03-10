@@ -16,13 +16,15 @@ public class GetSnapshotConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetSnapshotRequest interceptRequest(GetSnapshotRequest request) {
+    public static com.oracle.bmc.filestorage.requests.GetSnapshotRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.GetSnapshotRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetSnapshotRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.GetSnapshotRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
 
@@ -45,16 +47,22 @@ public class GetSnapshotConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetSnapshotResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.GetSnapshotResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSnapshotResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.GetSnapshotResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetSnapshotResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.GetSnapshotResponse>() {
                             @Override
-                            public GetSnapshotResponse apply(
+                            public com.oracle.bmc.filestorage.responses.GetSnapshotResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetSnapshotResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.GetSnapshotResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Snapshot>>
@@ -66,7 +74,10 @@ public class GetSnapshotConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetSnapshotResponse.Builder builder = GetSnapshotResponse.builder();
+                                com.oracle.bmc.filestorage.responses.GetSnapshotResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .GetSnapshotResponse.builder();
 
                                 builder.snapshot(response.getItem());
 
@@ -91,7 +102,8 @@ public class GetSnapshotConverter {
                                                     String.class));
                                 }
 
-                                GetSnapshotResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.GetSnapshotResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

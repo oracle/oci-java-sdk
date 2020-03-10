@@ -16,13 +16,15 @@ public class ListCompartmentsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCompartmentsRequest interceptRequest(ListCompartmentsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListCompartmentsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListCompartmentsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListCompartmentsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListCompartmentsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -75,17 +77,21 @@ public class ListCompartmentsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListCompartmentsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListCompartmentsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListCompartmentsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCompartmentsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListCompartmentsResponse>() {
                             @Override
-                            public ListCompartmentsResponse apply(
+                            public com.oracle.bmc.identity.responses.ListCompartmentsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListCompartmentsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListCompartmentsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -101,8 +107,10 @@ public class ListCompartmentsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCompartmentsResponse.Builder builder =
-                                        ListCompartmentsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListCompartmentsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListCompartmentsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -130,7 +138,8 @@ public class ListCompartmentsConverter {
                                                     String.class));
                                 }
 
-                                ListCompartmentsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListCompartmentsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

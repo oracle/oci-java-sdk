@@ -16,15 +16,16 @@ public class DeleteOAuthClientCredentialConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteOAuthClientCredentialRequest interceptRequest(
-            DeleteOAuthClientCredentialRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteOAuthClientCredentialRequest
+            interceptRequest(
+                    com.oracle.bmc.identity.requests.DeleteOAuthClientCredentialRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteOAuthClientCredentialRequest request) {
+            com.oracle.bmc.identity.requests.DeleteOAuthClientCredentialRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notBlank(
@@ -55,18 +56,23 @@ public class DeleteOAuthClientCredentialConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteOAuthClientCredentialResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteOAuthClientCredentialResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteOAuthClientCredentialResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteOAuthClientCredentialResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteOAuthClientCredentialResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .DeleteOAuthClientCredentialResponse>() {
                             @Override
-                            public DeleteOAuthClientCredentialResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses
+                                            .DeleteOAuthClientCredentialResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteOAuthClientCredentialResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteOAuthClientCredentialResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -77,8 +83,12 @@ public class DeleteOAuthClientCredentialConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteOAuthClientCredentialResponse.Builder builder =
-                                        DeleteOAuthClientCredentialResponse.builder();
+                                com.oracle.bmc.identity.responses
+                                                .DeleteOAuthClientCredentialResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteOAuthClientCredentialResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -92,8 +102,9 @@ public class DeleteOAuthClientCredentialConverter {
                                                     String.class));
                                 }
 
-                                DeleteOAuthClientCredentialResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.identity.responses
+                                                .DeleteOAuthClientCredentialResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

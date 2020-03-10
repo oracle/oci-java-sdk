@@ -16,14 +16,15 @@ public class ChangeImageCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeImageCompartmentRequest interceptRequest(
-            ChangeImageCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeImageCompartmentRequest interceptRequest(
+            com.oracle.bmc.core.requests.ChangeImageCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeImageCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ChangeImageCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
         Validate.notNull(
@@ -60,18 +61,21 @@ public class ChangeImageCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeImageCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeImageCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeImageCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeImageCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeImageCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ChangeImageCompartmentResponse>() {
                             @Override
-                            public ChangeImageCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ChangeImageCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeImageCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeImageCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +86,10 @@ public class ChangeImageCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeImageCompartmentResponse.Builder builder =
-                                        ChangeImageCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses.ChangeImageCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeImageCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -106,7 +112,8 @@ public class ChangeImageCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeImageCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ChangeImageCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

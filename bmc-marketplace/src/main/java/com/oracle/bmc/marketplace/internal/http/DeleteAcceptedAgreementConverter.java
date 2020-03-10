@@ -16,15 +16,16 @@ public class DeleteAcceptedAgreementConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteAcceptedAgreementRequest interceptRequest(
-            DeleteAcceptedAgreementRequest request) {
+    public static com.oracle.bmc.marketplace.requests.DeleteAcceptedAgreementRequest
+            interceptRequest(
+                    com.oracle.bmc.marketplace.requests.DeleteAcceptedAgreementRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteAcceptedAgreementRequest request) {
+            com.oracle.bmc.marketplace.requests.DeleteAcceptedAgreementRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAcceptedAgreementId(), "acceptedAgreementId must not be blank");
@@ -60,18 +61,23 @@ public class DeleteAcceptedAgreementConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteAcceptedAgreementResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.marketplace.responses.DeleteAcceptedAgreementResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteAcceptedAgreementResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.marketplace.responses.DeleteAcceptedAgreementResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteAcceptedAgreementResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.marketplace.responses
+                                        .DeleteAcceptedAgreementResponse>() {
                             @Override
-                            public DeleteAcceptedAgreementResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.marketplace.responses
+                                            .DeleteAcceptedAgreementResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteAcceptedAgreementResponse");
+                                        "Transform function invoked for com.oracle.bmc.marketplace.responses.DeleteAcceptedAgreementResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +88,11 @@ public class DeleteAcceptedAgreementConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteAcceptedAgreementResponse.Builder builder =
-                                        DeleteAcceptedAgreementResponse.builder();
+                                com.oracle.bmc.marketplace.responses.DeleteAcceptedAgreementResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.marketplace.responses
+                                                        .DeleteAcceptedAgreementResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -97,7 +106,8 @@ public class DeleteAcceptedAgreementConverter {
                                                     String.class));
                                 }
 
-                                DeleteAcceptedAgreementResponse responseWrapper = builder.build();
+                                com.oracle.bmc.marketplace.responses.DeleteAcceptedAgreementResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

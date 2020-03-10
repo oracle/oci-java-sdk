@@ -16,13 +16,15 @@ public class ListAlarmsStatusConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAlarmsStatusRequest interceptRequest(ListAlarmsStatusRequest request) {
+    public static com.oracle.bmc.monitoring.requests.ListAlarmsStatusRequest interceptRequest(
+            com.oracle.bmc.monitoring.requests.ListAlarmsStatusRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAlarmsStatusRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.monitoring.requests.ListAlarmsStatusRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -95,17 +97,21 @@ public class ListAlarmsStatusConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAlarmsStatusResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.monitoring.responses.ListAlarmsStatusResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlarmsStatusResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.monitoring.responses.ListAlarmsStatusResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAlarmsStatusResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.monitoring.responses.ListAlarmsStatusResponse>() {
                             @Override
-                            public ListAlarmsStatusResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.monitoring.responses.ListAlarmsStatusResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAlarmsStatusResponse");
+                                        "Transform function invoked for com.oracle.bmc.monitoring.responses.ListAlarmsStatusResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -122,8 +128,10 @@ public class ListAlarmsStatusConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAlarmsStatusResponse.Builder builder =
-                                        ListAlarmsStatusResponse.builder();
+                                com.oracle.bmc.monitoring.responses.ListAlarmsStatusResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.monitoring.responses
+                                                        .ListAlarmsStatusResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -151,7 +159,8 @@ public class ListAlarmsStatusConverter {
                                                     String.class));
                                 }
 
-                                ListAlarmsStatusResponse responseWrapper = builder.build();
+                                com.oracle.bmc.monitoring.responses.ListAlarmsStatusResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListShippingVendorsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListShippingVendorsRequest interceptRequest(ListShippingVendorsRequest request) {
+    public static com.oracle.bmc.dts.requests.ListShippingVendorsRequest interceptRequest(
+            com.oracle.bmc.dts.requests.ListShippingVendorsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListShippingVendorsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dts.requests.ListShippingVendorsRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -36,18 +38,21 @@ public class ListShippingVendorsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListShippingVendorsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.ListShippingVendorsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListShippingVendorsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.ListShippingVendorsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListShippingVendorsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.ListShippingVendorsResponse>() {
                             @Override
-                            public ListShippingVendorsResponse apply(
+                            public com.oracle.bmc.dts.responses.ListShippingVendorsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListShippingVendorsResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.ListShippingVendorsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -61,8 +66,10 @@ public class ListShippingVendorsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListShippingVendorsResponse.Builder builder =
-                                        ListShippingVendorsResponse.builder();
+                                com.oracle.bmc.dts.responses.ListShippingVendorsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .ListShippingVendorsResponse.builder();
 
                                 builder.shippingVendors(response.getItem());
 
@@ -78,7 +85,8 @@ public class ListShippingVendorsConverter {
                                                     String.class));
                                 }
 
-                                ListShippingVendorsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.ListShippingVendorsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

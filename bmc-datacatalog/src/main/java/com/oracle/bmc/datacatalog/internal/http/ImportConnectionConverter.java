@@ -16,13 +16,15 @@ public class ImportConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ImportConnectionRequest interceptRequest(ImportConnectionRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ImportConnectionRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ImportConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ImportConnectionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ImportConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -63,17 +65,21 @@ public class ImportConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ImportConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ImportConnectionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportConnectionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ImportConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ImportConnectionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ImportConnectionResponse>() {
                             @Override
-                            public ImportConnectionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.ImportConnectionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ImportConnectionResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ImportConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -87,8 +93,11 @@ public class ImportConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ImportConnectionResponse.Builder builder =
-                                        ImportConnectionResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ImportConnectionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ImportConnectionResponse.builder();
 
                                 builder.connection(response.getItem());
 
@@ -113,7 +122,8 @@ public class ImportConnectionConverter {
                                                     String.class));
                                 }
 
-                                ImportConnectionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ImportConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class CreateIntegrationInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateIntegrationInstanceRequest interceptRequest(
-            CreateIntegrationInstanceRequest request) {
+    public static com.oracle.bmc.integration.requests.CreateIntegrationInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.integration.requests.CreateIntegrationInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateIntegrationInstanceRequest request) {
+            com.oracle.bmc.integration.requests.CreateIntegrationInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateIntegrationInstanceDetails(),
@@ -49,18 +50,23 @@ public class CreateIntegrationInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateIntegrationInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.integration.responses.CreateIntegrationInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateIntegrationInstanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.integration.responses.CreateIntegrationInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateIntegrationInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.integration.responses
+                                        .CreateIntegrationInstanceResponse>() {
                             @Override
-                            public CreateIntegrationInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.integration.responses
+                                            .CreateIntegrationInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateIntegrationInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.integration.responses.CreateIntegrationInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,12 @@ public class CreateIntegrationInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateIntegrationInstanceResponse.Builder builder =
-                                        CreateIntegrationInstanceResponse.builder();
+                                com.oracle.bmc.integration.responses
+                                                .CreateIntegrationInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.integration.responses
+                                                        .CreateIntegrationInstanceResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -98,7 +108,9 @@ public class CreateIntegrationInstanceConverter {
                                                     String.class));
                                 }
 
-                                CreateIntegrationInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.integration.responses
+                                                .CreateIntegrationInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

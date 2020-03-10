@@ -16,13 +16,15 @@ public class GetDbSystemConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDbSystemRequest interceptRequest(GetDbSystemRequest request) {
+    public static com.oracle.bmc.database.requests.GetDbSystemRequest interceptRequest(
+            com.oracle.bmc.database.requests.GetDbSystemRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDbSystemRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.GetDbSystemRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
 
@@ -41,16 +43,22 @@ public class GetDbSystemConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetDbSystemResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetDbSystemResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDbSystemResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.GetDbSystemResponse>() {
                             @Override
-                            public GetDbSystemResponse apply(
+                            public com.oracle.bmc.database.responses.GetDbSystemResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetDbSystemResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetDbSystemResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<DbSystem>>
@@ -62,7 +70,10 @@ public class GetDbSystemConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDbSystemResponse.Builder builder = GetDbSystemResponse.builder();
+                                com.oracle.bmc.database.responses.GetDbSystemResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetDbSystemResponse.builder();
 
                                 builder.dbSystem(response.getItem());
 
@@ -87,7 +98,8 @@ public class GetDbSystemConverter {
                                                     String.class));
                                 }
 
-                                GetDbSystemResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.GetDbSystemResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

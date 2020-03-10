@@ -16,13 +16,15 @@ public class UpdateCaptchasConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateCaptchasRequest interceptRequest(UpdateCaptchasRequest request) {
+    public static com.oracle.bmc.waas.requests.UpdateCaptchasRequest interceptRequest(
+            com.oracle.bmc.waas.requests.UpdateCaptchasRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateCaptchasRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.UpdateCaptchasRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
         Validate.notNull(request.getCaptchas(), "captchas is required");
@@ -56,16 +58,21 @@ public class UpdateCaptchasConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCaptchasResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.waas.responses.UpdateCaptchasResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCaptchasResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.UpdateCaptchasResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateCaptchasResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.UpdateCaptchasResponse>() {
                             @Override
-                            public UpdateCaptchasResponse apply(
+                            public com.oracle.bmc.waas.responses.UpdateCaptchasResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateCaptchasResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.UpdateCaptchasResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +83,10 @@ public class UpdateCaptchasConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateCaptchasResponse.Builder builder =
-                                        UpdateCaptchasResponse.builder();
+                                com.oracle.bmc.waas.responses.UpdateCaptchasResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses.UpdateCaptchasResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -103,7 +112,8 @@ public class UpdateCaptchasConverter {
                                                     String.class));
                                 }
 
-                                UpdateCaptchasResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.UpdateCaptchasResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

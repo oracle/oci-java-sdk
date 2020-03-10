@@ -16,15 +16,16 @@ public class GetAppCatalogListingAgreementsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetAppCatalogListingAgreementsRequest interceptRequest(
-            GetAppCatalogListingAgreementsRequest request) {
+    public static com.oracle.bmc.core.requests.GetAppCatalogListingAgreementsRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.GetAppCatalogListingAgreementsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetAppCatalogListingAgreementsRequest request) {
+            com.oracle.bmc.core.requests.GetAppCatalogListingAgreementsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getListingId(), "listingId must not be blank");
         Validate.notBlank(request.getResourceVersion(), "resourceVersion must not be blank");
@@ -50,19 +51,23 @@ public class GetAppCatalogListingAgreementsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetAppCatalogListingAgreementsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetAppCatalogListingAgreementsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAppCatalogListingAgreementsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetAppCatalogListingAgreementsResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetAppCatalogListingAgreementsResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .GetAppCatalogListingAgreementsResponse>() {
                             @Override
-                            public GetAppCatalogListingAgreementsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .GetAppCatalogListingAgreementsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetAppCatalogListingAgreementsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetAppCatalogListingAgreementsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +83,12 @@ public class GetAppCatalogListingAgreementsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetAppCatalogListingAgreementsResponse.Builder builder =
-                                        GetAppCatalogListingAgreementsResponse.builder();
+                                com.oracle.bmc.core.responses.GetAppCatalogListingAgreementsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetAppCatalogListingAgreementsResponse
+                                                        .builder();
 
                                 builder.appCatalogListingResourceVersionAgreements(
                                         response.getItem());
@@ -105,8 +114,8 @@ public class GetAppCatalogListingAgreementsConverter {
                                                     String.class));
                                 }
 
-                                GetAppCatalogListingAgreementsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.GetAppCatalogListingAgreementsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

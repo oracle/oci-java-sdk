@@ -16,13 +16,15 @@ public class GetLoadBalancerConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetLoadBalancerRequest interceptRequest(GetLoadBalancerRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.GetLoadBalancerRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.GetLoadBalancerRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetLoadBalancerRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.GetLoadBalancerRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
 
@@ -46,16 +48,21 @@ public class GetLoadBalancerConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetLoadBalancerResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.GetLoadBalancerResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.GetLoadBalancerResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetLoadBalancerResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.GetLoadBalancerResponse>() {
                             @Override
-                            public GetLoadBalancerResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetLoadBalancerResponse");
+                            public com.oracle.bmc.loadbalancer.responses.GetLoadBalancerResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.GetLoadBalancerResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +76,11 @@ public class GetLoadBalancerConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetLoadBalancerResponse.Builder builder =
-                                        GetLoadBalancerResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.GetLoadBalancerResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .GetLoadBalancerResponse.builder();
 
                                 builder.loadBalancer(response.getItem());
 
@@ -86,7 +96,8 @@ public class GetLoadBalancerConverter {
                                                     String.class));
                                 }
 
-                                GetLoadBalancerResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.GetLoadBalancerResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

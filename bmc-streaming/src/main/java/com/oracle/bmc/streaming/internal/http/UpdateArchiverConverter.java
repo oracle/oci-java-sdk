@@ -16,13 +16,15 @@ public class UpdateArchiverConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateArchiverRequest interceptRequest(UpdateArchiverRequest request) {
+    public static com.oracle.bmc.streaming.requests.UpdateArchiverRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.UpdateArchiverRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateArchiverRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.UpdateArchiverRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
         Validate.notNull(request.getUpdateArchiverDetails(), "updateArchiverDetails is required");
@@ -51,16 +53,22 @@ public class UpdateArchiverConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateArchiverResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.UpdateArchiverResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateArchiverResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.UpdateArchiverResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateArchiverResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.UpdateArchiverResponse>() {
                             @Override
-                            public UpdateArchiverResponse apply(
+                            public com.oracle.bmc.streaming.responses.UpdateArchiverResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateArchiverResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.UpdateArchiverResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Archiver>>
@@ -72,8 +80,10 @@ public class UpdateArchiverConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateArchiverResponse.Builder builder =
-                                        UpdateArchiverResponse.builder();
+                                com.oracle.bmc.streaming.responses.UpdateArchiverResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .UpdateArchiverResponse.builder();
 
                                 builder.archiver(response.getItem());
 
@@ -98,7 +108,8 @@ public class UpdateArchiverConverter {
                                                     String.class));
                                 }
 
-                                UpdateArchiverResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.UpdateArchiverResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

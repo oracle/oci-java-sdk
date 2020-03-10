@@ -16,13 +16,15 @@ public class UpdateCertificateConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateCertificateRequest interceptRequest(UpdateCertificateRequest request) {
+    public static com.oracle.bmc.waas.requests.UpdateCertificateRequest interceptRequest(
+            com.oracle.bmc.waas.requests.UpdateCertificateRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateCertificateRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.UpdateCertificateRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
 
@@ -50,17 +52,21 @@ public class UpdateCertificateConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateCertificateResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.UpdateCertificateResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.UpdateCertificateResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateCertificateResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.UpdateCertificateResponse>() {
                             @Override
-                            public UpdateCertificateResponse apply(
+                            public com.oracle.bmc.waas.responses.UpdateCertificateResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateCertificateResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.UpdateCertificateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +80,10 @@ public class UpdateCertificateConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateCertificateResponse.Builder builder =
-                                        UpdateCertificateResponse.builder();
+                                com.oracle.bmc.waas.responses.UpdateCertificateResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .UpdateCertificateResponse.builder();
 
                                 builder.certificate(response.getItem());
 
@@ -100,7 +108,8 @@ public class UpdateCertificateConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateCertificateResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.UpdateCertificateResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

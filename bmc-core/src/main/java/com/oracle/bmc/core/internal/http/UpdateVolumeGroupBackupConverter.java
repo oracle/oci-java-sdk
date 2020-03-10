@@ -16,15 +16,15 @@ public class UpdateVolumeGroupBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateVolumeGroupBackupRequest interceptRequest(
-            UpdateVolumeGroupBackupRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateVolumeGroupBackupRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateVolumeGroupBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateVolumeGroupBackupRequest request) {
+            com.oracle.bmc.core.requests.UpdateVolumeGroupBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getVolumeGroupBackupId(), "volumeGroupBackupId must not be blank");
@@ -52,18 +52,21 @@ public class UpdateVolumeGroupBackupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateVolumeGroupBackupResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateVolumeGroupBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateVolumeGroupBackupResponse>() {
                             @Override
-                            public UpdateVolumeGroupBackupResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.UpdateVolumeGroupBackupResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateVolumeGroupBackupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateVolumeGroupBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -77,8 +80,11 @@ public class UpdateVolumeGroupBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateVolumeGroupBackupResponse.Builder builder =
-                                        UpdateVolumeGroupBackupResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateVolumeGroupBackupResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateVolumeGroupBackupResponse.builder();
 
                                 builder.volumeGroupBackup(response.getItem());
 
@@ -91,7 +97,8 @@ public class UpdateVolumeGroupBackupConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateVolumeGroupBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateVolumeGroupBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

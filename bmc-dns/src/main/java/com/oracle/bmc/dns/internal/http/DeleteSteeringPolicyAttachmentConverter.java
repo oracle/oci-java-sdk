@@ -16,15 +16,16 @@ public class DeleteSteeringPolicyAttachmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSteeringPolicyAttachmentRequest interceptRequest(
-            DeleteSteeringPolicyAttachmentRequest request) {
+    public static com.oracle.bmc.dns.requests.DeleteSteeringPolicyAttachmentRequest
+            interceptRequest(
+                    com.oracle.bmc.dns.requests.DeleteSteeringPolicyAttachmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteSteeringPolicyAttachmentRequest request) {
+            com.oracle.bmc.dns.requests.DeleteSteeringPolicyAttachmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getSteeringPolicyAttachmentId(),
@@ -58,19 +59,23 @@ public class DeleteSteeringPolicyAttachmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteSteeringPolicyAttachmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.DeleteSteeringPolicyAttachmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteSteeringPolicyAttachmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.DeleteSteeringPolicyAttachmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DeleteSteeringPolicyAttachmentResponse>() {
+                                com.oracle.bmc.dns.responses
+                                        .DeleteSteeringPolicyAttachmentResponse>() {
                             @Override
-                            public DeleteSteeringPolicyAttachmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dns.responses
+                                            .DeleteSteeringPolicyAttachmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteSteeringPolicyAttachmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.DeleteSteeringPolicyAttachmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -81,8 +86,12 @@ public class DeleteSteeringPolicyAttachmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSteeringPolicyAttachmentResponse.Builder builder =
-                                        DeleteSteeringPolicyAttachmentResponse.builder();
+                                com.oracle.bmc.dns.responses.DeleteSteeringPolicyAttachmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .DeleteSteeringPolicyAttachmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -96,8 +105,8 @@ public class DeleteSteeringPolicyAttachmentConverter {
                                                     String.class));
                                 }
 
-                                DeleteSteeringPolicyAttachmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dns.responses.DeleteSteeringPolicyAttachmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

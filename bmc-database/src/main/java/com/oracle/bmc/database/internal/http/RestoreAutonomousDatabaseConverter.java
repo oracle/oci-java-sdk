@@ -16,15 +16,16 @@ public class RestoreAutonomousDatabaseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static RestoreAutonomousDatabaseRequest interceptRequest(
-            RestoreAutonomousDatabaseRequest request) {
+    public static com.oracle.bmc.database.requests.RestoreAutonomousDatabaseRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.RestoreAutonomousDatabaseRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            RestoreAutonomousDatabaseRequest request) {
+            com.oracle.bmc.database.requests.RestoreAutonomousDatabaseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
@@ -54,18 +55,23 @@ public class RestoreAutonomousDatabaseConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, RestoreAutonomousDatabaseResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.RestoreAutonomousDatabaseResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestoreAutonomousDatabaseResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.RestoreAutonomousDatabaseResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, RestoreAutonomousDatabaseResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .RestoreAutonomousDatabaseResponse>() {
                             @Override
-                            public RestoreAutonomousDatabaseResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .RestoreAutonomousDatabaseResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for RestoreAutonomousDatabaseResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.RestoreAutonomousDatabaseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -79,8 +85,12 @@ public class RestoreAutonomousDatabaseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                RestoreAutonomousDatabaseResponse.Builder builder =
-                                        RestoreAutonomousDatabaseResponse.builder();
+                                com.oracle.bmc.database.responses.RestoreAutonomousDatabaseResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .RestoreAutonomousDatabaseResponse
+                                                        .builder();
 
                                 builder.autonomousDatabase(response.getItem());
 
@@ -117,7 +127,8 @@ public class RestoreAutonomousDatabaseConverter {
                                                     String.class));
                                 }
 
-                                RestoreAutonomousDatabaseResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.RestoreAutonomousDatabaseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

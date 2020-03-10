@@ -16,13 +16,15 @@ public class ListUsersConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListUsersRequest interceptRequest(ListUsersRequest request) {
+    public static com.oracle.bmc.identity.requests.ListUsersRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListUsersRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListUsersRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListUsersRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -74,15 +76,21 @@ public class ListUsersConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.identity.responses.ListUsersResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListUsersResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListUsersResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListUsersResponse>() {
                             @Override
-                            public ListUsersResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListUsersResponse");
+                            public com.oracle.bmc.identity.responses.ListUsersResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListUsersResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -97,7 +105,10 @@ public class ListUsersConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListUsersResponse.Builder builder = ListUsersResponse.builder();
+                                com.oracle.bmc.identity.responses.ListUsersResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses.ListUsersResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -125,7 +136,8 @@ public class ListUsersConverter {
                                                     String.class));
                                 }
 
-                                ListUsersResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListUsersResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

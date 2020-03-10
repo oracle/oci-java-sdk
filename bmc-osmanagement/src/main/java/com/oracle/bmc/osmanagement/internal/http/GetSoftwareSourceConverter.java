@@ -16,13 +16,15 @@ public class GetSoftwareSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetSoftwareSourceRequest interceptRequest(GetSoftwareSourceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.GetSoftwareSourceRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.GetSoftwareSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetSoftwareSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.GetSoftwareSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
 
@@ -46,17 +48,21 @@ public class GetSoftwareSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetSoftwareSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.GetSoftwareSourceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSoftwareSourceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.GetSoftwareSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetSoftwareSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses.GetSoftwareSourceResponse>() {
                             @Override
-                            public GetSoftwareSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses.GetSoftwareSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetSoftwareSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.GetSoftwareSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,11 @@ public class GetSoftwareSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetSoftwareSourceResponse.Builder builder =
-                                        GetSoftwareSourceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.GetSoftwareSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .GetSoftwareSourceResponse.builder();
 
                                 builder.softwareSource(response.getItem());
 
@@ -108,7 +117,8 @@ public class GetSoftwareSourceConverter {
                                                     Float.class));
                                 }
 
-                                GetSoftwareSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.GetSoftwareSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

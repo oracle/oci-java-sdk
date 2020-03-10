@@ -16,15 +16,17 @@ public class GetTransferApplianceEncryptionPassphraseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetTransferApplianceEncryptionPassphraseRequest interceptRequest(
-            GetTransferApplianceEncryptionPassphraseRequest request) {
+    public static com.oracle.bmc.dts.requests.GetTransferApplianceEncryptionPassphraseRequest
+            interceptRequest(
+                    com.oracle.bmc.dts.requests.GetTransferApplianceEncryptionPassphraseRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetTransferApplianceEncryptionPassphraseRequest request) {
+            com.oracle.bmc.dts.requests.GetTransferApplianceEncryptionPassphraseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
         Validate.notBlank(
@@ -51,19 +53,24 @@ public class GetTransferApplianceEncryptionPassphraseConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetTransferApplianceEncryptionPassphraseResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.GetTransferApplianceEncryptionPassphraseResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetTransferApplianceEncryptionPassphraseResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses
+                                .GetTransferApplianceEncryptionPassphraseResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetTransferApplianceEncryptionPassphraseResponse>() {
+                                com.oracle.bmc.dts.responses
+                                        .GetTransferApplianceEncryptionPassphraseResponse>() {
                             @Override
-                            public GetTransferApplianceEncryptionPassphraseResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses
+                                            .GetTransferApplianceEncryptionPassphraseResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetTransferApplianceEncryptionPassphraseResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.GetTransferApplianceEncryptionPassphraseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -79,8 +86,13 @@ public class GetTransferApplianceEncryptionPassphraseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetTransferApplianceEncryptionPassphraseResponse.Builder builder =
-                                        GetTransferApplianceEncryptionPassphraseResponse.builder();
+                                com.oracle.bmc.dts.responses
+                                                .GetTransferApplianceEncryptionPassphraseResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .GetTransferApplianceEncryptionPassphraseResponse
+                                                        .builder();
 
                                 builder.transferApplianceEncryptionPassphrase(response.getItem());
 
@@ -105,8 +117,9 @@ public class GetTransferApplianceEncryptionPassphraseConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetTransferApplianceEncryptionPassphraseResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dts.responses
+                                                .GetTransferApplianceEncryptionPassphraseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

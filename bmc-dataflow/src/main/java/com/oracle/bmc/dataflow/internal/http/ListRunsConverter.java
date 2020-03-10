@@ -16,13 +16,15 @@ public class ListRunsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListRunsRequest interceptRequest(ListRunsRequest request) {
+    public static com.oracle.bmc.dataflow.requests.ListRunsRequest interceptRequest(
+            com.oracle.bmc.dataflow.requests.ListRunsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListRunsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dataflow.requests.ListRunsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -126,15 +128,21 @@ public class ListRunsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListRunsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dataflow.responses.ListRunsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRunsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dataflow.responses.ListRunsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListRunsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dataflow.responses.ListRunsResponse>() {
                             @Override
-                            public ListRunsResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListRunsResponse");
+                            public com.oracle.bmc.dataflow.responses.ListRunsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dataflow.responses.ListRunsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -149,7 +157,9 @@ public class ListRunsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListRunsResponse.Builder builder = ListRunsResponse.builder();
+                                com.oracle.bmc.dataflow.responses.ListRunsResponse.Builder builder =
+                                        com.oracle.bmc.dataflow.responses.ListRunsResponse
+                                                .builder();
 
                                 builder.items(response.getItem());
 
@@ -189,7 +199,8 @@ public class ListRunsConverter {
                                                     String.class));
                                 }
 
-                                ListRunsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dataflow.responses.ListRunsResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

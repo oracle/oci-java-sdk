@@ -16,13 +16,15 @@ public class GetErratumConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetErratumRequest interceptRequest(GetErratumRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.GetErratumRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.GetErratumRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetErratumRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.GetErratumRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getErratumId(), "erratumId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetErratumConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetErratumResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.GetErratumResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetErratumResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.GetErratumResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetErratumResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses.GetErratumResponse>() {
                             @Override
-                            public GetErratumResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetErratumResponse");
+                            public com.oracle.bmc.osmanagement.responses.GetErratumResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.GetErratumResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Erratum>>
@@ -65,7 +74,10 @@ public class GetErratumConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetErratumResponse.Builder builder = GetErratumResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.GetErratumResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .GetErratumResponse.builder();
 
                                 builder.erratum(response.getItem());
 
@@ -81,7 +93,8 @@ public class GetErratumConverter {
                                                     String.class));
                                 }
 
-                                GetErratumResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.GetErratumResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

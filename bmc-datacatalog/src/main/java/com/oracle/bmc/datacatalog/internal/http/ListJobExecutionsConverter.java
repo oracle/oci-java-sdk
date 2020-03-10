@@ -16,13 +16,15 @@ public class ListJobExecutionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListJobExecutionsRequest interceptRequest(ListJobExecutionsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListJobExecutionsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListJobExecutionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListJobExecutionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListJobExecutionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getJobKey(), "jobKey must not be blank");
@@ -221,17 +223,21 @@ public class ListJobExecutionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListJobExecutionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListJobExecutionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobExecutionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListJobExecutionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListJobExecutionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ListJobExecutionsResponse>() {
                             @Override
-                            public ListJobExecutionsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.ListJobExecutionsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListJobExecutionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListJobExecutionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -245,8 +251,11 @@ public class ListJobExecutionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListJobExecutionsResponse.Builder builder =
-                                        ListJobExecutionsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListJobExecutionsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListJobExecutionsResponse.builder();
 
                                 builder.jobExecutionCollection(response.getItem());
 
@@ -274,7 +283,8 @@ public class ListJobExecutionsConverter {
                                                     String.class));
                                 }
 
-                                ListJobExecutionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListJobExecutionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class ListUpcomingScheduledJobsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListUpcomingScheduledJobsRequest interceptRequest(
-            ListUpcomingScheduledJobsRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.ListUpcomingScheduledJobsRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.ListUpcomingScheduledJobsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListUpcomingScheduledJobsRequest request) {
+            com.oracle.bmc.osmanagement.requests.ListUpcomingScheduledJobsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getTimeEnd(), "timeEnd is required");
@@ -123,18 +124,23 @@ public class ListUpcomingScheduledJobsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListUpcomingScheduledJobsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.ListUpcomingScheduledJobsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListUpcomingScheduledJobsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.ListUpcomingScheduledJobsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListUpcomingScheduledJobsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .ListUpcomingScheduledJobsResponse>() {
                             @Override
-                            public ListUpcomingScheduledJobsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .ListUpcomingScheduledJobsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListUpcomingScheduledJobsResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.ListUpcomingScheduledJobsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -151,8 +157,12 @@ public class ListUpcomingScheduledJobsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListUpcomingScheduledJobsResponse.Builder builder =
-                                        ListUpcomingScheduledJobsResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .ListUpcomingScheduledJobsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .ListUpcomingScheduledJobsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -180,7 +190,9 @@ public class ListUpcomingScheduledJobsConverter {
                                                     String.class));
                                 }
 
-                                ListUpcomingScheduledJobsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .ListUpcomingScheduledJobsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

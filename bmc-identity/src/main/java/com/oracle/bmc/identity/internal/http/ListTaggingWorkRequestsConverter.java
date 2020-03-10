@@ -16,15 +16,15 @@ public class ListTaggingWorkRequestsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTaggingWorkRequestsRequest interceptRequest(
-            ListTaggingWorkRequestsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListTaggingWorkRequestsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListTaggingWorkRequestsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListTaggingWorkRequestsRequest request) {
+            com.oracle.bmc.identity.requests.ListTaggingWorkRequestsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -69,18 +69,22 @@ public class ListTaggingWorkRequestsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListTaggingWorkRequestsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListTaggingWorkRequestsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTaggingWorkRequestsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListTaggingWorkRequestsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTaggingWorkRequestsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .ListTaggingWorkRequestsResponse>() {
                             @Override
-                            public ListTaggingWorkRequestsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ListTaggingWorkRequestsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListTaggingWorkRequestsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListTaggingWorkRequestsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -97,8 +101,11 @@ public class ListTaggingWorkRequestsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTaggingWorkRequestsResponse.Builder builder =
-                                        ListTaggingWorkRequestsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListTaggingWorkRequestsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListTaggingWorkRequestsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -126,7 +133,8 @@ public class ListTaggingWorkRequestsConverter {
                                                     String.class));
                                 }
 
-                                ListTaggingWorkRequestsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListTaggingWorkRequestsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

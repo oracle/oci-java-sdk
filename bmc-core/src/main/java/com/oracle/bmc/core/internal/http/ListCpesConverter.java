@@ -16,13 +16,15 @@ public class ListCpesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCpesRequest interceptRequest(ListCpesRequest request) {
+    public static com.oracle.bmc.core.requests.ListCpesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListCpesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListCpesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListCpesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -58,15 +60,20 @@ public class ListCpesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListCpesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListCpesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCpesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListCpesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCpesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListCpesResponse>() {
                             @Override
-                            public ListCpesResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListCpesResponse");
+                            public com.oracle.bmc.core.responses.ListCpesResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListCpesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -81,7 +88,8 @@ public class ListCpesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCpesResponse.Builder builder = ListCpesResponse.builder();
+                                com.oracle.bmc.core.responses.ListCpesResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.ListCpesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -109,7 +117,8 @@ public class ListCpesConverter {
                                                     String.class));
                                 }
 
-                                ListCpesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListCpesResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

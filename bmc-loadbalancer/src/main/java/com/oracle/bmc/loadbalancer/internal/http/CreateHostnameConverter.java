@@ -16,13 +16,15 @@ public class CreateHostnameConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateHostnameRequest interceptRequest(CreateHostnameRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.CreateHostnameRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.CreateHostnameRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateHostnameRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.CreateHostnameRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateHostnameDetails(), "createHostnameDetails is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
@@ -51,16 +53,22 @@ public class CreateHostnameConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateHostnameResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.CreateHostnameResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHostnameResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.CreateHostnameResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateHostnameResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.CreateHostnameResponse>() {
                             @Override
-                            public CreateHostnameResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateHostnameResponse");
+                            public com.oracle.bmc.loadbalancer.responses.CreateHostnameResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.CreateHostnameResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +79,10 @@ public class CreateHostnameConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateHostnameResponse.Builder builder =
-                                        CreateHostnameResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.CreateHostnameResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .CreateHostnameResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -98,7 +108,8 @@ public class CreateHostnameConverter {
                                                     String.class));
                                 }
 
-                                CreateHostnameResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.CreateHostnameResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

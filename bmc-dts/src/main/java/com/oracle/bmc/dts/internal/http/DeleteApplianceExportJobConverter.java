@@ -16,15 +16,15 @@ public class DeleteApplianceExportJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteApplianceExportJobRequest interceptRequest(
-            DeleteApplianceExportJobRequest request) {
+    public static com.oracle.bmc.dts.requests.DeleteApplianceExportJobRequest interceptRequest(
+            com.oracle.bmc.dts.requests.DeleteApplianceExportJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteApplianceExportJobRequest request) {
+            com.oracle.bmc.dts.requests.DeleteApplianceExportJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getApplianceExportJobId(), "applianceExportJobId must not be blank");
@@ -53,18 +53,21 @@ public class DeleteApplianceExportJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteApplianceExportJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.DeleteApplianceExportJobResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteApplianceExportJobResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.DeleteApplianceExportJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteApplianceExportJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.DeleteApplianceExportJobResponse>() {
                             @Override
-                            public DeleteApplianceExportJobResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses.DeleteApplianceExportJobResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteApplianceExportJobResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.DeleteApplianceExportJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +78,11 @@ public class DeleteApplianceExportJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteApplianceExportJobResponse.Builder builder =
-                                        DeleteApplianceExportJobResponse.builder();
+                                com.oracle.bmc.dts.responses.DeleteApplianceExportJobResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .DeleteApplianceExportJobResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -90,7 +96,8 @@ public class DeleteApplianceExportJobConverter {
                                                     String.class));
                                 }
 
-                                DeleteApplianceExportJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.DeleteApplianceExportJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

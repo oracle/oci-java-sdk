@@ -16,13 +16,15 @@ public class CreateBackendConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateBackendRequest interceptRequest(CreateBackendRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.CreateBackendRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.CreateBackendRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateBackendRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.CreateBackendRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateBackendDetails(), "createBackendDetails is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
@@ -56,16 +58,22 @@ public class CreateBackendConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.CreateBackendResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.CreateBackendResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateBackendResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.CreateBackendResponse>() {
                             @Override
-                            public CreateBackendResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateBackendResponse");
+                            public com.oracle.bmc.loadbalancer.responses.CreateBackendResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.CreateBackendResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +84,10 @@ public class CreateBackendConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateBackendResponse.Builder builder =
-                                        CreateBackendResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.CreateBackendResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .CreateBackendResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -103,7 +113,8 @@ public class CreateBackendConverter {
                                                     String.class));
                                 }
 
-                                CreateBackendResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.CreateBackendResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

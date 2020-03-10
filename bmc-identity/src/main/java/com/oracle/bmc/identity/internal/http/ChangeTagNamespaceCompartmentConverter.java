@@ -16,15 +16,16 @@ public class ChangeTagNamespaceCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeTagNamespaceCompartmentRequest interceptRequest(
-            ChangeTagNamespaceCompartmentRequest request) {
+    public static com.oracle.bmc.identity.requests.ChangeTagNamespaceCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.identity.requests.ChangeTagNamespaceCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeTagNamespaceCompartmentRequest request) {
+            com.oracle.bmc.identity.requests.ChangeTagNamespaceCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTagNamespaceId(), "tagNamespaceId must not be blank");
         Validate.notNull(
@@ -53,19 +54,23 @@ public class ChangeTagNamespaceCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeTagNamespaceCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ChangeTagNamespaceCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeTagNamespaceCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ChangeTagNamespaceCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeTagNamespaceCompartmentResponse>() {
+                                com.oracle.bmc.identity.responses
+                                        .ChangeTagNamespaceCompartmentResponse>() {
                             @Override
-                            public ChangeTagNamespaceCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses
+                                            .ChangeTagNamespaceCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeTagNamespaceCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ChangeTagNamespaceCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +81,12 @@ public class ChangeTagNamespaceCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeTagNamespaceCompartmentResponse.Builder builder =
-                                        ChangeTagNamespaceCompartmentResponse.builder();
+                                com.oracle.bmc.identity.responses
+                                                .ChangeTagNamespaceCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ChangeTagNamespaceCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -91,8 +100,9 @@ public class ChangeTagNamespaceCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeTagNamespaceCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.identity.responses
+                                                .ChangeTagNamespaceCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

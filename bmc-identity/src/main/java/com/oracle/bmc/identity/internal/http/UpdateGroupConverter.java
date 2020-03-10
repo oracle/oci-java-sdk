@@ -16,13 +16,15 @@ public class UpdateGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateGroupRequest interceptRequest(UpdateGroupRequest request) {
+    public static com.oracle.bmc.identity.requests.UpdateGroupRequest interceptRequest(
+            com.oracle.bmc.identity.requests.UpdateGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateGroupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.UpdateGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getGroupId(), "groupId must not be blank");
         Validate.notNull(request.getUpdateGroupDetails(), "updateGroupDetails is required");
@@ -46,16 +48,22 @@ public class UpdateGroupConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.UpdateGroupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.UpdateGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.UpdateGroupResponse>() {
                             @Override
-                            public UpdateGroupResponse apply(
+                            public com.oracle.bmc.identity.responses.UpdateGroupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateGroupResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.UpdateGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Group>>
@@ -67,7 +75,10 @@ public class UpdateGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateGroupResponse.Builder builder = UpdateGroupResponse.builder();
+                                com.oracle.bmc.identity.responses.UpdateGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .UpdateGroupResponse.builder();
 
                                 builder.group(response.getItem());
 
@@ -92,7 +103,8 @@ public class UpdateGroupConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateGroupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.UpdateGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

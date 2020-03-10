@@ -16,13 +16,15 @@ public class UpdateProjectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateProjectRequest interceptRequest(UpdateProjectRequest request) {
+    public static com.oracle.bmc.datascience.requests.UpdateProjectRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.UpdateProjectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateProjectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.UpdateProjectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getProjectId(), "projectId must not be blank");
         Validate.notNull(request.getUpdateProjectDetails(), "updateProjectDetails is required");
@@ -50,16 +52,22 @@ public class UpdateProjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.UpdateProjectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.UpdateProjectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateProjectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.UpdateProjectResponse>() {
                             @Override
-                            public UpdateProjectResponse apply(
+                            public com.oracle.bmc.datascience.responses.UpdateProjectResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateProjectResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.UpdateProjectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Project>>
@@ -71,8 +79,10 @@ public class UpdateProjectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateProjectResponse.Builder builder =
-                                        UpdateProjectResponse.builder();
+                                com.oracle.bmc.datascience.responses.UpdateProjectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .UpdateProjectResponse.builder();
 
                                 builder.project(response.getItem());
 
@@ -97,7 +107,8 @@ public class UpdateProjectConverter {
                                                     String.class));
                                 }
 
-                                UpdateProjectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.UpdateProjectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

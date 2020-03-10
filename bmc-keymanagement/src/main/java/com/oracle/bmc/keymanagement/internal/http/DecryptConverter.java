@@ -16,13 +16,15 @@ public class DecryptConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DecryptRequest interceptRequest(DecryptRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.DecryptRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.DecryptRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DecryptRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.DecryptRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getDecryptDataDetails(), "decryptDataDetails is required");
 
@@ -40,15 +42,22 @@ public class DecryptConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DecryptResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.DecryptResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DecryptResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.DecryptResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DecryptResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.DecryptResponse>() {
                             @Override
-                            public DecryptResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DecryptResponse");
+                            public com.oracle.bmc.keymanagement.responses.DecryptResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.DecryptResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -62,7 +71,10 @@ public class DecryptConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DecryptResponse.Builder builder = DecryptResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.DecryptResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .DecryptResponse.builder();
 
                                 builder.decryptedData(response.getItem());
 
@@ -78,7 +90,8 @@ public class DecryptConverter {
                                                     String.class));
                                 }
 
-                                DecryptResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.DecryptResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

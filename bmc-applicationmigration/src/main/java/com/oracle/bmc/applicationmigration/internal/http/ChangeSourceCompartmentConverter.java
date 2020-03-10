@@ -16,15 +16,17 @@ public class ChangeSourceCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeSourceCompartmentRequest interceptRequest(
-            ChangeSourceCompartmentRequest request) {
+    public static com.oracle.bmc.applicationmigration.requests.ChangeSourceCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.applicationmigration.requests.ChangeSourceCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeSourceCompartmentRequest request) {
+            com.oracle.bmc.applicationmigration.requests.ChangeSourceCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSourceId(), "sourceId must not be blank");
         Validate.notNull(
@@ -61,18 +63,24 @@ public class ChangeSourceCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeSourceCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.applicationmigration.responses.ChangeSourceCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeSourceCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.applicationmigration.responses
+                                .ChangeSourceCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeSourceCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.applicationmigration.responses
+                                        .ChangeSourceCompartmentResponse>() {
                             @Override
-                            public ChangeSourceCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.applicationmigration.responses
+                                            .ChangeSourceCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeSourceCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.applicationmigration.responses.ChangeSourceCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +91,11 @@ public class ChangeSourceCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeSourceCompartmentResponse.Builder builder =
-                                        ChangeSourceCompartmentResponse.builder();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .ChangeSourceCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.applicationmigration.responses
+                                                        .ChangeSourceCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -110,7 +121,9 @@ public class ChangeSourceCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeSourceCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .ChangeSourceCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

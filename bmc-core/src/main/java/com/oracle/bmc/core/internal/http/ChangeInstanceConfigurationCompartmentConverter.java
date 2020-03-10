@@ -16,15 +16,17 @@ public class ChangeInstanceConfigurationCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeInstanceConfigurationCompartmentRequest interceptRequest(
-            ChangeInstanceConfigurationCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeInstanceConfigurationCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeInstanceConfigurationCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeInstanceConfigurationCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeInstanceConfigurationCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
@@ -62,19 +64,24 @@ public class ChangeInstanceConfigurationCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeInstanceConfigurationCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeInstanceConfigurationCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeInstanceConfigurationCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses
+                                .ChangeInstanceConfigurationCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeInstanceConfigurationCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeInstanceConfigurationCompartmentResponse>() {
                             @Override
-                            public ChangeInstanceConfigurationCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeInstanceConfigurationCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeInstanceConfigurationCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeInstanceConfigurationCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -85,8 +92,13 @@ public class ChangeInstanceConfigurationCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeInstanceConfigurationCompartmentResponse.Builder builder =
-                                        ChangeInstanceConfigurationCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeInstanceConfigurationCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeInstanceConfigurationCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -109,8 +121,9 @@ public class ChangeInstanceConfigurationCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeInstanceConfigurationCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeInstanceConfigurationCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

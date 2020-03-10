@@ -16,14 +16,15 @@ public class DeleteIdentityProviderConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteIdentityProviderRequest interceptRequest(
-            DeleteIdentityProviderRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteIdentityProviderRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteIdentityProviderRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteIdentityProviderRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteIdentityProviderRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIdentityProviderId(), "identityProviderId must not be blank");
 
@@ -47,18 +48,22 @@ public class DeleteIdentityProviderConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteIdentityProviderResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteIdentityProviderResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteIdentityProviderResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .DeleteIdentityProviderResponse>() {
                             @Override
-                            public DeleteIdentityProviderResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.DeleteIdentityProviderResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteIdentityProviderResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteIdentityProviderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +74,11 @@ public class DeleteIdentityProviderConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteIdentityProviderResponse.Builder builder =
-                                        DeleteIdentityProviderResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteIdentityProviderResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteIdentityProviderResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +92,8 @@ public class DeleteIdentityProviderConverter {
                                                     String.class));
                                 }
 
-                                DeleteIdentityProviderResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteIdentityProviderResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

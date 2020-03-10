@@ -16,13 +16,15 @@ public class StopInstancePoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static StopInstancePoolRequest interceptRequest(StopInstancePoolRequest request) {
+    public static com.oracle.bmc.core.requests.StopInstancePoolRequest interceptRequest(
+            com.oracle.bmc.core.requests.StopInstancePoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, StopInstancePoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.StopInstancePoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
@@ -52,17 +54,21 @@ public class StopInstancePoolConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, StopInstancePoolResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.StopInstancePoolResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StopInstancePoolResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.StopInstancePoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, StopInstancePoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.StopInstancePoolResponse>() {
                             @Override
-                            public StopInstancePoolResponse apply(
+                            public com.oracle.bmc.core.responses.StopInstancePoolResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for StopInstancePoolResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.StopInstancePoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +82,10 @@ public class StopInstancePoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                StopInstancePoolResponse.Builder builder =
-                                        StopInstancePoolResponse.builder();
+                                com.oracle.bmc.core.responses.StopInstancePoolResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .StopInstancePoolResponse.builder();
 
                                 builder.instancePool(response.getItem());
 
@@ -102,7 +110,8 @@ public class StopInstancePoolConverter {
                                                     String.class));
                                 }
 
-                                StopInstancePoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.StopInstancePoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

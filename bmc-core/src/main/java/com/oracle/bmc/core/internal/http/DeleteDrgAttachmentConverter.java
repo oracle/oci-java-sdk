@@ -16,13 +16,15 @@ public class DeleteDrgAttachmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteDrgAttachmentRequest interceptRequest(DeleteDrgAttachmentRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteDrgAttachmentRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteDrgAttachmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteDrgAttachmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteDrgAttachmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
 
@@ -46,18 +48,21 @@ public class DeleteDrgAttachmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteDrgAttachmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteDrgAttachmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteDrgAttachmentResponse>() {
                             @Override
-                            public DeleteDrgAttachmentResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteDrgAttachmentResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteDrgAttachmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteDrgAttachmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -68,8 +73,10 @@ public class DeleteDrgAttachmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteDrgAttachmentResponse.Builder builder =
-                                        DeleteDrgAttachmentResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteDrgAttachmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteDrgAttachmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -83,7 +90,8 @@ public class DeleteDrgAttachmentConverter {
                                                     String.class));
                                 }
 
-                                DeleteDrgAttachmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteDrgAttachmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

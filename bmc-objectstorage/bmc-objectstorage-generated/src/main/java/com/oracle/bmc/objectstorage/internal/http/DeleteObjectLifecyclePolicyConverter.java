@@ -16,15 +16,17 @@ public class DeleteObjectLifecyclePolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteObjectLifecyclePolicyRequest interceptRequest(
-            DeleteObjectLifecyclePolicyRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.DeleteObjectLifecyclePolicyRequest
+            interceptRequest(
+                    com.oracle.bmc.objectstorage.requests.DeleteObjectLifecyclePolicyRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteObjectLifecyclePolicyRequest request) {
+            com.oracle.bmc.objectstorage.requests.DeleteObjectLifecyclePolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -58,18 +60,23 @@ public class DeleteObjectLifecyclePolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteObjectLifecyclePolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.DeleteObjectLifecyclePolicyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteObjectLifecyclePolicyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.DeleteObjectLifecyclePolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteObjectLifecyclePolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses
+                                        .DeleteObjectLifecyclePolicyResponse>() {
                             @Override
-                            public DeleteObjectLifecyclePolicyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.objectstorage.responses
+                                            .DeleteObjectLifecyclePolicyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteObjectLifecyclePolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.DeleteObjectLifecyclePolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -80,8 +87,12 @@ public class DeleteObjectLifecyclePolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteObjectLifecyclePolicyResponse.Builder builder =
-                                        DeleteObjectLifecyclePolicyResponse.builder();
+                                com.oracle.bmc.objectstorage.responses
+                                                .DeleteObjectLifecyclePolicyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .DeleteObjectLifecyclePolicyResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -107,8 +118,9 @@ public class DeleteObjectLifecyclePolicyConverter {
                                                     String.class));
                                 }
 
-                                DeleteObjectLifecyclePolicyResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.objectstorage.responses
+                                                .DeleteObjectLifecyclePolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class PurgeCacheConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static PurgeCacheRequest interceptRequest(PurgeCacheRequest request) {
+    public static com.oracle.bmc.waas.requests.PurgeCacheRequest interceptRequest(
+            com.oracle.bmc.waas.requests.PurgeCacheRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, PurgeCacheRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.PurgeCacheRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -51,15 +53,20 @@ public class PurgeCacheConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, PurgeCacheResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.waas.responses.PurgeCacheResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PurgeCacheResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.waas.responses.PurgeCacheResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, PurgeCacheResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.PurgeCacheResponse>() {
                             @Override
-                            public PurgeCacheResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for PurgeCacheResponse");
+                            public com.oracle.bmc.waas.responses.PurgeCacheResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.PurgeCacheResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,7 +77,8 @@ public class PurgeCacheConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                PurgeCacheResponse.Builder builder = PurgeCacheResponse.builder();
+                                com.oracle.bmc.waas.responses.PurgeCacheResponse.Builder builder =
+                                        com.oracle.bmc.waas.responses.PurgeCacheResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -96,7 +104,8 @@ public class PurgeCacheConverter {
                                                     String.class));
                                 }
 
-                                PurgeCacheResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.PurgeCacheResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

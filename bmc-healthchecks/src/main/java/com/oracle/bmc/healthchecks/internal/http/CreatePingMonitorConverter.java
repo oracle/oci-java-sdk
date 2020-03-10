@@ -16,13 +16,15 @@ public class CreatePingMonitorConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreatePingMonitorRequest interceptRequest(CreatePingMonitorRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.CreatePingMonitorRequest interceptRequest(
+            com.oracle.bmc.healthchecks.requests.CreatePingMonitorRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreatePingMonitorRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.healthchecks.requests.CreatePingMonitorRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreatePingMonitorDetails(), "createPingMonitorDetails is required");
@@ -46,17 +48,21 @@ public class CreatePingMonitorConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreatePingMonitorResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.CreatePingMonitorResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePingMonitorResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.CreatePingMonitorResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreatePingMonitorResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses.CreatePingMonitorResponse>() {
                             @Override
-                            public CreatePingMonitorResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses.CreatePingMonitorResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreatePingMonitorResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.CreatePingMonitorResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,11 @@ public class CreatePingMonitorConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreatePingMonitorResponse.Builder builder =
-                                        CreatePingMonitorResponse.builder();
+                                com.oracle.bmc.healthchecks.responses.CreatePingMonitorResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .CreatePingMonitorResponse.builder();
 
                                 builder.pingMonitor(response.getItem());
 
@@ -108,7 +117,8 @@ public class CreatePingMonitorConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreatePingMonitorResponse responseWrapper = builder.build();
+                                com.oracle.bmc.healthchecks.responses.CreatePingMonitorResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

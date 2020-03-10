@@ -16,13 +16,15 @@ public class GetIdentityProviderConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetIdentityProviderRequest interceptRequest(GetIdentityProviderRequest request) {
+    public static com.oracle.bmc.identity.requests.GetIdentityProviderRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetIdentityProviderRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetIdentityProviderRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GetIdentityProviderRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIdentityProviderId(), "identityProviderId must not be blank");
 
@@ -42,18 +44,21 @@ public class GetIdentityProviderConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetIdentityProviderResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.GetIdentityProviderResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetIdentityProviderResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetIdentityProviderResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetIdentityProviderResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.GetIdentityProviderResponse>() {
                             @Override
-                            public GetIdentityProviderResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.GetIdentityProviderResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetIdentityProviderResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetIdentityProviderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -67,8 +72,11 @@ public class GetIdentityProviderConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetIdentityProviderResponse.Builder builder =
-                                        GetIdentityProviderResponse.builder();
+                                com.oracle.bmc.identity.responses.GetIdentityProviderResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .GetIdentityProviderResponse.builder();
 
                                 builder.identityProvider(response.getItem());
 
@@ -93,7 +101,8 @@ public class GetIdentityProviderConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetIdentityProviderResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetIdentityProviderResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

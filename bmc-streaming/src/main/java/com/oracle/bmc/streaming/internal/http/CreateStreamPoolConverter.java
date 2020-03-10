@@ -16,13 +16,15 @@ public class CreateStreamPoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateStreamPoolRequest interceptRequest(CreateStreamPoolRequest request) {
+    public static com.oracle.bmc.streaming.requests.CreateStreamPoolRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.CreateStreamPoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateStreamPoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.CreateStreamPoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateStreamPoolDetails(), "createStreamPoolDetails is required");
@@ -46,17 +48,21 @@ public class CreateStreamPoolConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateStreamPoolResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.CreateStreamPoolResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStreamPoolResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.CreateStreamPoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateStreamPoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.CreateStreamPoolResponse>() {
                             @Override
-                            public CreateStreamPoolResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.streaming.responses.CreateStreamPoolResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateStreamPoolResponse");
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.CreateStreamPoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,10 @@ public class CreateStreamPoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateStreamPoolResponse.Builder builder =
-                                        CreateStreamPoolResponse.builder();
+                                com.oracle.bmc.streaming.responses.CreateStreamPoolResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .CreateStreamPoolResponse.builder();
 
                                 builder.streamPool(response.getItem());
 
@@ -96,7 +104,8 @@ public class CreateStreamPoolConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateStreamPoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.CreateStreamPoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

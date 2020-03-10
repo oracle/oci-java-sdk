@@ -16,13 +16,15 @@ public class GetConsoleHistoryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetConsoleHistoryRequest interceptRequest(GetConsoleHistoryRequest request) {
+    public static com.oracle.bmc.core.requests.GetConsoleHistoryRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetConsoleHistoryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetConsoleHistoryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetConsoleHistoryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getInstanceConsoleHistoryId(),
@@ -44,17 +46,21 @@ public class GetConsoleHistoryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetConsoleHistoryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetConsoleHistoryResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleHistoryResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetConsoleHistoryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetConsoleHistoryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetConsoleHistoryResponse>() {
                             @Override
-                            public GetConsoleHistoryResponse apply(
+                            public com.oracle.bmc.core.responses.GetConsoleHistoryResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetConsoleHistoryResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetConsoleHistoryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +74,10 @@ public class GetConsoleHistoryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetConsoleHistoryResponse.Builder builder =
-                                        GetConsoleHistoryResponse.builder();
+                                com.oracle.bmc.core.responses.GetConsoleHistoryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetConsoleHistoryResponse.builder();
 
                                 builder.consoleHistory(response.getItem());
 
@@ -94,7 +102,8 @@ public class GetConsoleHistoryConverter {
                                                     String.class));
                                 }
 
-                                GetConsoleHistoryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetConsoleHistoryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,14 +16,15 @@ public class CreateDedicatedVmHostConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateDedicatedVmHostRequest interceptRequest(
-            CreateDedicatedVmHostRequest request) {
+    public static com.oracle.bmc.core.requests.CreateDedicatedVmHostRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateDedicatedVmHostRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateDedicatedVmHostRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateDedicatedVmHostRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateDedicatedVmHostDetails(),
@@ -48,18 +49,21 @@ public class CreateDedicatedVmHostConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateDedicatedVmHostResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateDedicatedVmHostResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDedicatedVmHostResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateDedicatedVmHostResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateDedicatedVmHostResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateDedicatedVmHostResponse>() {
                             @Override
-                            public CreateDedicatedVmHostResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.CreateDedicatedVmHostResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateDedicatedVmHostResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateDedicatedVmHostResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +77,10 @@ public class CreateDedicatedVmHostConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateDedicatedVmHostResponse.Builder builder =
-                                        CreateDedicatedVmHostResponse.builder();
+                                com.oracle.bmc.core.responses.CreateDedicatedVmHostResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateDedicatedVmHostResponse.builder();
 
                                 builder.dedicatedVmHost(response.getItem());
 
@@ -111,7 +117,8 @@ public class CreateDedicatedVmHostConverter {
                                                     String.class));
                                 }
 
-                                CreateDedicatedVmHostResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateDedicatedVmHostResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

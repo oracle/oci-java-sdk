@@ -16,13 +16,15 @@ public class GetProjectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetProjectRequest interceptRequest(GetProjectRequest request) {
+    public static com.oracle.bmc.datascience.requests.GetProjectRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.GetProjectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetProjectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.GetProjectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getProjectId(), "projectId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetProjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.GetProjectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetProjectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.GetProjectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetProjectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.GetProjectResponse>() {
                             @Override
-                            public GetProjectResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetProjectResponse");
+                            public com.oracle.bmc.datascience.responses.GetProjectResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.GetProjectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Project>>
@@ -65,7 +74,10 @@ public class GetProjectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetProjectResponse.Builder builder = GetProjectResponse.builder();
+                                com.oracle.bmc.datascience.responses.GetProjectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .GetProjectResponse.builder();
 
                                 builder.project(response.getItem());
 
@@ -90,7 +102,8 @@ public class GetProjectConverter {
                                                     String.class));
                                 }
 
-                                GetProjectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.GetProjectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

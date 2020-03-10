@@ -5,14 +5,14 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.13.2</version>
+    <version>1.14.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-common</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Common</name>
   <description>This project contains the common runtime components of the SDK used for Oracle Cloud Infrastructure</description>
-  <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
   <properties>
     <bouncycastle.version>1.60</bouncycastle.version>

@@ -16,13 +16,15 @@ public class ListApplicationsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListApplicationsRequest interceptRequest(ListApplicationsRequest request) {
+    public static com.oracle.bmc.dataflow.requests.ListApplicationsRequest interceptRequest(
+            com.oracle.bmc.dataflow.requests.ListApplicationsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListApplicationsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dataflow.requests.ListApplicationsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -103,17 +105,21 @@ public class ListApplicationsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListApplicationsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dataflow.responses.ListApplicationsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dataflow.responses.ListApplicationsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListApplicationsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dataflow.responses.ListApplicationsResponse>() {
                             @Override
-                            public ListApplicationsResponse apply(
+                            public com.oracle.bmc.dataflow.responses.ListApplicationsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListApplicationsResponse");
+                                        "Transform function invoked for com.oracle.bmc.dataflow.responses.ListApplicationsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -130,8 +136,10 @@ public class ListApplicationsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListApplicationsResponse.Builder builder =
-                                        ListApplicationsResponse.builder();
+                                com.oracle.bmc.dataflow.responses.ListApplicationsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dataflow.responses
+                                                        .ListApplicationsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -171,7 +179,8 @@ public class ListApplicationsConverter {
                                                     String.class));
                                 }
 
-                                ListApplicationsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dataflow.responses.ListApplicationsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

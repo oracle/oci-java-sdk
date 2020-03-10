@@ -16,15 +16,16 @@ public class CreateOAuthClientCredentialConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateOAuthClientCredentialRequest interceptRequest(
-            CreateOAuthClientCredentialRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateOAuthClientCredentialRequest
+            interceptRequest(
+                    com.oracle.bmc.identity.requests.CreateOAuthClientCredentialRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateOAuthClientCredentialRequest request) {
+            com.oracle.bmc.identity.requests.CreateOAuthClientCredentialRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notNull(
@@ -52,18 +53,23 @@ public class CreateOAuthClientCredentialConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateOAuthClientCredentialResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateOAuthClientCredentialResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateOAuthClientCredentialResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateOAuthClientCredentialResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateOAuthClientCredentialResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .CreateOAuthClientCredentialResponse>() {
                             @Override
-                            public CreateOAuthClientCredentialResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses
+                                            .CreateOAuthClientCredentialResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateOAuthClientCredentialResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateOAuthClientCredentialResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -77,8 +83,12 @@ public class CreateOAuthClientCredentialConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateOAuthClientCredentialResponse.Builder builder =
-                                        CreateOAuthClientCredentialResponse.builder();
+                                com.oracle.bmc.identity.responses
+                                                .CreateOAuthClientCredentialResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateOAuthClientCredentialResponse
+                                                        .builder();
 
                                 builder.oAuth2ClientCredential(response.getItem());
 
@@ -103,8 +113,9 @@ public class CreateOAuthClientCredentialConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateOAuthClientCredentialResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.identity.responses
+                                                .CreateOAuthClientCredentialResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

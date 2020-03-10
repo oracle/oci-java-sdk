@@ -16,14 +16,15 @@ public class ChangeAlarmCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeAlarmCompartmentRequest interceptRequest(
-            ChangeAlarmCompartmentRequest request) {
+    public static com.oracle.bmc.monitoring.requests.ChangeAlarmCompartmentRequest interceptRequest(
+            com.oracle.bmc.monitoring.requests.ChangeAlarmCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeAlarmCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.monitoring.requests.ChangeAlarmCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAlarmId(), "alarmId must not be blank");
         Validate.notNull(
@@ -60,18 +61,23 @@ public class ChangeAlarmCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeAlarmCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.monitoring.responses.ChangeAlarmCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeAlarmCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.monitoring.responses.ChangeAlarmCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeAlarmCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.monitoring.responses
+                                        .ChangeAlarmCompartmentResponse>() {
                             @Override
-                            public ChangeAlarmCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.monitoring.responses
+                                            .ChangeAlarmCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeAlarmCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.monitoring.responses.ChangeAlarmCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +88,11 @@ public class ChangeAlarmCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeAlarmCompartmentResponse.Builder builder =
-                                        ChangeAlarmCompartmentResponse.builder();
+                                com.oracle.bmc.monitoring.responses.ChangeAlarmCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.monitoring.responses
+                                                        .ChangeAlarmCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -97,7 +106,8 @@ public class ChangeAlarmCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeAlarmCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.monitoring.responses.ChangeAlarmCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

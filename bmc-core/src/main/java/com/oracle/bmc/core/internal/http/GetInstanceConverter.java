@@ -16,13 +16,15 @@ public class GetInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetInstanceRequest interceptRequest(GetInstanceRequest request) {
+    public static com.oracle.bmc.core.requests.GetInstanceRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getInstanceId(), "instanceId must not be blank");
 
@@ -41,16 +43,21 @@ public class GetInstanceConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetInstanceResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetInstanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetInstanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetInstanceResponse>() {
                             @Override
-                            public GetInstanceResponse apply(
+                            public com.oracle.bmc.core.responses.GetInstanceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetInstanceResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Instance>>
@@ -62,7 +69,8 @@ public class GetInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetInstanceResponse.Builder builder = GetInstanceResponse.builder();
+                                com.oracle.bmc.core.responses.GetInstanceResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.GetInstanceResponse.builder();
 
                                 builder.instance(response.getItem());
 
@@ -87,7 +95,8 @@ public class GetInstanceConverter {
                                                     String.class));
                                 }
 
-                                GetInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetInstanceResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

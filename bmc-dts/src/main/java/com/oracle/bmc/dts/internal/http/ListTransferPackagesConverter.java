@@ -16,14 +16,15 @@ public class ListTransferPackagesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTransferPackagesRequest interceptRequest(
-            ListTransferPackagesRequest request) {
+    public static com.oracle.bmc.dts.requests.ListTransferPackagesRequest interceptRequest(
+            com.oracle.bmc.dts.requests.ListTransferPackagesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTransferPackagesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dts.requests.ListTransferPackagesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
 
@@ -60,18 +61,21 @@ public class ListTransferPackagesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListTransferPackagesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.ListTransferPackagesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTransferPackagesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.ListTransferPackagesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTransferPackagesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.ListTransferPackagesResponse>() {
                             @Override
-                            public ListTransferPackagesResponse apply(
+                            public com.oracle.bmc.dts.responses.ListTransferPackagesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListTransferPackagesResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.ListTransferPackagesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -85,8 +89,10 @@ public class ListTransferPackagesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTransferPackagesResponse.Builder builder =
-                                        ListTransferPackagesResponse.builder();
+                                com.oracle.bmc.dts.responses.ListTransferPackagesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .ListTransferPackagesResponse.builder();
 
                                 builder.multipleTransferPackages(response.getItem());
 
@@ -102,7 +108,8 @@ public class ListTransferPackagesConverter {
                                                     String.class));
                                 }
 
-                                ListTransferPackagesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.ListTransferPackagesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

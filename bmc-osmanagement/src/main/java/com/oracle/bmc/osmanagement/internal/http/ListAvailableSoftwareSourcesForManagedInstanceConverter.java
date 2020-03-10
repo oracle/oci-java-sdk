@@ -16,15 +16,21 @@ public class ListAvailableSoftwareSourcesForManagedInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAvailableSoftwareSourcesForManagedInstanceRequest interceptRequest(
-            ListAvailableSoftwareSourcesForManagedInstanceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests
+                    .ListAvailableSoftwareSourcesForManagedInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests
+                                    .ListAvailableSoftwareSourcesForManagedInstanceRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListAvailableSoftwareSourcesForManagedInstanceRequest request) {
+            com.oracle.bmc.osmanagement.requests
+                            .ListAvailableSoftwareSourcesForManagedInstanceRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
 
@@ -98,20 +104,24 @@ public class ListAvailableSoftwareSourcesForManagedInstanceConverter {
 
     public static com.google.common.base.Function<
                     javax.ws.rs.core.Response,
-                    ListAvailableSoftwareSourcesForManagedInstanceResponse>
+                    com.oracle.bmc.osmanagement.responses
+                            .ListAvailableSoftwareSourcesForManagedInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
-                        ListAvailableSoftwareSourcesForManagedInstanceResponse>
+                        com.oracle.bmc.osmanagement.responses
+                                .ListAvailableSoftwareSourcesForManagedInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListAvailableSoftwareSourcesForManagedInstanceResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .ListAvailableSoftwareSourcesForManagedInstanceResponse>() {
                             @Override
-                            public ListAvailableSoftwareSourcesForManagedInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .ListAvailableSoftwareSourcesForManagedInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAvailableSoftwareSourcesForManagedInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.ListAvailableSoftwareSourcesForManagedInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -129,9 +139,12 @@ public class ListAvailableSoftwareSourcesForManagedInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAvailableSoftwareSourcesForManagedInstanceResponse.Builder
+                                com.oracle.bmc.osmanagement.responses
+                                                .ListAvailableSoftwareSourcesForManagedInstanceResponse
+                                                .Builder
                                         builder =
-                                                ListAvailableSoftwareSourcesForManagedInstanceResponse
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .ListAvailableSoftwareSourcesForManagedInstanceResponse
                                                         .builder();
 
                                 builder.items(response.getItem());
@@ -160,7 +173,8 @@ public class ListAvailableSoftwareSourcesForManagedInstanceConverter {
                                                     String.class));
                                 }
 
-                                ListAvailableSoftwareSourcesForManagedInstanceResponse
+                                com.oracle.bmc.osmanagement.responses
+                                                .ListAvailableSoftwareSourcesForManagedInstanceResponse
                                         responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);

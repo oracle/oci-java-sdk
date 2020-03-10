@@ -16,13 +16,15 @@ public class UpdateWafConfigConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateWafConfigRequest interceptRequest(UpdateWafConfigRequest request) {
+    public static com.oracle.bmc.waas.requests.UpdateWafConfigRequest interceptRequest(
+            com.oracle.bmc.waas.requests.UpdateWafConfigRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateWafConfigRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.UpdateWafConfigRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
         Validate.notNull(request.getUpdateWafConfigDetails(), "updateWafConfigDetails is required");
@@ -56,16 +58,21 @@ public class UpdateWafConfigConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateWafConfigResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.UpdateWafConfigResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWafConfigResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.UpdateWafConfigResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateWafConfigResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.UpdateWafConfigResponse>() {
                             @Override
-                            public UpdateWafConfigResponse apply(
+                            public com.oracle.bmc.waas.responses.UpdateWafConfigResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateWafConfigResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.UpdateWafConfigResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +83,10 @@ public class UpdateWafConfigConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateWafConfigResponse.Builder builder =
-                                        UpdateWafConfigResponse.builder();
+                                com.oracle.bmc.waas.responses.UpdateWafConfigResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .UpdateWafConfigResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -103,7 +112,8 @@ public class UpdateWafConfigConverter {
                                                     String.class));
                                 }
 
-                                UpdateWafConfigResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.UpdateWafConfigResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

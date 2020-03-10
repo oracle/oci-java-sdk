@@ -16,15 +16,17 @@ public class ChangeNotebookSessionCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeNotebookSessionCompartmentRequest interceptRequest(
-            ChangeNotebookSessionCompartmentRequest request) {
+    public static com.oracle.bmc.datascience.requests.ChangeNotebookSessionCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.datascience.requests.ChangeNotebookSessionCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeNotebookSessionCompartmentRequest request) {
+            com.oracle.bmc.datascience.requests.ChangeNotebookSessionCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
         Validate.notNull(
@@ -61,19 +63,24 @@ public class ChangeNotebookSessionCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeNotebookSessionCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.ChangeNotebookSessionCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeNotebookSessionCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses
+                                .ChangeNotebookSessionCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeNotebookSessionCompartmentResponse>() {
+                                com.oracle.bmc.datascience.responses
+                                        .ChangeNotebookSessionCompartmentResponse>() {
                             @Override
-                            public ChangeNotebookSessionCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses
+                                            .ChangeNotebookSessionCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeNotebookSessionCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.ChangeNotebookSessionCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +91,12 @@ public class ChangeNotebookSessionCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeNotebookSessionCompartmentResponse.Builder builder =
-                                        ChangeNotebookSessionCompartmentResponse.builder();
+                                com.oracle.bmc.datascience.responses
+                                                .ChangeNotebookSessionCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .ChangeNotebookSessionCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -99,8 +110,9 @@ public class ChangeNotebookSessionCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeNotebookSessionCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.datascience.responses
+                                                .ChangeNotebookSessionCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

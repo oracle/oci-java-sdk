@@ -16,15 +16,16 @@ public class ChangeDedicatedVmHostCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeDedicatedVmHostCompartmentRequest interceptRequest(
-            ChangeDedicatedVmHostCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeDedicatedVmHostCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeDedicatedVmHostCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeDedicatedVmHostCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeDedicatedVmHostCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
         Validate.notNull(
@@ -61,19 +62,23 @@ public class ChangeDedicatedVmHostCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeDedicatedVmHostCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeDedicatedVmHostCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDedicatedVmHostCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeDedicatedVmHostCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeDedicatedVmHostCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeDedicatedVmHostCompartmentResponse>() {
                             @Override
-                            public ChangeDedicatedVmHostCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeDedicatedVmHostCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeDedicatedVmHostCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeDedicatedVmHostCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +89,12 @@ public class ChangeDedicatedVmHostCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeDedicatedVmHostCompartmentResponse.Builder builder =
-                                        ChangeDedicatedVmHostCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeDedicatedVmHostCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeDedicatedVmHostCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -120,8 +129,9 @@ public class ChangeDedicatedVmHostCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeDedicatedVmHostCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeDedicatedVmHostCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

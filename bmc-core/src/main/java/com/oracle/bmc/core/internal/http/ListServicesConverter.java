@@ -16,13 +16,15 @@ public class ListServicesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListServicesRequest interceptRequest(ListServicesRequest request) {
+    public static com.oracle.bmc.core.requests.ListServicesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListServicesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListServicesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListServicesRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -51,16 +53,21 @@ public class ListServicesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListServicesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListServicesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListServicesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListServicesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListServicesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListServicesResponse>() {
                             @Override
-                            public ListServicesResponse apply(
+                            public com.oracle.bmc.core.responses.ListServicesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListServicesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListServicesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -75,8 +82,9 @@ public class ListServicesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListServicesResponse.Builder builder =
-                                        ListServicesResponse.builder();
+                                com.oracle.bmc.core.responses.ListServicesResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.ListServicesResponse
+                                                .builder();
 
                                 builder.items(response.getItem());
 
@@ -104,7 +112,8 @@ public class ListServicesConverter {
                                                     String.class));
                                 }
 
-                                ListServicesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListServicesResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

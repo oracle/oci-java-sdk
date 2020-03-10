@@ -16,13 +16,15 @@ public class ListTagNamespacesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTagNamespacesRequest interceptRequest(ListTagNamespacesRequest request) {
+    public static com.oracle.bmc.identity.requests.ListTagNamespacesRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListTagNamespacesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTagNamespacesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListTagNamespacesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -75,17 +77,21 @@ public class ListTagNamespacesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListTagNamespacesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListTagNamespacesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListTagNamespacesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTagNamespacesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListTagNamespacesResponse>() {
                             @Override
-                            public ListTagNamespacesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ListTagNamespacesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListTagNamespacesResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListTagNamespacesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -102,8 +108,10 @@ public class ListTagNamespacesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTagNamespacesResponse.Builder builder =
-                                        ListTagNamespacesResponse.builder();
+                                com.oracle.bmc.identity.responses.ListTagNamespacesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListTagNamespacesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -131,7 +139,8 @@ public class ListTagNamespacesConverter {
                                                     String.class));
                                 }
 
-                                ListTagNamespacesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListTagNamespacesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

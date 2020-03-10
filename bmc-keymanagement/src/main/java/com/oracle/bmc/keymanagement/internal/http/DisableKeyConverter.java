@@ -16,13 +16,15 @@ public class DisableKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DisableKeyRequest interceptRequest(DisableKeyRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.DisableKeyRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.DisableKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DisableKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.DisableKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getKeyId(), "keyId must not be blank");
 
@@ -56,15 +58,22 @@ public class DisableKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DisableKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.DisableKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DisableKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.DisableKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DisableKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.DisableKeyResponse>() {
                             @Override
-                            public DisableKeyResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DisableKeyResponse");
+                            public com.oracle.bmc.keymanagement.responses.DisableKeyResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.DisableKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Key>>
@@ -75,7 +84,10 @@ public class DisableKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DisableKeyResponse.Builder builder = DisableKeyResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.DisableKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .DisableKeyResponse.builder();
 
                                 builder.key(response.getItem());
 
@@ -100,7 +112,8 @@ public class DisableKeyConverter {
                                                     String.class));
                                 }
 
-                                DisableKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.DisableKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

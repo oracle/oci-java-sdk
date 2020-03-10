@@ -16,13 +16,15 @@ public class GetRRSetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetRRSetRequest interceptRequest(GetRRSetRequest request) {
+    public static com.oracle.bmc.dns.requests.GetRRSetRequest interceptRequest(
+            com.oracle.bmc.dns.requests.GetRRSetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetRRSetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.GetRRSetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getZoneNameOrId(), "zoneNameOrId must not be blank");
         Validate.notBlank(request.getDomain(), "domain must not be blank");
@@ -94,15 +96,20 @@ public class GetRRSetConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetRRSetResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.GetRRSetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRRSetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.GetRRSetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetRRSetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.GetRRSetResponse>() {
                             @Override
-                            public GetRRSetResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetRRSetResponse");
+                            public com.oracle.bmc.dns.responses.GetRRSetResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.GetRRSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<RRSet>>
@@ -114,7 +121,8 @@ public class GetRRSetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetRRSetResponse.Builder builder = GetRRSetResponse.builder();
+                                com.oracle.bmc.dns.responses.GetRRSetResponse.Builder builder =
+                                        com.oracle.bmc.dns.responses.GetRRSetResponse.builder();
 
                                 builder.rRSet(response.getItem());
 
@@ -163,7 +171,8 @@ public class GetRRSetConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                GetRRSetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.GetRRSetResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

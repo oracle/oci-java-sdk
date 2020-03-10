@@ -16,13 +16,15 @@ public class GetFolderTagConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetFolderTagRequest interceptRequest(GetFolderTagRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetFolderTagRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetFolderTagRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetFolderTagRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetFolderTagRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -69,16 +71,22 @@ public class GetFolderTagConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderTagResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.GetFolderTagResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderTagResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetFolderTagResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetFolderTagResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.GetFolderTagResponse>() {
                             @Override
-                            public GetFolderTagResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.GetFolderTagResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetFolderTagResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetFolderTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<FolderTag>>
@@ -90,8 +98,10 @@ public class GetFolderTagConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetFolderTagResponse.Builder builder =
-                                        GetFolderTagResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetFolderTagResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .GetFolderTagResponse.builder();
 
                                 builder.folderTag(response.getItem());
 
@@ -116,7 +126,8 @@ public class GetFolderTagConverter {
                                                     String.class));
                                 }
 
-                                GetFolderTagResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetFolderTagResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

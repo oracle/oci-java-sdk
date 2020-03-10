@@ -16,13 +16,15 @@ public class GetSubnetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetSubnetRequest interceptRequest(GetSubnetRequest request) {
+    public static com.oracle.bmc.core.requests.GetSubnetRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetSubnetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetSubnetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetSubnetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
 
@@ -41,15 +43,20 @@ public class GetSubnetConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetSubnetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetSubnetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetSubnetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetSubnetResponse>() {
                             @Override
-                            public GetSubnetResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetSubnetResponse");
+                            public com.oracle.bmc.core.responses.GetSubnetResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetSubnetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Subnet>>
@@ -61,7 +68,8 @@ public class GetSubnetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetSubnetResponse.Builder builder = GetSubnetResponse.builder();
+                                com.oracle.bmc.core.responses.GetSubnetResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.GetSubnetResponse.builder();
 
                                 builder.subnet(response.getItem());
 
@@ -86,7 +94,8 @@ public class GetSubnetConverter {
                                                     String.class));
                                 }
 
-                                GetSubnetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetSubnetResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class LaunchDbSystemConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static LaunchDbSystemRequest interceptRequest(LaunchDbSystemRequest request) {
+    public static com.oracle.bmc.database.requests.LaunchDbSystemRequest interceptRequest(
+            com.oracle.bmc.database.requests.LaunchDbSystemRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, LaunchDbSystemRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.LaunchDbSystemRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getLaunchDbSystemDetails(), "launchDbSystemDetails is required");
 
@@ -40,16 +42,22 @@ public class LaunchDbSystemConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, LaunchDbSystemResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.LaunchDbSystemResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, LaunchDbSystemResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.LaunchDbSystemResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, LaunchDbSystemResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.LaunchDbSystemResponse>() {
                             @Override
-                            public LaunchDbSystemResponse apply(
+                            public com.oracle.bmc.database.responses.LaunchDbSystemResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for LaunchDbSystemResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.LaunchDbSystemResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<DbSystem>>
@@ -61,8 +69,10 @@ public class LaunchDbSystemConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                LaunchDbSystemResponse.Builder builder =
-                                        LaunchDbSystemResponse.builder();
+                                com.oracle.bmc.database.responses.LaunchDbSystemResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .LaunchDbSystemResponse.builder();
 
                                 builder.dbSystem(response.getItem());
 
@@ -99,7 +109,8 @@ public class LaunchDbSystemConverter {
                                                     String.class));
                                 }
 
-                                LaunchDbSystemResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.LaunchDbSystemResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

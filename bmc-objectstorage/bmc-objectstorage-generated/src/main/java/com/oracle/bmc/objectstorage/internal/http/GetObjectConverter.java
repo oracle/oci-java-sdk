@@ -15,13 +15,15 @@ public class GetObjectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetObjectRequest interceptRequest(GetObjectRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.GetObjectRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.GetObjectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetObjectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.GetObjectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -66,15 +68,22 @@ public class GetObjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.GetObjectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.GetObjectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetObjectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.GetObjectResponse>() {
                             @Override
-                            public GetObjectResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetObjectResponse");
+                            public com.oracle.bmc.objectstorage.responses.GetObjectResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.GetObjectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -88,7 +97,10 @@ public class GetObjectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetObjectResponse.Builder builder = GetObjectResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.GetObjectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .GetObjectResponse.builder();
 
                                 if (response.getStatusCode() != 304) {
                                     builder.inputStream(response.getItem());
@@ -289,7 +301,8 @@ public class GetObjectConverter {
                                                     java.util.Date.class));
                                 }
 
-                                GetObjectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.GetObjectResponse
+                                        responseWrapper = builder.build();
                                 responseWrapper =
                                         ObjectMetadataInterceptor.intercept(responseWrapper);
                                 return responseWrapper;

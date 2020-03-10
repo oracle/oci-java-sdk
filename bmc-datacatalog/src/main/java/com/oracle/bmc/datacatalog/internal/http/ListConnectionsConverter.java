@@ -16,13 +16,15 @@ public class ListConnectionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListConnectionsRequest interceptRequest(ListConnectionsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListConnectionsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListConnectionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListConnectionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListConnectionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -165,16 +167,21 @@ public class ListConnectionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListConnectionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListConnectionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListConnectionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListConnectionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListConnectionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ListConnectionsResponse>() {
                             @Override
-                            public ListConnectionsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListConnectionsResponse");
+                            public com.oracle.bmc.datacatalog.responses.ListConnectionsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListConnectionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -188,8 +195,10 @@ public class ListConnectionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListConnectionsResponse.Builder builder =
-                                        ListConnectionsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListConnectionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListConnectionsResponse.builder();
 
                                 builder.connectionCollection(response.getItem());
 
@@ -217,7 +226,8 @@ public class ListConnectionsConverter {
                                                     String.class));
                                 }
 
-                                ListConnectionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListConnectionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

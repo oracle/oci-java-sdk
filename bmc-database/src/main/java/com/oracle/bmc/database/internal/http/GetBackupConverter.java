@@ -16,13 +16,15 @@ public class GetBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetBackupRequest interceptRequest(GetBackupRequest request) {
+    public static com.oracle.bmc.database.requests.GetBackupRequest interceptRequest(
+            com.oracle.bmc.database.requests.GetBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetBackupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.GetBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBackupId(), "backupId must not be blank");
 
@@ -41,15 +43,21 @@ public class GetBackupConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.database.responses.GetBackupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.GetBackupResponse>() {
                             @Override
-                            public GetBackupResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetBackupResponse");
+                            public com.oracle.bmc.database.responses.GetBackupResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Backup>>
@@ -61,7 +69,10 @@ public class GetBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetBackupResponse.Builder builder = GetBackupResponse.builder();
+                                com.oracle.bmc.database.responses.GetBackupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses.GetBackupResponse
+                                                        .builder();
 
                                 builder.backup(response.getItem());
 
@@ -86,7 +97,8 @@ public class GetBackupConverter {
                                                     String.class));
                                 }
 
-                                GetBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.GetBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,14 +16,15 @@ public class CreateSoftwareSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateSoftwareSourceRequest interceptRequest(
-            CreateSoftwareSourceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.CreateSoftwareSourceRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.CreateSoftwareSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateSoftwareSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.CreateSoftwareSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateSoftwareSourceDetails(),
@@ -48,18 +49,23 @@ public class CreateSoftwareSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.CreateSoftwareSourceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.CreateSoftwareSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateSoftwareSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .CreateSoftwareSourceResponse>() {
                             @Override
-                            public CreateSoftwareSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .CreateSoftwareSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateSoftwareSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.CreateSoftwareSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +79,11 @@ public class CreateSoftwareSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateSoftwareSourceResponse.Builder builder =
-                                        CreateSoftwareSourceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.CreateSoftwareSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .CreateSoftwareSourceResponse.builder();
 
                                 builder.softwareSource(response.getItem());
 
@@ -111,7 +120,8 @@ public class CreateSoftwareSourceConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateSoftwareSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.CreateSoftwareSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

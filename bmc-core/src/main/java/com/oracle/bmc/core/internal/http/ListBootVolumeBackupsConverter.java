@@ -16,14 +16,15 @@ public class ListBootVolumeBackupsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListBootVolumeBackupsRequest interceptRequest(
-            ListBootVolumeBackupsRequest request) {
+    public static com.oracle.bmc.core.requests.ListBootVolumeBackupsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListBootVolumeBackupsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListBootVolumeBackupsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListBootVolumeBackupsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -108,18 +109,21 @@ public class ListBootVolumeBackupsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListBootVolumeBackupsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListBootVolumeBackupsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListBootVolumeBackupsResponse>() {
                             @Override
-                            public ListBootVolumeBackupsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListBootVolumeBackupsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListBootVolumeBackupsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListBootVolumeBackupsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -136,8 +140,10 @@ public class ListBootVolumeBackupsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListBootVolumeBackupsResponse.Builder builder =
-                                        ListBootVolumeBackupsResponse.builder();
+                                com.oracle.bmc.core.responses.ListBootVolumeBackupsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListBootVolumeBackupsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -165,7 +171,8 @@ public class ListBootVolumeBackupsConverter {
                                                     String.class));
                                 }
 
-                                ListBootVolumeBackupsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListBootVolumeBackupsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

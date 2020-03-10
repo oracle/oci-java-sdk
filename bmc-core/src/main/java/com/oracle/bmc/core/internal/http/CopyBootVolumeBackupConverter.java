@@ -16,14 +16,15 @@ public class CopyBootVolumeBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CopyBootVolumeBackupRequest interceptRequest(
-            CopyBootVolumeBackupRequest request) {
+    public static com.oracle.bmc.core.requests.CopyBootVolumeBackupRequest interceptRequest(
+            com.oracle.bmc.core.requests.CopyBootVolumeBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CopyBootVolumeBackupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CopyBootVolumeBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBootVolumeBackupId(), "bootVolumeBackupId must not be blank");
         Validate.notNull(
@@ -56,18 +57,21 @@ public class CopyBootVolumeBackupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CopyBootVolumeBackupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CopyBootVolumeBackupResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CopyBootVolumeBackupResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CopyBootVolumeBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CopyBootVolumeBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CopyBootVolumeBackupResponse>() {
                             @Override
-                            public CopyBootVolumeBackupResponse apply(
+                            public com.oracle.bmc.core.responses.CopyBootVolumeBackupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CopyBootVolumeBackupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CopyBootVolumeBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -81,8 +85,10 @@ public class CopyBootVolumeBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CopyBootVolumeBackupResponse.Builder builder =
-                                        CopyBootVolumeBackupResponse.builder();
+                                com.oracle.bmc.core.responses.CopyBootVolumeBackupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CopyBootVolumeBackupResponse.builder();
 
                                 builder.bootVolumeBackup(response.getItem());
 
@@ -107,7 +113,8 @@ public class CopyBootVolumeBackupConverter {
                                                     String.class));
                                 }
 
-                                CopyBootVolumeBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CopyBootVolumeBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

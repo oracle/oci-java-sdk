@@ -16,13 +16,15 @@ public class ListHostnamesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListHostnamesRequest interceptRequest(ListHostnamesRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.ListHostnamesRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.ListHostnamesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListHostnamesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.ListHostnamesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
 
@@ -46,16 +48,22 @@ public class ListHostnamesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListHostnamesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.ListHostnamesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListHostnamesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.ListHostnamesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListHostnamesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.ListHostnamesResponse>() {
                             @Override
-                            public ListHostnamesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListHostnamesResponse");
+                            public com.oracle.bmc.loadbalancer.responses.ListHostnamesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.ListHostnamesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +78,10 @@ public class ListHostnamesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListHostnamesResponse.Builder builder =
-                                        ListHostnamesResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.ListHostnamesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .ListHostnamesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -87,7 +97,8 @@ public class ListHostnamesConverter {
                                                     String.class));
                                 }
 
-                                ListHostnamesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.ListHostnamesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

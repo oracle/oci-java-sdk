@@ -16,13 +16,15 @@ public class ListVolumesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListVolumesRequest interceptRequest(ListVolumesRequest request) {
+    public static com.oracle.bmc.core.requests.ListVolumesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListVolumesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListVolumesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListVolumesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -106,16 +108,21 @@ public class ListVolumesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListVolumesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListVolumesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListVolumesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListVolumesResponse>() {
                             @Override
-                            public ListVolumesResponse apply(
+                            public com.oracle.bmc.core.responses.ListVolumesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListVolumesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListVolumesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -130,7 +137,8 @@ public class ListVolumesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListVolumesResponse.Builder builder = ListVolumesResponse.builder();
+                                com.oracle.bmc.core.responses.ListVolumesResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.ListVolumesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -158,7 +166,8 @@ public class ListVolumesConverter {
                                                     String.class));
                                 }
 
-                                ListVolumesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListVolumesResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,14 +16,17 @@ public class ListSourceApplicationsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListSourceApplicationsRequest interceptRequest(
-            ListSourceApplicationsRequest request) {
+    public static com.oracle.bmc.applicationmigration.requests.ListSourceApplicationsRequest
+            interceptRequest(
+                    com.oracle.bmc.applicationmigration.requests.ListSourceApplicationsRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListSourceApplicationsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.applicationmigration.requests.ListSourceApplicationsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSourceId(), "sourceId must not be blank");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
@@ -95,18 +98,24 @@ public class ListSourceApplicationsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListSourceApplicationsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.applicationmigration.responses.ListSourceApplicationsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSourceApplicationsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.applicationmigration.responses
+                                .ListSourceApplicationsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListSourceApplicationsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.applicationmigration.responses
+                                        .ListSourceApplicationsResponse>() {
                             @Override
-                            public ListSourceApplicationsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.applicationmigration.responses
+                                            .ListSourceApplicationsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListSourceApplicationsResponse");
+                                        "Transform function invoked for com.oracle.bmc.applicationmigration.responses.ListSourceApplicationsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -123,8 +132,11 @@ public class ListSourceApplicationsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListSourceApplicationsResponse.Builder builder =
-                                        ListSourceApplicationsResponse.builder();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .ListSourceApplicationsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.applicationmigration.responses
+                                                        .ListSourceApplicationsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -152,7 +164,9 @@ public class ListSourceApplicationsConverter {
                                                     String.class));
                                 }
 
-                                ListSourceApplicationsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .ListSourceApplicationsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

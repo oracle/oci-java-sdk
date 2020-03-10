@@ -16,15 +16,15 @@ public class DeleteVolumeBackupPolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteVolumeBackupPolicyRequest interceptRequest(
-            DeleteVolumeBackupPolicyRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteVolumeBackupPolicyRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteVolumeBackupPolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteVolumeBackupPolicyRequest request) {
+            com.oracle.bmc.core.requests.DeleteVolumeBackupPolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
 
@@ -52,18 +52,21 @@ public class DeleteVolumeBackupPolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteVolumeBackupPolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteVolumeBackupPolicyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteVolumeBackupPolicyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteVolumeBackupPolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteVolumeBackupPolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteVolumeBackupPolicyResponse>() {
                             @Override
-                            public DeleteVolumeBackupPolicyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.DeleteVolumeBackupPolicyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteVolumeBackupPolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteVolumeBackupPolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -74,8 +77,11 @@ public class DeleteVolumeBackupPolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteVolumeBackupPolicyResponse.Builder builder =
-                                        DeleteVolumeBackupPolicyResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteVolumeBackupPolicyResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteVolumeBackupPolicyResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -89,7 +95,8 @@ public class DeleteVolumeBackupPolicyConverter {
                                                     String.class));
                                 }
 
-                                DeleteVolumeBackupPolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteVolumeBackupPolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class ChangeDhcpOptionsCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeDhcpOptionsCompartmentRequest interceptRequest(
-            ChangeDhcpOptionsCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeDhcpOptionsCompartmentRequest interceptRequest(
+            com.oracle.bmc.core.requests.ChangeDhcpOptionsCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeDhcpOptionsCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeDhcpOptionsCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
         Validate.notNull(
@@ -57,18 +57,23 @@ public class ChangeDhcpOptionsCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeDhcpOptionsCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeDhcpOptionsCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .ChangeDhcpOptionsCompartmentResponse>() {
                             @Override
-                            public ChangeDhcpOptionsCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeDhcpOptionsCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeDhcpOptionsCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeDhcpOptionsCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +84,12 @@ public class ChangeDhcpOptionsCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeDhcpOptionsCompartmentResponse.Builder builder =
-                                        ChangeDhcpOptionsCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses.ChangeDhcpOptionsCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeDhcpOptionsCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -103,8 +112,8 @@ public class ChangeDhcpOptionsCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeDhcpOptionsCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.ChangeDhcpOptionsCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListCpeDeviceShapesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCpeDeviceShapesRequest interceptRequest(ListCpeDeviceShapesRequest request) {
+    public static com.oracle.bmc.core.requests.ListCpeDeviceShapesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListCpeDeviceShapesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListCpeDeviceShapesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListCpeDeviceShapesRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -56,18 +58,21 @@ public class ListCpeDeviceShapesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListCpeDeviceShapesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListCpeDeviceShapesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCpeDeviceShapesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListCpeDeviceShapesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCpeDeviceShapesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListCpeDeviceShapesResponse>() {
                             @Override
-                            public ListCpeDeviceShapesResponse apply(
+                            public com.oracle.bmc.core.responses.ListCpeDeviceShapesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListCpeDeviceShapesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListCpeDeviceShapesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -84,8 +89,10 @@ public class ListCpeDeviceShapesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCpeDeviceShapesResponse.Builder builder =
-                                        ListCpeDeviceShapesResponse.builder();
+                                com.oracle.bmc.core.responses.ListCpeDeviceShapesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListCpeDeviceShapesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -113,7 +120,8 @@ public class ListCpeDeviceShapesConverter {
                                                     String.class));
                                 }
 
-                                ListCpeDeviceShapesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListCpeDeviceShapesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class UpdateDbHomeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateDbHomeRequest interceptRequest(UpdateDbHomeRequest request) {
+    public static com.oracle.bmc.database.requests.UpdateDbHomeRequest interceptRequest(
+            com.oracle.bmc.database.requests.UpdateDbHomeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateDbHomeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.UpdateDbHomeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbHomeId(), "dbHomeId must not be blank");
         Validate.notNull(request.getUpdateDbHomeDetails(), "updateDbHomeDetails is required");
@@ -46,16 +48,22 @@ public class UpdateDbHomeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbHomeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.UpdateDbHomeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbHomeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.UpdateDbHomeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateDbHomeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.UpdateDbHomeResponse>() {
                             @Override
-                            public UpdateDbHomeResponse apply(
+                            public com.oracle.bmc.database.responses.UpdateDbHomeResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateDbHomeResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.UpdateDbHomeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<DbHome>>
@@ -67,8 +75,10 @@ public class UpdateDbHomeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateDbHomeResponse.Builder builder =
-                                        UpdateDbHomeResponse.builder();
+                                com.oracle.bmc.database.responses.UpdateDbHomeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .UpdateDbHomeResponse.builder();
 
                                 builder.dbHome(response.getItem());
 
@@ -105,7 +115,8 @@ public class UpdateDbHomeConverter {
                                                     String.class));
                                 }
 
-                                UpdateDbHomeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.UpdateDbHomeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

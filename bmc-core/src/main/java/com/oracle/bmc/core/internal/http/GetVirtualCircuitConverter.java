@@ -16,13 +16,15 @@ public class GetVirtualCircuitConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetVirtualCircuitRequest interceptRequest(GetVirtualCircuitRequest request) {
+    public static com.oracle.bmc.core.requests.GetVirtualCircuitRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetVirtualCircuitRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetVirtualCircuitRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetVirtualCircuitRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
 
@@ -42,17 +44,21 @@ public class GetVirtualCircuitConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetVirtualCircuitResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetVirtualCircuitResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVirtualCircuitResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetVirtualCircuitResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetVirtualCircuitResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetVirtualCircuitResponse>() {
                             @Override
-                            public GetVirtualCircuitResponse apply(
+                            public com.oracle.bmc.core.responses.GetVirtualCircuitResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetVirtualCircuitResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetVirtualCircuitResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class GetVirtualCircuitConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetVirtualCircuitResponse.Builder builder =
-                                        GetVirtualCircuitResponse.builder();
+                                com.oracle.bmc.core.responses.GetVirtualCircuitResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetVirtualCircuitResponse.builder();
 
                                 builder.virtualCircuit(response.getItem());
 
@@ -92,7 +100,8 @@ public class GetVirtualCircuitConverter {
                                                     String.class));
                                 }
 
-                                GetVirtualCircuitResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetVirtualCircuitResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
