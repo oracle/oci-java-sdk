@@ -16,13 +16,15 @@ public class UploadApiKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UploadApiKeyRequest interceptRequest(UploadApiKeyRequest request) {
+    public static com.oracle.bmc.identity.requests.UploadApiKeyRequest interceptRequest(
+            com.oracle.bmc.identity.requests.UploadApiKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UploadApiKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.UploadApiKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notNull(request.getCreateApiKeyDetails(), "createApiKeyDetails is required");
@@ -47,16 +49,22 @@ public class UploadApiKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.UploadApiKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.UploadApiKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UploadApiKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.UploadApiKeyResponse>() {
                             @Override
-                            public UploadApiKeyResponse apply(
+                            public com.oracle.bmc.identity.responses.UploadApiKeyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UploadApiKeyResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.UploadApiKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<ApiKey>>
@@ -68,8 +76,10 @@ public class UploadApiKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UploadApiKeyResponse.Builder builder =
-                                        UploadApiKeyResponse.builder();
+                                com.oracle.bmc.identity.responses.UploadApiKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .UploadApiKeyResponse.builder();
 
                                 builder.apiKey(response.getItem());
 
@@ -94,7 +104,8 @@ public class UploadApiKeyConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UploadApiKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.UploadApiKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

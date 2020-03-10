@@ -16,13 +16,15 @@ public class CreateKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateKeyRequest interceptRequest(CreateKeyRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.CreateKeyRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.CreateKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.CreateKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateKeyDetails(), "createKeyDetails is required");
 
@@ -44,15 +46,22 @@ public class CreateKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.CreateKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.CreateKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.CreateKeyResponse>() {
                             @Override
-                            public CreateKeyResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateKeyResponse");
+                            public com.oracle.bmc.keymanagement.responses.CreateKeyResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.CreateKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Key>>
@@ -63,7 +72,10 @@ public class CreateKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateKeyResponse.Builder builder = CreateKeyResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.CreateKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .CreateKeyResponse.builder();
 
                                 builder.key(response.getItem());
 
@@ -88,7 +100,8 @@ public class CreateKeyConverter {
                                                     String.class));
                                 }
 
-                                CreateKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.CreateKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

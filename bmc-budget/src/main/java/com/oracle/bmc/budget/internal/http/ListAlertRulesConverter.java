@@ -16,13 +16,15 @@ public class ListAlertRulesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAlertRulesRequest interceptRequest(ListAlertRulesRequest request) {
+    public static com.oracle.bmc.budget.requests.ListAlertRulesRequest interceptRequest(
+            com.oracle.bmc.budget.requests.ListAlertRulesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAlertRulesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.budget.requests.ListAlertRulesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
 
@@ -64,7 +66,7 @@ public class ListAlertRulesConverter {
                     target.queryParam(
                             "sortBy",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getSortBy()));
+                                    request.getSortBy().getValue()));
         }
 
         if (request.getLifecycleState() != null) {
@@ -72,7 +74,7 @@ public class ListAlertRulesConverter {
                     target.queryParam(
                             "lifecycleState",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getLifecycleState()));
+                                    request.getLifecycleState().getValue()));
         }
 
         if (request.getDisplayName() != null) {
@@ -94,16 +96,22 @@ public class ListAlertRulesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertRulesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.budget.responses.ListAlertRulesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlertRulesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.budget.responses.ListAlertRulesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAlertRulesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.budget.responses.ListAlertRulesResponse>() {
                             @Override
-                            public ListAlertRulesResponse apply(
+                            public com.oracle.bmc.budget.responses.ListAlertRulesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListAlertRulesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.budget.responses.ListAlertRulesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -120,8 +128,10 @@ public class ListAlertRulesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAlertRulesResponse.Builder builder =
-                                        ListAlertRulesResponse.builder();
+                                com.oracle.bmc.budget.responses.ListAlertRulesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.budget.responses
+                                                        .ListAlertRulesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -149,7 +159,8 @@ public class ListAlertRulesConverter {
                                                     String.class));
                                 }
 
-                                ListAlertRulesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.budget.responses.ListAlertRulesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

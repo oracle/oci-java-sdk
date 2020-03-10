@@ -16,13 +16,15 @@ public class ListTransferDevicesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTransferDevicesRequest interceptRequest(ListTransferDevicesRequest request) {
+    public static com.oracle.bmc.dts.requests.ListTransferDevicesRequest interceptRequest(
+            com.oracle.bmc.dts.requests.ListTransferDevicesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTransferDevicesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dts.requests.ListTransferDevicesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
 
@@ -59,18 +61,21 @@ public class ListTransferDevicesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListTransferDevicesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.ListTransferDevicesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTransferDevicesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.ListTransferDevicesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTransferDevicesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.ListTransferDevicesResponse>() {
                             @Override
-                            public ListTransferDevicesResponse apply(
+                            public com.oracle.bmc.dts.responses.ListTransferDevicesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListTransferDevicesResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.ListTransferDevicesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -84,8 +89,10 @@ public class ListTransferDevicesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTransferDevicesResponse.Builder builder =
-                                        ListTransferDevicesResponse.builder();
+                                com.oracle.bmc.dts.responses.ListTransferDevicesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .ListTransferDevicesResponse.builder();
 
                                 builder.multipleTransferDevices(response.getItem());
 
@@ -101,7 +108,8 @@ public class ListTransferDevicesConverter {
                                                     String.class));
                                 }
 
-                                ListTransferDevicesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.ListTransferDevicesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

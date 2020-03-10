@@ -16,15 +16,15 @@ public class ListAvailabilityDomainsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAvailabilityDomainsRequest interceptRequest(
-            ListAvailabilityDomainsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListAvailabilityDomainsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListAvailabilityDomainsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListAvailabilityDomainsRequest request) {
+            com.oracle.bmc.identity.requests.ListAvailabilityDomainsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -45,18 +45,22 @@ public class ListAvailabilityDomainsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .ListAvailabilityDomainsResponse>() {
                             @Override
-                            public ListAvailabilityDomainsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAvailabilityDomainsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +77,11 @@ public class ListAvailabilityDomainsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAvailabilityDomainsResponse.Builder builder =
-                                        ListAvailabilityDomainsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListAvailabilityDomainsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -102,7 +109,8 @@ public class ListAvailabilityDomainsConverter {
                                                     String.class));
                                 }
 
-                                ListAvailabilityDomainsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

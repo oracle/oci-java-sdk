@@ -16,13 +16,15 @@ public class ListResourceTypesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListResourceTypesRequest interceptRequest(ListResourceTypesRequest request) {
+    public static com.oracle.bmc.resourcesearch.requests.ListResourceTypesRequest interceptRequest(
+            com.oracle.bmc.resourcesearch.requests.ListResourceTypesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListResourceTypesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcesearch.requests.ListResourceTypesRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -56,17 +58,22 @@ public class ListResourceTypesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListResourceTypesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcesearch.responses.ListResourceTypesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcesearch.responses.ListResourceTypesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListResourceTypesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcesearch.responses
+                                        .ListResourceTypesResponse>() {
                             @Override
-                            public ListResourceTypesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.resourcesearch.responses.ListResourceTypesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListResourceTypesResponse");
+                                        "Transform function invoked for com.oracle.bmc.resourcesearch.responses.ListResourceTypesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -82,8 +89,11 @@ public class ListResourceTypesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListResourceTypesResponse.Builder builder =
-                                        ListResourceTypesResponse.builder();
+                                com.oracle.bmc.resourcesearch.responses.ListResourceTypesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.resourcesearch.responses
+                                                        .ListResourceTypesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -111,7 +121,8 @@ public class ListResourceTypesConverter {
                                                     String.class));
                                 }
 
-                                ListResourceTypesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcesearch.responses.ListResourceTypesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

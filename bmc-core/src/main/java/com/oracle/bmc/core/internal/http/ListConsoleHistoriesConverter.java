@@ -16,14 +16,15 @@ public class ListConsoleHistoriesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListConsoleHistoriesRequest interceptRequest(
-            ListConsoleHistoriesRequest request) {
+    public static com.oracle.bmc.core.requests.ListConsoleHistoriesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListConsoleHistoriesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListConsoleHistoriesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListConsoleHistoriesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -100,18 +101,21 @@ public class ListConsoleHistoriesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListConsoleHistoriesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListConsoleHistoriesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListConsoleHistoriesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListConsoleHistoriesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListConsoleHistoriesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListConsoleHistoriesResponse>() {
                             @Override
-                            public ListConsoleHistoriesResponse apply(
+                            public com.oracle.bmc.core.responses.ListConsoleHistoriesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListConsoleHistoriesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListConsoleHistoriesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -128,8 +132,10 @@ public class ListConsoleHistoriesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListConsoleHistoriesResponse.Builder builder =
-                                        ListConsoleHistoriesResponse.builder();
+                                com.oracle.bmc.core.responses.ListConsoleHistoriesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListConsoleHistoriesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -157,7 +163,8 @@ public class ListConsoleHistoriesConverter {
                                                     String.class));
                                 }
 
-                                ListConsoleHistoriesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListConsoleHistoriesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

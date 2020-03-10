@@ -16,14 +16,15 @@ public class ChangeTableCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeTableCompartmentRequest interceptRequest(
-            ChangeTableCompartmentRequest request) {
+    public static com.oracle.bmc.nosql.requests.ChangeTableCompartmentRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.ChangeTableCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeTableCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.ChangeTableCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
         Validate.notNull(
@@ -60,18 +61,21 @@ public class ChangeTableCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeTableCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.nosql.responses.ChangeTableCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeTableCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.ChangeTableCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeTableCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.ChangeTableCompartmentResponse>() {
                             @Override
-                            public ChangeTableCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.nosql.responses.ChangeTableCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeTableCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.ChangeTableCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +86,11 @@ public class ChangeTableCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeTableCompartmentResponse.Builder builder =
-                                        ChangeTableCompartmentResponse.builder();
+                                com.oracle.bmc.nosql.responses.ChangeTableCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.nosql.responses
+                                                        .ChangeTableCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -109,7 +116,8 @@ public class ChangeTableCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeTableCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.ChangeTableCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

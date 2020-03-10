@@ -16,13 +16,15 @@ public class CreateInstancePoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateInstancePoolRequest interceptRequest(CreateInstancePoolRequest request) {
+    public static com.oracle.bmc.core.requests.CreateInstancePoolRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateInstancePoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateInstancePoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateInstancePoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateInstancePoolDetails(), "createInstancePoolDetails is required");
@@ -42,17 +44,21 @@ public class CreateInstancePoolConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateInstancePoolResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateInstancePoolResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateInstancePoolResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateInstancePoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateInstancePoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateInstancePoolResponse>() {
                             @Override
-                            public CreateInstancePoolResponse apply(
+                            public com.oracle.bmc.core.responses.CreateInstancePoolResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateInstancePoolResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateInstancePoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateInstancePoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateInstancePoolResponse.Builder builder =
-                                        CreateInstancePoolResponse.builder();
+                                com.oracle.bmc.core.responses.CreateInstancePoolResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateInstancePoolResponse.builder();
 
                                 builder.instancePool(response.getItem());
 
@@ -92,7 +100,8 @@ public class CreateInstancePoolConverter {
                                                     String.class));
                                 }
 
-                                CreateInstancePoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateInstancePoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

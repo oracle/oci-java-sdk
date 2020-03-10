@@ -16,15 +16,16 @@ public class UpdateAuthenticationPolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateAuthenticationPolicyRequest interceptRequest(
-            UpdateAuthenticationPolicyRequest request) {
+    public static com.oracle.bmc.identity.requests.UpdateAuthenticationPolicyRequest
+            interceptRequest(
+                    com.oracle.bmc.identity.requests.UpdateAuthenticationPolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateAuthenticationPolicyRequest request) {
+            com.oracle.bmc.identity.requests.UpdateAuthenticationPolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCompartmentId(), "compartmentId must not be blank");
         Validate.notNull(
@@ -51,18 +52,23 @@ public class UpdateAuthenticationPolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateAuthenticationPolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.UpdateAuthenticationPolicyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAuthenticationPolicyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.UpdateAuthenticationPolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateAuthenticationPolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .UpdateAuthenticationPolicyResponse>() {
                             @Override
-                            public UpdateAuthenticationPolicyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses
+                                            .UpdateAuthenticationPolicyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateAuthenticationPolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.UpdateAuthenticationPolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +82,12 @@ public class UpdateAuthenticationPolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateAuthenticationPolicyResponse.Builder builder =
-                                        UpdateAuthenticationPolicyResponse.builder();
+                                com.oracle.bmc.identity.responses.UpdateAuthenticationPolicyResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .UpdateAuthenticationPolicyResponse
+                                                        .builder();
 
                                 builder.authenticationPolicy(response.getItem());
 
@@ -102,8 +112,8 @@ public class UpdateAuthenticationPolicyConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateAuthenticationPolicyResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.identity.responses.UpdateAuthenticationPolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

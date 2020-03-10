@@ -16,13 +16,15 @@ public class DeleteVolumeKmsKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteVolumeKmsKeyRequest interceptRequest(DeleteVolumeKmsKeyRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteVolumeKmsKeyRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteVolumeKmsKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteVolumeKmsKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteVolumeKmsKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeId(), "volumeId must not be blank");
 
@@ -47,17 +49,21 @@ public class DeleteVolumeKmsKeyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteVolumeKmsKeyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteVolumeKmsKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeKmsKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteVolumeKmsKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteVolumeKmsKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteVolumeKmsKeyResponse>() {
                             @Override
-                            public DeleteVolumeKmsKeyResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteVolumeKmsKeyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteVolumeKmsKeyResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteVolumeKmsKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -68,8 +74,10 @@ public class DeleteVolumeKmsKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteVolumeKmsKeyResponse.Builder builder =
-                                        DeleteVolumeKmsKeyResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteVolumeKmsKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteVolumeKmsKeyResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -83,7 +91,8 @@ public class DeleteVolumeKmsKeyConverter {
                                                     String.class));
                                 }
 
-                                DeleteVolumeKmsKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteVolumeKmsKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

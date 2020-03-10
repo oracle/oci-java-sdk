@@ -16,13 +16,15 @@ public class UploadCredentialsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UploadCredentialsRequest interceptRequest(UploadCredentialsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.UploadCredentialsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.UploadCredentialsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UploadCredentialsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.UploadCredentialsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -68,17 +70,21 @@ public class UploadCredentialsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UploadCredentialsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.UploadCredentialsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UploadCredentialsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.UploadCredentialsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UploadCredentialsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.UploadCredentialsResponse>() {
                             @Override
-                            public UploadCredentialsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.UploadCredentialsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UploadCredentialsResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.UploadCredentialsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -92,8 +98,11 @@ public class UploadCredentialsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UploadCredentialsResponse.Builder builder =
-                                        UploadCredentialsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.UploadCredentialsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .UploadCredentialsResponse.builder();
 
                                 builder.connection(response.getItem());
 
@@ -118,7 +127,8 @@ public class UploadCredentialsConverter {
                                                     String.class));
                                 }
 
-                                UploadCredentialsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.UploadCredentialsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

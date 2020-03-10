@@ -16,13 +16,15 @@ public class GetCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetCompartmentRequest interceptRequest(GetCompartmentRequest request) {
+    public static com.oracle.bmc.identity.requests.GetCompartmentRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GetCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCompartmentId(), "compartmentId must not be blank");
 
@@ -41,16 +43,22 @@ public class GetCompartmentConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.GetCompartmentResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.GetCompartmentResponse>() {
                             @Override
-                            public GetCompartmentResponse apply(
+                            public com.oracle.bmc.identity.responses.GetCompartmentResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetCompartmentResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -64,8 +72,10 @@ public class GetCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetCompartmentResponse.Builder builder =
-                                        GetCompartmentResponse.builder();
+                                com.oracle.bmc.identity.responses.GetCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .GetCompartmentResponse.builder();
 
                                 builder.compartment(response.getItem());
 
@@ -90,7 +100,8 @@ public class GetCompartmentConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

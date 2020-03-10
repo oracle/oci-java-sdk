@@ -16,13 +16,15 @@ public class UpdateVcnConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateVcnRequest interceptRequest(UpdateVcnRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateVcnRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateVcnRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateVcnRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateVcnRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
         Validate.notNull(request.getUpdateVcnDetails(), "updateVcnDetails is required");
@@ -46,15 +48,20 @@ public class UpdateVcnConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVcnResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.UpdateVcnResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVcnResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.UpdateVcnResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateVcnResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateVcnResponse>() {
                             @Override
-                            public UpdateVcnResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateVcnResponse");
+                            public com.oracle.bmc.core.responses.UpdateVcnResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateVcnResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Vcn>>
@@ -65,7 +72,8 @@ public class UpdateVcnConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateVcnResponse.Builder builder = UpdateVcnResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateVcnResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.UpdateVcnResponse.builder();
 
                                 builder.vcn(response.getItem());
 
@@ -90,7 +98,8 @@ public class UpdateVcnConverter {
                                                     String.class));
                                 }
 
-                                UpdateVcnResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateVcnResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

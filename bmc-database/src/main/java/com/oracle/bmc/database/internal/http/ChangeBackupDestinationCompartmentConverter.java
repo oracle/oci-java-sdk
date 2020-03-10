@@ -16,15 +16,17 @@ public class ChangeBackupDestinationCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeBackupDestinationCompartmentRequest interceptRequest(
-            ChangeBackupDestinationCompartmentRequest request) {
+    public static com.oracle.bmc.database.requests.ChangeBackupDestinationCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ChangeBackupDestinationCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeBackupDestinationCompartmentRequest request) {
+            com.oracle.bmc.database.requests.ChangeBackupDestinationCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getChangeCompartmentDetails(), "changeCompartmentDetails is required");
@@ -61,19 +63,24 @@ public class ChangeBackupDestinationCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeBackupDestinationCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ChangeBackupDestinationCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeBackupDestinationCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .ChangeBackupDestinationCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeBackupDestinationCompartmentResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .ChangeBackupDestinationCompartmentResponse>() {
                             @Override
-                            public ChangeBackupDestinationCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ChangeBackupDestinationCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeBackupDestinationCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ChangeBackupDestinationCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +91,12 @@ public class ChangeBackupDestinationCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeBackupDestinationCompartmentResponse.Builder builder =
-                                        ChangeBackupDestinationCompartmentResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .ChangeBackupDestinationCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ChangeBackupDestinationCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -120,8 +131,9 @@ public class ChangeBackupDestinationCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeBackupDestinationCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .ChangeBackupDestinationCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

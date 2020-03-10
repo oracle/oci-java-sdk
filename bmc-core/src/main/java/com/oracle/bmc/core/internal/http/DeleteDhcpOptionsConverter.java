@@ -16,13 +16,15 @@ public class DeleteDhcpOptionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteDhcpOptionsRequest interceptRequest(DeleteDhcpOptionsRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteDhcpOptionsRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteDhcpOptionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteDhcpOptionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteDhcpOptionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
 
@@ -46,17 +48,21 @@ public class DeleteDhcpOptionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteDhcpOptionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteDhcpOptionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteDhcpOptionsResponse>() {
                             @Override
-                            public DeleteDhcpOptionsResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteDhcpOptionsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteDhcpOptionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteDhcpOptionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class DeleteDhcpOptionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteDhcpOptionsResponse.Builder builder =
-                                        DeleteDhcpOptionsResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteDhcpOptionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteDhcpOptionsResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +90,8 @@ public class DeleteDhcpOptionsConverter {
                                                     String.class));
                                 }
 
-                                DeleteDhcpOptionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteDhcpOptionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

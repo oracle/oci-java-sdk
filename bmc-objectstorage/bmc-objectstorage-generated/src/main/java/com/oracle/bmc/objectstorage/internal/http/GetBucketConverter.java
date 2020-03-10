@@ -16,13 +16,15 @@ public class GetBucketConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetBucketRequest interceptRequest(GetBucketRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.GetBucketRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.GetBucketRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetBucketRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.GetBucketRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -67,15 +69,22 @@ public class GetBucketConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetBucketResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.GetBucketResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetBucketResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.GetBucketResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetBucketResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.GetBucketResponse>() {
                             @Override
-                            public GetBucketResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetBucketResponse");
+                            public com.oracle.bmc.objectstorage.responses.GetBucketResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.GetBucketResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Bucket>>
@@ -87,7 +96,10 @@ public class GetBucketConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetBucketResponse.Builder builder = GetBucketResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.GetBucketResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .GetBucketResponse.builder();
 
                                 if (response.getStatusCode() != 304) {
                                     builder.bucket(response.getItem());
@@ -129,7 +141,8 @@ public class GetBucketConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                GetBucketResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.GetBucketResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

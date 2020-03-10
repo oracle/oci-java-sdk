@@ -16,15 +16,16 @@ public class DetachDevicesFromTransferPackageConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DetachDevicesFromTransferPackageRequest interceptRequest(
-            DetachDevicesFromTransferPackageRequest request) {
+    public static com.oracle.bmc.dts.requests.DetachDevicesFromTransferPackageRequest
+            interceptRequest(
+                    com.oracle.bmc.dts.requests.DetachDevicesFromTransferPackageRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DetachDevicesFromTransferPackageRequest request) {
+            com.oracle.bmc.dts.requests.DetachDevicesFromTransferPackageRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
         Validate.notBlank(
@@ -53,19 +54,23 @@ public class DetachDevicesFromTransferPackageConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DetachDevicesFromTransferPackageResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.DetachDevicesFromTransferPackageResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DetachDevicesFromTransferPackageResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.DetachDevicesFromTransferPackageResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DetachDevicesFromTransferPackageResponse>() {
+                                com.oracle.bmc.dts.responses
+                                        .DetachDevicesFromTransferPackageResponse>() {
                             @Override
-                            public DetachDevicesFromTransferPackageResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses
+                                            .DetachDevicesFromTransferPackageResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DetachDevicesFromTransferPackageResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.DetachDevicesFromTransferPackageResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +81,12 @@ public class DetachDevicesFromTransferPackageConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DetachDevicesFromTransferPackageResponse.Builder builder =
-                                        DetachDevicesFromTransferPackageResponse.builder();
+                                com.oracle.bmc.dts.responses
+                                                .DetachDevicesFromTransferPackageResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .DetachDevicesFromTransferPackageResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -100,8 +109,9 @@ public class DetachDevicesFromTransferPackageConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                DetachDevicesFromTransferPackageResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dts.responses
+                                                .DetachDevicesFromTransferPackageResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,14 +16,15 @@ public class UpdateVirtualCircuitConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateVirtualCircuitRequest interceptRequest(
-            UpdateVirtualCircuitRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateVirtualCircuitRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateVirtualCircuitRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateVirtualCircuitRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateVirtualCircuitRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
         Validate.notNull(
@@ -50,18 +51,21 @@ public class UpdateVirtualCircuitConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateVirtualCircuitResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateVirtualCircuitResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateVirtualCircuitResponse>() {
                             @Override
-                            public UpdateVirtualCircuitResponse apply(
+                            public com.oracle.bmc.core.responses.UpdateVirtualCircuitResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateVirtualCircuitResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateVirtualCircuitResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -75,8 +79,10 @@ public class UpdateVirtualCircuitConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateVirtualCircuitResponse.Builder builder =
-                                        UpdateVirtualCircuitResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateVirtualCircuitResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateVirtualCircuitResponse.builder();
 
                                 builder.virtualCircuit(response.getItem());
 
@@ -101,7 +107,8 @@ public class UpdateVirtualCircuitConverter {
                                                     String.class));
                                 }
 
-                                UpdateVirtualCircuitResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateVirtualCircuitResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

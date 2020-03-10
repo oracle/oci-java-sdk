@@ -16,15 +16,15 @@ public class DeleteInstanceConfigurationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteInstanceConfigurationRequest interceptRequest(
-            DeleteInstanceConfigurationRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteInstanceConfigurationRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteInstanceConfigurationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteInstanceConfigurationRequest request) {
+            com.oracle.bmc.core.requests.DeleteInstanceConfigurationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getInstanceConfigurationId(), "instanceConfigurationId must not be blank");
@@ -49,18 +49,22 @@ public class DeleteInstanceConfigurationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteInstanceConfigurationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteInstanceConfigurationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteInstanceConfigurationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteInstanceConfigurationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteInstanceConfigurationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .DeleteInstanceConfigurationResponse>() {
                             @Override
-                            public DeleteInstanceConfigurationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.DeleteInstanceConfigurationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteInstanceConfigurationResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteInstanceConfigurationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +75,12 @@ public class DeleteInstanceConfigurationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteInstanceConfigurationResponse.Builder builder =
-                                        DeleteInstanceConfigurationResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteInstanceConfigurationResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteInstanceConfigurationResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,8 +94,8 @@ public class DeleteInstanceConfigurationConverter {
                                                     String.class));
                                 }
 
-                                DeleteInstanceConfigurationResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.DeleteInstanceConfigurationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

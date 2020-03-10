@@ -16,13 +16,15 @@ public class UpdateImageConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateImageRequest interceptRequest(UpdateImageRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateImageRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateImageRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateImageRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateImageRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
         Validate.notNull(request.getUpdateImageDetails(), "updateImageDetails is required");
@@ -50,16 +52,21 @@ public class UpdateImageConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateImageResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.UpdateImageResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateImageResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateImageResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateImageResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateImageResponse>() {
                             @Override
-                            public UpdateImageResponse apply(
+                            public com.oracle.bmc.core.responses.UpdateImageResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateImageResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateImageResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Image>>
@@ -71,7 +78,8 @@ public class UpdateImageConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateImageResponse.Builder builder = UpdateImageResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateImageResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.UpdateImageResponse.builder();
 
                                 builder.image(response.getItem());
 
@@ -96,7 +104,8 @@ public class UpdateImageConverter {
                                                     String.class));
                                 }
 
-                                UpdateImageResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateImageResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

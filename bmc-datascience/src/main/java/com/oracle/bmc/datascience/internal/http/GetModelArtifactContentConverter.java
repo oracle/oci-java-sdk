@@ -15,15 +15,16 @@ public class GetModelArtifactContentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetModelArtifactContentRequest interceptRequest(
-            GetModelArtifactContentRequest request) {
+    public static com.oracle.bmc.datascience.requests.GetModelArtifactContentRequest
+            interceptRequest(
+                    com.oracle.bmc.datascience.requests.GetModelArtifactContentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetModelArtifactContentRequest request) {
+            com.oracle.bmc.datascience.requests.GetModelArtifactContentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
 
@@ -53,18 +54,23 @@ public class GetModelArtifactContentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetModelArtifactContentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.GetModelArtifactContentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetModelArtifactContentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.GetModelArtifactContentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetModelArtifactContentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses
+                                        .GetModelArtifactContentResponse>() {
                             @Override
-                            public GetModelArtifactContentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses
+                                            .GetModelArtifactContentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetModelArtifactContentResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.GetModelArtifactContentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +84,11 @@ public class GetModelArtifactContentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetModelArtifactContentResponse.Builder builder =
-                                        GetModelArtifactContentResponse.builder();
+                                com.oracle.bmc.datascience.responses.GetModelArtifactContentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .GetModelArtifactContentResponse.builder();
 
                                 builder.inputStream(response.getItem());
 
@@ -152,7 +161,8 @@ public class GetModelArtifactContentConverter {
                                                     java.util.Date.class));
                                 }
 
-                                GetModelArtifactContentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.GetModelArtifactContentResponse
+                                        responseWrapper = builder.build();
 
                                 return responseWrapper;
                             }

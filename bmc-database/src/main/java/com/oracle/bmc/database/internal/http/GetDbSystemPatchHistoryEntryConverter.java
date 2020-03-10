@@ -16,15 +16,16 @@ public class GetDbSystemPatchHistoryEntryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDbSystemPatchHistoryEntryRequest interceptRequest(
-            GetDbSystemPatchHistoryEntryRequest request) {
+    public static com.oracle.bmc.database.requests.GetDbSystemPatchHistoryEntryRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.GetDbSystemPatchHistoryEntryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetDbSystemPatchHistoryEntryRequest request) {
+            com.oracle.bmc.database.requests.GetDbSystemPatchHistoryEntryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
         Validate.notBlank(
@@ -50,18 +51,23 @@ public class GetDbSystemPatchHistoryEntryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetDbSystemPatchHistoryEntryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetDbSystemPatchHistoryEntryResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDbSystemPatchHistoryEntryResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetDbSystemPatchHistoryEntryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDbSystemPatchHistoryEntryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .GetDbSystemPatchHistoryEntryResponse>() {
                             @Override
-                            public GetDbSystemPatchHistoryEntryResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .GetDbSystemPatchHistoryEntryResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetDbSystemPatchHistoryEntryResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetDbSystemPatchHistoryEntryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -75,8 +81,12 @@ public class GetDbSystemPatchHistoryEntryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDbSystemPatchHistoryEntryResponse.Builder builder =
-                                        GetDbSystemPatchHistoryEntryResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .GetDbSystemPatchHistoryEntryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetDbSystemPatchHistoryEntryResponse
+                                                        .builder();
 
                                 builder.patchHistoryEntry(response.getItem());
 
@@ -101,8 +111,9 @@ public class GetDbSystemPatchHistoryEntryConverter {
                                                     String.class));
                                 }
 
-                                GetDbSystemPatchHistoryEntryResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .GetDbSystemPatchHistoryEntryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

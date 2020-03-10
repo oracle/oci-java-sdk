@@ -16,14 +16,15 @@ public class DeleteVmClusterNetworkConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteVmClusterNetworkRequest interceptRequest(
-            DeleteVmClusterNetworkRequest request) {
+    public static com.oracle.bmc.database.requests.DeleteVmClusterNetworkRequest interceptRequest(
+            com.oracle.bmc.database.requests.DeleteVmClusterNetworkRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteVmClusterNetworkRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.DeleteVmClusterNetworkRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
@@ -57,18 +58,22 @@ public class DeleteVmClusterNetworkConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteVmClusterNetworkResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DeleteVmClusterNetworkResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteVmClusterNetworkResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.DeleteVmClusterNetworkResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteVmClusterNetworkResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .DeleteVmClusterNetworkResponse>() {
                             @Override
-                            public DeleteVmClusterNetworkResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.DeleteVmClusterNetworkResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteVmClusterNetworkResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DeleteVmClusterNetworkResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +84,11 @@ public class DeleteVmClusterNetworkConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteVmClusterNetworkResponse.Builder builder =
-                                        DeleteVmClusterNetworkResponse.builder();
+                                com.oracle.bmc.database.responses.DeleteVmClusterNetworkResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DeleteVmClusterNetworkResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -106,7 +114,8 @@ public class DeleteVmClusterNetworkConverter {
                                                     String.class));
                                 }
 
-                                DeleteVmClusterNetworkResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.DeleteVmClusterNetworkResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  * <ul>
  *   <li>
  *     Updating database with backupDestination. See:
- *       <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm">overview</a>
+ *       <a href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a>
  *       for more information</li>
  * </ul>
  */

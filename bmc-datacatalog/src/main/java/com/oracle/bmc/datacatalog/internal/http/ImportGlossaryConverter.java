@@ -16,13 +16,15 @@ public class ImportGlossaryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ImportGlossaryRequest interceptRequest(ImportGlossaryRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ImportGlossaryRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ImportGlossaryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ImportGlossaryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ImportGlossaryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -65,16 +67,22 @@ public class ImportGlossaryConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ImportGlossaryResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ImportGlossaryResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportGlossaryResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ImportGlossaryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ImportGlossaryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ImportGlossaryResponse>() {
                             @Override
-                            public ImportGlossaryResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ImportGlossaryResponse");
+                            public com.oracle.bmc.datacatalog.responses.ImportGlossaryResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ImportGlossaryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -85,8 +93,10 @@ public class ImportGlossaryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ImportGlossaryResponse.Builder builder =
-                                        ImportGlossaryResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ImportGlossaryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ImportGlossaryResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -109,7 +119,8 @@ public class ImportGlossaryConverter {
                                                     String.class));
                                 }
 
-                                ImportGlossaryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ImportGlossaryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

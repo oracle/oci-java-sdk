@@ -16,13 +16,15 @@ public class CreateBudgetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateBudgetRequest interceptRequest(CreateBudgetRequest request) {
+    public static com.oracle.bmc.budget.requests.CreateBudgetRequest interceptRequest(
+            com.oracle.bmc.budget.requests.CreateBudgetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateBudgetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.budget.requests.CreateBudgetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateBudgetDetails(), "createBudgetDetails is required");
 
@@ -44,16 +46,21 @@ public class CreateBudgetConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateBudgetResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.budget.responses.CreateBudgetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBudgetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.budget.responses.CreateBudgetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateBudgetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.budget.responses.CreateBudgetResponse>() {
                             @Override
-                            public CreateBudgetResponse apply(
+                            public com.oracle.bmc.budget.responses.CreateBudgetResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateBudgetResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.budget.responses.CreateBudgetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Budget>>
@@ -65,8 +72,10 @@ public class CreateBudgetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateBudgetResponse.Builder builder =
-                                        CreateBudgetResponse.builder();
+                                com.oracle.bmc.budget.responses.CreateBudgetResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.budget.responses.CreateBudgetResponse
+                                                        .builder();
 
                                 builder.budget(response.getItem());
 
@@ -91,7 +100,8 @@ public class CreateBudgetConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateBudgetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.budget.responses.CreateBudgetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

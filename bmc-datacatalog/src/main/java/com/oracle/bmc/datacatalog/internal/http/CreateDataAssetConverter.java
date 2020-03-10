@@ -16,13 +16,15 @@ public class CreateDataAssetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateDataAssetRequest interceptRequest(CreateDataAssetRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.CreateDataAssetRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.CreateDataAssetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateDataAssetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.CreateDataAssetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notNull(request.getCreateDataAssetDetails(), "createDataAssetDetails is required");
@@ -52,16 +54,21 @@ public class CreateDataAssetConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateDataAssetResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.CreateDataAssetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.CreateDataAssetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateDataAssetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.CreateDataAssetResponse>() {
                             @Override
-                            public CreateDataAssetResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateDataAssetResponse");
+                            public com.oracle.bmc.datacatalog.responses.CreateDataAssetResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.CreateDataAssetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<DataAsset>>
@@ -73,8 +80,10 @@ public class CreateDataAssetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateDataAssetResponse.Builder builder =
-                                        CreateDataAssetResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.CreateDataAssetResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .CreateDataAssetResponse.builder();
 
                                 builder.dataAsset(response.getItem());
 
@@ -99,7 +108,8 @@ public class CreateDataAssetConverter {
                                                     String.class));
                                 }
 
-                                CreateDataAssetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.CreateDataAssetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

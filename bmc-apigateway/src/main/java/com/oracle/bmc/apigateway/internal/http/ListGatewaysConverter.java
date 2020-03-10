@@ -16,13 +16,15 @@ public class ListGatewaysConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListGatewaysRequest interceptRequest(ListGatewaysRequest request) {
+    public static com.oracle.bmc.apigateway.requests.ListGatewaysRequest interceptRequest(
+            com.oracle.bmc.apigateway.requests.ListGatewaysRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListGatewaysRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.apigateway.requests.ListGatewaysRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -94,16 +96,22 @@ public class ListGatewaysConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListGatewaysResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.apigateway.responses.ListGatewaysResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListGatewaysResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.apigateway.responses.ListGatewaysResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListGatewaysResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.apigateway.responses.ListGatewaysResponse>() {
                             @Override
-                            public ListGatewaysResponse apply(
+                            public com.oracle.bmc.apigateway.responses.ListGatewaysResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListGatewaysResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.apigateway.responses.ListGatewaysResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -117,8 +125,10 @@ public class ListGatewaysConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListGatewaysResponse.Builder builder =
-                                        ListGatewaysResponse.builder();
+                                com.oracle.bmc.apigateway.responses.ListGatewaysResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.apigateway.responses
+                                                        .ListGatewaysResponse.builder();
 
                                 builder.gatewayCollection(response.getItem());
 
@@ -158,7 +168,8 @@ public class ListGatewaysConverter {
                                                     String.class));
                                 }
 
-                                ListGatewaysResponse responseWrapper = builder.build();
+                                com.oracle.bmc.apigateway.responses.ListGatewaysResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

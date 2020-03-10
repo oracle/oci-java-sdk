@@ -16,13 +16,15 @@ public class ListGiVersionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListGiVersionsRequest interceptRequest(ListGiVersionsRequest request) {
+    public static com.oracle.bmc.database.requests.ListGiVersionsRequest interceptRequest(
+            com.oracle.bmc.database.requests.ListGiVersionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListGiVersionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.ListGiVersionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -74,16 +76,22 @@ public class ListGiVersionsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListGiVersionsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListGiVersionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListGiVersionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListGiVersionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListGiVersionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.ListGiVersionsResponse>() {
                             @Override
-                            public ListGiVersionsResponse apply(
+                            public com.oracle.bmc.database.responses.ListGiVersionsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListGiVersionsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListGiVersionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -100,8 +108,10 @@ public class ListGiVersionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListGiVersionsResponse.Builder builder =
-                                        ListGiVersionsResponse.builder();
+                                com.oracle.bmc.database.responses.ListGiVersionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListGiVersionsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -129,7 +139,8 @@ public class ListGiVersionsConverter {
                                                     String.class));
                                 }
 
-                                ListGiVersionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ListGiVersionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class CreateZoneConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateZoneRequest interceptRequest(CreateZoneRequest request) {
+    public static com.oracle.bmc.dns.requests.CreateZoneRequest interceptRequest(
+            com.oracle.bmc.dns.requests.CreateZoneRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateZoneRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.CreateZoneRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateZoneDetails(), "createZoneDetails is required");
 
@@ -48,15 +50,20 @@ public class CreateZoneConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateZoneResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.CreateZoneResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateZoneResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.CreateZoneResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateZoneResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.CreateZoneResponse>() {
                             @Override
-                            public CreateZoneResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateZoneResponse");
+                            public com.oracle.bmc.dns.responses.CreateZoneResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.CreateZoneResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Zone>>
@@ -67,7 +74,8 @@ public class CreateZoneConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateZoneResponse.Builder builder = CreateZoneResponse.builder();
+                                com.oracle.bmc.dns.responses.CreateZoneResponse.Builder builder =
+                                        com.oracle.bmc.dns.responses.CreateZoneResponse.builder();
 
                                 builder.zone(response.getItem());
 
@@ -92,7 +100,8 @@ public class CreateZoneConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                CreateZoneResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.CreateZoneResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

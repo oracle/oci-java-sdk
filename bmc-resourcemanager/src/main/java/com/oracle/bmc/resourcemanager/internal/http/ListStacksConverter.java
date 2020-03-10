@@ -16,13 +16,15 @@ public class ListStacksConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListStacksRequest interceptRequest(ListStacksRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.ListStacksRequest interceptRequest(
+            com.oracle.bmc.resourcemanager.requests.ListStacksRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListStacksRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.ListStacksRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -103,15 +105,22 @@ public class ListStacksConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListStacksResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.ListStacksResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListStacksResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.ListStacksResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListStacksResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses.ListStacksResponse>() {
                             @Override
-                            public ListStacksResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListStacksResponse");
+                            public com.oracle.bmc.resourcemanager.responses.ListStacksResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.ListStacksResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -127,7 +136,10 @@ public class ListStacksConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListStacksResponse.Builder builder = ListStacksResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses.ListStacksResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .ListStacksResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -155,7 +167,8 @@ public class ListStacksConverter {
                                                     String.class));
                                 }
 
-                                ListStacksResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses.ListStacksResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListCrossConnectsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCrossConnectsRequest interceptRequest(ListCrossConnectsRequest request) {
+    public static com.oracle.bmc.core.requests.ListCrossConnectsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListCrossConnectsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListCrossConnectsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListCrossConnectsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -99,17 +101,21 @@ public class ListCrossConnectsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListCrossConnectsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListCrossConnectsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListCrossConnectsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCrossConnectsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListCrossConnectsResponse>() {
                             @Override
-                            public ListCrossConnectsResponse apply(
+                            public com.oracle.bmc.core.responses.ListCrossConnectsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListCrossConnectsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListCrossConnectsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -125,8 +131,10 @@ public class ListCrossConnectsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCrossConnectsResponse.Builder builder =
-                                        ListCrossConnectsResponse.builder();
+                                com.oracle.bmc.core.responses.ListCrossConnectsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListCrossConnectsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -154,7 +162,8 @@ public class ListCrossConnectsConverter {
                                                     String.class));
                                 }
 
-                                ListCrossConnectsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListCrossConnectsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

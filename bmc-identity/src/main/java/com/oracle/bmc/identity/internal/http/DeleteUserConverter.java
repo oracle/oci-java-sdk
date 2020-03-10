@@ -16,13 +16,15 @@ public class DeleteUserConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteUserRequest interceptRequest(DeleteUserRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteUserRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteUserRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteUserRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteUserRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -45,15 +47,21 @@ public class DeleteUserConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.identity.responses.DeleteUserResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteUserResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteUserResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteUserResponse>() {
                             @Override
-                            public DeleteUserResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteUserResponse");
+                            public com.oracle.bmc.identity.responses.DeleteUserResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteUserResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -64,7 +72,10 @@ public class DeleteUserConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteUserResponse.Builder builder = DeleteUserResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteUserResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses.DeleteUserResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -78,7 +89,8 @@ public class DeleteUserConverter {
                                                     String.class));
                                 }
 
-                                DeleteUserResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteUserResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,18 @@ public class ChangeIntegrationInstanceCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeIntegrationInstanceCompartmentRequest interceptRequest(
-            ChangeIntegrationInstanceCompartmentRequest request) {
+    public static com.oracle.bmc.integration.requests.ChangeIntegrationInstanceCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.integration.requests.ChangeIntegrationInstanceCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeIntegrationInstanceCompartmentRequest request) {
+            com.oracle.bmc.integration.requests.ChangeIntegrationInstanceCompartmentRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
@@ -58,19 +61,25 @@ public class ChangeIntegrationInstanceCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeIntegrationInstanceCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.integration.responses
+                            .ChangeIntegrationInstanceCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeIntegrationInstanceCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.integration.responses
+                                .ChangeIntegrationInstanceCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeIntegrationInstanceCompartmentResponse>() {
+                                com.oracle.bmc.integration.responses
+                                        .ChangeIntegrationInstanceCompartmentResponse>() {
                             @Override
-                            public ChangeIntegrationInstanceCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.integration.responses
+                                            .ChangeIntegrationInstanceCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeIntegrationInstanceCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.integration.responses.ChangeIntegrationInstanceCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -81,8 +90,13 @@ public class ChangeIntegrationInstanceCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeIntegrationInstanceCompartmentResponse.Builder builder =
-                                        ChangeIntegrationInstanceCompartmentResponse.builder();
+                                com.oracle.bmc.integration.responses
+                                                .ChangeIntegrationInstanceCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.integration.responses
+                                                        .ChangeIntegrationInstanceCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -108,8 +122,9 @@ public class ChangeIntegrationInstanceCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeIntegrationInstanceCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.integration.responses
+                                                .ChangeIntegrationInstanceCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class GetTopicConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetTopicRequest interceptRequest(GetTopicRequest request) {
+    public static com.oracle.bmc.ons.requests.GetTopicRequest interceptRequest(
+            com.oracle.bmc.ons.requests.GetTopicRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetTopicRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.ons.requests.GetTopicRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTopicId(), "topicId must not be blank");
 
@@ -45,15 +47,20 @@ public class GetTopicConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetTopicResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.ons.responses.GetTopicResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTopicResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.ons.responses.GetTopicResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetTopicResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.ons.responses.GetTopicResponse>() {
                             @Override
-                            public GetTopicResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetTopicResponse");
+                            public com.oracle.bmc.ons.responses.GetTopicResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.ons.responses.GetTopicResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -67,7 +74,8 @@ public class GetTopicConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetTopicResponse.Builder builder = GetTopicResponse.builder();
+                                com.oracle.bmc.ons.responses.GetTopicResponse.Builder builder =
+                                        com.oracle.bmc.ons.responses.GetTopicResponse.builder();
 
                                 builder.notificationTopic(response.getItem());
 
@@ -92,7 +100,8 @@ public class GetTopicConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetTopicResponse responseWrapper = builder.build();
+                                com.oracle.bmc.ons.responses.GetTopicResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class ChangeCertificateCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeCertificateCompartmentRequest interceptRequest(
-            ChangeCertificateCompartmentRequest request) {
+    public static com.oracle.bmc.waas.requests.ChangeCertificateCompartmentRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ChangeCertificateCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeCertificateCompartmentRequest request) {
+            com.oracle.bmc.waas.requests.ChangeCertificateCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
         Validate.notNull(
@@ -61,18 +61,23 @@ public class ChangeCertificateCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ChangeCertificateCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ChangeCertificateCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses
+                                        .ChangeCertificateCompartmentResponse>() {
                             @Override
-                            public ChangeCertificateCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses
+                                            .ChangeCertificateCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeCertificateCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ChangeCertificateCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +88,12 @@ public class ChangeCertificateCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeCertificateCompartmentResponse.Builder builder =
-                                        ChangeCertificateCompartmentResponse.builder();
+                                com.oracle.bmc.waas.responses.ChangeCertificateCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ChangeCertificateCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -98,8 +107,8 @@ public class ChangeCertificateCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeCertificateCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.waas.responses.ChangeCertificateCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListOdaInstancesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListOdaInstancesRequest interceptRequest(ListOdaInstancesRequest request) {
+    public static com.oracle.bmc.oda.requests.ListOdaInstancesRequest interceptRequest(
+            com.oracle.bmc.oda.requests.ListOdaInstancesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListOdaInstancesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.oda.requests.ListOdaInstancesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -95,17 +97,21 @@ public class ListOdaInstancesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListOdaInstancesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.oda.responses.ListOdaInstancesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListOdaInstancesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oda.responses.ListOdaInstancesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListOdaInstancesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oda.responses.ListOdaInstancesResponse>() {
                             @Override
-                            public ListOdaInstancesResponse apply(
+                            public com.oracle.bmc.oda.responses.ListOdaInstancesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListOdaInstancesResponse");
+                                        "Transform function invoked for com.oracle.bmc.oda.responses.ListOdaInstancesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -122,8 +128,10 @@ public class ListOdaInstancesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListOdaInstancesResponse.Builder builder =
-                                        ListOdaInstancesResponse.builder();
+                                com.oracle.bmc.oda.responses.ListOdaInstancesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.oda.responses
+                                                        .ListOdaInstancesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -151,7 +159,8 @@ public class ListOdaInstancesConverter {
                                                     String.class));
                                 }
 
-                                ListOdaInstancesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.oda.responses.ListOdaInstancesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

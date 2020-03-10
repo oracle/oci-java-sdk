@@ -16,13 +16,15 @@ public class ListAgreementsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAgreementsRequest interceptRequest(ListAgreementsRequest request) {
+    public static com.oracle.bmc.marketplace.requests.ListAgreementsRequest interceptRequest(
+            com.oracle.bmc.marketplace.requests.ListAgreementsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAgreementsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.marketplace.requests.ListAgreementsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getListingId(), "listingId must not be blank");
         Validate.notBlank(request.getPackageVersion(), "packageVersion must not be blank");
@@ -67,16 +69,22 @@ public class ListAgreementsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListAgreementsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.marketplace.responses.ListAgreementsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAgreementsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.marketplace.responses.ListAgreementsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAgreementsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.marketplace.responses.ListAgreementsResponse>() {
                             @Override
-                            public ListAgreementsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListAgreementsResponse");
+                            public com.oracle.bmc.marketplace.responses.ListAgreementsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.marketplace.responses.ListAgreementsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -93,8 +101,10 @@ public class ListAgreementsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAgreementsResponse.Builder builder =
-                                        ListAgreementsResponse.builder();
+                                com.oracle.bmc.marketplace.responses.ListAgreementsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.marketplace.responses
+                                                        .ListAgreementsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -122,7 +132,8 @@ public class ListAgreementsConverter {
                                                     String.class));
                                 }
 
-                                ListAgreementsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.marketplace.responses.ListAgreementsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

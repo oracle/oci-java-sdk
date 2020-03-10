@@ -16,14 +16,15 @@ public class UpdateClusterNetworkConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateClusterNetworkRequest interceptRequest(
-            UpdateClusterNetworkRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateClusterNetworkRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateClusterNetworkRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateClusterNetworkRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateClusterNetworkRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
         Validate.notNull(
@@ -54,18 +55,21 @@ public class UpdateClusterNetworkConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateClusterNetworkResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateClusterNetworkResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateClusterNetworkResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateClusterNetworkResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateClusterNetworkResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateClusterNetworkResponse>() {
                             @Override
-                            public UpdateClusterNetworkResponse apply(
+                            public com.oracle.bmc.core.responses.UpdateClusterNetworkResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateClusterNetworkResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateClusterNetworkResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -79,8 +83,10 @@ public class UpdateClusterNetworkConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateClusterNetworkResponse.Builder builder =
-                                        UpdateClusterNetworkResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateClusterNetworkResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateClusterNetworkResponse.builder();
 
                                 builder.clusterNetwork(response.getItem());
 
@@ -105,7 +111,8 @@ public class UpdateClusterNetworkConverter {
                                                     String.class));
                                 }
 
-                                UpdateClusterNetworkResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateClusterNetworkResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

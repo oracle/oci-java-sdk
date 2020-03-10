@@ -16,13 +16,15 @@ public class ListHttpMonitorsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListHttpMonitorsRequest interceptRequest(ListHttpMonitorsRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.ListHttpMonitorsRequest interceptRequest(
+            com.oracle.bmc.healthchecks.requests.ListHttpMonitorsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListHttpMonitorsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.healthchecks.requests.ListHttpMonitorsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -95,17 +97,21 @@ public class ListHttpMonitorsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListHttpMonitorsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.ListHttpMonitorsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListHttpMonitorsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.ListHttpMonitorsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListHttpMonitorsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses.ListHttpMonitorsResponse>() {
                             @Override
-                            public ListHttpMonitorsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses.ListHttpMonitorsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListHttpMonitorsResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.ListHttpMonitorsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -122,8 +128,11 @@ public class ListHttpMonitorsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListHttpMonitorsResponse.Builder builder =
-                                        ListHttpMonitorsResponse.builder();
+                                com.oracle.bmc.healthchecks.responses.ListHttpMonitorsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .ListHttpMonitorsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -151,7 +160,8 @@ public class ListHttpMonitorsConverter {
                                                     String.class));
                                 }
 
-                                ListHttpMonitorsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.healthchecks.responses.ListHttpMonitorsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

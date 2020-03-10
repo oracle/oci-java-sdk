@@ -16,13 +16,15 @@ public class DeleteRouteTableConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteRouteTableRequest interceptRequest(DeleteRouteTableRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteRouteTableRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteRouteTableRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteRouteTableRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteRouteTableRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getRtId(), "rtId must not be blank");
 
@@ -46,17 +48,21 @@ public class DeleteRouteTableConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteRouteTableResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteRouteTableResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRouteTableResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteRouteTableResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteRouteTableResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteRouteTableResponse>() {
                             @Override
-                            public DeleteRouteTableResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteRouteTableResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteRouteTableResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteRouteTableResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class DeleteRouteTableConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteRouteTableResponse.Builder builder =
-                                        DeleteRouteTableResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteRouteTableResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteRouteTableResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +90,8 @@ public class DeleteRouteTableConverter {
                                                     String.class));
                                 }
 
-                                DeleteRouteTableResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteRouteTableResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

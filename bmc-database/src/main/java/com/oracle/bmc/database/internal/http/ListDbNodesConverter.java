@@ -16,13 +16,15 @@ public class ListDbNodesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDbNodesRequest interceptRequest(ListDbNodesRequest request) {
+    public static com.oracle.bmc.database.requests.ListDbNodesRequest interceptRequest(
+            com.oracle.bmc.database.requests.ListDbNodesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListDbNodesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.ListDbNodesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -98,16 +100,22 @@ public class ListDbNodesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListDbNodesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListDbNodesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbNodesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListDbNodesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDbNodesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.ListDbNodesResponse>() {
                             @Override
-                            public ListDbNodesResponse apply(
+                            public com.oracle.bmc.database.responses.ListDbNodesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListDbNodesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListDbNodesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -124,7 +132,10 @@ public class ListDbNodesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDbNodesResponse.Builder builder = ListDbNodesResponse.builder();
+                                com.oracle.bmc.database.responses.ListDbNodesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListDbNodesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -152,7 +163,8 @@ public class ListDbNodesConverter {
                                                     String.class));
                                 }
 
-                                ListDbNodesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ListDbNodesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

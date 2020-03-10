@@ -16,13 +16,15 @@ public class ListRouteTablesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListRouteTablesRequest interceptRequest(ListRouteTablesRequest request) {
+    public static com.oracle.bmc.core.requests.ListRouteTablesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListRouteTablesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListRouteTablesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListRouteTablesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getVcnId(), "vcnId is required");
@@ -98,16 +100,21 @@ public class ListRouteTablesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListRouteTablesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListRouteTablesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRouteTablesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListRouteTablesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListRouteTablesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListRouteTablesResponse>() {
                             @Override
-                            public ListRouteTablesResponse apply(
+                            public com.oracle.bmc.core.responses.ListRouteTablesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListRouteTablesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListRouteTablesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -122,8 +129,10 @@ public class ListRouteTablesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListRouteTablesResponse.Builder builder =
-                                        ListRouteTablesResponse.builder();
+                                com.oracle.bmc.core.responses.ListRouteTablesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListRouteTablesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -151,7 +160,8 @@ public class ListRouteTablesConverter {
                                                     String.class));
                                 }
 
-                                ListRouteTablesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListRouteTablesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

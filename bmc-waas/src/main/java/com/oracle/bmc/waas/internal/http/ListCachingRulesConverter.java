@@ -16,13 +16,15 @@ public class ListCachingRulesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCachingRulesRequest interceptRequest(ListCachingRulesRequest request) {
+    public static com.oracle.bmc.waas.requests.ListCachingRulesRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListCachingRulesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListCachingRulesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListCachingRulesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -64,17 +66,21 @@ public class ListCachingRulesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListCachingRulesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ListCachingRulesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListCachingRulesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListCachingRulesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCachingRulesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListCachingRulesResponse>() {
                             @Override
-                            public ListCachingRulesResponse apply(
+                            public com.oracle.bmc.waas.responses.ListCachingRulesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListCachingRulesResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListCachingRulesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -91,8 +97,10 @@ public class ListCachingRulesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCachingRulesResponse.Builder builder =
-                                        ListCachingRulesResponse.builder();
+                                com.oracle.bmc.waas.responses.ListCachingRulesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ListCachingRulesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -129,7 +137,8 @@ public class ListCachingRulesConverter {
                                                     String.class));
                                 }
 
-                                ListCachingRulesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListCachingRulesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

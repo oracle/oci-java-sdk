@@ -16,13 +16,15 @@ public class ListRulesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListRulesRequest interceptRequest(ListRulesRequest request) {
+    public static com.oracle.bmc.events.requests.ListRulesRequest interceptRequest(
+            com.oracle.bmc.events.requests.ListRulesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListRulesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.events.requests.ListRulesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -94,15 +96,21 @@ public class ListRulesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListRulesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.events.responses.ListRulesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRulesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.events.responses.ListRulesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListRulesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.events.responses.ListRulesResponse>() {
                             @Override
-                            public ListRulesResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListRulesResponse");
+                            public com.oracle.bmc.events.responses.ListRulesResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.events.responses.ListRulesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -118,7 +126,8 @@ public class ListRulesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListRulesResponse.Builder builder = ListRulesResponse.builder();
+                                com.oracle.bmc.events.responses.ListRulesResponse.Builder builder =
+                                        com.oracle.bmc.events.responses.ListRulesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -146,7 +155,8 @@ public class ListRulesConverter {
                                                     String.class));
                                 }
 
-                                ListRulesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.events.responses.ListRulesResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

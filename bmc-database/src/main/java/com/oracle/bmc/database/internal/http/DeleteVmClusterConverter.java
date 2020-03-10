@@ -16,13 +16,15 @@ public class DeleteVmClusterConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteVmClusterRequest interceptRequest(DeleteVmClusterRequest request) {
+    public static com.oracle.bmc.database.requests.DeleteVmClusterRequest interceptRequest(
+            com.oracle.bmc.database.requests.DeleteVmClusterRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteVmClusterRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.DeleteVmClusterRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVmClusterId(), "vmClusterId must not be blank");
 
@@ -50,16 +52,21 @@ public class DeleteVmClusterConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteVmClusterResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DeleteVmClusterResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVmClusterResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.DeleteVmClusterResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteVmClusterResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.DeleteVmClusterResponse>() {
                             @Override
-                            public DeleteVmClusterResponse apply(
+                            public com.oracle.bmc.database.responses.DeleteVmClusterResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteVmClusterResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DeleteVmClusterResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,8 +77,10 @@ public class DeleteVmClusterConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteVmClusterResponse.Builder builder =
-                                        DeleteVmClusterResponse.builder();
+                                com.oracle.bmc.database.responses.DeleteVmClusterResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DeleteVmClusterResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -97,7 +106,8 @@ public class DeleteVmClusterConverter {
                                                     String.class));
                                 }
 
-                                DeleteVmClusterResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.DeleteVmClusterResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

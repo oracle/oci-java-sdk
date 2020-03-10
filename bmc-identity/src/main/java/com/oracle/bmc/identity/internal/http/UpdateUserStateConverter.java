@@ -16,13 +16,15 @@ public class UpdateUserStateConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateUserStateRequest interceptRequest(UpdateUserStateRequest request) {
+    public static com.oracle.bmc.identity.requests.UpdateUserStateRequest interceptRequest(
+            com.oracle.bmc.identity.requests.UpdateUserStateRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateUserStateRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.UpdateUserStateRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notNull(request.getUpdateStateDetails(), "updateStateDetails is required");
@@ -48,16 +50,21 @@ public class UpdateUserStateConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateUserStateResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.UpdateUserStateResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.UpdateUserStateResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateUserStateResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.UpdateUserStateResponse>() {
                             @Override
-                            public UpdateUserStateResponse apply(
+                            public com.oracle.bmc.identity.responses.UpdateUserStateResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateUserStateResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.UpdateUserStateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<User>>
@@ -68,8 +75,10 @@ public class UpdateUserStateConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateUserStateResponse.Builder builder =
-                                        UpdateUserStateResponse.builder();
+                                com.oracle.bmc.identity.responses.UpdateUserStateResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .UpdateUserStateResponse.builder();
 
                                 builder.user(response.getItem());
 
@@ -94,7 +103,8 @@ public class UpdateUserStateConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateUserStateResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.UpdateUserStateResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

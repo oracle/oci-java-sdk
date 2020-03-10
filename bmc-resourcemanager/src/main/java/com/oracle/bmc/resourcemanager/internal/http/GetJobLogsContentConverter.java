@@ -16,13 +16,15 @@ public class GetJobLogsContentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetJobLogsContentRequest interceptRequest(GetJobLogsContentRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.GetJobLogsContentRequest interceptRequest(
+            com.oracle.bmc.resourcemanager.requests.GetJobLogsContentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetJobLogsContentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.GetJobLogsContentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
 
@@ -48,17 +50,23 @@ public class GetJobLogsContentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetJobLogsContentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.GetJobLogsContentResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogsContentResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.GetJobLogsContentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetJobLogsContentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses
+                                        .GetJobLogsContentResponse>() {
                             @Override
-                            public GetJobLogsContentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.resourcemanager.responses
+                                            .GetJobLogsContentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetJobLogsContentResponse");
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.GetJobLogsContentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<String>>
@@ -70,8 +78,11 @@ public class GetJobLogsContentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetJobLogsContentResponse.Builder builder =
-                                        GetJobLogsContentResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses.GetJobLogsContentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .GetJobLogsContentResponse.builder();
 
                                 builder.value(response.getItem());
 
@@ -87,7 +98,8 @@ public class GetJobLogsContentConverter {
                                                     String.class));
                                 }
 
-                                GetJobLogsContentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses.GetJobLogsContentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

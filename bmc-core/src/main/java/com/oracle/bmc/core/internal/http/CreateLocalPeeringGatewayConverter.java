@@ -16,15 +16,15 @@ public class CreateLocalPeeringGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateLocalPeeringGatewayRequest interceptRequest(
-            CreateLocalPeeringGatewayRequest request) {
+    public static com.oracle.bmc.core.requests.CreateLocalPeeringGatewayRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateLocalPeeringGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateLocalPeeringGatewayRequest request) {
+            com.oracle.bmc.core.requests.CreateLocalPeeringGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateLocalPeeringGatewayDetails(),
@@ -45,18 +45,21 @@ public class CreateLocalPeeringGatewayConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateLocalPeeringGatewayResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateLocalPeeringGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateLocalPeeringGatewayResponse>() {
                             @Override
-                            public CreateLocalPeeringGatewayResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.CreateLocalPeeringGatewayResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateLocalPeeringGatewayResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateLocalPeeringGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +73,12 @@ public class CreateLocalPeeringGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateLocalPeeringGatewayResponse.Builder builder =
-                                        CreateLocalPeeringGatewayResponse.builder();
+                                com.oracle.bmc.core.responses.CreateLocalPeeringGatewayResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateLocalPeeringGatewayResponse
+                                                        .builder();
 
                                 builder.localPeeringGateway(response.getItem());
 
@@ -96,7 +103,8 @@ public class CreateLocalPeeringGatewayConverter {
                                                     String.class));
                                 }
 
-                                CreateLocalPeeringGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateLocalPeeringGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

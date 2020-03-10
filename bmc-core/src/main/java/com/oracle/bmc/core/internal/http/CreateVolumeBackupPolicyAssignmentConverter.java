@@ -16,15 +16,17 @@ public class CreateVolumeBackupPolicyAssignmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateVolumeBackupPolicyAssignmentRequest interceptRequest(
-            CreateVolumeBackupPolicyAssignmentRequest request) {
+    public static com.oracle.bmc.core.requests.CreateVolumeBackupPolicyAssignmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.CreateVolumeBackupPolicyAssignmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateVolumeBackupPolicyAssignmentRequest request) {
+            com.oracle.bmc.core.requests.CreateVolumeBackupPolicyAssignmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateVolumeBackupPolicyAssignmentDetails(),
@@ -41,19 +43,23 @@ public class CreateVolumeBackupPolicyAssignmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateVolumeBackupPolicyAssignmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateVolumeBackupPolicyAssignmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateVolumeBackupPolicyAssignmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateVolumeBackupPolicyAssignmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                CreateVolumeBackupPolicyAssignmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .CreateVolumeBackupPolicyAssignmentResponse>() {
                             @Override
-                            public CreateVolumeBackupPolicyAssignmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .CreateVolumeBackupPolicyAssignmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateVolumeBackupPolicyAssignmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateVolumeBackupPolicyAssignmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +74,12 @@ public class CreateVolumeBackupPolicyAssignmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateVolumeBackupPolicyAssignmentResponse.Builder builder =
-                                        CreateVolumeBackupPolicyAssignmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .CreateVolumeBackupPolicyAssignmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateVolumeBackupPolicyAssignmentResponse
+                                                        .builder();
 
                                 builder.volumeBackupPolicyAssignment(response.getItem());
 
@@ -94,8 +104,9 @@ public class CreateVolumeBackupPolicyAssignmentConverter {
                                                     String.class));
                                 }
 
-                                CreateVolumeBackupPolicyAssignmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .CreateVolumeBackupPolicyAssignmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

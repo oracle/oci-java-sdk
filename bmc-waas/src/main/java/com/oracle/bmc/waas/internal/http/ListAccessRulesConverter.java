@@ -16,13 +16,15 @@ public class ListAccessRulesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAccessRulesRequest interceptRequest(ListAccessRulesRequest request) {
+    public static com.oracle.bmc.waas.requests.ListAccessRulesRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListAccessRulesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAccessRulesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListAccessRulesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -64,16 +66,21 @@ public class ListAccessRulesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAccessRulesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ListAccessRulesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAccessRulesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListAccessRulesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAccessRulesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListAccessRulesResponse>() {
                             @Override
-                            public ListAccessRulesResponse apply(
+                            public com.oracle.bmc.waas.responses.ListAccessRulesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListAccessRulesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListAccessRulesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -88,8 +95,10 @@ public class ListAccessRulesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAccessRulesResponse.Builder builder =
-                                        ListAccessRulesResponse.builder();
+                                com.oracle.bmc.waas.responses.ListAccessRulesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ListAccessRulesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -126,7 +135,8 @@ public class ListAccessRulesConverter {
                                                     String.class));
                                 }
 
-                                ListAccessRulesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListAccessRulesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

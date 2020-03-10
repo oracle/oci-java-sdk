@@ -16,14 +16,15 @@ public class DeleteBootVolumeKmsKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteBootVolumeKmsKeyRequest interceptRequest(
-            DeleteBootVolumeKmsKeyRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteBootVolumeKmsKeyRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteBootVolumeKmsKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteBootVolumeKmsKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteBootVolumeKmsKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBootVolumeId(), "bootVolumeId must not be blank");
 
@@ -48,18 +49,21 @@ public class DeleteBootVolumeKmsKeyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteBootVolumeKmsKeyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteBootVolumeKmsKeyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteBootVolumeKmsKeyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteBootVolumeKmsKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteBootVolumeKmsKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteBootVolumeKmsKeyResponse>() {
                             @Override
-                            public DeleteBootVolumeKmsKeyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.DeleteBootVolumeKmsKeyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteBootVolumeKmsKeyResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteBootVolumeKmsKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,8 +74,10 @@ public class DeleteBootVolumeKmsKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteBootVolumeKmsKeyResponse.Builder builder =
-                                        DeleteBootVolumeKmsKeyResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteBootVolumeKmsKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteBootVolumeKmsKeyResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -85,7 +91,8 @@ public class DeleteBootVolumeKmsKeyConverter {
                                                     String.class));
                                 }
 
-                                DeleteBootVolumeKmsKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteBootVolumeKmsKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

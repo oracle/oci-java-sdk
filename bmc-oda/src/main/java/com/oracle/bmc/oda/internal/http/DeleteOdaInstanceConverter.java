@@ -16,13 +16,15 @@ public class DeleteOdaInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteOdaInstanceRequest interceptRequest(DeleteOdaInstanceRequest request) {
+    public static com.oracle.bmc.oda.requests.DeleteOdaInstanceRequest interceptRequest(
+            com.oracle.bmc.oda.requests.DeleteOdaInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteOdaInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.oda.requests.DeleteOdaInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteOdaInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteOdaInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.oda.responses.DeleteOdaInstanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteOdaInstanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oda.responses.DeleteOdaInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteOdaInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oda.responses.DeleteOdaInstanceResponse>() {
                             @Override
-                            public DeleteOdaInstanceResponse apply(
+                            public com.oracle.bmc.oda.responses.DeleteOdaInstanceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteOdaInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.oda.responses.DeleteOdaInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,10 @@ public class DeleteOdaInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteOdaInstanceResponse.Builder builder =
-                                        DeleteOdaInstanceResponse.builder();
+                                com.oracle.bmc.oda.responses.DeleteOdaInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.oda.responses
+                                                        .DeleteOdaInstanceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -98,7 +106,8 @@ public class DeleteOdaInstanceConverter {
                                                     String.class));
                                 }
 
-                                DeleteOdaInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.oda.responses.DeleteOdaInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

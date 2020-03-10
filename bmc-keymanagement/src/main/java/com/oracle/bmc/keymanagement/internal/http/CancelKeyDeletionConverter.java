@@ -16,13 +16,15 @@ public class CancelKeyDeletionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CancelKeyDeletionRequest interceptRequest(CancelKeyDeletionRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.CancelKeyDeletionRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.CancelKeyDeletionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CancelKeyDeletionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.CancelKeyDeletionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getKeyId(), "keyId must not be blank");
 
@@ -57,17 +59,22 @@ public class CancelKeyDeletionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CancelKeyDeletionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelKeyDeletionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CancelKeyDeletionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses
+                                        .CancelKeyDeletionResponse>() {
                             @Override
-                            public CancelKeyDeletionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CancelKeyDeletionResponse");
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Key>>
@@ -78,8 +85,11 @@ public class CancelKeyDeletionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CancelKeyDeletionResponse.Builder builder =
-                                        CancelKeyDeletionResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .CancelKeyDeletionResponse.builder();
 
                                 builder.key(response.getItem());
 
@@ -104,7 +114,8 @@ public class CancelKeyDeletionConverter {
                                                     String.class));
                                 }
 
-                                CancelKeyDeletionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

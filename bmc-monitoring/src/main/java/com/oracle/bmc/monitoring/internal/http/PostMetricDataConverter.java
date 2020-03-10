@@ -16,13 +16,15 @@ public class PostMetricDataConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static PostMetricDataRequest interceptRequest(PostMetricDataRequest request) {
+    public static com.oracle.bmc.monitoring.requests.PostMetricDataRequest interceptRequest(
+            com.oracle.bmc.monitoring.requests.PostMetricDataRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, PostMetricDataRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.monitoring.requests.PostMetricDataRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getPostMetricDataDetails(), "postMetricDataDetails is required");
 
@@ -40,16 +42,22 @@ public class PostMetricDataConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, PostMetricDataResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.monitoring.responses.PostMetricDataResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PostMetricDataResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.monitoring.responses.PostMetricDataResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, PostMetricDataResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.monitoring.responses.PostMetricDataResponse>() {
                             @Override
-                            public PostMetricDataResponse apply(
+                            public com.oracle.bmc.monitoring.responses.PostMetricDataResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for PostMetricDataResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.monitoring.responses.PostMetricDataResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -64,8 +72,10 @@ public class PostMetricDataConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                PostMetricDataResponse.Builder builder =
-                                        PostMetricDataResponse.builder();
+                                com.oracle.bmc.monitoring.responses.PostMetricDataResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.monitoring.responses
+                                                        .PostMetricDataResponse.builder();
 
                                 builder.postMetricDataResponseDetails(response.getItem());
 
@@ -81,7 +91,8 @@ public class PostMetricDataConverter {
                                                     String.class));
                                 }
 
-                                PostMetricDataResponse responseWrapper = builder.build();
+                                com.oracle.bmc.monitoring.responses.PostMetricDataResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListRuleSetsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListRuleSetsRequest interceptRequest(ListRuleSetsRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.ListRuleSetsRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.ListRuleSetsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListRuleSetsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.ListRuleSetsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
 
@@ -46,16 +48,22 @@ public class ListRuleSetsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListRuleSetsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.ListRuleSetsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRuleSetsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.ListRuleSetsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListRuleSetsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.ListRuleSetsResponse>() {
                             @Override
-                            public ListRuleSetsResponse apply(
+                            public com.oracle.bmc.loadbalancer.responses.ListRuleSetsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListRuleSetsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.ListRuleSetsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +78,10 @@ public class ListRuleSetsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListRuleSetsResponse.Builder builder =
-                                        ListRuleSetsResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.ListRuleSetsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .ListRuleSetsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -87,7 +97,8 @@ public class ListRuleSetsConverter {
                                                     String.class));
                                 }
 
-                                ListRuleSetsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.ListRuleSetsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

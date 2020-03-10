@@ -16,13 +16,15 @@ public class StopOdaInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static StopOdaInstanceRequest interceptRequest(StopOdaInstanceRequest request) {
+    public static com.oracle.bmc.oda.requests.StopOdaInstanceRequest interceptRequest(
+            com.oracle.bmc.oda.requests.StopOdaInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, StopOdaInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.oda.requests.StopOdaInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
 
@@ -56,16 +58,20 @@ public class StopOdaInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, StopOdaInstanceResponse>
+                    javax.ws.rs.core.Response, com.oracle.bmc.oda.responses.StopOdaInstanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StopOdaInstanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oda.responses.StopOdaInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, StopOdaInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oda.responses.StopOdaInstanceResponse>() {
                             @Override
-                            public StopOdaInstanceResponse apply(
+                            public com.oracle.bmc.oda.responses.StopOdaInstanceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for StopOdaInstanceResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.oda.responses.StopOdaInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +82,10 @@ public class StopOdaInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                StopOdaInstanceResponse.Builder builder =
-                                        StopOdaInstanceResponse.builder();
+                                com.oracle.bmc.oda.responses.StopOdaInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.oda.responses.StopOdaInstanceResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -103,7 +111,8 @@ public class StopOdaInstanceConverter {
                                                     String.class));
                                 }
 
-                                StopOdaInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.oda.responses.StopOdaInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

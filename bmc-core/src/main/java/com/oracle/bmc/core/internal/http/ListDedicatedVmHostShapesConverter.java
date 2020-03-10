@@ -16,15 +16,15 @@ public class ListDedicatedVmHostShapesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDedicatedVmHostShapesRequest interceptRequest(
-            ListDedicatedVmHostShapesRequest request) {
+    public static com.oracle.bmc.core.requests.ListDedicatedVmHostShapesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListDedicatedVmHostShapesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListDedicatedVmHostShapesRequest request) {
+            com.oracle.bmc.core.requests.ListDedicatedVmHostShapesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -81,18 +81,21 @@ public class ListDedicatedVmHostShapesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDedicatedVmHostShapesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListDedicatedVmHostShapesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDedicatedVmHostShapesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListDedicatedVmHostShapesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDedicatedVmHostShapesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListDedicatedVmHostShapesResponse>() {
                             @Override
-                            public ListDedicatedVmHostShapesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListDedicatedVmHostShapesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDedicatedVmHostShapesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListDedicatedVmHostShapesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -110,8 +113,12 @@ public class ListDedicatedVmHostShapesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDedicatedVmHostShapesResponse.Builder builder =
-                                        ListDedicatedVmHostShapesResponse.builder();
+                                com.oracle.bmc.core.responses.ListDedicatedVmHostShapesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListDedicatedVmHostShapesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -139,7 +146,8 @@ public class ListDedicatedVmHostShapesConverter {
                                                     String.class));
                                 }
 
-                                ListDedicatedVmHostShapesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListDedicatedVmHostShapesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

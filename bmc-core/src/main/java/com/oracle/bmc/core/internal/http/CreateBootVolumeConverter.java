@@ -16,13 +16,15 @@ public class CreateBootVolumeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateBootVolumeRequest interceptRequest(CreateBootVolumeRequest request) {
+    public static com.oracle.bmc.core.requests.CreateBootVolumeRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateBootVolumeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateBootVolumeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateBootVolumeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateBootVolumeDetails(), "createBootVolumeDetails is required");
@@ -42,17 +44,21 @@ public class CreateBootVolumeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateBootVolumeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateBootVolumeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateBootVolumeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateBootVolumeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateBootVolumeResponse>() {
                             @Override
-                            public CreateBootVolumeResponse apply(
+                            public com.oracle.bmc.core.responses.CreateBootVolumeResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateBootVolumeResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateBootVolumeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateBootVolumeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateBootVolumeResponse.Builder builder =
-                                        CreateBootVolumeResponse.builder();
+                                com.oracle.bmc.core.responses.CreateBootVolumeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateBootVolumeResponse.builder();
 
                                 builder.bootVolume(response.getItem());
 
@@ -92,7 +100,8 @@ public class CreateBootVolumeConverter {
                                                     String.class));
                                 }
 
-                                CreateBootVolumeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateBootVolumeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

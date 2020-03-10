@@ -16,13 +16,15 @@ public class ListPublicIpsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListPublicIpsRequest interceptRequest(ListPublicIpsRequest request) {
+    public static com.oracle.bmc.core.requests.ListPublicIpsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListPublicIpsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListPublicIpsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListPublicIpsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getScope(), "scope is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
@@ -81,16 +83,21 @@ public class ListPublicIpsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListPublicIpsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListPublicIpsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListPublicIpsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListPublicIpsResponse>() {
                             @Override
-                            public ListPublicIpsResponse apply(
+                            public com.oracle.bmc.core.responses.ListPublicIpsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListPublicIpsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListPublicIpsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -105,8 +112,10 @@ public class ListPublicIpsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListPublicIpsResponse.Builder builder =
-                                        ListPublicIpsResponse.builder();
+                                com.oracle.bmc.core.responses.ListPublicIpsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses.ListPublicIpsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -134,7 +143,8 @@ public class ListPublicIpsConverter {
                                                     String.class));
                                 }
 
-                                ListPublicIpsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListPublicIpsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

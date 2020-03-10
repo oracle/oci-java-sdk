@@ -16,13 +16,15 @@ public class GetDataAssetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDataAssetRequest interceptRequest(GetDataAssetRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetDataAssetRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetDataAssetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDataAssetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetDataAssetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -59,16 +61,22 @@ public class GetDataAssetConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.GetDataAssetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDataAssetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetDataAssetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDataAssetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.GetDataAssetResponse>() {
                             @Override
-                            public GetDataAssetResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.GetDataAssetResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetDataAssetResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetDataAssetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<DataAsset>>
@@ -80,8 +88,10 @@ public class GetDataAssetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDataAssetResponse.Builder builder =
-                                        GetDataAssetResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetDataAssetResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .GetDataAssetResponse.builder();
 
                                 builder.dataAsset(response.getItem());
 
@@ -106,7 +116,8 @@ public class GetDataAssetConverter {
                                                     String.class));
                                 }
 
-                                GetDataAssetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetDataAssetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

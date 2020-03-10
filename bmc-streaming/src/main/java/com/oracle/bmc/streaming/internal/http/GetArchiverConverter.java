@@ -16,13 +16,15 @@ public class GetArchiverConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetArchiverRequest interceptRequest(GetArchiverRequest request) {
+    public static com.oracle.bmc.streaming.requests.GetArchiverRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.GetArchiverRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetArchiverRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.GetArchiverRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
 
@@ -46,16 +48,22 @@ public class GetArchiverConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetArchiverResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.GetArchiverResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetArchiverResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.GetArchiverResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetArchiverResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.GetArchiverResponse>() {
                             @Override
-                            public GetArchiverResponse apply(
+                            public com.oracle.bmc.streaming.responses.GetArchiverResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetArchiverResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.GetArchiverResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Archiver>>
@@ -67,7 +75,10 @@ public class GetArchiverConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetArchiverResponse.Builder builder = GetArchiverResponse.builder();
+                                com.oracle.bmc.streaming.responses.GetArchiverResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .GetArchiverResponse.builder();
 
                                 builder.archiver(response.getItem());
 
@@ -92,7 +103,8 @@ public class GetArchiverConverter {
                                                     String.class));
                                 }
 
-                                GetArchiverResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.GetArchiverResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

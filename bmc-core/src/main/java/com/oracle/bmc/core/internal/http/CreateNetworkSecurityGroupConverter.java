@@ -16,15 +16,15 @@ public class CreateNetworkSecurityGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateNetworkSecurityGroupRequest interceptRequest(
-            CreateNetworkSecurityGroupRequest request) {
+    public static com.oracle.bmc.core.requests.CreateNetworkSecurityGroupRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateNetworkSecurityGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateNetworkSecurityGroupRequest request) {
+            com.oracle.bmc.core.requests.CreateNetworkSecurityGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateNetworkSecurityGroupDetails(),
@@ -45,18 +45,22 @@ public class CreateNetworkSecurityGroupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateNetworkSecurityGroupResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateNetworkSecurityGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .CreateNetworkSecurityGroupResponse>() {
                             @Override
-                            public CreateNetworkSecurityGroupResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.CreateNetworkSecurityGroupResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateNetworkSecurityGroupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateNetworkSecurityGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +74,12 @@ public class CreateNetworkSecurityGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateNetworkSecurityGroupResponse.Builder builder =
-                                        CreateNetworkSecurityGroupResponse.builder();
+                                com.oracle.bmc.core.responses.CreateNetworkSecurityGroupResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateNetworkSecurityGroupResponse
+                                                        .builder();
 
                                 builder.networkSecurityGroup(response.getItem());
 
@@ -96,8 +104,8 @@ public class CreateNetworkSecurityGroupConverter {
                                                     String.class));
                                 }
 
-                                CreateNetworkSecurityGroupResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.CreateNetworkSecurityGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

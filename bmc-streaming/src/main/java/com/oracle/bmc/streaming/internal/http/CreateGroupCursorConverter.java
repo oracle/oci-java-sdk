@@ -16,13 +16,15 @@ public class CreateGroupCursorConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateGroupCursorRequest interceptRequest(CreateGroupCursorRequest request) {
+    public static com.oracle.bmc.streaming.requests.CreateGroupCursorRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.CreateGroupCursorRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateGroupCursorRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.CreateGroupCursorRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
         Validate.notNull(
@@ -49,17 +51,21 @@ public class CreateGroupCursorConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateGroupCursorResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.CreateGroupCursorResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupCursorResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.CreateGroupCursorResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateGroupCursorResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.CreateGroupCursorResponse>() {
                             @Override
-                            public CreateGroupCursorResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.streaming.responses.CreateGroupCursorResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateGroupCursorResponse");
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.CreateGroupCursorResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Cursor>>
@@ -71,8 +77,10 @@ public class CreateGroupCursorConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateGroupCursorResponse.Builder builder =
-                                        CreateGroupCursorResponse.builder();
+                                com.oracle.bmc.streaming.responses.CreateGroupCursorResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .CreateGroupCursorResponse.builder();
 
                                 builder.cursor(response.getItem());
 
@@ -88,7 +96,8 @@ public class CreateGroupCursorConverter {
                                                     String.class));
                                 }
 
-                                CreateGroupCursorResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.CreateGroupCursorResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

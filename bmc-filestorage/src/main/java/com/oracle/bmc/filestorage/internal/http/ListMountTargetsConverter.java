@@ -16,13 +16,15 @@ public class ListMountTargetsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListMountTargetsRequest interceptRequest(ListMountTargetsRequest request) {
+    public static com.oracle.bmc.filestorage.requests.ListMountTargetsRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.ListMountTargetsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListMountTargetsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.ListMountTargetsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getAvailabilityDomain(), "availabilityDomain is required");
@@ -118,17 +120,21 @@ public class ListMountTargetsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListMountTargetsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.ListMountTargetsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListMountTargetsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.ListMountTargetsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListMountTargetsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.ListMountTargetsResponse>() {
                             @Override
-                            public ListMountTargetsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.filestorage.responses.ListMountTargetsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListMountTargetsResponse");
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.ListMountTargetsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -145,8 +151,11 @@ public class ListMountTargetsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListMountTargetsResponse.Builder builder =
-                                        ListMountTargetsResponse.builder();
+                                com.oracle.bmc.filestorage.responses.ListMountTargetsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .ListMountTargetsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -174,7 +183,8 @@ public class ListMountTargetsConverter {
                                                     String.class));
                                 }
 
-                                ListMountTargetsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.ListMountTargetsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

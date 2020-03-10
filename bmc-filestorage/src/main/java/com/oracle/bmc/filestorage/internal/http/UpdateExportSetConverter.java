@@ -16,13 +16,15 @@ public class UpdateExportSetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateExportSetRequest interceptRequest(UpdateExportSetRequest request) {
+    public static com.oracle.bmc.filestorage.requests.UpdateExportSetRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.UpdateExportSetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateExportSetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.UpdateExportSetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getExportSetId(), "exportSetId must not be blank");
         Validate.notNull(request.getUpdateExportSetDetails(), "updateExportSetDetails is required");
@@ -51,16 +53,21 @@ public class UpdateExportSetConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateExportSetResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.UpdateExportSetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExportSetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.UpdateExportSetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateExportSetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.UpdateExportSetResponse>() {
                             @Override
-                            public UpdateExportSetResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateExportSetResponse");
+                            public com.oracle.bmc.filestorage.responses.UpdateExportSetResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.UpdateExportSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<ExportSet>>
@@ -72,8 +79,10 @@ public class UpdateExportSetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateExportSetResponse.Builder builder =
-                                        UpdateExportSetResponse.builder();
+                                com.oracle.bmc.filestorage.responses.UpdateExportSetResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .UpdateExportSetResponse.builder();
 
                                 builder.exportSet(response.getItem());
 
@@ -98,7 +107,8 @@ public class UpdateExportSetConverter {
                                                     String.class));
                                 }
 
-                                UpdateExportSetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.UpdateExportSetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

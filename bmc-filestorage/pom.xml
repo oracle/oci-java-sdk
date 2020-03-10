@@ -5,21 +5,21 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.13.2</version>
+    <version>1.14.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-filestorage</artifactId>
   <name>Oracle Cloud Infrastructure SDK - File Storage</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure File Storage</description>
-  <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
 
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.13.2</version>
+      <version>1.14.0</version>
     </dependency>
   </dependencies>
 

@@ -16,13 +16,15 @@ public class ListZonesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListZonesRequest interceptRequest(ListZonesRequest request) {
+    public static com.oracle.bmc.dns.requests.ListZonesRequest interceptRequest(
+            com.oracle.bmc.dns.requests.ListZonesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListZonesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.ListZonesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -126,15 +128,20 @@ public class ListZonesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListZonesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.ListZonesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListZonesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.ListZonesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListZonesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.ListZonesResponse>() {
                             @Override
-                            public ListZonesResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListZonesResponse");
+                            public com.oracle.bmc.dns.responses.ListZonesResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.ListZonesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -150,7 +157,8 @@ public class ListZonesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListZonesResponse.Builder builder = ListZonesResponse.builder();
+                                com.oracle.bmc.dns.responses.ListZonesResponse.Builder builder =
+                                        com.oracle.bmc.dns.responses.ListZonesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -190,7 +198,8 @@ public class ListZonesConverter {
                                                     String.class));
                                 }
 
-                                ListZonesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.ListZonesResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

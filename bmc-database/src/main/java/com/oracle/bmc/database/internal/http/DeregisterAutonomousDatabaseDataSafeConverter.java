@@ -16,15 +16,17 @@ public class DeregisterAutonomousDatabaseDataSafeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeregisterAutonomousDatabaseDataSafeRequest interceptRequest(
-            DeregisterAutonomousDatabaseDataSafeRequest request) {
+    public static com.oracle.bmc.database.requests.DeregisterAutonomousDatabaseDataSafeRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.DeregisterAutonomousDatabaseDataSafeRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeregisterAutonomousDatabaseDataSafeRequest request) {
+            com.oracle.bmc.database.requests.DeregisterAutonomousDatabaseDataSafeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
@@ -51,19 +53,24 @@ public class DeregisterAutonomousDatabaseDataSafeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeregisterAutonomousDatabaseDataSafeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DeregisterAutonomousDatabaseDataSafeResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeregisterAutonomousDatabaseDataSafeResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .DeregisterAutonomousDatabaseDataSafeResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DeregisterAutonomousDatabaseDataSafeResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .DeregisterAutonomousDatabaseDataSafeResponse>() {
                             @Override
-                            public DeregisterAutonomousDatabaseDataSafeResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .DeregisterAutonomousDatabaseDataSafeResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeregisterAutonomousDatabaseDataSafeResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DeregisterAutonomousDatabaseDataSafeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -74,8 +81,13 @@ public class DeregisterAutonomousDatabaseDataSafeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeregisterAutonomousDatabaseDataSafeResponse.Builder builder =
-                                        DeregisterAutonomousDatabaseDataSafeResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .DeregisterAutonomousDatabaseDataSafeResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DeregisterAutonomousDatabaseDataSafeResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -101,8 +113,9 @@ public class DeregisterAutonomousDatabaseDataSafeConverter {
                                                     String.class));
                                 }
 
-                                DeregisterAutonomousDatabaseDataSafeResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .DeregisterAutonomousDatabaseDataSafeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

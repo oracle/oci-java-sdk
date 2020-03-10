@@ -16,13 +16,15 @@ public class UpdateSwiftPasswordConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateSwiftPasswordRequest interceptRequest(UpdateSwiftPasswordRequest request) {
+    public static com.oracle.bmc.identity.requests.UpdateSwiftPasswordRequest interceptRequest(
+            com.oracle.bmc.identity.requests.UpdateSwiftPasswordRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateSwiftPasswordRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.UpdateSwiftPasswordRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notBlank(request.getSwiftPasswordId(), "swiftPasswordId must not be blank");
@@ -53,18 +55,21 @@ public class UpdateSwiftPasswordConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.UpdateSwiftPasswordResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.UpdateSwiftPasswordResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.UpdateSwiftPasswordResponse>() {
                             @Override
-                            public UpdateSwiftPasswordResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.UpdateSwiftPasswordResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateSwiftPasswordResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.UpdateSwiftPasswordResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +83,11 @@ public class UpdateSwiftPasswordConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateSwiftPasswordResponse.Builder builder =
-                                        UpdateSwiftPasswordResponse.builder();
+                                com.oracle.bmc.identity.responses.UpdateSwiftPasswordResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .UpdateSwiftPasswordResponse.builder();
 
                                 builder.swiftPassword(response.getItem());
 
@@ -104,7 +112,8 @@ public class UpdateSwiftPasswordConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateSwiftPasswordResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.UpdateSwiftPasswordResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

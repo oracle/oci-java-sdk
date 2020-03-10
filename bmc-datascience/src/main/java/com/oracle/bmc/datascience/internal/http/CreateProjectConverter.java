@@ -16,13 +16,15 @@ public class CreateProjectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateProjectRequest interceptRequest(CreateProjectRequest request) {
+    public static com.oracle.bmc.datascience.requests.CreateProjectRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.CreateProjectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateProjectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.CreateProjectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateProjectDetails(), "createProjectDetails is required");
 
@@ -44,16 +46,22 @@ public class CreateProjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.CreateProjectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.CreateProjectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateProjectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.CreateProjectResponse>() {
                             @Override
-                            public CreateProjectResponse apply(
+                            public com.oracle.bmc.datascience.responses.CreateProjectResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateProjectResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.CreateProjectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Project>>
@@ -65,8 +73,10 @@ public class CreateProjectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateProjectResponse.Builder builder =
-                                        CreateProjectResponse.builder();
+                                com.oracle.bmc.datascience.responses.CreateProjectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .CreateProjectResponse.builder();
 
                                 builder.project(response.getItem());
 
@@ -91,7 +101,8 @@ public class CreateProjectConverter {
                                                     String.class));
                                 }
 
-                                CreateProjectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.CreateProjectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

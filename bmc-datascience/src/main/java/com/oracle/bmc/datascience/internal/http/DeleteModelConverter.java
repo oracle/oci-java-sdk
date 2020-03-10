@@ -16,13 +16,15 @@ public class DeleteModelConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteModelRequest interceptRequest(DeleteModelRequest request) {
+    public static com.oracle.bmc.datascience.requests.DeleteModelRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.DeleteModelRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteModelRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.DeleteModelRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
 
@@ -49,16 +51,22 @@ public class DeleteModelConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteModelResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.DeleteModelResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteModelResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.DeleteModelResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteModelResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.DeleteModelResponse>() {
                             @Override
-                            public DeleteModelResponse apply(
+                            public com.oracle.bmc.datascience.responses.DeleteModelResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteModelResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.DeleteModelResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,7 +77,10 @@ public class DeleteModelConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteModelResponse.Builder builder = DeleteModelResponse.builder();
+                                com.oracle.bmc.datascience.responses.DeleteModelResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .DeleteModelResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -83,7 +94,8 @@ public class DeleteModelConverter {
                                                     String.class));
                                 }
 
-                                DeleteModelResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.DeleteModelResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

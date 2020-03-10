@@ -16,15 +16,17 @@ public class CreateTransferApplianceAdminCredentialsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateTransferApplianceAdminCredentialsRequest interceptRequest(
-            CreateTransferApplianceAdminCredentialsRequest request) {
+    public static com.oracle.bmc.dts.requests.CreateTransferApplianceAdminCredentialsRequest
+            interceptRequest(
+                    com.oracle.bmc.dts.requests.CreateTransferApplianceAdminCredentialsRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateTransferApplianceAdminCredentialsRequest request) {
+            com.oracle.bmc.dts.requests.CreateTransferApplianceAdminCredentialsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
         Validate.notBlank(
@@ -52,19 +54,24 @@ public class CreateTransferApplianceAdminCredentialsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateTransferApplianceAdminCredentialsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.CreateTransferApplianceAdminCredentialsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateTransferApplianceAdminCredentialsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses
+                                .CreateTransferApplianceAdminCredentialsResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                CreateTransferApplianceAdminCredentialsResponse>() {
+                                com.oracle.bmc.dts.responses
+                                        .CreateTransferApplianceAdminCredentialsResponse>() {
                             @Override
-                            public CreateTransferApplianceAdminCredentialsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses
+                                            .CreateTransferApplianceAdminCredentialsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateTransferApplianceAdminCredentialsResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.CreateTransferApplianceAdminCredentialsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -79,8 +86,13 @@ public class CreateTransferApplianceAdminCredentialsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateTransferApplianceAdminCredentialsResponse.Builder builder =
-                                        CreateTransferApplianceAdminCredentialsResponse.builder();
+                                com.oracle.bmc.dts.responses
+                                                .CreateTransferApplianceAdminCredentialsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .CreateTransferApplianceAdminCredentialsResponse
+                                                        .builder();
 
                                 builder.transferApplianceCertificate(response.getItem());
 
@@ -105,8 +117,9 @@ public class CreateTransferApplianceAdminCredentialsConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateTransferApplianceAdminCredentialsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dts.responses
+                                                .CreateTransferApplianceAdminCredentialsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

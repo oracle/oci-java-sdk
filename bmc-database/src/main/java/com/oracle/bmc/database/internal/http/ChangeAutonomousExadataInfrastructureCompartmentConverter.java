@@ -16,15 +16,20 @@ public class ChangeAutonomousExadataInfrastructureCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeAutonomousExadataInfrastructureCompartmentRequest interceptRequest(
-            ChangeAutonomousExadataInfrastructureCompartmentRequest request) {
+    public static com.oracle.bmc.database.requests
+                    .ChangeAutonomousExadataInfrastructureCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests
+                                    .ChangeAutonomousExadataInfrastructureCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeAutonomousExadataInfrastructureCompartmentRequest request) {
+            com.oracle.bmc.database.requests.ChangeAutonomousExadataInfrastructureCompartmentRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getChangeCompartmentDetails(), "changeCompartmentDetails is required");
@@ -63,20 +68,24 @@ public class ChangeAutonomousExadataInfrastructureCompartmentConverter {
 
     public static com.google.common.base.Function<
                     javax.ws.rs.core.Response,
-                    ChangeAutonomousExadataInfrastructureCompartmentResponse>
+                    com.oracle.bmc.database.responses
+                            .ChangeAutonomousExadataInfrastructureCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
-                        ChangeAutonomousExadataInfrastructureCompartmentResponse>
+                        com.oracle.bmc.database.responses
+                                .ChangeAutonomousExadataInfrastructureCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeAutonomousExadataInfrastructureCompartmentResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .ChangeAutonomousExadataInfrastructureCompartmentResponse>() {
                             @Override
-                            public ChangeAutonomousExadataInfrastructureCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ChangeAutonomousExadataInfrastructureCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeAutonomousExadataInfrastructureCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ChangeAutonomousExadataInfrastructureCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -87,9 +96,12 @@ public class ChangeAutonomousExadataInfrastructureCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeAutonomousExadataInfrastructureCompartmentResponse.Builder
+                                com.oracle.bmc.database.responses
+                                                .ChangeAutonomousExadataInfrastructureCompartmentResponse
+                                                .Builder
                                         builder =
-                                                ChangeAutonomousExadataInfrastructureCompartmentResponse
+                                                com.oracle.bmc.database.responses
+                                                        .ChangeAutonomousExadataInfrastructureCompartmentResponse
                                                         .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
@@ -125,7 +137,8 @@ public class ChangeAutonomousExadataInfrastructureCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeAutonomousExadataInfrastructureCompartmentResponse
+                                com.oracle.bmc.database.responses
+                                                .ChangeAutonomousExadataInfrastructureCompartmentResponse
                                         responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);

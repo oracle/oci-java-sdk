@@ -16,14 +16,16 @@ public class SearchSoftwarePackagesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static SearchSoftwarePackagesRequest interceptRequest(
-            SearchSoftwarePackagesRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.SearchSoftwarePackagesRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.SearchSoftwarePackagesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, SearchSoftwarePackagesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.SearchSoftwarePackagesRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -100,18 +102,23 @@ public class SearchSoftwarePackagesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, SearchSoftwarePackagesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.SearchSoftwarePackagesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SearchSoftwarePackagesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.SearchSoftwarePackagesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, SearchSoftwarePackagesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .SearchSoftwarePackagesResponse>() {
                             @Override
-                            public SearchSoftwarePackagesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .SearchSoftwarePackagesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for SearchSoftwarePackagesResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.SearchSoftwarePackagesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -129,8 +136,11 @@ public class SearchSoftwarePackagesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                SearchSoftwarePackagesResponse.Builder builder =
-                                        SearchSoftwarePackagesResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.SearchSoftwarePackagesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .SearchSoftwarePackagesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -158,7 +168,8 @@ public class SearchSoftwarePackagesConverter {
                                                     String.class));
                                 }
 
-                                SearchSoftwarePackagesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.SearchSoftwarePackagesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

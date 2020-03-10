@@ -16,15 +16,16 @@ public class CreateRemotePeeringConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateRemotePeeringConnectionRequest interceptRequest(
-            CreateRemotePeeringConnectionRequest request) {
+    public static com.oracle.bmc.core.requests.CreateRemotePeeringConnectionRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.CreateRemotePeeringConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateRemotePeeringConnectionRequest request) {
+            com.oracle.bmc.core.requests.CreateRemotePeeringConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateRemotePeeringConnectionDetails(),
@@ -45,19 +46,23 @@ public class CreateRemotePeeringConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateRemotePeeringConnectionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateRemotePeeringConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                CreateRemotePeeringConnectionResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .CreateRemotePeeringConnectionResponse>() {
                             @Override
-                            public CreateRemotePeeringConnectionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .CreateRemotePeeringConnectionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateRemotePeeringConnectionResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateRemotePeeringConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -71,8 +76,12 @@ public class CreateRemotePeeringConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateRemotePeeringConnectionResponse.Builder builder =
-                                        CreateRemotePeeringConnectionResponse.builder();
+                                com.oracle.bmc.core.responses.CreateRemotePeeringConnectionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateRemotePeeringConnectionResponse
+                                                        .builder();
 
                                 builder.remotePeeringConnection(response.getItem());
 
@@ -97,8 +106,8 @@ public class CreateRemotePeeringConnectionConverter {
                                                     String.class));
                                 }
 
-                                CreateRemotePeeringConnectionResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.CreateRemotePeeringConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

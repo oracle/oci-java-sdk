@@ -16,14 +16,15 @@ public class ListConnectHarnessesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListConnectHarnessesRequest interceptRequest(
-            ListConnectHarnessesRequest request) {
+    public static com.oracle.bmc.streaming.requests.ListConnectHarnessesRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.ListConnectHarnessesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListConnectHarnessesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.ListConnectHarnessesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -104,18 +105,21 @@ public class ListConnectHarnessesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListConnectHarnessesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.ListConnectHarnessesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListConnectHarnessesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.ListConnectHarnessesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListConnectHarnessesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.ListConnectHarnessesResponse>() {
                             @Override
-                            public ListConnectHarnessesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.streaming.responses.ListConnectHarnessesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListConnectHarnessesResponse");
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.ListConnectHarnessesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -132,8 +136,11 @@ public class ListConnectHarnessesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListConnectHarnessesResponse.Builder builder =
-                                        ListConnectHarnessesResponse.builder();
+                                com.oracle.bmc.streaming.responses.ListConnectHarnessesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .ListConnectHarnessesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -173,7 +180,8 @@ public class ListConnectHarnessesConverter {
                                                     String.class));
                                 }
 
-                                ListConnectHarnessesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.ListConnectHarnessesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

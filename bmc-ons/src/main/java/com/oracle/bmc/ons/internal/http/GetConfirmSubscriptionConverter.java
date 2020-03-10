@@ -16,14 +16,15 @@ public class GetConfirmSubscriptionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetConfirmSubscriptionRequest interceptRequest(
-            GetConfirmSubscriptionRequest request) {
+    public static com.oracle.bmc.ons.requests.GetConfirmSubscriptionRequest interceptRequest(
+            com.oracle.bmc.ons.requests.GetConfirmSubscriptionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetConfirmSubscriptionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.ons.requests.GetConfirmSubscriptionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
         Validate.notNull(request.getToken(), "token is required");
@@ -62,18 +63,21 @@ public class GetConfirmSubscriptionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetConfirmSubscriptionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.ons.responses.GetConfirmSubscriptionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetConfirmSubscriptionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.ons.responses.GetConfirmSubscriptionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetConfirmSubscriptionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.ons.responses.GetConfirmSubscriptionResponse>() {
                             @Override
-                            public GetConfirmSubscriptionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.ons.responses.GetConfirmSubscriptionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetConfirmSubscriptionResponse");
+                                        "Transform function invoked for com.oracle.bmc.ons.responses.GetConfirmSubscriptionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -87,8 +91,10 @@ public class GetConfirmSubscriptionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetConfirmSubscriptionResponse.Builder builder =
-                                        GetConfirmSubscriptionResponse.builder();
+                                com.oracle.bmc.ons.responses.GetConfirmSubscriptionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.ons.responses
+                                                        .GetConfirmSubscriptionResponse.builder();
 
                                 builder.confirmationResult(response.getItem());
 
@@ -113,7 +119,8 @@ public class GetConfirmSubscriptionConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetConfirmSubscriptionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.ons.responses.GetConfirmSubscriptionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class DeleteNetworkSecurityGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteNetworkSecurityGroupRequest interceptRequest(
-            DeleteNetworkSecurityGroupRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteNetworkSecurityGroupRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteNetworkSecurityGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteNetworkSecurityGroupRequest request) {
+            com.oracle.bmc.core.requests.DeleteNetworkSecurityGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
@@ -49,18 +49,22 @@ public class DeleteNetworkSecurityGroupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteNetworkSecurityGroupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteNetworkSecurityGroupResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteNetworkSecurityGroupResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteNetworkSecurityGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteNetworkSecurityGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .DeleteNetworkSecurityGroupResponse>() {
                             @Override
-                            public DeleteNetworkSecurityGroupResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.DeleteNetworkSecurityGroupResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteNetworkSecurityGroupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteNetworkSecurityGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +75,12 @@ public class DeleteNetworkSecurityGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteNetworkSecurityGroupResponse.Builder builder =
-                                        DeleteNetworkSecurityGroupResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteNetworkSecurityGroupResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteNetworkSecurityGroupResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,8 +94,8 @@ public class DeleteNetworkSecurityGroupConverter {
                                                     String.class));
                                 }
 
-                                DeleteNetworkSecurityGroupResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.DeleteNetworkSecurityGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

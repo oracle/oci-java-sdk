@@ -16,13 +16,15 @@ public class DeleteRuleConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteRuleRequest interceptRequest(DeleteRuleRequest request) {
+    public static com.oracle.bmc.events.requests.DeleteRuleRequest interceptRequest(
+            com.oracle.bmc.events.requests.DeleteRuleRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteRuleRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.events.requests.DeleteRuleRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getRuleId(), "ruleId must not be blank");
 
@@ -49,15 +51,21 @@ public class DeleteRuleConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRuleResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.events.responses.DeleteRuleResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRuleResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.events.responses.DeleteRuleResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteRuleResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.events.responses.DeleteRuleResponse>() {
                             @Override
-                            public DeleteRuleResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteRuleResponse");
+                            public com.oracle.bmc.events.responses.DeleteRuleResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.events.responses.DeleteRuleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -68,7 +76,9 @@ public class DeleteRuleConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteRuleResponse.Builder builder = DeleteRuleResponse.builder();
+                                com.oracle.bmc.events.responses.DeleteRuleResponse.Builder builder =
+                                        com.oracle.bmc.events.responses.DeleteRuleResponse
+                                                .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +92,8 @@ public class DeleteRuleConverter {
                                                     String.class));
                                 }
 
-                                DeleteRuleResponse responseWrapper = builder.build();
+                                com.oracle.bmc.events.responses.DeleteRuleResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

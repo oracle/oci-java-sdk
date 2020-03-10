@@ -16,14 +16,15 @@ public class ListWorkRequestErrorsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListWorkRequestErrorsRequest interceptRequest(
-            ListWorkRequestErrorsRequest request) {
+    public static com.oracle.bmc.oda.requests.ListWorkRequestErrorsRequest interceptRequest(
+            com.oracle.bmc.oda.requests.ListWorkRequestErrorsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListWorkRequestErrorsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.oda.requests.ListWorkRequestErrorsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
@@ -80,18 +81,21 @@ public class ListWorkRequestErrorsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.oda.responses.ListWorkRequestErrorsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oda.responses.ListWorkRequestErrorsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oda.responses.ListWorkRequestErrorsResponse>() {
                             @Override
-                            public ListWorkRequestErrorsResponse apply(
+                            public com.oracle.bmc.oda.responses.ListWorkRequestErrorsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListWorkRequestErrorsResponse");
+                                        "Transform function invoked for com.oracle.bmc.oda.responses.ListWorkRequestErrorsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -108,8 +112,10 @@ public class ListWorkRequestErrorsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListWorkRequestErrorsResponse.Builder builder =
-                                        ListWorkRequestErrorsResponse.builder();
+                                com.oracle.bmc.oda.responses.ListWorkRequestErrorsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.oda.responses
+                                                        .ListWorkRequestErrorsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -137,7 +143,8 @@ public class ListWorkRequestErrorsConverter {
                                                     String.class));
                                 }
 
-                                ListWorkRequestErrorsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.oda.responses.ListWorkRequestErrorsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

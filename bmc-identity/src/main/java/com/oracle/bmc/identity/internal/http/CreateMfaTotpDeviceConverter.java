@@ -16,13 +16,15 @@ public class CreateMfaTotpDeviceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateMfaTotpDeviceRequest interceptRequest(CreateMfaTotpDeviceRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateMfaTotpDeviceRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateMfaTotpDeviceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateMfaTotpDeviceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreateMfaTotpDeviceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -47,18 +49,21 @@ public class CreateMfaTotpDeviceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateMfaTotpDeviceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateMfaTotpDeviceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.CreateMfaTotpDeviceResponse>() {
                             @Override
-                            public CreateMfaTotpDeviceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.CreateMfaTotpDeviceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateMfaTotpDeviceResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateMfaTotpDeviceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -72,8 +77,11 @@ public class CreateMfaTotpDeviceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateMfaTotpDeviceResponse.Builder builder =
-                                        CreateMfaTotpDeviceResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateMfaTotpDeviceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateMfaTotpDeviceResponse.builder();
 
                                 builder.mfaTotpDevice(response.getItem());
 
@@ -98,7 +106,8 @@ public class CreateMfaTotpDeviceConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateMfaTotpDeviceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateMfaTotpDeviceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

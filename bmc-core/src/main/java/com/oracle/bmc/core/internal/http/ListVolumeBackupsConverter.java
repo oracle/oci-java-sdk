@@ -16,13 +16,15 @@ public class ListVolumeBackupsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListVolumeBackupsRequest interceptRequest(ListVolumeBackupsRequest request) {
+    public static com.oracle.bmc.core.requests.ListVolumeBackupsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListVolumeBackupsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListVolumeBackupsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListVolumeBackupsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -107,17 +109,21 @@ public class ListVolumeBackupsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListVolumeBackupsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListVolumeBackupsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListVolumeBackupsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListVolumeBackupsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListVolumeBackupsResponse>() {
                             @Override
-                            public ListVolumeBackupsResponse apply(
+                            public com.oracle.bmc.core.responses.ListVolumeBackupsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListVolumeBackupsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListVolumeBackupsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -133,8 +139,10 @@ public class ListVolumeBackupsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListVolumeBackupsResponse.Builder builder =
-                                        ListVolumeBackupsResponse.builder();
+                                com.oracle.bmc.core.responses.ListVolumeBackupsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListVolumeBackupsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -162,7 +170,8 @@ public class ListVolumeBackupsConverter {
                                                     String.class));
                                 }
 
-                                ListVolumeBackupsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListVolumeBackupsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

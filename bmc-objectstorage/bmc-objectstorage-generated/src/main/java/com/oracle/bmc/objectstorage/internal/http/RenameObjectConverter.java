@@ -16,13 +16,15 @@ public class RenameObjectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static RenameObjectRequest interceptRequest(RenameObjectRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.RenameObjectRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.RenameObjectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, RenameObjectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.RenameObjectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -53,16 +55,22 @@ public class RenameObjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, RenameObjectResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.RenameObjectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, RenameObjectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.RenameObjectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, RenameObjectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.RenameObjectResponse>() {
                             @Override
-                            public RenameObjectResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for RenameObjectResponse");
+                            public com.oracle.bmc.objectstorage.responses.RenameObjectResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.RenameObjectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +81,10 @@ public class RenameObjectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                RenameObjectResponse.Builder builder =
-                                        RenameObjectResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.RenameObjectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .RenameObjectResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
@@ -121,7 +131,8 @@ public class RenameObjectConverter {
                                                     java.util.Date.class));
                                 }
 
-                                RenameObjectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.RenameObjectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

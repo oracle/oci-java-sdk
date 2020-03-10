@@ -16,13 +16,15 @@ public class CreateEntityTagConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateEntityTagRequest interceptRequest(CreateEntityTagRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.CreateEntityTagRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.CreateEntityTagRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateEntityTagRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.CreateEntityTagRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -62,16 +64,21 @@ public class CreateEntityTagConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateEntityTagResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.CreateEntityTagResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityTagResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.CreateEntityTagResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateEntityTagResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.CreateEntityTagResponse>() {
                             @Override
-                            public CreateEntityTagResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateEntityTagResponse");
+                            public com.oracle.bmc.datacatalog.responses.CreateEntityTagResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.CreateEntityTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<EntityTag>>
@@ -83,8 +90,10 @@ public class CreateEntityTagConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateEntityTagResponse.Builder builder =
-                                        CreateEntityTagResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.CreateEntityTagResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .CreateEntityTagResponse.builder();
 
                                 builder.entityTag(response.getItem());
 
@@ -109,7 +118,8 @@ public class CreateEntityTagConverter {
                                                     String.class));
                                 }
 
-                                CreateEntityTagResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.CreateEntityTagResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

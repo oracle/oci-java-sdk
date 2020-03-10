@@ -16,13 +16,15 @@ public class DeleteSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSourceRequest interceptRequest(DeleteSourceRequest request) {
+    public static com.oracle.bmc.applicationmigration.requests.DeleteSourceRequest interceptRequest(
+            com.oracle.bmc.applicationmigration.requests.DeleteSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.applicationmigration.requests.DeleteSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSourceId(), "sourceId must not be blank");
 
@@ -49,16 +51,24 @@ public class DeleteSourceConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSourceResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.applicationmigration.responses.DeleteSourceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSourceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.applicationmigration.responses.DeleteSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.applicationmigration.responses
+                                        .DeleteSourceResponse>() {
                             @Override
-                            public DeleteSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteSourceResponse");
+                            public com.oracle.bmc.applicationmigration.responses
+                                            .DeleteSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.applicationmigration.responses.DeleteSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +79,11 @@ public class DeleteSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSourceResponse.Builder builder =
-                                        DeleteSourceResponse.builder();
+                                com.oracle.bmc.applicationmigration.responses.DeleteSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.applicationmigration.responses
+                                                        .DeleteSourceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -96,7 +109,8 @@ public class DeleteSourceConverter {
                                                     String.class));
                                 }
 
-                                DeleteSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.applicationmigration.responses.DeleteSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

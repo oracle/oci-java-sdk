@@ -16,13 +16,15 @@ public class DeleteStreamConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteStreamRequest interceptRequest(DeleteStreamRequest request) {
+    public static com.oracle.bmc.streaming.requests.DeleteStreamRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.DeleteStreamRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteStreamRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.DeleteStreamRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
 
@@ -49,16 +51,22 @@ public class DeleteStreamConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteStreamResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.DeleteStreamResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteStreamResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.DeleteStreamResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteStreamResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.DeleteStreamResponse>() {
                             @Override
-                            public DeleteStreamResponse apply(
+                            public com.oracle.bmc.streaming.responses.DeleteStreamResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteStreamResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.DeleteStreamResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +77,10 @@ public class DeleteStreamConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteStreamResponse.Builder builder =
-                                        DeleteStreamResponse.builder();
+                                com.oracle.bmc.streaming.responses.DeleteStreamResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .DeleteStreamResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +94,8 @@ public class DeleteStreamConverter {
                                                     String.class));
                                 }
 
-                                DeleteStreamResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.DeleteStreamResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

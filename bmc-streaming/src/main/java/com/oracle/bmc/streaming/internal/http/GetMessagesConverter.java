@@ -16,13 +16,15 @@ public class GetMessagesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetMessagesRequest interceptRequest(GetMessagesRequest request) {
+    public static com.oracle.bmc.streaming.requests.GetMessagesRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.GetMessagesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetMessagesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.GetMessagesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
         Validate.notNull(request.getCursor(), "cursor is required");
@@ -61,16 +63,22 @@ public class GetMessagesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetMessagesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.GetMessagesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetMessagesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.GetMessagesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetMessagesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.GetMessagesResponse>() {
                             @Override
-                            public GetMessagesResponse apply(
+                            public com.oracle.bmc.streaming.responses.GetMessagesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetMessagesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.GetMessagesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -85,7 +93,10 @@ public class GetMessagesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetMessagesResponse.Builder builder = GetMessagesResponse.builder();
+                                com.oracle.bmc.streaming.responses.GetMessagesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .GetMessagesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -113,7 +124,8 @@ public class GetMessagesConverter {
                                                     String.class));
                                 }
 
-                                GetMessagesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.GetMessagesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

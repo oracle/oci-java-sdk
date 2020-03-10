@@ -16,13 +16,15 @@ public class ListTransferJobsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTransferJobsRequest interceptRequest(ListTransferJobsRequest request) {
+    public static com.oracle.bmc.dts.requests.ListTransferJobsRequest interceptRequest(
+            com.oracle.bmc.dts.requests.ListTransferJobsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTransferJobsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dts.requests.ListTransferJobsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -79,17 +81,21 @@ public class ListTransferJobsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListTransferJobsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.ListTransferJobsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTransferJobsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.ListTransferJobsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTransferJobsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.ListTransferJobsResponse>() {
                             @Override
-                            public ListTransferJobsResponse apply(
+                            public com.oracle.bmc.dts.responses.ListTransferJobsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListTransferJobsResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.ListTransferJobsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -106,8 +112,10 @@ public class ListTransferJobsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTransferJobsResponse.Builder builder =
-                                        ListTransferJobsResponse.builder();
+                                com.oracle.bmc.dts.responses.ListTransferJobsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .ListTransferJobsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -135,7 +143,8 @@ public class ListTransferJobsConverter {
                                                     String.class));
                                 }
 
-                                ListTransferJobsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.ListTransferJobsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class UpdateVolumeBackupPolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateVolumeBackupPolicyRequest interceptRequest(
-            UpdateVolumeBackupPolicyRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateVolumeBackupPolicyRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateVolumeBackupPolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateVolumeBackupPolicyRequest request) {
+            com.oracle.bmc.core.requests.UpdateVolumeBackupPolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
         Validate.notNull(
@@ -59,18 +59,21 @@ public class UpdateVolumeBackupPolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateVolumeBackupPolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateVolumeBackupPolicyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateVolumeBackupPolicyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateVolumeBackupPolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateVolumeBackupPolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateVolumeBackupPolicyResponse>() {
                             @Override
-                            public UpdateVolumeBackupPolicyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.UpdateVolumeBackupPolicyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateVolumeBackupPolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateVolumeBackupPolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -84,8 +87,11 @@ public class UpdateVolumeBackupPolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateVolumeBackupPolicyResponse.Builder builder =
-                                        UpdateVolumeBackupPolicyResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateVolumeBackupPolicyResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateVolumeBackupPolicyResponse.builder();
 
                                 builder.volumeBackupPolicy(response.getItem());
 
@@ -110,7 +116,8 @@ public class UpdateVolumeBackupPolicyConverter {
                                                     String.class));
                                 }
 
-                                UpdateVolumeBackupPolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateVolumeBackupPolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

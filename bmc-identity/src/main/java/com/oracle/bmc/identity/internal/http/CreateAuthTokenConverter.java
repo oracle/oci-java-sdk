@@ -16,13 +16,15 @@ public class CreateAuthTokenConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateAuthTokenRequest interceptRequest(CreateAuthTokenRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateAuthTokenRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateAuthTokenRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateAuthTokenRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreateAuthTokenRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateAuthTokenDetails(), "createAuthTokenDetails is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
@@ -48,16 +50,21 @@ public class CreateAuthTokenConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateAuthTokenResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateAuthTokenResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAuthTokenResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateAuthTokenResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateAuthTokenResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.CreateAuthTokenResponse>() {
                             @Override
-                            public CreateAuthTokenResponse apply(
+                            public com.oracle.bmc.identity.responses.CreateAuthTokenResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateAuthTokenResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateAuthTokenResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<AuthToken>>
@@ -69,8 +76,10 @@ public class CreateAuthTokenConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateAuthTokenResponse.Builder builder =
-                                        CreateAuthTokenResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateAuthTokenResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateAuthTokenResponse.builder();
 
                                 builder.authToken(response.getItem());
 
@@ -95,7 +104,8 @@ public class CreateAuthTokenConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateAuthTokenResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateAuthTokenResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

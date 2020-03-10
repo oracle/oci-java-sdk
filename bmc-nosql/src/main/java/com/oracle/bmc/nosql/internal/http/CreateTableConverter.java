@@ -16,13 +16,15 @@ public class CreateTableConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateTableRequest interceptRequest(CreateTableRequest request) {
+    public static com.oracle.bmc.nosql.requests.CreateTableRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.CreateTableRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateTableRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.CreateTableRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateTableDetails(), "createTableDetails is required");
 
@@ -44,16 +46,21 @@ public class CreateTableConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateTableResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.CreateTableResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTableResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.CreateTableResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateTableResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.CreateTableResponse>() {
                             @Override
-                            public CreateTableResponse apply(
+                            public com.oracle.bmc.nosql.responses.CreateTableResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateTableResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.CreateTableResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -64,7 +71,9 @@ public class CreateTableConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateTableResponse.Builder builder = CreateTableResponse.builder();
+                                com.oracle.bmc.nosql.responses.CreateTableResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.CreateTableResponse
+                                                .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -90,7 +99,8 @@ public class CreateTableConverter {
                                                     String.class));
                                 }
 
-                                CreateTableResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.CreateTableResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

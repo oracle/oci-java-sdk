@@ -16,15 +16,16 @@ public class ChangeSecurityListCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeSecurityListCompartmentRequest interceptRequest(
-            ChangeSecurityListCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeSecurityListCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeSecurityListCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeSecurityListCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeSecurityListCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
         Validate.notNull(
@@ -57,19 +58,23 @@ public class ChangeSecurityListCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeSecurityListCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeSecurityListCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeSecurityListCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeSecurityListCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeSecurityListCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeSecurityListCompartmentResponse>() {
                             @Override
-                            public ChangeSecurityListCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeSecurityListCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeSecurityListCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeSecurityListCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -80,8 +85,12 @@ public class ChangeSecurityListCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeSecurityListCompartmentResponse.Builder builder =
-                                        ChangeSecurityListCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses.ChangeSecurityListCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeSecurityListCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -104,8 +113,8 @@ public class ChangeSecurityListCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeSecurityListCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.ChangeSecurityListCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

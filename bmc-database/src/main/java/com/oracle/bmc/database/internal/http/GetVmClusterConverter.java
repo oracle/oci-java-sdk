@@ -16,13 +16,15 @@ public class GetVmClusterConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetVmClusterRequest interceptRequest(GetVmClusterRequest request) {
+    public static com.oracle.bmc.database.requests.GetVmClusterRequest interceptRequest(
+            com.oracle.bmc.database.requests.GetVmClusterRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetVmClusterRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.GetVmClusterRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVmClusterId(), "vmClusterId must not be blank");
 
@@ -45,16 +47,22 @@ public class GetVmClusterConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetVmClusterResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetVmClusterResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetVmClusterResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.GetVmClusterResponse>() {
                             @Override
-                            public GetVmClusterResponse apply(
+                            public com.oracle.bmc.database.responses.GetVmClusterResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetVmClusterResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetVmClusterResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<VmCluster>>
@@ -66,8 +74,10 @@ public class GetVmClusterConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetVmClusterResponse.Builder builder =
-                                        GetVmClusterResponse.builder();
+                                com.oracle.bmc.database.responses.GetVmClusterResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetVmClusterResponse.builder();
 
                                 builder.vmCluster(response.getItem());
 
@@ -92,7 +102,8 @@ public class GetVmClusterConverter {
                                                     String.class));
                                 }
 
-                                GetVmClusterResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.GetVmClusterResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

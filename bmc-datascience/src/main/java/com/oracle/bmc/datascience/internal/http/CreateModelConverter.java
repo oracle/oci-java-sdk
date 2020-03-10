@@ -16,13 +16,15 @@ public class CreateModelConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateModelRequest interceptRequest(CreateModelRequest request) {
+    public static com.oracle.bmc.datascience.requests.CreateModelRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.CreateModelRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateModelRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.CreateModelRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateModelDetails(), "createModelDetails is required");
 
@@ -44,16 +46,22 @@ public class CreateModelConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.CreateModelResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.CreateModelResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateModelResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.CreateModelResponse>() {
                             @Override
-                            public CreateModelResponse apply(
+                            public com.oracle.bmc.datascience.responses.CreateModelResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateModelResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.CreateModelResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Model>>
@@ -65,7 +73,10 @@ public class CreateModelConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateModelResponse.Builder builder = CreateModelResponse.builder();
+                                com.oracle.bmc.datascience.responses.CreateModelResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .CreateModelResponse.builder();
 
                                 builder.model(response.getItem());
 
@@ -90,7 +101,8 @@ public class CreateModelConverter {
                                                     String.class));
                                 }
 
-                                CreateModelResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.CreateModelResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class DeleteApiKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteApiKeyRequest interceptRequest(DeleteApiKeyRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteApiKeyRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteApiKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteApiKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteApiKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notBlank(request.getFingerprint(), "fingerprint must not be blank");
@@ -50,16 +52,22 @@ public class DeleteApiKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteApiKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteApiKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteApiKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteApiKeyResponse>() {
                             @Override
-                            public DeleteApiKeyResponse apply(
+                            public com.oracle.bmc.identity.responses.DeleteApiKeyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteApiKeyResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteApiKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,8 +78,10 @@ public class DeleteApiKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteApiKeyResponse.Builder builder =
-                                        DeleteApiKeyResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteApiKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteApiKeyResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -85,7 +95,8 @@ public class DeleteApiKeyConverter {
                                                     String.class));
                                 }
 
-                                DeleteApiKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteApiKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

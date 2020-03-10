@@ -16,13 +16,15 @@ public class PrepareStatementConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static PrepareStatementRequest interceptRequest(PrepareStatementRequest request) {
+    public static com.oracle.bmc.nosql.requests.PrepareStatementRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.PrepareStatementRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, PrepareStatementRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.PrepareStatementRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getStatement(), "statement is required");
@@ -54,17 +56,21 @@ public class PrepareStatementConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, PrepareStatementResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.nosql.responses.PrepareStatementResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PrepareStatementResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.PrepareStatementResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, PrepareStatementResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.PrepareStatementResponse>() {
                             @Override
-                            public PrepareStatementResponse apply(
+                            public com.oracle.bmc.nosql.responses.PrepareStatementResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for PrepareStatementResponse");
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.PrepareStatementResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +84,10 @@ public class PrepareStatementConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                PrepareStatementResponse.Builder builder =
-                                        PrepareStatementResponse.builder();
+                                com.oracle.bmc.nosql.responses.PrepareStatementResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.nosql.responses
+                                                        .PrepareStatementResponse.builder();
 
                                 builder.preparedStatement(response.getItem());
 
@@ -95,7 +103,8 @@ public class PrepareStatementConverter {
                                                     String.class));
                                 }
 
-                                PrepareStatementResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.PrepareStatementResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

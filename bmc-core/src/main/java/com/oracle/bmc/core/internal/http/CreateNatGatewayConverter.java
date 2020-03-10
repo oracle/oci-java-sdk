@@ -16,13 +16,15 @@ public class CreateNatGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateNatGatewayRequest interceptRequest(CreateNatGatewayRequest request) {
+    public static com.oracle.bmc.core.requests.CreateNatGatewayRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateNatGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateNatGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateNatGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateNatGatewayDetails(), "createNatGatewayDetails is required");
@@ -42,17 +44,21 @@ public class CreateNatGatewayConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateNatGatewayResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateNatGatewayResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateNatGatewayResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateNatGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateNatGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateNatGatewayResponse>() {
                             @Override
-                            public CreateNatGatewayResponse apply(
+                            public com.oracle.bmc.core.responses.CreateNatGatewayResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateNatGatewayResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateNatGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateNatGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateNatGatewayResponse.Builder builder =
-                                        CreateNatGatewayResponse.builder();
+                                com.oracle.bmc.core.responses.CreateNatGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateNatGatewayResponse.builder();
 
                                 builder.natGateway(response.getItem());
 
@@ -92,7 +100,8 @@ public class CreateNatGatewayConverter {
                                                     String.class));
                                 }
 
-                                CreateNatGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateNatGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

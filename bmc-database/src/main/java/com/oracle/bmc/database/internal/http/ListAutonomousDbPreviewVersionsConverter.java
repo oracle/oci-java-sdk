@@ -16,15 +16,17 @@ public class ListAutonomousDbPreviewVersionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAutonomousDbPreviewVersionsRequest interceptRequest(
-            ListAutonomousDbPreviewVersionsRequest request) {
+    public static com.oracle.bmc.database.requests.ListAutonomousDbPreviewVersionsRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ListAutonomousDbPreviewVersionsRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListAutonomousDbPreviewVersionsRequest request) {
+            com.oracle.bmc.database.requests.ListAutonomousDbPreviewVersionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -81,19 +83,23 @@ public class ListAutonomousDbPreviewVersionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAutonomousDbPreviewVersionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListAutonomousDbPreviewVersionsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDbPreviewVersionsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListAutonomousDbPreviewVersionsResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListAutonomousDbPreviewVersionsResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .ListAutonomousDbPreviewVersionsResponse>() {
                             @Override
-                            public ListAutonomousDbPreviewVersionsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ListAutonomousDbPreviewVersionsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAutonomousDbPreviewVersionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListAutonomousDbPreviewVersionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -111,8 +117,12 @@ public class ListAutonomousDbPreviewVersionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAutonomousDbPreviewVersionsResponse.Builder builder =
-                                        ListAutonomousDbPreviewVersionsResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .ListAutonomousDbPreviewVersionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListAutonomousDbPreviewVersionsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -140,8 +150,9 @@ public class ListAutonomousDbPreviewVersionsConverter {
                                                     String.class));
                                 }
 
-                                ListAutonomousDbPreviewVersionsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .ListAutonomousDbPreviewVersionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

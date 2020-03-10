@@ -16,13 +16,15 @@ public class DeleteVolumeBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteVolumeBackupRequest interceptRequest(DeleteVolumeBackupRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteVolumeBackupRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteVolumeBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteVolumeBackupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteVolumeBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeBackupId(), "volumeBackupId must not be blank");
 
@@ -46,17 +48,21 @@ public class DeleteVolumeBackupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteVolumeBackupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteVolumeBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteVolumeBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteVolumeBackupResponse>() {
                             @Override
-                            public DeleteVolumeBackupResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteVolumeBackupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteVolumeBackupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteVolumeBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class DeleteVolumeBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteVolumeBackupResponse.Builder builder =
-                                        DeleteVolumeBackupResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteVolumeBackupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteVolumeBackupResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +90,8 @@ public class DeleteVolumeBackupConverter {
                                                     String.class));
                                 }
 
-                                DeleteVolumeBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteVolumeBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class GetIndexConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetIndexRequest interceptRequest(GetIndexRequest request) {
+    public static com.oracle.bmc.nosql.requests.GetIndexRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.GetIndexRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetIndexRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.GetIndexRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
         Validate.notBlank(request.getIndexName(), "indexName must not be blank");
@@ -58,15 +60,20 @@ public class GetIndexConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetIndexResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.GetIndexResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetIndexResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.GetIndexResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetIndexResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.GetIndexResponse>() {
                             @Override
-                            public GetIndexResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetIndexResponse");
+                            public com.oracle.bmc.nosql.responses.GetIndexResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.GetIndexResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Index>>
@@ -78,7 +85,8 @@ public class GetIndexConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetIndexResponse.Builder builder = GetIndexResponse.builder();
+                                com.oracle.bmc.nosql.responses.GetIndexResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.GetIndexResponse.builder();
 
                                 builder.index(response.getItem());
 
@@ -103,7 +111,8 @@ public class GetIndexConverter {
                                                     String.class));
                                 }
 
-                                GetIndexResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.GetIndexResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,17 @@ public class ChangeMountTargetCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeMountTargetCompartmentRequest interceptRequest(
-            ChangeMountTargetCompartmentRequest request) {
+    public static com.oracle.bmc.filestorage.requests.ChangeMountTargetCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.filestorage.requests.ChangeMountTargetCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeMountTargetCompartmentRequest request) {
+            com.oracle.bmc.filestorage.requests.ChangeMountTargetCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
         Validate.notNull(
@@ -57,18 +59,23 @@ public class ChangeMountTargetCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeMountTargetCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.ChangeMountTargetCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeMountTargetCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.ChangeMountTargetCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeMountTargetCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses
+                                        .ChangeMountTargetCompartmentResponse>() {
                             @Override
-                            public ChangeMountTargetCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.filestorage.responses
+                                            .ChangeMountTargetCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeMountTargetCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.ChangeMountTargetCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +86,12 @@ public class ChangeMountTargetCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeMountTargetCompartmentResponse.Builder builder =
-                                        ChangeMountTargetCompartmentResponse.builder();
+                                com.oracle.bmc.filestorage.responses
+                                                .ChangeMountTargetCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .ChangeMountTargetCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -94,8 +105,9 @@ public class ChangeMountTargetCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeMountTargetCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.filestorage.responses
+                                                .ChangeMountTargetCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class DeleteExadataInfrastructureConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteExadataInfrastructureRequest interceptRequest(
-            DeleteExadataInfrastructureRequest request) {
+    public static com.oracle.bmc.database.requests.DeleteExadataInfrastructureRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.DeleteExadataInfrastructureRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteExadataInfrastructureRequest request) {
+            com.oracle.bmc.database.requests.DeleteExadataInfrastructureRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
@@ -53,18 +54,23 @@ public class DeleteExadataInfrastructureConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteExadataInfrastructureResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DeleteExadataInfrastructureResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteExadataInfrastructureResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.DeleteExadataInfrastructureResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteExadataInfrastructureResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .DeleteExadataInfrastructureResponse>() {
                             @Override
-                            public DeleteExadataInfrastructureResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .DeleteExadataInfrastructureResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteExadataInfrastructureResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DeleteExadataInfrastructureResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +81,12 @@ public class DeleteExadataInfrastructureConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteExadataInfrastructureResponse.Builder builder =
-                                        DeleteExadataInfrastructureResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .DeleteExadataInfrastructureResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DeleteExadataInfrastructureResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -102,8 +112,9 @@ public class DeleteExadataInfrastructureConverter {
                                                     String.class));
                                 }
 
-                                DeleteExadataInfrastructureResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .DeleteExadataInfrastructureResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

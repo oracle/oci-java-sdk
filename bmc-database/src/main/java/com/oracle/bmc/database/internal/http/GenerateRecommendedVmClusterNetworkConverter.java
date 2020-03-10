@@ -16,15 +16,17 @@ public class GenerateRecommendedVmClusterNetworkConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GenerateRecommendedVmClusterNetworkRequest interceptRequest(
-            GenerateRecommendedVmClusterNetworkRequest request) {
+    public static com.oracle.bmc.database.requests.GenerateRecommendedVmClusterNetworkRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.GenerateRecommendedVmClusterNetworkRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GenerateRecommendedVmClusterNetworkRequest request) {
+            com.oracle.bmc.database.requests.GenerateRecommendedVmClusterNetworkRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
@@ -59,19 +61,24 @@ public class GenerateRecommendedVmClusterNetworkConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GenerateRecommendedVmClusterNetworkResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GenerateRecommendedVmClusterNetworkResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateRecommendedVmClusterNetworkResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .GenerateRecommendedVmClusterNetworkResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GenerateRecommendedVmClusterNetworkResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .GenerateRecommendedVmClusterNetworkResponse>() {
                             @Override
-                            public GenerateRecommendedVmClusterNetworkResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .GenerateRecommendedVmClusterNetworkResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GenerateRecommendedVmClusterNetworkResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GenerateRecommendedVmClusterNetworkResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -85,8 +92,12 @@ public class GenerateRecommendedVmClusterNetworkConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GenerateRecommendedVmClusterNetworkResponse.Builder builder =
-                                        GenerateRecommendedVmClusterNetworkResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .GenerateRecommendedVmClusterNetworkResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GenerateRecommendedVmClusterNetworkResponse
+                                                        .builder();
 
                                 builder.vmClusterNetworkDetails(response.getItem());
 
@@ -111,8 +122,9 @@ public class GenerateRecommendedVmClusterNetworkConverter {
                                                     String.class));
                                 }
 
-                                GenerateRecommendedVmClusterNetworkResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .GenerateRecommendedVmClusterNetworkResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

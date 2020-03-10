@@ -16,13 +16,15 @@ public class GetDbNodeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDbNodeRequest interceptRequest(GetDbNodeRequest request) {
+    public static com.oracle.bmc.database.requests.GetDbNodeRequest interceptRequest(
+            com.oracle.bmc.database.requests.GetDbNodeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDbNodeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.GetDbNodeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
 
@@ -41,15 +43,21 @@ public class GetDbNodeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetDbNodeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.database.responses.GetDbNodeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbNodeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetDbNodeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDbNodeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.GetDbNodeResponse>() {
                             @Override
-                            public GetDbNodeResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetDbNodeResponse");
+                            public com.oracle.bmc.database.responses.GetDbNodeResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetDbNodeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<DbNode>>
@@ -61,7 +69,10 @@ public class GetDbNodeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDbNodeResponse.Builder builder = GetDbNodeResponse.builder();
+                                com.oracle.bmc.database.responses.GetDbNodeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses.GetDbNodeResponse
+                                                        .builder();
 
                                 builder.dbNode(response.getItem());
 
@@ -86,7 +97,8 @@ public class GetDbNodeConverter {
                                                     String.class));
                                 }
 
-                                GetDbNodeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.GetDbNodeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

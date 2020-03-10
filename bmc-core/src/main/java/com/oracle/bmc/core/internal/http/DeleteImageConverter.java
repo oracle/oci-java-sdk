@@ -16,13 +16,15 @@ public class DeleteImageConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteImageRequest interceptRequest(DeleteImageRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteImageRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteImageRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteImageRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteImageRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
 
@@ -45,16 +47,21 @@ public class DeleteImageConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteImageResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DeleteImageResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteImageResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteImageResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteImageResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteImageResponse>() {
                             @Override
-                            public DeleteImageResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteImageResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteImageResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteImageResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -65,7 +72,8 @@ public class DeleteImageConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteImageResponse.Builder builder = DeleteImageResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteImageResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.DeleteImageResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -79,7 +87,8 @@ public class DeleteImageConverter {
                                                     String.class));
                                 }
 
-                                DeleteImageResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteImageResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

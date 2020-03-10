@@ -16,14 +16,15 @@ public class ListHttpProbeResultsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListHttpProbeResultsRequest interceptRequest(
-            ListHttpProbeResultsRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.ListHttpProbeResultsRequest interceptRequest(
+            com.oracle.bmc.healthchecks.requests.ListHttpProbeResultsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListHttpProbeResultsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.healthchecks.requests.ListHttpProbeResultsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getProbeConfigurationId(), "probeConfigurationId must not be blank");
@@ -96,18 +97,23 @@ public class ListHttpProbeResultsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListHttpProbeResultsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.ListHttpProbeResultsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListHttpProbeResultsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.ListHttpProbeResultsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListHttpProbeResultsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses
+                                        .ListHttpProbeResultsResponse>() {
                             @Override
-                            public ListHttpProbeResultsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses
+                                            .ListHttpProbeResultsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListHttpProbeResultsResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.ListHttpProbeResultsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -124,8 +130,11 @@ public class ListHttpProbeResultsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListHttpProbeResultsResponse.Builder builder =
-                                        ListHttpProbeResultsResponse.builder();
+                                com.oracle.bmc.healthchecks.responses.ListHttpProbeResultsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .ListHttpProbeResultsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -153,7 +162,8 @@ public class ListHttpProbeResultsConverter {
                                                     String.class));
                                 }
 
-                                ListHttpProbeResultsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.healthchecks.responses.ListHttpProbeResultsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

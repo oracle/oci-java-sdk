@@ -16,13 +16,15 @@ public class CreateTsigKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateTsigKeyRequest interceptRequest(CreateTsigKeyRequest request) {
+    public static com.oracle.bmc.dns.requests.CreateTsigKeyRequest interceptRequest(
+            com.oracle.bmc.dns.requests.CreateTsigKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateTsigKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.CreateTsigKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateTsigKeyDetails(), "createTsigKeyDetails is required");
 
@@ -40,16 +42,21 @@ public class CreateTsigKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateTsigKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.CreateTsigKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTsigKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.CreateTsigKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateTsigKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.CreateTsigKeyResponse>() {
                             @Override
-                            public CreateTsigKeyResponse apply(
+                            public com.oracle.bmc.dns.responses.CreateTsigKeyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateTsigKeyResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.CreateTsigKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<TsigKey>>
@@ -61,8 +68,9 @@ public class CreateTsigKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateTsigKeyResponse.Builder builder =
-                                        CreateTsigKeyResponse.builder();
+                                com.oracle.bmc.dns.responses.CreateTsigKeyResponse.Builder builder =
+                                        com.oracle.bmc.dns.responses.CreateTsigKeyResponse
+                                                .builder();
 
                                 builder.tsigKey(response.getItem());
 
@@ -87,7 +95,8 @@ public class CreateTsigKeyConverter {
                                                     String.class));
                                 }
 
-                                CreateTsigKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.CreateTsigKeyResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

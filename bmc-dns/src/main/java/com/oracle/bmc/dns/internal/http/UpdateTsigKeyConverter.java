@@ -16,13 +16,15 @@ public class UpdateTsigKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateTsigKeyRequest interceptRequest(UpdateTsigKeyRequest request) {
+    public static com.oracle.bmc.dns.requests.UpdateTsigKeyRequest interceptRequest(
+            com.oracle.bmc.dns.requests.UpdateTsigKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateTsigKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.UpdateTsigKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTsigKeyId(), "tsigKeyId must not be blank");
         Validate.notNull(request.getUpdateTsigKeyDetails(), "updateTsigKeyDetails is required");
@@ -54,16 +56,21 @@ public class UpdateTsigKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTsigKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.UpdateTsigKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTsigKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.UpdateTsigKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateTsigKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.UpdateTsigKeyResponse>() {
                             @Override
-                            public UpdateTsigKeyResponse apply(
+                            public com.oracle.bmc.dns.responses.UpdateTsigKeyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateTsigKeyResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.UpdateTsigKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<TsigKey>>
@@ -75,8 +82,9 @@ public class UpdateTsigKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateTsigKeyResponse.Builder builder =
-                                        UpdateTsigKeyResponse.builder();
+                                com.oracle.bmc.dns.responses.UpdateTsigKeyResponse.Builder builder =
+                                        com.oracle.bmc.dns.responses.UpdateTsigKeyResponse
+                                                .builder();
 
                                 builder.tsigKey(response.getItem());
 
@@ -101,7 +109,8 @@ public class UpdateTsigKeyConverter {
                                                     String.class));
                                 }
 
-                                UpdateTsigKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.UpdateTsigKeyResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

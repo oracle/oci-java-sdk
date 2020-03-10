@@ -16,13 +16,15 @@ public class DeleteAuthTokenConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteAuthTokenRequest interceptRequest(DeleteAuthTokenRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteAuthTokenRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteAuthTokenRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteAuthTokenRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteAuthTokenRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notBlank(request.getAuthTokenId(), "authTokenId must not be blank");
@@ -51,16 +53,21 @@ public class DeleteAuthTokenConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteAuthTokenResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteAuthTokenResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAuthTokenResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteAuthTokenResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteAuthTokenResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteAuthTokenResponse>() {
                             @Override
-                            public DeleteAuthTokenResponse apply(
+                            public com.oracle.bmc.identity.responses.DeleteAuthTokenResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteAuthTokenResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteAuthTokenResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +78,10 @@ public class DeleteAuthTokenConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteAuthTokenResponse.Builder builder =
-                                        DeleteAuthTokenResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteAuthTokenResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteAuthTokenResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +95,8 @@ public class DeleteAuthTokenConverter {
                                                     String.class));
                                 }
 
-                                DeleteAuthTokenResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteAuthTokenResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

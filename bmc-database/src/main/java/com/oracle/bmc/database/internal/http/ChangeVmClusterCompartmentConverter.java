@@ -16,15 +16,16 @@ public class ChangeVmClusterCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeVmClusterCompartmentRequest interceptRequest(
-            ChangeVmClusterCompartmentRequest request) {
+    public static com.oracle.bmc.database.requests.ChangeVmClusterCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ChangeVmClusterCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeVmClusterCompartmentRequest request) {
+            com.oracle.bmc.database.requests.ChangeVmClusterCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getChangeVmClusterCompartmentDetails(),
@@ -61,18 +62,23 @@ public class ChangeVmClusterCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeVmClusterCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ChangeVmClusterCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeVmClusterCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ChangeVmClusterCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeVmClusterCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .ChangeVmClusterCompartmentResponse>() {
                             @Override
-                            public ChangeVmClusterCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ChangeVmClusterCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeVmClusterCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ChangeVmClusterCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +89,12 @@ public class ChangeVmClusterCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeVmClusterCompartmentResponse.Builder builder =
-                                        ChangeVmClusterCompartmentResponse.builder();
+                                com.oracle.bmc.database.responses.ChangeVmClusterCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ChangeVmClusterCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -110,8 +120,8 @@ public class ChangeVmClusterCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeVmClusterCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses.ChangeVmClusterCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

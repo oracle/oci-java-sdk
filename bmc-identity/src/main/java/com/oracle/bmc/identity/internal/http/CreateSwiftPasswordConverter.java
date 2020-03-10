@@ -16,13 +16,15 @@ public class CreateSwiftPasswordConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateSwiftPasswordRequest interceptRequest(CreateSwiftPasswordRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateSwiftPasswordRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateSwiftPasswordRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateSwiftPasswordRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreateSwiftPasswordRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateSwiftPasswordDetails(), "createSwiftPasswordDetails is required");
@@ -49,18 +51,21 @@ public class CreateSwiftPasswordConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateSwiftPasswordResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateSwiftPasswordResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateSwiftPasswordResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.CreateSwiftPasswordResponse>() {
                             @Override
-                            public CreateSwiftPasswordResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.CreateSwiftPasswordResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateSwiftPasswordResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateSwiftPasswordResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +79,11 @@ public class CreateSwiftPasswordConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateSwiftPasswordResponse.Builder builder =
-                                        CreateSwiftPasswordResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateSwiftPasswordResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateSwiftPasswordResponse.builder();
 
                                 builder.swiftPassword(response.getItem());
 
@@ -100,7 +108,8 @@ public class CreateSwiftPasswordConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateSwiftPasswordResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateSwiftPasswordResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

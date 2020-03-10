@@ -16,13 +16,15 @@ public class ListSecurityListsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListSecurityListsRequest interceptRequest(ListSecurityListsRequest request) {
+    public static com.oracle.bmc.core.requests.ListSecurityListsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListSecurityListsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListSecurityListsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListSecurityListsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getVcnId(), "vcnId is required");
@@ -98,17 +100,21 @@ public class ListSecurityListsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListSecurityListsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListSecurityListsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityListsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListSecurityListsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListSecurityListsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListSecurityListsResponse>() {
                             @Override
-                            public ListSecurityListsResponse apply(
+                            public com.oracle.bmc.core.responses.ListSecurityListsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListSecurityListsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListSecurityListsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -124,8 +130,10 @@ public class ListSecurityListsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListSecurityListsResponse.Builder builder =
-                                        ListSecurityListsResponse.builder();
+                                com.oracle.bmc.core.responses.ListSecurityListsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListSecurityListsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -153,7 +161,8 @@ public class ListSecurityListsConverter {
                                                     String.class));
                                 }
 
-                                ListSecurityListsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListSecurityListsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

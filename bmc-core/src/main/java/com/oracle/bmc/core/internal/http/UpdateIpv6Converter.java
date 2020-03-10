@@ -16,13 +16,15 @@ public class UpdateIpv6Converter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateIpv6Request interceptRequest(UpdateIpv6Request request) {
+    public static com.oracle.bmc.core.requests.UpdateIpv6Request interceptRequest(
+            com.oracle.bmc.core.requests.UpdateIpv6Request request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateIpv6Request request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateIpv6Request request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
         Validate.notNull(request.getUpdateIpv6Details(), "updateIpv6Details is required");
@@ -50,15 +52,20 @@ public class UpdateIpv6Converter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIpv6Response>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.UpdateIpv6Response>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIpv6Response>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.UpdateIpv6Response>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateIpv6Response>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateIpv6Response>() {
                             @Override
-                            public UpdateIpv6Response apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateIpv6Response");
+                            public com.oracle.bmc.core.responses.UpdateIpv6Response apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateIpv6Response");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Ipv6>>
@@ -69,7 +76,8 @@ public class UpdateIpv6Converter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateIpv6Response.Builder builder = UpdateIpv6Response.builder();
+                                com.oracle.bmc.core.responses.UpdateIpv6Response.Builder builder =
+                                        com.oracle.bmc.core.responses.UpdateIpv6Response.builder();
 
                                 builder.ipv6(response.getItem());
 
@@ -94,7 +102,8 @@ public class UpdateIpv6Converter {
                                                     String.class));
                                 }
 
-                                UpdateIpv6Response responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateIpv6Response responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

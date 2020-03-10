@@ -16,13 +16,15 @@ public class CreateCertificateConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateCertificateRequest interceptRequest(CreateCertificateRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.CreateCertificateRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.CreateCertificateRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateCertificateRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.CreateCertificateRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateCertificateDetails(), "createCertificateDetails is required");
@@ -53,17 +55,21 @@ public class CreateCertificateConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateCertificateResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.CreateCertificateResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.CreateCertificateResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateCertificateResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.CreateCertificateResponse>() {
                             @Override
-                            public CreateCertificateResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.loadbalancer.responses.CreateCertificateResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateCertificateResponse");
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.CreateCertificateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -74,8 +80,11 @@ public class CreateCertificateConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateCertificateResponse.Builder builder =
-                                        CreateCertificateResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.CreateCertificateResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .CreateCertificateResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -101,7 +110,8 @@ public class CreateCertificateConverter {
                                                     String.class));
                                 }
 
-                                CreateCertificateResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.CreateCertificateResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

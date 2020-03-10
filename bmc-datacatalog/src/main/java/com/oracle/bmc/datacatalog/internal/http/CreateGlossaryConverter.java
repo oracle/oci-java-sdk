@@ -16,13 +16,15 @@ public class CreateGlossaryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateGlossaryRequest interceptRequest(CreateGlossaryRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.CreateGlossaryRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.CreateGlossaryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateGlossaryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.CreateGlossaryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notNull(request.getCreateGlossaryDetails(), "createGlossaryDetails is required");
@@ -51,16 +53,22 @@ public class CreateGlossaryConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateGlossaryResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.CreateGlossaryResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGlossaryResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.CreateGlossaryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateGlossaryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.CreateGlossaryResponse>() {
                             @Override
-                            public CreateGlossaryResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateGlossaryResponse");
+                            public com.oracle.bmc.datacatalog.responses.CreateGlossaryResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.CreateGlossaryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Glossary>>
@@ -72,8 +80,10 @@ public class CreateGlossaryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateGlossaryResponse.Builder builder =
-                                        CreateGlossaryResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.CreateGlossaryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .CreateGlossaryResponse.builder();
 
                                 builder.glossary(response.getItem());
 
@@ -98,7 +108,8 @@ public class CreateGlossaryConverter {
                                                     String.class));
                                 }
 
-                                CreateGlossaryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.CreateGlossaryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

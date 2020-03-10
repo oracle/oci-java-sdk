@@ -16,13 +16,15 @@ public class UpdatePublicIpConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdatePublicIpRequest interceptRequest(UpdatePublicIpRequest request) {
+    public static com.oracle.bmc.core.requests.UpdatePublicIpRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdatePublicIpRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdatePublicIpRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdatePublicIpRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
         Validate.notNull(request.getUpdatePublicIpDetails(), "updatePublicIpDetails is required");
@@ -46,16 +48,21 @@ public class UpdatePublicIpConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicIpResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.UpdatePublicIpResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicIpResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdatePublicIpResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdatePublicIpResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdatePublicIpResponse>() {
                             @Override
-                            public UpdatePublicIpResponse apply(
+                            public com.oracle.bmc.core.responses.UpdatePublicIpResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdatePublicIpResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdatePublicIpResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<PublicIp>>
@@ -67,8 +74,10 @@ public class UpdatePublicIpConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdatePublicIpResponse.Builder builder =
-                                        UpdatePublicIpResponse.builder();
+                                com.oracle.bmc.core.responses.UpdatePublicIpResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses.UpdatePublicIpResponse
+                                                        .builder();
 
                                 builder.publicIp(response.getItem());
 
@@ -93,7 +102,8 @@ public class UpdatePublicIpConverter {
                                                     String.class));
                                 }
 
-                                UpdatePublicIpResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdatePublicIpResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

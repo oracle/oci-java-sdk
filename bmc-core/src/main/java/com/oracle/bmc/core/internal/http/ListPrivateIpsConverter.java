@@ -16,13 +16,15 @@ public class ListPrivateIpsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListPrivateIpsRequest interceptRequest(ListPrivateIpsRequest request) {
+    public static com.oracle.bmc.core.requests.ListPrivateIpsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListPrivateIpsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListPrivateIpsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListPrivateIpsRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -75,16 +77,21 @@ public class ListPrivateIpsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ListPrivateIpsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListPrivateIpsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListPrivateIpsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListPrivateIpsResponse>() {
                             @Override
-                            public ListPrivateIpsResponse apply(
+                            public com.oracle.bmc.core.responses.ListPrivateIpsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListPrivateIpsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListPrivateIpsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -99,8 +106,10 @@ public class ListPrivateIpsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListPrivateIpsResponse.Builder builder =
-                                        ListPrivateIpsResponse.builder();
+                                com.oracle.bmc.core.responses.ListPrivateIpsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses.ListPrivateIpsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -128,7 +137,8 @@ public class ListPrivateIpsConverter {
                                                     String.class));
                                 }
 
-                                ListPrivateIpsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListPrivateIpsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

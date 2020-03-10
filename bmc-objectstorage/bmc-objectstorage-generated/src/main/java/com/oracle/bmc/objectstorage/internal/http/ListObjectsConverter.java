@@ -16,13 +16,15 @@ public class ListObjectsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListObjectsRequest interceptRequest(ListObjectsRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.ListObjectsRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.ListObjectsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListObjectsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.ListObjectsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -99,16 +101,22 @@ public class ListObjectsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.ListObjectsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.ListObjectsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListObjectsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.ListObjectsResponse>() {
                             @Override
-                            public ListObjectsResponse apply(
+                            public com.oracle.bmc.objectstorage.responses.ListObjectsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListObjectsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.ListObjectsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -122,7 +130,10 @@ public class ListObjectsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListObjectsResponse.Builder builder = ListObjectsResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.ListObjectsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .ListObjectsResponse.builder();
 
                                 builder.listObjects(response.getItem());
 
@@ -150,7 +161,8 @@ public class ListObjectsConverter {
                                                     String.class));
                                 }
 
-                                ListObjectsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.ListObjectsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

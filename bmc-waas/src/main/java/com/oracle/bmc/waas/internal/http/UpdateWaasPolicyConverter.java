@@ -16,13 +16,15 @@ public class UpdateWaasPolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateWaasPolicyRequest interceptRequest(UpdateWaasPolicyRequest request) {
+    public static com.oracle.bmc.waas.requests.UpdateWaasPolicyRequest interceptRequest(
+            com.oracle.bmc.waas.requests.UpdateWaasPolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateWaasPolicyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.UpdateWaasPolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
         Validate.notNull(
@@ -56,17 +58,21 @@ public class UpdateWaasPolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateWaasPolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.UpdateWaasPolicyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateWaasPolicyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.UpdateWaasPolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateWaasPolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.UpdateWaasPolicyResponse>() {
                             @Override
-                            public UpdateWaasPolicyResponse apply(
+                            public com.oracle.bmc.waas.responses.UpdateWaasPolicyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateWaasPolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.UpdateWaasPolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -77,8 +83,10 @@ public class UpdateWaasPolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateWaasPolicyResponse.Builder builder =
-                                        UpdateWaasPolicyResponse.builder();
+                                com.oracle.bmc.waas.responses.UpdateWaasPolicyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .UpdateWaasPolicyResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -104,7 +112,8 @@ public class UpdateWaasPolicyConverter {
                                                     String.class));
                                 }
 
-                                UpdateWaasPolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.UpdateWaasPolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

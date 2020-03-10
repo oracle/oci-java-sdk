@@ -16,14 +16,15 @@ public class ChangeZoneCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeZoneCompartmentRequest interceptRequest(
-            ChangeZoneCompartmentRequest request) {
+    public static com.oracle.bmc.dns.requests.ChangeZoneCompartmentRequest interceptRequest(
+            com.oracle.bmc.dns.requests.ChangeZoneCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeZoneCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.ChangeZoneCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getZoneId(), "zoneId must not be blank");
         Validate.notNull(
@@ -60,18 +61,21 @@ public class ChangeZoneCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeZoneCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.ChangeZoneCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeZoneCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.ChangeZoneCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeZoneCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.ChangeZoneCompartmentResponse>() {
                             @Override
-                            public ChangeZoneCompartmentResponse apply(
+                            public com.oracle.bmc.dns.responses.ChangeZoneCompartmentResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeZoneCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.ChangeZoneCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +86,10 @@ public class ChangeZoneCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeZoneCompartmentResponse.Builder builder =
-                                        ChangeZoneCompartmentResponse.builder();
+                                com.oracle.bmc.dns.responses.ChangeZoneCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .ChangeZoneCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -97,7 +103,8 @@ public class ChangeZoneCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeZoneCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.ChangeZoneCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

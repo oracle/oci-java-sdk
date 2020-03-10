@@ -2,16 +2,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <artifactId>oci-java-sdk-addons</artifactId>
     <groupId>com.oracle.oci.sdk</groupId>
-    <version>1.13.2</version>
+    <version>1.14.0</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
 
   <artifactId>oci-java-sdk-addons-sasl</artifactId>
+  <name>Oracle Cloud Infrastructure SDK - SASL Client</name>
+  <description>This project contains the SASL client used for Oracle Cloud Infrastructure</description>
+  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
   <build>
+    <!-- Substitutes maven properties into the SDK properties -->
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>com.github.os72</groupId>
@@ -49,7 +61,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.13.2</version>
+      <version>1.14.0</version>
     </dependency>
   </dependencies>
 

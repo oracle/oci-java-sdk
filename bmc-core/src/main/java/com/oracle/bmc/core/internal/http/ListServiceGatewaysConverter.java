@@ -16,13 +16,15 @@ public class ListServiceGatewaysConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListServiceGatewaysRequest interceptRequest(ListServiceGatewaysRequest request) {
+    public static com.oracle.bmc.core.requests.ListServiceGatewaysRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListServiceGatewaysRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListServiceGatewaysRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListServiceGatewaysRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -91,18 +93,21 @@ public class ListServiceGatewaysConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListServiceGatewaysResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListServiceGatewaysResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListServiceGatewaysResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListServiceGatewaysResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListServiceGatewaysResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListServiceGatewaysResponse>() {
                             @Override
-                            public ListServiceGatewaysResponse apply(
+                            public com.oracle.bmc.core.responses.ListServiceGatewaysResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListServiceGatewaysResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListServiceGatewaysResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -119,8 +124,10 @@ public class ListServiceGatewaysConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListServiceGatewaysResponse.Builder builder =
-                                        ListServiceGatewaysResponse.builder();
+                                com.oracle.bmc.core.responses.ListServiceGatewaysResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListServiceGatewaysResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -148,7 +155,8 @@ public class ListServiceGatewaysConverter {
                                                     String.class));
                                 }
 
-                                ListServiceGatewaysResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListServiceGatewaysResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

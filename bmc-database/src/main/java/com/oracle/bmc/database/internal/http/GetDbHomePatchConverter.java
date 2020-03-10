@@ -16,13 +16,15 @@ public class GetDbHomePatchConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDbHomePatchRequest interceptRequest(GetDbHomePatchRequest request) {
+    public static com.oracle.bmc.database.requests.GetDbHomePatchRequest interceptRequest(
+            com.oracle.bmc.database.requests.GetDbHomePatchRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDbHomePatchRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.GetDbHomePatchRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbHomeId(), "dbHomeId must not be blank");
         Validate.notBlank(request.getPatchId(), "patchId must not be blank");
@@ -46,16 +48,22 @@ public class GetDbHomePatchConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomePatchResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetDbHomePatchResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomePatchResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetDbHomePatchResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDbHomePatchResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.GetDbHomePatchResponse>() {
                             @Override
-                            public GetDbHomePatchResponse apply(
+                            public com.oracle.bmc.database.responses.GetDbHomePatchResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetDbHomePatchResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetDbHomePatchResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Patch>>
@@ -67,8 +75,10 @@ public class GetDbHomePatchConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDbHomePatchResponse.Builder builder =
-                                        GetDbHomePatchResponse.builder();
+                                com.oracle.bmc.database.responses.GetDbHomePatchResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetDbHomePatchResponse.builder();
 
                                 builder.patch(response.getItem());
 
@@ -84,7 +94,8 @@ public class GetDbHomePatchConverter {
                                                     String.class));
                                 }
 
-                                GetDbHomePatchResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.GetDbHomePatchResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

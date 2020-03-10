@@ -16,13 +16,15 @@ public class CreateExportConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateExportRequest interceptRequest(CreateExportRequest request) {
+    public static com.oracle.bmc.filestorage.requests.CreateExportRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.CreateExportRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateExportRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.CreateExportRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateExportDetails(), "createExportDetails is required");
 
@@ -44,16 +46,22 @@ public class CreateExportConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateExportResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.CreateExportResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateExportResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.CreateExportResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateExportResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.CreateExportResponse>() {
                             @Override
-                            public CreateExportResponse apply(
+                            public com.oracle.bmc.filestorage.responses.CreateExportResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateExportResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.CreateExportResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Export>>
@@ -65,8 +73,10 @@ public class CreateExportConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateExportResponse.Builder builder =
-                                        CreateExportResponse.builder();
+                                com.oracle.bmc.filestorage.responses.CreateExportResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .CreateExportResponse.builder();
 
                                 builder.export(response.getItem());
 
@@ -91,7 +101,8 @@ public class CreateExportConverter {
                                                     String.class));
                                 }
 
-                                CreateExportResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.CreateExportResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

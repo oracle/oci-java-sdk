@@ -16,15 +16,17 @@ public class CreateManagedInstanceGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateManagedInstanceGroupRequest interceptRequest(
-            CreateManagedInstanceGroupRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.CreateManagedInstanceGroupRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.CreateManagedInstanceGroupRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateManagedInstanceGroupRequest request) {
+            com.oracle.bmc.osmanagement.requests.CreateManagedInstanceGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateManagedInstanceGroupDetails(),
@@ -49,18 +51,23 @@ public class CreateManagedInstanceGroupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateManagedInstanceGroupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.CreateManagedInstanceGroupResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateManagedInstanceGroupResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.CreateManagedInstanceGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateManagedInstanceGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .CreateManagedInstanceGroupResponse>() {
                             @Override
-                            public CreateManagedInstanceGroupResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .CreateManagedInstanceGroupResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateManagedInstanceGroupResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.CreateManagedInstanceGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +81,12 @@ public class CreateManagedInstanceGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateManagedInstanceGroupResponse.Builder builder =
-                                        CreateManagedInstanceGroupResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .CreateManagedInstanceGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .CreateManagedInstanceGroupResponse
+                                                        .builder();
 
                                 builder.managedInstanceGroup(response.getItem());
 
@@ -112,8 +123,9 @@ public class CreateManagedInstanceGroupConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateManagedInstanceGroupResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .CreateManagedInstanceGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

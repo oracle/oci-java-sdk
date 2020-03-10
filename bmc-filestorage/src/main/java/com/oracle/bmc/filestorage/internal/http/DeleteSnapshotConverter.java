@@ -16,13 +16,15 @@ public class DeleteSnapshotConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSnapshotRequest interceptRequest(DeleteSnapshotRequest request) {
+    public static com.oracle.bmc.filestorage.requests.DeleteSnapshotRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.DeleteSnapshotRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteSnapshotRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.DeleteSnapshotRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
 
@@ -49,16 +51,22 @@ public class DeleteSnapshotConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSnapshotResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.DeleteSnapshotResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSnapshotResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.DeleteSnapshotResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteSnapshotResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.DeleteSnapshotResponse>() {
                             @Override
-                            public DeleteSnapshotResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteSnapshotResponse");
+                            public com.oracle.bmc.filestorage.responses.DeleteSnapshotResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.DeleteSnapshotResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +77,10 @@ public class DeleteSnapshotConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSnapshotResponse.Builder builder =
-                                        DeleteSnapshotResponse.builder();
+                                com.oracle.bmc.filestorage.responses.DeleteSnapshotResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .DeleteSnapshotResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +94,8 @@ public class DeleteSnapshotConverter {
                                                     String.class));
                                 }
 
-                                DeleteSnapshotResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.DeleteSnapshotResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

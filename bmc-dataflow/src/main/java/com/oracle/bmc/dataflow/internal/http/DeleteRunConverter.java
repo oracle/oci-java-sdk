@@ -16,13 +16,15 @@ public class DeleteRunConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteRunRequest interceptRequest(DeleteRunRequest request) {
+    public static com.oracle.bmc.dataflow.requests.DeleteRunRequest interceptRequest(
+            com.oracle.bmc.dataflow.requests.DeleteRunRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteRunRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dataflow.requests.DeleteRunRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getRunId(), "runId must not be blank");
 
@@ -49,15 +51,21 @@ public class DeleteRunConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRunResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dataflow.responses.DeleteRunResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRunResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dataflow.responses.DeleteRunResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteRunResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dataflow.responses.DeleteRunResponse>() {
                             @Override
-                            public DeleteRunResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteRunResponse");
+                            public com.oracle.bmc.dataflow.responses.DeleteRunResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dataflow.responses.DeleteRunResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -68,7 +76,10 @@ public class DeleteRunConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteRunResponse.Builder builder = DeleteRunResponse.builder();
+                                com.oracle.bmc.dataflow.responses.DeleteRunResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dataflow.responses.DeleteRunResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +93,8 @@ public class DeleteRunConverter {
                                                     String.class));
                                 }
 
-                                DeleteRunResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dataflow.responses.DeleteRunResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

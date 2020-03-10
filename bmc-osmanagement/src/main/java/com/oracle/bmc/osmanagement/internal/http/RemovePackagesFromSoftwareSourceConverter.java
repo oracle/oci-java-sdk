@@ -16,15 +16,17 @@ public class RemovePackagesFromSoftwareSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static RemovePackagesFromSoftwareSourceRequest interceptRequest(
-            RemovePackagesFromSoftwareSourceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.RemovePackagesFromSoftwareSourceRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.RemovePackagesFromSoftwareSourceRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            RemovePackagesFromSoftwareSourceRequest request) {
+            com.oracle.bmc.osmanagement.requests.RemovePackagesFromSoftwareSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
         Validate.notNull(
@@ -53,19 +55,24 @@ public class RemovePackagesFromSoftwareSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, RemovePackagesFromSoftwareSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.RemovePackagesFromSoftwareSourceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RemovePackagesFromSoftwareSourceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses
+                                .RemovePackagesFromSoftwareSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                RemovePackagesFromSoftwareSourceResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .RemovePackagesFromSoftwareSourceResponse>() {
                             @Override
-                            public RemovePackagesFromSoftwareSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .RemovePackagesFromSoftwareSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for RemovePackagesFromSoftwareSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.RemovePackagesFromSoftwareSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +83,12 @@ public class RemovePackagesFromSoftwareSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                RemovePackagesFromSoftwareSourceResponse.Builder builder =
-                                        RemovePackagesFromSoftwareSourceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .RemovePackagesFromSoftwareSourceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .RemovePackagesFromSoftwareSourceResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -91,8 +102,9 @@ public class RemovePackagesFromSoftwareSourceConverter {
                                                     String.class));
                                 }
 
-                                RemovePackagesFromSoftwareSourceResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .RemovePackagesFromSoftwareSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

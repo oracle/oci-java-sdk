@@ -16,13 +16,15 @@ public class UpdateFolderConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateFolderRequest interceptRequest(UpdateFolderRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.UpdateFolderRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.UpdateFolderRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateFolderRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.UpdateFolderRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -60,16 +62,22 @@ public class UpdateFolderConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFolderResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.UpdateFolderResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFolderResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.UpdateFolderResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateFolderResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.UpdateFolderResponse>() {
                             @Override
-                            public UpdateFolderResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.UpdateFolderResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateFolderResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.UpdateFolderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Folder>>
@@ -81,8 +89,10 @@ public class UpdateFolderConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateFolderResponse.Builder builder =
-                                        UpdateFolderResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.UpdateFolderResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .UpdateFolderResponse.builder();
 
                                 builder.folder(response.getItem());
 
@@ -107,7 +117,8 @@ public class UpdateFolderConverter {
                                                     String.class));
                                 }
 
-                                UpdateFolderResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.UpdateFolderResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,14 +16,15 @@ public class CreateSmtpCredentialConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateSmtpCredentialRequest interceptRequest(
-            CreateSmtpCredentialRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateSmtpCredentialRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateSmtpCredentialRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateSmtpCredentialRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreateSmtpCredentialRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateSmtpCredentialDetails(),
@@ -51,18 +52,21 @@ public class CreateSmtpCredentialConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateSmtpCredentialResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateSmtpCredentialResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSmtpCredentialResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateSmtpCredentialResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateSmtpCredentialResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.CreateSmtpCredentialResponse>() {
                             @Override
-                            public CreateSmtpCredentialResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.CreateSmtpCredentialResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateSmtpCredentialResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateSmtpCredentialResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +80,11 @@ public class CreateSmtpCredentialConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateSmtpCredentialResponse.Builder builder =
-                                        CreateSmtpCredentialResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateSmtpCredentialResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateSmtpCredentialResponse.builder();
 
                                 builder.smtpCredential(response.getItem());
 
@@ -102,7 +109,8 @@ public class CreateSmtpCredentialConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateSmtpCredentialResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateSmtpCredentialResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

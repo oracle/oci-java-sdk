@@ -16,13 +16,15 @@ public class CreateDhcpOptionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateDhcpOptionsRequest interceptRequest(CreateDhcpOptionsRequest request) {
+    public static com.oracle.bmc.core.requests.CreateDhcpOptionsRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateDhcpOptionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateDhcpOptionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateDhcpOptionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateDhcpDetails(), "createDhcpDetails is required");
 
@@ -41,17 +43,21 @@ public class CreateDhcpOptionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateDhcpOptionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateDhcpOptionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateDhcpOptionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateDhcpOptionsResponse>() {
                             @Override
-                            public CreateDhcpOptionsResponse apply(
+                            public com.oracle.bmc.core.responses.CreateDhcpOptionsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateDhcpOptionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateDhcpOptionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -65,8 +71,10 @@ public class CreateDhcpOptionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateDhcpOptionsResponse.Builder builder =
-                                        CreateDhcpOptionsResponse.builder();
+                                com.oracle.bmc.core.responses.CreateDhcpOptionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateDhcpOptionsResponse.builder();
 
                                 builder.dhcpOptions(response.getItem());
 
@@ -91,7 +99,8 @@ public class CreateDhcpOptionsConverter {
                                                     String.class));
                                 }
 
-                                CreateDhcpOptionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateDhcpOptionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

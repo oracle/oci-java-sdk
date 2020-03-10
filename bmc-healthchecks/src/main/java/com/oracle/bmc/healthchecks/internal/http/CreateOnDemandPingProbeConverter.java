@@ -16,15 +16,16 @@ public class CreateOnDemandPingProbeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateOnDemandPingProbeRequest interceptRequest(
-            CreateOnDemandPingProbeRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.CreateOnDemandPingProbeRequest
+            interceptRequest(
+                    com.oracle.bmc.healthchecks.requests.CreateOnDemandPingProbeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateOnDemandPingProbeRequest request) {
+            com.oracle.bmc.healthchecks.requests.CreateOnDemandPingProbeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateOnDemandPingProbeDetails(),
@@ -45,18 +46,23 @@ public class CreateOnDemandPingProbeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateOnDemandPingProbeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.CreateOnDemandPingProbeResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateOnDemandPingProbeResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.CreateOnDemandPingProbeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateOnDemandPingProbeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses
+                                        .CreateOnDemandPingProbeResponse>() {
                             @Override
-                            public CreateOnDemandPingProbeResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses
+                                            .CreateOnDemandPingProbeResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateOnDemandPingProbeResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.CreateOnDemandPingProbeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<PingProbe>>
@@ -68,8 +74,11 @@ public class CreateOnDemandPingProbeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateOnDemandPingProbeResponse.Builder builder =
-                                        CreateOnDemandPingProbeResponse.builder();
+                                com.oracle.bmc.healthchecks.responses
+                                                .CreateOnDemandPingProbeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .CreateOnDemandPingProbeResponse.builder();
 
                                 builder.pingProbe(response.getItem());
 
@@ -97,7 +106,9 @@ public class CreateOnDemandPingProbeConverter {
                                                     String.class));
                                 }
 
-                                CreateOnDemandPingProbeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.healthchecks.responses
+                                                .CreateOnDemandPingProbeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

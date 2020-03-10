@@ -16,15 +16,16 @@ public class ChangeInternetGatewayCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeInternetGatewayCompartmentRequest interceptRequest(
-            ChangeInternetGatewayCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeInternetGatewayCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeInternetGatewayCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeInternetGatewayCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeInternetGatewayCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIgId(), "igId must not be blank");
         Validate.notNull(
@@ -57,19 +58,23 @@ public class ChangeInternetGatewayCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeInternetGatewayCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeInternetGatewayCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeInternetGatewayCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeInternetGatewayCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeInternetGatewayCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeInternetGatewayCompartmentResponse>() {
                             @Override
-                            public ChangeInternetGatewayCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeInternetGatewayCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeInternetGatewayCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeInternetGatewayCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -80,8 +85,12 @@ public class ChangeInternetGatewayCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeInternetGatewayCompartmentResponse.Builder builder =
-                                        ChangeInternetGatewayCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeInternetGatewayCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeInternetGatewayCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -104,8 +113,9 @@ public class ChangeInternetGatewayCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeInternetGatewayCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeInternetGatewayCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

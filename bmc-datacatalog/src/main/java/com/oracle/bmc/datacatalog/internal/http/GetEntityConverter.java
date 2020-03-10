@@ -16,13 +16,15 @@ public class GetEntityConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetEntityRequest interceptRequest(GetEntityRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetEntityRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetEntityRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetEntityRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetEntityRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -64,15 +66,22 @@ public class GetEntityConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetEntityResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.GetEntityResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetEntityResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetEntityResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetEntityResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.GetEntityResponse>() {
                             @Override
-                            public GetEntityResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetEntityResponse");
+                            public com.oracle.bmc.datacatalog.responses.GetEntityResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetEntityResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Entity>>
@@ -84,7 +93,10 @@ public class GetEntityConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetEntityResponse.Builder builder = GetEntityResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetEntityResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .GetEntityResponse.builder();
 
                                 builder.entity(response.getItem());
 
@@ -109,7 +121,8 @@ public class GetEntityConverter {
                                                     String.class));
                                 }
 
-                                GetEntityResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetEntityResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

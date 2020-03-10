@@ -16,13 +16,15 @@ public class ListIndexesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListIndexesRequest interceptRequest(ListIndexesRequest request) {
+    public static com.oracle.bmc.nosql.requests.ListIndexesRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.ListIndexesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListIndexesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.ListIndexesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
 
@@ -102,16 +104,21 @@ public class ListIndexesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListIndexesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.ListIndexesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListIndexesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.ListIndexesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListIndexesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.ListIndexesResponse>() {
                             @Override
-                            public ListIndexesResponse apply(
+                            public com.oracle.bmc.nosql.responses.ListIndexesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListIndexesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.ListIndexesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -125,7 +132,9 @@ public class ListIndexesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListIndexesResponse.Builder builder = ListIndexesResponse.builder();
+                                com.oracle.bmc.nosql.responses.ListIndexesResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.ListIndexesResponse
+                                                .builder();
 
                                 builder.indexCollection(response.getItem());
 
@@ -153,7 +162,8 @@ public class ListIndexesConverter {
                                                     String.class));
                                 }
 
-                                ListIndexesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.ListIndexesResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

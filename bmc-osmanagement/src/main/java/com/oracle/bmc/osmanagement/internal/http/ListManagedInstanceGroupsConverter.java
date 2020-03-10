@@ -16,15 +16,16 @@ public class ListManagedInstanceGroupsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListManagedInstanceGroupsRequest interceptRequest(
-            ListManagedInstanceGroupsRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.ListManagedInstanceGroupsRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.ListManagedInstanceGroupsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListManagedInstanceGroupsRequest request) {
+            com.oracle.bmc.osmanagement.requests.ListManagedInstanceGroupsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -97,18 +98,23 @@ public class ListManagedInstanceGroupsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListManagedInstanceGroupsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.ListManagedInstanceGroupsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListManagedInstanceGroupsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.ListManagedInstanceGroupsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListManagedInstanceGroupsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .ListManagedInstanceGroupsResponse>() {
                             @Override
-                            public ListManagedInstanceGroupsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .ListManagedInstanceGroupsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListManagedInstanceGroupsResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.ListManagedInstanceGroupsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -126,8 +132,12 @@ public class ListManagedInstanceGroupsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListManagedInstanceGroupsResponse.Builder builder =
-                                        ListManagedInstanceGroupsResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .ListManagedInstanceGroupsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .ListManagedInstanceGroupsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -155,7 +165,9 @@ public class ListManagedInstanceGroupsConverter {
                                                     String.class));
                                 }
 
-                                ListManagedInstanceGroupsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .ListManagedInstanceGroupsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListTopicsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTopicsRequest interceptRequest(ListTopicsRequest request) {
+    public static com.oracle.bmc.ons.requests.ListTopicsRequest interceptRequest(
+            com.oracle.bmc.ons.requests.ListTopicsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTopicsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.ons.requests.ListTopicsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -102,15 +104,20 @@ public class ListTopicsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListTopicsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.ons.responses.ListTopicsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListTopicsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.ons.responses.ListTopicsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTopicsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.ons.responses.ListTopicsResponse>() {
                             @Override
-                            public ListTopicsResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListTopicsResponse");
+                            public com.oracle.bmc.ons.responses.ListTopicsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.ons.responses.ListTopicsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -127,7 +134,8 @@ public class ListTopicsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTopicsResponse.Builder builder = ListTopicsResponse.builder();
+                                com.oracle.bmc.ons.responses.ListTopicsResponse.Builder builder =
+                                        com.oracle.bmc.ons.responses.ListTopicsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -155,7 +163,8 @@ public class ListTopicsConverter {
                                                     String.class));
                                 }
 
-                                ListTopicsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.ons.responses.ListTopicsResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class ChangeAddressListCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeAddressListCompartmentRequest interceptRequest(
-            ChangeAddressListCompartmentRequest request) {
+    public static com.oracle.bmc.waas.requests.ChangeAddressListCompartmentRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ChangeAddressListCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeAddressListCompartmentRequest request) {
+            com.oracle.bmc.waas.requests.ChangeAddressListCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAddressListId(), "addressListId must not be blank");
         Validate.notNull(
@@ -61,18 +61,23 @@ public class ChangeAddressListCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeAddressListCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ChangeAddressListCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeAddressListCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ChangeAddressListCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeAddressListCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses
+                                        .ChangeAddressListCompartmentResponse>() {
                             @Override
-                            public ChangeAddressListCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses
+                                            .ChangeAddressListCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeAddressListCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ChangeAddressListCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +88,12 @@ public class ChangeAddressListCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeAddressListCompartmentResponse.Builder builder =
-                                        ChangeAddressListCompartmentResponse.builder();
+                                com.oracle.bmc.waas.responses.ChangeAddressListCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ChangeAddressListCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -98,8 +107,8 @@ public class ChangeAddressListCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeAddressListCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.waas.responses.ChangeAddressListCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

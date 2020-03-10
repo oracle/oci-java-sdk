@@ -16,15 +16,21 @@ public class DetachParentSoftwareSourceFromManagedInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DetachParentSoftwareSourceFromManagedInstanceRequest interceptRequest(
-            DetachParentSoftwareSourceFromManagedInstanceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests
+                    .DetachParentSoftwareSourceFromManagedInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests
+                                    .DetachParentSoftwareSourceFromManagedInstanceRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DetachParentSoftwareSourceFromManagedInstanceRequest request) {
+            com.oracle.bmc.osmanagement.requests
+                            .DetachParentSoftwareSourceFromManagedInstanceRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
         Validate.notNull(
@@ -58,20 +64,24 @@ public class DetachParentSoftwareSourceFromManagedInstanceConverter {
 
     public static com.google.common.base.Function<
                     javax.ws.rs.core.Response,
-                    DetachParentSoftwareSourceFromManagedInstanceResponse>
+                    com.oracle.bmc.osmanagement.responses
+                            .DetachParentSoftwareSourceFromManagedInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
-                        DetachParentSoftwareSourceFromManagedInstanceResponse>
+                        com.oracle.bmc.osmanagement.responses
+                                .DetachParentSoftwareSourceFromManagedInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DetachParentSoftwareSourceFromManagedInstanceResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .DetachParentSoftwareSourceFromManagedInstanceResponse>() {
                             @Override
-                            public DetachParentSoftwareSourceFromManagedInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .DetachParentSoftwareSourceFromManagedInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DetachParentSoftwareSourceFromManagedInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.DetachParentSoftwareSourceFromManagedInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,9 +92,12 @@ public class DetachParentSoftwareSourceFromManagedInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DetachParentSoftwareSourceFromManagedInstanceResponse.Builder
+                                com.oracle.bmc.osmanagement.responses
+                                                .DetachParentSoftwareSourceFromManagedInstanceResponse
+                                                .Builder
                                         builder =
-                                                DetachParentSoftwareSourceFromManagedInstanceResponse
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .DetachParentSoftwareSourceFromManagedInstanceResponse
                                                         .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
@@ -99,7 +112,8 @@ public class DetachParentSoftwareSourceFromManagedInstanceConverter {
                                                     String.class));
                                 }
 
-                                DetachParentSoftwareSourceFromManagedInstanceResponse
+                                com.oracle.bmc.osmanagement.responses
+                                                .DetachParentSoftwareSourceFromManagedInstanceResponse
                                         responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);

@@ -16,14 +16,16 @@ public class CreateTermRelationshipConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateTermRelationshipRequest interceptRequest(
-            CreateTermRelationshipRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.CreateTermRelationshipRequest
+            interceptRequest(
+                    com.oracle.bmc.datacatalog.requests.CreateTermRelationshipRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateTermRelationshipRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.CreateTermRelationshipRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -65,18 +67,23 @@ public class CreateTermRelationshipConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateTermRelationshipResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.CreateTermRelationshipResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateTermRelationshipResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.CreateTermRelationshipResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateTermRelationshipResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses
+                                        .CreateTermRelationshipResponse>() {
                             @Override
-                            public CreateTermRelationshipResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses
+                                            .CreateTermRelationshipResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateTermRelationshipResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.CreateTermRelationshipResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -90,8 +97,11 @@ public class CreateTermRelationshipConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateTermRelationshipResponse.Builder builder =
-                                        CreateTermRelationshipResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.CreateTermRelationshipResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .CreateTermRelationshipResponse.builder();
 
                                 builder.termRelationship(response.getItem());
 
@@ -116,7 +126,8 @@ public class CreateTermRelationshipConverter {
                                                     String.class));
                                 }
 
-                                CreateTermRelationshipResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.CreateTermRelationshipResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

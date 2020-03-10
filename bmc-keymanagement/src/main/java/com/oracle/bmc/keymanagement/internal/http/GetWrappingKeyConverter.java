@@ -16,13 +16,15 @@ public class GetWrappingKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetWrappingKeyRequest interceptRequest(GetWrappingKeyRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.GetWrappingKeyRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.GetWrappingKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetWrappingKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.GetWrappingKeyRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -39,16 +41,22 @@ public class GetWrappingKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetWrappingKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.GetWrappingKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWrappingKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.GetWrappingKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetWrappingKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.GetWrappingKeyResponse>() {
                             @Override
-                            public GetWrappingKeyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetWrappingKeyResponse");
+                            public com.oracle.bmc.keymanagement.responses.GetWrappingKeyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.GetWrappingKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -62,8 +70,11 @@ public class GetWrappingKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetWrappingKeyResponse.Builder builder =
-                                        GetWrappingKeyResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.GetWrappingKeyResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .GetWrappingKeyResponse.builder();
 
                                 builder.wrappingKey(response.getItem());
 
@@ -88,7 +99,8 @@ public class GetWrappingKeyConverter {
                                                     String.class));
                                 }
 
-                                GetWrappingKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.GetWrappingKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

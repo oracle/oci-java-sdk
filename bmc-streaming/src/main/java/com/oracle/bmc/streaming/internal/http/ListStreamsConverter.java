@@ -16,13 +16,15 @@ public class ListStreamsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListStreamsRequest interceptRequest(ListStreamsRequest request) {
+    public static com.oracle.bmc.streaming.requests.ListStreamsRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.ListStreamsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListStreamsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.ListStreamsRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -111,16 +113,22 @@ public class ListStreamsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListStreamsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.ListStreamsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListStreamsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.ListStreamsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListStreamsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.ListStreamsResponse>() {
                             @Override
-                            public ListStreamsResponse apply(
+                            public com.oracle.bmc.streaming.responses.ListStreamsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListStreamsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.ListStreamsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -137,7 +145,10 @@ public class ListStreamsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListStreamsResponse.Builder builder = ListStreamsResponse.builder();
+                                com.oracle.bmc.streaming.responses.ListStreamsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .ListStreamsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -177,7 +188,8 @@ public class ListStreamsConverter {
                                                     String.class));
                                 }
 
-                                ListStreamsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.ListStreamsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

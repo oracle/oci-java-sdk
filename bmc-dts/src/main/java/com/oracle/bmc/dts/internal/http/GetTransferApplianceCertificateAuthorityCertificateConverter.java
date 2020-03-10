@@ -16,15 +16,20 @@ public class GetTransferApplianceCertificateAuthorityCertificateConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetTransferApplianceCertificateAuthorityCertificateRequest interceptRequest(
-            GetTransferApplianceCertificateAuthorityCertificateRequest request) {
+    public static com.oracle.bmc.dts.requests
+                    .GetTransferApplianceCertificateAuthorityCertificateRequest
+            interceptRequest(
+                    com.oracle.bmc.dts.requests
+                                    .GetTransferApplianceCertificateAuthorityCertificateRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetTransferApplianceCertificateAuthorityCertificateRequest request) {
+            com.oracle.bmc.dts.requests.GetTransferApplianceCertificateAuthorityCertificateRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
         Validate.notBlank(
@@ -52,20 +57,24 @@ public class GetTransferApplianceCertificateAuthorityCertificateConverter {
 
     public static com.google.common.base.Function<
                     javax.ws.rs.core.Response,
-                    GetTransferApplianceCertificateAuthorityCertificateResponse>
+                    com.oracle.bmc.dts.responses
+                            .GetTransferApplianceCertificateAuthorityCertificateResponse>
             fromResponse() {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
-                        GetTransferApplianceCertificateAuthorityCertificateResponse>
+                        com.oracle.bmc.dts.responses
+                                .GetTransferApplianceCertificateAuthorityCertificateResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetTransferApplianceCertificateAuthorityCertificateResponse>() {
+                                com.oracle.bmc.dts.responses
+                                        .GetTransferApplianceCertificateAuthorityCertificateResponse>() {
                             @Override
-                            public GetTransferApplianceCertificateAuthorityCertificateResponse
+                            public com.oracle.bmc.dts.responses
+                                            .GetTransferApplianceCertificateAuthorityCertificateResponse
                                     apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetTransferApplianceCertificateAuthorityCertificateResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.GetTransferApplianceCertificateAuthorityCertificateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -80,9 +89,12 @@ public class GetTransferApplianceCertificateAuthorityCertificateConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetTransferApplianceCertificateAuthorityCertificateResponse.Builder
+                                com.oracle.bmc.dts.responses
+                                                .GetTransferApplianceCertificateAuthorityCertificateResponse
+                                                .Builder
                                         builder =
-                                                GetTransferApplianceCertificateAuthorityCertificateResponse
+                                                com.oracle.bmc.dts.responses
+                                                        .GetTransferApplianceCertificateAuthorityCertificateResponse
                                                         .builder();
 
                                 builder.transferApplianceCertificate(response.getItem());
@@ -108,7 +120,8 @@ public class GetTransferApplianceCertificateAuthorityCertificateConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetTransferApplianceCertificateAuthorityCertificateResponse
+                                com.oracle.bmc.dts.responses
+                                                .GetTransferApplianceCertificateAuthorityCertificateResponse
                                         responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);

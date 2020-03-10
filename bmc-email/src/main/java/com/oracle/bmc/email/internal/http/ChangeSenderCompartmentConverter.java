@@ -16,15 +16,15 @@ public class ChangeSenderCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeSenderCompartmentRequest interceptRequest(
-            ChangeSenderCompartmentRequest request) {
+    public static com.oracle.bmc.email.requests.ChangeSenderCompartmentRequest interceptRequest(
+            com.oracle.bmc.email.requests.ChangeSenderCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeSenderCompartmentRequest request) {
+            com.oracle.bmc.email.requests.ChangeSenderCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSenderId(), "senderId must not be blank");
         Validate.notNull(
@@ -57,18 +57,21 @@ public class ChangeSenderCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeSenderCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.email.responses.ChangeSenderCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeSenderCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.email.responses.ChangeSenderCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeSenderCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.email.responses.ChangeSenderCompartmentResponse>() {
                             @Override
-                            public ChangeSenderCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.email.responses.ChangeSenderCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeSenderCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.email.responses.ChangeSenderCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +82,11 @@ public class ChangeSenderCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeSenderCompartmentResponse.Builder builder =
-                                        ChangeSenderCompartmentResponse.builder();
+                                com.oracle.bmc.email.responses.ChangeSenderCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.email.responses
+                                                        .ChangeSenderCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -94,7 +100,8 @@ public class ChangeSenderCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeSenderCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.email.responses.ChangeSenderCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

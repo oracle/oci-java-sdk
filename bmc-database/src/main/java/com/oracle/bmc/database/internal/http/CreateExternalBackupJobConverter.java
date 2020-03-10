@@ -16,15 +16,15 @@ public class CreateExternalBackupJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateExternalBackupJobRequest interceptRequest(
-            CreateExternalBackupJobRequest request) {
+    public static com.oracle.bmc.database.requests.CreateExternalBackupJobRequest interceptRequest(
+            com.oracle.bmc.database.requests.CreateExternalBackupJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateExternalBackupJobRequest request) {
+            com.oracle.bmc.database.requests.CreateExternalBackupJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateExternalBackupJobDetails(),
@@ -45,18 +45,22 @@ public class CreateExternalBackupJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateExternalBackupJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.CreateExternalBackupJobResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateExternalBackupJobResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.CreateExternalBackupJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateExternalBackupJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .CreateExternalBackupJobResponse>() {
                             @Override
-                            public CreateExternalBackupJobResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.CreateExternalBackupJobResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateExternalBackupJobResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.CreateExternalBackupJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +74,11 @@ public class CreateExternalBackupJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateExternalBackupJobResponse.Builder builder =
-                                        CreateExternalBackupJobResponse.builder();
+                                com.oracle.bmc.database.responses.CreateExternalBackupJobResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .CreateExternalBackupJobResponse.builder();
 
                                 builder.externalBackupJob(response.getItem());
 
@@ -108,7 +115,8 @@ public class CreateExternalBackupJobConverter {
                                                     String.class));
                                 }
 
-                                CreateExternalBackupJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.CreateExternalBackupJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

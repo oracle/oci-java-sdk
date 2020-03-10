@@ -16,13 +16,15 @@ public class GetGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetGroupRequest interceptRequest(GetGroupRequest request) {
+    public static com.oracle.bmc.streaming.requests.GetGroupRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.GetGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetGroupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.GetGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
         Validate.notBlank(request.getGroupName(), "groupName must not be blank");
@@ -50,15 +52,21 @@ public class GetGroupConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.streaming.responses.GetGroupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.GetGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.GetGroupResponse>() {
                             @Override
-                            public GetGroupResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetGroupResponse");
+                            public com.oracle.bmc.streaming.responses.GetGroupResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.GetGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Group>>
@@ -70,7 +78,10 @@ public class GetGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetGroupResponse.Builder builder = GetGroupResponse.builder();
+                                com.oracle.bmc.streaming.responses.GetGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses.GetGroupResponse
+                                                        .builder();
 
                                 builder.group(response.getItem());
 
@@ -86,7 +97,8 @@ public class GetGroupConverter {
                                                     String.class));
                                 }
 
-                                GetGroupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.GetGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

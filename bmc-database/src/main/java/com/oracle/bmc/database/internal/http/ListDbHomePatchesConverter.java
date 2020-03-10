@@ -16,13 +16,15 @@ public class ListDbHomePatchesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDbHomePatchesRequest interceptRequest(ListDbHomePatchesRequest request) {
+    public static com.oracle.bmc.database.requests.ListDbHomePatchesRequest interceptRequest(
+            com.oracle.bmc.database.requests.ListDbHomePatchesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListDbHomePatchesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.ListDbHomePatchesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbHomeId(), "dbHomeId must not be blank");
 
@@ -59,17 +61,21 @@ public class ListDbHomePatchesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDbHomePatchesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListDbHomePatchesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDbHomePatchesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListDbHomePatchesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDbHomePatchesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.ListDbHomePatchesResponse>() {
                             @Override
-                            public ListDbHomePatchesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.ListDbHomePatchesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDbHomePatchesResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListDbHomePatchesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -85,8 +91,10 @@ public class ListDbHomePatchesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDbHomePatchesResponse.Builder builder =
-                                        ListDbHomePatchesResponse.builder();
+                                com.oracle.bmc.database.responses.ListDbHomePatchesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListDbHomePatchesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -114,7 +122,8 @@ public class ListDbHomePatchesConverter {
                                                     String.class));
                                 }
 
-                                ListDbHomePatchesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ListDbHomePatchesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

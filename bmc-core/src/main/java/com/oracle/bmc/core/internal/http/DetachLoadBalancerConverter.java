@@ -16,13 +16,15 @@ public class DetachLoadBalancerConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DetachLoadBalancerRequest interceptRequest(DetachLoadBalancerRequest request) {
+    public static com.oracle.bmc.core.requests.DetachLoadBalancerRequest interceptRequest(
+            com.oracle.bmc.core.requests.DetachLoadBalancerRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DetachLoadBalancerRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DetachLoadBalancerRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
         Validate.notNull(
@@ -54,17 +56,21 @@ public class DetachLoadBalancerConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DetachLoadBalancerResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DetachLoadBalancerResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachLoadBalancerResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DetachLoadBalancerResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DetachLoadBalancerResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DetachLoadBalancerResponse>() {
                             @Override
-                            public DetachLoadBalancerResponse apply(
+                            public com.oracle.bmc.core.responses.DetachLoadBalancerResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DetachLoadBalancerResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DetachLoadBalancerResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +84,10 @@ public class DetachLoadBalancerConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DetachLoadBalancerResponse.Builder builder =
-                                        DetachLoadBalancerResponse.builder();
+                                com.oracle.bmc.core.responses.DetachLoadBalancerResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DetachLoadBalancerResponse.builder();
 
                                 builder.instancePool(response.getItem());
 
@@ -104,7 +112,8 @@ public class DetachLoadBalancerConverter {
                                                     String.class));
                                 }
 
-                                DetachLoadBalancerResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DetachLoadBalancerResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

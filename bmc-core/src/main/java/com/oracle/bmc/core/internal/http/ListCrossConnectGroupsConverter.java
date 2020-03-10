@@ -16,14 +16,15 @@ public class ListCrossConnectGroupsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCrossConnectGroupsRequest interceptRequest(
-            ListCrossConnectGroupsRequest request) {
+    public static com.oracle.bmc.core.requests.ListCrossConnectGroupsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListCrossConnectGroupsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListCrossConnectGroupsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListCrossConnectGroupsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -92,18 +93,21 @@ public class ListCrossConnectGroupsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListCrossConnectGroupsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListCrossConnectGroupsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListCrossConnectGroupsResponse>() {
                             @Override
-                            public ListCrossConnectGroupsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListCrossConnectGroupsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListCrossConnectGroupsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListCrossConnectGroupsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -120,8 +124,10 @@ public class ListCrossConnectGroupsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCrossConnectGroupsResponse.Builder builder =
-                                        ListCrossConnectGroupsResponse.builder();
+                                com.oracle.bmc.core.responses.ListCrossConnectGroupsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListCrossConnectGroupsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -149,7 +155,8 @@ public class ListCrossConnectGroupsConverter {
                                                     String.class));
                                 }
 
-                                ListCrossConnectGroupsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListCrossConnectGroupsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

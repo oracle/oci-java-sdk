@@ -16,13 +16,15 @@ public class PutObjectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static PutObjectRequest interceptRequest(PutObjectRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.PutObjectRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.PutObjectRequest request) {
         request = ObjectMetadataInterceptor.intercept(request);
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, PutObjectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.PutObjectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -102,15 +104,22 @@ public class PutObjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, PutObjectResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.PutObjectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PutObjectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.PutObjectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, PutObjectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.PutObjectResponse>() {
                             @Override
-                            public PutObjectResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for PutObjectResponse");
+                            public com.oracle.bmc.objectstorage.responses.PutObjectResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.PutObjectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -121,7 +130,10 @@ public class PutObjectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                PutObjectResponse.Builder builder = PutObjectResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.PutObjectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .PutObjectResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
@@ -180,7 +192,8 @@ public class PutObjectConverter {
                                                     java.util.Date.class));
                                 }
 
-                                PutObjectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.PutObjectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

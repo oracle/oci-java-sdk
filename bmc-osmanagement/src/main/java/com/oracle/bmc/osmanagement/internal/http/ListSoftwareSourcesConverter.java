@@ -16,13 +16,15 @@ public class ListSoftwareSourcesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListSoftwareSourcesRequest interceptRequest(ListSoftwareSourcesRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.ListSoftwareSourcesRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.ListSoftwareSourcesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListSoftwareSourcesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.ListSoftwareSourcesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -95,18 +97,22 @@ public class ListSoftwareSourcesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListSoftwareSourcesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.ListSoftwareSourcesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSoftwareSourcesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.ListSoftwareSourcesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListSoftwareSourcesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .ListSoftwareSourcesResponse>() {
                             @Override
-                            public ListSoftwareSourcesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses.ListSoftwareSourcesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListSoftwareSourcesResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.ListSoftwareSourcesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -123,8 +129,11 @@ public class ListSoftwareSourcesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListSoftwareSourcesResponse.Builder builder =
-                                        ListSoftwareSourcesResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.ListSoftwareSourcesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .ListSoftwareSourcesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -152,7 +161,8 @@ public class ListSoftwareSourcesConverter {
                                                     String.class));
                                 }
 
-                                ListSoftwareSourcesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.ListSoftwareSourcesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

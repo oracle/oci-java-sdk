@@ -16,15 +16,15 @@ public class UpdateTunnelCpeDeviceConfigConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateTunnelCpeDeviceConfigRequest interceptRequest(
-            UpdateTunnelCpeDeviceConfigRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateTunnelCpeDeviceConfigRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateTunnelCpeDeviceConfigRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateTunnelCpeDeviceConfigRequest request) {
+            com.oracle.bmc.core.requests.UpdateTunnelCpeDeviceConfigRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
         Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
@@ -65,18 +65,22 @@ public class UpdateTunnelCpeDeviceConfigConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateTunnelCpeDeviceConfigResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateTunnelCpeDeviceConfigResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .UpdateTunnelCpeDeviceConfigResponse>() {
                             @Override
-                            public UpdateTunnelCpeDeviceConfigResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.UpdateTunnelCpeDeviceConfigResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateTunnelCpeDeviceConfigResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateTunnelCpeDeviceConfigResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -90,8 +94,12 @@ public class UpdateTunnelCpeDeviceConfigConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateTunnelCpeDeviceConfigResponse.Builder builder =
-                                        UpdateTunnelCpeDeviceConfigResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateTunnelCpeDeviceConfigResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateTunnelCpeDeviceConfigResponse
+                                                        .builder();
 
                                 builder.tunnelCpeDeviceConfig(response.getItem());
 
@@ -116,8 +124,8 @@ public class UpdateTunnelCpeDeviceConfigConverter {
                                                     String.class));
                                 }
 
-                                UpdateTunnelCpeDeviceConfigResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.UpdateTunnelCpeDeviceConfigResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

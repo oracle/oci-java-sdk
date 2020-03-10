@@ -16,15 +16,15 @@ public class TerminateClusterNetworkConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static TerminateClusterNetworkRequest interceptRequest(
-            TerminateClusterNetworkRequest request) {
+    public static com.oracle.bmc.core.requests.TerminateClusterNetworkRequest interceptRequest(
+            com.oracle.bmc.core.requests.TerminateClusterNetworkRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            TerminateClusterNetworkRequest request) {
+            com.oracle.bmc.core.requests.TerminateClusterNetworkRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
 
@@ -48,18 +48,21 @@ public class TerminateClusterNetworkConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, TerminateClusterNetworkResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.TerminateClusterNetworkResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, TerminateClusterNetworkResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.TerminateClusterNetworkResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, TerminateClusterNetworkResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.TerminateClusterNetworkResponse>() {
                             @Override
-                            public TerminateClusterNetworkResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.TerminateClusterNetworkResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for TerminateClusterNetworkResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.TerminateClusterNetworkResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,8 +73,11 @@ public class TerminateClusterNetworkConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                TerminateClusterNetworkResponse.Builder builder =
-                                        TerminateClusterNetworkResponse.builder();
+                                com.oracle.bmc.core.responses.TerminateClusterNetworkResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .TerminateClusterNetworkResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -97,7 +103,8 @@ public class TerminateClusterNetworkConverter {
                                                     String.class));
                                 }
 
-                                TerminateClusterNetworkResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.TerminateClusterNetworkResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

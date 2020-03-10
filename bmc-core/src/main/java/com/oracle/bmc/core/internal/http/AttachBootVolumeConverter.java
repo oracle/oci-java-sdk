@@ -16,13 +16,15 @@ public class AttachBootVolumeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static AttachBootVolumeRequest interceptRequest(AttachBootVolumeRequest request) {
+    public static com.oracle.bmc.core.requests.AttachBootVolumeRequest interceptRequest(
+            com.oracle.bmc.core.requests.AttachBootVolumeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, AttachBootVolumeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.AttachBootVolumeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getAttachBootVolumeDetails(), "attachBootVolumeDetails is required");
@@ -42,17 +44,21 @@ public class AttachBootVolumeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, AttachBootVolumeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.AttachBootVolumeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AttachBootVolumeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.AttachBootVolumeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, AttachBootVolumeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.AttachBootVolumeResponse>() {
                             @Override
-                            public AttachBootVolumeResponse apply(
+                            public com.oracle.bmc.core.responses.AttachBootVolumeResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for AttachBootVolumeResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.AttachBootVolumeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class AttachBootVolumeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                AttachBootVolumeResponse.Builder builder =
-                                        AttachBootVolumeResponse.builder();
+                                com.oracle.bmc.core.responses.AttachBootVolumeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .AttachBootVolumeResponse.builder();
 
                                 builder.bootVolumeAttachment(response.getItem());
 
@@ -92,7 +100,8 @@ public class AttachBootVolumeConverter {
                                                     String.class));
                                 }
 
-                                AttachBootVolumeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.AttachBootVolumeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

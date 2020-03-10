@@ -16,13 +16,15 @@ public class DeletePingMonitorConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeletePingMonitorRequest interceptRequest(DeletePingMonitorRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.DeletePingMonitorRequest interceptRequest(
+            com.oracle.bmc.healthchecks.requests.DeletePingMonitorRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeletePingMonitorRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.healthchecks.requests.DeletePingMonitorRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getMonitorId(), "monitorId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeletePingMonitorConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeletePingMonitorResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.DeletePingMonitorResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePingMonitorResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.DeletePingMonitorResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeletePingMonitorResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses.DeletePingMonitorResponse>() {
                             @Override
-                            public DeletePingMonitorResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses.DeletePingMonitorResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeletePingMonitorResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.DeletePingMonitorResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,11 @@ public class DeletePingMonitorConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeletePingMonitorResponse.Builder builder =
-                                        DeletePingMonitorResponse.builder();
+                                com.oracle.bmc.healthchecks.responses.DeletePingMonitorResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .DeletePingMonitorResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +95,8 @@ public class DeletePingMonitorConverter {
                                                     String.class));
                                 }
 
-                                DeletePingMonitorResponse responseWrapper = builder.build();
+                                com.oracle.bmc.healthchecks.responses.DeletePingMonitorResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

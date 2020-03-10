@@ -16,13 +16,15 @@ public class DeleteBackendSetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteBackendSetRequest interceptRequest(DeleteBackendSetRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.DeleteBackendSetRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.DeleteBackendSetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteBackendSetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.DeleteBackendSetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
         Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
@@ -51,17 +53,21 @@ public class DeleteBackendSetConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteBackendSetResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.DeleteBackendSetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendSetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.DeleteBackendSetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteBackendSetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.DeleteBackendSetResponse>() {
                             @Override
-                            public DeleteBackendSetResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.loadbalancer.responses.DeleteBackendSetResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteBackendSetResponse");
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.DeleteBackendSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -72,8 +78,11 @@ public class DeleteBackendSetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteBackendSetResponse.Builder builder =
-                                        DeleteBackendSetResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.DeleteBackendSetResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .DeleteBackendSetResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -99,7 +108,8 @@ public class DeleteBackendSetConverter {
                                                     String.class));
                                 }
 
-                                DeleteBackendSetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.DeleteBackendSetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

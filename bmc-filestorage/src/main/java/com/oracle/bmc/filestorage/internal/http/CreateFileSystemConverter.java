@@ -16,13 +16,15 @@ public class CreateFileSystemConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateFileSystemRequest interceptRequest(CreateFileSystemRequest request) {
+    public static com.oracle.bmc.filestorage.requests.CreateFileSystemRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.CreateFileSystemRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateFileSystemRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.CreateFileSystemRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateFileSystemDetails(), "createFileSystemDetails is required");
@@ -46,17 +48,21 @@ public class CreateFileSystemConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateFileSystemResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.CreateFileSystemResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFileSystemResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.CreateFileSystemResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateFileSystemResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.CreateFileSystemResponse>() {
                             @Override
-                            public CreateFileSystemResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.filestorage.responses.CreateFileSystemResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateFileSystemResponse");
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.CreateFileSystemResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,11 @@ public class CreateFileSystemConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateFileSystemResponse.Builder builder =
-                                        CreateFileSystemResponse.builder();
+                                com.oracle.bmc.filestorage.responses.CreateFileSystemResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .CreateFileSystemResponse.builder();
 
                                 builder.fileSystem(response.getItem());
 
@@ -96,7 +105,8 @@ public class CreateFileSystemConverter {
                                                     String.class));
                                 }
 
-                                CreateFileSystemResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.CreateFileSystemResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

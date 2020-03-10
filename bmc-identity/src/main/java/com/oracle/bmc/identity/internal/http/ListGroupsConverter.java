@@ -16,13 +16,15 @@ public class ListGroupsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListGroupsRequest interceptRequest(ListGroupsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListGroupsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListGroupsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListGroupsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListGroupsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -58,15 +60,21 @@ public class ListGroupsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListGroupsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.identity.responses.ListGroupsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListGroupsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListGroupsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListGroupsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListGroupsResponse>() {
                             @Override
-                            public ListGroupsResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListGroupsResponse");
+                            public com.oracle.bmc.identity.responses.ListGroupsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListGroupsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -81,7 +89,10 @@ public class ListGroupsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListGroupsResponse.Builder builder = ListGroupsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListGroupsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses.ListGroupsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -109,7 +120,8 @@ public class ListGroupsConverter {
                                                     String.class));
                                 }
 
-                                ListGroupsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListGroupsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

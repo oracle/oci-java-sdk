@@ -16,14 +16,15 @@ public class ListAppCatalogListingsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAppCatalogListingsRequest interceptRequest(
-            ListAppCatalogListingsRequest request) {
+    public static com.oracle.bmc.core.requests.ListAppCatalogListingsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListAppCatalogListingsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAppCatalogListingsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListAppCatalogListingsRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -85,18 +86,21 @@ public class ListAppCatalogListingsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAppCatalogListingsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListAppCatalogListingsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAppCatalogListingsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListAppCatalogListingsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAppCatalogListingsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListAppCatalogListingsResponse>() {
                             @Override
-                            public ListAppCatalogListingsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListAppCatalogListingsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAppCatalogListingsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListAppCatalogListingsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -113,8 +117,10 @@ public class ListAppCatalogListingsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAppCatalogListingsResponse.Builder builder =
-                                        ListAppCatalogListingsResponse.builder();
+                                com.oracle.bmc.core.responses.ListAppCatalogListingsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListAppCatalogListingsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -142,7 +148,8 @@ public class ListAppCatalogListingsConverter {
                                                     String.class));
                                 }
 
-                                ListAppCatalogListingsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListAppCatalogListingsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

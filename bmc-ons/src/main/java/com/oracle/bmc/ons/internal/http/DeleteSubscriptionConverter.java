@@ -16,13 +16,15 @@ public class DeleteSubscriptionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSubscriptionRequest interceptRequest(DeleteSubscriptionRequest request) {
+    public static com.oracle.bmc.ons.requests.DeleteSubscriptionRequest interceptRequest(
+            com.oracle.bmc.ons.requests.DeleteSubscriptionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteSubscriptionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.ons.requests.DeleteSubscriptionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteSubscriptionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteSubscriptionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.ons.responses.DeleteSubscriptionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubscriptionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.ons.responses.DeleteSubscriptionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteSubscriptionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.ons.responses.DeleteSubscriptionResponse>() {
                             @Override
-                            public DeleteSubscriptionResponse apply(
+                            public com.oracle.bmc.ons.responses.DeleteSubscriptionResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteSubscriptionResponse");
+                                        "Transform function invoked for com.oracle.bmc.ons.responses.DeleteSubscriptionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,10 @@ public class DeleteSubscriptionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSubscriptionResponse.Builder builder =
-                                        DeleteSubscriptionResponse.builder();
+                                com.oracle.bmc.ons.responses.DeleteSubscriptionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.ons.responses
+                                                        .DeleteSubscriptionResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +94,8 @@ public class DeleteSubscriptionConverter {
                                                     String.class));
                                 }
 
-                                DeleteSubscriptionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.ons.responses.DeleteSubscriptionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

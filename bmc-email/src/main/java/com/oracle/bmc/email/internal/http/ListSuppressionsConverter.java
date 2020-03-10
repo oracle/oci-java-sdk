@@ -16,13 +16,15 @@ public class ListSuppressionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListSuppressionsRequest interceptRequest(ListSuppressionsRequest request) {
+    public static com.oracle.bmc.email.requests.ListSuppressionsRequest interceptRequest(
+            com.oracle.bmc.email.requests.ListSuppressionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListSuppressionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.email.requests.ListSuppressionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -103,17 +105,21 @@ public class ListSuppressionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListSuppressionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.email.responses.ListSuppressionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSuppressionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.email.responses.ListSuppressionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListSuppressionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.email.responses.ListSuppressionsResponse>() {
                             @Override
-                            public ListSuppressionsResponse apply(
+                            public com.oracle.bmc.email.responses.ListSuppressionsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListSuppressionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.email.responses.ListSuppressionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -130,8 +136,10 @@ public class ListSuppressionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListSuppressionsResponse.Builder builder =
-                                        ListSuppressionsResponse.builder();
+                                com.oracle.bmc.email.responses.ListSuppressionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.email.responses
+                                                        .ListSuppressionsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -171,7 +179,8 @@ public class ListSuppressionsConverter {
                                                     String.class));
                                 }
 
-                                ListSuppressionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.email.responses.ListSuppressionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

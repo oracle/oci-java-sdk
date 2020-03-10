@@ -16,15 +16,15 @@ public class ChangeSubscriptionCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeSubscriptionCompartmentRequest interceptRequest(
-            ChangeSubscriptionCompartmentRequest request) {
+    public static com.oracle.bmc.ons.requests.ChangeSubscriptionCompartmentRequest interceptRequest(
+            com.oracle.bmc.ons.requests.ChangeSubscriptionCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeSubscriptionCompartmentRequest request) {
+            com.oracle.bmc.ons.requests.ChangeSubscriptionCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
         Validate.notNull(
@@ -61,19 +61,23 @@ public class ChangeSubscriptionCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeSubscriptionCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.ons.responses.ChangeSubscriptionCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeSubscriptionCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.ons.responses.ChangeSubscriptionCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeSubscriptionCompartmentResponse>() {
+                                com.oracle.bmc.ons.responses
+                                        .ChangeSubscriptionCompartmentResponse>() {
                             @Override
-                            public ChangeSubscriptionCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.ons.responses
+                                            .ChangeSubscriptionCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeSubscriptionCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.ons.responses.ChangeSubscriptionCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +88,12 @@ public class ChangeSubscriptionCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeSubscriptionCompartmentResponse.Builder builder =
-                                        ChangeSubscriptionCompartmentResponse.builder();
+                                com.oracle.bmc.ons.responses.ChangeSubscriptionCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.ons.responses
+                                                        .ChangeSubscriptionCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -99,8 +107,8 @@ public class ChangeSubscriptionCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeSubscriptionCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.ons.responses.ChangeSubscriptionCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

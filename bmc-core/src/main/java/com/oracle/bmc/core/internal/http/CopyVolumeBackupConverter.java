@@ -16,13 +16,15 @@ public class CopyVolumeBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CopyVolumeBackupRequest interceptRequest(CopyVolumeBackupRequest request) {
+    public static com.oracle.bmc.core.requests.CopyVolumeBackupRequest interceptRequest(
+            com.oracle.bmc.core.requests.CopyVolumeBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CopyVolumeBackupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CopyVolumeBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeBackupId(), "volumeBackupId must not be blank");
         Validate.notNull(
@@ -54,17 +56,21 @@ public class CopyVolumeBackupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CopyVolumeBackupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CopyVolumeBackupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CopyVolumeBackupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CopyVolumeBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CopyVolumeBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CopyVolumeBackupResponse>() {
                             @Override
-                            public CopyVolumeBackupResponse apply(
+                            public com.oracle.bmc.core.responses.CopyVolumeBackupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CopyVolumeBackupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CopyVolumeBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +84,10 @@ public class CopyVolumeBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CopyVolumeBackupResponse.Builder builder =
-                                        CopyVolumeBackupResponse.builder();
+                                com.oracle.bmc.core.responses.CopyVolumeBackupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CopyVolumeBackupResponse.builder();
 
                                 builder.volumeBackup(response.getItem());
 
@@ -104,7 +112,8 @@ public class CopyVolumeBackupConverter {
                                                     String.class));
                                 }
 
-                                CopyVolumeBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CopyVolumeBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

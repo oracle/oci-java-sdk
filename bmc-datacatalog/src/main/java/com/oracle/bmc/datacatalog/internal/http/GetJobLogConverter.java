@@ -16,13 +16,15 @@ public class GetJobLogConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetJobLogRequest interceptRequest(GetJobLogRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetJobLogRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetJobLogRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetJobLogRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetJobLogRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getJobKey(), "jobKey must not be blank");
@@ -69,15 +71,22 @@ public class GetJobLogConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.GetJobLogResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobLogResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetJobLogResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetJobLogResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.GetJobLogResponse>() {
                             @Override
-                            public GetJobLogResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetJobLogResponse");
+                            public com.oracle.bmc.datacatalog.responses.GetJobLogResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetJobLogResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<JobLog>>
@@ -89,7 +98,10 @@ public class GetJobLogConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetJobLogResponse.Builder builder = GetJobLogResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetJobLogResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .GetJobLogResponse.builder();
 
                                 builder.jobLog(response.getItem());
 
@@ -114,7 +126,8 @@ public class GetJobLogConverter {
                                                     String.class));
                                 }
 
-                                GetJobLogResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetJobLogResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

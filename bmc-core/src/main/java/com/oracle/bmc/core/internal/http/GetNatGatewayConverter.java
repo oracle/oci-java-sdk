@@ -16,13 +16,15 @@ public class GetNatGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetNatGatewayRequest interceptRequest(GetNatGatewayRequest request) {
+    public static com.oracle.bmc.core.requests.GetNatGatewayRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetNatGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetNatGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetNatGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
 
@@ -41,16 +43,21 @@ public class GetNatGatewayConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetNatGatewayResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetNatGatewayResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetNatGatewayResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetNatGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetNatGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetNatGatewayResponse>() {
                             @Override
-                            public GetNatGatewayResponse apply(
+                            public com.oracle.bmc.core.responses.GetNatGatewayResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetNatGatewayResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetNatGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -64,8 +71,10 @@ public class GetNatGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetNatGatewayResponse.Builder builder =
-                                        GetNatGatewayResponse.builder();
+                                com.oracle.bmc.core.responses.GetNatGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses.GetNatGatewayResponse
+                                                        .builder();
 
                                 builder.natGateway(response.getItem());
 
@@ -90,7 +99,8 @@ public class GetNatGatewayConverter {
                                                     String.class));
                                 }
 
-                                GetNatGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetNatGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

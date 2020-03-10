@@ -16,13 +16,15 @@ public class GetDrgAttachmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDrgAttachmentRequest interceptRequest(GetDrgAttachmentRequest request) {
+    public static com.oracle.bmc.core.requests.GetDrgAttachmentRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetDrgAttachmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDrgAttachmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetDrgAttachmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
 
@@ -42,17 +44,21 @@ public class GetDrgAttachmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetDrgAttachmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetDrgAttachmentResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgAttachmentResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetDrgAttachmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDrgAttachmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetDrgAttachmentResponse>() {
                             @Override
-                            public GetDrgAttachmentResponse apply(
+                            public com.oracle.bmc.core.responses.GetDrgAttachmentResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetDrgAttachmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetDrgAttachmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class GetDrgAttachmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDrgAttachmentResponse.Builder builder =
-                                        GetDrgAttachmentResponse.builder();
+                                com.oracle.bmc.core.responses.GetDrgAttachmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetDrgAttachmentResponse.builder();
 
                                 builder.drgAttachment(response.getItem());
 
@@ -92,7 +100,8 @@ public class GetDrgAttachmentConverter {
                                                     String.class));
                                 }
 
-                                GetDrgAttachmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetDrgAttachmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

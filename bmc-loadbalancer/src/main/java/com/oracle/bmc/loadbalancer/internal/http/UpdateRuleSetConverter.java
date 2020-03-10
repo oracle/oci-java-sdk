@@ -16,13 +16,15 @@ public class UpdateRuleSetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateRuleSetRequest interceptRequest(UpdateRuleSetRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.UpdateRuleSetRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.UpdateRuleSetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateRuleSetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.UpdateRuleSetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
         Validate.notBlank(request.getRuleSetName(), "ruleSetName must not be blank");
@@ -51,16 +53,22 @@ public class UpdateRuleSetConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleSetResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.UpdateRuleSetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleSetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.UpdateRuleSetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateRuleSetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.UpdateRuleSetResponse>() {
                             @Override
-                            public UpdateRuleSetResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateRuleSetResponse");
+                            public com.oracle.bmc.loadbalancer.responses.UpdateRuleSetResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.UpdateRuleSetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +79,10 @@ public class UpdateRuleSetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateRuleSetResponse.Builder builder =
-                                        UpdateRuleSetResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.UpdateRuleSetResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .UpdateRuleSetResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -98,7 +108,8 @@ public class UpdateRuleSetConverter {
                                                     String.class));
                                 }
 
-                                UpdateRuleSetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.UpdateRuleSetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

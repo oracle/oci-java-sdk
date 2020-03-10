@@ -16,15 +16,15 @@ public class ChangePublicIpCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangePublicIpCompartmentRequest interceptRequest(
-            ChangePublicIpCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangePublicIpCompartmentRequest interceptRequest(
+            com.oracle.bmc.core.requests.ChangePublicIpCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangePublicIpCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangePublicIpCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
         Validate.notNull(
@@ -57,18 +57,21 @@ public class ChangePublicIpCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangePublicIpCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangePublicIpCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ChangePublicIpCompartmentResponse>() {
                             @Override
-                            public ChangePublicIpCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ChangePublicIpCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangePublicIpCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangePublicIpCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +82,12 @@ public class ChangePublicIpCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangePublicIpCompartmentResponse.Builder builder =
-                                        ChangePublicIpCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses.ChangePublicIpCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangePublicIpCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -103,7 +110,8 @@ public class ChangePublicIpCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangePublicIpCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ChangePublicIpCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class UpdateOceInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateOceInstanceRequest interceptRequest(UpdateOceInstanceRequest request) {
+    public static com.oracle.bmc.oce.requests.UpdateOceInstanceRequest interceptRequest(
+            com.oracle.bmc.oce.requests.UpdateOceInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateOceInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.oce.requests.UpdateOceInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getOceInstanceId(), "oceInstanceId must not be blank");
         Validate.notNull(
@@ -52,17 +54,21 @@ public class UpdateOceInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateOceInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.oce.responses.UpdateOceInstanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOceInstanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oce.responses.UpdateOceInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateOceInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oce.responses.UpdateOceInstanceResponse>() {
                             @Override
-                            public UpdateOceInstanceResponse apply(
+                            public com.oracle.bmc.oce.responses.UpdateOceInstanceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateOceInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.oce.responses.UpdateOceInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +79,10 @@ public class UpdateOceInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateOceInstanceResponse.Builder builder =
-                                        UpdateOceInstanceResponse.builder();
+                                com.oracle.bmc.oce.responses.UpdateOceInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.oce.responses
+                                                        .UpdateOceInstanceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -100,7 +108,8 @@ public class UpdateOceInstanceConverter {
                                                     String.class));
                                 }
 
-                                UpdateOceInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.oce.responses.UpdateOceInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

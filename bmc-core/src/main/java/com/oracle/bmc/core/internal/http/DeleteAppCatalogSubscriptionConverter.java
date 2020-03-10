@@ -16,15 +16,15 @@ public class DeleteAppCatalogSubscriptionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteAppCatalogSubscriptionRequest interceptRequest(
-            DeleteAppCatalogSubscriptionRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteAppCatalogSubscriptionRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteAppCatalogSubscriptionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteAppCatalogSubscriptionRequest request) {
+            com.oracle.bmc.core.requests.DeleteAppCatalogSubscriptionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getListingId(), "listingId is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
@@ -59,18 +59,23 @@ public class DeleteAppCatalogSubscriptionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteAppCatalogSubscriptionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteAppCatalogSubscriptionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteAppCatalogSubscriptionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteAppCatalogSubscriptionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteAppCatalogSubscriptionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .DeleteAppCatalogSubscriptionResponse>() {
                             @Override
-                            public DeleteAppCatalogSubscriptionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .DeleteAppCatalogSubscriptionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteAppCatalogSubscriptionResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteAppCatalogSubscriptionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -81,8 +86,12 @@ public class DeleteAppCatalogSubscriptionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteAppCatalogSubscriptionResponse.Builder builder =
-                                        DeleteAppCatalogSubscriptionResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteAppCatalogSubscriptionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteAppCatalogSubscriptionResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -96,8 +105,8 @@ public class DeleteAppCatalogSubscriptionConverter {
                                                     String.class));
                                 }
 
-                                DeleteAppCatalogSubscriptionResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.DeleteAppCatalogSubscriptionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

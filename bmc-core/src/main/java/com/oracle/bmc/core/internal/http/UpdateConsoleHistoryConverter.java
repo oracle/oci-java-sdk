@@ -16,14 +16,15 @@ public class UpdateConsoleHistoryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateConsoleHistoryRequest interceptRequest(
-            UpdateConsoleHistoryRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateConsoleHistoryRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateConsoleHistoryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateConsoleHistoryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateConsoleHistoryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getInstanceConsoleHistoryId(),
@@ -52,18 +53,21 @@ public class UpdateConsoleHistoryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateConsoleHistoryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateConsoleHistoryResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateConsoleHistoryResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateConsoleHistoryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateConsoleHistoryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateConsoleHistoryResponse>() {
                             @Override
-                            public UpdateConsoleHistoryResponse apply(
+                            public com.oracle.bmc.core.responses.UpdateConsoleHistoryResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateConsoleHistoryResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateConsoleHistoryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -77,8 +81,10 @@ public class UpdateConsoleHistoryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateConsoleHistoryResponse.Builder builder =
-                                        UpdateConsoleHistoryResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateConsoleHistoryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateConsoleHistoryResponse.builder();
 
                                 builder.consoleHistory(response.getItem());
 
@@ -103,7 +109,8 @@ public class UpdateConsoleHistoryConverter {
                                                     String.class));
                                 }
 
-                                UpdateConsoleHistoryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateConsoleHistoryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

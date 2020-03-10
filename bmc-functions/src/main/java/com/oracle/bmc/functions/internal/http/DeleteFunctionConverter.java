@@ -16,13 +16,15 @@ public class DeleteFunctionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteFunctionRequest interceptRequest(DeleteFunctionRequest request) {
+    public static com.oracle.bmc.functions.requests.DeleteFunctionRequest interceptRequest(
+            com.oracle.bmc.functions.requests.DeleteFunctionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteFunctionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.functions.requests.DeleteFunctionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getFunctionId(), "functionId must not be blank");
 
@@ -49,16 +51,22 @@ public class DeleteFunctionConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFunctionResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.functions.responses.DeleteFunctionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFunctionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.functions.responses.DeleteFunctionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteFunctionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.functions.responses.DeleteFunctionResponse>() {
                             @Override
-                            public DeleteFunctionResponse apply(
+                            public com.oracle.bmc.functions.responses.DeleteFunctionResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteFunctionResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.functions.responses.DeleteFunctionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +77,10 @@ public class DeleteFunctionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteFunctionResponse.Builder builder =
-                                        DeleteFunctionResponse.builder();
+                                com.oracle.bmc.functions.responses.DeleteFunctionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.functions.responses
+                                                        .DeleteFunctionResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +94,8 @@ public class DeleteFunctionConverter {
                                                     String.class));
                                 }
 
-                                DeleteFunctionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.functions.responses.DeleteFunctionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

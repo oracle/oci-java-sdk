@@ -16,15 +16,16 @@ public class ListVirtualCircuitBandwidthShapesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListVirtualCircuitBandwidthShapesRequest interceptRequest(
-            ListVirtualCircuitBandwidthShapesRequest request) {
+    public static com.oracle.bmc.core.requests.ListVirtualCircuitBandwidthShapesRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ListVirtualCircuitBandwidthShapesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListVirtualCircuitBandwidthShapesRequest request) {
+            com.oracle.bmc.core.requests.ListVirtualCircuitBandwidthShapesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -61,19 +62,23 @@ public class ListVirtualCircuitBandwidthShapesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListVirtualCircuitBandwidthShapesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListVirtualCircuitBandwidthShapesResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListVirtualCircuitBandwidthShapesResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ListVirtualCircuitBandwidthShapesResponse>() {
                             @Override
-                            public ListVirtualCircuitBandwidthShapesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ListVirtualCircuitBandwidthShapesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListVirtualCircuitBandwidthShapesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListVirtualCircuitBandwidthShapesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -91,8 +96,12 @@ public class ListVirtualCircuitBandwidthShapesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListVirtualCircuitBandwidthShapesResponse.Builder builder =
-                                        ListVirtualCircuitBandwidthShapesResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ListVirtualCircuitBandwidthShapesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListVirtualCircuitBandwidthShapesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -120,8 +129,9 @@ public class ListVirtualCircuitBandwidthShapesConverter {
                                                     String.class));
                                 }
 
-                                ListVirtualCircuitBandwidthShapesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ListVirtualCircuitBandwidthShapesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

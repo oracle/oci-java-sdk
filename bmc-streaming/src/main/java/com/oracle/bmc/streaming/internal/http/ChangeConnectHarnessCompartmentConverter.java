@@ -16,15 +16,17 @@ public class ChangeConnectHarnessCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeConnectHarnessCompartmentRequest interceptRequest(
-            ChangeConnectHarnessCompartmentRequest request) {
+    public static com.oracle.bmc.streaming.requests.ChangeConnectHarnessCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.streaming.requests.ChangeConnectHarnessCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeConnectHarnessCompartmentRequest request) {
+            com.oracle.bmc.streaming.requests.ChangeConnectHarnessCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getConnectHarnessId(), "connectHarnessId must not be blank");
         Validate.notNull(
@@ -57,19 +59,23 @@ public class ChangeConnectHarnessCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeConnectHarnessCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.ChangeConnectHarnessCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeConnectHarnessCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.ChangeConnectHarnessCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeConnectHarnessCompartmentResponse>() {
+                                com.oracle.bmc.streaming.responses
+                                        .ChangeConnectHarnessCompartmentResponse>() {
                             @Override
-                            public ChangeConnectHarnessCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.streaming.responses
+                                            .ChangeConnectHarnessCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeConnectHarnessCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.ChangeConnectHarnessCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -80,8 +86,12 @@ public class ChangeConnectHarnessCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeConnectHarnessCompartmentResponse.Builder builder =
-                                        ChangeConnectHarnessCompartmentResponse.builder();
+                                com.oracle.bmc.streaming.responses
+                                                .ChangeConnectHarnessCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .ChangeConnectHarnessCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -95,8 +105,9 @@ public class ChangeConnectHarnessCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeConnectHarnessCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.streaming.responses
+                                                .ChangeConnectHarnessCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

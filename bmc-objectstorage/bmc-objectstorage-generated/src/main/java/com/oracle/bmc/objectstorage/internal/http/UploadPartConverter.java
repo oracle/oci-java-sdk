@@ -16,13 +16,15 @@ public class UploadPartConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UploadPartRequest interceptRequest(UploadPartRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.UploadPartRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.UploadPartRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UploadPartRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.UploadPartRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -90,15 +92,22 @@ public class UploadPartConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UploadPartResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.UploadPartResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UploadPartResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.UploadPartResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UploadPartResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.UploadPartResponse>() {
                             @Override
-                            public UploadPartResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UploadPartResponse");
+                            public com.oracle.bmc.objectstorage.responses.UploadPartResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.UploadPartResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -109,7 +118,10 @@ public class UploadPartConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UploadPartResponse.Builder builder = UploadPartResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.UploadPartResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .UploadPartResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
@@ -156,7 +168,8 @@ public class UploadPartConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                UploadPartResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.UploadPartResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

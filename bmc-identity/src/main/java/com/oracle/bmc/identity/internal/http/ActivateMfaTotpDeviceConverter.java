@@ -16,14 +16,15 @@ public class ActivateMfaTotpDeviceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ActivateMfaTotpDeviceRequest interceptRequest(
-            ActivateMfaTotpDeviceRequest request) {
+    public static com.oracle.bmc.identity.requests.ActivateMfaTotpDeviceRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ActivateMfaTotpDeviceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ActivateMfaTotpDeviceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ActivateMfaTotpDeviceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notBlank(request.getMfaTotpDeviceId(), "mfaTotpDeviceId must not be blank");
@@ -59,18 +60,21 @@ public class ActivateMfaTotpDeviceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ActivateMfaTotpDeviceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ActivateMfaTotpDeviceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ActivateMfaTotpDeviceResponse>() {
                             @Override
-                            public ActivateMfaTotpDeviceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ActivateMfaTotpDeviceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ActivateMfaTotpDeviceResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ActivateMfaTotpDeviceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -84,8 +88,11 @@ public class ActivateMfaTotpDeviceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ActivateMfaTotpDeviceResponse.Builder builder =
-                                        ActivateMfaTotpDeviceResponse.builder();
+                                com.oracle.bmc.identity.responses.ActivateMfaTotpDeviceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ActivateMfaTotpDeviceResponse.builder();
 
                                 builder.mfaTotpDeviceSummary(response.getItem());
 
@@ -110,7 +117,8 @@ public class ActivateMfaTotpDeviceConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                ActivateMfaTotpDeviceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ActivateMfaTotpDeviceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,14 +16,15 @@ public class DeleteNotebookSessionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteNotebookSessionRequest interceptRequest(
-            DeleteNotebookSessionRequest request) {
+    public static com.oracle.bmc.datascience.requests.DeleteNotebookSessionRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.DeleteNotebookSessionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteNotebookSessionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.DeleteNotebookSessionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
 
@@ -51,18 +52,23 @@ public class DeleteNotebookSessionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteNotebookSessionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.DeleteNotebookSessionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteNotebookSessionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.DeleteNotebookSessionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteNotebookSessionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses
+                                        .DeleteNotebookSessionResponse>() {
                             @Override
-                            public DeleteNotebookSessionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses
+                                            .DeleteNotebookSessionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteNotebookSessionResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.DeleteNotebookSessionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +79,11 @@ public class DeleteNotebookSessionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteNotebookSessionResponse.Builder builder =
-                                        DeleteNotebookSessionResponse.builder();
+                                com.oracle.bmc.datascience.responses.DeleteNotebookSessionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .DeleteNotebookSessionResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -100,7 +109,8 @@ public class DeleteNotebookSessionConverter {
                                                     String.class));
                                 }
 
-                                DeleteNotebookSessionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.DeleteNotebookSessionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

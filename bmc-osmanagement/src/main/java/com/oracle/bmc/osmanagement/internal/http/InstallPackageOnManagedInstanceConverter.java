@@ -16,15 +16,17 @@ public class InstallPackageOnManagedInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static InstallPackageOnManagedInstanceRequest interceptRequest(
-            InstallPackageOnManagedInstanceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.InstallPackageOnManagedInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.InstallPackageOnManagedInstanceRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            InstallPackageOnManagedInstanceRequest request) {
+            com.oracle.bmc.osmanagement.requests.InstallPackageOnManagedInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
         Validate.notNull(request.getSoftwarePackageName(), "softwarePackageName is required");
@@ -62,19 +64,24 @@ public class InstallPackageOnManagedInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, InstallPackageOnManagedInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.InstallPackageOnManagedInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, InstallPackageOnManagedInstanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses
+                                .InstallPackageOnManagedInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                InstallPackageOnManagedInstanceResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .InstallPackageOnManagedInstanceResponse>() {
                             @Override
-                            public InstallPackageOnManagedInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .InstallPackageOnManagedInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for InstallPackageOnManagedInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.InstallPackageOnManagedInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -85,8 +92,12 @@ public class InstallPackageOnManagedInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                InstallPackageOnManagedInstanceResponse.Builder builder =
-                                        InstallPackageOnManagedInstanceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .InstallPackageOnManagedInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .InstallPackageOnManagedInstanceResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -112,8 +123,9 @@ public class InstallPackageOnManagedInstanceConverter {
                                                     String.class));
                                 }
 
-                                InstallPackageOnManagedInstanceResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .InstallPackageOnManagedInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

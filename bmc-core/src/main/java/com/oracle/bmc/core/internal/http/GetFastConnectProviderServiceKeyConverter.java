@@ -16,15 +16,16 @@ public class GetFastConnectProviderServiceKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetFastConnectProviderServiceKeyRequest interceptRequest(
-            GetFastConnectProviderServiceKeyRequest request) {
+    public static com.oracle.bmc.core.requests.GetFastConnectProviderServiceKeyRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.GetFastConnectProviderServiceKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetFastConnectProviderServiceKeyRequest request) {
+            com.oracle.bmc.core.requests.GetFastConnectProviderServiceKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
         Validate.notBlank(
@@ -50,19 +51,23 @@ public class GetFastConnectProviderServiceKeyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetFastConnectProviderServiceKeyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetFastConnectProviderServiceKeyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetFastConnectProviderServiceKeyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetFastConnectProviderServiceKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetFastConnectProviderServiceKeyResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .GetFastConnectProviderServiceKeyResponse>() {
                             @Override
-                            public GetFastConnectProviderServiceKeyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .GetFastConnectProviderServiceKeyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetFastConnectProviderServiceKeyResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetFastConnectProviderServiceKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -77,8 +82,12 @@ public class GetFastConnectProviderServiceKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetFastConnectProviderServiceKeyResponse.Builder builder =
-                                        GetFastConnectProviderServiceKeyResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .GetFastConnectProviderServiceKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetFastConnectProviderServiceKeyResponse
+                                                        .builder();
 
                                 builder.fastConnectProviderServiceKey(response.getItem());
 
@@ -94,8 +103,9 @@ public class GetFastConnectProviderServiceKeyConverter {
                                                     String.class));
                                 }
 
-                                GetFastConnectProviderServiceKeyResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .GetFastConnectProviderServiceKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

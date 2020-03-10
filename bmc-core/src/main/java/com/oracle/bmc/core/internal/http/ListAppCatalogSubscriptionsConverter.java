@@ -16,15 +16,15 @@ public class ListAppCatalogSubscriptionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAppCatalogSubscriptionsRequest interceptRequest(
-            ListAppCatalogSubscriptionsRequest request) {
+    public static com.oracle.bmc.core.requests.ListAppCatalogSubscriptionsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListAppCatalogSubscriptionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListAppCatalogSubscriptionsRequest request) {
+            com.oracle.bmc.core.requests.ListAppCatalogSubscriptionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -85,18 +85,22 @@ public class ListAppCatalogSubscriptionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAppCatalogSubscriptionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListAppCatalogSubscriptionsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAppCatalogSubscriptionsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListAppCatalogSubscriptionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAppCatalogSubscriptionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .ListAppCatalogSubscriptionsResponse>() {
                             @Override
-                            public ListAppCatalogSubscriptionsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListAppCatalogSubscriptionsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAppCatalogSubscriptionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListAppCatalogSubscriptionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -114,8 +118,12 @@ public class ListAppCatalogSubscriptionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAppCatalogSubscriptionsResponse.Builder builder =
-                                        ListAppCatalogSubscriptionsResponse.builder();
+                                com.oracle.bmc.core.responses.ListAppCatalogSubscriptionsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListAppCatalogSubscriptionsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -143,8 +151,8 @@ public class ListAppCatalogSubscriptionsConverter {
                                                     String.class));
                                 }
 
-                                ListAppCatalogSubscriptionsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.ListAppCatalogSubscriptionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

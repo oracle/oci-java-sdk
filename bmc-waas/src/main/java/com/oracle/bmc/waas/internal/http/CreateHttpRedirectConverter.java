@@ -16,13 +16,15 @@ public class CreateHttpRedirectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateHttpRedirectRequest interceptRequest(CreateHttpRedirectRequest request) {
+    public static com.oracle.bmc.waas.requests.CreateHttpRedirectRequest interceptRequest(
+            com.oracle.bmc.waas.requests.CreateHttpRedirectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateHttpRedirectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.CreateHttpRedirectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateHttpRedirectDetails(), "createHttpRedirectDetails is required");
@@ -46,17 +48,21 @@ public class CreateHttpRedirectConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateHttpRedirectResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.CreateHttpRedirectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpRedirectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.CreateHttpRedirectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateHttpRedirectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.CreateHttpRedirectResponse>() {
                             @Override
-                            public CreateHttpRedirectResponse apply(
+                            public com.oracle.bmc.waas.responses.CreateHttpRedirectResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateHttpRedirectResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.CreateHttpRedirectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class CreateHttpRedirectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateHttpRedirectResponse.Builder builder =
-                                        CreateHttpRedirectResponse.builder();
+                                com.oracle.bmc.waas.responses.CreateHttpRedirectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .CreateHttpRedirectResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -94,7 +102,8 @@ public class CreateHttpRedirectConverter {
                                                     String.class));
                                 }
 
-                                CreateHttpRedirectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.CreateHttpRedirectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

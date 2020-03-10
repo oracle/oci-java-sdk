@@ -16,15 +16,21 @@ public class DetachManagedInstanceFromManagedInstanceGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DetachManagedInstanceFromManagedInstanceGroupRequest interceptRequest(
-            DetachManagedInstanceFromManagedInstanceGroupRequest request) {
+    public static com.oracle.bmc.osmanagement.requests
+                    .DetachManagedInstanceFromManagedInstanceGroupRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests
+                                    .DetachManagedInstanceFromManagedInstanceGroupRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DetachManagedInstanceFromManagedInstanceGroupRequest request) {
+            com.oracle.bmc.osmanagement.requests
+                            .DetachManagedInstanceFromManagedInstanceGroupRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
@@ -63,20 +69,24 @@ public class DetachManagedInstanceFromManagedInstanceGroupConverter {
 
     public static com.google.common.base.Function<
                     javax.ws.rs.core.Response,
-                    DetachManagedInstanceFromManagedInstanceGroupResponse>
+                    com.oracle.bmc.osmanagement.responses
+                            .DetachManagedInstanceFromManagedInstanceGroupResponse>
             fromResponse() {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
-                        DetachManagedInstanceFromManagedInstanceGroupResponse>
+                        com.oracle.bmc.osmanagement.responses
+                                .DetachManagedInstanceFromManagedInstanceGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DetachManagedInstanceFromManagedInstanceGroupResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .DetachManagedInstanceFromManagedInstanceGroupResponse>() {
                             @Override
-                            public DetachManagedInstanceFromManagedInstanceGroupResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .DetachManagedInstanceFromManagedInstanceGroupResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DetachManagedInstanceFromManagedInstanceGroupResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.DetachManagedInstanceFromManagedInstanceGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -87,9 +97,12 @@ public class DetachManagedInstanceFromManagedInstanceGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DetachManagedInstanceFromManagedInstanceGroupResponse.Builder
+                                com.oracle.bmc.osmanagement.responses
+                                                .DetachManagedInstanceFromManagedInstanceGroupResponse
+                                                .Builder
                                         builder =
-                                                DetachManagedInstanceFromManagedInstanceGroupResponse
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .DetachManagedInstanceFromManagedInstanceGroupResponse
                                                         .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
@@ -104,7 +117,8 @@ public class DetachManagedInstanceFromManagedInstanceGroupConverter {
                                                     String.class));
                                 }
 
-                                DetachManagedInstanceFromManagedInstanceGroupResponse
+                                com.oracle.bmc.osmanagement.responses
+                                                .DetachManagedInstanceFromManagedInstanceGroupResponse
                                         responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);

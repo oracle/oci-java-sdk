@@ -16,14 +16,15 @@ public class CreateIdentityProviderConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateIdentityProviderRequest interceptRequest(
-            CreateIdentityProviderRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateIdentityProviderRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateIdentityProviderRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateIdentityProviderRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreateIdentityProviderRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateIdentityProviderDetails(),
@@ -44,18 +45,22 @@ public class CreateIdentityProviderConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateIdentityProviderResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateIdentityProviderResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateIdentityProviderResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateIdentityProviderResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateIdentityProviderResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .CreateIdentityProviderResponse>() {
                             @Override
-                            public CreateIdentityProviderResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.CreateIdentityProviderResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateIdentityProviderResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateIdentityProviderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +74,11 @@ public class CreateIdentityProviderConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateIdentityProviderResponse.Builder builder =
-                                        CreateIdentityProviderResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateIdentityProviderResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateIdentityProviderResponse.builder();
 
                                 builder.identityProvider(response.getItem());
 
@@ -95,7 +103,8 @@ public class CreateIdentityProviderConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateIdentityProviderResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateIdentityProviderResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

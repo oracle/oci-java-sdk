@@ -16,13 +16,15 @@ public class ListDataAssetTagsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDataAssetTagsRequest interceptRequest(ListDataAssetTagsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListDataAssetTagsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListDataAssetTagsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListDataAssetTagsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListDataAssetTagsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -141,17 +143,21 @@ public class ListDataAssetTagsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDataAssetTagsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListDataAssetTagsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListDataAssetTagsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListDataAssetTagsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDataAssetTagsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ListDataAssetTagsResponse>() {
                             @Override
-                            public ListDataAssetTagsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.ListDataAssetTagsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDataAssetTagsResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListDataAssetTagsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -165,8 +171,11 @@ public class ListDataAssetTagsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDataAssetTagsResponse.Builder builder =
-                                        ListDataAssetTagsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListDataAssetTagsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListDataAssetTagsResponse.builder();
 
                                 builder.dataAssetTagCollection(response.getItem());
 
@@ -194,7 +203,8 @@ public class ListDataAssetTagsConverter {
                                                     String.class));
                                 }
 
-                                ListDataAssetTagsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListDataAssetTagsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

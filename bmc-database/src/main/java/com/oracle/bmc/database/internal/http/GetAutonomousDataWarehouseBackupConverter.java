@@ -16,15 +16,17 @@ public class GetAutonomousDataWarehouseBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetAutonomousDataWarehouseBackupRequest interceptRequest(
-            GetAutonomousDataWarehouseBackupRequest request) {
+    public static com.oracle.bmc.database.requests.GetAutonomousDataWarehouseBackupRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.GetAutonomousDataWarehouseBackupRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetAutonomousDataWarehouseBackupRequest request) {
+            com.oracle.bmc.database.requests.GetAutonomousDataWarehouseBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousDataWarehouseBackupId(),
@@ -46,19 +48,23 @@ public class GetAutonomousDataWarehouseBackupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetAutonomousDataWarehouseBackupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetAutonomousDataWarehouseBackupResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousDataWarehouseBackupResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetAutonomousDataWarehouseBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetAutonomousDataWarehouseBackupResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .GetAutonomousDataWarehouseBackupResponse>() {
                             @Override
-                            public GetAutonomousDataWarehouseBackupResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .GetAutonomousDataWarehouseBackupResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetAutonomousDataWarehouseBackupResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetAutonomousDataWarehouseBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +79,12 @@ public class GetAutonomousDataWarehouseBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetAutonomousDataWarehouseBackupResponse.Builder builder =
-                                        GetAutonomousDataWarehouseBackupResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .GetAutonomousDataWarehouseBackupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetAutonomousDataWarehouseBackupResponse
+                                                        .builder();
 
                                 builder.autonomousDataWarehouseBackup(response.getItem());
 
@@ -99,8 +109,9 @@ public class GetAutonomousDataWarehouseBackupConverter {
                                                     String.class));
                                 }
 
-                                GetAutonomousDataWarehouseBackupResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .GetAutonomousDataWarehouseBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,17 @@ public class BulkDeleteVirtualCircuitPublicPrefixesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static BulkDeleteVirtualCircuitPublicPrefixesRequest interceptRequest(
-            BulkDeleteVirtualCircuitPublicPrefixesRequest request) {
+    public static com.oracle.bmc.core.requests.BulkDeleteVirtualCircuitPublicPrefixesRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.BulkDeleteVirtualCircuitPublicPrefixesRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            BulkDeleteVirtualCircuitPublicPrefixesRequest request) {
+            com.oracle.bmc.core.requests.BulkDeleteVirtualCircuitPublicPrefixesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
         Validate.notNull(
@@ -49,19 +51,24 @@ public class BulkDeleteVirtualCircuitPublicPrefixesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, BulkDeleteVirtualCircuitPublicPrefixesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.BulkDeleteVirtualCircuitPublicPrefixesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, BulkDeleteVirtualCircuitPublicPrefixesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses
+                                .BulkDeleteVirtualCircuitPublicPrefixesResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                BulkDeleteVirtualCircuitPublicPrefixesResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .BulkDeleteVirtualCircuitPublicPrefixesResponse>() {
                             @Override
-                            public BulkDeleteVirtualCircuitPublicPrefixesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .BulkDeleteVirtualCircuitPublicPrefixesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for BulkDeleteVirtualCircuitPublicPrefixesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.BulkDeleteVirtualCircuitPublicPrefixesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -72,11 +79,17 @@ public class BulkDeleteVirtualCircuitPublicPrefixesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                BulkDeleteVirtualCircuitPublicPrefixesResponse.Builder builder =
-                                        BulkDeleteVirtualCircuitPublicPrefixesResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .BulkDeleteVirtualCircuitPublicPrefixesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .BulkDeleteVirtualCircuitPublicPrefixesResponse
+                                                        .builder();
 
-                                BulkDeleteVirtualCircuitPublicPrefixesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .BulkDeleteVirtualCircuitPublicPrefixesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

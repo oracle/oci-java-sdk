@@ -16,13 +16,15 @@ public class GetVolumeKmsKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetVolumeKmsKeyRequest interceptRequest(GetVolumeKmsKeyRequest request) {
+    public static com.oracle.bmc.core.requests.GetVolumeKmsKeyRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetVolumeKmsKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetVolumeKmsKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetVolumeKmsKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeId(), "volumeId must not be blank");
 
@@ -47,16 +49,21 @@ public class GetVolumeKmsKeyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetVolumeKmsKeyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetVolumeKmsKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeKmsKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetVolumeKmsKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetVolumeKmsKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetVolumeKmsKeyResponse>() {
                             @Override
-                            public GetVolumeKmsKeyResponse apply(
+                            public com.oracle.bmc.core.responses.GetVolumeKmsKeyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetVolumeKmsKeyResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetVolumeKmsKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +77,10 @@ public class GetVolumeKmsKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetVolumeKmsKeyResponse.Builder builder =
-                                        GetVolumeKmsKeyResponse.builder();
+                                com.oracle.bmc.core.responses.GetVolumeKmsKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetVolumeKmsKeyResponse.builder();
 
                                 builder.volumeKmsKey(response.getItem());
 
@@ -96,7 +105,8 @@ public class GetVolumeKmsKeyConverter {
                                                     String.class));
                                 }
 
-                                GetVolumeKmsKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetVolumeKmsKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

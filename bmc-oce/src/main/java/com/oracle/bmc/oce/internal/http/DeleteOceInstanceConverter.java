@@ -16,13 +16,15 @@ public class DeleteOceInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteOceInstanceRequest interceptRequest(DeleteOceInstanceRequest request) {
+    public static com.oracle.bmc.oce.requests.DeleteOceInstanceRequest interceptRequest(
+            com.oracle.bmc.oce.requests.DeleteOceInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteOceInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.oce.requests.DeleteOceInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getOceInstanceId(), "oceInstanceId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteOceInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteOceInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.oce.responses.DeleteOceInstanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteOceInstanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oce.responses.DeleteOceInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteOceInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oce.responses.DeleteOceInstanceResponse>() {
                             @Override
-                            public DeleteOceInstanceResponse apply(
+                            public com.oracle.bmc.oce.responses.DeleteOceInstanceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteOceInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.oce.responses.DeleteOceInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,10 @@ public class DeleteOceInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteOceInstanceResponse.Builder builder =
-                                        DeleteOceInstanceResponse.builder();
+                                com.oracle.bmc.oce.responses.DeleteOceInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.oce.responses
+                                                        .DeleteOceInstanceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -98,7 +106,8 @@ public class DeleteOceInstanceConverter {
                                                     String.class));
                                 }
 
-                                DeleteOceInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.oce.responses.DeleteOceInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

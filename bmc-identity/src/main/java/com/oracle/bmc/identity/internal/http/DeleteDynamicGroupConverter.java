@@ -16,13 +16,15 @@ public class DeleteDynamicGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteDynamicGroupRequest interceptRequest(DeleteDynamicGroupRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteDynamicGroupRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteDynamicGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteDynamicGroupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteDynamicGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDynamicGroupId(), "dynamicGroupId must not be blank");
 
@@ -46,17 +48,21 @@ public class DeleteDynamicGroupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteDynamicGroupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteDynamicGroupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDynamicGroupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteDynamicGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteDynamicGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteDynamicGroupResponse>() {
                             @Override
-                            public DeleteDynamicGroupResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.DeleteDynamicGroupResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteDynamicGroupResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteDynamicGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class DeleteDynamicGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteDynamicGroupResponse.Builder builder =
-                                        DeleteDynamicGroupResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteDynamicGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteDynamicGroupResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +90,8 @@ public class DeleteDynamicGroupConverter {
                                                     String.class));
                                 }
 
-                                DeleteDynamicGroupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteDynamicGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

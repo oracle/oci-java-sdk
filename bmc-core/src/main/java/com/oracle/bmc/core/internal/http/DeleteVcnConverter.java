@@ -16,13 +16,15 @@ public class DeleteVcnConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteVcnRequest interceptRequest(DeleteVcnRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteVcnRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteVcnRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteVcnRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteVcnRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
 
@@ -45,15 +47,20 @@ public class DeleteVcnConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVcnResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DeleteVcnResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVcnResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DeleteVcnResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteVcnResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteVcnResponse>() {
                             @Override
-                            public DeleteVcnResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteVcnResponse");
+                            public com.oracle.bmc.core.responses.DeleteVcnResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteVcnResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -64,7 +71,8 @@ public class DeleteVcnConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteVcnResponse.Builder builder = DeleteVcnResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteVcnResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.DeleteVcnResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -78,7 +86,8 @@ public class DeleteVcnConverter {
                                                     String.class));
                                 }
 
-                                DeleteVcnResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteVcnResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

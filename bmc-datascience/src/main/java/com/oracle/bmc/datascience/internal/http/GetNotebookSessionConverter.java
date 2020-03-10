@@ -16,13 +16,15 @@ public class GetNotebookSessionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetNotebookSessionRequest interceptRequest(GetNotebookSessionRequest request) {
+    public static com.oracle.bmc.datascience.requests.GetNotebookSessionRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.GetNotebookSessionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetNotebookSessionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.GetNotebookSessionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
 
@@ -46,17 +48,21 @@ public class GetNotebookSessionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetNotebookSessionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.GetNotebookSessionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetNotebookSessionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.GetNotebookSessionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetNotebookSessionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.GetNotebookSessionResponse>() {
                             @Override
-                            public GetNotebookSessionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses.GetNotebookSessionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetNotebookSessionResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.GetNotebookSessionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,11 @@ public class GetNotebookSessionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetNotebookSessionResponse.Builder builder =
-                                        GetNotebookSessionResponse.builder();
+                                com.oracle.bmc.datascience.responses.GetNotebookSessionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .GetNotebookSessionResponse.builder();
 
                                 builder.notebookSession(response.getItem());
 
@@ -96,7 +105,8 @@ public class GetNotebookSessionConverter {
                                                     String.class));
                                 }
 
-                                GetNotebookSessionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.GetNotebookSessionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

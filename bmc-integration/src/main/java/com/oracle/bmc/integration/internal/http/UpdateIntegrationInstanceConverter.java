@@ -16,15 +16,16 @@ public class UpdateIntegrationInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateIntegrationInstanceRequest interceptRequest(
-            UpdateIntegrationInstanceRequest request) {
+    public static com.oracle.bmc.integration.requests.UpdateIntegrationInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.integration.requests.UpdateIntegrationInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateIntegrationInstanceRequest request) {
+            com.oracle.bmc.integration.requests.UpdateIntegrationInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
@@ -56,18 +57,23 @@ public class UpdateIntegrationInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateIntegrationInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.integration.responses.UpdateIntegrationInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateIntegrationInstanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.integration.responses.UpdateIntegrationInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateIntegrationInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.integration.responses
+                                        .UpdateIntegrationInstanceResponse>() {
                             @Override
-                            public UpdateIntegrationInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.integration.responses
+                                            .UpdateIntegrationInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateIntegrationInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.integration.responses.UpdateIntegrationInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -78,8 +84,12 @@ public class UpdateIntegrationInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateIntegrationInstanceResponse.Builder builder =
-                                        UpdateIntegrationInstanceResponse.builder();
+                                com.oracle.bmc.integration.responses
+                                                .UpdateIntegrationInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.integration.responses
+                                                        .UpdateIntegrationInstanceResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -105,7 +115,9 @@ public class UpdateIntegrationInstanceConverter {
                                                     String.class));
                                 }
 
-                                UpdateIntegrationInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.integration.responses
+                                                .UpdateIntegrationInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

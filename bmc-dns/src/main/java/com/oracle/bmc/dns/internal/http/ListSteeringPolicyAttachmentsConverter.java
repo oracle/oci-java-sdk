@@ -16,15 +16,15 @@ public class ListSteeringPolicyAttachmentsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListSteeringPolicyAttachmentsRequest interceptRequest(
-            ListSteeringPolicyAttachmentsRequest request) {
+    public static com.oracle.bmc.dns.requests.ListSteeringPolicyAttachmentsRequest interceptRequest(
+            com.oracle.bmc.dns.requests.ListSteeringPolicyAttachmentsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListSteeringPolicyAttachmentsRequest request) {
+            com.oracle.bmc.dns.requests.ListSteeringPolicyAttachmentsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -153,19 +153,23 @@ public class ListSteeringPolicyAttachmentsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListSteeringPolicyAttachmentsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.ListSteeringPolicyAttachmentsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSteeringPolicyAttachmentsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.ListSteeringPolicyAttachmentsResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListSteeringPolicyAttachmentsResponse>() {
+                                com.oracle.bmc.dns.responses
+                                        .ListSteeringPolicyAttachmentsResponse>() {
                             @Override
-                            public ListSteeringPolicyAttachmentsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dns.responses
+                                            .ListSteeringPolicyAttachmentsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListSteeringPolicyAttachmentsResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.ListSteeringPolicyAttachmentsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -183,8 +187,12 @@ public class ListSteeringPolicyAttachmentsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListSteeringPolicyAttachmentsResponse.Builder builder =
-                                        ListSteeringPolicyAttachmentsResponse.builder();
+                                com.oracle.bmc.dns.responses.ListSteeringPolicyAttachmentsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .ListSteeringPolicyAttachmentsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -224,8 +232,8 @@ public class ListSteeringPolicyAttachmentsConverter {
                                                     String.class));
                                 }
 
-                                ListSteeringPolicyAttachmentsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dns.responses.ListSteeringPolicyAttachmentsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class DeleteInstanceConsoleConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteInstanceConsoleConnectionRequest interceptRequest(
-            DeleteInstanceConsoleConnectionRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteInstanceConsoleConnectionRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.DeleteInstanceConsoleConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteInstanceConsoleConnectionRequest request) {
+            com.oracle.bmc.core.requests.DeleteInstanceConsoleConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getInstanceConsoleConnectionId(),
@@ -50,19 +51,23 @@ public class DeleteInstanceConsoleConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteInstanceConsoleConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteInstanceConsoleConnectionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteInstanceConsoleConnectionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteInstanceConsoleConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DeleteInstanceConsoleConnectionResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .DeleteInstanceConsoleConnectionResponse>() {
                             @Override
-                            public DeleteInstanceConsoleConnectionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .DeleteInstanceConsoleConnectionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteInstanceConsoleConnectionResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteInstanceConsoleConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +78,12 @@ public class DeleteInstanceConsoleConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteInstanceConsoleConnectionResponse.Builder builder =
-                                        DeleteInstanceConsoleConnectionResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .DeleteInstanceConsoleConnectionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteInstanceConsoleConnectionResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -88,8 +97,9 @@ public class DeleteInstanceConsoleConnectionConverter {
                                                     String.class));
                                 }
 
-                                DeleteInstanceConsoleConnectionResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .DeleteInstanceConsoleConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

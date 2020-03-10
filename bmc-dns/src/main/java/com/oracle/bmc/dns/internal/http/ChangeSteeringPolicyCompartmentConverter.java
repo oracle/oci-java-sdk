@@ -16,15 +16,16 @@ public class ChangeSteeringPolicyCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeSteeringPolicyCompartmentRequest interceptRequest(
-            ChangeSteeringPolicyCompartmentRequest request) {
+    public static com.oracle.bmc.dns.requests.ChangeSteeringPolicyCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.dns.requests.ChangeSteeringPolicyCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeSteeringPolicyCompartmentRequest request) {
+            com.oracle.bmc.dns.requests.ChangeSteeringPolicyCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSteeringPolicyId(), "steeringPolicyId must not be blank");
         Validate.notNull(
@@ -61,19 +62,23 @@ public class ChangeSteeringPolicyCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeSteeringPolicyCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.ChangeSteeringPolicyCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeSteeringPolicyCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.ChangeSteeringPolicyCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeSteeringPolicyCompartmentResponse>() {
+                                com.oracle.bmc.dns.responses
+                                        .ChangeSteeringPolicyCompartmentResponse>() {
                             @Override
-                            public ChangeSteeringPolicyCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dns.responses
+                                            .ChangeSteeringPolicyCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeSteeringPolicyCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.ChangeSteeringPolicyCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +89,12 @@ public class ChangeSteeringPolicyCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeSteeringPolicyCompartmentResponse.Builder builder =
-                                        ChangeSteeringPolicyCompartmentResponse.builder();
+                                com.oracle.bmc.dns.responses.ChangeSteeringPolicyCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .ChangeSteeringPolicyCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -99,8 +108,8 @@ public class ChangeSteeringPolicyCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeSteeringPolicyCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dns.responses.ChangeSteeringPolicyCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

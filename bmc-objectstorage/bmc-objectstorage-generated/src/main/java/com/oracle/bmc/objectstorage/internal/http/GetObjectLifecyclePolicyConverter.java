@@ -16,15 +16,16 @@ public class GetObjectLifecyclePolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetObjectLifecyclePolicyRequest interceptRequest(
-            GetObjectLifecyclePolicyRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.GetObjectLifecyclePolicyRequest
+            interceptRequest(
+                    com.oracle.bmc.objectstorage.requests.GetObjectLifecyclePolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetObjectLifecyclePolicyRequest request) {
+            com.oracle.bmc.objectstorage.requests.GetObjectLifecyclePolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -54,18 +55,23 @@ public class GetObjectLifecyclePolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetObjectLifecyclePolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.GetObjectLifecyclePolicyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetObjectLifecyclePolicyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.GetObjectLifecyclePolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetObjectLifecyclePolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses
+                                        .GetObjectLifecyclePolicyResponse>() {
                             @Override
-                            public GetObjectLifecyclePolicyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.objectstorage.responses
+                                            .GetObjectLifecyclePolicyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetObjectLifecyclePolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.GetObjectLifecyclePolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -79,8 +85,11 @@ public class GetObjectLifecyclePolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetObjectLifecyclePolicyResponse.Builder builder =
-                                        GetObjectLifecyclePolicyResponse.builder();
+                                com.oracle.bmc.objectstorage.responses
+                                                .GetObjectLifecyclePolicyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .GetObjectLifecyclePolicyResponse.builder();
 
                                 builder.objectLifecyclePolicy(response.getItem());
 
@@ -117,7 +126,9 @@ public class GetObjectLifecyclePolicyConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                GetObjectLifecyclePolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses
+                                                .GetObjectLifecyclePolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

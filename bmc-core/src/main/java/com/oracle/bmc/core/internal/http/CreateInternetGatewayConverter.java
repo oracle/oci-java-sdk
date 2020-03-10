@@ -16,14 +16,15 @@ public class CreateInternetGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateInternetGatewayRequest interceptRequest(
-            CreateInternetGatewayRequest request) {
+    public static com.oracle.bmc.core.requests.CreateInternetGatewayRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateInternetGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateInternetGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateInternetGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateInternetGatewayDetails(),
@@ -44,18 +45,21 @@ public class CreateInternetGatewayConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateInternetGatewayResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateInternetGatewayResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateInternetGatewayResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateInternetGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateInternetGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateInternetGatewayResponse>() {
                             @Override
-                            public CreateInternetGatewayResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.CreateInternetGatewayResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateInternetGatewayResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateInternetGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +73,10 @@ public class CreateInternetGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateInternetGatewayResponse.Builder builder =
-                                        CreateInternetGatewayResponse.builder();
+                                com.oracle.bmc.core.responses.CreateInternetGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateInternetGatewayResponse.builder();
 
                                 builder.internetGateway(response.getItem());
 
@@ -95,7 +101,8 @@ public class CreateInternetGatewayConverter {
                                                     String.class));
                                 }
 
-                                CreateInternetGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateInternetGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

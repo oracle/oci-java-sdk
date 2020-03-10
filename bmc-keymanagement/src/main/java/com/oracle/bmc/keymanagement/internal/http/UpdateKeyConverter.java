@@ -16,13 +16,15 @@ public class UpdateKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateKeyRequest interceptRequest(UpdateKeyRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.UpdateKeyRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.UpdateKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.UpdateKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getKeyId(), "keyId must not be blank");
         Validate.notNull(request.getUpdateKeyDetails(), "updateKeyDetails is required");
@@ -51,15 +53,22 @@ public class UpdateKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.UpdateKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.UpdateKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.UpdateKeyResponse>() {
                             @Override
-                            public UpdateKeyResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateKeyResponse");
+                            public com.oracle.bmc.keymanagement.responses.UpdateKeyResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.UpdateKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Key>>
@@ -70,7 +79,10 @@ public class UpdateKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateKeyResponse.Builder builder = UpdateKeyResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.UpdateKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .UpdateKeyResponse.builder();
 
                                 builder.key(response.getItem());
 
@@ -95,7 +107,8 @@ public class UpdateKeyConverter {
                                                     String.class));
                                 }
 
-                                UpdateKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.UpdateKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

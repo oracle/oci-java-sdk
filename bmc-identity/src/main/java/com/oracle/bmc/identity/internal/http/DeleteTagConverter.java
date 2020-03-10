@@ -16,13 +16,15 @@ public class DeleteTagConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteTagRequest interceptRequest(DeleteTagRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteTagRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteTagRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteTagRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteTagRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTagNamespaceId(), "tagNamespaceId must not be blank");
         Validate.notBlank(request.getTagName(), "tagName must not be blank");
@@ -50,15 +52,21 @@ public class DeleteTagConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.identity.responses.DeleteTagResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteTagResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteTagResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteTagResponse>() {
                             @Override
-                            public DeleteTagResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteTagResponse");
+                            public com.oracle.bmc.identity.responses.DeleteTagResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,7 +77,10 @@ public class DeleteTagConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteTagResponse.Builder builder = DeleteTagResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteTagResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses.DeleteTagResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -95,7 +106,8 @@ public class DeleteTagConverter {
                                                     String.class));
                                 }
 
-                                DeleteTagResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteTagResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

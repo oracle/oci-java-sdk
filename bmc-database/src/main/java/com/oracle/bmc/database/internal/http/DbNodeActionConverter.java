@@ -16,13 +16,15 @@ public class DbNodeActionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DbNodeActionRequest interceptRequest(DbNodeActionRequest request) {
+    public static com.oracle.bmc.database.requests.DbNodeActionRequest interceptRequest(
+            com.oracle.bmc.database.requests.DbNodeActionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DbNodeActionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.DbNodeActionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbNodeId(), "dbNodeId must not be blank");
         Validate.notNull(request.getAction(), "action is required");
@@ -56,16 +58,22 @@ public class DbNodeActionConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DbNodeActionResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DbNodeActionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DbNodeActionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.DbNodeActionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DbNodeActionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.DbNodeActionResponse>() {
                             @Override
-                            public DbNodeActionResponse apply(
+                            public com.oracle.bmc.database.responses.DbNodeActionResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DbNodeActionResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DbNodeActionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<DbNode>>
@@ -77,8 +85,10 @@ public class DbNodeActionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DbNodeActionResponse.Builder builder =
-                                        DbNodeActionResponse.builder();
+                                com.oracle.bmc.database.responses.DbNodeActionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DbNodeActionResponse.builder();
 
                                 builder.dbNode(response.getItem());
 
@@ -115,7 +125,8 @@ public class DbNodeActionConverter {
                                                     String.class));
                                 }
 
-                                DbNodeActionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.DbNodeActionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

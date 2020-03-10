@@ -16,14 +16,15 @@ public class ListCustomerSecretKeysConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCustomerSecretKeysRequest interceptRequest(
-            ListCustomerSecretKeysRequest request) {
+    public static com.oracle.bmc.identity.requests.ListCustomerSecretKeysRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListCustomerSecretKeysRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListCustomerSecretKeysRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListCustomerSecretKeysRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -44,18 +45,22 @@ public class ListCustomerSecretKeysConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .ListCustomerSecretKeysResponse>() {
                             @Override
-                            public ListCustomerSecretKeysResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListCustomerSecretKeysResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -72,8 +77,11 @@ public class ListCustomerSecretKeysConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCustomerSecretKeysResponse.Builder builder =
-                                        ListCustomerSecretKeysResponse.builder();
+                                com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListCustomerSecretKeysResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -101,7 +109,8 @@ public class ListCustomerSecretKeysConverter {
                                                     String.class));
                                 }
 
-                                ListCustomerSecretKeysResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListCustomerSecretKeysResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

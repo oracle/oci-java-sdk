@@ -16,14 +16,15 @@ public class ListTermRelationshipsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTermRelationshipsRequest interceptRequest(
-            ListTermRelationshipsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListTermRelationshipsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListTermRelationshipsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTermRelationshipsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListTermRelationshipsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -115,18 +116,23 @@ public class ListTermRelationshipsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListTermRelationshipsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListTermRelationshipsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTermRelationshipsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListTermRelationshipsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTermRelationshipsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses
+                                        .ListTermRelationshipsResponse>() {
                             @Override
-                            public ListTermRelationshipsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses
+                                            .ListTermRelationshipsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListTermRelationshipsResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListTermRelationshipsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -140,8 +146,11 @@ public class ListTermRelationshipsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTermRelationshipsResponse.Builder builder =
-                                        ListTermRelationshipsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListTermRelationshipsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListTermRelationshipsResponse.builder();
 
                                 builder.termRelationshipCollection(response.getItem());
 
@@ -169,7 +178,8 @@ public class ListTermRelationshipsConverter {
                                                     String.class));
                                 }
 
-                                ListTermRelationshipsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListTermRelationshipsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

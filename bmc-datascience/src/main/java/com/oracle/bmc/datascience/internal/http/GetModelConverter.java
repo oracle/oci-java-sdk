@@ -16,13 +16,15 @@ public class GetModelConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetModelRequest interceptRequest(GetModelRequest request) {
+    public static com.oracle.bmc.datascience.requests.GetModelRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.GetModelRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetModelRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.GetModelRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetModelConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetModelResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.GetModelResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetModelResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.GetModelResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetModelResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.GetModelResponse>() {
                             @Override
-                            public GetModelResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetModelResponse");
+                            public com.oracle.bmc.datascience.responses.GetModelResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.GetModelResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Model>>
@@ -65,7 +74,10 @@ public class GetModelConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetModelResponse.Builder builder = GetModelResponse.builder();
+                                com.oracle.bmc.datascience.responses.GetModelResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .GetModelResponse.builder();
 
                                 builder.model(response.getItem());
 
@@ -90,7 +102,8 @@ public class GetModelConverter {
                                                     String.class));
                                 }
 
-                                GetModelResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.GetModelResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

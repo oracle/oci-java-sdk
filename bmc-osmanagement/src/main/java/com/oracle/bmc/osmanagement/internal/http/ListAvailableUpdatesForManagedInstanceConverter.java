@@ -16,15 +16,19 @@ public class ListAvailableUpdatesForManagedInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAvailableUpdatesForManagedInstanceRequest interceptRequest(
-            ListAvailableUpdatesForManagedInstanceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.ListAvailableUpdatesForManagedInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests
+                                    .ListAvailableUpdatesForManagedInstanceRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListAvailableUpdatesForManagedInstanceRequest request) {
+            com.oracle.bmc.osmanagement.requests.ListAvailableUpdatesForManagedInstanceRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
 
@@ -98,19 +102,25 @@ public class ListAvailableUpdatesForManagedInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAvailableUpdatesForManagedInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses
+                            .ListAvailableUpdatesForManagedInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAvailableUpdatesForManagedInstanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses
+                                .ListAvailableUpdatesForManagedInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListAvailableUpdatesForManagedInstanceResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .ListAvailableUpdatesForManagedInstanceResponse>() {
                             @Override
-                            public ListAvailableUpdatesForManagedInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .ListAvailableUpdatesForManagedInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAvailableUpdatesForManagedInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.ListAvailableUpdatesForManagedInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -127,8 +137,13 @@ public class ListAvailableUpdatesForManagedInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAvailableUpdatesForManagedInstanceResponse.Builder builder =
-                                        ListAvailableUpdatesForManagedInstanceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .ListAvailableUpdatesForManagedInstanceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .ListAvailableUpdatesForManagedInstanceResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -156,8 +171,9 @@ public class ListAvailableUpdatesForManagedInstanceConverter {
                                                     String.class));
                                 }
 
-                                ListAvailableUpdatesForManagedInstanceResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .ListAvailableUpdatesForManagedInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

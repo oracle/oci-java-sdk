@@ -16,13 +16,15 @@ public class UpdateCatalogConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateCatalogRequest interceptRequest(UpdateCatalogRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.UpdateCatalogRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.UpdateCatalogRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateCatalogRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.UpdateCatalogRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notNull(request.getUpdateCatalogDetails(), "updateCatalogDetails is required");
@@ -50,16 +52,22 @@ public class UpdateCatalogConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCatalogResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.UpdateCatalogResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCatalogResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.UpdateCatalogResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateCatalogResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.UpdateCatalogResponse>() {
                             @Override
-                            public UpdateCatalogResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.UpdateCatalogResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateCatalogResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.UpdateCatalogResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Catalog>>
@@ -71,8 +79,10 @@ public class UpdateCatalogConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateCatalogResponse.Builder builder =
-                                        UpdateCatalogResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.UpdateCatalogResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .UpdateCatalogResponse.builder();
 
                                 builder.catalog(response.getItem());
 
@@ -97,7 +107,8 @@ public class UpdateCatalogConverter {
                                                     String.class));
                                 }
 
-                                UpdateCatalogResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.UpdateCatalogResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

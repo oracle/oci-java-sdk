@@ -16,15 +16,15 @@ public class GetPublicIpByPrivateIpIdConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetPublicIpByPrivateIpIdRequest interceptRequest(
-            GetPublicIpByPrivateIpIdRequest request) {
+    public static com.oracle.bmc.core.requests.GetPublicIpByPrivateIpIdRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetPublicIpByPrivateIpIdRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetPublicIpByPrivateIpIdRequest request) {
+            com.oracle.bmc.core.requests.GetPublicIpByPrivateIpIdRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getGetPublicIpByPrivateIpIdDetails(),
@@ -45,18 +45,21 @@ public class GetPublicIpByPrivateIpIdConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetPublicIpByPrivateIpIdResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetPublicIpByPrivateIpIdResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetPublicIpByPrivateIpIdResponse>() {
                             @Override
-                            public GetPublicIpByPrivateIpIdResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.GetPublicIpByPrivateIpIdResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetPublicIpByPrivateIpIdResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetPublicIpByPrivateIpIdResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<PublicIp>>
@@ -68,8 +71,11 @@ public class GetPublicIpByPrivateIpIdConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetPublicIpByPrivateIpIdResponse.Builder builder =
-                                        GetPublicIpByPrivateIpIdResponse.builder();
+                                com.oracle.bmc.core.responses.GetPublicIpByPrivateIpIdResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetPublicIpByPrivateIpIdResponse.builder();
 
                                 builder.publicIp(response.getItem());
 
@@ -94,7 +100,8 @@ public class GetPublicIpByPrivateIpIdConverter {
                                                     String.class));
                                 }
 
-                                GetPublicIpByPrivateIpIdResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetPublicIpByPrivateIpIdResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

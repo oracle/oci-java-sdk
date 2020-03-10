@@ -16,13 +16,15 @@ public class GetDrgConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDrgRequest interceptRequest(GetDrgRequest request) {
+    public static com.oracle.bmc.core.requests.GetDrgRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetDrgRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDrgRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetDrgRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
@@ -41,15 +43,20 @@ public class GetDrgConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetDrgResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetDrgResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDrgResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetDrgResponse>() {
                             @Override
-                            public GetDrgResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetDrgResponse");
+                            public com.oracle.bmc.core.responses.GetDrgResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetDrgResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Drg>>
@@ -60,7 +67,8 @@ public class GetDrgConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDrgResponse.Builder builder = GetDrgResponse.builder();
+                                com.oracle.bmc.core.responses.GetDrgResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.GetDrgResponse.builder();
 
                                 builder.drg(response.getItem());
 
@@ -85,7 +93,8 @@ public class GetDrgConverter {
                                                     String.class));
                                 }
 
-                                GetDrgResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetDrgResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

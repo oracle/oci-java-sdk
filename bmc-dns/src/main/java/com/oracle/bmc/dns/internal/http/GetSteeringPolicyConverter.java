@@ -16,13 +16,15 @@ public class GetSteeringPolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetSteeringPolicyRequest interceptRequest(GetSteeringPolicyRequest request) {
+    public static com.oracle.bmc.dns.requests.GetSteeringPolicyRequest interceptRequest(
+            com.oracle.bmc.dns.requests.GetSteeringPolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetSteeringPolicyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.GetSteeringPolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSteeringPolicyId(), "steeringPolicyId must not be blank");
 
@@ -54,17 +56,21 @@ public class GetSteeringPolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetSteeringPolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.GetSteeringPolicyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSteeringPolicyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.GetSteeringPolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetSteeringPolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.GetSteeringPolicyResponse>() {
                             @Override
-                            public GetSteeringPolicyResponse apply(
+                            public com.oracle.bmc.dns.responses.GetSteeringPolicyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetSteeringPolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.GetSteeringPolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +84,10 @@ public class GetSteeringPolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetSteeringPolicyResponse.Builder builder =
-                                        GetSteeringPolicyResponse.builder();
+                                com.oracle.bmc.dns.responses.GetSteeringPolicyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .GetSteeringPolicyResponse.builder();
 
                                 if (response.getStatusCode() != 304) {
                                     builder.steeringPolicy(response.getItem());
@@ -109,7 +117,8 @@ public class GetSteeringPolicyConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                GetSteeringPolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.GetSteeringPolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

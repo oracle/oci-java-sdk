@@ -16,15 +16,18 @@ public class ChangeMigrationCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeMigrationCompartmentRequest interceptRequest(
-            ChangeMigrationCompartmentRequest request) {
+    public static com.oracle.bmc.applicationmigration.requests.ChangeMigrationCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.applicationmigration.requests.ChangeMigrationCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeMigrationCompartmentRequest request) {
+            com.oracle.bmc.applicationmigration.requests.ChangeMigrationCompartmentRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getMigrationId(), "migrationId must not be blank");
         Validate.notNull(
@@ -61,18 +64,25 @@ public class ChangeMigrationCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeMigrationCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.applicationmigration.responses
+                            .ChangeMigrationCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeMigrationCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.applicationmigration.responses
+                                .ChangeMigrationCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeMigrationCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.applicationmigration.responses
+                                        .ChangeMigrationCompartmentResponse>() {
                             @Override
-                            public ChangeMigrationCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.applicationmigration.responses
+                                            .ChangeMigrationCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeMigrationCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.applicationmigration.responses.ChangeMigrationCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +93,12 @@ public class ChangeMigrationCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeMigrationCompartmentResponse.Builder builder =
-                                        ChangeMigrationCompartmentResponse.builder();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .ChangeMigrationCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.applicationmigration.responses
+                                                        .ChangeMigrationCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -110,8 +124,9 @@ public class ChangeMigrationCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeMigrationCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .ChangeMigrationCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

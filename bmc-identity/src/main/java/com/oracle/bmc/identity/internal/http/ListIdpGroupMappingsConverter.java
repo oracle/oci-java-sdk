@@ -16,14 +16,15 @@ public class ListIdpGroupMappingsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListIdpGroupMappingsRequest interceptRequest(
-            ListIdpGroupMappingsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListIdpGroupMappingsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListIdpGroupMappingsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListIdpGroupMappingsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListIdpGroupMappingsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIdentityProviderId(), "identityProviderId must not be blank");
 
@@ -60,18 +61,21 @@ public class ListIdpGroupMappingsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListIdpGroupMappingsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListIdpGroupMappingsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListIdpGroupMappingsResponse>() {
                             @Override
-                            public ListIdpGroupMappingsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ListIdpGroupMappingsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListIdpGroupMappingsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListIdpGroupMappingsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -88,8 +92,11 @@ public class ListIdpGroupMappingsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListIdpGroupMappingsResponse.Builder builder =
-                                        ListIdpGroupMappingsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListIdpGroupMappingsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListIdpGroupMappingsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -117,7 +124,8 @@ public class ListIdpGroupMappingsConverter {
                                                     String.class));
                                 }
 
-                                ListIdpGroupMappingsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListIdpGroupMappingsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

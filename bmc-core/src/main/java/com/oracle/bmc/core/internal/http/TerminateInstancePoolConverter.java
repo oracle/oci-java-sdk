@@ -16,14 +16,15 @@ public class TerminateInstancePoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static TerminateInstancePoolRequest interceptRequest(
-            TerminateInstancePoolRequest request) {
+    public static com.oracle.bmc.core.requests.TerminateInstancePoolRequest interceptRequest(
+            com.oracle.bmc.core.requests.TerminateInstancePoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, TerminateInstancePoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.TerminateInstancePoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
@@ -47,18 +48,21 @@ public class TerminateInstancePoolConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, TerminateInstancePoolResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.TerminateInstancePoolResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, TerminateInstancePoolResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.TerminateInstancePoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, TerminateInstancePoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.TerminateInstancePoolResponse>() {
                             @Override
-                            public TerminateInstancePoolResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.TerminateInstancePoolResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for TerminateInstancePoolResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.TerminateInstancePoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +73,10 @@ public class TerminateInstancePoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                TerminateInstancePoolResponse.Builder builder =
-                                        TerminateInstancePoolResponse.builder();
+                                com.oracle.bmc.core.responses.TerminateInstancePoolResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .TerminateInstancePoolResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +90,8 @@ public class TerminateInstancePoolConverter {
                                                     String.class));
                                 }
 
-                                TerminateInstancePoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.TerminateInstancePoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class GetWafAddressRateLimitingConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetWafAddressRateLimitingRequest interceptRequest(
-            GetWafAddressRateLimitingRequest request) {
+    public static com.oracle.bmc.waas.requests.GetWafAddressRateLimitingRequest interceptRequest(
+            com.oracle.bmc.waas.requests.GetWafAddressRateLimitingRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetWafAddressRateLimitingRequest request) {
+            com.oracle.bmc.waas.requests.GetWafAddressRateLimitingRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -50,18 +50,21 @@ public class GetWafAddressRateLimitingConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetWafAddressRateLimitingResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.GetWafAddressRateLimitingResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetWafAddressRateLimitingResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.GetWafAddressRateLimitingResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetWafAddressRateLimitingResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.GetWafAddressRateLimitingResponse>() {
                             @Override
-                            public GetWafAddressRateLimitingResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses.GetWafAddressRateLimitingResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetWafAddressRateLimitingResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.GetWafAddressRateLimitingResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -75,8 +78,12 @@ public class GetWafAddressRateLimitingConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetWafAddressRateLimitingResponse.Builder builder =
-                                        GetWafAddressRateLimitingResponse.builder();
+                                com.oracle.bmc.waas.responses.GetWafAddressRateLimitingResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .GetWafAddressRateLimitingResponse
+                                                        .builder();
 
                                 builder.addressRateLimiting(response.getItem());
 
@@ -101,7 +108,8 @@ public class GetWafAddressRateLimitingConverter {
                                                     String.class));
                                 }
 
-                                GetWafAddressRateLimitingResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.GetWafAddressRateLimitingResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class DeleteIntegrationInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteIntegrationInstanceRequest interceptRequest(
-            DeleteIntegrationInstanceRequest request) {
+    public static com.oracle.bmc.integration.requests.DeleteIntegrationInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.integration.requests.DeleteIntegrationInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteIntegrationInstanceRequest request) {
+            com.oracle.bmc.integration.requests.DeleteIntegrationInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
@@ -53,18 +54,23 @@ public class DeleteIntegrationInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteIntegrationInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.integration.responses.DeleteIntegrationInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteIntegrationInstanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.integration.responses.DeleteIntegrationInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteIntegrationInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.integration.responses
+                                        .DeleteIntegrationInstanceResponse>() {
                             @Override
-                            public DeleteIntegrationInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.integration.responses
+                                            .DeleteIntegrationInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteIntegrationInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.integration.responses.DeleteIntegrationInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +81,12 @@ public class DeleteIntegrationInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteIntegrationInstanceResponse.Builder builder =
-                                        DeleteIntegrationInstanceResponse.builder();
+                                com.oracle.bmc.integration.responses
+                                                .DeleteIntegrationInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.integration.responses
+                                                        .DeleteIntegrationInstanceResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -102,7 +112,9 @@ public class DeleteIntegrationInstanceConverter {
                                                     String.class));
                                 }
 
-                                DeleteIntegrationInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.integration.responses
+                                                .DeleteIntegrationInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

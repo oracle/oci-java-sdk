@@ -16,15 +16,16 @@ public class UpdateNamespaceMetadataConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateNamespaceMetadataRequest interceptRequest(
-            UpdateNamespaceMetadataRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.UpdateNamespaceMetadataRequest
+            interceptRequest(
+                    com.oracle.bmc.objectstorage.requests.UpdateNamespaceMetadataRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateNamespaceMetadataRequest request) {
+            com.oracle.bmc.objectstorage.requests.UpdateNamespaceMetadataRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notNull(
@@ -51,18 +52,23 @@ public class UpdateNamespaceMetadataConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateNamespaceMetadataResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.UpdateNamespaceMetadataResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateNamespaceMetadataResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.UpdateNamespaceMetadataResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateNamespaceMetadataResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses
+                                        .UpdateNamespaceMetadataResponse>() {
                             @Override
-                            public UpdateNamespaceMetadataResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.objectstorage.responses
+                                            .UpdateNamespaceMetadataResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateNamespaceMetadataResponse");
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.UpdateNamespaceMetadataResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +82,11 @@ public class UpdateNamespaceMetadataConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateNamespaceMetadataResponse.Builder builder =
-                                        UpdateNamespaceMetadataResponse.builder();
+                                com.oracle.bmc.objectstorage.responses
+                                                .UpdateNamespaceMetadataResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .UpdateNamespaceMetadataResponse.builder();
 
                                 builder.namespaceMetadata(response.getItem());
 
@@ -105,7 +114,9 @@ public class UpdateNamespaceMetadataConverter {
                                                     String.class));
                                 }
 
-                                UpdateNamespaceMetadataResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses
+                                                .UpdateNamespaceMetadataResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

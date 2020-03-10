@@ -16,13 +16,15 @@ public class CreateNetworkSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateNetworkSourceRequest interceptRequest(CreateNetworkSourceRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateNetworkSourceRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateNetworkSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateNetworkSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreateNetworkSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateNetworkSourceDetails(), "createNetworkSourceDetails is required");
@@ -42,18 +44,21 @@ public class CreateNetworkSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateNetworkSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateNetworkSourceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateNetworkSourceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateNetworkSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateNetworkSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.CreateNetworkSourceResponse>() {
                             @Override
-                            public CreateNetworkSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.CreateNetworkSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateNetworkSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateNetworkSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -67,8 +72,11 @@ public class CreateNetworkSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateNetworkSourceResponse.Builder builder =
-                                        CreateNetworkSourceResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateNetworkSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateNetworkSourceResponse.builder();
 
                                 builder.networkSources(response.getItem());
 
@@ -93,7 +101,8 @@ public class CreateNetworkSourceConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateNetworkSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateNetworkSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

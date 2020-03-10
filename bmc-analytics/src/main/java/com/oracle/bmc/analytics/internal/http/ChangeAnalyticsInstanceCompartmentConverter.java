@@ -16,15 +16,17 @@ public class ChangeAnalyticsInstanceCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeAnalyticsInstanceCompartmentRequest interceptRequest(
-            ChangeAnalyticsInstanceCompartmentRequest request) {
+    public static com.oracle.bmc.analytics.requests.ChangeAnalyticsInstanceCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.analytics.requests.ChangeAnalyticsInstanceCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeAnalyticsInstanceCompartmentRequest request) {
+            com.oracle.bmc.analytics.requests.ChangeAnalyticsInstanceCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAnalyticsInstanceId(), "analyticsInstanceId must not be blank");
@@ -61,19 +63,24 @@ public class ChangeAnalyticsInstanceCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeAnalyticsInstanceCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.analytics.responses.ChangeAnalyticsInstanceCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeAnalyticsInstanceCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.analytics.responses
+                                .ChangeAnalyticsInstanceCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeAnalyticsInstanceCompartmentResponse>() {
+                                com.oracle.bmc.analytics.responses
+                                        .ChangeAnalyticsInstanceCompartmentResponse>() {
                             @Override
-                            public ChangeAnalyticsInstanceCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.analytics.responses
+                                            .ChangeAnalyticsInstanceCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeAnalyticsInstanceCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.analytics.responses.ChangeAnalyticsInstanceCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +91,12 @@ public class ChangeAnalyticsInstanceCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeAnalyticsInstanceCompartmentResponse.Builder builder =
-                                        ChangeAnalyticsInstanceCompartmentResponse.builder();
+                                com.oracle.bmc.analytics.responses
+                                                .ChangeAnalyticsInstanceCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.analytics.responses
+                                                        .ChangeAnalyticsInstanceCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -111,8 +122,9 @@ public class ChangeAnalyticsInstanceCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeAnalyticsInstanceCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.analytics.responses
+                                                .ChangeAnalyticsInstanceCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

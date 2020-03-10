@@ -16,13 +16,15 @@ public class DeleteLoadBalancerConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteLoadBalancerRequest interceptRequest(DeleteLoadBalancerRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.DeleteLoadBalancerRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.DeleteLoadBalancerRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteLoadBalancerRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.DeleteLoadBalancerRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
 
@@ -46,17 +48,22 @@ public class DeleteLoadBalancerConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteLoadBalancerResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.DeleteLoadBalancerResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLoadBalancerResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.DeleteLoadBalancerResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteLoadBalancerResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses
+                                        .DeleteLoadBalancerResponse>() {
                             @Override
-                            public DeleteLoadBalancerResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.loadbalancer.responses.DeleteLoadBalancerResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteLoadBalancerResponse");
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.DeleteLoadBalancerResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +74,11 @@ public class DeleteLoadBalancerConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteLoadBalancerResponse.Builder builder =
-                                        DeleteLoadBalancerResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.DeleteLoadBalancerResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .DeleteLoadBalancerResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -94,7 +104,8 @@ public class DeleteLoadBalancerConverter {
                                                     String.class));
                                 }
 
-                                DeleteLoadBalancerResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.DeleteLoadBalancerResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

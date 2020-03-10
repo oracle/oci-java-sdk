@@ -16,13 +16,15 @@ public class GetAlarmHistoryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetAlarmHistoryRequest interceptRequest(GetAlarmHistoryRequest request) {
+    public static com.oracle.bmc.monitoring.requests.GetAlarmHistoryRequest interceptRequest(
+            com.oracle.bmc.monitoring.requests.GetAlarmHistoryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetAlarmHistoryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.monitoring.requests.GetAlarmHistoryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAlarmId(), "alarmId must not be blank");
 
@@ -87,16 +89,21 @@ public class GetAlarmHistoryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetAlarmHistoryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.monitoring.responses.GetAlarmHistoryResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetAlarmHistoryResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.monitoring.responses.GetAlarmHistoryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetAlarmHistoryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.monitoring.responses.GetAlarmHistoryResponse>() {
                             @Override
-                            public GetAlarmHistoryResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetAlarmHistoryResponse");
+                            public com.oracle.bmc.monitoring.responses.GetAlarmHistoryResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.monitoring.responses.GetAlarmHistoryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -110,8 +117,10 @@ public class GetAlarmHistoryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetAlarmHistoryResponse.Builder builder =
-                                        GetAlarmHistoryResponse.builder();
+                                com.oracle.bmc.monitoring.responses.GetAlarmHistoryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.monitoring.responses
+                                                        .GetAlarmHistoryResponse.builder();
 
                                 builder.alarmHistoryCollection(response.getItem());
 
@@ -139,7 +148,8 @@ public class GetAlarmHistoryConverter {
                                                     String.class));
                                 }
 
-                                GetAlarmHistoryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.monitoring.responses.GetAlarmHistoryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

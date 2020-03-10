@@ -16,13 +16,15 @@ public class GetBackendSetHealthConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetBackendSetHealthRequest interceptRequest(GetBackendSetHealthRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.GetBackendSetHealthRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.GetBackendSetHealthRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetBackendSetHealthRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.GetBackendSetHealthRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
         Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
@@ -52,18 +54,22 @@ public class GetBackendSetHealthConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetBackendSetHealthResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.GetBackendSetHealthResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetBackendSetHealthResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.GetBackendSetHealthResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetBackendSetHealthResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses
+                                        .GetBackendSetHealthResponse>() {
                             @Override
-                            public GetBackendSetHealthResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.loadbalancer.responses.GetBackendSetHealthResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetBackendSetHealthResponse");
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.GetBackendSetHealthResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -77,8 +83,11 @@ public class GetBackendSetHealthConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetBackendSetHealthResponse.Builder builder =
-                                        GetBackendSetHealthResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.GetBackendSetHealthResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .GetBackendSetHealthResponse.builder();
 
                                 builder.backendSetHealth(response.getItem());
 
@@ -94,7 +103,8 @@ public class GetBackendSetHealthConverter {
                                                     String.class));
                                 }
 
-                                GetBackendSetHealthResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.GetBackendSetHealthResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

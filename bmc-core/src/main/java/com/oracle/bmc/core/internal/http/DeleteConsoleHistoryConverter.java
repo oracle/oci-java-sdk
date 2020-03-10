@@ -16,14 +16,15 @@ public class DeleteConsoleHistoryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteConsoleHistoryRequest interceptRequest(
-            DeleteConsoleHistoryRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteConsoleHistoryRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteConsoleHistoryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteConsoleHistoryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteConsoleHistoryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getInstanceConsoleHistoryId(),
@@ -49,18 +50,21 @@ public class DeleteConsoleHistoryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteConsoleHistoryResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteConsoleHistoryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteConsoleHistoryResponse>() {
                             @Override
-                            public DeleteConsoleHistoryResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteConsoleHistoryResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteConsoleHistoryResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteConsoleHistoryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +75,10 @@ public class DeleteConsoleHistoryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteConsoleHistoryResponse.Builder builder =
-                                        DeleteConsoleHistoryResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteConsoleHistoryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteConsoleHistoryResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +92,8 @@ public class DeleteConsoleHistoryConverter {
                                                     String.class));
                                 }
 
-                                DeleteConsoleHistoryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteConsoleHistoryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

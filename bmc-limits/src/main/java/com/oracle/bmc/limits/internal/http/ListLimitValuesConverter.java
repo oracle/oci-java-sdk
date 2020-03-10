@@ -16,13 +16,15 @@ public class ListLimitValuesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListLimitValuesRequest interceptRequest(ListLimitValuesRequest request) {
+    public static com.oracle.bmc.limits.requests.ListLimitValuesRequest interceptRequest(
+            com.oracle.bmc.limits.requests.ListLimitValuesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListLimitValuesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.limits.requests.ListLimitValuesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getServiceName(), "serviceName is required");
@@ -110,16 +112,21 @@ public class ListLimitValuesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListLimitValuesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.limits.responses.ListLimitValuesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListLimitValuesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.limits.responses.ListLimitValuesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListLimitValuesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.limits.responses.ListLimitValuesResponse>() {
                             @Override
-                            public ListLimitValuesResponse apply(
+                            public com.oracle.bmc.limits.responses.ListLimitValuesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListLimitValuesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.limits.responses.ListLimitValuesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -136,8 +143,10 @@ public class ListLimitValuesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListLimitValuesResponse.Builder builder =
-                                        ListLimitValuesResponse.builder();
+                                com.oracle.bmc.limits.responses.ListLimitValuesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.limits.responses
+                                                        .ListLimitValuesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -165,7 +174,8 @@ public class ListLimitValuesConverter {
                                                     String.class));
                                 }
 
-                                ListLimitValuesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.limits.responses.ListLimitValuesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

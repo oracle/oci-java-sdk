@@ -16,13 +16,15 @@ public class GetStreamPoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetStreamPoolRequest interceptRequest(GetStreamPoolRequest request) {
+    public static com.oracle.bmc.streaming.requests.GetStreamPoolRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.GetStreamPoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetStreamPoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.GetStreamPoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamPoolId(), "streamPoolId must not be blank");
 
@@ -45,16 +47,22 @@ public class GetStreamPoolConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetStreamPoolResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.GetStreamPoolResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetStreamPoolResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.GetStreamPoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetStreamPoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.GetStreamPoolResponse>() {
                             @Override
-                            public GetStreamPoolResponse apply(
+                            public com.oracle.bmc.streaming.responses.GetStreamPoolResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetStreamPoolResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.GetStreamPoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +76,10 @@ public class GetStreamPoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetStreamPoolResponse.Builder builder =
-                                        GetStreamPoolResponse.builder();
+                                com.oracle.bmc.streaming.responses.GetStreamPoolResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .GetStreamPoolResponse.builder();
 
                                 builder.streamPool(response.getItem());
 
@@ -94,7 +104,8 @@ public class GetStreamPoolConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetStreamPoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.GetStreamPoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class UpdateConfigurationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateConfigurationRequest interceptRequest(UpdateConfigurationRequest request) {
+    public static com.oracle.bmc.audit.requests.UpdateConfigurationRequest interceptRequest(
+            com.oracle.bmc.audit.requests.UpdateConfigurationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateConfigurationRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.audit.requests.UpdateConfigurationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(
@@ -45,18 +47,21 @@ public class UpdateConfigurationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateConfigurationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.audit.responses.UpdateConfigurationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateConfigurationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.audit.responses.UpdateConfigurationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateConfigurationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.audit.responses.UpdateConfigurationResponse>() {
                             @Override
-                            public UpdateConfigurationResponse apply(
+                            public com.oracle.bmc.audit.responses.UpdateConfigurationResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateConfigurationResponse");
+                                        "Transform function invoked for com.oracle.bmc.audit.responses.UpdateConfigurationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +72,10 @@ public class UpdateConfigurationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateConfigurationResponse.Builder builder =
-                                        UpdateConfigurationResponse.builder();
+                                com.oracle.bmc.audit.responses.UpdateConfigurationResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.audit.responses
+                                                        .UpdateConfigurationResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -94,7 +101,8 @@ public class UpdateConfigurationConverter {
                                                     String.class));
                                 }
 
-                                UpdateConfigurationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.audit.responses.UpdateConfigurationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListFaultDomainsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListFaultDomainsRequest interceptRequest(ListFaultDomainsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListFaultDomainsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListFaultDomainsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListFaultDomainsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListFaultDomainsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getAvailabilityDomain(), "availabilityDomain is required");
@@ -50,17 +52,21 @@ public class ListFaultDomainsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListFaultDomainsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListFaultDomainsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFaultDomainsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListFaultDomainsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListFaultDomainsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListFaultDomainsResponse>() {
                             @Override
-                            public ListFaultDomainsResponse apply(
+                            public com.oracle.bmc.identity.responses.ListFaultDomainsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListFaultDomainsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListFaultDomainsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +82,10 @@ public class ListFaultDomainsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListFaultDomainsResponse.Builder builder =
-                                        ListFaultDomainsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListFaultDomainsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListFaultDomainsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -93,7 +101,8 @@ public class ListFaultDomainsConverter {
                                                     String.class));
                                 }
 
-                                ListFaultDomainsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListFaultDomainsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

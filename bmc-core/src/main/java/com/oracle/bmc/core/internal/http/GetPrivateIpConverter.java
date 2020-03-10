@@ -16,13 +16,15 @@ public class GetPrivateIpConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetPrivateIpRequest interceptRequest(GetPrivateIpRequest request) {
+    public static com.oracle.bmc.core.requests.GetPrivateIpRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetPrivateIpRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetPrivateIpRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetPrivateIpRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
 
@@ -41,16 +43,21 @@ public class GetPrivateIpConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateIpResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetPrivateIpResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateIpResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetPrivateIpResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetPrivateIpResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetPrivateIpResponse>() {
                             @Override
-                            public GetPrivateIpResponse apply(
+                            public com.oracle.bmc.core.responses.GetPrivateIpResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetPrivateIpResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetPrivateIpResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<PrivateIp>>
@@ -62,8 +69,9 @@ public class GetPrivateIpConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetPrivateIpResponse.Builder builder =
-                                        GetPrivateIpResponse.builder();
+                                com.oracle.bmc.core.responses.GetPrivateIpResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.GetPrivateIpResponse
+                                                .builder();
 
                                 builder.privateIp(response.getItem());
 
@@ -88,7 +96,8 @@ public class GetPrivateIpConverter {
                                                     String.class));
                                 }
 
-                                GetPrivateIpResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetPrivateIpResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

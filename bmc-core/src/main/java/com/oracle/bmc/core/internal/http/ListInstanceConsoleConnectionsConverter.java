@@ -16,15 +16,16 @@ public class ListInstanceConsoleConnectionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListInstanceConsoleConnectionsRequest interceptRequest(
-            ListInstanceConsoleConnectionsRequest request) {
+    public static com.oracle.bmc.core.requests.ListInstanceConsoleConnectionsRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ListInstanceConsoleConnectionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListInstanceConsoleConnectionsRequest request) {
+            com.oracle.bmc.core.requests.ListInstanceConsoleConnectionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -69,19 +70,23 @@ public class ListInstanceConsoleConnectionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListInstanceConsoleConnectionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListInstanceConsoleConnectionsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListInstanceConsoleConnectionsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListInstanceConsoleConnectionsResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListInstanceConsoleConnectionsResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ListInstanceConsoleConnectionsResponse>() {
                             @Override
-                            public ListInstanceConsoleConnectionsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ListInstanceConsoleConnectionsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListInstanceConsoleConnectionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListInstanceConsoleConnectionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -98,8 +103,12 @@ public class ListInstanceConsoleConnectionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListInstanceConsoleConnectionsResponse.Builder builder =
-                                        ListInstanceConsoleConnectionsResponse.builder();
+                                com.oracle.bmc.core.responses.ListInstanceConsoleConnectionsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListInstanceConsoleConnectionsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -127,8 +136,8 @@ public class ListInstanceConsoleConnectionsConverter {
                                                     String.class));
                                 }
 
-                                ListInstanceConsoleConnectionsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.ListInstanceConsoleConnectionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

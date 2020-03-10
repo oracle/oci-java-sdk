@@ -16,13 +16,15 @@ public class GetTypeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetTypeRequest interceptRequest(GetTypeRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetTypeRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetTypeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetTypeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetTypeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getTypeKey(), "typeKey must not be blank");
@@ -59,15 +61,21 @@ public class GetTypeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetTypeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.datacatalog.responses.GetTypeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTypeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetTypeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetTypeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.GetTypeResponse>() {
                             @Override
-                            public GetTypeResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetTypeResponse");
+                            public com.oracle.bmc.datacatalog.responses.GetTypeResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetTypeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Type>>
@@ -78,7 +86,10 @@ public class GetTypeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetTypeResponse.Builder builder = GetTypeResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetTypeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses.GetTypeResponse
+                                                        .builder();
 
                                 builder.type(response.getItem());
 
@@ -103,7 +114,8 @@ public class GetTypeConverter {
                                                     String.class));
                                 }
 
-                                GetTypeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetTypeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

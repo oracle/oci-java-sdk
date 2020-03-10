@@ -16,13 +16,15 @@ public class DeleteJobDefinitionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteJobDefinitionRequest interceptRequest(DeleteJobDefinitionRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.DeleteJobDefinitionRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.DeleteJobDefinitionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteJobDefinitionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.DeleteJobDefinitionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getJobDefinitionKey(), "jobDefinitionKey must not be blank");
@@ -55,18 +57,22 @@ public class DeleteJobDefinitionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteJobDefinitionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.DeleteJobDefinitionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteJobDefinitionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.DeleteJobDefinitionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteJobDefinitionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses
+                                        .DeleteJobDefinitionResponse>() {
                             @Override
-                            public DeleteJobDefinitionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.DeleteJobDefinitionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteJobDefinitionResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.DeleteJobDefinitionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -77,8 +83,11 @@ public class DeleteJobDefinitionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteJobDefinitionResponse.Builder builder =
-                                        DeleteJobDefinitionResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.DeleteJobDefinitionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .DeleteJobDefinitionResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -92,7 +101,8 @@ public class DeleteJobDefinitionConverter {
                                                     String.class));
                                 }
 
-                                DeleteJobDefinitionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.DeleteJobDefinitionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class DeleteGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteGroupRequest interceptRequest(DeleteGroupRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteGroupRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteGroupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getGroupId(), "groupId must not be blank");
 
@@ -45,16 +47,22 @@ public class DeleteGroupConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteGroupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteGroupResponse>() {
                             @Override
-                            public DeleteGroupResponse apply(
+                            public com.oracle.bmc.identity.responses.DeleteGroupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteGroupResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -65,7 +73,10 @@ public class DeleteGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteGroupResponse.Builder builder = DeleteGroupResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteGroupResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -79,7 +90,8 @@ public class DeleteGroupConverter {
                                                     String.class));
                                 }
 
-                                DeleteGroupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class UpdateDhcpOptionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateDhcpOptionsRequest interceptRequest(UpdateDhcpOptionsRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateDhcpOptionsRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateDhcpOptionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateDhcpOptionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateDhcpOptionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
         Validate.notNull(request.getUpdateDhcpDetails(), "updateDhcpDetails is required");
@@ -47,17 +49,21 @@ public class UpdateDhcpOptionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateDhcpOptionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateDhcpOptionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateDhcpOptionsResponse>() {
                             @Override
-                            public UpdateDhcpOptionsResponse apply(
+                            public com.oracle.bmc.core.responses.UpdateDhcpOptionsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateDhcpOptionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateDhcpOptionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -71,8 +77,10 @@ public class UpdateDhcpOptionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateDhcpOptionsResponse.Builder builder =
-                                        UpdateDhcpOptionsResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateDhcpOptionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateDhcpOptionsResponse.builder();
 
                                 builder.dhcpOptions(response.getItem());
 
@@ -97,7 +105,8 @@ public class UpdateDhcpOptionsConverter {
                                                     String.class));
                                 }
 
-                                UpdateDhcpOptionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateDhcpOptionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

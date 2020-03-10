@@ -16,14 +16,15 @@ public class SoftresetInstancePoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static SoftresetInstancePoolRequest interceptRequest(
-            SoftresetInstancePoolRequest request) {
+    public static com.oracle.bmc.core.requests.SoftresetInstancePoolRequest interceptRequest(
+            com.oracle.bmc.core.requests.SoftresetInstancePoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, SoftresetInstancePoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.SoftresetInstancePoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
@@ -53,18 +54,21 @@ public class SoftresetInstancePoolConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, SoftresetInstancePoolResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.SoftresetInstancePoolResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, SoftresetInstancePoolResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.SoftresetInstancePoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, SoftresetInstancePoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.SoftresetInstancePoolResponse>() {
                             @Override
-                            public SoftresetInstancePoolResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.SoftresetInstancePoolResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for SoftresetInstancePoolResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.SoftresetInstancePoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +82,10 @@ public class SoftresetInstancePoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                SoftresetInstancePoolResponse.Builder builder =
-                                        SoftresetInstancePoolResponse.builder();
+                                com.oracle.bmc.core.responses.SoftresetInstancePoolResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .SoftresetInstancePoolResponse.builder();
 
                                 builder.instancePool(response.getItem());
 
@@ -104,7 +110,8 @@ public class SoftresetInstancePoolConverter {
                                                     String.class));
                                 }
 
-                                SoftresetInstancePoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.SoftresetInstancePoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

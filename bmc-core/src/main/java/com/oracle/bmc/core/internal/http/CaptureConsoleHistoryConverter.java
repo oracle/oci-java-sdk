@@ -16,14 +16,15 @@ public class CaptureConsoleHistoryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CaptureConsoleHistoryRequest interceptRequest(
-            CaptureConsoleHistoryRequest request) {
+    public static com.oracle.bmc.core.requests.CaptureConsoleHistoryRequest interceptRequest(
+            com.oracle.bmc.core.requests.CaptureConsoleHistoryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CaptureConsoleHistoryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CaptureConsoleHistoryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCaptureConsoleHistoryDetails(),
@@ -44,18 +45,21 @@ public class CaptureConsoleHistoryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CaptureConsoleHistoryResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CaptureConsoleHistoryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CaptureConsoleHistoryResponse>() {
                             @Override
-                            public CaptureConsoleHistoryResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.CaptureConsoleHistoryResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CaptureConsoleHistoryResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CaptureConsoleHistoryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +73,10 @@ public class CaptureConsoleHistoryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CaptureConsoleHistoryResponse.Builder builder =
-                                        CaptureConsoleHistoryResponse.builder();
+                                com.oracle.bmc.core.responses.CaptureConsoleHistoryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CaptureConsoleHistoryResponse.builder();
 
                                 builder.consoleHistory(response.getItem());
 
@@ -95,7 +101,8 @@ public class CaptureConsoleHistoryConverter {
                                                     String.class));
                                 }
 
-                                CaptureConsoleHistoryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CaptureConsoleHistoryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

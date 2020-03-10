@@ -16,13 +16,15 @@ public class GetSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetSourceRequest interceptRequest(GetSourceRequest request) {
+    public static com.oracle.bmc.applicationmigration.requests.GetSourceRequest interceptRequest(
+            com.oracle.bmc.applicationmigration.requests.GetSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.applicationmigration.requests.GetSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSourceId(), "sourceId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetSourceConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetSourceResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.applicationmigration.responses.GetSourceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSourceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.applicationmigration.responses.GetSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.applicationmigration.responses.GetSourceResponse>() {
                             @Override
-                            public GetSourceResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetSourceResponse");
+                            public com.oracle.bmc.applicationmigration.responses.GetSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.applicationmigration.responses.GetSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Source>>
@@ -65,7 +74,11 @@ public class GetSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetSourceResponse.Builder builder = GetSourceResponse.builder();
+                                com.oracle.bmc.applicationmigration.responses.GetSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.applicationmigration.responses
+                                                        .GetSourceResponse.builder();
 
                                 builder.source(response.getItem());
 
@@ -90,7 +103,8 @@ public class GetSourceConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.applicationmigration.responses.GetSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
