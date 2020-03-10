@@ -16,13 +16,15 @@ public class ObjectStatsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ObjectStatsRequest interceptRequest(ObjectStatsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ObjectStatsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ObjectStatsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ObjectStatsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ObjectStatsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
 
@@ -79,16 +81,22 @@ public class ObjectStatsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ObjectStatsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ObjectStatsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ObjectStatsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ObjectStatsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ObjectStatsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ObjectStatsResponse>() {
                             @Override
-                            public ObjectStatsResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.ObjectStatsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ObjectStatsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ObjectStatsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<String>>
@@ -100,7 +108,10 @@ public class ObjectStatsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ObjectStatsResponse.Builder builder = ObjectStatsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ObjectStatsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ObjectStatsResponse.builder();
 
                                 builder.value(response.getItem());
 
@@ -128,7 +139,8 @@ public class ObjectStatsConverter {
                                                     String.class));
                                 }
 
-                                ObjectStatsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ObjectStatsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

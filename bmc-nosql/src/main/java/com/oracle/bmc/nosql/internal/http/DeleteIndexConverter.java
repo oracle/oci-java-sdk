@@ -16,13 +16,15 @@ public class DeleteIndexConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteIndexRequest interceptRequest(DeleteIndexRequest request) {
+    public static com.oracle.bmc.nosql.requests.DeleteIndexRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.DeleteIndexRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteIndexRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.DeleteIndexRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
         Validate.notBlank(request.getIndexName(), "indexName must not be blank");
@@ -70,16 +72,21 @@ public class DeleteIndexConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIndexResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.DeleteIndexResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIndexResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.DeleteIndexResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteIndexResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.DeleteIndexResponse>() {
                             @Override
-                            public DeleteIndexResponse apply(
+                            public com.oracle.bmc.nosql.responses.DeleteIndexResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteIndexResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.DeleteIndexResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -90,7 +97,9 @@ public class DeleteIndexConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteIndexResponse.Builder builder = DeleteIndexResponse.builder();
+                                com.oracle.bmc.nosql.responses.DeleteIndexResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.DeleteIndexResponse
+                                                .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -116,7 +125,8 @@ public class DeleteIndexConverter {
                                                     String.class));
                                 }
 
-                                DeleteIndexResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.DeleteIndexResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

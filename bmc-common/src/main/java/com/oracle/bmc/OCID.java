@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 /**
  * Oracle Cloud Infrastructure unique ID.
  * <p>
- * See <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm#ocid">documentation</a>.
+ * See <a href="https://docs.cloud.oracle.com/Content/GSG/Concepts/concepts.htm#ocid">documentation</a>.
  */
 @InternalSdk
 public class OCID {

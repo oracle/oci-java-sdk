@@ -15,13 +15,15 @@ public class GetStackTfStateConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetStackTfStateRequest interceptRequest(GetStackTfStateRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.GetStackTfStateRequest interceptRequest(
+            com.oracle.bmc.resourcemanager.requests.GetStackTfStateRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetStackTfStateRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.GetStackTfStateRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStackId(), "stackId must not be blank");
 
@@ -46,16 +48,22 @@ public class GetStackTfStateConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetStackTfStateResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.GetStackTfStateResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetStackTfStateResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.GetStackTfStateResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetStackTfStateResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses
+                                        .GetStackTfStateResponse>() {
                             @Override
-                            public GetStackTfStateResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetStackTfStateResponse");
+                            public com.oracle.bmc.resourcemanager.responses.GetStackTfStateResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.GetStackTfStateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +77,11 @@ public class GetStackTfStateConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetStackTfStateResponse.Builder builder =
-                                        GetStackTfStateResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses.GetStackTfStateResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .GetStackTfStateResponse.builder();
 
                                 builder.inputStream(response.getItem());
 
@@ -86,7 +97,8 @@ public class GetStackTfStateConverter {
                                                     String.class));
                                 }
 
-                                GetStackTfStateResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses.GetStackTfStateResponse
+                                        responseWrapper = builder.build();
 
                                 return responseWrapper;
                             }

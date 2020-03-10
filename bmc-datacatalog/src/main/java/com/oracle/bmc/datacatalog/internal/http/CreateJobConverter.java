@@ -16,13 +16,15 @@ public class CreateJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateJobRequest interceptRequest(CreateJobRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.CreateJobRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.CreateJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.CreateJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notNull(request.getCreateJobDetails(), "createJobDetails is required");
@@ -51,15 +53,22 @@ public class CreateJobConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.CreateJobResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.CreateJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.CreateJobResponse>() {
                             @Override
-                            public CreateJobResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateJobResponse");
+                            public com.oracle.bmc.datacatalog.responses.CreateJobResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.CreateJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Job>>
@@ -70,7 +79,10 @@ public class CreateJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateJobResponse.Builder builder = CreateJobResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.CreateJobResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .CreateJobResponse.builder();
 
                                 builder.job(response.getItem());
 
@@ -95,7 +107,8 @@ public class CreateJobConverter {
                                                     String.class));
                                 }
 
-                                CreateJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.CreateJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

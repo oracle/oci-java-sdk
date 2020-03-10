@@ -16,13 +16,15 @@ public class ListKeysConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListKeysRequest interceptRequest(ListKeysRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.ListKeysRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.ListKeysRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListKeysRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.ListKeysRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -78,15 +80,22 @@ public class ListKeysConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListKeysResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.ListKeysResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListKeysResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.ListKeysResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListKeysResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.ListKeysResponse>() {
                             @Override
-                            public ListKeysResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListKeysResponse");
+                            public com.oracle.bmc.keymanagement.responses.ListKeysResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.ListKeysResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -101,7 +110,10 @@ public class ListKeysConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListKeysResponse.Builder builder = ListKeysResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.ListKeysResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .ListKeysResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -129,7 +141,8 @@ public class ListKeysConverter {
                                                     String.class));
                                 }
 
-                                ListKeysResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.ListKeysResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

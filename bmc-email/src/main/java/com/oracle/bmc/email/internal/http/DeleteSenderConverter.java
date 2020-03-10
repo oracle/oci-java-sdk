@@ -16,13 +16,15 @@ public class DeleteSenderConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSenderRequest interceptRequest(DeleteSenderRequest request) {
+    public static com.oracle.bmc.email.requests.DeleteSenderRequest interceptRequest(
+            com.oracle.bmc.email.requests.DeleteSenderRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteSenderRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.email.requests.DeleteSenderRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSenderId(), "senderId must not be blank");
 
@@ -49,16 +51,21 @@ public class DeleteSenderConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSenderResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.email.responses.DeleteSenderResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSenderResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.email.responses.DeleteSenderResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteSenderResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.email.responses.DeleteSenderResponse>() {
                             @Override
-                            public DeleteSenderResponse apply(
+                            public com.oracle.bmc.email.responses.DeleteSenderResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteSenderResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.email.responses.DeleteSenderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +76,10 @@ public class DeleteSenderConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSenderResponse.Builder builder =
-                                        DeleteSenderResponse.builder();
+                                com.oracle.bmc.email.responses.DeleteSenderResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.email.responses.DeleteSenderResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +93,8 @@ public class DeleteSenderConverter {
                                                     String.class));
                                 }
 
-                                DeleteSenderResponse responseWrapper = builder.build();
+                                com.oracle.bmc.email.responses.DeleteSenderResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

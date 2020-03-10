@@ -16,13 +16,15 @@ public class ListGoodBotsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListGoodBotsRequest interceptRequest(ListGoodBotsRequest request) {
+    public static com.oracle.bmc.waas.requests.ListGoodBotsRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListGoodBotsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListGoodBotsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListGoodBotsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -63,16 +65,21 @@ public class ListGoodBotsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListGoodBotsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.waas.responses.ListGoodBotsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListGoodBotsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListGoodBotsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListGoodBotsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListGoodBotsResponse>() {
                             @Override
-                            public ListGoodBotsResponse apply(
+                            public com.oracle.bmc.waas.responses.ListGoodBotsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListGoodBotsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListGoodBotsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -87,8 +94,9 @@ public class ListGoodBotsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListGoodBotsResponse.Builder builder =
-                                        ListGoodBotsResponse.builder();
+                                com.oracle.bmc.waas.responses.ListGoodBotsResponse.Builder builder =
+                                        com.oracle.bmc.waas.responses.ListGoodBotsResponse
+                                                .builder();
 
                                 builder.items(response.getItem());
 
@@ -125,7 +133,8 @@ public class ListGoodBotsConverter {
                                                     String.class));
                                 }
 
-                                ListGoodBotsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListGoodBotsResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

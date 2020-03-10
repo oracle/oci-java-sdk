@@ -16,13 +16,15 @@ public class GetCpeDeviceShapeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetCpeDeviceShapeRequest interceptRequest(GetCpeDeviceShapeRequest request) {
+    public static com.oracle.bmc.core.requests.GetCpeDeviceShapeRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetCpeDeviceShapeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetCpeDeviceShapeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetCpeDeviceShapeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCpeDeviceShapeId(), "cpeDeviceShapeId must not be blank");
 
@@ -46,17 +48,21 @@ public class GetCpeDeviceShapeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetCpeDeviceShapeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetCpeDeviceShapeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeDeviceShapeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetCpeDeviceShapeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetCpeDeviceShapeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetCpeDeviceShapeResponse>() {
                             @Override
-                            public GetCpeDeviceShapeResponse apply(
+                            public com.oracle.bmc.core.responses.GetCpeDeviceShapeResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetCpeDeviceShapeResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetCpeDeviceShapeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,10 @@ public class GetCpeDeviceShapeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetCpeDeviceShapeResponse.Builder builder =
-                                        GetCpeDeviceShapeResponse.builder();
+                                com.oracle.bmc.core.responses.GetCpeDeviceShapeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetCpeDeviceShapeResponse.builder();
 
                                 builder.cpeDeviceShapeDetail(response.getItem());
 
@@ -87,7 +95,8 @@ public class GetCpeDeviceShapeConverter {
                                                     String.class));
                                 }
 
-                                GetCpeDeviceShapeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetCpeDeviceShapeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

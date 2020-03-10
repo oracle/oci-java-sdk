@@ -16,13 +16,15 @@ public class UpdateApplicationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateApplicationRequest interceptRequest(UpdateApplicationRequest request) {
+    public static com.oracle.bmc.dataflow.requests.UpdateApplicationRequest interceptRequest(
+            com.oracle.bmc.dataflow.requests.UpdateApplicationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateApplicationRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dataflow.requests.UpdateApplicationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getUpdateApplicationDetails(), "updateApplicationDetails is required");
@@ -52,17 +54,21 @@ public class UpdateApplicationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateApplicationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dataflow.responses.UpdateApplicationResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dataflow.responses.UpdateApplicationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateApplicationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dataflow.responses.UpdateApplicationResponse>() {
                             @Override
-                            public UpdateApplicationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dataflow.responses.UpdateApplicationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateApplicationResponse");
+                                        "Transform function invoked for com.oracle.bmc.dataflow.responses.UpdateApplicationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +82,10 @@ public class UpdateApplicationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateApplicationResponse.Builder builder =
-                                        UpdateApplicationResponse.builder();
+                                com.oracle.bmc.dataflow.responses.UpdateApplicationResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dataflow.responses
+                                                        .UpdateApplicationResponse.builder();
 
                                 builder.application(response.getItem());
 
@@ -102,7 +110,8 @@ public class UpdateApplicationConverter {
                                                     String.class));
                                 }
 
-                                UpdateApplicationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dataflow.responses.UpdateApplicationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

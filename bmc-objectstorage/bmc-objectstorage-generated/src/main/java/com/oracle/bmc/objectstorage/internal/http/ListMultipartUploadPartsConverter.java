@@ -16,15 +16,16 @@ public class ListMultipartUploadPartsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListMultipartUploadPartsRequest interceptRequest(
-            ListMultipartUploadPartsRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.ListMultipartUploadPartsRequest
+            interceptRequest(
+                    com.oracle.bmc.objectstorage.requests.ListMultipartUploadPartsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListMultipartUploadPartsRequest request) {
+            com.oracle.bmc.objectstorage.requests.ListMultipartUploadPartsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -81,18 +82,23 @@ public class ListMultipartUploadPartsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListMultipartUploadPartsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.ListMultipartUploadPartsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListMultipartUploadPartsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.ListMultipartUploadPartsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListMultipartUploadPartsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses
+                                        .ListMultipartUploadPartsResponse>() {
                             @Override
-                            public ListMultipartUploadPartsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.objectstorage.responses
+                                            .ListMultipartUploadPartsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListMultipartUploadPartsResponse");
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.ListMultipartUploadPartsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -109,8 +115,11 @@ public class ListMultipartUploadPartsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListMultipartUploadPartsResponse.Builder builder =
-                                        ListMultipartUploadPartsResponse.builder();
+                                com.oracle.bmc.objectstorage.responses
+                                                .ListMultipartUploadPartsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .ListMultipartUploadPartsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -150,7 +159,9 @@ public class ListMultipartUploadPartsConverter {
                                                     String.class));
                                 }
 
-                                ListMultipartUploadPartsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses
+                                                .ListMultipartUploadPartsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

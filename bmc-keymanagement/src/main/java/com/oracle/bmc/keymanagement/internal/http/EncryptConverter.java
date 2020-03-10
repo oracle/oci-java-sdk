@@ -16,13 +16,15 @@ public class EncryptConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static EncryptRequest interceptRequest(EncryptRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.EncryptRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.EncryptRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, EncryptRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.EncryptRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getEncryptDataDetails(), "encryptDataDetails is required");
 
@@ -40,15 +42,22 @@ public class EncryptConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, EncryptResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.EncryptResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, EncryptResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.EncryptResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, EncryptResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.EncryptResponse>() {
                             @Override
-                            public EncryptResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for EncryptResponse");
+                            public com.oracle.bmc.keymanagement.responses.EncryptResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.EncryptResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -62,7 +71,10 @@ public class EncryptConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                EncryptResponse.Builder builder = EncryptResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.EncryptResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .EncryptResponse.builder();
 
                                 builder.encryptedData(response.getItem());
 
@@ -78,7 +90,8 @@ public class EncryptConverter {
                                                     String.class));
                                 }
 
-                                EncryptResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.EncryptResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

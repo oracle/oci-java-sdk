@@ -16,13 +16,15 @@ public class GetFolderConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetFolderRequest interceptRequest(GetFolderRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetFolderRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetFolderRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetFolderRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetFolderRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -64,15 +66,22 @@ public class GetFolderConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.GetFolderResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetFolderResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetFolderResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetFolderResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.GetFolderResponse>() {
                             @Override
-                            public GetFolderResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetFolderResponse");
+                            public com.oracle.bmc.datacatalog.responses.GetFolderResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetFolderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Folder>>
@@ -84,7 +93,10 @@ public class GetFolderConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetFolderResponse.Builder builder = GetFolderResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetFolderResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .GetFolderResponse.builder();
 
                                 builder.folder(response.getItem());
 
@@ -109,7 +121,8 @@ public class GetFolderConverter {
                                                     String.class));
                                 }
 
-                                GetFolderResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetFolderResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

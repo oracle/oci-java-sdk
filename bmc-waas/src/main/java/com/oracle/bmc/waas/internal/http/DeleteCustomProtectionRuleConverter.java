@@ -16,15 +16,15 @@ public class DeleteCustomProtectionRuleConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteCustomProtectionRuleRequest interceptRequest(
-            DeleteCustomProtectionRuleRequest request) {
+    public static com.oracle.bmc.waas.requests.DeleteCustomProtectionRuleRequest interceptRequest(
+            com.oracle.bmc.waas.requests.DeleteCustomProtectionRuleRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteCustomProtectionRuleRequest request) {
+            com.oracle.bmc.waas.requests.DeleteCustomProtectionRuleRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getCustomProtectionRuleId(), "customProtectionRuleId must not be blank");
@@ -57,18 +57,22 @@ public class DeleteCustomProtectionRuleConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteCustomProtectionRuleResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.DeleteCustomProtectionRuleResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteCustomProtectionRuleResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.DeleteCustomProtectionRuleResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteCustomProtectionRuleResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses
+                                        .DeleteCustomProtectionRuleResponse>() {
                             @Override
-                            public DeleteCustomProtectionRuleResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses.DeleteCustomProtectionRuleResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteCustomProtectionRuleResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.DeleteCustomProtectionRuleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +83,12 @@ public class DeleteCustomProtectionRuleConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteCustomProtectionRuleResponse.Builder builder =
-                                        DeleteCustomProtectionRuleResponse.builder();
+                                com.oracle.bmc.waas.responses.DeleteCustomProtectionRuleResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .DeleteCustomProtectionRuleResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -94,8 +102,8 @@ public class DeleteCustomProtectionRuleConverter {
                                                     String.class));
                                 }
 
-                                DeleteCustomProtectionRuleResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.waas.responses.DeleteCustomProtectionRuleResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

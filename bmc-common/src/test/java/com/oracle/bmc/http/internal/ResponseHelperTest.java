@@ -35,6 +35,8 @@ public class ResponseHelperTest {
     private static final String OPC_REQUEST_ID = "DummyOPCRequestID";
     private static final MediaType HTML_MEDIA_TYPE = MediaType.TEXT_HTML_TYPE;
     private static final MediaType JSON_MEDIA_TYPE = MediaType.APPLICATION_JSON_TYPE;
+    private static final MediaType JSON_MEDIA_TYPE_WITH_CHARSET =
+            MediaType.APPLICATION_JSON_TYPE.withCharset("UTF-8");
     private static final Response.Status BAD_GATEWAY_STATUS = Response.Status.BAD_GATEWAY;
 
     @Test
@@ -52,6 +54,28 @@ public class ResponseHelperTest {
                     BAD_GATEWAY_STATUS,
                     "Unknown",
                     "Unexpected Content-Type: " + HTML_MEDIA_TYPE);
+        }
+    }
+
+    @Test
+    public void test_throwIfNotSuccessful_ValidUTF8JsonResponse() {
+        final Response jsonResponse =
+                buildMockResponse(OPC_REQUEST_ID, JSON_MEDIA_TYPE_WITH_CHARSET, BAD_GATEWAY_STATUS);
+        final String dummyServiceCode = "DummyServiceCode";
+        final String dummyMessage = "DummyMessage";
+        when(jsonResponse.readEntity(ResponseHelper.ErrorCodeAndMessage.class))
+                .thenReturn(
+                        ResponseHelper.ErrorCodeAndMessage.builder()
+                                .code(dummyServiceCode)
+                                .message(dummyMessage)
+                                .build());
+
+        try {
+            ResponseHelper.throwIfNotSuccessful(jsonResponse);
+            fail("Should have thrown");
+        } catch (BmcException exception) {
+            validateExceptionFields(
+                    exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode, dummyMessage);
         }
     }
 

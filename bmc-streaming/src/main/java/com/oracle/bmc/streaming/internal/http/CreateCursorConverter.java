@@ -16,13 +16,15 @@ public class CreateCursorConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateCursorRequest interceptRequest(CreateCursorRequest request) {
+    public static com.oracle.bmc.streaming.requests.CreateCursorRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.CreateCursorRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateCursorRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.CreateCursorRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
         Validate.notNull(request.getCreateCursorDetails(), "createCursorDetails is required");
@@ -47,16 +49,22 @@ public class CreateCursorConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateCursorResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.CreateCursorResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCursorResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.CreateCursorResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateCursorResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.CreateCursorResponse>() {
                             @Override
-                            public CreateCursorResponse apply(
+                            public com.oracle.bmc.streaming.responses.CreateCursorResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateCursorResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.CreateCursorResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Cursor>>
@@ -68,8 +76,10 @@ public class CreateCursorConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateCursorResponse.Builder builder =
-                                        CreateCursorResponse.builder();
+                                com.oracle.bmc.streaming.responses.CreateCursorResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .CreateCursorResponse.builder();
 
                                 builder.cursor(response.getItem());
 
@@ -85,7 +95,8 @@ public class CreateCursorConverter {
                                                     String.class));
                                 }
 
-                                CreateCursorResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.CreateCursorResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

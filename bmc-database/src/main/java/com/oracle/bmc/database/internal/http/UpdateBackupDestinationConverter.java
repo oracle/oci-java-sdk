@@ -16,15 +16,15 @@ public class UpdateBackupDestinationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateBackupDestinationRequest interceptRequest(
-            UpdateBackupDestinationRequest request) {
+    public static com.oracle.bmc.database.requests.UpdateBackupDestinationRequest interceptRequest(
+            com.oracle.bmc.database.requests.UpdateBackupDestinationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateBackupDestinationRequest request) {
+            com.oracle.bmc.database.requests.UpdateBackupDestinationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getBackupDestinationId(), "backupDestinationId must not be blank");
@@ -56,18 +56,22 @@ public class UpdateBackupDestinationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateBackupDestinationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.UpdateBackupDestinationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateBackupDestinationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.UpdateBackupDestinationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateBackupDestinationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .UpdateBackupDestinationResponse>() {
                             @Override
-                            public UpdateBackupDestinationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.UpdateBackupDestinationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateBackupDestinationResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.UpdateBackupDestinationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -81,8 +85,11 @@ public class UpdateBackupDestinationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateBackupDestinationResponse.Builder builder =
-                                        UpdateBackupDestinationResponse.builder();
+                                com.oracle.bmc.database.responses.UpdateBackupDestinationResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .UpdateBackupDestinationResponse.builder();
 
                                 builder.backupDestination(response.getItem());
 
@@ -107,7 +114,8 @@ public class UpdateBackupDestinationConverter {
                                                     String.class));
                                 }
 
-                                UpdateBackupDestinationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.UpdateBackupDestinationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

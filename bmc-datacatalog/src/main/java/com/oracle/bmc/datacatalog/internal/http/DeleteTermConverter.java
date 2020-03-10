@@ -16,13 +16,15 @@ public class DeleteTermConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteTermRequest interceptRequest(DeleteTermRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.DeleteTermRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.DeleteTermRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteTermRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.DeleteTermRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -59,15 +61,22 @@ public class DeleteTermConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTermResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.DeleteTermResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTermResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.DeleteTermResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteTermResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.DeleteTermResponse>() {
                             @Override
-                            public DeleteTermResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteTermResponse");
+                            public com.oracle.bmc.datacatalog.responses.DeleteTermResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.DeleteTermResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -78,7 +87,10 @@ public class DeleteTermConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteTermResponse.Builder builder = DeleteTermResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.DeleteTermResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .DeleteTermResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -92,7 +104,8 @@ public class DeleteTermConverter {
                                                     String.class));
                                 }
 
-                                DeleteTermResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.DeleteTermResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

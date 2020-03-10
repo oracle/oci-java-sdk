@@ -16,13 +16,15 @@ public class CreateTagNamespaceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateTagNamespaceRequest interceptRequest(CreateTagNamespaceRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateTagNamespaceRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateTagNamespaceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateTagNamespaceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreateTagNamespaceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateTagNamespaceDetails(), "createTagNamespaceDetails is required");
@@ -42,17 +44,21 @@ public class CreateTagNamespaceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateTagNamespaceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateTagNamespaceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateTagNamespaceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateTagNamespaceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.CreateTagNamespaceResponse>() {
                             @Override
-                            public CreateTagNamespaceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.CreateTagNamespaceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateTagNamespaceResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateTagNamespaceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateTagNamespaceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateTagNamespaceResponse.Builder builder =
-                                        CreateTagNamespaceResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateTagNamespaceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateTagNamespaceResponse.builder();
 
                                 builder.tagNamespace(response.getItem());
 
@@ -83,7 +91,8 @@ public class CreateTagNamespaceConverter {
                                                     String.class));
                                 }
 
-                                CreateTagNamespaceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateTagNamespaceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

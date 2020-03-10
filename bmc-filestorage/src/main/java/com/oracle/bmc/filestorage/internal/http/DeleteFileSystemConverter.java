@@ -16,13 +16,15 @@ public class DeleteFileSystemConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteFileSystemRequest interceptRequest(DeleteFileSystemRequest request) {
+    public static com.oracle.bmc.filestorage.requests.DeleteFileSystemRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.DeleteFileSystemRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteFileSystemRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.DeleteFileSystemRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteFileSystemConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteFileSystemResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.DeleteFileSystemResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFileSystemResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.DeleteFileSystemResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteFileSystemResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.DeleteFileSystemResponse>() {
                             @Override
-                            public DeleteFileSystemResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.filestorage.responses.DeleteFileSystemResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteFileSystemResponse");
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.DeleteFileSystemResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,11 @@ public class DeleteFileSystemConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteFileSystemResponse.Builder builder =
-                                        DeleteFileSystemResponse.builder();
+                                com.oracle.bmc.filestorage.responses.DeleteFileSystemResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .DeleteFileSystemResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +95,8 @@ public class DeleteFileSystemConverter {
                                                     String.class));
                                 }
 
-                                DeleteFileSystemResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.DeleteFileSystemResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

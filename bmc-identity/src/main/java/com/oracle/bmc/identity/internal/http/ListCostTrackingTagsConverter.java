@@ -16,14 +16,15 @@ public class ListCostTrackingTagsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCostTrackingTagsRequest interceptRequest(
-            ListCostTrackingTagsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListCostTrackingTagsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListCostTrackingTagsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListCostTrackingTagsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListCostTrackingTagsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -64,18 +65,21 @@ public class ListCostTrackingTagsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListCostTrackingTagsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListCostTrackingTagsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCostTrackingTagsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListCostTrackingTagsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCostTrackingTagsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListCostTrackingTagsResponse>() {
                             @Override
-                            public ListCostTrackingTagsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ListCostTrackingTagsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListCostTrackingTagsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListCostTrackingTagsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -90,8 +94,11 @@ public class ListCostTrackingTagsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCostTrackingTagsResponse.Builder builder =
-                                        ListCostTrackingTagsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListCostTrackingTagsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListCostTrackingTagsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -119,7 +126,8 @@ public class ListCostTrackingTagsConverter {
                                                     String.class));
                                 }
 
-                                ListCostTrackingTagsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListCostTrackingTagsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

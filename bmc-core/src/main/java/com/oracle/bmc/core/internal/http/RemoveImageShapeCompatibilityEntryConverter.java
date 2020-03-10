@@ -16,15 +16,17 @@ public class RemoveImageShapeCompatibilityEntryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static RemoveImageShapeCompatibilityEntryRequest interceptRequest(
-            RemoveImageShapeCompatibilityEntryRequest request) {
+    public static com.oracle.bmc.core.requests.RemoveImageShapeCompatibilityEntryRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.RemoveImageShapeCompatibilityEntryRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            RemoveImageShapeCompatibilityEntryRequest request) {
+            com.oracle.bmc.core.requests.RemoveImageShapeCompatibilityEntryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
         Validate.notBlank(request.getShapeName(), "shapeName must not be blank");
@@ -49,19 +51,23 @@ public class RemoveImageShapeCompatibilityEntryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, RemoveImageShapeCompatibilityEntryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.RemoveImageShapeCompatibilityEntryResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RemoveImageShapeCompatibilityEntryResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.RemoveImageShapeCompatibilityEntryResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                RemoveImageShapeCompatibilityEntryResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .RemoveImageShapeCompatibilityEntryResponse>() {
                             @Override
-                            public RemoveImageShapeCompatibilityEntryResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .RemoveImageShapeCompatibilityEntryResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for RemoveImageShapeCompatibilityEntryResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.RemoveImageShapeCompatibilityEntryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -72,8 +78,12 @@ public class RemoveImageShapeCompatibilityEntryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                RemoveImageShapeCompatibilityEntryResponse.Builder builder =
-                                        RemoveImageShapeCompatibilityEntryResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .RemoveImageShapeCompatibilityEntryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .RemoveImageShapeCompatibilityEntryResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -87,8 +97,9 @@ public class RemoveImageShapeCompatibilityEntryConverter {
                                                     String.class));
                                 }
 
-                                RemoveImageShapeCompatibilityEntryResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .RemoveImageShapeCompatibilityEntryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

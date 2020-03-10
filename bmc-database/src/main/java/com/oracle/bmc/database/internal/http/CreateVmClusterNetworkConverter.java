@@ -16,14 +16,15 @@ public class CreateVmClusterNetworkConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateVmClusterNetworkRequest interceptRequest(
-            CreateVmClusterNetworkRequest request) {
+    public static com.oracle.bmc.database.requests.CreateVmClusterNetworkRequest interceptRequest(
+            com.oracle.bmc.database.requests.CreateVmClusterNetworkRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateVmClusterNetworkRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.CreateVmClusterNetworkRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
@@ -55,18 +56,22 @@ public class CreateVmClusterNetworkConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateVmClusterNetworkResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.CreateVmClusterNetworkResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateVmClusterNetworkResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.CreateVmClusterNetworkResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateVmClusterNetworkResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .CreateVmClusterNetworkResponse>() {
                             @Override
-                            public CreateVmClusterNetworkResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.CreateVmClusterNetworkResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateVmClusterNetworkResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.CreateVmClusterNetworkResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -80,8 +85,11 @@ public class CreateVmClusterNetworkConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateVmClusterNetworkResponse.Builder builder =
-                                        CreateVmClusterNetworkResponse.builder();
+                                com.oracle.bmc.database.responses.CreateVmClusterNetworkResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .CreateVmClusterNetworkResponse.builder();
 
                                 builder.vmClusterNetwork(response.getItem());
 
@@ -118,7 +126,8 @@ public class CreateVmClusterNetworkConverter {
                                                     String.class));
                                 }
 
-                                CreateVmClusterNetworkResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.CreateVmClusterNetworkResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

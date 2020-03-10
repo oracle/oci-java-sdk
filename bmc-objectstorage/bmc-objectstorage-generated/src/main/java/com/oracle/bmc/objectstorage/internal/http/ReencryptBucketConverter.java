@@ -16,13 +16,15 @@ public class ReencryptBucketConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ReencryptBucketRequest interceptRequest(ReencryptBucketRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.ReencryptBucketRequest interceptRequest(
+            com.oracle.bmc.objectstorage.requests.ReencryptBucketRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ReencryptBucketRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.ReencryptBucketRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -53,16 +55,21 @@ public class ReencryptBucketConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ReencryptBucketResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.ReencryptBucketResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ReencryptBucketResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.ReencryptBucketResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ReencryptBucketResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses.ReencryptBucketResponse>() {
                             @Override
-                            public ReencryptBucketResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ReencryptBucketResponse");
+                            public com.oracle.bmc.objectstorage.responses.ReencryptBucketResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.ReencryptBucketResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +80,11 @@ public class ReencryptBucketConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ReencryptBucketResponse.Builder builder =
-                                        ReencryptBucketResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.ReencryptBucketResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .ReencryptBucketResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -112,7 +122,8 @@ public class ReencryptBucketConverter {
                                                     String.class));
                                 }
 
-                                ReencryptBucketResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.ReencryptBucketResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

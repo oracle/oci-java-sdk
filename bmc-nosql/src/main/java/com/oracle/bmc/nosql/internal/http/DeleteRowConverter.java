@@ -16,13 +16,15 @@ public class DeleteRowConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteRowRequest interceptRequest(DeleteRowRequest request) {
+    public static com.oracle.bmc.nosql.requests.DeleteRowRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.DeleteRowRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteRowRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.DeleteRowRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
         Validate.notNull(request.getKey(), "key is required");
@@ -82,15 +84,20 @@ public class DeleteRowConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRowResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.DeleteRowResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRowResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.DeleteRowResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteRowResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.DeleteRowResponse>() {
                             @Override
-                            public DeleteRowResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteRowResponse");
+                            public com.oracle.bmc.nosql.responses.DeleteRowResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.DeleteRowResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -104,7 +111,8 @@ public class DeleteRowConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteRowResponse.Builder builder = DeleteRowResponse.builder();
+                                com.oracle.bmc.nosql.responses.DeleteRowResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.DeleteRowResponse.builder();
 
                                 builder.deleteRowResult(response.getItem());
 
@@ -120,7 +128,8 @@ public class DeleteRowConverter {
                                                     String.class));
                                 }
 
-                                DeleteRowResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.DeleteRowResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

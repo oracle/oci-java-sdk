@@ -16,15 +16,16 @@ public class ResendSubscriptionConfirmationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ResendSubscriptionConfirmationRequest interceptRequest(
-            ResendSubscriptionConfirmationRequest request) {
+    public static com.oracle.bmc.ons.requests.ResendSubscriptionConfirmationRequest
+            interceptRequest(
+                    com.oracle.bmc.ons.requests.ResendSubscriptionConfirmationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ResendSubscriptionConfirmationRequest request) {
+            com.oracle.bmc.ons.requests.ResendSubscriptionConfirmationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
 
@@ -49,19 +50,23 @@ public class ResendSubscriptionConfirmationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ResendSubscriptionConfirmationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.ons.responses.ResendSubscriptionConfirmationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ResendSubscriptionConfirmationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.ons.responses.ResendSubscriptionConfirmationResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ResendSubscriptionConfirmationResponse>() {
+                                com.oracle.bmc.ons.responses
+                                        .ResendSubscriptionConfirmationResponse>() {
                             @Override
-                            public ResendSubscriptionConfirmationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.ons.responses
+                                            .ResendSubscriptionConfirmationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ResendSubscriptionConfirmationResponse");
+                                        "Transform function invoked for com.oracle.bmc.ons.responses.ResendSubscriptionConfirmationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -75,8 +80,12 @@ public class ResendSubscriptionConfirmationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ResendSubscriptionConfirmationResponse.Builder builder =
-                                        ResendSubscriptionConfirmationResponse.builder();
+                                com.oracle.bmc.ons.responses.ResendSubscriptionConfirmationResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.ons.responses
+                                                        .ResendSubscriptionConfirmationResponse
+                                                        .builder();
 
                                 builder.subscription(response.getItem());
 
@@ -92,8 +101,8 @@ public class ResendSubscriptionConfirmationConverter {
                                                     String.class));
                                 }
 
-                                ResendSubscriptionConfirmationResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.ons.responses.ResendSubscriptionConfirmationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class GetExadataInfrastructureOcpusConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetExadataInfrastructureOcpusRequest interceptRequest(
-            GetExadataInfrastructureOcpusRequest request) {
+    public static com.oracle.bmc.database.requests.GetExadataInfrastructureOcpusRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.GetExadataInfrastructureOcpusRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetExadataInfrastructureOcpusRequest request) {
+            com.oracle.bmc.database.requests.GetExadataInfrastructureOcpusRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousExadataInfrastructureId(),
@@ -51,19 +52,23 @@ public class GetExadataInfrastructureOcpusConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetExadataInfrastructureOcpusResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetExadataInfrastructureOcpusResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetExadataInfrastructureOcpusResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetExadataInfrastructureOcpusResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetExadataInfrastructureOcpusResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .GetExadataInfrastructureOcpusResponse>() {
                             @Override
-                            public GetExadataInfrastructureOcpusResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .GetExadataInfrastructureOcpusResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetExadataInfrastructureOcpusResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetExadataInfrastructureOcpusResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<OCPUs>>
@@ -75,8 +80,12 @@ public class GetExadataInfrastructureOcpusConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetExadataInfrastructureOcpusResponse.Builder builder =
-                                        GetExadataInfrastructureOcpusResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .GetExadataInfrastructureOcpusResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetExadataInfrastructureOcpusResponse
+                                                        .builder();
 
                                 builder.oCPUs(response.getItem());
 
@@ -92,8 +101,9 @@ public class GetExadataInfrastructureOcpusConverter {
                                                     String.class));
                                 }
 
-                                GetExadataInfrastructureOcpusResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .GetExadataInfrastructureOcpusResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

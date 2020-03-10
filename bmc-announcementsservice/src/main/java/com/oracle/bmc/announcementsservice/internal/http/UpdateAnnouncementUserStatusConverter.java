@@ -16,15 +16,18 @@ public class UpdateAnnouncementUserStatusConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateAnnouncementUserStatusRequest interceptRequest(
-            UpdateAnnouncementUserStatusRequest request) {
+    public static com.oracle.bmc.announcementsservice.requests.UpdateAnnouncementUserStatusRequest
+            interceptRequest(
+                    com.oracle.bmc.announcementsservice.requests.UpdateAnnouncementUserStatusRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateAnnouncementUserStatusRequest request) {
+            com.oracle.bmc.announcementsservice.requests.UpdateAnnouncementUserStatusRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAnnouncementId(), "announcementId must not be blank");
         Validate.notNull(request.getStatusDetails(), "statusDetails is required");
@@ -54,18 +57,25 @@ public class UpdateAnnouncementUserStatusConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateAnnouncementUserStatusResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.announcementsservice.responses
+                            .UpdateAnnouncementUserStatusResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAnnouncementUserStatusResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.announcementsservice.responses
+                                .UpdateAnnouncementUserStatusResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateAnnouncementUserStatusResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.announcementsservice.responses
+                                        .UpdateAnnouncementUserStatusResponse>() {
                             @Override
-                            public UpdateAnnouncementUserStatusResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.announcementsservice.responses
+                                            .UpdateAnnouncementUserStatusResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateAnnouncementUserStatusResponse");
+                                        "Transform function invoked for com.oracle.bmc.announcementsservice.responses.UpdateAnnouncementUserStatusResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +86,12 @@ public class UpdateAnnouncementUserStatusConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateAnnouncementUserStatusResponse.Builder builder =
-                                        UpdateAnnouncementUserStatusResponse.builder();
+                                com.oracle.bmc.announcementsservice.responses
+                                                .UpdateAnnouncementUserStatusResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.announcementsservice.responses
+                                                        .UpdateAnnouncementUserStatusResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -100,8 +114,9 @@ public class UpdateAnnouncementUserStatusConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateAnnouncementUserStatusResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.announcementsservice.responses
+                                                .UpdateAnnouncementUserStatusResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

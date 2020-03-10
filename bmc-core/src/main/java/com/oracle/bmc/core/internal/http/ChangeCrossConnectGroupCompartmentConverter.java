@@ -16,15 +16,17 @@ public class ChangeCrossConnectGroupCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeCrossConnectGroupCompartmentRequest interceptRequest(
-            ChangeCrossConnectGroupCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeCrossConnectGroupCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeCrossConnectGroupCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeCrossConnectGroupCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeCrossConnectGroupCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
@@ -58,19 +60,23 @@ public class ChangeCrossConnectGroupCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeCrossConnectGroupCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeCrossConnectGroupCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeCrossConnectGroupCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeCrossConnectGroupCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeCrossConnectGroupCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeCrossConnectGroupCompartmentResponse>() {
                             @Override
-                            public ChangeCrossConnectGroupCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeCrossConnectGroupCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeCrossConnectGroupCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeCrossConnectGroupCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -81,8 +87,12 @@ public class ChangeCrossConnectGroupCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeCrossConnectGroupCompartmentResponse.Builder builder =
-                                        ChangeCrossConnectGroupCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeCrossConnectGroupCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeCrossConnectGroupCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -105,8 +115,9 @@ public class ChangeCrossConnectGroupCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeCrossConnectGroupCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeCrossConnectGroupCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

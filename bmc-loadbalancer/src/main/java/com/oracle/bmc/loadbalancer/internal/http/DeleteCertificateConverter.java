@@ -16,13 +16,15 @@ public class DeleteCertificateConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteCertificateRequest interceptRequest(DeleteCertificateRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.DeleteCertificateRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.DeleteCertificateRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteCertificateRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.DeleteCertificateRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
         Validate.notBlank(request.getCertificateName(), "certificateName must not be blank");
@@ -51,17 +53,21 @@ public class DeleteCertificateConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteCertificateResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.DeleteCertificateResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.DeleteCertificateResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteCertificateResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.DeleteCertificateResponse>() {
                             @Override
-                            public DeleteCertificateResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.loadbalancer.responses.DeleteCertificateResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteCertificateResponse");
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.DeleteCertificateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -72,8 +78,11 @@ public class DeleteCertificateConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteCertificateResponse.Builder builder =
-                                        DeleteCertificateResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.DeleteCertificateResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .DeleteCertificateResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -99,7 +108,8 @@ public class DeleteCertificateConverter {
                                                     String.class));
                                 }
 
-                                DeleteCertificateResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.DeleteCertificateResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

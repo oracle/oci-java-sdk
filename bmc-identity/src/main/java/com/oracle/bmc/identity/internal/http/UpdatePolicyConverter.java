@@ -16,13 +16,15 @@ public class UpdatePolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdatePolicyRequest interceptRequest(UpdatePolicyRequest request) {
+    public static com.oracle.bmc.identity.requests.UpdatePolicyRequest interceptRequest(
+            com.oracle.bmc.identity.requests.UpdatePolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdatePolicyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.UpdatePolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
         Validate.notNull(request.getUpdatePolicyDetails(), "updatePolicyDetails is required");
@@ -46,16 +48,22 @@ public class UpdatePolicyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.UpdatePolicyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.UpdatePolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdatePolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.UpdatePolicyResponse>() {
                             @Override
-                            public UpdatePolicyResponse apply(
+                            public com.oracle.bmc.identity.responses.UpdatePolicyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdatePolicyResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.UpdatePolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Policy>>
@@ -67,8 +75,10 @@ public class UpdatePolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdatePolicyResponse.Builder builder =
-                                        UpdatePolicyResponse.builder();
+                                com.oracle.bmc.identity.responses.UpdatePolicyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .UpdatePolicyResponse.builder();
 
                                 builder.policy(response.getItem());
 
@@ -93,7 +103,8 @@ public class UpdatePolicyConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdatePolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.UpdatePolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

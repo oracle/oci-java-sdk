@@ -16,15 +16,17 @@ public class ChangeHttpMonitorCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeHttpMonitorCompartmentRequest interceptRequest(
-            ChangeHttpMonitorCompartmentRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.ChangeHttpMonitorCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.healthchecks.requests.ChangeHttpMonitorCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeHttpMonitorCompartmentRequest request) {
+            com.oracle.bmc.healthchecks.requests.ChangeHttpMonitorCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getMonitorId(), "monitorId must not be blank");
         Validate.notNull(
@@ -61,18 +63,23 @@ public class ChangeHttpMonitorCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeHttpMonitorCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.ChangeHttpMonitorCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeHttpMonitorCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.ChangeHttpMonitorCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeHttpMonitorCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses
+                                        .ChangeHttpMonitorCompartmentResponse>() {
                             @Override
-                            public ChangeHttpMonitorCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses
+                                            .ChangeHttpMonitorCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeHttpMonitorCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.ChangeHttpMonitorCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +90,12 @@ public class ChangeHttpMonitorCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeHttpMonitorCompartmentResponse.Builder builder =
-                                        ChangeHttpMonitorCompartmentResponse.builder();
+                                com.oracle.bmc.healthchecks.responses
+                                                .ChangeHttpMonitorCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .ChangeHttpMonitorCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -98,8 +109,9 @@ public class ChangeHttpMonitorCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeHttpMonitorCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.healthchecks.responses
+                                                .ChangeHttpMonitorCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

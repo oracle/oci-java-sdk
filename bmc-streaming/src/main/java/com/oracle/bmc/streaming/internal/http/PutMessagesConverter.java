@@ -16,13 +16,15 @@ public class PutMessagesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static PutMessagesRequest interceptRequest(PutMessagesRequest request) {
+    public static com.oracle.bmc.streaming.requests.PutMessagesRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.PutMessagesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, PutMessagesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.PutMessagesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
         Validate.notNull(request.getPutMessagesDetails(), "putMessagesDetails is required");
@@ -47,16 +49,22 @@ public class PutMessagesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, PutMessagesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.PutMessagesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PutMessagesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.PutMessagesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, PutMessagesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.PutMessagesResponse>() {
                             @Override
-                            public PutMessagesResponse apply(
+                            public com.oracle.bmc.streaming.responses.PutMessagesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for PutMessagesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.PutMessagesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,7 +78,10 @@ public class PutMessagesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                PutMessagesResponse.Builder builder = PutMessagesResponse.builder();
+                                com.oracle.bmc.streaming.responses.PutMessagesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .PutMessagesResponse.builder();
 
                                 builder.putMessagesResult(response.getItem());
 
@@ -86,7 +97,8 @@ public class PutMessagesConverter {
                                                     String.class));
                                 }
 
-                                PutMessagesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.PutMessagesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

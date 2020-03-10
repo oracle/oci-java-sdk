@@ -16,13 +16,15 @@ public class GetPolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetPolicyRequest interceptRequest(GetPolicyRequest request) {
+    public static com.oracle.bmc.identity.requests.GetPolicyRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetPolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetPolicyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GetPolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPolicyId(), "policyId must not be blank");
 
@@ -41,15 +43,21 @@ public class GetPolicyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.identity.responses.GetPolicyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetPolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetPolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.GetPolicyResponse>() {
                             @Override
-                            public GetPolicyResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetPolicyResponse");
+                            public com.oracle.bmc.identity.responses.GetPolicyResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetPolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Policy>>
@@ -61,7 +69,10 @@ public class GetPolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetPolicyResponse.Builder builder = GetPolicyResponse.builder();
+                                com.oracle.bmc.identity.responses.GetPolicyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses.GetPolicyResponse
+                                                        .builder();
 
                                 builder.policy(response.getItem());
 
@@ -86,7 +97,8 @@ public class GetPolicyConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetPolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetPolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

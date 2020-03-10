@@ -16,13 +16,15 @@ public class DetachServiceIdConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DetachServiceIdRequest interceptRequest(DetachServiceIdRequest request) {
+    public static com.oracle.bmc.core.requests.DetachServiceIdRequest interceptRequest(
+            com.oracle.bmc.core.requests.DetachServiceIdRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DetachServiceIdRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DetachServiceIdRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
         Validate.notNull(request.getDetachServiceDetails(), "detachServiceDetails is required");
@@ -49,16 +51,21 @@ public class DetachServiceIdConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DetachServiceIdResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DetachServiceIdResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DetachServiceIdResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DetachServiceIdResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DetachServiceIdResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DetachServiceIdResponse>() {
                             @Override
-                            public DetachServiceIdResponse apply(
+                            public com.oracle.bmc.core.responses.DetachServiceIdResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DetachServiceIdResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DetachServiceIdResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -72,8 +79,10 @@ public class DetachServiceIdConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DetachServiceIdResponse.Builder builder =
-                                        DetachServiceIdResponse.builder();
+                                com.oracle.bmc.core.responses.DetachServiceIdResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DetachServiceIdResponse.builder();
 
                                 builder.serviceGateway(response.getItem());
 
@@ -89,7 +98,8 @@ public class DetachServiceIdConverter {
                                                     String.class));
                                 }
 
-                                DetachServiceIdResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DetachServiceIdResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

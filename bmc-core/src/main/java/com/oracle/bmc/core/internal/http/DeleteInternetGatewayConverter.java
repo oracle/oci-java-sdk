@@ -16,14 +16,15 @@ public class DeleteInternetGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteInternetGatewayRequest interceptRequest(
-            DeleteInternetGatewayRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteInternetGatewayRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteInternetGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteInternetGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteInternetGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIgId(), "igId must not be blank");
 
@@ -47,18 +48,21 @@ public class DeleteInternetGatewayConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteInternetGatewayResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteInternetGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteInternetGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteInternetGatewayResponse>() {
                             @Override
-                            public DeleteInternetGatewayResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.DeleteInternetGatewayResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteInternetGatewayResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteInternetGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +73,10 @@ public class DeleteInternetGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteInternetGatewayResponse.Builder builder =
-                                        DeleteInternetGatewayResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteInternetGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteInternetGatewayResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +90,8 @@ public class DeleteInternetGatewayConverter {
                                                     String.class));
                                 }
 
-                                DeleteInternetGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteInternetGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

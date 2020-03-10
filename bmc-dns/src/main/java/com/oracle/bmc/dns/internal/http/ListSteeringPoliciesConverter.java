@@ -16,14 +16,15 @@ public class ListSteeringPoliciesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListSteeringPoliciesRequest interceptRequest(
-            ListSteeringPoliciesRequest request) {
+    public static com.oracle.bmc.dns.requests.ListSteeringPoliciesRequest interceptRequest(
+            com.oracle.bmc.dns.requests.ListSteeringPoliciesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListSteeringPoliciesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.ListSteeringPoliciesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -144,18 +145,21 @@ public class ListSteeringPoliciesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListSteeringPoliciesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.ListSteeringPoliciesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSteeringPoliciesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.ListSteeringPoliciesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListSteeringPoliciesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.ListSteeringPoliciesResponse>() {
                             @Override
-                            public ListSteeringPoliciesResponse apply(
+                            public com.oracle.bmc.dns.responses.ListSteeringPoliciesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListSteeringPoliciesResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.ListSteeringPoliciesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -172,8 +176,10 @@ public class ListSteeringPoliciesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListSteeringPoliciesResponse.Builder builder =
-                                        ListSteeringPoliciesResponse.builder();
+                                com.oracle.bmc.dns.responses.ListSteeringPoliciesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .ListSteeringPoliciesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -213,7 +219,8 @@ public class ListSteeringPoliciesConverter {
                                                     String.class));
                                 }
 
-                                ListSteeringPoliciesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.ListSteeringPoliciesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

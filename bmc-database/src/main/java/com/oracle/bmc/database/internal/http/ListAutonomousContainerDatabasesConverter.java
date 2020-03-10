@@ -16,15 +16,17 @@ public class ListAutonomousContainerDatabasesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAutonomousContainerDatabasesRequest interceptRequest(
-            ListAutonomousContainerDatabasesRequest request) {
+    public static com.oracle.bmc.database.requests.ListAutonomousContainerDatabasesRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ListAutonomousContainerDatabasesRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListAutonomousContainerDatabasesRequest request) {
+            com.oracle.bmc.database.requests.ListAutonomousContainerDatabasesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -109,19 +111,23 @@ public class ListAutonomousContainerDatabasesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAutonomousContainerDatabasesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListAutonomousContainerDatabasesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousContainerDatabasesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListAutonomousContainerDatabasesResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListAutonomousContainerDatabasesResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .ListAutonomousContainerDatabasesResponse>() {
                             @Override
-                            public ListAutonomousContainerDatabasesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ListAutonomousContainerDatabasesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAutonomousContainerDatabasesResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListAutonomousContainerDatabasesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -139,8 +145,12 @@ public class ListAutonomousContainerDatabasesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAutonomousContainerDatabasesResponse.Builder builder =
-                                        ListAutonomousContainerDatabasesResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .ListAutonomousContainerDatabasesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListAutonomousContainerDatabasesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -168,8 +178,9 @@ public class ListAutonomousContainerDatabasesConverter {
                                                     String.class));
                                 }
 
-                                ListAutonomousContainerDatabasesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .ListAutonomousContainerDatabasesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

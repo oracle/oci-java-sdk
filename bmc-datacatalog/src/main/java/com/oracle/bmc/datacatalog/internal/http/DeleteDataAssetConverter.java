@@ -16,13 +16,15 @@ public class DeleteDataAssetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteDataAssetRequest interceptRequest(DeleteDataAssetRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.DeleteDataAssetRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.DeleteDataAssetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteDataAssetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.DeleteDataAssetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -55,16 +57,21 @@ public class DeleteDataAssetConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteDataAssetResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.DeleteDataAssetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDataAssetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.DeleteDataAssetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteDataAssetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.DeleteDataAssetResponse>() {
                             @Override
-                            public DeleteDataAssetResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteDataAssetResponse");
+                            public com.oracle.bmc.datacatalog.responses.DeleteDataAssetResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.DeleteDataAssetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +82,10 @@ public class DeleteDataAssetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteDataAssetResponse.Builder builder =
-                                        DeleteDataAssetResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.DeleteDataAssetResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .DeleteDataAssetResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -90,7 +99,8 @@ public class DeleteDataAssetConverter {
                                                     String.class));
                                 }
 
-                                DeleteDataAssetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.DeleteDataAssetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

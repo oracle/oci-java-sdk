@@ -16,14 +16,15 @@ public class UpdateModelProvenanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateModelProvenanceRequest interceptRequest(
-            UpdateModelProvenanceRequest request) {
+    public static com.oracle.bmc.datascience.requests.UpdateModelProvenanceRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.UpdateModelProvenanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateModelProvenanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.UpdateModelProvenanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
         Validate.notNull(
@@ -55,18 +56,23 @@ public class UpdateModelProvenanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateModelProvenanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.UpdateModelProvenanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateModelProvenanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.UpdateModelProvenanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateModelProvenanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses
+                                        .UpdateModelProvenanceResponse>() {
                             @Override
-                            public UpdateModelProvenanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses
+                                            .UpdateModelProvenanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateModelProvenanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.UpdateModelProvenanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -80,8 +86,11 @@ public class UpdateModelProvenanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateModelProvenanceResponse.Builder builder =
-                                        UpdateModelProvenanceResponse.builder();
+                                com.oracle.bmc.datascience.responses.UpdateModelProvenanceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .UpdateModelProvenanceResponse.builder();
 
                                 builder.modelProvenance(response.getItem());
 
@@ -106,7 +115,8 @@ public class UpdateModelProvenanceConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateModelProvenanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.UpdateModelProvenanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

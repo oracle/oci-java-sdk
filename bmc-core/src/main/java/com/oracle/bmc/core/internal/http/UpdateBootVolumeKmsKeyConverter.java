@@ -16,14 +16,15 @@ public class UpdateBootVolumeKmsKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateBootVolumeKmsKeyRequest interceptRequest(
-            UpdateBootVolumeKmsKeyRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateBootVolumeKmsKeyRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateBootVolumeKmsKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateBootVolumeKmsKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateBootVolumeKmsKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBootVolumeId(), "bootVolumeId must not be blank");
         Validate.notNull(
@@ -51,18 +52,21 @@ public class UpdateBootVolumeKmsKeyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateBootVolumeKmsKeyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateBootVolumeKmsKeyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateBootVolumeKmsKeyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateBootVolumeKmsKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateBootVolumeKmsKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateBootVolumeKmsKeyResponse>() {
                             @Override
-                            public UpdateBootVolumeKmsKeyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.UpdateBootVolumeKmsKeyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateBootVolumeKmsKeyResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateBootVolumeKmsKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +80,10 @@ public class UpdateBootVolumeKmsKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateBootVolumeKmsKeyResponse.Builder builder =
-                                        UpdateBootVolumeKmsKeyResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateBootVolumeKmsKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateBootVolumeKmsKeyResponse.builder();
 
                                 builder.bootVolumeKmsKey(response.getItem());
 
@@ -102,7 +108,8 @@ public class UpdateBootVolumeKmsKeyConverter {
                                                     String.class));
                                 }
 
-                                UpdateBootVolumeKmsKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateBootVolumeKmsKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

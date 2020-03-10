@@ -16,15 +16,15 @@ public class GetResourceAvailabilityConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetResourceAvailabilityRequest interceptRequest(
-            GetResourceAvailabilityRequest request) {
+    public static com.oracle.bmc.limits.requests.GetResourceAvailabilityRequest interceptRequest(
+            com.oracle.bmc.limits.requests.GetResourceAvailabilityRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetResourceAvailabilityRequest request) {
+            com.oracle.bmc.limits.requests.GetResourceAvailabilityRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getServiceName(), "serviceName must not be blank");
         Validate.notBlank(request.getLimitName(), "limitName must not be blank");
@@ -70,18 +70,21 @@ public class GetResourceAvailabilityConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetResourceAvailabilityResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.limits.responses.GetResourceAvailabilityResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetResourceAvailabilityResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.limits.responses.GetResourceAvailabilityResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetResourceAvailabilityResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.limits.responses.GetResourceAvailabilityResponse>() {
                             @Override
-                            public GetResourceAvailabilityResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.limits.responses.GetResourceAvailabilityResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetResourceAvailabilityResponse");
+                                        "Transform function invoked for com.oracle.bmc.limits.responses.GetResourceAvailabilityResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -95,8 +98,11 @@ public class GetResourceAvailabilityConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetResourceAvailabilityResponse.Builder builder =
-                                        GetResourceAvailabilityResponse.builder();
+                                com.oracle.bmc.limits.responses.GetResourceAvailabilityResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.limits.responses
+                                                        .GetResourceAvailabilityResponse.builder();
 
                                 builder.resourceAvailability(response.getItem());
 
@@ -112,7 +118,8 @@ public class GetResourceAvailabilityConverter {
                                                     String.class));
                                 }
 
-                                GetResourceAvailabilityResponse responseWrapper = builder.build();
+                                com.oracle.bmc.limits.responses.GetResourceAvailabilityResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListSendersConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListSendersRequest interceptRequest(ListSendersRequest request) {
+    public static com.oracle.bmc.email.requests.ListSendersRequest interceptRequest(
+            com.oracle.bmc.email.requests.ListSendersRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListSendersRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.email.requests.ListSendersRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -94,16 +96,21 @@ public class ListSendersConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListSendersResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.email.responses.ListSendersResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSendersResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.email.responses.ListSendersResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListSendersResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.email.responses.ListSendersResponse>() {
                             @Override
-                            public ListSendersResponse apply(
+                            public com.oracle.bmc.email.responses.ListSendersResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListSendersResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.email.responses.ListSendersResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -120,7 +127,9 @@ public class ListSendersConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListSendersResponse.Builder builder = ListSendersResponse.builder();
+                                com.oracle.bmc.email.responses.ListSendersResponse.Builder builder =
+                                        com.oracle.bmc.email.responses.ListSendersResponse
+                                                .builder();
 
                                 builder.items(response.getItem());
 
@@ -172,7 +181,8 @@ public class ListSendersConverter {
                                                     Integer.class));
                                 }
 
-                                ListSendersResponse responseWrapper = builder.build();
+                                com.oracle.bmc.email.responses.ListSendersResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

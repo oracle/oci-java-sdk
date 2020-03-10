@@ -16,15 +16,15 @@ public class ListCrossConnectLocationsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCrossConnectLocationsRequest interceptRequest(
-            ListCrossConnectLocationsRequest request) {
+    public static com.oracle.bmc.core.requests.ListCrossConnectLocationsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListCrossConnectLocationsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListCrossConnectLocationsRequest request) {
+            com.oracle.bmc.core.requests.ListCrossConnectLocationsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -61,18 +61,21 @@ public class ListCrossConnectLocationsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListCrossConnectLocationsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListCrossConnectLocationsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListCrossConnectLocationsResponse>() {
                             @Override
-                            public ListCrossConnectLocationsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListCrossConnectLocationsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListCrossConnectLocationsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListCrossConnectLocationsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -89,8 +92,12 @@ public class ListCrossConnectLocationsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCrossConnectLocationsResponse.Builder builder =
-                                        ListCrossConnectLocationsResponse.builder();
+                                com.oracle.bmc.core.responses.ListCrossConnectLocationsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListCrossConnectLocationsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -118,7 +125,8 @@ public class ListCrossConnectLocationsConverter {
                                                     String.class));
                                 }
 
-                                ListCrossConnectLocationsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListCrossConnectLocationsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

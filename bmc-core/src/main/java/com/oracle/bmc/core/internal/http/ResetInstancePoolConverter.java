@@ -16,13 +16,15 @@ public class ResetInstancePoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ResetInstancePoolRequest interceptRequest(ResetInstancePoolRequest request) {
+    public static com.oracle.bmc.core.requests.ResetInstancePoolRequest interceptRequest(
+            com.oracle.bmc.core.requests.ResetInstancePoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ResetInstancePoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ResetInstancePoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
 
@@ -52,17 +54,21 @@ public class ResetInstancePoolConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ResetInstancePoolResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ResetInstancePoolResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ResetInstancePoolResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ResetInstancePoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ResetInstancePoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ResetInstancePoolResponse>() {
                             @Override
-                            public ResetInstancePoolResponse apply(
+                            public com.oracle.bmc.core.responses.ResetInstancePoolResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ResetInstancePoolResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ResetInstancePoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +82,10 @@ public class ResetInstancePoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ResetInstancePoolResponse.Builder builder =
-                                        ResetInstancePoolResponse.builder();
+                                com.oracle.bmc.core.responses.ResetInstancePoolResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ResetInstancePoolResponse.builder();
 
                                 builder.instancePool(response.getItem());
 
@@ -102,7 +110,8 @@ public class ResetInstancePoolConverter {
                                                     String.class));
                                 }
 
-                                ResetInstancePoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ResetInstancePoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

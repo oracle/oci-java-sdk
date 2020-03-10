@@ -16,15 +16,16 @@ public class GetCrossConnectLetterOfAuthorityConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetCrossConnectLetterOfAuthorityRequest interceptRequest(
-            GetCrossConnectLetterOfAuthorityRequest request) {
+    public static com.oracle.bmc.core.requests.GetCrossConnectLetterOfAuthorityRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.GetCrossConnectLetterOfAuthorityRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetCrossConnectLetterOfAuthorityRequest request) {
+            com.oracle.bmc.core.requests.GetCrossConnectLetterOfAuthorityRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
 
@@ -45,19 +46,23 @@ public class GetCrossConnectLetterOfAuthorityConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetCrossConnectLetterOfAuthorityResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetCrossConnectLetterOfAuthorityResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetCrossConnectLetterOfAuthorityResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetCrossConnectLetterOfAuthorityResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetCrossConnectLetterOfAuthorityResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .GetCrossConnectLetterOfAuthorityResponse>() {
                             @Override
-                            public GetCrossConnectLetterOfAuthorityResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .GetCrossConnectLetterOfAuthorityResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetCrossConnectLetterOfAuthorityResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetCrossConnectLetterOfAuthorityResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -71,8 +76,12 @@ public class GetCrossConnectLetterOfAuthorityConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetCrossConnectLetterOfAuthorityResponse.Builder builder =
-                                        GetCrossConnectLetterOfAuthorityResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .GetCrossConnectLetterOfAuthorityResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetCrossConnectLetterOfAuthorityResponse
+                                                        .builder();
 
                                 builder.letterOfAuthority(response.getItem());
 
@@ -88,8 +97,9 @@ public class GetCrossConnectLetterOfAuthorityConverter {
                                                     String.class));
                                 }
 
-                                GetCrossConnectLetterOfAuthorityResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .GetCrossConnectLetterOfAuthorityResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

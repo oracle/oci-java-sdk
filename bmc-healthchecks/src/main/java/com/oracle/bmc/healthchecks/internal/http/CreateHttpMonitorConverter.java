@@ -16,13 +16,15 @@ public class CreateHttpMonitorConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateHttpMonitorRequest interceptRequest(CreateHttpMonitorRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.CreateHttpMonitorRequest interceptRequest(
+            com.oracle.bmc.healthchecks.requests.CreateHttpMonitorRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateHttpMonitorRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.healthchecks.requests.CreateHttpMonitorRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateHttpMonitorDetails(), "createHttpMonitorDetails is required");
@@ -46,17 +48,21 @@ public class CreateHttpMonitorConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateHttpMonitorResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.CreateHttpMonitorResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpMonitorResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.CreateHttpMonitorResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateHttpMonitorResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses.CreateHttpMonitorResponse>() {
                             @Override
-                            public CreateHttpMonitorResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses.CreateHttpMonitorResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateHttpMonitorResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.CreateHttpMonitorResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +76,11 @@ public class CreateHttpMonitorConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateHttpMonitorResponse.Builder builder =
-                                        CreateHttpMonitorResponse.builder();
+                                com.oracle.bmc.healthchecks.responses.CreateHttpMonitorResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .CreateHttpMonitorResponse.builder();
 
                                 builder.httpMonitor(response.getItem());
 
@@ -108,7 +117,8 @@ public class CreateHttpMonitorConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateHttpMonitorResponse responseWrapper = builder.build();
+                                com.oracle.bmc.healthchecks.responses.CreateHttpMonitorResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

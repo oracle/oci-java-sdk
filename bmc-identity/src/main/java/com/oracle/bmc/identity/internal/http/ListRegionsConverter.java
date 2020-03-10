@@ -16,13 +16,15 @@ public class ListRegionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListRegionsRequest interceptRequest(ListRegionsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListRegionsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListRegionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListRegionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListRegionsRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -35,16 +37,22 @@ public class ListRegionsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListRegionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListRegionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListRegionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListRegionsResponse>() {
                             @Override
-                            public ListRegionsResponse apply(
+                            public com.oracle.bmc.identity.responses.ListRegionsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListRegionsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListRegionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -59,7 +67,10 @@ public class ListRegionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListRegionsResponse.Builder builder = ListRegionsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListRegionsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListRegionsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -75,7 +86,8 @@ public class ListRegionsConverter {
                                                     String.class));
                                 }
 
-                                ListRegionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListRegionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

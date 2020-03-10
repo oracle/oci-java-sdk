@@ -16,13 +16,15 @@ public class ListVaultsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListVaultsRequest interceptRequest(ListVaultsRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.ListVaultsRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.ListVaultsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListVaultsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.ListVaultsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -78,15 +80,22 @@ public class ListVaultsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.ListVaultsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVaultsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.ListVaultsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListVaultsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.ListVaultsResponse>() {
                             @Override
-                            public ListVaultsResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListVaultsResponse");
+                            public com.oracle.bmc.keymanagement.responses.ListVaultsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.ListVaultsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -102,7 +111,10 @@ public class ListVaultsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListVaultsResponse.Builder builder = ListVaultsResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.ListVaultsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .ListVaultsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -130,7 +142,8 @@ public class ListVaultsConverter {
                                                     String.class));
                                 }
 
-                                ListVaultsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.ListVaultsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

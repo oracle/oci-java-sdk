@@ -16,13 +16,15 @@ public class GetDomainRecordsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDomainRecordsRequest interceptRequest(GetDomainRecordsRequest request) {
+    public static com.oracle.bmc.dns.requests.GetDomainRecordsRequest interceptRequest(
+            com.oracle.bmc.dns.requests.GetDomainRecordsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDomainRecordsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.GetDomainRecordsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getZoneNameOrId(), "zoneNameOrId must not be blank");
         Validate.notBlank(request.getDomain(), "domain must not be blank");
@@ -115,17 +117,21 @@ public class GetDomainRecordsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetDomainRecordsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.GetDomainRecordsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDomainRecordsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.GetDomainRecordsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDomainRecordsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.GetDomainRecordsResponse>() {
                             @Override
-                            public GetDomainRecordsResponse apply(
+                            public com.oracle.bmc.dns.responses.GetDomainRecordsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetDomainRecordsResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.GetDomainRecordsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -139,8 +145,10 @@ public class GetDomainRecordsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDomainRecordsResponse.Builder builder =
-                                        GetDomainRecordsResponse.builder();
+                                com.oracle.bmc.dns.responses.GetDomainRecordsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .GetDomainRecordsResponse.builder();
 
                                 builder.recordCollection(response.getItem());
 
@@ -189,7 +197,8 @@ public class GetDomainRecordsConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                GetDomainRecordsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.GetDomainRecordsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

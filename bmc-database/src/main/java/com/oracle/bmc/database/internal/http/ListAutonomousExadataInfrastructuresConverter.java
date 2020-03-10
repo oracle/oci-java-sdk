@@ -16,15 +16,17 @@ public class ListAutonomousExadataInfrastructuresConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAutonomousExadataInfrastructuresRequest interceptRequest(
-            ListAutonomousExadataInfrastructuresRequest request) {
+    public static com.oracle.bmc.database.requests.ListAutonomousExadataInfrastructuresRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ListAutonomousExadataInfrastructuresRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListAutonomousExadataInfrastructuresRequest request) {
+            com.oracle.bmc.database.requests.ListAutonomousExadataInfrastructuresRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -101,19 +103,24 @@ public class ListAutonomousExadataInfrastructuresConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAutonomousExadataInfrastructuresResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListAutonomousExadataInfrastructuresResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousExadataInfrastructuresResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .ListAutonomousExadataInfrastructuresResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListAutonomousExadataInfrastructuresResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .ListAutonomousExadataInfrastructuresResponse>() {
                             @Override
-                            public ListAutonomousExadataInfrastructuresResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ListAutonomousExadataInfrastructuresResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAutonomousExadataInfrastructuresResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListAutonomousExadataInfrastructuresResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -132,8 +139,13 @@ public class ListAutonomousExadataInfrastructuresConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAutonomousExadataInfrastructuresResponse.Builder builder =
-                                        ListAutonomousExadataInfrastructuresResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .ListAutonomousExadataInfrastructuresResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListAutonomousExadataInfrastructuresResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -161,8 +173,9 @@ public class ListAutonomousExadataInfrastructuresConverter {
                                                     String.class));
                                 }
 
-                                ListAutonomousExadataInfrastructuresResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .ListAutonomousExadataInfrastructuresResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

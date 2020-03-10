@@ -16,13 +16,15 @@ public class CreateStackConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateStackRequest interceptRequest(CreateStackRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.CreateStackRequest interceptRequest(
+            com.oracle.bmc.resourcemanager.requests.CreateStackRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateStackRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.CreateStackRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateStackDetails(), "createStackDetails is required");
 
@@ -44,16 +46,22 @@ public class CreateStackConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateStackResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.CreateStackResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStackResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.CreateStackResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateStackResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses.CreateStackResponse>() {
                             @Override
-                            public CreateStackResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateStackResponse");
+                            public com.oracle.bmc.resourcemanager.responses.CreateStackResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.CreateStackResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Stack>>
@@ -65,7 +73,10 @@ public class CreateStackConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateStackResponse.Builder builder = CreateStackResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses.CreateStackResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .CreateStackResponse.builder();
 
                                 builder.stack(response.getItem());
 
@@ -90,7 +101,8 @@ public class CreateStackConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateStackResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses.CreateStackResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

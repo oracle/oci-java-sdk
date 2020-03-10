@@ -16,14 +16,15 @@ public class UpdateSoftwareSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateSoftwareSourceRequest interceptRequest(
-            UpdateSoftwareSourceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.UpdateSoftwareSourceRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.UpdateSoftwareSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateSoftwareSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.UpdateSoftwareSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
         Validate.notNull(
@@ -54,18 +55,23 @@ public class UpdateSoftwareSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.UpdateSoftwareSourceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.UpdateSoftwareSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .UpdateSoftwareSourceResponse>() {
                             @Override
-                            public UpdateSoftwareSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .UpdateSoftwareSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateSoftwareSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.UpdateSoftwareSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -79,8 +85,11 @@ public class UpdateSoftwareSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateSoftwareSourceResponse.Builder builder =
-                                        UpdateSoftwareSourceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.UpdateSoftwareSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .UpdateSoftwareSourceResponse.builder();
 
                                 builder.softwareSource(response.getItem());
 
@@ -105,7 +114,8 @@ public class UpdateSoftwareSourceConverter {
                                                     String.class));
                                 }
 
-                                UpdateSoftwareSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.UpdateSoftwareSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

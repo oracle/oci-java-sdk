@@ -16,14 +16,15 @@ public class GetProtectionSettingsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetProtectionSettingsRequest interceptRequest(
-            GetProtectionSettingsRequest request) {
+    public static com.oracle.bmc.waas.requests.GetProtectionSettingsRequest interceptRequest(
+            com.oracle.bmc.waas.requests.GetProtectionSettingsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetProtectionSettingsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.GetProtectionSettingsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -49,18 +50,21 @@ public class GetProtectionSettingsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetProtectionSettingsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.GetProtectionSettingsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetProtectionSettingsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.GetProtectionSettingsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetProtectionSettingsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.GetProtectionSettingsResponse>() {
                             @Override
-                            public GetProtectionSettingsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses.GetProtectionSettingsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetProtectionSettingsResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.GetProtectionSettingsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +78,10 @@ public class GetProtectionSettingsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetProtectionSettingsResponse.Builder builder =
-                                        GetProtectionSettingsResponse.builder();
+                                com.oracle.bmc.waas.responses.GetProtectionSettingsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .GetProtectionSettingsResponse.builder();
 
                                 builder.protectionSettings(response.getItem());
 
@@ -100,7 +106,8 @@ public class GetProtectionSettingsConverter {
                                                     String.class));
                                 }
 
-                                GetProtectionSettingsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.GetProtectionSettingsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

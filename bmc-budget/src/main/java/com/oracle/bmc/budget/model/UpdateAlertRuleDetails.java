@@ -180,7 +180,7 @@ public class UpdateAlertRuleDetails {
     ThresholdType thresholdType;
 
     /**
-     * The audience that will received the alert when it triggers.
+     * The audience that will receive the alert when it triggers. If you need to clear out this value, please pass in an empty string instead of null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipients")
     String recipients;

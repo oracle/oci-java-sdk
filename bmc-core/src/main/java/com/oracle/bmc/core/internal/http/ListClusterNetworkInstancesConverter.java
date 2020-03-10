@@ -16,15 +16,15 @@ public class ListClusterNetworkInstancesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListClusterNetworkInstancesRequest interceptRequest(
-            ListClusterNetworkInstancesRequest request) {
+    public static com.oracle.bmc.core.requests.ListClusterNetworkInstancesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListClusterNetworkInstancesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListClusterNetworkInstancesRequest request) {
+            com.oracle.bmc.core.requests.ListClusterNetworkInstancesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
@@ -92,18 +92,22 @@ public class ListClusterNetworkInstancesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListClusterNetworkInstancesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListClusterNetworkInstancesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListClusterNetworkInstancesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListClusterNetworkInstancesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListClusterNetworkInstancesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .ListClusterNetworkInstancesResponse>() {
                             @Override
-                            public ListClusterNetworkInstancesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListClusterNetworkInstancesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListClusterNetworkInstancesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListClusterNetworkInstancesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -120,8 +124,12 @@ public class ListClusterNetworkInstancesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListClusterNetworkInstancesResponse.Builder builder =
-                                        ListClusterNetworkInstancesResponse.builder();
+                                com.oracle.bmc.core.responses.ListClusterNetworkInstancesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListClusterNetworkInstancesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -149,8 +157,8 @@ public class ListClusterNetworkInstancesConverter {
                                                     String.class));
                                 }
 
-                                ListClusterNetworkInstancesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.ListClusterNetworkInstancesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

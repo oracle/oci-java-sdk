@@ -315,7 +315,7 @@ public class BudgetSummary {
     /**
      * The list of targets on which the budget is applied.
      *   If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
-     *   If targetType is \"TAG\", targets contains list of tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+     *   If targetType is \"TAG\", targets contains list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targets")

@@ -16,13 +16,15 @@ public class GetRowConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetRowRequest interceptRequest(GetRowRequest request) {
+    public static com.oracle.bmc.nosql.requests.GetRowRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.GetRowRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetRowRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.GetRowRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
         Validate.notNull(request.getKey(), "key is required");
@@ -78,15 +80,20 @@ public class GetRowConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetRowResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.GetRowResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRowResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.GetRowResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetRowResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.GetRowResponse>() {
                             @Override
-                            public GetRowResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetRowResponse");
+                            public com.oracle.bmc.nosql.responses.GetRowResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.GetRowResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Row>>
@@ -97,7 +104,8 @@ public class GetRowConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetRowResponse.Builder builder = GetRowResponse.builder();
+                                com.oracle.bmc.nosql.responses.GetRowResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.GetRowResponse.builder();
 
                                 builder.row(response.getItem());
 
@@ -122,7 +130,8 @@ public class GetRowConverter {
                                                     String.class));
                                 }
 
-                                GetRowResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.GetRowResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

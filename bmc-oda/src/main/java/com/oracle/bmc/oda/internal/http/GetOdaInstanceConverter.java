@@ -16,13 +16,15 @@ public class GetOdaInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetOdaInstanceRequest interceptRequest(GetOdaInstanceRequest request) {
+    public static com.oracle.bmc.oda.requests.GetOdaInstanceRequest interceptRequest(
+            com.oracle.bmc.oda.requests.GetOdaInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetOdaInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.oda.requests.GetOdaInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
 
@@ -45,16 +47,21 @@ public class GetOdaInstanceConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetOdaInstanceResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.oda.responses.GetOdaInstanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetOdaInstanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oda.responses.GetOdaInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetOdaInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oda.responses.GetOdaInstanceResponse>() {
                             @Override
-                            public GetOdaInstanceResponse apply(
+                            public com.oracle.bmc.oda.responses.GetOdaInstanceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetOdaInstanceResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.oda.responses.GetOdaInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +75,10 @@ public class GetOdaInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetOdaInstanceResponse.Builder builder =
-                                        GetOdaInstanceResponse.builder();
+                                com.oracle.bmc.oda.responses.GetOdaInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.oda.responses.GetOdaInstanceResponse
+                                                        .builder();
 
                                 builder.odaInstance(response.getItem());
 
@@ -94,7 +103,8 @@ public class GetOdaInstanceConverter {
                                                     String.class));
                                 }
 
-                                GetOdaInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.oda.responses.GetOdaInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

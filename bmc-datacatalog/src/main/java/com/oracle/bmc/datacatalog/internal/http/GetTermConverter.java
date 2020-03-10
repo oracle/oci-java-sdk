@@ -16,13 +16,15 @@ public class GetTermConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetTermRequest interceptRequest(GetTermRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetTermRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetTermRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetTermRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetTermRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -64,15 +66,21 @@ public class GetTermConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetTermResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.datacatalog.responses.GetTermResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTermResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetTermResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetTermResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.GetTermResponse>() {
                             @Override
-                            public GetTermResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetTermResponse");
+                            public com.oracle.bmc.datacatalog.responses.GetTermResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetTermResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Term>>
@@ -83,7 +91,10 @@ public class GetTermConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetTermResponse.Builder builder = GetTermResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetTermResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses.GetTermResponse
+                                                        .builder();
 
                                 builder.term(response.getItem());
 
@@ -108,7 +119,8 @@ public class GetTermConverter {
                                                     String.class));
                                 }
 
-                                GetTermResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetTermResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

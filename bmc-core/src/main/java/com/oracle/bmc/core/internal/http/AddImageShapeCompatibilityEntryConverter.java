@@ -16,15 +16,16 @@ public class AddImageShapeCompatibilityEntryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static AddImageShapeCompatibilityEntryRequest interceptRequest(
-            AddImageShapeCompatibilityEntryRequest request) {
+    public static com.oracle.bmc.core.requests.AddImageShapeCompatibilityEntryRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.AddImageShapeCompatibilityEntryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            AddImageShapeCompatibilityEntryRequest request) {
+            com.oracle.bmc.core.requests.AddImageShapeCompatibilityEntryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
         Validate.notBlank(request.getShapeName(), "shapeName must not be blank");
@@ -49,19 +50,23 @@ public class AddImageShapeCompatibilityEntryConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, AddImageShapeCompatibilityEntryResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.AddImageShapeCompatibilityEntryResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AddImageShapeCompatibilityEntryResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.AddImageShapeCompatibilityEntryResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                AddImageShapeCompatibilityEntryResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .AddImageShapeCompatibilityEntryResponse>() {
                             @Override
-                            public AddImageShapeCompatibilityEntryResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .AddImageShapeCompatibilityEntryResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for AddImageShapeCompatibilityEntryResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.AddImageShapeCompatibilityEntryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +81,12 @@ public class AddImageShapeCompatibilityEntryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                AddImageShapeCompatibilityEntryResponse.Builder builder =
-                                        AddImageShapeCompatibilityEntryResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .AddImageShapeCompatibilityEntryResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .AddImageShapeCompatibilityEntryResponse
+                                                        .builder();
 
                                 builder.imageShapeCompatibilityEntry(response.getItem());
 
@@ -93,8 +102,9 @@ public class AddImageShapeCompatibilityEntryConverter {
                                                     String.class));
                                 }
 
-                                AddImageShapeCompatibilityEntryResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .AddImageShapeCompatibilityEntryResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

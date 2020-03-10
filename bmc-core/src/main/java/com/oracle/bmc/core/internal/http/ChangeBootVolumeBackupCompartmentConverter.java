@@ -16,15 +16,16 @@ public class ChangeBootVolumeBackupCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeBootVolumeBackupCompartmentRequest interceptRequest(
-            ChangeBootVolumeBackupCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeBootVolumeBackupCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeBootVolumeBackupCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeBootVolumeBackupCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeBootVolumeBackupCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBootVolumeBackupId(), "bootVolumeBackupId must not be blank");
         Validate.notNull(
@@ -53,19 +54,23 @@ public class ChangeBootVolumeBackupCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeBootVolumeBackupCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeBootVolumeBackupCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeBootVolumeBackupCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeBootVolumeBackupCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeBootVolumeBackupCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeBootVolumeBackupCompartmentResponse>() {
                             @Override
-                            public ChangeBootVolumeBackupCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeBootVolumeBackupCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeBootVolumeBackupCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeBootVolumeBackupCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +81,12 @@ public class ChangeBootVolumeBackupCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeBootVolumeBackupCompartmentResponse.Builder builder =
-                                        ChangeBootVolumeBackupCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeBootVolumeBackupCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeBootVolumeBackupCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -100,8 +109,9 @@ public class ChangeBootVolumeBackupCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeBootVolumeBackupCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeBootVolumeBackupCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

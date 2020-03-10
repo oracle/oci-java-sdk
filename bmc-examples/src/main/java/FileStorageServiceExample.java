@@ -160,7 +160,7 @@ public class FileStorageServiceExample {
              *     - Creating a mount target via which the file system can be accessed. The mount target and file system must
              *       be in the same availability domain in order to export the file system from the mount target
              *     - Creating an export so that we can mount the file system (see
-             *       https://docs.us-phoenix-1.oraclecloud.com/Content/File/Tasks/mountingfilesystems.htm for more information)
+             *       https://docs.cloud.oracle.com/Content/File/Tasks/mountingfilesystems.htm for more information)
              *     - Creating a snapshot of the file system
              *
              * And we'll delete these resources when we're done
@@ -434,7 +434,7 @@ public class FileStorageServiceExample {
      * creating multiple resources.
      *
      * There are rules around export paths and file system associations which you should review here:
-     * https://docs.us-phoenix-1.oraclecloud.com/api/#/en/filestorage/20171215/Export/
+     * https://docs.cloud.oracle.com/api/#/en/filestorage/20171215/Export/
      *
      * @param fsClient the service client to use to create the export
      * @param fileSystemId the OCID of the file system to associate with the export

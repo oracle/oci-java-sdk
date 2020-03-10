@@ -16,15 +16,17 @@ public class AddPackagesToSoftwareSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static AddPackagesToSoftwareSourceRequest interceptRequest(
-            AddPackagesToSoftwareSourceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.AddPackagesToSoftwareSourceRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.AddPackagesToSoftwareSourceRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            AddPackagesToSoftwareSourceRequest request) {
+            com.oracle.bmc.osmanagement.requests.AddPackagesToSoftwareSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
         Validate.notNull(
@@ -53,18 +55,23 @@ public class AddPackagesToSoftwareSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, AddPackagesToSoftwareSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.AddPackagesToSoftwareSourceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, AddPackagesToSoftwareSourceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.AddPackagesToSoftwareSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, AddPackagesToSoftwareSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .AddPackagesToSoftwareSourceResponse>() {
                             @Override
-                            public AddPackagesToSoftwareSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .AddPackagesToSoftwareSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for AddPackagesToSoftwareSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.AddPackagesToSoftwareSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +82,12 @@ public class AddPackagesToSoftwareSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                AddPackagesToSoftwareSourceResponse.Builder builder =
-                                        AddPackagesToSoftwareSourceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .AddPackagesToSoftwareSourceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .AddPackagesToSoftwareSourceResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -90,8 +101,9 @@ public class AddPackagesToSoftwareSourceConverter {
                                                     String.class));
                                 }
 
-                                AddPackagesToSoftwareSourceResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .AddPackagesToSoftwareSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

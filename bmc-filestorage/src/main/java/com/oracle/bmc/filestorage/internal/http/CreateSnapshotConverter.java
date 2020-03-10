@@ -16,13 +16,15 @@ public class CreateSnapshotConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateSnapshotRequest interceptRequest(CreateSnapshotRequest request) {
+    public static com.oracle.bmc.filestorage.requests.CreateSnapshotRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.CreateSnapshotRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateSnapshotRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.CreateSnapshotRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateSnapshotDetails(), "createSnapshotDetails is required");
 
@@ -44,16 +46,22 @@ public class CreateSnapshotConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateSnapshotResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.CreateSnapshotResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSnapshotResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.CreateSnapshotResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateSnapshotResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.CreateSnapshotResponse>() {
                             @Override
-                            public CreateSnapshotResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateSnapshotResponse");
+                            public com.oracle.bmc.filestorage.responses.CreateSnapshotResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.CreateSnapshotResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Snapshot>>
@@ -65,8 +73,10 @@ public class CreateSnapshotConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateSnapshotResponse.Builder builder =
-                                        CreateSnapshotResponse.builder();
+                                com.oracle.bmc.filestorage.responses.CreateSnapshotResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .CreateSnapshotResponse.builder();
 
                                 builder.snapshot(response.getItem());
 
@@ -91,7 +101,8 @@ public class CreateSnapshotConverter {
                                                     String.class));
                                 }
 
-                                CreateSnapshotResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.CreateSnapshotResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

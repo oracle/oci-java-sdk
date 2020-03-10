@@ -16,14 +16,15 @@ public class DeleteVirtualCircuitConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteVirtualCircuitRequest interceptRequest(
-            DeleteVirtualCircuitRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteVirtualCircuitRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteVirtualCircuitRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteVirtualCircuitRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteVirtualCircuitRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
 
@@ -47,18 +48,21 @@ public class DeleteVirtualCircuitConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteVirtualCircuitResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteVirtualCircuitResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteVirtualCircuitResponse>() {
                             @Override
-                            public DeleteVirtualCircuitResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteVirtualCircuitResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteVirtualCircuitResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteVirtualCircuitResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +73,10 @@ public class DeleteVirtualCircuitConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteVirtualCircuitResponse.Builder builder =
-                                        DeleteVirtualCircuitResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteVirtualCircuitResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteVirtualCircuitResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +90,8 @@ public class DeleteVirtualCircuitConverter {
                                                     String.class));
                                 }
 
-                                DeleteVirtualCircuitResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteVirtualCircuitResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

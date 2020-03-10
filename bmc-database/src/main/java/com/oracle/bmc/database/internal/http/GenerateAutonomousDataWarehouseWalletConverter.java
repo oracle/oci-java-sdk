@@ -15,15 +15,17 @@ public class GenerateAutonomousDataWarehouseWalletConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GenerateAutonomousDataWarehouseWalletRequest interceptRequest(
-            GenerateAutonomousDataWarehouseWalletRequest request) {
+    public static com.oracle.bmc.database.requests.GenerateAutonomousDataWarehouseWalletRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.GenerateAutonomousDataWarehouseWalletRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GenerateAutonomousDataWarehouseWalletRequest request) {
+            com.oracle.bmc.database.requests.GenerateAutonomousDataWarehouseWalletRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousDataWarehouseId(),
@@ -58,19 +60,24 @@ public class GenerateAutonomousDataWarehouseWalletConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GenerateAutonomousDataWarehouseWalletResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GenerateAutonomousDataWarehouseWalletResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateAutonomousDataWarehouseWalletResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .GenerateAutonomousDataWarehouseWalletResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GenerateAutonomousDataWarehouseWalletResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .GenerateAutonomousDataWarehouseWalletResponse>() {
                             @Override
-                            public GenerateAutonomousDataWarehouseWalletResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .GenerateAutonomousDataWarehouseWalletResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GenerateAutonomousDataWarehouseWalletResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GenerateAutonomousDataWarehouseWalletResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -84,8 +91,13 @@ public class GenerateAutonomousDataWarehouseWalletConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GenerateAutonomousDataWarehouseWalletResponse.Builder builder =
-                                        GenerateAutonomousDataWarehouseWalletResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .GenerateAutonomousDataWarehouseWalletResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GenerateAutonomousDataWarehouseWalletResponse
+                                                        .builder();
 
                                 builder.inputStream(response.getItem());
 
@@ -134,8 +146,9 @@ public class GenerateAutonomousDataWarehouseWalletConverter {
                                                     java.util.Date.class));
                                 }
 
-                                GenerateAutonomousDataWarehouseWalletResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .GenerateAutonomousDataWarehouseWalletResponse
+                                        responseWrapper = builder.build();
 
                                 return responseWrapper;
                             }

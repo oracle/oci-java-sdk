@@ -16,14 +16,15 @@ public class ListTransferAppliancesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListTransferAppliancesRequest interceptRequest(
-            ListTransferAppliancesRequest request) {
+    public static com.oracle.bmc.dts.requests.ListTransferAppliancesRequest interceptRequest(
+            com.oracle.bmc.dts.requests.ListTransferAppliancesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListTransferAppliancesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dts.requests.ListTransferAppliancesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
 
@@ -52,18 +53,21 @@ public class ListTransferAppliancesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListTransferAppliancesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.ListTransferAppliancesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListTransferAppliancesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.ListTransferAppliancesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListTransferAppliancesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.ListTransferAppliancesResponse>() {
                             @Override
-                            public ListTransferAppliancesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses.ListTransferAppliancesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListTransferAppliancesResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.ListTransferAppliancesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -77,8 +81,10 @@ public class ListTransferAppliancesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListTransferAppliancesResponse.Builder builder =
-                                        ListTransferAppliancesResponse.builder();
+                                com.oracle.bmc.dts.responses.ListTransferAppliancesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .ListTransferAppliancesResponse.builder();
 
                                 builder.multipleTransferAppliances(response.getItem());
 
@@ -94,7 +100,8 @@ public class ListTransferAppliancesConverter {
                                                     String.class));
                                 }
 
-                                ListTransferAppliancesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.ListTransferAppliancesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

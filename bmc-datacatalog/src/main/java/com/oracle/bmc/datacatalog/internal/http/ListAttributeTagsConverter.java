@@ -16,13 +16,15 @@ public class ListAttributeTagsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAttributeTagsRequest interceptRequest(ListAttributeTagsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListAttributeTagsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListAttributeTagsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAttributeTagsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListAttributeTagsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -151,17 +153,21 @@ public class ListAttributeTagsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAttributeTagsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListAttributeTagsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAttributeTagsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListAttributeTagsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAttributeTagsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ListAttributeTagsResponse>() {
                             @Override
-                            public ListAttributeTagsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.ListAttributeTagsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAttributeTagsResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListAttributeTagsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -175,8 +181,11 @@ public class ListAttributeTagsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAttributeTagsResponse.Builder builder =
-                                        ListAttributeTagsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListAttributeTagsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListAttributeTagsResponse.builder();
 
                                 builder.attributeTagCollection(response.getItem());
 
@@ -204,7 +213,8 @@ public class ListAttributeTagsConverter {
                                                     String.class));
                                 }
 
-                                ListAttributeTagsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListAttributeTagsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

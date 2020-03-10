@@ -16,13 +16,15 @@ public class GetServiceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetServiceRequest interceptRequest(GetServiceRequest request) {
+    public static com.oracle.bmc.core.requests.GetServiceRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetServiceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetServiceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetServiceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getServiceId(), "serviceId must not be blank");
 
@@ -41,15 +43,20 @@ public class GetServiceConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetServiceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetServiceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetServiceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetServiceResponse>() {
                             @Override
-                            public GetServiceResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetServiceResponse");
+                            public com.oracle.bmc.core.responses.GetServiceResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetServiceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Service>>
@@ -61,7 +68,8 @@ public class GetServiceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetServiceResponse.Builder builder = GetServiceResponse.builder();
+                                com.oracle.bmc.core.responses.GetServiceResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.GetServiceResponse.builder();
 
                                 builder.service(response.getItem());
 
@@ -86,7 +94,8 @@ public class GetServiceConverter {
                                                     String.class));
                                 }
 
-                                GetServiceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetServiceResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

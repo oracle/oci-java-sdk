@@ -16,15 +16,17 @@ public class GetAutonomousDatabaseRegionalWalletConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetAutonomousDatabaseRegionalWalletRequest interceptRequest(
-            GetAutonomousDatabaseRegionalWalletRequest request) {
+    public static com.oracle.bmc.database.requests.GetAutonomousDatabaseRegionalWalletRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.GetAutonomousDatabaseRegionalWalletRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetAutonomousDatabaseRegionalWalletRequest request) {
+            com.oracle.bmc.database.requests.GetAutonomousDatabaseRegionalWalletRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -42,19 +44,24 @@ public class GetAutonomousDatabaseRegionalWalletConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetAutonomousDatabaseRegionalWalletResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetAutonomousDatabaseRegionalWalletResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousDatabaseRegionalWalletResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .GetAutonomousDatabaseRegionalWalletResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetAutonomousDatabaseRegionalWalletResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .GetAutonomousDatabaseRegionalWalletResponse>() {
                             @Override
-                            public GetAutonomousDatabaseRegionalWalletResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .GetAutonomousDatabaseRegionalWalletResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetAutonomousDatabaseRegionalWalletResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetAutonomousDatabaseRegionalWalletResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +75,12 @@ public class GetAutonomousDatabaseRegionalWalletConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetAutonomousDatabaseRegionalWalletResponse.Builder builder =
-                                        GetAutonomousDatabaseRegionalWalletResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .GetAutonomousDatabaseRegionalWalletResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetAutonomousDatabaseRegionalWalletResponse
+                                                        .builder();
 
                                 builder.autonomousDatabaseWallet(response.getItem());
 
@@ -85,8 +96,9 @@ public class GetAutonomousDatabaseRegionalWalletConverter {
                                                     String.class));
                                 }
 
-                                GetAutonomousDatabaseRegionalWalletResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .GetAutonomousDatabaseRegionalWalletResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

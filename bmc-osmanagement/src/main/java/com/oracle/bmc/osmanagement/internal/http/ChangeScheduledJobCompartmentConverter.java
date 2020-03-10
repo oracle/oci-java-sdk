@@ -16,15 +16,17 @@ public class ChangeScheduledJobCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeScheduledJobCompartmentRequest interceptRequest(
-            ChangeScheduledJobCompartmentRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.ChangeScheduledJobCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.ChangeScheduledJobCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeScheduledJobCompartmentRequest request) {
+            com.oracle.bmc.osmanagement.requests.ChangeScheduledJobCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getScheduledJobId(), "scheduledJobId must not be blank");
         Validate.notNull(
@@ -61,19 +63,23 @@ public class ChangeScheduledJobCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeScheduledJobCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.ChangeScheduledJobCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeScheduledJobCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.ChangeScheduledJobCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeScheduledJobCompartmentResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .ChangeScheduledJobCompartmentResponse>() {
                             @Override
-                            public ChangeScheduledJobCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .ChangeScheduledJobCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeScheduledJobCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.ChangeScheduledJobCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +90,12 @@ public class ChangeScheduledJobCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeScheduledJobCompartmentResponse.Builder builder =
-                                        ChangeScheduledJobCompartmentResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .ChangeScheduledJobCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .ChangeScheduledJobCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -99,8 +109,9 @@ public class ChangeScheduledJobCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeScheduledJobCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .ChangeScheduledJobCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

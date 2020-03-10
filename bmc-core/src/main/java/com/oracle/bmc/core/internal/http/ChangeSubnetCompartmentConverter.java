@@ -16,15 +16,15 @@ public class ChangeSubnetCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeSubnetCompartmentRequest interceptRequest(
-            ChangeSubnetCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeSubnetCompartmentRequest interceptRequest(
+            com.oracle.bmc.core.requests.ChangeSubnetCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeSubnetCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeSubnetCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
         Validate.notNull(
@@ -57,18 +57,21 @@ public class ChangeSubnetCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeSubnetCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeSubnetCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ChangeSubnetCompartmentResponse>() {
                             @Override
-                            public ChangeSubnetCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ChangeSubnetCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeSubnetCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeSubnetCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +82,11 @@ public class ChangeSubnetCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeSubnetCompartmentResponse.Builder builder =
-                                        ChangeSubnetCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses.ChangeSubnetCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeSubnetCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -115,7 +121,8 @@ public class ChangeSubnetCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeSubnetCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ChangeSubnetCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

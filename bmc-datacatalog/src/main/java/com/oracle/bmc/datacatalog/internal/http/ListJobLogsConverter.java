@@ -16,13 +16,15 @@ public class ListJobLogsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListJobLogsRequest interceptRequest(ListJobLogsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListJobLogsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListJobLogsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListJobLogsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListJobLogsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getJobKey(), "jobKey must not be blank");
@@ -145,16 +147,22 @@ public class ListJobLogsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListJobLogsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListJobLogsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobLogsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListJobLogsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListJobLogsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ListJobLogsResponse>() {
                             @Override
-                            public ListJobLogsResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.ListJobLogsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListJobLogsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListJobLogsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -168,7 +176,10 @@ public class ListJobLogsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListJobLogsResponse.Builder builder = ListJobLogsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListJobLogsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListJobLogsResponse.builder();
 
                                 builder.jobLogCollection(response.getItem());
 
@@ -196,7 +207,8 @@ public class ListJobLogsConverter {
                                                     String.class));
                                 }
 
-                                ListJobLogsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListJobLogsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

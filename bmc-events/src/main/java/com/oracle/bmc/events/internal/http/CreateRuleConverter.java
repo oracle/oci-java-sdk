@@ -16,13 +16,15 @@ public class CreateRuleConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateRuleRequest interceptRequest(CreateRuleRequest request) {
+    public static com.oracle.bmc.events.requests.CreateRuleRequest interceptRequest(
+            com.oracle.bmc.events.requests.CreateRuleRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateRuleRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.events.requests.CreateRuleRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateRuleDetails(), "createRuleDetails is required");
 
@@ -44,15 +46,21 @@ public class CreateRuleConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.events.responses.CreateRuleResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.events.responses.CreateRuleResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateRuleResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.events.responses.CreateRuleResponse>() {
                             @Override
-                            public CreateRuleResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateRuleResponse");
+                            public com.oracle.bmc.events.responses.CreateRuleResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.events.responses.CreateRuleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Rule>>
@@ -63,7 +71,9 @@ public class CreateRuleConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateRuleResponse.Builder builder = CreateRuleResponse.builder();
+                                com.oracle.bmc.events.responses.CreateRuleResponse.Builder builder =
+                                        com.oracle.bmc.events.responses.CreateRuleResponse
+                                                .builder();
 
                                 builder.rule(response.getItem());
 
@@ -88,7 +98,8 @@ public class CreateRuleConverter {
                                                     String.class));
                                 }
 
-                                CreateRuleResponse responseWrapper = builder.build();
+                                com.oracle.bmc.events.responses.CreateRuleResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

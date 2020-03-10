@@ -16,13 +16,15 @@ public class ResetIdpScimClientConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ResetIdpScimClientRequest interceptRequest(ResetIdpScimClientRequest request) {
+    public static com.oracle.bmc.identity.requests.ResetIdpScimClientRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ResetIdpScimClientRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ResetIdpScimClientRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ResetIdpScimClientRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIdentityProviderId(), "identityProviderId must not be blank");
 
@@ -44,17 +46,21 @@ public class ResetIdpScimClientConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ResetIdpScimClientResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ResetIdpScimClientResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ResetIdpScimClientResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ResetIdpScimClientResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ResetIdpScimClientResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ResetIdpScimClientResponse>() {
                             @Override
-                            public ResetIdpScimClientResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ResetIdpScimClientResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ResetIdpScimClientResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ResetIdpScimClientResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +74,10 @@ public class ResetIdpScimClientConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ResetIdpScimClientResponse.Builder builder =
-                                        ResetIdpScimClientResponse.builder();
+                                com.oracle.bmc.identity.responses.ResetIdpScimClientResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ResetIdpScimClientResponse.builder();
 
                                 builder.scimClientCredentials(response.getItem());
 
@@ -85,7 +93,8 @@ public class ResetIdpScimClientConverter {
                                                     String.class));
                                 }
 
-                                ResetIdpScimClientResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ResetIdpScimClientResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

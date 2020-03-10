@@ -16,14 +16,16 @@ public class GetIntegrationInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetIntegrationInstanceRequest interceptRequest(
-            GetIntegrationInstanceRequest request) {
+    public static com.oracle.bmc.integration.requests.GetIntegrationInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.integration.requests.GetIntegrationInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetIntegrationInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.integration.requests.GetIntegrationInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
@@ -48,18 +50,23 @@ public class GetIntegrationInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetIntegrationInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.integration.responses.GetIntegrationInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetIntegrationInstanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.integration.responses.GetIntegrationInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetIntegrationInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.integration.responses
+                                        .GetIntegrationInstanceResponse>() {
                             @Override
-                            public GetIntegrationInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.integration.responses
+                                            .GetIntegrationInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetIntegrationInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.integration.responses.GetIntegrationInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +80,11 @@ public class GetIntegrationInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetIntegrationInstanceResponse.Builder builder =
-                                        GetIntegrationInstanceResponse.builder();
+                                com.oracle.bmc.integration.responses.GetIntegrationInstanceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.integration.responses
+                                                        .GetIntegrationInstanceResponse.builder();
 
                                 builder.integrationInstance(response.getItem());
 
@@ -99,7 +109,8 @@ public class GetIntegrationInstanceConverter {
                                                     String.class));
                                 }
 
-                                GetIntegrationInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.integration.responses.GetIntegrationInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

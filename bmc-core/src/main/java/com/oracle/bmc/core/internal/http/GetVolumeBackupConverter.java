@@ -16,13 +16,15 @@ public class GetVolumeBackupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetVolumeBackupRequest interceptRequest(GetVolumeBackupRequest request) {
+    public static com.oracle.bmc.core.requests.GetVolumeBackupRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetVolumeBackupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetVolumeBackupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetVolumeBackupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeBackupId(), "volumeBackupId must not be blank");
 
@@ -42,16 +44,21 @@ public class GetVolumeBackupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetVolumeBackupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetVolumeBackupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetVolumeBackupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetVolumeBackupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetVolumeBackupResponse>() {
                             @Override
-                            public GetVolumeBackupResponse apply(
+                            public com.oracle.bmc.core.responses.GetVolumeBackupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetVolumeBackupResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetVolumeBackupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -65,8 +72,10 @@ public class GetVolumeBackupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetVolumeBackupResponse.Builder builder =
-                                        GetVolumeBackupResponse.builder();
+                                com.oracle.bmc.core.responses.GetVolumeBackupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetVolumeBackupResponse.builder();
 
                                 builder.volumeBackup(response.getItem());
 
@@ -91,7 +100,8 @@ public class GetVolumeBackupConverter {
                                                     String.class));
                                 }
 
-                                GetVolumeBackupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetVolumeBackupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

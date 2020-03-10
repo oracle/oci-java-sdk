@@ -16,13 +16,15 @@ public class GetCertificateConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetCertificateRequest interceptRequest(GetCertificateRequest request) {
+    public static com.oracle.bmc.waas.requests.GetCertificateRequest interceptRequest(
+            com.oracle.bmc.waas.requests.GetCertificateRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetCertificateRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.GetCertificateRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
 
@@ -45,16 +47,21 @@ public class GetCertificateConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.waas.responses.GetCertificateResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.GetCertificateResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetCertificateResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.GetCertificateResponse>() {
                             @Override
-                            public GetCertificateResponse apply(
+                            public com.oracle.bmc.waas.responses.GetCertificateResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetCertificateResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.GetCertificateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +75,10 @@ public class GetCertificateConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetCertificateResponse.Builder builder =
-                                        GetCertificateResponse.builder();
+                                com.oracle.bmc.waas.responses.GetCertificateResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses.GetCertificateResponse
+                                                        .builder();
 
                                 builder.certificate(response.getItem());
 
@@ -94,7 +103,8 @@ public class GetCertificateConverter {
                                                     String.class));
                                 }
 
-                                GetCertificateResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.GetCertificateResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

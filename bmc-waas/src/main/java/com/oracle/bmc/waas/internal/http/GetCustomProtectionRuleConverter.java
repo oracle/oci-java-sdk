@@ -16,15 +16,15 @@ public class GetCustomProtectionRuleConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetCustomProtectionRuleRequest interceptRequest(
-            GetCustomProtectionRuleRequest request) {
+    public static com.oracle.bmc.waas.requests.GetCustomProtectionRuleRequest interceptRequest(
+            com.oracle.bmc.waas.requests.GetCustomProtectionRuleRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetCustomProtectionRuleRequest request) {
+            com.oracle.bmc.waas.requests.GetCustomProtectionRuleRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getCustomProtectionRuleId(), "customProtectionRuleId must not be blank");
@@ -49,18 +49,21 @@ public class GetCustomProtectionRuleConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetCustomProtectionRuleResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.GetCustomProtectionRuleResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetCustomProtectionRuleResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.GetCustomProtectionRuleResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetCustomProtectionRuleResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.GetCustomProtectionRuleResponse>() {
                             @Override
-                            public GetCustomProtectionRuleResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses.GetCustomProtectionRuleResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetCustomProtectionRuleResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.GetCustomProtectionRuleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +77,11 @@ public class GetCustomProtectionRuleConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetCustomProtectionRuleResponse.Builder builder =
-                                        GetCustomProtectionRuleResponse.builder();
+                                com.oracle.bmc.waas.responses.GetCustomProtectionRuleResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .GetCustomProtectionRuleResponse.builder();
 
                                 builder.customProtectionRule(response.getItem());
 
@@ -100,7 +106,8 @@ public class GetCustomProtectionRuleConverter {
                                                     String.class));
                                 }
 
-                                GetCustomProtectionRuleResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.GetCustomProtectionRuleResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

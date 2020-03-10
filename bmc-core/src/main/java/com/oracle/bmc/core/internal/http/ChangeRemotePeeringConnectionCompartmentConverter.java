@@ -16,15 +16,17 @@ public class ChangeRemotePeeringConnectionCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeRemotePeeringConnectionCompartmentRequest interceptRequest(
-            ChangeRemotePeeringConnectionCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeRemotePeeringConnectionCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeRemotePeeringConnectionCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeRemotePeeringConnectionCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeRemotePeeringConnectionCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getRemotePeeringConnectionId(),
@@ -59,19 +61,24 @@ public class ChangeRemotePeeringConnectionCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeRemotePeeringConnectionCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeRemotePeeringConnectionCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeRemotePeeringConnectionCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses
+                                .ChangeRemotePeeringConnectionCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeRemotePeeringConnectionCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeRemotePeeringConnectionCompartmentResponse>() {
                             @Override
-                            public ChangeRemotePeeringConnectionCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeRemotePeeringConnectionCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeRemotePeeringConnectionCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeRemotePeeringConnectionCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +89,13 @@ public class ChangeRemotePeeringConnectionCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeRemotePeeringConnectionCompartmentResponse.Builder builder =
-                                        ChangeRemotePeeringConnectionCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeRemotePeeringConnectionCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeRemotePeeringConnectionCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -106,8 +118,9 @@ public class ChangeRemotePeeringConnectionCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeRemotePeeringConnectionCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeRemotePeeringConnectionCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ImportKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ImportKeyRequest interceptRequest(ImportKeyRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.ImportKeyRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.ImportKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ImportKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.ImportKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getImportKeyDetails(), "importKeyDetails is required");
 
@@ -44,15 +46,22 @@ public class ImportKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ImportKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.ImportKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ImportKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.ImportKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ImportKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.ImportKeyResponse>() {
                             @Override
-                            public ImportKeyResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ImportKeyResponse");
+                            public com.oracle.bmc.keymanagement.responses.ImportKeyResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.ImportKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Key>>
@@ -63,7 +72,10 @@ public class ImportKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ImportKeyResponse.Builder builder = ImportKeyResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.ImportKeyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .ImportKeyResponse.builder();
 
                                 builder.key(response.getItem());
 
@@ -88,7 +100,8 @@ public class ImportKeyConverter {
                                                     String.class));
                                 }
 
-                                ImportKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.ImportKeyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

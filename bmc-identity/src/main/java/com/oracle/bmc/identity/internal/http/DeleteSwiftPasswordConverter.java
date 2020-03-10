@@ -16,13 +16,15 @@ public class DeleteSwiftPasswordConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSwiftPasswordRequest interceptRequest(DeleteSwiftPasswordRequest request) {
+    public static com.oracle.bmc.identity.requests.DeleteSwiftPasswordRequest interceptRequest(
+            com.oracle.bmc.identity.requests.DeleteSwiftPasswordRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteSwiftPasswordRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.DeleteSwiftPasswordRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
         Validate.notBlank(request.getSwiftPasswordId(), "swiftPasswordId must not be blank");
@@ -51,18 +53,21 @@ public class DeleteSwiftPasswordConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.DeleteSwiftPasswordResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.DeleteSwiftPasswordResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.DeleteSwiftPasswordResponse>() {
                             @Override
-                            public DeleteSwiftPasswordResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.DeleteSwiftPasswordResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteSwiftPasswordResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.DeleteSwiftPasswordResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +78,11 @@ public class DeleteSwiftPasswordConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSwiftPasswordResponse.Builder builder =
-                                        DeleteSwiftPasswordResponse.builder();
+                                com.oracle.bmc.identity.responses.DeleteSwiftPasswordResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .DeleteSwiftPasswordResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -88,7 +96,8 @@ public class DeleteSwiftPasswordConverter {
                                                     String.class));
                                 }
 
-                                DeleteSwiftPasswordResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.DeleteSwiftPasswordResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

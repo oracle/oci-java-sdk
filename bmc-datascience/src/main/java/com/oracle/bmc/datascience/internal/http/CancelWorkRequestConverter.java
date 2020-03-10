@@ -16,13 +16,15 @@ public class CancelWorkRequestConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CancelWorkRequestRequest interceptRequest(CancelWorkRequestRequest request) {
+    public static com.oracle.bmc.datascience.requests.CancelWorkRequestRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.CancelWorkRequestRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CancelWorkRequestRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.CancelWorkRequestRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
@@ -50,17 +52,21 @@ public class CancelWorkRequestConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CancelWorkRequestResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.CancelWorkRequestResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.CancelWorkRequestResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CancelWorkRequestResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.CancelWorkRequestResponse>() {
                             @Override
-                            public CancelWorkRequestResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses.CancelWorkRequestResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CancelWorkRequestResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.CancelWorkRequestResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,11 @@ public class CancelWorkRequestConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CancelWorkRequestResponse.Builder builder =
-                                        CancelWorkRequestResponse.builder();
+                                com.oracle.bmc.datascience.responses.CancelWorkRequestResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .CancelWorkRequestResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +95,8 @@ public class CancelWorkRequestConverter {
                                                     String.class));
                                 }
 
-                                CancelWorkRequestResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.CancelWorkRequestResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class UpdateSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateSourceRequest interceptRequest(UpdateSourceRequest request) {
+    public static com.oracle.bmc.applicationmigration.requests.UpdateSourceRequest interceptRequest(
+            com.oracle.bmc.applicationmigration.requests.UpdateSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.applicationmigration.requests.UpdateSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSourceId(), "sourceId must not be blank");
         Validate.notNull(request.getUpdateSourceDetails(), "updateSourceDetails is required");
@@ -50,16 +52,24 @@ public class UpdateSourceConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSourceResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.applicationmigration.responses.UpdateSourceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSourceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.applicationmigration.responses.UpdateSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.applicationmigration.responses
+                                        .UpdateSourceResponse>() {
                             @Override
-                            public UpdateSourceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateSourceResponse");
+                            public com.oracle.bmc.applicationmigration.responses
+                                            .UpdateSourceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.applicationmigration.responses.UpdateSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,8 +80,11 @@ public class UpdateSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateSourceResponse.Builder builder =
-                                        UpdateSourceResponse.builder();
+                                com.oracle.bmc.applicationmigration.responses.UpdateSourceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.applicationmigration.responses
+                                                        .UpdateSourceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -97,7 +110,8 @@ public class UpdateSourceConverter {
                                                     String.class));
                                 }
 
-                                UpdateSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.applicationmigration.responses.UpdateSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

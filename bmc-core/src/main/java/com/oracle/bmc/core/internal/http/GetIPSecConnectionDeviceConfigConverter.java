@@ -16,15 +16,16 @@ public class GetIPSecConnectionDeviceConfigConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetIPSecConnectionDeviceConfigRequest interceptRequest(
-            GetIPSecConnectionDeviceConfigRequest request) {
+    public static com.oracle.bmc.core.requests.GetIPSecConnectionDeviceConfigRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.GetIPSecConnectionDeviceConfigRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetIPSecConnectionDeviceConfigRequest request) {
+            com.oracle.bmc.core.requests.GetIPSecConnectionDeviceConfigRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
@@ -45,19 +46,23 @@ public class GetIPSecConnectionDeviceConfigConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetIPSecConnectionDeviceConfigResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetIPSecConnectionDeviceConfigResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionDeviceConfigResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetIPSecConnectionDeviceConfigResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetIPSecConnectionDeviceConfigResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .GetIPSecConnectionDeviceConfigResponse>() {
                             @Override
-                            public GetIPSecConnectionDeviceConfigResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .GetIPSecConnectionDeviceConfigResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetIPSecConnectionDeviceConfigResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetIPSecConnectionDeviceConfigResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -72,8 +77,12 @@ public class GetIPSecConnectionDeviceConfigConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetIPSecConnectionDeviceConfigResponse.Builder builder =
-                                        GetIPSecConnectionDeviceConfigResponse.builder();
+                                com.oracle.bmc.core.responses.GetIPSecConnectionDeviceConfigResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetIPSecConnectionDeviceConfigResponse
+                                                        .builder();
 
                                 builder.iPSecConnectionDeviceConfig(response.getItem());
 
@@ -98,8 +107,8 @@ public class GetIPSecConnectionDeviceConfigConverter {
                                                     String.class));
                                 }
 
-                                GetIPSecConnectionDeviceConfigResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.GetIPSecConnectionDeviceConfigResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

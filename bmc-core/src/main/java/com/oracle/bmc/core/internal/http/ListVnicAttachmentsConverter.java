@@ -16,13 +16,15 @@ public class ListVnicAttachmentsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListVnicAttachmentsRequest interceptRequest(ListVnicAttachmentsRequest request) {
+    public static com.oracle.bmc.core.requests.ListVnicAttachmentsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListVnicAttachmentsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListVnicAttachmentsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListVnicAttachmentsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -83,18 +85,21 @@ public class ListVnicAttachmentsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListVnicAttachmentsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListVnicAttachmentsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListVnicAttachmentsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListVnicAttachmentsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListVnicAttachmentsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListVnicAttachmentsResponse>() {
                             @Override
-                            public ListVnicAttachmentsResponse apply(
+                            public com.oracle.bmc.core.responses.ListVnicAttachmentsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListVnicAttachmentsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListVnicAttachmentsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -111,8 +116,10 @@ public class ListVnicAttachmentsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListVnicAttachmentsResponse.Builder builder =
-                                        ListVnicAttachmentsResponse.builder();
+                                com.oracle.bmc.core.responses.ListVnicAttachmentsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListVnicAttachmentsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -140,7 +147,8 @@ public class ListVnicAttachmentsConverter {
                                                     String.class));
                                 }
 
-                                ListVnicAttachmentsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListVnicAttachmentsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

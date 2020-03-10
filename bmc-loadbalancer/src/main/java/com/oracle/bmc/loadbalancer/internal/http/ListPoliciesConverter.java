@@ -16,13 +16,15 @@ public class ListPoliciesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListPoliciesRequest interceptRequest(ListPoliciesRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.ListPoliciesRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.ListPoliciesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListPoliciesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.ListPoliciesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -62,16 +64,22 @@ public class ListPoliciesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.ListPoliciesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.ListPoliciesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListPoliciesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.ListPoliciesResponse>() {
                             @Override
-                            public ListPoliciesResponse apply(
+                            public com.oracle.bmc.loadbalancer.responses.ListPoliciesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListPoliciesResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.ListPoliciesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -88,8 +96,10 @@ public class ListPoliciesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListPoliciesResponse.Builder builder =
-                                        ListPoliciesResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.ListPoliciesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .ListPoliciesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -117,7 +127,8 @@ public class ListPoliciesConverter {
                                                     String.class));
                                 }
 
-                                ListPoliciesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.ListPoliciesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

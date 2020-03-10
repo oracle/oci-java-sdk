@@ -16,13 +16,15 @@ public class DeleteClusterConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteClusterRequest interceptRequest(DeleteClusterRequest request) {
+    public static com.oracle.bmc.containerengine.requests.DeleteClusterRequest interceptRequest(
+            com.oracle.bmc.containerengine.requests.DeleteClusterRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteClusterRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.containerengine.requests.DeleteClusterRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
 
@@ -49,16 +51,22 @@ public class DeleteClusterConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteClusterResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.containerengine.responses.DeleteClusterResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteClusterResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.containerengine.responses.DeleteClusterResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteClusterResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.containerengine.responses.DeleteClusterResponse>() {
                             @Override
-                            public DeleteClusterResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteClusterResponse");
+                            public com.oracle.bmc.containerengine.responses.DeleteClusterResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.containerengine.responses.DeleteClusterResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +77,11 @@ public class DeleteClusterConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteClusterResponse.Builder builder =
-                                        DeleteClusterResponse.builder();
+                                com.oracle.bmc.containerengine.responses.DeleteClusterResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.containerengine.responses
+                                                        .DeleteClusterResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -96,7 +107,8 @@ public class DeleteClusterConverter {
                                                     String.class));
                                 }
 
-                                DeleteClusterResponse responseWrapper = builder.build();
+                                com.oracle.bmc.containerengine.responses.DeleteClusterResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

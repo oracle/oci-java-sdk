@@ -16,15 +16,18 @@ public class TerminateAutonomousExadataInfrastructureConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static TerminateAutonomousExadataInfrastructureRequest interceptRequest(
-            TerminateAutonomousExadataInfrastructureRequest request) {
+    public static com.oracle.bmc.database.requests.TerminateAutonomousExadataInfrastructureRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.TerminateAutonomousExadataInfrastructureRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            TerminateAutonomousExadataInfrastructureRequest request) {
+            com.oracle.bmc.database.requests.TerminateAutonomousExadataInfrastructureRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousExadataInfrastructureId(),
@@ -50,19 +53,25 @@ public class TerminateAutonomousExadataInfrastructureConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, TerminateAutonomousExadataInfrastructureResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses
+                            .TerminateAutonomousExadataInfrastructureResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, TerminateAutonomousExadataInfrastructureResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .TerminateAutonomousExadataInfrastructureResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                TerminateAutonomousExadataInfrastructureResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .TerminateAutonomousExadataInfrastructureResponse>() {
                             @Override
-                            public TerminateAutonomousExadataInfrastructureResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .TerminateAutonomousExadataInfrastructureResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for TerminateAutonomousExadataInfrastructureResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.TerminateAutonomousExadataInfrastructureResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +82,13 @@ public class TerminateAutonomousExadataInfrastructureConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                TerminateAutonomousExadataInfrastructureResponse.Builder builder =
-                                        TerminateAutonomousExadataInfrastructureResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .TerminateAutonomousExadataInfrastructureResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .TerminateAutonomousExadataInfrastructureResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -100,8 +114,9 @@ public class TerminateAutonomousExadataInfrastructureConverter {
                                                     String.class));
                                 }
 
-                                TerminateAutonomousExadataInfrastructureResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .TerminateAutonomousExadataInfrastructureResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

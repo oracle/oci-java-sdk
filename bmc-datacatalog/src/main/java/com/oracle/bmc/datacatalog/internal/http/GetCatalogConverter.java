@@ -16,13 +16,15 @@ public class GetCatalogConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetCatalogRequest interceptRequest(GetCatalogRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.GetCatalogRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.GetCatalogRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetCatalogRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.GetCatalogRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetCatalogConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetCatalogResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.GetCatalogResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetCatalogResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.GetCatalogResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetCatalogResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.GetCatalogResponse>() {
                             @Override
-                            public GetCatalogResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetCatalogResponse");
+                            public com.oracle.bmc.datacatalog.responses.GetCatalogResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.GetCatalogResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Catalog>>
@@ -65,7 +74,10 @@ public class GetCatalogConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetCatalogResponse.Builder builder = GetCatalogResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.GetCatalogResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .GetCatalogResponse.builder();
 
                                 builder.catalog(response.getItem());
 
@@ -90,7 +102,8 @@ public class GetCatalogConverter {
                                                     String.class));
                                 }
 
-                                GetCatalogResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.GetCatalogResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

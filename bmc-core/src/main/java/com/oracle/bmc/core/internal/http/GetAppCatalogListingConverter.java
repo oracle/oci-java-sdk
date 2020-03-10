@@ -16,14 +16,15 @@ public class GetAppCatalogListingConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetAppCatalogListingRequest interceptRequest(
-            GetAppCatalogListingRequest request) {
+    public static com.oracle.bmc.core.requests.GetAppCatalogListingRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetAppCatalogListingRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetAppCatalogListingRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetAppCatalogListingRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getListingId(), "listingId must not be blank");
 
@@ -43,18 +44,21 @@ public class GetAppCatalogListingConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetAppCatalogListingResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetAppCatalogListingResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAppCatalogListingResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetAppCatalogListingResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetAppCatalogListingResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetAppCatalogListingResponse>() {
                             @Override
-                            public GetAppCatalogListingResponse apply(
+                            public com.oracle.bmc.core.responses.GetAppCatalogListingResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetAppCatalogListingResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetAppCatalogListingResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +72,10 @@ public class GetAppCatalogListingConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetAppCatalogListingResponse.Builder builder =
-                                        GetAppCatalogListingResponse.builder();
+                                com.oracle.bmc.core.responses.GetAppCatalogListingResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetAppCatalogListingResponse.builder();
 
                                 builder.appCatalogListing(response.getItem());
 
@@ -94,7 +100,8 @@ public class GetAppCatalogListingConverter {
                                                     String.class));
                                 }
 
-                                GetAppCatalogListingResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetAppCatalogListingResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

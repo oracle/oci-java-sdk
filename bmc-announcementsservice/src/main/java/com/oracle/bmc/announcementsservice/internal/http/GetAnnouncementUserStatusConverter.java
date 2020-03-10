@@ -16,15 +16,17 @@ public class GetAnnouncementUserStatusConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetAnnouncementUserStatusRequest interceptRequest(
-            GetAnnouncementUserStatusRequest request) {
+    public static com.oracle.bmc.announcementsservice.requests.GetAnnouncementUserStatusRequest
+            interceptRequest(
+                    com.oracle.bmc.announcementsservice.requests.GetAnnouncementUserStatusRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetAnnouncementUserStatusRequest request) {
+            com.oracle.bmc.announcementsservice.requests.GetAnnouncementUserStatusRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAnnouncementId(), "announcementId must not be blank");
 
@@ -49,18 +51,24 @@ public class GetAnnouncementUserStatusConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetAnnouncementUserStatusResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.announcementsservice.responses.GetAnnouncementUserStatusResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAnnouncementUserStatusResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.announcementsservice.responses
+                                .GetAnnouncementUserStatusResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetAnnouncementUserStatusResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.announcementsservice.responses
+                                        .GetAnnouncementUserStatusResponse>() {
                             @Override
-                            public GetAnnouncementUserStatusResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.announcementsservice.responses
+                                            .GetAnnouncementUserStatusResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetAnnouncementUserStatusResponse");
+                                        "Transform function invoked for com.oracle.bmc.announcementsservice.responses.GetAnnouncementUserStatusResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -75,8 +83,12 @@ public class GetAnnouncementUserStatusConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetAnnouncementUserStatusResponse.Builder builder =
-                                        GetAnnouncementUserStatusResponse.builder();
+                                com.oracle.bmc.announcementsservice.responses
+                                                .GetAnnouncementUserStatusResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.announcementsservice.responses
+                                                        .GetAnnouncementUserStatusResponse
+                                                        .builder();
 
                                 builder.announcementUserStatusDetails(response.getItem());
 
@@ -92,7 +104,9 @@ public class GetAnnouncementUserStatusConverter {
                                                     String.class));
                                 }
 
-                                GetAnnouncementUserStatusResponse responseWrapper = builder.build();
+                                com.oracle.bmc.announcementsservice.responses
+                                                .GetAnnouncementUserStatusResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

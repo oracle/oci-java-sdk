@@ -16,15 +16,15 @@ public class UpdateExadataIormConfigConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateExadataIormConfigRequest interceptRequest(
-            UpdateExadataIormConfigRequest request) {
+    public static com.oracle.bmc.database.requests.UpdateExadataIormConfigRequest interceptRequest(
+            com.oracle.bmc.database.requests.UpdateExadataIormConfigRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateExadataIormConfigRequest request) {
+            com.oracle.bmc.database.requests.UpdateExadataIormConfigRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
         Validate.notNull(
@@ -56,18 +56,22 @@ public class UpdateExadataIormConfigConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateExadataIormConfigResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.UpdateExadataIormConfigResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateExadataIormConfigResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.UpdateExadataIormConfigResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateExadataIormConfigResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .UpdateExadataIormConfigResponse>() {
                             @Override
-                            public UpdateExadataIormConfigResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.UpdateExadataIormConfigResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateExadataIormConfigResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.UpdateExadataIormConfigResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -81,8 +85,11 @@ public class UpdateExadataIormConfigConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateExadataIormConfigResponse.Builder builder =
-                                        UpdateExadataIormConfigResponse.builder();
+                                com.oracle.bmc.database.responses.UpdateExadataIormConfigResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .UpdateExadataIormConfigResponse.builder();
 
                                 builder.exadataIormConfig(response.getItem());
 
@@ -119,7 +126,8 @@ public class UpdateExadataIormConfigConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateExadataIormConfigResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.UpdateExadataIormConfigResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

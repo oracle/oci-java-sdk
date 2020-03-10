@@ -16,13 +16,15 @@ public class GetManagedInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetManagedInstanceRequest interceptRequest(GetManagedInstanceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.GetManagedInstanceRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.GetManagedInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetManagedInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.GetManagedInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
 
@@ -46,17 +48,22 @@ public class GetManagedInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetManagedInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.GetManagedInstanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetManagedInstanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.GetManagedInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetManagedInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .GetManagedInstanceResponse>() {
                             @Override
-                            public GetManagedInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses.GetManagedInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetManagedInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.GetManagedInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -70,8 +77,11 @@ public class GetManagedInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetManagedInstanceResponse.Builder builder =
-                                        GetManagedInstanceResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.GetManagedInstanceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .GetManagedInstanceResponse.builder();
 
                                 builder.managedInstance(response.getItem());
 
@@ -87,7 +97,8 @@ public class GetManagedInstanceConverter {
                                                     String.class));
                                 }
 
-                                GetManagedInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.GetManagedInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

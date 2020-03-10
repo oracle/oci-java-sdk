@@ -16,13 +16,15 @@ public class SearchResourcesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static SearchResourcesRequest interceptRequest(SearchResourcesRequest request) {
+    public static com.oracle.bmc.resourcesearch.requests.SearchResourcesRequest interceptRequest(
+            com.oracle.bmc.resourcesearch.requests.SearchResourcesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, SearchResourcesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcesearch.requests.SearchResourcesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getSearchDetails(), "searchDetails is required");
 
@@ -57,16 +59,21 @@ public class SearchResourcesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, SearchResourcesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcesearch.responses.SearchResourcesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, SearchResourcesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcesearch.responses.SearchResourcesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, SearchResourcesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcesearch.responses.SearchResourcesResponse>() {
                             @Override
-                            public SearchResourcesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for SearchResourcesResponse");
+                            public com.oracle.bmc.resourcesearch.responses.SearchResourcesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.resourcesearch.responses.SearchResourcesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -80,8 +87,11 @@ public class SearchResourcesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                SearchResourcesResponse.Builder builder =
-                                        SearchResourcesResponse.builder();
+                                com.oracle.bmc.resourcesearch.responses.SearchResourcesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.resourcesearch.responses
+                                                        .SearchResourcesResponse.builder();
 
                                 builder.resourceSummaryCollection(response.getItem());
 
@@ -109,7 +119,8 @@ public class SearchResourcesConverter {
                                                     String.class));
                                 }
 
-                                SearchResourcesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcesearch.responses.SearchResourcesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

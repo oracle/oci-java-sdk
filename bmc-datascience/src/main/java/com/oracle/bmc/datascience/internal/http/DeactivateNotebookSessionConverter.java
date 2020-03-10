@@ -16,15 +16,16 @@ public class DeactivateNotebookSessionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeactivateNotebookSessionRequest interceptRequest(
-            DeactivateNotebookSessionRequest request) {
+    public static com.oracle.bmc.datascience.requests.DeactivateNotebookSessionRequest
+            interceptRequest(
+                    com.oracle.bmc.datascience.requests.DeactivateNotebookSessionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeactivateNotebookSessionRequest request) {
+            com.oracle.bmc.datascience.requests.DeactivateNotebookSessionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
 
@@ -54,18 +55,23 @@ public class DeactivateNotebookSessionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeactivateNotebookSessionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.DeactivateNotebookSessionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeactivateNotebookSessionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.DeactivateNotebookSessionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeactivateNotebookSessionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses
+                                        .DeactivateNotebookSessionResponse>() {
                             @Override
-                            public DeactivateNotebookSessionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses
+                                            .DeactivateNotebookSessionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeactivateNotebookSessionResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.DeactivateNotebookSessionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +82,12 @@ public class DeactivateNotebookSessionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeactivateNotebookSessionResponse.Builder builder =
-                                        DeactivateNotebookSessionResponse.builder();
+                                com.oracle.bmc.datascience.responses
+                                                .DeactivateNotebookSessionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .DeactivateNotebookSessionResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -103,7 +113,9 @@ public class DeactivateNotebookSessionConverter {
                                                     String.class));
                                 }
 
-                                DeactivateNotebookSessionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses
+                                                .DeactivateNotebookSessionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

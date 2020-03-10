@@ -16,13 +16,15 @@ public class DeleteCatalogConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteCatalogRequest interceptRequest(DeleteCatalogRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.DeleteCatalogRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.DeleteCatalogRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteCatalogRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.DeleteCatalogRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
 
@@ -49,16 +51,22 @@ public class DeleteCatalogConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCatalogResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.DeleteCatalogResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCatalogResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.DeleteCatalogResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteCatalogResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.DeleteCatalogResponse>() {
                             @Override
-                            public DeleteCatalogResponse apply(
+                            public com.oracle.bmc.datacatalog.responses.DeleteCatalogResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteCatalogResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.DeleteCatalogResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +77,10 @@ public class DeleteCatalogConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteCatalogResponse.Builder builder =
-                                        DeleteCatalogResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.DeleteCatalogResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .DeleteCatalogResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -96,7 +106,8 @@ public class DeleteCatalogConverter {
                                                     String.class));
                                 }
 
-                                DeleteCatalogResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.DeleteCatalogResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

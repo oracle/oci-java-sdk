@@ -16,13 +16,15 @@ public class UpdateTagConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateTagRequest interceptRequest(UpdateTagRequest request) {
+    public static com.oracle.bmc.identity.requests.UpdateTagRequest interceptRequest(
+            com.oracle.bmc.identity.requests.UpdateTagRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateTagRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.UpdateTagRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTagNamespaceId(), "tagNamespaceId must not be blank");
         Validate.notBlank(request.getTagName(), "tagName must not be blank");
@@ -51,15 +53,21 @@ public class UpdateTagConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.identity.responses.UpdateTagResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.UpdateTagResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateTagResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.UpdateTagResponse>() {
                             @Override
-                            public UpdateTagResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateTagResponse");
+                            public com.oracle.bmc.identity.responses.UpdateTagResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.UpdateTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Tag>>
@@ -70,7 +78,10 @@ public class UpdateTagConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateTagResponse.Builder builder = UpdateTagResponse.builder();
+                                com.oracle.bmc.identity.responses.UpdateTagResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses.UpdateTagResponse
+                                                        .builder();
 
                                 builder.tag(response.getItem());
 
@@ -95,7 +106,8 @@ public class UpdateTagConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateTagResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.UpdateTagResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

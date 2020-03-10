@@ -16,13 +16,15 @@ public class CreateImageConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateImageRequest interceptRequest(CreateImageRequest request) {
+    public static com.oracle.bmc.core.requests.CreateImageRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateImageRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateImageRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateImageRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateImageDetails(), "createImageDetails is required");
 
@@ -40,16 +42,21 @@ public class CreateImageConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateImageResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.CreateImageResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateImageResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateImageResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateImageResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateImageResponse>() {
                             @Override
-                            public CreateImageResponse apply(
+                            public com.oracle.bmc.core.responses.CreateImageResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateImageResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateImageResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Image>>
@@ -61,7 +68,8 @@ public class CreateImageConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateImageResponse.Builder builder = CreateImageResponse.builder();
+                                com.oracle.bmc.core.responses.CreateImageResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.CreateImageResponse.builder();
 
                                 builder.image(response.getItem());
 
@@ -98,7 +106,8 @@ public class CreateImageConverter {
                                                     String.class));
                                 }
 
-                                CreateImageResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateImageResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

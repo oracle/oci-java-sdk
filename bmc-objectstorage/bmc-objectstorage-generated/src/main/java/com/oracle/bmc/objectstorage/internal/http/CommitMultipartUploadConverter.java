@@ -16,14 +16,16 @@ public class CommitMultipartUploadConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CommitMultipartUploadRequest interceptRequest(
-            CommitMultipartUploadRequest request) {
+    public static com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest
+            interceptRequest(
+                    com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CommitMultipartUploadRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
         Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
@@ -75,18 +77,23 @@ public class CommitMultipartUploadConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CommitMultipartUploadResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CommitMultipartUploadResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CommitMultipartUploadResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.objectstorage.responses
+                                        .CommitMultipartUploadResponse>() {
                             @Override
-                            public CommitMultipartUploadResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.objectstorage.responses
+                                            .CommitMultipartUploadResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CommitMultipartUploadResponse");
+                                        "Transform function invoked for com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -97,8 +104,11 @@ public class CommitMultipartUploadConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CommitMultipartUploadResponse.Builder builder =
-                                        CommitMultipartUploadResponse.builder();
+                                com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.objectstorage.responses
+                                                        .CommitMultipartUploadResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =
@@ -157,7 +167,8 @@ public class CommitMultipartUploadConverter {
                                                     java.util.Date.class));
                                 }
 
-                                CommitMultipartUploadResponse responseWrapper = builder.build();
+                                com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

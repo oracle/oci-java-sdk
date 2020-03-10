@@ -16,13 +16,15 @@ public class DeleteDomainRecordsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteDomainRecordsRequest interceptRequest(DeleteDomainRecordsRequest request) {
+    public static com.oracle.bmc.dns.requests.DeleteDomainRecordsRequest interceptRequest(
+            com.oracle.bmc.dns.requests.DeleteDomainRecordsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteDomainRecordsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.DeleteDomainRecordsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getZoneNameOrId(), "zoneNameOrId must not be blank");
         Validate.notBlank(request.getDomain(), "domain must not be blank");
@@ -67,18 +69,21 @@ public class DeleteDomainRecordsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteDomainRecordsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.DeleteDomainRecordsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDomainRecordsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.DeleteDomainRecordsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteDomainRecordsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.DeleteDomainRecordsResponse>() {
                             @Override
-                            public DeleteDomainRecordsResponse apply(
+                            public com.oracle.bmc.dns.responses.DeleteDomainRecordsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteDomainRecordsResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.DeleteDomainRecordsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -89,8 +94,10 @@ public class DeleteDomainRecordsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteDomainRecordsResponse.Builder builder =
-                                        DeleteDomainRecordsResponse.builder();
+                                com.oracle.bmc.dns.responses.DeleteDomainRecordsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .DeleteDomainRecordsResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -104,7 +111,8 @@ public class DeleteDomainRecordsConverter {
                                                     String.class));
                                 }
 
-                                DeleteDomainRecordsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.DeleteDomainRecordsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

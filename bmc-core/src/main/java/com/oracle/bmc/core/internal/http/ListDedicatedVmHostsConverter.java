@@ -16,14 +16,15 @@ public class ListDedicatedVmHostsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDedicatedVmHostsRequest interceptRequest(
-            ListDedicatedVmHostsRequest request) {
+    public static com.oracle.bmc.core.requests.ListDedicatedVmHostsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListDedicatedVmHostsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListDedicatedVmHostsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ListDedicatedVmHostsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -112,18 +113,21 @@ public class ListDedicatedVmHostsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDedicatedVmHostsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListDedicatedVmHostsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDedicatedVmHostsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListDedicatedVmHostsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDedicatedVmHostsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListDedicatedVmHostsResponse>() {
                             @Override
-                            public ListDedicatedVmHostsResponse apply(
+                            public com.oracle.bmc.core.responses.ListDedicatedVmHostsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDedicatedVmHostsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListDedicatedVmHostsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -140,8 +144,10 @@ public class ListDedicatedVmHostsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDedicatedVmHostsResponse.Builder builder =
-                                        ListDedicatedVmHostsResponse.builder();
+                                com.oracle.bmc.core.responses.ListDedicatedVmHostsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListDedicatedVmHostsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -169,7 +175,8 @@ public class ListDedicatedVmHostsConverter {
                                                     String.class));
                                 }
 
-                                ListDedicatedVmHostsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListDedicatedVmHostsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

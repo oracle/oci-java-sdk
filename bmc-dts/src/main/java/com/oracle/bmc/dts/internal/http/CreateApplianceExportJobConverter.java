@@ -16,15 +16,15 @@ public class CreateApplianceExportJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateApplianceExportJobRequest interceptRequest(
-            CreateApplianceExportJobRequest request) {
+    public static com.oracle.bmc.dts.requests.CreateApplianceExportJobRequest interceptRequest(
+            com.oracle.bmc.dts.requests.CreateApplianceExportJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateApplianceExportJobRequest request) {
+            com.oracle.bmc.dts.requests.CreateApplianceExportJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateApplianceExportJobDetails(),
@@ -49,18 +49,21 @@ public class CreateApplianceExportJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateApplianceExportJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.CreateApplianceExportJobResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateApplianceExportJobResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.CreateApplianceExportJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateApplianceExportJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.CreateApplianceExportJobResponse>() {
                             @Override
-                            public CreateApplianceExportJobResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses.CreateApplianceExportJobResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateApplianceExportJobResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.CreateApplianceExportJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +77,11 @@ public class CreateApplianceExportJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateApplianceExportJobResponse.Builder builder =
-                                        CreateApplianceExportJobResponse.builder();
+                                com.oracle.bmc.dts.responses.CreateApplianceExportJobResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .CreateApplianceExportJobResponse.builder();
 
                                 builder.applianceExportJob(response.getItem());
 
@@ -100,7 +106,8 @@ public class CreateApplianceExportJobConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateApplianceExportJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.CreateApplianceExportJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

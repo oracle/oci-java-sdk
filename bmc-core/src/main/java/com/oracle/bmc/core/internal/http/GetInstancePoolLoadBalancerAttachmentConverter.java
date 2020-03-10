@@ -16,15 +16,17 @@ public class GetInstancePoolLoadBalancerAttachmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetInstancePoolLoadBalancerAttachmentRequest interceptRequest(
-            GetInstancePoolLoadBalancerAttachmentRequest request) {
+    public static com.oracle.bmc.core.requests.GetInstancePoolLoadBalancerAttachmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.GetInstancePoolLoadBalancerAttachmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetInstancePoolLoadBalancerAttachmentRequest request) {
+            com.oracle.bmc.core.requests.GetInstancePoolLoadBalancerAttachmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getInstancePoolId(), "instancePoolId must not be blank");
         Validate.notBlank(
@@ -51,19 +53,23 @@ public class GetInstancePoolLoadBalancerAttachmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetInstancePoolLoadBalancerAttachmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetInstancePoolLoadBalancerAttachmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetInstancePoolLoadBalancerAttachmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetInstancePoolLoadBalancerAttachmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                GetInstancePoolLoadBalancerAttachmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .GetInstancePoolLoadBalancerAttachmentResponse>() {
                             @Override
-                            public GetInstancePoolLoadBalancerAttachmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .GetInstancePoolLoadBalancerAttachmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetInstancePoolLoadBalancerAttachmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetInstancePoolLoadBalancerAttachmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,8 +84,13 @@ public class GetInstancePoolLoadBalancerAttachmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetInstancePoolLoadBalancerAttachmentResponse.Builder builder =
-                                        GetInstancePoolLoadBalancerAttachmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .GetInstancePoolLoadBalancerAttachmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetInstancePoolLoadBalancerAttachmentResponse
+                                                        .builder();
 
                                 builder.instancePoolLoadBalancerAttachment(response.getItem());
 
@@ -95,8 +106,9 @@ public class GetInstancePoolLoadBalancerAttachmentConverter {
                                                     String.class));
                                 }
 
-                                GetInstancePoolLoadBalancerAttachmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .GetInstancePoolLoadBalancerAttachmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

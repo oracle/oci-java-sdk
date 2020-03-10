@@ -16,13 +16,15 @@ public class CreateCrossConnectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateCrossConnectRequest interceptRequest(CreateCrossConnectRequest request) {
+    public static com.oracle.bmc.core.requests.CreateCrossConnectRequest interceptRequest(
+            com.oracle.bmc.core.requests.CreateCrossConnectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateCrossConnectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.CreateCrossConnectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateCrossConnectDetails(), "createCrossConnectDetails is required");
@@ -42,17 +44,21 @@ public class CreateCrossConnectConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateCrossConnectResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.CreateCrossConnectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.CreateCrossConnectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateCrossConnectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.CreateCrossConnectResponse>() {
                             @Override
-                            public CreateCrossConnectResponse apply(
+                            public com.oracle.bmc.core.responses.CreateCrossConnectResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateCrossConnectResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.CreateCrossConnectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateCrossConnectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateCrossConnectResponse.Builder builder =
-                                        CreateCrossConnectResponse.builder();
+                                com.oracle.bmc.core.responses.CreateCrossConnectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .CreateCrossConnectResponse.builder();
 
                                 builder.crossConnect(response.getItem());
 
@@ -92,7 +100,8 @@ public class CreateCrossConnectConverter {
                                                     String.class));
                                 }
 
-                                CreateCrossConnectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.CreateCrossConnectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

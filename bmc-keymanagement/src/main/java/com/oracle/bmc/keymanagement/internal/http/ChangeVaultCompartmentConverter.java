@@ -16,14 +16,16 @@ public class ChangeVaultCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeVaultCompartmentRequest interceptRequest(
-            ChangeVaultCompartmentRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.ChangeVaultCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.keymanagement.requests.ChangeVaultCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeVaultCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.ChangeVaultCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVaultId(), "vaultId must not be blank");
         Validate.notNull(
@@ -61,18 +63,23 @@ public class ChangeVaultCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeVaultCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.ChangeVaultCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeVaultCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.ChangeVaultCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeVaultCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses
+                                        .ChangeVaultCompartmentResponse>() {
                             @Override
-                            public ChangeVaultCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.keymanagement.responses
+                                            .ChangeVaultCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeVaultCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.ChangeVaultCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +90,11 @@ public class ChangeVaultCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeVaultCompartmentResponse.Builder builder =
-                                        ChangeVaultCompartmentResponse.builder();
+                                com.oracle.bmc.keymanagement.responses
+                                                .ChangeVaultCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .ChangeVaultCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -107,7 +117,9 @@ public class ChangeVaultCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeVaultCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses
+                                                .ChangeVaultCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

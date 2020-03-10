@@ -16,13 +16,15 @@ public class CreateNodePoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateNodePoolRequest interceptRequest(CreateNodePoolRequest request) {
+    public static com.oracle.bmc.containerengine.requests.CreateNodePoolRequest interceptRequest(
+            com.oracle.bmc.containerengine.requests.CreateNodePoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateNodePoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.containerengine.requests.CreateNodePoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateNodePoolDetails(), "createNodePoolDetails is required");
 
@@ -44,16 +46,22 @@ public class CreateNodePoolConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateNodePoolResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.containerengine.responses.CreateNodePoolResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateNodePoolResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.containerengine.responses.CreateNodePoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateNodePoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.containerengine.responses.CreateNodePoolResponse>() {
                             @Override
-                            public CreateNodePoolResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateNodePoolResponse");
+                            public com.oracle.bmc.containerengine.responses.CreateNodePoolResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.containerengine.responses.CreateNodePoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -64,8 +72,11 @@ public class CreateNodePoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateNodePoolResponse.Builder builder =
-                                        CreateNodePoolResponse.builder();
+                                com.oracle.bmc.containerengine.responses.CreateNodePoolResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.containerengine.responses
+                                                        .CreateNodePoolResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -91,7 +102,8 @@ public class CreateNodePoolConverter {
                                                     String.class));
                                 }
 
-                                CreateNodePoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.containerengine.responses.CreateNodePoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

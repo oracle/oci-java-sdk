@@ -16,13 +16,15 @@ public class DeleteDrgConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteDrgRequest interceptRequest(DeleteDrgRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteDrgRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteDrgRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteDrgRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteDrgRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
@@ -45,15 +47,20 @@ public class DeleteDrgConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DeleteDrgResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DeleteDrgResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteDrgResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteDrgResponse>() {
                             @Override
-                            public DeleteDrgResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteDrgResponse");
+                            public com.oracle.bmc.core.responses.DeleteDrgResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteDrgResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -64,7 +71,8 @@ public class DeleteDrgConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteDrgResponse.Builder builder = DeleteDrgResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteDrgResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.DeleteDrgResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -78,7 +86,8 @@ public class DeleteDrgConverter {
                                                     String.class));
                                 }
 
-                                DeleteDrgResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteDrgResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

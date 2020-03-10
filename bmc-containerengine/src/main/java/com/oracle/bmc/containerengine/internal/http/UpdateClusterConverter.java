@@ -16,13 +16,15 @@ public class UpdateClusterConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateClusterRequest interceptRequest(UpdateClusterRequest request) {
+    public static com.oracle.bmc.containerengine.requests.UpdateClusterRequest interceptRequest(
+            com.oracle.bmc.containerengine.requests.UpdateClusterRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateClusterRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.containerengine.requests.UpdateClusterRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getClusterId(), "clusterId must not be blank");
         Validate.notNull(request.getUpdateClusterDetails(), "updateClusterDetails is required");
@@ -50,16 +52,22 @@ public class UpdateClusterConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateClusterResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.containerengine.responses.UpdateClusterResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateClusterResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.containerengine.responses.UpdateClusterResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateClusterResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.containerengine.responses.UpdateClusterResponse>() {
                             @Override
-                            public UpdateClusterResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateClusterResponse");
+                            public com.oracle.bmc.containerengine.responses.UpdateClusterResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.containerengine.responses.UpdateClusterResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,8 +78,11 @@ public class UpdateClusterConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateClusterResponse.Builder builder =
-                                        UpdateClusterResponse.builder();
+                                com.oracle.bmc.containerengine.responses.UpdateClusterResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.containerengine.responses
+                                                        .UpdateClusterResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -97,7 +108,8 @@ public class UpdateClusterConverter {
                                                     String.class));
                                 }
 
-                                UpdateClusterResponse responseWrapper = builder.build();
+                                com.oracle.bmc.containerengine.responses.UpdateClusterResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

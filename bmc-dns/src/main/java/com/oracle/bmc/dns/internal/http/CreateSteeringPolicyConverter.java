@@ -16,14 +16,15 @@ public class CreateSteeringPolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateSteeringPolicyRequest interceptRequest(
-            CreateSteeringPolicyRequest request) {
+    public static com.oracle.bmc.dns.requests.CreateSteeringPolicyRequest interceptRequest(
+            com.oracle.bmc.dns.requests.CreateSteeringPolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateSteeringPolicyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.CreateSteeringPolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateSteeringPolicyDetails(),
@@ -48,18 +49,21 @@ public class CreateSteeringPolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateSteeringPolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSteeringPolicyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateSteeringPolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse>() {
                             @Override
-                            public CreateSteeringPolicyResponse apply(
+                            public com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateSteeringPolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +77,10 @@ public class CreateSteeringPolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateSteeringPolicyResponse.Builder builder =
-                                        CreateSteeringPolicyResponse.builder();
+                                com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .CreateSteeringPolicyResponse.builder();
 
                                 builder.steeringPolicy(response.getItem());
 
@@ -99,7 +105,8 @@ public class CreateSteeringPolicyConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                CreateSteeringPolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

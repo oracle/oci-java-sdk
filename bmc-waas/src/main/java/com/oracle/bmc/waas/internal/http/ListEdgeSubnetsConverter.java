@@ -16,13 +16,15 @@ public class ListEdgeSubnetsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListEdgeSubnetsRequest interceptRequest(ListEdgeSubnetsRequest request) {
+    public static com.oracle.bmc.waas.requests.ListEdgeSubnetsRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListEdgeSubnetsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListEdgeSubnetsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListEdgeSubnetsRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -72,16 +74,21 @@ public class ListEdgeSubnetsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListEdgeSubnetsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ListEdgeSubnetsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEdgeSubnetsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListEdgeSubnetsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListEdgeSubnetsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListEdgeSubnetsResponse>() {
                             @Override
-                            public ListEdgeSubnetsResponse apply(
+                            public com.oracle.bmc.waas.responses.ListEdgeSubnetsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListEdgeSubnetsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListEdgeSubnetsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -96,8 +103,10 @@ public class ListEdgeSubnetsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListEdgeSubnetsResponse.Builder builder =
-                                        ListEdgeSubnetsResponse.builder();
+                                com.oracle.bmc.waas.responses.ListEdgeSubnetsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ListEdgeSubnetsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -125,7 +134,8 @@ public class ListEdgeSubnetsConverter {
                                                     String.class));
                                 }
 
-                                ListEdgeSubnetsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListEdgeSubnetsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

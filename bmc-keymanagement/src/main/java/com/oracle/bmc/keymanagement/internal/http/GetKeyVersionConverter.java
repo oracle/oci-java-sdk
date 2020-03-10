@@ -16,13 +16,15 @@ public class GetKeyVersionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetKeyVersionRequest interceptRequest(GetKeyVersionRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.GetKeyVersionRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.GetKeyVersionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetKeyVersionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.GetKeyVersionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getKeyId(), "keyId must not be blank");
         Validate.notBlank(request.getKeyVersionId(), "keyVersionId must not be blank");
@@ -51,16 +53,22 @@ public class GetKeyVersionConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetKeyVersionResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.GetKeyVersionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetKeyVersionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.GetKeyVersionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetKeyVersionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses.GetKeyVersionResponse>() {
                             @Override
-                            public GetKeyVersionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetKeyVersionResponse");
+                            public com.oracle.bmc.keymanagement.responses.GetKeyVersionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.GetKeyVersionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +82,10 @@ public class GetKeyVersionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetKeyVersionResponse.Builder builder =
-                                        GetKeyVersionResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.GetKeyVersionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .GetKeyVersionResponse.builder();
 
                                 builder.keyVersion(response.getItem());
 
@@ -100,7 +110,8 @@ public class GetKeyVersionConverter {
                                                     String.class));
                                 }
 
-                                GetKeyVersionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.GetKeyVersionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

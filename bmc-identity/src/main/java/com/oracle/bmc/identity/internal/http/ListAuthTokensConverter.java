@@ -16,13 +16,15 @@ public class ListAuthTokensConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAuthTokensRequest interceptRequest(ListAuthTokensRequest request) {
+    public static com.oracle.bmc.identity.requests.ListAuthTokensRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListAuthTokensRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAuthTokensRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListAuthTokensRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -42,16 +44,22 @@ public class ListAuthTokensConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListAuthTokensResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListAuthTokensResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAuthTokensResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListAuthTokensResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAuthTokensResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListAuthTokensResponse>() {
                             @Override
-                            public ListAuthTokensResponse apply(
+                            public com.oracle.bmc.identity.responses.ListAuthTokensResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListAuthTokensResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListAuthTokensResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +74,10 @@ public class ListAuthTokensConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAuthTokensResponse.Builder builder =
-                                        ListAuthTokensResponse.builder();
+                                com.oracle.bmc.identity.responses.ListAuthTokensResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListAuthTokensResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -95,7 +105,8 @@ public class ListAuthTokensConverter {
                                                     String.class));
                                 }
 
-                                ListAuthTokensResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListAuthTokensResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class GetAuthenticationPolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetAuthenticationPolicyRequest interceptRequest(
-            GetAuthenticationPolicyRequest request) {
+    public static com.oracle.bmc.identity.requests.GetAuthenticationPolicyRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetAuthenticationPolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            GetAuthenticationPolicyRequest request) {
+            com.oracle.bmc.identity.requests.GetAuthenticationPolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCompartmentId(), "compartmentId must not be blank");
 
@@ -44,18 +44,22 @@ public class GetAuthenticationPolicyConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetAuthenticationPolicyResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.GetAuthenticationPolicyResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAuthenticationPolicyResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetAuthenticationPolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetAuthenticationPolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .GetAuthenticationPolicyResponse>() {
                             @Override
-                            public GetAuthenticationPolicyResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.GetAuthenticationPolicyResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetAuthenticationPolicyResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetAuthenticationPolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +73,11 @@ public class GetAuthenticationPolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetAuthenticationPolicyResponse.Builder builder =
-                                        GetAuthenticationPolicyResponse.builder();
+                                com.oracle.bmc.identity.responses.GetAuthenticationPolicyResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .GetAuthenticationPolicyResponse.builder();
 
                                 builder.authenticationPolicy(response.getItem());
 
@@ -95,7 +102,8 @@ public class GetAuthenticationPolicyConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetAuthenticationPolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetAuthenticationPolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

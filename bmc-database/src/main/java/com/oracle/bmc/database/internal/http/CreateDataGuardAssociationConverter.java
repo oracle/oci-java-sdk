@@ -16,15 +16,16 @@ public class CreateDataGuardAssociationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateDataGuardAssociationRequest interceptRequest(
-            CreateDataGuardAssociationRequest request) {
+    public static com.oracle.bmc.database.requests.CreateDataGuardAssociationRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.CreateDataGuardAssociationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateDataGuardAssociationRequest request) {
+            com.oracle.bmc.database.requests.CreateDataGuardAssociationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
         Validate.notNull(
@@ -52,18 +53,23 @@ public class CreateDataGuardAssociationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateDataGuardAssociationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.CreateDataGuardAssociationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateDataGuardAssociationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.CreateDataGuardAssociationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateDataGuardAssociationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .CreateDataGuardAssociationResponse>() {
                             @Override
-                            public CreateDataGuardAssociationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .CreateDataGuardAssociationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateDataGuardAssociationResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.CreateDataGuardAssociationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -77,8 +83,12 @@ public class CreateDataGuardAssociationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateDataGuardAssociationResponse.Builder builder =
-                                        CreateDataGuardAssociationResponse.builder();
+                                com.oracle.bmc.database.responses.CreateDataGuardAssociationResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .CreateDataGuardAssociationResponse
+                                                        .builder();
 
                                 builder.dataGuardAssociation(response.getItem());
 
@@ -115,8 +125,8 @@ public class CreateDataGuardAssociationConverter {
                                                     String.class));
                                 }
 
-                                CreateDataGuardAssociationResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses.CreateDataGuardAssociationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

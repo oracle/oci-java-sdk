@@ -16,14 +16,15 @@ public class ScaleAnalyticsInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ScaleAnalyticsInstanceRequest interceptRequest(
-            ScaleAnalyticsInstanceRequest request) {
+    public static com.oracle.bmc.analytics.requests.ScaleAnalyticsInstanceRequest interceptRequest(
+            com.oracle.bmc.analytics.requests.ScaleAnalyticsInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ScaleAnalyticsInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.analytics.requests.ScaleAnalyticsInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAnalyticsInstanceId(), "analyticsInstanceId must not be blank");
@@ -61,18 +62,22 @@ public class ScaleAnalyticsInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ScaleAnalyticsInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.analytics.responses.ScaleAnalyticsInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ScaleAnalyticsInstanceResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.analytics.responses.ScaleAnalyticsInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ScaleAnalyticsInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.analytics.responses
+                                        .ScaleAnalyticsInstanceResponse>() {
                             @Override
-                            public ScaleAnalyticsInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.analytics.responses.ScaleAnalyticsInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ScaleAnalyticsInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.analytics.responses.ScaleAnalyticsInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +88,11 @@ public class ScaleAnalyticsInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ScaleAnalyticsInstanceResponse.Builder builder =
-                                        ScaleAnalyticsInstanceResponse.builder();
+                                com.oracle.bmc.analytics.responses.ScaleAnalyticsInstanceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.analytics.responses
+                                                        .ScaleAnalyticsInstanceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -110,7 +118,8 @@ public class ScaleAnalyticsInstanceConverter {
                                                     String.class));
                                 }
 
-                                ScaleAnalyticsInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.analytics.responses.ScaleAnalyticsInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class UpdateMountTargetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateMountTargetRequest interceptRequest(UpdateMountTargetRequest request) {
+    public static com.oracle.bmc.filestorage.requests.UpdateMountTargetRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.UpdateMountTargetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateMountTargetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.UpdateMountTargetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
         Validate.notNull(
@@ -52,17 +54,21 @@ public class UpdateMountTargetConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateMountTargetResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.UpdateMountTargetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMountTargetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.UpdateMountTargetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateMountTargetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.UpdateMountTargetResponse>() {
                             @Override
-                            public UpdateMountTargetResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.filestorage.responses.UpdateMountTargetResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateMountTargetResponse");
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.UpdateMountTargetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +82,11 @@ public class UpdateMountTargetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateMountTargetResponse.Builder builder =
-                                        UpdateMountTargetResponse.builder();
+                                com.oracle.bmc.filestorage.responses.UpdateMountTargetResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .UpdateMountTargetResponse.builder();
 
                                 builder.mountTarget(response.getItem());
 
@@ -102,7 +111,8 @@ public class UpdateMountTargetConverter {
                                                     String.class));
                                 }
 
-                                UpdateMountTargetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.UpdateMountTargetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

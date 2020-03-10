@@ -16,13 +16,15 @@ public class StartArchiverConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static StartArchiverRequest interceptRequest(StartArchiverRequest request) {
+    public static com.oracle.bmc.streaming.requests.StartArchiverRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.StartArchiverRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, StartArchiverRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.StartArchiverRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
 
@@ -52,16 +54,22 @@ public class StartArchiverConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, StartArchiverResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.StartArchiverResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StartArchiverResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.StartArchiverResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, StartArchiverResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.StartArchiverResponse>() {
                             @Override
-                            public StartArchiverResponse apply(
+                            public com.oracle.bmc.streaming.responses.StartArchiverResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for StartArchiverResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.StartArchiverResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Archiver>>
@@ -73,8 +81,10 @@ public class StartArchiverConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                StartArchiverResponse.Builder builder =
-                                        StartArchiverResponse.builder();
+                                com.oracle.bmc.streaming.responses.StartArchiverResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .StartArchiverResponse.builder();
 
                                 builder.archiver(response.getItem());
 
@@ -99,7 +109,8 @@ public class StartArchiverConverter {
                                                     String.class));
                                 }
 
-                                StartArchiverResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.StartArchiverResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,17 @@ public class ChangeLocalPeeringGatewayCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeLocalPeeringGatewayCompartmentRequest interceptRequest(
-            ChangeLocalPeeringGatewayCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeLocalPeeringGatewayCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeLocalPeeringGatewayCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeLocalPeeringGatewayCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeLocalPeeringGatewayCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
@@ -58,19 +60,23 @@ public class ChangeLocalPeeringGatewayCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeLocalPeeringGatewayCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeLocalPeeringGatewayCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeLocalPeeringGatewayCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeLocalPeeringGatewayCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeLocalPeeringGatewayCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeLocalPeeringGatewayCompartmentResponse>() {
                             @Override
-                            public ChangeLocalPeeringGatewayCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeLocalPeeringGatewayCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeLocalPeeringGatewayCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeLocalPeeringGatewayCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -81,8 +87,13 @@ public class ChangeLocalPeeringGatewayCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeLocalPeeringGatewayCompartmentResponse.Builder builder =
-                                        ChangeLocalPeeringGatewayCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeLocalPeeringGatewayCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeLocalPeeringGatewayCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -105,8 +116,9 @@ public class ChangeLocalPeeringGatewayCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeLocalPeeringGatewayCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeLocalPeeringGatewayCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

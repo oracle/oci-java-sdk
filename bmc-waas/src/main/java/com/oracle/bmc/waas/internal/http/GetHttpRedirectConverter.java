@@ -16,13 +16,15 @@ public class GetHttpRedirectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetHttpRedirectRequest interceptRequest(GetHttpRedirectRequest request) {
+    public static com.oracle.bmc.waas.requests.GetHttpRedirectRequest interceptRequest(
+            com.oracle.bmc.waas.requests.GetHttpRedirectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetHttpRedirectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.GetHttpRedirectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getHttpRedirectId(), "httpRedirectId must not be blank");
 
@@ -46,16 +48,21 @@ public class GetHttpRedirectConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetHttpRedirectResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.GetHttpRedirectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetHttpRedirectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.GetHttpRedirectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetHttpRedirectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.GetHttpRedirectResponse>() {
                             @Override
-                            public GetHttpRedirectResponse apply(
+                            public com.oracle.bmc.waas.responses.GetHttpRedirectResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetHttpRedirectResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.GetHttpRedirectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +76,10 @@ public class GetHttpRedirectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetHttpRedirectResponse.Builder builder =
-                                        GetHttpRedirectResponse.builder();
+                                com.oracle.bmc.waas.responses.GetHttpRedirectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .GetHttpRedirectResponse.builder();
 
                                 builder.httpRedirect(response.getItem());
 
@@ -95,7 +104,8 @@ public class GetHttpRedirectConverter {
                                                     String.class));
                                 }
 
-                                GetHttpRedirectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.GetHttpRedirectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

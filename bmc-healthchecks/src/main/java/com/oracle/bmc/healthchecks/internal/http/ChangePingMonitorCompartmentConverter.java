@@ -16,15 +16,17 @@ public class ChangePingMonitorCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangePingMonitorCompartmentRequest interceptRequest(
-            ChangePingMonitorCompartmentRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.ChangePingMonitorCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.healthchecks.requests.ChangePingMonitorCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangePingMonitorCompartmentRequest request) {
+            com.oracle.bmc.healthchecks.requests.ChangePingMonitorCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getMonitorId(), "monitorId must not be blank");
         Validate.notNull(
@@ -61,18 +63,23 @@ public class ChangePingMonitorCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangePingMonitorCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.ChangePingMonitorCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangePingMonitorCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.ChangePingMonitorCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangePingMonitorCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.healthchecks.responses
+                                        .ChangePingMonitorCompartmentResponse>() {
                             @Override
-                            public ChangePingMonitorCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses
+                                            .ChangePingMonitorCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangePingMonitorCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.ChangePingMonitorCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +90,12 @@ public class ChangePingMonitorCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangePingMonitorCompartmentResponse.Builder builder =
-                                        ChangePingMonitorCompartmentResponse.builder();
+                                com.oracle.bmc.healthchecks.responses
+                                                .ChangePingMonitorCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .ChangePingMonitorCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -98,8 +109,9 @@ public class ChangePingMonitorCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangePingMonitorCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.healthchecks.responses
+                                                .ChangePingMonitorCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

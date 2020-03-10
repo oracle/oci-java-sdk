@@ -16,15 +16,17 @@ public class RestartAutonomousContainerDatabaseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static RestartAutonomousContainerDatabaseRequest interceptRequest(
-            RestartAutonomousContainerDatabaseRequest request) {
+    public static com.oracle.bmc.database.requests.RestartAutonomousContainerDatabaseRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.RestartAutonomousContainerDatabaseRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            RestartAutonomousContainerDatabaseRequest request) {
+            com.oracle.bmc.database.requests.RestartAutonomousContainerDatabaseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousContainerDatabaseId(),
@@ -56,19 +58,24 @@ public class RestartAutonomousContainerDatabaseConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, RestartAutonomousContainerDatabaseResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.RestartAutonomousContainerDatabaseResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestartAutonomousContainerDatabaseResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .RestartAutonomousContainerDatabaseResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                RestartAutonomousContainerDatabaseResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .RestartAutonomousContainerDatabaseResponse>() {
                             @Override
-                            public RestartAutonomousContainerDatabaseResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .RestartAutonomousContainerDatabaseResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for RestartAutonomousContainerDatabaseResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.RestartAutonomousContainerDatabaseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -83,8 +90,12 @@ public class RestartAutonomousContainerDatabaseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                RestartAutonomousContainerDatabaseResponse.Builder builder =
-                                        RestartAutonomousContainerDatabaseResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .RestartAutonomousContainerDatabaseResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .RestartAutonomousContainerDatabaseResponse
+                                                        .builder();
 
                                 builder.autonomousContainerDatabase(response.getItem());
 
@@ -121,8 +132,9 @@ public class RestartAutonomousContainerDatabaseConverter {
                                                     String.class));
                                 }
 
-                                RestartAutonomousContainerDatabaseResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .RestartAutonomousContainerDatabaseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

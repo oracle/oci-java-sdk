@@ -16,14 +16,15 @@ public class ListBackupDestinationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListBackupDestinationRequest interceptRequest(
-            ListBackupDestinationRequest request) {
+    public static com.oracle.bmc.database.requests.ListBackupDestinationRequest interceptRequest(
+            com.oracle.bmc.database.requests.ListBackupDestinationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListBackupDestinationRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.ListBackupDestinationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -72,18 +73,21 @@ public class ListBackupDestinationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListBackupDestinationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListBackupDestinationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListBackupDestinationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListBackupDestinationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListBackupDestinationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.ListBackupDestinationResponse>() {
                             @Override
-                            public ListBackupDestinationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.ListBackupDestinationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListBackupDestinationResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListBackupDestinationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -100,8 +104,11 @@ public class ListBackupDestinationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListBackupDestinationResponse.Builder builder =
-                                        ListBackupDestinationResponse.builder();
+                                com.oracle.bmc.database.responses.ListBackupDestinationResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListBackupDestinationResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -138,7 +145,8 @@ public class ListBackupDestinationConverter {
                                                     String.class));
                                 }
 
-                                ListBackupDestinationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ListBackupDestinationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

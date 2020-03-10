@@ -16,14 +16,15 @@ public class GetDrgRedundancyStatusConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDrgRedundancyStatusRequest interceptRequest(
-            GetDrgRedundancyStatusRequest request) {
+    public static com.oracle.bmc.core.requests.GetDrgRedundancyStatusRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetDrgRedundancyStatusRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDrgRedundancyStatusRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetDrgRedundancyStatusRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
@@ -48,18 +49,21 @@ public class GetDrgRedundancyStatusConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetDrgRedundancyStatusResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetDrgRedundancyStatusResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetDrgRedundancyStatusResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetDrgRedundancyStatusResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDrgRedundancyStatusResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetDrgRedundancyStatusResponse>() {
                             @Override
-                            public GetDrgRedundancyStatusResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.GetDrgRedundancyStatusResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetDrgRedundancyStatusResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetDrgRedundancyStatusResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +77,10 @@ public class GetDrgRedundancyStatusConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDrgRedundancyStatusResponse.Builder builder =
-                                        GetDrgRedundancyStatusResponse.builder();
+                                com.oracle.bmc.core.responses.GetDrgRedundancyStatusResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetDrgRedundancyStatusResponse.builder();
 
                                 builder.drgRedundancyStatus(response.getItem());
 
@@ -90,7 +96,8 @@ public class GetDrgRedundancyStatusConverter {
                                                     String.class));
                                 }
 
-                                GetDrgRedundancyStatusResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetDrgRedundancyStatusResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

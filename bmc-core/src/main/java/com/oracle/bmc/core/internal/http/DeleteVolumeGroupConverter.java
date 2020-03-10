@@ -16,13 +16,15 @@ public class DeleteVolumeGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteVolumeGroupRequest interceptRequest(DeleteVolumeGroupRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteVolumeGroupRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteVolumeGroupRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteVolumeGroupRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteVolumeGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVolumeGroupId(), "volumeGroupId must not be blank");
 
@@ -46,17 +48,21 @@ public class DeleteVolumeGroupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteVolumeGroupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteVolumeGroupResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeGroupResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteVolumeGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteVolumeGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteVolumeGroupResponse>() {
                             @Override
-                            public DeleteVolumeGroupResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteVolumeGroupResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteVolumeGroupResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteVolumeGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class DeleteVolumeGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteVolumeGroupResponse.Builder builder =
-                                        DeleteVolumeGroupResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteVolumeGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteVolumeGroupResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +90,8 @@ public class DeleteVolumeGroupConverter {
                                                     String.class));
                                 }
 
-                                DeleteVolumeGroupResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteVolumeGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

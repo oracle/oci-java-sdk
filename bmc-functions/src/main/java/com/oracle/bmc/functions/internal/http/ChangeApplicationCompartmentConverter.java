@@ -16,15 +16,16 @@ public class ChangeApplicationCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeApplicationCompartmentRequest interceptRequest(
-            ChangeApplicationCompartmentRequest request) {
+    public static com.oracle.bmc.functions.requests.ChangeApplicationCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.functions.requests.ChangeApplicationCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeApplicationCompartmentRequest request) {
+            com.oracle.bmc.functions.requests.ChangeApplicationCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getApplicationId(), "applicationId must not be blank");
         Validate.notNull(
@@ -57,18 +58,23 @@ public class ChangeApplicationCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.functions.responses.ChangeApplicationCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.functions.responses.ChangeApplicationCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.functions.responses
+                                        .ChangeApplicationCompartmentResponse>() {
                             @Override
-                            public ChangeApplicationCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.functions.responses
+                                            .ChangeApplicationCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeApplicationCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.functions.responses.ChangeApplicationCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -79,8 +85,12 @@ public class ChangeApplicationCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeApplicationCompartmentResponse.Builder builder =
-                                        ChangeApplicationCompartmentResponse.builder();
+                                com.oracle.bmc.functions.responses
+                                                .ChangeApplicationCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.functions.responses
+                                                        .ChangeApplicationCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -94,8 +104,9 @@ public class ChangeApplicationCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeApplicationCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.functions.responses
+                                                .ChangeApplicationCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

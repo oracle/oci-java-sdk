@@ -16,13 +16,15 @@ public class UpdateVmClusterConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateVmClusterRequest interceptRequest(UpdateVmClusterRequest request) {
+    public static com.oracle.bmc.database.requests.UpdateVmClusterRequest interceptRequest(
+            com.oracle.bmc.database.requests.UpdateVmClusterRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateVmClusterRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.UpdateVmClusterRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVmClusterId(), "vmClusterId must not be blank");
         Validate.notNull(request.getUpdateVmClusterDetails(), "updateVmClusterDetails is required");
@@ -51,16 +53,21 @@ public class UpdateVmClusterConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateVmClusterResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.UpdateVmClusterResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVmClusterResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.UpdateVmClusterResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateVmClusterResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.UpdateVmClusterResponse>() {
                             @Override
-                            public UpdateVmClusterResponse apply(
+                            public com.oracle.bmc.database.responses.UpdateVmClusterResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateVmClusterResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.UpdateVmClusterResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<VmCluster>>
@@ -72,8 +79,10 @@ public class UpdateVmClusterConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateVmClusterResponse.Builder builder =
-                                        UpdateVmClusterResponse.builder();
+                                com.oracle.bmc.database.responses.UpdateVmClusterResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .UpdateVmClusterResponse.builder();
 
                                 builder.vmCluster(response.getItem());
 
@@ -110,7 +119,8 @@ public class UpdateVmClusterConverter {
                                                     String.class));
                                 }
 
-                                UpdateVmClusterResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.UpdateVmClusterResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class CreateVmClusterConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateVmClusterRequest interceptRequest(CreateVmClusterRequest request) {
+    public static com.oracle.bmc.database.requests.CreateVmClusterRequest interceptRequest(
+            com.oracle.bmc.database.requests.CreateVmClusterRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateVmClusterRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.CreateVmClusterRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateVmClusterDetails(), "createVmClusterDetails is required");
 
@@ -45,16 +47,21 @@ public class CreateVmClusterConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateVmClusterResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.CreateVmClusterResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.CreateVmClusterResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateVmClusterResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.CreateVmClusterResponse>() {
                             @Override
-                            public CreateVmClusterResponse apply(
+                            public com.oracle.bmc.database.responses.CreateVmClusterResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateVmClusterResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.CreateVmClusterResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<VmCluster>>
@@ -66,8 +73,10 @@ public class CreateVmClusterConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateVmClusterResponse.Builder builder =
-                                        CreateVmClusterResponse.builder();
+                                com.oracle.bmc.database.responses.CreateVmClusterResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .CreateVmClusterResponse.builder();
 
                                 builder.vmCluster(response.getItem());
 
@@ -104,7 +113,8 @@ public class CreateVmClusterConverter {
                                                     String.class));
                                 }
 
-                                CreateVmClusterResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.CreateVmClusterResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

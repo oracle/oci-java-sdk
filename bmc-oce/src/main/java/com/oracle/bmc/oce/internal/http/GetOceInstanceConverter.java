@@ -16,13 +16,15 @@ public class GetOceInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetOceInstanceRequest interceptRequest(GetOceInstanceRequest request) {
+    public static com.oracle.bmc.oce.requests.GetOceInstanceRequest interceptRequest(
+            com.oracle.bmc.oce.requests.GetOceInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetOceInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.oce.requests.GetOceInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getOceInstanceId(), "oceInstanceId must not be blank");
 
@@ -45,16 +47,21 @@ public class GetOceInstanceConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetOceInstanceResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.oce.responses.GetOceInstanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetOceInstanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oce.responses.GetOceInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetOceInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oce.responses.GetOceInstanceResponse>() {
                             @Override
-                            public GetOceInstanceResponse apply(
+                            public com.oracle.bmc.oce.responses.GetOceInstanceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetOceInstanceResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.oce.responses.GetOceInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +75,10 @@ public class GetOceInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetOceInstanceResponse.Builder builder =
-                                        GetOceInstanceResponse.builder();
+                                com.oracle.bmc.oce.responses.GetOceInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.oce.responses.GetOceInstanceResponse
+                                                        .builder();
 
                                 builder.oceInstance(response.getItem());
 
@@ -94,7 +103,8 @@ public class GetOceInstanceConverter {
                                                     String.class));
                                 }
 
-                                GetOceInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.oce.responses.GetOceInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

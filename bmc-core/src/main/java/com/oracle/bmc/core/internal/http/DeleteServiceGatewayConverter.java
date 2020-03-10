@@ -16,14 +16,15 @@ public class DeleteServiceGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteServiceGatewayRequest interceptRequest(
-            DeleteServiceGatewayRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteServiceGatewayRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteServiceGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteServiceGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteServiceGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
 
@@ -47,18 +48,21 @@ public class DeleteServiceGatewayConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteServiceGatewayResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteServiceGatewayResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteServiceGatewayResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteServiceGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteServiceGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteServiceGatewayResponse>() {
                             @Override
-                            public DeleteServiceGatewayResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteServiceGatewayResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteServiceGatewayResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteServiceGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +73,10 @@ public class DeleteServiceGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteServiceGatewayResponse.Builder builder =
-                                        DeleteServiceGatewayResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteServiceGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteServiceGatewayResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +90,8 @@ public class DeleteServiceGatewayConverter {
                                                     String.class));
                                 }
 
-                                DeleteServiceGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteServiceGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,16 @@ public class UpdateHumanInteractionChallengeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateHumanInteractionChallengeRequest interceptRequest(
-            UpdateHumanInteractionChallengeRequest request) {
+    public static com.oracle.bmc.waas.requests.UpdateHumanInteractionChallengeRequest
+            interceptRequest(
+                    com.oracle.bmc.waas.requests.UpdateHumanInteractionChallengeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateHumanInteractionChallengeRequest request) {
+            com.oracle.bmc.waas.requests.UpdateHumanInteractionChallengeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
         Validate.notNull(
@@ -61,19 +62,23 @@ public class UpdateHumanInteractionChallengeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateHumanInteractionChallengeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.UpdateHumanInteractionChallengeResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateHumanInteractionChallengeResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.UpdateHumanInteractionChallengeResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                UpdateHumanInteractionChallengeResponse>() {
+                                com.oracle.bmc.waas.responses
+                                        .UpdateHumanInteractionChallengeResponse>() {
                             @Override
-                            public UpdateHumanInteractionChallengeResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses
+                                            .UpdateHumanInteractionChallengeResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateHumanInteractionChallengeResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.UpdateHumanInteractionChallengeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +89,12 @@ public class UpdateHumanInteractionChallengeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateHumanInteractionChallengeResponse.Builder builder =
-                                        UpdateHumanInteractionChallengeResponse.builder();
+                                com.oracle.bmc.waas.responses
+                                                .UpdateHumanInteractionChallengeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .UpdateHumanInteractionChallengeResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -111,8 +120,9 @@ public class UpdateHumanInteractionChallengeConverter {
                                                     String.class));
                                 }
 
-                                UpdateHumanInteractionChallengeResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.waas.responses
+                                                .UpdateHumanInteractionChallengeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

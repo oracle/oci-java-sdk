@@ -16,13 +16,15 @@ public class ListPublishersConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListPublishersRequest interceptRequest(ListPublishersRequest request) {
+    public static com.oracle.bmc.marketplace.requests.ListPublishersRequest interceptRequest(
+            com.oracle.bmc.marketplace.requests.ListPublishersRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListPublishersRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.marketplace.requests.ListPublishersRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -63,16 +65,22 @@ public class ListPublishersConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListPublishersResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.marketplace.responses.ListPublishersResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListPublishersResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.marketplace.responses.ListPublishersResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListPublishersResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.marketplace.responses.ListPublishersResponse>() {
                             @Override
-                            public ListPublishersResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListPublishersResponse");
+                            public com.oracle.bmc.marketplace.responses.ListPublishersResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.marketplace.responses.ListPublishersResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -89,8 +97,10 @@ public class ListPublishersConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListPublishersResponse.Builder builder =
-                                        ListPublishersResponse.builder();
+                                com.oracle.bmc.marketplace.responses.ListPublishersResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.marketplace.responses
+                                                        .ListPublishersResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -118,7 +128,8 @@ public class ListPublishersConverter {
                                                     String.class));
                                 }
 
-                                ListPublishersResponse responseWrapper = builder.build();
+                                com.oracle.bmc.marketplace.responses.ListPublishersResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

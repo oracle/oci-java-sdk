@@ -16,13 +16,15 @@ public class GetPublicIpConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetPublicIpRequest interceptRequest(GetPublicIpRequest request) {
+    public static com.oracle.bmc.core.requests.GetPublicIpRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetPublicIpRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetPublicIpRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetPublicIpRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
 
@@ -41,16 +43,21 @@ public class GetPublicIpConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetPublicIpResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetPublicIpResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetPublicIpResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetPublicIpResponse>() {
                             @Override
-                            public GetPublicIpResponse apply(
+                            public com.oracle.bmc.core.responses.GetPublicIpResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetPublicIpResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetPublicIpResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<PublicIp>>
@@ -62,7 +69,8 @@ public class GetPublicIpConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetPublicIpResponse.Builder builder = GetPublicIpResponse.builder();
+                                com.oracle.bmc.core.responses.GetPublicIpResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.GetPublicIpResponse.builder();
 
                                 builder.publicIp(response.getItem());
 
@@ -87,7 +95,8 @@ public class GetPublicIpConverter {
                                                     String.class));
                                 }
 
-                                GetPublicIpResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetPublicIpResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

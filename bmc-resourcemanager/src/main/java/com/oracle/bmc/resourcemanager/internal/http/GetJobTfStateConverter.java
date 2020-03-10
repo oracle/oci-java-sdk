@@ -15,13 +15,15 @@ public class GetJobTfStateConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetJobTfStateRequest interceptRequest(GetJobTfStateRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.GetJobTfStateRequest interceptRequest(
+            com.oracle.bmc.resourcemanager.requests.GetJobTfStateRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetJobTfStateRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.GetJobTfStateRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getJobId(), "jobId must not be blank");
 
@@ -45,16 +47,22 @@ public class GetJobTfStateConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfStateResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.GetJobTfStateResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetJobTfStateResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.GetJobTfStateResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetJobTfStateResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses.GetJobTfStateResponse>() {
                             @Override
-                            public GetJobTfStateResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetJobTfStateResponse");
+                            public com.oracle.bmc.resourcemanager.responses.GetJobTfStateResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.GetJobTfStateResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +76,11 @@ public class GetJobTfStateConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetJobTfStateResponse.Builder builder =
-                                        GetJobTfStateResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses.GetJobTfStateResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .GetJobTfStateResponse.builder();
 
                                 builder.inputStream(response.getItem());
 
@@ -85,7 +96,8 @@ public class GetJobTfStateConverter {
                                                     String.class));
                                 }
 
-                                GetJobTfStateResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses.GetJobTfStateResponse
+                                        responseWrapper = builder.build();
 
                                 return responseWrapper;
                             }

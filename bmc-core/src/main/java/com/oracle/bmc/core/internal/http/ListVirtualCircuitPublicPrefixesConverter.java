@@ -16,15 +16,16 @@ public class ListVirtualCircuitPublicPrefixesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListVirtualCircuitPublicPrefixesRequest interceptRequest(
-            ListVirtualCircuitPublicPrefixesRequest request) {
+    public static com.oracle.bmc.core.requests.ListVirtualCircuitPublicPrefixesRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ListVirtualCircuitPublicPrefixesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListVirtualCircuitPublicPrefixesRequest request) {
+            com.oracle.bmc.core.requests.ListVirtualCircuitPublicPrefixesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
 
@@ -53,19 +54,23 @@ public class ListVirtualCircuitPublicPrefixesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListVirtualCircuitPublicPrefixesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListVirtualCircuitPublicPrefixesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListVirtualCircuitPublicPrefixesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListVirtualCircuitPublicPrefixesResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListVirtualCircuitPublicPrefixesResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ListVirtualCircuitPublicPrefixesResponse>() {
                             @Override
-                            public ListVirtualCircuitPublicPrefixesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ListVirtualCircuitPublicPrefixesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListVirtualCircuitPublicPrefixesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListVirtualCircuitPublicPrefixesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -82,8 +87,12 @@ public class ListVirtualCircuitPublicPrefixesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListVirtualCircuitPublicPrefixesResponse.Builder builder =
-                                        ListVirtualCircuitPublicPrefixesResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ListVirtualCircuitPublicPrefixesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListVirtualCircuitPublicPrefixesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -99,8 +108,9 @@ public class ListVirtualCircuitPublicPrefixesConverter {
                                                     String.class));
                                 }
 
-                                ListVirtualCircuitPublicPrefixesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ListVirtualCircuitPublicPrefixesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

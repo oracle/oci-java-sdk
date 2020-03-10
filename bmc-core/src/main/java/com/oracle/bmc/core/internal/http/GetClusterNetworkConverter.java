@@ -16,13 +16,15 @@ public class GetClusterNetworkConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetClusterNetworkRequest interceptRequest(GetClusterNetworkRequest request) {
+    public static com.oracle.bmc.core.requests.GetClusterNetworkRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetClusterNetworkRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetClusterNetworkRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetClusterNetworkRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getClusterNetworkId(), "clusterNetworkId must not be blank");
 
@@ -42,17 +44,21 @@ public class GetClusterNetworkConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetClusterNetworkResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetClusterNetworkResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterNetworkResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetClusterNetworkResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetClusterNetworkResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetClusterNetworkResponse>() {
                             @Override
-                            public GetClusterNetworkResponse apply(
+                            public com.oracle.bmc.core.responses.GetClusterNetworkResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetClusterNetworkResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetClusterNetworkResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class GetClusterNetworkConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetClusterNetworkResponse.Builder builder =
-                                        GetClusterNetworkResponse.builder();
+                                com.oracle.bmc.core.responses.GetClusterNetworkResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetClusterNetworkResponse.builder();
 
                                 builder.clusterNetwork(response.getItem());
 
@@ -92,7 +100,8 @@ public class GetClusterNetworkConverter {
                                                     String.class));
                                 }
 
-                                GetClusterNetworkResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetClusterNetworkResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

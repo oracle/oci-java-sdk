@@ -16,13 +16,15 @@ public class GetConfigurationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetConfigurationRequest interceptRequest(GetConfigurationRequest request) {
+    public static com.oracle.bmc.audit.requests.GetConfigurationRequest interceptRequest(
+            com.oracle.bmc.audit.requests.GetConfigurationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetConfigurationRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.audit.requests.GetConfigurationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -43,17 +45,21 @@ public class GetConfigurationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetConfigurationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.audit.responses.GetConfigurationResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.audit.responses.GetConfigurationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetConfigurationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.audit.responses.GetConfigurationResponse>() {
                             @Override
-                            public GetConfigurationResponse apply(
+                            public com.oracle.bmc.audit.responses.GetConfigurationResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetConfigurationResponse");
+                                        "Transform function invoked for com.oracle.bmc.audit.responses.GetConfigurationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -67,12 +73,15 @@ public class GetConfigurationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetConfigurationResponse.Builder builder =
-                                        GetConfigurationResponse.builder();
+                                com.oracle.bmc.audit.responses.GetConfigurationResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.audit.responses
+                                                        .GetConfigurationResponse.builder();
 
                                 builder.configuration(response.getItem());
 
-                                GetConfigurationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.audit.responses.GetConfigurationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

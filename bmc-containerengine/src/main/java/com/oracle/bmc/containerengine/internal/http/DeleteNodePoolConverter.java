@@ -16,13 +16,15 @@ public class DeleteNodePoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteNodePoolRequest interceptRequest(DeleteNodePoolRequest request) {
+    public static com.oracle.bmc.containerengine.requests.DeleteNodePoolRequest interceptRequest(
+            com.oracle.bmc.containerengine.requests.DeleteNodePoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteNodePoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.containerengine.requests.DeleteNodePoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNodePoolId(), "nodePoolId must not be blank");
 
@@ -49,16 +51,22 @@ public class DeleteNodePoolConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNodePoolResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.containerengine.responses.DeleteNodePoolResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNodePoolResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.containerengine.responses.DeleteNodePoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteNodePoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.containerengine.responses.DeleteNodePoolResponse>() {
                             @Override
-                            public DeleteNodePoolResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteNodePoolResponse");
+                            public com.oracle.bmc.containerengine.responses.DeleteNodePoolResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.containerengine.responses.DeleteNodePoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +77,11 @@ public class DeleteNodePoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteNodePoolResponse.Builder builder =
-                                        DeleteNodePoolResponse.builder();
+                                com.oracle.bmc.containerengine.responses.DeleteNodePoolResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.containerengine.responses
+                                                        .DeleteNodePoolResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -96,7 +107,8 @@ public class DeleteNodePoolConverter {
                                                     String.class));
                                 }
 
-                                DeleteNodePoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.containerengine.responses.DeleteNodePoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

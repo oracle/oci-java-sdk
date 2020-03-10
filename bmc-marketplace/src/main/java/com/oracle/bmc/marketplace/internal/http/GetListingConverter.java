@@ -16,13 +16,15 @@ public class GetListingConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetListingRequest interceptRequest(GetListingRequest request) {
+    public static com.oracle.bmc.marketplace.requests.GetListingRequest interceptRequest(
+            com.oracle.bmc.marketplace.requests.GetListingRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetListingRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.marketplace.requests.GetListingRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getListingId(), "listingId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetListingConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetListingResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.marketplace.responses.GetListingResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetListingResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.marketplace.responses.GetListingResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetListingResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.marketplace.responses.GetListingResponse>() {
                             @Override
-                            public GetListingResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetListingResponse");
+                            public com.oracle.bmc.marketplace.responses.GetListingResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.marketplace.responses.GetListingResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Listing>>
@@ -65,7 +74,10 @@ public class GetListingConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetListingResponse.Builder builder = GetListingResponse.builder();
+                                com.oracle.bmc.marketplace.responses.GetListingResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.marketplace.responses
+                                                        .GetListingResponse.builder();
 
                                 builder.listing(response.getItem());
 
@@ -90,7 +102,8 @@ public class GetListingConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetListingResponse responseWrapper = builder.build();
+                                com.oracle.bmc.marketplace.responses.GetListingResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListDbSystemPatchesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDbSystemPatchesRequest interceptRequest(ListDbSystemPatchesRequest request) {
+    public static com.oracle.bmc.database.requests.ListDbSystemPatchesRequest interceptRequest(
+            com.oracle.bmc.database.requests.ListDbSystemPatchesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListDbSystemPatchesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.ListDbSystemPatchesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
 
@@ -59,18 +61,21 @@ public class ListDbSystemPatchesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDbSystemPatchesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListDbSystemPatchesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDbSystemPatchesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListDbSystemPatchesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDbSystemPatchesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.ListDbSystemPatchesResponse>() {
                             @Override
-                            public ListDbSystemPatchesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.ListDbSystemPatchesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDbSystemPatchesResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListDbSystemPatchesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -86,8 +91,11 @@ public class ListDbSystemPatchesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDbSystemPatchesResponse.Builder builder =
-                                        ListDbSystemPatchesResponse.builder();
+                                com.oracle.bmc.database.responses.ListDbSystemPatchesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListDbSystemPatchesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -115,7 +123,8 @@ public class ListDbSystemPatchesConverter {
                                                     String.class));
                                 }
 
-                                ListDbSystemPatchesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ListDbSystemPatchesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

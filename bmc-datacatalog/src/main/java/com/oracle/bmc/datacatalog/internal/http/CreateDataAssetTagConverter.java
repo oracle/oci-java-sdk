@@ -16,13 +16,15 @@ public class CreateDataAssetTagConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateDataAssetTagRequest interceptRequest(CreateDataAssetTagRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.CreateDataAssetTagRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.CreateDataAssetTagRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateDataAssetTagRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.CreateDataAssetTagRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -58,17 +60,21 @@ public class CreateDataAssetTagConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateDataAssetTagResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.CreateDataAssetTagResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetTagResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.CreateDataAssetTagResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateDataAssetTagResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.CreateDataAssetTagResponse>() {
                             @Override
-                            public CreateDataAssetTagResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.CreateDataAssetTagResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateDataAssetTagResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.CreateDataAssetTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -82,8 +88,11 @@ public class CreateDataAssetTagConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateDataAssetTagResponse.Builder builder =
-                                        CreateDataAssetTagResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.CreateDataAssetTagResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .CreateDataAssetTagResponse.builder();
 
                                 builder.dataAssetTag(response.getItem());
 
@@ -108,7 +117,8 @@ public class CreateDataAssetTagConverter {
                                                     String.class));
                                 }
 
-                                CreateDataAssetTagResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.CreateDataAssetTagResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

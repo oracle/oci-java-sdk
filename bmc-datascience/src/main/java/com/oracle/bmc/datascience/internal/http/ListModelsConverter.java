@@ -16,13 +16,15 @@ public class ListModelsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListModelsRequest interceptRequest(ListModelsRequest request) {
+    public static com.oracle.bmc.datascience.requests.ListModelsRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.ListModelsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListModelsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.ListModelsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -118,15 +120,22 @@ public class ListModelsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListModelsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.ListModelsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListModelsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.ListModelsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListModelsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.ListModelsResponse>() {
                             @Override
-                            public ListModelsResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListModelsResponse");
+                            public com.oracle.bmc.datascience.responses.ListModelsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.ListModelsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -142,7 +151,10 @@ public class ListModelsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListModelsResponse.Builder builder = ListModelsResponse.builder();
+                                com.oracle.bmc.datascience.responses.ListModelsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .ListModelsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -182,7 +194,8 @@ public class ListModelsConverter {
                                                     String.class));
                                 }
 
-                                ListModelsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.ListModelsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

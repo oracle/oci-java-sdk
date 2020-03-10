@@ -16,13 +16,15 @@ public class GetFunctionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetFunctionRequest interceptRequest(GetFunctionRequest request) {
+    public static com.oracle.bmc.functions.requests.GetFunctionRequest interceptRequest(
+            com.oracle.bmc.functions.requests.GetFunctionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetFunctionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.functions.requests.GetFunctionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getFunctionId(), "functionId must not be blank");
 
@@ -45,16 +47,22 @@ public class GetFunctionConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetFunctionResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.functions.responses.GetFunctionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetFunctionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.functions.responses.GetFunctionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetFunctionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.functions.responses.GetFunctionResponse>() {
                             @Override
-                            public GetFunctionResponse apply(
+                            public com.oracle.bmc.functions.responses.GetFunctionResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetFunctionResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.functions.responses.GetFunctionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Function>>
@@ -66,7 +74,10 @@ public class GetFunctionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetFunctionResponse.Builder builder = GetFunctionResponse.builder();
+                                com.oracle.bmc.functions.responses.GetFunctionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.functions.responses
+                                                        .GetFunctionResponse.builder();
 
                                 builder.function(response.getItem());
 
@@ -91,7 +102,8 @@ public class GetFunctionConverter {
                                                     String.class));
                                 }
 
-                                GetFunctionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.functions.responses.GetFunctionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

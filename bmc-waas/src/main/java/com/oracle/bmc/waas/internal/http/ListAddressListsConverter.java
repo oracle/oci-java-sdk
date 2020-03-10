@@ -16,13 +16,15 @@ public class ListAddressListsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAddressListsRequest interceptRequest(ListAddressListsRequest request) {
+    public static com.oracle.bmc.waas.requests.ListAddressListsRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListAddressListsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAddressListsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListAddressListsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -122,17 +124,21 @@ public class ListAddressListsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAddressListsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ListAddressListsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAddressListsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListAddressListsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAddressListsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListAddressListsResponse>() {
                             @Override
-                            public ListAddressListsResponse apply(
+                            public com.oracle.bmc.waas.responses.ListAddressListsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAddressListsResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListAddressListsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -149,8 +155,10 @@ public class ListAddressListsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAddressListsResponse.Builder builder =
-                                        ListAddressListsResponse.builder();
+                                com.oracle.bmc.waas.responses.ListAddressListsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ListAddressListsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -178,7 +186,8 @@ public class ListAddressListsConverter {
                                                     String.class));
                                 }
 
-                                ListAddressListsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListAddressListsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

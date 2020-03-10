@@ -16,13 +16,15 @@ public class DeleteProjectConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteProjectRequest interceptRequest(DeleteProjectRequest request) {
+    public static com.oracle.bmc.datascience.requests.DeleteProjectRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.DeleteProjectRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteProjectRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.DeleteProjectRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getProjectId(), "projectId must not be blank");
 
@@ -49,16 +51,22 @@ public class DeleteProjectConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.DeleteProjectResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.DeleteProjectResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteProjectResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.DeleteProjectResponse>() {
                             @Override
-                            public DeleteProjectResponse apply(
+                            public com.oracle.bmc.datascience.responses.DeleteProjectResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteProjectResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.DeleteProjectResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +77,10 @@ public class DeleteProjectConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteProjectResponse.Builder builder =
-                                        DeleteProjectResponse.builder();
+                                com.oracle.bmc.datascience.responses.DeleteProjectResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .DeleteProjectResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -96,7 +106,8 @@ public class DeleteProjectConverter {
                                                     String.class));
                                 }
 
-                                DeleteProjectResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.DeleteProjectResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

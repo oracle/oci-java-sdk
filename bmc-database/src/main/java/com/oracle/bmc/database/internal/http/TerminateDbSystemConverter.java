@@ -16,13 +16,15 @@ public class TerminateDbSystemConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static TerminateDbSystemRequest interceptRequest(TerminateDbSystemRequest request) {
+    public static com.oracle.bmc.database.requests.TerminateDbSystemRequest interceptRequest(
+            com.oracle.bmc.database.requests.TerminateDbSystemRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, TerminateDbSystemRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.TerminateDbSystemRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
 
@@ -46,17 +48,21 @@ public class TerminateDbSystemConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, TerminateDbSystemResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.TerminateDbSystemResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, TerminateDbSystemResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.TerminateDbSystemResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, TerminateDbSystemResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.TerminateDbSystemResponse>() {
                             @Override
-                            public TerminateDbSystemResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.TerminateDbSystemResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for TerminateDbSystemResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.TerminateDbSystemResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class TerminateDbSystemConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                TerminateDbSystemResponse.Builder builder =
-                                        TerminateDbSystemResponse.builder();
+                                com.oracle.bmc.database.responses.TerminateDbSystemResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .TerminateDbSystemResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -94,7 +102,8 @@ public class TerminateDbSystemConverter {
                                                     String.class));
                                 }
 
-                                TerminateDbSystemResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.TerminateDbSystemResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

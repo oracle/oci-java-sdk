@@ -16,14 +16,15 @@ public class CreateNotebookSessionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateNotebookSessionRequest interceptRequest(
-            CreateNotebookSessionRequest request) {
+    public static com.oracle.bmc.datascience.requests.CreateNotebookSessionRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.CreateNotebookSessionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateNotebookSessionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.CreateNotebookSessionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateNotebookSessionDetails(),
@@ -48,18 +49,23 @@ public class CreateNotebookSessionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateNotebookSessionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.CreateNotebookSessionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateNotebookSessionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.CreateNotebookSessionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateNotebookSessionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses
+                                        .CreateNotebookSessionResponse>() {
                             @Override
-                            public CreateNotebookSessionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses
+                                            .CreateNotebookSessionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateNotebookSessionResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.CreateNotebookSessionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +79,11 @@ public class CreateNotebookSessionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateNotebookSessionResponse.Builder builder =
-                                        CreateNotebookSessionResponse.builder();
+                                com.oracle.bmc.datascience.responses.CreateNotebookSessionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .CreateNotebookSessionResponse.builder();
 
                                 builder.notebookSession(response.getItem());
 
@@ -123,7 +132,8 @@ public class CreateNotebookSessionConverter {
                                                     String.class));
                                 }
 
-                                CreateNotebookSessionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.CreateNotebookSessionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

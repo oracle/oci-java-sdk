@@ -16,13 +16,15 @@ public class GetStreamConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetStreamRequest interceptRequest(GetStreamRequest request) {
+    public static com.oracle.bmc.streaming.requests.GetStreamRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.GetStreamRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetStreamRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.GetStreamRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
 
@@ -45,15 +47,21 @@ public class GetStreamConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetStreamResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.streaming.responses.GetStreamResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetStreamResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.GetStreamResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetStreamResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.GetStreamResponse>() {
                             @Override
-                            public GetStreamResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetStreamResponse");
+                            public com.oracle.bmc.streaming.responses.GetStreamResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.GetStreamResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Stream>>
@@ -65,7 +73,10 @@ public class GetStreamConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetStreamResponse.Builder builder = GetStreamResponse.builder();
+                                com.oracle.bmc.streaming.responses.GetStreamResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses.GetStreamResponse
+                                                        .builder();
 
                                 builder.stream(response.getItem());
 
@@ -90,7 +101,8 @@ public class GetStreamConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetStreamResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.GetStreamResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

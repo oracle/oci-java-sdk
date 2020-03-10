@@ -16,13 +16,15 @@ public class ListHttpRedirectsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListHttpRedirectsRequest interceptRequest(ListHttpRedirectsRequest request) {
+    public static com.oracle.bmc.waas.requests.ListHttpRedirectsRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListHttpRedirectsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListHttpRedirectsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListHttpRedirectsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -122,17 +124,21 @@ public class ListHttpRedirectsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListHttpRedirectsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ListHttpRedirectsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListHttpRedirectsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListHttpRedirectsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListHttpRedirectsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListHttpRedirectsResponse>() {
                             @Override
-                            public ListHttpRedirectsResponse apply(
+                            public com.oracle.bmc.waas.responses.ListHttpRedirectsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListHttpRedirectsResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListHttpRedirectsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -149,8 +155,10 @@ public class ListHttpRedirectsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListHttpRedirectsResponse.Builder builder =
-                                        ListHttpRedirectsResponse.builder();
+                                com.oracle.bmc.waas.responses.ListHttpRedirectsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ListHttpRedirectsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -178,7 +186,8 @@ public class ListHttpRedirectsConverter {
                                                     String.class));
                                 }
 
-                                ListHttpRedirectsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListHttpRedirectsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

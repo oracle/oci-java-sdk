@@ -16,13 +16,15 @@ public class GetModelProvenanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetModelProvenanceRequest interceptRequest(GetModelProvenanceRequest request) {
+    public static com.oracle.bmc.datascience.requests.GetModelProvenanceRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.GetModelProvenanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetModelProvenanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.GetModelProvenanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
 
@@ -47,17 +49,21 @@ public class GetModelProvenanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetModelProvenanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.GetModelProvenanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetModelProvenanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.GetModelProvenanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetModelProvenanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.GetModelProvenanceResponse>() {
                             @Override
-                            public GetModelProvenanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses.GetModelProvenanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetModelProvenanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.GetModelProvenanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -71,8 +77,11 @@ public class GetModelProvenanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetModelProvenanceResponse.Builder builder =
-                                        GetModelProvenanceResponse.builder();
+                                com.oracle.bmc.datascience.responses.GetModelProvenanceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .GetModelProvenanceResponse.builder();
 
                                 builder.modelProvenance(response.getItem());
 
@@ -97,7 +106,8 @@ public class GetModelProvenanceConverter {
                                                     String.class));
                                 }
 
-                                GetModelProvenanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.GetModelProvenanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

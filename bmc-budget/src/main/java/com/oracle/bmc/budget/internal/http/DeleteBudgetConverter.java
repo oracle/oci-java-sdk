@@ -16,13 +16,15 @@ public class DeleteBudgetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteBudgetRequest interceptRequest(DeleteBudgetRequest request) {
+    public static com.oracle.bmc.budget.requests.DeleteBudgetRequest interceptRequest(
+            com.oracle.bmc.budget.requests.DeleteBudgetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteBudgetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.budget.requests.DeleteBudgetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
 
@@ -49,16 +51,21 @@ public class DeleteBudgetConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBudgetResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.budget.responses.DeleteBudgetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBudgetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.budget.responses.DeleteBudgetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteBudgetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.budget.responses.DeleteBudgetResponse>() {
                             @Override
-                            public DeleteBudgetResponse apply(
+                            public com.oracle.bmc.budget.responses.DeleteBudgetResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteBudgetResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.budget.responses.DeleteBudgetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +76,10 @@ public class DeleteBudgetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteBudgetResponse.Builder builder =
-                                        DeleteBudgetResponse.builder();
+                                com.oracle.bmc.budget.responses.DeleteBudgetResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.budget.responses.DeleteBudgetResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +93,8 @@ public class DeleteBudgetConverter {
                                                     String.class));
                                 }
 
-                                DeleteBudgetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.budget.responses.DeleteBudgetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class GetNetworkSourceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetNetworkSourceRequest interceptRequest(GetNetworkSourceRequest request) {
+    public static com.oracle.bmc.identity.requests.GetNetworkSourceRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetNetworkSourceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetNetworkSourceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GetNetworkSourceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNetworkSourceId(), "networkSourceId must not be blank");
 
@@ -42,17 +44,21 @@ public class GetNetworkSourceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetNetworkSourceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.GetNetworkSourceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkSourceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetNetworkSourceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetNetworkSourceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.GetNetworkSourceResponse>() {
                             @Override
-                            public GetNetworkSourceResponse apply(
+                            public com.oracle.bmc.identity.responses.GetNetworkSourceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetNetworkSourceResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetNetworkSourceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class GetNetworkSourceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetNetworkSourceResponse.Builder builder =
-                                        GetNetworkSourceResponse.builder();
+                                com.oracle.bmc.identity.responses.GetNetworkSourceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .GetNetworkSourceResponse.builder();
 
                                 builder.networkSources(response.getItem());
 
@@ -92,7 +100,8 @@ public class GetNetworkSourceConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetNetworkSourceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetNetworkSourceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

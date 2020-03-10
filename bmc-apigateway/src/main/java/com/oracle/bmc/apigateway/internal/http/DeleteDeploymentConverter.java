@@ -16,13 +16,15 @@ public class DeleteDeploymentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteDeploymentRequest interceptRequest(DeleteDeploymentRequest request) {
+    public static com.oracle.bmc.apigateway.requests.DeleteDeploymentRequest interceptRequest(
+            com.oracle.bmc.apigateway.requests.DeleteDeploymentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteDeploymentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.apigateway.requests.DeleteDeploymentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDeploymentId(), "deploymentId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteDeploymentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteDeploymentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.apigateway.responses.DeleteDeploymentResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDeploymentResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.apigateway.responses.DeleteDeploymentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteDeploymentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.apigateway.responses.DeleteDeploymentResponse>() {
                             @Override
-                            public DeleteDeploymentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.apigateway.responses.DeleteDeploymentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteDeploymentResponse");
+                                        "Transform function invoked for com.oracle.bmc.apigateway.responses.DeleteDeploymentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,10 @@ public class DeleteDeploymentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteDeploymentResponse.Builder builder =
-                                        DeleteDeploymentResponse.builder();
+                                com.oracle.bmc.apigateway.responses.DeleteDeploymentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.apigateway.responses
+                                                        .DeleteDeploymentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -98,7 +106,8 @@ public class DeleteDeploymentConverter {
                                                     String.class));
                                 }
 
-                                DeleteDeploymentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.apigateway.responses.DeleteDeploymentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

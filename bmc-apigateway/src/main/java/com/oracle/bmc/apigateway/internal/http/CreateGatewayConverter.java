@@ -16,13 +16,15 @@ public class CreateGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateGatewayRequest interceptRequest(CreateGatewayRequest request) {
+    public static com.oracle.bmc.apigateway.requests.CreateGatewayRequest interceptRequest(
+            com.oracle.bmc.apigateway.requests.CreateGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.apigateway.requests.CreateGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateGatewayDetails(), "createGatewayDetails is required");
 
@@ -44,16 +46,22 @@ public class CreateGatewayConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateGatewayResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.apigateway.responses.CreateGatewayResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGatewayResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.apigateway.responses.CreateGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.apigateway.responses.CreateGatewayResponse>() {
                             @Override
-                            public CreateGatewayResponse apply(
+                            public com.oracle.bmc.apigateway.responses.CreateGatewayResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateGatewayResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.apigateway.responses.CreateGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Gateway>>
@@ -65,8 +73,10 @@ public class CreateGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateGatewayResponse.Builder builder =
-                                        CreateGatewayResponse.builder();
+                                com.oracle.bmc.apigateway.responses.CreateGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.apigateway.responses
+                                                        .CreateGatewayResponse.builder();
 
                                 builder.gateway(response.getItem());
 
@@ -115,7 +125,8 @@ public class CreateGatewayConverter {
                                                     String.class));
                                 }
 
-                                CreateGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.apigateway.responses.CreateGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

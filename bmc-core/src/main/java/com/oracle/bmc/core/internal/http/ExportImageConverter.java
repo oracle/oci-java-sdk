@@ -16,13 +16,15 @@ public class ExportImageConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ExportImageRequest interceptRequest(ExportImageRequest request) {
+    public static com.oracle.bmc.core.requests.ExportImageRequest interceptRequest(
+            com.oracle.bmc.core.requests.ExportImageRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ExportImageRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ExportImageRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getImageId(), "imageId must not be blank");
         Validate.notNull(request.getExportImageDetails(), "exportImageDetails is required");
@@ -52,16 +54,21 @@ public class ExportImageConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ExportImageResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.ExportImageResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ExportImageResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ExportImageResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ExportImageResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ExportImageResponse>() {
                             @Override
-                            public ExportImageResponse apply(
+                            public com.oracle.bmc.core.responses.ExportImageResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ExportImageResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ExportImageResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Image>>
@@ -73,7 +80,8 @@ public class ExportImageConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ExportImageResponse.Builder builder = ExportImageResponse.builder();
+                                com.oracle.bmc.core.responses.ExportImageResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.ExportImageResponse.builder();
 
                                 builder.image(response.getItem());
 
@@ -110,7 +118,8 @@ public class ExportImageConverter {
                                                     String.class));
                                 }
 
-                                ExportImageResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ExportImageResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

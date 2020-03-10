@@ -16,13 +16,15 @@ public class ListRecommendationsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListRecommendationsRequest interceptRequest(ListRecommendationsRequest request) {
+    public static com.oracle.bmc.waas.requests.ListRecommendationsRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListRecommendationsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListRecommendationsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListRecommendationsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -72,18 +74,21 @@ public class ListRecommendationsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListRecommendationsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ListRecommendationsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListRecommendationsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListRecommendationsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListRecommendationsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListRecommendationsResponse>() {
                             @Override
-                            public ListRecommendationsResponse apply(
+                            public com.oracle.bmc.waas.responses.ListRecommendationsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListRecommendationsResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListRecommendationsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -100,8 +105,10 @@ public class ListRecommendationsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListRecommendationsResponse.Builder builder =
-                                        ListRecommendationsResponse.builder();
+                                com.oracle.bmc.waas.responses.ListRecommendationsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ListRecommendationsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -138,7 +145,8 @@ public class ListRecommendationsConverter {
                                                     String.class));
                                 }
 
-                                ListRecommendationsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListRecommendationsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

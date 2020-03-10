@@ -16,13 +16,15 @@ public class DeleteTsigKeyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteTsigKeyRequest interceptRequest(DeleteTsigKeyRequest request) {
+    public static com.oracle.bmc.dns.requests.DeleteTsigKeyRequest interceptRequest(
+            com.oracle.bmc.dns.requests.DeleteTsigKeyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteTsigKeyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.DeleteTsigKeyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTsigKeyId(), "tsigKeyId must not be blank");
 
@@ -53,16 +55,21 @@ public class DeleteTsigKeyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTsigKeyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.dns.responses.DeleteTsigKeyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTsigKeyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.DeleteTsigKeyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteTsigKeyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.DeleteTsigKeyResponse>() {
                             @Override
-                            public DeleteTsigKeyResponse apply(
+                            public com.oracle.bmc.dns.responses.DeleteTsigKeyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteTsigKeyResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.DeleteTsigKeyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -73,8 +80,9 @@ public class DeleteTsigKeyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteTsigKeyResponse.Builder builder =
-                                        DeleteTsigKeyResponse.builder();
+                                com.oracle.bmc.dns.responses.DeleteTsigKeyResponse.Builder builder =
+                                        com.oracle.bmc.dns.responses.DeleteTsigKeyResponse
+                                                .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -100,7 +108,8 @@ public class DeleteTsigKeyConverter {
                                                     String.class));
                                 }
 
-                                DeleteTsigKeyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.DeleteTsigKeyResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

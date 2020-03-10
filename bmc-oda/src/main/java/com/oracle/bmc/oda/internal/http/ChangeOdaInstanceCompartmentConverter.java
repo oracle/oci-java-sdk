@@ -16,15 +16,15 @@ public class ChangeOdaInstanceCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeOdaInstanceCompartmentRequest interceptRequest(
-            ChangeOdaInstanceCompartmentRequest request) {
+    public static com.oracle.bmc.oda.requests.ChangeOdaInstanceCompartmentRequest interceptRequest(
+            com.oracle.bmc.oda.requests.ChangeOdaInstanceCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeOdaInstanceCompartmentRequest request) {
+            com.oracle.bmc.oda.requests.ChangeOdaInstanceCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getOdaInstanceId(), "odaInstanceId must not be blank");
         Validate.notNull(
@@ -61,18 +61,22 @@ public class ChangeOdaInstanceCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeOdaInstanceCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.oda.responses.ChangeOdaInstanceCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeOdaInstanceCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oda.responses.ChangeOdaInstanceCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeOdaInstanceCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oda.responses
+                                        .ChangeOdaInstanceCompartmentResponse>() {
                             @Override
-                            public ChangeOdaInstanceCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.oda.responses.ChangeOdaInstanceCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeOdaInstanceCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.oda.responses.ChangeOdaInstanceCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +87,12 @@ public class ChangeOdaInstanceCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeOdaInstanceCompartmentResponse.Builder builder =
-                                        ChangeOdaInstanceCompartmentResponse.builder();
+                                com.oracle.bmc.oda.responses.ChangeOdaInstanceCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.oda.responses
+                                                        .ChangeOdaInstanceCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -110,8 +118,8 @@ public class ChangeOdaInstanceCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeOdaInstanceCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.oda.responses.ChangeOdaInstanceCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

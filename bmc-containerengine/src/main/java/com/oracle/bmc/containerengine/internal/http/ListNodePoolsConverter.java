@@ -16,13 +16,15 @@ public class ListNodePoolsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListNodePoolsRequest interceptRequest(ListNodePoolsRequest request) {
+    public static com.oracle.bmc.containerengine.requests.ListNodePoolsRequest interceptRequest(
+            com.oracle.bmc.containerengine.requests.ListNodePoolsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListNodePoolsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.containerengine.requests.ListNodePoolsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -94,16 +96,22 @@ public class ListNodePoolsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListNodePoolsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.containerengine.responses.ListNodePoolsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListNodePoolsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.containerengine.responses.ListNodePoolsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListNodePoolsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.containerengine.responses.ListNodePoolsResponse>() {
                             @Override
-                            public ListNodePoolsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListNodePoolsResponse");
+                            public com.oracle.bmc.containerengine.responses.ListNodePoolsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.containerengine.responses.ListNodePoolsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -120,8 +128,11 @@ public class ListNodePoolsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListNodePoolsResponse.Builder builder =
-                                        ListNodePoolsResponse.builder();
+                                com.oracle.bmc.containerengine.responses.ListNodePoolsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.containerengine.responses
+                                                        .ListNodePoolsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -149,7 +160,8 @@ public class ListNodePoolsConverter {
                                                     String.class));
                                 }
 
-                                ListNodePoolsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.containerengine.responses.ListNodePoolsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

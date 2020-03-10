@@ -16,15 +16,17 @@ public class ChangeNetworkSecurityGroupCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeNetworkSecurityGroupCompartmentRequest interceptRequest(
-            ChangeNetworkSecurityGroupCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeNetworkSecurityGroupCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ChangeNetworkSecurityGroupCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeNetworkSecurityGroupCompartmentRequest request) {
+            com.oracle.bmc.core.requests.ChangeNetworkSecurityGroupCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
@@ -58,19 +60,23 @@ public class ChangeNetworkSecurityGroupCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeNetworkSecurityGroupCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeNetworkSecurityGroupCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeNetworkSecurityGroupCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeNetworkSecurityGroupCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeNetworkSecurityGroupCompartmentResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ChangeNetworkSecurityGroupCompartmentResponse>() {
                             @Override
-                            public ChangeNetworkSecurityGroupCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ChangeNetworkSecurityGroupCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeNetworkSecurityGroupCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeNetworkSecurityGroupCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -81,8 +87,13 @@ public class ChangeNetworkSecurityGroupCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeNetworkSecurityGroupCompartmentResponse.Builder builder =
-                                        ChangeNetworkSecurityGroupCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ChangeNetworkSecurityGroupCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeNetworkSecurityGroupCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -105,8 +116,9 @@ public class ChangeNetworkSecurityGroupCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeNetworkSecurityGroupCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ChangeNetworkSecurityGroupCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

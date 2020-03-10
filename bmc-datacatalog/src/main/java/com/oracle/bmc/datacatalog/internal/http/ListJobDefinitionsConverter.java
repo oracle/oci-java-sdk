@@ -16,13 +16,15 @@ public class ListJobDefinitionsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListJobDefinitionsRequest interceptRequest(ListJobDefinitionsRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ListJobDefinitionsRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ListJobDefinitionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListJobDefinitionsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ListJobDefinitionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
 
@@ -176,17 +178,21 @@ public class ListJobDefinitionsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListJobDefinitionsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ListJobDefinitionsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListJobDefinitionsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ListJobDefinitionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListJobDefinitionsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ListJobDefinitionsResponse>() {
                             @Override
-                            public ListJobDefinitionsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.ListJobDefinitionsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListJobDefinitionsResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ListJobDefinitionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -200,8 +206,11 @@ public class ListJobDefinitionsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListJobDefinitionsResponse.Builder builder =
-                                        ListJobDefinitionsResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ListJobDefinitionsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ListJobDefinitionsResponse.builder();
 
                                 builder.jobDefinitionCollection(response.getItem());
 
@@ -229,7 +238,8 @@ public class ListJobDefinitionsConverter {
                                                     String.class));
                                 }
 
-                                ListJobDefinitionsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ListJobDefinitionsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

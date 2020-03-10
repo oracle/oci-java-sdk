@@ -16,13 +16,15 @@ public class UpdateSecurityListConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateSecurityListRequest interceptRequest(UpdateSecurityListRequest request) {
+    public static com.oracle.bmc.core.requests.UpdateSecurityListRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdateSecurityListRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateSecurityListRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdateSecurityListRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
         Validate.notNull(
@@ -48,17 +50,21 @@ public class UpdateSecurityListConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateSecurityListResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdateSecurityListResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityListResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdateSecurityListResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateSecurityListResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdateSecurityListResponse>() {
                             @Override
-                            public UpdateSecurityListResponse apply(
+                            public com.oracle.bmc.core.responses.UpdateSecurityListResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateSecurityListResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdateSecurityListResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -72,8 +78,10 @@ public class UpdateSecurityListConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateSecurityListResponse.Builder builder =
-                                        UpdateSecurityListResponse.builder();
+                                com.oracle.bmc.core.responses.UpdateSecurityListResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdateSecurityListResponse.builder();
 
                                 builder.securityList(response.getItem());
 
@@ -98,7 +106,8 @@ public class UpdateSecurityListConverter {
                                                     String.class));
                                 }
 
-                                UpdateSecurityListResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdateSecurityListResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

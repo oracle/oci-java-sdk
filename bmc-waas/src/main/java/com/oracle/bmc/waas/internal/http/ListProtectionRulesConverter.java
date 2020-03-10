@@ -16,13 +16,15 @@ public class ListProtectionRulesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListProtectionRulesRequest interceptRequest(ListProtectionRulesRequest request) {
+    public static com.oracle.bmc.waas.requests.ListProtectionRulesRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListProtectionRulesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListProtectionRulesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListProtectionRulesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -82,18 +84,21 @@ public class ListProtectionRulesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListProtectionRulesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.ListProtectionRulesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListProtectionRulesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListProtectionRulesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListProtectionRulesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListProtectionRulesResponse>() {
                             @Override
-                            public ListProtectionRulesResponse apply(
+                            public com.oracle.bmc.waas.responses.ListProtectionRulesResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListProtectionRulesResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListProtectionRulesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -110,8 +115,10 @@ public class ListProtectionRulesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListProtectionRulesResponse.Builder builder =
-                                        ListProtectionRulesResponse.builder();
+                                com.oracle.bmc.waas.responses.ListProtectionRulesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .ListProtectionRulesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -148,7 +155,8 @@ public class ListProtectionRulesConverter {
                                                     String.class));
                                 }
 
-                                ListProtectionRulesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListProtectionRulesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

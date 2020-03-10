@@ -16,14 +16,16 @@ public class DeleteTermRelationshipConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteTermRelationshipRequest interceptRequest(
-            DeleteTermRelationshipRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.DeleteTermRelationshipRequest
+            interceptRequest(
+                    com.oracle.bmc.datacatalog.requests.DeleteTermRelationshipRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteTermRelationshipRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.DeleteTermRelationshipRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -67,18 +69,23 @@ public class DeleteTermRelationshipConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteTermRelationshipResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.DeleteTermRelationshipResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteTermRelationshipResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.DeleteTermRelationshipResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteTermRelationshipResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses
+                                        .DeleteTermRelationshipResponse>() {
                             @Override
-                            public DeleteTermRelationshipResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses
+                                            .DeleteTermRelationshipResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteTermRelationshipResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.DeleteTermRelationshipResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -89,8 +96,11 @@ public class DeleteTermRelationshipConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteTermRelationshipResponse.Builder builder =
-                                        DeleteTermRelationshipResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.DeleteTermRelationshipResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .DeleteTermRelationshipResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -104,7 +114,8 @@ public class DeleteTermRelationshipConverter {
                                                     String.class));
                                 }
 
-                                DeleteTermRelationshipResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.DeleteTermRelationshipResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

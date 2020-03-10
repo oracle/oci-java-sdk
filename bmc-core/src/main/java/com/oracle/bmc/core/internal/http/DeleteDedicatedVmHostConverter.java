@@ -16,14 +16,15 @@ public class DeleteDedicatedVmHostConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteDedicatedVmHostRequest interceptRequest(
-            DeleteDedicatedVmHostRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteDedicatedVmHostRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteDedicatedVmHostRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteDedicatedVmHostRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteDedicatedVmHostRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
 
@@ -47,18 +48,21 @@ public class DeleteDedicatedVmHostConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteDedicatedVmHostResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteDedicatedVmHostResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteDedicatedVmHostResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteDedicatedVmHostResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteDedicatedVmHostResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteDedicatedVmHostResponse>() {
                             @Override
-                            public DeleteDedicatedVmHostResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.DeleteDedicatedVmHostResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteDedicatedVmHostResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteDedicatedVmHostResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,8 +73,10 @@ public class DeleteDedicatedVmHostConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteDedicatedVmHostResponse.Builder builder =
-                                        DeleteDedicatedVmHostResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteDedicatedVmHostResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteDedicatedVmHostResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -96,7 +102,8 @@ public class DeleteDedicatedVmHostConverter {
                                                     String.class));
                                 }
 
-                                DeleteDedicatedVmHostResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteDedicatedVmHostResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListBackupsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListBackupsRequest interceptRequest(ListBackupsRequest request) {
+    public static com.oracle.bmc.database.requests.ListBackupsRequest interceptRequest(
+            com.oracle.bmc.database.requests.ListBackupsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListBackupsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.ListBackupsRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -67,16 +69,22 @@ public class ListBackupsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListBackupsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListBackupsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListBackupsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.ListBackupsResponse>() {
                             @Override
-                            public ListBackupsResponse apply(
+                            public com.oracle.bmc.database.responses.ListBackupsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListBackupsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListBackupsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -93,7 +101,10 @@ public class ListBackupsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListBackupsResponse.Builder builder = ListBackupsResponse.builder();
+                                com.oracle.bmc.database.responses.ListBackupsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListBackupsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -121,7 +132,8 @@ public class ListBackupsConverter {
                                                     String.class));
                                 }
 
-                                ListBackupsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.ListBackupsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class GetDbHomeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDbHomeRequest interceptRequest(GetDbHomeRequest request) {
+    public static com.oracle.bmc.database.requests.GetDbHomeRequest interceptRequest(
+            com.oracle.bmc.database.requests.GetDbHomeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDbHomeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.GetDbHomeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbHomeId(), "dbHomeId must not be blank");
 
@@ -41,15 +43,21 @@ public class GetDbHomeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.database.responses.GetDbHomeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetDbHomeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDbHomeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.GetDbHomeResponse>() {
                             @Override
-                            public GetDbHomeResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetDbHomeResponse");
+                            public com.oracle.bmc.database.responses.GetDbHomeResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetDbHomeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<DbHome>>
@@ -61,7 +69,10 @@ public class GetDbHomeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDbHomeResponse.Builder builder = GetDbHomeResponse.builder();
+                                com.oracle.bmc.database.responses.GetDbHomeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses.GetDbHomeResponse
+                                                        .builder();
 
                                 builder.dbHome(response.getItem());
 
@@ -86,7 +97,8 @@ public class GetDbHomeConverter {
                                                     String.class));
                                 }
 
-                                GetDbHomeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.GetDbHomeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

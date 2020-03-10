@@ -16,15 +16,17 @@ public class ListHealthChecksVantagePointsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListHealthChecksVantagePointsRequest interceptRequest(
-            ListHealthChecksVantagePointsRequest request) {
+    public static com.oracle.bmc.healthchecks.requests.ListHealthChecksVantagePointsRequest
+            interceptRequest(
+                    com.oracle.bmc.healthchecks.requests.ListHealthChecksVantagePointsRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListHealthChecksVantagePointsRequest request) {
+            com.oracle.bmc.healthchecks.requests.ListHealthChecksVantagePointsRequest request) {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
@@ -90,19 +92,23 @@ public class ListHealthChecksVantagePointsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListHealthChecksVantagePointsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.healthchecks.responses.ListHealthChecksVantagePointsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListHealthChecksVantagePointsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.healthchecks.responses.ListHealthChecksVantagePointsResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListHealthChecksVantagePointsResponse>() {
+                                com.oracle.bmc.healthchecks.responses
+                                        .ListHealthChecksVantagePointsResponse>() {
                             @Override
-                            public ListHealthChecksVantagePointsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.healthchecks.responses
+                                            .ListHealthChecksVantagePointsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListHealthChecksVantagePointsResponse");
+                                        "Transform function invoked for com.oracle.bmc.healthchecks.responses.ListHealthChecksVantagePointsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -120,8 +126,12 @@ public class ListHealthChecksVantagePointsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListHealthChecksVantagePointsResponse.Builder builder =
-                                        ListHealthChecksVantagePointsResponse.builder();
+                                com.oracle.bmc.healthchecks.responses
+                                                .ListHealthChecksVantagePointsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.healthchecks.responses
+                                                        .ListHealthChecksVantagePointsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -149,8 +159,9 @@ public class ListHealthChecksVantagePointsConverter {
                                                     String.class));
                                 }
 
-                                ListHealthChecksVantagePointsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.healthchecks.responses
+                                                .ListHealthChecksVantagePointsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

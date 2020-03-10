@@ -16,13 +16,15 @@ public class CreateIndexConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateIndexRequest interceptRequest(CreateIndexRequest request) {
+    public static com.oracle.bmc.nosql.requests.CreateIndexRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.CreateIndexRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateIndexRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.CreateIndexRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTableNameOrId(), "tableNameOrId must not be blank");
         Validate.notNull(request.getCreateIndexDetails(), "createIndexDetails is required");
@@ -51,16 +53,21 @@ public class CreateIndexConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateIndexResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.CreateIndexResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateIndexResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.nosql.responses.CreateIndexResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateIndexResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.CreateIndexResponse>() {
                             @Override
-                            public CreateIndexResponse apply(
+                            public com.oracle.bmc.nosql.responses.CreateIndexResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateIndexResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.CreateIndexResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,7 +78,9 @@ public class CreateIndexConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateIndexResponse.Builder builder = CreateIndexResponse.builder();
+                                com.oracle.bmc.nosql.responses.CreateIndexResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.CreateIndexResponse
+                                                .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -97,7 +106,8 @@ public class CreateIndexConverter {
                                                     String.class));
                                 }
 
-                                CreateIndexResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.CreateIndexResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,15 +16,15 @@ public class ListDedicatedVmHostInstancesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDedicatedVmHostInstancesRequest interceptRequest(
-            ListDedicatedVmHostInstancesRequest request) {
+    public static com.oracle.bmc.core.requests.ListDedicatedVmHostInstancesRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListDedicatedVmHostInstancesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListDedicatedVmHostInstancesRequest request) {
+            com.oracle.bmc.core.requests.ListDedicatedVmHostInstancesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notBlank(request.getDedicatedVmHostId(), "dedicatedVmHostId must not be blank");
@@ -96,18 +96,23 @@ public class ListDedicatedVmHostInstancesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDedicatedVmHostInstancesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListDedicatedVmHostInstancesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDedicatedVmHostInstancesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListDedicatedVmHostInstancesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListDedicatedVmHostInstancesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses
+                                        .ListDedicatedVmHostInstancesResponse>() {
                             @Override
-                            public ListDedicatedVmHostInstancesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ListDedicatedVmHostInstancesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDedicatedVmHostInstancesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListDedicatedVmHostInstancesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -125,8 +130,12 @@ public class ListDedicatedVmHostInstancesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDedicatedVmHostInstancesResponse.Builder builder =
-                                        ListDedicatedVmHostInstancesResponse.builder();
+                                com.oracle.bmc.core.responses.ListDedicatedVmHostInstancesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListDedicatedVmHostInstancesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -154,8 +163,8 @@ public class ListDedicatedVmHostInstancesConverter {
                                                     String.class));
                                 }
 
-                                ListDedicatedVmHostInstancesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses.ListDedicatedVmHostInstancesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

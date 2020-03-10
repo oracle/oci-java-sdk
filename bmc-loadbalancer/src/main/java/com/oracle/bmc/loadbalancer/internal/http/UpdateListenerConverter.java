@@ -16,13 +16,15 @@ public class UpdateListenerConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateListenerRequest interceptRequest(UpdateListenerRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.UpdateListenerRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.UpdateListenerRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateListenerRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.UpdateListenerRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getUpdateListenerDetails(), "updateListenerDetails is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
@@ -55,16 +57,22 @@ public class UpdateListenerConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateListenerResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.UpdateListenerResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateListenerResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.UpdateListenerResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateListenerResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.UpdateListenerResponse>() {
                             @Override
-                            public UpdateListenerResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateListenerResponse");
+                            public com.oracle.bmc.loadbalancer.responses.UpdateListenerResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.UpdateListenerResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +83,10 @@ public class UpdateListenerConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateListenerResponse.Builder builder =
-                                        UpdateListenerResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.UpdateListenerResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .UpdateListenerResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -102,7 +112,8 @@ public class UpdateListenerConverter {
                                                     String.class));
                                 }
 
-                                UpdateListenerResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.UpdateListenerResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

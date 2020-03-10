@@ -16,15 +16,16 @@ public class ListIdentityProviderGroupsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListIdentityProviderGroupsRequest interceptRequest(
-            ListIdentityProviderGroupsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListIdentityProviderGroupsRequest
+            interceptRequest(
+                    com.oracle.bmc.identity.requests.ListIdentityProviderGroupsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListIdentityProviderGroupsRequest request) {
+            com.oracle.bmc.identity.requests.ListIdentityProviderGroupsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIdentityProviderId(), "identityProviderId must not be blank");
 
@@ -61,18 +62,23 @@ public class ListIdentityProviderGroupsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListIdentityProviderGroupsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListIdentityProviderGroupsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListIdentityProviderGroupsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListIdentityProviderGroupsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListIdentityProviderGroupsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .ListIdentityProviderGroupsResponse>() {
                             @Override
-                            public ListIdentityProviderGroupsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses
+                                            .ListIdentityProviderGroupsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListIdentityProviderGroupsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListIdentityProviderGroupsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -90,8 +96,12 @@ public class ListIdentityProviderGroupsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListIdentityProviderGroupsResponse.Builder builder =
-                                        ListIdentityProviderGroupsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListIdentityProviderGroupsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListIdentityProviderGroupsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -119,8 +129,8 @@ public class ListIdentityProviderGroupsConverter {
                                                     String.class));
                                 }
 
-                                ListIdentityProviderGroupsResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.identity.responses.ListIdentityProviderGroupsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

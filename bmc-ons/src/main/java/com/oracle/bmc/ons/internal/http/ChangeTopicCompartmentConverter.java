@@ -16,14 +16,15 @@ public class ChangeTopicCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeTopicCompartmentRequest interceptRequest(
-            ChangeTopicCompartmentRequest request) {
+    public static com.oracle.bmc.ons.requests.ChangeTopicCompartmentRequest interceptRequest(
+            com.oracle.bmc.ons.requests.ChangeTopicCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeTopicCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.ons.requests.ChangeTopicCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTopicId(), "topicId must not be blank");
         Validate.notNull(
@@ -60,18 +61,21 @@ public class ChangeTopicCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeTopicCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.ons.responses.ChangeTopicCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeTopicCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.ons.responses.ChangeTopicCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeTopicCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.ons.responses.ChangeTopicCompartmentResponse>() {
                             @Override
-                            public ChangeTopicCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.ons.responses.ChangeTopicCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeTopicCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.ons.responses.ChangeTopicCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -82,8 +86,10 @@ public class ChangeTopicCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeTopicCompartmentResponse.Builder builder =
-                                        ChangeTopicCompartmentResponse.builder();
+                                com.oracle.bmc.ons.responses.ChangeTopicCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.ons.responses
+                                                        .ChangeTopicCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -97,7 +103,8 @@ public class ChangeTopicCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeTopicCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.ons.responses.ChangeTopicCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

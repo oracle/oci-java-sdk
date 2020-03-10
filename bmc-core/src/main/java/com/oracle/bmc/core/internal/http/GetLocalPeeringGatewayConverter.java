@@ -16,14 +16,15 @@ public class GetLocalPeeringGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetLocalPeeringGatewayRequest interceptRequest(
-            GetLocalPeeringGatewayRequest request) {
+    public static com.oracle.bmc.core.requests.GetLocalPeeringGatewayRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetLocalPeeringGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetLocalPeeringGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetLocalPeeringGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
@@ -44,18 +45,21 @@ public class GetLocalPeeringGatewayConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.GetLocalPeeringGatewayResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetLocalPeeringGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetLocalPeeringGatewayResponse>() {
                             @Override
-                            public GetLocalPeeringGatewayResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.GetLocalPeeringGatewayResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetLocalPeeringGatewayResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetLocalPeeringGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +73,10 @@ public class GetLocalPeeringGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetLocalPeeringGatewayResponse.Builder builder =
-                                        GetLocalPeeringGatewayResponse.builder();
+                                com.oracle.bmc.core.responses.GetLocalPeeringGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .GetLocalPeeringGatewayResponse.builder();
 
                                 builder.localPeeringGateway(response.getItem());
 
@@ -95,7 +101,8 @@ public class GetLocalPeeringGatewayConverter {
                                                     String.class));
                                 }
 
-                                GetLocalPeeringGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetLocalPeeringGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

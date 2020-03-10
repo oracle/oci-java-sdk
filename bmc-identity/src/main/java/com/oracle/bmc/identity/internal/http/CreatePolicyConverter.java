@@ -16,13 +16,15 @@ public class CreatePolicyConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreatePolicyRequest interceptRequest(CreatePolicyRequest request) {
+    public static com.oracle.bmc.identity.requests.CreatePolicyRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreatePolicyRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreatePolicyRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.CreatePolicyRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreatePolicyDetails(), "createPolicyDetails is required");
 
@@ -40,16 +42,22 @@ public class CreatePolicyConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreatePolicyResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreatePolicyResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreatePolicyResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.CreatePolicyResponse>() {
                             @Override
-                            public CreatePolicyResponse apply(
+                            public com.oracle.bmc.identity.responses.CreatePolicyResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreatePolicyResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreatePolicyResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Policy>>
@@ -61,8 +69,10 @@ public class CreatePolicyConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreatePolicyResponse.Builder builder =
-                                        CreatePolicyResponse.builder();
+                                com.oracle.bmc.identity.responses.CreatePolicyResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreatePolicyResponse.builder();
 
                                 builder.policy(response.getItem());
 
@@ -87,7 +97,8 @@ public class CreatePolicyConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreatePolicyResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreatePolicyResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

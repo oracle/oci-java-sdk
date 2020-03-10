@@ -16,14 +16,16 @@ public class ChangeKeyCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeKeyCompartmentRequest interceptRequest(
-            ChangeKeyCompartmentRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.ChangeKeyCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.keymanagement.requests.ChangeKeyCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeKeyCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.ChangeKeyCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getKeyId(), "keyId must not be blank");
         Validate.notNull(
@@ -61,18 +63,23 @@ public class ChangeKeyCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeKeyCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.ChangeKeyCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeKeyCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.ChangeKeyCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeKeyCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses
+                                        .ChangeKeyCompartmentResponse>() {
                             @Override
-                            public ChangeKeyCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.keymanagement.responses
+                                            .ChangeKeyCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeKeyCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.ChangeKeyCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -83,8 +90,11 @@ public class ChangeKeyCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeKeyCompartmentResponse.Builder builder =
-                                        ChangeKeyCompartmentResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.ChangeKeyCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .ChangeKeyCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -107,7 +117,8 @@ public class ChangeKeyCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeKeyCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.ChangeKeyCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

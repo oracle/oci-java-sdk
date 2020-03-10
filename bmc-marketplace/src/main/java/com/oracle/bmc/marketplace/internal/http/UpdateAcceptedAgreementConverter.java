@@ -16,15 +16,16 @@ public class UpdateAcceptedAgreementConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateAcceptedAgreementRequest interceptRequest(
-            UpdateAcceptedAgreementRequest request) {
+    public static com.oracle.bmc.marketplace.requests.UpdateAcceptedAgreementRequest
+            interceptRequest(
+                    com.oracle.bmc.marketplace.requests.UpdateAcceptedAgreementRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateAcceptedAgreementRequest request) {
+            com.oracle.bmc.marketplace.requests.UpdateAcceptedAgreementRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAcceptedAgreementId(), "acceptedAgreementId must not be blank");
@@ -60,18 +61,23 @@ public class UpdateAcceptedAgreementConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateAcceptedAgreementResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.marketplace.responses.UpdateAcceptedAgreementResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAcceptedAgreementResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.marketplace.responses.UpdateAcceptedAgreementResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateAcceptedAgreementResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.marketplace.responses
+                                        .UpdateAcceptedAgreementResponse>() {
                             @Override
-                            public UpdateAcceptedAgreementResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.marketplace.responses
+                                            .UpdateAcceptedAgreementResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateAcceptedAgreementResponse");
+                                        "Transform function invoked for com.oracle.bmc.marketplace.responses.UpdateAcceptedAgreementResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -85,8 +91,11 @@ public class UpdateAcceptedAgreementConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateAcceptedAgreementResponse.Builder builder =
-                                        UpdateAcceptedAgreementResponse.builder();
+                                com.oracle.bmc.marketplace.responses.UpdateAcceptedAgreementResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.marketplace.responses
+                                                        .UpdateAcceptedAgreementResponse.builder();
 
                                 builder.acceptedAgreement(response.getItem());
 
@@ -111,7 +120,8 @@ public class UpdateAcceptedAgreementConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateAcceptedAgreementResponse responseWrapper = builder.build();
+                                com.oracle.bmc.marketplace.responses.UpdateAcceptedAgreementResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

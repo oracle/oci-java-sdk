@@ -16,13 +16,15 @@ public class ValidateConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ValidateConnectionRequest interceptRequest(ValidateConnectionRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ValidateConnectionRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ValidateConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ValidateConnectionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ValidateConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -59,17 +61,21 @@ public class ValidateConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ValidateConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ValidateConnectionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ValidateConnectionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ValidateConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ValidateConnectionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ValidateConnectionResponse>() {
                             @Override
-                            public ValidateConnectionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.ValidateConnectionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ValidateConnectionResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ValidateConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -83,8 +89,11 @@ public class ValidateConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ValidateConnectionResponse.Builder builder =
-                                        ValidateConnectionResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ValidateConnectionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ValidateConnectionResponse.builder();
 
                                 builder.validateConnectionResult(response.getItem());
 
@@ -109,7 +118,8 @@ public class ValidateConnectionConverter {
                                                     String.class));
                                 }
 
-                                ValidateConnectionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ValidateConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

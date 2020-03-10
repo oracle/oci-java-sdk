@@ -16,13 +16,15 @@ public class ScheduleKeyDeletionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ScheduleKeyDeletionRequest interceptRequest(ScheduleKeyDeletionRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.ScheduleKeyDeletionRequest interceptRequest(
+            com.oracle.bmc.keymanagement.requests.ScheduleKeyDeletionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ScheduleKeyDeletionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.keymanagement.requests.ScheduleKeyDeletionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getKeyId(), "keyId must not be blank");
         Validate.notNull(
@@ -59,18 +61,23 @@ public class ScheduleKeyDeletionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ScheduleKeyDeletionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.ScheduleKeyDeletionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ScheduleKeyDeletionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.ScheduleKeyDeletionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ScheduleKeyDeletionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses
+                                        .ScheduleKeyDeletionResponse>() {
                             @Override
-                            public ScheduleKeyDeletionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.keymanagement.responses
+                                            .ScheduleKeyDeletionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ScheduleKeyDeletionResponse");
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.ScheduleKeyDeletionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Key>>
@@ -81,8 +88,11 @@ public class ScheduleKeyDeletionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ScheduleKeyDeletionResponse.Builder builder =
-                                        ScheduleKeyDeletionResponse.builder();
+                                com.oracle.bmc.keymanagement.responses.ScheduleKeyDeletionResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .ScheduleKeyDeletionResponse.builder();
 
                                 builder.key(response.getItem());
 
@@ -107,7 +117,8 @@ public class ScheduleKeyDeletionConverter {
                                                     String.class));
                                 }
 
-                                ScheduleKeyDeletionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.keymanagement.responses.ScheduleKeyDeletionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class UpdateBudgetConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateBudgetRequest interceptRequest(UpdateBudgetRequest request) {
+    public static com.oracle.bmc.budget.requests.UpdateBudgetRequest interceptRequest(
+            com.oracle.bmc.budget.requests.UpdateBudgetRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateBudgetRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.budget.requests.UpdateBudgetRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
         Validate.notNull(request.getUpdateBudgetDetails(), "updateBudgetDetails is required");
@@ -50,16 +52,21 @@ public class UpdateBudgetConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBudgetResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.budget.responses.UpdateBudgetResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBudgetResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.budget.responses.UpdateBudgetResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateBudgetResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.budget.responses.UpdateBudgetResponse>() {
                             @Override
-                            public UpdateBudgetResponse apply(
+                            public com.oracle.bmc.budget.responses.UpdateBudgetResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateBudgetResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.budget.responses.UpdateBudgetResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Budget>>
@@ -71,8 +78,10 @@ public class UpdateBudgetConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateBudgetResponse.Builder builder =
-                                        UpdateBudgetResponse.builder();
+                                com.oracle.bmc.budget.responses.UpdateBudgetResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.budget.responses.UpdateBudgetResponse
+                                                        .builder();
 
                                 builder.budget(response.getItem());
 
@@ -97,7 +106,8 @@ public class UpdateBudgetConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                UpdateBudgetResponse responseWrapper = builder.build();
+                                com.oracle.bmc.budget.responses.UpdateBudgetResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

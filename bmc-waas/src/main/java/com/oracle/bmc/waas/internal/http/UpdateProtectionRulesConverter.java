@@ -16,14 +16,15 @@ public class UpdateProtectionRulesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateProtectionRulesRequest interceptRequest(
-            UpdateProtectionRulesRequest request) {
+    public static com.oracle.bmc.waas.requests.UpdateProtectionRulesRequest interceptRequest(
+            com.oracle.bmc.waas.requests.UpdateProtectionRulesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateProtectionRulesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.UpdateProtectionRulesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
         Validate.notNull(request.getProtectionRules(), "protectionRules is required");
@@ -54,18 +55,21 @@ public class UpdateProtectionRulesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateProtectionRulesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.UpdateProtectionRulesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateProtectionRulesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.UpdateProtectionRulesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateProtectionRulesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.UpdateProtectionRulesResponse>() {
                             @Override
-                            public UpdateProtectionRulesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses.UpdateProtectionRulesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateProtectionRulesResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.UpdateProtectionRulesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -76,8 +80,10 @@ public class UpdateProtectionRulesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateProtectionRulesResponse.Builder builder =
-                                        UpdateProtectionRulesResponse.builder();
+                                com.oracle.bmc.waas.responses.UpdateProtectionRulesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .UpdateProtectionRulesResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -103,7 +109,8 @@ public class UpdateProtectionRulesConverter {
                                                     String.class));
                                 }
 
-                                UpdateProtectionRulesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.UpdateProtectionRulesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

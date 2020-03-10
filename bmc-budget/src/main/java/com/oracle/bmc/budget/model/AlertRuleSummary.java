@@ -278,7 +278,7 @@ public class AlertRuleSummary {
     Integer version;
 
     /**
-     * The audience that will received the alert when it triggers.
+     * The audience that will receive the alert when it triggers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipients")
     String recipients;

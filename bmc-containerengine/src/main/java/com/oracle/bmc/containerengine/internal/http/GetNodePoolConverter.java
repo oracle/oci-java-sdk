@@ -16,13 +16,15 @@ public class GetNodePoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetNodePoolRequest interceptRequest(GetNodePoolRequest request) {
+    public static com.oracle.bmc.containerengine.requests.GetNodePoolRequest interceptRequest(
+            com.oracle.bmc.containerengine.requests.GetNodePoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetNodePoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.containerengine.requests.GetNodePoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNodePoolId(), "nodePoolId must not be blank");
 
@@ -45,16 +47,22 @@ public class GetNodePoolConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetNodePoolResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.containerengine.responses.GetNodePoolResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetNodePoolResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.containerengine.responses.GetNodePoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetNodePoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.containerengine.responses.GetNodePoolResponse>() {
                             @Override
-                            public GetNodePoolResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetNodePoolResponse");
+                            public com.oracle.bmc.containerengine.responses.GetNodePoolResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.containerengine.responses.GetNodePoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<NodePool>>
@@ -66,7 +74,10 @@ public class GetNodePoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetNodePoolResponse.Builder builder = GetNodePoolResponse.builder();
+                                com.oracle.bmc.containerengine.responses.GetNodePoolResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.containerengine.responses
+                                                        .GetNodePoolResponse.builder();
 
                                 builder.nodePool(response.getItem());
 
@@ -91,7 +102,8 @@ public class GetNodePoolConverter {
                                                     String.class));
                                 }
 
-                                GetNodePoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.containerengine.responses.GetNodePoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

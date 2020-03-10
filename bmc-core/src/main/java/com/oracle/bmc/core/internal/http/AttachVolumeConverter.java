@@ -16,13 +16,15 @@ public class AttachVolumeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static AttachVolumeRequest interceptRequest(AttachVolumeRequest request) {
+    public static com.oracle.bmc.core.requests.AttachVolumeRequest interceptRequest(
+            com.oracle.bmc.core.requests.AttachVolumeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, AttachVolumeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.AttachVolumeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getAttachVolumeDetails(), "attachVolumeDetails is required");
 
@@ -40,16 +42,21 @@ public class AttachVolumeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, AttachVolumeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.AttachVolumeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, AttachVolumeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.AttachVolumeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, AttachVolumeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.AttachVolumeResponse>() {
                             @Override
-                            public AttachVolumeResponse apply(
+                            public com.oracle.bmc.core.responses.AttachVolumeResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for AttachVolumeResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.AttachVolumeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -63,8 +70,9 @@ public class AttachVolumeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                AttachVolumeResponse.Builder builder =
-                                        AttachVolumeResponse.builder();
+                                com.oracle.bmc.core.responses.AttachVolumeResponse.Builder builder =
+                                        com.oracle.bmc.core.responses.AttachVolumeResponse
+                                                .builder();
 
                                 builder.volumeAttachment(response.getItem());
 
@@ -89,7 +97,8 @@ public class AttachVolumeConverter {
                                                     String.class));
                                 }
 
-                                AttachVolumeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.AttachVolumeResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

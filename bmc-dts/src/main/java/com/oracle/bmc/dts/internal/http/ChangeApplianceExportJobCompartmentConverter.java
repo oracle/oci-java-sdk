@@ -16,15 +16,17 @@ public class ChangeApplianceExportJobCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeApplianceExportJobCompartmentRequest interceptRequest(
-            ChangeApplianceExportJobCompartmentRequest request) {
+    public static com.oracle.bmc.dts.requests.ChangeApplianceExportJobCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.dts.requests.ChangeApplianceExportJobCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeApplianceExportJobCompartmentRequest request) {
+            com.oracle.bmc.dts.requests.ChangeApplianceExportJobCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getApplianceExportJobId(), "applianceExportJobId must not be blank");
@@ -62,19 +64,23 @@ public class ChangeApplianceExportJobCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeApplianceExportJobCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.ChangeApplianceExportJobCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeApplianceExportJobCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.ChangeApplianceExportJobCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeApplianceExportJobCompartmentResponse>() {
+                                com.oracle.bmc.dts.responses
+                                        .ChangeApplianceExportJobCompartmentResponse>() {
                             @Override
-                            public ChangeApplianceExportJobCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dts.responses
+                                            .ChangeApplianceExportJobCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeApplianceExportJobCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.ChangeApplianceExportJobCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -85,8 +91,12 @@ public class ChangeApplianceExportJobCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeApplianceExportJobCompartmentResponse.Builder builder =
-                                        ChangeApplianceExportJobCompartmentResponse.builder();
+                                com.oracle.bmc.dts.responses
+                                                .ChangeApplianceExportJobCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .ChangeApplianceExportJobCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -100,8 +110,9 @@ public class ChangeApplianceExportJobCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeApplianceExportJobCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dts.responses
+                                                .ChangeApplianceExportJobCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

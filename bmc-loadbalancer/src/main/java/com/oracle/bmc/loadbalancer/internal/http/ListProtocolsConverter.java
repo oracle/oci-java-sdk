@@ -16,13 +16,15 @@ public class ListProtocolsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListProtocolsRequest interceptRequest(ListProtocolsRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.ListProtocolsRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.ListProtocolsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListProtocolsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.ListProtocolsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -62,16 +64,22 @@ public class ListProtocolsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListProtocolsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.ListProtocolsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProtocolsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.ListProtocolsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListProtocolsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.ListProtocolsResponse>() {
                             @Override
-                            public ListProtocolsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListProtocolsResponse");
+                            public com.oracle.bmc.loadbalancer.responses.ListProtocolsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.ListProtocolsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -88,8 +96,10 @@ public class ListProtocolsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListProtocolsResponse.Builder builder =
-                                        ListProtocolsResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.ListProtocolsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .ListProtocolsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -117,7 +127,8 @@ public class ListProtocolsConverter {
                                                     String.class));
                                 }
 
-                                ListProtocolsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.ListProtocolsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

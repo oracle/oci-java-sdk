@@ -16,14 +16,15 @@ public class ChangeDrgCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeDrgCompartmentRequest interceptRequest(
-            ChangeDrgCompartmentRequest request) {
+    public static com.oracle.bmc.core.requests.ChangeDrgCompartmentRequest interceptRequest(
+            com.oracle.bmc.core.requests.ChangeDrgCompartmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ChangeDrgCompartmentRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.ChangeDrgCompartmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDrgId(), "drgId must not be blank");
         Validate.notNull(
@@ -56,18 +57,21 @@ public class ChangeDrgCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeDrgCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ChangeDrgCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeDrgCompartmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ChangeDrgCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ChangeDrgCompartmentResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ChangeDrgCompartmentResponse>() {
                             @Override
-                            public ChangeDrgCompartmentResponse apply(
+                            public com.oracle.bmc.core.responses.ChangeDrgCompartmentResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeDrgCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ChangeDrgCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -78,8 +82,10 @@ public class ChangeDrgCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeDrgCompartmentResponse.Builder builder =
-                                        ChangeDrgCompartmentResponse.builder();
+                                com.oracle.bmc.core.responses.ChangeDrgCompartmentResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ChangeDrgCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -114,7 +120,8 @@ public class ChangeDrgCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeDrgCompartmentResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ChangeDrgCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

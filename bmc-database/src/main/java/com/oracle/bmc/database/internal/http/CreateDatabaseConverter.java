@@ -16,13 +16,15 @@ public class CreateDatabaseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateDatabaseRequest interceptRequest(CreateDatabaseRequest request) {
+    public static com.oracle.bmc.database.requests.CreateDatabaseRequest interceptRequest(
+            com.oracle.bmc.database.requests.CreateDatabaseRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateDatabaseRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.CreateDatabaseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateNewDatabaseDetails(), "createNewDatabaseDetails is required");
@@ -45,16 +47,22 @@ public class CreateDatabaseConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatabaseResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.CreateDatabaseResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatabaseResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.CreateDatabaseResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateDatabaseResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.CreateDatabaseResponse>() {
                             @Override
-                            public CreateDatabaseResponse apply(
+                            public com.oracle.bmc.database.responses.CreateDatabaseResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateDatabaseResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.CreateDatabaseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Database>>
@@ -66,8 +74,10 @@ public class CreateDatabaseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateDatabaseResponse.Builder builder =
-                                        CreateDatabaseResponse.builder();
+                                com.oracle.bmc.database.responses.CreateDatabaseResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .CreateDatabaseResponse.builder();
 
                                 builder.database(response.getItem());
 
@@ -104,7 +114,8 @@ public class CreateDatabaseConverter {
                                                     String.class));
                                 }
 
-                                CreateDatabaseResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.CreateDatabaseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class UpdateModelConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateModelRequest interceptRequest(UpdateModelRequest request) {
+    public static com.oracle.bmc.datascience.requests.UpdateModelRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.UpdateModelRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateModelRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.UpdateModelRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
         Validate.notNull(request.getUpdateModelDetails(), "updateModelDetails is required");
@@ -50,16 +52,22 @@ public class UpdateModelConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.UpdateModelResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateModelResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.UpdateModelResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateModelResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.UpdateModelResponse>() {
                             @Override
-                            public UpdateModelResponse apply(
+                            public com.oracle.bmc.datascience.responses.UpdateModelResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateModelResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.UpdateModelResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Model>>
@@ -71,7 +79,10 @@ public class UpdateModelConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateModelResponse.Builder builder = UpdateModelResponse.builder();
+                                com.oracle.bmc.datascience.responses.UpdateModelResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .UpdateModelResponse.builder();
 
                                 builder.model(response.getItem());
 
@@ -96,7 +107,8 @@ public class UpdateModelConverter {
                                                     String.class));
                                 }
 
-                                UpdateModelResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.UpdateModelResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

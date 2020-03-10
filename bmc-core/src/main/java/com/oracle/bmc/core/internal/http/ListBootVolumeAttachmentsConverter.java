@@ -16,15 +16,15 @@ public class ListBootVolumeAttachmentsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListBootVolumeAttachmentsRequest interceptRequest(
-            ListBootVolumeAttachmentsRequest request) {
+    public static com.oracle.bmc.core.requests.ListBootVolumeAttachmentsRequest interceptRequest(
+            com.oracle.bmc.core.requests.ListBootVolumeAttachmentsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListBootVolumeAttachmentsRequest request) {
+            com.oracle.bmc.core.requests.ListBootVolumeAttachmentsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getAvailabilityDomain(), "availabilityDomain is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
@@ -84,18 +84,21 @@ public class ListBootVolumeAttachmentsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListBootVolumeAttachmentsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListBootVolumeAttachmentsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListBootVolumeAttachmentsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListBootVolumeAttachmentsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListBootVolumeAttachmentsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.ListBootVolumeAttachmentsResponse>() {
                             @Override
-                            public ListBootVolumeAttachmentsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses.ListBootVolumeAttachmentsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListBootVolumeAttachmentsResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListBootVolumeAttachmentsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -112,8 +115,12 @@ public class ListBootVolumeAttachmentsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListBootVolumeAttachmentsResponse.Builder builder =
-                                        ListBootVolumeAttachmentsResponse.builder();
+                                com.oracle.bmc.core.responses.ListBootVolumeAttachmentsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListBootVolumeAttachmentsResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -141,7 +148,8 @@ public class ListBootVolumeAttachmentsConverter {
                                                     String.class));
                                 }
 
-                                ListBootVolumeAttachmentsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.ListBootVolumeAttachmentsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

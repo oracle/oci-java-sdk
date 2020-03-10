@@ -16,13 +16,15 @@ public class ListRunLogsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListRunLogsRequest interceptRequest(ListRunLogsRequest request) {
+    public static com.oracle.bmc.dataflow.requests.ListRunLogsRequest interceptRequest(
+            com.oracle.bmc.dataflow.requests.ListRunLogsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListRunLogsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dataflow.requests.ListRunLogsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getRunId(), "runId must not be blank");
 
@@ -62,16 +64,22 @@ public class ListRunLogsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListRunLogsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dataflow.responses.ListRunLogsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRunLogsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dataflow.responses.ListRunLogsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListRunLogsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dataflow.responses.ListRunLogsResponse>() {
                             @Override
-                            public ListRunLogsResponse apply(
+                            public com.oracle.bmc.dataflow.responses.ListRunLogsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListRunLogsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.dataflow.responses.ListRunLogsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -88,7 +96,10 @@ public class ListRunLogsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListRunLogsResponse.Builder builder = ListRunLogsResponse.builder();
+                                com.oracle.bmc.dataflow.responses.ListRunLogsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dataflow.responses
+                                                        .ListRunLogsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -128,7 +139,8 @@ public class ListRunLogsConverter {
                                                     String.class));
                                 }
 
-                                ListRunLogsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dataflow.responses.ListRunLogsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

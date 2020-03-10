@@ -16,15 +16,16 @@ public class ListAutonomousDataWarehousesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAutonomousDataWarehousesRequest interceptRequest(
-            ListAutonomousDataWarehousesRequest request) {
+    public static com.oracle.bmc.database.requests.ListAutonomousDataWarehousesRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ListAutonomousDataWarehousesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListAutonomousDataWarehousesRequest request) {
+            com.oracle.bmc.database.requests.ListAutonomousDataWarehousesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -93,18 +94,23 @@ public class ListAutonomousDataWarehousesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAutonomousDataWarehousesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListAutonomousDataWarehousesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDataWarehousesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListAutonomousDataWarehousesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAutonomousDataWarehousesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .ListAutonomousDataWarehousesResponse>() {
                             @Override
-                            public ListAutonomousDataWarehousesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ListAutonomousDataWarehousesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAutonomousDataWarehousesResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListAutonomousDataWarehousesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -122,8 +128,12 @@ public class ListAutonomousDataWarehousesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAutonomousDataWarehousesResponse.Builder builder =
-                                        ListAutonomousDataWarehousesResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .ListAutonomousDataWarehousesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListAutonomousDataWarehousesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -151,8 +161,9 @@ public class ListAutonomousDataWarehousesConverter {
                                                     String.class));
                                 }
 
-                                ListAutonomousDataWarehousesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .ListAutonomousDataWarehousesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

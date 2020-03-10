@@ -16,13 +16,15 @@ public class GetTagDefaultConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetTagDefaultRequest interceptRequest(GetTagDefaultRequest request) {
+    public static com.oracle.bmc.identity.requests.GetTagDefaultRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetTagDefaultRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetTagDefaultRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GetTagDefaultRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTagDefaultId(), "tagDefaultId must not be blank");
 
@@ -41,16 +43,22 @@ public class GetTagDefaultConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetTagDefaultResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.GetTagDefaultResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTagDefaultResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.GetTagDefaultResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetTagDefaultResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.GetTagDefaultResponse>() {
                             @Override
-                            public GetTagDefaultResponse apply(
+                            public com.oracle.bmc.identity.responses.GetTagDefaultResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetTagDefaultResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetTagDefaultResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -64,8 +72,10 @@ public class GetTagDefaultConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetTagDefaultResponse.Builder builder =
-                                        GetTagDefaultResponse.builder();
+                                com.oracle.bmc.identity.responses.GetTagDefaultResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .GetTagDefaultResponse.builder();
 
                                 builder.tagDefault(response.getItem());
 
@@ -90,7 +100,8 @@ public class GetTagDefaultConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetTagDefaultResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetTagDefaultResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ParseConnectionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ParseConnectionRequest interceptRequest(ParseConnectionRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.ParseConnectionRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.ParseConnectionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ParseConnectionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.ParseConnectionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -66,16 +68,21 @@ public class ParseConnectionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ParseConnectionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.ParseConnectionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ParseConnectionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.ParseConnectionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ParseConnectionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.ParseConnectionResponse>() {
                             @Override
-                            public ParseConnectionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ParseConnectionResponse");
+                            public com.oracle.bmc.datacatalog.responses.ParseConnectionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.ParseConnectionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -92,8 +99,10 @@ public class ParseConnectionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ParseConnectionResponse.Builder builder =
-                                        ParseConnectionResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.ParseConnectionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .ParseConnectionResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -118,7 +127,8 @@ public class ParseConnectionConverter {
                                                     String.class));
                                 }
 
-                                ParseConnectionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.ParseConnectionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

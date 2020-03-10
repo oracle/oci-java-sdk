@@ -16,13 +16,15 @@ public class CreateSuppressionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateSuppressionRequest interceptRequest(CreateSuppressionRequest request) {
+    public static com.oracle.bmc.email.requests.CreateSuppressionRequest interceptRequest(
+            com.oracle.bmc.email.requests.CreateSuppressionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateSuppressionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.email.requests.CreateSuppressionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateSuppressionDetails(), "createSuppressionDetails is required");
@@ -42,17 +44,21 @@ public class CreateSuppressionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateSuppressionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.email.responses.CreateSuppressionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSuppressionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.email.responses.CreateSuppressionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateSuppressionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.email.responses.CreateSuppressionResponse>() {
                             @Override
-                            public CreateSuppressionResponse apply(
+                            public com.oracle.bmc.email.responses.CreateSuppressionResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateSuppressionResponse");
+                                        "Transform function invoked for com.oracle.bmc.email.responses.CreateSuppressionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -66,8 +72,10 @@ public class CreateSuppressionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateSuppressionResponse.Builder builder =
-                                        CreateSuppressionResponse.builder();
+                                com.oracle.bmc.email.responses.CreateSuppressionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.email.responses
+                                                        .CreateSuppressionResponse.builder();
 
                                 builder.suppression(response.getItem());
 
@@ -83,7 +91,8 @@ public class CreateSuppressionConverter {
                                                     String.class));
                                 }
 
-                                CreateSuppressionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.email.responses.CreateSuppressionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class GetDatabaseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetDatabaseRequest interceptRequest(GetDatabaseRequest request) {
+    public static com.oracle.bmc.database.requests.GetDatabaseRequest interceptRequest(
+            com.oracle.bmc.database.requests.GetDatabaseRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetDatabaseRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.GetDatabaseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
 
@@ -41,16 +43,22 @@ public class GetDatabaseConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.GetDatabaseResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.GetDatabaseResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetDatabaseResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses.GetDatabaseResponse>() {
                             @Override
-                            public GetDatabaseResponse apply(
+                            public com.oracle.bmc.database.responses.GetDatabaseResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetDatabaseResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.database.responses.GetDatabaseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Database>>
@@ -62,7 +70,10 @@ public class GetDatabaseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetDatabaseResponse.Builder builder = GetDatabaseResponse.builder();
+                                com.oracle.bmc.database.responses.GetDatabaseResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .GetDatabaseResponse.builder();
 
                                 builder.database(response.getItem());
 
@@ -87,7 +98,8 @@ public class GetDatabaseConverter {
                                                     String.class));
                                 }
 
-                                GetDatabaseResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.GetDatabaseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

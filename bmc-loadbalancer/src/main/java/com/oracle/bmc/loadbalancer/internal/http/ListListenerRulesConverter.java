@@ -16,13 +16,15 @@ public class ListListenerRulesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListListenerRulesRequest interceptRequest(ListListenerRulesRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.ListListenerRulesRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.ListListenerRulesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListListenerRulesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.ListListenerRulesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
         Validate.notBlank(request.getListenerName(), "listenerName must not be blank");
@@ -52,17 +54,21 @@ public class ListListenerRulesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListListenerRulesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.ListListenerRulesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListListenerRulesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.ListListenerRulesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListListenerRulesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.ListListenerRulesResponse>() {
                             @Override
-                            public ListListenerRulesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.loadbalancer.responses.ListListenerRulesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListListenerRulesResponse");
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.ListListenerRulesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -79,8 +85,11 @@ public class ListListenerRulesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListListenerRulesResponse.Builder builder =
-                                        ListListenerRulesResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.ListListenerRulesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .ListListenerRulesResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -96,7 +105,8 @@ public class ListListenerRulesConverter {
                                                     String.class));
                                 }
 
-                                ListListenerRulesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.ListListenerRulesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

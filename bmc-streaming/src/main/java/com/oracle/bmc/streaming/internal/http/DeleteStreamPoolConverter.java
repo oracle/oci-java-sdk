@@ -16,13 +16,15 @@ public class DeleteStreamPoolConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteStreamPoolRequest interceptRequest(DeleteStreamPoolRequest request) {
+    public static com.oracle.bmc.streaming.requests.DeleteStreamPoolRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.DeleteStreamPoolRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteStreamPoolRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.DeleteStreamPoolRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamPoolId(), "streamPoolId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteStreamPoolConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteStreamPoolResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.DeleteStreamPoolResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteStreamPoolResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.DeleteStreamPoolResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteStreamPoolResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.DeleteStreamPoolResponse>() {
                             @Override
-                            public DeleteStreamPoolResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.streaming.responses.DeleteStreamPoolResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteStreamPoolResponse");
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.DeleteStreamPoolResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,10 @@ public class DeleteStreamPoolConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteStreamPoolResponse.Builder builder =
-                                        DeleteStreamPoolResponse.builder();
+                                com.oracle.bmc.streaming.responses.DeleteStreamPoolResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .DeleteStreamPoolResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +94,8 @@ public class DeleteStreamPoolConverter {
                                                     String.class));
                                 }
 
-                                DeleteStreamPoolResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.DeleteStreamPoolResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

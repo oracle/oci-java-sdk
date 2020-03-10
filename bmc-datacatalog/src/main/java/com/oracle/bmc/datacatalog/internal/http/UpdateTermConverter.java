@@ -16,13 +16,15 @@ public class UpdateTermConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateTermRequest interceptRequest(UpdateTermRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.UpdateTermRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.UpdateTermRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdateTermRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.UpdateTermRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getGlossaryKey(), "glossaryKey must not be blank");
@@ -60,15 +62,22 @@ public class UpdateTermConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTermResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.UpdateTermResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTermResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.UpdateTermResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdateTermResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.UpdateTermResponse>() {
                             @Override
-                            public UpdateTermResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdateTermResponse");
+                            public com.oracle.bmc.datacatalog.responses.UpdateTermResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.UpdateTermResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Term>>
@@ -79,7 +88,10 @@ public class UpdateTermConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateTermResponse.Builder builder = UpdateTermResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.UpdateTermResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .UpdateTermResponse.builder();
 
                                 builder.term(response.getItem());
 
@@ -104,7 +116,8 @@ public class UpdateTermConverter {
                                                     String.class));
                                 }
 
-                                UpdateTermResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.UpdateTermResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

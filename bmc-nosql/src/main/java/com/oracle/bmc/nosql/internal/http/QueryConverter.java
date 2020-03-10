@@ -16,13 +16,15 @@ public class QueryConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static QueryRequest interceptRequest(QueryRequest request) {
+    public static com.oracle.bmc.nosql.requests.QueryRequest interceptRequest(
+            com.oracle.bmc.nosql.requests.QueryRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, QueryRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.nosql.requests.QueryRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getQueryDetails(), "queryDetails is required");
 
@@ -56,15 +58,20 @@ public class QueryConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, QueryResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.QueryResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, QueryResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.nosql.responses.QueryResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, QueryResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.nosql.responses.QueryResponse>() {
                             @Override
-                            public QueryResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for QueryResponse");
+                            public com.oracle.bmc.nosql.responses.QueryResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.nosql.responses.QueryResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -78,7 +85,8 @@ public class QueryConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                QueryResponse.Builder builder = QueryResponse.builder();
+                                com.oracle.bmc.nosql.responses.QueryResponse.Builder builder =
+                                        com.oracle.bmc.nosql.responses.QueryResponse.builder();
 
                                 builder.queryResultCollection(response.getItem());
 
@@ -106,7 +114,8 @@ public class QueryConverter {
                                                     String.class));
                                 }
 
-                                QueryResponse responseWrapper = builder.build();
+                                com.oracle.bmc.nosql.responses.QueryResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

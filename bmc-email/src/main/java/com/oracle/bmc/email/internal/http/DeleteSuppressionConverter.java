@@ -16,13 +16,15 @@ public class DeleteSuppressionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSuppressionRequest interceptRequest(DeleteSuppressionRequest request) {
+    public static com.oracle.bmc.email.requests.DeleteSuppressionRequest interceptRequest(
+            com.oracle.bmc.email.requests.DeleteSuppressionRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteSuppressionRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.email.requests.DeleteSuppressionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSuppressionId(), "suppressionId must not be blank");
 
@@ -46,17 +48,21 @@ public class DeleteSuppressionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteSuppressionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.email.responses.DeleteSuppressionResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSuppressionResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.email.responses.DeleteSuppressionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteSuppressionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.email.responses.DeleteSuppressionResponse>() {
                             @Override
-                            public DeleteSuppressionResponse apply(
+                            public com.oracle.bmc.email.responses.DeleteSuppressionResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteSuppressionResponse");
+                                        "Transform function invoked for com.oracle.bmc.email.responses.DeleteSuppressionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class DeleteSuppressionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSuppressionResponse.Builder builder =
-                                        DeleteSuppressionResponse.builder();
+                                com.oracle.bmc.email.responses.DeleteSuppressionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.email.responses
+                                                        .DeleteSuppressionResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +90,8 @@ public class DeleteSuppressionConverter {
                                                     String.class));
                                 }
 
-                                DeleteSuppressionResponse responseWrapper = builder.build();
+                                com.oracle.bmc.email.responses.DeleteSuppressionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

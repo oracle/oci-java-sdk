@@ -16,13 +16,15 @@ public class GetWorkRequestConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetWorkRequestRequest interceptRequest(GetWorkRequestRequest request) {
+    public static com.oracle.bmc.resourcemanager.requests.GetWorkRequestRequest interceptRequest(
+            com.oracle.bmc.resourcemanager.requests.GetWorkRequestRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetWorkRequestRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.resourcemanager.requests.GetWorkRequestRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
@@ -45,16 +47,22 @@ public class GetWorkRequestConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.resourcemanager.responses.GetWorkRequestResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.resourcemanager.responses.GetWorkRequestResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetWorkRequestResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.resourcemanager.responses.GetWorkRequestResponse>() {
                             @Override
-                            public GetWorkRequestResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetWorkRequestResponse");
+                            public com.oracle.bmc.resourcemanager.responses.GetWorkRequestResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.resourcemanager.responses.GetWorkRequestResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -68,8 +76,11 @@ public class GetWorkRequestConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetWorkRequestResponse.Builder builder =
-                                        GetWorkRequestResponse.builder();
+                                com.oracle.bmc.resourcemanager.responses.GetWorkRequestResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.resourcemanager.responses
+                                                        .GetWorkRequestResponse.builder();
 
                                 builder.workRequest(response.getItem());
 
@@ -85,7 +96,8 @@ public class GetWorkRequestConverter {
                                                     String.class));
                                 }
 
-                                GetWorkRequestResponse responseWrapper = builder.build();
+                                com.oracle.bmc.resourcemanager.responses.GetWorkRequestResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

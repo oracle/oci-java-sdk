@@ -16,15 +16,15 @@ public class CreateOrResetUIPasswordConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateOrResetUIPasswordRequest interceptRequest(
-            CreateOrResetUIPasswordRequest request) {
+    public static com.oracle.bmc.identity.requests.CreateOrResetUIPasswordRequest interceptRequest(
+            com.oracle.bmc.identity.requests.CreateOrResetUIPasswordRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateOrResetUIPasswordRequest request) {
+            com.oracle.bmc.identity.requests.CreateOrResetUIPasswordRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -49,18 +49,22 @@ public class CreateOrResetUIPasswordConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.CreateOrResetUIPasswordResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.CreateOrResetUIPasswordResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses
+                                        .CreateOrResetUIPasswordResponse>() {
                             @Override
-                            public CreateOrResetUIPasswordResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.CreateOrResetUIPasswordResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateOrResetUIPasswordResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.CreateOrResetUIPasswordResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +78,11 @@ public class CreateOrResetUIPasswordConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateOrResetUIPasswordResponse.Builder builder =
-                                        CreateOrResetUIPasswordResponse.builder();
+                                com.oracle.bmc.identity.responses.CreateOrResetUIPasswordResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .CreateOrResetUIPasswordResponse.builder();
 
                                 builder.uIPassword(response.getItem());
 
@@ -100,7 +107,8 @@ public class CreateOrResetUIPasswordConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateOrResetUIPasswordResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.CreateOrResetUIPasswordResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

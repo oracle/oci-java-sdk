@@ -16,15 +16,20 @@ public class ChangeAutoScalingConfigurationCompartmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ChangeAutoScalingConfigurationCompartmentRequest interceptRequest(
-            ChangeAutoScalingConfigurationCompartmentRequest request) {
+    public static com.oracle.bmc.autoscaling.requests
+                    .ChangeAutoScalingConfigurationCompartmentRequest
+            interceptRequest(
+                    com.oracle.bmc.autoscaling.requests
+                                    .ChangeAutoScalingConfigurationCompartmentRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ChangeAutoScalingConfigurationCompartmentRequest request) {
+            com.oracle.bmc.autoscaling.requests.ChangeAutoScalingConfigurationCompartmentRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutoScalingConfigurationId(),
@@ -62,20 +67,25 @@ public class ChangeAutoScalingConfigurationCompartmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ChangeAutoScalingConfigurationCompartmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.autoscaling.responses
+                            .ChangeAutoScalingConfigurationCompartmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
-                        ChangeAutoScalingConfigurationCompartmentResponse>
+                        com.oracle.bmc.autoscaling.responses
+                                .ChangeAutoScalingConfigurationCompartmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ChangeAutoScalingConfigurationCompartmentResponse>() {
+                                com.oracle.bmc.autoscaling.responses
+                                        .ChangeAutoScalingConfigurationCompartmentResponse>() {
                             @Override
-                            public ChangeAutoScalingConfigurationCompartmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.autoscaling.responses
+                                            .ChangeAutoScalingConfigurationCompartmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ChangeAutoScalingConfigurationCompartmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.autoscaling.responses.ChangeAutoScalingConfigurationCompartmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -86,8 +96,13 @@ public class ChangeAutoScalingConfigurationCompartmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ChangeAutoScalingConfigurationCompartmentResponse.Builder builder =
-                                        ChangeAutoScalingConfigurationCompartmentResponse.builder();
+                                com.oracle.bmc.autoscaling.responses
+                                                .ChangeAutoScalingConfigurationCompartmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.autoscaling.responses
+                                                        .ChangeAutoScalingConfigurationCompartmentResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -110,8 +125,9 @@ public class ChangeAutoScalingConfigurationCompartmentConverter {
                                                     String.class));
                                 }
 
-                                ChangeAutoScalingConfigurationCompartmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.autoscaling.responses
+                                                .ChangeAutoScalingConfigurationCompartmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

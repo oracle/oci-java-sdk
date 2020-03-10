@@ -16,13 +16,15 @@ public class CreateOceInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateOceInstanceRequest interceptRequest(CreateOceInstanceRequest request) {
+    public static com.oracle.bmc.oce.requests.CreateOceInstanceRequest interceptRequest(
+            com.oracle.bmc.oce.requests.CreateOceInstanceRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateOceInstanceRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.oce.requests.CreateOceInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateOceInstanceDetails(), "createOceInstanceDetails is required");
@@ -46,17 +48,21 @@ public class CreateOceInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateOceInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.oce.responses.CreateOceInstanceResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateOceInstanceResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.oce.responses.CreateOceInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateOceInstanceResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.oce.responses.CreateOceInstanceResponse>() {
                             @Override
-                            public CreateOceInstanceResponse apply(
+                            public com.oracle.bmc.oce.responses.CreateOceInstanceResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateOceInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.oce.responses.CreateOceInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class CreateOceInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateOceInstanceResponse.Builder builder =
-                                        CreateOceInstanceResponse.builder();
+                                com.oracle.bmc.oce.responses.CreateOceInstanceResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.oce.responses
+                                                        .CreateOceInstanceResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -94,7 +102,8 @@ public class CreateOceInstanceConverter {
                                                     String.class));
                                 }
 
-                                CreateOceInstanceResponse responseWrapper = builder.build();
+                                com.oracle.bmc.oce.responses.CreateOceInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class GetGatewayConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetGatewayRequest interceptRequest(GetGatewayRequest request) {
+    public static com.oracle.bmc.apigateway.requests.GetGatewayRequest interceptRequest(
+            com.oracle.bmc.apigateway.requests.GetGatewayRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetGatewayRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.apigateway.requests.GetGatewayRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getGatewayId(), "gatewayId must not be blank");
 
@@ -45,15 +47,22 @@ public class GetGatewayConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetGatewayResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.apigateway.responses.GetGatewayResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetGatewayResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.apigateway.responses.GetGatewayResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetGatewayResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.apigateway.responses.GetGatewayResponse>() {
                             @Override
-                            public GetGatewayResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetGatewayResponse");
+                            public com.oracle.bmc.apigateway.responses.GetGatewayResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.apigateway.responses.GetGatewayResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Gateway>>
@@ -65,7 +74,10 @@ public class GetGatewayConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetGatewayResponse.Builder builder = GetGatewayResponse.builder();
+                                com.oracle.bmc.apigateway.responses.GetGatewayResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.apigateway.responses
+                                                        .GetGatewayResponse.builder();
 
                                 builder.gateway(response.getItem());
 
@@ -90,7 +102,8 @@ public class GetGatewayConverter {
                                                     String.class));
                                 }
 
-                                GetGatewayResponse responseWrapper = builder.build();
+                                com.oracle.bmc.apigateway.responses.GetGatewayResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

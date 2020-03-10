@@ -16,13 +16,15 @@ public class ListAlarmsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAlarmsRequest interceptRequest(ListAlarmsRequest request) {
+    public static com.oracle.bmc.monitoring.requests.ListAlarmsRequest interceptRequest(
+            com.oracle.bmc.monitoring.requests.ListAlarmsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListAlarmsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.monitoring.requests.ListAlarmsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -102,15 +104,22 @@ public class ListAlarmsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListAlarmsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.monitoring.responses.ListAlarmsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListAlarmsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.monitoring.responses.ListAlarmsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAlarmsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.monitoring.responses.ListAlarmsResponse>() {
                             @Override
-                            public ListAlarmsResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListAlarmsResponse");
+                            public com.oracle.bmc.monitoring.responses.ListAlarmsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.monitoring.responses.ListAlarmsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -126,7 +135,10 @@ public class ListAlarmsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAlarmsResponse.Builder builder = ListAlarmsResponse.builder();
+                                com.oracle.bmc.monitoring.responses.ListAlarmsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.monitoring.responses
+                                                        .ListAlarmsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -154,7 +166,8 @@ public class ListAlarmsConverter {
                                                     String.class));
                                 }
 
-                                ListAlarmsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.monitoring.responses.ListAlarmsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

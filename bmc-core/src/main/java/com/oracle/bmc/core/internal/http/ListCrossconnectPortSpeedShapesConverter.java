@@ -16,15 +16,16 @@ public class ListCrossconnectPortSpeedShapesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListCrossconnectPortSpeedShapesRequest interceptRequest(
-            ListCrossconnectPortSpeedShapesRequest request) {
+    public static com.oracle.bmc.core.requests.ListCrossconnectPortSpeedShapesRequest
+            interceptRequest(
+                    com.oracle.bmc.core.requests.ListCrossconnectPortSpeedShapesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListCrossconnectPortSpeedShapesRequest request) {
+            com.oracle.bmc.core.requests.ListCrossconnectPortSpeedShapesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -61,19 +62,23 @@ public class ListCrossconnectPortSpeedShapesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListCrossconnectPortSpeedShapesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.ListCrossconnectPortSpeedShapesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListCrossconnectPortSpeedShapesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.ListCrossconnectPortSpeedShapesResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListCrossconnectPortSpeedShapesResponse>() {
+                                com.oracle.bmc.core.responses
+                                        .ListCrossconnectPortSpeedShapesResponse>() {
                             @Override
-                            public ListCrossconnectPortSpeedShapesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.core.responses
+                                            .ListCrossconnectPortSpeedShapesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListCrossconnectPortSpeedShapesResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.ListCrossconnectPortSpeedShapesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -90,8 +95,12 @@ public class ListCrossconnectPortSpeedShapesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListCrossconnectPortSpeedShapesResponse.Builder builder =
-                                        ListCrossconnectPortSpeedShapesResponse.builder();
+                                com.oracle.bmc.core.responses
+                                                .ListCrossconnectPortSpeedShapesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .ListCrossconnectPortSpeedShapesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -119,8 +128,9 @@ public class ListCrossconnectPortSpeedShapesConverter {
                                                     String.class));
                                 }
 
-                                ListCrossconnectPortSpeedShapesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.core.responses
+                                                .ListCrossconnectPortSpeedShapesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

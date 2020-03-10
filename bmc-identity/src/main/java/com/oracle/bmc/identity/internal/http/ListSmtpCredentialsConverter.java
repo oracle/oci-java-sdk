@@ -16,13 +16,15 @@ public class ListSmtpCredentialsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListSmtpCredentialsRequest interceptRequest(ListSmtpCredentialsRequest request) {
+    public static com.oracle.bmc.identity.requests.ListSmtpCredentialsRequest interceptRequest(
+            com.oracle.bmc.identity.requests.ListSmtpCredentialsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListSmtpCredentialsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.ListSmtpCredentialsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getUserId(), "userId must not be blank");
 
@@ -43,18 +45,21 @@ public class ListSmtpCredentialsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListSmtpCredentialsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.identity.responses.ListSmtpCredentialsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListSmtpCredentialsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.identity.responses.ListSmtpCredentialsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListSmtpCredentialsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.ListSmtpCredentialsResponse>() {
                             @Override
-                            public ListSmtpCredentialsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.identity.responses.ListSmtpCredentialsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListSmtpCredentialsResponse");
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.ListSmtpCredentialsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -71,8 +76,11 @@ public class ListSmtpCredentialsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListSmtpCredentialsResponse.Builder builder =
-                                        ListSmtpCredentialsResponse.builder();
+                                com.oracle.bmc.identity.responses.ListSmtpCredentialsResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.identity.responses
+                                                        .ListSmtpCredentialsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -100,7 +108,8 @@ public class ListSmtpCredentialsConverter {
                                                     String.class));
                                 }
 
-                                ListSmtpCredentialsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.ListSmtpCredentialsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

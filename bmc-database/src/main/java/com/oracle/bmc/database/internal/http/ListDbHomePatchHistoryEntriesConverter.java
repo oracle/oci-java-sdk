@@ -16,15 +16,16 @@ public class ListDbHomePatchHistoryEntriesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListDbHomePatchHistoryEntriesRequest interceptRequest(
-            ListDbHomePatchHistoryEntriesRequest request) {
+    public static com.oracle.bmc.database.requests.ListDbHomePatchHistoryEntriesRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.ListDbHomePatchHistoryEntriesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListDbHomePatchHistoryEntriesRequest request) {
+            com.oracle.bmc.database.requests.ListDbHomePatchHistoryEntriesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getDbHomeId(), "dbHomeId must not be blank");
 
@@ -61,19 +62,23 @@ public class ListDbHomePatchHistoryEntriesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListDbHomePatchHistoryEntriesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.ListDbHomePatchHistoryEntriesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListDbHomePatchHistoryEntriesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.ListDbHomePatchHistoryEntriesResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                ListDbHomePatchHistoryEntriesResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .ListDbHomePatchHistoryEntriesResponse>() {
                             @Override
-                            public ListDbHomePatchHistoryEntriesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .ListDbHomePatchHistoryEntriesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListDbHomePatchHistoryEntriesResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.ListDbHomePatchHistoryEntriesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -90,8 +95,12 @@ public class ListDbHomePatchHistoryEntriesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListDbHomePatchHistoryEntriesResponse.Builder builder =
-                                        ListDbHomePatchHistoryEntriesResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .ListDbHomePatchHistoryEntriesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .ListDbHomePatchHistoryEntriesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -119,8 +128,9 @@ public class ListDbHomePatchHistoryEntriesConverter {
                                                     String.class));
                                 }
 
-                                ListDbHomePatchHistoryEntriesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .ListDbHomePatchHistoryEntriesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

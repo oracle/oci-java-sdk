@@ -16,13 +16,15 @@ public class CreateSenderConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateSenderRequest interceptRequest(CreateSenderRequest request) {
+    public static com.oracle.bmc.email.requests.CreateSenderRequest interceptRequest(
+            com.oracle.bmc.email.requests.CreateSenderRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateSenderRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.email.requests.CreateSenderRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateSenderDetails(), "createSenderDetails is required");
 
@@ -40,16 +42,21 @@ public class CreateSenderConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateSenderResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.email.responses.CreateSenderResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSenderResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.email.responses.CreateSenderResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateSenderResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.email.responses.CreateSenderResponse>() {
                             @Override
-                            public CreateSenderResponse apply(
+                            public com.oracle.bmc.email.responses.CreateSenderResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateSenderResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.email.responses.CreateSenderResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Sender>>
@@ -61,8 +68,10 @@ public class CreateSenderConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateSenderResponse.Builder builder =
-                                        CreateSenderResponse.builder();
+                                com.oracle.bmc.email.responses.CreateSenderResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.email.responses.CreateSenderResponse
+                                                        .builder();
 
                                 builder.sender(response.getItem());
 
@@ -87,7 +96,8 @@ public class CreateSenderConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateSenderResponse responseWrapper = builder.build();
+                                com.oracle.bmc.email.responses.CreateSenderResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

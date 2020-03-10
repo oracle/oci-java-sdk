@@ -16,13 +16,15 @@ public class UpdatePrivateIpConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdatePrivateIpRequest interceptRequest(UpdatePrivateIpRequest request) {
+    public static com.oracle.bmc.core.requests.UpdatePrivateIpRequest interceptRequest(
+            com.oracle.bmc.core.requests.UpdatePrivateIpRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, UpdatePrivateIpRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.UpdatePrivateIpRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
         Validate.notNull(request.getUpdatePrivateIpDetails(), "updatePrivateIpDetails is required");
@@ -47,16 +49,21 @@ public class UpdatePrivateIpConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdatePrivateIpResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.UpdatePrivateIpResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePrivateIpResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.UpdatePrivateIpResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, UpdatePrivateIpResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.UpdatePrivateIpResponse>() {
                             @Override
-                            public UpdatePrivateIpResponse apply(
+                            public com.oracle.bmc.core.responses.UpdatePrivateIpResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for UpdatePrivateIpResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.UpdatePrivateIpResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<PrivateIp>>
@@ -68,8 +75,10 @@ public class UpdatePrivateIpConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdatePrivateIpResponse.Builder builder =
-                                        UpdatePrivateIpResponse.builder();
+                                com.oracle.bmc.core.responses.UpdatePrivateIpResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .UpdatePrivateIpResponse.builder();
 
                                 builder.privateIp(response.getItem());
 
@@ -94,7 +103,8 @@ public class UpdatePrivateIpConverter {
                                                     String.class));
                                 }
 
-                                UpdatePrivateIpResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.UpdatePrivateIpResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

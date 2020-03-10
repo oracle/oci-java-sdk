@@ -16,13 +16,15 @@ public class CreateAlertRuleConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateAlertRuleRequest interceptRequest(CreateAlertRuleRequest request) {
+    public static com.oracle.bmc.budget.requests.CreateAlertRuleRequest interceptRequest(
+            com.oracle.bmc.budget.requests.CreateAlertRuleRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateAlertRuleRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.budget.requests.CreateAlertRuleRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBudgetId(), "budgetId must not be blank");
         Validate.notNull(request.getCreateAlertRuleDetails(), "createAlertRuleDetails is required");
@@ -52,16 +54,21 @@ public class CreateAlertRuleConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateAlertRuleResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.budget.responses.CreateAlertRuleResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAlertRuleResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.budget.responses.CreateAlertRuleResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateAlertRuleResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.budget.responses.CreateAlertRuleResponse>() {
                             @Override
-                            public CreateAlertRuleResponse apply(
+                            public com.oracle.bmc.budget.responses.CreateAlertRuleResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateAlertRuleResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.budget.responses.CreateAlertRuleResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<AlertRule>>
@@ -73,8 +80,10 @@ public class CreateAlertRuleConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateAlertRuleResponse.Builder builder =
-                                        CreateAlertRuleResponse.builder();
+                                com.oracle.bmc.budget.responses.CreateAlertRuleResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.budget.responses
+                                                        .CreateAlertRuleResponse.builder();
 
                                 builder.alertRule(response.getItem());
 
@@ -99,7 +108,8 @@ public class CreateAlertRuleConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateAlertRuleResponse responseWrapper = builder.build();
+                                com.oracle.bmc.budget.responses.CreateAlertRuleResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

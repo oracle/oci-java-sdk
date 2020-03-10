@@ -16,15 +16,16 @@ public class CreateSteeringPolicyAttachmentConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateSteeringPolicyAttachmentRequest interceptRequest(
-            CreateSteeringPolicyAttachmentRequest request) {
+    public static com.oracle.bmc.dns.requests.CreateSteeringPolicyAttachmentRequest
+            interceptRequest(
+                    com.oracle.bmc.dns.requests.CreateSteeringPolicyAttachmentRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateSteeringPolicyAttachmentRequest request) {
+            com.oracle.bmc.dns.requests.CreateSteeringPolicyAttachmentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateSteeringPolicyAttachmentDetails(),
@@ -49,19 +50,23 @@ public class CreateSteeringPolicyAttachmentConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateSteeringPolicyAttachmentResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.CreateSteeringPolicyAttachmentResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateSteeringPolicyAttachmentResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.CreateSteeringPolicyAttachmentResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                CreateSteeringPolicyAttachmentResponse>() {
+                                com.oracle.bmc.dns.responses
+                                        .CreateSteeringPolicyAttachmentResponse>() {
                             @Override
-                            public CreateSteeringPolicyAttachmentResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dns.responses
+                                            .CreateSteeringPolicyAttachmentResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateSteeringPolicyAttachmentResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.CreateSteeringPolicyAttachmentResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -75,8 +80,12 @@ public class CreateSteeringPolicyAttachmentConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateSteeringPolicyAttachmentResponse.Builder builder =
-                                        CreateSteeringPolicyAttachmentResponse.builder();
+                                com.oracle.bmc.dns.responses.CreateSteeringPolicyAttachmentResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .CreateSteeringPolicyAttachmentResponse
+                                                        .builder();
 
                                 builder.steeringPolicyAttachment(response.getItem());
 
@@ -101,8 +110,8 @@ public class CreateSteeringPolicyAttachmentConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                CreateSteeringPolicyAttachmentResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.dns.responses.CreateSteeringPolicyAttachmentResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

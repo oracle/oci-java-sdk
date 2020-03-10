@@ -16,13 +16,15 @@ public class GetHealthCheckerConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetHealthCheckerRequest interceptRequest(GetHealthCheckerRequest request) {
+    public static com.oracle.bmc.loadbalancer.requests.GetHealthCheckerRequest interceptRequest(
+            com.oracle.bmc.loadbalancer.requests.GetHealthCheckerRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetHealthCheckerRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.loadbalancer.requests.GetHealthCheckerRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getLoadBalancerId(), "loadBalancerId must not be blank");
         Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
@@ -52,17 +54,21 @@ public class GetHealthCheckerConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetHealthCheckerResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.loadbalancer.responses.GetHealthCheckerResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.loadbalancer.responses.GetHealthCheckerResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetHealthCheckerResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.loadbalancer.responses.GetHealthCheckerResponse>() {
                             @Override
-                            public GetHealthCheckerResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.loadbalancer.responses.GetHealthCheckerResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetHealthCheckerResponse");
+                                        "Transform function invoked for com.oracle.bmc.loadbalancer.responses.GetHealthCheckerResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -76,8 +82,11 @@ public class GetHealthCheckerConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetHealthCheckerResponse.Builder builder =
-                                        GetHealthCheckerResponse.builder();
+                                com.oracle.bmc.loadbalancer.responses.GetHealthCheckerResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.loadbalancer.responses
+                                                        .GetHealthCheckerResponse.builder();
 
                                 builder.healthChecker(response.getItem());
 
@@ -93,7 +102,8 @@ public class GetHealthCheckerConverter {
                                                     String.class));
                                 }
 
-                                GetHealthCheckerResponse responseWrapper = builder.build();
+                                com.oracle.bmc.loadbalancer.responses.GetHealthCheckerResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

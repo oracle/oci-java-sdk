@@ -16,13 +16,15 @@ public class GetTagConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetTagRequest interceptRequest(GetTagRequest request) {
+    public static com.oracle.bmc.identity.requests.GetTagRequest interceptRequest(
+            com.oracle.bmc.identity.requests.GetTagRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetTagRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.identity.requests.GetTagRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTagNamespaceId(), "tagNamespaceId must not be blank");
         Validate.notBlank(request.getTagName(), "tagName must not be blank");
@@ -46,15 +48,20 @@ public class GetTagConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetTagResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.identity.responses.GetTagResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetTagResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, com.oracle.bmc.identity.responses.GetTagResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetTagResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.identity.responses.GetTagResponse>() {
                             @Override
-                            public GetTagResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetTagResponse");
+                            public com.oracle.bmc.identity.responses.GetTagResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.identity.responses.GetTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Tag>>
@@ -65,7 +72,8 @@ public class GetTagConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetTagResponse.Builder builder = GetTagResponse.builder();
+                                com.oracle.bmc.identity.responses.GetTagResponse.Builder builder =
+                                        com.oracle.bmc.identity.responses.GetTagResponse.builder();
 
                                 builder.tag(response.getItem());
 
@@ -90,7 +98,8 @@ public class GetTagConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetTagResponse responseWrapper = builder.build();
+                                com.oracle.bmc.identity.responses.GetTagResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

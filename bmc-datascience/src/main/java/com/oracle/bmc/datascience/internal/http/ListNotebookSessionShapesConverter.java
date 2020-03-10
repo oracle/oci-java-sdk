@@ -16,15 +16,16 @@ public class ListNotebookSessionShapesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListNotebookSessionShapesRequest interceptRequest(
-            ListNotebookSessionShapesRequest request) {
+    public static com.oracle.bmc.datascience.requests.ListNotebookSessionShapesRequest
+            interceptRequest(
+                    com.oracle.bmc.datascience.requests.ListNotebookSessionShapesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListNotebookSessionShapesRequest request) {
+            com.oracle.bmc.datascience.requests.ListNotebookSessionShapesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -65,18 +66,23 @@ public class ListNotebookSessionShapesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListNotebookSessionShapesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.ListNotebookSessionShapesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListNotebookSessionShapesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.ListNotebookSessionShapesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListNotebookSessionShapesResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses
+                                        .ListNotebookSessionShapesResponse>() {
                             @Override
-                            public ListNotebookSessionShapesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datascience.responses
+                                            .ListNotebookSessionShapesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListNotebookSessionShapesResponse");
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.ListNotebookSessionShapesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -94,8 +100,12 @@ public class ListNotebookSessionShapesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListNotebookSessionShapesResponse.Builder builder =
-                                        ListNotebookSessionShapesResponse.builder();
+                                com.oracle.bmc.datascience.responses
+                                                .ListNotebookSessionShapesResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .ListNotebookSessionShapesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -135,7 +145,9 @@ public class ListNotebookSessionShapesConverter {
                                                     String.class));
                                 }
 
-                                ListNotebookSessionShapesResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses
+                                                .ListNotebookSessionShapesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

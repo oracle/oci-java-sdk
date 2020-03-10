@@ -16,13 +16,15 @@ public class DeleteApplicationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteApplicationRequest interceptRequest(DeleteApplicationRequest request) {
+    public static com.oracle.bmc.dataflow.requests.DeleteApplicationRequest interceptRequest(
+            com.oracle.bmc.dataflow.requests.DeleteApplicationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteApplicationRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dataflow.requests.DeleteApplicationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getApplicationId(), "applicationId must not be blank");
 
@@ -50,17 +52,21 @@ public class DeleteApplicationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteApplicationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dataflow.responses.DeleteApplicationResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dataflow.responses.DeleteApplicationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteApplicationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dataflow.responses.DeleteApplicationResponse>() {
                             @Override
-                            public DeleteApplicationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.dataflow.responses.DeleteApplicationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteApplicationResponse");
+                                        "Transform function invoked for com.oracle.bmc.dataflow.responses.DeleteApplicationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -71,8 +77,10 @@ public class DeleteApplicationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteApplicationResponse.Builder builder =
-                                        DeleteApplicationResponse.builder();
+                                com.oracle.bmc.dataflow.responses.DeleteApplicationResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dataflow.responses
+                                                        .DeleteApplicationResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -86,7 +94,8 @@ public class DeleteApplicationConverter {
                                                     String.class));
                                 }
 
-                                DeleteApplicationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dataflow.responses.DeleteApplicationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

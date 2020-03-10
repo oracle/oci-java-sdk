@@ -16,13 +16,15 @@ public class ListProjectsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListProjectsRequest interceptRequest(ListProjectsRequest request) {
+    public static com.oracle.bmc.datascience.requests.ListProjectsRequest interceptRequest(
+            com.oracle.bmc.datascience.requests.ListProjectsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListProjectsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datascience.requests.ListProjectsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -110,16 +112,22 @@ public class ListProjectsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datascience.responses.ListProjectsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProjectsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datascience.responses.ListProjectsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListProjectsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datascience.responses.ListProjectsResponse>() {
                             @Override
-                            public ListProjectsResponse apply(
+                            public com.oracle.bmc.datascience.responses.ListProjectsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListProjectsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.datascience.responses.ListProjectsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -136,8 +144,10 @@ public class ListProjectsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListProjectsResponse.Builder builder =
-                                        ListProjectsResponse.builder();
+                                com.oracle.bmc.datascience.responses.ListProjectsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.datascience.responses
+                                                        .ListProjectsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -177,7 +187,8 @@ public class ListProjectsConverter {
                                                     String.class));
                                 }
 
-                                ListProjectsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datascience.responses.ListProjectsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

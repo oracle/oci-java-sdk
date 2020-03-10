@@ -16,15 +16,15 @@ public class CreateAutonomousDatabaseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateAutonomousDatabaseRequest interceptRequest(
-            CreateAutonomousDatabaseRequest request) {
+    public static com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest interceptRequest(
+            com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            CreateAutonomousDatabaseRequest request) {
+            com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(
                 request.getCreateAutonomousDatabaseDetails(),
@@ -49,18 +49,23 @@ public class CreateAutonomousDatabaseConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, CreateAutonomousDatabaseResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAutonomousDatabaseResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateAutonomousDatabaseResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .CreateAutonomousDatabaseResponse>() {
                             @Override
-                            public CreateAutonomousDatabaseResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .CreateAutonomousDatabaseResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for CreateAutonomousDatabaseResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -74,8 +79,11 @@ public class CreateAutonomousDatabaseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateAutonomousDatabaseResponse.Builder builder =
-                                        CreateAutonomousDatabaseResponse.builder();
+                                com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .CreateAutonomousDatabaseResponse.builder();
 
                                 builder.autonomousDatabase(response.getItem());
 
@@ -112,7 +120,8 @@ public class CreateAutonomousDatabaseConverter {
                                                     String.class));
                                 }
 
-                                CreateAutonomousDatabaseResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

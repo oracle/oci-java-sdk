@@ -16,13 +16,15 @@ public class DeleteAlarmConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteAlarmRequest interceptRequest(DeleteAlarmRequest request) {
+    public static com.oracle.bmc.monitoring.requests.DeleteAlarmRequest interceptRequest(
+            com.oracle.bmc.monitoring.requests.DeleteAlarmRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteAlarmRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.monitoring.requests.DeleteAlarmRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getAlarmId(), "alarmId must not be blank");
 
@@ -49,16 +51,22 @@ public class DeleteAlarmConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAlarmResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.monitoring.responses.DeleteAlarmResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAlarmResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.monitoring.responses.DeleteAlarmResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteAlarmResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.monitoring.responses.DeleteAlarmResponse>() {
                             @Override
-                            public DeleteAlarmResponse apply(
+                            public com.oracle.bmc.monitoring.responses.DeleteAlarmResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteAlarmResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.monitoring.responses.DeleteAlarmResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -69,7 +77,10 @@ public class DeleteAlarmConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteAlarmResponse.Builder builder = DeleteAlarmResponse.builder();
+                                com.oracle.bmc.monitoring.responses.DeleteAlarmResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.monitoring.responses
+                                                        .DeleteAlarmResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -83,7 +94,8 @@ public class DeleteAlarmConverter {
                                                     String.class));
                                 }
 
-                                DeleteAlarmResponse responseWrapper = builder.build();
+                                com.oracle.bmc.monitoring.responses.DeleteAlarmResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

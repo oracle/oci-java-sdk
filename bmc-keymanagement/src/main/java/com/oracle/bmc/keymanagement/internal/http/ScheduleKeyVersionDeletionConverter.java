@@ -16,15 +16,17 @@ public class ScheduleKeyVersionDeletionConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ScheduleKeyVersionDeletionRequest interceptRequest(
-            ScheduleKeyVersionDeletionRequest request) {
+    public static com.oracle.bmc.keymanagement.requests.ScheduleKeyVersionDeletionRequest
+            interceptRequest(
+                    com.oracle.bmc.keymanagement.requests.ScheduleKeyVersionDeletionRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ScheduleKeyVersionDeletionRequest request) {
+            com.oracle.bmc.keymanagement.requests.ScheduleKeyVersionDeletionRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getKeyId(), "keyId must not be blank");
         Validate.notBlank(request.getKeyVersionId(), "keyVersionId must not be blank");
@@ -67,18 +69,23 @@ public class ScheduleKeyVersionDeletionConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ScheduleKeyVersionDeletionResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.keymanagement.responses.ScheduleKeyVersionDeletionResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ScheduleKeyVersionDeletionResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.keymanagement.responses.ScheduleKeyVersionDeletionResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ScheduleKeyVersionDeletionResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.keymanagement.responses
+                                        .ScheduleKeyVersionDeletionResponse>() {
                             @Override
-                            public ScheduleKeyVersionDeletionResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.keymanagement.responses
+                                            .ScheduleKeyVersionDeletionResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ScheduleKeyVersionDeletionResponse");
+                                        "Transform function invoked for com.oracle.bmc.keymanagement.responses.ScheduleKeyVersionDeletionResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -92,8 +99,12 @@ public class ScheduleKeyVersionDeletionConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ScheduleKeyVersionDeletionResponse.Builder builder =
-                                        ScheduleKeyVersionDeletionResponse.builder();
+                                com.oracle.bmc.keymanagement.responses
+                                                .ScheduleKeyVersionDeletionResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.keymanagement.responses
+                                                        .ScheduleKeyVersionDeletionResponse
+                                                        .builder();
 
                                 builder.keyVersion(response.getItem());
 
@@ -118,8 +129,9 @@ public class ScheduleKeyVersionDeletionConverter {
                                                     String.class));
                                 }
 
-                                ScheduleKeyVersionDeletionResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.keymanagement.responses
+                                                .ScheduleKeyVersionDeletionResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

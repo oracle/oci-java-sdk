@@ -16,15 +16,15 @@ public class DeleteBackupDestinationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteBackupDestinationRequest interceptRequest(
-            DeleteBackupDestinationRequest request) {
+    public static com.oracle.bmc.database.requests.DeleteBackupDestinationRequest interceptRequest(
+            com.oracle.bmc.database.requests.DeleteBackupDestinationRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteBackupDestinationRequest request) {
+            com.oracle.bmc.database.requests.DeleteBackupDestinationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getBackupDestinationId(), "backupDestinationId must not be blank");
@@ -53,18 +53,22 @@ public class DeleteBackupDestinationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteBackupDestinationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.DeleteBackupDestinationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteBackupDestinationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.DeleteBackupDestinationResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteBackupDestinationResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .DeleteBackupDestinationResponse>() {
                             @Override
-                            public DeleteBackupDestinationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.DeleteBackupDestinationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteBackupDestinationResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.DeleteBackupDestinationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +79,11 @@ public class DeleteBackupDestinationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteBackupDestinationResponse.Builder builder =
-                                        DeleteBackupDestinationResponse.builder();
+                                com.oracle.bmc.database.responses.DeleteBackupDestinationResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .DeleteBackupDestinationResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -90,7 +97,8 @@ public class DeleteBackupDestinationConverter {
                                                     String.class));
                                 }
 
-                                DeleteBackupDestinationResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.DeleteBackupDestinationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

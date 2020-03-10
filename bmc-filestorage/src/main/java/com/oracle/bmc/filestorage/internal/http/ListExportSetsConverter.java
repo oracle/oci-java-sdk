@@ -16,13 +16,15 @@ public class ListExportSetsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListExportSetsRequest interceptRequest(ListExportSetsRequest request) {
+    public static com.oracle.bmc.filestorage.requests.ListExportSetsRequest interceptRequest(
+            com.oracle.bmc.filestorage.requests.ListExportSetsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListExportSetsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.filestorage.requests.ListExportSetsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
         Validate.notNull(request.getAvailabilityDomain(), "availabilityDomain is required");
@@ -109,16 +111,22 @@ public class ListExportSetsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListExportSetsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.filestorage.responses.ListExportSetsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListExportSetsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.filestorage.responses.ListExportSetsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListExportSetsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.filestorage.responses.ListExportSetsResponse>() {
                             @Override
-                            public ListExportSetsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListExportSetsResponse");
+                            public com.oracle.bmc.filestorage.responses.ListExportSetsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.filestorage.responses.ListExportSetsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -135,8 +143,10 @@ public class ListExportSetsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListExportSetsResponse.Builder builder =
-                                        ListExportSetsResponse.builder();
+                                com.oracle.bmc.filestorage.responses.ListExportSetsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.filestorage.responses
+                                                        .ListExportSetsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -164,7 +174,8 @@ public class ListExportSetsConverter {
                                                     String.class));
                                 }
 
-                                ListExportSetsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.filestorage.responses.ListExportSetsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

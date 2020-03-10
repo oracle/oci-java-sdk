@@ -16,13 +16,15 @@ public class DeleteTransferJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteTransferJobRequest interceptRequest(DeleteTransferJobRequest request) {
+    public static com.oracle.bmc.dts.requests.DeleteTransferJobRequest interceptRequest(
+            com.oracle.bmc.dts.requests.DeleteTransferJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteTransferJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dts.requests.DeleteTransferJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getId(), "id must not be blank");
 
@@ -46,17 +48,21 @@ public class DeleteTransferJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteTransferJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.DeleteTransferJobResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTransferJobResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.DeleteTransferJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteTransferJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.DeleteTransferJobResponse>() {
                             @Override
-                            public DeleteTransferJobResponse apply(
+                            public com.oracle.bmc.dts.responses.DeleteTransferJobResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteTransferJobResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.DeleteTransferJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class DeleteTransferJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteTransferJobResponse.Builder builder =
-                                        DeleteTransferJobResponse.builder();
+                                com.oracle.bmc.dts.responses.DeleteTransferJobResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .DeleteTransferJobResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +90,8 @@ public class DeleteTransferJobConverter {
                                                     String.class));
                                 }
 
-                                DeleteTransferJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.DeleteTransferJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

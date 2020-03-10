@@ -16,13 +16,15 @@ public class DeleteSecurityListConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteSecurityListRequest interceptRequest(DeleteSecurityListRequest request) {
+    public static com.oracle.bmc.core.requests.DeleteSecurityListRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeleteSecurityListRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteSecurityListRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeleteSecurityListRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
 
@@ -46,17 +48,21 @@ public class DeleteSecurityListConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteSecurityListResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.core.responses.DeleteSecurityListResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityListResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeleteSecurityListResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteSecurityListResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeleteSecurityListResponse>() {
                             @Override
-                            public DeleteSecurityListResponse apply(
+                            public com.oracle.bmc.core.responses.DeleteSecurityListResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteSecurityListResponse");
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeleteSecurityListResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -67,8 +73,10 @@ public class DeleteSecurityListConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteSecurityListResponse.Builder builder =
-                                        DeleteSecurityListResponse.builder();
+                                com.oracle.bmc.core.responses.DeleteSecurityListResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses
+                                                        .DeleteSecurityListResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -82,7 +90,8 @@ public class DeleteSecurityListConverter {
                                                     String.class));
                                 }
 
-                                DeleteSecurityListResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeleteSecurityListResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

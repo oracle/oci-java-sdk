@@ -16,13 +16,15 @@ public class GetScheduledJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetScheduledJobRequest interceptRequest(GetScheduledJobRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.GetScheduledJobRequest interceptRequest(
+            com.oracle.bmc.osmanagement.requests.GetScheduledJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetScheduledJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.osmanagement.requests.GetScheduledJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getScheduledJobId(), "scheduledJobId must not be blank");
 
@@ -46,16 +48,21 @@ public class GetScheduledJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetScheduledJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.GetScheduledJobResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetScheduledJobResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.GetScheduledJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetScheduledJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses.GetScheduledJobResponse>() {
                             @Override
-                            public GetScheduledJobResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetScheduledJobResponse");
+                            public com.oracle.bmc.osmanagement.responses.GetScheduledJobResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.GetScheduledJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -69,8 +76,11 @@ public class GetScheduledJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetScheduledJobResponse.Builder builder =
-                                        GetScheduledJobResponse.builder();
+                                com.oracle.bmc.osmanagement.responses.GetScheduledJobResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .GetScheduledJobResponse.builder();
 
                                 builder.scheduledJob(response.getItem());
 
@@ -107,7 +117,8 @@ public class GetScheduledJobConverter {
                                                     Float.class));
                                 }
 
-                                GetScheduledJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.osmanagement.responses.GetScheduledJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

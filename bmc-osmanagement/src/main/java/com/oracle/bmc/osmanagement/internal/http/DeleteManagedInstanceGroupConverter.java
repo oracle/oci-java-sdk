@@ -16,15 +16,17 @@ public class DeleteManagedInstanceGroupConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteManagedInstanceGroupRequest interceptRequest(
-            DeleteManagedInstanceGroupRequest request) {
+    public static com.oracle.bmc.osmanagement.requests.DeleteManagedInstanceGroupRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests.DeleteManagedInstanceGroupRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteManagedInstanceGroupRequest request) {
+            com.oracle.bmc.osmanagement.requests.DeleteManagedInstanceGroupRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
@@ -53,18 +55,23 @@ public class DeleteManagedInstanceGroupConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteManagedInstanceGroupResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses.DeleteManagedInstanceGroupResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteManagedInstanceGroupResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.osmanagement.responses.DeleteManagedInstanceGroupResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteManagedInstanceGroupResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.osmanagement.responses
+                                        .DeleteManagedInstanceGroupResponse>() {
                             @Override
-                            public DeleteManagedInstanceGroupResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .DeleteManagedInstanceGroupResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteManagedInstanceGroupResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.DeleteManagedInstanceGroupResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -75,8 +82,12 @@ public class DeleteManagedInstanceGroupConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteManagedInstanceGroupResponse.Builder builder =
-                                        DeleteManagedInstanceGroupResponse.builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .DeleteManagedInstanceGroupResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .DeleteManagedInstanceGroupResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -90,8 +101,9 @@ public class DeleteManagedInstanceGroupConverter {
                                                     String.class));
                                 }
 
-                                DeleteManagedInstanceGroupResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .DeleteManagedInstanceGroupResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

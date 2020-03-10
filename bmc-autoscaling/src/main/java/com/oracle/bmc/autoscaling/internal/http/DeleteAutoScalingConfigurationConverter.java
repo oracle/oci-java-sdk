@@ -16,15 +16,17 @@ public class DeleteAutoScalingConfigurationConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteAutoScalingConfigurationRequest interceptRequest(
-            DeleteAutoScalingConfigurationRequest request) {
+    public static com.oracle.bmc.autoscaling.requests.DeleteAutoScalingConfigurationRequest
+            interceptRequest(
+                    com.oracle.bmc.autoscaling.requests.DeleteAutoScalingConfigurationRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            DeleteAutoScalingConfigurationRequest request) {
+            com.oracle.bmc.autoscaling.requests.DeleteAutoScalingConfigurationRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutoScalingConfigurationId(),
@@ -54,19 +56,23 @@ public class DeleteAutoScalingConfigurationConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteAutoScalingConfigurationResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.autoscaling.responses.DeleteAutoScalingConfigurationResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteAutoScalingConfigurationResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.autoscaling.responses.DeleteAutoScalingConfigurationResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                DeleteAutoScalingConfigurationResponse>() {
+                                com.oracle.bmc.autoscaling.responses
+                                        .DeleteAutoScalingConfigurationResponse>() {
                             @Override
-                            public DeleteAutoScalingConfigurationResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.autoscaling.responses
+                                            .DeleteAutoScalingConfigurationResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteAutoScalingConfigurationResponse");
+                                        "Transform function invoked for com.oracle.bmc.autoscaling.responses.DeleteAutoScalingConfigurationResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -77,8 +83,12 @@ public class DeleteAutoScalingConfigurationConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteAutoScalingConfigurationResponse.Builder builder =
-                                        DeleteAutoScalingConfigurationResponse.builder();
+                                com.oracle.bmc.autoscaling.responses
+                                                .DeleteAutoScalingConfigurationResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.autoscaling.responses
+                                                        .DeleteAutoScalingConfigurationResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -92,8 +102,9 @@ public class DeleteAutoScalingConfigurationConverter {
                                                     String.class));
                                 }
 
-                                DeleteAutoScalingConfigurationResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.autoscaling.responses
+                                                .DeleteAutoScalingConfigurationResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

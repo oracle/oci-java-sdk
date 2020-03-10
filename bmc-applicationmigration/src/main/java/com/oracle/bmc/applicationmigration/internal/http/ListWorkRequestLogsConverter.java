@@ -16,13 +16,17 @@ public class ListWorkRequestLogsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListWorkRequestLogsRequest interceptRequest(ListWorkRequestLogsRequest request) {
+    public static com.oracle.bmc.applicationmigration.requests.ListWorkRequestLogsRequest
+            interceptRequest(
+                    com.oracle.bmc.applicationmigration.requests.ListWorkRequestLogsRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListWorkRequestLogsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.applicationmigration.requests.ListWorkRequestLogsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
@@ -71,18 +75,23 @@ public class ListWorkRequestLogsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.applicationmigration.responses.ListWorkRequestLogsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.applicationmigration.responses.ListWorkRequestLogsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListWorkRequestLogsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.applicationmigration.responses
+                                        .ListWorkRequestLogsResponse>() {
                             @Override
-                            public ListWorkRequestLogsResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.applicationmigration.responses
+                                            .ListWorkRequestLogsResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListWorkRequestLogsResponse");
+                                        "Transform function invoked for com.oracle.bmc.applicationmigration.responses.ListWorkRequestLogsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -99,8 +108,11 @@ public class ListWorkRequestLogsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListWorkRequestLogsResponse.Builder builder =
-                                        ListWorkRequestLogsResponse.builder();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .ListWorkRequestLogsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.applicationmigration.responses
+                                                        .ListWorkRequestLogsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -128,7 +140,9 @@ public class ListWorkRequestLogsConverter {
                                                     String.class));
                                 }
 
-                                ListWorkRequestLogsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.applicationmigration.responses
+                                                .ListWorkRequestLogsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

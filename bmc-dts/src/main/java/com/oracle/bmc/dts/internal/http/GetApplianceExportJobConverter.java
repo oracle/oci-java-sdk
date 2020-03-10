@@ -16,14 +16,15 @@ public class GetApplianceExportJobConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetApplianceExportJobRequest interceptRequest(
-            GetApplianceExportJobRequest request) {
+    public static com.oracle.bmc.dts.requests.GetApplianceExportJobRequest interceptRequest(
+            com.oracle.bmc.dts.requests.GetApplianceExportJobRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetApplianceExportJobRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dts.requests.GetApplianceExportJobRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getApplianceExportJobId(), "applianceExportJobId must not be blank");
@@ -48,18 +49,21 @@ public class GetApplianceExportJobConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, GetApplianceExportJobResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dts.responses.GetApplianceExportJobResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetApplianceExportJobResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dts.responses.GetApplianceExportJobResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetApplianceExportJobResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dts.responses.GetApplianceExportJobResponse>() {
                             @Override
-                            public GetApplianceExportJobResponse apply(
+                            public com.oracle.bmc.dts.responses.GetApplianceExportJobResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for GetApplianceExportJobResponse");
+                                        "Transform function invoked for com.oracle.bmc.dts.responses.GetApplianceExportJobResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -73,8 +77,10 @@ public class GetApplianceExportJobConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetApplianceExportJobResponse.Builder builder =
-                                        GetApplianceExportJobResponse.builder();
+                                com.oracle.bmc.dts.responses.GetApplianceExportJobResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dts.responses
+                                                        .GetApplianceExportJobResponse.builder();
 
                                 builder.applianceExportJob(response.getItem());
 
@@ -99,7 +105,8 @@ public class GetApplianceExportJobConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetApplianceExportJobResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dts.responses.GetApplianceExportJobResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

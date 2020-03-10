@@ -16,13 +16,15 @@ public class PatchDomainRecordsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static PatchDomainRecordsRequest interceptRequest(PatchDomainRecordsRequest request) {
+    public static com.oracle.bmc.dns.requests.PatchDomainRecordsRequest interceptRequest(
+            com.oracle.bmc.dns.requests.PatchDomainRecordsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, PatchDomainRecordsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.dns.requests.PatchDomainRecordsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getZoneNameOrId(), "zoneNameOrId must not be blank");
         Validate.notBlank(request.getDomain(), "domain must not be blank");
@@ -69,17 +71,21 @@ public class PatchDomainRecordsConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, PatchDomainRecordsResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.dns.responses.PatchDomainRecordsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, PatchDomainRecordsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.dns.responses.PatchDomainRecordsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, PatchDomainRecordsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.dns.responses.PatchDomainRecordsResponse>() {
                             @Override
-                            public PatchDomainRecordsResponse apply(
+                            public com.oracle.bmc.dns.responses.PatchDomainRecordsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for PatchDomainRecordsResponse");
+                                        "Transform function invoked for com.oracle.bmc.dns.responses.PatchDomainRecordsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -93,8 +99,10 @@ public class PatchDomainRecordsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                PatchDomainRecordsResponse.Builder builder =
-                                        PatchDomainRecordsResponse.builder();
+                                com.oracle.bmc.dns.responses.PatchDomainRecordsResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.dns.responses
+                                                        .PatchDomainRecordsResponse.builder();
 
                                 builder.recordCollection(response.getItem());
 
@@ -143,7 +151,8 @@ public class PatchDomainRecordsConverter {
                                                     "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
-                                PatchDomainRecordsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.dns.responses.PatchDomainRecordsResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

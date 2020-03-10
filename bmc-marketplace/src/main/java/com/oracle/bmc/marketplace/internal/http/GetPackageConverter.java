@@ -16,13 +16,15 @@ public class GetPackageConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetPackageRequest interceptRequest(GetPackageRequest request) {
+    public static com.oracle.bmc.marketplace.requests.GetPackageRequest interceptRequest(
+            com.oracle.bmc.marketplace.requests.GetPackageRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetPackageRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.marketplace.requests.GetPackageRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getListingId(), "listingId must not be blank");
         Validate.notBlank(request.getPackageVersion(), "packageVersion must not be blank");
@@ -50,15 +52,22 @@ public class GetPackageConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetPackageResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.marketplace.responses.GetPackageResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPackageResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.marketplace.responses.GetPackageResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetPackageResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.marketplace.responses.GetPackageResponse>() {
                             @Override
-                            public GetPackageResponse apply(javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetPackageResponse");
+                            public com.oracle.bmc.marketplace.responses.GetPackageResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.marketplace.responses.GetPackageResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -72,7 +81,10 @@ public class GetPackageConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetPackageResponse.Builder builder = GetPackageResponse.builder();
+                                com.oracle.bmc.marketplace.responses.GetPackageResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.marketplace.responses
+                                                        .GetPackageResponse.builder();
 
                                 builder.listingPackage(response.getItem());
 
@@ -97,7 +109,8 @@ public class GetPackageConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                GetPackageResponse responseWrapper = builder.build();
+                                com.oracle.bmc.marketplace.responses.GetPackageResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

@@ -16,13 +16,15 @@ public class ListWafLogsConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListWafLogsRequest interceptRequest(ListWafLogsRequest request) {
+    public static com.oracle.bmc.waas.requests.ListWafLogsRequest interceptRequest(
+            com.oracle.bmc.waas.requests.ListWafLogsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListWafLogsRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.waas.requests.ListWafLogsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
 
@@ -230,16 +232,21 @@ public class ListWafLogsConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListWafLogsResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.waas.responses.ListWafLogsResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWafLogsResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.ListWafLogsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListWafLogsResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.waas.responses.ListWafLogsResponse>() {
                             @Override
-                            public ListWafLogsResponse apply(
+                            public com.oracle.bmc.waas.responses.ListWafLogsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListWafLogsResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.ListWafLogsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -254,7 +261,8 @@ public class ListWafLogsConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListWafLogsResponse.Builder builder = ListWafLogsResponse.builder();
+                                com.oracle.bmc.waas.responses.ListWafLogsResponse.Builder builder =
+                                        com.oracle.bmc.waas.responses.ListWafLogsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -282,7 +290,8 @@ public class ListWafLogsConverter {
                                                     String.class));
                                 }
 
-                                ListWafLogsResponse responseWrapper = builder.build();
+                                com.oracle.bmc.waas.responses.ListWafLogsResponse responseWrapper =
+                                        builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

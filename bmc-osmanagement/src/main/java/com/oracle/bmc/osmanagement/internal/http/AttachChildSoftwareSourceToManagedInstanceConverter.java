@@ -16,15 +16,20 @@ public class AttachChildSoftwareSourceToManagedInstanceConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static AttachChildSoftwareSourceToManagedInstanceRequest interceptRequest(
-            AttachChildSoftwareSourceToManagedInstanceRequest request) {
+    public static com.oracle.bmc.osmanagement.requests
+                    .AttachChildSoftwareSourceToManagedInstanceRequest
+            interceptRequest(
+                    com.oracle.bmc.osmanagement.requests
+                                    .AttachChildSoftwareSourceToManagedInstanceRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            AttachChildSoftwareSourceToManagedInstanceRequest request) {
+            com.oracle.bmc.osmanagement.requests.AttachChildSoftwareSourceToManagedInstanceRequest
+                    request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
         Validate.notNull(
@@ -57,20 +62,25 @@ public class AttachChildSoftwareSourceToManagedInstanceConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, AttachChildSoftwareSourceToManagedInstanceResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.osmanagement.responses
+                            .AttachChildSoftwareSourceToManagedInstanceResponse>
             fromResponse() {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response,
-                        AttachChildSoftwareSourceToManagedInstanceResponse>
+                        com.oracle.bmc.osmanagement.responses
+                                .AttachChildSoftwareSourceToManagedInstanceResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                AttachChildSoftwareSourceToManagedInstanceResponse>() {
+                                com.oracle.bmc.osmanagement.responses
+                                        .AttachChildSoftwareSourceToManagedInstanceResponse>() {
                             @Override
-                            public AttachChildSoftwareSourceToManagedInstanceResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.osmanagement.responses
+                                            .AttachChildSoftwareSourceToManagedInstanceResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for AttachChildSoftwareSourceToManagedInstanceResponse");
+                                        "Transform function invoked for com.oracle.bmc.osmanagement.responses.AttachChildSoftwareSourceToManagedInstanceResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -81,9 +91,13 @@ public class AttachChildSoftwareSourceToManagedInstanceConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                AttachChildSoftwareSourceToManagedInstanceResponse.Builder builder =
-                                        AttachChildSoftwareSourceToManagedInstanceResponse
-                                                .builder();
+                                com.oracle.bmc.osmanagement.responses
+                                                .AttachChildSoftwareSourceToManagedInstanceResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.osmanagement.responses
+                                                        .AttachChildSoftwareSourceToManagedInstanceResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -97,8 +111,9 @@ public class AttachChildSoftwareSourceToManagedInstanceConverter {
                                                     String.class));
                                 }
 
-                                AttachChildSoftwareSourceToManagedInstanceResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.osmanagement.responses
+                                                .AttachChildSoftwareSourceToManagedInstanceResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

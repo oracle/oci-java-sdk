@@ -16,13 +16,15 @@ public class CreateStreamConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static CreateStreamRequest interceptRequest(CreateStreamRequest request) {
+    public static com.oracle.bmc.streaming.requests.CreateStreamRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.CreateStreamRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, CreateStreamRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.CreateStreamRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCreateStreamDetails(), "createStreamDetails is required");
 
@@ -40,16 +42,22 @@ public class CreateStreamConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateStreamResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.CreateStreamResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStreamResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.CreateStreamResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, CreateStreamResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.CreateStreamResponse>() {
                             @Override
-                            public CreateStreamResponse apply(
+                            public com.oracle.bmc.streaming.responses.CreateStreamResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for CreateStreamResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.CreateStreamResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Stream>>
@@ -61,8 +69,10 @@ public class CreateStreamConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                CreateStreamResponse.Builder builder =
-                                        CreateStreamResponse.builder();
+                                com.oracle.bmc.streaming.responses.CreateStreamResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .CreateStreamResponse.builder();
 
                                 builder.stream(response.getItem());
 
@@ -87,7 +97,8 @@ public class CreateStreamConverter {
                                                     "etag", etagHeader.get().get(0), String.class));
                                 }
 
-                                CreateStreamResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.CreateStreamResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

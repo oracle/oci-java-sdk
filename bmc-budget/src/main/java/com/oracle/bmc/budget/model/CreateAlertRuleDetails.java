@@ -186,7 +186,7 @@ public class CreateAlertRuleDetails {
     ThresholdType thresholdType;
 
     /**
-     * The audience that will received the alert when it triggers.
+     * The audience that will receive the alert when it triggers. An empty string is interpreted as null.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipients")
     String recipients;

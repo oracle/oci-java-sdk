@@ -16,13 +16,15 @@ public class DeleteQuotaConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteQuotaRequest interceptRequest(DeleteQuotaRequest request) {
+    public static com.oracle.bmc.limits.requests.DeleteQuotaRequest interceptRequest(
+            com.oracle.bmc.limits.requests.DeleteQuotaRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteQuotaRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.limits.requests.DeleteQuotaRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getQuotaId(), "quotaId must not be blank");
 
@@ -50,16 +52,21 @@ public class DeleteQuotaConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteQuotaResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.limits.responses.DeleteQuotaResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteQuotaResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.limits.responses.DeleteQuotaResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteQuotaResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.limits.responses.DeleteQuotaResponse>() {
                             @Override
-                            public DeleteQuotaResponse apply(
+                            public com.oracle.bmc.limits.responses.DeleteQuotaResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeleteQuotaResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.limits.responses.DeleteQuotaResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -70,7 +77,10 @@ public class DeleteQuotaConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteQuotaResponse.Builder builder = DeleteQuotaResponse.builder();
+                                com.oracle.bmc.limits.responses.DeleteQuotaResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.limits.responses.DeleteQuotaResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -84,7 +94,8 @@ public class DeleteQuotaConverter {
                                                     String.class));
                                 }
 
-                                DeleteQuotaResponse responseWrapper = builder.build();
+                                com.oracle.bmc.limits.responses.DeleteQuotaResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

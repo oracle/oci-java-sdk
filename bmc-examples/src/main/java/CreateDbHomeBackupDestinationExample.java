@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  *   <li>Create a BackupDestination for the DbHome to be created.</li>
  *   <li>
  *     Creating DBHome with BackupDestination. See:
- *       <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm">overview</a>
+ *       <a href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a>
  *       for more information</li>
  * </ul>
  */

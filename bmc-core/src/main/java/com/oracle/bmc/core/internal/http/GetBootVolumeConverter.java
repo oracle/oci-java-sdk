@@ -16,13 +16,15 @@ public class GetBootVolumeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static GetBootVolumeRequest interceptRequest(GetBootVolumeRequest request) {
+    public static com.oracle.bmc.core.requests.GetBootVolumeRequest interceptRequest(
+            com.oracle.bmc.core.requests.GetBootVolumeRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, GetBootVolumeRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.GetBootVolumeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getBootVolumeId(), "bootVolumeId must not be blank");
 
@@ -41,16 +43,21 @@ public class GetBootVolumeConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.GetBootVolumeResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.GetBootVolumeResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, GetBootVolumeResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.GetBootVolumeResponse>() {
                             @Override
-                            public GetBootVolumeResponse apply(
+                            public com.oracle.bmc.core.responses.GetBootVolumeResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for GetBootVolumeResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.GetBootVolumeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -64,8 +71,10 @@ public class GetBootVolumeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                GetBootVolumeResponse.Builder builder =
-                                        GetBootVolumeResponse.builder();
+                                com.oracle.bmc.core.responses.GetBootVolumeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses.GetBootVolumeResponse
+                                                        .builder();
 
                                 builder.bootVolume(response.getItem());
 
@@ -90,7 +99,8 @@ public class GetBootVolumeConverter {
                                                     String.class));
                                 }
 
-                                GetBootVolumeResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.GetBootVolumeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

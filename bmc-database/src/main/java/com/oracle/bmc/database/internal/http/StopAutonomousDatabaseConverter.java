@@ -16,14 +16,15 @@ public class StopAutonomousDatabaseConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static StopAutonomousDatabaseRequest interceptRequest(
-            StopAutonomousDatabaseRequest request) {
+    public static com.oracle.bmc.database.requests.StopAutonomousDatabaseRequest interceptRequest(
+            com.oracle.bmc.database.requests.StopAutonomousDatabaseRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, StopAutonomousDatabaseRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.database.requests.StopAutonomousDatabaseRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
@@ -54,18 +55,22 @@ public class StopAutonomousDatabaseConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, StopAutonomousDatabaseResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.StopAutonomousDatabaseResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, StopAutonomousDatabaseResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses.StopAutonomousDatabaseResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, StopAutonomousDatabaseResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.database.responses
+                                        .StopAutonomousDatabaseResponse>() {
                             @Override
-                            public StopAutonomousDatabaseResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses.StopAutonomousDatabaseResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for StopAutonomousDatabaseResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.StopAutonomousDatabaseResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
@@ -79,8 +84,11 @@ public class StopAutonomousDatabaseConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                StopAutonomousDatabaseResponse.Builder builder =
-                                        StopAutonomousDatabaseResponse.builder();
+                                com.oracle.bmc.database.responses.StopAutonomousDatabaseResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .StopAutonomousDatabaseResponse.builder();
 
                                 builder.autonomousDatabase(response.getItem());
 
@@ -117,7 +125,8 @@ public class StopAutonomousDatabaseConverter {
                                                     String.class));
                                 }
 
-                                StopAutonomousDatabaseResponse responseWrapper = builder.build();
+                                com.oracle.bmc.database.responses.StopAutonomousDatabaseResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

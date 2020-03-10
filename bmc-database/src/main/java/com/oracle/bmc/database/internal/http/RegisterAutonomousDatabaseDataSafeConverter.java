@@ -16,15 +16,17 @@ public class RegisterAutonomousDatabaseDataSafeConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static RegisterAutonomousDatabaseDataSafeRequest interceptRequest(
-            RegisterAutonomousDatabaseDataSafeRequest request) {
+    public static com.oracle.bmc.database.requests.RegisterAutonomousDatabaseDataSafeRequest
+            interceptRequest(
+                    com.oracle.bmc.database.requests.RegisterAutonomousDatabaseDataSafeRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            RegisterAutonomousDatabaseDataSafeRequest request) {
+            com.oracle.bmc.database.requests.RegisterAutonomousDatabaseDataSafeRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
@@ -51,19 +53,24 @@ public class RegisterAutonomousDatabaseDataSafeConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, RegisterAutonomousDatabaseDataSafeResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.database.responses.RegisterAutonomousDatabaseDataSafeResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RegisterAutonomousDatabaseDataSafeResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.database.responses
+                                .RegisterAutonomousDatabaseDataSafeResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                RegisterAutonomousDatabaseDataSafeResponse>() {
+                                com.oracle.bmc.database.responses
+                                        .RegisterAutonomousDatabaseDataSafeResponse>() {
                             @Override
-                            public RegisterAutonomousDatabaseDataSafeResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.database.responses
+                                            .RegisterAutonomousDatabaseDataSafeResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for RegisterAutonomousDatabaseDataSafeResponse");
+                                        "Transform function invoked for com.oracle.bmc.database.responses.RegisterAutonomousDatabaseDataSafeResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -74,8 +81,12 @@ public class RegisterAutonomousDatabaseDataSafeConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                RegisterAutonomousDatabaseDataSafeResponse.Builder builder =
-                                        RegisterAutonomousDatabaseDataSafeResponse.builder();
+                                com.oracle.bmc.database.responses
+                                                .RegisterAutonomousDatabaseDataSafeResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.database.responses
+                                                        .RegisterAutonomousDatabaseDataSafeResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -101,8 +112,9 @@ public class RegisterAutonomousDatabaseDataSafeConverter {
                                                     String.class));
                                 }
 
-                                RegisterAutonomousDatabaseDataSafeResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.database.responses
+                                                .RegisterAutonomousDatabaseDataSafeResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

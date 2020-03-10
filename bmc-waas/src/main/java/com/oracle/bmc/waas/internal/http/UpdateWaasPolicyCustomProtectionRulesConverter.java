@@ -16,15 +16,17 @@ public class UpdateWaasPolicyCustomProtectionRulesConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static UpdateWaasPolicyCustomProtectionRulesRequest interceptRequest(
-            UpdateWaasPolicyCustomProtectionRulesRequest request) {
+    public static com.oracle.bmc.waas.requests.UpdateWaasPolicyCustomProtectionRulesRequest
+            interceptRequest(
+                    com.oracle.bmc.waas.requests.UpdateWaasPolicyCustomProtectionRulesRequest
+                            request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            UpdateWaasPolicyCustomProtectionRulesRequest request) {
+            com.oracle.bmc.waas.requests.UpdateWaasPolicyCustomProtectionRulesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
         Validate.notNull(
@@ -61,19 +63,23 @@ public class UpdateWaasPolicyCustomProtectionRulesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, UpdateWaasPolicyCustomProtectionRulesResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.waas.responses.UpdateWaasPolicyCustomProtectionRulesResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateWaasPolicyCustomProtectionRulesResponse>
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.waas.responses.UpdateWaasPolicyCustomProtectionRulesResponse>
                 transformer =
                         new com.google.common.base.Function<
                                 javax.ws.rs.core.Response,
-                                UpdateWaasPolicyCustomProtectionRulesResponse>() {
+                                com.oracle.bmc.waas.responses
+                                        .UpdateWaasPolicyCustomProtectionRulesResponse>() {
                             @Override
-                            public UpdateWaasPolicyCustomProtectionRulesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.waas.responses
+                                            .UpdateWaasPolicyCustomProtectionRulesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for UpdateWaasPolicyCustomProtectionRulesResponse");
+                                        "Transform function invoked for com.oracle.bmc.waas.responses.UpdateWaasPolicyCustomProtectionRulesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -84,8 +90,13 @@ public class UpdateWaasPolicyCustomProtectionRulesConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                UpdateWaasPolicyCustomProtectionRulesResponse.Builder builder =
-                                        UpdateWaasPolicyCustomProtectionRulesResponse.builder();
+                                com.oracle.bmc.waas.responses
+                                                .UpdateWaasPolicyCustomProtectionRulesResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.waas.responses
+                                                        .UpdateWaasPolicyCustomProtectionRulesResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -111,8 +122,9 @@ public class UpdateWaasPolicyCustomProtectionRulesConverter {
                                                     String.class));
                                 }
 
-                                UpdateWaasPolicyCustomProtectionRulesResponse responseWrapper =
-                                        builder.build();
+                                com.oracle.bmc.waas.responses
+                                                .UpdateWaasPolicyCustomProtectionRulesResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

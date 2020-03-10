@@ -16,13 +16,15 @@ public class DeletePublicIpConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeletePublicIpRequest interceptRequest(DeletePublicIpRequest request) {
+    public static com.oracle.bmc.core.requests.DeletePublicIpRequest interceptRequest(
+            com.oracle.bmc.core.requests.DeletePublicIpRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeletePublicIpRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.core.requests.DeletePublicIpRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
 
@@ -45,16 +47,21 @@ public class DeletePublicIpConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, com.oracle.bmc.core.responses.DeletePublicIpResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.core.responses.DeletePublicIpResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeletePublicIpResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.core.responses.DeletePublicIpResponse>() {
                             @Override
-                            public DeletePublicIpResponse apply(
+                            public com.oracle.bmc.core.responses.DeletePublicIpResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for DeletePublicIpResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.core.responses.DeletePublicIpResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -65,8 +72,10 @@ public class DeletePublicIpConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeletePublicIpResponse.Builder builder =
-                                        DeletePublicIpResponse.builder();
+                                com.oracle.bmc.core.responses.DeletePublicIpResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.core.responses.DeletePublicIpResponse
+                                                        .builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -80,7 +89,8 @@ public class DeletePublicIpConverter {
                                                     String.class));
                                 }
 
-                                DeletePublicIpResponse responseWrapper = builder.build();
+                                com.oracle.bmc.core.responses.DeletePublicIpResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

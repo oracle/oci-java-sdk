@@ -16,13 +16,15 @@ public class StopArchiverConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static StopArchiverRequest interceptRequest(StopArchiverRequest request) {
+    public static com.oracle.bmc.streaming.requests.StopArchiverRequest interceptRequest(
+            com.oracle.bmc.streaming.requests.StopArchiverRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, StopArchiverRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.streaming.requests.StopArchiverRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getStreamId(), "streamId must not be blank");
 
@@ -52,16 +54,22 @@ public class StopArchiverConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, StopArchiverResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.streaming.responses.StopArchiverResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, StopArchiverResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.streaming.responses.StopArchiverResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, StopArchiverResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.streaming.responses.StopArchiverResponse>() {
                             @Override
-                            public StopArchiverResponse apply(
+                            public com.oracle.bmc.streaming.responses.StopArchiverResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for StopArchiverResponse");
+                                LOG.trace(
+                                        "Transform function invoked for com.oracle.bmc.streaming.responses.StopArchiverResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Archiver>>
@@ -73,8 +81,10 @@ public class StopArchiverConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                StopArchiverResponse.Builder builder =
-                                        StopArchiverResponse.builder();
+                                com.oracle.bmc.streaming.responses.StopArchiverResponse.Builder
+                                        builder =
+                                                com.oracle.bmc.streaming.responses
+                                                        .StopArchiverResponse.builder();
 
                                 builder.archiver(response.getItem());
 
@@ -99,7 +109,8 @@ public class StopArchiverConverter {
                                                     String.class));
                                 }
 
-                                StopArchiverResponse responseWrapper = builder.build();
+                                com.oracle.bmc.streaming.responses.StopArchiverResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

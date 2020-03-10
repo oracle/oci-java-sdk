@@ -16,13 +16,15 @@ public class DeleteAttributeTagConverter {
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static DeleteAttributeTagRequest interceptRequest(DeleteAttributeTagRequest request) {
+    public static com.oracle.bmc.datacatalog.requests.DeleteAttributeTagRequest interceptRequest(
+            com.oracle.bmc.datacatalog.requests.DeleteAttributeTagRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, DeleteAttributeTagRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            com.oracle.bmc.datacatalog.requests.DeleteAttributeTagRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
         Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
@@ -70,17 +72,21 @@ public class DeleteAttributeTagConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, DeleteAttributeTagResponse>
+                    javax.ws.rs.core.Response,
+                    com.oracle.bmc.datacatalog.responses.DeleteAttributeTagResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAttributeTagResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        com.oracle.bmc.datacatalog.responses.DeleteAttributeTagResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, DeleteAttributeTagResponse>() {
+                                javax.ws.rs.core.Response,
+                                com.oracle.bmc.datacatalog.responses.DeleteAttributeTagResponse>() {
                             @Override
-                            public DeleteAttributeTagResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
+                            public com.oracle.bmc.datacatalog.responses.DeleteAttributeTagResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for DeleteAttributeTagResponse");
+                                        "Transform function invoked for com.oracle.bmc.datacatalog.responses.DeleteAttributeTagResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<Void>>
@@ -91,8 +97,11 @@ public class DeleteAttributeTagConverter {
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                DeleteAttributeTagResponse.Builder builder =
-                                        DeleteAttributeTagResponse.builder();
+                                com.oracle.bmc.datacatalog.responses.DeleteAttributeTagResponse
+                                                .Builder
+                                        builder =
+                                                com.oracle.bmc.datacatalog.responses
+                                                        .DeleteAttributeTagResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
@@ -106,7 +115,8 @@ public class DeleteAttributeTagConverter {
                                                     String.class));
                                 }
 
-                                DeleteAttributeTagResponse responseWrapper = builder.build();
+                                com.oracle.bmc.datacatalog.responses.DeleteAttributeTagResponse
+                                        responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
