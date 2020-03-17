@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## 1.15.0 - 2020-03-17
+## 1.15.1 - 2020-03-17
 ### Added
 - Support for serial console connections in the Database service
 - Support for preview database versions in the Database service
