@@ -68,7 +68,7 @@ abstract class ProgressTrackerFactory {
         }
 
         /**
-         * This progress tracker is threadsafe as updates to the aggregate root progress tracker is synchronized.
+         * This progress tracker is thread-safe as updates to the aggregate root progress tracker is synchronized.
          */
         @ThreadSafe
         private class SubProgressTracker extends ProgressTracker {
@@ -81,6 +81,14 @@ abstract class ProgressTrackerFactory {
                 super.onBytesRead(bytesRead);
                 synchronized (rootProgressTracker) {
                     rootProgressTracker.onBytesRead(bytesRead);
+                }
+            }
+
+            @Override
+            protected void invalidateBytesRead(long invalidByteCount) {
+                super.invalidateBytesRead(invalidByteCount);
+                synchronized (rootProgressTracker) {
+                    rootProgressTracker.invalidateBytesRead(invalidByteCount);
                 }
             }
 

@@ -100,7 +100,7 @@ public class Recurrence {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid IntervalType: " + key);
+            throw new IllegalArgumentException("Invalid IntervalType: " + key);
         }
     };
     /**

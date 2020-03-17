@@ -120,7 +120,11 @@ public class AutonomousDbPreviewVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timePreviewEnd")
     java.util.Date timePreviewEnd;
     /**
-     * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DbWorkload {
@@ -166,7 +170,11 @@ public class AutonomousDbPreviewVersionSummary {
         }
     };
     /**
-     * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     DbWorkload dbWorkload;

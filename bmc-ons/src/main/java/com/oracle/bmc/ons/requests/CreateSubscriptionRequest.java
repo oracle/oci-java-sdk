@@ -8,7 +8,8 @@ import com.oracle.bmc.ons.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class CreateSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest {
+public class CreateSubscriptionRequest
+        extends com.oracle.bmc.requests.BmcRequest<CreateSubscriptionDetails> {
 
     /**
      * The subscription to create.
@@ -32,7 +33,19 @@ public class CreateSubscriptionRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public CreateSubscriptionDetails getBody$() {
+        return createSubscriptionDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CreateSubscriptionRequest, CreateSubscriptionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -88,6 +101,17 @@ public class CreateSubscriptionRequest extends com.oracle.bmc.requests.BmcReques
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(CreateSubscriptionDetails body) {
+            createSubscriptionDetails(body);
+            return this;
         }
     }
 }

@@ -8,7 +8,8 @@ import com.oracle.bmc.dts.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateTransferPackageRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateTransferPackageRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateTransferPackageDetails> {
 
     /**
      * ID of the Transfer Job
@@ -32,7 +33,19 @@ public class UpdateTransferPackageRequest extends com.oracle.bmc.requests.BmcReq
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateTransferPackageDetails getBody$() {
+        return updateTransferPackageDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateTransferPackageRequest, UpdateTransferPackageDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -89,6 +102,17 @@ public class UpdateTransferPackageRequest extends com.oracle.bmc.requests.BmcReq
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateTransferPackageDetails body) {
+            updateTransferPackageDetails(body);
+            return this;
         }
     }
 }

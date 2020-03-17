@@ -8,7 +8,7 @@ import com.oracle.bmc.limits.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
@@ -59,10 +59,9 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ScopeType: " + key);
+            throw new IllegalArgumentException("Invalid ScopeType: " + key);
         }
     };
-
     /**
      * Filter entries by availability domain. This implies that only AD-specific values will be returned.
      *
@@ -112,10 +111,9 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
      *
@@ -155,10 +153,9 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * The maximum number of items to return in a paginated \"List\" call.
      *
@@ -178,7 +175,9 @@ public class ListLimitValuesRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListLimitValuesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

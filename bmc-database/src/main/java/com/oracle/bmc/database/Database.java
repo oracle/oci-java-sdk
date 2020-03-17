@@ -211,6 +211,17 @@ public interface Database extends AutoCloseable {
     CreateBackupDestinationResponse createBackupDestination(CreateBackupDestinationRequest request);
 
     /**
+     * Creates a new console connection to the specified dbNode.
+     * After the console connection has been created and is available,
+     * you connect to the console using SSH.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateConsoleConnectionResponse createConsoleConnection(CreateConsoleConnectionRequest request);
+
+    /**
      * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
      * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
      * <p>
@@ -340,6 +351,14 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteBackupDestinationResponse deleteBackupDestination(DeleteBackupDestinationRequest request);
+
+    /**
+     * Deletes the specified Db node console connection.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteConsoleConnectionResponse deleteConsoleConnection(DeleteConsoleConnectionRequest request);
 
     /**
      * Deletes the database. Applies only to Exadata DB systems.
@@ -561,6 +580,14 @@ public interface Database extends AutoCloseable {
     GetBackupDestinationResponse getBackupDestination(GetBackupDestinationRequest request);
 
     /**
+     * Gets the specified Db node console connection's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetConsoleConnectionResponse getConsoleConnection(GetConsoleConnectionRequest request);
+
+    /**
      * Gets the specified Data Guard association's configuration information.
      *
      * @param request The request object containing the details to send
@@ -714,12 +741,14 @@ public interface Database extends AutoCloseable {
             LaunchAutonomousExadataInfrastructureRequest request);
 
     /**
-     * Launches a new DB system in the specified compartment and availability domain. The Oracle
+     * Creates a new DB system in the specified compartment and availability domain. The Oracle
      * Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
      * <p>
      * An initial database is created on the DB system based on the request parameters you provide and some default
-     * options. For more information,
-     * see [Default Options for the Initial Database](https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm#DefaultOptionsfortheInitialDatabase).
+     * options. For detailed information about default options, see the following:
+     * <p>
+     * - [Bare metal and virtual machine DB system default options](https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#DefaultOptionsfortheInitialDatabase)
+     * - [Exadata DB system default options](https://docs.cloud.oracle.com/Content/Database/Tasks/exacreatingDBsystem.htm#DefaultOptionsfortheInitialDatabase)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -832,6 +861,15 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListBackupsResponse listBackups(ListBackupsRequest request);
+
+    /**
+     * Lists the console connections for the specified Db node.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListConsoleConnectionsResponse listConsoleConnections(ListConsoleConnectionsRequest request);
 
     /**
      * Lists all Data Guard associations for the specified database.
@@ -1010,7 +1048,7 @@ public interface Database extends AutoCloseable {
             RestartAutonomousContainerDatabaseRequest request);
 
     /**
-     * Restarts the specified Autonomous Database.
+     * Restarts the specified Autonomous Database. Restart supported only for databases using dedicated Exadata infrastructure.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -8,7 +8,8 @@ import com.oracle.bmc.nosql.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ChangeTableCompartmentRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ChangeTableCompartmentRequest
+        extends com.oracle.bmc.requests.BmcRequest<ChangeTableCompartmentDetails> {
 
     /**
      * A table name within the compartment, or a table OCID.
@@ -47,7 +48,19 @@ public class ChangeTableCompartmentRequest extends com.oracle.bmc.requests.BmcRe
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeTableCompartmentDetails getBody$() {
+        return changeTableCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeTableCompartmentRequest, ChangeTableCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -105,6 +118,17 @@ public class ChangeTableCompartmentRequest extends com.oracle.bmc.requests.BmcRe
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeTableCompartmentDetails body) {
+            changeTableCompartmentDetails(body);
+            return this;
         }
     }
 }

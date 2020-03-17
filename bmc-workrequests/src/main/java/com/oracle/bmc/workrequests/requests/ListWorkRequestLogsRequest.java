@@ -8,7 +8,7 @@ import com.oracle.bmc.workrequests.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
@@ -70,10 +70,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -81,7 +80,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListWorkRequestLogsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

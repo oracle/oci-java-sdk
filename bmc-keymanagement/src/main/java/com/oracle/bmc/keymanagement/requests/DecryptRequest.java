@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class DecryptRequest extends com.oracle.bmc.requests.BmcRequest {
+public class DecryptRequest extends com.oracle.bmc.requests.BmcRequest<DecryptDataDetails> {
 
     /**
      * DecryptDataDetails
@@ -23,7 +23,19 @@ public class DecryptRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public DecryptDataDetails getBody$() {
+        return decryptDataDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    DecryptRequest, DecryptDataDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -78,6 +90,17 @@ public class DecryptRequest extends com.oracle.bmc.requests.BmcRequest {
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(DecryptDataDetails body) {
+            decryptDataDetails(body);
+            return this;
         }
     }
 }

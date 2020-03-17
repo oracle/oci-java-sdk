@@ -8,7 +8,8 @@ import com.oracle.bmc.apigateway.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ChangeGatewayCompartmentRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ChangeGatewayCompartmentRequest
+        extends com.oracle.bmc.requests.BmcRequest<ChangeGatewayCompartmentDetails> {
 
     /**
      * The ocid of the gateway.
@@ -45,7 +46,19 @@ public class ChangeGatewayCompartmentRequest extends com.oracle.bmc.requests.Bmc
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeGatewayCompartmentDetails getBody$() {
+        return changeGatewayCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeGatewayCompartmentRequest, ChangeGatewayCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -103,6 +116,17 @@ public class ChangeGatewayCompartmentRequest extends com.oracle.bmc.requests.Bmc
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeGatewayCompartmentDetails body) {
+            changeGatewayCompartmentDetails(body);
+            return this;
         }
     }
 }

@@ -8,7 +8,8 @@ import com.oracle.bmc.dataflow.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateApplicationRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateApplicationRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateApplicationDetails> {
 
     /**
      * Details for updating an application.
@@ -37,7 +38,19 @@ public class UpdateApplicationRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateApplicationDetails getBody$() {
+        return updateApplicationDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateApplicationRequest, UpdateApplicationDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -94,6 +107,17 @@ public class UpdateApplicationRequest extends com.oracle.bmc.requests.BmcRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateApplicationDetails body) {
+            updateApplicationDetails(body);
+            return this;
         }
     }
 }

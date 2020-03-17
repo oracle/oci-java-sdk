@@ -9,7 +9,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class LaunchAutonomousExadataInfrastructureRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<LaunchAutonomousExadataInfrastructureDetails> {
 
     /**
      * Request to launch a Autonomous Exadata Infrastructure.
@@ -27,7 +27,20 @@ public class LaunchAutonomousExadataInfrastructureRequest
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public LaunchAutonomousExadataInfrastructureDetails getBody$() {
+        return launchAutonomousExadataInfrastructureDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    LaunchAutonomousExadataInfrastructureRequest,
+                    LaunchAutonomousExadataInfrastructureDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -83,6 +96,17 @@ public class LaunchAutonomousExadataInfrastructureRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(LaunchAutonomousExadataInfrastructureDetails body) {
+            launchAutonomousExadataInfrastructureDetails(body);
+            return this;
         }
     }
 }

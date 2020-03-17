@@ -68,7 +68,11 @@ public class CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
     /**
-     * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     *
      **/
     public enum DbWorkload {
         Oltp("OLTP"),
@@ -99,11 +103,15 @@ public class CreateAutonomousDatabaseBase {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid DbWorkload: " + key);
+            throw new IllegalArgumentException("Invalid DbWorkload: " + key);
         }
     };
     /**
-     * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     DbWorkload dbWorkload;
@@ -167,7 +175,7 @@ public class CreateAutonomousDatabaseBase {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LicenseModel: " + key);
+            throw new IllegalArgumentException("Invalid LicenseModel: " + key);
         }
     };
     /**
@@ -232,7 +240,9 @@ public class CreateAutonomousDatabaseBase {
     String subnetId;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -305,7 +315,7 @@ public class CreateAutonomousDatabaseBase {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Source: " + key);
+            throw new IllegalArgumentException("Invalid Source: " + key);
         }
     };
 }

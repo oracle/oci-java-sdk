@@ -8,7 +8,7 @@ import com.oracle.bmc.oce.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The ID of the compartment in which to list resources.
@@ -70,10 +70,9 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
      *
@@ -113,10 +112,9 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * Filter results on lifecycleState.
      */
@@ -158,16 +156,17 @@ public class ListOceInstancesRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-
     /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListOceInstancesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

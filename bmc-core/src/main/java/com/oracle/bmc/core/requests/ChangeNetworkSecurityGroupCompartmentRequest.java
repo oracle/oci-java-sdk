@@ -9,7 +9,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class ChangeNetworkSecurityGroupCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<ChangeNetworkSecurityGroupCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -39,7 +39,20 @@ public class ChangeNetworkSecurityGroupCompartmentRequest
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeNetworkSecurityGroupCompartmentDetails getBody$() {
+        return changeNetworkSecurityGroupCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeNetworkSecurityGroupCompartmentRequest,
+                    ChangeNetworkSecurityGroupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -97,6 +110,17 @@ public class ChangeNetworkSecurityGroupCompartmentRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeNetworkSecurityGroupCompartmentDetails body) {
+            changeNetworkSecurityGroupCompartmentDetails(body);
+            return this;
         }
     }
 }

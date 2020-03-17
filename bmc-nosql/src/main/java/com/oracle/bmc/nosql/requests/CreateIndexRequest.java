@@ -8,7 +8,7 @@ import com.oracle.bmc.nosql.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class CreateIndexRequest extends com.oracle.bmc.requests.BmcRequest {
+public class CreateIndexRequest extends com.oracle.bmc.requests.BmcRequest<CreateIndexDetails> {
 
     /**
      * A table name within the compartment, or a table OCID.
@@ -37,7 +37,19 @@ public class CreateIndexRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public CreateIndexDetails getBody$() {
+        return createIndexDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CreateIndexRequest, CreateIndexDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -94,6 +106,17 @@ public class CreateIndexRequest extends com.oracle.bmc.requests.BmcRequest {
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(CreateIndexDetails body) {
+            createIndexDetails(body);
+            return this;
         }
     }
 }

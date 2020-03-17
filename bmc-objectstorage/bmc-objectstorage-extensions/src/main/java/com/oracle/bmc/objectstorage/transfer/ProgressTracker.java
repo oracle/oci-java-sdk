@@ -24,7 +24,7 @@ class ProgressTracker {
         if (totalBytesRead < 0 || totalBytesRead > totalBytes) {
             throw new IllegalStateException(
                     String.format(
-                            "IllegalState - bytes read %d causes total bytes read(%d)/total bytes(%d)",
+                            "IllegalState - bytes read %d causes total bytes read(%d) > total bytes(%d)",
                             bytesRead,
                             totalBytesRead,
                             totalBytes));

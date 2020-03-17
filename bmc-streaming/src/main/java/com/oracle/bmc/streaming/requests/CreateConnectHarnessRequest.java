@@ -8,7 +8,8 @@ import com.oracle.bmc.streaming.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class CreateConnectHarnessRequest extends com.oracle.bmc.requests.BmcRequest {
+public class CreateConnectHarnessRequest
+        extends com.oracle.bmc.requests.BmcRequest<CreateConnectHarnessDetails> {
 
     /**
      * The connect harness to create.
@@ -27,7 +28,19 @@ public class CreateConnectHarnessRequest extends com.oracle.bmc.requests.BmcRequ
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public CreateConnectHarnessDetails getBody$() {
+        return createConnectHarnessDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CreateConnectHarnessRequest, CreateConnectHarnessDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -83,6 +96,17 @@ public class CreateConnectHarnessRequest extends com.oracle.bmc.requests.BmcRequ
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(CreateConnectHarnessDetails body) {
+            createConnectHarnessDetails(body);
+            return this;
         }
     }
 }

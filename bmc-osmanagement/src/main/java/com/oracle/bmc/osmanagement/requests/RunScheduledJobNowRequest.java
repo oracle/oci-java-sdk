@@ -8,7 +8,7 @@ import com.oracle.bmc.osmanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class RunScheduledJobNowRequest extends com.oracle.bmc.requests.BmcRequest {
+public class RunScheduledJobNowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The ID of the scheduled job.
@@ -40,7 +40,9 @@ public class RunScheduledJobNowRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    RunScheduledJobNowRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

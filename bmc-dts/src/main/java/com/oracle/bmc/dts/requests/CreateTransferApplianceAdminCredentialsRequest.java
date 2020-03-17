@@ -9,7 +9,7 @@ import com.oracle.bmc.dts.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class CreateTransferApplianceAdminCredentialsRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<TransferAppliancePublicKey> {
 
     /**
      * ID of the Transfer Job
@@ -26,7 +26,19 @@ public class CreateTransferApplianceAdminCredentialsRequest
      */
     private TransferAppliancePublicKey adminPublicKey;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public TransferAppliancePublicKey getBody$() {
+        return adminPublicKey;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CreateTransferApplianceAdminCredentialsRequest, TransferAppliancePublicKey> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -83,6 +95,17 @@ public class CreateTransferApplianceAdminCredentialsRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(TransferAppliancePublicKey body) {
+            adminPublicKey(body);
+            return this;
         }
     }
 }

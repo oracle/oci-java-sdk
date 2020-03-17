@@ -9,7 +9,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class GetInstancePoolLoadBalancerAttachmentRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -21,7 +21,9 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
      */
     private String instancePoolLoadBalancerAttachmentId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    GetInstancePoolLoadBalancerAttachmentRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

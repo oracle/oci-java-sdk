@@ -8,7 +8,8 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ChangeNatGatewayCompartmentRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ChangeNatGatewayCompartmentRequest
+        extends com.oracle.bmc.requests.BmcRequest<ChangeNatGatewayCompartmentDetails> {
 
     /**
      * The NAT gateway's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -37,7 +38,19 @@ public class ChangeNatGatewayCompartmentRequest extends com.oracle.bmc.requests.
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeNatGatewayCompartmentDetails getBody$() {
+        return changeNatGatewayCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeNatGatewayCompartmentRequest, ChangeNatGatewayCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -94,6 +107,17 @@ public class ChangeNatGatewayCompartmentRequest extends com.oracle.bmc.requests.
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeNatGatewayCompartmentDetails body) {
+            changeNatGatewayCompartmentDetails(body);
+            return this;
         }
     }
 }

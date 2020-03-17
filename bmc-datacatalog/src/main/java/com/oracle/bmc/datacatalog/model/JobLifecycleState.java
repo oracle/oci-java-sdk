@@ -41,6 +41,6 @@ public enum JobLifecycleState {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid JobLifecycleState: " + key);
+        throw new IllegalArgumentException("Invalid JobLifecycleState: " + key);
     }
 }

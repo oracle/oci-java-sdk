@@ -9,7 +9,7 @@ import com.oracle.bmc.dts.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class GetTransferApplianceEncryptionPassphraseRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * ID of the Transfer Job
@@ -21,7 +21,9 @@ public class GetTransferApplianceEncryptionPassphraseRequest
      */
     private String transferApplianceLabel;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    GetTransferApplianceEncryptionPassphraseRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

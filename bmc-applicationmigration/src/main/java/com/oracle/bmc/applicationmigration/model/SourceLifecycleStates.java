@@ -40,6 +40,6 @@ public enum SourceLifecycleStates {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid SourceLifecycleStates: " + key);
+        throw new IllegalArgumentException("Invalid SourceLifecycleStates: " + key);
     }
 }

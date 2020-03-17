@@ -8,7 +8,8 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class DownloadVmClusterNetworkConfigFileRequest extends com.oracle.bmc.requests.BmcRequest {
+public class DownloadVmClusterNetworkConfigFileRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -36,7 +37,9 @@ public class DownloadVmClusterNetworkConfigFileRequest extends com.oracle.bmc.re
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    DownloadVmClusterNetworkConfigFileRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

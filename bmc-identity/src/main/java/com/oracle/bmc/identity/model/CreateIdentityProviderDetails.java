@@ -94,7 +94,7 @@ public class CreateIdentityProviderDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ProductType: " + key);
+            throw new IllegalArgumentException("Invalid ProductType: " + key);
         }
     };
     /**
@@ -161,7 +161,7 @@ public class CreateIdentityProviderDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Protocol: " + key);
+            throw new IllegalArgumentException("Invalid Protocol: " + key);
         }
     };
 }

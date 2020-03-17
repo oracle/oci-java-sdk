@@ -39,6 +39,6 @@ public enum JobScheduleType {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid JobScheduleType: " + key);
+        throw new IllegalArgumentException("Invalid JobScheduleType: " + key);
     }
 }

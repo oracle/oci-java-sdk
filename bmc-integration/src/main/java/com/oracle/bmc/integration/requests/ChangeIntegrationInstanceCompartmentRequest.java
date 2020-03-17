@@ -9,7 +9,7 @@ import com.oracle.bmc.integration.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class ChangeIntegrationInstanceCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<ChangeIntegrationInstanceCompartmentDetails> {
 
     /**
      * Unique Integration Instance identifier.
@@ -36,7 +36,20 @@ public class ChangeIntegrationInstanceCompartmentRequest
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeIntegrationInstanceCompartmentDetails getBody$() {
+        return changeIntegrationInstanceCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeIntegrationInstanceCompartmentRequest,
+                    ChangeIntegrationInstanceCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -94,6 +107,17 @@ public class ChangeIntegrationInstanceCompartmentRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeIntegrationInstanceCompartmentDetails body) {
+            changeIntegrationInstanceCompartmentDetails(body);
+            return this;
         }
     }
 }

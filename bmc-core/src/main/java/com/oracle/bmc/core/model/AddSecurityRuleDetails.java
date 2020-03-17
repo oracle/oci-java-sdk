@@ -244,7 +244,7 @@ public class AddSecurityRuleDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid DestinationType: " + key);
+            throw new IllegalArgumentException("Invalid DestinationType: " + key);
         }
     };
     /**
@@ -296,7 +296,7 @@ public class AddSecurityRuleDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Direction: " + key);
+            throw new IllegalArgumentException("Invalid Direction: " + key);
         }
     };
     /**
@@ -406,7 +406,7 @@ public class AddSecurityRuleDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SourceType: " + key);
+            throw new IllegalArgumentException("Invalid SourceType: " + key);
         }
     };
     /**

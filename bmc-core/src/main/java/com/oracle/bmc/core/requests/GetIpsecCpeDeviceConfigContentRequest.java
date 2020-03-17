@@ -8,7 +8,8 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class GetIpsecCpeDeviceConfigContentRequest extends com.oracle.bmc.requests.BmcRequest {
+public class GetIpsecCpeDeviceConfigContentRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the IPSec connection.
@@ -22,7 +23,9 @@ public class GetIpsecCpeDeviceConfigContentRequest extends com.oracle.bmc.reques
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    GetIpsecCpeDeviceConfigContentRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

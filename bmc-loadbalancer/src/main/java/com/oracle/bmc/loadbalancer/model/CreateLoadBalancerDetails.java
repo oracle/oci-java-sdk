@@ -301,7 +301,7 @@ public class CreateLoadBalancerDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid IpMode: " + key);
+            throw new IllegalArgumentException("Invalid IpMode: " + key);
         }
     };
     /**

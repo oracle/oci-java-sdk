@@ -8,7 +8,7 @@ import com.oracle.bmc.marketplace.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The name of the listing.
@@ -91,10 +91,9 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order to use, either `ASC` or `DESC`.
      */
@@ -132,10 +131,9 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with
      * one or more matching categories.
@@ -156,7 +154,9 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private Boolean isFeatured;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListListingsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

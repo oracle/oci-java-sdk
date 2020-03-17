@@ -219,9 +219,9 @@ public class UpdateAutonomousDatabaseDetails {
     String adminPassword;
 
     /**
-     * New name for this Autonomous Database. It must begin with an alphabetic character and can contain a
-     * maximum of eight alphanumeric characters. Special characters are not permitted. This is valid only
-     * for dedicated databases.
+     * New name for this Autonomous Database.
+     * For databases using dedicated Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * For databases using shared Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
@@ -246,7 +246,9 @@ public class UpdateAutonomousDatabaseDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -285,7 +287,7 @@ public class UpdateAutonomousDatabaseDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LicenseModel: " + key);
+            throw new IllegalArgumentException("Invalid LicenseModel: " + key);
         }
     };
     /**

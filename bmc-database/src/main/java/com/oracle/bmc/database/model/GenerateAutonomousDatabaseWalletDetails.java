@@ -102,7 +102,7 @@ public class GenerateAutonomousDatabaseWalletDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid GenerateType: " + key);
+            throw new IllegalArgumentException("Invalid GenerateType: " + key);
         }
     };
     /**

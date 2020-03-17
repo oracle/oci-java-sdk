@@ -8,7 +8,8 @@ import com.oracle.bmc.dts.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListTransferApplianceEntitlementRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListTransferApplianceEntitlementRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * compartment id
@@ -32,7 +33,9 @@ public class ListTransferApplianceEntitlementRequest extends com.oracle.bmc.requ
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListTransferApplianceEntitlementRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

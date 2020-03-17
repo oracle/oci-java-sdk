@@ -8,7 +8,8 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ChangeBootVolumeBackupCompartmentRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ChangeBootVolumeBackupCompartmentRequest
+        extends com.oracle.bmc.requests.BmcRequest<ChangeBootVolumeBackupCompartmentDetails> {
 
     /**
      * The OCID of the boot volume backup.
@@ -27,7 +28,20 @@ public class ChangeBootVolumeBackupCompartmentRequest extends com.oracle.bmc.req
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeBootVolumeBackupCompartmentDetails getBody$() {
+        return changeBootVolumeBackupCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeBootVolumeBackupCompartmentRequest,
+                    ChangeBootVolumeBackupCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -84,6 +98,17 @@ public class ChangeBootVolumeBackupCompartmentRequest extends com.oracle.bmc.req
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeBootVolumeBackupCompartmentDetails body) {
+            changeBootVolumeBackupCompartmentDetails(body);
+            return this;
         }
     }
 }

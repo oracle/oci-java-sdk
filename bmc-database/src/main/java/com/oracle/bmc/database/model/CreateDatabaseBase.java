@@ -84,7 +84,7 @@ public class CreateDatabaseBase {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Source: " + key);
+            throw new IllegalArgumentException("Invalid Source: " + key);
         }
     };
 }

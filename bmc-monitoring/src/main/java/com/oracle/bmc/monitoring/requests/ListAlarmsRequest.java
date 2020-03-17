@@ -8,7 +8,7 @@ import com.oracle.bmc.monitoring.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
@@ -101,10 +101,9 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order to use when sorting returned alarm definitions. Ascending (ASC) or descending (DESC).
      * <p>
@@ -148,10 +147,9 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can
      * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
@@ -162,7 +160,9 @@ public class ListAlarmsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private Boolean compartmentIdInSubtree;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListAlarmsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

@@ -9,7 +9,7 @@ import com.oracle.bmc.waas.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class ChangeCustomProtectionRuleCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<ChangeCustomProtectionRuleCompartmentDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
@@ -38,7 +38,20 @@ public class ChangeCustomProtectionRuleCompartmentRequest
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeCustomProtectionRuleCompartmentDetails getBody$() {
+        return changeCustomProtectionRuleCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeCustomProtectionRuleCompartmentRequest,
+                    ChangeCustomProtectionRuleCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -97,6 +110,17 @@ public class ChangeCustomProtectionRuleCompartmentRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeCustomProtectionRuleCompartmentDetails body) {
+            changeCustomProtectionRuleCompartmentDetails(body);
+            return this;
         }
     }
 }
