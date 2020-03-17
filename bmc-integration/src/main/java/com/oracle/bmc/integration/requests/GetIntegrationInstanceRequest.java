@@ -8,7 +8,8 @@ import com.oracle.bmc.integration.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class GetIntegrationInstanceRequest extends com.oracle.bmc.requests.BmcRequest {
+public class GetIntegrationInstanceRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * Unique Integration Instance identifier.
@@ -20,7 +21,9 @@ public class GetIntegrationInstanceRequest extends com.oracle.bmc.requests.BmcRe
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    GetIntegrationInstanceRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

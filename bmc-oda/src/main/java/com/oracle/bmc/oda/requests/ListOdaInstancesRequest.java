@@ -8,7 +8,7 @@ import com.oracle.bmc.oda.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * List the Digital Assistant instances that belong to this compartment.
@@ -65,10 +65,9 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-
     /**
      * The maximum number of items to return per page.
      */
@@ -122,10 +121,9 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * Sort on this field. You can specify one sort order only. The default sort field is `TIMECREATED`.
      * <p>
@@ -169,16 +167,17 @@ public class ListOdaInstancesRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListOdaInstancesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

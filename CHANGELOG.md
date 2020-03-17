@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.15.1 - 2020-03-17
+### Added
+- Support for serial console connections in the Database service
+- Support for preview database versions in the Database service
+- Support for node reboot migration maintenance status and maintenance windows in the Database service
+- Support for using instance metadata API v2 for instance principals authentication
+
+### Fixed
+- Retries for requests that take an `InputStream` as input will now function correctly.
+- Retries will correctly report upload progress to the `ProgressReporter` for the Object Storage upload manager.
+
+### Breaking changes
+- In case retries are necessary, the number of `completed` bytes reported to the `ProgressReporter` will decrease. The `completed` bytes number is not monotonically increasing anymore.
+- To allow retries, the `MultipartObjectAssembler` of the Object Storage upload manager will always allow overwriting existing parts.
+- The `com.oracle.bmc.database.model.AutonomousExadataInfrastructureMaintenanceWindow` class and the `com.oracle.bmc.database.model.AutonomousExadataInfrastructureMaintenanceWindow$DayOfWeek` enum were removed. They were extraneous and not in use anywhere in the API.
+
 ## 1.14.0 - 2020-03-10
 ### Added
 - Support for Events service integration with alerts in the Budgets service
@@ -34,7 +50,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for filtering database versions by storage management type in the Database service
 - Support for specifying paid listing types within pricing models in the Marketplace service
 - Support for primary and non-primary instance types in the Content and Experience service
-
 
 ### Breaking changes
 - Removed LifecycleState enum in Marketplace service (was unused)

@@ -8,7 +8,7 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -30,7 +30,9 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String page;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListDbSystemShapesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

@@ -97,7 +97,11 @@ public class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;
     /**
-     * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DbWorkload {
@@ -143,7 +147,11 @@ public class AutonomousDbVersionSummary {
         }
     };
     /**
-     * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     DbWorkload dbWorkload;

@@ -102,7 +102,7 @@ public class WrappedImportKey {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid WrappingAlgorithm: " + key);
+            throw new IllegalArgumentException("Invalid WrappingAlgorithm: " + key);
         }
     };
     /**

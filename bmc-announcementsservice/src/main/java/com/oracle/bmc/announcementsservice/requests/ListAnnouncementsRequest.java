@@ -8,7 +8,7 @@ import com.oracle.bmc.announcementsservice.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the compartment. Because announcements are specific to a tenancy, this is the
@@ -69,10 +69,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-
     /**
      * Whether the announcement is displayed as a console banner.
      */
@@ -121,10 +120,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order to use. (Sorting by `announcementType` orders the announcements list according to importance.)
      *
@@ -164,10 +162,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * The boundary for the earliest `timeOneValue` date on announcements that you want to see.
      */
@@ -185,7 +182,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListAnnouncementsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

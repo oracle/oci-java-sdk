@@ -3,17 +3,20 @@
  */
 package com.oracle.bmc.common;
 
-import com.google.common.collect.ImmutableMap;
-import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.Service;
-import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.signing.RequestSignerFactory;
-import com.oracle.bmc.http.signing.SigningStrategy;
-import com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableMap;
+import com.oracle.bmc.ClientConfiguration;
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.Service;
+import com.oracle.bmc.http.ClientConfigurator;
+import com.oracle.bmc.http.internal.RestClientFactoryBuilder;
+import com.oracle.bmc.http.signing.RequestSignerFactory;
+import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory;
 
 /**
  * Base client builder.
@@ -29,6 +32,8 @@ public abstract class ClientBuilderBase<B extends ClientBuilderBase, C> {
     protected Map<SigningStrategy, RequestSignerFactory> signingStrategyRequestSignerFactories =
             DefaultRequestSignerFactory.createDefaultRequestSignerFactories();
     protected String endpoint;
+    protected RestClientFactoryBuilder restClientFactoryBuilder =
+            RestClientFactoryBuilder.builder();
 
     public ClientBuilderBase(Service service) {
         this.service = service;
@@ -104,6 +109,18 @@ public abstract class ClientBuilderBase<B extends ClientBuilderBase, C> {
             Map<SigningStrategy, RequestSignerFactory> signingStrategyRequestSignerFactories) {
         this.signingStrategyRequestSignerFactories =
                 ImmutableMap.copyOf(signingStrategyRequestSignerFactories);
+        return (B) this;
+    }
+
+    /**
+     * Set the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}.
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}.
+     * @return this builder
+     */
+    @InternalSdk
+    @VisibleForTesting
+    public B restClientFactoryBuilder(RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.restClientFactoryBuilder = restClientFactoryBuilder;
         return (B) this;
     }
 

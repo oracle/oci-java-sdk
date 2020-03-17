@@ -138,7 +138,7 @@ public class CreatePreauthenticatedRequestDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid AccessType: " + key);
+            throw new IllegalArgumentException("Invalid AccessType: " + key);
         }
     };
     /**

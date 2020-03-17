@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.io.InputStream;
 
+@Slf4j
 class ProgressTrackingInputStreamFactory {
     static InputStream create(final InputStream source, final ProgressTracker progressTracker) {
         if (progressTracker == null) {
@@ -34,6 +35,8 @@ class ProgressTrackingInputStreamFactory {
         @Getter(value = AccessLevel.PROTECTED)
         private final ProgressTracker progressTracker;
 
+        private long bytesReadSinceReset = 0L;
+
         @Override
         public long skip(long n) throws IOException {
             return source.skip(n);
@@ -52,6 +55,9 @@ class ProgressTrackingInputStreamFactory {
         @Override
         public void reset() throws IOException {
             source.reset();
+            progressTracker.invalidateBytesRead(bytesReadSinceReset);
+            LOG.trace("Invalidated {} bytes", bytesReadSinceReset);
+            bytesReadSinceReset = 0;
         }
 
         @Override
@@ -61,9 +67,11 @@ class ProgressTrackingInputStreamFactory {
 
         @Override
         public int read() throws IOException {
-            final int bytesRead = source.read();
-            checkAndReportBytesRead(bytesRead);
-            return bytesRead;
+            final int data = source.read();
+            if (data != -1) {
+                checkAndReportBytesRead(1);
+            }
+            return data;
         }
 
         @Override
@@ -87,6 +95,8 @@ class ProgressTrackingInputStreamFactory {
 
         private void checkAndReportBytesRead(final int bytesRead) {
             if (bytesRead != -1) {
+                bytesReadSinceReset += bytesRead;
+                LOG.trace("Read {} bytes for a total of {}", bytesRead, bytesReadSinceReset);
                 progressTracker.onBytesRead(bytesRead);
             }
         }

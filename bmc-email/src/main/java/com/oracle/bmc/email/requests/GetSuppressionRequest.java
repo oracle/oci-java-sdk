@@ -8,7 +8,7 @@ import com.oracle.bmc.email.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class GetSuppressionRequest extends com.oracle.bmc.requests.BmcRequest {
+public class GetSuppressionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The unique OCID of the suppression.
@@ -20,7 +20,9 @@ public class GetSuppressionRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    GetSuppressionRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

@@ -8,7 +8,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateScheduledJobRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateScheduledJobRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateScheduledJobDetails> {
 
     /**
      * The ID of the scheduled job.
@@ -35,7 +36,19 @@ public class UpdateScheduledJobRequest extends com.oracle.bmc.requests.BmcReques
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateScheduledJobDetails getBody$() {
+        return updateScheduledJobDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateScheduledJobRequest, UpdateScheduledJobDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -92,6 +105,17 @@ public class UpdateScheduledJobRequest extends com.oracle.bmc.requests.BmcReques
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateScheduledJobDetails body) {
+            updateScheduledJobDetails(body);
+            return this;
         }
     }
 }

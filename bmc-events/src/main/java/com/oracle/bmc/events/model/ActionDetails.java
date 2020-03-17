@@ -99,7 +99,7 @@ public class ActionDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ActionType: " + key);
+            throw new IllegalArgumentException("Invalid ActionType: " + key);
         }
     };
 }

@@ -8,7 +8,8 @@ import com.oracle.bmc.streaming.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class DeleteConnectHarnessRequest extends com.oracle.bmc.requests.BmcRequest {
+public class DeleteConnectHarnessRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the connect harness.
@@ -28,7 +29,9 @@ public class DeleteConnectHarnessRequest extends com.oracle.bmc.requests.BmcRequ
      */
     private String ifMatch;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    DeleteConnectHarnessRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

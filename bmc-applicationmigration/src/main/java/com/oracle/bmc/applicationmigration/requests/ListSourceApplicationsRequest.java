@@ -8,7 +8,8 @@ import com.oracle.bmc.applicationmigration.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListSourceApplicationsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListSourceApplicationsRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The source OCID
@@ -90,16 +91,17 @@ public class ListSourceApplicationsRequest extends com.oracle.bmc.requests.BmcRe
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * Resource name on which to query.
      */
     private String displayName;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListSourceApplicationsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

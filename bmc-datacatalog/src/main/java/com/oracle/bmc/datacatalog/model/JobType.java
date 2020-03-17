@@ -54,6 +54,6 @@ public enum JobType {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid JobType: " + key);
+        throw new IllegalArgumentException("Invalid JobType: " + key);
     }
 }

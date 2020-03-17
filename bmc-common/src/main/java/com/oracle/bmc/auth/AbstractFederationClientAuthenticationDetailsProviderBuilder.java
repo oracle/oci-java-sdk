@@ -20,6 +20,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.KeyPair;
@@ -54,7 +55,12 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /**
      * Default base url of metadata service.
      */
-    protected static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v1/";
+    protected static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v2/";
+
+    /**
+     * Fallback url of metadata service.
+     */
+    protected static final String FALLBACK_METADATA_SERVICE_URL = "http://169.254.169.254/opc/v1/";
 
     /**
      * The Authorization header value to be sent for requests to the metadata service.
@@ -179,6 +185,28 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         if (federationEndpoint == null) {
             Client client = ClientBuilder.newClient();
             WebTarget base = client.target(getMetadataBaseUrl() + "instance/");
+
+            try {
+                Response response =
+                        base.request(MediaType.APPLICATION_JSON)
+                                .header(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
+                                .get();
+
+                //fallback to v1 if v2 endpoint throws resource not found else raise exception
+                if (response.getStatus() == 404) {
+                    LOG.warn("Falling back to v1, response from v2 was {}", response.getStatus());
+                    this.metadataBaseUrl = FALLBACK_METADATA_SERVICE_URL;
+                    base = client.target(getMetadataBaseUrl() + "instance/");
+                } else if (!Response.Status.Family.SUCCESSFUL.equals(
+                        response.getStatusInfo().getFamily())) {
+                    throw new RuntimeException(
+                            "Rest call to v2 endpoint failed : HTTP error code : "
+                                    + response.getStatus());
+                }
+            } catch (RuntimeException e) {
+                LOG.warn("Rest call to v2 endpoint failed & cannot fallback as it's not 404 ", e);
+            }
+
             String regionStr =
                     base.path("region")
                             .request(MediaType.TEXT_PLAIN)

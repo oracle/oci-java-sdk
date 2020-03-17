@@ -115,7 +115,7 @@ public class ProtectionRuleAction {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Action: " + key);
+            throw new IllegalArgumentException("Invalid Action: " + key);
         }
     };
     /**

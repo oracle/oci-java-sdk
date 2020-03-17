@@ -8,7 +8,7 @@ import com.oracle.bmc.streaming.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListStreamPoolsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListStreamPoolsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the compartment.
@@ -76,10 +76,9 @@ public class ListStreamPoolsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order to use, either 'asc' or 'desc'.
      *
@@ -119,10 +118,9 @@ public class ListStreamPoolsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      *
@@ -136,7 +134,9 @@ public class ListStreamPoolsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListStreamPoolsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

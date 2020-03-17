@@ -154,7 +154,7 @@ public class UpdateIntegrationInstanceDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid IntegrationInstanceType: " + key);
+            throw new IllegalArgumentException("Invalid IntegrationInstanceType: " + key);
         }
     };
     /**

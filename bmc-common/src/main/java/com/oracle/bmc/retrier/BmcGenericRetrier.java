@@ -9,6 +9,7 @@ import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.waiter.GenericWaiter;
 import lombok.NonNull;
 import org.apache.commons.lang3.mutable.MutableObject;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.util.Objects;
 import java.util.function.Function;
@@ -47,7 +48,7 @@ public class BmcGenericRetrier {
                         Suppliers.ofInstance(requestToUse),
                         (request) -> {
                             try {
-                                return functionCall.apply(request);
+                                return doFunctionCall(request, functionCall);
                             } catch (BmcException e) {
                                 if (!retryCondition.shouldBeRetried(e)) {
                                     throw e;
@@ -63,5 +64,18 @@ public class BmcGenericRetrier {
         }
 
         throw lastKnownException.getValue();
+    }
+
+    /**
+     * Executes the actual function call. Can be overridden, e.g. for debugging.
+     * @param functionCall Function that will be invoked to send out the request.
+     * @param request request data for the function call
+     * @param <REQUEST> Request object class
+     * @param <RESPONSE> Response object class
+     * @return The successful response
+     */
+    protected <REQUEST, RESPONSE> RESPONSE doFunctionCall(
+            @Nullable @NonNull REQUEST request, @NonNull Function<REQUEST, RESPONSE> functionCall) {
+        return functionCall.apply(request);
     }
 }

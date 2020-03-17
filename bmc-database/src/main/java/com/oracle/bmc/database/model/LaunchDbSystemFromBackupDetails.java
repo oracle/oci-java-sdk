@@ -439,7 +439,7 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid DatabaseEdition: " + key);
+            throw new IllegalArgumentException("Invalid DatabaseEdition: " + key);
         }
     };
     /**
@@ -484,7 +484,7 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid DiskRedundancy: " + key);
+            throw new IllegalArgumentException("Invalid DiskRedundancy: " + key);
         }
     };
     /**
@@ -528,7 +528,7 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LicenseModel: " + key);
+            throw new IllegalArgumentException("Invalid LicenseModel: " + key);
         }
     };
     /**

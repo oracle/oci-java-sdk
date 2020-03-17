@@ -104,7 +104,7 @@ public class UpdateTransferApplianceDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
 

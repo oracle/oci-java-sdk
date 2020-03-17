@@ -78,7 +78,7 @@ public class ImageSourceDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SourceImageType: " + key);
+            throw new IllegalArgumentException("Invalid SourceImageType: " + key);
         }
     };
     /**

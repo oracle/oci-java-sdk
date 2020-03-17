@@ -266,7 +266,7 @@ public class CreateSteeringPolicyDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Template: " + key);
+            throw new IllegalArgumentException("Invalid Template: " + key);
         }
     };
     /**

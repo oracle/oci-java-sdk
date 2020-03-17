@@ -45,6 +45,6 @@ public enum OperationTypes {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid OperationTypes: " + key);
+        throw new IllegalArgumentException("Invalid OperationTypes: " + key);
     }
 }

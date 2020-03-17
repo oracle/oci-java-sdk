@@ -8,7 +8,8 @@ import com.oracle.bmc.apigateway.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class CreateDeploymentRequest extends com.oracle.bmc.requests.BmcRequest {
+public class CreateDeploymentRequest
+        extends com.oracle.bmc.requests.BmcRequest<CreateDeploymentDetails> {
 
     /**
      * Details for the new deployment
@@ -30,7 +31,19 @@ public class CreateDeploymentRequest extends com.oracle.bmc.requests.BmcRequest 
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public CreateDeploymentDetails getBody$() {
+        return createDeploymentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CreateDeploymentRequest, CreateDeploymentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -86,6 +99,17 @@ public class CreateDeploymentRequest extends com.oracle.bmc.requests.BmcRequest 
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(CreateDeploymentDetails body) {
+            createDeploymentDetails(body);
+            return this;
         }
     }
 }

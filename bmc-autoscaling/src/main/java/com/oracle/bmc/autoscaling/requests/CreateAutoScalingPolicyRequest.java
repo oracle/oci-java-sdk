@@ -8,7 +8,8 @@ import com.oracle.bmc.autoscaling.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class CreateAutoScalingPolicyRequest extends com.oracle.bmc.requests.BmcRequest {
+public class CreateAutoScalingPolicyRequest
+        extends com.oracle.bmc.requests.BmcRequest<CreateAutoScalingPolicyDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
@@ -35,7 +36,19 @@ public class CreateAutoScalingPolicyRequest extends com.oracle.bmc.requests.BmcR
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public CreateAutoScalingPolicyDetails getBody$() {
+        return createAutoScalingPolicyDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CreateAutoScalingPolicyRequest, CreateAutoScalingPolicyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -92,6 +105,17 @@ public class CreateAutoScalingPolicyRequest extends com.oracle.bmc.requests.BmcR
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(CreateAutoScalingPolicyDetails body) {
+            createAutoScalingPolicyDetails(body);
+            return this;
         }
     }
 }

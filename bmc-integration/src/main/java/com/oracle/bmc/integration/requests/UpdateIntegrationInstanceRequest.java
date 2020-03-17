@@ -8,7 +8,8 @@ import com.oracle.bmc.integration.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateIntegrationInstanceRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateIntegrationInstanceRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateIntegrationInstanceDetails> {
 
     /**
      * Unique Integration Instance identifier.
@@ -35,7 +36,19 @@ public class UpdateIntegrationInstanceRequest extends com.oracle.bmc.requests.Bm
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateIntegrationInstanceDetails getBody$() {
+        return updateIntegrationInstanceDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateIntegrationInstanceRequest, UpdateIntegrationInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -92,6 +105,17 @@ public class UpdateIntegrationInstanceRequest extends com.oracle.bmc.requests.Bm
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateIntegrationInstanceDetails body) {
+            updateIntegrationInstanceDetails(body);
+            return this;
         }
     }
 }

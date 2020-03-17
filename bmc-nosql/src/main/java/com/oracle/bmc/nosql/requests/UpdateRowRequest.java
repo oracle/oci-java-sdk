@@ -8,7 +8,7 @@ import com.oracle.bmc.nosql.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateRowRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateRowRequest extends com.oracle.bmc.requests.BmcRequest<UpdateRowDetails> {
 
     /**
      * A table name within the compartment, or a table OCID.
@@ -35,7 +35,19 @@ public class UpdateRowRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateRowDetails getBody$() {
+        return updateRowDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateRowRequest, UpdateRowDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -92,6 +104,17 @@ public class UpdateRowRequest extends com.oracle.bmc.requests.BmcRequest {
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateRowDetails body) {
+            updateRowDetails(body);
+            return this;
         }
     }
 }

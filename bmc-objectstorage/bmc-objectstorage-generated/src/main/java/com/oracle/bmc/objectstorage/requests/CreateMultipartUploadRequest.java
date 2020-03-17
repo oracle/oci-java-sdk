@@ -8,7 +8,8 @@ import com.oracle.bmc.objectstorage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class CreateMultipartUploadRequest extends com.oracle.bmc.requests.BmcRequest {
+public class CreateMultipartUploadRequest
+        extends com.oracle.bmc.requests.BmcRequest<CreateMultipartUploadDetails> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -47,7 +48,19 @@ public class CreateMultipartUploadRequest extends com.oracle.bmc.requests.BmcReq
      */
     private String opcClientRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public CreateMultipartUploadDetails getBody$() {
+        return createMultipartUploadDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CreateMultipartUploadRequest, CreateMultipartUploadDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -106,6 +119,17 @@ public class CreateMultipartUploadRequest extends com.oracle.bmc.requests.BmcReq
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(CreateMultipartUploadDetails body) {
+            createMultipartUploadDetails(body);
+            return this;
         }
     }
 }

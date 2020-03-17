@@ -8,7 +8,7 @@ import com.oracle.bmc.nosql.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The ID of a table's compartment.
@@ -70,10 +70,9 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * The field to sort by. Only one sort order may be
      * provided. Default order for timeCreated is descending. Default
@@ -119,10 +118,9 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The client request ID for tracing.
      */
@@ -170,11 +168,13 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListTablesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

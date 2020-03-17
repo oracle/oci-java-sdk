@@ -211,7 +211,7 @@ public class CreateBucketDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid PublicAccessType: " + key);
+            throw new IllegalArgumentException("Invalid PublicAccessType: " + key);
         }
     };
     /**
@@ -260,7 +260,7 @@ public class CreateBucketDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid StorageTier: " + key);
+            throw new IllegalArgumentException("Invalid StorageTier: " + key);
         }
     };
     /**

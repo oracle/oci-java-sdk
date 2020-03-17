@@ -36,6 +36,6 @@ public enum SortOrders {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid SortOrders: " + key);
+        throw new IllegalArgumentException("Invalid SortOrders: " + key);
     }
 }

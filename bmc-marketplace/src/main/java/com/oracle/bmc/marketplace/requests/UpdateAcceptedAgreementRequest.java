@@ -8,7 +8,8 @@ import com.oracle.bmc.marketplace.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateAcceptedAgreementRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateAcceptedAgreementRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateAcceptedAgreementDetails> {
 
     /**
      * The unique identifier for the accepted terms of use agreement.
@@ -44,7 +45,19 @@ public class UpdateAcceptedAgreementRequest extends com.oracle.bmc.requests.BmcR
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateAcceptedAgreementDetails getBody$() {
+        return updateAcceptedAgreementDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateAcceptedAgreementRequest, UpdateAcceptedAgreementDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -102,6 +115,17 @@ public class UpdateAcceptedAgreementRequest extends com.oracle.bmc.requests.BmcR
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateAcceptedAgreementDetails body) {
+            updateAcceptedAgreementDetails(body);
+            return this;
         }
     }
 }

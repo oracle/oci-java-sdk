@@ -8,7 +8,8 @@ import com.oracle.bmc.dts.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListApplianceExportJobsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListApplianceExportJobsRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * compartment id
@@ -57,10 +58,9 @@ public class ListApplianceExportJobsRequest extends com.oracle.bmc.requests.BmcR
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-
     /**
      * filtering by displayName
      */
@@ -91,7 +91,9 @@ public class ListApplianceExportJobsRequest extends com.oracle.bmc.requests.BmcR
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListApplianceExportJobsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
