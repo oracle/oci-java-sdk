@@ -8,7 +8,8 @@ import com.oracle.bmc.loadbalancer.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateHealthCheckerRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateHealthCheckerDetails> {
 
     /**
      * The health check policy configuration details.
@@ -45,7 +46,19 @@ public class UpdateHealthCheckerRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateHealthCheckerDetails getBody$() {
+        return healthChecker;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateHealthCheckerRequest, UpdateHealthCheckerDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -103,6 +116,17 @@ public class UpdateHealthCheckerRequest extends com.oracle.bmc.requests.BmcReque
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateHealthCheckerDetails body) {
+            healthChecker(body);
+            return this;
         }
     }
 }

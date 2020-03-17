@@ -8,7 +8,8 @@ import com.oracle.bmc.waas.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateAddressListRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateAddressListRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateAddressListDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
@@ -30,7 +31,19 @@ public class UpdateAddressListRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private UpdateAddressListDetails updateAddressListDetails;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateAddressListDetails getBody$() {
+        return updateAddressListDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateAddressListRequest, UpdateAddressListDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -87,6 +100,17 @@ public class UpdateAddressListRequest extends com.oracle.bmc.requests.BmcRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateAddressListDetails body) {
+            updateAddressListDetails(body);
+            return this;
         }
     }
 }

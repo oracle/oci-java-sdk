@@ -103,6 +103,42 @@ public class DbNode {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceType")
+        private MaintenanceType maintenanceType;
+
+        public Builder maintenanceType(MaintenanceType maintenanceType) {
+            this.maintenanceType = maintenanceType;
+            this.__explicitlySet__.add("maintenanceType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceWindowStart")
+        private java.util.Date timeMaintenanceWindowStart;
+
+        public Builder timeMaintenanceWindowStart(java.util.Date timeMaintenanceWindowStart) {
+            this.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
+            this.__explicitlySet__.add("timeMaintenanceWindowStart");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceWindowEnd")
+        private java.util.Date timeMaintenanceWindowEnd;
+
+        public Builder timeMaintenanceWindowEnd(java.util.Date timeMaintenanceWindowEnd) {
+            this.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
+            this.__explicitlySet__.add("timeMaintenanceWindowEnd");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
+        private String additionalDetails;
+
+        public Builder additionalDetails(String additionalDetails) {
+            this.additionalDetails = additionalDetails;
+            this.__explicitlySet__.add("additionalDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -117,7 +153,11 @@ public class DbNode {
                             hostname,
                             faultDomain,
                             timeCreated,
-                            softwareStorageSizeInGB);
+                            softwareStorageSizeInGB,
+                            maintenanceType,
+                            timeMaintenanceWindowStart,
+                            timeMaintenanceWindowEnd,
+                            additionalDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -133,7 +173,11 @@ public class DbNode {
                             .hostname(o.getHostname())
                             .faultDomain(o.getFaultDomain())
                             .timeCreated(o.getTimeCreated())
-                            .softwareStorageSizeInGB(o.getSoftwareStorageSizeInGB());
+                            .softwareStorageSizeInGB(o.getSoftwareStorageSizeInGB())
+                            .maintenanceType(o.getMaintenanceType())
+                            .timeMaintenanceWindowStart(o.getTimeMaintenanceWindowStart())
+                            .timeMaintenanceWindowEnd(o.getTimeMaintenanceWindowEnd())
+                            .additionalDetails(o.getAdditionalDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -253,6 +297,74 @@ public class DbNode {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareStorageSizeInGB")
     Integer softwareStorageSizeInGB;
+    /**
+     * The type of maintenance of dbNode.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum MaintenanceType {
+        VmdbRebootMigration("VMDB_REBOOT_MIGRATION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, MaintenanceType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MaintenanceType v : MaintenanceType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        MaintenanceType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MaintenanceType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'MaintenanceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of maintenance of dbNode.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceType")
+    MaintenanceType maintenanceType;
+
+    /**
+     * Start date and time of maintenance window.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceWindowStart")
+    java.util.Date timeMaintenanceWindowStart;
+
+    /**
+     * End date and time of maintenance window.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceWindowEnd")
+    java.util.Date timeMaintenanceWindowEnd;
+
+    /**
+     * Additional information like a message to customer about the maintenance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
+    String additionalDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

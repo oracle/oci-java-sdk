@@ -3,7 +3,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.common.base.Throwables;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
@@ -27,6 +26,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
 import java.util.UUID;
@@ -164,12 +164,14 @@ public class RestClient implements AutoCloseable {
      */
     private Object attemptToSerialize(@Nullable Object body) {
         try {
-            return (body instanceof String || body instanceof InputStream)
-                    ? body
-                    : (body != null)
-                            ? RestClientFactory.getObjectMapper().writeValueAsString(body)
-                            : StringUtils.EMPTY;
-        } catch (JsonProcessingException e) {
+            if (body instanceof String || body instanceof InputStream) {
+                return body;
+            } else if (body != null) {
+                return RestClientFactory.getObjectMapper().writeValueAsString(body);
+            } else {
+                return StringUtils.EMPTY;
+            }
+        } catch (IOException e) {
             throw new IllegalArgumentException("Unable to process JSON body", e);
         }
     }

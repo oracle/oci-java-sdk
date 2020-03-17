@@ -166,7 +166,7 @@ public class CreateOdaInstanceDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ShapeName: " + key);
+            throw new IllegalArgumentException("Invalid ShapeName: " + key);
         }
     };
     /**

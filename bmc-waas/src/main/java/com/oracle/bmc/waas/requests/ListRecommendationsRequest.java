@@ -8,7 +8,7 @@ import com.oracle.bmc.waas.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -57,10 +57,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid RecommendedAction: " + key);
+            throw new IllegalArgumentException("Invalid RecommendedAction: " + key);
         }
     };
-
     /**
      * The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
      */
@@ -71,7 +70,9 @@ public class ListRecommendationsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListRecommendationsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

@@ -110,7 +110,7 @@ public class CreateZoneBaseDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid MigrationSource: " + key);
+            throw new IllegalArgumentException("Invalid MigrationSource: " + key);
         }
     };
 }

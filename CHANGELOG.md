@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.15.0 - 2020-03-17
+### Added
+- Support for serial console connections in the Database service
+- Support for preview database versions in the Database service
+- Support for node reboot migration maintenance status and maintenance windows in the Database service
+- Support for using instance metadata API v2 for instance principals authentication
+
+### Fixed
+- Retries for requests that take an `InputStream` as input will now function correctly.
+- Retries will correctly report upload progress to the `ProgressReporter` for the Object Storage upload manager.
+
+### Breaking changes
+- In case retries are necessary, the number of `completed` bytes reported to the `ProgressReporter` will decrease. The `completed` bytes number is not monotonically increasing anymore.
+- To allow retries, the `MultipartObjectAssembler` of the Object Storage upload manager will always allow overwriting existing parts.
+- The `com.oracle.bmc.database.model.AutonomousExadataInfrastructureMaintenanceWindow` class and the `com.oracle.bmc.database.model.AutonomousExadataInfrastructureMaintenanceWindow$DayOfWeek` enum were removed. They were extraneous and not in use anywhere in the API.
+
 ## 1.14.0 - 2020-03-10
 ### Added
 - Support for Events service integration with alerts in the Budgets service
@@ -34,7 +50,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for filtering database versions by storage management type in the Database service
 - Support for specifying paid listing types within pricing models in the Marketplace service
 - Support for primary and non-primary instance types in the Content and Experience service
-
 
 ### Breaking changes
 - Removed LifecycleState enum in Marketplace service (was unused)
@@ -679,7 +694,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## 1.2.27 - 2018-02-08
 
 ### Fixed
-- Bug fix for not serializing dates in request bodies correctly to RFC-3339
+- N/A
 
 ### Added
 - Support for DNS Service. An example of calling this service is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/DnsExample.java)
@@ -726,8 +741,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## 1.2.18 - 2017-11-27
 
 ### Changed
-- Passphrases are now passed as char[] instead of as String
-- Requests are now buffered in memory by default, except by the ObjectStorageClient and ObjectStorageAsyncClient. This allows for better error messages on PUT and POST requests. If you do not want to buffer requests in memory, pass an instance of `com.oracle.bmc.http.DefaultConfigurator.NonBuffering` to the constructor of the client.
+- MultipartObjectAssembler and UploadManager will now automatically overwrite parts when retries are necessary.
 
 ### Added
 - Support for VCN to VCN peering within region
@@ -737,7 +751,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for sort and filter in ListLoadBalancers method in Load Balancer Service
 
 ### Deprecated
-- Methods accepting passphrases as String are deprecated; use char[] instead
+- N/A
 
 ## 1.2.17 - 2017-11-02
 

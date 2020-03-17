@@ -8,7 +8,8 @@ import com.oracle.bmc.waas.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateCustomProtectionRuleRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateCustomProtectionRuleRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateCustomProtectionRuleDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
@@ -36,7 +37,19 @@ public class UpdateCustomProtectionRuleRequest extends com.oracle.bmc.requests.B
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateCustomProtectionRuleDetails getBody$() {
+        return updateCustomProtectionRuleDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateCustomProtectionRuleRequest, UpdateCustomProtectionRuleDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -94,6 +107,17 @@ public class UpdateCustomProtectionRuleRequest extends com.oracle.bmc.requests.B
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateCustomProtectionRuleDetails body) {
+            updateCustomProtectionRuleDetails(body);
+            return this;
         }
     }
 }

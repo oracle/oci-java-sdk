@@ -236,7 +236,7 @@ public class CreateDatabaseDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid DbWorkload: " + key);
+            throw new IllegalArgumentException("Invalid DbWorkload: " + key);
         }
     };
     /**

@@ -8,7 +8,8 @@ import com.oracle.bmc.identity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class CreateTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest {
+public class CreateTagDefaultRequest
+        extends com.oracle.bmc.requests.BmcRequest<CreateTagDefaultDetails> {
 
     /**
      * Request object for creating a new tag default.
@@ -32,7 +33,19 @@ public class CreateTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest 
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public CreateTagDefaultDetails getBody$() {
+        return createTagDefaultDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CreateTagDefaultRequest, CreateTagDefaultDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -88,6 +101,17 @@ public class CreateTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest 
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(CreateTagDefaultDetails body) {
+            createTagDefaultDetails(body);
+            return this;
         }
     }
 }

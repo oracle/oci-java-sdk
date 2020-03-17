@@ -216,7 +216,7 @@ public class CreateImageDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LaunchMode: " + key);
+            throw new IllegalArgumentException("Invalid LaunchMode: " + key);
         }
     };
     /**

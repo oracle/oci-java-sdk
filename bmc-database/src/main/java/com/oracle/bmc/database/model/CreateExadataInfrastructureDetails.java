@@ -282,7 +282,9 @@ public class CreateExadataInfrastructureDetails {
     String infiniBandNetworkCIDR;
 
     /**
-     * The corporate network proxy for access to the control plane network.
+     * The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible
+     * for enhanced security.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("corporateProxy")
     String corporateProxy;

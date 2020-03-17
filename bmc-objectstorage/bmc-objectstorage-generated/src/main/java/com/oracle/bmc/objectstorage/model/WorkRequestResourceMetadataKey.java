@@ -38,6 +38,6 @@ public enum WorkRequestResourceMetadataKey {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid WorkRequestResourceMetadataKey: " + key);
+        throw new IllegalArgumentException("Invalid WorkRequestResourceMetadataKey: " + key);
     }
 }

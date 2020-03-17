@@ -8,7 +8,7 @@ import com.oracle.bmc.objectstorage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest {
+public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
      * The Object Storage namespace used for the request.
@@ -104,7 +104,19 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private java.util.Map<String, String> opcMeta;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public java.io.InputStream getBody$() {
+        return putObjectBody;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    PutObjectRequest, java.io.InputStream> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -173,6 +185,17 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest {
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(java.io.InputStream body) {
+            putObjectBody(body);
+            return this;
         }
     }
 }

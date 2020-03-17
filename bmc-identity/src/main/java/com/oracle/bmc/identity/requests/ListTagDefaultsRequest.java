@@ -8,7 +8,7 @@ import com.oracle.bmc.identity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -46,7 +46,9 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private TagDefaultSummary.LifecycleState lifecycleState;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListTagDefaultsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

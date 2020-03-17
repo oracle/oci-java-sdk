@@ -3,9 +3,9 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import java.util.List;
-
 import com.oracle.bmc.objectstorage.model.CommitMultipartUploadPartDetails;
+
+import java.util.List;
 
 public interface MultipartManifest {
 

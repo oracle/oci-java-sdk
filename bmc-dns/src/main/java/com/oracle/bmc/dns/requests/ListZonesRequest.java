@@ -8,7 +8,7 @@ import com.oracle.bmc.dns.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the compartment the resource belongs to.
@@ -90,10 +90,9 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ZoneType: " + key);
+            throw new IllegalArgumentException("Invalid ZoneType: " + key);
         }
     };
-
     /**
      * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
      * all returned resources were created on or after the indicated time.
@@ -148,10 +147,9 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-
     /**
      * The field by which to sort zones.
      */
@@ -190,17 +188,18 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The order to sort the resources.
      *
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListZonesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

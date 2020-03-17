@@ -8,7 +8,8 @@ import com.oracle.bmc.loadbalancer.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateNetworkSecurityGroupsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateNetworkSecurityGroupsRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateNetworkSecurityGroupsDetails> {
 
     /**
      * The details for updating the NSGs associated with the specified load balancer.
@@ -37,7 +38,19 @@ public class UpdateNetworkSecurityGroupsRequest extends com.oracle.bmc.requests.
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateNetworkSecurityGroupsDetails getBody$() {
+        return updateNetworkSecurityGroupsDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateNetworkSecurityGroupsRequest, UpdateNetworkSecurityGroupsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -94,6 +107,17 @@ public class UpdateNetworkSecurityGroupsRequest extends com.oracle.bmc.requests.
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateNetworkSecurityGroupsDetails body) {
+            updateNetworkSecurityGroupsDetails(body);
+            return this;
         }
     }
 }

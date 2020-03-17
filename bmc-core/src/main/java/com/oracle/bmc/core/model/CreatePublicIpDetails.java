@@ -187,7 +187,7 @@ public class CreatePublicIpDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Lifetime: " + key);
+            throw new IllegalArgumentException("Invalid Lifetime: " + key);
         }
     };
     /**

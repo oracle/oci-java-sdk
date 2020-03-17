@@ -8,7 +8,8 @@ import com.oracle.bmc.datacatalog.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UploadCredentialsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UploadCredentialsRequest
+        extends com.oracle.bmc.requests.BmcRequest<UploadCredentialsDetails> {
 
     /**
      * Unique catalog identifier.
@@ -55,7 +56,19 @@ public class UploadCredentialsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UploadCredentialsDetails getBody$() {
+        return uploadCredentialsDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UploadCredentialsRequest, UploadCredentialsDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -115,6 +128,17 @@ public class UploadCredentialsRequest extends com.oracle.bmc.requests.BmcRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UploadCredentialsDetails body) {
+            uploadCredentialsDetails(body);
+            return this;
         }
     }
 }

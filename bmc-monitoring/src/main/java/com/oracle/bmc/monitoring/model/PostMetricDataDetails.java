@@ -116,7 +116,7 @@ public class PostMetricDataDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid BatchAtomicity: " + key);
+            throw new IllegalArgumentException("Invalid BatchAtomicity: " + key);
         }
     };
     /**

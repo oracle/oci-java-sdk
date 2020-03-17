@@ -146,7 +146,7 @@ public class BaseAnnouncement {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid AnnouncementType: " + key);
+            throw new IllegalArgumentException("Invalid AnnouncementType: " + key);
         }
     };
     /**
@@ -186,7 +186,7 @@ public class BaseAnnouncement {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
     /**

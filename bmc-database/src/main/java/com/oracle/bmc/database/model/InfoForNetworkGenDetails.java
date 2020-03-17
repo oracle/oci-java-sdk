@@ -154,7 +154,7 @@ public class InfoForNetworkGenDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid NetworkType: " + key);
+            throw new IllegalArgumentException("Invalid NetworkType: " + key);
         }
     };
     /**

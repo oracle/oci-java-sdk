@@ -258,7 +258,7 @@ public class CreateIPSecConnectionDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid CpeLocalIdentifierType: " + key);
+            throw new IllegalArgumentException("Invalid CpeLocalIdentifierType: " + key);
         }
     };
     /**

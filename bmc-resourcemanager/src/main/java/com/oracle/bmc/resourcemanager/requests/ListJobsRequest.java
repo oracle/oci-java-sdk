@@ -8,7 +8,7 @@ import com.oracle.bmc.resourcemanager.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -97,10 +97,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order, either `ASC` (ascending) or `DESC` (descending).
      *
@@ -140,10 +139,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * The number of items returned in a paginated `List` call. For information about pagination, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -158,7 +156,8 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String page;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<ListJobsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

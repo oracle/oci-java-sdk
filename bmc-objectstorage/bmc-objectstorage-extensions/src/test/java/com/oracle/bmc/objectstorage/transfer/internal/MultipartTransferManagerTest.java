@@ -34,7 +34,7 @@ public class MultipartTransferManagerTest {
         manifest = new MultipartManifestImpl("uploadId");
         manager =
                 new MultipartTransferManager(
-                        Executors.newSingleThreadExecutor(), manifest, new SimpleRetry(service));
+                        Executors.newSingleThreadExecutor(), manifest, service);
     }
 
     @Test

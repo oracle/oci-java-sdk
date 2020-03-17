@@ -215,7 +215,7 @@ public class UpdateBucketDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid PublicAccessType: " + key);
+            throw new IllegalArgumentException("Invalid PublicAccessType: " + key);
         }
     };
     /**
