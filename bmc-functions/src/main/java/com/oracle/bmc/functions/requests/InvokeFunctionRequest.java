@@ -8,7 +8,7 @@ import com.oracle.bmc.functions.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest {
+public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -62,10 +62,9 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid FnIntent: " + key);
+            throw new IllegalArgumentException("Invalid FnIntent: " + key);
         }
     };
-
     /**
      * Indicates whether the functions platform should execute the request directly and return the result ('sync') or
      * whether the platform should enqueue the request for later processing and acknowledge that it has been processed ('detached').
@@ -107,10 +106,9 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid FnInvokeType: " + key);
+            throw new IllegalArgumentException("Invalid FnInvokeType: " + key);
         }
     };
-
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -118,7 +116,19 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public java.io.InputStream getBody$() {
+        return invokeFunctionBody;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    InvokeFunctionRequest, java.io.InputStream> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -176,6 +186,17 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest {
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(java.io.InputStream body) {
+            invokeFunctionBody(body);
+            return this;
         }
     }
 }

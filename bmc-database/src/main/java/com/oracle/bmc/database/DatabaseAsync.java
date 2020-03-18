@@ -341,6 +341,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new console connection to the specified dbNode.
+     * After the console connection has been created and is available,
+     * you connect to the console using SSH.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateConsoleConnectionResponse> createConsoleConnection(
+            CreateConsoleConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateConsoleConnectionRequest, CreateConsoleConnectionResponse>
+                    handler);
+
+    /**
      * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
      * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
      * <p>
@@ -558,6 +577,22 @@ public interface DatabaseAsync extends AutoCloseable {
             DeleteBackupDestinationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteBackupDestinationRequest, DeleteBackupDestinationResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Db node console connection.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteConsoleConnectionResponse> deleteConsoleConnection(
+            DeleteConsoleConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteConsoleConnectionRequest, DeleteConsoleConnectionResponse>
                     handler);
 
     /**
@@ -957,6 +992,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified Db node console connection's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConsoleConnectionResponse> getConsoleConnection(
+            GetConsoleConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetConsoleConnectionRequest, GetConsoleConnectionResponse>
+                    handler);
+
+    /**
      * Gets the specified Data Guard association's configuration information.
      *
      *
@@ -1235,12 +1286,14 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Launches a new DB system in the specified compartment and availability domain. The Oracle
+     * Creates a new DB system in the specified compartment and availability domain. The Oracle
      * Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
      * <p>
      * An initial database is created on the DB system based on the request parameters you provide and some default
-     * options. For more information,
-     * see [Default Options for the Initial Database](https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm#DefaultOptionsfortheInitialDatabase).
+     * options. For detailed information about default options, see the following:
+     * <p>
+     * - [Bare metal and virtual machine DB system default options](https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#DefaultOptionsfortheInitialDatabase)
+     * - [Exadata DB system default options](https://docs.cloud.oracle.com/Content/Database/Tasks/exacreatingDBsystem.htm#DefaultOptionsfortheInitialDatabase)
      *
      *
      * @param request The request object containing the details to send
@@ -1451,6 +1504,23 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<ListBackupsResponse> listBackups(
             ListBackupsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse> handler);
+
+    /**
+     * Lists the console connections for the specified Db node.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConsoleConnectionsResponse> listConsoleConnections(
+            ListConsoleConnectionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListConsoleConnectionsRequest, ListConsoleConnectionsResponse>
+                    handler);
 
     /**
      * Lists all Data Guard associations for the specified database.
@@ -1775,7 +1845,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Restarts the specified Autonomous Database.
+     * Restarts the specified Autonomous Database. Restart supported only for databases using dedicated Exadata infrastructure.
      *
      *
      * @param request The request object containing the details to send

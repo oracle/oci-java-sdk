@@ -39,6 +39,6 @@ public enum ConnectionResult {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid ConnectionResult: " + key);
+        throw new IllegalArgumentException("Invalid ConnectionResult: " + key);
     }
 }

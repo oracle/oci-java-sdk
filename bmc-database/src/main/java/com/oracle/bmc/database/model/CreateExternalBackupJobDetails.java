@@ -273,7 +273,7 @@ public class CreateExternalBackupJobDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid DatabaseMode: " + key);
+            throw new IllegalArgumentException("Invalid DatabaseMode: " + key);
         }
     };
     /**
@@ -317,7 +317,7 @@ public class CreateExternalBackupJobDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid DatabaseEdition: " + key);
+            throw new IllegalArgumentException("Invalid DatabaseEdition: " + key);
         }
     };
     /**

@@ -12,6 +12,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
+import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.requests.UploadPartRequest;
 import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
 
@@ -29,7 +30,7 @@ public class MultipartTransferManager {
     private final SecureRandom random = new SecureRandom();
     private final ExecutorService executor;
     private final MultipartManifestImpl manifest;
-    private final SimpleRetry simpleRetry;
+    private final ObjectStorage client;
 
     private final List<Future<Void>> responses = new ArrayList<>();
 
@@ -50,8 +51,7 @@ public class MultipartTransferManager {
                                     Thread.sleep(
                                             random.nextInt(
                                                     MAX_RANDOM_SLEEP_BEFORE_UPLOAD_START_MS));
-                                    UploadPartResponse response =
-                                            simpleRetry.createUploadPartFunction().apply(request);
+                                    UploadPartResponse response = client.uploadPart(request);
                                     manifest.registerSuccess(request.getUploadPartNum(), response);
                                 } catch (Exception e) {
                                     LOG.error(

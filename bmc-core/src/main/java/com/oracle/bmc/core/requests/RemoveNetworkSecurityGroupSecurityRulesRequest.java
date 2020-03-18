@@ -9,7 +9,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class RemoveNetworkSecurityGroupSecurityRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<RemoveNetworkSecurityGroupSecurityRulesDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -24,7 +24,20 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
     private RemoveNetworkSecurityGroupSecurityRulesDetails
             removeNetworkSecurityGroupSecurityRulesDetails;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public RemoveNetworkSecurityGroupSecurityRulesDetails getBody$() {
+        return removeNetworkSecurityGroupSecurityRulesDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    RemoveNetworkSecurityGroupSecurityRulesRequest,
+                    RemoveNetworkSecurityGroupSecurityRulesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -81,6 +94,17 @@ public class RemoveNetworkSecurityGroupSecurityRulesRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(RemoveNetworkSecurityGroupSecurityRulesDetails body) {
+            removeNetworkSecurityGroupSecurityRulesDetails(body);
+            return this;
         }
     }
 }

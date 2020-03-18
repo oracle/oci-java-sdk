@@ -195,7 +195,7 @@ public class UpdateRowDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Option: " + key);
+            throw new IllegalArgumentException("Invalid Option: " + key);
         }
     };
     /**

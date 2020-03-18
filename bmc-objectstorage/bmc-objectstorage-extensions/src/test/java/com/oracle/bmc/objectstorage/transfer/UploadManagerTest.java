@@ -3,6 +3,64 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
+import com.google.common.base.Function;
+import com.google.common.base.Strings;
+import com.oracle.bmc.ClientConfiguration;
+import com.oracle.bmc.Service;
+import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
+import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
+import com.oracle.bmc.http.ClientConfigurator;
+import com.oracle.bmc.http.internal.RestClient;
+import com.oracle.bmc.http.internal.RestClientFactory;
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
+import com.oracle.bmc.http.internal.WrappedWebTarget;
+import com.oracle.bmc.http.signing.RequestSigner;
+import com.oracle.bmc.http.signing.RequestSignerFactory;
+import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.objectstorage.ObjectStorage;
+import com.oracle.bmc.objectstorage.ObjectStorageClient;
+import com.oracle.bmc.objectstorage.internal.http.CommitMultipartUploadConverter;
+import com.oracle.bmc.objectstorage.internal.http.CreateMultipartUploadConverter;
+import com.oracle.bmc.objectstorage.internal.http.UploadPartConverter;
+import com.oracle.bmc.objectstorage.model.MultipartUpload;
+import com.oracle.bmc.objectstorage.requests.AbortMultipartUploadRequest;
+import com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest;
+import com.oracle.bmc.objectstorage.requests.CreateMultipartUploadRequest;
+import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
+import com.oracle.bmc.objectstorage.requests.UploadPartRequest;
+import com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse;
+import com.oracle.bmc.objectstorage.responses.CreateMultipartUploadResponse;
+import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
+import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
+import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadRequest;
+import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadResponse;
+import com.oracle.bmc.objectstorage.transfer.internal.MultipartManifestImpl;
+import com.oracle.bmc.objectstorage.transfer.internal.MultipartUtils;
+import com.oracle.bmc.util.StreamUtils;
+import org.hamcrest.Matchers;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -21,47 +79,13 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import com.oracle.bmc.objectstorage.model.MultipartUpload;
-import com.oracle.bmc.objectstorage.requests.AbortMultipartUploadRequest;
-import com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest;
-import com.oracle.bmc.objectstorage.requests.CreateMultipartUploadRequest;
-import com.oracle.bmc.objectstorage.requests.UploadPartRequest;
-import com.oracle.bmc.objectstorage.responses.CreateMultipartUploadResponse;
-import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
-import com.oracle.bmc.objectstorage.transfer.internal.MultipartUtils;
-import org.hamcrest.Matchers;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
-
-import com.google.common.base.Strings;
-import com.oracle.bmc.model.BmcException;
-import com.oracle.bmc.objectstorage.ObjectStorage;
-import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
-import com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse;
-import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
-import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadRequest;
-import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadResponse;
-import com.oracle.bmc.objectstorage.transfer.internal.MultipartManifestImpl;
-import com.oracle.bmc.util.StreamUtils;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.runners.MockitoJUnitRunner;
-import org.mockito.stubbing.Answer;
-
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({
+    RestClientFactory.class,
+    CreateMultipartUploadConverter.class,
+    UploadPartConverter.class,
+    CommitMultipartUploadConverter.class
+})
 public class UploadManagerTest {
     private static final String CONTENT =
             Strings.repeat("a", (int) (20 * MultipartUtils.MiB)); // 20 MiB
@@ -73,6 +97,10 @@ public class UploadManagerTest {
     private static final String CONTENT_ENCODING = "gzip";
     private static final String CONTENT_LANG = "en";
     private static final Map<String, String> METADATA = new HashMap<>();
+    private static final String NAMESPACE_NAME = "namespaceName";
+    private static final String BUCKET_NAME = "bucketName";
+    private static final String UPLOAD_ID = "12345";
+    private static final String OBJECT_NAME = "objectName";
 
     private InputStream body;
 
@@ -190,7 +218,7 @@ public class UploadManagerTest {
 
         verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
         verify(assembler, times(2))
-                .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 2), eq((String) null));
+                .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 2), eq(null));
     }
 
     @Test
@@ -267,7 +295,7 @@ public class UploadManagerTest {
 
         verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
         verify(assembler, times(2))
-                .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 2), eq((String) null));
+                .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 2), eq(null));
     }
 
     @Test(expected = BmcException.class)
@@ -410,57 +438,150 @@ public class UploadManagerTest {
     }
 
     @Test
-    public void multipartUpload_progressReporter_withRetries() {
-        final UploadManager uploadManager =
-                new UploadManager(objectStorage, getMultipartUploadConfiguration());
+    public void multipartUpload_progressReporter_withRetries() throws Exception {
+        // we have to build a full client to test retries
+        // to make sure we don't accidentally use the interface mock, set it to null
+        objectStorage = null;
 
-        when(objectStorage.createMultipartUpload(any(CreateMultipartUploadRequest.class)))
-                .thenReturn(
-                        CreateMultipartUploadResponse.builder()
-                                .multipartUpload(MultipartUpload.builder().build())
-                                .build());
+        AbstractAuthenticationDetailsProvider authenticationDetailsProvider =
+                mock(BasicAuthenticationDetailsProvider.class);
+        ClientConfiguration configuration = ClientConfiguration.builder().build();
+        ClientConfigurator clientConfigurator = null;
+        RequestSignerFactory defaultRequestSignerFactory = mock(RequestSignerFactory.class);
+        RequestSigner mockRequestSigner = mock(RequestSigner.class);
+        when(
+                        defaultRequestSignerFactory.createRequestSigner(
+                                any(Service.class), eq(authenticationDetailsProvider)))
+                .thenReturn(mockRequestSigner);
+
+        Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSignerFactory>
+                signingStrategyRequestSignerFactories = new HashMap<>();
+
+        for (SigningStrategy s : SigningStrategy.values()) {
+            signingStrategyRequestSignerFactories.put(s, defaultRequestSignerFactory);
+        }
+
+        List<ClientConfigurator> additionalClientConfigurators = Collections.emptyList();
+        String endpoint = null;
+        java.util.concurrent.ExecutorService executorService = null;
+
+        RestClient mockRestClient = PowerMockito.mock(RestClient.class);
+        PowerMockito.whenNew(RestClient.class).withAnyArguments().thenReturn(mockRestClient);
+
+        WrappedWebTarget mockBaseTarget = mock(WrappedWebTarget.class);
+        when(mockRestClient.getBaseTarget()).thenReturn(mockBaseTarget);
+        when(mockBaseTarget.path(anyString())).thenReturn(mockBaseTarget);
+        when(mockBaseTarget.queryParam(anyString(), any())).thenReturn(mockBaseTarget);
+
+        WrappedInvocationBuilder mockInvocationBuilder = mock(WrappedInvocationBuilder.class);
+        when(mockBaseTarget.request()).thenReturn(mockInvocationBuilder);
+
         final AtomicInteger onProgressCallbackCount = new AtomicInteger();
-        final ConcurrentMap<Integer, Integer> retryCountMap = new ConcurrentHashMap<>();
-        when(objectStorage.uploadPart(any(UploadPartRequest.class)))
-                .thenAnswer(
-                        new Answer<UploadPartResponse>() {
-                            @Override
-                            public UploadPartResponse answer(InvocationOnMock invocationOnMock)
-                                    throws Throwable {
-                                final UploadPartRequest uploadPartRequest =
-                                        invocationOnMock.getArgumentAt(0, null);
-                                final int uploadPartNum = uploadPartRequest.getUploadPartNum();
-                                final InputStream inputStream =
-                                        uploadPartRequest.getUploadPartBody();
+
+        when(mockRestClient.put(any(WrappedInvocationBuilder.class), any(InputStream.class), any()))
+                .then(
+                        invocationOnMock -> {
+                            Object[] arguments = invocationOnMock.getArguments();
+                            if (arguments[1] instanceof InputStream) {
+                                // read as much as we can
+                                InputStream inputStream = (InputStream) arguments[1];
                                 final byte[] buffer = new byte[READ_BLOCK_SIZE];
                                 while (inputStream.read(buffer) != -1) {
                                     onProgressCallbackCount.incrementAndGet();
-
-                                    if (!retryCountMap.containsKey(uploadPartNum)) {
-                                        retryCountMap.put(uploadPartNum, 0);
-                                    }
-                                    final int retryCount = retryCountMap.get(uploadPartNum);
-                                    final boolean shouldTriggerRetry =
-                                            ThreadLocalRandom.current().nextBoolean()
-                                                    && retryCount < 2
-                                                    && retryCountMap.replace(
-                                                            uploadPartNum,
-                                                            retryCount,
-                                                            retryCount + 1);
-                                    if (shouldTriggerRetry) {
-                                        throw new BmcException(-1, null, null, null);
-                                    }
                                 }
-                                return UploadPartResponse.builder().build();
                             }
+                            return null;
                         });
-        when(objectStorage.commitMultipartUpload(any(CommitMultipartUploadRequest.class)))
-                .thenReturn(CommitMultipartUploadResponse.builder().build());
+
+        // CreateMultipartUpload
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMultipartUploadResponse>
+                mockCreateResponseConverter = mock(Function.class);
+
+        PowerMockito.mockStatic(CreateMultipartUploadConverter.class);
+        PowerMockito.when(CreateMultipartUploadConverter.fromResponse())
+                .thenReturn(mockCreateResponseConverter);
+        PowerMockito.when(
+                        CreateMultipartUploadConverter.fromRequest(
+                                any(RestClient.class), any(CreateMultipartUploadRequest.class)))
+                .thenCallRealMethod();
+        PowerMockito.when(
+                        CreateMultipartUploadConverter.interceptRequest(
+                                any(CreateMultipartUploadRequest.class)))
+                .thenCallRealMethod();
+
+        CreateMultipartUploadResponse createMultipartUploadResponse =
+                CreateMultipartUploadResponse.builder()
+                        .multipartUpload(MultipartUpload.builder().uploadId(UPLOAD_ID).build())
+                        .build();
+        when(mockCreateResponseConverter.apply(any(javax.ws.rs.core.Response.class)))
+                .thenReturn(createMultipartUploadResponse);
+
+        // uploadPart
+        com.google.common.base.Function<javax.ws.rs.core.Response, UploadPartResponse>
+                mockUploadResponseConverter = mock(Function.class);
+
+        PowerMockito.mockStatic(UploadPartConverter.class);
+        PowerMockito.when(UploadPartConverter.fromResponse())
+                .thenReturn(mockUploadResponseConverter);
+        PowerMockito.when(
+                        UploadPartConverter.fromRequest(
+                                any(RestClient.class), any(UploadPartRequest.class)))
+                .thenCallRealMethod();
+        PowerMockito.when(UploadPartConverter.interceptRequest(any(UploadPartRequest.class)))
+                .thenCallRealMethod();
+
+        UploadPartResponse uploadPartResponse = UploadPartResponse.builder().build();
+        when(mockUploadResponseConverter.apply(any(javax.ws.rs.core.Response.class)))
+                .thenThrow(new BmcException(500, "serviceCode", "message", "opcRequestId"))
+                .thenThrow(new BmcException(500, "serviceCode", "message", "opcRequestId"))
+                .thenReturn(uploadPartResponse);
+
+        // commitMultipartUpload
+
+        // uploadPart
+        com.google.common.base.Function<javax.ws.rs.core.Response, CommitMultipartUploadResponse>
+                mockCommitResponseConverter = mock(Function.class);
+
+        PowerMockito.mockStatic(CommitMultipartUploadConverter.class);
+        PowerMockito.when(CommitMultipartUploadConverter.fromResponse())
+                .thenReturn(mockCommitResponseConverter);
+        PowerMockito.when(
+                        CommitMultipartUploadConverter.fromRequest(
+                                any(RestClient.class), any(CommitMultipartUploadRequest.class)))
+                .thenCallRealMethod();
+        PowerMockito.when(
+                        CommitMultipartUploadConverter.interceptRequest(
+                                any(CommitMultipartUploadRequest.class)))
+                .thenCallRealMethod();
+
+        CommitMultipartUploadResponse commitMultipartUploadResponse =
+                CommitMultipartUploadResponse.builder().build();
+        when(mockCommitResponseConverter.apply(any(javax.ws.rs.core.Response.class)))
+                .thenReturn(commitMultipartUploadResponse);
+
+        ObjectStorageClient objectStorageClient =
+                new ObjectStorageClient(
+                        authenticationDetailsProvider,
+                        configuration,
+                        clientConfigurator,
+                        defaultRequestSignerFactory,
+                        signingStrategyRequestSignerFactories,
+                        additionalClientConfigurators,
+                        endpoint,
+                        executorService);
+
+        final UploadManager uploadManager =
+                new UploadManager(objectStorageClient, getMultipartUploadConfiguration());
 
         final ProgressReporter progressReporter = mock(ProgressReporter.class);
         final UploadResponse uploadResponse =
                 uploadManager.upload(createUploadRequest(progressReporter));
         assertNotNull(uploadResponse);
+
+        // 2 parts, each fails once, resulting in 4 calls
+        verify(mockUploadResponseConverter, times(4)).apply(any());
 
         verify(progressReporter, times(onProgressCallbackCount.get()))
                 .onProgress(and(gt(0L), leq(CONTENT_LENGTH)), eq(CONTENT_LENGTH));
@@ -501,7 +622,7 @@ public class UploadManagerTest {
 
         verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
         verify(assembler, times(20))
-                .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 20), eq((String) null));
+                .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 20), eq(null));
     }
 
     @Test
@@ -541,6 +662,9 @@ public class UploadManagerTest {
                         .contentLanguage(CONTENT_LANG)
                         .contentType(CONTENT_TYPE)
                         .contentEncoding(CONTENT_ENCODING)
+                        .namespaceName(NAMESPACE_NAME)
+                        .bucketName(BUCKET_NAME)
+                        .objectName(OBJECT_NAME)
                         .build();
         return UploadRequest.builder(body, CONTENT_LENGTH)
                 .progressReporter(progressReporter)

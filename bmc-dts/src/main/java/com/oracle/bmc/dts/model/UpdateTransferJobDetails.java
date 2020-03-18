@@ -132,7 +132,7 @@ public class UpdateTransferJobDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
 
@@ -172,7 +172,7 @@ public class UpdateTransferJobDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid DeviceType: " + key);
+            throw new IllegalArgumentException("Invalid DeviceType: " + key);
         }
     };
 

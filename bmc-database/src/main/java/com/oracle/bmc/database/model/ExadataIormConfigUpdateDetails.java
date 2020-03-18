@@ -106,7 +106,7 @@ public class ExadataIormConfigUpdateDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Objective: " + key);
+            throw new IllegalArgumentException("Invalid Objective: " + key);
         }
     };
     /**

@@ -8,7 +8,8 @@ import com.oracle.bmc.marketplace.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListAcceptedAgreementsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListAcceptedAgreementsRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The unique identifier for the compartment.
@@ -84,10 +85,9 @@ public class ListAcceptedAgreementsRequest extends com.oracle.bmc.requests.BmcRe
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order to use, either `ASC` or `DESC`.
      */
@@ -125,10 +125,9 @@ public class ListAcceptedAgreementsRequest extends com.oracle.bmc.requests.BmcRe
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
      *
@@ -140,7 +139,9 @@ public class ListAcceptedAgreementsRequest extends com.oracle.bmc.requests.BmcRe
      */
     private String page;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListAcceptedAgreementsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

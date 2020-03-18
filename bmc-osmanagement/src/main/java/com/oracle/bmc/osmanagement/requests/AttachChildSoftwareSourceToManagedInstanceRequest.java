@@ -9,7 +9,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class AttachChildSoftwareSourceToManagedInstanceRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<
+                AttachChildSoftwareSourceToManagedInstanceDetails> {
 
     /**
      * OCID for the managed instance
@@ -37,7 +38,20 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public AttachChildSoftwareSourceToManagedInstanceDetails getBody$() {
+        return attachChildSoftwareSourceToManagedInstanceDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    AttachChildSoftwareSourceToManagedInstanceRequest,
+                    AttachChildSoftwareSourceToManagedInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -96,6 +110,17 @@ public class AttachChildSoftwareSourceToManagedInstanceRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(AttachChildSoftwareSourceToManagedInstanceDetails body) {
+            attachChildSoftwareSourceToManagedInstanceDetails(body);
+            return this;
         }
     }
 }

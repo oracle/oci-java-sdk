@@ -8,7 +8,7 @@ import com.oracle.bmc.monitoring.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class GetAlarmRequest extends com.oracle.bmc.requests.BmcRequest {
+public class GetAlarmRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
@@ -23,7 +23,8 @@ public class GetAlarmRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<GetAlarmRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

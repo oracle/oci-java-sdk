@@ -8,7 +8,7 @@ import com.oracle.bmc.filestorage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListMountTargetsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListMountTargetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the compartment.
@@ -103,10 +103,9 @@ public class ListMountTargetsRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-
     /**
      * Filter results by OCID. Must be an OCID of the correct type for
      * the resouce type.
@@ -159,10 +158,9 @@ public class ListMountTargetsRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order to use, either 'asc' or 'desc', where 'asc' is
      * ascending and 'desc' is descending. The default order is 'desc'
@@ -206,10 +204,9 @@ public class ListMountTargetsRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * Unique identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
@@ -217,7 +214,9 @@ public class ListMountTargetsRequest extends com.oracle.bmc.requests.BmcRequest 
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListMountTargetsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

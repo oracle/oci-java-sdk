@@ -299,7 +299,7 @@ public class UpdateVirtualCircuitDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ProviderState: " + key);
+            throw new IllegalArgumentException("Invalid ProviderState: " + key);
         }
     };
     /**

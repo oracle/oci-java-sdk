@@ -8,7 +8,8 @@ import com.oracle.bmc.waas.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateWhitelistsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateWhitelistsRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.util.List<Whitelist>> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -36,7 +37,19 @@ public class UpdateWhitelistsRequest extends com.oracle.bmc.requests.BmcRequest 
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public java.util.List<Whitelist> getBody$() {
+        return whitelists;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateWhitelistsRequest, java.util.List<Whitelist>> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -94,6 +107,17 @@ public class UpdateWhitelistsRequest extends com.oracle.bmc.requests.BmcRequest 
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(java.util.List<Whitelist> body) {
+            whitelists(body);
+            return this;
         }
     }
 }

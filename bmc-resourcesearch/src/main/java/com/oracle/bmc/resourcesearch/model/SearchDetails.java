@@ -72,7 +72,7 @@ public class SearchDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid MatchingContextType: " + key);
+            throw new IllegalArgumentException("Invalid MatchingContextType: " + key);
         }
     };
     /**

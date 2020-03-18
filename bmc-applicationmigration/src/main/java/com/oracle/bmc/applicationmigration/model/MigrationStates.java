@@ -41,6 +41,6 @@ public enum MigrationStates {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid MigrationStates: " + key);
+        throw new IllegalArgumentException("Invalid MigrationStates: " + key);
     }
 }

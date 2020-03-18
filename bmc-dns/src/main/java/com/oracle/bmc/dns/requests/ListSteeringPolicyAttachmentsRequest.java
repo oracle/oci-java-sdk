@@ -8,7 +8,8 @@ import com.oracle.bmc.dns.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListSteeringPolicyAttachmentsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListSteeringPolicyAttachmentsRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the compartment the resource belongs to.
@@ -130,17 +131,18 @@ public class ListSteeringPolicyAttachmentsRequest extends com.oracle.bmc.request
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The order to sort the resources.
      *
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListSteeringPolicyAttachmentsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

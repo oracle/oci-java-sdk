@@ -8,7 +8,7 @@ import com.oracle.bmc.integration.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The ID of the compartment in which to list resources.
@@ -35,7 +35,9 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
      */
     private String page;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListWorkRequestLogsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

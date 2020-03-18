@@ -8,7 +8,8 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class CreateRemotePeeringConnectionRequest extends com.oracle.bmc.requests.BmcRequest {
+public class CreateRemotePeeringConnectionRequest
+        extends com.oracle.bmc.requests.BmcRequest<CreateRemotePeeringConnectionDetails> {
 
     /**
      * Request to create peering connection to remote region
@@ -25,7 +26,19 @@ public class CreateRemotePeeringConnectionRequest extends com.oracle.bmc.request
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public CreateRemotePeeringConnectionDetails getBody$() {
+        return createRemotePeeringConnectionDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CreateRemotePeeringConnectionRequest, CreateRemotePeeringConnectionDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -80,6 +93,17 @@ public class CreateRemotePeeringConnectionRequest extends com.oracle.bmc.request
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(CreateRemotePeeringConnectionDetails body) {
+            createRemotePeeringConnectionDetails(body);
+            return this;
         }
     }
 }

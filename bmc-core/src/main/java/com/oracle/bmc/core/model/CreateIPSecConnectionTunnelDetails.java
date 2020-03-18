@@ -141,7 +141,7 @@ public class CreateIPSecConnectionTunnelDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Routing: " + key);
+            throw new IllegalArgumentException("Invalid Routing: " + key);
         }
     };
     /**
@@ -183,7 +183,7 @@ public class CreateIPSecConnectionTunnelDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid IkeVersion: " + key);
+            throw new IllegalArgumentException("Invalid IkeVersion: " + key);
         }
     };
     /**

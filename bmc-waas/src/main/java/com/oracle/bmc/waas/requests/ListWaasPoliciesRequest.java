@@ -8,7 +8,7 @@ import com.oracle.bmc.waas.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListWaasPoliciesRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListWaasPoliciesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -68,10 +68,9 @@ public class ListWaasPoliciesRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The value of the sorting direction of resources in a paginated 'List' call. If unspecified, defaults to `DESC`.
      */
@@ -109,10 +108,9 @@ public class ListWaasPoliciesRequest extends com.oracle.bmc.requests.BmcRequest 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
-
     /**
      * Filter policies using a list of policy OCIDs.
      */
@@ -138,7 +136,9 @@ public class ListWaasPoliciesRequest extends com.oracle.bmc.requests.BmcRequest 
      */
     private java.util.Date timeCreatedLessThan;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListWaasPoliciesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

@@ -253,7 +253,7 @@ public class CreateOceInstanceDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid InstanceUsageType: " + key);
+            throw new IllegalArgumentException("Invalid InstanceUsageType: " + key);
         }
     };
     /**

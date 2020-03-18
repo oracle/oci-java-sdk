@@ -8,7 +8,8 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateLocalPeeringGatewayRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateLocalPeeringGatewayRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateLocalPeeringGatewayDetails> {
 
     /**
      * The OCID of the local peering gateway.
@@ -28,7 +29,19 @@ public class UpdateLocalPeeringGatewayRequest extends com.oracle.bmc.requests.Bm
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateLocalPeeringGatewayDetails getBody$() {
+        return updateLocalPeeringGatewayDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateLocalPeeringGatewayRequest, UpdateLocalPeeringGatewayDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -84,6 +97,17 @@ public class UpdateLocalPeeringGatewayRequest extends com.oracle.bmc.requests.Bm
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateLocalPeeringGatewayDetails body) {
+            updateLocalPeeringGatewayDetails(body);
+            return this;
         }
     }
 }

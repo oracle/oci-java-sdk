@@ -95,12 +95,17 @@ public class StreamChunkCreator {
      * This class should be used in place of {@link SubRangeInputStream} directly when the underlying input stream itself
      * is a DuplicatableInputStream.  This class will always duplicate the underlying stream while maintaining the desired
      * start and end positions.
+     *
+     * Because this stream can be duplicated for each thread, it will support {@link InputStream#mark(int)} and
+     * {@link InputStream#reset()} whenever the source stream does so, because only one thread will reset it,
+     * and the threads will not interfere with each other.
      */
     public static class DuplicatedSubRangeInputStream extends SubRangeInputStream
             implements DuplicatableInputStream {
         private final long desiredStartPositionInSource;
         private final long desiredEndPositionInSource;
         private final DuplicatableInputStream duplicatableInputStream;
+        private long markPosition;
 
         /*
          * Creates a new stream.  The given source stream will be duplicated by this constructor, callers should
@@ -119,9 +124,27 @@ public class StreamChunkCreator {
                     desiredEndPositionInSource,
                     0,
                     true);
+            this.markPosition = currentStartPositionInSource;
             this.duplicatableInputStream = source;
             this.desiredStartPositionInSource = desiredStartPositionInSource;
             this.desiredEndPositionInSource = desiredEndPositionInSource;
+        }
+
+        @Override
+        public boolean markSupported() {
+            return source.markSupported();
+        }
+
+        @Override
+        public synchronized void mark(int readlimit) {
+            source.mark(readlimit);
+            markPosition = currentStartPositionInSource;
+        }
+
+        @Override
+        public synchronized void reset() throws IOException {
+            source.reset();
+            currentStartPositionInSource = markPosition;
         }
 
         @Override
@@ -137,18 +160,32 @@ public class StreamChunkCreator {
     /**
      * Creates a new SubRangeInputStream that represents a sub-range of bytes from another InputStream.
      * It's assumed the sub range stream can only be read once, and a sub range of bytes from another input stream.
+     * <<<<<<< HEAD
+     * =======
+     *
+     * Note: The behavior is a bit strange. A {@link SubRangeInputStream} doesn't guarantee that, if you read the
+     * chunks out of order, it will actually read the designated subrange. All it guarantees is that if you read all of
+     * the subranges, you have the entire source stream.
+     *
+     * For example, if you have the stream "AABB" with a chunk size of 2. chunk1 corresponds to [0,1) and chunk2
+     * corresponds to [2,3). If you read chunk2 first, you will get "AA" and not "BB". But if you read both chunks,
+     * in any order, and you concatenate the results, you will get "AABB".
+     *
+     * Because this stream cannot be duplicated for each thread, it does not support {@link InputStream#mark(int)} and
+     * {@link InputStream#reset()}, even if the source stream does. This is because all threads share the same stream,
+     * and resetting the stream in one thread would interfere with another thread reading from the stream.
+     * >>>>>>> 0d885027ab... DEX-7431/DEX-7469/DEX-7047/DEX-7411: Retries when uploading streams (manual changes)
      */
     public static class SubRangeInputStream extends InputStream {
         // used to advance the start offset to the desired offset.
         private static final int MAX_SKIP_ATTEMPTS = 50;
 
-        private final InputStream source;
+        protected final InputStream source;
         private final long desiredStartPositionInSource;
         private final long desiredEndPositionInSource;
         private final boolean closeSource;
 
-        private long currentStartPositionInSource;
-        private long markPosition;
+        protected long currentStartPositionInSource;
 
         private long totalBytesRead = 0;
 
@@ -162,7 +199,6 @@ public class StreamChunkCreator {
             this.desiredStartPositionInSource = desiredStartPositionInSource;
             this.desiredEndPositionInSource = desiredEndPositionInSource;
             this.currentStartPositionInSource = currentStartPositionInSource;
-            this.markPosition = currentStartPositionInSource;
             this.closeSource = closeSource;
         }
 
@@ -216,23 +252,6 @@ public class StreamChunkCreator {
          */
         public long length() {
             return desiredEndPositionInSource - desiredStartPositionInSource;
-        }
-
-        @Override
-        public boolean markSupported() {
-            return source.markSupported();
-        }
-
-        @Override
-        public synchronized void mark(int readlimit) {
-            source.mark(readlimit);
-            markPosition = currentStartPositionInSource;
-        }
-
-        @Override
-        public synchronized void reset() throws IOException {
-            source.reset();
-            currentStartPositionInSource = markPosition;
         }
 
         @Override

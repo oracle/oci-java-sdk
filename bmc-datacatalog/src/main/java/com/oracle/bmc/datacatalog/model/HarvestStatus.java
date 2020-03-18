@@ -46,6 +46,6 @@ public enum HarvestStatus {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid HarvestStatus: " + key);
+        throw new IllegalArgumentException("Invalid HarvestStatus: " + key);
     }
 }

@@ -166,7 +166,7 @@ public class CreateVaultDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid VaultType: " + key);
+            throw new IllegalArgumentException("Invalid VaultType: " + key);
         }
     };
     /**

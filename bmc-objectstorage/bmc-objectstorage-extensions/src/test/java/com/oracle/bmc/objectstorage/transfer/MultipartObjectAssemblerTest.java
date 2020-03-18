@@ -377,7 +377,8 @@ public class MultipartObjectAssemblerTest {
         assertEquals(uploadId, request.getUploadId());
         assertEquals(partNum, request.getUploadPartNum().intValue());
         assertEquals(md5, request.getContentMD5());
-        assertEquals("*", request.getIfNoneMatch());
+        assertEquals(
+                null, request.getIfNoneMatch()); // we allow overwriting parts, to help with retries
         assertEquals(mockInvocationCallback, request.getInvocationCallback());
         assertNotNull(request.getUploadPartBody());
     }

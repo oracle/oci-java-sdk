@@ -409,7 +409,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid CloneType: " + key);
+            throw new IllegalArgumentException("Invalid CloneType: " + key);
         }
     };
     /**

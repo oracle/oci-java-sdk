@@ -8,7 +8,8 @@ import com.oracle.bmc.containerengine.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateNodePoolRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateNodePoolRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateNodePoolDetails> {
 
     /**
      * The OCID of the node pool.
@@ -35,7 +36,19 @@ public class UpdateNodePoolRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateNodePoolDetails getBody$() {
+        return updateNodePoolDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateNodePoolRequest, UpdateNodePoolDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -92,6 +105,17 @@ public class UpdateNodePoolRequest extends com.oracle.bmc.requests.BmcRequest {
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateNodePoolDetails body) {
+            updateNodePoolDetails(body);
+            return this;
         }
     }
 }

@@ -155,7 +155,7 @@ public class UpdateAutonomousContainerDatabaseDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid PatchModel: " + key);
+            throw new IllegalArgumentException("Invalid PatchModel: " + key);
         }
     };
     /**

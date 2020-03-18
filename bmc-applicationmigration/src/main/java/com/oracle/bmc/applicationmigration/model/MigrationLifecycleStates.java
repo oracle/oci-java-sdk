@@ -41,6 +41,6 @@ public enum MigrationLifecycleStates {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid MigrationLifecycleStates: " + key);
+        throw new IllegalArgumentException("Invalid MigrationLifecycleStates: " + key);
     }
 }

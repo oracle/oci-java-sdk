@@ -47,6 +47,6 @@ public enum JobExecutionState {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid JobExecutionState: " + key);
+        throw new IllegalArgumentException("Invalid JobExecutionState: " + key);
     }
 }

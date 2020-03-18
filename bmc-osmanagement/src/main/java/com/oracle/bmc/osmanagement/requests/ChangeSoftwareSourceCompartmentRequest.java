@@ -8,7 +8,8 @@ import com.oracle.bmc.osmanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ChangeSoftwareSourceCompartmentRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ChangeSoftwareSourceCompartmentRequest
+        extends com.oracle.bmc.requests.BmcRequest<ChangeSoftwareSourceCompartmentDetails> {
 
     /**
      * The OCID of the software source.
@@ -45,7 +46,20 @@ public class ChangeSoftwareSourceCompartmentRequest extends com.oracle.bmc.reque
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeSoftwareSourceCompartmentDetails getBody$() {
+        return changeSoftwareSourceCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeSoftwareSourceCompartmentRequest,
+                    ChangeSoftwareSourceCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -103,6 +117,17 @@ public class ChangeSoftwareSourceCompartmentRequest extends com.oracle.bmc.reque
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeSoftwareSourceCompartmentDetails body) {
+            changeSoftwareSourceCompartmentDetails(body);
+            return this;
         }
     }
 }

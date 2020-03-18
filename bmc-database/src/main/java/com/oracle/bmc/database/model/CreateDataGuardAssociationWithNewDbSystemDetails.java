@@ -4,9 +4,9 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The configuration details for creating a Data Guard association for a bare metal DB system or virtual machine DB system database. A new DB system will be launched to create the standby database.
+ * The configuration details for creating a Data Guard association for a virtual machine DB system database. For this type of DB system database, the `creationType` should be `NewDbSystem`. A new DB system will be launched to create the standby database.
  * <p>
- **NOTE** - You must use this subtype to create a Data Guard association for a database in a virtual machine DB system.
+ * To create a Data Guard association for a database in a bare metal or Exadata DB system, use the {@link #createDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssociationToExistingDbSystemDetailsRequest) createDataGuardAssociationToExistingDbSystemDetails} subtype instead.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -205,8 +205,8 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
     String availabilityDomain;
 
     /**
-     * The shape of the DB system to launch to set up the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system.
-     * Only virtual machine shapes are valid shapes. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+     * The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system.
+     * Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
      * <p>
      * To get a list of all shapes, use the {@link #listDbSystemShapes(ListDbSystemShapesRequest) listDbSystemShapes} operation.
      *
@@ -228,7 +228,9 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
     String subnetId;
 
     /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")

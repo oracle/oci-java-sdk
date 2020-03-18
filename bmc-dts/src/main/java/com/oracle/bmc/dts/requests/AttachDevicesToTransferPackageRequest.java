@@ -8,7 +8,8 @@ import com.oracle.bmc.dts.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class AttachDevicesToTransferPackageRequest extends com.oracle.bmc.requests.BmcRequest {
+public class AttachDevicesToTransferPackageRequest
+        extends com.oracle.bmc.requests.BmcRequest<AttachDevicesDetails> {
 
     /**
      * ID of the Transfer Job
@@ -25,7 +26,19 @@ public class AttachDevicesToTransferPackageRequest extends com.oracle.bmc.reques
      */
     private AttachDevicesDetails attachDevicesDetails;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public AttachDevicesDetails getBody$() {
+        return attachDevicesDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    AttachDevicesToTransferPackageRequest, AttachDevicesDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -81,6 +94,17 @@ public class AttachDevicesToTransferPackageRequest extends com.oracle.bmc.reques
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(AttachDevicesDetails body) {
+            attachDevicesDetails(body);
+            return this;
         }
     }
 }
