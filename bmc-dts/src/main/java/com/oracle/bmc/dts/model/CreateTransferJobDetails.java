@@ -156,7 +156,7 @@ public class CreateTransferJobDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid DeviceType: " + key);
+            throw new IllegalArgumentException("Invalid DeviceType: " + key);
         }
     };
 

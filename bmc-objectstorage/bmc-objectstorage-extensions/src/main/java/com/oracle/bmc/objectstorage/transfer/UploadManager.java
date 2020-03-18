@@ -3,15 +3,6 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.security.DigestOutputStream;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.oracle.bmc.io.DuplicatableInputStream;
@@ -22,18 +13,28 @@ import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse;
 import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartUtils;
-import com.oracle.bmc.objectstorage.transfer.internal.SimpleRetry;
 import com.oracle.bmc.objectstorage.transfer.internal.StreamChunkCreator;
 import com.oracle.bmc.objectstorage.transfer.internal.StreamHelper;
+import com.oracle.bmc.retrier.DefaultRetryCondition;
+import com.oracle.bmc.retrier.RetryCondition;
+import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.StreamUtils;
-
-import com.oracle.bmc.util.internal.Consumer;
+import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
+import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.ws.rs.client.Invocation;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.security.DigestOutputStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * UploadManager simplifies interaction with the Object Storage service by abstracting away the method used
@@ -51,6 +52,27 @@ import javax.ws.rs.client.Invocation;
 @Slf4j
 public class UploadManager {
     private static final int DEFAULT_NUM_MULTIPART_THREADS_PER_REQUEST = 3;
+
+    /**
+     * Default retry condition, but added timeout, -1, and 409 "ConcurrentObjectUpdate".
+     */
+    private static final RetryCondition RETRY_CONDITION =
+            new DefaultRetryCondition() {
+                @Override
+                public boolean shouldBeRetried(@NonNull BmcException e) {
+                    return super.shouldBeRetried(e)
+                            || e.getStatusCode() == -1
+                            || (e.getStatusCode() == 409
+                                    && "ConcurrentObjectUpdate".equals(e.getServiceCode()));
+                }
+            };
+
+    static final RetryConfiguration RETRY_CONFIGURATION =
+            RetryConfiguration.builder()
+                    .terminationStrategy(new MaxAttemptsTerminationStrategy(3))
+                    .delayStrategy(new ExponentialBackoffDelayStrategy(100))
+                    .retryCondition(exception -> RETRY_CONDITION.shouldBeRetried(exception))
+                    .build();
 
     private final ObjectStorage objectStorage;
     private final UploadConfiguration uploadConfiguration;
@@ -74,18 +96,14 @@ public class UploadManager {
             return multipartUpload(uploadDetails);
         }
 
-        return singleUpload(
-                uploadDetails,
-                uploadDetails.putObjectRequest.getPutObjectBody(),
-                uploadDetails.putObjectRequest.getContentLength());
+        return singleUpload(uploadDetails, uploadDetails.putObjectRequest.getContentLength());
     }
 
-    private UploadResponse singleUpload(
-            UploadRequest uploadDetails, InputStream stream, long contentLength) {
+    private UploadResponse singleUpload(UploadRequest uploadRequest, long contentLength) {
         final ProgressTrackerFactory progressTrackerFactory =
                 ProgressTrackerFactory.createSingleUploadProgressTrackerFactory(
-                        uploadDetails.progressReporter, contentLength);
-        PutObjectRequest putObjectRequest = uploadDetails.putObjectRequest;
+                        uploadRequest.progressReporter, contentLength);
+        PutObjectRequest putObjectRequest = uploadRequest.putObjectRequest;
         if (MultipartUtils.shouldCalculateMd5(uploadConfiguration, putObjectRequest)) {
             MD5Calculation md5Calculation =
                     calculateMd5(
@@ -111,8 +129,9 @@ public class UploadManager {
                             .build();
         }
 
-        PutObjectResponse response =
-                new SimpleRetry(objectStorage).createPutObjectFunction().apply(putObjectRequest);
+        putObjectRequest.setRetryConfiguration(RETRY_CONFIGURATION);
+
+        PutObjectResponse response = objectStorage.putObject(putObjectRequest);
         return new UploadResponse(
                 response.getETag(),
                 response.getOpcContentMd5(),
@@ -121,11 +140,11 @@ public class UploadManager {
                 response.getOpcClientRequestId());
     }
 
-    private UploadResponse multipartUpload(UploadRequest uploadDetails) {
-        PutObjectRequest request = uploadDetails.putObjectRequest;
+    private UploadResponse multipartUpload(UploadRequest uploadRequest) {
+        PutObjectRequest request = uploadRequest.putObjectRequest;
         ProgressTrackerFactory progressTrackerFactory =
                 ProgressTrackerFactory.createMultiPartUploadProgressTrackerFactory(
-                        uploadDetails.progressReporter, request.getContentLength());
+                        uploadRequest.progressReporter, request.getContentLength());
 
         long sizePerPart =
                 MultipartUtils.calculatePartSize(uploadConfiguration, request.getContentLength());
@@ -136,8 +155,8 @@ public class UploadManager {
         final ExecutorService executorServiceToUse;
         final boolean shutdownExecutor;
         if (uploadConfiguration.isAllowParallelUploads() && chunkCreator.supportsParallelReads()) {
-            if (uploadDetails.parallelUploadExecutorService != null) {
-                executorServiceToUse = uploadDetails.parallelUploadExecutorService;
+            if (uploadRequest.parallelUploadExecutorService != null) {
+                executorServiceToUse = uploadRequest.parallelUploadExecutorService;
                 shutdownExecutor = false;
             } else {
                 executorServiceToUse = buildDefaultParallelExecutor();
@@ -151,7 +170,7 @@ public class UploadManager {
         }
 
         MultipartObjectAssembler assembler =
-                createAssembler(request, uploadDetails, executorServiceToUse);
+                createAssembler(request, uploadRequest, executorServiceToUse);
         MultipartManifest manifest = null;
         try {
             manifest =
@@ -160,8 +179,9 @@ public class UploadManager {
                             request.getContentLanguage(),
                             request.getContentEncoding(),
                             request.getOpcMeta());
-
+            int partCount = 0;
             while (chunkCreator.hasMore()) {
+                LOG.trace("Creating part {}", ++partCount);
                 StreamChunkCreator.SubRangeInputStream chunk = chunkCreator.next();
                 if (uploadConfiguration.isEnforceMd5BeforeMultipartUpload()) {
                     MD5Calculation md5Calculation = calculateMd5(chunk, chunk.length());
@@ -179,6 +199,7 @@ public class UploadManager {
                             null);
                 }
             }
+            LOG.debug("Created {} parts", partCount);
             CommitMultipartUploadResponse response = assembler.commit();
             return new UploadResponse(
                     response.getETag(),
@@ -217,7 +238,7 @@ public class UploadManager {
                     false, "Failed to upload object using multi-part uploads", e, null);
         } finally {
             // always close the source stream at this point
-            StreamUtils.closeQuietly(uploadDetails.putObjectRequest.getPutObjectBody());
+            StreamUtils.closeQuietly(uploadRequest.putObjectRequest.getPutObjectBody());
 
             if (shutdownExecutor) {
                 executorServiceToUse.shutdownNow();

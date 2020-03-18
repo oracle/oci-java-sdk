@@ -9,7 +9,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class ChangeLocalPeeringGatewayCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<ChangeLocalPeeringGatewayCompartmentDetails> {
 
     /**
      * The OCID of the local peering gateway.
@@ -38,7 +38,20 @@ public class ChangeLocalPeeringGatewayCompartmentRequest
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeLocalPeeringGatewayCompartmentDetails getBody$() {
+        return changeLocalPeeringGatewayCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeLocalPeeringGatewayCompartmentRequest,
+                    ChangeLocalPeeringGatewayCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -96,6 +109,17 @@ public class ChangeLocalPeeringGatewayCompartmentRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeLocalPeeringGatewayCompartmentDetails body) {
+            changeLocalPeeringGatewayCompartmentDetails(body);
+            return this;
         }
     }
 }

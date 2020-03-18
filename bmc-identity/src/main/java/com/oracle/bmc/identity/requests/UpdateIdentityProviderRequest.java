@@ -8,7 +8,8 @@ import com.oracle.bmc.identity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateIdentityProviderRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateIdentityProviderRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateIdentityProviderDetails> {
 
     /**
      * The OCID of the identity provider.
@@ -28,7 +29,19 @@ public class UpdateIdentityProviderRequest extends com.oracle.bmc.requests.BmcRe
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateIdentityProviderDetails getBody$() {
+        return updateIdentityProviderDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateIdentityProviderRequest, UpdateIdentityProviderDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -84,6 +97,17 @@ public class UpdateIdentityProviderRequest extends com.oracle.bmc.requests.BmcRe
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateIdentityProviderDetails body) {
+            updateIdentityProviderDetails(body);
+            return this;
         }
     }
 }

@@ -9,7 +9,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class ChangeAutonomousExadataInfrastructureCompartmentRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
 
     /**
      * Request to move Autonomous Exadata Infrastructure to a different compartment
@@ -45,7 +45,20 @@ public class ChangeAutonomousExadataInfrastructureCompartmentRequest
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeCompartmentDetails getBody$() {
+        return changeCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeAutonomousExadataInfrastructureCompartmentRequest,
+                    ChangeCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -104,6 +117,17 @@ public class ChangeAutonomousExadataInfrastructureCompartmentRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeCompartmentDetails body) {
+            changeCompartmentDetails(body);
+            return this;
         }
     }
 }

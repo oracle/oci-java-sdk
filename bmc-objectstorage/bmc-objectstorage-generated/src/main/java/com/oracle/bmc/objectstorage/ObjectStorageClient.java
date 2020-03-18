@@ -213,9 +213,51 @@ public class ObjectStorageClient implements ObjectStorage {
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint,
             java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected ObjectStorageClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
+                restClientFactoryBuilder
                         .defaultConfigurator(
                                 new com.oracle.bmc.http.DefaultConfigurator.NonBuffering())
                         .clientConfigurator(clientConfigurator)
@@ -1204,36 +1246,55 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public PutObjectResponse putObject(PutObjectRequest request) {
         LOG.trace("Called putObject");
-        final PutObjectRequest interceptedRequest = PutObjectConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                PutObjectConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, PutObjectResponse> transformer =
-                PutObjectConverter.fromResponse();
+        try {
+            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, PutObjectRequest.builder());
+            }
+            final PutObjectRequest interceptedRequest =
+                    PutObjectConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    PutObjectConverter.fromRequest(client, interceptedRequest);
+            com.google.common.base.Function<javax.ws.rs.core.Response, PutObjectResponse>
+                    transformer = PutObjectConverter.fromResponse();
 
-        ib.property(
-                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
-                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getPutObjectBody(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            interceptedRequest.getRetryConfiguration(), retryConfiguration);
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.put(
+                                                        ib,
+                                                        retriedRequest.getPutObjectBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest.getPutObjectBody());
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(request.getPutObjectBody());
+        }
     }
 
     @Override
@@ -1430,36 +1491,55 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public UploadPartResponse uploadPart(UploadPartRequest request) {
         LOG.trace("Called uploadPart");
-        final UploadPartRequest interceptedRequest = UploadPartConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UploadPartConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UploadPartResponse> transformer =
-                UploadPartConverter.fromResponse();
+        try {
+            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UploadPartRequest.builder());
+            }
+            final UploadPartRequest interceptedRequest =
+                    UploadPartConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UploadPartConverter.fromRequest(client, interceptedRequest);
+            com.google.common.base.Function<javax.ws.rs.core.Response, UploadPartResponse>
+                    transformer = UploadPartConverter.fromResponse();
 
-        ib.property(
-                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
-                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUploadPartBody(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            interceptedRequest.getRetryConfiguration(), retryConfiguration);
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.put(
+                                                        ib,
+                                                        retriedRequest.getUploadPartBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest.getUploadPartBody());
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(request.getUploadPartBody());
+        }
     }
 
     @Override

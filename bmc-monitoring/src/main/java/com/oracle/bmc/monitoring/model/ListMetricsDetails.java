@@ -216,7 +216,7 @@ public class ListMetricsDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
     /**
@@ -263,7 +263,7 @@ public class ListMetricsDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
     /**

@@ -215,9 +215,51 @@ public class DatabaseClient implements Database {
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint,
             java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected DatabaseClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(additionalClientConfigurators)
                         .build();
@@ -938,6 +980,39 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CreateConsoleConnectionResponse createConsoleConnection(
+            CreateConsoleConnectionRequest request) {
+        LOG.trace("Called createConsoleConnection");
+        final CreateConsoleConnectionRequest interceptedRequest =
+                CreateConsoleConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateConsoleConnectionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateConsoleConnectionResponse>
+                transformer = CreateConsoleConnectionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateConsoleConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateDataGuardAssociationResponse createDataGuardAssociation(
             CreateDataGuardAssociationRequest request) {
         LOG.trace("Called createDataGuardAssociation");
@@ -1299,6 +1374,36 @@ public class DatabaseClient implements Database {
                 DeleteBackupDestinationConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupDestinationResponse>
                 transformer = DeleteBackupDestinationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteConsoleConnectionResponse deleteConsoleConnection(
+            DeleteConsoleConnectionRequest request) {
+        LOG.trace("Called deleteConsoleConnection");
+        final DeleteConsoleConnectionRequest interceptedRequest =
+                DeleteConsoleConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteConsoleConnectionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConsoleConnectionResponse>
+                transformer = DeleteConsoleConnectionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1980,6 +2085,34 @@ public class DatabaseClient implements Database {
                 GetBackupDestinationConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupDestinationResponse>
                 transformer = GetBackupDestinationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetConsoleConnectionResponse getConsoleConnection(GetConsoleConnectionRequest request) {
+        LOG.trace("Called getConsoleConnection");
+        final GetConsoleConnectionRequest interceptedRequest =
+                GetConsoleConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetConsoleConnectionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleConnectionResponse>
+                transformer = GetConsoleConnectionConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2831,6 +2964,35 @@ public class DatabaseClient implements Database {
                 ListBackupsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
                 transformer = ListBackupsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListConsoleConnectionsResponse listConsoleConnections(
+            ListConsoleConnectionsRequest request) {
+        LOG.trace("Called listConsoleConnections");
+        final ListConsoleConnectionsRequest interceptedRequest =
+                ListConsoleConnectionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListConsoleConnectionsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListConsoleConnectionsResponse>
+                transformer = ListConsoleConnectionsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

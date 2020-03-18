@@ -95,7 +95,7 @@ public class UpdateIdentityProviderDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Protocol: " + key);
+            throw new IllegalArgumentException("Invalid Protocol: " + key);
         }
     };
 }

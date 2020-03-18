@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the compartment.
@@ -79,10 +79,9 @@ public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
      *
@@ -122,11 +121,13 @@ public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListVaultsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

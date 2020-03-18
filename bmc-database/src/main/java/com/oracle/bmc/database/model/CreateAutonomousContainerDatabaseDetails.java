@@ -189,7 +189,7 @@ public class CreateAutonomousContainerDatabaseDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ServiceLevelAgreementType: " + key);
+            throw new IllegalArgumentException("Invalid ServiceLevelAgreementType: " + key);
         }
     };
     /**
@@ -241,7 +241,7 @@ public class CreateAutonomousContainerDatabaseDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid PatchModel: " + key);
+            throw new IllegalArgumentException("Invalid PatchModel: " + key);
         }
     };
     /**

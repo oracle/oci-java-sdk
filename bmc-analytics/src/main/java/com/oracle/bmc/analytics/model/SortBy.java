@@ -41,6 +41,6 @@ public enum SortBy {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid SortBy: " + key);
+        throw new IllegalArgumentException("Invalid SortBy: " + key);
     }
 }

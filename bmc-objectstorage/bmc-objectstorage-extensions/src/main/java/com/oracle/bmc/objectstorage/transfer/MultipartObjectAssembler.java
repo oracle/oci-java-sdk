@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
+import javax.ws.rs.client.Invocation;
 
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.internal.ObjectStorageUtils;
@@ -28,15 +29,11 @@ import com.oracle.bmc.objectstorage.responses.ListMultipartUploadPartsResponse;
 import com.oracle.bmc.objectstorage.responses.ListMultipartUploadsResponse;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartManifestImpl;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartTransferManager;
-import com.oracle.bmc.objectstorage.transfer.internal.SimpleRetry;
 import com.oracle.bmc.util.StreamUtils;
-
 import com.oracle.bmc.util.internal.Consumer;
 import lombok.Builder;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.ws.rs.client.Invocation;
 
 /**
  * MultiPartObjectAssembler provides a simplified interaction with uploading large
@@ -158,8 +155,7 @@ public class MultipartObjectAssembler {
         this.manifest =
                 new MultipartManifestImpl(createUploadResponse.getMultipartUpload().getUploadId());
         this.transferManager =
-                new MultipartTransferManager(
-                        executorService, this.manifest, new SimpleRetry(service));
+                new MultipartTransferManager(executorService, this.manifest, service);
 
         this.initialized = true;
         return this.manifest;
@@ -207,8 +203,7 @@ public class MultipartObjectAssembler {
         } while (nextPageToken != null);
         this.manifest = manifest;
         this.transferManager =
-                new MultipartTransferManager(
-                        executorService, this.manifest, new SimpleRetry(service));
+                new MultipartTransferManager(executorService, this.manifest, service);
 
         this.initialized = true;
         return manifest;
@@ -238,8 +233,8 @@ public class MultipartObjectAssembler {
     /**
      * Add the next part to the upload.  Parts will be committed in the order
      * submitted.
-     * <p>
-     * Calling this will set the ifNoneMatch value and will not allow overwriting existing parts.
+     *
+     * We allow part overwrites to facilitate retries.
      *
      * @param stream The stream to upload as the next part
      * @param contentLength The content length of the part
@@ -248,7 +243,7 @@ public class MultipartObjectAssembler {
      */
     public int addPart(InputStream stream, long contentLength, String md5) {
         int nextPartNumber = manifest.nextPartNumber();
-        return doUploadPart(stream, contentLength, md5, nextPartNumber, false);
+        return doUploadPart(stream, contentLength, md5, nextPartNumber);
     }
 
     /**
@@ -284,17 +279,11 @@ public class MultipartObjectAssembler {
      * @param partNum The part number to to assign to the part
      */
     public void setPart(InputStream stream, long contentLength, String md5, int partNum) {
-        doUploadPart(stream, contentLength, md5, partNum, true);
+        doUploadPart(stream, contentLength, md5, partNum);
     }
 
-    private int doUploadPart(
-            InputStream stream,
-            long contentLength,
-            String md5,
-            int partNumber,
-            boolean allowPartOverwrite) {
+    private int doUploadPart(InputStream stream, long contentLength, String md5, int partNumber) {
         validateState();
-        String ifNoneMatch = ObjectStorageUtils.getIfNoneMatchHeader(allowPartOverwrite);
         UploadPartRequest request =
                 UploadPartRequest.builder()
                         .invocationCallback(invocationCallback)
@@ -304,11 +293,13 @@ public class MultipartObjectAssembler {
                         .contentMD5(md5)
                         .contentLength(contentLength)
                         .uploadId(manifest.getUploadId())
-                        .ifNoneMatch(ifNoneMatch)
                         .uploadPartNum(partNumber)
                         .uploadPartBody(stream)
                         .opcClientRequestId(createClientRequestId("-" + partNumber))
                         .build();
+
+        request.setRetryConfiguration(UploadManager.RETRY_CONFIGURATION);
+
         transferManager.startTransfer(request);
         return partNumber;
     }

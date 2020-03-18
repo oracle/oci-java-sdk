@@ -8,7 +8,8 @@ import com.oracle.bmc.identity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateTagNamespaceRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateTagNamespaceRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateTagNamespaceDetails> {
 
     /**
      * The OCID of the tag namespace.
@@ -21,7 +22,19 @@ public class UpdateTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
      */
     private UpdateTagNamespaceDetails updateTagNamespaceDetails;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateTagNamespaceDetails getBody$() {
+        return updateTagNamespaceDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateTagNamespaceRequest, UpdateTagNamespaceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -76,6 +89,17 @@ public class UpdateTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateTagNamespaceDetails body) {
+            updateTagNamespaceDetails(body);
+            return this;
         }
     }
 }

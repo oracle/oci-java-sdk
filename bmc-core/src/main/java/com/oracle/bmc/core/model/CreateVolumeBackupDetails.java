@@ -161,7 +161,7 @@ public class CreateVolumeBackupDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Type: " + key);
+            throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
     /**

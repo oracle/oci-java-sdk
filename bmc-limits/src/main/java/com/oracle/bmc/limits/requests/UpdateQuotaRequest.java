@@ -8,7 +8,7 @@ import com.oracle.bmc.limits.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateQuotaRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateQuotaRequest extends com.oracle.bmc.requests.BmcRequest<UpdateQuotaDetails> {
 
     /**
      * The OCID of the quota.
@@ -35,7 +35,19 @@ public class UpdateQuotaRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateQuotaDetails getBody$() {
+        return updateQuotaDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateQuotaRequest, UpdateQuotaDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -92,6 +104,17 @@ public class UpdateQuotaRequest extends com.oracle.bmc.requests.BmcRequest {
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateQuotaDetails body) {
+            updateQuotaDetails(body);
+            return this;
         }
     }
 }

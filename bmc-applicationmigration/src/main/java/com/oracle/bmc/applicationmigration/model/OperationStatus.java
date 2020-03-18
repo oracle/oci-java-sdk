@@ -40,6 +40,6 @@ public enum OperationStatus {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid OperationStatus: " + key);
+        throw new IllegalArgumentException("Invalid OperationStatus: " + key);
     }
 }

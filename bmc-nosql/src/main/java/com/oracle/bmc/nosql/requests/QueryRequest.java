@@ -8,7 +8,7 @@ import com.oracle.bmc.nosql.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class QueryRequest extends com.oracle.bmc.requests.BmcRequest {
+public class QueryRequest extends com.oracle.bmc.requests.BmcRequest<QueryDetails> {
 
     /**
      * SQL query statement and ancillary information.
@@ -33,7 +33,18 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public QueryDetails getBody$() {
+        return queryDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<QueryRequest, QueryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -90,6 +101,17 @@ public class QueryRequest extends com.oracle.bmc.requests.BmcRequest {
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(QueryDetails body) {
+            queryDetails(body);
+            return this;
         }
     }
 }

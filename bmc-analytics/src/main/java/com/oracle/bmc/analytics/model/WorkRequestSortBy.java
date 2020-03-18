@@ -41,6 +41,6 @@ public enum WorkRequestSortBy {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid WorkRequestSortBy: " + key);
+        throw new IllegalArgumentException("Invalid WorkRequestSortBy: " + key);
     }
 }

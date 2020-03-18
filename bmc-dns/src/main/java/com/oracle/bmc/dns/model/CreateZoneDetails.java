@@ -172,7 +172,7 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ZoneType: " + key);
+            throw new IllegalArgumentException("Invalid ZoneType: " + key);
         }
     };
     /**

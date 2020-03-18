@@ -8,7 +8,7 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -36,14 +36,16 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String dbSystemId;
 
     /**
-     * The storage option used in DB system to list database versions for that storage manager.
-     * ASM - Automatic storage management
-     * LVM - Logical Volume management
+     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
+     * * ASM - Automatic storage management
+     * * LVM - Logical volume management
      *
      */
     private DbSystemOptions.StorageManagement storageManagement;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListDbVersionsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

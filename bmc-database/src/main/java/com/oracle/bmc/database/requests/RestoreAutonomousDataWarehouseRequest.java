@@ -8,7 +8,8 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class RestoreAutonomousDataWarehouseRequest extends com.oracle.bmc.requests.BmcRequest {
+public class RestoreAutonomousDataWarehouseRequest
+        extends com.oracle.bmc.requests.BmcRequest<RestoreAutonomousDataWarehouseDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -28,7 +29,19 @@ public class RestoreAutonomousDataWarehouseRequest extends com.oracle.bmc.reques
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public RestoreAutonomousDataWarehouseDetails getBody$() {
+        return restoreAutonomousDataWarehouseDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    RestoreAutonomousDataWarehouseRequest, RestoreAutonomousDataWarehouseDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -84,6 +97,17 @@ public class RestoreAutonomousDataWarehouseRequest extends com.oracle.bmc.reques
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(RestoreAutonomousDataWarehouseDetails body) {
+            restoreAutonomousDataWarehouseDetails(body);
+            return this;
         }
     }
 }

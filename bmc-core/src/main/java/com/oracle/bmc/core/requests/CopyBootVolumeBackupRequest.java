@@ -8,7 +8,8 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class CopyBootVolumeBackupRequest extends com.oracle.bmc.requests.BmcRequest {
+public class CopyBootVolumeBackupRequest
+        extends com.oracle.bmc.requests.BmcRequest<CopyBootVolumeBackupDetails> {
 
     /**
      * The OCID of the boot volume backup.
@@ -37,7 +38,19 @@ public class CopyBootVolumeBackupRequest extends com.oracle.bmc.requests.BmcRequ
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public CopyBootVolumeBackupDetails getBody$() {
+        return copyBootVolumeBackupDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    CopyBootVolumeBackupRequest, CopyBootVolumeBackupDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -94,6 +107,17 @@ public class CopyBootVolumeBackupRequest extends com.oracle.bmc.requests.BmcRequ
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(CopyBootVolumeBackupDetails body) {
+            copyBootVolumeBackupDetails(body);
+            return this;
         }
     }
 }

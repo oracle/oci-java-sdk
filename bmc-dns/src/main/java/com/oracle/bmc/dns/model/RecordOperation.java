@@ -246,7 +246,7 @@ public class RecordOperation {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Operation: " + key);
+            throw new IllegalArgumentException("Invalid Operation: " + key);
         }
     };
     /**

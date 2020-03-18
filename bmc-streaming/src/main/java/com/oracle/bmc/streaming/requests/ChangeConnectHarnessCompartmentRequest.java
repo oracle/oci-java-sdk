@@ -8,7 +8,8 @@ import com.oracle.bmc.streaming.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ChangeConnectHarnessCompartmentRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ChangeConnectHarnessCompartmentRequest
+        extends com.oracle.bmc.requests.BmcRequest<ChangeConnectHarnessCompartmentDetails> {
 
     /**
      * The OCID of the connect harness.
@@ -33,7 +34,20 @@ public class ChangeConnectHarnessCompartmentRequest extends com.oracle.bmc.reque
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public ChangeConnectHarnessCompartmentDetails getBody$() {
+        return changeConnectHarnessCompartmentDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ChangeConnectHarnessCompartmentRequest,
+                    ChangeConnectHarnessCompartmentDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -90,6 +104,17 @@ public class ChangeConnectHarnessCompartmentRequest extends com.oracle.bmc.reque
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(ChangeConnectHarnessCompartmentDetails body) {
+            changeConnectHarnessCompartmentDetails(body);
+            return this;
         }
     }
 }

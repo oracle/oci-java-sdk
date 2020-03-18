@@ -179,7 +179,7 @@ public class QueryDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Consistency: " + key);
+            throw new IllegalArgumentException("Invalid Consistency: " + key);
         }
     };
     /**

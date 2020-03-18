@@ -8,7 +8,7 @@ import com.oracle.bmc.resourcesearch.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.4")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The maximum number of items to return. The value must be between 1 and 1000.
@@ -27,7 +27,9 @@ public class ListResourceTypesRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListResourceTypesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

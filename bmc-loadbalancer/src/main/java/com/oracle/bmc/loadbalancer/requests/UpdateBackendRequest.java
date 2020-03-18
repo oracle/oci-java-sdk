@@ -8,7 +8,7 @@ import com.oracle.bmc.loadbalancer.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateBackendRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateBackendRequest extends com.oracle.bmc.requests.BmcRequest<UpdateBackendDetails> {
 
     /**
      * Details for updating a backend server.
@@ -53,7 +53,19 @@ public class UpdateBackendRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcRetryToken;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateBackendDetails getBody$() {
+        return updateBackendDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateBackendRequest, UpdateBackendDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -112,6 +124,17 @@ public class UpdateBackendRequest extends com.oracle.bmc.requests.BmcRequest {
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateBackendDetails body) {
+            updateBackendDetails(body);
+            return this;
         }
     }
 }

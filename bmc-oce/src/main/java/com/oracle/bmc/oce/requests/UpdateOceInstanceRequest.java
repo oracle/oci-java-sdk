@@ -8,7 +8,8 @@ import com.oracle.bmc.oce.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class UpdateOceInstanceRequest extends com.oracle.bmc.requests.BmcRequest {
+public class UpdateOceInstanceRequest
+        extends com.oracle.bmc.requests.BmcRequest<UpdateOceInstanceDetails> {
 
     /**
      * unique OceInstance identifier
@@ -35,7 +36,19 @@ public class UpdateOceInstanceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateOceInstanceDetails getBody$() {
+        return updateOceInstanceDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateOceInstanceRequest, UpdateOceInstanceDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -92,6 +105,17 @@ public class UpdateOceInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateOceInstanceDetails body) {
+            updateOceInstanceDetails(body);
+            return this;
         }
     }
 }

@@ -8,7 +8,7 @@ import com.oracle.bmc.monitoring.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest {
+public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
@@ -68,10 +68,9 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid AlarmHistorytype: " + key);
+            throw new IllegalArgumentException("Invalid AlarmHistorytype: " + key);
         }
     };
-
     /**
      * For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
      * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -106,7 +105,9 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private java.util.Date timestampLessThan;
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    GetAlarmHistoryRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

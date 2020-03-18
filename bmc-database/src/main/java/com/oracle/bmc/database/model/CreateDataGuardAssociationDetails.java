@@ -98,7 +98,7 @@ public class CreateDataGuardAssociationDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ProtectionMode: " + key);
+            throw new IllegalArgumentException("Invalid ProtectionMode: " + key);
         }
     };
     /**
@@ -155,7 +155,7 @@ public class CreateDataGuardAssociationDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid TransportType: " + key);
+            throw new IllegalArgumentException("Invalid TransportType: " + key);
         }
     };
     /**

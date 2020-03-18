@@ -8,7 +8,8 @@ import com.oracle.bmc.oda.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListWorkRequestErrorsRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListWorkRequestErrorsRequest
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The identifier of the asynchronous work request.
@@ -79,10 +80,9 @@ public class ListWorkRequestErrorsRequest extends com.oracle.bmc.requests.BmcReq
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * Sort the results in this order, use either `ASC` (ascending) or `DESC` (descending).
      */
@@ -120,11 +120,13 @@ public class ListWorkRequestErrorsRequest extends com.oracle.bmc.requests.BmcReq
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListWorkRequestErrorsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;

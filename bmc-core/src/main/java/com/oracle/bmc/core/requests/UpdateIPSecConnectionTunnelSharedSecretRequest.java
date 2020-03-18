@@ -9,7 +9,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class UpdateIPSecConnectionTunnelSharedSecretRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<UpdateIPSecConnectionTunnelSharedSecretDetails> {
 
     /**
      * The OCID of the IPSec connection.
@@ -35,7 +35,20 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
      */
     private String ifMatch;
 
-    public static class Builder {
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public UpdateIPSecConnectionTunnelSharedSecretDetails getBody$() {
+        return updateIPSecConnectionTunnelSharedSecretDetails;
+    }
+
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    UpdateIPSecConnectionTunnelSharedSecretRequest,
+                    UpdateIPSecConnectionTunnelSharedSecretDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -94,6 +107,17 @@ public class UpdateIPSecConnectionTunnelSharedSecretRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(UpdateIPSecConnectionTunnelSharedSecretDetails body) {
+            updateIPSecConnectionTunnelSharedSecretDetails(body);
+            return this;
         }
     }
 }

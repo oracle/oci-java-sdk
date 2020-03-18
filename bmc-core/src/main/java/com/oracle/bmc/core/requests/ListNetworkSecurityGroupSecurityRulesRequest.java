@@ -9,7 +9,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class ListNetworkSecurityGroupSecurityRulesRequest
-        extends com.oracle.bmc.requests.BmcRequest {
+        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security group.
@@ -57,10 +57,9 @@ public class ListNetworkSecurityGroupSecurityRulesRequest
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid Direction: " + key);
+            throw new IllegalArgumentException("Invalid Direction: " + key);
         }
     };
-
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * \"List\" call. For important details about how pagination works, see
@@ -115,10 +114,9 @@ public class ListNetworkSecurityGroupSecurityRulesRequest
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortBy: " + key);
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-
     /**
      * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
      * is case sensitive.
@@ -160,11 +158,13 @@ public class ListNetworkSecurityGroupSecurityRulesRequest
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid SortOrder: " + key);
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.requests.BmcRequest.Builder<
+                    ListNetworkSecurityGroupSecurityRulesRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
