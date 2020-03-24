@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.15.1</version>
+  <version>1.15.2</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -47,6 +47,9 @@
     <commons-codec.version>1.13</commons-codec.version>
     <commons-lang3.version>3.8.1</commons-lang3.version>
     <commons-io.version>2.6</commons-io.version>
+    <!-- Update resilience4jVersion and io.vavr.version together -->
+    <resilience4jVersion>1.2.0</resilience4jVersion>
+    <io.vavr.version>0.10.2</io.vavr.version>
     <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
     <bouncycastle.version>1.60</bouncycastle.version>
     <mockito.version>1.10.19</mockito.version>
@@ -501,7 +504,6 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>${mockito.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -618,15 +620,38 @@
         <version>${jackson.version}</version>
       </dependency>
       <dependency>
+        <groupId>io.github.resilience4j</groupId>
+        <artifactId>resilience4j-core</artifactId>
+        <version>${resilience4jVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.resilience4j</groupId>
+        <artifactId>resilience4j-circuitbreaker</artifactId>
+        <version>${resilience4jVersion}</version>
+      </dependency>
+      <!-- io.vavr is added here because it is in resilience4j-circuitbreaker, update versions together -->
+      <dependency>
+        <groupId>io.vavr</groupId>
+        <artifactId>vavr</artifactId>
+        <version>${io.vavr.version}</version>
+      </dependency>
+      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>${junit.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
   <modules>
     <module>bmc-audit</module>
     <module>bmc-bom</module>
+    <module>bmc-circuitbreaker</module>
     <module>bmc-common</module>
     <module>bmc-core</module>
     <module>bmc-database</module>

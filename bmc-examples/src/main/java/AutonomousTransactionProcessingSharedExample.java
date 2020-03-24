@@ -37,7 +37,12 @@ public class AutonomousTransactionProcessingSharedExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // TODO: Fill in these values
+        if (args.length != 2) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "Unexpected number of arguments.  Expected 2, got %s. Compartment Id and custom password are required for this example",
+                            args.length));
+        }
 
         String compartmentId = args[0];
         String password = args[1];

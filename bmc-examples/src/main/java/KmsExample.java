@@ -7,12 +7,6 @@ import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.keymanagement.KmsCryptoClient;
 import com.oracle.bmc.keymanagement.KmsManagementClient;
 import com.oracle.bmc.keymanagement.KmsVaultClient;
-import com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails;
-import com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails;
-import com.oracle.bmc.keymanagement.model.CreateKeyDetails;
-import com.oracle.bmc.keymanagement.model.CreateVaultDetails;
-import com.oracle.bmc.keymanagement.model.DecryptDataDetails;
-import com.oracle.bmc.keymanagement.model.EncryptDataDetails;
 import com.oracle.bmc.keymanagement.model.GenerateKeyDetails;
 import com.oracle.bmc.keymanagement.model.KeyShape;
 import com.oracle.bmc.keymanagement.model.KeySummary;
@@ -23,6 +17,13 @@ import com.oracle.bmc.keymanagement.model.UpdateKeyDetails;
 import com.oracle.bmc.keymanagement.model.UpdateVaultDetails;
 import com.oracle.bmc.keymanagement.model.Vault;
 import com.oracle.bmc.keymanagement.model.VaultSummary;
+import com.oracle.bmc.keymanagement.model.CreateVaultDetails;
+import com.oracle.bmc.keymanagement.model.CreateKeyDetails;
+import com.oracle.bmc.keymanagement.model.EncryptDataDetails;
+import com.oracle.bmc.keymanagement.model.DecryptDataDetails;
+import com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails;
+import com.oracle.bmc.keymanagement.model.Key;
+import com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails;
 import com.oracle.bmc.keymanagement.requests.CancelKeyDeletionRequest;
 import com.oracle.bmc.keymanagement.requests.CancelVaultDeletionRequest;
 import com.oracle.bmc.keymanagement.requests.ChangeKeyCompartmentRequest;
@@ -85,7 +86,6 @@ import java.util.Map;
 public class KmsExample {
 
     private static final int DEFAULT_KEY_LENGTH = 32;
-    private static final long TRANSIENT_STATE_WAIT_TIME_MS = 1000L * 30L;
 
     // The KeyShape used for testing
     private static final KeyShape TEST_KEY_SHAPE =
@@ -148,48 +148,85 @@ public class KmsExample {
         // After scheduling deletion, the Vault will stay in SCHEDULING_DELETION state shortly and then
         // transit to PENDING_DELETION state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for the deletion scheduling to finish");
-        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+        kmsVaultClient
+                .getWaiters()
+                .forVault(
+                        GetVaultRequest.builder().vaultId(vault.getId()).build(),
+                        Vault.LifecycleState.PendingDeletion)
+                .execute();
 
         cancelVaultDeletionTest(kmsVaultClient, vault.getId());
         // After cancelling deletion, the Vault will stay in CANCELLING_DELETION state shortly and then
         // transit to ACTIVE state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for the deletion cancelling to finish");
-        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+        kmsVaultClient
+                .getWaiters()
+                .forVault(
+                        GetVaultRequest.builder().vaultId(vault.getId()).build(),
+                        Vault.LifecycleState.Active)
+                .execute();
 
         // Management / Key Operations
         String keyId = createKeyTest(kmsManagementClient, compartmentId);
         // After creating a Key, the Key will stay in CREATING state shortly and then
         // transit to ENABLED state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for Key creation to finish");
-        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
 
         getKeyTest(kmsManagementClient, keyId);
         updateKeyResetTagsTest(kmsManagementClient, keyId);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
+
         updateKeyTest(kmsManagementClient, keyId);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
+
         listKeysTest(kmsManagementClient, compartmentId);
         disableKeyTest(kmsManagementClient, keyId);
         // After disabling a Key, the Key will stay in DISABLING state shortly and then
         // transit to DISABLED state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for Key disabling to finish");
-        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Disabled)
+                .execute();
 
         enableKeyTest(kmsManagementClient, keyId);
         // After enabling a Key, the Key will stay in ENABLING state shortly and then
         // transit to ENABLED state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for Key enabling to finish");
-        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
 
         scheduleKeyDetetionTest(kmsManagementClient, keyId);
         // After scheduling deletion, the Key will stay in SCHEDULING_DELETION state shortly and then
         // transit to PENDING_DELETION state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for the deletion scheduling to finish");
-        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(
+                        GetKeyRequest.builder().keyId(keyId).build(),
+                        Key.LifecycleState.PendingDeletion)
+                .execute();
 
         cancelKeyDetetionTest(kmsManagementClient, keyId);
         // After cancelling deletion, the Key will stay in CANCELLING_DELETION state shortly and then
         // transit to Enabled state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for the deletion cancelling to finish");
-        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
 
         createKeyVersionTest(kmsManagementClient, keyId);
         listKeyVersionsTest(kmsManagementClient, keyId);
@@ -198,15 +235,25 @@ public class KmsExample {
         String ciphertext = encryptTest(kmsCryptoClient, keyId);
         decryptTest(kmsCryptoClient, keyId, ciphertext);
         generateDataEncryptionKeyTest(kmsCryptoClient, keyId);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
 
         // change compartment operations
         changeKeyCompartmentTest(kmsManagementClient, keyId, targetCompartmentForMove);
         System.out.println("Wait a bit for Key move to finish");
-        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
 
         changeVaultCompartmentTest(kmsVaultClient, vaultId, targetCompartmentForMove);
         System.out.println("Wait a bit for Vault move to finish");
-        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+        kmsManagementClient
+                .getWaiters()
+                .forKey(GetKeyRequest.builder().keyId(keyId).build(), Key.LifecycleState.Enabled)
+                .execute();
     }
 
     public static Vault createVaultTest(KmsVaultClient kmsVaultClient, String compartmentId) {

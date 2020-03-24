@@ -1,0 +1,42 @@
+/**
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ */
+package com.oracle.bmc.circuitbreaker;
+
+import java.util.concurrent.Future;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.core.Response;
+
+/**
+ * JaxRsCircuitBreaker is a specialized CircuitBreaker for JaxRs client
+ */
+public interface JaxRsCircuitBreaker {
+
+    /**
+     * Returns a supplier which is decorated by the JaxRsCircuitBreaker.
+     *
+     * @param supplier the original supplier
+     * @return a supplier which is decorated by the JaxRsCircuitBreaker.
+     */
+    Supplier<Response> decorateSupplier(Supplier<Response> supplier);
+
+    /**
+     * Returns a function which is decorated by the JaxRsCircuitBreaker.
+     *
+     * @param function the original function
+     * @return a function which is decorated by the JaxRsCircuitBreaker.
+     */
+    Function<Invocation, Response> decorateFunction(Function<Invocation, Response> function);
+
+    /**
+     * Returns a supplier of type Future which is decorated by the JaxRsCircuitBreaker. The elapsed time
+     * includes {@link Future#get()} evaluation time even if the underlying call took less time to
+     * return. Any delays in evaluating Future by caller will add towards total time.
+     *
+     * @param supplier the original supplier
+     * @return a supplier which is decorated by the JaxRsCircuitBreaker.
+     */
+    Supplier<Future<Response>> decorateFuture(Supplier<Future<Response>> supplier);
+}

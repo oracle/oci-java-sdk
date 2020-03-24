@@ -430,7 +430,7 @@ public class LaunchInstanceDetails {
      *  information about how to take advantage of user data, see the
      *  [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      * <p>
-     **Note:** Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v2/instance/metadata/`
+     **Note:** Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
      *  path. When the instance launches and either of these keys are provided, the key values are formatted as
      *  OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:
      * <p>
@@ -454,9 +454,9 @@ public class LaunchInstanceDetails {
      * To get information about your instance, connect to the instance using SSH and issue any of the
      *  following GET requests:
      * <p>
-     * curl http://169.254.169.254/opc/v2/instance/
-     *      curl http://169.254.169.254/opc/v2/instance/metadata/
-     *      curl http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+     * curl http://169.254.169.254/opc/v1/instance/
+     *      curl http://169.254.169.254/opc/v1/instance/metadata/
+     *      curl http://169.254.169.254/opc/v1/instance/metadata/<any-key-name>
      * <p>
      * You'll get back a response that includes all the instance information; only the metadata information; or
      *  the metadata information for the specified key name, respectively.

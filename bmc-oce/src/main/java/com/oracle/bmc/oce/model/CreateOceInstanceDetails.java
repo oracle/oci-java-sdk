@@ -114,6 +114,15 @@ public class CreateOceInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
+        private String wafPrimaryDomain;
+
+        public Builder wafPrimaryDomain(String wafPrimaryDomain) {
+            this.wafPrimaryDomain = wafPrimaryDomain;
+            this.__explicitlySet__.add("wafPrimaryDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -149,6 +158,7 @@ public class CreateOceInstanceDetails {
                             instanceUsageType,
                             objectStorageNamespace,
                             adminEmail,
+                            wafPrimaryDomain,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -168,6 +178,7 @@ public class CreateOceInstanceDetails {
                             .instanceUsageType(o.getInstanceUsageType())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
+                            .wafPrimaryDomain(o.getWafPrimaryDomain())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -273,6 +284,12 @@ public class CreateOceInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     String adminEmail;
+
+    /**
+     * Web Application Firewall(WAF) primary domain
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
+    String wafPrimaryDomain;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

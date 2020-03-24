@@ -27,6 +27,8 @@ import com.oracle.bmc.core.responses.UpdateRemotePeeringConnectionResponse;
 import com.oracle.bmc.core.responses.GetRemotePeeringConnectionResponse;
 
 import com.oracle.bmc.identity.IdentityClient;
+import com.oracle.bmc.workrequests.WorkRequest;
+import com.oracle.bmc.workrequests.WorkRequestClient;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -77,40 +79,46 @@ public class VpnRemotePeeringConnectionExample {
                 new VpnRemotePeeringConnectionExample(phxVirtualNetworkClient, Region.US_PHOENIX_1);
         final IdentityClient identityClient = new IdentityClient(authProvider);
 
-        example.run(identityClient);
+        example.run(identityClient, authProvider);
     }
 
-    public void run(IdentityClient identityClient) throws Exception {
-
+    public void run(IdentityClient identityClient, final AuthenticationDetailsProvider authProvider)
+            throws Exception {
         System.out.println("Create RemotePeeringConnection example, NON-LAG physical connection.");
         Drg drg = null;
         RemotePeeringConnection cc = null;
         try {
             System.out.println("Creating DRG.");
-            drg = createDrg(virtualNetworkClient, region);
+            drg = createDrg(virtualNetworkClient, authProvider, region);
 
             System.out.println("Create RemotePeeringConnection.");
-            cc = createRemotePeeringConnection(virtualNetworkClient, COMPARTMENT_ID, drg);
+            cc =
+                    createRemotePeeringConnection(
+                            virtualNetworkClient, authProvider, COMPARTMENT_ID, drg);
 
             System.out.println("Activate the RemotePeeringConnection.");
-            cc = updateRemotePeeringConnection(virtualNetworkClient, cc.getId(), true);
-
+            cc =
+                    updateRemotePeeringConnection(
+                            virtualNetworkClient, authProvider, cc.getId(), true);
             System.out.println("Change RemotePeeringConnection compartment.");
             changeRemotePeeringConnectionCompartment(
                     virtualNetworkClient, cc.getId(), NEW_COMPARTMENT_ID);
         } finally {
             System.out.println("Delete RemotePeeringConnection.");
             if (null != cc) {
-                deleteRemotePeeringConnection(virtualNetworkClient, cc.getId());
+                deleteRemotePeeringConnection(virtualNetworkClient, authProvider, cc.getId());
             }
 
             if (null != drg) {
-                deleteDrg(virtualNetworkClient, drg);
+                deleteDrg(virtualNetworkClient, authProvider, drg);
             }
         }
     }
 
-    public static Drg createDrg(final VirtualNetwork virtualNetwork, final Region region)
+    public static Drg createDrg(
+            final VirtualNetwork virtualNetwork,
+            final AuthenticationDetailsProvider authProvider,
+            final Region region)
             throws Exception {
         final CreateDrgRequest request =
                 CreateDrgRequest.builder()
@@ -126,9 +134,9 @@ public class VpnRemotePeeringConnectionExample {
                         .build();
 
         final CreateDrgResponse response = virtualNetwork.createDrg(request);
-
+        WorkRequestClient workRequestClient = WorkRequestClient.builder().build(authProvider);
         virtualNetwork
-                .getWaiters()
+                .newWaiters(workRequestClient)
                 .forDrg(
                         GetDrgRequest.builder().drgId(response.getDrg().getId()).build(),
                         Drg.LifecycleState.Available)
@@ -139,13 +147,17 @@ public class VpnRemotePeeringConnectionExample {
         return response.getDrg();
     }
 
-    public static void deleteDrg(final VirtualNetwork virtualNetwork, final Drg drg)
+    public static void deleteDrg(
+            final VirtualNetwork virtualNetwork,
+            final AuthenticationDetailsProvider authProvider,
+            final Drg drg)
             throws Exception {
         final DeleteDrgRequest request = DeleteDrgRequest.builder().drgId(drg.getId()).build();
         virtualNetwork.deleteDrg(request);
 
+        WorkRequestClient workRequestClient = WorkRequestClient.builder().build(authProvider);
         virtualNetwork
-                .getWaiters()
+                .newWaiters(workRequestClient)
                 .forDrg(
                         GetDrgRequest.builder().drgId(drg.getId()).build(),
                         Drg.LifecycleState.Terminated)
@@ -154,7 +166,10 @@ public class VpnRemotePeeringConnectionExample {
     }
 
     private static RemotePeeringConnection createRemotePeeringConnection(
-            final VirtualNetwork virtualNetwork, final String compartmentId, final Drg drg)
+            final VirtualNetwork virtualNetwork,
+            final AuthenticationDetailsProvider authProvider,
+            final String compartmentId,
+            final Drg drg)
             throws Exception {
         final CreateRemotePeeringConnectionRequest request =
                 CreateRemotePeeringConnectionRequest.builder()
@@ -169,8 +184,9 @@ public class VpnRemotePeeringConnectionExample {
         final CreateRemotePeeringConnectionResponse response =
                 virtualNetwork.createRemotePeeringConnection(request);
 
+        WorkRequestClient workRequestClient = WorkRequestClient.builder().build(authProvider);
         virtualNetwork
-                .getWaiters()
+                .newWaiters(workRequestClient)
                 .forRemotePeeringConnection(
                         GetRemotePeeringConnectionRequest.builder()
                                 .remotePeeringConnectionId(
@@ -196,7 +212,10 @@ public class VpnRemotePeeringConnectionExample {
      * Use UPDATE to update display name and activate the physical connection
      */
     private static RemotePeeringConnection updateRemotePeeringConnection(
-            final VirtualNetwork virtualNetwork, final String ccId, final boolean isActive)
+            final VirtualNetwork virtualNetwork,
+            final AuthenticationDetailsProvider authProvider,
+            final String ccId,
+            final boolean isActive)
             throws Exception {
         final UpdateRemotePeeringConnectionRequest request =
                 UpdateRemotePeeringConnectionRequest.builder()
@@ -210,8 +229,9 @@ public class VpnRemotePeeringConnectionExample {
         final UpdateRemotePeeringConnectionResponse response =
                 virtualNetwork.updateRemotePeeringConnection(request);
 
+        WorkRequestClient workRequestClient = WorkRequestClient.builder().build(authProvider);
         virtualNetwork
-                .getWaiters()
+                .newWaiters(workRequestClient)
                 .forRemotePeeringConnection(
                         GetRemotePeeringConnectionRequest.builder()
                                 .remotePeeringConnectionId(
@@ -224,8 +244,10 @@ public class VpnRemotePeeringConnectionExample {
     }
 
     private static void deleteRemotePeeringConnection(
-            final VirtualNetwork virtualNetwork, final String ccId) throws Exception {
-
+            final VirtualNetwork virtualNetwork,
+            final AuthenticationDetailsProvider authProvider,
+            final String ccId)
+            throws Exception {
         // if resource is in provisioning, wait until provisioned
         RemotePeeringConnection cc = getRemotePeeringConnection(virtualNetwork, ccId);
         if (cc.getLifecycleState() != RemotePeeringConnection.LifecycleState.Available) {
@@ -237,8 +259,10 @@ public class VpnRemotePeeringConnectionExample {
                 DeleteRemotePeeringConnectionRequest.builder()
                         .remotePeeringConnectionId(ccId)
                         .build());
+
+        WorkRequestClient workRequestClient = WorkRequestClient.builder().build(authProvider);
         virtualNetwork
-                .getWaiters()
+                .newWaiters(workRequestClient)
                 .forRemotePeeringConnection(
                         GetRemotePeeringConnectionRequest.builder()
                                 .remotePeeringConnectionId(ccId)

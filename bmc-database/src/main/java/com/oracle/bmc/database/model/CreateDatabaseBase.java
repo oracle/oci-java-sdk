@@ -33,6 +33,10 @@ package com.oracle.bmc.database.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateNewDatabaseDetails.class,
         name = "NONE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDatabaseFromBackup.class,
+        name = "DB_BACKUP"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -53,11 +57,13 @@ public class CreateDatabaseBase {
     /**
      * The source of the database:
      * Use `NONE` for creating a new database.
+     * Use `DB_BACKUP` for creating a new database by restoring from a backup.
      * The default is `NONE`.
      *
      **/
     public enum Source {
         None("NONE"),
+        DbBackup("DB_BACKUP"),
         ;
 
         private final String value;

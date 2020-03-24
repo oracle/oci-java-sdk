@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The details of a HTTP Redirect configuration to allow redirecting HTTP traffic to allow redirecting HTTP traffic from a request domain to a new target.
+ * The details of a HTTP Redirect configuration to allow redirecting HTTP traffic from a request domain to a new target.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  * <br/>
@@ -192,7 +192,7 @@ public class HttpRedirect {
     HttpRedirectTarget target;
 
     /**
-     * The response code returned for the redirect to the client. reference - https://tools.ietf.org/html/rfc7231#section-6.4
+     * The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseCode")
     Integer responseCode;

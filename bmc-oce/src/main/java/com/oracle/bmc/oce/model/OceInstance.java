@@ -130,6 +130,15 @@ public class OceInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
+        private String wafPrimaryDomain;
+
+        public Builder wafPrimaryDomain(String wafPrimaryDomain) {
+            this.wafPrimaryDomain = wafPrimaryDomain;
+            this.__explicitlySet__.add("wafPrimaryDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -212,6 +221,7 @@ public class OceInstance {
                             instanceUsageType,
                             objectStorageNamespace,
                             adminEmail,
+                            wafPrimaryDomain,
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
@@ -238,6 +248,7 @@ public class OceInstance {
                             .instanceUsageType(o.getInstanceUsageType())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
+                            .wafPrimaryDomain(o.getWafPrimaryDomain())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
@@ -371,6 +382,12 @@ public class OceInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminEmail")
     String adminEmail;
+
+    /**
+     * Web Application Firewall(WAF) primary domain
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
+    String wafPrimaryDomain;
 
     /**
      * The time the the OceInstance was created. An RFC3339 formatted datetime string

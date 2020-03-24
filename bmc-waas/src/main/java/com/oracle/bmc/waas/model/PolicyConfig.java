@@ -112,6 +112,42 @@ public class PolicyConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancingMethod")
+        private LoadBalancingMethod loadBalancingMethod;
+
+        public Builder loadBalancingMethod(LoadBalancingMethod loadBalancingMethod) {
+            this.loadBalancingMethod = loadBalancingMethod;
+            this.__explicitlySet__.add("loadBalancingMethod");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("websocketPathPrefixes")
+        private java.util.List<String> websocketPathPrefixes;
+
+        public Builder websocketPathPrefixes(java.util.List<String> websocketPathPrefixes) {
+            this.websocketPathPrefixes = websocketPathPrefixes;
+            this.__explicitlySet__.add("websocketPathPrefixes");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isSniEnabled")
+        private Boolean isSniEnabled;
+
+        public Builder isSniEnabled(Boolean isSniEnabled) {
+            this.isSniEnabled = isSniEnabled;
+            this.__explicitlySet__.add("isSniEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("healthChecks")
+        private HealthCheck healthChecks;
+
+        public Builder healthChecks(HealthCheck healthChecks) {
+            this.healthChecks = healthChecks;
+            this.__explicitlySet__.add("healthChecks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -127,7 +163,11 @@ public class PolicyConfig {
                             clientAddressHeader,
                             isCacheControlRespected,
                             isResponseBufferingEnabled,
-                            cipherGroup);
+                            cipherGroup,
+                            loadBalancingMethod,
+                            websocketPathPrefixes,
+                            isSniEnabled,
+                            healthChecks);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -144,7 +184,11 @@ public class PolicyConfig {
                             .clientAddressHeader(o.getClientAddressHeader())
                             .isCacheControlRespected(o.getIsCacheControlRespected())
                             .isResponseBufferingEnabled(o.getIsResponseBufferingEnabled())
-                            .cipherGroup(o.getCipherGroup());
+                            .cipherGroup(o.getCipherGroup())
+                            .loadBalancingMethod(o.getLoadBalancingMethod())
+                            .websocketPathPrefixes(o.getWebsocketPathPrefixes())
+                            .isSniEnabled(o.getIsSniEnabled())
+                            .healthChecks(o.getHealthChecks());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -399,6 +443,27 @@ public class PolicyConfig {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cipherGroup")
     CipherGroup cipherGroup;
+
+    /**
+     * An object that represents a load balancing method and its properties.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancingMethod")
+    LoadBalancingMethod loadBalancingMethod;
+
+    /**
+     * ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("websocketPathPrefixes")
+    java.util.List<String> websocketPathPrefixes;
+
+    /**
+     * SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSniEnabled")
+    Boolean isSniEnabled;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("healthChecks")
+    HealthCheck healthChecks;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

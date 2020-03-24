@@ -163,7 +163,7 @@ public class LaunchDbSystemFromBackupExample {
                         LaunchDbSystemFromBackupDetails.DatabaseEdition
                                 .EnterpriseEditionExtremePerformance)
                 .displayName("dbs" + randomId)
-                .shape("VM.Standard1.1")
+                .shape("VM.Standard2.1")
                 .subnetId(subnetId)
                 .hostname("host" + randomId)
                 .licenseModel(LaunchDbSystemFromBackupDetails.LicenseModel.LicenseIncluded)

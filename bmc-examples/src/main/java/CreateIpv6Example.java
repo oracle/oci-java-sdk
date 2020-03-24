@@ -62,7 +62,7 @@ public class CreateIpv6Example {
     private static final String SUBNET_V4_CIDR = "10.0.1.0/24";
     private static final String SUBNET_V6_CIDR = "fd00:aaaa:0123:1111::/64";
 
-    private static final String INSTANCE_SHAPE = "VM.Standard1.1";
+    private static final String INSTANCE_SHAPE = "VM.Standard2.1";
     private static final String INSTANCE_OS = "Oracle Linux";
     private static final String OS_VERSION = "7";
 

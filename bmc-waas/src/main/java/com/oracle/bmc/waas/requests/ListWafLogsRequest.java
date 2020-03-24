@@ -21,7 +21,7 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String opcRequestId;
 
     /**
-     * The maximum number of items to return in a paginated call. In unspecified, defaults to `20`.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to `20`.
      */
     private Integer limit;
 
@@ -165,12 +165,12 @@ public class ListWafLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private java.util.List<String> incidentKey;
 
     /**
-     * Filter by log type.
+     * Filter by log type. For more information about WAF logs, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
      */
     private java.util.List<LogType> logType;
 
     /**
-     * Filter by log type.
+     * Filter by log type. For more information about WAF logs, see [Logs](/iaas/Content/WAF/Tasks/logs.htm).
      **/
     public enum LogType {
         Access("ACCESS"),

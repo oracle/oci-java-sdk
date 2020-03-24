@@ -520,6 +520,8 @@ public interface Waas extends AutoCloseable {
      * CAPTCHA challenges can be created by adding a new access rule object to the list without a `key` property specified. A `key` will be generated for the new CAPTCHA challenges upon update.
      * <p>
      * Any existing CAPTCHA challenges that are not specified with a `key` in the list of CAPTCHA challenges will be deleted upon update.
+     * <p>
+     * Query parameters are allowed in CAPTCHA URL.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -548,7 +550,7 @@ public interface Waas extends AutoCloseable {
      * <p>
      * The signature is based on a library of attributes detected via JavaScript listeners; the attributes include OS, screen resolution, fonts, UserAgent, IP address, etc. We are constantly making improvements and considering new libraries to include in our DFC build. We can also exclude attributes from the signature as needed.
      * <p>
-     * DFC collects attributes to generate a hashed signature about a client \u2013 if a fingerprint is not possible, then it will result in a block or alert action. Actions can be enforced across multiple devices if they share they have the same fingerprint.
+     * DFC collects attributes to generate a hashed signature about a client - if a fingerprint is not possible, then it will result in a block or alert action. Actions can be enforced across multiple devices if they share they have the same fingerprint.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -663,7 +665,7 @@ public interface Waas extends AutoCloseable {
     UpdateWafConfigResponse updateWafConfig(UpdateWafConfigRequest request);
 
     /**
-     * Updates the list of IP addresses that bypass the Web Application Firewall for a WAAS policy. Supports both single IP addresses or subnet masks (CIDR notation).
+     * Updates the list of IP addresses that bypass the Web Application Firewall for a WAAS policy. Supports single IP addresses, subnet masks (CIDR notation) and Address Lists.
      * <p>
      * This operation can create, delete, update, and/or reorder whitelists depending on the structure of the request body.
      * <p>

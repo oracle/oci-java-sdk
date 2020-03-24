@@ -33,6 +33,15 @@ public class UpdateOceInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
+        private String wafPrimaryDomain;
+
+        public Builder wafPrimaryDomain(String wafPrimaryDomain) {
+            this.wafPrimaryDomain = wafPrimaryDomain;
+            this.__explicitlySet__.add("wafPrimaryDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -57,7 +66,8 @@ public class UpdateOceInstanceDetails {
 
         public UpdateOceInstanceDetails build() {
             UpdateOceInstanceDetails __instance__ =
-                    new UpdateOceInstanceDetails(description, freeformTags, definedTags);
+                    new UpdateOceInstanceDetails(
+                            description, wafPrimaryDomain, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,6 +76,7 @@ public class UpdateOceInstanceDetails {
         public Builder copy(UpdateOceInstanceDetails o) {
             Builder copiedBuilder =
                     description(o.getDescription())
+                            .wafPrimaryDomain(o.getWafPrimaryDomain())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -86,6 +97,12 @@ public class UpdateOceInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * Web Application Firewall(WAF) primary domain
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
+    String wafPrimaryDomain;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

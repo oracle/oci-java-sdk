@@ -4,6 +4,8 @@
 package com.oracle.bmc;
 
 import com.oracle.bmc.retrier.RetryConfiguration;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -36,6 +38,11 @@ public class ClientConfiguration {
      */
     private final RetryConfiguration retryConfiguration;
 
+    /**
+     * The circuit-breaker configuration to use. Default is no circuit-breaker.
+     */
+    private final CircuitBreakerConfiguration circuitBreakerConfiguration;
+
     // Explicit @Builder on constructor so we can enforce default values.
     @Builder
     private ClientConfiguration(
@@ -43,12 +50,14 @@ public class ClientConfiguration {
             Integer readTimeoutMillis,
             Integer maxAsyncThreads,
             Boolean disableDataBufferingOnUpload,
-            RetryConfiguration retryConfiguration) {
+            RetryConfiguration retryConfiguration,
+            CircuitBreakerConfiguration circuitBreakerConfiguration) {
         this.connectionTimeoutMillis =
                 getOrDefault(connectionTimeoutMillis, CONNECTION_TIMEOUT_MILLIS);
         this.readTimeoutMillis = getOrDefault(readTimeoutMillis, READ_TIMEOUT_MILLIS);
         this.maxAsyncThreads = getOrDefault(maxAsyncThreads, MAX_ASYNC_THREADS);
         this.retryConfiguration = retryConfiguration;
+        this.circuitBreakerConfiguration = circuitBreakerConfiguration;
     }
 
     private static <T> T getOrDefault(T value, T defaultValue) {

@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
  * <ul>
  *   <li>Create a VCN and subnets needed for the DB system and its related resources</li>
  *   <li>
- *     Launch a DB system with VM.Standard1.1 shape. See:
+ *     Launch a DB system with VM.Standard2.1 shape. See:
  *       <a href="https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a>
  *       for more information
  * </ul>
@@ -137,7 +137,7 @@ public class LaunchDbSystemWithNsgExample {
                                     LaunchDbSystemDetails.DatabaseEdition
                                             .EnterpriseEditionExtremePerformance)
                             .displayName("dbs" + randomId)
-                            .shape("VM.Standard1.1")
+                            .shape("VM.Standard2.1")
                             .subnetId(subnet.getId())
                             .hostname("host" + randomId)
                             .nsgIds(createdNsgIds)

@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * A list of Web Application Firewall log entries. Each entry is a JSON object, including a timestamp property and other fields varying based on log type. Logs record what rules and countermeasures are triggered by requests and are used as a basis to move request handling into block mode. For more information about WAF logs, see [WAF Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm).
+ * A list of Web Application Firewall log entries. Each entry is a JSON object, including a timestamp property and other fields varying based on log type. Logs record what rules and countermeasures are triggered by requests and are used as a basis to move request handling into block mode. For more information about WAF logs, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -530,7 +530,7 @@ public class WafLog {
     java.util.Date timestamp;
 
     /**
-     * The type of log of the request. For more about log types, see [WAF Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm).
+     * The type of log of the request. For more about log types, see [Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logType")

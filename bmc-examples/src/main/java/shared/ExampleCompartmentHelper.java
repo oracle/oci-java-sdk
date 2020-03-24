@@ -7,6 +7,8 @@ import com.oracle.bmc.identity.Identity;
 import com.oracle.bmc.identity.model.Compartment;
 import com.oracle.bmc.identity.model.CreateCompartmentDetails;
 import com.oracle.bmc.identity.requests.CreateCompartmentRequest;
+import com.oracle.bmc.identity.requests.DeleteCompartmentRequest;
+import com.oracle.bmc.identity.requests.GetCompartmentRequest;
 import com.oracle.bmc.identity.requests.ListCompartmentsRequest;
 import com.oracle.bmc.identity.IdentityPaginators;
 
@@ -73,5 +75,17 @@ public class ExampleCompartmentHelper {
         System.out.println(
                 "Compartment " + compartmentName + " does not exist. Please check the name.");
         throw new RuntimeException("Compartment does not exist");
+    }
+
+    public static void deleteCompartment(Identity client, Compartment compartment)
+            throws Exception {
+        DeleteCompartmentRequest deleteCompartmentRequest =
+                DeleteCompartmentRequest.builder().compartmentId(compartment.getId()).build();
+        client.deleteCompartment(deleteCompartmentRequest);
+        client.getWaiters()
+                .forCompartment(
+                        GetCompartmentRequest.builder().compartmentId(compartment.getId()).build(),
+                        Compartment.LifecycleState.Deleted)
+                .execute();
     }
 }

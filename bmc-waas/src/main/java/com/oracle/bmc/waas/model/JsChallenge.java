@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The JavaScript challenge settings. Javascript Challenge is the function to filter abnormal or malicious bots and allow access to real clients.
+ * The JavaScript challenge settings. JavaScript Challenge is the function to filter abnormal or malicious bots and allow access to real clients.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -76,6 +76,33 @@ public class JsChallenge {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("areRedirectsChallenged")
+        private Boolean areRedirectsChallenged;
+
+        public Builder areRedirectsChallenged(Boolean areRedirectsChallenged) {
+            this.areRedirectsChallenged = areRedirectsChallenged;
+            this.__explicitlySet__.add("areRedirectsChallenged");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("criteria")
+        private java.util.List<AccessRuleCriteria> criteria;
+
+        public Builder criteria(java.util.List<AccessRuleCriteria> criteria) {
+            this.criteria = criteria;
+            this.__explicitlySet__.add("criteria");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isNatEnabled")
+        private Boolean isNatEnabled;
+
+        public Builder isNatEnabled(Boolean isNatEnabled) {
+            this.isNatEnabled = isNatEnabled;
+            this.__explicitlySet__.add("isNatEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -87,7 +114,10 @@ public class JsChallenge {
                             failureThreshold,
                             actionExpirationInSeconds,
                             setHttpHeader,
-                            challengeSettings);
+                            challengeSettings,
+                            areRedirectsChallenged,
+                            criteria,
+                            isNatEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -100,7 +130,10 @@ public class JsChallenge {
                             .failureThreshold(o.getFailureThreshold())
                             .actionExpirationInSeconds(o.getActionExpirationInSeconds())
                             .setHttpHeader(o.getSetHttpHeader())
-                            .challengeSettings(o.getChallengeSettings());
+                            .challengeSettings(o.getChallengeSettings())
+                            .areRedirectsChallenged(o.getAreRedirectsChallenged())
+                            .criteria(o.getCriteria())
+                            .isNatEnabled(o.getIsNatEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -191,6 +224,24 @@ public class JsChallenge {
 
     @com.fasterxml.jackson.annotation.JsonProperty("challengeSettings")
     BlockChallengeSettings challengeSettings;
+
+    /**
+     * When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("areRedirectsChallenged")
+    Boolean areRedirectsChallenged;
+
+    /**
+     * When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("criteria")
+    java.util.List<AccessRuleCriteria> criteria;
+
+    /**
+     * When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isNatEnabled")
+    Boolean isNatEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
