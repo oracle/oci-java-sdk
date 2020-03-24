@@ -117,7 +117,7 @@ public class UpdateHttpRedirectDetails {
     HttpRedirectTarget target;
 
     /**
-     * The response code returned for the redirect to the client. reference - https://tools.ietf.org/html/rfc7231#section-6.4
+     * The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseCode")
     Integer responseCode;

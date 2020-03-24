@@ -8,6 +8,7 @@ import com.google.common.base.Suppliers;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.waiter.GenericWaiter;
 import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.mutable.MutableObject;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -18,6 +19,7 @@ import java.util.function.Function;
  * A generic retrier that can be used to implement custom retry behavior for specific
  * types of calls.
  */
+@Slf4j
 public class BmcGenericRetrier {
     private final GenericWaiter waiter;
     private final RetryCondition retryCondition;
@@ -47,10 +49,16 @@ public class BmcGenericRetrier {
                 waiter.execute(
                         Suppliers.ofInstance(requestToUse),
                         (request) -> {
+                            if (lastKnownException.getValue() != null) {
+                                // we know there was a previous exception, so this must be a retry
+                                LOG.debug(
+                                        "Retrying: {}", lastKnownException.getValue().getMessage());
+                            }
                             try {
                                 return doFunctionCall(request, functionCall);
                             } catch (BmcException e) {
                                 if (!retryCondition.shouldBeRetried(e)) {
+                                    LOG.debug("Not retrying, not retriable: {}", e.getMessage());
                                     throw e;
                                 }
                                 lastKnownException.setValue(e);

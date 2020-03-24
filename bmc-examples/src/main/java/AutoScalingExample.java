@@ -40,6 +40,11 @@ import com.oracle.bmc.core.requests.GetInstancePoolRequest;
 import com.oracle.bmc.core.requests.TerminateInstancePoolRequest;
 import com.oracle.bmc.core.responses.CreateInstanceConfigurationResponse;
 import com.oracle.bmc.core.responses.CreateInstancePoolResponse;
+import com.oracle.bmc.identity.IdentityClient;
+import com.oracle.bmc.identity.model.TagDefaultSummary;
+import com.oracle.bmc.identity.requests.DeleteTagDefaultRequest;
+import com.oracle.bmc.identity.requests.ListTagDefaultsRequest;
+import com.oracle.bmc.identity.responses.ListTagDefaultsResponse;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -91,6 +96,19 @@ public class AutoScalingExample {
 
         ComputeManagementClient client = new ComputeManagementClient(provider);
         AutoScalingClient autoScalingClient = new AutoScalingClient(provider);
+
+        IdentityClient identityClient = new IdentityClient(provider);
+
+        // This step will delete all tag defaults
+        ListTagDefaultsResponse listTagDefaultsResponse =
+                identityClient.listTagDefaults(
+                        ListTagDefaultsRequest.builder().compartmentId(compartmentId).build());
+        for (TagDefaultSummary tagDefault : listTagDefaultsResponse.getItems()) {
+            identityClient.deleteTagDefault(
+                    DeleteTagDefaultRequest.builder().tagDefaultId(tagDefault.getId()).build());
+            System.out.println(
+                    "Tag Default: " + tagDefault.getTagDefinitionName() + " was deleted");
+        }
 
         InstanceConfiguration instanceConfiguration =
                 createInstanceConfiguration(client, imageId, compartmentId);

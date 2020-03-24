@@ -76,10 +76,10 @@ public class LaunchDbSystemExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
     private static final String DB_VERSION = "12.1.0.2";
-    private static final int DB_SYSTEM_CPU_CORE_COUNT = 4;
+    private static final int DB_SYSTEM_CPU_CORE_COUNT = 1;
     private static final LaunchDbSystemDetails.DatabaseEdition DB_SYSTEM_DB_EDITION =
             LaunchDbSystemDetails.DatabaseEdition.EnterpriseEdition;
-    private static final String DB_SYSTEM_SHAPE = "BM.DenseIO1.36";
+    private static final String DB_SYSTEM_SHAPE = "VM.Standard2.1";
 
     /**
      * The entry point for the example.
@@ -131,6 +131,8 @@ public class LaunchDbSystemExample {
                     LaunchDbSystemDetails.builder()
                             .availabilityDomain(availabilityDomain)
                             .compartmentId(compartmentId)
+                            .nodeCount(1)
+                            .initialDataStorageSizeInGB(256)
                             .cpuCoreCount(DB_SYSTEM_CPU_CORE_COUNT)
                             .databaseEdition(DB_SYSTEM_DB_EDITION)
                             .dbHome(

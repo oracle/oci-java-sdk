@@ -37,6 +37,10 @@ import com.oracle.bmc.identity.responses.CreateTagResponse;
 import com.oracle.bmc.identity.responses.UpdateTagNamespaceResponse;
 import com.oracle.bmc.identity.responses.UpdateTagResponse;
 import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.retrier.DefaultRetryCondition;
+import com.oracle.bmc.retrier.RetryConfiguration;
+import com.oracle.bmc.waiter.FixedTimeDelayStrategy;
+import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 
 import java.security.SecureRandom;
 import java.util.HashMap;
@@ -191,6 +195,32 @@ public class TaggingExample {
                                 .updateTagDetails(
                                         UpdateTagDetails.builder().isRetired(false).build())
                                 .build());
+
+        identityClient
+                .getWaiters()
+                .forTagNamespace(
+                        GetTagNamespaceRequest.builder().tagNamespaceId(tagNamespaceId).build(),
+                        TagNamespace.LifecycleState.Active)
+                .execute();
+        identityClient
+                .getWaiters()
+                .forTag(
+                        GetTagRequest.builder()
+                                .tagName(updateTagOneResponse.getTag().getName())
+                                .tagNamespaceId(updateTagOneResponse.getTag().getTagNamespaceId())
+                                .build(),
+                        Tag.LifecycleState.Active)
+                .execute();
+        identityClient
+                .getWaiters()
+                .forTag(
+                        GetTagRequest.builder()
+                                .tagName(tagTwo.getName())
+                                .tagNamespaceId(updateTagOneResponse.getTag().getTagNamespaceId())
+                                .build(),
+                        Tag.LifecycleState.Active)
+                .execute();
+
         System.out.println("Updated tag (reactivated): " + updateTagOneResponse.getTag());
 
         Map<String, String> freeformTags = new HashMap<>();
@@ -215,48 +245,39 @@ public class TaggingExample {
          Resources where we can create/update tags will have the freeform_tags and defined_tags attributes. Consult the API
          documentation to see what these are (https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/index.html)
         */
-        String vcnId;
-        int numTries = 0;
-        while (true) {
-            try {
-                CreateVcnResponse createVcnResponse =
-                        virtualNetworkClient.createVcn(
-                                CreateVcnRequest.builder()
-                                        .createVcnDetails(
-                                                CreateVcnDetails.builder()
-                                                        .cidrBlock("10.0.0.0/16")
-                                                        .compartmentId(compartmentId)
-                                                        .displayName("Java SDK tagging example VCN")
-                                                        .dnsLabel("vnc" + rnd.nextInt(1000000))
-                                                        .freeformTags(freeformTags)
-                                                        .definedTags(definedTags)
-                                                        .build())
-                                        .build());
-                vcnId = createVcnResponse.getVcn().getId();
-                GetVcnResponse getVcnResponse =
-                        virtualNetworkClient
-                                .getWaiters()
-                                .forVcn(
-                                        GetVcnRequest.builder().vcnId(vcnId).build(),
-                                        Vcn.LifecycleState.Available)
-                                .execute();
-                System.out.println("Created VCN with tags: " + getVcnResponse.getVcn());
-                break;
-            } catch (BmcException e) {
-                if (e.getStatusCode() == 404) {
-                    System.out.println("Retrying on 404: " + e.getMessage());
-                    numTries++;
-                    if (numTries >= 3) {
-                        // If we can't get it in 3 tries, something else may be going on
-                        throw e;
-                    } else {
-                        Thread.sleep(2000L);
-                    }
-                } else {
-                    throw e;
-                }
-            }
-        }
+
+        CreateVcnResponse createVcnResponse =
+                virtualNetworkClient.createVcn(
+                        CreateVcnRequest.builder()
+                                .createVcnDetails(
+                                        CreateVcnDetails.builder()
+                                                .cidrBlock("10.0.0.0/16")
+                                                .compartmentId(compartmentId)
+                                                .displayName("Java SDK tagging example VCN")
+                                                .dnsLabel("vnc" + rnd.nextInt(1000000))
+                                                .freeformTags(freeformTags)
+                                                .definedTags(definedTags)
+                                                .build())
+                                .retryConfiguration(
+                                        RetryConfiguration.builder()
+                                                .retryCondition(
+                                                        exception ->
+                                                                new DefaultRetryCondition()
+                                                                        .shouldBeRetried(exception))
+                                                .terminationStrategy(
+                                                        new MaxAttemptsTerminationStrategy(3))
+                                                .delayStrategy(new FixedTimeDelayStrategy(10000))
+                                                .build())
+                                .build());
+        String vcnId = createVcnResponse.getVcn().getId();
+        GetVcnResponse getVcnResponse =
+                virtualNetworkClient
+                        .getWaiters()
+                        .forVcn(
+                                GetVcnRequest.builder().vcnId(vcnId).build(),
+                                Vcn.LifecycleState.Available)
+                        .execute();
+        System.out.println("Created VCN with tags: " + getVcnResponse.getVcn());
 
         /*
           We can also update tags on a resource. Note that this is a total replacement for any previously set freeform or defined tags.

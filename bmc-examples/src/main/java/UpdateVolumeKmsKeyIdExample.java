@@ -21,10 +21,15 @@ import com.oracle.bmc.core.responses.GetVolumeResponse;
 import com.oracle.bmc.identity.Identity;
 import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.model.AvailabilityDomain;
+import com.oracle.bmc.identity.model.Compartment;
+import com.oracle.bmc.identity.model.CreatePolicyDetails;
+import com.oracle.bmc.identity.requests.CreatePolicyRequest;
+import com.oracle.bmc.identity.requests.GetCompartmentRequest;
 import com.oracle.bmc.identity.requests.ListAvailabilityDomainsRequest;
 import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,12 +50,17 @@ public class UpdateVolumeKmsKeyIdExample {
 
         // When an instance is created, a boot volume is created at the same time. User could choose to use their own kms key to encrypt the data.
         // fill out necessary kms key information to use your own key to protect kms.  More information of volume security please refer to https://cloud.oracle.com/storage/block-volume/faq
+        // make sure you have set up proper policy for blockstorage to access the key. More information please refer to https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm#services-use-key
         String kmsKeyId = "SOME VALID KEY OCID";
 
         AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
 
         BlockstorageClient client = new BlockstorageClient(provider);
+        IdentityClient identityClient = new IdentityClient(provider);
+
+        // Set up proper policy to execute
+        setupPolicy(compartmentId, kmsKeyId, identityClient);
 
         // TODO: For this example we're just using the first AD returned.
         // You'll probably want different logic around which AD to use
@@ -122,6 +132,46 @@ public class UpdateVolumeKmsKeyIdExample {
         System.out.println("This is the example for update/delete volume's kms key.");
 
         client.close();
+    }
+
+    private static void setupPolicy(
+            String compartmentId, String kmsKeyId, IdentityClient identityClient) {
+        // This sets up a policy with the following statement:
+        // Allow service blockstorage to use keys in tenancy where target.key.id = '%s'
+        // Allow service blockstorage to use keys in compartment %s where target.key.id = '%s'
+        // If you already have this policy set up, it's not necessary to execute this method.
+        // If you do NOT already have this policy, then the user must have the correct permissions to create policies.
+        Compartment compartment =
+                identityClient
+                        .getCompartment(
+                                GetCompartmentRequest.builder()
+                                        .compartmentId(compartmentId)
+                                        .build())
+                        .getCompartment();
+        String rootCompartmentId = compartment.getCompartmentId();
+
+        // This step is to grant access to kms key
+        List<String> statements = new ArrayList<>();
+
+        // use this statement if the compartment is a root compartment
+        // statements.add(String.format("Allow service blockstorage to use keys in tenancy where target.key.id = '%s'", kmsKeyId));
+
+        // use this statement if the compartment is a subcomaprtment
+        statements.add(
+                String.format(
+                        "Allow service blockstorage to use keys in compartment %s where target.key.id = '%s'",
+                        compartment.getName(),
+                        kmsKeyId));
+
+        CreatePolicyDetails createPolicyDetails =
+                CreatePolicyDetails.builder()
+                        .compartmentId(rootCompartmentId)
+                        .name("usingkms")
+                        .description("apply kms to current tenancy")
+                        .statements(statements)
+                        .build();
+        identityClient.createPolicy(
+                CreatePolicyRequest.builder().createPolicyDetails(createPolicyDetails).build());
     }
 
     private static List<AvailabilityDomain> getAvailabilityDomains(

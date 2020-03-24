@@ -121,6 +121,52 @@ public class AccessRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("captchaTitle")
+        private String captchaTitle;
+
+        public Builder captchaTitle(String captchaTitle) {
+            this.captchaTitle = captchaTitle;
+            this.__explicitlySet__.add("captchaTitle");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("captchaHeader")
+        private String captchaHeader;
+
+        public Builder captchaHeader(String captchaHeader) {
+            this.captchaHeader = captchaHeader;
+            this.__explicitlySet__.add("captchaHeader");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("captchaFooter")
+        private String captchaFooter;
+
+        public Builder captchaFooter(String captchaFooter) {
+            this.captchaFooter = captchaFooter;
+            this.__explicitlySet__.add("captchaFooter");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("captchaSubmitLabel")
+        private String captchaSubmitLabel;
+
+        public Builder captchaSubmitLabel(String captchaSubmitLabel) {
+            this.captchaSubmitLabel = captchaSubmitLabel;
+            this.__explicitlySet__.add("captchaSubmitLabel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("responseHeaderManipulation")
+        private java.util.List<HeaderManipulationAction> responseHeaderManipulation;
+
+        public Builder responseHeaderManipulation(
+                java.util.List<HeaderManipulationAction> responseHeaderManipulation) {
+            this.responseHeaderManipulation = responseHeaderManipulation;
+            this.__explicitlySet__.add("responseHeaderManipulation");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -137,7 +183,12 @@ public class AccessRule {
                             blockErrorPageDescription,
                             bypassChallenges,
                             redirectUrl,
-                            redirectResponseCode);
+                            redirectResponseCode,
+                            captchaTitle,
+                            captchaHeader,
+                            captchaFooter,
+                            captchaSubmitLabel,
+                            responseHeaderManipulation);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -155,7 +206,12 @@ public class AccessRule {
                             .blockErrorPageDescription(o.getBlockErrorPageDescription())
                             .bypassChallenges(o.getBypassChallenges())
                             .redirectUrl(o.getRedirectUrl())
-                            .redirectResponseCode(o.getRedirectResponseCode());
+                            .redirectResponseCode(o.getRedirectResponseCode())
+                            .captchaTitle(o.getCaptchaTitle())
+                            .captchaHeader(o.getCaptchaHeader())
+                            .captchaFooter(o.getCaptchaFooter())
+                            .captchaSubmitLabel(o.getCaptchaSubmitLabel())
+                            .responseHeaderManipulation(o.getResponseHeaderManipulation());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -176,7 +232,7 @@ public class AccessRule {
     String name;
 
     /**
-     * The list of access rule criteria.
+     * The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criteria")
     java.util.List<AccessRuleCriteria> criteria;
@@ -191,7 +247,9 @@ public class AccessRule {
      * <p>
      * - **BYPASS:** Bypasses some or all challenges.
      * <p>
-     * - **REDIRECT:** Redirects the request to the specified URL.
+     * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+     * <p>
+     * - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
      * <p>
      * Regardless of action, no further rules are processed once a rule is matched.
      **/
@@ -202,6 +260,7 @@ public class AccessRule {
         Block("BLOCK"),
         Bypass("BYPASS"),
         Redirect("REDIRECT"),
+        ShowCaptcha("SHOW_CAPTCHA"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -252,7 +311,9 @@ public class AccessRule {
      * <p>
      * - **BYPASS:** Bypasses some or all challenges.
      * <p>
-     * - **REDIRECT:** Redirects the request to the specified URL.
+     * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+     * <p>
+     * - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
      * <p>
      * Regardless of action, no further rules are processed once a rule is matched.
      **/
@@ -395,7 +456,7 @@ public class AccessRule {
     java.util.List<BypassChallenges> bypassChallenges;
 
     /**
-     * The target to which the request should be redirected, represented as a URI reference.
+     * The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
     String redirectUrl;
@@ -458,6 +519,36 @@ public class AccessRule {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("redirectResponseCode")
     RedirectResponseCode redirectResponseCode;
+
+    /**
+     * The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("captchaTitle")
+    String captchaTitle;
+
+    /**
+     * The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("captchaHeader")
+    String captchaHeader;
+
+    /**
+     * The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("captchaFooter")
+    String captchaFooter;
+
+    /**
+     * The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("captchaSubmitLabel")
+    String captchaSubmitLabel;
+
+    /**
+     * An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("responseHeaderManipulation")
+    java.util.List<HeaderManipulationAction> responseHeaderManipulation;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

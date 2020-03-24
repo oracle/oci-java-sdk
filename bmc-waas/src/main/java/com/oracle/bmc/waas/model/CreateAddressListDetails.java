@@ -109,7 +109,7 @@ public class CreateAddressListDetails {
     String compartmentId;
 
     /**
-     * A unique user-friendly name for the address list.
+     * A user-friendly name for the address list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

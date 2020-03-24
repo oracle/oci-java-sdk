@@ -130,6 +130,15 @@ public class Backup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -147,7 +156,8 @@ public class Backup {
                             availabilityDomain,
                             lifecycleState,
                             databaseEdition,
-                            databaseSizeInGBs);
+                            databaseSizeInGBs,
+                            shape);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -166,7 +176,8 @@ public class Backup {
                             .availabilityDomain(o.getAvailabilityDomain())
                             .lifecycleState(o.getLifecycleState())
                             .databaseEdition(o.getDatabaseEdition())
-                            .databaseSizeInGBs(o.getDatabaseSizeInGBs());
+                            .databaseSizeInGBs(o.getDatabaseSizeInGBs())
+                            .shape(o.getShape());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -395,6 +406,12 @@ public class Backup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
     Double databaseSizeInGBs;
+
+    /**
+     * Shape of the backup's source database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

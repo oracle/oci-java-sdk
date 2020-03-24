@@ -185,6 +185,7 @@ public class RequestSignerImpl implements RequestSigner {
             final Map<String, List<String>> allHeaders = new HashMap<>();
             allHeaders.putAll(existingHeaders);
             for (Map.Entry<String, String> e : missingHeaders.entrySet()) {
+                LOG.trace("Adding missing header '{}' = '{}'", e.getKey(), e.getValue());
                 allHeaders.put(e.getKey(), ImmutableList.of(e.getValue()));
             }
 

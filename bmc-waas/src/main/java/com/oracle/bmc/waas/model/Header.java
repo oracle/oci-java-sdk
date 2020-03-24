@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * An HTTP header name and value. You can configure your origin server to only allow requests that contain the custom header values that you specify.
+ * An HTTP header with name and value.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

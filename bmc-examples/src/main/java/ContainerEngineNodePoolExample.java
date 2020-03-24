@@ -104,7 +104,7 @@ public class ContainerEngineNodePoolExample {
     private static final String NODE_POOL_DISPLAY_NAME = "ContainerEngineNodePool";
     private static final String NEW_NODE_POOL_DISPLAY_NAME = "ContainerEngineNodePoolNew";
     private static final String NODE_IMAGE_NAME = "Oracle-Linux-7.4";
-    private static final String NODE_SHAPE = "VM.Standard1.1";
+    private static final String NODE_SHAPE = "VM.Standard2.1";
     private static final Map<String, String> NODE_METADATA = createNodeMetadata();
 
     private static String clusterId = null;

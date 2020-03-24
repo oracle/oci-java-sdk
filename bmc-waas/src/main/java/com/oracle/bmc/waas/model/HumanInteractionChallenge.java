@@ -106,6 +106,15 @@ public class HumanInteractionChallenge {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isNatEnabled")
+        private Boolean isNatEnabled;
+
+        public Builder isNatEnabled(Boolean isNatEnabled) {
+            this.isNatEnabled = isNatEnabled;
+            this.__explicitlySet__.add("isNatEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -120,7 +129,8 @@ public class HumanInteractionChallenge {
                             interactionThreshold,
                             recordingPeriodInSeconds,
                             setHttpHeader,
-                            challengeSettings);
+                            challengeSettings,
+                            isNatEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -137,7 +147,8 @@ public class HumanInteractionChallenge {
                             .interactionThreshold(o.getInteractionThreshold())
                             .recordingPeriodInSeconds(o.getRecordingPeriodInSeconds())
                             .setHttpHeader(o.getSetHttpHeader())
-                            .challengeSettings(o.getChallengeSettings());
+                            .challengeSettings(o.getChallengeSettings())
+                            .isNatEnabled(o.getIsNatEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -246,6 +257,12 @@ public class HumanInteractionChallenge {
 
     @com.fasterxml.jackson.annotation.JsonProperty("challengeSettings")
     BlockChallengeSettings challengeSettings;
+
+    /**
+     * When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isNatEnabled")
+    Boolean isNatEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -60,13 +60,22 @@ public class WaasPolicyCustomProtectionRuleSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
+        private java.util.List<ProtectionRuleExclusion> exclusions;
+
+        public Builder exclusions(java.util.List<ProtectionRuleExclusion> exclusions) {
+            this.exclusions = exclusions;
+            this.__explicitlySet__.add("exclusions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WaasPolicyCustomProtectionRuleSummary build() {
             WaasPolicyCustomProtectionRuleSummary __instance__ =
                     new WaasPolicyCustomProtectionRuleSummary(
-                            id, displayName, action, modSecurityRuleIds);
+                            id, displayName, action, modSecurityRuleIds, exclusions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,7 +86,8 @@ public class WaasPolicyCustomProtectionRuleSummary {
                     id(o.getId())
                             .displayName(o.getDisplayName())
                             .action(o.getAction())
-                            .modSecurityRuleIds(o.getModSecurityRuleIds());
+                            .modSecurityRuleIds(o.getModSecurityRuleIds())
+                            .exclusions(o.getExclusions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -161,6 +171,9 @@ public class WaasPolicyCustomProtectionRuleSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modSecurityRuleIds")
     java.util.List<String> modSecurityRuleIds;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
+    java.util.List<ProtectionRuleExclusion> exclusions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

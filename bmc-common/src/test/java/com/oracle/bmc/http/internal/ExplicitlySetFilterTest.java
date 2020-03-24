@@ -125,7 +125,7 @@ public class ExplicitlySetFilterTest {
         EntityFactory ef = mock(EntityFactory.class);
         URI requestURI = PowerMockito.mock(URI.class);
 
-        try (RestClient rc = new RestClient(client, ef)) {
+        try (RestClient rc = new RestClient(client, ef, null)) {
             Invocation.Builder ib = mock(Invocation.Builder.class);
             rc.post(new WrappedInvocationBuilder(ib, requestURI), sub, new BmcRequest());
 
@@ -160,7 +160,7 @@ public class ExplicitlySetFilterTest {
         Client client = mock(Client.class);
         EntityFactory ef = mock(EntityFactory.class);
         URI requestURI = PowerMockito.mock(URI.class);
-        try (RestClient rc = new RestClient(client, ef)) {
+        try (RestClient rc = new RestClient(client, ef, null)) {
 
             Invocation.Builder ib = mock(Invocation.Builder.class);
             rc.post(new WrappedInvocationBuilder(ib, requestURI), o, new BmcRequest());

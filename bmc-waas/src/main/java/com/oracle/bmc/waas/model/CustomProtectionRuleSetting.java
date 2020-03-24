@@ -42,18 +42,29 @@ public class CustomProtectionRuleSetting {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
+        private java.util.List<ProtectionRuleExclusion> exclusions;
+
+        public Builder exclusions(java.util.List<ProtectionRuleExclusion> exclusions) {
+            this.exclusions = exclusions;
+            this.__explicitlySet__.add("exclusions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CustomProtectionRuleSetting build() {
-            CustomProtectionRuleSetting __instance__ = new CustomProtectionRuleSetting(id, action);
+            CustomProtectionRuleSetting __instance__ =
+                    new CustomProtectionRuleSetting(id, action, exclusions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CustomProtectionRuleSetting o) {
-            Builder copiedBuilder = id(o.getId()).action(o.getAction());
+            Builder copiedBuilder =
+                    id(o.getId()).action(o.getAction()).exclusions(o.getExclusions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -125,6 +136,9 @@ public class CustomProtectionRuleSetting {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
+    java.util.List<ProtectionRuleExclusion> exclusions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

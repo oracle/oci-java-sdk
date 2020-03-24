@@ -91,7 +91,7 @@ public class VolumeAttachmentExample {
     private static final String VOL_ONE_DISPLAY_NAME = "VolumeAttachExample1";
     private static final String VOL_TWO_DISPLAY_NAME = "VolumeAttachExample2";
 
-    protected static final String INSTANCE_SHAPE = "VM.Standard1.1";
+    protected static final String INSTANCE_SHAPE = "VM.Standard2.1";
     protected static final String INSTANCE_OS = "Oracle Linux";
     protected static final String INSTANCE_OS_VERSION = "7.5";
     protected static final String INSTANCE_DISPLAY_NAME = "VolAttachExampleInstance";

@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- *
+ * When defined, the parent challenge would be applied only for the requests that matched all the listed conditions.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -42,18 +42,31 @@ public class AccessRuleCriteria {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
+        private Boolean isCaseSensitive;
+
+        public Builder isCaseSensitive(Boolean isCaseSensitive) {
+            this.isCaseSensitive = isCaseSensitive;
+            this.__explicitlySet__.add("isCaseSensitive");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AccessRuleCriteria build() {
-            AccessRuleCriteria __instance__ = new AccessRuleCriteria(condition, value);
+            AccessRuleCriteria __instance__ =
+                    new AccessRuleCriteria(condition, value, isCaseSensitive);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AccessRuleCriteria o) {
-            Builder copiedBuilder = condition(o.getCondition()).value(o.getValue());
+            Builder copiedBuilder =
+                    condition(o.getCondition())
+                            .value(o.getValue())
+                            .isCaseSensitive(o.getIsCaseSensitive());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -68,41 +81,57 @@ public class AccessRuleCriteria {
     }
 
     /**
-     * The criteria the access rule uses to determine if action should be taken on a request.
-     * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field.
-     * <p>
-     * - **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field.
-     * <p>
-     * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field.
-     * <p>
+     * The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
+     * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
+     * - **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
+     * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
      * - **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-     * <p>
      * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
+     * - **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+     * - **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+     * - **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
+     * - **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
+     * - **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
+     * - **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \
      * <p>
-     * - **URL_REGEX:** Matches if the request is described by the regular expression in the `value` field.
+     *Example:* \"1.1.1.1\
+     * 1.1.1.2\
+     * 1.2.2.1/30\"
+     * - **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \
      * <p>
-     * - **IP_IS:** Matches if the request originates from an IP address in the `value` field.
-     * <p>
-     * - **IP_IS_NOT:** Matches if the request does not originate from an IP address in the `value` field.
-     * <p>
+     *Example:* \"1.1.1.1\
+     * 1.1.1.2\
+     * 1.2.2.1/30\"
+     * - **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
+     * - **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
      * - **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match.
      * *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
+     * - **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \
+     *  The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      * <p>
-     * - **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
+     *Example:* \"GET\
+     * POST\"
      * <p>
-     * - **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
+     * - **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \
+     *  The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      * <p>
-     * - **HTTP_METHOD_IS:** Matches if the request method corresponds to the `value` field. The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+     *Example:* \"GET\
+     * POST\"
      * <p>
-     * - **HTTP_METHOD_IS_NOT:** Matches if the request method does not correspond to the `value` field. The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-     * <p>
-     * - **COUNTRY_IS:** Matches if the request originates from a country in the `value` field. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-     * <p>
-     * - **COUNTRY_IS_NOT:** Matches if the request does not originate from a country in the `value` field. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-     * <p>
-     * - **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. Example: `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-     * <p>
-     * - **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. Example: `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+     * - **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \
+     *  Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     * *Example:* \"AL\
+     * DZ\
+     * AM\"
+     * - **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \
+     *  Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     * *Example:* \"AL\
+     * DZ\
+     * AM\"
+     * - **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field.
+     * *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+     * - **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field.
+     * *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Condition {
@@ -112,11 +141,15 @@ public class AccessRuleCriteria {
         UrlPartEndsWith("URL_PART_ENDS_WITH"),
         UrlPartContains("URL_PART_CONTAINS"),
         UrlRegex("URL_REGEX"),
+        UrlDoesNotMatchRegex("URL_DOES_NOT_MATCH_REGEX"),
+        UrlDoesNotStartWith("URL_DOES_NOT_START_WITH"),
+        UrlPartDoesNotContain("URL_PART_DOES_NOT_CONTAIN"),
+        UrlPartDoesNotEndWith("URL_PART_DOES_NOT_END_WITH"),
         IpIs("IP_IS"),
         IpIsNot("IP_IS_NOT"),
-        HttpHeaderContains("HTTP_HEADER_CONTAINS"),
         IpInList("IP_IN_LIST"),
         IpNotInList("IP_NOT_IN_LIST"),
+        HttpHeaderContains("HTTP_HEADER_CONTAINS"),
         HttpMethodIs("HTTP_METHOD_IS"),
         HttpMethodIsNot("HTTP_METHOD_IS_NOT"),
         CountryIs("COUNTRY_IS"),
@@ -163,41 +196,57 @@ public class AccessRuleCriteria {
         }
     };
     /**
-     * The criteria the access rule uses to determine if action should be taken on a request.
-     * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field.
-     * <p>
-     * - **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field.
-     * <p>
-     * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field.
-     * <p>
+     * The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
+     * - **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
+     * - **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
+     * - **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
      * - **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
-     * <p>
      * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
+     * - **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+     * - **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
+     * - **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
+     * - **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
+     * - **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
+     * - **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \
      * <p>
-     * - **URL_REGEX:** Matches if the request is described by the regular expression in the `value` field.
+     *Example:* \"1.1.1.1\
+     * 1.1.1.2\
+     * 1.2.2.1/30\"
+     * - **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \
      * <p>
-     * - **IP_IS:** Matches if the request originates from an IP address in the `value` field.
-     * <p>
-     * - **IP_IS_NOT:** Matches if the request does not originate from an IP address in the `value` field.
-     * <p>
+     *Example:* \"1.1.1.1\
+     * 1.1.1.2\
+     * 1.2.2.1/30\"
+     * - **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
+     * - **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
      * - **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match.
      * *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
+     * - **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \
+     *  The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      * <p>
-     * - **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
+     *Example:* \"GET\
+     * POST\"
      * <p>
-     * - **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
+     * - **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \
+     *  The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
      * <p>
-     * - **HTTP_METHOD_IS:** Matches if the request method corresponds to the `value` field. The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
+     *Example:* \"GET\
+     * POST\"
      * <p>
-     * - **HTTP_METHOD_IS_NOT:** Matches if the request method does not correspond to the `value` field. The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-     * <p>
-     * - **COUNTRY_IS:** Matches if the request originates from a country in the `value` field. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-     * <p>
-     * - **COUNTRY_IS_NOT:** Matches if the request does not originate from a country in the `value` field. Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
-     * <p>
-     * - **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. Example: `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-     * <p>
-     * - **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. Example: `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+     * - **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \
+     *  Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     * *Example:* \"AL\
+     * DZ\
+     * AM\"
+     * - **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \
+     *  Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     * *Example:* \"AL\
+     * DZ\
+     * AM\"
+     * - **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field.
+     * *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+     * - **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field.
+     * *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     Condition condition;
@@ -207,6 +256,12 @@ public class AccessRuleCriteria {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     String value;
+
+    /**
+     * When enabled, the condition will be matched with case-sensitive rules.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
+    Boolean isCaseSensitive;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

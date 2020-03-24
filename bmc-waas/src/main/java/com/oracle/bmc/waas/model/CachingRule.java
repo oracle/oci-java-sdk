@@ -216,7 +216,7 @@ public class CachingRule {
     String clientCachingDuration;
 
     /**
-     * The array of the rule criteria with condition and value.
+     * The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criteria")
     java.util.List<CachingRuleCriteria> criteria;

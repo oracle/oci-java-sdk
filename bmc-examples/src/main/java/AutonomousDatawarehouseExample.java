@@ -6,24 +6,23 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.database.DatabaseClient;
 import com.oracle.bmc.database.DatabaseWaiters;
-import com.oracle.bmc.database.model.AutonomousDataWarehouse;
-import com.oracle.bmc.database.model.CreateAutonomousDataWarehouseDetails;
-import com.oracle.bmc.database.model.GenerateAutonomousDataWarehouseWalletDetails;
-import com.oracle.bmc.database.model.UpdateAutonomousDataWarehouseDetails;
-import com.oracle.bmc.database.requests.CreateAutonomousDataWarehouseRequest;
-import com.oracle.bmc.database.requests.DeleteAutonomousDataWarehouseRequest;
-import com.oracle.bmc.database.requests.GetAutonomousDataWarehouseRequest;
-import com.oracle.bmc.database.requests.StartAutonomousDataWarehouseRequest;
-import com.oracle.bmc.database.requests.StopAutonomousDataWarehouseRequest;
-import com.oracle.bmc.database.requests.UpdateAutonomousDataWarehouseRequest;
-import com.oracle.bmc.database.responses.CreateAutonomousDataWarehouseResponse;
-import com.oracle.bmc.database.responses.GetAutonomousDataWarehouseResponse;
-import com.oracle.bmc.database.responses.UpdateAutonomousDataWarehouseResponse;
-import com.oracle.bmc.database.responses.GenerateAutonomousDataWarehouseWalletResponse;
-import com.oracle.bmc.database.requests.GenerateAutonomousDataWarehouseWalletRequest;
-
+import com.oracle.bmc.database.model.AutonomousDatabase;
+import com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails;
+import com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails;
+import com.oracle.bmc.database.requests.DeleteAutonomousDatabaseRequest;
+import com.oracle.bmc.database.requests.GetAutonomousDatabaseRequest;
+import com.oracle.bmc.database.requests.StartAutonomousDatabaseRequest;
+import com.oracle.bmc.database.requests.StopAutonomousDatabaseRequest;
+import com.oracle.bmc.database.requests.UpdateAutonomousDatabaseRequest;
+import com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest;
+import com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse;
+import com.oracle.bmc.database.responses.GetAutonomousDatabaseResponse;
+import com.oracle.bmc.database.responses.UpdateAutonomousDatabaseResponse;
+import com.oracle.bmc.database.responses.GenerateAutonomousDatabaseWalletResponse;
+import com.oracle.bmc.database.requests.GenerateAutonomousDatabaseWalletRequest;
+import com.oracle.bmc.database.model.CreateAutonomousDatabaseDetails;
+import com.oracle.bmc.database.model.CreateAutonomousDatabaseBase;
 import java.util.zip.ZipInputStream;
-import java.io.InputStream;
 import java.util.Random;
 
 public class AutonomousDatawarehouseExample {
@@ -31,6 +30,12 @@ public class AutonomousDatawarehouseExample {
     public static void main(String[] args) throws Exception {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
+
+        if (args.length != 2) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "Unexpected number of arguments.  Expected 2, got %s", args.length));
+        }
 
         // TODO: Fill in these values
         String compartmentId = args[0];
@@ -43,10 +48,10 @@ public class AutonomousDatawarehouseExample {
         dbClient.setRegion(Region.US_PHOENIX_1);
 
         // Create
-        CreateAutonomousDataWarehouseDetails createRequest = createAdwRequest(compartmentId);
+        CreateAutonomousDatabaseDetails createRequest = createAdwRequest(compartmentId);
 
         System.out.println("Creating Autonomous Datawarehouse with request : " + createRequest);
-        AutonomousDataWarehouse adw = createADW(dbClient, createRequest);
+        AutonomousDatabase adw = createADW(dbClient, createRequest);
         System.out.println("ADW instance is provisioning : " + adw);
 
         adw = waitForInstanceToBecomeAvailable(dbClient, adw.getId());
@@ -54,17 +59,17 @@ public class AutonomousDatawarehouseExample {
 
         // Get
         adw =
-                dbClient.getAutonomousDataWarehouse(
-                                GetAutonomousDataWarehouseRequest.builder()
-                                        .autonomousDataWarehouseId(adw.getId())
+                dbClient.getAutonomousDatabase(
+                                GetAutonomousDatabaseRequest.builder()
+                                        .autonomousDatabaseId(adw.getId())
                                         .build())
-                        .getAutonomousDataWarehouse();
+                        .getAutonomousDatabase();
         System.out.println("GET request returned :" + adw);
 
         // Scale
-        UpdateAutonomousDataWarehouseDetails updateRequest = scaleAdwRequest();
+        UpdateAutonomousDatabaseDetails updateRequest = scaleAdwRequest();
         System.out.println("Updating Autonomous Datawarehouse with request : " + updateRequest);
-        AutonomousDataWarehouse updatedAdw = updateADW(dbClient, updateRequest, adw.getId());
+        AutonomousDatabase updatedAdw = updateADW(dbClient, updateRequest, adw.getId());
         System.out.println("ADW instance is scaling : " + updatedAdw);
 
         updatedAdw = waitForInstanceToBecomeAvailable(dbClient, adw.getId());
@@ -79,31 +84,30 @@ public class AutonomousDatawarehouseExample {
         // Stop
         System.out.println("Stopping Autonomous Datawarehouse Shared : " + updatedAdw);
         adw =
-                dbClient.stopAutonomousDataWarehouse(
-                                StopAutonomousDataWarehouseRequest.builder()
-                                        .autonomousDataWarehouseId(updatedAdw.getId())
+                dbClient.stopAutonomousDatabase(
+                                StopAutonomousDatabaseRequest.builder()
+                                        .autonomousDatabaseId(updatedAdw.getId())
                                         .build())
-                        .getAutonomousDataWarehouse();
+                        .getAutonomousDatabase();
         adw = waitForInstanceToBeStopped(dbClient, adw.getId());
         System.out.println("Stopped Autonomous Datawarehouse Shared : " + adw);
 
         // Start
         System.out.println("Starting Autonomous Datawarehouse Shared : " + adw);
         adw =
-                dbClient.startAutonomousDataWarehouse(
-                                StartAutonomousDataWarehouseRequest.builder()
-                                        .autonomousDataWarehouseId(updatedAdw.getId())
+                dbClient.startAutonomousDatabase(
+                                StartAutonomousDatabaseRequest.builder()
+                                        .autonomousDatabaseId(updatedAdw.getId())
                                         .build())
-                        .getAutonomousDataWarehouse();
+                        .getAutonomousDatabase();
         adw = waitForInstanceToBecomeAvailable(dbClient, adw.getId());
         System.out.println("Started Autonomous Datawarehouse Shared : " + adw);
 
         //download wallet
 
         System.out.println("Downloading wallet for  : " + adw);
-        GenerateAutonomousDataWarehouseWalletDetails adwWalletDetails =
-                createAdwWalletDetails(password);
-        GenerateAutonomousDataWarehouseWalletResponse adwWalletResponse =
+        GenerateAutonomousDatabaseWalletDetails adwWalletDetails = createAdwWalletDetails(password);
+        GenerateAutonomousDatabaseWalletResponse adwWalletResponse =
                 generateADWWallet(dbClient, adwWalletDetails, adw.getId());
         System.out.println(
                 "Autonomous data warehouse downloaded wallet content length is : "
@@ -111,118 +115,116 @@ public class AutonomousDatawarehouseExample {
         ZipInputStream zin = new ZipInputStream(adwWalletResponse.getInputStream());
         // Delete
         System.out.println("Deleting Autonomous Datawarehouse Shared : " + adw);
-        dbClient.deleteAutonomousDataWarehouse(
-                DeleteAutonomousDataWarehouseRequest.builder()
-                        .autonomousDataWarehouseId(updatedAdw.getId())
+        dbClient.deleteAutonomousDatabase(
+                DeleteAutonomousDatabaseRequest.builder()
+                        .autonomousDatabaseId(updatedAdw.getId())
                         .build());
 
         DatabaseWaiters waiter = dbClient.getWaiters();
-        GetAutonomousDataWarehouseResponse response =
-                waiter.forAutonomousDataWarehouse(
-                                GetAutonomousDataWarehouseRequest.builder()
-                                        .autonomousDataWarehouseId(adw.getId())
+        GetAutonomousDatabaseResponse response =
+                waiter.forAutonomousDatabase(
+                                GetAutonomousDatabaseRequest.builder()
+                                        .autonomousDatabaseId(adw.getId())
                                         .build(),
-                                AutonomousDataWarehouse.LifecycleState.Terminated)
+                                AutonomousDatabase.LifecycleState.Terminated)
                         .execute();
 
         dbClient.close();
     }
 
-    public static AutonomousDataWarehouse createADW(
-            DatabaseClient dbClient, CreateAutonomousDataWarehouseDetails request) {
+    public static AutonomousDatabase createADW(
+            DatabaseClient dbClient, CreateAutonomousDatabaseDetails request) {
 
-        CreateAutonomousDataWarehouseResponse response =
-                dbClient.createAutonomousDataWarehouse(
-                        CreateAutonomousDataWarehouseRequest.builder()
-                                .createAutonomousDataWarehouseDetails(request)
+        CreateAutonomousDatabaseResponse response =
+                dbClient.createAutonomousDatabase(
+                        CreateAutonomousDatabaseRequest.builder()
+                                .createAutonomousDatabaseDetails(request)
                                 .build());
 
-        return response.getAutonomousDataWarehouse();
+        return response.getAutonomousDatabase();
     }
 
-    private static AutonomousDataWarehouse waitForInstanceToBecomeAvailable(
+    private static AutonomousDatabase waitForInstanceToBecomeAvailable(
             DatabaseClient dbClient, String id) throws Exception {
 
         DatabaseWaiters waiter = dbClient.getWaiters();
-        GetAutonomousDataWarehouseResponse response =
-                waiter.forAutonomousDataWarehouse(
-                                GetAutonomousDataWarehouseRequest.builder()
-                                        .autonomousDataWarehouseId(id)
+        GetAutonomousDatabaseResponse response =
+                waiter.forAutonomousDatabase(
+                                GetAutonomousDatabaseRequest.builder()
+                                        .autonomousDatabaseId(id)
                                         .build(),
-                                AutonomousDataWarehouse.LifecycleState.Available)
+                                AutonomousDatabase.LifecycleState.Available)
                         .execute();
 
-        return response.getAutonomousDataWarehouse();
+        return response.getAutonomousDatabase();
     }
 
-    private static AutonomousDataWarehouse updateADW(
-            DatabaseClient dbClient,
-            UpdateAutonomousDataWarehouseDetails updateRequest,
-            String adwId) {
-        UpdateAutonomousDataWarehouseResponse response =
-                dbClient.updateAutonomousDataWarehouse(
-                        UpdateAutonomousDataWarehouseRequest.builder()
-                                .updateAutonomousDataWarehouseDetails(updateRequest)
-                                .autonomousDataWarehouseId(adwId)
+    private static AutonomousDatabase updateADW(
+            DatabaseClient dbClient, UpdateAutonomousDatabaseDetails updateRequest, String adwId) {
+        UpdateAutonomousDatabaseResponse response =
+                dbClient.updateAutonomousDatabase(
+                        UpdateAutonomousDatabaseRequest.builder()
+                                .updateAutonomousDatabaseDetails(updateRequest)
+                                .autonomousDatabaseId(adwId)
                                 .build());
 
-        return response.getAutonomousDataWarehouse();
+        return response.getAutonomousDatabase();
     }
 
-    private static GenerateAutonomousDataWarehouseWalletResponse generateADWWallet(
+    private static GenerateAutonomousDatabaseWalletResponse generateADWWallet(
             DatabaseClient dbClient,
-            GenerateAutonomousDataWarehouseWalletDetails adwWalletDetails,
+            GenerateAutonomousDatabaseWalletDetails adwWalletDetails,
             String adwId) {
-        GenerateAutonomousDataWarehouseWalletResponse response =
-                dbClient.generateAutonomousDataWarehouseWallet(
-                        GenerateAutonomousDataWarehouseWalletRequest.builder()
-                                .generateAutonomousDataWarehouseWalletDetails(adwWalletDetails)
-                                .autonomousDataWarehouseId(adwId)
+        GenerateAutonomousDatabaseWalletResponse response =
+                dbClient.generateAutonomousDatabaseWallet(
+                        GenerateAutonomousDatabaseWalletRequest.builder()
+                                .generateAutonomousDatabaseWalletDetails(adwWalletDetails)
+                                .autonomousDatabaseId(adwId)
                                 .build());
 
         return response;
     }
 
-    private static GenerateAutonomousDataWarehouseWalletDetails createAdwWalletDetails(
-            String password) {
-        return GenerateAutonomousDataWarehouseWalletDetails.builder().password(password).build();
+    private static GenerateAutonomousDatabaseWalletDetails createAdwWalletDetails(String password) {
+        return GenerateAutonomousDatabaseWalletDetails.builder().password(password).build();
     }
 
-    private static AutonomousDataWarehouse waitForInstanceToBeStopped(
-            DatabaseClient dbClient, String id) throws Exception {
+    private static AutonomousDatabase waitForInstanceToBeStopped(DatabaseClient dbClient, String id)
+            throws Exception {
         DatabaseWaiters waiter = dbClient.getWaiters();
-        GetAutonomousDataWarehouseResponse response =
-                waiter.forAutonomousDataWarehouse(
-                                GetAutonomousDataWarehouseRequest.builder()
-                                        .autonomousDataWarehouseId(id)
+        GetAutonomousDatabaseResponse response =
+                waiter.forAutonomousDatabase(
+                                GetAutonomousDatabaseRequest.builder()
+                                        .autonomousDatabaseId(id)
                                         .build(),
-                                AutonomousDataWarehouse.LifecycleState.Stopped)
+                                AutonomousDatabase.LifecycleState.Stopped)
                         .execute();
 
-        return response.getAutonomousDataWarehouse();
+        return response.getAutonomousDatabase();
     }
 
-    private static CreateAutonomousDataWarehouseDetails createAdwRequest(String compartmentId) {
+    private static CreateAutonomousDatabaseDetails createAdwRequest(String compartmentId) {
         Random rand = new Random();
-        return CreateAutonomousDataWarehouseDetails.builder()
+        return CreateAutonomousDatabaseDetails.builder()
+                .dbWorkload(CreateAutonomousDatabaseBase.DbWorkload.Dw)
                 .cpuCoreCount(1)
                 .dataStorageSizeInTBs(1)
                 .displayName("javaSdkExample")
                 .adminPassword("DBaaS12345_#")
                 .dbName("javaSdkExam" + rand.nextInt(500))
                 .compartmentId(compartmentId)
-                .licenseModel(CreateAutonomousDataWarehouseDetails.LicenseModel.LicenseIncluded)
+                .licenseModel(CreateAutonomousDatabaseDetails.LicenseModel.LicenseIncluded)
                 .build();
     }
 
-    private static UpdateAutonomousDataWarehouseDetails scaleAdwRequest() {
-        return UpdateAutonomousDataWarehouseDetails.builder()
+    private static UpdateAutonomousDatabaseDetails scaleAdwRequest() {
+        return UpdateAutonomousDatabaseDetails.builder()
                 .cpuCoreCount(2)
                 .dataStorageSizeInTBs(2)
                 .build();
     }
 
-    private static UpdateAutonomousDataWarehouseDetails updateDisplayNameAdwRequest() {
-        return UpdateAutonomousDataWarehouseDetails.builder().displayName("newDisplayName").build();
+    private static UpdateAutonomousDatabaseDetails updateDisplayNameAdwRequest() {
+        return UpdateAutonomousDatabaseDetails.builder().displayName("newDisplayName").build();
     }
 }

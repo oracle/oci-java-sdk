@@ -3,10 +3,14 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Throwables;
+import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
+import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.util.internal.Consumer;
+import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
@@ -31,6 +35,7 @@ import java.io.InputStream;
 import java.io.InterruptedIOException;
 import java.util.UUID;
 import java.util.concurrent.Future;
+import java.util.function.Supplier;
 
 /**
  * A REST client that can make synchronous and asynchronous calls.<br/>
@@ -44,6 +49,8 @@ public class RestClient implements AutoCloseable {
     private final EntityFactory entityFactory;
     private final Client client;
 
+    @VisibleForTesting final JaxRsCircuitBreaker circuitBreaker;
+
     private WrappedWebTarget baseTarget;
 
     /**
@@ -52,10 +59,15 @@ public class RestClient implements AutoCloseable {
      *
      * @param client        A HTTP client to make all requests with.
      * @param entityFactory An entity factory to create entities for POST/PUT operations.
+     * @param circuitBreaker A circuit breaker instance to decorate http client
      */
-    public RestClient(@NonNull Client client, @NonNull EntityFactory entityFactory) {
+    public RestClient(
+            @NonNull Client client,
+            @NonNull EntityFactory entityFactory,
+            JaxRsCircuitBreaker circuitBreaker) {
         this.client = client;
         this.entityFactory = entityFactory;
+        this.circuitBreaker = circuitBreaker;
     }
 
     /**
@@ -84,6 +96,48 @@ public class RestClient implements AutoCloseable {
         return this.baseTarget;
     }
 
+    /**
+     * Ideal name for this method is decorateSupplierWithCircuitBreaker. However, I shortened it due to it's being private
+     * It takes a Supplier<Response> and returns a Supplier<Response>, this pattern allows users to chain different
+     * functionalities.
+     * @param supplier a supplier of Response
+     * @return a supplier of Response
+     */
+    private Supplier<Response> decorateSupplier(Supplier<Response> supplier) {
+        if (circuitBreaker == null) {
+            return supplier;
+        } else {
+            return () -> {
+                try {
+                    return circuitBreaker.decorateSupplier(supplier).get();
+                } catch (CallNotAllowedException e) {
+                    throw new BmcException(false, "CircuitBreaker is OPEN!", e, null);
+                }
+            };
+        }
+    }
+
+    /**
+     * Ideal name for this method is decorateFutureSupplierWithCircuitBreaker. However, I shortened it due to it's being private
+     * It takes a Supplier<Future<Response>> and returns a Supplier<Future<Response>>, this pattern allows users to chain
+     * different functionalities.
+     * @param supplier a Supplier of Future<Response>
+     * @return a Supplier of Future<Response>
+     */
+    private Supplier<Future<Response>> decorateFuture(Supplier<Future<Response>> supplier) {
+        if (circuitBreaker == null) {
+            return supplier;
+        } else {
+            return () -> {
+                try {
+                    return circuitBreaker.decorateFuture(supplier).get();
+                } catch (CallNotPermittedException e) {
+                    throw new BmcException(false, "CircuitBreaker is OPEN!", e, null);
+                }
+            };
+        }
+    }
+
     // Rest APIs
 
     /**
@@ -99,8 +153,7 @@ public class RestClient implements AutoCloseable {
             @NonNull WrappedInvocationBuilder ib, @NonNull T request) throws BmcException {
         InvocationInformation info = preprocessRequest(ib, request);
         try {
-            Response response = ib.get();
-            return response;
+            return decorateSupplier(ib::get).get();
         } catch (ProcessingException ex) {
             throw convertToBmcException(baseTarget, ex, info);
         }
@@ -127,9 +180,15 @@ public class RestClient implements AutoCloseable {
         InvocationInformation info = preprocessRequest(ib, request);
 
         if (onSuccess == null && onError == null) {
-            return ib.async().get();
+            return decorateFuture(ib.async()::get).get();
         } else {
-            return ib.async().get(new Callback(baseTarget, info, onSuccess, onError));
+            return decorateFuture(
+                            () ->
+                                    ib.async()
+                                            .get(
+                                                    new Callback(
+                                                            baseTarget, info, onSuccess, onError)))
+                    .get();
         }
     }
 
@@ -150,8 +209,7 @@ public class RestClient implements AutoCloseable {
         InvocationInformation info = preprocessRequest(ib, request);
         try {
             Entity<?> requestBody = this.entityFactory.forPost(request, attemptToSerialize(body));
-            final Response response = ib.post(requestBody);
-            return response;
+            return decorateSupplier(() -> ib.post(requestBody)).get();
         } catch (ProcessingException e) {
             throw convertToBmcException(baseTarget, e, info);
         }
@@ -201,9 +259,16 @@ public class RestClient implements AutoCloseable {
         Entity<?> requestBody = this.entityFactory.forPost(request, attemptToSerialize(body));
 
         if (onSuccess == null && onError == null) {
-            return ib.async().post(requestBody);
+            return decorateFuture(() -> ib.async().post(requestBody)).get();
         } else {
-            return ib.async().post(requestBody, new Callback(baseTarget, info, onSuccess, onError));
+            return decorateFuture(
+                            () ->
+                                    ib.async()
+                                            .post(
+                                                    requestBody,
+                                                    new Callback(
+                                                            baseTarget, info, onSuccess, onError)))
+                    .get();
         }
     }
 
@@ -276,8 +341,7 @@ public class RestClient implements AutoCloseable {
         InvocationInformation info = preprocessRequest(ib, request);
         try {
             Entity<?> requestBody = this.entityFactory.forPatch(request, attemptToSerialize(body));
-            final Response response = ib.method(PATCH_VERB, requestBody);
-            return response;
+            return decorateSupplier(() -> ib.method(PATCH_VERB, requestBody)).get();
         } catch (ProcessingException e) {
             throw convertToBmcException(baseTarget, e, info);
         }
@@ -330,13 +394,17 @@ public class RestClient implements AutoCloseable {
         Entity<?> requestBody = this.entityFactory.forPatch(request, attemptToSerialize(body));
 
         if (onSuccess == null && onError == null) {
-            return ib.async().method(PATCH_VERB, requestBody);
+            return decorateFuture(() -> ib.async().method(PATCH_VERB, requestBody)).get();
         } else {
-            return ib.async()
-                    .method(
-                            PATCH_VERB,
-                            requestBody,
-                            new Callback(baseTarget, info, onSuccess, onError));
+            return decorateFuture(
+                            () ->
+                                    ib.async()
+                                            .method(
+                                                    PATCH_VERB,
+                                                    requestBody,
+                                                    new Callback(
+                                                            baseTarget, info, onSuccess, onError)))
+                    .get();
         }
     }
 
@@ -376,8 +444,7 @@ public class RestClient implements AutoCloseable {
         InvocationInformation info = preprocessRequest(ib, request);
         try {
             Entity<?> requestBody = this.entityFactory.forPut(request, attemptToSerialize(body));
-            final Response response = ib.put(requestBody);
-            return response;
+            return decorateSupplier(() -> ib.put(requestBody)).get();
         } catch (ProcessingException e) {
             throw convertToBmcException(baseTarget, e, info);
         }
@@ -439,9 +506,16 @@ public class RestClient implements AutoCloseable {
         Entity<?> requestBody = this.entityFactory.forPut(request, attemptToSerialize(body));
 
         if (onSuccess == null && onError == null) {
-            return ib.async().put(requestBody);
+            return decorateFuture(() -> ib.async().put(requestBody)).get();
         } else {
-            return ib.async().put(requestBody, new Callback(baseTarget, info, onSuccess, onError));
+            return decorateFuture(
+                            () ->
+                                    ib.async()
+                                            .put(
+                                                    requestBody,
+                                                    new Callback(
+                                                            baseTarget, info, onSuccess, onError)))
+                    .get();
         }
     }
 
@@ -461,8 +535,7 @@ public class RestClient implements AutoCloseable {
             @NonNull WrappedInvocationBuilder ib, @NonNull T request) throws BmcException {
         InvocationInformation info = preprocessRequest(ib, request);
         try {
-            Response response = ib.delete(Response.class);
-            return response;
+            return decorateSupplier(() -> ib.delete(Response.class)).get();
         } catch (ProcessingException e) {
             throw convertToBmcException(baseTarget, e, info);
         }
@@ -493,9 +566,15 @@ public class RestClient implements AutoCloseable {
         InvocationInformation info = preprocessRequest(ib, request);
 
         if (onSuccess == null && onError == null) {
-            return ib.async().delete();
+            return decorateFuture(() -> ib.async().delete()).get();
         } else {
-            return ib.async().delete(new Callback(baseTarget, info, onSuccess, onError));
+            return decorateFuture(
+                            () ->
+                                    ib.async()
+                                            .delete(
+                                                    new Callback(
+                                                            baseTarget, info, onSuccess, onError)))
+                    .get();
         }
     }
 
@@ -515,8 +594,7 @@ public class RestClient implements AutoCloseable {
             @NonNull WrappedInvocationBuilder ib, @NonNull T request) throws BmcException {
         InvocationInformation info = preprocessRequest(ib, request);
         try {
-            Response response = ib.head();
-            return response;
+            return decorateSupplier(ib::head).get();
         } catch (ProcessingException ex) {
             throw convertToBmcException(baseTarget, ex, info);
         }
@@ -548,9 +626,15 @@ public class RestClient implements AutoCloseable {
         InvocationInformation info = preprocessRequest(ib, request);
 
         if (onSuccess == null && onError == null) {
-            return ib.async().head();
+            return decorateFuture(ib.async()::head).get();
         } else {
-            return ib.async().head(new Callback(baseTarget, info, onSuccess, onError));
+            return decorateFuture(
+                            () ->
+                                    ib.async()
+                                            .head(
+                                                    new Callback(
+                                                            baseTarget, info, onSuccess, onError)))
+                    .get();
         }
     }
 

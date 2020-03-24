@@ -92,7 +92,7 @@ public class UpdateAddressListDetails {
     }
 
     /**
-     * A unique user-friendly name for the address list.
+     * A user-friendly name for the address list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

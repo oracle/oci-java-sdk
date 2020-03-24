@@ -10,6 +10,8 @@ import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.google.common.annotations.VisibleForTesting;
 import com.oracle.bmc.ClientConfiguration;
+import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
+import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
@@ -145,7 +147,13 @@ public class RestClientFactory {
                         requestSigners,
                         clientConfigurationToUse,
                         this.clientConfigurator);
-        return new RestClient(client, new EntityFactory());
+
+        JaxRsCircuitBreaker circuitBreaker = null;
+        if (configuration != null && configuration.getCircuitBreakerConfiguration() != null) {
+            circuitBreaker =
+                    new JaxRsCircuitBreakerImpl(configuration.getCircuitBreakerConfiguration());
+        }
+        return new RestClient(client, new EntityFactory(), circuitBreaker);
     }
 
     @VisibleForTesting
