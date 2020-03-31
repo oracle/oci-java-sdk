@@ -51,12 +51,26 @@ public class ClusterCreateOptions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
+        private AdmissionControllerOptions admissionControllerOptions;
+
+        public Builder admissionControllerOptions(
+                AdmissionControllerOptions admissionControllerOptions) {
+            this.admissionControllerOptions = admissionControllerOptions;
+            this.__explicitlySet__.add("admissionControllerOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClusterCreateOptions build() {
             ClusterCreateOptions __instance__ =
-                    new ClusterCreateOptions(serviceLbSubnetIds, kubernetesNetworkConfig, addOns);
+                    new ClusterCreateOptions(
+                            serviceLbSubnetIds,
+                            kubernetesNetworkConfig,
+                            addOns,
+                            admissionControllerOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +80,8 @@ public class ClusterCreateOptions {
             Builder copiedBuilder =
                     serviceLbSubnetIds(o.getServiceLbSubnetIds())
                             .kubernetesNetworkConfig(o.getKubernetesNetworkConfig())
-                            .addOns(o.getAddOns());
+                            .addOns(o.getAddOns())
+                            .admissionControllerOptions(o.getAdmissionControllerOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,6 +112,12 @@ public class ClusterCreateOptions {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addOns")
     AddOnOptions addOns;
+
+    /**
+     * Configurable cluster admission controllers
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
+    AdmissionControllerOptions admissionControllerOptions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

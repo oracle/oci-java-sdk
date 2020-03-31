@@ -70,12 +70,17 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /**
      * Base url of metadata service.
      */
-    @Getter protected String metadataBaseUrl = METADATA_SERVICE_BASE_URL;
+    @Getter protected volatile String metadataBaseUrl = METADATA_SERVICE_BASE_URL;
 
     /**
      * The federation endpoint url.
      */
     @Getter protected String federationEndpoint;
+
+    /**
+     * Flag to ensure fallback logic executed only once.
+     */
+    private volatile boolean wasFallbackCheckExecuted = false;
 
     /**
      * The leaf certificate, or null if detecting from instance metadata.
@@ -183,29 +188,10 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      */
     protected String autoDetectEndpointUsingMetadataUrl() {
         if (federationEndpoint == null) {
+
+            executeInstanceFallback();
             Client client = ClientBuilder.newClient();
             WebTarget base = client.target(getMetadataBaseUrl() + "instance/");
-
-            try {
-                Response response =
-                        base.request(MediaType.APPLICATION_JSON)
-                                .header(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
-                                .get();
-
-                //fallback to v1 if v2 endpoint throws resource not found else raise exception
-                if (response.getStatus() == 404) {
-                    LOG.warn("Falling back to v1, response from v2 was {}", response.getStatus());
-                    this.metadataBaseUrl = FALLBACK_METADATA_SERVICE_URL;
-                    base = client.target(getMetadataBaseUrl() + "instance/");
-                } else if (!Response.Status.Family.SUCCESSFUL.equals(
-                        response.getStatusInfo().getFamily())) {
-                    throw new RuntimeException(
-                            "Rest call to v2 endpoint failed : HTTP error code : "
-                                    + response.getStatus());
-                }
-            } catch (RuntimeException e) {
-                LOG.warn("Rest call to v2 endpoint failed & cannot fallback as it's not 404 ", e);
-            }
 
             String regionStr =
                     base.path("region")
@@ -246,6 +232,14 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      */
     protected void autoDetectCertificatesUsingMetadataUrl() {
         try {
+
+            if (!wasFallbackCheckExecuted) {
+                LOG.info(
+                        " Executing fallback check for certificates as federation endpoint was already set to {}",
+                        getFederationEndpoint());
+                executeInstanceFallback();
+            }
+
             if (leafCertificateSupplier == null) {
                 leafCertificateSupplier =
                         new URLBasedX509CertificateSupplier(
@@ -273,6 +267,41 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             }
         } catch (MalformedURLException ex) {
             throw new IllegalArgumentException("The metadata service url is invalid.", ex);
+        }
+    }
+
+    /**
+     * Checks and falls back to V1 endpoint for both federation endpoint detection & certificates if necessary.
+     */
+    private void executeInstanceFallback() {
+        Client client = ClientBuilder.newClient();
+        WebTarget base = client.target(getMetadataBaseUrl() + "instance/");
+
+        try {
+            Response response =
+                    base.request(MediaType.APPLICATION_JSON)
+                            .header(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
+                            .get();
+            LOG.info(
+                    "Rest call to verify if v2 endpoint exists, response from v2 was {}",
+                    response.getStatus());
+
+            //fallback to v1 if v2 endpoint throws resource not found else raise exception
+            if (response.getStatus() == 404) {
+                LOG.warn("Falling back to v1, response from v2 was {}", response.getStatus());
+                this.metadataBaseUrl = FALLBACK_METADATA_SERVICE_URL;
+            } else if (!Response.Status.Family.SUCCESSFUL.equals(
+                    response.getStatusInfo().getFamily())) {
+                throw new RuntimeException(
+                        "Rest call to v2 endpoint failed : HTTP error code : "
+                                + response.getStatus());
+            }
+            wasFallbackCheckExecuted = true;
+            LOG.info(
+                    " Metadata base url on executing instance fallback is {}",
+                    getMetadataBaseUrl());
+        } catch (RuntimeException e) {
+            LOG.warn("Rest call to v2 endpoint failed & cannot fallback as it's not 404 ", e);
         }
     }
 

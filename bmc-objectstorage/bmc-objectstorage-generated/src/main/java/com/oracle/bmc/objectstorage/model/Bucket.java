@@ -174,6 +174,24 @@ public class Bucket {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationEnabled")
+        private Boolean replicationEnabled;
+
+        public Builder replicationEnabled(Boolean replicationEnabled) {
+            this.replicationEnabled = replicationEnabled;
+            this.__explicitlySet__.add("replicationEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
+        private Boolean isReadOnly;
+
+        public Builder isReadOnly(Boolean isReadOnly) {
+            this.isReadOnly = isReadOnly;
+            this.__explicitlySet__.add("isReadOnly");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -205,6 +223,8 @@ public class Bucket {
                             objectLifecyclePolicyEtag,
                             approximateCount,
                             approximateSize,
+                            replicationEnabled,
+                            isReadOnly,
                             id);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -229,6 +249,8 @@ public class Bucket {
                             .objectLifecyclePolicyEtag(o.getObjectLifecyclePolicyEtag())
                             .approximateCount(o.getApproximateCount())
                             .approximateSize(o.getApproximateSize())
+                            .replicationEnabled(o.getReplicationEnabled())
+                            .isReadOnly(o.getIsReadOnly())
                             .id(o.getId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -270,13 +292,13 @@ public class Bucket {
     java.util.Map<String, String> metadata;
 
     /**
-     * The OCID of the user who created the bucket.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     String createdBy;
 
     /**
-     * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
@@ -436,8 +458,8 @@ public class Bucket {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of a master encryption key used to call the Key Management service to generate a data encryption key
-     * or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management
+     * service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
@@ -466,7 +488,23 @@ public class Bucket {
     Long approximateSize;
 
     /**
-     * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket).
+     * Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will
+     * be set to 'true' when you create a replication policy for the bucket.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationEnabled")
+    Boolean replicationEnabled;
+
+    /**
+     * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will
+     * be set to 'true' when this bucket is configured as a destination in a replication policy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
+    Boolean isReadOnly;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the bucket.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")

@@ -607,6 +607,354 @@ public class ObjectStoragePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listReplicationPolicies operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListReplicationPoliciesResponse> listReplicationPoliciesResponseIterator(
+            final ListReplicationPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListReplicationPoliciesRequest.Builder, ListReplicationPoliciesRequest,
+                ListReplicationPoliciesResponse>(
+                new com.google.common.base.Supplier<ListReplicationPoliciesRequest.Builder>() {
+                    @Override
+                    public ListReplicationPoliciesRequest.Builder get() {
+                        return ListReplicationPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReplicationPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListReplicationPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReplicationPoliciesRequest.Builder>,
+                        ListReplicationPoliciesRequest>() {
+                    @Override
+                    public ListReplicationPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReplicationPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReplicationPoliciesRequest, ListReplicationPoliciesResponse>() {
+                    @Override
+                    public ListReplicationPoliciesResponse apply(
+                            ListReplicationPoliciesRequest request) {
+                        return client.listReplicationPolicies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.objectstorage.model.ReplicationPolicySummary} objects
+     * contained in responses from the listReplicationPolicies operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.objectstorage.model.ReplicationPolicySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.objectstorage.model.ReplicationPolicySummary>
+            listReplicationPoliciesRecordIterator(final ListReplicationPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListReplicationPoliciesRequest.Builder, ListReplicationPoliciesRequest,
+                ListReplicationPoliciesResponse,
+                com.oracle.bmc.objectstorage.model.ReplicationPolicySummary>(
+                new com.google.common.base.Supplier<ListReplicationPoliciesRequest.Builder>() {
+                    @Override
+                    public ListReplicationPoliciesRequest.Builder get() {
+                        return ListReplicationPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReplicationPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListReplicationPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReplicationPoliciesRequest.Builder>,
+                        ListReplicationPoliciesRequest>() {
+                    @Override
+                    public ListReplicationPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReplicationPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReplicationPoliciesRequest, ListReplicationPoliciesResponse>() {
+                    @Override
+                    public ListReplicationPoliciesResponse apply(
+                            ListReplicationPoliciesRequest request) {
+                        return client.listReplicationPolicies(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReplicationPoliciesResponse,
+                        java.util.List<
+                                com.oracle.bmc.objectstorage.model.ReplicationPolicySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.objectstorage.model.ReplicationPolicySummary>
+                            apply(ListReplicationPoliciesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listReplicationSources operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListReplicationSourcesResponse> listReplicationSourcesResponseIterator(
+            final ListReplicationSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListReplicationSourcesRequest.Builder, ListReplicationSourcesRequest,
+                ListReplicationSourcesResponse>(
+                new com.google.common.base.Supplier<ListReplicationSourcesRequest.Builder>() {
+                    @Override
+                    public ListReplicationSourcesRequest.Builder get() {
+                        return ListReplicationSourcesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReplicationSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListReplicationSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReplicationSourcesRequest.Builder>,
+                        ListReplicationSourcesRequest>() {
+                    @Override
+                    public ListReplicationSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReplicationSourcesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReplicationSourcesRequest, ListReplicationSourcesResponse>() {
+                    @Override
+                    public ListReplicationSourcesResponse apply(
+                            ListReplicationSourcesRequest request) {
+                        return client.listReplicationSources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.objectstorage.model.ReplicationSource} objects
+     * contained in responses from the listReplicationSources operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.objectstorage.model.ReplicationSource} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.objectstorage.model.ReplicationSource>
+            listReplicationSourcesRecordIterator(final ListReplicationSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListReplicationSourcesRequest.Builder, ListReplicationSourcesRequest,
+                ListReplicationSourcesResponse,
+                com.oracle.bmc.objectstorage.model.ReplicationSource>(
+                new com.google.common.base.Supplier<ListReplicationSourcesRequest.Builder>() {
+                    @Override
+                    public ListReplicationSourcesRequest.Builder get() {
+                        return ListReplicationSourcesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReplicationSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListReplicationSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReplicationSourcesRequest.Builder>,
+                        ListReplicationSourcesRequest>() {
+                    @Override
+                    public ListReplicationSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReplicationSourcesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReplicationSourcesRequest, ListReplicationSourcesResponse>() {
+                    @Override
+                    public ListReplicationSourcesResponse apply(
+                            ListReplicationSourcesRequest request) {
+                        return client.listReplicationSources(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReplicationSourcesResponse,
+                        java.util.List<com.oracle.bmc.objectstorage.model.ReplicationSource>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.objectstorage.model.ReplicationSource>
+                            apply(ListReplicationSourcesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRetentionRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRetentionRulesResponse> listRetentionRulesResponseIterator(
+            final ListRetentionRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRetentionRulesRequest.Builder, ListRetentionRulesRequest,
+                ListRetentionRulesResponse>(
+                new com.google.common.base.Supplier<ListRetentionRulesRequest.Builder>() {
+                    @Override
+                    public ListRetentionRulesRequest.Builder get() {
+                        return ListRetentionRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRetentionRulesResponse, String>() {
+                    @Override
+                    public String apply(ListRetentionRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRetentionRulesRequest.Builder>,
+                        ListRetentionRulesRequest>() {
+                    @Override
+                    public ListRetentionRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRetentionRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRetentionRulesRequest, ListRetentionRulesResponse>() {
+                    @Override
+                    public ListRetentionRulesResponse apply(ListRetentionRulesRequest request) {
+                        return client.listRetentionRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.objectstorage.model.RetentionRuleSummary} objects
+     * contained in responses from the listRetentionRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.objectstorage.model.RetentionRuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.objectstorage.model.RetentionRuleSummary>
+            listRetentionRulesRecordIterator(final ListRetentionRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRetentionRulesRequest.Builder, ListRetentionRulesRequest,
+                ListRetentionRulesResponse,
+                com.oracle.bmc.objectstorage.model.RetentionRuleSummary>(
+                new com.google.common.base.Supplier<ListRetentionRulesRequest.Builder>() {
+                    @Override
+                    public ListRetentionRulesRequest.Builder get() {
+                        return ListRetentionRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRetentionRulesResponse, String>() {
+                    @Override
+                    public String apply(ListRetentionRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRetentionRulesRequest.Builder>,
+                        ListRetentionRulesRequest>() {
+                    @Override
+                    public ListRetentionRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRetentionRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRetentionRulesRequest, ListRetentionRulesResponse>() {
+                    @Override
+                    public ListRetentionRulesResponse apply(ListRetentionRulesRequest request) {
+                        return client.listRetentionRules(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRetentionRulesResponse,
+                        java.util.List<com.oracle.bmc.objectstorage.model.RetentionRuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.objectstorage.model.RetentionRuleSummary>
+                            apply(ListRetentionRulesResponse response) {
+                        return response.getRetentionRuleCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
      * will fetch more data from the server as needed.
      *

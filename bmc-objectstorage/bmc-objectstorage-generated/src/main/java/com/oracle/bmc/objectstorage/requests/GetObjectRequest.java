@@ -50,7 +50,7 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String opcClientRequestId;
 
     /**
-     * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/rfc/rfc7233), section 2.1.
+     * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/html/rfc7233#section-2.1).
      * Note that only a single range of bytes is supported.
      *
      */

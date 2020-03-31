@@ -150,6 +150,7 @@ public class PreauthenticatedRequest {
     /**
      * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
      * information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
+     * Example: test/object1.log
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
@@ -209,7 +210,7 @@ public class PreauthenticatedRequest {
     AccessType accessType;
 
     /**
-     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/rfc/rfc3339). After
+     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After
      * this date the pre-authenticated request will no longer be valid.
      *
      **/
@@ -218,7 +219,7 @@ public class PreauthenticatedRequest {
 
     /**
      * The date when the pre-authenticated request was created as per specification
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

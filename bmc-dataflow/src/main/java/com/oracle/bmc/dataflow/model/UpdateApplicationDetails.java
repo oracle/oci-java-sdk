@@ -25,6 +25,42 @@ public class UpdateApplicationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("className")
+        private String className;
+
+        public Builder className(String className) {
+            this.className = className;
+            this.__explicitlySet__.add("className");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
+        private String fileUri;
+
+        public Builder fileUri(String fileUri) {
+            this.fileUri = fileUri;
+            this.__explicitlySet__.add("fileUri");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
+        private String sparkVersion;
+
+        public Builder sparkVersion(String sparkVersion) {
+            this.sparkVersion = sparkVersion;
+            this.__explicitlySet__.add("sparkVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("language")
+        private ApplicationLanguage language;
+
+        public Builder language(ApplicationLanguage language) {
+            this.language = language;
+            this.__explicitlySet__.add("language");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<String> arguments;
 
@@ -140,6 +176,10 @@ public class UpdateApplicationDetails {
         public UpdateApplicationDetails build() {
             UpdateApplicationDetails __instance__ =
                     new UpdateApplicationDetails(
+                            className,
+                            fileUri,
+                            sparkVersion,
+                            language,
                             arguments,
                             configuration,
                             definedTags,
@@ -159,7 +199,11 @@ public class UpdateApplicationDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateApplicationDetails o) {
             Builder copiedBuilder =
-                    arguments(o.getArguments())
+                    className(o.getClassName())
+                            .fileUri(o.getFileUri())
+                            .sparkVersion(o.getSparkVersion())
+                            .language(o.getLanguage())
+                            .arguments(o.getArguments())
                             .configuration(o.getConfiguration())
                             .definedTags(o.getDefinedTags())
                             .description(o.getDescription())
@@ -183,6 +227,35 @@ public class UpdateApplicationDetails {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * The class for the application.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("className")
+    String className;
+
+    /**
+     * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
+    String fileUri;
+
+    /**
+     * The Spark version utilized to run the application.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
+    String sparkVersion;
+
+    /**
+     * The Spark language.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("language")
+    ApplicationLanguage language;
 
     /**
      * The arguments passed to the running application as command line arguments.  An argument is

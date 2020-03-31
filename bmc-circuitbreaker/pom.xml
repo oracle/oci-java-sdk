@@ -5,17 +5,27 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.15.2</version>
+    <version>1.15.3</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-circuitbreaker</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Circuit Breaker</name>
-  <description>This project contains the Circuit Breaker module used for Oracle Cloud Infrastructure
-    SDKs</description>
+  <description>This project contains the Circuit Breaker module used for Oracle Cloud Infrastructure SDKs</description>
+  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <build>
+    <!-- Substitutes maven properties into the SDK properties -->
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
 
   <dependencies>
     <dependency>

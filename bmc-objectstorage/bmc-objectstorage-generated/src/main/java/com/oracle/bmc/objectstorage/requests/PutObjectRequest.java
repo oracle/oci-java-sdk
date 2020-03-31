@@ -65,9 +65,10 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     private String expect;
 
     /**
-     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Object Storage performs an integrity check
-     * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
-     * If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+     * The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object
+     * Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the
+     * MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
+     * is returned with the message:
      * <p>
      * \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
      *
@@ -75,27 +76,48 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     private String contentMD5;
 
     /**
-     * The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
+     * The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to
+     * 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect
+     * on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example,
+     * you could use this header to identify and perform special operations on text only objects.
+     *
      */
     private String contentType;
 
     /**
-     * The content language of the object.
+     * The optional Content-Language header that defines the content language of the object to upload. Specifying
+     * values for this header has no effect on Object Storage behavior. Programs that read the object determine what
+     * to do based on the value provided. For example, you could use this header to identify and differentiate objects
+     * based on a particular language.
+     *
      */
     private String contentLanguage;
 
     /**
-     * The content encoding of the object.
+     * The optional Content-Encoding header that defines the content encodings that were applied to the object to
+     * upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
+     * object determine what to do based on the value provided. For example, you could use this header to determine
+     * what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
+     * the object.
+     *
      */
     private String contentEncoding;
 
     /**
-     * The Content-Disposition header value to be returned in GetObjectReponse.
+     * The optional Content-Disposition header that defines presentational information for the object to be
+     * returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
+     * Storage behavior. Programs that read the object determine what to do based on the value provided.
+     * For example, you could use this header to let users download objects with custom filenames in a browser.
+     *
      */
     private String contentDisposition;
 
     /**
-     * The cache-control header value to be returned in GetObjectReponse.
+     * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
+     * HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
+     * that read the object determine what to do based on the value provided.
+     * For example, you could use this header to identify objects that require caching restrictions.
+     *
      */
     private String cacheControl;
 

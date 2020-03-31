@@ -38,7 +38,7 @@ public class HeadObjectResponse {
     private Long contentLength;
 
     /**
-     * Content-MD5 header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+     * Content-MD5 header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.15).
      * Unavailable for objects uploaded using multipart upload.
      *
      */
@@ -55,32 +55,32 @@ public class HeadObjectResponse {
     private String opcMultipartMd5;
 
     /**
-     * Content-Type header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.17.
+     * Content-Type header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
      */
     private String contentType;
 
     /**
-     * Content-Language header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.12.
+     * Content-Language header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.12).
      */
     private String contentLanguage;
 
     /**
-     * Content-Encoding header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.11.
+     * Content-Encoding header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.11).
      */
     private String contentEncoding;
 
     /**
-     * Cache-Control header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.9.
+     * Cache-Control header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.9).
      */
     private String cacheControl;
 
     /**
-     * Content-Disposition header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1
+     * Content-Disposition header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-19.5.1).
      */
     private String contentDisposition;
 
     /**
-     * The object modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     * The object modification time, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      */
     private java.util.Date lastModified;
 

@@ -156,6 +156,41 @@ public interface ObjectStorageAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a replication policy for the specified bucket.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateReplicationPolicyResponse> createReplicationPolicy(
+            CreateReplicationPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateReplicationPolicyRequest, CreateReplicationPolicyResponse>
+                    handler);
+
+    /**
+     * Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds.
+     * Note that a maximum of 100 rules are supported on a bucket.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRetentionRuleResponse> createRetentionRule(
+            CreateRetentionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateRetentionRuleRequest, CreateRetentionRuleResponse>
+                    handler);
+
+    /**
      * Deletes a bucket if the bucket is already empty. If the bucket is not empty, use
      * {@link #deleteObject(DeleteObjectRequest, Consumer, Consumer) deleteObject} first. In addition,
      * you cannot delete a bucket that has a multipart upload in progress or a pre-authenticated
@@ -224,6 +259,39 @@ public interface ObjectStorageAsync extends AutoCloseable {
                                     DeletePreauthenticatedRequestRequest,
                                     DeletePreauthenticatedRequestResponse>
                             handler);
+
+    /**
+     * Deletes the replication policy associated with the source bucket.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteReplicationPolicyResponse> deleteReplicationPolicy(
+            DeleteReplicationPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteReplicationPolicyRequest, DeleteReplicationPolicyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified rule. The deletion takes effect typically within 30 seconds.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRetentionRuleResponse> deleteRetentionRule(
+            DeleteRetentionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRetentionRuleRequest, DeleteRetentionRuleResponse>
+                    handler);
 
     /**
      * Gets the current representation of the given bucket in the given Object Storage namespace.
@@ -331,6 +399,38 @@ public interface ObjectStorageAsync extends AutoCloseable {
             GetPreauthenticatedRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetPreauthenticatedRequestRequest, GetPreauthenticatedRequestResponse>
+                    handler);
+
+    /**
+     * Get the replication policy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetReplicationPolicyResponse> getReplicationPolicy(
+            GetReplicationPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetReplicationPolicyRequest, GetReplicationPolicyResponse>
+                    handler);
+
+    /**
+     * Get the specified retention rule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRetentionRuleResponse> getRetentionRule(
+            GetRetentionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetRetentionRuleRequest, GetRetentionRuleResponse>
                     handler);
 
     /**
@@ -470,6 +570,58 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List the replication policies associated with a bucket.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListReplicationPoliciesResponse> listReplicationPolicies(
+            ListReplicationPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListReplicationPoliciesRequest, ListReplicationPoliciesResponse>
+                    handler);
+
+    /**
+     * List the replication sources of a destination bucket.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListReplicationSourcesResponse> listReplicationSources(
+            ListReplicationSourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListReplicationSourcesRequest, ListReplicationSourcesResponse>
+                    handler);
+
+    /**
+     * List the retention rules for a bucket. The retention rules are sorted based on creation time,
+     * with the most recently created retention rule returned first.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRetentionRulesResponse> listRetentionRules(
+            ListRetentionRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRetentionRulesRequest, ListRetentionRulesResponse>
+                    handler);
+
+    /**
      * Lists the errors of the work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -518,8 +670,31 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new object or overwrites an existing one. See [Special Instructions for Object Storage
-     * PUT](https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
+     * Stops replication to the destination bucket and removes the replication policy. When the replication
+     * policy was created, this destination bucket became read-only except for new and changed objects replicated
+     * automatically from the source bucket. MakeBucketWritable removes the replication policy. This bucket is no
+     * longer the target for replication and is now writable, allowing users to make changes to bucket contents.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<MakeBucketWritableResponse> makeBucketWritable(
+            MakeBucketWritableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            MakeBucketWritableRequest, MakeBucketWritableResponse>
+                    handler);
+
+    /**
+     * Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
+     * PutObject is 50 GiB.
+     * <p>
+     * See [Special Instructions for Object Storage PUT](https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
+     * for request signature requirements.
      *
      *
      * @param request The request object containing the details to send
@@ -653,6 +828,23 @@ public interface ObjectStorageAsync extends AutoCloseable {
             UpdateNamespaceMetadataRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateNamespaceMetadataRequest, UpdateNamespaceMetadataResponse>
+                    handler);
+
+    /**
+     * Updates the specified retention rule. Rule changes take effect typically within 30 seconds.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRetentionRuleResponse> updateRetentionRule(
+            UpdateRetentionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRetentionRuleRequest, UpdateRetentionRuleResponse>
                     handler);
 
     /**

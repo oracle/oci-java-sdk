@@ -139,31 +139,52 @@ public class CreateMultipartUploadDetails {
     String object;
 
     /**
-     * The content type of the object to upload.
+     * The optional Content-Type header that defines the standard MIME type format of the object to upload.
+     * Specifying values for this header has no effect on Object Storage behavior. Programs that read the object
+     * determine what to do based on the value provided. For example, you could use this header to identify and
+     * perform special operations on text only objects.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     String contentType;
 
     /**
-     * The content language of the object to upload.
+     * The optional Content-Language header that defines the content language of the object to upload. Specifying
+     * values for this header has no effect on Object Storage behavior. Programs that read the object determine what
+     * to do based on the value provided. For example, you could use this header to identify and differentiate objects
+     * based on a particular language.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentLanguage")
     String contentLanguage;
 
     /**
-     * The content encoding of the object to upload.
+     * The optional Content-Encoding header that defines the content encodings that were applied to the object to
+     * upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
+     * object determine what to do based on the value provided. For example, you could use this header to determine
+     * what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
+     * the object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentEncoding")
     String contentEncoding;
 
     /**
-     * The Content-Disposition header value to be returned in GetObjectReponse.
+     * The optional Content-Disposition header that defines presentational information for the object to be
+     * returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
+     * Storage behavior. Programs that read the object determine what to do based on the value provided.
+     * For example, you could use this header to let users download objects with custom filenames in a browser.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentDisposition")
     String contentDisposition;
 
     /**
-     * The cache-control header value to be returned in GetObjectReponse.
+     * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
+     * HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
+     * that read the object determine what to do based on the value provided.
+     * For example, you could use this header to identify objects that require caching restrictions.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cacheControl")
     String cacheControl;

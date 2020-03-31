@@ -42,18 +42,31 @@ public class UpdateClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("options")
+        private UpdateClusterOptionsDetails options;
+
+        public Builder options(UpdateClusterOptionsDetails options) {
+            this.options = options;
+            this.__explicitlySet__.add("options");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateClusterDetails build() {
-            UpdateClusterDetails __instance__ = new UpdateClusterDetails(name, kubernetesVersion);
+            UpdateClusterDetails __instance__ =
+                    new UpdateClusterDetails(name, kubernetesVersion, options);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateClusterDetails o) {
-            Builder copiedBuilder = name(o.getName()).kubernetesVersion(o.getKubernetesVersion());
+            Builder copiedBuilder =
+                    name(o.getName())
+                            .kubernetesVersion(o.getKubernetesVersion())
+                            .options(o.getOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -78,6 +91,9 @@ public class UpdateClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
     String kubernetesVersion;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("options")
+    UpdateClusterOptionsDetails options;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -38,7 +38,7 @@ public class CommitMultipartUploadResponse {
     private String eTag;
 
     /**
-     * The time the object was last modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     * The time the object was last modified, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      */
     private java.util.Date lastModified;
 

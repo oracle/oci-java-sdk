@@ -148,7 +148,7 @@ public class CreatePreauthenticatedRequestDetails {
     AccessType accessType;
 
     /**
-     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * After this date the pre-authenticated request will no longer be valid.
      *
      **/
