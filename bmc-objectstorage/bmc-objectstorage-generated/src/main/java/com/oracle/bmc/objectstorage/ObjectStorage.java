@@ -102,6 +102,25 @@ public interface ObjectStorage extends AutoCloseable {
             CreatePreauthenticatedRequestRequest request);
 
     /**
+     * Creates a replication policy for the specified bucket.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateReplicationPolicyResponse createReplicationPolicy(CreateReplicationPolicyRequest request);
+
+    /**
+     * Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds.
+     * Note that a maximum of 100 rules are supported on a bucket.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateRetentionRuleResponse createRetentionRule(CreateRetentionRuleRequest request);
+
+    /**
      * Deletes a bucket if the bucket is already empty. If the bucket is not empty, use
      * {@link #deleteObject(DeleteObjectRequest) deleteObject} first. In addition,
      * you cannot delete a bucket that has a multipart upload in progress or a pre-authenticated
@@ -140,6 +159,23 @@ public interface ObjectStorage extends AutoCloseable {
      */
     DeletePreauthenticatedRequestResponse deletePreauthenticatedRequest(
             DeletePreauthenticatedRequestRequest request);
+
+    /**
+     * Deletes the replication policy associated with the source bucket.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteReplicationPolicyResponse deleteReplicationPolicy(DeleteReplicationPolicyRequest request);
+
+    /**
+     * Deletes the specified rule. The deletion takes effect typically within 30 seconds.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteRetentionRuleResponse deleteRetentionRule(DeleteRetentionRuleRequest request);
 
     /**
      * Gets the current representation of the given bucket in the given Object Storage namespace.
@@ -207,6 +243,23 @@ public interface ObjectStorage extends AutoCloseable {
      */
     GetPreauthenticatedRequestResponse getPreauthenticatedRequest(
             GetPreauthenticatedRequestRequest request);
+
+    /**
+     * Get the replication policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetReplicationPolicyResponse getReplicationPolicy(GetReplicationPolicyRequest request);
+
+    /**
+     * Get the specified retention rule.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetRetentionRuleResponse getRetentionRule(GetRetentionRuleRequest request);
 
     /**
      * Gets the status of the work request for the given ID.
@@ -291,6 +344,34 @@ public interface ObjectStorage extends AutoCloseable {
             ListPreauthenticatedRequestsRequest request);
 
     /**
+     * List the replication policies associated with a bucket.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListReplicationPoliciesResponse listReplicationPolicies(ListReplicationPoliciesRequest request);
+
+    /**
+     * List the replication sources of a destination bucket.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListReplicationSourcesResponse listReplicationSources(ListReplicationSourcesRequest request);
+
+    /**
+     * List the retention rules for a bucket. The retention rules are sorted based on creation time,
+     * with the most recently created retention rule returned first.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListRetentionRulesResponse listRetentionRules(ListRetentionRulesRequest request);
+
+    /**
      * Lists the errors of the work request with the given ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -316,8 +397,23 @@ public interface ObjectStorage extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Creates a new object or overwrites an existing one. See [Special Instructions for Object Storage
-     * PUT](https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
+     * Stops replication to the destination bucket and removes the replication policy. When the replication
+     * policy was created, this destination bucket became read-only except for new and changed objects replicated
+     * automatically from the source bucket. MakeBucketWritable removes the replication policy. This bucket is no
+     * longer the target for replication and is now writable, allowing users to make changes to bucket contents.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    MakeBucketWritableResponse makeBucketWritable(MakeBucketWritableRequest request);
+
+    /**
+     * Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
+     * PutObject is 50 GiB.
+     * <p>
+     * See [Special Instructions for Object Storage PUT](https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
+     * for request signature requirements.
      *
      *
      * Note: This operation consumes a stream.
@@ -430,6 +526,15 @@ public interface ObjectStorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateNamespaceMetadataResponse updateNamespaceMetadata(UpdateNamespaceMetadataRequest request);
+
+    /**
+     * Updates the specified retention rule. Rule changes take effect typically within 30 seconds.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateRetentionRuleResponse updateRetentionRule(UpdateRetentionRuleRequest request);
 
     /**
      * Uploads a single part of a multipart upload.

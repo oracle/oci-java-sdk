@@ -154,7 +154,7 @@ public class CreateBucketDetails {
     }
 
     /**
-     * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, and dashes.
+     * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      * Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information.
      * example: Example: my-new-bucket1
      *
@@ -301,8 +301,8 @@ public class CreateBucketDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of a master encryption key used to call the Key Management service to generate a data
-     * encryption key or to encrypt or decrypt a data encryption key.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+     * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")

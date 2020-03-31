@@ -16,8 +16,8 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String opcClientRequestId;
 
     /**
-     * This is an optional field representing the tenancy OCID or the compartment OCID within the tenancy whose Object Storage namespace
-     * name has to be retrieved.
+     * This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) or the compartment
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
      *
      */
     private String compartmentId;

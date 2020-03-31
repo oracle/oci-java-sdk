@@ -643,6 +643,71 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public CreateReplicationPolicyResponse createReplicationPolicy(
+            CreateReplicationPolicyRequest request) {
+        LOG.trace("Called createReplicationPolicy");
+        final CreateReplicationPolicyRequest interceptedRequest =
+                CreateReplicationPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateReplicationPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateReplicationPolicyResponse>
+                transformer = CreateReplicationPolicyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateReplicationPolicyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateRetentionRuleResponse createRetentionRule(CreateRetentionRuleRequest request) {
+        LOG.trace("Called createRetentionRule");
+        final CreateRetentionRuleRequest interceptedRequest =
+                CreateRetentionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRetentionRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRetentionRuleResponse>
+                transformer = CreateRetentionRuleConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateRetentionRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteBucketResponse deleteBucket(DeleteBucketRequest request) {
         LOG.trace("Called deleteBucket");
         final DeleteBucketRequest interceptedRequest =
@@ -742,6 +807,65 @@ public class ObjectStorageClient implements ObjectStorage {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeletePreauthenticatedRequestResponse>
                 transformer = DeletePreauthenticatedRequestConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteReplicationPolicyResponse deleteReplicationPolicy(
+            DeleteReplicationPolicyRequest request) {
+        LOG.trace("Called deleteReplicationPolicy");
+        final DeleteReplicationPolicyRequest interceptedRequest =
+                DeleteReplicationPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteReplicationPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteReplicationPolicyResponse>
+                transformer = DeleteReplicationPolicyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteRetentionRuleResponse deleteRetentionRule(DeleteRetentionRuleRequest request) {
+        LOG.trace("Called deleteRetentionRule");
+        final DeleteRetentionRuleRequest interceptedRequest =
+                DeleteRetentionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRetentionRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRetentionRuleResponse>
+                transformer = DeleteRetentionRuleConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -912,6 +1036,62 @@ public class ObjectStorageClient implements ObjectStorage {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPreauthenticatedRequestResponse>
                 transformer = GetPreauthenticatedRequestConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetReplicationPolicyResponse getReplicationPolicy(GetReplicationPolicyRequest request) {
+        LOG.trace("Called getReplicationPolicy");
+        final GetReplicationPolicyRequest interceptedRequest =
+                GetReplicationPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetReplicationPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetReplicationPolicyResponse>
+                transformer = GetReplicationPolicyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRetentionRuleResponse getRetentionRule(GetRetentionRuleRequest request) {
+        LOG.trace("Called getRetentionRule");
+        final GetRetentionRuleRequest interceptedRequest =
+                GetRetentionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRetentionRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetRetentionRuleResponse>
+                transformer = GetRetentionRuleConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1159,6 +1339,92 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public ListReplicationPoliciesResponse listReplicationPolicies(
+            ListReplicationPoliciesRequest request) {
+        LOG.trace("Called listReplicationPolicies");
+        final ListReplicationPoliciesRequest interceptedRequest =
+                ListReplicationPoliciesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListReplicationPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListReplicationPoliciesResponse>
+                transformer = ListReplicationPoliciesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListReplicationSourcesResponse listReplicationSources(
+            ListReplicationSourcesRequest request) {
+        LOG.trace("Called listReplicationSources");
+        final ListReplicationSourcesRequest interceptedRequest =
+                ListReplicationSourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListReplicationSourcesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListReplicationSourcesResponse>
+                transformer = ListReplicationSourcesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRetentionRulesResponse listRetentionRules(ListRetentionRulesRequest request) {
+        LOG.trace("Called listRetentionRules");
+        final ListRetentionRulesRequest interceptedRequest =
+                ListRetentionRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRetentionRulesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListRetentionRulesResponse>
+                transformer = ListRetentionRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
         LOG.trace("Called listWorkRequestErrors");
@@ -1238,6 +1504,35 @@ public class ObjectStorageClient implements ObjectStorage {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public MakeBucketWritableResponse makeBucketWritable(MakeBucketWritableRequest request) {
+        LOG.trace("Called makeBucketWritable");
+        final MakeBucketWritableRequest interceptedRequest =
+                MakeBucketWritableConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MakeBucketWritableConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, MakeBucketWritableResponse>
+                transformer = MakeBucketWritableConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1482,6 +1777,38 @@ public class ObjectStorageClient implements ObjectStorage {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateNamespaceMetadataDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateRetentionRuleResponse updateRetentionRule(UpdateRetentionRuleRequest request) {
+        LOG.trace("Called updateRetentionRule");
+        final UpdateRetentionRuleRequest interceptedRequest =
+                UpdateRetentionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRetentionRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRetentionRuleResponse>
+                transformer = UpdateRetentionRuleConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateRetentionRuleDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

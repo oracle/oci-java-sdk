@@ -199,9 +199,6 @@ public class ObjectLifecycleRule {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
 
-    /**
-     * A filter limiting object names that the rule will apply to.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNameFilter")
     ObjectNameFilter objectNameFilter;
 

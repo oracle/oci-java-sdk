@@ -23,7 +23,7 @@ public class DeleteObjectResponse {
     private String opcRequestId;
 
     /**
-     * The time the object was deleted, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     * The time the object was deleted, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      */
     private java.util.Date lastModified;
 

@@ -24,7 +24,7 @@ public class CreateMultipartUploadRequest
     private String bucketName;
 
     /**
-     * Request object for creating a multi-part upload.
+     * Request object for creating a multipart upload.
      */
     private CreateMultipartUploadDetails createMultipartUploadDetails;
 
