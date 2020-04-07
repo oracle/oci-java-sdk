@@ -37,6 +37,29 @@ public interface DataFlow extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves an application into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Associated resources, like runs, will not be automatically moved.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeApplicationCompartmentResponse changeApplicationCompartment(
+            ChangeApplicationCompartmentRequest request);
+
+    /**
+     * Moves a run into a different compartment. When provided, If-Match is checked against ETag
+     * values of the resource. Associated resources, like historical metrics, will not be
+     * automatically moved. The run must be in a terminal state (CANCELED, FAILED, SUCCEEDED) in
+     * order for it to be moved to a different compartment
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeRunCompartmentResponse changeRunCompartment(ChangeRunCompartmentRequest request);
+
+    /**
      * Creates an application.
      *
      * @param request The request object containing the details to send

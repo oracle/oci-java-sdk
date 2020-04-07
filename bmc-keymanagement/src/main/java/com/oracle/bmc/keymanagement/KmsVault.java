@@ -102,6 +102,15 @@ public interface KmsVault extends AutoCloseable {
     GetVaultResponse getVault(GetVaultRequest request);
 
     /**
+     * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVaultUsageResponse getVaultUsage(GetVaultUsageRequest request);
+
+    /**
      * Lists the vaults in the specified compartment.
      * <p>
      * As a provisioning operation, this call is subject to a Key Management limit that applies to

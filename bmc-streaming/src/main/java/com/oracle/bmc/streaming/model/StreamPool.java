@@ -85,6 +85,42 @@ public class StreamPool {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKey")
+        private CustomEncryptionKey customEncryptionKey;
+
+        public Builder customEncryptionKey(CustomEncryptionKey customEncryptionKey) {
+            this.customEncryptionKey = customEncryptionKey;
+            this.__explicitlySet__.add("customEncryptionKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
+        private Boolean isPrivate;
+
+        public Builder isPrivate(Boolean isPrivate) {
+            this.isPrivate = isPrivate;
+            this.__explicitlySet__.add("isPrivate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointFqdn")
+        private String endpointFqdn;
+
+        public Builder endpointFqdn(String endpointFqdn) {
+            this.endpointFqdn = endpointFqdn;
+            this.__explicitlySet__.add("endpointFqdn");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointSettings")
+        private PrivateEndpointSettings privateEndpointSettings;
+
+        public Builder privateEndpointSettings(PrivateEndpointSettings privateEndpointSettings) {
+            this.privateEndpointSettings = privateEndpointSettings;
+            this.__explicitlySet__.add("privateEndpointSettings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -117,6 +153,10 @@ public class StreamPool {
                             lifecycleStateDetails,
                             timeCreated,
                             kafkaSettings,
+                            customEncryptionKey,
+                            isPrivate,
+                            endpointFqdn,
+                            privateEndpointSettings,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -133,6 +173,10 @@ public class StreamPool {
                             .lifecycleStateDetails(o.getLifecycleStateDetails())
                             .timeCreated(o.getTimeCreated())
                             .kafkaSettings(o.getKafkaSettings())
+                            .customEncryptionKey(o.getCustomEncryptionKey())
+                            .isPrivate(o.getIsPrivate())
+                            .endpointFqdn(o.getEndpointFqdn())
+                            .privateEndpointSettings(o.getPrivateEndpointSettings())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -238,6 +282,29 @@ public class StreamPool {
 
     @com.fasterxml.jackson.annotation.JsonProperty("kafkaSettings")
     KafkaSettings kafkaSettings;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKey")
+    CustomEncryptionKey customEncryptionKey;
+
+    /**
+     * True if the stream pool is private, false otherwise.
+     * If the stream pool is private, the streams inside the stream pool can only be accessed from inside the associated subnetId.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
+    Boolean isPrivate;
+
+    /**
+     * The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a {@link Stream} object).
+     * If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable.
+     * Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointFqdn")
+    String endpointFqdn;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointSettings")
+    PrivateEndpointSettings privateEndpointSettings;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only.

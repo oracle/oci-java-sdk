@@ -258,6 +258,8 @@ public class StreamSummary {
 
     /**
      * The endpoint to use when creating the StreamClient to consume or publish messages in the stream.
+     * If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messagesEndpoint")
     String messagesEndpoint;
