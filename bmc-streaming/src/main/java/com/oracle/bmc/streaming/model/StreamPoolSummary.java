@@ -69,6 +69,15 @@ public class StreamPoolSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
+        private Boolean isPrivate;
+
+        public Builder isPrivate(Boolean isPrivate) {
+            this.isPrivate = isPrivate;
+            this.__explicitlySet__.add("isPrivate");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -99,6 +108,7 @@ public class StreamPoolSummary {
                             name,
                             lifecycleState,
                             timeCreated,
+                            isPrivate,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -113,6 +123,7 @@ public class StreamPoolSummary {
                             .name(o.getName())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
+                            .isPrivate(o.getIsPrivate())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -209,6 +220,14 @@ public class StreamPoolSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * True if the stream pool is private, false otherwise.
+     * The associated endpoint and subnetId of a private stream pool can be retrieved through the {@link #getStreamPool(GetStreamPoolRequest) getStreamPool} API.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
+    Boolean isPrivate;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only.

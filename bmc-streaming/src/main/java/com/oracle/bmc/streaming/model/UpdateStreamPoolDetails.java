@@ -42,6 +42,16 @@ public class UpdateStreamPoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyDetails")
+        private CustomEncryptionKeyDetails customEncryptionKeyDetails;
+
+        public Builder customEncryptionKeyDetails(
+                CustomEncryptionKeyDetails customEncryptionKeyDetails) {
+            this.customEncryptionKeyDetails = customEncryptionKeyDetails;
+            this.__explicitlySet__.add("customEncryptionKeyDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -66,7 +76,12 @@ public class UpdateStreamPoolDetails {
 
         public UpdateStreamPoolDetails build() {
             UpdateStreamPoolDetails __instance__ =
-                    new UpdateStreamPoolDetails(name, kafkaSettings, freeformTags, definedTags);
+                    new UpdateStreamPoolDetails(
+                            name,
+                            kafkaSettings,
+                            customEncryptionKeyDetails,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,6 +91,7 @@ public class UpdateStreamPoolDetails {
             Builder copiedBuilder =
                     name(o.getName())
                             .kafkaSettings(o.getKafkaSettings())
+                            .customEncryptionKeyDetails(o.getCustomEncryptionKeyDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -96,6 +112,9 @@ public class UpdateStreamPoolDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("kafkaSettings")
     KafkaSettings kafkaSettings;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyDetails")
+    CustomEncryptionKeyDetails customEncryptionKeyDetails;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only.

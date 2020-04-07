@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.15.4 - 2020-04-07
+### Added
+- Support for changing compartments of runs and applications in the Data Flow service
+- Support for getting usage information in the Key Management Vault service
+- Support for custom Key Management service endpoints and private endpoints on stream pools in the Streaming service
+
 ## 1.15.3 - 2020-03-31
 ### Added
 - Support for the Secrets Management service 

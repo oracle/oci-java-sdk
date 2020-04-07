@@ -37,6 +37,45 @@ public interface DataFlowAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves an application into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Associated resources, like runs, will not be automatically moved.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeApplicationCompartmentResponse> changeApplicationCompartment(
+            ChangeApplicationCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeApplicationCompartmentRequest,
+                            ChangeApplicationCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a run into a different compartment. When provided, If-Match is checked against ETag
+     * values of the resource. Associated resources, like historical metrics, will not be
+     * automatically moved. The run must be in a terminal state (CANCELED, FAILED, SUCCEEDED) in
+     * order for it to be moved to a different compartment
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRunCompartmentResponse> changeRunCompartment(
+            ChangeRunCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeRunCompartmentRequest, ChangeRunCompartmentResponse>
+                    handler);
+
+    /**
      * Creates an application.
      *
      *

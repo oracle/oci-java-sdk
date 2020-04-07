@@ -51,6 +51,25 @@ public class CreateStreamPoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyDetails")
+        private CustomEncryptionKeyDetails customEncryptionKeyDetails;
+
+        public Builder customEncryptionKeyDetails(
+                CustomEncryptionKeyDetails customEncryptionKeyDetails) {
+            this.customEncryptionKeyDetails = customEncryptionKeyDetails;
+            this.__explicitlySet__.add("customEncryptionKeyDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDetails")
+        private PrivateEndpointDetails privateEndpointDetails;
+
+        public Builder privateEndpointDetails(PrivateEndpointDetails privateEndpointDetails) {
+            this.privateEndpointDetails = privateEndpointDetails;
+            this.__explicitlySet__.add("privateEndpointDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -76,7 +95,13 @@ public class CreateStreamPoolDetails {
         public CreateStreamPoolDetails build() {
             CreateStreamPoolDetails __instance__ =
                     new CreateStreamPoolDetails(
-                            compartmentId, name, kafkaSettings, freeformTags, definedTags);
+                            compartmentId,
+                            name,
+                            kafkaSettings,
+                            customEncryptionKeyDetails,
+                            privateEndpointDetails,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,6 +112,8 @@ public class CreateStreamPoolDetails {
                     compartmentId(o.getCompartmentId())
                             .name(o.getName())
                             .kafkaSettings(o.getKafkaSettings())
+                            .customEncryptionKeyDetails(o.getCustomEncryptionKeyDetails())
+                            .privateEndpointDetails(o.getPrivateEndpointDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -119,6 +146,12 @@ public class CreateStreamPoolDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("kafkaSettings")
     KafkaSettings kafkaSettings;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyDetails")
+    CustomEncryptionKeyDetails customEncryptionKeyDetails;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDetails")
+    PrivateEndpointDetails privateEndpointDetails;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only.

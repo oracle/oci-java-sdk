@@ -230,7 +230,7 @@ public class CreateRunDetails {
     java.util.List<String> arguments;
 
     /**
-     * The OCID of the compartment that contains this application.
+     * The OCID of a compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

@@ -174,7 +174,7 @@ public class ApplicationSummary {
     }
 
     /**
-     * The OCID of the compartment that contains this application.
+     * The OCID of a compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
