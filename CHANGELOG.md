@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.15.5 - 2020-04-14
+### Added
+- Support for access types on instances in the Content and Experience service
+- Support for identity contexts in the Search service
+- Support for Client Side Encryption: https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm
+
 ## 1.15.4 - 2020-04-07
 ### Added
 - Support for changing compartments of runs and applications in the Data Flow service

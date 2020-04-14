@@ -123,12 +123,30 @@ public class OceInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("upgradeSchedule")
+        private OceInstance.UpgradeSchedule upgradeSchedule;
+
+        public Builder upgradeSchedule(OceInstance.UpgradeSchedule upgradeSchedule) {
+            this.upgradeSchedule = upgradeSchedule;
+            this.__explicitlySet__.add("upgradeSchedule");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
         private String wafPrimaryDomain;
 
         public Builder wafPrimaryDomain(String wafPrimaryDomain) {
             this.wafPrimaryDomain = wafPrimaryDomain;
             this.__explicitlySet__.add("wafPrimaryDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
+        private InstanceAccessType instanceAccessType;
+
+        public Builder instanceAccessType(InstanceAccessType instanceAccessType) {
+            this.instanceAccessType = instanceAccessType;
+            this.__explicitlySet__.add("instanceAccessType");
             return this;
         }
 
@@ -213,7 +231,9 @@ public class OceInstanceSummary {
                             instanceUsageType,
                             objectStorageNamespace,
                             adminEmail,
+                            upgradeSchedule,
                             wafPrimaryDomain,
+                            instanceAccessType,
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
@@ -239,7 +259,9 @@ public class OceInstanceSummary {
                             .instanceUsageType(o.getInstanceUsageType())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
+                            .upgradeSchedule(o.getUpgradeSchedule())
                             .wafPrimaryDomain(o.getWafPrimaryDomain())
+                            .instanceAccessType(o.getInstanceAccessType())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
@@ -372,10 +394,69 @@ public class OceInstanceSummary {
     String adminEmail;
 
     /**
+     * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+     * or delay upgrade of the service to previous released version
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("upgradeSchedule")
+    OceInstance.UpgradeSchedule upgradeSchedule;
+
+    /**
      * Web Application Firewall(WAF) primary domain
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
     String wafPrimaryDomain;
+    /**
+     * Flag indicating whether the instance access is private or public
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum InstanceAccessType {
+        Public("PUBLIC"),
+        Private("PRIVATE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, InstanceAccessType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InstanceAccessType v : InstanceAccessType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        InstanceAccessType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InstanceAccessType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'InstanceAccessType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Flag indicating whether the instance access is private or public
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
+    InstanceAccessType instanceAccessType;
 
     /**
      * The time the the OceInstance was created. An RFC3339 formatted datetime string

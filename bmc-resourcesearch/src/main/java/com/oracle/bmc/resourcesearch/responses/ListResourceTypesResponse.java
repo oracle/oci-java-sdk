@@ -5,7 +5,7 @@ package com.oracle.bmc.resourcesearch.responses;
 
 import com.oracle.bmc.resourcesearch.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.4")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListResourceTypesResponse {
@@ -16,8 +16,8 @@ public class ListResourceTypesResponse {
     private String opcNextPage;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;

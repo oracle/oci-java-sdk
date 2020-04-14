@@ -26,6 +26,7 @@ public class ConfigFileAuthenticationDetailsProvider
         implements AuthenticationDetailsProvider, RegionProvider {
 
     private final SimpleAuthenticationDetailsProvider delegate;
+    private final String pemFilePath;
 
     /**
      * Creates a new instance using the config file at the default location,
@@ -108,6 +109,7 @@ public class ConfigFileAuthenticationDetailsProvider
             builder = builder.passphraseCharacters(passPhrase.toCharArray());
         }
         this.delegate = builder.build();
+        this.pemFilePath = pemFilePath;
     }
 
     @Override
@@ -149,5 +151,14 @@ public class ConfigFileAuthenticationDetailsProvider
     @Override
     public Region getRegion() {
         return this.delegate.getRegion();
+    }
+
+    /**
+     * Returns the file path to the private key.
+     *
+     * @return the PEM File Path.
+     */
+    public String getPemFilePath() {
+        return this.pemFilePath;
     }
 }

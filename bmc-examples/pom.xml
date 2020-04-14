@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.15.4</version>
+    <version>1.15.5</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-examples</artifactId>
@@ -17,7 +17,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>1.15.4</version>
+        <version>1.15.5</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -207,6 +207,10 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-bds</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-encryption</artifactId>
     </dependency>
   </dependencies>
 </project>

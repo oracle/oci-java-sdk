@@ -5,7 +5,7 @@ package com.oracle.bmc.resourcesearch.requests;
 
 import com.oracle.bmc.resourcesearch.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.4")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class GetResourceTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {

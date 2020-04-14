@@ -23,6 +23,7 @@ import com.oracle.bmc.events.responses.GetRuleResponse;
 import com.oracle.bmc.events.responses.UpdateRuleResponse;
 import com.oracle.bmc.model.BmcException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -247,11 +248,19 @@ public class EventsServiceExample implements Closeable {
         }
 
         if (!OCID.isValid(args[0])) {
-            throw new IllegalArgumentException("Compartment Id must be passed in");
+            if (StringUtils.isBlank(args[0])) {
+                throw new IllegalArgumentException("Compartment Id must be passed in");
+            }
+            throw new IllegalArgumentException(
+                    String.format("Compartment Id %s does not match expected pattern", args[0]));
         }
 
         if (!OCID.isValid(args[1])) {
-            throw new IllegalArgumentException("OSS stream Id must be passed in");
+            if (StringUtils.isBlank(args[1])) {
+                throw new IllegalArgumentException("OSS stream Id must be passed in");
+            }
+            throw new IllegalArgumentException(
+                    String.format("OSS stream Id %s does not match expected pattern", args[1]));
         }
     }
 

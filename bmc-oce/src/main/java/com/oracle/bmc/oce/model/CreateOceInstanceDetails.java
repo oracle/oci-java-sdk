@@ -114,12 +114,30 @@ public class CreateOceInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("upgradeSchedule")
+        private OceInstance.UpgradeSchedule upgradeSchedule;
+
+        public Builder upgradeSchedule(OceInstance.UpgradeSchedule upgradeSchedule) {
+            this.upgradeSchedule = upgradeSchedule;
+            this.__explicitlySet__.add("upgradeSchedule");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
         private String wafPrimaryDomain;
 
         public Builder wafPrimaryDomain(String wafPrimaryDomain) {
             this.wafPrimaryDomain = wafPrimaryDomain;
             this.__explicitlySet__.add("wafPrimaryDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
+        private InstanceAccessType instanceAccessType;
+
+        public Builder instanceAccessType(InstanceAccessType instanceAccessType) {
+            this.instanceAccessType = instanceAccessType;
+            this.__explicitlySet__.add("instanceAccessType");
             return this;
         }
 
@@ -158,7 +176,9 @@ public class CreateOceInstanceDetails {
                             instanceUsageType,
                             objectStorageNamespace,
                             adminEmail,
+                            upgradeSchedule,
                             wafPrimaryDomain,
+                            instanceAccessType,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -178,7 +198,9 @@ public class CreateOceInstanceDetails {
                             .instanceUsageType(o.getInstanceUsageType())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
+                            .upgradeSchedule(o.getUpgradeSchedule())
                             .wafPrimaryDomain(o.getWafPrimaryDomain())
+                            .instanceAccessType(o.getInstanceAccessType())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -286,10 +308,58 @@ public class CreateOceInstanceDetails {
     String adminEmail;
 
     /**
+     * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+     * or delay upgrade of the service to previous released version
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("upgradeSchedule")
+    OceInstance.UpgradeSchedule upgradeSchedule;
+
+    /**
      * Web Application Firewall(WAF) primary domain
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
     String wafPrimaryDomain;
+    /**
+     * Flag indicating whether the instance access is private or public
+     **/
+    public enum InstanceAccessType {
+        Public("PUBLIC"),
+        Private("PRIVATE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, InstanceAccessType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InstanceAccessType v : InstanceAccessType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        InstanceAccessType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InstanceAccessType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid InstanceAccessType: " + key);
+        }
+    };
+    /**
+     * Flag indicating whether the instance access is private or public
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
+    InstanceAccessType instanceAccessType;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

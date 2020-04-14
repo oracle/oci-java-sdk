@@ -94,6 +94,15 @@ public class OceInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("upgradeSchedule")
+        private UpgradeSchedule upgradeSchedule;
+
+        public Builder upgradeSchedule(UpgradeSchedule upgradeSchedule) {
+            this.upgradeSchedule = upgradeSchedule;
+            this.__explicitlySet__.add("upgradeSchedule");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("identityStripe")
         private IdentityStripeDetails identityStripe;
 
@@ -136,6 +145,15 @@ public class OceInstance {
         public Builder wafPrimaryDomain(String wafPrimaryDomain) {
             this.wafPrimaryDomain = wafPrimaryDomain;
             this.__explicitlySet__.add("wafPrimaryDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
+        private InstanceAccessType instanceAccessType;
+
+        public Builder instanceAccessType(InstanceAccessType instanceAccessType) {
+            this.instanceAccessType = instanceAccessType;
+            this.__explicitlySet__.add("instanceAccessType");
             return this;
         }
 
@@ -217,11 +235,13 @@ public class OceInstance {
                             tenancyId,
                             idcsTenancy,
                             tenancyName,
+                            upgradeSchedule,
                             identityStripe,
                             instanceUsageType,
                             objectStorageNamespace,
                             adminEmail,
                             wafPrimaryDomain,
+                            instanceAccessType,
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
@@ -244,11 +264,13 @@ public class OceInstance {
                             .tenancyId(o.getTenancyId())
                             .idcsTenancy(o.getIdcsTenancy())
                             .tenancyName(o.getTenancyName())
+                            .upgradeSchedule(o.getUpgradeSchedule())
                             .identityStripe(o.getIdentityStripe())
                             .instanceUsageType(o.getInstanceUsageType())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
                             .wafPrimaryDomain(o.getWafPrimaryDomain())
+                            .instanceAccessType(o.getInstanceAccessType())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
@@ -316,6 +338,61 @@ public class OceInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     String tenancyName;
+    /**
+     * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+     * or delay upgrade of the service to previous released version
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum UpgradeSchedule {
+        UpgradeImmediately("UPGRADE_IMMEDIATELY"),
+        DelayedUpgrade("DELAYED_UPGRADE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, UpgradeSchedule> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (UpgradeSchedule v : UpgradeSchedule.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        UpgradeSchedule(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static UpgradeSchedule create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'UpgradeSchedule', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+     * or delay upgrade of the service to previous released version
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("upgradeSchedule")
+    UpgradeSchedule upgradeSchedule;
 
     @com.fasterxml.jackson.annotation.JsonProperty("identityStripe")
     IdentityStripeDetails identityStripe;
@@ -388,6 +465,57 @@ public class OceInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
     String wafPrimaryDomain;
+    /**
+     * Flag indicating whether the instance access is private or public
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum InstanceAccessType {
+        Public("PUBLIC"),
+        Private("PRIVATE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, InstanceAccessType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InstanceAccessType v : InstanceAccessType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        InstanceAccessType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InstanceAccessType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'InstanceAccessType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Flag indicating whether the instance access is private or public
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
+    InstanceAccessType instanceAccessType;
 
     /**
      * The time the the OceInstance was created. An RFC3339 formatted datetime string

@@ -3,6 +3,8 @@
  */
 package com.oracle.bmc;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.regex.Pattern;
 
 /**
@@ -24,6 +26,7 @@ public class OCID {
      * @return true if it matches teh pattern, false if not.
      */
     public static boolean isValid(String ocid) {
+        if (StringUtils.isBlank(ocid)) return false;
         return OCID_PATTERN.matcher(ocid).matches();
     }
 }

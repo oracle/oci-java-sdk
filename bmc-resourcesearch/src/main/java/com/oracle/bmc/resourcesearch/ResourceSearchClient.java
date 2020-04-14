@@ -8,7 +8,7 @@ import com.oracle.bmc.resourcesearch.internal.http.*;
 import com.oracle.bmc.resourcesearch.requests.*;
 import com.oracle.bmc.resourcesearch.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.4")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @lombok.extern.slf4j.Slf4j
 public class ResourceSearchClient implements ResourceSearch {
     /**

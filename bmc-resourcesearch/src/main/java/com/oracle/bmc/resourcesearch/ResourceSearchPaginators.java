@@ -24,7 +24,7 @@ import com.oracle.bmc.resourcesearch.responses.*;
  * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.4")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @lombok.RequiredArgsConstructor
 public class ResourceSearchPaginators {
     private final ResourceSearch client;
