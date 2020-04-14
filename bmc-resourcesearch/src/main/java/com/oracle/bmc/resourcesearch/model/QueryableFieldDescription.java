@@ -13,7 +13,7 @@ package com.oracle.bmc.resourcesearch.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.4")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -159,14 +159,14 @@ public class QueryableFieldDescription {
     String fieldName;
 
     /**
-     * Indicates this field is actually an array of the specified field type.
+     * Indicates that this field is actually an array of the specified field type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isArray")
     Boolean isArray;
 
     /**
-     * If the field type is `OBJECT`, then this property will provide all the individual properties on the object that can
+     * If the field type is `OBJECT`, then this property will provide all the individual properties of the object that can
      * be queried.
      *
      **/

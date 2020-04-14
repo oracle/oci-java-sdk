@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.oracle.oci.sdk</groupId>
+    <artifactId>oci-java-sdk</artifactId>
+    <version>1.15.5</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>oci-java-sdk-encryption</artifactId>
+  <name>Oracle Cloud Infrastructure SDK - Common</name>
+  <description>This project contains the common runtime components of the SDK used for Oracle Cloud Infrastructure</description>
+  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+
+  <properties>
+    <bouncycastle.version>1.60</bouncycastle.version>
+  </properties>
+
+  <build>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common</artifactId>
+      <version>1.15.5</version>
+  </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-circuitbreaker</artifactId>
+      <version>1.15.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-keymanagement</artifactId>
+      <version>1.15.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jdk8</artifactId>
+    </dependency>
+  </dependencies>
+</project>

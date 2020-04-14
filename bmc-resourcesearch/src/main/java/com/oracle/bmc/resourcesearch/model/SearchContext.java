@@ -13,7 +13,7 @@ package com.oracle.bmc.resourcesearch.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.4")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SearchContext.Builder.class)
@@ -59,7 +59,7 @@ public class SearchContext {
     /**
      * Describes what in each field matched the search criteria by showing highlighted values, but only for free text searches or for structured
      * queries that use a MATCHING clause. The list of strings represents fragments of values that matched the query conditions. Highlighted
-     * values are wrapped with <hl>..</hl> tags. All values are HTML-encoded (except <hl> tags).
+     * values are wrapped with &lt;h1&gt;..&lt;/h1&gt; tags. All values are HTML-encoded (except &lt;h1&gt; tags).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("highlights")

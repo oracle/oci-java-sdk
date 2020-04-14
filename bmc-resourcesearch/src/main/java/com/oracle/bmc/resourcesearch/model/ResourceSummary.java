@@ -4,7 +4,7 @@
 package com.oracle.bmc.resourcesearch.model;
 
 /**
- * A resource that exists in the user's cloud network.
+ * A resource that exists in the cloud network that you're querying.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -13,7 +13,7 @@ package com.oracle.bmc.resourcesearch.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.4")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceSummary.Builder.class)
@@ -104,12 +104,30 @@ public class ResourceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("searchContext")
         private SearchContext searchContext;
 
         public Builder searchContext(SearchContext searchContext) {
             this.searchContext = searchContext;
             this.__explicitlySet__.add("searchContext");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("identityContext")
+        private java.util.Map<String, Object> identityContext;
+
+        public Builder identityContext(java.util.Map<String, Object> identityContext) {
+            this.identityContext = identityContext;
+            this.__explicitlySet__.add("identityContext");
             return this;
         }
 
@@ -128,7 +146,9 @@ public class ResourceSummary {
                             lifecycleState,
                             freeformTags,
                             definedTags,
-                            searchContext);
+                            systemTags,
+                            searchContext,
+                            identityContext);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -145,7 +165,9 @@ public class ResourceSummary {
                             .lifecycleState(o.getLifecycleState())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .searchContext(o.getSearchContext());
+                            .systemTags(o.getSystemTags())
+                            .searchContext(o.getSearchContext())
+                            .identityContext(o.getIdentityContext());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -178,7 +200,7 @@ public class ResourceSummary {
     String compartmentId;
 
     /**
-     * The time this resource was created.
+     * The time that this resource was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
@@ -190,7 +212,7 @@ public class ResourceSummary {
     String displayName;
 
     /**
-     * The availability domain this resource is located in, if applicable.
+     * The availability domain where this resource exists, if applicable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
@@ -202,22 +224,42 @@ public class ResourceSummary {
     String lifecycleState;
 
     /**
-     * The freeform tags associated with this resource, if any.
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Department\": \"Finance\"}`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The defined tags associated with this resource, if any.
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Contains search context, such as highlighting, for found resources.
+     * System tags associated with this resource, if any. System tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: `{orcl-cloud: {free-tier-retain: true}}`
+     *
      **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
     @com.fasterxml.jackson.annotation.JsonProperty("searchContext")
     SearchContext searchContext;
+
+    /**
+     * Additional identifiers to use together in a \"Get\" request for a specified resource, only required for resource types
+     * that explicitly cannot be retrieved by using a single identifier, such as the resource's OCID.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("identityContext")
+    java.util.Map<String, Object> identityContext;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

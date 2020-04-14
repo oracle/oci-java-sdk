@@ -9,7 +9,7 @@ import com.oracle.bmc.resourcesearch.requests.*;
 import com.oracle.bmc.resourcesearch.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.4")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @lombok.extern.slf4j.Slf4j
 public class GetResourceTypeConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory

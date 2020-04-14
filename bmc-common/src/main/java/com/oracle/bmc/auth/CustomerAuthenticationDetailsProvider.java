@@ -6,6 +6,7 @@ package com.oracle.bmc.auth;
 import com.oracle.bmc.OCID;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 @Slf4j
 public abstract class CustomerAuthenticationDetailsProvider
@@ -14,10 +15,14 @@ public abstract class CustomerAuthenticationDetailsProvider
     @Override
     public String getKeyId() {
         if (!OCID.isValid(getTenantId())) {
-            LOG.warn("tenantId '{}' does not match expected pattern", getTenantId());
+            if (StringUtils.isBlank(getTenantId())) {
+                LOG.warn("tenantId may not be null");
+            } else LOG.warn("tenantId '{}' does not match expected pattern", getTenantId());
         }
         if (!OCID.isValid(getUserId())) {
-            LOG.warn("userId '{}' does not match expected pattern", getUserId());
+            if (StringUtils.isBlank(getUserId())) {
+                LOG.warn("userId may not be null");
+            } else LOG.warn("userId '{}' does not match expected pattern", getUserId());
         }
 
         String keyId = CustomerKeyIdFormatter.createKeyId(this);
