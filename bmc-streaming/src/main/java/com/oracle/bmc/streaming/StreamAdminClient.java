@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.streaming;
 
@@ -522,38 +523,6 @@ public class StreamAdminClient implements StreamAdmin {
     }
 
     @Override
-    public CreateArchiverResponse createArchiver(CreateArchiverRequest request) {
-        LOG.trace("Called createArchiver");
-        final CreateArchiverRequest interceptedRequest =
-                CreateArchiverConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateArchiverConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, CreateArchiverResponse>
-                transformer = CreateArchiverConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateArchiverDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public CreateConnectHarnessResponse createConnectHarness(CreateConnectHarnessRequest request) {
         LOG.trace("Called createConnectHarness");
         final CreateConnectHarnessRequest interceptedRequest =
@@ -737,34 +706,6 @@ public class StreamAdminClient implements StreamAdmin {
     }
 
     @Override
-    public GetArchiverResponse getArchiver(GetArchiverRequest request) {
-        LOG.trace("Called getArchiver");
-        final GetArchiverRequest interceptedRequest =
-                GetArchiverConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetArchiverConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, GetArchiverResponse>
-                transformer = GetArchiverConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public GetConnectHarnessResponse getConnectHarness(GetConnectHarnessRequest request) {
         LOG.trace("Called getConnectHarness");
         final GetConnectHarnessRequest interceptedRequest =
@@ -926,96 +867,6 @@ public class StreamAdminClient implements StreamAdmin {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public StartArchiverResponse startArchiver(StartArchiverRequest request) {
-        LOG.trace("Called startArchiver");
-        final StartArchiverRequest interceptedRequest =
-                StartArchiverConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StartArchiverConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, StartArchiverResponse>
-                transformer = StartArchiverConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public StopArchiverResponse stopArchiver(StopArchiverRequest request) {
-        LOG.trace("Called stopArchiver");
-        final StopArchiverRequest interceptedRequest =
-                StopArchiverConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StopArchiverConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, StopArchiverResponse>
-                transformer = StopArchiverConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public UpdateArchiverResponse updateArchiver(UpdateArchiverRequest request) {
-        LOG.trace("Called updateArchiver");
-        final UpdateArchiverRequest interceptedRequest =
-                UpdateArchiverConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateArchiverConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateArchiverResponse>
-                transformer = UpdateArchiverConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateArchiverDetails(),
-                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

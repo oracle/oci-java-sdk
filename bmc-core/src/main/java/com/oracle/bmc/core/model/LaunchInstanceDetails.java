@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
@@ -171,6 +172,15 @@ public class LaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+        private LaunchInstanceShapeConfigDetails shapeConfig;
+
+        public Builder shapeConfig(LaunchInstanceShapeConfigDetails shapeConfig) {
+            this.shapeConfig = shapeConfig;
+            this.__explicitlySet__.add("shapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
         private InstanceSourceDetails sourceDetails;
 
@@ -220,6 +230,7 @@ public class LaunchInstanceDetails {
                             metadata,
                             agentConfig,
                             shape,
+                            shapeConfig,
                             sourceDetails,
                             subnetId,
                             isPvEncryptionInTransitEnabled);
@@ -246,6 +257,7 @@ public class LaunchInstanceDetails {
                             .metadata(o.getMetadata())
                             .agentConfig(o.getAgentConfig())
                             .shape(o.getShape())
+                            .shapeConfig(o.getShapeConfig())
                             .sourceDetails(o.getSourceDetails())
                             .subnetId(o.getSubnetId())
                             .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
@@ -477,6 +489,9 @@ public class LaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+    LaunchInstanceShapeConfigDetails shapeConfig;
 
     /**
      * Details for creating an instance.

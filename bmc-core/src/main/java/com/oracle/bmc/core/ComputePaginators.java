@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
 
@@ -1096,6 +1097,133 @@ public class ComputePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.DedicatedVmHostSummary> apply(
                             ListDedicatedVmHostsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listImageShapeCompatibilityEntries operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListImageShapeCompatibilityEntriesResponse>
+            listImageShapeCompatibilityEntriesResponseIterator(
+                    final ListImageShapeCompatibilityEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListImageShapeCompatibilityEntriesRequest.Builder,
+                ListImageShapeCompatibilityEntriesRequest,
+                ListImageShapeCompatibilityEntriesResponse>(
+                new com.google.common.base.Supplier<
+                        ListImageShapeCompatibilityEntriesRequest.Builder>() {
+                    @Override
+                    public ListImageShapeCompatibilityEntriesRequest.Builder get() {
+                        return ListImageShapeCompatibilityEntriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListImageShapeCompatibilityEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListImageShapeCompatibilityEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImageShapeCompatibilityEntriesRequest.Builder>,
+                        ListImageShapeCompatibilityEntriesRequest>() {
+                    @Override
+                    public ListImageShapeCompatibilityEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImageShapeCompatibilityEntriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListImageShapeCompatibilityEntriesRequest,
+                        ListImageShapeCompatibilityEntriesResponse>() {
+                    @Override
+                    public ListImageShapeCompatibilityEntriesResponse apply(
+                            ListImageShapeCompatibilityEntriesRequest request) {
+                        return client.listImageShapeCompatibilityEntries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} objects
+     * contained in responses from the listImageShapeCompatibilityEntries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ImageShapeCompatibilitySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ImageShapeCompatibilitySummary>
+            listImageShapeCompatibilityEntriesRecordIterator(
+                    final ListImageShapeCompatibilityEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListImageShapeCompatibilityEntriesRequest.Builder,
+                ListImageShapeCompatibilityEntriesRequest,
+                ListImageShapeCompatibilityEntriesResponse,
+                com.oracle.bmc.core.model.ImageShapeCompatibilitySummary>(
+                new com.google.common.base.Supplier<
+                        ListImageShapeCompatibilityEntriesRequest.Builder>() {
+                    @Override
+                    public ListImageShapeCompatibilityEntriesRequest.Builder get() {
+                        return ListImageShapeCompatibilityEntriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListImageShapeCompatibilityEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListImageShapeCompatibilityEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListImageShapeCompatibilityEntriesRequest.Builder>,
+                        ListImageShapeCompatibilityEntriesRequest>() {
+                    @Override
+                    public ListImageShapeCompatibilityEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListImageShapeCompatibilityEntriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListImageShapeCompatibilityEntriesRequest,
+                        ListImageShapeCompatibilityEntriesResponse>() {
+                    @Override
+                    public ListImageShapeCompatibilityEntriesResponse apply(
+                            ListImageShapeCompatibilityEntriesRequest request) {
+                        return client.listImageShapeCompatibilityEntries(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListImageShapeCompatibilityEntriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model.ImageShapeCompatibilitySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ImageShapeCompatibilitySummary>
+                            apply(ListImageShapeCompatibilityEntriesResponse response) {
                         return response.getItems();
                     }
                 });

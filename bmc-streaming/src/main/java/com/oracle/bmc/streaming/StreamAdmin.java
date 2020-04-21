@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.streaming;
 
@@ -64,17 +65,6 @@ public interface StreamAdmin extends AutoCloseable {
      */
     ChangeStreamPoolCompartmentResponse changeStreamPoolCompartment(
             ChangeStreamPoolCompartmentRequest request);
-
-    /**
-     * Starts the provisioning of a new stream archiver.
-     * To track the progress of the provisioning, you can periodically call {@link #getArchiver(GetArchiverRequest) getArchiver}.
-     * In the response, the `lifecycleState` parameter of the {@link Archiver} object tells you its current state.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    CreateArchiverResponse createArchiver(CreateArchiverRequest request);
 
     /**
      * Starts the provisioning of a new connect harness.
@@ -147,15 +137,6 @@ public interface StreamAdmin extends AutoCloseable {
     DeleteStreamPoolResponse deleteStreamPool(DeleteStreamPoolRequest request);
 
     /**
-     * Returns the current state of the stream archiver.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    GetArchiverResponse getArchiver(GetArchiverRequest request);
-
-    /**
      * Gets detailed information about a connect harness.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -206,33 +187,6 @@ public interface StreamAdmin extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListStreamsResponse listStreams(ListStreamsRequest request);
-
-    /**
-     * Start the archiver for the specified stream.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    StartArchiverResponse startArchiver(StartArchiverRequest request);
-
-    /**
-     * Stop the archiver for the specified stream.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    StopArchiverResponse stopArchiver(StopArchiverRequest request);
-
-    /**
-     * Update the stream archiver parameters.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    UpdateArchiverResponse updateArchiver(UpdateArchiverRequest request);
 
     /**
      * Updates the tags applied to the connect harness.

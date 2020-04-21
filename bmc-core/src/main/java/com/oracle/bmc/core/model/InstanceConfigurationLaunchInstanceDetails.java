@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
@@ -116,6 +117,16 @@ public class InstanceConfigurationLaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+        private InstanceConfigurationLaunchInstanceShapeConfigDetails shapeConfig;
+
+        public Builder shapeConfig(
+                InstanceConfigurationLaunchInstanceShapeConfigDetails shapeConfig) {
+            this.shapeConfig = shapeConfig;
+            this.__explicitlySet__.add("shapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
         private InstanceConfigurationInstanceSourceDetails sourceDetails;
 
@@ -131,6 +142,62 @@ public class InstanceConfigurationLaunchInstanceDetails {
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+        private String dedicatedVmHostId;
+
+        public Builder dedicatedVmHostId(String dedicatedVmHostId) {
+            this.dedicatedVmHostId = dedicatedVmHostId;
+            this.__explicitlySet__.add("dedicatedVmHostId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
+        private LaunchMode launchMode;
+
+        public Builder launchMode(LaunchMode launchMode) {
+            this.launchMode = launchMode;
+            this.__explicitlySet__.add("launchMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
+        private InstanceConfigurationLaunchOptions launchOptions;
+
+        public Builder launchOptions(InstanceConfigurationLaunchOptions launchOptions) {
+            this.launchOptions = launchOptions;
+            this.__explicitlySet__.add("launchOptions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
+        private InstanceConfigurationLaunchInstanceAgentConfigDetails agentConfig;
+
+        public Builder agentConfig(
+                InstanceConfigurationLaunchInstanceAgentConfigDetails agentConfig) {
+            this.agentConfig = agentConfig;
+            this.__explicitlySet__.add("agentConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+        private Boolean isPvEncryptionInTransitEnabled;
+
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("preferredMaintenanceAction")
+        private PreferredMaintenanceAction preferredMaintenanceAction;
+
+        public Builder preferredMaintenanceAction(
+                PreferredMaintenanceAction preferredMaintenanceAction) {
+            this.preferredMaintenanceAction = preferredMaintenanceAction;
+            this.__explicitlySet__.add("preferredMaintenanceAction");
             return this;
         }
 
@@ -150,8 +217,15 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             ipxeScript,
                             metadata,
                             shape,
+                            shapeConfig,
                             sourceDetails,
-                            faultDomain);
+                            faultDomain,
+                            dedicatedVmHostId,
+                            launchMode,
+                            launchOptions,
+                            agentConfig,
+                            isPvEncryptionInTransitEnabled,
+                            preferredMaintenanceAction);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -169,8 +243,15 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             .ipxeScript(o.getIpxeScript())
                             .metadata(o.getMetadata())
                             .shape(o.getShape())
+                            .shapeConfig(o.getShapeConfig())
                             .sourceDetails(o.getSourceDetails())
-                            .faultDomain(o.getFaultDomain());
+                            .faultDomain(o.getFaultDomain())
+                            .dedicatedVmHostId(o.getDedicatedVmHostId())
+                            .launchMode(o.getLaunchMode())
+                            .launchOptions(o.getLaunchOptions())
+                            .agentConfig(o.getAgentConfig())
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
+                            .preferredMaintenanceAction(o.getPreferredMaintenanceAction());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -350,6 +431,9 @@ public class InstanceConfigurationLaunchInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+    InstanceConfigurationLaunchInstanceShapeConfigDetails shapeConfig;
+
     /**
      * Details for creating an instance.
      * Use this parameter to specify whether a boot volume or an image should be used to launch a new instance.
@@ -377,6 +461,145 @@ public class InstanceConfigurationLaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     String faultDomain;
+
+    /**
+     * The OCID of dedicated VM host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+    String dedicatedVmHostId;
+    /**
+     * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum LaunchMode {
+        Native("NATIVE"),
+        Emulated("EMULATED"),
+        Paravirtualized("PARAVIRTUALIZED"),
+        Custom("CUSTOM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, LaunchMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LaunchMode v : LaunchMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LaunchMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LaunchMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LaunchMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
+    LaunchMode launchMode;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
+    InstanceConfigurationLaunchOptions launchOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
+    InstanceConfigurationLaunchInstanceAgentConfigDetails agentConfig;
+
+    /**
+     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+    Boolean isPvEncryptionInTransitEnabled;
+    /**
+     * The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+     * * `LIVE_MIGRATE` - Run maintenance using a live migration.
+     * * `REBOOT` - Run maintenance using a reboot.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum PreferredMaintenanceAction {
+        LiveMigrate("LIVE_MIGRATE"),
+        Reboot("REBOOT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, PreferredMaintenanceAction> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PreferredMaintenanceAction v : PreferredMaintenanceAction.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PreferredMaintenanceAction(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PreferredMaintenanceAction create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PreferredMaintenanceAction', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+     * * `LIVE_MIGRATE` - Run maintenance using a live migration.
+     * * `REBOOT` - Run maintenance using a reboot.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("preferredMaintenanceAction")
+    PreferredMaintenanceAction preferredMaintenanceAction;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

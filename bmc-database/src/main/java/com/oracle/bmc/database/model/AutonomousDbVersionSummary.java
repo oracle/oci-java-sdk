@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
@@ -61,12 +62,22 @@ public class AutonomousDbVersionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
+        private Boolean isFreeTierEnabled;
+
+        public Builder isFreeTierEnabled(Boolean isFreeTierEnabled) {
+            this.isFreeTierEnabled = isFreeTierEnabled;
+            this.__explicitlySet__.add("isFreeTierEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDbVersionSummary build() {
             AutonomousDbVersionSummary __instance__ =
-                    new AutonomousDbVersionSummary(version, dbWorkload, isDedicated, details);
+                    new AutonomousDbVersionSummary(
+                            version, dbWorkload, isDedicated, details, isFreeTierEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,7 +88,8 @@ public class AutonomousDbVersionSummary {
                     version(o.getVersion())
                             .dbWorkload(o.getDbWorkload())
                             .isDedicated(o.getIsDedicated())
-                            .details(o.getDetails());
+                            .details(o.getDetails())
+                            .isFreeTierEnabled(o.getIsFreeTierEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -168,6 +180,12 @@ public class AutonomousDbVersionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     String details;
+
+    /**
+     * True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
+    Boolean isFreeTierEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

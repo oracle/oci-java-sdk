@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
@@ -88,6 +89,15 @@ public class UpdateInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+        private UpdateInstanceShapeConfigDetails shapeConfig;
+
+        public Builder shapeConfig(UpdateInstanceShapeConfigDetails shapeConfig) {
+            this.shapeConfig = shapeConfig;
+            this.__explicitlySet__.add("shapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -100,7 +110,8 @@ public class UpdateInstanceDetails {
                             agentConfig,
                             metadata,
                             extendedMetadata,
-                            shape);
+                            shape,
+                            shapeConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -114,7 +125,8 @@ public class UpdateInstanceDetails {
                             .agentConfig(o.getAgentConfig())
                             .metadata(o.getMetadata())
                             .extendedMetadata(o.getExtendedMetadata())
-                            .shape(o.getShape());
+                            .shape(o.getShape())
+                            .shapeConfig(o.getShapeConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -215,6 +227,9 @@ public class UpdateInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+    UpdateInstanceShapeConfigDetails shapeConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

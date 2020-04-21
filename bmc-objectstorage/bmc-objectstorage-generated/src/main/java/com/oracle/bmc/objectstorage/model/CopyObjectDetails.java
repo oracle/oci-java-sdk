@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.model;
 
@@ -44,6 +45,15 @@ public class CopyObjectDetails {
         public Builder sourceObjectIfMatchETag(String sourceObjectIfMatchETag) {
             this.sourceObjectIfMatchETag = sourceObjectIfMatchETag;
             this.__explicitlySet__.add("sourceObjectIfMatchETag");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceVersionId")
+        private String sourceVersionId;
+
+        public Builder sourceVersionId(String sourceVersionId) {
+            this.sourceVersionId = sourceVersionId;
+            this.__explicitlySet__.add("sourceVersionId");
             return this;
         }
 
@@ -119,6 +129,7 @@ public class CopyObjectDetails {
                     new CopyObjectDetails(
                             sourceObjectName,
                             sourceObjectIfMatchETag,
+                            sourceVersionId,
                             destinationRegion,
                             destinationNamespace,
                             destinationBucket,
@@ -135,6 +146,7 @@ public class CopyObjectDetails {
             Builder copiedBuilder =
                     sourceObjectName(o.getSourceObjectName())
                             .sourceObjectIfMatchETag(o.getSourceObjectIfMatchETag())
+                            .sourceVersionId(o.getSourceVersionId())
                             .destinationRegion(o.getDestinationRegion())
                             .destinationNamespace(o.getDestinationNamespace())
                             .destinationBucket(o.getDestinationBucket())
@@ -169,6 +181,12 @@ public class CopyObjectDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectIfMatchETag")
     String sourceObjectIfMatchETag;
+
+    /**
+     * VersionId of the object to copy. If not provided then current version is copied by default.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceVersionId")
+    String sourceVersionId;
 
     /**
      * The destination region the object will be copied to, for example \"us-ashburn-1\".

@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
@@ -109,6 +110,15 @@ public class UpdateDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+        private MaintenanceWindow maintenanceWindowDetails;
+
+        public Builder maintenanceWindowDetails(MaintenanceWindow maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
+            this.__explicitlySet__.add("maintenanceWindowDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -123,7 +133,8 @@ public class UpdateDbSystemDetails {
                             definedTags,
                             shape,
                             nsgIds,
-                            backupNetworkNsgIds);
+                            backupNetworkNsgIds,
+                            maintenanceWindowDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -139,7 +150,8 @@ public class UpdateDbSystemDetails {
                             .definedTags(o.getDefinedTags())
                             .shape(o.getShape())
                             .nsgIds(o.getNsgIds())
-                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds());
+                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
+                            .maintenanceWindowDetails(o.getMaintenanceWindowDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -218,6 +230,9 @@ public class UpdateDbSystemDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     java.util.List<String> backupNetworkNsgIds;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+    MaintenanceWindow maintenanceWindowDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

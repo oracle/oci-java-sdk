@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
@@ -42,19 +43,31 @@ public class ImageShapeCompatibilityEntry {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpuConstraints")
+        private ImageOcpuConstraints ocpuConstraints;
+
+        public Builder ocpuConstraints(ImageOcpuConstraints ocpuConstraints) {
+            this.ocpuConstraints = ocpuConstraints;
+            this.__explicitlySet__.add("ocpuConstraints");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ImageShapeCompatibilityEntry build() {
             ImageShapeCompatibilityEntry __instance__ =
-                    new ImageShapeCompatibilityEntry(imageId, shape);
+                    new ImageShapeCompatibilityEntry(imageId, shape, ocpuConstraints);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ImageShapeCompatibilityEntry o) {
-            Builder copiedBuilder = imageId(o.getImageId()).shape(o.getShape());
+            Builder copiedBuilder =
+                    imageId(o.getImageId())
+                            .shape(o.getShape())
+                            .ocpuConstraints(o.getOcpuConstraints());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -79,6 +92,9 @@ public class ImageShapeCompatibilityEntry {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpuConstraints")
+    ImageOcpuConstraints ocpuConstraints;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

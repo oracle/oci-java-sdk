@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
@@ -57,6 +58,15 @@ public class VolumeBackupPolicy {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
+        private String destinationRegion;
+
+        public Builder destinationRegion(String destinationRegion) {
+            this.destinationRegion = destinationRegion;
+            this.__explicitlySet__.add("destinationRegion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -103,6 +113,7 @@ public class VolumeBackupPolicy {
                             displayName,
                             id,
                             schedules,
+                            destinationRegion,
                             timeCreated,
                             compartmentId,
                             definedTags,
@@ -117,6 +128,7 @@ public class VolumeBackupPolicy {
                     displayName(o.getDisplayName())
                             .id(o.getId())
                             .schedules(o.getSchedules())
+                            .destinationRegion(o.getDestinationRegion())
                             .timeCreated(o.getTimeCreated())
                             .compartmentId(o.getCompartmentId())
                             .definedTags(o.getDefinedTags())
@@ -153,6 +165,13 @@ public class VolumeBackupPolicy {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
     java.util.List<VolumeBackupSchedule> schedules;
+
+    /**
+     * The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example `us-ashburn-1`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
+    String destinationRegion;
 
     /**
      * The date and time the volume backup policy was created. Format defined by RFC3339.

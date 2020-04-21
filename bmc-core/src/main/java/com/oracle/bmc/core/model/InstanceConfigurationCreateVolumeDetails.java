@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
@@ -80,6 +81,24 @@ public class InstanceConfigurationCreateVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+        private Long vpusPerGB;
+
+        public Builder vpusPerGB(Long vpusPerGB) {
+            this.vpusPerGB = vpusPerGB;
+            this.__explicitlySet__.add("vpusPerGB");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
@@ -110,6 +129,8 @@ public class InstanceConfigurationCreateVolumeDetails {
                             definedTags,
                             displayName,
                             freeformTags,
+                            kmsKeyId,
+                            vpusPerGB,
                             sizeInGBs,
                             sourceDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -125,6 +146,8 @@ public class InstanceConfigurationCreateVolumeDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .kmsKeyId(o.getKmsKeyId())
+                            .vpusPerGB(o.getVpusPerGB())
                             .sizeInGBs(o.getSizeInGBs())
                             .sourceDetails(o.getSourceDetails());
 
@@ -190,6 +213,31 @@ public class InstanceConfigurationCreateVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The OCID of the Key Management key to assign as the master encryption key
+     * for the volume.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
+
+    /**
+     * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+     * representing the Block Volume service's elastic performance options.
+     * See [Block Volume Elastic Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm) for more information.
+     * <p>
+     * Allowed values:
+     * <p>
+     * `0`: Represents Lower Cost option.
+     * <p>
+     * `10`: Represents Balanced option.
+     * <p>
+     * `20`: Represents Higher Performance option.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+    Long vpusPerGB;
 
     /**
      * The size of the volume in GBs.

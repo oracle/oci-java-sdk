@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.model;
 
@@ -42,18 +43,29 @@ public class RestoreObjectsDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("versionId")
+        private String versionId;
+
+        public Builder versionId(String versionId) {
+            this.versionId = versionId;
+            this.__explicitlySet__.add("versionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RestoreObjectsDetails build() {
-            RestoreObjectsDetails __instance__ = new RestoreObjectsDetails(objectName, hours);
+            RestoreObjectsDetails __instance__ =
+                    new RestoreObjectsDetails(objectName, hours, versionId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RestoreObjectsDetails o) {
-            Builder copiedBuilder = objectName(o.getObjectName()).hours(o.getHours());
+            Builder copiedBuilder =
+                    objectName(o.getObjectName()).hours(o.getHours()).versionId(o.getVersionId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -80,6 +92,13 @@ public class RestoreObjectsDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hours")
     Integer hours;
+
+    /**
+     * The versionId of the object to restore. Current object version is used by default.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("versionId")
+    String versionId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

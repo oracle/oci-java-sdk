@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
@@ -35,12 +36,31 @@ public class InstanceConfigurationCreateVnicDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -96,7 +116,9 @@ public class InstanceConfigurationCreateVnicDetails {
             InstanceConfigurationCreateVnicDetails __instance__ =
                     new InstanceConfigurationCreateVnicDetails(
                             assignPublicIp,
+                            definedTags,
                             displayName,
+                            freeformTags,
                             hostnameLabel,
                             nsgIds,
                             privateIp,
@@ -110,7 +132,9 @@ public class InstanceConfigurationCreateVnicDetails {
         public Builder copy(InstanceConfigurationCreateVnicDetails o) {
             Builder copiedBuilder =
                     assignPublicIp(o.getAssignPublicIp())
+                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
+                            .freeformTags(o.getFreeformTags())
                             .hostnameLabel(o.getHostnameLabel())
                             .nsgIds(o.getNsgIds())
                             .privateIp(o.getPrivateIp())
@@ -138,12 +162,32 @@ public class InstanceConfigurationCreateVnicDetails {
     Boolean assignPublicIp;
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * A user-friendly name for the VNIC. Does not have to be unique.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
      * The hostname for the VNIC's primary private IP.

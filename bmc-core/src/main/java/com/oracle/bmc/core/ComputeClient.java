@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
 
@@ -445,7 +446,12 @@ public class ComputeClient implements Compute {
                     return tokenRefreshRetrier.execute(
                             retryRequest,
                             retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.put(ib, retriedRequest);
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getAddImageShapeCompatibilityEntryDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1316,6 +1322,36 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public GetImageShapeCompatibilityEntryResponse getImageShapeCompatibilityEntry(
+            GetImageShapeCompatibilityEntryRequest request) {
+        LOG.trace("Called getImageShapeCompatibilityEntry");
+        final GetImageShapeCompatibilityEntryRequest interceptedRequest =
+                GetImageShapeCompatibilityEntryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetImageShapeCompatibilityEntryConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetImageShapeCompatibilityEntryResponse>
+                transformer = GetImageShapeCompatibilityEntryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetInstanceResponse getInstance(GetInstanceRequest request) {
         LOG.trace("Called getInstance");
         final GetInstanceRequest interceptedRequest =
@@ -1768,6 +1804,36 @@ public class ComputeClient implements Compute {
                 ListDedicatedVmHostsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDedicatedVmHostsResponse>
                 transformer = ListDedicatedVmHostsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListImageShapeCompatibilityEntriesResponse listImageShapeCompatibilityEntries(
+            ListImageShapeCompatibilityEntriesRequest request) {
+        LOG.trace("Called listImageShapeCompatibilityEntries");
+        final ListImageShapeCompatibilityEntriesRequest interceptedRequest =
+                ListImageShapeCompatibilityEntriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListImageShapeCompatibilityEntriesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListImageShapeCompatibilityEntriesResponse>
+                transformer = ListImageShapeCompatibilityEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

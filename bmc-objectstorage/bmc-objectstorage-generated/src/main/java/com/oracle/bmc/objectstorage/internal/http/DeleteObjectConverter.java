@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.internal.http;
 
@@ -45,6 +46,14 @@ public class DeleteObjectConverter {
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getObjectName()));
+
+        if (request.getVersionId() != null) {
+            target =
+                    target.queryParam(
+                            "versionId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVersionId()));
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
@@ -126,6 +135,30 @@ public class DeleteObjectConverter {
                                                     "last-modified",
                                                     lastModifiedHeader.get().get(0),
                                                     java.util.Date.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        versionIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "version-id");
+                                if (versionIdHeader.isPresent()) {
+                                    builder.versionId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "version-id",
+                                                    versionIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        isDeleteMarkerHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "is-delete-marker");
+                                if (isDeleteMarkerHeader.isPresent()) {
+                                    builder.isDeleteMarker(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "is-delete-marker",
+                                                    isDeleteMarkerHeader.get().get(0),
+                                                    Boolean.class));
                                 }
 
                                 com.oracle.bmc.objectstorage.responses.DeleteObjectResponse

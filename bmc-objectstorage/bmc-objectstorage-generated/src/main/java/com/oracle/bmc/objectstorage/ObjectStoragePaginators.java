@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage;
 
@@ -366,6 +367,120 @@ public class ObjectStoragePaginators {
                     public java.util.List<com.oracle.bmc.objectstorage.model.MultipartUpload> apply(
                             ListMultipartUploadsResponse response) {
                         return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listObjectVersions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListObjectVersionsResponse> listObjectVersionsResponseIterator(
+            final ListObjectVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListObjectVersionsRequest.Builder, ListObjectVersionsRequest,
+                ListObjectVersionsResponse>(
+                new com.google.common.base.Supplier<ListObjectVersionsRequest.Builder>() {
+                    @Override
+                    public ListObjectVersionsRequest.Builder get() {
+                        return ListObjectVersionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListObjectVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListObjectVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListObjectVersionsRequest.Builder>,
+                        ListObjectVersionsRequest>() {
+                    @Override
+                    public ListObjectVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListObjectVersionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListObjectVersionsRequest, ListObjectVersionsResponse>() {
+                    @Override
+                    public ListObjectVersionsResponse apply(ListObjectVersionsRequest request) {
+                        return client.listObjectVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.objectstorage.model.ObjectVersionSummary} objects
+     * contained in responses from the listObjectVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.objectstorage.model.ObjectVersionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.objectstorage.model.ObjectVersionSummary>
+            listObjectVersionsRecordIterator(final ListObjectVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListObjectVersionsRequest.Builder, ListObjectVersionsRequest,
+                ListObjectVersionsResponse,
+                com.oracle.bmc.objectstorage.model.ObjectVersionSummary>(
+                new com.google.common.base.Supplier<ListObjectVersionsRequest.Builder>() {
+                    @Override
+                    public ListObjectVersionsRequest.Builder get() {
+                        return ListObjectVersionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListObjectVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListObjectVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListObjectVersionsRequest.Builder>,
+                        ListObjectVersionsRequest>() {
+                    @Override
+                    public ListObjectVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListObjectVersionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListObjectVersionsRequest, ListObjectVersionsResponse>() {
+                    @Override
+                    public ListObjectVersionsResponse apply(ListObjectVersionsRequest request) {
+                        return client.listObjectVersions(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListObjectVersionsResponse,
+                        java.util.List<com.oracle.bmc.objectstorage.model.ObjectVersionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.objectstorage.model.ObjectVersionSummary>
+                            apply(ListObjectVersionsResponse response) {
+                        return response.getObjectVersionCollection().getItems();
                     }
                 });
     }

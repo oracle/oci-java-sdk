@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
 
@@ -382,6 +383,15 @@ public interface Compute extends AutoCloseable {
     GetImageResponse getImage(GetImageRequest request);
 
     /**
+     * Retrieves an image shape compatibility entry.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetImageShapeCompatibilityEntryResponse getImageShapeCompatibilityEntry(
+            GetImageShapeCompatibilityEntryRequest request);
+
+    /**
      * Gets information about the specified instance.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -578,6 +588,15 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListDedicatedVmHostsResponse listDedicatedVmHosts(ListDedicatedVmHostsRequest request);
+
+    /**
+     * Lists the shape compatibilities for the image.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListImageShapeCompatibilityEntriesResponse listImageShapeCompatibilityEntries(
+            ListImageShapeCompatibilityEntriesRequest request);
 
     /**
      * Lists the available images in the specified compartment, including both

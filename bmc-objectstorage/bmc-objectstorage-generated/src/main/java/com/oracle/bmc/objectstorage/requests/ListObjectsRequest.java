@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.requests;
 
@@ -54,9 +55,10 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
-     * (object size in bytes), 'etag', 'md5', and 'timeCreated' (object creation date and time) fields.
+     * (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time) and 'timeModified'
+     * (object modification date and time).
      * Value of this parameter should be a comma-separated, case-insensitive list of those field names.
-     * For example 'name,etag,timeCreated,md5'.
+     * For example 'name,etag,timeCreated,md5,timeModified'
      *
      */
     private String fields;
@@ -65,6 +67,11 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * The client request ID for tracing.
      */
     private String opcClientRequestId;
+
+    /**
+     * Object names returned by a list query must be greater than this parameter.
+     */
+    private String startAfter;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -110,6 +117,7 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             delimiter(o.getDelimiter());
             fields(o.getFields());
             opcClientRequestId(o.getOpcClientRequestId());
+            startAfter(o.getStartAfter());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

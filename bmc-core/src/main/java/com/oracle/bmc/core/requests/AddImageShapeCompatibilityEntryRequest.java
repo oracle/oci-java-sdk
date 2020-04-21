@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
 
@@ -9,7 +10,7 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class AddImageShapeCompatibilityEntryRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<AddImageShapeCompatibilityEntryDetails> {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
@@ -21,9 +22,25 @@ public class AddImageShapeCompatibilityEntryRequest
      */
     private String shapeName;
 
+    /**
+     * Image shape compatibility details
+     */
+    private AddImageShapeCompatibilityEntryDetails addImageShapeCompatibilityEntryDetails;
+
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public AddImageShapeCompatibilityEntryDetails getBody$() {
+        return addImageShapeCompatibilityEntryDetails;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    AddImageShapeCompatibilityEntryRequest, java.lang.Void> {
+                    AddImageShapeCompatibilityEntryRequest,
+                    AddImageShapeCompatibilityEntryDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -58,6 +75,7 @@ public class AddImageShapeCompatibilityEntryRequest
         public Builder copy(AddImageShapeCompatibilityEntryRequest o) {
             imageId(o.getImageId());
             shapeName(o.getShapeName());
+            addImageShapeCompatibilityEntryDetails(o.getAddImageShapeCompatibilityEntryDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -78,6 +96,17 @@ public class AddImageShapeCompatibilityEntryRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(AddImageShapeCompatibilityEntryDetails body) {
+            addImageShapeCompatibilityEntryDetails(body);
+            return this;
         }
     }
 }
