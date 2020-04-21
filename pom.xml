@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.15.5</version>
+  <version>1.16.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -357,6 +357,8 @@
             <includes>
               <include>src/main/java/**/*.java</include>
               <include>src/test/java/**/*.java</include>
+              <include>**/*.properties</include>
+              <include>**/*.html</include>
             </includes>
           </configuration>
         </plugin>
@@ -696,6 +698,8 @@
     <module>bmc-vault</module>
     <module>bmc-bds</module>
     <module>bmc-encryption</module>
+    <module>bmc-cims</module>
+    <module>bmc-datasafe</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

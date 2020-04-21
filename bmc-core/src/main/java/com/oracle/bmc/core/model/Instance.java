@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
@@ -187,6 +188,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+        private InstanceShapeConfig shapeConfig;
+
+        public Builder shapeConfig(InstanceShapeConfig shapeConfig) {
+            this.shapeConfig = shapeConfig;
+            this.__explicitlySet__.add("shapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
         private InstanceSourceDetails sourceDetails;
 
@@ -255,6 +265,7 @@ public class Instance {
                             metadata,
                             region,
                             shape,
+                            shapeConfig,
                             sourceDetails,
                             systemTags,
                             timeCreated,
@@ -284,6 +295,7 @@ public class Instance {
                             .metadata(o.getMetadata())
                             .region(o.getRegion())
                             .shape(o.getShape())
+                            .shapeConfig(o.getShapeConfig())
                             .sourceDetails(o.getSourceDetails())
                             .systemTags(o.getSystemTags())
                             .timeCreated(o.getTimeCreated())
@@ -572,6 +584,9 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+    InstanceShapeConfig shapeConfig;
 
     /**
      * Details for creating an instance

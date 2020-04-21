@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.model;
 
@@ -109,6 +110,15 @@ public class CreateBucketDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("versioning")
+        private Versioning versioning;
+
+        public Builder versioning(Versioning versioning) {
+            this.versioning = versioning;
+            this.__explicitlySet__.add("versioning");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -123,7 +133,8 @@ public class CreateBucketDetails {
                             objectEventsEnabled,
                             freeformTags,
                             definedTags,
-                            kmsKeyId);
+                            kmsKeyId,
+                            versioning);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -139,7 +150,8 @@ public class CreateBucketDetails {
                             .objectEventsEnabled(o.getObjectEventsEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .kmsKeyId(o.getKmsKeyId());
+                            .kmsKeyId(o.getKmsKeyId())
+                            .versioning(o.getVersioning());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -307,6 +319,48 @@ public class CreateBucketDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
+    /**
+     * Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket.
+     *
+     **/
+    public enum Versioning {
+        Enabled("Enabled"),
+        Disabled("Disabled"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Versioning> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Versioning v : Versioning.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Versioning(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Versioning create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Versioning: " + key);
+        }
+    };
+    /**
+     * Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("versioning")
+    Versioning versioning;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

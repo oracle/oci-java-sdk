@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
@@ -70,12 +71,27 @@ public class MaintenanceWindow {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("leadTimeInWeeks")
+        private Integer leadTimeInWeeks;
+
+        public Builder leadTimeInWeeks(Integer leadTimeInWeeks) {
+            this.leadTimeInWeeks = leadTimeInWeeks;
+            this.__explicitlySet__.add("leadTimeInWeeks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MaintenanceWindow build() {
             MaintenanceWindow __instance__ =
-                    new MaintenanceWindow(preference, months, weeksOfMonth, daysOfWeek, hoursOfDay);
+                    new MaintenanceWindow(
+                            preference,
+                            months,
+                            weeksOfMonth,
+                            daysOfWeek,
+                            hoursOfDay,
+                            leadTimeInWeeks);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,7 +103,8 @@ public class MaintenanceWindow {
                             .months(o.getMonths())
                             .weeksOfMonth(o.getWeeksOfMonth())
                             .daysOfWeek(o.getDaysOfWeek())
-                            .hoursOfDay(o.getHoursOfDay());
+                            .hoursOfDay(o.getHoursOfDay())
+                            .leadTimeInWeeks(o.getLeadTimeInWeeks());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -180,6 +197,13 @@ public class MaintenanceWindow {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hoursOfDay")
     java.util.List<Integer> hoursOfDay;
+
+    /**
+     * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("leadTimeInWeeks")
+    Integer leadTimeInWeeks;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

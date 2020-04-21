@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
@@ -337,6 +338,33 @@ public class DbSystem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private MaintenanceWindow maintenanceWindow;
+
+        public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
+        private String lastMaintenanceRunId;
+
+        public Builder lastMaintenanceRunId(String lastMaintenanceRunId) {
+            this.lastMaintenanceRunId = lastMaintenanceRunId;
+            this.__explicitlySet__.add("lastMaintenanceRunId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
+        private String nextMaintenanceRunId;
+
+        public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
+            this.nextMaintenanceRunId = nextMaintenanceRunId;
+            this.__explicitlySet__.add("nextMaintenanceRunId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -397,6 +425,9 @@ public class DbSystem {
                             recoStorageSizeInGB,
                             nodeCount,
                             licenseModel,
+                            maintenanceWindow,
+                            lastMaintenanceRunId,
+                            nextMaintenanceRunId,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -441,6 +472,9 @@ public class DbSystem {
                             .recoStorageSizeInGB(o.getRecoStorageSizeInGB())
                             .nodeCount(o.getNodeCount())
                             .licenseModel(o.getLicenseModel())
+                            .maintenanceWindow(o.getMaintenanceWindow())
+                            .lastMaintenanceRunId(o.getLastMaintenanceRunId())
+                            .nextMaintenanceRunId(o.getNextMaintenanceRunId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -892,6 +926,21 @@ public class DbSystem {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     LicenseModel licenseModel;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    MaintenanceWindow maintenanceWindow;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
+    String lastMaintenanceRunId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
+    String nextMaintenanceRunId;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

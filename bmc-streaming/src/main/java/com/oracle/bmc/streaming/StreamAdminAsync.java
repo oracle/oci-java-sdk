@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.streaming;
 
@@ -87,24 +88,6 @@ public interface StreamAdminAsync extends AutoCloseable {
             ChangeStreamPoolCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeStreamPoolCompartmentRequest, ChangeStreamPoolCompartmentResponse>
-                    handler);
-
-    /**
-     * Starts the provisioning of a new stream archiver.
-     * To track the progress of the provisioning, you can periodically call {@link #getArchiver(GetArchiverRequest, Consumer, Consumer) getArchiver}.
-     * In the response, the `lifecycleState` parameter of the {@link Archiver} object tells you its current state.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<CreateArchiverResponse> createArchiver(
-            CreateArchiverRequest request,
-            com.oracle.bmc.responses.AsyncHandler<CreateArchiverRequest, CreateArchiverResponse>
                     handler);
 
     /**
@@ -222,21 +205,6 @@ public interface StreamAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the current state of the stream archiver.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<GetArchiverResponse> getArchiver(
-            GetArchiverRequest request,
-            com.oracle.bmc.responses.AsyncHandler<GetArchiverRequest, GetArchiverResponse> handler);
-
-    /**
      * Gets detailed information about a connect harness.
      *
      * @param request The request object containing the details to send
@@ -329,54 +297,6 @@ public interface StreamAdminAsync extends AutoCloseable {
     java.util.concurrent.Future<ListStreamsResponse> listStreams(
             ListStreamsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListStreamsRequest, ListStreamsResponse> handler);
-
-    /**
-     * Start the archiver for the specified stream.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<StartArchiverResponse> startArchiver(
-            StartArchiverRequest request,
-            com.oracle.bmc.responses.AsyncHandler<StartArchiverRequest, StartArchiverResponse>
-                    handler);
-
-    /**
-     * Stop the archiver for the specified stream.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<StopArchiverResponse> stopArchiver(
-            StopArchiverRequest request,
-            com.oracle.bmc.responses.AsyncHandler<StopArchiverRequest, StopArchiverResponse>
-                    handler);
-
-    /**
-     * Update the stream archiver parameters.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<UpdateArchiverResponse> updateArchiver(
-            UpdateArchiverRequest request,
-            com.oracle.bmc.responses.AsyncHandler<UpdateArchiverRequest, UpdateArchiverResponse>
-                    handler);
 
     /**
      * Updates the tags applied to the connect harness.

@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
 
@@ -342,7 +343,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                             final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
                                     new com.oracle.bmc.http.internal.ErrorConsumer<>(
                                             this, interceptedRequest);
-                            client.put(ib, interceptedRequest, onSuccess, onError);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getAddImageShapeCompatibilityEntryDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
                         }
                     };
         }
@@ -359,7 +365,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                                 handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.put(ib, interceptedRequest, onSuccess, onError);
+                client.put(
+                        ib,
+                        interceptedRequest.getAddImageShapeCompatibilityEntryDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -373,7 +384,12 @@ public class ComputeAsyncClient implements ComputeAsync {
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
                         @Override
                         public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.put(ib, interceptedRequest, onSuccess, onError);
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getAddImageShapeCompatibilityEntryDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
                         }
                     });
         } else {
@@ -2683,6 +2699,86 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetImageShapeCompatibilityEntryResponse>
+            getImageShapeCompatibilityEntry(
+                    final GetImageShapeCompatibilityEntryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetImageShapeCompatibilityEntryRequest,
+                                    GetImageShapeCompatibilityEntryResponse>
+                            handler) {
+        LOG.trace("Called async getImageShapeCompatibilityEntry");
+        final GetImageShapeCompatibilityEntryRequest interceptedRequest =
+                GetImageShapeCompatibilityEntryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetImageShapeCompatibilityEntryConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetImageShapeCompatibilityEntryResponse>
+                transformer = GetImageShapeCompatibilityEntryConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetImageShapeCompatibilityEntryRequest,
+                        GetImageShapeCompatibilityEntryResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            GetImageShapeCompatibilityEntryRequest,
+                            GetImageShapeCompatibilityEntryResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, GetImageShapeCompatibilityEntryResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInstanceResponse> getInstance(
             final GetInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetInstanceRequest, GetInstanceResponse>
@@ -3910,6 +4006,86 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListDedicatedVmHostsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImageShapeCompatibilityEntriesResponse>
+            listImageShapeCompatibilityEntries(
+                    final ListImageShapeCompatibilityEntriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListImageShapeCompatibilityEntriesRequest,
+                                    ListImageShapeCompatibilityEntriesResponse>
+                            handler) {
+        LOG.trace("Called async listImageShapeCompatibilityEntries");
+        final ListImageShapeCompatibilityEntriesRequest interceptedRequest =
+                ListImageShapeCompatibilityEntriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListImageShapeCompatibilityEntriesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListImageShapeCompatibilityEntriesResponse>
+                transformer = ListImageShapeCompatibilityEntriesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListImageShapeCompatibilityEntriesRequest,
+                        ListImageShapeCompatibilityEntriesResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ListImageShapeCompatibilityEntriesRequest,
+                            ListImageShapeCompatibilityEntriesResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, ListImageShapeCompatibilityEntriesResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)

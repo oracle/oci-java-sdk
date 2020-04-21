@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.responses;
 
@@ -27,6 +28,19 @@ public class DeleteObjectResponse {
      */
     private java.util.Date lastModified;
 
+    /**
+     * The `versionId` of the delete marker created as a result of the DELETE Object.
+     * If the request contains a specific `versionId`, then this response header will be the same as the requested `versionId` of the object that was deleted.
+     *
+     */
+    private String versionId;
+
+    /**
+     * This is `true` if the deleted object is a delete marker, otherwise `false`
+     *
+     */
+    private Boolean isDeleteMarker;
+
     public static class Builder {
         /**
          * Copy method to populate the builder with values from the given instance.
@@ -36,6 +50,8 @@ public class DeleteObjectResponse {
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             lastModified(o.getLastModified());
+            versionId(o.getVersionId());
+            isDeleteMarker(o.getIsDeleteMarker());
 
             return this;
         }

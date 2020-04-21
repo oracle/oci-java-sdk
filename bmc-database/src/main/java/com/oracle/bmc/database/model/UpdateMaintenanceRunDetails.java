@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
@@ -34,18 +35,28 @@ public class UpdateMaintenanceRunDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
+        private java.util.Date timeScheduled;
+
+        public Builder timeScheduled(java.util.Date timeScheduled) {
+            this.timeScheduled = timeScheduled;
+            this.__explicitlySet__.add("timeScheduled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateMaintenanceRunDetails build() {
-            UpdateMaintenanceRunDetails __instance__ = new UpdateMaintenanceRunDetails(isEnabled);
+            UpdateMaintenanceRunDetails __instance__ =
+                    new UpdateMaintenanceRunDetails(isEnabled, timeScheduled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateMaintenanceRunDetails o) {
-            Builder copiedBuilder = isEnabled(o.getIsEnabled());
+            Builder copiedBuilder = isEnabled(o.getIsEnabled()).timeScheduled(o.getTimeScheduled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -64,6 +75,12 @@ public class UpdateMaintenanceRunDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
+
+    /**
+     * The scheduled date and time of the Maintenance Run to update.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
+    java.util.Date timeScheduled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

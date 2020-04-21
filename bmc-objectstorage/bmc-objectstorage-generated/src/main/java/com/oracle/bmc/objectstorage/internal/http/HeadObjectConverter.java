@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.internal.http;
 
@@ -46,6 +47,14 @@ public class HeadObjectConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getObjectName()));
 
+        if (request.getVersionId() != null) {
+            target =
+                    target.queryParam(
+                            "versionId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVersionId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -60,6 +69,18 @@ public class HeadObjectConverter {
 
         if (request.getOpcClientRequestId() != null) {
             ib.header("opc-client-request-id", request.getOpcClientRequestId());
+        }
+
+        if (request.getOpcSseCustomerAlgorithm() != null) {
+            ib.header("opc-sse-customer-algorithm", request.getOpcSseCustomerAlgorithm());
+        }
+
+        if (request.getOpcSseCustomerKey() != null) {
+            ib.header("opc-sse-customer-key", request.getOpcSseCustomerKey());
+        }
+
+        if (request.getOpcSseCustomerKeySha256() != null) {
+            ib.header("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256());
         }
 
         return ib;
@@ -280,6 +301,18 @@ public class HeadObjectConverter {
                                                     "time-of-archival",
                                                     timeOfArchivalHeader.get().get(0),
                                                     java.util.Date.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        versionIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "version-id");
+                                if (versionIdHeader.isPresent()) {
+                                    builder.versionId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "version-id",
+                                                    versionIdHeader.get().get(0),
+                                                    String.class));
                                 }
 
                                 com.oracle.bmc.objectstorage.responses.HeadObjectResponse

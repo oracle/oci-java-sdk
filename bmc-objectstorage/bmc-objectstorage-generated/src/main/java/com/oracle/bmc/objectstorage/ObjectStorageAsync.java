@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage;
 
@@ -533,6 +534,27 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the object versions in a bucket.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListObjectVersionsResponse> listObjectVersions(
+            ListObjectVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListObjectVersionsRequest, ListObjectVersionsResponse>
+                    handler);
+
+    /**
      * Lists the objects in a bucket.
      * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
@@ -740,6 +762,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * objects created before the time of the API call will be re-encrypted. The call can take a long time, depending on how many
      * objects are in the bucket and how big they are. This API returns a work request ID that you can use to retrieve the status
      * of the work request task.
+     * All the versions of objects will be re-encrypted whether versioning is enabled or suspended at the bucket.
      *
      *
      * @param request The request object containing the details to send

@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.requests;
 
@@ -41,6 +42,11 @@ public class DeleteObjectRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private String opcClientRequestId;
 
+    /**
+     * VersionId used to identify a particular version of the object
+     */
+    private String versionId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteObjectRequest, java.lang.Void> {
@@ -81,6 +87,7 @@ public class DeleteObjectRequest extends com.oracle.bmc.requests.BmcRequest<java
             objectName(o.getObjectName());
             ifMatch(o.getIfMatch());
             opcClientRequestId(o.getOpcClientRequestId());
+            versionId(o.getVersionId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

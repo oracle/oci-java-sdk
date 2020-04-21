@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
@@ -37,6 +38,15 @@ public class UpdateVolumeBackupPolicyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
+        private String destinationRegion;
+
+        public Builder destinationRegion(String destinationRegion) {
+            this.destinationRegion = destinationRegion;
+            this.__explicitlySet__.add("destinationRegion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("schedules")
         private java.util.List<VolumeBackupSchedule> schedules;
 
@@ -71,7 +81,7 @@ public class UpdateVolumeBackupPolicyDetails {
         public UpdateVolumeBackupPolicyDetails build() {
             UpdateVolumeBackupPolicyDetails __instance__ =
                     new UpdateVolumeBackupPolicyDetails(
-                            displayName, schedules, definedTags, freeformTags);
+                            displayName, destinationRegion, schedules, definedTags, freeformTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -80,6 +90,7 @@ public class UpdateVolumeBackupPolicyDetails {
         public Builder copy(UpdateVolumeBackupPolicyDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .destinationRegion(o.getDestinationRegion())
                             .schedules(o.getSchedules())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags());
@@ -103,6 +114,13 @@ public class UpdateVolumeBackupPolicyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example: `us-ashburn-1`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
+    String destinationRegion;
 
     /**
      * The collection of schedules for the volume backup policy. See

@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.model;
 
@@ -201,6 +202,15 @@ public class Bucket {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("versioning")
+        private Versioning versioning;
+
+        public Builder versioning(Versioning versioning) {
+            this.versioning = versioning;
+            this.__explicitlySet__.add("versioning");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -225,7 +235,8 @@ public class Bucket {
                             approximateSize,
                             replicationEnabled,
                             isReadOnly,
-                            id);
+                            id,
+                            versioning);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -251,7 +262,8 @@ public class Bucket {
                             .approximateSize(o.getApproximateSize())
                             .replicationEnabled(o.getReplicationEnabled())
                             .isReadOnly(o.getIsReadOnly())
-                            .id(o.getId());
+                            .id(o.getId())
+                            .versioning(o.getVersioning());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -509,6 +521,62 @@ public class Bucket {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
+    /**
+     * The versioning status on the bucket. A bucket is created with versioning `Disabled` by default.
+     * For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Versioning {
+        Enabled("Enabled"),
+        Suspended("Suspended"),
+        Disabled("Disabled"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Versioning> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Versioning v : Versioning.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Versioning(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Versioning create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Versioning', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The versioning status on the bucket. A bucket is created with versioning `Disabled` by default.
+     * For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("versioning")
+    Versioning versioning;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

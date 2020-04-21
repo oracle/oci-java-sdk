@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.model;
 
@@ -109,6 +110,15 @@ public class UpdateBucketDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("versioning")
+        private Versioning versioning;
+
+        public Builder versioning(Versioning versioning) {
+            this.versioning = versioning;
+            this.__explicitlySet__.add("versioning");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -123,7 +133,8 @@ public class UpdateBucketDetails {
                             objectEventsEnabled,
                             freeformTags,
                             definedTags,
-                            kmsKeyId);
+                            kmsKeyId,
+                            versioning);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -139,7 +150,8 @@ public class UpdateBucketDetails {
                             .objectEventsEnabled(o.getObjectEventsEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .kmsKeyId(o.getKmsKeyId());
+                            .kmsKeyId(o.getKmsKeyId())
+                            .versioning(o.getVersioning());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -265,6 +277,52 @@ public class UpdateBucketDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
+    /**
+     * The versioning status on the bucket. If in state `Enabled`, multiple versions of the same object can be kept in the bucket.
+     * When the object is overwritten or deleted, previous versions will still be available. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+     * Versioning cannot be disabled on a bucket once enabled.
+     *
+     **/
+    public enum Versioning {
+        Enabled("Enabled"),
+        Suspended("Suspended"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Versioning> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Versioning v : Versioning.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Versioning(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Versioning create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Versioning: " + key);
+        }
+    };
+    /**
+     * The versioning status on the bucket. If in state `Enabled`, multiple versions of the same object can be kept in the bucket.
+     * When the object is overwritten or deleted, previous versions will still be available. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+     * Versioning cannot be disabled on a bucket once enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("versioning")
+    Versioning versioning;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

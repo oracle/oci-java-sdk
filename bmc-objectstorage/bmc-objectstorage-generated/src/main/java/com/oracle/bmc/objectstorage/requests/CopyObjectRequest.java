@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.requests;
 
@@ -31,6 +32,54 @@ public class CopyObjectRequest extends com.oracle.bmc.requests.BmcRequest<CopyOb
      * The client request ID for tracing.
      */
     private String opcClientRequestId;
+
+    /**
+     * The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm).
+     *
+     */
+    private String opcSseCustomerAlgorithm;
+
+    /**
+     * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+     * decrypt the data. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm).
+     *
+     */
+    private String opcSseCustomerKey;
+
+    /**
+     * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+     * value is used to check the integrity of the encryption key. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm).
+     *
+     */
+    private String opcSseCustomerKeySha256;
+
+    /**
+     * The optional header that specifies \"AES256\" as the encryption algorithm to use to decrypt the source
+     * object. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm).
+     *
+     */
+    private String opcSourceSseCustomerAlgorithm;
+
+    /**
+     * The optional header that specifies the base64-encoded 256-bit encryption key to use to decrypt
+     * the source object. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm).
+     *
+     */
+    private String opcSourceSseCustomerKey;
+
+    /**
+     * The optional header that specifies the base64-encoded SHA256 hash of the encryption key used to
+     * decrypt the source object. This value is used to check the integrity of the encryption key. For
+     * more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm).
+     *
+     */
+    private String opcSourceSseCustomerKeySha256;
 
     /**
      * Alternative accessor for the body parameter.
@@ -81,6 +130,12 @@ public class CopyObjectRequest extends com.oracle.bmc.requests.BmcRequest<CopyOb
             bucketName(o.getBucketName());
             copyObjectDetails(o.getCopyObjectDetails());
             opcClientRequestId(o.getOpcClientRequestId());
+            opcSseCustomerAlgorithm(o.getOpcSseCustomerAlgorithm());
+            opcSseCustomerKey(o.getOpcSseCustomerKey());
+            opcSseCustomerKeySha256(o.getOpcSseCustomerKeySha256());
+            opcSourceSseCustomerAlgorithm(o.getOpcSourceSseCustomerAlgorithm());
+            opcSourceSseCustomerKey(o.getOpcSourceSseCustomerKey());
+            opcSourceSseCustomerKeySha256(o.getOpcSourceSseCustomerKeySha256());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

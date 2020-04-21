@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.model;
 
@@ -70,11 +71,21 @@ public class ObjectSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
+        private java.util.Date timeModified;
+
+        public Builder timeModified(java.util.Date timeModified) {
+            this.timeModified = timeModified;
+            this.__explicitlySet__.add("timeModified");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectSummary build() {
-            ObjectSummary __instance__ = new ObjectSummary(name, size, md5, timeCreated, etag);
+            ObjectSummary __instance__ =
+                    new ObjectSummary(name, size, md5, timeCreated, etag, timeModified);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -86,7 +97,8 @@ public class ObjectSummary {
                             .size(o.getSize())
                             .md5(o.getMd5())
                             .timeCreated(o.getTimeCreated())
-                            .etag(o.getEtag());
+                            .etag(o.getEtag())
+                            .timeModified(o.getTimeModified());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -131,6 +143,12 @@ public class ObjectSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     String etag;
+
+    /**
+     * The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
+    java.util.Date timeModified;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
