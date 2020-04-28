@@ -37,6 +37,15 @@ public class UpdateDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
+        private String dbHomeId;
+
+        public Builder dbHomeId(String dbHomeId) {
+            this.dbHomeId = dbHomeId;
+            this.__explicitlySet__.add("dbHomeId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -61,7 +70,7 @@ public class UpdateDatabaseDetails {
 
         public UpdateDatabaseDetails build() {
             UpdateDatabaseDetails __instance__ =
-                    new UpdateDatabaseDetails(dbBackupConfig, freeformTags, definedTags);
+                    new UpdateDatabaseDetails(dbBackupConfig, dbHomeId, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -70,6 +79,7 @@ public class UpdateDatabaseDetails {
         public Builder copy(UpdateDatabaseDetails o) {
             Builder copiedBuilder =
                     dbBackupConfig(o.getDbBackupConfig())
+                            .dbHomeId(o.getDbHomeId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -87,6 +97,12 @@ public class UpdateDatabaseDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
     DbBackupConfig dbBackupConfig;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
+    String dbHomeId;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

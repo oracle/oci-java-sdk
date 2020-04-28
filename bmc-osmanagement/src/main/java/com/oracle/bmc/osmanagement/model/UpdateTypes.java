@@ -13,6 +13,7 @@ public enum UpdateTypes {
     Security("SECURITY"),
     Bug("BUG"),
     Enhancement("ENHANCEMENT"),
+    Other("OTHER"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

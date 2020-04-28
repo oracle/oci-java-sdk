@@ -108,6 +108,8 @@ public class WorkRequestResource {
     public enum ActionType {
         Created("CREATED"),
         Updated("UPDATED"),
+        Stopped("STOPPED"),
+        Started("STARTED"),
         Deleted("DELETED"),
         InProgress("IN_PROGRESS"),
 

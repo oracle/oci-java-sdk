@@ -283,6 +283,7 @@ public class IntegrationInstance {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
+        Inactive("INACTIVE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),

@@ -23,6 +23,11 @@ public class GetListingRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      */
     private String opcRequestId;
 
+    /**
+     * The unique identifier for the compartment.
+     */
+    private String compartmentId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetListingRequest, java.lang.Void> {
@@ -60,6 +65,7 @@ public class GetListingRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         public Builder copy(GetListingRequest o) {
             listingId(o.getListingId());
             opcRequestId(o.getOpcRequestId());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

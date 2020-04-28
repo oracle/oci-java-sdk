@@ -106,6 +106,15 @@ public class UpdateScheduledJobDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("updateNames")
+        private java.util.List<String> updateNames;
+
+        public Builder updateNames(java.util.List<String> updateNames) {
+            this.updateNames = updateNames;
+            this.__explicitlySet__.add("updateNames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -140,6 +149,7 @@ public class UpdateScheduledJobDetails {
                             operationType,
                             updateType,
                             packageNames,
+                            updateNames,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -158,6 +168,7 @@ public class UpdateScheduledJobDetails {
                             .operationType(o.getOperationType())
                             .updateType(o.getUpdateType())
                             .packageNames(o.getPackageNames())
+                            .updateNames(o.getUpdateNames())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -216,16 +227,24 @@ public class UpdateScheduledJobDetails {
     OperationTypes operationType;
 
     /**
-     * Type of the update (only if operation type is UPDATE_ALL_PACKAGES)
+     * Type of the update (only if operation type is UPDATEALL)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     PackageUpdateTypes updateType;
 
     /**
-     * the id of the package (only if operation type is INSTALL/UPDATE/REMOVE_PACKAGE)
+     * the id of the package (only if operation type is INSTALL/UPDATE/REMOVE)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
     java.util.List<PackageName> packageNames;
+
+    /**
+     * The unique names of the Windows Updates (only if operation type is INSTALL).
+     * This is only applicable when the osFamily is for Windows managed instances.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("updateNames")
+    java.util.List<String> updateNames;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

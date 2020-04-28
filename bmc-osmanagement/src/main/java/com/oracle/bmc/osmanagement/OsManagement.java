@@ -271,6 +271,15 @@ public interface OsManagement extends AutoCloseable {
     GetSoftwareSourceResponse getSoftwareSource(GetSoftwareSourceRequest request);
 
     /**
+     * Returns a Windows Update object.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetWindowsUpdateResponse getWindowsUpdate(GetWindowsUpdateRequest request);
+
+    /**
      * Gets the detailed information for the work request with the given ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -287,6 +296,16 @@ public interface OsManagement extends AutoCloseable {
      */
     InstallAllPackageUpdatesOnManagedInstanceResponse installAllPackageUpdatesOnManagedInstance(
             InstallAllPackageUpdatesOnManagedInstanceRequest request);
+
+    /**
+     * Install all of the available Windows updates for the managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    InstallAllWindowsUpdatesOnManagedInstanceResponse installAllWindowsUpdatesOnManagedInstance(
+            InstallAllWindowsUpdatesOnManagedInstanceRequest request);
 
     /**
      * Installs a package on a managed instance.
@@ -307,6 +326,16 @@ public interface OsManagement extends AutoCloseable {
      */
     InstallPackageUpdateOnManagedInstanceResponse installPackageUpdateOnManagedInstance(
             InstallPackageUpdateOnManagedInstanceRequest request);
+
+    /**
+     * Installs a Windows update on a managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    InstallWindowsUpdateOnManagedInstanceResponse installWindowsUpdateOnManagedInstance(
+            InstallWindowsUpdateOnManagedInstanceRequest request);
 
     /**
      * Returns a list of packages available for install on the Managed Instance.
@@ -338,6 +367,17 @@ public interface OsManagement extends AutoCloseable {
      */
     ListAvailableUpdatesForManagedInstanceResponse listAvailableUpdatesForManagedInstance(
             ListAvailableUpdatesForManagedInstanceRequest request);
+
+    /**
+     * Returns a list of available Windows updates for a Managed Instance. This is only applicable to Windows instances.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAvailableWindowsUpdatesForManagedInstanceResponse
+            listAvailableWindowsUpdatesForManagedInstance(
+                    ListAvailableWindowsUpdatesForManagedInstanceRequest request);
 
     /**
      * Returns a list of all Managed Instance Groups.
@@ -405,6 +445,26 @@ public interface OsManagement extends AutoCloseable {
      */
     ListUpcomingScheduledJobsResponse listUpcomingScheduledJobs(
             ListUpcomingScheduledJobsRequest request);
+
+    /**
+     * Returns a list of Windows Updates.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWindowsUpdatesResponse listWindowsUpdates(ListWindowsUpdatesRequest request);
+
+    /**
+     * Returns a list of installed Windows updates for a Managed Instance. This is only applicable to Windows instances.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWindowsUpdatesInstalledOnManagedInstanceResponse
+            listWindowsUpdatesInstalledOnManagedInstance(
+                    ListWindowsUpdatesInstalledOnManagedInstanceRequest request);
 
     /**
      * Gets the errors for the work request with the given ID.

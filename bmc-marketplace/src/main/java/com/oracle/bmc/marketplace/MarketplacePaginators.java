@@ -702,4 +702,226 @@ public class MarketplacePaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listReportTypes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListReportTypesResponse> listReportTypesResponseIterator(
+            final ListReportTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListReportTypesRequest.Builder, ListReportTypesRequest, ListReportTypesResponse>(
+                new com.google.common.base.Supplier<ListReportTypesRequest.Builder>() {
+                    @Override
+                    public ListReportTypesRequest.Builder get() {
+                        return ListReportTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReportTypesResponse, String>() {
+                    @Override
+                    public String apply(ListReportTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReportTypesRequest.Builder>,
+                        ListReportTypesRequest>() {
+                    @Override
+                    public ListReportTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReportTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReportTypesRequest, ListReportTypesResponse>() {
+                    @Override
+                    public ListReportTypesResponse apply(ListReportTypesRequest request) {
+                        return client.listReportTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplace.model.ReportTypeSummary} objects
+     * contained in responses from the listReportTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplace.model.ReportTypeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplace.model.ReportTypeSummary>
+            listReportTypesRecordIterator(final ListReportTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListReportTypesRequest.Builder, ListReportTypesRequest, ListReportTypesResponse,
+                com.oracle.bmc.marketplace.model.ReportTypeSummary>(
+                new com.google.common.base.Supplier<ListReportTypesRequest.Builder>() {
+                    @Override
+                    public ListReportTypesRequest.Builder get() {
+                        return ListReportTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReportTypesResponse, String>() {
+                    @Override
+                    public String apply(ListReportTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReportTypesRequest.Builder>,
+                        ListReportTypesRequest>() {
+                    @Override
+                    public ListReportTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReportTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReportTypesRequest, ListReportTypesResponse>() {
+                    @Override
+                    public ListReportTypesResponse apply(ListReportTypesRequest request) {
+                        return client.listReportTypes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReportTypesResponse,
+                        java.util.List<com.oracle.bmc.marketplace.model.ReportTypeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.marketplace.model.ReportTypeSummary> apply(
+                            ListReportTypesResponse response) {
+                        return response.getReportTypeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listReports operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListReportsResponse> listReportsResponseIterator(
+            final ListReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListReportsRequest.Builder, ListReportsRequest, ListReportsResponse>(
+                new com.google.common.base.Supplier<ListReportsRequest.Builder>() {
+                    @Override
+                    public ListReportsRequest.Builder get() {
+                        return ListReportsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReportsResponse, String>() {
+                    @Override
+                    public String apply(ListReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReportsRequest.Builder>,
+                        ListReportsRequest>() {
+                    @Override
+                    public ListReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReportsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListReportsRequest, ListReportsResponse>() {
+                    @Override
+                    public ListReportsResponse apply(ListReportsRequest request) {
+                        return client.listReports(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.marketplace.model.ReportSummary} objects
+     * contained in responses from the listReports operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.marketplace.model.ReportSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.marketplace.model.ReportSummary> listReportsRecordIterator(
+            final ListReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListReportsRequest.Builder, ListReportsRequest, ListReportsResponse,
+                com.oracle.bmc.marketplace.model.ReportSummary>(
+                new com.google.common.base.Supplier<ListReportsRequest.Builder>() {
+                    @Override
+                    public ListReportsRequest.Builder get() {
+                        return ListReportsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReportsResponse, String>() {
+                    @Override
+                    public String apply(ListReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReportsRequest.Builder>,
+                        ListReportsRequest>() {
+                    @Override
+                    public ListReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReportsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListReportsRequest, ListReportsResponse>() {
+                    @Override
+                    public ListReportsResponse apply(ListReportsRequest request) {
+                        return client.listReports(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReportsResponse,
+                        java.util.List<com.oracle.bmc.marketplace.model.ReportSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.marketplace.model.ReportSummary> apply(
+                            ListReportsResponse response) {
+                        return response.getReportCollection().getItems();
+                    }
+                });
+    }
 }

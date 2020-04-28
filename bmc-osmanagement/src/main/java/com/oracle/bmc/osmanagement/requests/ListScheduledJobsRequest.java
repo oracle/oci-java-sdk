@@ -141,6 +141,11 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * The OS family for which to list resources.
+     */
+    private com.oracle.bmc.osmanagement.model.OsFamilies osFamily;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListScheduledJobsRequest, java.lang.Void> {
@@ -187,6 +192,7 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             sortBy(o.getSortBy());
             lifecycleState(o.getLifecycleState());
             opcRequestId(o.getOpcRequestId());
+            osFamily(o.getOsFamily());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

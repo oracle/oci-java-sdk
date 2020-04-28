@@ -154,6 +154,22 @@ public interface Marketplace extends AutoCloseable {
     ListPublishersResponse listPublishers(ListPublishersRequest request);
 
     /**
+     * List available reports for the compartment
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListReportTypesResponse listReportTypes(ListReportTypesRequest request);
+
+    /**
+     * List reports for the specific report type, date, and for the compartment
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListReportsResponse listReports(ListReportsRequest request);
+
+    /**
      * Updates the display name or tags associated with a listing's previously accepted terms of use agreement.
      *
      * @param request The request object containing the details to send

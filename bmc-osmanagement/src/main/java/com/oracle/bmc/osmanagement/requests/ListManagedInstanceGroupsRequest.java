@@ -127,6 +127,11 @@ public class ListManagedInstanceGroupsRequest
      */
     private com.oracle.bmc.osmanagement.model.LifecycleStates lifecycleState;
 
+    /**
+     * The OS family for which to list resources.
+     */
+    private com.oracle.bmc.osmanagement.model.OsFamilies osFamily;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListManagedInstanceGroupsRequest, java.lang.Void> {
@@ -170,6 +175,7 @@ public class ListManagedInstanceGroupsRequest
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
             lifecycleState(o.getLifecycleState());
+            osFamily(o.getOsFamily());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

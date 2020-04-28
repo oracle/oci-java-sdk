@@ -39,6 +39,11 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String page;
 
+    /**
+     * The unique identifier for the compartment.
+     */
+    private String compartmentId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAgreementsRequest, java.lang.Void> {
@@ -79,6 +84,7 @@ public class ListAgreementsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

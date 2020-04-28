@@ -12,11 +12,6 @@ import com.oracle.bmc.osmanagement.model.*;
 public class ListWorkRequestErrorsResponse {
 
     /**
-     * For optimistic concurrency control. See `if-match`.
-     */
-    private String etag;
-
-    /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
      * please provide the request ID.
@@ -48,7 +43,6 @@ public class ListWorkRequestErrorsResponse {
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestErrorsResponse o) {
-            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             retryAfter(o.getRetryAfter());

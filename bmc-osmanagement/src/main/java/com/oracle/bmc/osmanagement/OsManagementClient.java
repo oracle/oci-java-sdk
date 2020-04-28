@@ -1137,6 +1137,34 @@ public class OsManagementClient implements OsManagement {
     }
 
     @Override
+    public GetWindowsUpdateResponse getWindowsUpdate(GetWindowsUpdateRequest request) {
+        LOG.trace("Called getWindowsUpdate");
+        final GetWindowsUpdateRequest interceptedRequest =
+                GetWindowsUpdateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWindowsUpdateConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetWindowsUpdateResponse>
+                transformer = GetWindowsUpdateConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
         LOG.trace("Called getWorkRequest");
         final GetWorkRequestRequest interceptedRequest =
@@ -1178,6 +1206,40 @@ public class OsManagementClient implements OsManagement {
                         javax.ws.rs.core.Response,
                         InstallAllPackageUpdatesOnManagedInstanceResponse>
                 transformer = InstallAllPackageUpdatesOnManagedInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public InstallAllWindowsUpdatesOnManagedInstanceResponse
+            installAllWindowsUpdatesOnManagedInstance(
+                    InstallAllWindowsUpdatesOnManagedInstanceRequest request) {
+        LOG.trace("Called installAllWindowsUpdatesOnManagedInstance");
+        final InstallAllWindowsUpdatesOnManagedInstanceRequest interceptedRequest =
+                InstallAllWindowsUpdatesOnManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallAllWindowsUpdatesOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        InstallAllWindowsUpdatesOnManagedInstanceResponse>
+                transformer = InstallAllWindowsUpdatesOnManagedInstanceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1241,6 +1303,38 @@ public class OsManagementClient implements OsManagement {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, InstallPackageUpdateOnManagedInstanceResponse>
                 transformer = InstallPackageUpdateOnManagedInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public InstallWindowsUpdateOnManagedInstanceResponse installWindowsUpdateOnManagedInstance(
+            InstallWindowsUpdateOnManagedInstanceRequest request) {
+        LOG.trace("Called installWindowsUpdateOnManagedInstance");
+        final InstallWindowsUpdateOnManagedInstanceRequest interceptedRequest =
+                InstallWindowsUpdateOnManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallWindowsUpdateOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, InstallWindowsUpdateOnManagedInstanceResponse>
+                transformer = InstallWindowsUpdateOnManagedInstanceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1338,6 +1432,39 @@ public class OsManagementClient implements OsManagement {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAvailableUpdatesForManagedInstanceResponse>
                 transformer = ListAvailableUpdatesForManagedInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAvailableWindowsUpdatesForManagedInstanceResponse
+            listAvailableWindowsUpdatesForManagedInstance(
+                    ListAvailableWindowsUpdatesForManagedInstanceRequest request) {
+        LOG.trace("Called listAvailableWindowsUpdatesForManagedInstance");
+        final ListAvailableWindowsUpdatesForManagedInstanceRequest interceptedRequest =
+                ListAvailableWindowsUpdatesForManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAvailableWindowsUpdatesForManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListAvailableWindowsUpdatesForManagedInstanceResponse>
+                transformer = ListAvailableWindowsUpdatesForManagedInstanceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1543,6 +1670,67 @@ public class OsManagementClient implements OsManagement {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListUpcomingScheduledJobsResponse>
                 transformer = ListUpcomingScheduledJobsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListWindowsUpdatesResponse listWindowsUpdates(ListWindowsUpdatesRequest request) {
+        LOG.trace("Called listWindowsUpdates");
+        final ListWindowsUpdatesRequest interceptedRequest =
+                ListWindowsUpdatesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWindowsUpdatesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListWindowsUpdatesResponse>
+                transformer = ListWindowsUpdatesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListWindowsUpdatesInstalledOnManagedInstanceResponse
+            listWindowsUpdatesInstalledOnManagedInstance(
+                    ListWindowsUpdatesInstalledOnManagedInstanceRequest request) {
+        LOG.trace("Called listWindowsUpdatesInstalledOnManagedInstance");
+        final ListWindowsUpdatesInstalledOnManagedInstanceRequest interceptedRequest =
+                ListWindowsUpdatesInstalledOnManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWindowsUpdatesInstalledOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListWindowsUpdatesInstalledOnManagedInstanceResponse>
+                transformer = ListWindowsUpdatesInstalledOnManagedInstanceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

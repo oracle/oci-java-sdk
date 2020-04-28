@@ -12,11 +12,6 @@ import com.oracle.bmc.osmanagement.model.*;
 public class ListWorkRequestLogsResponse {
 
     /**
-     * For optimistic concurrency control. See `if-match`.
-     */
-    private String etag;
-
-    /**
      * Unique Oracle-assigned identifier for the request. If
      * you need to contact Oracle about a particular request,
      * please provide the request ID.
@@ -48,7 +43,6 @@ public class ListWorkRequestLogsResponse {
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestLogsResponse o) {
-            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             retryAfter(o.getRetryAfter());

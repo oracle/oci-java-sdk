@@ -426,6 +426,141 @@ public class OsManagementPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAvailableWindowsUpdatesForManagedInstance operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAvailableWindowsUpdatesForManagedInstanceResponse>
+            listAvailableWindowsUpdatesForManagedInstanceResponseIterator(
+                    final ListAvailableWindowsUpdatesForManagedInstanceRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder,
+                ListAvailableWindowsUpdatesForManagedInstanceRequest,
+                ListAvailableWindowsUpdatesForManagedInstanceResponse>(
+                new com.google.common.base.Supplier<
+                        ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder>() {
+                    @Override
+                    public ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder get() {
+                        return ListAvailableWindowsUpdatesForManagedInstanceRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAvailableWindowsUpdatesForManagedInstanceResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListAvailableWindowsUpdatesForManagedInstanceResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder>,
+                        ListAvailableWindowsUpdatesForManagedInstanceRequest>() {
+                    @Override
+                    public ListAvailableWindowsUpdatesForManagedInstanceRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableWindowsUpdatesForManagedInstanceRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAvailableWindowsUpdatesForManagedInstanceRequest,
+                        ListAvailableWindowsUpdatesForManagedInstanceResponse>() {
+                    @Override
+                    public ListAvailableWindowsUpdatesForManagedInstanceResponse apply(
+                            ListAvailableWindowsUpdatesForManagedInstanceRequest request) {
+                        return client.listAvailableWindowsUpdatesForManagedInstance(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary} objects
+     * contained in responses from the listAvailableWindowsUpdatesForManagedInstance operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary>
+            listAvailableWindowsUpdatesForManagedInstanceRecordIterator(
+                    final ListAvailableWindowsUpdatesForManagedInstanceRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder,
+                ListAvailableWindowsUpdatesForManagedInstanceRequest,
+                ListAvailableWindowsUpdatesForManagedInstanceResponse,
+                com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary>(
+                new com.google.common.base.Supplier<
+                        ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder>() {
+                    @Override
+                    public ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder get() {
+                        return ListAvailableWindowsUpdatesForManagedInstanceRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAvailableWindowsUpdatesForManagedInstanceResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListAvailableWindowsUpdatesForManagedInstanceResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailableWindowsUpdatesForManagedInstanceRequest.Builder>,
+                        ListAvailableWindowsUpdatesForManagedInstanceRequest>() {
+                    @Override
+                    public ListAvailableWindowsUpdatesForManagedInstanceRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailableWindowsUpdatesForManagedInstanceRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAvailableWindowsUpdatesForManagedInstanceRequest,
+                        ListAvailableWindowsUpdatesForManagedInstanceResponse>() {
+                    @Override
+                    public ListAvailableWindowsUpdatesForManagedInstanceResponse apply(
+                            ListAvailableWindowsUpdatesForManagedInstanceRequest request) {
+                        return client.listAvailableWindowsUpdatesForManagedInstance(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAvailableWindowsUpdatesForManagedInstanceResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagement.model
+                                        .AvailableWindowsUpdateSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary>
+                            apply(ListAvailableWindowsUpdatesForManagedInstanceResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listManagedInstanceGroups operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1245,6 +1380,254 @@ public class OsManagementPaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.osmanagement.model.ScheduledJobSummary>
                             apply(ListUpcomingScheduledJobsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWindowsUpdates operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWindowsUpdatesResponse> listWindowsUpdatesResponseIterator(
+            final ListWindowsUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWindowsUpdatesRequest.Builder, ListWindowsUpdatesRequest,
+                ListWindowsUpdatesResponse>(
+                new com.google.common.base.Supplier<ListWindowsUpdatesRequest.Builder>() {
+                    @Override
+                    public ListWindowsUpdatesRequest.Builder get() {
+                        return ListWindowsUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWindowsUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListWindowsUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWindowsUpdatesRequest.Builder>,
+                        ListWindowsUpdatesRequest>() {
+                    @Override
+                    public ListWindowsUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWindowsUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>() {
+                    @Override
+                    public ListWindowsUpdatesResponse apply(ListWindowsUpdatesRequest request) {
+                        return client.listWindowsUpdates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} objects
+     * contained in responses from the listWindowsUpdates operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagement.model.WindowsUpdateSummary>
+            listWindowsUpdatesRecordIterator(final ListWindowsUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWindowsUpdatesRequest.Builder, ListWindowsUpdatesRequest,
+                ListWindowsUpdatesResponse, com.oracle.bmc.osmanagement.model.WindowsUpdateSummary>(
+                new com.google.common.base.Supplier<ListWindowsUpdatesRequest.Builder>() {
+                    @Override
+                    public ListWindowsUpdatesRequest.Builder get() {
+                        return ListWindowsUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWindowsUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListWindowsUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWindowsUpdatesRequest.Builder>,
+                        ListWindowsUpdatesRequest>() {
+                    @Override
+                    public ListWindowsUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWindowsUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>() {
+                    @Override
+                    public ListWindowsUpdatesResponse apply(ListWindowsUpdatesRequest request) {
+                        return client.listWindowsUpdates(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWindowsUpdatesResponse,
+                        java.util.List<com.oracle.bmc.osmanagement.model.WindowsUpdateSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.osmanagement.model.WindowsUpdateSummary>
+                            apply(ListWindowsUpdatesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWindowsUpdatesInstalledOnManagedInstance operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWindowsUpdatesInstalledOnManagedInstanceResponse>
+            listWindowsUpdatesInstalledOnManagedInstanceResponseIterator(
+                    final ListWindowsUpdatesInstalledOnManagedInstanceRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder,
+                ListWindowsUpdatesInstalledOnManagedInstanceRequest,
+                ListWindowsUpdatesInstalledOnManagedInstanceResponse>(
+                new com.google.common.base.Supplier<
+                        ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder>() {
+                    @Override
+                    public ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder get() {
+                        return ListWindowsUpdatesInstalledOnManagedInstanceRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWindowsUpdatesInstalledOnManagedInstanceResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListWindowsUpdatesInstalledOnManagedInstanceResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder>,
+                        ListWindowsUpdatesInstalledOnManagedInstanceRequest>() {
+                    @Override
+                    public ListWindowsUpdatesInstalledOnManagedInstanceRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWindowsUpdatesInstalledOnManagedInstanceRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWindowsUpdatesInstalledOnManagedInstanceRequest,
+                        ListWindowsUpdatesInstalledOnManagedInstanceResponse>() {
+                    @Override
+                    public ListWindowsUpdatesInstalledOnManagedInstanceResponse apply(
+                            ListWindowsUpdatesInstalledOnManagedInstanceRequest request) {
+                        return client.listWindowsUpdatesInstalledOnManagedInstance(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary} objects
+     * contained in responses from the listWindowsUpdatesInstalledOnManagedInstance operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary>
+            listWindowsUpdatesInstalledOnManagedInstanceRecordIterator(
+                    final ListWindowsUpdatesInstalledOnManagedInstanceRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder,
+                ListWindowsUpdatesInstalledOnManagedInstanceRequest,
+                ListWindowsUpdatesInstalledOnManagedInstanceResponse,
+                com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary>(
+                new com.google.common.base.Supplier<
+                        ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder>() {
+                    @Override
+                    public ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder get() {
+                        return ListWindowsUpdatesInstalledOnManagedInstanceRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWindowsUpdatesInstalledOnManagedInstanceResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListWindowsUpdatesInstalledOnManagedInstanceResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWindowsUpdatesInstalledOnManagedInstanceRequest.Builder>,
+                        ListWindowsUpdatesInstalledOnManagedInstanceRequest>() {
+                    @Override
+                    public ListWindowsUpdatesInstalledOnManagedInstanceRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWindowsUpdatesInstalledOnManagedInstanceRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWindowsUpdatesInstalledOnManagedInstanceRequest,
+                        ListWindowsUpdatesInstalledOnManagedInstanceResponse>() {
+                    @Override
+                    public ListWindowsUpdatesInstalledOnManagedInstanceResponse apply(
+                            ListWindowsUpdatesInstalledOnManagedInstanceRequest request) {
+                        return client.listWindowsUpdatesInstalledOnManagedInstance(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWindowsUpdatesInstalledOnManagedInstanceResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagement.model
+                                        .InstalledWindowsUpdateSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary>
+                            apply(ListWindowsUpdatesInstalledOnManagedInstanceResponse response) {
                         return response.getItems();
                     }
                 });
