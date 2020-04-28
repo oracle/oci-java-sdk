@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.17.0 - 2020-04-28
+### Added
+- Support for the MySQL Database service
+- Support for updating the database home of a database in the Database service
+- Support for government regions in the Marketplace service
+- Support for starting and stopping instances in the Integration service
+- Support for installing Windows updates in the OS Management service
+
+### Breaking Changes
+- Removed the models of `ErrataId`, `UpdatablePackageSummary`, `ManagedInstanceUpdateDetails` and the parameter `etag` from `ListWorkRequestErrorsResponse` and `ListWorkRequestLogsResponse` in the OsManagement service
+
 ## 1.16.0 - 2020-04-21
 ### Added
 - Support for the Data Safe service

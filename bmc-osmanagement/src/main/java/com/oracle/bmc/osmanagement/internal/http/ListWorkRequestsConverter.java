@@ -86,6 +86,14 @@ public class ListWorkRequestsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getOsFamily() != null) {
+            target =
+                    target.queryParam(
+                            "osFamily",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getOsFamily().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

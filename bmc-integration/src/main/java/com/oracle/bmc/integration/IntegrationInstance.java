@@ -118,6 +118,25 @@ public interface IntegrationInstance extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Start an integration instance that was previously in an INACTIVE state
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StartIntegrationInstanceResponse startIntegrationInstance(
+            StartIntegrationInstanceRequest request);
+
+    /**
+     * Stop an integration instance that was previously in an ACTIVE state
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StopIntegrationInstanceResponse stopIntegrationInstance(StopIntegrationInstanceRequest request);
+
+    /**
      * Updates the Integration Instance.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

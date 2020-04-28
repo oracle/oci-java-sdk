@@ -694,6 +694,66 @@ public class IntegrationInstanceClient implements IntegrationInstance {
     }
 
     @Override
+    public StartIntegrationInstanceResponse startIntegrationInstance(
+            StartIntegrationInstanceRequest request) {
+        LOG.trace("Called startIntegrationInstance");
+        final StartIntegrationInstanceRequest interceptedRequest =
+                StartIntegrationInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartIntegrationInstanceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StartIntegrationInstanceResponse>
+                transformer = StartIntegrationInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public StopIntegrationInstanceResponse stopIntegrationInstance(
+            StopIntegrationInstanceRequest request) {
+        LOG.trace("Called stopIntegrationInstance");
+        final StopIntegrationInstanceRequest interceptedRequest =
+                StopIntegrationInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopIntegrationInstanceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StopIntegrationInstanceResponse>
+                transformer = StopIntegrationInstanceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateIntegrationInstanceResponse updateIntegrationInstance(
             UpdateIntegrationInstanceRequest request) {
         LOG.trace("Called updateIntegrationInstance");

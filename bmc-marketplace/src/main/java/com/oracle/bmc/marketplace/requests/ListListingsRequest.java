@@ -155,6 +155,11 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private Boolean isFeatured;
 
+    /**
+     * The unique identifier for the compartment.
+     */
+    private String compartmentId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListListingsRequest, java.lang.Void> {
@@ -202,6 +207,7 @@ public class ListListingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             category(o.getCategory());
             pricing(o.getPricing());
             isFeatured(o.getIsFeatured());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

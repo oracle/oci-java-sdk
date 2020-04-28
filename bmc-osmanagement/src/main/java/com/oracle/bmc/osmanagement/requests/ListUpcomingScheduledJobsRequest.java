@@ -145,6 +145,11 @@ public class ListUpcomingScheduledJobsRequest
      */
     private String opcRequestId;
 
+    /**
+     * The OS family for which to list resources.
+     */
+    private com.oracle.bmc.osmanagement.model.OsFamilies osFamily;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUpcomingScheduledJobsRequest, java.lang.Void> {
@@ -191,6 +196,7 @@ public class ListUpcomingScheduledJobsRequest
             tagValue(o.getTagValue());
             lifecycleState(o.getLifecycleState());
             opcRequestId(o.getOpcRequestId());
+            osFamily(o.getOsFamily());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

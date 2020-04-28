@@ -98,6 +98,15 @@ public class ManagedInstanceGroup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+        private OsFamilies osFamily;
+
+        public Builder osFamily(OsFamilies osFamily) {
+            this.osFamily = osFamily;
+            this.__explicitlySet__.add("osFamily");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -111,7 +120,8 @@ public class ManagedInstanceGroup {
                             managedInstances,
                             lifecycleState,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            osFamily);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -126,7 +136,8 @@ public class ManagedInstanceGroup {
                             .managedInstances(o.getManagedInstances())
                             .lifecycleState(o.getLifecycleState())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .osFamily(o.getOsFamily());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -191,6 +202,12 @@ public class ManagedInstanceGroup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The Operating System type of the managed instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+    OsFamilies osFamily;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

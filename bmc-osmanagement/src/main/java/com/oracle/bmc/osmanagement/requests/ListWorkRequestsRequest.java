@@ -126,6 +126,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     private String opcRequestId;
 
+    /**
+     * The OS family for which to list resources.
+     */
+    private com.oracle.bmc.osmanagement.model.OsFamilies osFamily;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestsRequest, java.lang.Void> {
@@ -169,6 +174,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            osFamily(o.getOsFamily());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

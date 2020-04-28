@@ -2027,7 +2027,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                             final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
                                     new com.oracle.bmc.http.internal.ErrorConsumer<>(
                                             this, interceptedRequest);
-                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
                         }
                     };
         }
@@ -2044,7 +2044,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                                 handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.delete(ib, interceptedRequest, onSuccess, onError);
+                client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2058,7 +2058,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
                         @Override
                         public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
                         }
                     });
         } else {
@@ -2101,7 +2101,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                             final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
                                     new com.oracle.bmc.http.internal.ErrorConsumer<>(
                                             this, interceptedRequest);
-                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
                         }
                     };
         }
@@ -2118,7 +2118,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                                 handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.delete(ib, interceptedRequest, onSuccess, onError);
+                client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -2132,7 +2132,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
                         @Override
                         public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
                         }
                     });
         } else {

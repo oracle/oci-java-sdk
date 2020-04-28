@@ -26,7 +26,7 @@ public class ListAvailableSoftwareSourcesForManagedInstanceRequest
     private String displayName;
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
      */
     private String compartmentId;
 

@@ -71,13 +71,27 @@ public class CreateManagedInstanceGroupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+        private OsFamilies osFamily;
+
+        public Builder osFamily(OsFamilies osFamily) {
+            this.osFamily = osFamily;
+            this.__explicitlySet__.add("osFamily");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateManagedInstanceGroupDetails build() {
             CreateManagedInstanceGroupDetails __instance__ =
                     new CreateManagedInstanceGroupDetails(
-                            displayName, description, compartmentId, freeformTags, definedTags);
+                            displayName,
+                            description,
+                            compartmentId,
+                            freeformTags,
+                            definedTags,
+                            osFamily);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,7 +103,8 @@ public class CreateManagedInstanceGroupDetails {
                             .description(o.getDescription())
                             .compartmentId(o.getCompartmentId())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .osFamily(o.getOsFamily());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -136,6 +151,14 @@ public class CreateManagedInstanceGroupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The Operating System type of the managed instance(s) on which this scheduled job will operate.
+     * If not specified, this defaults to Linux.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+    OsFamilies osFamily;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

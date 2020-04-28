@@ -149,6 +149,24 @@ public class ManagedInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+        private OsFamilies osFamily;
+
+        public Builder osFamily(OsFamilies osFamily) {
+            this.osFamily = osFamily;
+            this.__explicitlySet__.add("osFamily");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
+        private Boolean isRebootRequired;
+
+        public Builder isRebootRequired(Boolean isRebootRequired) {
+            this.isRebootRequired = isRebootRequired;
+            this.__explicitlySet__.add("isRebootRequired");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -168,7 +186,9 @@ public class ManagedInstance {
                             status,
                             parentSoftwareSource,
                             childSoftwareSources,
-                            managedInstanceGroups);
+                            managedInstanceGroups,
+                            osFamily,
+                            isRebootRequired);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -189,7 +209,9 @@ public class ManagedInstance {
                             .status(o.getStatus())
                             .parentSoftwareSource(o.getParentSoftwareSource())
                             .childSoftwareSources(o.getChildSoftwareSources())
-                            .managedInstanceGroups(o.getManagedInstanceGroups());
+                            .managedInstanceGroups(o.getManagedInstanceGroups())
+                            .osFamily(o.getOsFamily())
+                            .isRebootRequired(o.getIsRebootRequired());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -335,6 +357,18 @@ public class ManagedInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroups")
     java.util.List<Id> managedInstanceGroups;
+
+    /**
+     * The Operating System type of the managed instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+    OsFamilies osFamily;
+
+    /**
+     * Indicates whether a reboot is required to complete installation of updates.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
+    Boolean isRebootRequired;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -37,6 +37,7 @@ public class ListIntegrationInstancesRequest
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
+        Inactive("INACTIVE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),

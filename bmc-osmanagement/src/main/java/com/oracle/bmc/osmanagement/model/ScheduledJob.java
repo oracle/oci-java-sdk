@@ -186,6 +186,24 @@ public class ScheduledJob {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("updateNames")
+        private java.util.List<String> updateNames;
+
+        public Builder updateNames(java.util.List<String> updateNames) {
+            this.updateNames = updateNames;
+            this.__explicitlySet__.add("updateNames");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+        private OsFamilies osFamily;
+
+        public Builder osFamily(OsFamilies osFamily) {
+            this.osFamily = osFamily;
+            this.__explicitlySet__.add("osFamily");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -209,7 +227,9 @@ public class ScheduledJob {
                             workRequests,
                             lifecycleState,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            updateNames,
+                            osFamily);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -234,7 +254,9 @@ public class ScheduledJob {
                             .workRequests(o.getWorkRequests())
                             .lifecycleState(o.getLifecycleState())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .updateNames(o.getUpdateNames())
+                            .osFamily(o.getOsFamily());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -321,13 +343,13 @@ public class ScheduledJob {
     OperationTypes operationType;
 
     /**
-     * Type of the update (only if operation type is UPDATE_ALL_PACKAGES)
+     * Type of the update (only if operation type is UPDATEALL)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     PackageUpdateTypes updateType;
 
     /**
-     * the names of the packages (only if operation type is INSTALL/UPDATE/REMOVE_PACKAGE)
+     * the names of the updates (only if operation type is INSTALL/UPDATE/REMOVE)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
     java.util.List<PackageName> packageNames;
@@ -359,6 +381,20 @@ public class ScheduledJob {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The unique names of the Windows Updates (only if operation type is INSTALL).
+     * This is only applicable when the osFamily is for Windows managed instances.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("updateNames")
+    java.util.List<String> updateNames;
+
+    /**
+     * The Operating System type of the managed instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+    OsFamilies osFamily;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

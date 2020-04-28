@@ -130,6 +130,10 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+    /**
+     * The unique identifier for the compartment.
+     */
+    private String compartmentId;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -174,6 +178,7 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             page(o.getPage());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

@@ -447,6 +447,22 @@ public interface OsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a Windows Update object.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWindowsUpdateResponse> getWindowsUpdate(
+            GetWindowsUpdateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetWindowsUpdateRequest, GetWindowsUpdateResponse>
+                    handler);
+
+    /**
      * Gets the detailed information for the work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -478,6 +494,25 @@ public interface OsManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     InstallAllPackageUpdatesOnManagedInstanceRequest,
                                     InstallAllPackageUpdatesOnManagedInstanceResponse>
+                            handler);
+
+    /**
+     * Install all of the available Windows updates for the managed instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<InstallAllWindowsUpdatesOnManagedInstanceResponse>
+            installAllWindowsUpdatesOnManagedInstance(
+                    InstallAllWindowsUpdatesOnManagedInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    InstallAllWindowsUpdatesOnManagedInstanceRequest,
+                                    InstallAllWindowsUpdatesOnManagedInstanceResponse>
                             handler);
 
     /**
@@ -516,6 +551,25 @@ public interface OsManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     InstallPackageUpdateOnManagedInstanceRequest,
                                     InstallPackageUpdateOnManagedInstanceResponse>
+                            handler);
+
+    /**
+     * Installs a Windows update on a managed instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<InstallWindowsUpdateOnManagedInstanceResponse>
+            installWindowsUpdateOnManagedInstance(
+                    InstallWindowsUpdateOnManagedInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    InstallWindowsUpdateOnManagedInstanceRequest,
+                                    InstallWindowsUpdateOnManagedInstanceResponse>
                             handler);
 
     /**
@@ -573,6 +627,25 @@ public interface OsManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListAvailableUpdatesForManagedInstanceRequest,
                                     ListAvailableUpdatesForManagedInstanceResponse>
+                            handler);
+
+    /**
+     * Returns a list of available Windows updates for a Managed Instance. This is only applicable to Windows instances.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAvailableWindowsUpdatesForManagedInstanceResponse>
+            listAvailableWindowsUpdatesForManagedInstance(
+                    ListAvailableWindowsUpdatesForManagedInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAvailableWindowsUpdatesForManagedInstanceRequest,
+                                    ListAvailableWindowsUpdatesForManagedInstanceResponse>
                             handler);
 
     /**
@@ -695,6 +768,42 @@ public interface OsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListUpcomingScheduledJobsRequest, ListUpcomingScheduledJobsResponse>
                     handler);
+
+    /**
+     * Returns a list of Windows Updates.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWindowsUpdatesResponse> listWindowsUpdates(
+            ListWindowsUpdatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>
+                    handler);
+
+    /**
+     * Returns a list of installed Windows updates for a Managed Instance. This is only applicable to Windows instances.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWindowsUpdatesInstalledOnManagedInstanceResponse>
+            listWindowsUpdatesInstalledOnManagedInstance(
+                    ListWindowsUpdatesInstalledOnManagedInstanceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListWindowsUpdatesInstalledOnManagedInstanceRequest,
+                                    ListWindowsUpdatesInstalledOnManagedInstanceResponse>
+                            handler);
 
     /**
      * Gets the errors for the work request with the given ID.

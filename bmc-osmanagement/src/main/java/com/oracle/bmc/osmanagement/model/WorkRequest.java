@@ -77,6 +77,15 @@ public class WorkRequest {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
+        private Id managedInstanceId;
+
+        public Builder managedInstanceId(Id managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
+            this.__explicitlySet__.add("managedInstanceId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
@@ -122,6 +131,15 @@ public class WorkRequest {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+        private OsFamilies osFamily;
+
+        public Builder osFamily(OsFamilies osFamily) {
+            this.osFamily = osFamily;
+            this.__explicitlySet__.add("osFamily");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -134,11 +152,13 @@ public class WorkRequest {
                             compartmentId,
                             description,
                             message,
+                            managedInstanceId,
                             resources,
                             percentComplete,
                             timeAccepted,
                             timeStarted,
-                            timeFinished);
+                            timeFinished,
+                            osFamily);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -152,11 +172,13 @@ public class WorkRequest {
                             .compartmentId(o.getCompartmentId())
                             .description(o.getDescription())
                             .message(o.getMessage())
+                            .managedInstanceId(o.getManagedInstanceId())
                             .resources(o.getResources())
                             .percentComplete(o.getPercentComplete())
                             .timeAccepted(o.getTimeAccepted())
                             .timeStarted(o.getTimeStarted())
-                            .timeFinished(o.getTimeFinished());
+                            .timeFinished(o.getTimeFinished())
+                            .osFamily(o.getOsFamily());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -210,6 +232,9 @@ public class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
+    Id managedInstanceId;
+
     /**
      * The resources affected by this work request.
      **/
@@ -244,6 +269,12 @@ public class WorkRequest {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;
+
+    /**
+     * The Operating System type of the managed instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
+    OsFamilies osFamily;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

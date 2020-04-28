@@ -155,6 +155,8 @@ public class WorkRequest {
     public enum OperationType {
         CreateIntegrationInstance("CREATE_INTEGRATION_INSTANCE"),
         UpdateIntegrationInstance("UPDATE_INTEGRATION_INSTANCE"),
+        StopIntegrationInstance("STOP_INTEGRATION_INSTANCE"),
+        StartIntegrationInstance("START_INTEGRATION_INSTANCE"),
         DeleteIntegrationInstance("DELETE_INTEGRATION_INSTANCE"),
 
         /**
