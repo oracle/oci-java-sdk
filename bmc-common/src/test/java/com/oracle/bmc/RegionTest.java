@@ -5,9 +5,16 @@
 package com.oracle.bmc;
 
 import com.google.common.base.Optional;
+import com.oracle.bmc.model.RegionSchema;
+import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.NameUtils;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
+import static com.oracle.bmc.Region.register;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
@@ -23,18 +30,31 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RegionTest {
+
     private static final Service TEST_SERVICE =
             Services.serviceBuilder()
                     .serviceEndpointPrefix("foobar")
                     .serviceName("RegionTest")
                     .build();
+
+    @SuppressWarnings({"unchecked"})
+    public static void setEnvironmentVariable(String val) throws ReflectiveOperationException {
+        Map<String, String> env = System.getenv();
+        Field field = env.getClass().getDeclaredField("m");
+        field.setAccessible(true);
+        ((Map<String, String>) field.get(env)).put("OCI_REGION_METADATA", val);
+    }
+
+    @Before
+    public void init() throws ReflectiveOperationException {
+        String regionBlob =
+                "{ \"realmKey\" : \"OC7\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"SDO\",\"regionIdentifier\" : \"us-sandiego-1\"}";
+        setEnvironmentVariable(regionBlob);
+    }
 
     @Test
     public void validRegion() {
@@ -253,5 +273,89 @@ public class RegionTest {
         // register region zzz
         regionList.add(Region.register("zzz", Realm.OC3));
         assertEquals(regionList, Arrays.asList(Region.values()));
+    }
+
+    @Test
+    public void checkIfValidRegionSchema() {
+        RegionSchema regionSchema =
+                new RegionSchema("OC6", "oraclensrcloud.com", "FRD", "us-florida-1");
+        Assert.assertTrue(RegionSchema.isValid(regionSchema));
+    }
+
+    @Test
+    public void checkIfInValidRealm() {
+        RegionSchema regionSchema =
+                new RegionSchema(null, "oraclensrcloud.com", "FRD", "us-florida-1");
+        Assert.assertFalse(RegionSchema.isValid(regionSchema));
+    }
+
+    @Test
+    public void checkIfEmptyRealm() {
+        RegionSchema regionSchema =
+                new RegionSchema("", "oraclensrcloud.com", "FRD", "us-florida-1");
+        Assert.assertFalse(RegionSchema.isValid(regionSchema));
+    }
+
+    @Test
+    public void testExistingRegionFromSDK() {
+
+        Region region = Region.fromRegionCodeOrId("phx");
+        assertSame(Region.US_PHOENIX_1, region);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEnvEmptyDomain() throws ReflectiveOperationException {
+        String regionBlob =
+                "{ \"realmKey\" : \"OC1\",\"realmDomainComponent\" : \"\",\"regionKey\" : \"MSW\",\"regionIdentifier\" : \"us-moscow-1\"}";
+        setEnvironmentVariable(regionBlob);
+        Region.fromRegionCodeOrId("MSW");
+    }
+
+    @Test
+    public void testExistingEnvRegion() {
+        Region region = Region.fromRegionCodeOrId("SDO");
+        Region US_SAN_DIEGO_TST =
+                Region.register(
+                        "us-sandiego-1", Realm.register("OC7", "oraclensrcloud.com"), "SDO");
+        assertSame(US_SAN_DIEGO_TST, region);
+    }
+
+    @Test
+    public void testExistingDuplicateEnv() throws ReflectiveOperationException {
+        String regionBlob =
+                "{ \"realmKey\" : \"OC7\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"SDO\",\"regionIdentifier\" : \"us-sandiego-1\"}";
+        setEnvironmentVariable(regionBlob);
+        int count = Region.values().length;
+        Region.fromRegionCodeOrId("SDO");
+        int afterCheckEnvCount = Region.values().length;
+        assertSame(count, afterCheckEnvCount);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testNewEnvRegion() throws ReflectiveOperationException {
+        String regionBlob =
+                "{ \"realmKey\" : \"OC6\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"DBI\",\"regionIdentifier\" : \"us-dubai-1\"}";
+        setEnvironmentVariable(regionBlob);
+        Region.fromRegionCodeOrId("DBI");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testEnvEmptyRealm() throws ReflectiveOperationException {
+        String regionBlob =
+                "{ \"realmKey\" : \"\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"BRN\",\"regionIdentifier\" : \"us-berlin-1\"}";
+        setEnvironmentVariable(regionBlob);
+        Region.fromRegionCodeOrId("BRN");
+    }
+
+    @Test
+    public void testValidConfigFile() {
+
+        File file = new File(FileUtils.expandUserHome("~/.oci/regions-config.json"));
+        if (file.exists()) {
+            Region region = Region.fromRegionCodeOrId("ATL");
+            Region US_ATLANTA_TST =
+                    register("ap-atlanta-1", Realm.register("OC6", "oraclecloud.com"), "atl");
+            assertSame(US_ATLANTA_TST, region);
+        }
     }
 }

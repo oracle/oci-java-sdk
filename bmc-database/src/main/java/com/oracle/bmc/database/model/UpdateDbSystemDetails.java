@@ -110,6 +110,15 @@ public class UpdateDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
+        private LicenseModel licenseModel;
+
+        public Builder licenseModel(LicenseModel licenseModel) {
+            this.licenseModel = licenseModel;
+            this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
         private MaintenanceWindow maintenanceWindowDetails;
 
@@ -134,6 +143,7 @@ public class UpdateDbSystemDetails {
                             shape,
                             nsgIds,
                             backupNetworkNsgIds,
+                            licenseModel,
                             maintenanceWindowDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -151,6 +161,7 @@ public class UpdateDbSystemDetails {
                             .shape(o.getShape())
                             .nsgIds(o.getNsgIds())
                             .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
+                            .licenseModel(o.getLicenseModel())
                             .maintenanceWindowDetails(o.getMaintenanceWindowDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -230,6 +241,48 @@ public class UpdateDbSystemDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
     java.util.List<String> backupNetworkNsgIds;
+    /**
+     * The Oracle Database license model that applies to all databases on the DB system. The default is LICENSE_INCLUDED.
+     *
+     **/
+    public enum LicenseModel {
+        LicenseIncluded("LICENSE_INCLUDED"),
+        BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, LicenseModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LicenseModel v : LicenseModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        LicenseModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LicenseModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid LicenseModel: " + key);
+        }
+    };
+    /**
+     * The Oracle Database license model that applies to all databases on the DB system. The default is LICENSE_INCLUDED.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
+    LicenseModel licenseModel;
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
     MaintenanceWindow maintenanceWindowDetails;

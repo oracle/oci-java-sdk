@@ -420,6 +420,38 @@ public class KmsVaultClient implements KmsVault {
     }
 
     @Override
+    public BackupVaultResponse backupVault(BackupVaultRequest request) {
+        LOG.trace("Called backupVault");
+        final BackupVaultRequest interceptedRequest =
+                BackupVaultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BackupVaultConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, BackupVaultResponse>
+                transformer = BackupVaultConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getBackupVaultDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CancelVaultDeletionResponse cancelVaultDeletion(CancelVaultDeletionRequest request) {
         LOG.trace("Called cancelVaultDeletion");
         final CancelVaultDeletionRequest interceptedRequest =
@@ -590,6 +622,94 @@ public class KmsVaultClient implements KmsVault {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RestoreVaultFromFileResponse restoreVaultFromFile(RestoreVaultFromFileRequest request) {
+        LOG.trace("Called restoreVaultFromFile");
+        try {
+            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, RestoreVaultFromFileRequest.builder());
+            }
+            final RestoreVaultFromFileRequest interceptedRequest =
+                    RestoreVaultFromFileConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    RestoreVaultFromFileConverter.fromRequest(client, interceptedRequest);
+            com.google.common.base.Function<javax.ws.rs.core.Response, RestoreVaultFromFileResponse>
+                    transformer = RestoreVaultFromFileConverter.fromResponse();
+
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            interceptedRequest.getRetryConfiguration(), retryConfiguration);
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getRestoreVaultFromFileDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getRestoreVaultFromFileDetails());
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getRestoreVaultFromFileDetails());
+        }
+    }
+
+    @Override
+    public RestoreVaultFromObjectStoreResponse restoreVaultFromObjectStore(
+            RestoreVaultFromObjectStoreRequest request) {
+        LOG.trace("Called restoreVaultFromObjectStore");
+        final RestoreVaultFromObjectStoreRequest interceptedRequest =
+                RestoreVaultFromObjectStoreConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreVaultFromObjectStoreConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestoreVaultFromObjectStoreResponse>
+                transformer = RestoreVaultFromObjectStoreConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRestoreVaultFromObjectStoreDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

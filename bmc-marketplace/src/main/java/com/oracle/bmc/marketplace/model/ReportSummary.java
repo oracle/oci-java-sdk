@@ -89,25 +89,25 @@ public class ReportSummary {
     }
 
     /**
-     * The type of the report.
+     * The type of report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reportType")
     String reportType;
 
     /**
-     * Date of the report.
+     * The date of the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("date")
     java.util.Date date;
 
     /**
-     * The columns in the report content.
+     * The columns in the report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     java.util.List<String> columns;
 
     /**
-     * The content of report in CSV string format.
+     * The contents of the report in comma-separated values (CSV) file format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     String content;

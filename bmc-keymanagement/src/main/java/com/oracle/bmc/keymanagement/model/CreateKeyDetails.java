@@ -102,7 +102,7 @@ public class CreateKeyDetails {
     }
 
     /**
-     * The OCID of the compartment that contains this master encryption key.
+     * The OCID of the compartment where you want to create the master encryption key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

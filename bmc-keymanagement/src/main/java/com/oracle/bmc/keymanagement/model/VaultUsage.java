@@ -67,15 +67,9 @@ public class VaultUsage {
         return new Builder();
     }
 
-    /**
-     * The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyCount")
     Integer keyCount;
 
-    /**
-     * The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionCount")
     Integer keyVersionCount;
 

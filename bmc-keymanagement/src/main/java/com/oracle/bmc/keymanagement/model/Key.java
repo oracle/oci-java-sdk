@@ -123,6 +123,15 @@ public class Key {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyId")
+        private String restoredFromKeyId;
+
+        public Builder restoredFromKeyId(String restoredFromKeyId) {
+            this.restoredFromKeyId = restoredFromKeyId;
+            this.__explicitlySet__.add("restoredFromKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -139,7 +148,8 @@ public class Key {
                             lifecycleState,
                             timeCreated,
                             timeOfDeletion,
-                            vaultId);
+                            vaultId,
+                            restoredFromKeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -157,7 +167,8 @@ public class Key {
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .timeOfDeletion(o.getTimeOfDeletion())
-                            .vaultId(o.getVaultId());
+                            .vaultId(o.getVaultId())
+                            .restoredFromKeyId(o.getRestoredFromKeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -180,7 +191,7 @@ public class Key {
     /**
      * The OCID of the key version used in cryptographic operations. During key rotation, the service might be
      * in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion`
-     * field is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
+     * property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentKeyVersion")
@@ -221,7 +232,7 @@ public class Key {
     @com.fasterxml.jackson.annotation.JsonProperty("keyShape")
     KeyShape keyShape;
     /**
-     * The key's current state.
+     * The key's current lifecycle state.
      * <p>
      * Example: `ENABLED`
      *
@@ -239,6 +250,8 @@ public class Key {
         SchedulingDeletion("SCHEDULING_DELETION"),
         CancellingDeletion("CANCELLING_DELETION"),
         Updating("UPDATING"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
+        Restoring("RESTORING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -279,7 +292,7 @@ public class Key {
         }
     };
     /**
-     * The key's current state.
+     * The key's current lifecycle state.
      * <p>
      * Example: `ENABLED`
      *
@@ -309,6 +322,12 @@ public class Key {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     String vaultId;
+
+    /**
+     * The OCID of the key from which this key was restored.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyId")
+    String restoredFromKeyId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

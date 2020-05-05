@@ -38,6 +38,17 @@ public interface KmsVault extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Backs up an encrypted file that contains all the metadata of a vault so that you can restore the vault later.
+     * You can backup a vault whether or not it contains keys. This operation only backs up the
+     * metadata of the vault, and does not include key metadata.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    BackupVaultResponse backupVault(BackupVaultRequest request);
+
+    /**
      * Cancels the scheduled deletion of the specified vault. Canceling a scheduled deletion
      * restores the vault and all keys in it to their respective states from before their
      * scheduled deletion. All keys that were scheduled for deletion prior to vault
@@ -126,8 +137,58 @@ public interface KmsVault extends AutoCloseable {
     ListVaultsResponse listVaults(ListVaultsRequest request);
 
     /**
+     * Restores a vault from an encrypted backup file. If a vault
+     * with the same OCID already exists, this operation returns a response with a
+     * 409 HTTP status error code.
+     *
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestoreVaultFromFileResponse restoreVaultFromFile(RestoreVaultFromFileRequest request);
+
+    /**
+     * Restores a vault from an encrypted backup file stored in Oracle Cloud Infrastructure Object
+     * Storage. If a vault with the same OCID already exists, this operation returns
+     * a response with a 409 HTTP status error code.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestoreVaultFromObjectStoreResponse restoreVaultFromObjectStore(
+            RestoreVaultFromObjectStoreRequest request);
+
+    /**
      * Schedules the deletion of the specified vault. This sets the lifecycle state of the vault and all keys in it
-     * that are not already scheduled for deletion to PENDING_DELETION and then deletes them after the
+     * that are not already scheduled for deletion to `PENDING_DELETION` and then deletes them after the
      * retention period ends. The lifecycle state and time of deletion for keys already scheduled for deletion won't
      * change. If any keys in the vault are scheduled to be deleted after the specified time of
      * deletion for the vault, the call is rejected with the error code 409.

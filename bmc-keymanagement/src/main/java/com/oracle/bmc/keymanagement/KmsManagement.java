@@ -17,6 +17,16 @@ public interface KmsManagement extends AutoCloseable {
     void setEndpoint(String endpoint);
 
     /**
+     * Backs up an encrypted file that contains all key versions and metadata of the specified key so that you can restore
+     * the key later. The file also contains the metadata of the vault that the key belonged to.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    BackupKeyResponse backupKey(BackupKeyRequest request);
+
+    /**
      * Cancels the scheduled deletion of the specified key. Canceling
      * a scheduled deletion restores the key's lifecycle state to what
      * it was before its scheduled deletion.
@@ -82,7 +92,7 @@ public interface KmsManagement extends AutoCloseable {
 
     /**
      * Generates a new [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/release/KeyVersion/) resource that provides new cryptographic
-     * material for a master encryption key. The key must be in an ENABLED state to be rotated.
+     * material for a master encryption key. The key must be in an `ENABLED` state to be rotated.
      * <p>
      * As a management operation, this call is subject to a Key Management limit that applies to the total number
      * of requests across all  management write operations. Key Management might throttle this call to reject an
@@ -154,7 +164,8 @@ public interface KmsManagement extends AutoCloseable {
     GetKeyVersionResponse getKeyVersion(GetKeyVersionRequest request);
 
     /**
-     * Returns the RSA wrapping key associated with the vault in the endpoint.
+     * Gets details about the public RSA wrapping key associated with the vault in the endpoint. Each vault has an RSA key-pair that wraps and
+     * unwraps AES key material for import into Key Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -163,7 +174,10 @@ public interface KmsManagement extends AutoCloseable {
     GetWrappingKeyResponse getWrappingKey(GetWrappingKeyRequest request);
 
     /**
-     * Imports the given wrapped/encrypted AES key.
+     * Imports AES key material to create a new key with. The key material must be base64-encoded and
+     * wrapped by the vault's public RSA wrapping key before you can import it. Key Management supports AES symmetric keys
+     * that are exactly 16, 24, or 32 bytes. Furthermore, the key length must match what you specify at the time of import.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -171,7 +185,12 @@ public interface KmsManagement extends AutoCloseable {
     ImportKeyResponse importKey(ImportKeyRequest request);
 
     /**
-     * Imports the given key version.
+     * Imports AES key material to create a new key version with, and then rotates the key to begin using the new
+     * key version. The key material must be base64-encoded and wrapped by the vault's public RSA wrapping key
+     * before you can import it. Key Management supports AES symmetric keys that are exactly 16, 24, or 32 bytes.
+     * Furthermore, the key length must match the length of the specified key and what you specify as the length
+     * at the time of import.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -206,6 +225,56 @@ public interface KmsManagement extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListKeysResponse listKeys(ListKeysRequest request);
+
+    /**
+     * Restores the specified key to the specified vault, based on information in the backup file provided.
+     * If the vault doesn't exist, the operation returns a response with a 404 HTTP status error code. You
+     * need to first restore the vault associated with the key.
+     *
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestoreKeyFromFileResponse restoreKeyFromFile(RestoreKeyFromFileRequest request);
+
+    /**
+     * Restores the specified key to the specified vault from an Oracle Cloud Infrastructure
+     * Object Storage location. If the vault doesn't exist, the operation returns a response with a
+     * 404 HTTP status error code. You need to first restore the vault associated with the key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestoreKeyFromObjectStoreResponse restoreKeyFromObjectStore(
+            RestoreKeyFromObjectStoreRequest request);
 
     /**
      * Schedules the deletion of the specified key. This sets the lifecycle state of the key

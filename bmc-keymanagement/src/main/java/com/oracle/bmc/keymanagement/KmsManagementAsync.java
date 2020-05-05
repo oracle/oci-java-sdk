@@ -17,6 +17,22 @@ public interface KmsManagementAsync extends AutoCloseable {
     void setEndpoint(String endpoint);
 
     /**
+     * Backs up an encrypted file that contains all key versions and metadata of the specified key so that you can restore
+     * the key later. The file also contains the metadata of the vault that the key belonged to.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<BackupKeyResponse> backupKey(
+            BackupKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<BackupKeyRequest, BackupKeyResponse> handler);
+
+    /**
      * Cancels the scheduled deletion of the specified key. Canceling
      * a scheduled deletion restores the key's lifecycle state to what
      * it was before its scheduled deletion.
@@ -111,7 +127,7 @@ public interface KmsManagementAsync extends AutoCloseable {
 
     /**
      * Generates a new [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/release/KeyVersion/) resource that provides new cryptographic
-     * material for a master encryption key. The key must be in an ENABLED state to be rotated.
+     * material for a master encryption key. The key must be in an `ENABLED` state to be rotated.
      * <p>
      * As a management operation, this call is subject to a Key Management limit that applies to the total number
      * of requests across all  management write operations. Key Management might throttle this call to reject an
@@ -215,7 +231,8 @@ public interface KmsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the RSA wrapping key associated with the vault in the endpoint.
+     * Gets details about the public RSA wrapping key associated with the vault in the endpoint. Each vault has an RSA key-pair that wraps and
+     * unwraps AES key material for import into Key Management.
      *
      *
      * @param request The request object containing the details to send
@@ -231,7 +248,10 @@ public interface KmsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Imports the given wrapped/encrypted AES key.
+     * Imports AES key material to create a new key with. The key material must be base64-encoded and
+     * wrapped by the vault's public RSA wrapping key before you can import it. Key Management supports AES symmetric keys
+     * that are exactly 16, 24, or 32 bytes. Furthermore, the key length must match what you specify at the time of import.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -245,7 +265,12 @@ public interface KmsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ImportKeyRequest, ImportKeyResponse> handler);
 
     /**
-     * Imports the given key version.
+     * Imports AES key material to create a new key version with, and then rotates the key to begin using the new
+     * key version. The key material must be base64-encoded and wrapped by the vault's public RSA wrapping key
+     * before you can import it. Key Management supports AES symmetric keys that are exactly 16, 24, or 32 bytes.
+     * Furthermore, the key length must match the length of the specified key and what you specify as the length
+     * at the time of import.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -300,6 +325,44 @@ public interface KmsManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<ListKeysResponse> listKeys(
             ListKeysRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListKeysRequest, ListKeysResponse> handler);
+
+    /**
+     * Restores the specified key to the specified vault, based on information in the backup file provided.
+     * If the vault doesn't exist, the operation returns a response with a 404 HTTP status error code. You
+     * need to first restore the vault associated with the key.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestoreKeyFromFileResponse> restoreKeyFromFile(
+            RestoreKeyFromFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RestoreKeyFromFileRequest, RestoreKeyFromFileResponse>
+                    handler);
+
+    /**
+     * Restores the specified key to the specified vault from an Oracle Cloud Infrastructure
+     * Object Storage location. If the vault doesn't exist, the operation returns a response with a
+     * 404 HTTP status error code. You need to first restore the vault associated with the key.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestoreKeyFromObjectStoreResponse> restoreKeyFromObjectStore(
+            RestoreKeyFromObjectStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RestoreKeyFromObjectStoreRequest, RestoreKeyFromObjectStoreResponse>
+                    handler);
 
     /**
      * Schedules the deletion of the specified key. This sets the lifecycle state of the key

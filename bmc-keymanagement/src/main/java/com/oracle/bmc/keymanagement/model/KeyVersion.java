@@ -95,6 +95,15 @@ public class KeyVersion {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyVersionId")
+        private String restoredFromKeyVersionId;
+
+        public Builder restoredFromKeyVersionId(String restoredFromKeyVersionId) {
+            this.restoredFromKeyVersionId = restoredFromKeyVersionId;
+            this.__explicitlySet__.add("restoredFromKeyVersionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -108,7 +117,8 @@ public class KeyVersion {
                             origin,
                             timeCreated,
                             timeOfDeletion,
-                            vaultId);
+                            vaultId,
+                            restoredFromKeyVersionId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -123,7 +133,8 @@ public class KeyVersion {
                             .origin(o.getOrigin())
                             .timeCreated(o.getTimeCreated())
                             .timeOfDeletion(o.getTimeOfDeletion())
-                            .vaultId(o.getVaultId());
+                            .vaultId(o.getVaultId())
+                            .restoredFromKeyVersionId(o.getRestoredFromKeyVersionId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -155,7 +166,7 @@ public class KeyVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     String keyId;
     /**
-     * The key version's current state.
+     * The key version's current lifecycle state.
      * <p>
      * Example: `ENABLED`
      *
@@ -212,7 +223,7 @@ public class KeyVersion {
         }
     };
     /**
-     * The key version's current state.
+     * The key version's current lifecycle state.
      * <p>
      * Example: `ENABLED`
      *
@@ -220,7 +231,10 @@ public class KeyVersion {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
     /**
-     * The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+     * The source of the key material. When this value is `INTERNAL`, Key Management
+     * created the key material. When this value is `EXTERNAL`, the key material
+     * was imported from an external source.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Origin {
@@ -266,7 +280,10 @@ public class KeyVersion {
         }
     };
     /**
-     * The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+     * The source of the key material. When this value is `INTERNAL`, Key Management
+     * created the key material. When this value is `EXTERNAL`, the key material
+     * was imported from an external source.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     Origin origin;
@@ -293,6 +310,12 @@ public class KeyVersion {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     String vaultId;
+
+    /**
+     * The OCID of the key version from which this key version was restored.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("restoredFromKeyVersionId")
+    String restoredFromKeyVersionId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

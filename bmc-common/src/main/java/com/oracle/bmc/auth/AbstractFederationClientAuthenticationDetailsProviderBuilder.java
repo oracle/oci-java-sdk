@@ -138,7 +138,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     }
 
     /**
-     * Build a new AuthenticationDetailsProvider that uses the FederationCLient.
+     * Build a new AuthenticationDetailsProvider that uses the FederationClient.
      *
      * @return A new provider instance.
      */
@@ -280,7 +280,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
         try {
             Response response =
-                    base.request(MediaType.APPLICATION_JSON)
+                    base.path("id")
+                            .request(MediaType.TEXT_PLAIN)
                             .header(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
                             .get();
             LOG.info(

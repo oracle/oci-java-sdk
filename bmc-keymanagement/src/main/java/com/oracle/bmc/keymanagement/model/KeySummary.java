@@ -176,7 +176,7 @@ public class KeySummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * The key's current state.
+     * The key's current lifecycle state.
      * <p>
      * Example: `ENABLED`
      *
@@ -194,6 +194,8 @@ public class KeySummary {
         SchedulingDeletion("SCHEDULING_DELETION"),
         CancellingDeletion("CANCELLING_DELETION"),
         Updating("UPDATING"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
+        Restoring("RESTORING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -234,7 +236,7 @@ public class KeySummary {
         }
     };
     /**
-     * The key's current state.
+     * The key's current lifecycle state.
      * <p>
      * Example: `ENABLED`
      *

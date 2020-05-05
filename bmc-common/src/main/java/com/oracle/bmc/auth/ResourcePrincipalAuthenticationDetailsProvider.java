@@ -59,7 +59,8 @@ public class ResourcePrincipalAuthenticationDetailsProvider
     final static String OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM = "OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM";
     final static String OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE =
             "OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE";
-    final static String OCI_RESOURCE_PRINCIPAL_REGION = "OCI_RESOURCE_PRINCIPAL_REGION";
+    final static String OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME =
+            "OCI_RESOURCE_PRINCIPAL_REGION";
 
     /**
      * Returns the region where the java code using resource principal authentication is running at
@@ -207,10 +208,12 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                                 ociResourcePrincipalRPST, sessionKeySupplier);
             }
 
-            final String ociResourcePrincipalRegion = System.getenv(OCI_RESOURCE_PRINCIPAL_REGION);
+            final String ociResourcePrincipalRegion =
+                    System.getenv(OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME);
             if (ociResourcePrincipalRegion == null) {
                 throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_REGION + " environment variable missing");
+                        OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME
+                                + " environment variable missing");
             } else {
                 region =
                         Region.valueOf(

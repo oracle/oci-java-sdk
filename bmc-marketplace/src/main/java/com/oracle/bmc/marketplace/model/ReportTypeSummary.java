@@ -92,7 +92,7 @@ public class ReportTypeSummary {
     }
 
     /**
-     * The type of the report.
+     * The type of report.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reportType")
     String reportType;

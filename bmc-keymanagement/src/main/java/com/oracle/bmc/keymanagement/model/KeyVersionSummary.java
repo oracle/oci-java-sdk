@@ -157,7 +157,7 @@ public class KeyVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     String keyId;
     /**
-     * The key version's current state.
+     * The key version's current lifecycle state.
      * <p>
      * Example: `ENABLED`
      *
@@ -214,7 +214,7 @@ public class KeyVersionSummary {
         }
     };
     /**
-     * The key version's current state.
+     * The key version's current lifecycle state.
      * <p>
      * Example: `ENABLED`
      *
@@ -222,7 +222,7 @@ public class KeyVersionSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
     /**
-     * The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+     * The source of the key material. When this value is INTERNAL, Key Management created the key material. When this value is EXTERNAL, the key material was imported from an external source.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Origin {
@@ -268,7 +268,7 @@ public class KeyVersionSummary {
         }
     };
     /**
-     * The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+     * The source of the key material. When this value is INTERNAL, Key Management created the key material. When this value is EXTERNAL, the key material was imported from an external source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     Origin origin;

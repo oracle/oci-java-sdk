@@ -22,4 +22,9 @@ public final class NameUtils {
     public static String canonicalizeForEnumTypes(final String name) {
         return name.toUpperCase().replaceAll("-", "_");
     }
+
+    /** Convert enum type name to un-canonicalized name **/
+    public static String decanonicalizeFromEnumTypes(final String name) {
+        return name.toLowerCase().replaceAll("_", "-");
+    }
 }

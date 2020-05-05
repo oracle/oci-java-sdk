@@ -336,6 +336,37 @@ public class KmsManagementClient implements KmsManagement {
     }
 
     @Override
+    public BackupKeyResponse backupKey(BackupKeyRequest request) {
+        LOG.trace("Called backupKey");
+        final BackupKeyRequest interceptedRequest = BackupKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BackupKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, BackupKeyResponse> transformer =
+                BackupKeyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getBackupKeyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request) {
         LOG.trace("Called cancelKeyDeletion");
         final CancelKeyDeletionRequest interceptedRequest =
@@ -738,6 +769,94 @@ public class KmsManagementClient implements KmsManagement {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RestoreKeyFromFileResponse restoreKeyFromFile(RestoreKeyFromFileRequest request) {
+        LOG.trace("Called restoreKeyFromFile");
+        try {
+            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, RestoreKeyFromFileRequest.builder());
+            }
+            final RestoreKeyFromFileRequest interceptedRequest =
+                    RestoreKeyFromFileConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    RestoreKeyFromFileConverter.fromRequest(client, interceptedRequest);
+            com.google.common.base.Function<javax.ws.rs.core.Response, RestoreKeyFromFileResponse>
+                    transformer = RestoreKeyFromFileConverter.fromResponse();
+
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            interceptedRequest.getRetryConfiguration(), retryConfiguration);
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getRestoreKeyFromFileDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getRestoreKeyFromFileDetails());
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getRestoreKeyFromFileDetails());
+        }
+    }
+
+    @Override
+    public RestoreKeyFromObjectStoreResponse restoreKeyFromObjectStore(
+            RestoreKeyFromObjectStoreRequest request) {
+        LOG.trace("Called restoreKeyFromObjectStore");
+        final RestoreKeyFromObjectStoreRequest interceptedRequest =
+                RestoreKeyFromObjectStoreConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreKeyFromObjectStoreConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestoreKeyFromObjectStoreResponse>
+                transformer = RestoreKeyFromObjectStoreConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRestoreKeyFromObjectStoreDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
