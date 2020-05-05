@@ -47,13 +47,13 @@ public class ListingPackage {
     String description;
 
     /**
-     * The id of the listing this package belongs to.
+     * The ID of the listing this package belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     String listingId;
 
     /**
-     * The version of this package.
+     * The package version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;

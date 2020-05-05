@@ -61,7 +61,7 @@ public class ScheduleVaultDeletionDetails {
     }
 
     /**
-     * An optional property to indicate when to delete the vault, expressed in
+     * An optional property indicating when to delete the vault, expressed in
      * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The specified
      * time must be between 7 and 30 days from the time when the request is received.
      * If this property is missing, it will be set to 30 days from the time of the request

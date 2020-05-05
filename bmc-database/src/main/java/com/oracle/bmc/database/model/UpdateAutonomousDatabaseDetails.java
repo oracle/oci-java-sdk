@@ -137,6 +137,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -154,7 +163,8 @@ public class UpdateAutonomousDatabaseDetails {
                             nsgIds,
                             licenseModel,
                             whitelistedIps,
-                            isAutoScalingEnabled);
+                            isAutoScalingEnabled,
+                            dbVersion);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -173,7 +183,8 @@ public class UpdateAutonomousDatabaseDetails {
                             .nsgIds(o.getNsgIds())
                             .licenseModel(o.getLicenseModel())
                             .whitelistedIps(o.getWhitelistedIps())
-                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled());
+                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
+                            .dbVersion(o.getDbVersion());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -315,6 +326,12 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     Boolean isAutoScalingEnabled;
+
+    /**
+     * A valid Oracle Database version for Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    String dbVersion;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

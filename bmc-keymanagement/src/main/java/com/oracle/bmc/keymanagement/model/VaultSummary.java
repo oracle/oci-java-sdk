@@ -207,7 +207,7 @@ public class VaultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * A vault's current state.
+     * A vault's current lifecycle state.
      * <p>
      * Example: `ACTIVE`
      *
@@ -222,6 +222,8 @@ public class VaultSummary {
         SchedulingDeletion("SCHEDULING_DELETION"),
         CancellingDeletion("CANCELLING_DELETION"),
         Updating("UPDATING"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
+        Restoring("RESTORING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -262,7 +264,7 @@ public class VaultSummary {
         }
     };
     /**
-     * A vault's current state.
+     * A vault's current lifecycle state.
      * <p>
      * Example: `ACTIVE`
      *

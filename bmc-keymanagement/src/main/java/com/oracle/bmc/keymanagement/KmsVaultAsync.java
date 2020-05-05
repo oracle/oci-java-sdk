@@ -38,6 +38,23 @@ public interface KmsVaultAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Backs up an encrypted file that contains all the metadata of a vault so that you can restore the vault later.
+     * You can backup a vault whether or not it contains keys. This operation only backs up the
+     * metadata of the vault, and does not include key metadata.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<BackupVaultResponse> backupVault(
+            BackupVaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<BackupVaultRequest, BackupVaultResponse> handler);
+
+    /**
      * Cancels the scheduled deletion of the specified vault. Canceling a scheduled deletion
      * restores the vault and all keys in it to their respective states from before their
      * scheduled deletion. All keys that were scheduled for deletion prior to vault
@@ -167,8 +184,46 @@ public interface KmsVaultAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListVaultsRequest, ListVaultsResponse> handler);
 
     /**
+     * Restores a vault from an encrypted backup file. If a vault
+     * with the same OCID already exists, this operation returns a response with a
+     * 409 HTTP status error code.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestoreVaultFromFileResponse> restoreVaultFromFile(
+            RestoreVaultFromFileRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RestoreVaultFromFileRequest, RestoreVaultFromFileResponse>
+                    handler);
+
+    /**
+     * Restores a vault from an encrypted backup file stored in Oracle Cloud Infrastructure Object
+     * Storage. If a vault with the same OCID already exists, this operation returns
+     * a response with a 409 HTTP status error code.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestoreVaultFromObjectStoreResponse> restoreVaultFromObjectStore(
+            RestoreVaultFromObjectStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RestoreVaultFromObjectStoreRequest, RestoreVaultFromObjectStoreResponse>
+                    handler);
+
+    /**
      * Schedules the deletion of the specified vault. This sets the lifecycle state of the vault and all keys in it
-     * that are not already scheduled for deletion to PENDING_DELETION and then deletes them after the
+     * that are not already scheduled for deletion to `PENDING_DELETION` and then deletes them after the
      * retention period ends. The lifecycle state and time of deletion for keys already scheduled for deletion won't
      * change. If any keys in the vault are scheduled to be deleted after the specified time of
      * deletion for the vault, the call is rejected with the error code 409.

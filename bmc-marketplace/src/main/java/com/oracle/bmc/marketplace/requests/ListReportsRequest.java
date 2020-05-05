@@ -12,12 +12,12 @@ import com.oracle.bmc.marketplace.model.*;
 public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Type of the report.
+     * The type of the report.
      */
     private String reportType;
 
     /**
-     * Date in YYYYMMDD format
+     * Date, expressed in `YYYYMMDD` format, where `Y` represents the year, `M` represents the month, and `D` represents the day.
      */
     private java.util.Date date;
 

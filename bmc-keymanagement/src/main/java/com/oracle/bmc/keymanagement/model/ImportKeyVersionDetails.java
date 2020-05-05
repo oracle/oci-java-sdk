@@ -83,17 +83,18 @@ public class ImportKeyVersionDetails {
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")

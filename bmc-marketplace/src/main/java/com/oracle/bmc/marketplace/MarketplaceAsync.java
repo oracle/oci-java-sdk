@@ -111,6 +111,19 @@ public interface MarketplaceAsync extends AutoCloseable {
     /**
      * Gets detailed information about a listing, including the listing's name, version, description, and
      * resources.
+     * <p>
+     * If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+     * you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+     * <p>
+     * Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+     * listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
+     * The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
+     * its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+     * listing resource version, create a subscription by issuing a
+     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
+     * <p>
+     * To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
+     * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      *
      *
      * @param request The request object containing the details to send
@@ -126,6 +139,19 @@ public interface MarketplaceAsync extends AutoCloseable {
 
     /**
      * Get the details of the specified version of a package, including information needed to launch the package.
+     * <p>
+     * If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+     * you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+     * <p>
+     * Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+     * listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
+     * The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
+     * its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+     * listing resource version, create a subscription by issuing a
+     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
+     * <p>
+     * To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
+     * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      *
      *
      * @param request The request object containing the details to send
@@ -193,6 +219,19 @@ public interface MarketplaceAsync extends AutoCloseable {
     /**
      * Gets a list of listings from Oracle Cloud Infrastructure Marketplace by searching keywords and
      * filtering according to listing attributes.
+     * <p>
+     * If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+     * you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+     * <p>
+     * Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+     * listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
+     * The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
+     * its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+     * listing resource version, create a subscription by issuing a
+     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
+     * <p>
+     * To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
+     * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      *
      *
      * @param request The request object containing the details to send
@@ -209,6 +248,19 @@ public interface MarketplaceAsync extends AutoCloseable {
 
     /**
      * Gets the list of packages for a listing.
+     * <p>
+     * If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+     * you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+     * <p>
+     * Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+     * listing resource version. To get the signature, issue a [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements) API call.
+     * The [AppCatalogListingResourceVersionAgreements](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements) object, including
+     * its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+     * listing resource version, create a subscription by issuing a
+     * [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription) API call.
+     * <p>
+     * To get the image ID to launch an instance, issue a [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion) API call.
+     * Lastly, to launch the instance, use the image ID of the listing resource version to issue a [LaunchInstance](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) API call.
      *
      *
      * @param request The request object containing the details to send
@@ -240,7 +292,7 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List available reports for the compartment
+     * Lists available types of reports for the compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -255,7 +307,7 @@ public interface MarketplaceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List reports for the specific report type, date, and for the compartment
+     * Lists reports in the compartment that match the specified report type and date.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

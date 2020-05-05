@@ -60,7 +60,7 @@ public class ReportTypeCollection {
     }
 
     /**
-     * Array of report types.
+     * An array of report types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ReportTypeSummary> items;

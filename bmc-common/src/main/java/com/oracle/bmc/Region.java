@@ -4,15 +4,23 @@
  */
 package com.oracle.bmc;
 
+import java.io.IOException;
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import com.google.common.base.Optional;
 import com.oracle.bmc.internal.EndpointBuilder;
 
+import com.oracle.bmc.model.RegionSchema;
+import com.oracle.bmc.model.internal.JsonConverter;
+import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.NameUtils;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -27,11 +35,22 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @EqualsAndHashCode
 public final class Region implements Serializable, Comparable<Region> {
+
+    // Region metadata env attribute key
+    private final static String OCI_REGION_METADATA_ENV_VAR_NAME = "OCI_REGION_METADATA";
+
+    //The regions-config file path location
+    private static final String REGIONS_CONFIG_FILE_PATH = "~/.oci/regions-config.json";
+
+    private static volatile boolean hasUsedEnvVar = false;
+    private static volatile boolean hasUsedConfigFile = false;
+
     // LinkedHashMap to ensure stable ordering of registered regions
     private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
 
     // OC1
     public static final Region AP_MELBOURNE_1 = register("ap-melbourne-1", Realm.OC1, "mel");
+    public static final Region AP_HYDERABAD_1 = register("ap-hyderabad-1", Realm.OC1, "hyd");
     public static final Region AP_MUMBAI_1 = register("ap-mumbai-1", Realm.OC1, "bom");
     public static final Region AP_OSAKA_1 = register("ap-osaka-1", Realm.OC1, "kix");
     public static final Region AP_SEOUL_1 = register("ap-seoul-1", Realm.OC1, "icn");
@@ -162,6 +181,7 @@ public final class Region implements Serializable, Comparable<Region> {
      * @return Known regions
      */
     public static Region[] values() {
+        registerAllRegions();
         synchronized (KNOWN_REGIONS) {
             return KNOWN_REGIONS.values().toArray(new Region[0]);
         }
@@ -177,16 +197,11 @@ public final class Region implements Serializable, Comparable<Region> {
      * name
      */
     public static Region valueOf(@NonNull String name) throws IllegalArgumentException {
-        Region region;
-
-        synchronized (KNOWN_REGIONS) {
-            region = KNOWN_REGIONS.get(name);
-        }
-
-        if (region == null) {
+        Optional<Region> maybeRegion = getRegionAndRegisterIfNecessary(name);
+        if (!maybeRegion.isPresent()) {
             throw new IllegalArgumentException("Unknown region " + name);
         }
-        return region;
+        return maybeRegion.get();
     }
 
     /**
@@ -245,12 +260,7 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     private static Optional<Region> maybeFromRegionId(String regionId) {
-        for (Region region : Region.values()) {
-            if (region.regionId.equals(regionId)) {
-                return Optional.of(region);
-            }
-        }
-        return Optional.absent();
+        return getRegionAndRegisterIfNecessary(regionId);
     }
 
     /**
@@ -262,12 +272,11 @@ public final class Region implements Serializable, Comparable<Region> {
      * @return The Region object.
      */
     public static Region fromRegionCode(String regionCode) {
-        for (Region region : Region.values()) {
-            if (region.getRegionCode().compareToIgnoreCase(regionCode) == 0) {
-                return region;
-            }
+        Optional<Region> maybeRegion = getRegionAndRegisterIfNecessary(regionCode);
+        if (!maybeRegion.isPresent()) {
+            throw new IllegalArgumentException("Unknown regionCode: " + regionCode);
         }
-        throw new IllegalArgumentException("Unknown regionId: " + regionCode);
+        return maybeRegion.get();
     }
 
     /**
@@ -279,13 +288,11 @@ public final class Region implements Serializable, Comparable<Region> {
      * @return The Region object.
      */
     public static Region fromRegionCodeOrId(String regionCodeOrId) {
-        for (Region region : Region.values()) {
-            if (region.getRegionCode().compareToIgnoreCase(regionCodeOrId) == 0
-                    || region.regionId.compareToIgnoreCase(regionCodeOrId) == 0) {
-                return region;
-            }
+        Optional<Region> maybeRegion = getRegionAndRegisterIfNecessary(regionCodeOrId);
+        if (!maybeRegion.isPresent()) {
+            throw new IllegalArgumentException("Unknown regionCodeOrId: " + regionCodeOrId);
         }
-        throw new IllegalArgumentException("Unknown region: " + regionCodeOrId);
+        return maybeRegion.get();
     }
 
     /**
@@ -315,7 +322,7 @@ public final class Region implements Serializable, Comparable<Region> {
             throw new IllegalArgumentException("Cannot have empty regionId");
         }
         synchronized (KNOWN_REGIONS) {
-            for (Region region : Region.values()) {
+            for (Region region : KNOWN_REGIONS.values()) {
                 if (region.getRegionId().equals(regionId)) {
                     if (!region.getRealm().equals(realm)) {
                         throw new IllegalArgumentException(
@@ -335,6 +342,130 @@ public final class Region implements Serializable, Comparable<Region> {
                 }
             }
             return new Region(regionId, Optional.fromNullable(regionCode), realm);
+        }
+    }
+
+    private static java.util.Optional<Region> maybeFromRegionCodeOrIdWithoutRegistering(
+            String regionCodeOrId) {
+        synchronized (KNOWN_REGIONS) {
+            return KNOWN_REGIONS
+                    .values()
+                    .stream()
+                    .filter(
+                            r ->
+                                    r.getRegionCode().equalsIgnoreCase(regionCodeOrId)
+                                            || r.regionId.equalsIgnoreCase(regionCodeOrId))
+                    .findAny();
+        }
+    }
+
+    /**
+     *  Register all regions and sets status
+     */
+    private static void registerAllRegions() {
+
+        if (!hasUsedConfigFile) {
+            readConfigFile();
+        }
+
+        if (!hasUsedEnvVar) {
+            readEnvVar();
+        }
+    }
+
+    /**
+     *  Implements decision tree to determine Region.
+     */
+    private static Optional<Region> getRegionAndRegisterIfNecessary(String regionCodeOrId) {
+
+        if (regionCodeOrId.contains("_")) {
+            regionCodeOrId = NameUtils.decanonicalizeFromEnumTypes(regionCodeOrId);
+        }
+
+        java.util.Optional<Region> maybeRegion =
+                maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+        if (maybeRegion.isPresent()) {
+            return Optional.fromNullable(maybeRegion.get()); // already known
+        }
+
+        if (!hasUsedConfigFile) {
+            readConfigFile(); // registers region and sets hasUsedConfigFile = true;
+            maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+            if (maybeRegion.isPresent()) {
+                return Optional.fromNullable(maybeRegion.get());
+            }
+        }
+
+        if (!hasUsedEnvVar) {
+            readEnvVar(); // registers region and sets hasUsedEnvVar = true;
+            maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+            if (maybeRegion.isPresent()) {
+                return Optional.fromNullable(maybeRegion.get());
+            }
+        }
+
+        return Optional.absent();
+    }
+
+    /**
+     * Registers region and sets envVarUsed status to true.
+     */
+    private static void readEnvVar() {
+        final String envVar = System.getenv(OCI_REGION_METADATA_ENV_VAR_NAME);
+        RegionSchema regionSchema = null;
+
+        LOG.info("Region metadata schema from OCI_REGION_METADATA env variable is {}", envVar);
+        hasUsedEnvVar = true;
+        if (envVar != null) {
+            regionSchema = JsonConverter.jsonBlobToObject(envVar, RegionSchema.class);
+        }
+
+        if (regionSchema != null && RegionSchema.isValid(regionSchema)) {
+            register(
+                    regionSchema.getRegionIdentifier(),
+                    Realm.register(
+                            regionSchema.getRealmKey(), regionSchema.getRealmDomainComponent()),
+                    regionSchema.getRegionKey());
+        }
+    }
+
+    /**
+     * Registers region and sets hasUsedConfigFile status to true.
+     */
+    private static void readConfigFile() {
+        hasUsedConfigFile = true;
+
+        try {
+            String content =
+                    new String(
+                            Files.readAllBytes(
+                                    Paths.get(FileUtils.expandUserHome(REGIONS_CONFIG_FILE_PATH))),
+                            StandardCharsets.UTF_8);
+            LOG.info("Region schemas from regions-config.json are {}", content);
+
+            if (content.isEmpty()) return;
+            RegionSchema[] regionSchemas =
+                    JsonConverter.jsonBlobToObject(content, RegionSchema[].class);
+
+            if (regionSchemas != null && regionSchemas.length != 0) {
+                for (RegionSchema regionSchema : regionSchemas) {
+
+                    if (regionSchema != null && RegionSchema.isValid(regionSchema)) {
+                        Region.register(
+                                regionSchema.getRegionIdentifier(),
+                                Realm.register(
+                                        regionSchema.getRealmKey(),
+                                        regionSchema.getRealmDomainComponent()),
+                                regionSchema.getRegionKey());
+                    }
+                }
+            }
+
+        } catch (IOException e) {
+            LOG.warn(
+                    "Exception in reading or parsing {} to fetch regions ",
+                    Paths.get(FileUtils.expandUserHome(REGIONS_CONFIG_FILE_PATH)),
+                    e);
         }
     }
 }

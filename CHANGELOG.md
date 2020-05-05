@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.17.1 - 2020-05-05
+### Added
+- Support for updating the license type of database systems in the Database service
+- Support for updating the version of 19c autonomous databases in the Database service
+- Support for backup and restore functionality in the Key Management service
+- Support for reports in the Marketplace service
+- Support for calling Oracle Cloud Infrastructure services in the ap-hyderabad-1 region
+
 ## 1.17.0 - 2020-04-28
 ### Added
 - Support for the MySQL Database service

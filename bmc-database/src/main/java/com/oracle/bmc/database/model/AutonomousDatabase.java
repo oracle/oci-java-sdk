@@ -335,6 +335,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availableUpgradeVersions")
+        private java.util.List<String> availableUpgradeVersions;
+
+        public Builder availableUpgradeVersions(java.util.List<String> availableUpgradeVersions) {
+            this.availableUpgradeVersions = availableUpgradeVersions;
+            this.__explicitlySet__.add("availableUpgradeVersions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -374,7 +383,8 @@ public class AutonomousDatabase {
                             isAutoScalingEnabled,
                             dataSafeStatus,
                             timeMaintenanceBegin,
-                            timeMaintenanceEnd);
+                            timeMaintenanceEnd,
+                            availableUpgradeVersions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -417,7 +427,8 @@ public class AutonomousDatabase {
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .dataSafeStatus(o.getDataSafeStatus())
                             .timeMaintenanceBegin(o.getTimeMaintenanceBegin())
-                            .timeMaintenanceEnd(o.getTimeMaintenanceEnd());
+                            .timeMaintenanceEnd(o.getTimeMaintenanceEnd())
+                            .availableUpgradeVersions(o.getAvailableUpgradeVersions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -463,6 +474,7 @@ public class AutonomousDatabase {
         Updating("UPDATING"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
         Restarting("RESTARTING"),
+        Upgrading("UPGRADING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -871,6 +883,12 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
     java.util.Date timeMaintenanceEnd;
+
+    /**
+     * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableUpgradeVersions")
+    java.util.List<String> availableUpgradeVersions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

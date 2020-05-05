@@ -123,6 +123,15 @@ public class Vault {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("restoredFromVaultId")
+        private String restoredFromVaultId;
+
+        public Builder restoredFromVaultId(String restoredFromVaultId) {
+            this.restoredFromVaultId = restoredFromVaultId;
+            this.__explicitlySet__.add("restoredFromVaultId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("wrappingkeyId")
         private String wrappingkeyId;
 
@@ -149,6 +158,7 @@ public class Vault {
                             timeCreated,
                             timeOfDeletion,
                             vaultType,
+                            restoredFromVaultId,
                             wrappingkeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -168,6 +178,7 @@ public class Vault {
                             .timeCreated(o.getTimeCreated())
                             .timeOfDeletion(o.getTimeOfDeletion())
                             .vaultType(o.getVaultType())
+                            .restoredFromVaultId(o.getRestoredFromVaultId())
                             .wrappingkeyId(o.getWrappingkeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -229,7 +240,7 @@ public class Vault {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * The vault's current state.
+     * The vault's current lifecycle state.
      * <p>
      * Example: `DELETED`
      *
@@ -244,6 +255,8 @@ public class Vault {
         SchedulingDeletion("SCHEDULING_DELETION"),
         CancellingDeletion("CANCELLING_DELETION"),
         Updating("UPDATING"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
+        Restoring("RESTORING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -284,7 +297,7 @@ public class Vault {
         }
     };
     /**
-     * The vault's current state.
+     * The vault's current lifecycle state.
      * <p>
      * Example: `DELETED`
      *
@@ -372,7 +385,16 @@ public class Vault {
     VaultType vaultType;
 
     /**
-     * The OCID of the vault wrapping key.
+     * The OCID of the vault from which this vault was restored, if it was restored from a backup file.
+     * If you restore a vault to the same region, the vault retains the same OCID that it had when you
+     * backed up the vault.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("restoredFromVaultId")
+    String restoredFromVaultId;
+
+    /**
+     * The OCID of the vault's wrapping key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wrappingkeyId")
     String wrappingkeyId;

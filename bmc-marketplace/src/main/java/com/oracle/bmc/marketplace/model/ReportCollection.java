@@ -5,7 +5,7 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A collection of reports.
+ * A collection of reports that match the parameters of the request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -58,7 +58,7 @@ public class ReportCollection {
     }
 
     /**
-     * Array of reports.
+     * An array of reports.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ReportSummary> items;
