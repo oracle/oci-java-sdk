@@ -85,7 +85,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handler);
 
     /**
-     * Creates a stack in the specified comparment.
+     * Creates a stack in the specified compartment.
      * Specify the compartment using the compartment ID.
      * For more information, see [Create a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#CreateStack).
      *
@@ -114,6 +114,21 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteStackResponse> deleteStack(
             DeleteStackRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteStackRequest, DeleteStackResponse> handler);
+
+    /**
+     * Checks drift status for the specified stack.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DetectStackDriftResponse> detectStackDrift(
+            DetectStackDriftRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DetectStackDriftRequest, DetectStackDriftResponse>
+                    handler);
 
     /**
      * Returns the specified job along with the job details.
@@ -273,6 +288,27 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<ListJobsResponse> listJobs(
             ListJobsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handler);
+
+    /**
+     * Lists drift status details for each resource defined in the specified stack.
+     * The drift status details for a given resource indicate differences, if any, between the actual state
+     * and the expected (defined) state for that resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListStackResourceDriftDetailsResponse>
+            listStackResourceDriftDetails(
+                    ListStackResourceDriftDetailsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListStackResourceDriftDetailsRequest,
+                                    ListStackResourceDriftDetailsResponse>
+                            handler);
 
     /**
      * Returns a list of stacks.

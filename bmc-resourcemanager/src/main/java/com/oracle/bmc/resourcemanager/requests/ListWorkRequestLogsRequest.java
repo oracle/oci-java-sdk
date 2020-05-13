@@ -17,7 +17,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     private String workRequestId;
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
+     * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     private String compartmentId;
 
@@ -36,13 +37,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     private String page;
 
     /**
-     * The sort order, either `ASC` (ascending) or `DESC` (descending).
+     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order, either `ASC` (ascending) or `DESC` (descending).
+     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
      *
      **/
     public enum SortOrder {

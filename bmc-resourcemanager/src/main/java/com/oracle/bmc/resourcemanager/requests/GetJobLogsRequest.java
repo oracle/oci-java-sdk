@@ -36,13 +36,13 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private LogEntry.Level levelGreaterThanOrEqualTo;
 
     /**
-     * The sort order, either `ASC` (ascending) or `DESC` (descending).
+     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order, either `ASC` (ascending) or `DESC` (descending).
+     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
      *
      **/
     public enum SortOrder {

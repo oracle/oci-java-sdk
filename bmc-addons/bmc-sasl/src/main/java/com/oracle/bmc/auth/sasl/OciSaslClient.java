@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.auth.sasl;
 
+import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
@@ -14,6 +15,7 @@ import com.oracle.bmc.identity.auth.sasl.messages.OciSaslMessages.Challenge;
 import com.oracle.bmc.identity.auth.sasl.messages.OciSaslMessages.Key;
 import com.oracle.bmc.identity.auth.sasl.messages.OciSaslMessages.Response;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.security.interfaces.RSAPrivateKey;
@@ -31,6 +33,7 @@ import javax.security.auth.callback.UnsupportedCallbackException;
 import javax.security.sasl.SaslClient;
 import javax.security.sasl.SaslClientFactory;
 import javax.security.sasl.SaslException;
+import lombok.RequiredArgsConstructor;
 
 /**
  * Implementation of a {@link SaslClient} for the OCI SASL mechanism.
@@ -48,6 +51,8 @@ public class OciSaslClient implements SaslClient {
     private final OciMechanism mechanism;
     private final BasicAuthenticationDetailsProvider authProvider;
     private final String intent;
+
+    private OciPrivateKey currentPrivateKey = null;
 
     private State state = State.KEY_ID;
 
@@ -89,22 +94,36 @@ public class OciSaslClient implements SaslClient {
     }
 
     private Key generateKeyMessage() {
-        // Get new token for each new key exchange to prevent stale keys
-        if (authProvider instanceof RefreshableOnNotAuthenticatedProvider) {
-            ((RefreshableOnNotAuthenticatedProvider) authProvider).refresh();
-        }
+        // Because the authProvider might be used across multiple clients,
+        // we need to protect its access while we generate and retrieve a new private key
+        synchronized (authProvider) {
+            // Get a new token for each new key exchange to prevent stale keys
+            if (authProvider instanceof RefreshableOnNotAuthenticatedProvider) {
+                ((RefreshableOnNotAuthenticatedProvider) authProvider).refresh();
+            }
 
-        return Key.newBuilder().setKeyId(authProvider.getKeyId()).setIntent(intent).build();
+            currentPrivateKey =
+                    new OciPrivateKey(
+                            authProvider.getKeyId(),
+                            authProvider.getPrivateKey(),
+                            authProvider.getPassphraseCharacters());
+
+            return Key.newBuilder().setKeyId(currentPrivateKey.keyId).setIntent(intent).build();
+        }
     }
 
     private Response signChallenge(byte[] serializedChallenge) throws SaslException {
+
+        Preconditions.checkArgument(currentPrivateKey != null);
 
         final Challenge challenge = getAndValidateChallenge(serializedChallenge);
         final long epoch = OffsetDateTime.now().toEpochSecond();
 
         final PEMFileRSAPrivateKeySupplier keySupplier =
                 new PEMFileRSAPrivateKeySupplier(
-                        authProvider.getPrivateKey(), authProvider.getPassphraseCharacters());
+                        currentPrivateKey.privateKey, currentPrivateKey.passphraseCharacters);
+
+        currentPrivateKey = null;
 
         final RSAPrivateKey privateKey =
                 keySupplier
@@ -284,5 +303,12 @@ public class OciSaslClient implements SaslClient {
         static BasicAuthenticationDetailsProvider get(String key) {
             return authProvidersCache.get(key);
         }
+    }
+
+    @RequiredArgsConstructor
+    private static final class OciPrivateKey {
+        private final String keyId;
+        private final InputStream privateKey;
+        private final char[] passphraseCharacters;
     }
 }

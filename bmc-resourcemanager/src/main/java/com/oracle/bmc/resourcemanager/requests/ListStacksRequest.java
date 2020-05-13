@@ -19,7 +19,8 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String opcRequestId;
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
+     * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     private String compartmentId;
 
@@ -32,6 +33,7 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     /**
      * A filter that returns only those resources that match the specified
      * lifecycle state. The state value is case-insensitive.
+     * For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates).
      * <p>
      * Allowable values:
      * - CREATING
@@ -43,12 +45,13 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private Stack.LifecycleState lifecycleState;
 
     /**
-     * Display name on which to query.
+     * A filter to return only resources that match the specified display name.
+     *
      */
     private String displayName;
 
     /**
-     * Specifies the field on which to sort.
+     * The field to use when sorting returned resources.
      * By default, `TIMECREATED` is ordered descending.
      * By default, `DISPLAYNAME` is ordered ascending. Note that you can sort only on one field.
      *
@@ -56,7 +59,7 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private SortBy sortBy;
 
     /**
-     * Specifies the field on which to sort.
+     * The field to use when sorting returned resources.
      * By default, `TIMECREATED` is ordered descending.
      * By default, `DISPLAYNAME` is ordered ascending. Note that you can sort only on one field.
      *
@@ -94,13 +97,13 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
     /**
-     * The sort order, either `ASC` (ascending) or `DESC` (descending).
+     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order, either `ASC` (ascending) or `DESC` (descending).
+     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
      *
      **/
     public enum SortOrder {

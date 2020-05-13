@@ -19,7 +19,8 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     private String opcRequestId;
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
+     * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     private String compartmentId;
 
@@ -51,12 +52,13 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     private Job.LifecycleState lifecycleState;
 
     /**
-     * Display name on which to query.
+     * A filter to return only resources that match the specified display name.
+     *
      */
     private String displayName;
 
     /**
-     * Specifies the field on which to sort.
+     * The field to use when sorting returned resources.
      * By default, `TIMECREATED` is ordered descending.
      * By default, `DISPLAYNAME` is ordered ascending. Note that you can sort only on one field.
      *
@@ -64,7 +66,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     private SortBy sortBy;
 
     /**
-     * Specifies the field on which to sort.
+     * The field to use when sorting returned resources.
      * By default, `TIMECREATED` is ordered descending.
      * By default, `DISPLAYNAME` is ordered ascending. Note that you can sort only on one field.
      *
@@ -102,13 +104,13 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * The sort order, either `ASC` (ascending) or `DESC` (descending).
+     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order, either `ASC` (ascending) or `DESC` (descending).
+     * The sort order to use when sorting returned resources. Ascending (`ASC`) or descending (`DESC`).
      *
      **/
     public enum SortOrder {

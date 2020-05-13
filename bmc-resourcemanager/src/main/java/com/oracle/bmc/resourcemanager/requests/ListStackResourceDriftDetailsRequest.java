@@ -9,8 +9,13 @@ import com.oracle.bmc.resourcemanager.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListTerraformVersionsRequest
+public class ListStackResourceDriftDetailsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+     */
+    private String stackId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -20,14 +25,33 @@ public class ListTerraformVersionsRequest
     private String opcRequestId;
 
     /**
-     * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * A filter that returns only resources that match the given drift status. The value is case-insensitive.
+     * Allowable values -
+     *   - NOT_CHECKED
+     *   - MODIFIED
+     *   - IN_SYNC
+     *   - DELETED
      *
      */
-    private String compartmentId;
+    private java.util.List<StackResourceDriftSummary.ResourceDriftStatus> resourceDriftStatus;
+
+    /**
+     * The number of items returned in a paginated `List` call. For information about pagination, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
+    private Integer limit;
+
+    /**
+     * The value of the `opc-next-page` response header from the preceding `List` call.
+     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
+    private String page;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    ListTerraformVersionsRequest, java.lang.Void> {
+                    ListStackResourceDriftDetailsRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -59,26 +83,29 @@ public class ListTerraformVersionsRequest
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
-        public Builder copy(ListTerraformVersionsRequest o) {
+        public Builder copy(ListStackResourceDriftDetailsRequest o) {
+            stackId(o.getStackId());
             opcRequestId(o.getOpcRequestId());
-            compartmentId(o.getCompartmentId());
+            resourceDriftStatus(o.getResourceDriftStatus());
+            limit(o.getLimit());
+            page(o.getPage());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
         /**
-         * Build the instance of ListTerraformVersionsRequest as configured by this builder
+         * Build the instance of ListStackResourceDriftDetailsRequest as configured by this builder
          *
          * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
          * This is the preferred method to build an instance.
          *
-         * @return instance of ListTerraformVersionsRequest
+         * @return instance of ListStackResourceDriftDetailsRequest
          */
-        public ListTerraformVersionsRequest build() {
-            ListTerraformVersionsRequest request = buildWithoutInvocationCallback();
+        public ListStackResourceDriftDetailsRequest build() {
+            ListStackResourceDriftDetailsRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;

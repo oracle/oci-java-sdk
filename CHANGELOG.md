@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.17.3 - 2020-05-13
+### Added
+- Support for drift detection in the Resource Manager service
+
 ## 1.17.1 - 2020-05-05
 ### Added
 - Support for updating the license type of database systems in the Database service

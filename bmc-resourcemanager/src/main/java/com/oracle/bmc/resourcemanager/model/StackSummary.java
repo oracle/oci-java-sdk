@@ -180,6 +180,18 @@ public class StackSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
+    /**
+     * The current lifecycle state of the stack.
+     * For more information about resource states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts).
+     * <p>
+     * Allowable values:
+     * - CREATING
+     * - ACTIVE
+     * - DELETING
+     * - DELETED
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     Stack.LifecycleState lifecycleState;
 
