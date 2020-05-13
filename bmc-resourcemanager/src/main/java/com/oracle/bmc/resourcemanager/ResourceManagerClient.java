@@ -573,6 +573,35 @@ public class ResourceManagerClient implements ResourceManager {
     }
 
     @Override
+    public DetectStackDriftResponse detectStackDrift(DetectStackDriftRequest request) {
+        LOG.trace("Called detectStackDrift");
+        final DetectStackDriftRequest interceptedRequest =
+                DetectStackDriftConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetectStackDriftConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetectStackDriftResponse>
+                transformer = DetectStackDriftConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetJobResponse getJob(GetJobRequest request) {
         LOG.trace("Called getJob");
         final GetJobRequest interceptedRequest = GetJobConverter.interceptRequest(request);
@@ -843,6 +872,37 @@ public class ResourceManagerClient implements ResourceManager {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListStackResourceDriftDetailsResponse listStackResourceDriftDetails(
+            ListStackResourceDriftDetailsRequest request) {
+        LOG.trace("Called listStackResourceDriftDetails");
+        final ListStackResourceDriftDetailsRequest interceptedRequest =
+                ListStackResourceDriftDetailsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStackResourceDriftDetailsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListStackResourceDriftDetailsResponse>
+                transformer = ListStackResourceDriftDetailsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

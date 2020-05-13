@@ -250,7 +250,11 @@ public class JobSummary {
     java.util.Date timeFinished;
 
     /**
-     * Current state of the specified job. Allowed values are:
+     * Current state of the specified job.
+     * For more information about resource states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts).
+     * <p>
+     * Allowable values:
      * - ACCEPTED
      * - IN_PROGRESS
      * - FAILED

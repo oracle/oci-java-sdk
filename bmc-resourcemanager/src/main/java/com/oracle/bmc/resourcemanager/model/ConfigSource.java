@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Location of the Terraform configuration.
+ * Information about the Terraform configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -38,16 +38,15 @@ package com.oracle.bmc.resourcemanager.model;
 public class ConfigSource {
 
     /**
-     * File path to the directory from which Terraform runs.
-     * If not specified, we use the root directory.
+     * File path to the directory to use for running Terraform.
+     * If not specified, the root directory is used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
     String workingDirectory;
 
     /**
-     * Specifies the `configSourceType` for uploading the Terraform configuration.
-     * Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+     * The type of configuration source to use for the Terraform configuration.
      *
      **/
     @lombok.extern.slf4j.Slf4j

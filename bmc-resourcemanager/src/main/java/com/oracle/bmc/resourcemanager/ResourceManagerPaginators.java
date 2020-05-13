@@ -250,6 +250,132 @@ public class ResourceManagerPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listStackResourceDriftDetails operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListStackResourceDriftDetailsResponse>
+            listStackResourceDriftDetailsResponseIterator(
+                    final ListStackResourceDriftDetailsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStackResourceDriftDetailsRequest.Builder, ListStackResourceDriftDetailsRequest,
+                ListStackResourceDriftDetailsResponse>(
+                new com.google.common.base.Supplier<
+                        ListStackResourceDriftDetailsRequest.Builder>() {
+                    @Override
+                    public ListStackResourceDriftDetailsRequest.Builder get() {
+                        return ListStackResourceDriftDetailsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStackResourceDriftDetailsResponse, String>() {
+                    @Override
+                    public String apply(ListStackResourceDriftDetailsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStackResourceDriftDetailsRequest.Builder>,
+                        ListStackResourceDriftDetailsRequest>() {
+                    @Override
+                    public ListStackResourceDriftDetailsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStackResourceDriftDetailsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStackResourceDriftDetailsRequest,
+                        ListStackResourceDriftDetailsResponse>() {
+                    @Override
+                    public ListStackResourceDriftDetailsResponse apply(
+                            ListStackResourceDriftDetailsRequest request) {
+                        return client.listStackResourceDriftDetails(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary} objects
+     * contained in responses from the listStackResourceDriftDetails operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary>
+            listStackResourceDriftDetailsRecordIterator(
+                    final ListStackResourceDriftDetailsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStackResourceDriftDetailsRequest.Builder, ListStackResourceDriftDetailsRequest,
+                ListStackResourceDriftDetailsResponse,
+                com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary>(
+                new com.google.common.base.Supplier<
+                        ListStackResourceDriftDetailsRequest.Builder>() {
+                    @Override
+                    public ListStackResourceDriftDetailsRequest.Builder get() {
+                        return ListStackResourceDriftDetailsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStackResourceDriftDetailsResponse, String>() {
+                    @Override
+                    public String apply(ListStackResourceDriftDetailsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStackResourceDriftDetailsRequest.Builder>,
+                        ListStackResourceDriftDetailsRequest>() {
+                    @Override
+                    public ListStackResourceDriftDetailsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStackResourceDriftDetailsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStackResourceDriftDetailsRequest,
+                        ListStackResourceDriftDetailsResponse>() {
+                    @Override
+                    public ListStackResourceDriftDetailsResponse apply(
+                            ListStackResourceDriftDetailsRequest request) {
+                        return client.listStackResourceDriftDetails(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStackResourceDriftDetailsResponse,
+                        java.util.List<
+                                com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary>
+                            apply(ListStackResourceDriftDetailsResponse response) {
+                        return response.getStackResourceDriftCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listStacks operation. This iterable
      * will fetch more data from the server as needed.
      *

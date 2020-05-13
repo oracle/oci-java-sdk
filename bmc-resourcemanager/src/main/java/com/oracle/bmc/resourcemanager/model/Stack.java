@@ -106,6 +106,24 @@ public class Stack {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("stackDriftStatus")
+        private StackDriftStatus stackDriftStatus;
+
+        public Builder stackDriftStatus(StackDriftStatus stackDriftStatus) {
+            this.stackDriftStatus = stackDriftStatus;
+            this.__explicitlySet__.add("stackDriftStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDriftLastChecked")
+        private java.util.Date timeDriftLastChecked;
+
+        public Builder timeDriftLastChecked(java.util.Date timeDriftLastChecked) {
+            this.timeDriftLastChecked = timeDriftLastChecked;
+            this.__explicitlySet__.add("timeDriftLastChecked");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -140,6 +158,8 @@ public class Stack {
                             configSource,
                             variables,
                             terraformVersion,
+                            stackDriftStatus,
+                            timeDriftLastChecked,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -158,6 +178,8 @@ public class Stack {
                             .configSource(o.getConfigSource())
                             .variables(o.getVariables())
                             .terraformVersion(o.getTerraformVersion())
+                            .stackDriftStatus(o.getStackDriftStatus())
+                            .timeDriftLastChecked(o.getTimeDriftLastChecked())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -204,6 +226,9 @@ public class Stack {
     java.util.Date timeCreated;
     /**
      * The current lifecycle state of the stack.
+     * For more information about resource states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts).
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -252,6 +277,9 @@ public class Stack {
     };
     /**
      * The current lifecycle state of the stack.
+     * For more information about resource states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -275,6 +303,70 @@ public class Stack {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
     String terraformVersion;
+    /**
+     * Drift status of the stack.
+     * Drift refers to differences between the actual (current) state of the stack and the expected (defined) state of the stack.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum StackDriftStatus {
+        NotChecked("NOT_CHECKED"),
+        InSync("IN_SYNC"),
+        Drifted("DRIFTED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, StackDriftStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (StackDriftStatus v : StackDriftStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        StackDriftStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static StackDriftStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'StackDriftStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Drift status of the stack.
+     * Drift refers to differences between the actual (current) state of the stack and the expected (defined) state of the stack.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("stackDriftStatus")
+    StackDriftStatus stackDriftStatus;
+
+    /**
+     * Date and time when the drift detection was last executed. Format is defined by RFC3339.
+     * Example: 2020-01-25T21:10:29.600Z
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDriftLastChecked")
+    java.util.Date timeDriftLastChecked;
 
     /**
      * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.

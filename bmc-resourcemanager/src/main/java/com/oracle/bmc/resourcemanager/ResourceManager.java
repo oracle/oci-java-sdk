@@ -65,7 +65,7 @@ public interface ResourceManager extends AutoCloseable {
     CreateJobResponse createJob(CreateJobRequest request);
 
     /**
-     * Creates a stack in the specified comparment.
+     * Creates a stack in the specified compartment.
      * Specify the compartment using the compartment ID.
      * For more information, see [Create a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#CreateStack).
      *
@@ -82,6 +82,14 @@ public interface ResourceManager extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteStackResponse deleteStack(DeleteStackRequest request);
+
+    /**
+     * Checks drift status for the specified stack.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DetectStackDriftResponse detectStackDrift(DetectStackDriftRequest request);
 
     /**
      * Returns the specified job along with the job details.
@@ -174,6 +182,18 @@ public interface ResourceManager extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListJobsResponse listJobs(ListJobsRequest request);
+
+    /**
+     * Lists drift status details for each resource defined in the specified stack.
+     * The drift status details for a given resource indicate differences, if any, between the actual state
+     * and the expected (defined) state for that resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListStackResourceDriftDetailsResponse listStackResourceDriftDetails(
+            ListStackResourceDriftDetailsRequest request);
 
     /**
      * Returns a list of stacks.

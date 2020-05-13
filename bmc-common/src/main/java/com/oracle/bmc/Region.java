@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc;
 
-import java.io.IOException;
+import java.io.File;
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -13,8 +13,8 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.stream.Stream;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.oracle.bmc.internal.EndpointBuilder;
 
@@ -26,6 +26,15 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.client.ClientProperties;
+
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+
+import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
 
 /**
  * Class containing all of the known Regions that can be contacted.
@@ -39,11 +48,29 @@ public final class Region implements Serializable, Comparable<Region> {
     // Region metadata env attribute key
     private final static String OCI_REGION_METADATA_ENV_VAR_NAME = "OCI_REGION_METADATA";
 
+    //Default base url of metadata service.
+    private final static String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v2/";
+
+    //The Authorization header value to be sent for requests to the metadata service.
+    private static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
+
     //The regions-config file path location
     private static final String REGIONS_CONFIG_FILE_PATH = "~/.oci/regions-config.json";
 
     private static volatile boolean hasUsedEnvVar = false;
     private static volatile boolean hasUsedConfigFile = false;
+
+    @VisibleForTesting static volatile boolean hasUsedInstanceMetadataService = false;
+    private static volatile boolean hasReceivedInstanceMetadataServiceResponse = false;
+    private static volatile boolean hasWarnedAboutValuesWithoutInstanceMetadataService = false;
+    private static volatile ClientConfig imdsClientConfiguration = new ClientConfig();
+
+    static {
+        imdsClientConfiguration =
+                imdsClientConfiguration.property(ClientProperties.CONNECT_TIMEOUT, 10000);
+        imdsClientConfiguration =
+                imdsClientConfiguration.property(ClientProperties.READ_TIMEOUT, 60000);
+    }
 
     // LinkedHashMap to ensure stable ordering of registered regions
     private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
@@ -176,11 +203,23 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * All known Regions in this version of the SDK
+     * Return all known Regions in this version of the SDK, except possibly the region returned by IMDS (Instance Metadata
+     * Service, only available on OCI instances), since IMDS is not automatically contacted by this method.
+     *
+     * To ensure that this method also returns the region provided by IMDS, call {@link Region#registerFromInstanceMetadataService()}
+     * explicitly before calling {@link Region#values()}.
      *
      * @return Known regions
      */
     public static Region[] values() {
+        if (!hasUsedInstanceMetadataService
+                && !hasWarnedAboutValuesWithoutInstanceMetadataService) {
+            LOG.warn(
+                    "Call to Regions.values() without having contacted IMDS (Instance Metadata Service, only "
+                            + "available on OCI instances); if you do need the region from IMDS, call "
+                            + "Region.registerFromInstanceMetadataService before calling Region.values()");
+            hasWarnedAboutValuesWithoutInstanceMetadataService = true;
+        }
         registerAllRegions();
         synchronized (KNOWN_REGIONS) {
             return KNOWN_REGIONS.values().toArray(new Region[0]);
@@ -404,6 +443,14 @@ public final class Region implements Serializable, Comparable<Region> {
             }
         }
 
+        if (!hasUsedInstanceMetadataService) {
+            registerFromInstanceMetadataService(); // registers region and sets hasUsedInstanceMetadataService = true;
+            maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
+            if (maybeRegion.isPresent()) {
+                return Optional.fromNullable(maybeRegion.get());
+            }
+        }
+
         return Optional.absent();
     }
 
@@ -436,6 +483,14 @@ public final class Region implements Serializable, Comparable<Region> {
         hasUsedConfigFile = true;
 
         try {
+            File file = new File(FileUtils.expandUserHome(REGIONS_CONFIG_FILE_PATH));
+            if (!file.isFile()) {
+                LOG.info(
+                        "Region config file not found to fetch regions at {} ",
+                        Paths.get(FileUtils.expandUserHome(REGIONS_CONFIG_FILE_PATH)));
+                return;
+            }
+
             String content =
                     new String(
                             Files.readAllBytes(
@@ -461,11 +516,78 @@ public final class Region implements Serializable, Comparable<Region> {
                 }
             }
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             LOG.warn(
                     "Exception in reading or parsing {} to fetch regions ",
                     Paths.get(FileUtils.expandUserHome(REGIONS_CONFIG_FILE_PATH)),
                     e);
+        }
+    }
+
+    /**
+     * Set the client configuration used to contact IMDS (Instance Metadata Service, only available on OCI instances).
+     *
+     * The default configuration uses a 10 second connect timeout and a 60 second read timeout.
+     *
+     * @param clientConfig configuration used to contact IMDS.
+     */
+    public static void setInstanceMetadataServiceClientConfig(ClientConfig clientConfig) {
+        imdsClientConfiguration = clientConfig;
+    }
+
+    /**
+     * Instructs the SDK to not contact the IMDS (Instance Metadata Service, only available on OCI instances).
+     */
+    public static void skipInstanceMetadataService() {
+        hasUsedInstanceMetadataService = true;
+    }
+
+    /**
+     * Send request to IMDS (Instance Metadata Service, only available on OCI instances), registers region, and sets
+     * hasUsedInstanceMetadataService = true.
+     * @return true if response from IMDS was received
+     */
+    public static boolean registerFromInstanceMetadataService() {
+        if (hasUsedInstanceMetadataService) {
+            // only read once
+            return hasReceivedInstanceMetadataServiceResponse;
+        }
+
+        try {
+            Client client = ClientBuilder.newClient(imdsClientConfiguration);
+            WebTarget base = client.target(METADATA_SERVICE_BASE_URL + "instance/");
+
+            hasUsedInstanceMetadataService = true;
+
+            LOG.info(
+                    "Requesting region metadata blob from IMDS at {}",
+                    METADATA_SERVICE_BASE_URL + "instance/regionInfo");
+            String regionMetadataSchema =
+                    base.path("regionInfo")
+                            .request(MediaType.APPLICATION_JSON)
+                            .header(AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
+                            .get(String.class);
+
+            hasReceivedInstanceMetadataServiceResponse = true;
+            LOG.info("Region metadata blob from regionInfo service is {}", regionMetadataSchema);
+
+            if (regionMetadataSchema != null && !regionMetadataSchema.isEmpty()) {
+                RegionSchema regionSchema =
+                        JsonConverter.jsonBlobToObject(regionMetadataSchema, RegionSchema.class);
+
+                if (regionSchema != null && RegionSchema.isValid(regionSchema)) {
+                    Region.register(
+                            regionSchema.getRegionIdentifier(),
+                            Realm.register(
+                                    regionSchema.getRealmKey(),
+                                    regionSchema.getRealmDomainComponent()),
+                            regionSchema.getRegionKey());
+                }
+            }
+        } catch (RuntimeException e) {
+            LOG.warn("Rest call to get regionInfo from metadata service failed ", e);
+        } finally {
+            return hasReceivedInstanceMetadataServiceResponse;
         }
     }
 }

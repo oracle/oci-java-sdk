@@ -5,7 +5,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Metadata about the user-provided Terraform configuration.
+ * Drift status details for resources in the stack.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -16,43 +16,37 @@ package com.oracle.bmc.resourcemanager.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ZipUploadConfigSource.Builder.class
-)
-@lombok.ToString(callSuper = true)
-@lombok.EqualsAndHashCode(callSuper = true)
-@com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "configSourceType"
+    builder = StackResourceDriftCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ZipUploadConfigSource extends ConfigSource {
+public class StackResourceDriftCollection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
-        private String workingDirectory;
+        @com.fasterxml.jackson.annotation.JsonProperty("items")
+        private java.util.List<StackResourceDriftSummary> items;
 
-        public Builder workingDirectory(String workingDirectory) {
-            this.workingDirectory = workingDirectory;
-            this.__explicitlySet__.add("workingDirectory");
+        public Builder items(java.util.List<StackResourceDriftSummary> items) {
+            this.items = items;
+            this.__explicitlySet__.add("items");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public ZipUploadConfigSource build() {
-            ZipUploadConfigSource __instance__ = new ZipUploadConfigSource(workingDirectory);
+        public StackResourceDriftCollection build() {
+            StackResourceDriftCollection __instance__ = new StackResourceDriftCollection(items);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ZipUploadConfigSource o) {
-            Builder copiedBuilder = workingDirectory(o.getWorkingDirectory());
+        public Builder copy(StackResourceDriftCollection o) {
+            Builder copiedBuilder = items(o.getItems());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -66,10 +60,11 @@ public class ZipUploadConfigSource extends ConfigSource {
         return new Builder();
     }
 
-    @Deprecated
-    public ZipUploadConfigSource(String workingDirectory) {
-        super(workingDirectory);
-    }
+    /**
+     * Collection of drift status details for all resources defined in the stack.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("items")
+    java.util.List<StackResourceDriftSummary> items;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
