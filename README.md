@@ -17,6 +17,13 @@ For details on compatibility, advanced configurations, and add-ons, see [Configu
 
 Examples can be found [here](/bmc-examples/src/main/java/).
 
+You may run any example by invoking the `exec:java` goal and passing appropriate values for `exec.mainClass` and `.exec.arguments` properties, for example
+
+```
+mvn -am -pl bmc-examples exec:java -Dexec.mainClass=ObjectStorageGetBucketExample \
+  -Dexec.arguments=ocid1.compartment.oc1..aaaaabaaoht5722yrrthjpjdpvrfkng2rgzfbh32rbwa5hlanhqlafpl3tsa,test,sample
+```
+
 ## Documentation
 
 Full documentation, including prerequisites, installation, and configuration instructions, is available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
