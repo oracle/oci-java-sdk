@@ -107,12 +107,6 @@
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
-        <artifactId>oci-java-sdk-resourcesearch</artifactId>
-        <version>1.17.3</version>
-        <optional>false</optional>
-      </dependency>
-      <dependency>
-        <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons-apache</artifactId>
         <version>1.17.3</version>
         <optional>false</optional>
