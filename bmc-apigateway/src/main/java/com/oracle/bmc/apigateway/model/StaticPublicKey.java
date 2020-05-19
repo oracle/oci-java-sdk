@@ -5,7 +5,7 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Information on how to authenticate incoming requests.
+ * A static public key which is used to verify the JWT signature.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -24,37 +24,37 @@ package com.oracle.bmc.apigateway.model;
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type",
-    defaultImpl = AuthenticationPolicy.class
+    property = "format",
+    defaultImpl = StaticPublicKey.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = JwtAuthenticationPolicy.class,
-        name = "JWT_AUTHENTICATION"
+        value = JsonWebKey.class,
+        name = "JSON_WEB_KEY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CustomAuthenticationPolicy.class,
-        name = "CUSTOM_AUTHENTICATION"
+        value = PemEncodedPublicKey.class,
+        name = "PEM"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AuthenticationPolicy {
+public class StaticPublicKey {
 
     /**
-     * Whether an unauthenticated user may access the API. Must be \"true\" to enable ANONYMOUS
-     * route authorization.
+     * A unique key ID. This key will be used to verify the signature of a
+     * JWT with matching \"kid\".
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isAnonymousAccessAllowed")
-    Boolean isAnonymousAccessAllowed;
+    @com.fasterxml.jackson.annotation.JsonProperty("kid")
+    String kid;
 
     /**
-     * Type of the authentication policy to use.
+     * The format of the public key.
      **/
     @lombok.extern.slf4j.Slf4j
-    public enum Type {
-        CustomAuthentication("CUSTOM_AUTHENTICATION"),
-        JwtAuthentication("JWT_AUTHENTICATION"),
+    public enum Format {
+        JsonWebKey("JSON_WEB_KEY"),
+        Pem("PEM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -63,18 +63,18 @@ public class AuthenticationPolicy {
         UnknownEnumValue(null);
 
         private final String value;
-        private static java.util.Map<String, Type> map;
+        private static java.util.Map<String, Format> map;
 
         static {
             map = new java.util.HashMap<>();
-            for (Type v : Type.values()) {
+            for (Format v : Format.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
                 }
             }
         }
 
-        Type(String value) {
+        Format(String value) {
             this.value = value;
         }
 
@@ -84,12 +84,13 @@ public class AuthenticationPolicy {
         }
 
         @com.fasterxml.jackson.annotation.JsonCreator
-        public static Type create(String key) {
+        public static Format create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
             LOG.warn(
-                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
+                    "Received unknown value '{}' for enum 'Format', returning UnknownEnumValue",
+                    key);
             return UnknownEnumValue;
         }
     };

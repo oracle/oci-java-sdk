@@ -5,7 +5,7 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Information on how to authenticate incoming requests.
+ * A set of Public Keys that will be used to verify the JWT signature.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -25,36 +25,28 @@ package com.oracle.bmc.apigateway.model;
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type",
-    defaultImpl = AuthenticationPolicy.class
+    defaultImpl = PublicKeySet.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = JwtAuthenticationPolicy.class,
-        name = "JWT_AUTHENTICATION"
+        value = StaticPublicKeySet.class,
+        name = "STATIC_KEYS"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CustomAuthenticationPolicy.class,
-        name = "CUSTOM_AUTHENTICATION"
+        value = RemoteJsonWebKeySet.class,
+        name = "REMOTE_JWKS"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AuthenticationPolicy {
+public class PublicKeySet {
 
     /**
-     * Whether an unauthenticated user may access the API. Must be \"true\" to enable ANONYMOUS
-     * route authorization.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isAnonymousAccessAllowed")
-    Boolean isAnonymousAccessAllowed;
-
-    /**
-     * Type of the authentication policy to use.
+     * Type of the public key set.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Type {
-        CustomAuthentication("CUSTOM_AUTHENTICATION"),
-        JwtAuthentication("JWT_AUTHENTICATION"),
+        StaticKeys("STATIC_KEYS"),
+        RemoteJwks("REMOTE_JWKS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
