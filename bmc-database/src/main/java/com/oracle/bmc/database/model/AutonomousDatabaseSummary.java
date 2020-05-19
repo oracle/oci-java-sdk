@@ -265,6 +265,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
+        private String privateEndpointIp;
+
+        public Builder privateEndpointIp(String privateEndpointIp) {
+            this.privateEndpointIp = privateEndpointIp;
+            this.__explicitlySet__.add("privateEndpointIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
@@ -378,6 +387,7 @@ public class AutonomousDatabaseSummary {
                             nsgIds,
                             privateEndpoint,
                             privateEndpointLabel,
+                            privateEndpointIp,
                             dbVersion,
                             isPreview,
                             dbWorkload,
@@ -422,6 +432,7 @@ public class AutonomousDatabaseSummary {
                             .nsgIds(o.getNsgIds())
                             .privateEndpoint(o.getPrivateEndpoint())
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
+                            .privateEndpointIp(o.getPrivateEndpointIp())
                             .dbVersion(o.getDbVersion())
                             .isPreview(o.getIsPreview())
                             .dbWorkload(o.getDbWorkload())
@@ -730,6 +741,12 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointLabel")
     String privateEndpointLabel;
+
+    /**
+     * The private endpoint Ip address for the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
+    String privateEndpointIp;
 
     /**
      * A valid Oracle Database version for Autonomous Database.
