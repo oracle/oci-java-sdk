@@ -103,6 +103,15 @@ public class OrchestrationListingPackage extends ListingPackage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("regions")
+        private java.util.List<Region> regions;
+
+        public Builder regions(java.util.List<Region> regions) {
+            this.regions = regions;
+            this.__explicitlySet__.add("regions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -116,7 +125,8 @@ public class OrchestrationListingPackage extends ListingPackage {
                             resourceId,
                             timeCreated,
                             resourceLink,
-                            variables);
+                            variables,
+                            regions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -131,7 +141,8 @@ public class OrchestrationListingPackage extends ListingPackage {
                             .resourceId(o.getResourceId())
                             .timeCreated(o.getTimeCreated())
                             .resourceLink(o.getResourceLink())
-                            .variables(o.getVariables());
+                            .variables(o.getVariables())
+                            .regions(o.getRegions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -154,10 +165,12 @@ public class OrchestrationListingPackage extends ListingPackage {
             String resourceId,
             java.util.Date timeCreated,
             String resourceLink,
-            java.util.List<OrchestrationVariable> variables) {
+            java.util.List<OrchestrationVariable> variables,
+            java.util.List<Region> regions) {
         super(description, listingId, version, pricing, resourceId, timeCreated);
         this.resourceLink = resourceLink;
         this.variables = variables;
+        this.regions = regions;
     }
 
     /**
@@ -171,6 +184,12 @@ public class OrchestrationListingPackage extends ListingPackage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     java.util.List<OrchestrationVariable> variables;
+
+    /**
+     * List of regions in which this ListingPackage is available.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("regions")
+    java.util.List<Region> regions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

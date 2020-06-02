@@ -17,6 +17,8 @@ import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerException;
 import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.io.internal.KeepOpenInputStream;
+import com.oracle.bmc.retrier.Retriers;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
@@ -488,6 +490,10 @@ public class RequestSignerImpl implements RequestSigner {
         } else if (body instanceof DuplicatableInputStream) {
             final InputStream duplicatedBody = ((DuplicatableInputStream) body).duplicate();
             return ByteStreams.toByteArray(duplicatedBody);
+        } else if (body instanceof KeepOpenInputStream) {
+            byte[] byteArr = ByteStreams.toByteArray((KeepOpenInputStream) body);
+            Retriers.tryResetStreamForRetry((InputStream) body);
+            return byteArr;
         } else if (body instanceof InputStream) {
             // TODO: Allow input streams to be signed, but for now restrict to DIS until we can refactor
             throw new IllegalArgumentException(

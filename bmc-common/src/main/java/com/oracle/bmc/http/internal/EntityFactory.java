@@ -61,7 +61,7 @@ class EntityFactory {
         if (body instanceof InputStream) {
             requestBody = Entity.entity(body, InputStreamVariantCreator.create(request));
         } else {
-            requestBody = Entity.json(body);
+            requestBody = Entity.json(getBodyAsString(body));
         }
         return requestBody;
     }

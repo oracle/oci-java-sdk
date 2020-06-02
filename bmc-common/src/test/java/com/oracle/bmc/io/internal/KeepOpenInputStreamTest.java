@@ -15,6 +15,7 @@ import java.io.InputStream;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests for {@link KeepOpenInputStream}.
@@ -27,15 +28,31 @@ public class KeepOpenInputStreamTest {
         MockitoAnnotations.initMocks(this);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testCreationWithNoResettableStream() throws IllegalArgumentException {
+        when(is.markSupported()).thenReturn(false);
+        KeepOpenInputStream keepOpenInputStream = new KeepOpenInputStream(is);
+    }
+
+    @Test
+    public void testCreationWithResettableStream() {
+        when(is.markSupported()).thenReturn(true);
+        KeepOpenInputStream keepOpenInputStream = new KeepOpenInputStream(is);
+        verify(is).markSupported();
+    }
+
     @Test
     public void testClose() throws IOException {
+        when(is.markSupported()).thenReturn(true);
         KeepOpenInputStream keepOpenInputStream = new KeepOpenInputStream(is);
         keepOpenInputStream.close();
+        verify(is).markSupported();
         verifyNoMoreInteractions(is);
     }
 
     @Test
     public void testDoClose() throws IOException {
+        when(is.markSupported()).thenReturn(true);
         KeepOpenInputStream keepOpenInputStream = new KeepOpenInputStream(is);
         keepOpenInputStream.doClose();
         verify(is).close();
@@ -43,9 +60,11 @@ public class KeepOpenInputStreamTest {
 
     @Test
     public void testCloseStream() throws IOException {
+        when(is.markSupported()).thenReturn(true);
         InputStream is2 = mock(InputStream.class);
         KeepOpenInputStream keepOpenInputStream = new KeepOpenInputStream(is);
 
+        verify(is).markSupported();
         KeepOpenInputStream.closeStream(is2);
         verify(is2).close();
 

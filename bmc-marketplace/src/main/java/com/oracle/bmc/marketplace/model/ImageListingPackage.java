@@ -103,6 +103,15 @@ public class ImageListingPackage extends ListingPackage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("imageId")
+        private String imageId;
+
+        public Builder imageId(String imageId) {
+            this.imageId = imageId;
+            this.__explicitlySet__.add("imageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<Region> regions;
 
@@ -126,6 +135,7 @@ public class ImageListingPackage extends ListingPackage {
                             timeCreated,
                             appCatalogListingId,
                             appCatalogListingResourceVersion,
+                            imageId,
                             regions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -143,6 +153,7 @@ public class ImageListingPackage extends ListingPackage {
                             .appCatalogListingId(o.getAppCatalogListingId())
                             .appCatalogListingResourceVersion(
                                     o.getAppCatalogListingResourceVersion())
+                            .imageId(o.getImageId())
                             .regions(o.getRegions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -167,10 +178,12 @@ public class ImageListingPackage extends ListingPackage {
             java.util.Date timeCreated,
             String appCatalogListingId,
             String appCatalogListingResourceVersion,
+            String imageId,
             java.util.List<Region> regions) {
         super(description, listingId, version, pricing, resourceId, timeCreated);
         this.appCatalogListingId = appCatalogListingId;
         this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
+        this.imageId = imageId;
         this.regions = regions;
     }
 
@@ -188,7 +201,13 @@ public class ImageListingPackage extends ListingPackage {
     String appCatalogListingResourceVersion;
 
     /**
-     * The regions where the listing is available.
+     * The id of the image corresponding to the package.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("imageId")
+    String imageId;
+
+    /**
+     * List of regions in which this ListingPackage is available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     java.util.List<Region> regions;

@@ -76,6 +76,7 @@ public final class Region implements Serializable, Comparable<Region> {
     private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
 
     // OC1
+    public static final Region AP_CHUNCHEON_1 = register("ap-chuncheon-1", Realm.OC1, "yny");
     public static final Region AP_MELBOURNE_1 = register("ap-melbourne-1", Realm.OC1, "mel");
     public static final Region AP_HYDERABAD_1 = register("ap-hyderabad-1", Realm.OC1, "hyd");
     public static final Region AP_MUMBAI_1 = register("ap-mumbai-1", Realm.OC1, "bom");
