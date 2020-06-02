@@ -21,6 +21,12 @@ import java.io.InputStream;
 public final class KeepOpenInputStream extends FilterInputStream {
     public KeepOpenInputStream(InputStream is) {
         super(is);
+        if (!is.markSupported()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "Stream '%s' does not support mark/reset, retries won't work",
+                            is.getClass().getName()));
+        }
     }
 
     @Override

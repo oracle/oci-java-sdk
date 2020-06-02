@@ -86,6 +86,15 @@ public class ListingSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("regions")
+        private java.util.List<Region> regions;
+
+        public Builder regions(java.util.List<Region> regions) {
+            this.regions = regions;
+            this.__explicitlySet__.add("regions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
         private Boolean isFeatured;
 
@@ -126,6 +135,7 @@ public class ListingSummary {
                             icon,
                             packageType,
                             pricingTypes,
+                            regions,
                             isFeatured,
                             categories,
                             publisher);
@@ -143,6 +153,7 @@ public class ListingSummary {
                             .icon(o.getIcon())
                             .packageType(o.getPackageType())
                             .pricingTypes(o.getPricingTypes())
+                            .regions(o.getRegions())
                             .isFeatured(o.getIsFeatured())
                             .categories(o.getCategories())
                             .publisher(o.getPublisher());
@@ -242,6 +253,12 @@ public class ListingSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pricingTypes")
     java.util.List<PricingTypes> pricingTypes;
+
+    /**
+     * The regions where the listing is eligible to be deployed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("regions")
+    java.util.List<Region> regions;
 
     /**
      * Indicates whether the listing is featured.

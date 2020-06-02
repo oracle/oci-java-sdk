@@ -19,8 +19,11 @@
       <directory>${project.basedir}/..</directory>
       <outputDirectory></outputDirectory>
       <includes>
+        <include>README.md</include>
+        <include>CHANGELOG.md</include>
+        <include>CONTRIBUTING.md</include>
         <include>LICENSE.txt</include>
-        <include>Thirdpartyreadme.txt</include>
+        <include>THIRD_PARTY_LICENSES.txt</include>
       </includes>
     </fileSet>
     <!-- Include all of the examples -->

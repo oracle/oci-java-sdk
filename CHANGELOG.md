@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.17.5 - 2020-06-02
+### Added
+- Support for optionally supplying a signature when deleting an agreement in the Marketplace service
+- Support for launching paid listings in non-US regions in the Marketplace service
+- Support for returning the image id of packages in the Marketplace service
+- Support for calling Oracle Cloud Infrastructure services in the ap-chuncheon-1 region
+
 ## 1.17.4 - 2020-05-19
 ### Added
 - Support for returning the private IP of a private endpoint database in the Database service

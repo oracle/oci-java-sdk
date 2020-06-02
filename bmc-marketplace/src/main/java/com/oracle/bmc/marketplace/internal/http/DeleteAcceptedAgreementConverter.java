@@ -30,7 +30,6 @@ public class DeleteAcceptedAgreementConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(
                 request.getAcceptedAgreementId(), "acceptedAgreementId must not be blank");
-        Validate.notNull(request.getSignature(), "signature is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
@@ -40,11 +39,13 @@ public class DeleteAcceptedAgreementConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getAcceptedAgreementId()));
 
-        target =
-                target.queryParam(
-                        "signature",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getSignature()));
+        if (request.getSignature() != null) {
+            target =
+                    target.queryParam(
+                            "signature",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSignature()));
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

@@ -14,6 +14,7 @@ import com.google.common.io.ByteStreams;
 import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.signing.RequestSignerException;
 import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.io.internal.KeepOpenInputStream;
 import com.oracle.bmc.util.StreamUtils;
 import org.junit.Before;
 import org.junit.Rule;
@@ -222,6 +223,21 @@ public class RequestSignerImplTest {
                 new ByteArrayInputStream(BYTE_BUFFER),
                 BYTE_BUFFER.length,
                 SigningStrategy.STANDARD);
+    }
+
+    @Test
+    public void calculateMissingHeaders_postKeepOpenInputStreamBody() throws IOException {
+        final KeepOpenInputStream body =
+                new KeepOpenInputStream(new ByteArrayInputStream(BYTE_BUFFER));
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.POST,
+                MediaType.TEXT_PLAIN,
+                body,
+                BYTE_BUFFER.length,
+                SigningStrategy.STANDARD);
+
+        // Read the stream one more time to verify it wasn't consumed already and verify content matches source
+        assertTrue(Arrays.equals(BYTE_BUFFER, ByteStreams.toByteArray(body)));
     }
 
     @Test

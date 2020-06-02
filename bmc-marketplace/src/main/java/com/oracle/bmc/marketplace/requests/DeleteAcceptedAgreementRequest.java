@@ -18,8 +18,7 @@ public class DeleteAcceptedAgreementRequest
     private String acceptedAgreementId;
 
     /**
-     * A signature generated for the listing package terms of use agreements that you can retrieve with a [GetAgreement](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/marketplace/latest/Agreement/GetAgreement) API call.
-     *
+     * Deprecated. The signature value is ignored.
      */
     private String signature;
 

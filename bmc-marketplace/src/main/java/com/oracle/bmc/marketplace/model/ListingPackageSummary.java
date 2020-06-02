@@ -52,6 +52,15 @@ public class ListingPackageSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("regions")
+        private java.util.List<Region> regions;
+
+        public Builder regions(java.util.List<Region> regions) {
+            this.regions = regions;
+            this.__explicitlySet__.add("regions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
@@ -76,7 +85,12 @@ public class ListingPackageSummary {
         public ListingPackageSummary build() {
             ListingPackageSummary __instance__ =
                     new ListingPackageSummary(
-                            listingId, packageVersion, packageType, resourceId, timeCreated);
+                            listingId,
+                            packageVersion,
+                            packageType,
+                            regions,
+                            resourceId,
+                            timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,6 +101,7 @@ public class ListingPackageSummary {
                     listingId(o.getListingId())
                             .packageVersion(o.getPackageVersion())
                             .packageType(o.getPackageType())
+                            .regions(o.getRegions())
                             .resourceId(o.getResourceId())
                             .timeCreated(o.getTimeCreated());
 
@@ -119,6 +134,12 @@ public class ListingPackageSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     PackageTypeEnum packageType;
+
+    /**
+     * The regions where the package is eligible to be deployed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("regions")
+    java.util.List<Region> regions;
 
     /**
      * The unique identifier for the package resource.
