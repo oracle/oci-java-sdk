@@ -97,6 +97,7 @@ public class RegionTest {
                         .property(ClientProperties.CONNECT_TIMEOUT, 10000)
                         .property(ClientProperties.READ_TIMEOUT, 60000));
         Region.hasUsedInstanceMetadataService = false;
+        Region.enableInstanceMetadataService();
     }
 
     @Test

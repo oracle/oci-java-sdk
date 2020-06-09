@@ -60,6 +60,7 @@ public final class Region implements Serializable, Comparable<Region> {
     private static volatile boolean hasUsedEnvVar = false;
     private static volatile boolean hasUsedConfigFile = false;
 
+    private static volatile boolean hasOptedForInstanceMetadataService = false;
     @VisibleForTesting static volatile boolean hasUsedInstanceMetadataService = false;
     private static volatile boolean hasReceivedInstanceMetadataServiceResponse = false;
     private static volatile boolean hasWarnedAboutValuesWithoutInstanceMetadataService = false;
@@ -444,7 +445,7 @@ public final class Region implements Serializable, Comparable<Region> {
             }
         }
 
-        if (!hasUsedInstanceMetadataService) {
+        if (hasOptedForInstanceMetadataService && !hasUsedInstanceMetadataService) {
             registerFromInstanceMetadataService(); // registers region and sets hasUsedInstanceMetadataService = true;
             maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
             if (maybeRegion.isPresent()) {
@@ -537,10 +538,18 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
+     * Enables contact to IMDS (Instance Metadata Service, only available on OCI instances) if user decides to opt-in.
+     */
+    public static void enableInstanceMetadataService() {
+        hasOptedForInstanceMetadataService = true;
+    }
+
+    /**
      * Instructs the SDK to not contact the IMDS (Instance Metadata Service, only available on OCI instances).
      */
     public static void skipInstanceMetadataService() {
         hasUsedInstanceMetadataService = true;
+        hasOptedForInstanceMetadataService = false;
     }
 
     /**
@@ -557,7 +566,7 @@ public final class Region implements Serializable, Comparable<Region> {
         try {
             Client client = ClientBuilder.newClient(imdsClientConfiguration);
             WebTarget base = client.target(METADATA_SERVICE_BASE_URL + "instance/");
-
+            enableInstanceMetadataService();
             hasUsedInstanceMetadataService = true;
 
             LOG.info(

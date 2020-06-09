@@ -304,7 +304,7 @@ public class DbNodeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("softwareStorageSizeInGB")
     Integer softwareStorageSizeInGB;
     /**
-     * The type of maintenance of dbNode.
+     * The type of database node maintenance.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum MaintenanceType {
@@ -349,7 +349,7 @@ public class DbNodeSummary {
         }
     };
     /**
-     * The type of maintenance of dbNode.
+     * The type of database node maintenance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceType")
     MaintenanceType maintenanceType;
@@ -367,7 +367,7 @@ public class DbNodeSummary {
     java.util.Date timeMaintenanceWindowEnd;
 
     /**
-     * Additional information like a message to customer about the maintenance.
+     * Additional information about the planned maintenance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     String additionalDetails;

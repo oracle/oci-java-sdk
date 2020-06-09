@@ -124,6 +124,15 @@ public class IntegrationInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
+        private Boolean isFileServerEnabled;
+
+        public Builder isFileServerEnabled(Boolean isFileServerEnabled) {
+            this.isFileServerEnabled = isFileServerEnabled;
+            this.__explicitlySet__.add("isFileServerEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -140,7 +149,8 @@ public class IntegrationInstanceSummary {
                             stateMessage,
                             isByol,
                             instanceUrl,
-                            messagePacks);
+                            messagePacks,
+                            isFileServerEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -158,7 +168,8 @@ public class IntegrationInstanceSummary {
                             .stateMessage(o.getStateMessage())
                             .isByol(o.getIsByol())
                             .instanceUrl(o.getInstanceUrl())
-                            .messagePacks(o.getMessagePacks());
+                            .messagePacks(o.getMessagePacks())
+                            .isFileServerEnabled(o.getIsFileServerEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -332,6 +343,12 @@ public class IntegrationInstanceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
     Integer messagePacks;
+
+    /**
+     * The file server is enabled or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
+    Boolean isFileServerEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
