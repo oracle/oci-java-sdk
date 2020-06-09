@@ -101,15 +101,6 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-        private java.util.List<String> nsgIds;
-
-        public Builder nsgIds(java.util.List<String> nsgIds) {
-            this.nsgIds = nsgIds;
-            this.__explicitlySet__.add("nsgIds");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
@@ -146,6 +137,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -160,11 +160,11 @@ public class UpdateAutonomousDatabaseDetails {
                             dbName,
                             freeformTags,
                             definedTags,
-                            nsgIds,
                             licenseModel,
                             whitelistedIps,
                             isAutoScalingEnabled,
-                            dbVersion);
+                            dbVersion,
+                            nsgIds);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -180,11 +180,11 @@ public class UpdateAutonomousDatabaseDetails {
                             .dbName(o.getDbName())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .nsgIds(o.getNsgIds())
                             .licenseModel(o.getLicenseModel())
                             .whitelistedIps(o.getWhitelistedIps())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
-                            .dbVersion(o.getDbVersion());
+                            .dbVersion(o.getDbVersion())
+                            .nsgIds(o.getNsgIds());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -212,7 +212,9 @@ public class UpdateAutonomousDatabaseDetails {
     Integer dataStorageSizeInTBs;
 
     /**
-     * The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * The user-friendly name for the Autonomous Database. The name does not have to be unique. Can only be updated for Autonomous Databases
+     * using dedicated Exadata infrastructure.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -256,15 +258,6 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-    /**
-     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:**
-     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-    java.util.List<String> nsgIds;
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
      * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
@@ -332,6 +325,15 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
+
+    /**
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

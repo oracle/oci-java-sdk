@@ -84,6 +84,69 @@ public class DbSystemShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("minCoreCountPerNode")
+        private Integer minCoreCountPerNode;
+
+        public Builder minCoreCountPerNode(Integer minCoreCountPerNode) {
+            this.minCoreCountPerNode = minCoreCountPerNode;
+            this.__explicitlySet__.add("minCoreCountPerNode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryInGBs")
+        private Integer availableMemoryInGBs;
+
+        public Builder availableMemoryInGBs(Integer availableMemoryInGBs) {
+            this.availableMemoryInGBs = availableMemoryInGBs;
+            this.__explicitlySet__.add("availableMemoryInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("minMemoryPerNodeInGBs")
+        private Integer minMemoryPerNodeInGBs;
+
+        public Builder minMemoryPerNodeInGBs(Integer minMemoryPerNodeInGBs) {
+            this.minMemoryPerNodeInGBs = minMemoryPerNodeInGBs;
+            this.__explicitlySet__.add("minMemoryPerNodeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodeStorageInGBs")
+        private Integer availableDbNodeStorageInGBs;
+
+        public Builder availableDbNodeStorageInGBs(Integer availableDbNodeStorageInGBs) {
+            this.availableDbNodeStorageInGBs = availableDbNodeStorageInGBs;
+            this.__explicitlySet__.add("availableDbNodeStorageInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("minDbNodeStoragePerNodeInGBs")
+        private Integer minDbNodeStoragePerNodeInGBs;
+
+        public Builder minDbNodeStoragePerNodeInGBs(Integer minDbNodeStoragePerNodeInGBs) {
+            this.minDbNodeStoragePerNodeInGBs = minDbNodeStoragePerNodeInGBs;
+            this.__explicitlySet__.add("minDbNodeStoragePerNodeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableDataStorageInTBs")
+        private Integer availableDataStorageInTBs;
+
+        public Builder availableDataStorageInTBs(Integer availableDataStorageInTBs) {
+            this.availableDataStorageInTBs = availableDataStorageInTBs;
+            this.__explicitlySet__.add("availableDataStorageInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("minDataStorageInTBs")
+        private Integer minDataStorageInTBs;
+
+        public Builder minDataStorageInTBs(Integer minDataStorageInTBs) {
+            this.minDataStorageInTBs = minDataStorageInTBs;
+            this.__explicitlySet__.add("minDataStorageInTBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
         private Integer minimumNodeCount;
 
@@ -114,6 +177,13 @@ public class DbSystemShapeSummary {
                             availableCoreCount,
                             minimumCoreCount,
                             coreCountIncrement,
+                            minCoreCountPerNode,
+                            availableMemoryInGBs,
+                            minMemoryPerNodeInGBs,
+                            availableDbNodeStorageInGBs,
+                            minDbNodeStoragePerNodeInGBs,
+                            availableDataStorageInTBs,
+                            minDataStorageInTBs,
                             minimumNodeCount,
                             maximumNodeCount);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -129,6 +199,13 @@ public class DbSystemShapeSummary {
                             .availableCoreCount(o.getAvailableCoreCount())
                             .minimumCoreCount(o.getMinimumCoreCount())
                             .coreCountIncrement(o.getCoreCountIncrement())
+                            .minCoreCountPerNode(o.getMinCoreCountPerNode())
+                            .availableMemoryInGBs(o.getAvailableMemoryInGBs())
+                            .minMemoryPerNodeInGBs(o.getMinMemoryPerNodeInGBs())
+                            .availableDbNodeStorageInGBs(o.getAvailableDbNodeStorageInGBs())
+                            .minDbNodeStoragePerNodeInGBs(o.getMinDbNodeStoragePerNodeInGBs())
+                            .availableDataStorageInTBs(o.getAvailableDataStorageInTBs())
+                            .minDataStorageInTBs(o.getMinDataStorageInTBs())
                             .minimumNodeCount(o.getMinimumNodeCount())
                             .maximumNodeCount(o.getMaximumNodeCount());
 
@@ -179,6 +256,48 @@ public class DbSystemShapeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
     Integer coreCountIncrement;
+
+    /**
+     * The minimum number of CPU cores that can be enabled per node for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minCoreCountPerNode")
+    Integer minCoreCountPerNode;
+
+    /**
+     * The maximum memory that can be enabled for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableMemoryInGBs")
+    Integer availableMemoryInGBs;
+
+    /**
+     * The minimum memory that need be allocated per node for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minMemoryPerNodeInGBs")
+    Integer minMemoryPerNodeInGBs;
+
+    /**
+     * The maximum Db Node storage that can be enabled for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableDbNodeStorageInGBs")
+    Integer availableDbNodeStorageInGBs;
+
+    /**
+     * The minimum Db Node storage that need be allocated per node for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minDbNodeStoragePerNodeInGBs")
+    Integer minDbNodeStoragePerNodeInGBs;
+
+    /**
+     * The maximum DATA storage that can be enabled for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableDataStorageInTBs")
+    Integer availableDataStorageInTBs;
+
+    /**
+     * The minimum data storage that need be allocated for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minDataStorageInTBs")
+    Integer minDataStorageInTBs;
 
     /**
      * The minimum number of database nodes available for this shape.

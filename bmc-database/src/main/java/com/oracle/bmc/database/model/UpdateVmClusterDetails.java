@@ -34,6 +34,33 @@ public class UpdateVmClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+        private Integer memorySizeInGBs;
+
+        public Builder memorySizeInGBs(Integer memorySizeInGBs) {
+            this.memorySizeInGBs = memorySizeInGBs;
+            this.__explicitlySet__.add("memorySizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+        private Integer dbNodeStorageSizeInGBs;
+
+        public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
+            this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+            this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+        private Double dataStorageSizeInTBs;
+
+        public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
+            this.dataStorageSizeInTBs = dataStorageSizeInTBs;
+            this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
@@ -49,6 +76,15 @@ public class UpdateVmClusterDetails {
         public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
             this.sshPublicKeys = sshPublicKeys;
             this.__explicitlySet__.add("sshPublicKeys");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("version")
+        private PatchDetails version;
+
+        public Builder version(PatchDetails version) {
+            this.version = version;
+            this.__explicitlySet__.add("version");
             return this;
         }
 
@@ -77,7 +113,15 @@ public class UpdateVmClusterDetails {
         public UpdateVmClusterDetails build() {
             UpdateVmClusterDetails __instance__ =
                     new UpdateVmClusterDetails(
-                            cpuCoreCount, licenseModel, sshPublicKeys, freeformTags, definedTags);
+                            cpuCoreCount,
+                            memorySizeInGBs,
+                            dbNodeStorageSizeInGBs,
+                            dataStorageSizeInTBs,
+                            licenseModel,
+                            sshPublicKeys,
+                            version,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -86,8 +130,12 @@ public class UpdateVmClusterDetails {
         public Builder copy(UpdateVmClusterDetails o) {
             Builder copiedBuilder =
                     cpuCoreCount(o.getCpuCoreCount())
+                            .memorySizeInGBs(o.getMemorySizeInGBs())
+                            .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
+                            .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .licenseModel(o.getLicenseModel())
                             .sshPublicKeys(o.getSshPublicKeys())
+                            .version(o.getVersion())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -108,6 +156,24 @@ public class UpdateVmClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
+
+    /**
+     * The memory to be allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+    Integer memorySizeInGBs;
+
+    /**
+     * The local node storage to be allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+    Integer dbNodeStorageSizeInGBs;
+
+    /**
+     * The data disk group size to be allocated in TBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+    Double dataStorageSizeInTBs;
     /**
      * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      *
@@ -156,6 +222,9 @@ public class UpdateVmClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     java.util.List<String> sshPublicKeys;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("version")
+    PatchDetails version;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

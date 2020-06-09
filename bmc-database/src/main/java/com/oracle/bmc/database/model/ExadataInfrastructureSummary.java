@@ -88,12 +88,66 @@ public class ExadataInfrastructureSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
-        private Integer dataStorageSizeInTBs;
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCount")
+        private Integer maxCpuCount;
 
-        public Builder dataStorageSizeInTBs(Integer dataStorageSizeInTBs) {
+        public Builder maxCpuCount(Integer maxCpuCount) {
+            this.maxCpuCount = maxCpuCount;
+            this.__explicitlySet__.add("maxCpuCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+        private Integer memorySizeInGBs;
+
+        public Builder memorySizeInGBs(Integer memorySizeInGBs) {
+            this.memorySizeInGBs = memorySizeInGBs;
+            this.__explicitlySet__.add("memorySizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInGBs")
+        private Integer maxMemoryInGBs;
+
+        public Builder maxMemoryInGBs(Integer maxMemoryInGBs) {
+            this.maxMemoryInGBs = maxMemoryInGBs;
+            this.__explicitlySet__.add("maxMemoryInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+        private Integer dbNodeStorageSizeInGBs;
+
+        public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
+            this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+            this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maxDbNodeStorageInGBs")
+        private Integer maxDbNodeStorageInGBs;
+
+        public Builder maxDbNodeStorageInGBs(Integer maxDbNodeStorageInGBs) {
+            this.maxDbNodeStorageInGBs = maxDbNodeStorageInGBs;
+            this.__explicitlySet__.add("maxDbNodeStorageInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+        private Double dataStorageSizeInTBs;
+
+        public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maxDataStorageInTBs")
+        private Double maxDataStorageInTBs;
+
+        public Builder maxDataStorageInTBs(Double maxDataStorageInTBs) {
+            this.maxDataStorageInTBs = maxDataStorageInTBs;
+            this.__explicitlySet__.add("maxDataStorageInTBs");
             return this;
         }
 
@@ -228,7 +282,13 @@ public class ExadataInfrastructureSummary {
                             shape,
                             timeZone,
                             cpusEnabled,
+                            maxCpuCount,
+                            memorySizeInGBs,
+                            maxMemoryInGBs,
+                            dbNodeStorageSizeInGBs,
+                            maxDbNodeStorageInGBs,
                             dataStorageSizeInTBs,
+                            maxDataStorageInTBs,
                             cloudControlPlaneServer1,
                             cloudControlPlaneServer2,
                             netmask,
@@ -256,7 +316,13 @@ public class ExadataInfrastructureSummary {
                             .shape(o.getShape())
                             .timeZone(o.getTimeZone())
                             .cpusEnabled(o.getCpusEnabled())
+                            .maxCpuCount(o.getMaxCpuCount())
+                            .memorySizeInGBs(o.getMemorySizeInGBs())
+                            .maxMemoryInGBs(o.getMaxMemoryInGBs())
+                            .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
+                            .maxDbNodeStorageInGBs(o.getMaxDbNodeStorageInGBs())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .maxDataStorageInTBs(o.getMaxDataStorageInTBs())
                             .cloudControlPlaneServer1(o.getCloudControlPlaneServer1())
                             .cloudControlPlaneServer2(o.getCloudControlPlaneServer2())
                             .netmask(o.getNetmask())
@@ -308,7 +374,7 @@ public class ExadataInfrastructureSummary {
         Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),
-        Offline("OFFLINE"),
+        Disconnected("DISCONNECTED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -380,11 +446,47 @@ public class ExadataInfrastructureSummary {
     Integer cpusEnabled;
 
     /**
+     * The total number of CPU cores available.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCount")
+    Integer maxCpuCount;
+
+    /**
+     * The memory allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+    Integer memorySizeInGBs;
+
+    /**
+     * The total memory available in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInGBs")
+    Integer maxMemoryInGBs;
+
+    /**
+     * The local node storage allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+    Integer dbNodeStorageSizeInGBs;
+
+    /**
+     * The total local node storage available in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxDbNodeStorageInGBs")
+    Integer maxDbNodeStorageInGBs;
+
+    /**
      * Size, in terabytes, of the DATA disk group.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
-    Integer dataStorageSizeInTBs;
+    Double dataStorageSizeInTBs;
+
+    /**
+     * The total available DATA disk group size.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxDataStorageInTBs")
+    Double maxDataStorageInTBs;
 
     /**
      * The IP address for the first control plane server.

@@ -240,7 +240,7 @@ public interface Database extends AutoCloseable {
             CreateDataGuardAssociationRequest request);
 
     /**
-     * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata DB systems.
+     * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies to Exadata DB systems and Exadata Cloud at Customer.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -249,7 +249,7 @@ public interface Database extends AutoCloseable {
     CreateDatabaseResponse createDatabase(CreateDatabaseRequest request);
 
     /**
-     * Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies only to bare metal and Exadata DB systems.
+     * Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies to bare metal DB systems, Exadata DB systems, and Exadata Cloud at Customer systems.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -373,11 +373,9 @@ public interface Database extends AutoCloseable {
     DeleteDatabaseResponse deleteDatabase(DeleteDatabaseRequest request);
 
     /**
-     * Deletes a Database Home. Applies only to bare metal and Exadata DB systems.
+     * Deletes a Database Home. Applies to bare metal DB systems, Exadata DB systems, and Exadata Cloud at Customer systems.
      * <p>
-     * The Database Home and its database data are local to the DB system, and on a bare metal DB system, both are lost when you delete the Database Home. Oracle recommends that you back up any data on the DB system before you delete it. You can use the `performFinalBackup` parameter with this operation on bare metal DB systems.
-     * <p>
-     * On an Exadata DB system, the delete request is rejected if the Database Home is not empty. You must terminate all databases in the Database Home before you delete the home. The `performFinalBackup` parameter is not used with this operation on Exadata DB systems.
+     * Oracle recommends that you use the `performFinalBackup` parameter to back up any data on a bare metal DB system before you delete a Database Home. On an Exadata Cloud at Customer system or an Exadata DB system, you can delete a Database Home only when there are no databases in it and therefore you cannot use the `performFinalBackup` parameter to back up data.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -732,6 +730,25 @@ public interface Database extends AutoCloseable {
     GetVmClusterNetworkResponse getVmClusterNetwork(GetVmClusterNetworkRequest request);
 
     /**
+     * Gets information about a specified patch package.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVmClusterPatchResponse getVmClusterPatch(GetVmClusterPatchRequest request);
+
+    /**
+     * Gets the patch history details for the specified patchHistoryEntryId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVmClusterPatchHistoryEntryResponse getVmClusterPatchHistoryEntry(
+            GetVmClusterPatchHistoryEntryRequest request);
+
+    /**
      * Launches a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
      *
      * @param request The request object containing the details to send
@@ -1009,6 +1026,25 @@ public interface Database extends AutoCloseable {
     ListVmClusterNetworksResponse listVmClusterNetworks(ListVmClusterNetworksRequest request);
 
     /**
+     * Gets the history of the patch actions performed on the specified Vm cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVmClusterPatchHistoryEntriesResponse listVmClusterPatchHistoryEntries(
+            ListVmClusterPatchHistoryEntriesRequest request);
+
+    /**
+     * Lists the patches applicable to the requested Vm cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVmClusterPatchesResponse listVmClusterPatches(ListVmClusterPatchesRequest request);
+
+    /**
      * Gets a list of the VM clusters in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -1048,7 +1084,7 @@ public interface Database extends AutoCloseable {
             RestartAutonomousContainerDatabaseRequest request);
 
     /**
-     * Restarts the specified Autonomous Database. Restart supported only for databases using dedicated Exadata infrastructure.
+     * Restarts the specified Autonomous Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

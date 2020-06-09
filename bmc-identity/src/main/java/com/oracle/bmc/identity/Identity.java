@@ -71,6 +71,83 @@ public interface Identity extends AutoCloseable {
     AssembleEffectiveTagSetResponse assembleEffectiveTagSet(AssembleEffectiveTagSetRequest request);
 
     /**
+     * Bulk delete resources in the compartment. All resources must be in the same compartment.
+     * This API can only be invoked from tenancy's home region.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    BulkDeleteResourcesResponse bulkDeleteResources(BulkDeleteResourcesRequest request);
+
+    /**
+     * Deletes the specified tag key definitions. This operation triggers a process that removes the
+     * tags from all resources in your tenancy.
+     * <p>
+     * The following actions happen immediately:
+     * \u00A0
+     *   * If the tag is a cost-tracking tag, the tag no longer counts against your
+     *   10 cost-tracking tags limit, even if you do not disable the tag before running this operation.
+     *   * If the tag is used with dynamic groups, the rules that contain the tag are no longer
+     *   evaluated against the tag.
+     * <p>
+     * After you start this operation, the state of the tag changes to DELETING, and tag removal
+     * from resources begins. This process can take up to 48 hours depending on the number of resources that
+     * are tagged and the regions in which those resources reside.
+     * <p>
+     * When all tags have been removed, the state changes to DELETED. You cannot restore a deleted tag. After the tag state
+     * changes to DELETED, you can use the same tag name again.
+     * <p>
+     * After you start this operation, you cannot start either the {@link #deleteTag(DeleteTagRequest) deleteTag} or the {@link #cascadeDeleteTagNamespace(CascadeDeleteTagNamespaceRequest) cascadeDeleteTagNamespace} operation until this process completes.
+     * <p>
+     * In order to delete tags, you must first retire the tags. Use {@link #updateTag(UpdateTagRequest) updateTag}
+     * to retire a tag.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    BulkDeleteTagsResponse bulkDeleteTags(BulkDeleteTagsRequest request);
+
+    /**
+     * Bulk move resources in the compartment. All resources must be in the same compartment.
+     * This API can only be invoked from tenancy's home region.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    BulkMoveResourcesResponse bulkMoveResources(BulkMoveResourcesRequest request);
+
+    /**
+     * Deletes the specified tag namespace. This operation triggers a process that removes all of the tags
+     * defined in the specified tag namespace from all resources in your tenancy and then deletes the tag namespace.
+     * <p>
+     * After you start the delete operation:
+     * <p>
+     * New tag key definitions cannot be created under the namespace.
+     *   * The state of the tag namespace changes to DELETING.
+     *   * Tag removal from the resources begins.
+     * <p>
+     * This process can take up to 48 hours depending on the number of tag definitions in the namespace, the number of resources
+     * that are tagged, and the locations of the regions in which those resources reside.
+     * <p>
+     * After all tags are removed, the state changes to DELETED. You cannot restore a deleted tag namespace. After the deleted tag namespace
+     * changes its state to DELETED, you can use the name of the deleted tag namespace again.
+     * <p>
+     * After you start this operation, you cannot start either the {@link #deleteTag(DeleteTagRequest) deleteTag} or the {@link #bulkDeleteTags(BulkDeleteTagsRequest) bulkDeleteTags} operation until this process completes.
+     * <p>
+     * To delete a tag namespace, you must first retire it. Use {@link #updateTagNamespace(UpdateTagNamespaceRequest) updateTagNamespace}
+     * to retire a tag namespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CascadeDeleteTagNamespaceResponse cascadeDeleteTagNamespace(
+            CascadeDeleteTagNamespaceRequest request);
+
+    /**
      * Moves the specified tag namespace to the specified compartment within the same tenancy.
      * <p>
      * To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
@@ -268,6 +345,9 @@ public interface Identity extends AutoCloseable {
      * <p>
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
      * object, first make sure its `lifecycleState` has changed to ACTIVE.
+     * <p>
+     * After your network resource is created, you can use it in policy to restrict access to only requests made from an allowed
+     * IP address specified in your network source. For more information, see [Managing Network Sources](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingnetworksources.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -626,11 +706,14 @@ public interface Identity extends AutoCloseable {
      *   * If the tag was used with dynamic groups, none of the rules that contain the tag will
      *   be evaluated against the tag.
      * <p>
-     * Once you start the delete operation, the state of the tag changes to DELETING and tag removal
+     * When you start the delete operation, the state of the tag changes to DELETING and tag removal
      * from resources begins. This can take up to 48 hours depending on the number of resources that
-     * were tagged as well as the regions in which those resources reside. When all tags have been
-     * removed, the state changes to DELETED. You cannot restore a deleted tag. Once the deleted tag
+     * were tagged as well as the regions in which those resources reside.
+     * <p>
+     * When all tags have been removed, the state changes to DELETED. You cannot restore a deleted tag. Once the deleted tag
      * changes its state to DELETED, you can use the same tag name again.
+     * <p>
+     * After you start this operation, you cannot start either the {@link #bulkDeleteTags(BulkDeleteTagsRequest) bulkDeleteTags} or the {@link #cascadeDeleteTagNamespace(CascadeDeleteTagNamespaceRequest) cascadeDeleteTagNamespace} operation until this process completes.
      * <p>
      * To delete a tag, you must first retire it. Use {@link #updateTag(UpdateTagRequest) updateTag}
      * to retire a tag.
@@ -651,8 +734,11 @@ public interface Identity extends AutoCloseable {
     DeleteTagDefaultResponse deleteTagDefault(DeleteTagDefaultRequest request);
 
     /**
-     * Deletes the specified tag namespace. Only an empty tag namespace can be deleted. To delete
-     * a tag namespace, first delete all its tag definitions.
+     * Deletes the specified tag namespace. Only an empty tag namespace can be deleted with this operation. To use this operation
+     * to delete a tag namespace that contains tag definitions, first delete all of its tag definitions.
+     * <p>
+     * Use {@link #cascadeDeleteTagNamespace(CascadeDeleteTagNamespaceRequest) cascadeDeleteTagNamespace} to delete a tag namespace along with all of
+     * the tag definitions contained within that namespace.
      * <p>
      * Use {@link #deleteTag(DeleteTagRequest) deleteTag} to delete a tag definition.
      *
@@ -884,6 +970,16 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListAvailabilityDomainsResponse listAvailabilityDomains(ListAvailabilityDomainsRequest request);
+
+    /**
+     * Lists the resource types supported by compartment bulk actions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListBulkActionResourceTypesResponse listBulkActionResourceTypes(
+            ListBulkActionResourceTypesRequest request);
 
     /**
      * Lists the compartments in a specified compartment. The members of the list

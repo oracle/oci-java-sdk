@@ -6,7 +6,7 @@ package com.oracle.bmc.database.model;
 
 /**
  * For a RECOVERY_APPLIANCE backup destination, used to update the connection string and/or the list of VPC users.
- * For an NFS backup destination, used to update the NFS location.
+ * For an NFS backup destination, there are 2 mount types - Self mount used for non-autonomous ExaCC and automated mount used for autonomous on ExaCC.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

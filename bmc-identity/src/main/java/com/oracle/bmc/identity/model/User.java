@@ -10,7 +10,7 @@ package com.oracle.bmc.identity.model;
  * have one or more IAM Service credentials ({@link ApiKey},
  * {@link UIPassword}, {@link SwiftPassword} and
  * {@link AuthToken}).
- * For more information, see [User Credentials](https://docs.cloud.oracle.com/Content/API/Concepts/usercredentials.htm)). End users of your
+ * For more information, see [User Credentials](https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm)). End users of your
  * application are not typically IAM Service users. For conceptual information about users and other IAM Service
  * components, see [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
  * <p>

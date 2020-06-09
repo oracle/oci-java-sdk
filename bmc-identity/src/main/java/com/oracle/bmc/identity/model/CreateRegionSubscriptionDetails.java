@@ -61,16 +61,8 @@ public class CreateRegionSubscriptionDetails {
     }
 
     /**
-     * The regions's key.
-     * <p>
-     * Allowed values are:
-     * - `PHX`
-     * - `IAD`
-     * - `FRA`
-     * - `LHR`
-     * - `YYZ`
-     * - `NRT`
-     * - `ICN`
+     * The regions's key. See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for
+     * the full list of supported 3-letter region codes.
      * <p>
      * Example: `PHX`
      *

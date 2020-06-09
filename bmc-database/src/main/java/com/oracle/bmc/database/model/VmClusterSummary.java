@@ -42,6 +42,15 @@ public class VmClusterSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
+        private String lastPatchHistoryEntryId;
+
+        public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
+            this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+            this.__explicitlySet__.add("lastPatchHistoryEntryId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -132,10 +141,28 @@ public class VmClusterSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
-        private Integer dataStorageSizeInTBs;
+        @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+        private Integer memorySizeInGBs;
 
-        public Builder dataStorageSizeInTBs(Integer dataStorageSizeInTBs) {
+        public Builder memorySizeInGBs(Integer memorySizeInGBs) {
+            this.memorySizeInGBs = memorySizeInGBs;
+            this.__explicitlySet__.add("memorySizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+        private Integer dbNodeStorageSizeInGBs;
+
+        public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
+            this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+            this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
+        private Double dataStorageSizeInTBs;
+
+        public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
             return this;
@@ -204,6 +231,7 @@ public class VmClusterSummary {
                     new VmClusterSummary(
                             id,
                             compartmentId,
+                            lastPatchHistoryEntryId,
                             lifecycleState,
                             displayName,
                             timeCreated,
@@ -214,6 +242,8 @@ public class VmClusterSummary {
                             isSparseDiskgroupEnabled,
                             vmClusterNetworkId,
                             cpusEnabled,
+                            memorySizeInGBs,
+                            dbNodeStorageSizeInGBs,
                             dataStorageSizeInTBs,
                             shape,
                             giVersion,
@@ -230,6 +260,7 @@ public class VmClusterSummary {
             Builder copiedBuilder =
                     id(o.getId())
                             .compartmentId(o.getCompartmentId())
+                            .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
                             .lifecycleState(o.getLifecycleState())
                             .displayName(o.getDisplayName())
                             .timeCreated(o.getTimeCreated())
@@ -240,6 +271,8 @@ public class VmClusterSummary {
                             .isSparseDiskgroupEnabled(o.getIsSparseDiskgroupEnabled())
                             .vmClusterNetworkId(o.getVmClusterNetworkId())
                             .cpusEnabled(o.getCpusEnabled())
+                            .memorySizeInGBs(o.getMemorySizeInGBs())
+                            .dbNodeStorageSizeInGBs(o.getDbNodeStorageSizeInGBs())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .shape(o.getShape())
                             .giVersion(o.getGiVersion())
@@ -271,6 +304,12 @@ public class VmClusterSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
+    String lastPatchHistoryEntryId;
     /**
      * The current state of the VM cluster.
      **/
@@ -384,11 +423,23 @@ public class VmClusterSummary {
     Integer cpusEnabled;
 
     /**
+     * The memory allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
+    Integer memorySizeInGBs;
+
+    /**
+     * The local node storage allocated in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
+    Integer dbNodeStorageSizeInGBs;
+
+    /**
      * Size, in terabytes, of the DATA disk group.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
-    Integer dataStorageSizeInTBs;
+    Double dataStorageSizeInTBs;
 
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.

@@ -385,7 +385,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata DB systems.
+     * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies to Exadata DB systems and Exadata Cloud at Customer.
      *
      *
      * @param request The request object containing the details to send
@@ -401,7 +401,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies only to bare metal and Exadata DB systems.
+     * Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies to bare metal DB systems, Exadata DB systems, and Exadata Cloud at Customer systems.
      *
      *
      * @param request The request object containing the details to send
@@ -615,11 +615,9 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Database Home. Applies only to bare metal and Exadata DB systems.
+     * Deletes a Database Home. Applies to bare metal DB systems, Exadata DB systems, and Exadata Cloud at Customer systems.
      * <p>
-     * The Database Home and its database data are local to the DB system, and on a bare metal DB system, both are lost when you delete the Database Home. Oracle recommends that you back up any data on the DB system before you delete it. You can use the `performFinalBackup` parameter with this operation on bare metal DB systems.
-     * <p>
-     * On an Exadata DB system, the delete request is rejected if the Database Home is not empty. You must terminate all databases in the Database Home before you delete the home. The `performFinalBackup` parameter is not used with this operation on Exadata DB systems.
+     * Oracle recommends that you use the `performFinalBackup` parameter to back up any data on a bare metal DB system before you delete a Database Home. On an Exadata Cloud at Customer system or an Exadata DB system, you can delete a Database Home only when there are no databases in it and therefore you cannot use the `performFinalBackup` parameter to back up data.
      *
      *
      * @param request The request object containing the details to send
@@ -1268,6 +1266,42 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about a specified patch package.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVmClusterPatchResponse> getVmClusterPatch(
+            GetVmClusterPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVmClusterPatchRequest, GetVmClusterPatchResponse>
+                    handler);
+
+    /**
+     * Gets the patch history details for the specified patchHistoryEntryId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVmClusterPatchHistoryEntryResponse>
+            getVmClusterPatchHistoryEntry(
+                    GetVmClusterPatchHistoryEntryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetVmClusterPatchHistoryEntryRequest,
+                                    GetVmClusterPatchHistoryEntryResponse>
+                            handler);
+
+    /**
      * Launches a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
      *
      *
@@ -1772,6 +1806,42 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the history of the patch actions performed on the specified Vm cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVmClusterPatchHistoryEntriesResponse>
+            listVmClusterPatchHistoryEntries(
+                    ListVmClusterPatchHistoryEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVmClusterPatchHistoryEntriesRequest,
+                                    ListVmClusterPatchHistoryEntriesResponse>
+                            handler);
+
+    /**
+     * Lists the patches applicable to the requested Vm cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVmClusterPatchesResponse> listVmClusterPatches(
+            ListVmClusterPatchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVmClusterPatchesRequest, ListVmClusterPatchesResponse>
+                    handler);
+
+    /**
      * Gets a list of the VM clusters in the specified compartment.
      *
      *
@@ -1845,7 +1915,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Restarts the specified Autonomous Database. Restart supported only for databases using dedicated Exadata infrastructure.
+     * Restarts the specified Autonomous Database.
      *
      *
      * @param request The request object containing the details to send

@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.18.0 - 2020-06-09
+### Added
+- Support for returning the database version of backups in the Database service
+- Support for patching on Exadata Cloud at Customer resources in the Database service
+- Support for new lifecycle substates on instances in the Digital Assistant service
+- Support for file servers in the Integration service
+- Support for deleting non-empty tag namespaces and bulk deleting tags in the Identity service
+- Support for bulk move and bulk delete of resources by compartment in the Identity service
+
+
+### Breaking Changes
+- Data type for paramater `dataStorageSizeInTBs` changed from `Integer` to `Double` in the Database service
+- Enum `LifecycleState` has removed the state `Offline` and added `Disconnected` in the Database service
+
 ## 1.17.5 - 2020-06-02
 ### Added
 - Support for optionally supplying a signature when deleting an agreement in the Marketplace service

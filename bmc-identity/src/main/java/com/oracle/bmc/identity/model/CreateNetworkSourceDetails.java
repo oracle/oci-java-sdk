@@ -142,7 +142,7 @@ public class CreateNetworkSourceDetails {
     }
 
     /**
-     * The OCID of the tenancy containing the network source object.
+     * The OCID of the tenancy (root compartment) containing the network source object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -156,22 +156,24 @@ public class CreateNetworkSourceDetails {
     String name;
 
     /**
-     * A list of allowed public IPs and CIDR ranges
+     * A list of allowed public IP addresses and CIDR ranges.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicSourceList")
     java.util.List<String> publicSourceList;
 
     /**
-     * A list of allowed VCN ocid/IP range pairs
+     * A list of allowed VCN OCID and IP range pairs.
+     * Example:`\"vcnId\": \"ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID\", \"ipRanges\": [ \"129.213.39.0/24\" ]`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualSourceList")
     java.util.List<NetworkSources_virtualSourceList> virtualSourceList;
 
     /**
-     * A list of OCIservices allowed to make on behalf of requests which may have different source ips.
-     * At this time only the values of all or none are supported.
+     * A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses
+     * than those listed in the network source.
+     * Currently, only `all` and `none` are supported. The default is `all`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")

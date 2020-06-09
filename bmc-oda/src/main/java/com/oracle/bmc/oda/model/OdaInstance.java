@@ -365,7 +365,13 @@ public class OdaInstance {
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleSubState {
+        Creating("CREATING"),
+        Starting("STARTING"),
+        Stopping("STOPPING"),
+        ChangingCompartment("CHANGING_COMPARTMENT"),
+        Deleting("DELETING"),
         DeletePending("DELETE_PENDING"),
+        Recovering("RECOVERING"),
         Purging("PURGING"),
         Queued("QUEUED"),
 

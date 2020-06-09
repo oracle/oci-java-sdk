@@ -31,6 +31,124 @@ public class IdentityPaginators {
     private final Identity client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBulkActionResourceTypes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBulkActionResourceTypesResponse>
+            listBulkActionResourceTypesResponseIterator(
+                    final ListBulkActionResourceTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBulkActionResourceTypesRequest.Builder, ListBulkActionResourceTypesRequest,
+                ListBulkActionResourceTypesResponse>(
+                new com.google.common.base.Supplier<ListBulkActionResourceTypesRequest.Builder>() {
+                    @Override
+                    public ListBulkActionResourceTypesRequest.Builder get() {
+                        return ListBulkActionResourceTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBulkActionResourceTypesResponse, String>() {
+                    @Override
+                    public String apply(ListBulkActionResourceTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBulkActionResourceTypesRequest.Builder>,
+                        ListBulkActionResourceTypesRequest>() {
+                    @Override
+                    public ListBulkActionResourceTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBulkActionResourceTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBulkActionResourceTypesRequest, ListBulkActionResourceTypesResponse>() {
+                    @Override
+                    public ListBulkActionResourceTypesResponse apply(
+                            ListBulkActionResourceTypesRequest request) {
+                        return client.listBulkActionResourceTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.BulkActionResourceType} objects
+     * contained in responses from the listBulkActionResourceTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.BulkActionResourceType} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.BulkActionResourceType>
+            listBulkActionResourceTypesRecordIterator(
+                    final ListBulkActionResourceTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBulkActionResourceTypesRequest.Builder, ListBulkActionResourceTypesRequest,
+                ListBulkActionResourceTypesResponse,
+                com.oracle.bmc.identity.model.BulkActionResourceType>(
+                new com.google.common.base.Supplier<ListBulkActionResourceTypesRequest.Builder>() {
+                    @Override
+                    public ListBulkActionResourceTypesRequest.Builder get() {
+                        return ListBulkActionResourceTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBulkActionResourceTypesResponse, String>() {
+                    @Override
+                    public String apply(ListBulkActionResourceTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBulkActionResourceTypesRequest.Builder>,
+                        ListBulkActionResourceTypesRequest>() {
+                    @Override
+                    public ListBulkActionResourceTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBulkActionResourceTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBulkActionResourceTypesRequest, ListBulkActionResourceTypesResponse>() {
+                    @Override
+                    public ListBulkActionResourceTypesResponse apply(
+                            ListBulkActionResourceTypesRequest request) {
+                        return client.listBulkActionResourceTypes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBulkActionResourceTypesResponse,
+                        java.util.List<com.oracle.bmc.identity.model.BulkActionResourceType>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.identity.model.BulkActionResourceType>
+                            apply(ListBulkActionResourceTypesResponse response) {
+                        return response.getBulkActionResourceTypeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCompartments operation. This iterable
      * will fetch more data from the server as needed.
      *
