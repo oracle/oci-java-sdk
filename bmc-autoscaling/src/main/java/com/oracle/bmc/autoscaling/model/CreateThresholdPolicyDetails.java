@@ -53,6 +53,15 @@ public class CreateThresholdPolicyDetails extends CreateAutoScalingPolicyDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<CreateConditionDetails> rules;
 
@@ -67,7 +76,7 @@ public class CreateThresholdPolicyDetails extends CreateAutoScalingPolicyDetails
 
         public CreateThresholdPolicyDetails build() {
             CreateThresholdPolicyDetails __instance__ =
-                    new CreateThresholdPolicyDetails(capacity, displayName, rules);
+                    new CreateThresholdPolicyDetails(capacity, displayName, isEnabled, rules);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +84,10 @@ public class CreateThresholdPolicyDetails extends CreateAutoScalingPolicyDetails
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateThresholdPolicyDetails o) {
             Builder copiedBuilder =
-                    capacity(o.getCapacity()).displayName(o.getDisplayName()).rules(o.getRules());
+                    capacity(o.getCapacity())
+                            .displayName(o.getDisplayName())
+                            .isEnabled(o.getIsEnabled())
+                            .rules(o.getRules());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -91,8 +103,11 @@ public class CreateThresholdPolicyDetails extends CreateAutoScalingPolicyDetails
 
     @Deprecated
     public CreateThresholdPolicyDetails(
-            Capacity capacity, String displayName, java.util.List<CreateConditionDetails> rules) {
-        super(capacity, displayName);
+            Capacity capacity,
+            String displayName,
+            Boolean isEnabled,
+            java.util.List<CreateConditionDetails> rules) {
+        super(capacity, displayName, isEnabled);
         this.rules = rules;
     }
 

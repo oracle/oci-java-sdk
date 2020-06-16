@@ -49,6 +49,15 @@ public class UpdateThresholdPolicyDetails extends UpdateAutoScalingPolicyDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<UpdateConditionDetails> rules;
 
@@ -63,7 +72,7 @@ public class UpdateThresholdPolicyDetails extends UpdateAutoScalingPolicyDetails
 
         public UpdateThresholdPolicyDetails build() {
             UpdateThresholdPolicyDetails __instance__ =
-                    new UpdateThresholdPolicyDetails(displayName, capacity, rules);
+                    new UpdateThresholdPolicyDetails(displayName, capacity, isEnabled, rules);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -71,7 +80,10 @@ public class UpdateThresholdPolicyDetails extends UpdateAutoScalingPolicyDetails
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateThresholdPolicyDetails o) {
             Builder copiedBuilder =
-                    displayName(o.getDisplayName()).capacity(o.getCapacity()).rules(o.getRules());
+                    displayName(o.getDisplayName())
+                            .capacity(o.getCapacity())
+                            .isEnabled(o.getIsEnabled())
+                            .rules(o.getRules());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -87,8 +99,11 @@ public class UpdateThresholdPolicyDetails extends UpdateAutoScalingPolicyDetails
 
     @Deprecated
     public UpdateThresholdPolicyDetails(
-            String displayName, Capacity capacity, java.util.List<UpdateConditionDetails> rules) {
-        super(displayName, capacity);
+            String displayName,
+            Capacity capacity,
+            Boolean isEnabled,
+            java.util.List<UpdateConditionDetails> rules) {
+        super(displayName, capacity, isEnabled);
         this.rules = rules;
     }
 

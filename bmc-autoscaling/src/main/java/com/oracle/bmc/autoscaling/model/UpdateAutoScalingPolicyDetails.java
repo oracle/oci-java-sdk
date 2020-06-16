@@ -31,6 +31,10 @@ package com.oracle.bmc.autoscaling.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateThresholdPolicyDetails.class,
         name = "threshold"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateScheduledPolicyDetails.class,
+        name = "scheduled"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -48,4 +52,10 @@ public class UpdateAutoScalingPolicyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     Capacity capacity;
+
+    /**
+     * Boolean field indicating whether this policy is enabled or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+    Boolean isEnabled;
 }

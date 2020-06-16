@@ -65,6 +65,15 @@ public class ThresholdPolicy extends AutoScalingPolicy {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<Condition> rules;
 
@@ -79,7 +88,7 @@ public class ThresholdPolicy extends AutoScalingPolicy {
 
         public ThresholdPolicy build() {
             ThresholdPolicy __instance__ =
-                    new ThresholdPolicy(capacity, id, displayName, timeCreated, rules);
+                    new ThresholdPolicy(capacity, id, displayName, timeCreated, isEnabled, rules);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -91,6 +100,7 @@ public class ThresholdPolicy extends AutoScalingPolicy {
                             .id(o.getId())
                             .displayName(o.getDisplayName())
                             .timeCreated(o.getTimeCreated())
+                            .isEnabled(o.getIsEnabled())
                             .rules(o.getRules());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -111,8 +121,9 @@ public class ThresholdPolicy extends AutoScalingPolicy {
             String id,
             String displayName,
             java.util.Date timeCreated,
+            Boolean isEnabled,
             java.util.List<Condition> rules) {
-        super(capacity, id, displayName, timeCreated);
+        super(capacity, id, displayName, timeCreated, isEnabled);
         this.rules = rules;
     }
 

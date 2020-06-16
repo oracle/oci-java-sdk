@@ -128,7 +128,8 @@ public class FastConnectCrossConnectGroupExample {
 
             System.out.println("Change the CrossConnectGroup compartment.");
             changeCrossConnectGroupCompartment(
-                    virtualNetworkClient, cc.getId(), NEW_COMPARTMENT_ID);
+                    virtualNetworkClient, ccg.getId(), cc.getId(), NEW_COMPARTMENT_ID);
+
         } finally {
             System.out.println("Remove physical connection from LAG.");
             if (null != cc) {
@@ -346,7 +347,11 @@ public class FastConnectCrossConnectGroupExample {
      * Change Compartment
      */
     private static void changeCrossConnectGroupCompartment(
-            final VirtualNetwork virtualNetwork, final String ccgId, final String newCompartment) {
+            final VirtualNetwork virtualNetwork,
+            final String ccgId,
+            final String ccId,
+            final String newCompartment)
+            throws Exception {
         final ChangeCrossConnectGroupCompartmentRequest request =
                 ChangeCrossConnectGroupCompartmentRequest.builder()
                         .crossConnectGroupId(ccgId)
@@ -357,5 +362,19 @@ public class FastConnectCrossConnectGroupExample {
                         .build();
 
         virtualNetwork.changeCrossConnectGroupCompartment(request);
+
+        virtualNetwork
+                .getWaiters()
+                .forCrossConnect(
+                        GetCrossConnectRequest.builder().crossConnectId(ccId).build(),
+                        CrossConnect.LifecycleState.Provisioned)
+                .execute();
+
+        virtualNetwork
+                .getWaiters()
+                .forCrossConnectGroup(
+                        GetCrossConnectGroupRequest.builder().crossConnectGroupId(ccgId).build(),
+                        CrossConnectGroup.LifecycleState.Provisioned)
+                .execute();
     }
 }

@@ -25,7 +25,7 @@ import com.oracle.bmc.dts.responses.*;
  * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 @lombok.RequiredArgsConstructor
 public class TransferJobPaginators {
     private final TransferJob client;

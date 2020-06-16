@@ -53,12 +53,21 @@ public class AutoScalingPolicySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutoScalingPolicySummary build() {
             AutoScalingPolicySummary __instance__ =
-                    new AutoScalingPolicySummary(id, displayName, policyType);
+                    new AutoScalingPolicySummary(id, displayName, policyType, isEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +75,10 @@ public class AutoScalingPolicySummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AutoScalingPolicySummary o) {
             Builder copiedBuilder =
-                    id(o.getId()).displayName(o.getDisplayName()).policyType(o.getPolicyType());
+                    id(o.getId())
+                            .displayName(o.getDisplayName())
+                            .policyType(o.getPolicyType())
+                            .isEnabled(o.getIsEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -98,6 +110,12 @@ public class AutoScalingPolicySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     String policyType;
+
+    /**
+     * Boolean field indicated whether this policy is enabled or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+    Boolean isEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

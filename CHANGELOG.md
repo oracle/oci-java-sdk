@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.18.1 - 2020-06-16
+### Added
+- Support for creating a new database from an existing database based on a given timestamp in the Database service
+- Support for enabling archive log backups of databases in the Database service
+- Support for returning the database version on autonomous container databases in the Database service
+- Support for the new DNS format of the Data Transfer service
+- Support for scheduled autoscaling, which allows for scaling actions triggered at particular times based on CRON expressions, in the Compute Autoscaling service
+- Support for filtering of list APIs for groups, identity providers, identity provider groups, compartments, dynamic groups, network sources, policies, and users by name or lifecycle state in the Identity Service
+
 ## 1.18.0 - 2020-06-09
 ### Added
 - Support for returning the database version of backups in the Database service
