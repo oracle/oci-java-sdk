@@ -22,7 +22,7 @@ import com.oracle.bmc.dts.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 @lombok.extern.slf4j.Slf4j
 public class TransferPackageAsyncClient implements TransferPackageAsync {
     /**
@@ -32,7 +32,8 @@ public class TransferPackageAsyncClient implements TransferPackageAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("TRANSFERPACKAGE")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://datatransfer.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://datatransfer.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

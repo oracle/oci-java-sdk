@@ -41,6 +41,118 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String externalIdentifier;
 
+    /**
+     * A filter to only return resources that match the given name exactly.
+     *
+     */
+    private String name;
+
+    /**
+     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * TIMECREATED is descending. Default order for NAME is ascending. The NAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     * optionally filter by Availability Domain if the scope of the resource type is within a
+     * single Availability Domain. If you call one of these \"List\" operations without specifying
+     * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * TIMECREATED is descending. Default order for NAME is ascending. The NAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     * optionally filter by Availability Domain if the scope of the resource type is within a
+     * single Availability Domain. If you call one of these \"List\" operations without specifying
+     * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+     *
+     **/
+    public enum SortBy {
+        Timecreated("TIMECREATED"),
+        Name("NAME"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
+    /**
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The NAME sort order
+     * is case sensitive.
+     *
+     */
+    private SortOrder sortOrder;
+
+    /**
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The NAME sort order
+     * is case sensitive.
+     *
+     **/
+    public enum SortOrder {
+        Asc("ASC"),
+        Desc("DESC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortOrder> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortOrder v : SortOrder.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortOrder(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortOrder create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortOrder: " + key);
+        }
+    };
+    /**
+     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     *
+     */
+    private User.LifecycleState lifecycleState;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUsersRequest, java.lang.Void> {
@@ -81,6 +193,10 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             limit(o.getLimit());
             identityProviderId(o.getIdentityProviderId());
             externalIdentifier(o.getExternalIdentifier());
+            name(o.getName());
+            sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
+            lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

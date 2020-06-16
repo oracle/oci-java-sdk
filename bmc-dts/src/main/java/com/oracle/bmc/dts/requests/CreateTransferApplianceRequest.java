@@ -6,7 +6,7 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class CreateTransferApplianceRequest

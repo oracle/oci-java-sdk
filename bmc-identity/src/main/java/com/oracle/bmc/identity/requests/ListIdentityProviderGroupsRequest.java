@@ -29,6 +29,18 @@ public class ListIdentityProviderGroupsRequest
      */
     private Integer limit;
 
+    /**
+     * A filter to only return resources that match the given name exactly.
+     *
+     */
+    private String name;
+
+    /**
+     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     *
+     */
+    private IdentityProvider.LifecycleState lifecycleState;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListIdentityProviderGroupsRequest, java.lang.Void> {
@@ -67,6 +79,8 @@ public class ListIdentityProviderGroupsRequest
             identityProviderId(o.getIdentityProviderId());
             page(o.getPage());
             limit(o.getLimit());
+            name(o.getName());
+            lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

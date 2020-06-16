@@ -163,6 +163,15 @@ public class AutonomousContainerDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("backupConfig")
         private AutonomousContainerDatabaseBackupConfig backupConfig;
 
@@ -193,6 +202,7 @@ public class AutonomousContainerDatabaseSummary {
                             freeformTags,
                             definedTags,
                             availabilityDomain,
+                            dbVersion,
                             backupConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -217,6 +227,7 @@ public class AutonomousContainerDatabaseSummary {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .availabilityDomain(o.getAvailabilityDomain())
+                            .dbVersion(o.getDbVersion())
                             .backupConfig(o.getBackupConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -467,6 +478,12 @@ public class AutonomousContainerDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
+
+    /**
+     * Oracle Database version of the Autonomous Container Database
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    String dbVersion;
 
     @com.fasterxml.jackson.annotation.JsonProperty("backupConfig")
     AutonomousContainerDatabaseBackupConfig backupConfig;

@@ -32,6 +32,10 @@ package com.oracle.bmc.database.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDbHomeWithDbSystemIdFromDatabaseDetails.class,
+        name = "DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDbHomeWithDbSystemIdFromBackupDetails.class,
         name = "DB_BACKUP"
     ),
@@ -60,6 +64,7 @@ public class CreateDbHomeBase {
     public enum Source {
         None("NONE"),
         DbBackup("DB_BACKUP"),
+        Database("DATABASE"),
         VmClusterNew("VM_CLUSTER_NEW"),
         ;
 

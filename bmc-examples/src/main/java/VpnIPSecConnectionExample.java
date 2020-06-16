@@ -7,42 +7,54 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.core.VirtualNetwork;
 import com.oracle.bmc.core.VirtualNetworkClient;
+import com.oracle.bmc.core.model.ChangeIPSecConnectionCompartmentDetails;
 import com.oracle.bmc.core.model.Cpe;
+import com.oracle.bmc.core.model.CpeDeviceConfigAnswer;
 import com.oracle.bmc.core.model.CreateCpeDetails;
-import com.oracle.bmc.core.model.Drg;
 import com.oracle.bmc.core.model.CreateDrgDetails;
-import com.oracle.bmc.core.requests.CreateCpeRequest;
-import com.oracle.bmc.core.requests.DeleteCpeRequest;
-import com.oracle.bmc.core.requests.CreateDrgRequest;
-import com.oracle.bmc.core.requests.DeleteDrgRequest;
-import com.oracle.bmc.core.requests.GetDrgRequest;
+import com.oracle.bmc.core.model.CreateIPSecConnectionDetails;
+import com.oracle.bmc.core.model.Drg;
 import com.oracle.bmc.core.model.IPSecConnection;
+import com.oracle.bmc.core.model.IPSecConnectionDeviceConfig;
 import com.oracle.bmc.core.model.IPSecConnectionTunnel;
 import com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret;
-import com.oracle.bmc.core.model.CreateIPSecConnectionDetails;
+import com.oracle.bmc.core.model.TunnelCpeDeviceConfig;
 import com.oracle.bmc.core.model.UpdateIPSecConnectionDetails;
 import com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelDetails;
 import com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails;
-import com.oracle.bmc.core.model.ChangeIPSecConnectionCompartmentDetails;
+import com.oracle.bmc.core.model.UpdateTunnelCpeDeviceConfigDetails;
+import com.oracle.bmc.core.requests.ChangeIPSecConnectionCompartmentRequest;
+import com.oracle.bmc.core.requests.CreateCpeRequest;
+import com.oracle.bmc.core.requests.CreateDrgRequest;
 import com.oracle.bmc.core.requests.CreateIPSecConnectionRequest;
-import com.oracle.bmc.core.requests.UpdateIPSecConnectionRequest;
+import com.oracle.bmc.core.requests.DeleteCpeRequest;
+import com.oracle.bmc.core.requests.DeleteDrgRequest;
 import com.oracle.bmc.core.requests.DeleteIPSecConnectionRequest;
+import com.oracle.bmc.core.requests.GetDrgRequest;
+import com.oracle.bmc.core.requests.GetIPSecConnectionDeviceConfigRequest;
 import com.oracle.bmc.core.requests.GetIPSecConnectionRequest;
 import com.oracle.bmc.core.requests.GetIPSecConnectionTunnelRequest;
 import com.oracle.bmc.core.requests.GetIPSecConnectionTunnelSharedSecretRequest;
+import com.oracle.bmc.core.requests.GetTunnelCpeDeviceConfigRequest;
+import com.oracle.bmc.core.requests.ListIPSecConnectionTunnelsRequest;
+import com.oracle.bmc.core.requests.UpdateIPSecConnectionRequest;
 import com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelRequest;
 import com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelSharedSecretRequest;
-import com.oracle.bmc.core.requests.ChangeIPSecConnectionCompartmentRequest;
+import com.oracle.bmc.core.requests.UpdateTunnelCpeDeviceConfigRequest;
 import com.oracle.bmc.core.responses.CreateCpeResponse;
 import com.oracle.bmc.core.responses.CreateDrgResponse;
 import com.oracle.bmc.core.responses.CreateIPSecConnectionResponse;
-import com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse;
+import com.oracle.bmc.core.responses.GetIPSecConnectionDeviceConfigResponse;
 import com.oracle.bmc.core.responses.GetIPSecConnectionResponse;
-import com.oracle.bmc.core.responses.GetIPSecConnectionTunnelResponse;
 import com.oracle.bmc.core.responses.GetIPSecConnectionTunnelSharedSecretResponse;
+import com.oracle.bmc.core.responses.GetTunnelCpeDeviceConfigResponse;
+import com.oracle.bmc.core.responses.ListIPSecConnectionTunnelsResponse;
+import com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse;
 import com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelResponse;
 import com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelSharedSecretResponse;
+import com.oracle.bmc.core.responses.UpdateTunnelCpeDeviceConfigResponse;
 import com.oracle.bmc.identity.IdentityClient;
+import java.util.Arrays;
 import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -104,6 +116,8 @@ public class VpnIPSecConnectionExample {
         IPSecConnection ipsec = null;
         IPSecConnectionTunnel tunnel = null;
         IPSecConnectionTunnelSharedSecret sharedsecret = null;
+        IPSecConnectionDeviceConfig ipsecDeviceConfig = null;
+        TunnelCpeDeviceConfig tunnelCpeDeviceConfig = null;
         try {
             System.out.println("Create Cpe.");
             cpe = createCpe(virtualNetworkClient, region);
@@ -117,26 +131,44 @@ public class VpnIPSecConnectionExample {
             System.out.println("Activate the IPSecConnection.");
             ipsec = updateIPSecConnection(virtualNetworkClient, ipsec.getId());
 
+            System.out.println("Get the IPSecConnectionDeviceConfig of current IPSecConnection");
+
+            ipsecDeviceConfig = getIPSecConnectionDeviceConfig(virtualNetworkClient, ipsec.getId());
+            System.out.println(ipsecDeviceConfig);
+
             System.out.println("Change IPSecConnection compartment.");
             changeIPSecCompartment(virtualNetworkClient, ipsec.getId(), NEW_COMPARTMENT_ID);
 
             System.out.println("Get tunnel for the IPSecConnection.");
             tunnel = getIPSecConnectionTunnel(virtualNetworkClient, ipsec.getId());
 
-            System.out.println("update tunnel for the IPSecConnection.");
-            tunnel = updateIPSecConnectionTunnel(virtualNetworkClient, tunnel.getId());
+            System.out.println("Update TunnelCpeDeviceConfig");
+            tunnelCpeDeviceConfig =
+                    updateTunnelCpeDeviceConfig(
+                            virtualNetworkClient, ipsec.getId(), tunnel.getId());
+            System.out.println(tunnelCpeDeviceConfig);
 
-            System.out.println("get Shared Secret for tunnel.");
+            System.out.println("Get the TunnelCpeDeviceConfig of current tunnel");
+            tunnelCpeDeviceConfig =
+                    getTunnelCpeDeviceConfig(virtualNetworkClient, ipsec.getId(), tunnel.getId());
+            System.out.println(tunnelCpeDeviceConfig);
+
+            System.out.println("Update tunnel for the IPSecConnection.");
+            tunnel =
+                    updateIPSecConnectionTunnel(
+                            virtualNetworkClient, ipsec.getId(), tunnel.getId());
+
+            System.out.println("Get Shared Secret for tunnel.");
             sharedsecret =
                     getIPSecConnectionTunnelSharedSecret(
                             virtualNetworkClient, ipsec.getId(), tunnel.getId());
             System.out.println(sharedsecret);
 
-            System.out.println("update tunnel for the IPSecConnection.");
+            System.out.println("Update tunnel for the IPSecConnection.");
             updateIPSecConnectionTunnelSharedSecret(
                     virtualNetworkClient, ipsec.getId(), tunnel.getId());
 
-            System.out.println("get Shared Secret for tunnel again.");
+            System.out.println("Get Shared Secret for tunnel again.");
             sharedsecret =
                     getIPSecConnectionTunnelSharedSecret(
                             virtualNetworkClient, ipsec.getId(), tunnel.getId());
@@ -158,6 +190,9 @@ public class VpnIPSecConnectionExample {
         }
     }
 
+    /*
+     * Use CREATE to create a CPE
+     */
     public static Cpe createCpe(final VirtualNetwork virtualNetwork, final Region region) {
         final CreateCpeRequest request =
                 CreateCpeRequest.builder()
@@ -180,6 +215,9 @@ public class VpnIPSecConnectionExample {
         return response.getCpe();
     }
 
+    /*
+     * Use DELETE to delete the CPE
+     */
     public static void deleteCpe(final VirtualNetwork virtualNetwork, final Cpe cpe)
             throws Exception {
         final DeleteCpeRequest request = DeleteCpeRequest.builder().cpeId(cpe.getId()).build();
@@ -188,6 +226,9 @@ public class VpnIPSecConnectionExample {
         System.out.println("Deleted Cpe: " + cpe.getId());
     }
 
+    /*
+     * Use CREATE to create a DRG connection and activate connection
+     */
     public static Drg createDrg(final VirtualNetwork virtualNetwork, final Region region)
             throws Exception {
         final CreateDrgRequest request =
@@ -217,6 +258,9 @@ public class VpnIPSecConnectionExample {
         return response.getDrg();
     }
 
+    /*
+     * Use DELETE to delete the DRG
+     */
     public static void deleteDrg(final VirtualNetwork virtualNetwork, final Drg drg)
             throws Exception {
         final DeleteDrgRequest request = DeleteDrgRequest.builder().drgId(drg.getId()).build();
@@ -231,6 +275,9 @@ public class VpnIPSecConnectionExample {
         System.out.println("Deleted DRG: " + drg.getId());
     }
 
+    /*
+     * Use CREATE to create a IPSec connection and activate connection
+     */
     private static IPSecConnection createIPSecConnection(
             final VirtualNetwork virtualNetwork,
             final String compartmentId,
@@ -266,6 +313,9 @@ public class VpnIPSecConnectionExample {
         return response.getIPSecConnection();
     }
 
+    /*
+     * Use GET to get the IPSec connection
+     */
     private static IPSecConnection getIPSecConnection(
             final VirtualNetwork virtualNetwork, final String ipsecId) {
 
@@ -276,6 +326,9 @@ public class VpnIPSecConnectionExample {
         return response.getIPSecConnection();
     }
 
+    /*
+     * Use UPDATE to update the IPSec connection and activate connection
+     */
     private static IPSecConnection updateIPSecConnection(
             final VirtualNetwork virtualNetwork, final String ipsecId) throws Exception {
         final UpdateIPSecConnectionRequest request =
@@ -302,24 +355,32 @@ public class VpnIPSecConnectionExample {
         return response.getIPSecConnection();
     }
 
+    /*
+     * Use GET to get the IPSec tunnel
+     */
     private static IPSecConnectionTunnel getIPSecConnectionTunnel(
-            final VirtualNetwork virtualNetwork, final String ipsecId) throws Exception {
-        final GetIPSecConnectionTunnelRequest request =
-                GetIPSecConnectionTunnelRequest.builder().ipscId(ipsecId).build();
-        final GetIPSecConnectionTunnelResponse response =
-                virtualNetwork.getIPSecConnectionTunnel(request);
+            final VirtualNetwork virtualNetwork, final String ipsecId) {
+        final ListIPSecConnectionTunnelsRequest request =
+                ListIPSecConnectionTunnelsRequest.builder().ipscId(ipsecId).build();
 
-        return response.getIPSecConnectionTunnel();
+        final ListIPSecConnectionTunnelsResponse response =
+                virtualNetwork.listIPSecConnectionTunnels(request);
+
+        IPSecConnectionTunnel ipSecConnectionTunnel = response.getItems().get(0);
+
+        return ipSecConnectionTunnel;
     }
 
     /*
      * Use UPDATE to update display name and activate the physical connection
      */
     private static IPSecConnectionTunnel updateIPSecConnectionTunnel(
-            final VirtualNetwork virtualNetwork, final String ipsecId) throws Exception {
+            final VirtualNetwork virtualNetwork, final String ipsecId, final String tunnelId)
+            throws Exception {
         final UpdateIPSecConnectionTunnelRequest request =
                 UpdateIPSecConnectionTunnelRequest.builder()
                         .ipscId(ipsecId)
+                        .tunnelId(tunnelId)
                         .updateIPSecConnectionTunnelDetails(
                                 UpdateIPSecConnectionTunnelDetails.builder()
                                         .displayName(String.format("CC-%s", TIMESTAMP_SUFFIX))
@@ -333,7 +394,8 @@ public class VpnIPSecConnectionExample {
                 .getWaiters()
                 .forIPSecConnectionTunnel(
                         GetIPSecConnectionTunnelRequest.builder()
-                                .ipscId(response.getIPSecConnectionTunnel().getId())
+                                .ipscId(ipsecId)
+                                .tunnelId(tunnelId)
                                 .build(),
                         IPSecConnectionTunnel.LifecycleState.Available)
                 .execute();
@@ -341,6 +403,9 @@ public class VpnIPSecConnectionExample {
         return response.getIPSecConnectionTunnel();
     }
 
+    /*
+     * Use GET to get the TunnelSharedSecret
+     */
     private static IPSecConnectionTunnelSharedSecret getIPSecConnectionTunnelSharedSecret(
             final VirtualNetwork virtualNetwork, final String ipsecId, final String tunnelId)
             throws Exception {
@@ -377,6 +442,23 @@ public class VpnIPSecConnectionExample {
         return response.getIPSecConnectionTunnelSharedSecret();
     }
 
+    /*
+     * Use GET to get the device config of IPSec connection
+     */
+    private static IPSecConnectionDeviceConfig getIPSecConnectionDeviceConfig(
+            final VirtualNetwork virtualNetwork, final String ipsecId) {
+        final GetIPSecConnectionDeviceConfigRequest request =
+                GetIPSecConnectionDeviceConfigRequest.builder().ipscId(ipsecId).build();
+
+        final GetIPSecConnectionDeviceConfigResponse response =
+                virtualNetwork.getIPSecConnectionDeviceConfig(request);
+
+        return response.getIPSecConnectionDeviceConfig();
+    }
+
+    /*
+     * Use DELETE to delete the IPSec connection
+     */
     private static void deleteIPSecConnection(
             final VirtualNetwork virtualNetwork, final String ipsecId) throws Exception {
         // if resource is in provisioning state, wait until provisioned
@@ -402,9 +484,8 @@ public class VpnIPSecConnectionExample {
      * Change Compartment
      */
     private static void changeIPSecCompartment(
-            final VirtualNetwork virtualNetwork,
-            final String ipsecId,
-            final String newCompartment) {
+            final VirtualNetwork virtualNetwork, final String ipsecId, final String newCompartment)
+            throws Exception {
         final ChangeIPSecConnectionCompartmentRequest request =
                 ChangeIPSecConnectionCompartmentRequest.builder()
                         .ipscId(ipsecId)
@@ -415,5 +496,63 @@ public class VpnIPSecConnectionExample {
                         .build();
 
         virtualNetwork.changeIPSecConnectionCompartment(request);
+        virtualNetwork
+                .getWaiters()
+                .forIPSecConnection(
+                        GetIPSecConnectionRequest.builder().ipscId(ipsecId).build(),
+                        IPSecConnection.LifecycleState.Available)
+                .execute();
+    }
+
+    /*
+     * Use GET to get the device config of IPSec tunnel
+     */
+    private TunnelCpeDeviceConfig getTunnelCpeDeviceConfig(
+            final VirtualNetwork virtualNetwork, final String ipsecId, final String tunnelId) {
+        final GetTunnelCpeDeviceConfigRequest request =
+                GetTunnelCpeDeviceConfigRequest.builder()
+                        .ipscId(ipsecId)
+                        .tunnelId(tunnelId)
+                        .build();
+
+        final GetTunnelCpeDeviceConfigResponse response =
+                virtualNetwork.getTunnelCpeDeviceConfig(request);
+
+        return response.getTunnelCpeDeviceConfig();
+    }
+
+    /*
+     * Use UPDATE to update the device config of IPSec tunnel with configAnswer and activate tunnel
+     */
+    private TunnelCpeDeviceConfig updateTunnelCpeDeviceConfig(
+            final VirtualNetwork virtualNetwork, final String ipsecId, final String tunnelId)
+            throws Exception {
+        final UpdateTunnelCpeDeviceConfigDetails update =
+                UpdateTunnelCpeDeviceConfigDetails.builder()
+                        .tunnelCpeDeviceConfig(
+                                Arrays.asList(new CpeDeviceConfigAnswer("demo_key", "demo_value")))
+                        .build();
+
+        final UpdateTunnelCpeDeviceConfigRequest request =
+                UpdateTunnelCpeDeviceConfigRequest.builder()
+                        .ipscId(ipsecId)
+                        .tunnelId(tunnelId)
+                        .updateTunnelCpeDeviceConfigDetails(update)
+                        .build();
+
+        final UpdateTunnelCpeDeviceConfigResponse response =
+                virtualNetwork.updateTunnelCpeDeviceConfig(request);
+
+        virtualNetwork
+                .getWaiters()
+                .forIPSecConnectionTunnel(
+                        GetIPSecConnectionTunnelRequest.builder()
+                                .ipscId(ipsecId)
+                                .tunnelId(tunnelId)
+                                .build(),
+                        IPSecConnectionTunnel.LifecycleState.Available)
+                .execute();
+
+        return response.getTunnelCpeDeviceConfig();
     }
 }

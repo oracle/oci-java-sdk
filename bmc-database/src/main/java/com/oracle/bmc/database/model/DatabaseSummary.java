@@ -154,6 +154,15 @@ public class DatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lastBackupTimestamp")
+        private java.util.Date lastBackupTimestamp;
+
+        public Builder lastBackupTimestamp(java.util.Date lastBackupTimestamp) {
+            this.lastBackupTimestamp = lastBackupTimestamp;
+            this.__explicitlySet__.add("lastBackupTimestamp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
         private DbBackupConfig dbBackupConfig;
 
@@ -211,6 +220,7 @@ public class DatabaseSummary {
                             lifecycleDetails,
                             lifecycleState,
                             timeCreated,
+                            lastBackupTimestamp,
                             dbBackupConfig,
                             freeformTags,
                             definedTags,
@@ -236,6 +246,7 @@ public class DatabaseSummary {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
+                            .lastBackupTimestamp(o.getLastBackupTimestamp())
                             .dbBackupConfig(o.getDbBackupConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -388,6 +399,12 @@ public class DatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The date and time when the latest database backup was created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastBackupTimestamp")
+    java.util.Date lastBackupTimestamp;
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
     DbBackupConfig dbBackupConfig;

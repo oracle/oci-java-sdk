@@ -9,7 +9,7 @@ import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 @lombok.extern.slf4j.Slf4j
 public class TransferApplianceEntitlementClient implements TransferApplianceEntitlement {
     /**
@@ -19,7 +19,8 @@ public class TransferApplianceEntitlementClient implements TransferApplianceEnti
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("TRANSFERAPPLIANCEENTITLEMENT")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://datatransfer.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://datatransfer.{region}.oci.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;

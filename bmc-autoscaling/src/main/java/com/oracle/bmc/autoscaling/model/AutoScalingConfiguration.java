@@ -118,6 +118,24 @@ public class AutoScalingConfiguration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maxResourceCount")
+        private Integer maxResourceCount;
+
+        public Builder maxResourceCount(Integer maxResourceCount) {
+            this.maxResourceCount = maxResourceCount;
+            this.__explicitlySet__.add("maxResourceCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("minResourceCount")
+        private Integer minResourceCount;
+
+        public Builder minResourceCount(Integer minResourceCount) {
+            this.minResourceCount = minResourceCount;
+            this.__explicitlySet__.add("minResourceCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -133,7 +151,9 @@ public class AutoScalingConfiguration {
                             isEnabled,
                             resource,
                             policies,
-                            timeCreated);
+                            timeCreated,
+                            maxResourceCount,
+                            minResourceCount);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -150,7 +170,9 @@ public class AutoScalingConfiguration {
                             .isEnabled(o.getIsEnabled())
                             .resource(o.getResource())
                             .policies(o.getPolicies())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .maxResourceCount(o.getMaxResourceCount())
+                            .minResourceCount(o.getMinResourceCount());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -239,6 +261,18 @@ public class AutoScalingConfiguration {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The maximum number of resources to scale out to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxResourceCount")
+    Integer maxResourceCount;
+
+    /**
+     * The minimum number of resources to scale in to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minResourceCount")
+    Integer minResourceCount;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

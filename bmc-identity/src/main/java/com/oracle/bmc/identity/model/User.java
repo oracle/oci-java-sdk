@@ -88,6 +88,15 @@ public class User {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("emailVerified")
+        private Boolean emailVerified;
+
+        public Builder emailVerified(Boolean emailVerified) {
+            this.emailVerified = emailVerified;
+            this.__explicitlySet__.add("emailVerified");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("identityProviderId")
         private String identityProviderId;
 
@@ -181,6 +190,7 @@ public class User {
                             name,
                             description,
                             email,
+                            emailVerified,
                             identityProviderId,
                             externalIdentifier,
                             timeCreated,
@@ -202,6 +212,7 @@ public class User {
                             .name(o.getName())
                             .description(o.getDescription())
                             .email(o.getEmail())
+                            .emailVerified(o.getEmailVerified())
                             .identityProviderId(o.getIdentityProviderId())
                             .externalIdentifier(o.getExternalIdentifier())
                             .timeCreated(o.getTimeCreated())
@@ -257,6 +268,12 @@ public class User {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     String email;
+
+    /**
+     * Whether the email address has been validated.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("emailVerified")
+    Boolean emailVerified;
 
     /**
      * The OCID of the `IdentityProvider` this user belongs to.

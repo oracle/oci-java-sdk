@@ -36,6 +36,10 @@ package com.oracle.bmc.database.model;
         name = "NONE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = LaunchDbSystemFromDatabaseDetails.class,
+        name = "DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LaunchDbSystemFromBackupDetails.class,
         name = "DB_BACKUP"
     )
@@ -249,12 +253,14 @@ public class LaunchDbSystemBase {
 
     /**
      * The source of the database:
-     * Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
+     * Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating
+     * a new database from an existing database, including archive redo log data. The default is `NONE`.
      *
      **/
     public enum Source {
         None("NONE"),
         DbBackup("DB_BACKUP"),
+        Database("DATABASE"),
         ;
 
         private final String value;
