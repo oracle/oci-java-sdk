@@ -41,6 +41,25 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
         private String vmClusterId;
 
@@ -74,7 +93,12 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
         public CreateDbHomeWithVmClusterIdDetails build() {
             CreateDbHomeWithVmClusterIdDetails __instance__ =
                     new CreateDbHomeWithVmClusterIdDetails(
-                            displayName, vmClusterId, dbVersion, database);
+                            displayName,
+                            freeformTags,
+                            definedTags,
+                            vmClusterId,
+                            dbVersion,
+                            database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -83,6 +107,8 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
         public Builder copy(CreateDbHomeWithVmClusterIdDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .vmClusterId(o.getVmClusterId())
                             .dbVersion(o.getDbVersion())
                             .database(o.getDatabase());
@@ -102,10 +128,12 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
     @Deprecated
     public CreateDbHomeWithVmClusterIdDetails(
             String displayName,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vmClusterId,
             String dbVersion,
             CreateDatabaseDetails database) {
-        super(displayName);
+        super(displayName, freeformTags, definedTags);
         this.vmClusterId = vmClusterId;
         this.dbVersion = dbVersion;
         this.database = database;

@@ -39,7 +39,7 @@ public class ListAttributeTagsRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    private LifecycleState lifecycleState;
+    private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
     /**
      * Unique key of the related term.

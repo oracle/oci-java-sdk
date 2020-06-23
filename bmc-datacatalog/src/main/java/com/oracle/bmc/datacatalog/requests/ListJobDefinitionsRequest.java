@@ -24,12 +24,12 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    private LifecycleState lifecycleState;
+    private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
     /**
      * Job type.
      */
-    private JobType jobType;
+    private com.oracle.bmc.datacatalog.model.JobType jobType;
 
     /**
      * Whether job definition is an incremental harvest (true) or a full harvest (false).

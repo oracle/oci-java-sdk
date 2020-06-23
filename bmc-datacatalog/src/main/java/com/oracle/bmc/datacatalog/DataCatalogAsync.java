@@ -38,6 +38,23 @@ public interface DataCatalogAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Attaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachCatalogPrivateEndpointResponse> attachCatalogPrivateEndpoint(
+            AttachCatalogPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AttachCatalogPrivateEndpointRequest,
+                            AttachCatalogPrivateEndpointResponse>
+                    handler);
+
+    /**
      * Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
      *
      * @param request The request object containing the details to send
@@ -52,6 +69,24 @@ public interface DataCatalogAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeCatalogCompartmentRequest, ChangeCatalogCompartmentResponse>
                     handler);
+
+    /**
+     * Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCatalogPrivateEndpointCompartmentResponse>
+            changeCatalogPrivateEndpointCompartment(
+                    ChangeCatalogPrivateEndpointCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCatalogPrivateEndpointCompartmentRequest,
+                                    ChangeCatalogPrivateEndpointCompartmentResponse>
+                            handler);
 
     /**
      * Creates a new entity attribute.
@@ -99,6 +134,23 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateCatalogResponse> createCatalog(
             CreateCatalogRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateCatalogRequest, CreateCatalogResponse>
+                    handler);
+
+    /**
+     * Create a new private reverse connection endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCatalogPrivateEndpointResponse> createCatalogPrivateEndpoint(
+            CreateCatalogPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCatalogPrivateEndpointRequest,
+                            CreateCatalogPrivateEndpointResponse>
                     handler);
 
     /**
@@ -345,6 +397,23 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a private reverse connection endpoint by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCatalogPrivateEndpointResponse> deleteCatalogPrivateEndpoint(
+            DeleteCatalogPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCatalogPrivateEndpointRequest,
+                            DeleteCatalogPrivateEndpointResponse>
+                    handler);
+
+    /**
      * Deletes a specific connection of a data asset.
      *
      * @param request The request object containing the details to send
@@ -526,6 +595,23 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Detaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DetachCatalogPrivateEndpointResponse> detachCatalogPrivateEndpoint(
+            DetachCatalogPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DetachCatalogPrivateEndpointRequest,
+                            DetachCatalogPrivateEndpointResponse>
+                    handler);
+
+    /**
      * Returns the fully expanded tree hierarchy of parent and child terms in this glossary.
      *
      * @param request The request object containing the details to send
@@ -599,6 +685,22 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<GetCatalogResponse> getCatalog(
             GetCatalogRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetCatalogRequest, GetCatalogResponse> handler);
+
+    /**
+     * Gets a specific private reverse connection by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCatalogPrivateEndpointResponse> getCatalogPrivateEndpoint(
+            GetCatalogPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCatalogPrivateEndpointRequest, GetCatalogPrivateEndpointResponse>
+                    handler);
 
     /**
      * Gets a specific data asset connection by key.
@@ -908,6 +1010,23 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<ListAttributesResponse> listAttributes(
             ListAttributesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListAttributesRequest, ListAttributesResponse>
+                    handler);
+
+    /**
+     * Returns a list of all the catalog private endpoints in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCatalogPrivateEndpointsResponse> listCatalogPrivateEndpoints(
+            ListCatalogPrivateEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCatalogPrivateEndpointsRequest, ListCatalogPrivateEndpointsResponse>
                     handler);
 
     /**
@@ -1316,6 +1435,23 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateCatalogResponse> updateCatalog(
             UpdateCatalogRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateCatalogRequest, UpdateCatalogResponse>
+                    handler);
+
+    /**
+     * Updates the private reverse connection endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCatalogPrivateEndpointResponse> updateCatalogPrivateEndpoint(
+            UpdateCatalogPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCatalogPrivateEndpointRequest,
+                            UpdateCatalogPrivateEndpointResponse>
                     handler);
 
     /**

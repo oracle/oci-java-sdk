@@ -29,7 +29,7 @@ public class ListJobLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    private LifecycleState lifecycleState;
+    private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
     /**
      * Severity level for this Log.

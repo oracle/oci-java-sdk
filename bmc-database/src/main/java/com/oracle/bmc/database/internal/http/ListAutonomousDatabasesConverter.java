@@ -78,6 +78,14 @@ public class ListAutonomousDatabasesConverter {
                                     request.getSortOrder().getValue()));
         }
 
+        if (request.getInfrastructureType() != null) {
+            target =
+                    target.queryParam(
+                            "infrastructureType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getInfrastructureType().getValue()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

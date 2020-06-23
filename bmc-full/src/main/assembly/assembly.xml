@@ -38,6 +38,7 @@
     <fileSet>
       <directory>${project.build.directory}/apidocs</directory>
       <outputDirectory>apidocs</outputDirectory>
+      <fileMode>0755</fileMode>
     </fileSet>
     <fileSet>
       <directory>..</directory>

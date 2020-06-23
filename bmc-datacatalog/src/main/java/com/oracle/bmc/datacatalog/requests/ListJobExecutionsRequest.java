@@ -24,7 +24,7 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * Job execution lifecycle state.
      */
-    private JobExecutionState lifecycleState;
+    private com.oracle.bmc.datacatalog.model.JobExecutionState lifecycleState;
 
     /**
      * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -49,7 +49,7 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * Job type.
      */
-    private JobType jobType;
+    private com.oracle.bmc.datacatalog.model.JobType jobType;
 
     /**
      * Sub-type of this job execution.

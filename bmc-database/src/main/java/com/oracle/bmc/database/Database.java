@@ -86,6 +86,17 @@ public interface Database extends AutoCloseable {
                     ChangeAutonomousExadataInfrastructureCompartmentRequest request);
 
     /**
+     * To move an Autonomous VM cluster and its dependent resources to another compartment, use the
+     * {@link #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest) changeAutonomousVmClusterCompartment} operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeAutonomousVmClusterCompartmentResponse changeAutonomousVmClusterCompartment(
+            ChangeAutonomousVmClusterCompartmentRequest request);
+
+    /**
      * Move the backup destination and its dependent resources to the specified compartment.
      * For more information about moving backup destinations, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -192,6 +203,16 @@ public interface Database extends AutoCloseable {
      */
     CreateAutonomousDatabaseBackupResponse createAutonomousDatabaseBackup(
             CreateAutonomousDatabaseBackupRequest request);
+
+    /**
+     * Creates an Autonomous VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateAutonomousVmClusterResponse createAutonomousVmCluster(
+            CreateAutonomousVmClusterRequest request);
 
     /**
      * Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
@@ -335,6 +356,16 @@ public interface Database extends AutoCloseable {
      */
     DeleteAutonomousDatabaseResponse deleteAutonomousDatabase(
             DeleteAutonomousDatabaseRequest request);
+
+    /**
+     * Deletes the specified Autonomous VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteAutonomousVmClusterResponse deleteAutonomousVmCluster(
+            DeleteAutonomousVmClusterRequest request);
 
     /**
      * Deletes a full backup. You cannot delete automatic backups using this API.
@@ -560,6 +591,14 @@ public interface Database extends AutoCloseable {
      */
     GetAutonomousExadataInfrastructureResponse getAutonomousExadataInfrastructure(
             GetAutonomousExadataInfrastructureRequest request);
+
+    /**
+     * Gets information about the specified Autonomous VM cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousVmClusterResponse getAutonomousVmCluster(GetAutonomousVmClusterRequest request);
 
     /**
      * Gets information about the specified backup.
@@ -861,6 +900,16 @@ public interface Database extends AutoCloseable {
      */
     ListAutonomousExadataInfrastructuresResponse listAutonomousExadataInfrastructures(
             ListAutonomousExadataInfrastructuresRequest request);
+
+    /**
+     * Gets a list of Autonomous VM clusters in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousVmClustersResponse listAutonomousVmClusters(
+            ListAutonomousVmClustersRequest request);
 
     /**
      * Gets a list of backup destinations in the specified compartment.
@@ -1256,6 +1305,16 @@ public interface Database extends AutoCloseable {
      */
     UpdateAutonomousExadataInfrastructureResponse updateAutonomousExadataInfrastructure(
             UpdateAutonomousExadataInfrastructureRequest request);
+
+    /**
+     * Updates the specified Autonomous VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAutonomousVmClusterResponse updateAutonomousVmCluster(
+            UpdateAutonomousVmClusterRequest request);
 
     /**
      * If no database is associated with the backup destination:

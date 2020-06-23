@@ -35,6 +35,15 @@ public class CreateAutonomousContainerDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+        private String dbUniqueName;
+
+        public Builder dbUniqueName(String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
+            this.__explicitlySet__.add("dbUniqueName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceLevelAgreementType")
         private ServiceLevelAgreementType serviceLevelAgreementType;
 
@@ -51,6 +60,15 @@ public class CreateAutonomousContainerDatabaseDetails {
         public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
             this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             this.__explicitlySet__.add("autonomousExadataInfrastructureId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
+        private String autonomousVmClusterId;
+
+        public Builder autonomousVmClusterId(String autonomousVmClusterId) {
+            this.autonomousVmClusterId = autonomousVmClusterId;
+            this.__explicitlySet__.add("autonomousVmClusterId");
             return this;
         }
 
@@ -116,8 +134,10 @@ public class CreateAutonomousContainerDatabaseDetails {
             CreateAutonomousContainerDatabaseDetails __instance__ =
                     new CreateAutonomousContainerDatabaseDetails(
                             displayName,
+                            dbUniqueName,
                             serviceLevelAgreementType,
                             autonomousExadataInfrastructureId,
+                            autonomousVmClusterId,
                             compartmentId,
                             patchModel,
                             maintenanceWindowDetails,
@@ -132,9 +152,11 @@ public class CreateAutonomousContainerDatabaseDetails {
         public Builder copy(CreateAutonomousContainerDatabaseDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .dbUniqueName(o.getDbUniqueName())
                             .serviceLevelAgreementType(o.getServiceLevelAgreementType())
                             .autonomousExadataInfrastructureId(
                                     o.getAutonomousExadataInfrastructureId())
+                            .autonomousVmClusterId(o.getAutonomousVmClusterId())
                             .compartmentId(o.getCompartmentId())
                             .patchModel(o.getPatchModel())
                             .maintenanceWindowDetails(o.getMaintenanceWindowDetails())
@@ -159,6 +181,12 @@ public class CreateAutonomousContainerDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+    String dbUniqueName;
     /**
      * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For a mission critical Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      **/
@@ -204,6 +232,12 @@ public class CreateAutonomousContainerDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
     String autonomousExadataInfrastructureId;
+
+    /**
+     * The OCID of the Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
+    String autonomousVmClusterId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.

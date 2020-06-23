@@ -61,12 +61,21 @@ public class BackupDestinationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
+        private String internetProxy;
+
+        public Builder internetProxy(String internetProxy) {
+            this.internetProxy = internetProxy;
+            this.__explicitlySet__.add("internetProxy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackupDestinationDetails build() {
             BackupDestinationDetails __instance__ =
-                    new BackupDestinationDetails(type, id, vpcUser, vpcPassword);
+                    new BackupDestinationDetails(type, id, vpcUser, vpcPassword, internetProxy);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,7 +86,8 @@ public class BackupDestinationDetails {
                     type(o.getType())
                             .id(o.getId())
                             .vpcUser(o.getVpcUser())
-                            .vpcPassword(o.getVpcPassword());
+                            .vpcPassword(o.getVpcPassword())
+                            .internetProxy(o.getInternetProxy());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -161,6 +171,12 @@ public class BackupDestinationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
     String vpcPassword;
+
+    /**
+     * Proxy URL to connect to object store.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
+    String internetProxy;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -98,6 +98,33 @@ public class BackupDestinationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
+        private NfsMountType nfsMountType;
+
+        public Builder nfsMountType(NfsMountType nfsMountType) {
+            this.nfsMountType = nfsMountType;
+            this.__explicitlySet__.add("nfsMountType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
+        private java.util.List<String> nfsServer;
+
+        public Builder nfsServer(java.util.List<String> nfsServer) {
+            this.nfsServer = nfsServer;
+            this.__explicitlySet__.add("nfsServer");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
+        private String nfsServerExport;
+
+        public Builder nfsServerExport(String nfsServerExport) {
+            this.nfsServerExport = nfsServerExport;
+            this.__explicitlySet__.add("nfsServerExport");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -158,6 +185,9 @@ public class BackupDestinationSummary {
                             connectionString,
                             vpcUsers,
                             localMountPointPath,
+                            nfsMountType,
+                            nfsServer,
+                            nfsServerExport,
                             lifecycleState,
                             timeCreated,
                             lifecycleDetails,
@@ -178,6 +208,9 @@ public class BackupDestinationSummary {
                             .connectionString(o.getConnectionString())
                             .vpcUsers(o.getVpcUsers())
                             .localMountPointPath(o.getLocalMountPointPath())
+                            .nfsMountType(o.getNfsMountType())
+                            .nfsServer(o.getNfsServer())
+                            .nfsServerExport(o.getNfsServerExport())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleDetails(o.getLifecycleDetails())
@@ -288,6 +321,69 @@ public class BackupDestinationSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
     String localMountPointPath;
+    /**
+     * NFS Mount type for backup destination.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum NfsMountType {
+        SelfMount("SELF_MOUNT"),
+        AutomatedMount("AUTOMATED_MOUNT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, NfsMountType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NfsMountType v : NfsMountType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        NfsMountType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NfsMountType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'NfsMountType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * NFS Mount type for backup destination.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
+    NfsMountType nfsMountType;
+
+    /**
+     * Host names or IP addresses for NFS Auto mount.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
+    java.util.List<String> nfsServer;
+
+    /**
+     * Specifies the directory on which to mount the file system
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
+    String nfsServerExport;
     /**
      * The current lifecycle state of the backup destination.
      **/

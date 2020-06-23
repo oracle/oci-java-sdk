@@ -157,6 +157,12 @@ public class WorkRequest {
         UpdateCatalog("UPDATE_CATALOG"),
         DeleteCatalog("DELETE_CATALOG"),
         MoveCatalog("MOVE_CATALOG"),
+        CreateCatalogPrivateEndpoint("CREATE_CATALOG_PRIVATE_ENDPOINT"),
+        DeleteCatalogPrivateEndpoint("DELETE_CATALOG_PRIVATE_ENDPOINT"),
+        UpdateCatalogPrivateEndpoint("UPDATE_CATALOG_PRIVATE_ENDPOINT"),
+        MoveCatalogPrivateEndpoint("MOVE_CATALOG_PRIVATE_ENDPOINT"),
+        AttachCatalogPrivateEndpoint("ATTACH_CATALOG_PRIVATE_ENDPOINT"),
+        DetachCatalogPrivateEndpoint("DETACH_CATALOG_PRIVATE_ENDPOINT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

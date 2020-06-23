@@ -132,6 +132,16 @@ public class Catalog {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("attachedCatalogPrivateEndpoints")
+        private java.util.List<String> attachedCatalogPrivateEndpoints;
+
+        public Builder attachedCatalogPrivateEndpoints(
+                java.util.List<String> attachedCatalogPrivateEndpoints) {
+            this.attachedCatalogPrivateEndpoints = attachedCatalogPrivateEndpoints;
+            this.__explicitlySet__.add("attachedCatalogPrivateEndpoints");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -149,7 +159,8 @@ public class Catalog {
                             lifecycleState,
                             lifecycleDetails,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            attachedCatalogPrivateEndpoints);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -168,7 +179,9 @@ public class Catalog {
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .attachedCatalogPrivateEndpoints(
+                                    o.getAttachedCatalogPrivateEndpoints());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -261,6 +274,12 @@ public class Catalog {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The list of private reverse connection endpoints attached to the catalog
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("attachedCatalogPrivateEndpoints")
+    java.util.List<String> attachedCatalogPrivateEndpoints;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

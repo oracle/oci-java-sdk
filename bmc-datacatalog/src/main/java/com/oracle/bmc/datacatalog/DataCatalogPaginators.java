@@ -256,6 +256,126 @@ public class DataCatalogPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCatalogPrivateEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCatalogPrivateEndpointsResponse>
+            listCatalogPrivateEndpointsResponseIterator(
+                    final ListCatalogPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCatalogPrivateEndpointsRequest.Builder, ListCatalogPrivateEndpointsRequest,
+                ListCatalogPrivateEndpointsResponse>(
+                new com.google.common.base.Supplier<ListCatalogPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListCatalogPrivateEndpointsRequest.Builder get() {
+                        return ListCatalogPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCatalogPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListCatalogPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCatalogPrivateEndpointsRequest.Builder>,
+                        ListCatalogPrivateEndpointsRequest>() {
+                    @Override
+                    public ListCatalogPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCatalogPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCatalogPrivateEndpointsRequest, ListCatalogPrivateEndpointsResponse>() {
+                    @Override
+                    public ListCatalogPrivateEndpointsResponse apply(
+                            ListCatalogPrivateEndpointsRequest request) {
+                        return client.listCatalogPrivateEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary} objects
+     * contained in responses from the listCatalogPrivateEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary>
+            listCatalogPrivateEndpointsRecordIterator(
+                    final ListCatalogPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCatalogPrivateEndpointsRequest.Builder, ListCatalogPrivateEndpointsRequest,
+                ListCatalogPrivateEndpointsResponse,
+                com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary>(
+                new com.google.common.base.Supplier<ListCatalogPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListCatalogPrivateEndpointsRequest.Builder get() {
+                        return ListCatalogPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCatalogPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListCatalogPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCatalogPrivateEndpointsRequest.Builder>,
+                        ListCatalogPrivateEndpointsRequest>() {
+                    @Override
+                    public ListCatalogPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCatalogPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCatalogPrivateEndpointsRequest, ListCatalogPrivateEndpointsResponse>() {
+                    @Override
+                    public ListCatalogPrivateEndpointsResponse apply(
+                            ListCatalogPrivateEndpointsRequest request) {
+                        return client.listCatalogPrivateEndpoints(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCatalogPrivateEndpointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datacatalog.model.CatalogPrivateEndpointSummary>
+                            apply(ListCatalogPrivateEndpointsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCatalogs operation. This iterable
      * will fetch more data from the server as needed.
      *

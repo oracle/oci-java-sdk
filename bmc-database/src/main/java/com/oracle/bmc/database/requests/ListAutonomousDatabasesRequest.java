@@ -119,6 +119,11 @@ public class ListAutonomousDatabasesRequest
         }
     };
     /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     */
+    private AutonomousDatabaseSummary.InfrastructureType infrastructureType;
+
+    /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
     private AutonomousDatabaseSummary.LifecycleState lifecycleState;
@@ -192,6 +197,7 @@ public class ListAutonomousDatabasesRequest
             page(o.getPage());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            infrastructureType(o.getInfrastructureType());
             lifecycleState(o.getLifecycleState());
             dbWorkload(o.getDbWorkload());
             dbVersion(o.getDbVersion());

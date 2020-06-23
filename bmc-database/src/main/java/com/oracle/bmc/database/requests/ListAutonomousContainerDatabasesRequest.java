@@ -23,6 +23,16 @@ public class ListAutonomousContainerDatabasesRequest
     private String autonomousExadataInfrastructureId;
 
     /**
+     * The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
+    private String autonomousVmClusterId;
+
+    /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     */
+    private AutonomousContainerDatabaseSummary.InfrastructureType infrastructureType;
+
+    /**
      * The maximum number of items to return per page.
      */
     private Integer limit;
@@ -170,6 +180,8 @@ public class ListAutonomousContainerDatabasesRequest
         public Builder copy(ListAutonomousContainerDatabasesRequest o) {
             compartmentId(o.getCompartmentId());
             autonomousExadataInfrastructureId(o.getAutonomousExadataInfrastructureId());
+            autonomousVmClusterId(o.getAutonomousVmClusterId());
+            infrastructureType(o.getInfrastructureType());
             limit(o.getLimit());
             page(o.getPage());
             sortBy(o.getSortBy());

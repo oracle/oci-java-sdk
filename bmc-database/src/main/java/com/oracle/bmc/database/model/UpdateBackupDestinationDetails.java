@@ -54,6 +54,33 @@ public class UpdateBackupDestinationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
+        private NfsMountType nfsMountType;
+
+        public Builder nfsMountType(NfsMountType nfsMountType) {
+            this.nfsMountType = nfsMountType;
+            this.__explicitlySet__.add("nfsMountType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
+        private java.util.List<String> nfsServer;
+
+        public Builder nfsServer(java.util.List<String> nfsServer) {
+            this.nfsServer = nfsServer;
+            this.__explicitlySet__.add("nfsServer");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
+        private String nfsServerExport;
+
+        public Builder nfsServerExport(String nfsServerExport) {
+            this.nfsServerExport = nfsServerExport;
+            this.__explicitlySet__.add("nfsServerExport");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -82,6 +109,9 @@ public class UpdateBackupDestinationDetails {
                             vpcUsers,
                             connectionString,
                             localMountPointPath,
+                            nfsMountType,
+                            nfsServer,
+                            nfsServerExport,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -94,6 +124,9 @@ public class UpdateBackupDestinationDetails {
                     vpcUsers(o.getVpcUsers())
                             .connectionString(o.getConnectionString())
                             .localMountPointPath(o.getLocalMountPointPath())
+                            .nfsMountType(o.getNfsMountType())
+                            .nfsServer(o.getNfsServer())
+                            .nfsServerExport(o.getNfsServerExport())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -127,6 +160,58 @@ public class UpdateBackupDestinationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
     String localMountPointPath;
+    /**
+     * NFS Mount type for backup destination.
+     **/
+    public enum NfsMountType {
+        SelfMount("SELF_MOUNT"),
+        AutomatedMount("AUTOMATED_MOUNT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, NfsMountType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NfsMountType v : NfsMountType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        NfsMountType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NfsMountType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid NfsMountType: " + key);
+        }
+    };
+    /**
+     * NFS Mount type for backup destination.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nfsMountType")
+    NfsMountType nfsMountType;
+
+    /**
+     * IP addresses for NFS Auto mount.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
+    java.util.List<String> nfsServer;
+
+    /**
+     * Specifies the directory on which to mount the file system
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
+    String nfsServerExport;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

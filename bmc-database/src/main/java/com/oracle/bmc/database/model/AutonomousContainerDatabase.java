@@ -52,6 +52,15 @@ public class AutonomousContainerDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+        private String dbUniqueName;
+
+        public Builder dbUniqueName(String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
+            this.__explicitlySet__.add("dbUniqueName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceLevelAgreementType")
         private ServiceLevelAgreementType serviceLevelAgreementType;
 
@@ -68,6 +77,24 @@ public class AutonomousContainerDatabase {
         public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
             this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             this.__explicitlySet__.add("autonomousExadataInfrastructureId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
+        private String autonomousVmClusterId;
+
+        public Builder autonomousVmClusterId(String autonomousVmClusterId) {
+            this.autonomousVmClusterId = autonomousVmClusterId;
+            this.__explicitlySet__.add("autonomousVmClusterId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
+        private InfrastructureType infrastructureType;
+
+        public Builder infrastructureType(InfrastructureType infrastructureType) {
+            this.infrastructureType = infrastructureType;
+            this.__explicitlySet__.add("infrastructureType");
             return this;
         }
 
@@ -189,8 +216,11 @@ public class AutonomousContainerDatabase {
                             id,
                             compartmentId,
                             displayName,
+                            dbUniqueName,
                             serviceLevelAgreementType,
                             autonomousExadataInfrastructureId,
+                            autonomousVmClusterId,
+                            infrastructureType,
                             lifecycleState,
                             lifecycleDetails,
                             timeCreated,
@@ -213,9 +243,12 @@ public class AutonomousContainerDatabase {
                     id(o.getId())
                             .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
+                            .dbUniqueName(o.getDbUniqueName())
                             .serviceLevelAgreementType(o.getServiceLevelAgreementType())
                             .autonomousExadataInfrastructureId(
                                     o.getAutonomousExadataInfrastructureId())
+                            .autonomousVmClusterId(o.getAutonomousVmClusterId())
+                            .infrastructureType(o.getInfrastructureType())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
@@ -258,6 +291,12 @@ public class AutonomousContainerDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+    String dbUniqueName;
     /**
      * The service level agreement type of the container database. The default is STANDARD.
      **/
@@ -315,6 +354,63 @@ public class AutonomousContainerDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
     String autonomousExadataInfrastructureId;
+
+    /**
+     * The OCID of the Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
+    String autonomousVmClusterId;
+    /**
+     * The infrastructure type this resource belongs to.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum InfrastructureType {
+        Cloud("CLOUD"),
+        CloudAtCustomer("CLOUD_AT_CUSTOMER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, InfrastructureType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InfrastructureType v : InfrastructureType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        InfrastructureType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InfrastructureType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'InfrastructureType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The infrastructure type this resource belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
+    InfrastructureType infrastructureType;
     /**
      * The current state of the Autonomous Container Database.
      **/

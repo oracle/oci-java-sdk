@@ -26,6 +26,16 @@ public class AutonomousContainerDatabaseBackupConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+        private java.util.List<BackupDestinationDetails> backupDestinationDetails;
+
+        public Builder backupDestinationDetails(
+                java.util.List<BackupDestinationDetails> backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
+            this.__explicitlySet__.add("backupDestinationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
         private Integer recoveryWindowInDays;
 
@@ -40,14 +50,17 @@ public class AutonomousContainerDatabaseBackupConfig {
 
         public AutonomousContainerDatabaseBackupConfig build() {
             AutonomousContainerDatabaseBackupConfig __instance__ =
-                    new AutonomousContainerDatabaseBackupConfig(recoveryWindowInDays);
+                    new AutonomousContainerDatabaseBackupConfig(
+                            backupDestinationDetails, recoveryWindowInDays);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AutonomousContainerDatabaseBackupConfig o) {
-            Builder copiedBuilder = recoveryWindowInDays(o.getRecoveryWindowInDays());
+            Builder copiedBuilder =
+                    backupDestinationDetails(o.getBackupDestinationDetails())
+                            .recoveryWindowInDays(o.getRecoveryWindowInDays());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -60,6 +73,12 @@ public class AutonomousContainerDatabaseBackupConfig {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * Backup destination details.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+    java.util.List<BackupDestinationDetails> backupDestinationDetails;
 
     /**
      * Number of days between the current and the earliest point of recoverability covered by automatic backups.
