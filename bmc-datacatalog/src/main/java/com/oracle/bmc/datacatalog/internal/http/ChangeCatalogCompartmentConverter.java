@@ -93,18 +93,6 @@ public class ChangeCatalogCompartmentConverter {
                                                         .ChangeCatalogCompartmentResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
-                                if (opcRequestIdHeader.isPresent()) {
-                                    builder.opcRequestId(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "opc-request-id",
-                                                    opcRequestIdHeader.get().get(0),
-                                                    String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "opc-work-request-id");
@@ -113,6 +101,18 @@ public class ChangeCatalogCompartmentConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-work-request-id",
                                                     opcWorkRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
                                                     String.class));
                                 }
 

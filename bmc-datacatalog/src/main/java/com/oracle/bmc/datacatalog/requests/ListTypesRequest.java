@@ -24,7 +24,7 @@ public class ListTypesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    private LifecycleState lifecycleState;
+    private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
     /**
      * Indicates whether the type is internal, making it unavailable for use by metadata elements.

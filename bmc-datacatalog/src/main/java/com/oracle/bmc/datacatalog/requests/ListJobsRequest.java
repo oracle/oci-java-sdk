@@ -24,7 +24,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     /**
      * Job lifecycle state.
      */
-    private JobLifecycleState lifecycleState;
+    private com.oracle.bmc.datacatalog.model.JobLifecycleState lifecycleState;
 
     /**
      * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -49,7 +49,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     /**
      * Job type.
      */
-    private JobType jobType;
+    private com.oracle.bmc.datacatalog.model.JobType jobType;
 
     /**
      * Unique job definition key.
@@ -77,7 +77,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     /**
      * Type of the job schedule.
      */
-    private JobScheduleType scheduleType;
+    private com.oracle.bmc.datacatalog.model.JobScheduleType scheduleType;
 
     /**
      * Unique connection key.

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.18.1</version>
+  <version>1.19.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -400,11 +400,11 @@
           <configuration>
             <!-- Exclude classes that shouldn't be exposed to end users, ex, those in 'internal' packages -->
             <excludePackageNames>*.internal.*</excludePackageNames>
-            <doclet>ch.raffael.doclets.pegdown.PegdownDoclet</doclet>
+            <doclet>org.jdrupes.mdoclet.MDoclet</doclet>
             <docletArtifact>
-              <groupId>ch.raffael.pegdown-doclet</groupId>
-              <artifactId>pegdown-doclet</artifactId>
-              <version>1.3</version>
+              <groupId>org.jdrupes.mdoclet</groupId>
+              <artifactId>doclet</artifactId>
+              <version>1.0.10</version>
             </docletArtifact>
             <useStandardDocletOptions>true</useStandardDocletOptions>
             <aggregate>true</aggregate>
@@ -701,6 +701,7 @@
     <module>bmc-cims</module>
     <module>bmc-datasafe</module>
     <module>bmc-mysql</module>
+    <module>bmc-dataintegration</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

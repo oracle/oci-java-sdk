@@ -129,6 +129,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
+        private InfrastructureType infrastructureType;
+
+        public Builder infrastructureType(InfrastructureType infrastructureType) {
+            this.infrastructureType = infrastructureType;
+            this.__explicitlySet__.add("infrastructureType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
         private Boolean isDedicated;
 
@@ -372,6 +381,7 @@ public class AutonomousDatabaseSummary {
                             timeDeletionOfFreeAutonomousDatabase,
                             cpuCoreCount,
                             dataStorageSizeInTBs,
+                            infrastructureType,
                             isDedicated,
                             autonomousContainerDatabaseId,
                             timeCreated,
@@ -417,6 +427,7 @@ public class AutonomousDatabaseSummary {
                                     o.getTimeDeletionOfFreeAutonomousDatabase())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .infrastructureType(o.getInfrastructureType())
                             .isDedicated(o.getIsDedicated())
                             .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
                             .timeCreated(o.getTimeCreated())
@@ -585,6 +596,57 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Integer dataStorageSizeInTBs;
+    /**
+     * The infrastructure type this resource belongs to.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum InfrastructureType {
+        Cloud("CLOUD"),
+        CloudAtCustomer("CLOUD_AT_CUSTOMER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, InfrastructureType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InfrastructureType v : InfrastructureType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        InfrastructureType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InfrastructureType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'InfrastructureType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The infrastructure type this resource belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
+    InfrastructureType infrastructureType;
 
     /**
      * True if the database uses [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm).

@@ -48,6 +48,22 @@ public class ListAutonomousContainerDatabasesConverter {
                                     request.getAutonomousExadataInfrastructureId()));
         }
 
+        if (request.getAutonomousVmClusterId() != null) {
+            target =
+                    target.queryParam(
+                            "autonomousVmClusterId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAutonomousVmClusterId()));
+        }
+
+        if (request.getInfrastructureType() != null) {
+            target =
+                    target.queryParam(
+                            "infrastructureType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getInfrastructureType().getValue()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

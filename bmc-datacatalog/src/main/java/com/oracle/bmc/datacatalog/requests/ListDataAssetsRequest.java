@@ -24,7 +24,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    private LifecycleState lifecycleState;
+    private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
     /**
      * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

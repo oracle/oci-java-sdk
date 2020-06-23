@@ -119,6 +119,26 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * To move an Autonomous VM cluster and its dependent resources to another compartment, use the
+     * {@link #changeAutonomousVmClusterCompartment(ChangeAutonomousVmClusterCompartmentRequest, Consumer, Consumer) changeAutonomousVmClusterCompartment} operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutonomousVmClusterCompartmentResponse>
+            changeAutonomousVmClusterCompartment(
+                    ChangeAutonomousVmClusterCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousVmClusterCompartmentRequest,
+                                    ChangeAutonomousVmClusterCompartmentResponse>
+                            handler);
+
+    /**
      * Move the backup destination and its dependent resources to the specified compartment.
      * For more information about moving backup destinations, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -307,6 +327,23 @@ public interface DatabaseAsync extends AutoCloseable {
                                     CreateAutonomousDatabaseBackupRequest,
                                     CreateAutonomousDatabaseBackupResponse>
                             handler);
+
+    /**
+     * Creates an Autonomous VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAutonomousVmClusterResponse> createAutonomousVmCluster(
+            CreateAutonomousVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAutonomousVmClusterRequest, CreateAutonomousVmClusterResponse>
+                    handler);
 
     /**
      * Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
@@ -546,6 +583,23 @@ public interface DatabaseAsync extends AutoCloseable {
             DeleteAutonomousDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteAutonomousDatabaseRequest, DeleteAutonomousDatabaseResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Autonomous VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAutonomousVmClusterResponse> deleteAutonomousVmCluster(
+            DeleteAutonomousVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAutonomousVmClusterRequest, DeleteAutonomousVmClusterResponse>
                     handler);
 
     /**
@@ -958,6 +1012,22 @@ public interface DatabaseAsync extends AutoCloseable {
                                     GetAutonomousExadataInfrastructureRequest,
                                     GetAutonomousExadataInfrastructureResponse>
                             handler);
+
+    /**
+     * Gets information about the specified Autonomous VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutonomousVmClusterResponse> getAutonomousVmCluster(
+            GetAutonomousVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAutonomousVmClusterRequest, GetAutonomousVmClusterResponse>
+                    handler);
 
     /**
      * Gets information about the specified backup.
@@ -1507,6 +1577,23 @@ public interface DatabaseAsync extends AutoCloseable {
                                     ListAutonomousExadataInfrastructuresRequest,
                                     ListAutonomousExadataInfrastructuresResponse>
                             handler);
+
+    /**
+     * Gets a list of Autonomous VM clusters in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousVmClustersResponse> listAutonomousVmClusters(
+            ListAutonomousVmClustersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAutonomousVmClustersRequest, ListAutonomousVmClustersResponse>
+                    handler);
 
     /**
      * Gets a list of backup destinations in the specified compartment.
@@ -2235,6 +2322,23 @@ public interface DatabaseAsync extends AutoCloseable {
                                     UpdateAutonomousExadataInfrastructureRequest,
                                     UpdateAutonomousExadataInfrastructureResponse>
                             handler);
+
+    /**
+     * Updates the specified Autonomous VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAutonomousVmClusterResponse> updateAutonomousVmCluster(
+            UpdateAutonomousVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAutonomousVmClusterRequest, UpdateAutonomousVmClusterResponse>
+                    handler);
 
     /**
      * If no database is associated with the backup destination:

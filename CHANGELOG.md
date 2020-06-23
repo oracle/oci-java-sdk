@@ -3,6 +3,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.19.0 - 2020-06-23
+### Added
+- Support for the Data Integration service
+- Support for updating database home IDs on databases in the Database service
+- Support for backing up autonomous databases on Cloud at Customer in the Database service
+- Support for managing autonomous VM clusters on Cloud at Customer in the Database service
+- Support for accessing data assets via private endpoints in the Data Catalog service
+- Support for dependency archive zip files to be specified for use by applications in the Data Flow service
+
+
+### Breaking Changes
+- Enum `LifeCycleState` in the Data Catalog service has restricted values to `Creating`, `Active`, `Inactive`, `Updating`, `Deleting`, `Deleted`, `Failed`, `Moving`
+- Enum `TermWorkflowStatus` in the Data Catalog service has restricted values to `New`, `Approved`, `UnderReview`, `Escalated`
+- Enum `JobScheduleType` in the Data Catalog service has restricted values to `Scheduled`, `Immediate`
+- Enum `JobType` in the Data Catalog service has restricted values to `Harvest`, `Profiling`, `Sampling`, `Preview`, `Import`, `Export`, `Internal`, `Purge`, `Immediate`, `Scheduled`, `Immediate_Execution`, `ScheduledExecution`, `ScheduledExecutionInstance`
+- Enum `HarvestStatus` in the Data Catalog service has restricted values to `Complete`, `Error`, `InProgress`, `Deferred`
+- Enum `JobExecutionState` in the Data Catalog service has restricted values to `Created`, `InProgress`, `Inactive`, `Failed`, `Succeeded`, `Canceled`
+- Enum `ConnectionResult` in the Data Catalog service has restricted values to `Succeeded`, `Failed`
+
 ## 1.18.1 - 2020-06-16
 ### Added
 - Support for creating a new database from an existing database based on a given timestamp in the Database service

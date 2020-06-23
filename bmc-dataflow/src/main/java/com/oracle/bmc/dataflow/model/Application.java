@@ -24,6 +24,15 @@ public class Application {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
+        private String archiveUri;
+
+        public Builder archiveUri(String archiveUri) {
+            this.archiveUri = archiveUri;
+            this.__explicitlySet__.add("archiveUri");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<String> arguments;
 
@@ -238,6 +247,7 @@ public class Application {
         public Application build() {
             Application __instance__ =
                     new Application(
+                            archiveUri,
                             arguments,
                             className,
                             configuration,
@@ -268,7 +278,8 @@ public class Application {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Application o) {
             Builder copiedBuilder =
-                    arguments(o.getArguments())
+                    archiveUri(o.getArchiveUri())
+                            .arguments(o.getArguments())
                             .className(o.getClassName())
                             .configuration(o.getConfiguration())
                             .compartmentId(o.getCompartmentId())
@@ -303,6 +314,14 @@ public class Application {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
+    String archiveUri;
 
     /**
      * The arguments passed to the running application as command line arguments.  An argument is

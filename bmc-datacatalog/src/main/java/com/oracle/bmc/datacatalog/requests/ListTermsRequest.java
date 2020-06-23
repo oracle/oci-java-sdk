@@ -29,7 +29,7 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    private LifecycleState lifecycleState;
+    private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
     /**
      * Unique key of the parent term.
@@ -44,7 +44,7 @@ public class ListTermsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     /**
      * Status of the approval workflow for this business term in the glossary.
      */
-    private TermWorkflowStatus workflowStatus;
+    private com.oracle.bmc.datacatalog.model.TermWorkflowStatus workflowStatus;
 
     /**
      * Full path of the resource for resources that support paths.

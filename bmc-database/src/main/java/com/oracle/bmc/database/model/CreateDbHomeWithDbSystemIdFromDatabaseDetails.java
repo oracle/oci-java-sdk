@@ -41,6 +41,25 @@ public class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateDbHomeB
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
@@ -65,7 +84,7 @@ public class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateDbHomeB
         public CreateDbHomeWithDbSystemIdFromDatabaseDetails build() {
             CreateDbHomeWithDbSystemIdFromDatabaseDetails __instance__ =
                     new CreateDbHomeWithDbSystemIdFromDatabaseDetails(
-                            displayName, dbSystemId, database);
+                            displayName, freeformTags, definedTags, dbSystemId, database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -74,6 +93,8 @@ public class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateDbHomeB
         public Builder copy(CreateDbHomeWithDbSystemIdFromDatabaseDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .dbSystemId(o.getDbSystemId())
                             .database(o.getDatabase());
 
@@ -92,9 +113,11 @@ public class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateDbHomeB
     @Deprecated
     public CreateDbHomeWithDbSystemIdFromDatabaseDetails(
             String displayName,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbSystemId,
             CreateDatabaseFromAnotherDatabaseDetails database) {
-        super(displayName);
+        super(displayName, freeformTags, definedTags);
         this.dbSystemId = dbSystemId;
         this.database = database;
     }

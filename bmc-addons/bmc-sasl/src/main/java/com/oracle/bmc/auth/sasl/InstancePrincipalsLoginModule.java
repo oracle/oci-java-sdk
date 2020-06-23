@@ -7,6 +7,7 @@ package com.oracle.bmc.auth.sasl;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
 import java.util.Map;
+import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider.InstancePrincipalsAuthenticationDetailsProviderBuilder;
 
 /**
  * A {@link javax.security.auth.spi.LoginModule} that will use Instance Principals to fill the {@link javax.security.auth.Subject} credentials.
@@ -14,9 +15,19 @@ import java.util.Map;
  * <pre>{@code com.oracle.bmc.auth.sasl.InstancePrincipalsLoginModule required intent="<intent>";}</pre>
  */
 public class InstancePrincipalsLoginModule extends OciLoginModule {
+
+    private static final String METADATA_URL = "metadataBaseUrl";
+
     @Override
     protected BasicAuthenticationDetailsProvider loadAuthenticationProvider(
             Map<String, ?> options) {
-        return InstancePrincipalsAuthenticationDetailsProvider.builder().build();
+
+        final InstancePrincipalsAuthenticationDetailsProviderBuilder builder =
+                InstancePrincipalsAuthenticationDetailsProvider.builder();
+
+        if (options.containsKey(METADATA_URL)) {
+            builder.metadataBaseUrl((String) options.get(METADATA_URL));
+        }
+        return builder.build();
     }
 }

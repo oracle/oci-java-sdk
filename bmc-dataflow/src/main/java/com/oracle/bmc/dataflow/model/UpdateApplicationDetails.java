@@ -62,6 +62,15 @@ public class UpdateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
+        private String archiveUri;
+
+        public Builder archiveUri(String archiveUri) {
+            this.archiveUri = archiveUri;
+            this.__explicitlySet__.add("archiveUri");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<String> arguments;
 
@@ -181,6 +190,7 @@ public class UpdateApplicationDetails {
                             fileUri,
                             sparkVersion,
                             language,
+                            archiveUri,
                             arguments,
                             configuration,
                             definedTags,
@@ -204,6 +214,7 @@ public class UpdateApplicationDetails {
                             .fileUri(o.getFileUri())
                             .sparkVersion(o.getSparkVersion())
                             .language(o.getLanguage())
+                            .archiveUri(o.getArchiveUri())
                             .arguments(o.getArguments())
                             .configuration(o.getConfiguration())
                             .definedTags(o.getDefinedTags())
@@ -257,6 +268,14 @@ public class UpdateApplicationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     ApplicationLanguage language;
+
+    /**
+     * An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
+    String archiveUri;
 
     /**
      * The arguments passed to the running application as command line arguments.  An argument is

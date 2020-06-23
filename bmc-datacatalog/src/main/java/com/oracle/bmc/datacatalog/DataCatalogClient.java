@@ -420,6 +420,41 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public AttachCatalogPrivateEndpointResponse attachCatalogPrivateEndpoint(
+            AttachCatalogPrivateEndpointRequest request) {
+        LOG.trace("Called attachCatalogPrivateEndpoint");
+        final AttachCatalogPrivateEndpointRequest interceptedRequest =
+                AttachCatalogPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachCatalogPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AttachCatalogPrivateEndpointResponse>
+                transformer = AttachCatalogPrivateEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAttachCatalogPrivateEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeCatalogCompartmentResponse changeCatalogCompartment(
             ChangeCatalogCompartmentRequest request) {
         LOG.trace("Called changeCatalogCompartment");
@@ -446,6 +481,42 @@ public class DataCatalogClient implements DataCatalog {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getChangeCatalogCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeCatalogPrivateEndpointCompartmentResponse changeCatalogPrivateEndpointCompartment(
+            ChangeCatalogPrivateEndpointCompartmentRequest request) {
+        LOG.trace("Called changeCatalogPrivateEndpointCompartment");
+        final ChangeCatalogPrivateEndpointCompartmentRequest interceptedRequest =
+                ChangeCatalogPrivateEndpointCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCatalogPrivateEndpointCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeCatalogPrivateEndpointCompartmentResponse>
+                transformer = ChangeCatalogPrivateEndpointCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeCatalogPrivateEndpointCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -542,6 +613,41 @@ public class DataCatalogClient implements DataCatalog {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateCatalogDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateCatalogPrivateEndpointResponse createCatalogPrivateEndpoint(
+            CreateCatalogPrivateEndpointRequest request) {
+        LOG.trace("Called createCatalogPrivateEndpoint");
+        final CreateCatalogPrivateEndpointRequest interceptedRequest =
+                CreateCatalogPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCatalogPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateCatalogPrivateEndpointResponse>
+                transformer = CreateCatalogPrivateEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateCatalogPrivateEndpointDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1051,6 +1157,37 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public DeleteCatalogPrivateEndpointResponse deleteCatalogPrivateEndpoint(
+            DeleteCatalogPrivateEndpointRequest request) {
+        LOG.trace("Called deleteCatalogPrivateEndpoint");
+        final DeleteCatalogPrivateEndpointRequest interceptedRequest =
+                DeleteCatalogPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCatalogPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteCatalogPrivateEndpointResponse>
+                transformer = DeleteCatalogPrivateEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request) {
         LOG.trace("Called deleteConnection");
         final DeleteConnectionRequest interceptedRequest =
@@ -1398,6 +1535,41 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public DetachCatalogPrivateEndpointResponse detachCatalogPrivateEndpoint(
+            DetachCatalogPrivateEndpointRequest request) {
+        LOG.trace("Called detachCatalogPrivateEndpoint");
+        final DetachCatalogPrivateEndpointRequest interceptedRequest =
+                DetachCatalogPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachCatalogPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DetachCatalogPrivateEndpointResponse>
+                transformer = DetachCatalogPrivateEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDetachCatalogPrivateEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ExpandTreeForGlossaryResponse expandTreeForGlossary(
             ExpandTreeForGlossaryRequest request) {
         LOG.trace("Called expandTreeForGlossary");
@@ -1520,6 +1692,36 @@ public class DataCatalogClient implements DataCatalog {
                 GetCatalogConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCatalogResponse> transformer =
                 GetCatalogConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetCatalogPrivateEndpointResponse getCatalogPrivateEndpoint(
+            GetCatalogPrivateEndpointRequest request) {
+        LOG.trace("Called getCatalogPrivateEndpoint");
+        final GetCatalogPrivateEndpointRequest interceptedRequest =
+                GetCatalogPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCatalogPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetCatalogPrivateEndpointResponse>
+                transformer = GetCatalogPrivateEndpointConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2110,6 +2312,36 @@ public class DataCatalogClient implements DataCatalog {
                 ListAttributesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListAttributesResponse>
                 transformer = ListAttributesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCatalogPrivateEndpointsResponse listCatalogPrivateEndpoints(
+            ListCatalogPrivateEndpointsRequest request) {
+        LOG.trace("Called listCatalogPrivateEndpoints");
+        final ListCatalogPrivateEndpointsRequest interceptedRequest =
+                ListCatalogPrivateEndpointsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCatalogPrivateEndpointsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCatalogPrivateEndpointsResponse>
+                transformer = ListCatalogPrivateEndpointsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2895,6 +3127,41 @@ public class DataCatalogClient implements DataCatalog {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateCatalogDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateCatalogPrivateEndpointResponse updateCatalogPrivateEndpoint(
+            UpdateCatalogPrivateEndpointRequest request) {
+        LOG.trace("Called updateCatalogPrivateEndpoint");
+        final UpdateCatalogPrivateEndpointRequest interceptedRequest =
+                UpdateCatalogPrivateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCatalogPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateCatalogPrivateEndpointResponse>
+                transformer = UpdateCatalogPrivateEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateCatalogPrivateEndpointDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

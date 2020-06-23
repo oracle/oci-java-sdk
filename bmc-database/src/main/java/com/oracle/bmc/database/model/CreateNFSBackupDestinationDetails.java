@@ -77,6 +77,15 @@ public class CreateNFSBackupDestinationDetails extends CreateBackupDestinationDe
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("mountTypeDetails")
+        private MountTypeDetails mountTypeDetails;
+
+        public Builder mountTypeDetails(MountTypeDetails mountTypeDetails) {
+            this.mountTypeDetails = mountTypeDetails;
+            this.__explicitlySet__.add("mountTypeDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -87,7 +96,8 @@ public class CreateNFSBackupDestinationDetails extends CreateBackupDestinationDe
                             compartmentId,
                             freeformTags,
                             definedTags,
-                            localMountPointPath);
+                            localMountPointPath,
+                            mountTypeDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -99,7 +109,8 @@ public class CreateNFSBackupDestinationDetails extends CreateBackupDestinationDe
                             .compartmentId(o.getCompartmentId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .localMountPointPath(o.getLocalMountPointPath());
+                            .localMountPointPath(o.getLocalMountPointPath())
+                            .mountTypeDetails(o.getMountTypeDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -119,17 +130,23 @@ public class CreateNFSBackupDestinationDetails extends CreateBackupDestinationDe
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String localMountPointPath) {
+            String localMountPointPath,
+            MountTypeDetails mountTypeDetails) {
         super(displayName, compartmentId, freeformTags, definedTags);
         this.localMountPointPath = localMountPointPath;
+        this.mountTypeDetails = mountTypeDetails;
     }
 
     /**
-     * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+     * **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+     * This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localMountPointPath")
     String localMountPointPath;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("mountTypeDetails")
+    MountTypeDetails mountTypeDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

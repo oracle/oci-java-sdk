@@ -38,6 +38,15 @@ public interface DataCatalog extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Attaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AttachCatalogPrivateEndpointResponse attachCatalogPrivateEndpoint(
+            AttachCatalogPrivateEndpointRequest request);
+
+    /**
      * Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -45,6 +54,15 @@ public interface DataCatalog extends AutoCloseable {
      */
     ChangeCatalogCompartmentResponse changeCatalogCompartment(
             ChangeCatalogCompartmentRequest request);
+
+    /**
+     * Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeCatalogPrivateEndpointCompartmentResponse changeCatalogPrivateEndpointCompartment(
+            ChangeCatalogPrivateEndpointCompartmentRequest request);
 
     /**
      * Creates a new entity attribute.
@@ -71,6 +89,15 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateCatalogResponse createCatalog(CreateCatalogRequest request);
+
+    /**
+     * Create a new private reverse connection endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateCatalogPrivateEndpointResponse createCatalogPrivateEndpoint(
+            CreateCatalogPrivateEndpointRequest request);
 
     /**
      * Creates a new connection.
@@ -201,6 +228,15 @@ public interface DataCatalog extends AutoCloseable {
     DeleteCatalogResponse deleteCatalog(DeleteCatalogRequest request);
 
     /**
+     * Deletes a private reverse connection endpoint by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteCatalogPrivateEndpointResponse deleteCatalogPrivateEndpoint(
+            DeleteCatalogPrivateEndpointRequest request);
+
+    /**
      * Deletes a specific connection of a data asset.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -297,6 +333,15 @@ public interface DataCatalog extends AutoCloseable {
     DeleteTermRelationshipResponse deleteTermRelationship(DeleteTermRelationshipRequest request);
 
     /**
+     * Detaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DetachCatalogPrivateEndpointResponse detachCatalogPrivateEndpoint(
+            DetachCatalogPrivateEndpointRequest request);
+
+    /**
      * Returns the fully expanded tree hierarchy of parent and child terms in this glossary.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -335,6 +380,15 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetCatalogResponse getCatalog(GetCatalogRequest request);
+
+    /**
+     * Gets a specific private reverse connection by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetCatalogPrivateEndpointResponse getCatalogPrivateEndpoint(
+            GetCatalogPrivateEndpointRequest request);
 
     /**
      * Gets a specific data asset connection by key.
@@ -503,6 +557,16 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListAttributesResponse listAttributes(ListAttributesRequest request);
+
+    /**
+     * Returns a list of all the catalog private endpoints in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCatalogPrivateEndpointsResponse listCatalogPrivateEndpoints(
+            ListCatalogPrivateEndpointsRequest request);
 
     /**
      * Returns a list of all the data catalogs in the specified compartment.
@@ -723,6 +787,15 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateCatalogResponse updateCatalog(UpdateCatalogRequest request);
+
+    /**
+     * Updates the private reverse connection endpoint.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateCatalogPrivateEndpointResponse updateCatalogPrivateEndpoint(
+            UpdateCatalogPrivateEndpointRequest request);
 
     /**
      * Updates a specific connection of a data asset.

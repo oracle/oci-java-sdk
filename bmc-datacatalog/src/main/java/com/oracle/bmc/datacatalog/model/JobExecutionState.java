@@ -15,6 +15,7 @@ package com.oracle.bmc.datacatalog.model;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@lombok.extern.slf4j.Slf4j
 public enum JobExecutionState {
     Created("CREATED"),
     InProgress("IN_PROGRESS"),
@@ -22,7 +23,12 @@ public enum JobExecutionState {
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),
     Canceled("CANCELED"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
 
     private final String value;
     private static java.util.Map<String, JobExecutionState> map;
@@ -30,7 +36,9 @@ public enum JobExecutionState {
     static {
         map = new java.util.HashMap<>();
         for (JobExecutionState v : JobExecutionState.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -48,6 +56,9 @@ public enum JobExecutionState {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid JobExecutionState: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'JobExecutionState', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

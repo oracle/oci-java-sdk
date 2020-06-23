@@ -29,7 +29,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    private LifecycleState lifecycleState;
+    private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
     /**
      * Unique folder key.
@@ -69,7 +69,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     /**
      * Harvest status of the harvestable resource as updated by the harvest process.
      */
-    private HarvestStatus harvestStatus;
+    private com.oracle.bmc.datacatalog.model.HarvestStatus harvestStatus;
 
     /**
      * Key of the last harvest process to update this resource.
