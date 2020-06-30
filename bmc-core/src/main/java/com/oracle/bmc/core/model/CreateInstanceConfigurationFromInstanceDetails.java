@@ -28,6 +28,7 @@ package com.oracle.bmc.core.model;
     property = "source"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CreateInstanceConfigurationFromInstanceDetails
         extends CreateInstanceConfigurationBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")

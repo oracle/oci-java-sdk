@@ -7,6 +7,9 @@ package com.oracle.bmc.integration;
 import com.oracle.bmc.integration.requests.*;
 import com.oracle.bmc.integration.responses.*;
 
+/**
+ * Oracle Integration API.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 public interface IntegrationInstanceAsync extends AutoCloseable {
 

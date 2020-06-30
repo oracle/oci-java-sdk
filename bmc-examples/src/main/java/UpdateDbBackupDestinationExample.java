@@ -10,10 +10,6 @@ import com.oracle.bmc.database.model.DbBackupConfig;
 import com.oracle.bmc.database.model.UpdateDatabaseDetails;
 import com.oracle.bmc.database.requests.UpdateDatabaseRequest;
 import com.oracle.bmc.database.responses.UpdateDatabaseResponse;
-import com.oracle.bmc.http.ResteasyClientConfigurator;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NonNull;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -41,7 +37,6 @@ public class UpdateDbBackupDestinationExample {
     /**
      * Defines the arguments for this example.
      */
-    @AllArgsConstructor
     private enum Opts {
         DATABASE_OCID("--databaseOcid", "The OCID of a database.", true),
         BACKUP_DESTINATION_OCID(
@@ -50,9 +45,28 @@ public class UpdateDbBackupDestinationExample {
         VPC_USER("--vpcUser", "vpcuser for the ZDLRA type of backup destination", false),
         VPC_PASSWORD(
                 "--vpcPassword", "vpcPassword for the ZDLRA type of backup destination", false);
-        @Getter public final String argName;
-        @Getter public final String description;
-        @Getter public final boolean required;
+
+        Opts(String argName, String description, boolean required) {
+            this.argName = argName;
+            this.description = description;
+            this.required = required;
+        }
+
+        public final String argName;
+        public final String description;
+        public final boolean required;
+
+        public String getArgName() {
+            return argName;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public boolean isRequired() {
+            return required;
+        }
     }
 
     /**
@@ -62,7 +76,11 @@ public class UpdateDbBackupDestinationExample {
      * @return a mapping of argument to its value. Arguments may be missing from the map if they were not supplied by
      * the user and not required.
      */
-    private static Map<Opts, String> parseOpts(@NonNull String[] argv) {
+    private static Map<Opts, String> parseOpts(String[] argv) {
+        if (argv == null) {
+            throw new IllegalArgumentException("Missing arguments to be parsed");
+        }
+
         final Iterable<String> iterable = Arrays.asList(argv);
         final Iterator<String> iterator = iterable.iterator();
         final Map<Opts, String> argsMap = new HashMap<>();

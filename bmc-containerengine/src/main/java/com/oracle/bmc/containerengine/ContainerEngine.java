@@ -7,6 +7,12 @@ package com.oracle.bmc.containerengine;
 import com.oracle.bmc.containerengine.requests.*;
 import com.oracle.bmc.containerengine.responses.*;
 
+/**
+ * API for the Container Engine for Kubernetes service. Use this API to build, deploy,
+ * and manage cloud-native applications. For more information, see
+ * [Overview of Container Engine for Kubernetes](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm).
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public interface ContainerEngine extends AutoCloseable {
 

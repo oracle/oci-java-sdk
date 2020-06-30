@@ -30,6 +30,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Instance.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class Instance {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -603,7 +604,7 @@ public class Instance {
     java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.
+     * The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
@@ -615,7 +616,7 @@ public class Instance {
     InstanceAgentConfig agentConfig;
 
     /**
-     * The date and time the instance is expected to be stopped / started,  in the format defined by RFC3339.
+     * The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time.
      * Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state.
      * Example: `2018-05-25T21:10:29.600Z`

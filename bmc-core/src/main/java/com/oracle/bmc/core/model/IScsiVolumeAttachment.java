@@ -27,6 +27,7 @@ package com.oracle.bmc.core.model;
     property = "attachmentType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class IScsiVolumeAttachment extends VolumeAttachment {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -287,16 +288,15 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.
      * (Also called the \"CHAP password\".)
      * <p>
-     * Example: `d6866c0d-298b-48ba-95af-309b4faux45e`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chapSecret")
     String chapSecret;
 
     /**
-     * The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.
+     * The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.
      * <p>
-     * Example: `ocid1.volume.oc1.phx.abyhqljrgvttnlx73nmrwfaux7kcvzfs3s66izvxf2h4lgvyndsdsnoiwr5q`
+     * Example: `ocid1.volume.oc1.phx.<unique_ID>`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chapUsername")
@@ -312,16 +312,16 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
     String ipv4;
 
     /**
-     * The target volume's iSCSI Qualified Name in the format defined by RFC 3720.
+     * The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).
      * <p>
-     * Example: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`
+     * Example: `iqn.2015-12.us.oracle.com:<CHAP_username>`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iqn")
     String iqn;
 
     /**
-     * The volume's iSCSI port.
+     * The volume's iSCSI port, usually port 860 or 3260.
      * <p>
      * Example: `3260`
      *

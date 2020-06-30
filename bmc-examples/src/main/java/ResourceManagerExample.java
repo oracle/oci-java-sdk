@@ -7,7 +7,6 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.resourcemanager.ResourceManagerClient;
-import com.oracle.bmc.resourcemanager.model.ApplyJobPlanResolution;
 import com.oracle.bmc.resourcemanager.model.CreateApplyJobOperationDetails;
 import com.oracle.bmc.resourcemanager.model.CreateDestroyJobOperationDetails;
 import com.oracle.bmc.resourcemanager.model.CreateImportTfStateJobOperationDetails;
@@ -19,7 +18,6 @@ import com.oracle.bmc.resourcemanager.model.CreateZipUploadConfigSourceDetails;
 import com.oracle.bmc.resourcemanager.model.ApplyJobOperationDetails;
 import com.oracle.bmc.resourcemanager.model.DestroyJobOperationDetails;
 import com.oracle.bmc.resourcemanager.model.Job.LifecycleState;
-import com.oracle.bmc.resourcemanager.model.Job.Operation;
 import com.oracle.bmc.resourcemanager.requests.CreateJobRequest;
 import com.oracle.bmc.resourcemanager.requests.CreateStackRequest;
 import com.oracle.bmc.resourcemanager.requests.DeleteStackRequest;
@@ -38,13 +36,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
-import lombok.extern.slf4j.Slf4j;
 import net.jodah.failsafe.Failsafe;
 import net.jodah.failsafe.RetryPolicy;
 import net.jodah.failsafe.function.Predicate;
 import org.apache.commons.codec.binary.Base64;
 
-@Slf4j
 public class ResourceManagerExample {
 
     private static final String CONFIG_LOCATION = "~/.oci/config";

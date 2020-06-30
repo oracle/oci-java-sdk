@@ -37,6 +37,7 @@ package com.oracle.bmc.core.model;
     builder = CrossConnectGroup.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CrossConnectGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -259,7 +260,7 @@ public class CrossConnectGroup {
     String customerReferenceName;
 
     /**
-     * The date and time the cross-connect group was created, in the format defined by RFC3339.
+     * The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

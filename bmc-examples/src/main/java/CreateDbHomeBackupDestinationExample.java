@@ -8,9 +8,6 @@ import com.oracle.bmc.database.DatabaseClient;
 import com.oracle.bmc.database.model.*;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NonNull;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -40,7 +37,6 @@ public class CreateDbHomeBackupDestinationExample {
     /**
      * Defines the arguments for this example.
      */
-    @AllArgsConstructor
     private enum Opts {
         VM_CLUSTER_OCID("--vmClusterOcid", "The OCID of a VmCluster.", true, null),
         DB_NAME(
@@ -79,10 +75,38 @@ public class CreateDbHomeBackupDestinationExample {
                 "vpcPassword for the ZDLRA type of backup destination",
                 false,
                 null);
-        @Getter public final String argName;
-        @Getter public final String description;
-        @Getter public final boolean required;
-        @Getter public final Function<Object, String> defaultSupplier;
+
+        Opts(
+                String argName,
+                String description,
+                boolean required,
+                Function<Object, String> defaultSupplier) {
+            this.argName = argName;
+            this.description = description;
+            this.required = required;
+            this.defaultSupplier = defaultSupplier;
+        }
+
+        public final String argName;
+        public final String description;
+        public final boolean required;
+        public final Function<Object, String> defaultSupplier;
+
+        public String getArgName() {
+            return argName;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public boolean isRequired() {
+            return required;
+        }
+
+        public Function<Object, String> getDefaultSupplier() {
+            return defaultSupplier;
+        }
     }
 
     /**
@@ -92,7 +116,11 @@ public class CreateDbHomeBackupDestinationExample {
      * @return a mapping of argument to its value. Arguments may be missing from the map if they were not supplied by
      * the user and not required.
      */
-    private static Map<Opts, String> parseOpts(@NonNull String[] argv) {
+    private static Map<Opts, String> parseOpts(String[] argv) {
+
+        if (argv == null) {
+            throw new IllegalArgumentException("Arguments passed are null");
+        }
         final Iterable<String> iterable = Arrays.asList(argv);
         final Iterator<String> iterator = iterable.iterator();
         final Map<Opts, String> argsMap = new HashMap<>();

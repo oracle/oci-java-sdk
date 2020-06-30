@@ -7,6 +7,12 @@ package com.oracle.bmc.healthchecks;
 import com.oracle.bmc.healthchecks.requests.*;
 import com.oracle.bmc.healthchecks.responses.*;
 
+/**
+ * API for the Health Checks service. Use this API to manage endpoint probes and monitors.
+ * For more information, see
+ * [Overview of the Health Checks Service](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Concepts/healthchecks.htm).
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public interface HealthChecksAsync extends AutoCloseable {
 

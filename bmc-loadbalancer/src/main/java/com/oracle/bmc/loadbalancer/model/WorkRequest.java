@@ -23,6 +23,7 @@ package com.oracle.bmc.loadbalancer.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class WorkRequest {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -51,6 +52,15 @@ public class WorkRequest {
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
             return this;
         }
 
@@ -108,6 +118,7 @@ public class WorkRequest {
                             id,
                             loadBalancerId,
                             type,
+                            compartmentId,
                             lifecycleState,
                             message,
                             timeAccepted,
@@ -123,6 +134,7 @@ public class WorkRequest {
                     id(o.getId())
                             .loadBalancerId(o.getLoadBalancerId())
                             .type(o.getType())
+                            .compartmentId(o.getCompartmentId())
                             .lifecycleState(o.getLifecycleState())
                             .message(o.getMessage())
                             .timeAccepted(o.getTimeAccepted())
@@ -163,6 +175,12 @@ public class WorkRequest {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     String type;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
     /**
      * The current state of the work request.
      *

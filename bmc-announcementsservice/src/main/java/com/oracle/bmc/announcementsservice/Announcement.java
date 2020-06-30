@@ -7,6 +7,9 @@ package com.oracle.bmc.announcementsservice;
 import com.oracle.bmc.announcementsservice.requests.*;
 import com.oracle.bmc.announcementsservice.responses.*;
 
+/**
+ * Manage Oracle Cloud Infrastructure console announcements.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public interface Announcement extends AutoCloseable {
 

@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Summary information for an image shape compatibility entry.
+ * Summary information for a compatible image and shape.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -21,6 +21,7 @@ package com.oracle.bmc.core.model;
     builder = ImageShapeCompatibilitySummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class ImageShapeCompatibilitySummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -82,7 +83,7 @@ public class ImageShapeCompatibilitySummary {
     }
 
     /**
-     * The image OCID.
+     * The image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;

@@ -7,6 +7,14 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
+/**
+ * API covering the [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
+ * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services. Use this API
+ * to manage resources such as virtual cloud networks (VCNs), compute instances, and
+ * block storage volumes.
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ComputeAsync extends AutoCloseable {
 
@@ -942,7 +950,7 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the shape compatibilities for the image.
+     * Lists the compatible shapes for the specified image.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

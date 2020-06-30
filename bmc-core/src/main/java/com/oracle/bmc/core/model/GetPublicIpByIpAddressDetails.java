@@ -22,6 +22,7 @@ package com.oracle.bmc.core.model;
     builder = GetPublicIpByIpAddressDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class GetPublicIpByIpAddressDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -63,7 +64,7 @@ public class GetPublicIpByIpAddressDetails {
 
     /**
      * The public IP address.
-     * Example: 129.146.2.1
+     * Example: 203.0.113.2
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")

@@ -46,6 +46,11 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private String vnicId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VLAN.
+     */
+    private String vlanId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPrivateIpsRequest, java.lang.Void> {
@@ -86,6 +91,7 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             ipAddress(o.getIpAddress());
             subnetId(o.getSubnetId());
             vnicId(o.getVnicId());
+            vlanId(o.getVlanId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

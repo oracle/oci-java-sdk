@@ -20,6 +20,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TunnelStatus.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class TunnelStatus {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -93,7 +94,7 @@ public class TunnelStatus {
     /**
      * The IP address of Oracle's VPN headend.
      * <p>
-     * Example: `129.146.17.50`
+     * Example: `203.0.113.50`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -152,7 +153,7 @@ public class TunnelStatus {
     LifecycleState lifecycleState;
 
     /**
-     * The date and time the IPSec connection was created, in the format defined by RFC3339.
+     * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
@@ -161,7 +162,7 @@ public class TunnelStatus {
     java.util.Date timeCreated;
 
     /**
-     * When the state of the tunnel last changed, in the format defined by RFC3339.
+     * When the state of the tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

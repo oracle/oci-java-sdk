@@ -23,7 +23,6 @@ import com.oracle.bmc.events.responses.CreateRuleResponse;
 import com.oracle.bmc.events.responses.GetRuleResponse;
 import com.oracle.bmc.events.responses.UpdateRuleResponse;
 import com.oracle.bmc.model.BmcException;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Closeable;
@@ -41,7 +40,6 @@ import java.util.Map;
  * - deleting a rule
  * - listing all rules in a given compartment
  */
-@Slf4j
 public class EventsServiceExample implements Closeable {
 
     final static String configurationFilePath = "~/.oci/config";
@@ -82,7 +80,8 @@ public class EventsServiceExample implements Closeable {
 
         // We now list all the rules in our compartment
         final List<RuleSummary> rulesList = eventsServiceExample.listRules(compartmentId);
-        LOG.info("Number of rules in compartment {} is {}", compartmentId, rulesList.size());
+        System.out.println(
+                "Number of rules in compartment " + compartmentId + " is " + rulesList.size());
 
         // We delete our Rule
         eventsServiceExample.deleteRule(updatedRule.getId());
@@ -134,19 +133,21 @@ public class EventsServiceExample implements Closeable {
                     this.eventsClient.createRule(createRuleRequest);
 
             final Rule rule = createRuleResponse.getRule();
-            LOG.info(
-                    "Rule {} with displayName {} created in compartment {}",
-                    rule.getId(),
-                    rule.getDisplayName(),
-                    compartmentId);
+            System.out.println(
+                    "Rule "
+                            + rule.getId()
+                            + " with displayName "
+                            + rule.getDisplayName()
+                            + " created in compartment "
+                            + compartmentId);
 
             return rule;
         } catch (final BmcException e) {
-            LOG.error(
-                    "Failed to create Rule in compartment {}. StreamId = {}",
-                    compartmentId,
-                    streamId,
-                    e);
+            System.out.println(
+                    "Failed to create Rule in compartment "
+                            + compartmentId
+                            + "StreamId = "
+                            + streamId);
             throw e;
         }
     }
@@ -163,7 +164,7 @@ public class EventsServiceExample implements Closeable {
             GetRuleResponse ruleResponse = this.eventsClient.getRule(getRuleRequest);
             return ruleResponse.getRule();
         } catch (final BmcException e) {
-            LOG.error("Failed to retrieve the Rule {}", ruleId, e);
+            System.out.println("Failed to retrieve the Rule " + ruleId);
             throw e;
         }
     }
@@ -187,11 +188,12 @@ public class EventsServiceExample implements Closeable {
         try {
             final UpdateRuleResponse updateRuleResponse =
                     eventsClient.updateRule(updateRuleRequest);
-            LOG.info("Rule {} was updated", ruleId);
+            System.out.println("Rule " + ruleId + " was updated");
 
             return updateRuleResponse.getRule();
         } catch (final BmcException e) {
-            LOG.error("Failed to update rule {} with displayName {}", ruleId, newDisplayName, e);
+            System.out.println(
+                    "Failed to update rule " + ruleId + " with displayName " + newDisplayName);
             throw e;
         }
     }
@@ -216,7 +218,7 @@ public class EventsServiceExample implements Closeable {
 
             return allRulesInCompartment;
         } catch (final BmcException e) {
-            LOG.error("Failed to list rules in compartment {}", compartmentId, e);
+            System.out.println("Failed to list rules in compartment " + compartmentId);
             throw e;
         }
     }
@@ -231,9 +233,9 @@ public class EventsServiceExample implements Closeable {
 
         try {
             eventsClient.deleteRule(deleteRuleRequest);
-            LOG.info("Rule {} was deleted", ruleId);
+            System.out.println("Rule " + ruleId + "was deleted");
         } catch (final BmcException e) {
-            LOG.error("Failed to delete rule {}", ruleId, e);
+            System.out.println("Failed to delete rule " + ruleId);
             throw e;
         }
     }

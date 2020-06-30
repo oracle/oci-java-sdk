@@ -5,13 +5,17 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The shape configuration requested for the instance. If provided, the instance will be created
- * with the resources specified. In the case where some properties are missing or
- * the entire parameter is not provided, the instance will be created with the default
- * configuration values for the provided `shape`.
+ * The shape configuration requested for the instance.
  * <p>
- * Each shape only supports certain configurable values. If the values provided are invalid for the
- * provided `shape`, an error will be returned.
+ * If the parameter is provided, the instance is created with the resources that you specify. If some
+ * properties are missing or the entire parameter is not provided, the instance is created
+ * with the default configuration values for the `shape` that you specify.
+ * <p>
+ * Each shape only supports certain configurable values. If the values that you provide are not valid for the
+ * specified `shape`, an error is returned.
+ * <p>
+ * For more information about customizing the resources that are allocated to a flexible shapes,
+ * see [Flexible Shapes](https://docs.cloud.oracle.com/Content/Compute/References/computeshapes.htm#flexible).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -28,6 +32,7 @@ package com.oracle.bmc.core.model;
     builder = LaunchInstanceShapeConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class LaunchInstanceShapeConfigDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)

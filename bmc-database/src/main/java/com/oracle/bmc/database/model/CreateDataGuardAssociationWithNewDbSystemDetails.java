@@ -30,6 +30,7 @@ package com.oracle.bmc.database.model;
     property = "creationType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CreateDataGuardAssociationWithNewDbSystemDetails
         extends CreateDataGuardAssociationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")

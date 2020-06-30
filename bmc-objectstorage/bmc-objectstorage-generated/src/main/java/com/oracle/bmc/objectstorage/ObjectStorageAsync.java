@@ -7,6 +7,12 @@ package com.oracle.bmc.objectstorage;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
 
+/**
+ * Common set of Object Storage and Archive Storage APIs for managing buckets, objects, and related resources.
+ * For more information, see [Overview of Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) and
+ * [Overview of Archive Storage](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ObjectStorageAsync extends AutoCloseable {
 

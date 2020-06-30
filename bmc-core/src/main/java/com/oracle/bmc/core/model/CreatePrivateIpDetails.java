@@ -21,6 +21,7 @@ package com.oracle.bmc.core.model;
     builder = CreatePrivateIpDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CreatePrivateIpDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -80,6 +81,15 @@ public class CreatePrivateIpDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+        private String vlanId;
+
+        public Builder vlanId(String vlanId) {
+            this.vlanId = vlanId;
+            this.__explicitlySet__.add("vlanId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -91,7 +101,8 @@ public class CreatePrivateIpDetails {
                             freeformTags,
                             hostnameLabel,
                             ipAddress,
-                            vnicId);
+                            vnicId,
+                            vlanId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -104,7 +115,8 @@ public class CreatePrivateIpDetails {
                             .freeformTags(o.getFreeformTags())
                             .hostnameLabel(o.getHostnameLabel())
                             .ipAddress(o.getIpAddress())
-                            .vnicId(o.getVnicId());
+                            .vnicId(o.getVnicId())
+                            .vlanId(o.getVlanId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -181,6 +193,16 @@ public class CreatePrivateIpDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     String vnicId;
+
+    /**
+     * Use this attribute only with the Oracle Cloud VMware Solution.
+     * <p>
+     * The OCID of the VLAN from which the private IP is to be drawn. The IP address,
+     * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+    String vlanId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

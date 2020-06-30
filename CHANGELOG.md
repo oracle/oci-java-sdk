@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.19.1 - 2020-06-30
+### Added
+- Support for the Usage service
+- Support for the VMware Provisioning service
+- Support for applying one-off patches to databases in the Database service
+- Support for layer-2 virtualization features on vlans in the Networking service
+- Support for all AttachVolumeDetails and ParavirtualizedAttachVolumeDetails properties on instance configurations in the Compute Management service
+- Support for setting HTTP header size and allowing invalid characters in HTTP request headers in the Load Balancing service
+
 ## 1.19.0 - 2020-06-23
 ### Added
 - Support for the Data Integration service

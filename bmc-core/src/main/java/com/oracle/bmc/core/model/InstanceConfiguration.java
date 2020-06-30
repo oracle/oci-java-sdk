@@ -24,6 +24,7 @@ package com.oracle.bmc.core.model;
     builder = InstanceConfiguration.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class InstanceConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -197,7 +198,7 @@ public class InstanceConfiguration {
     java.util.List<String> deferredFields;
 
     /**
-     * The date and time the instance configuration was created, in the format defined by RFC3339.
+     * The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

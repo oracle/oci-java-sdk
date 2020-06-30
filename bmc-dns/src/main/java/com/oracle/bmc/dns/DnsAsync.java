@@ -7,6 +7,11 @@ package com.oracle.bmc.dns;
 import com.oracle.bmc.dns.requests.*;
 import com.oracle.bmc.dns.responses.*;
 
+/**
+ * API for the DNS service. Use this API to manage DNS zones, records, and other DNS resources.
+ * For more information, see [Overview of the DNS Service](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnszonemanagement.htm).
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public interface DnsAsync extends AutoCloseable {
 

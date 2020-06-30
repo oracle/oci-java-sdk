@@ -7,6 +7,12 @@ package com.oracle.bmc.monitoring;
 import com.oracle.bmc.monitoring.requests.*;
 import com.oracle.bmc.monitoring.responses.*;
 
+/**
+ * Use the Monitoring API to manage metric queries and alarms for assessing the health, capacity, and performance of your cloud resources.
+ * Endpoints vary by operation. For PostMetric, use the `telemetry-ingestion` endpoints; for all other operations, use the `telemetry` endpoints.
+ * For information about monitoring, see [Monitoring Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm).
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public interface Monitoring extends AutoCloseable {
 

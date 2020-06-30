@@ -7,6 +7,9 @@ package com.oracle.bmc.streaming;
 import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
 
+/**
+ * The API for the Streaming Service.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public interface StreamAsync extends AutoCloseable {
 

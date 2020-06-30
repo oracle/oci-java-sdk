@@ -5,9 +5,9 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The possible configurations for the number of OCPUs available to an instance of this shape.
- * If this field is null, then all instances of this shape have a fixed
- * number of OCPUs equal to `ocpus`.
+ * For a flexible shape, the number of OCPUs available for instances that use this shape.
+ * <p>
+ * If this field is null, then this shape has a fixed number of OCPUs equal to `ocpus`.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -22,6 +22,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShapeOcpuOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class ShapeOcpuOptions {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)

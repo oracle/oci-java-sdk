@@ -25,6 +25,7 @@ package com.oracle.bmc.core.model;
     builder = CreateVnicDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CreateVnicDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -111,6 +112,15 @@ public class CreateVnicDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+        private String vlanId;
+
+        public Builder vlanId(String vlanId) {
+            this.vlanId = vlanId;
+            this.__explicitlySet__.add("vlanId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -125,7 +135,8 @@ public class CreateVnicDetails {
                             nsgIds,
                             privateIp,
                             skipSourceDestCheck,
-                            subnetId);
+                            subnetId,
+                            vlanId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -141,7 +152,8 @@ public class CreateVnicDetails {
                             .nsgIds(o.getNsgIds())
                             .privateIp(o.getPrivateIp())
                             .skipSourceDestCheck(o.getSkipSourceDestCheck())
-                            .subnetId(o.getSubnetId());
+                            .subnetId(o.getSubnetId())
+                            .vlanId(o.getVlanId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -239,6 +251,11 @@ public class CreateVnicDetails {
      * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
      * information about NSGs, see
      * {@link NetworkSecurityGroup}.
+     * <p>
+     * If a `vlanId` is specified, the `nsgIds` is ignored. The `vlanId`
+     * indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
+     * all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
+     * See {@link Vlan}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -253,6 +270,11 @@ public class CreateVnicDetails {
      * {@link PrivateIp} object returned by
      * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
      * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
+     * <p>
+     *
+     * If you specify a `vlanId`, the `privateIp` is ignored.
+     * See {@link Vlan}.
+     * <p>
      * Example: `10.0.3.3`
      *
      **/
@@ -265,6 +287,11 @@ public class CreateVnicDetails {
      * about why you would skip the source/destination check, see
      * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
+     *
+     * If you specify a `vlanId`, the `skipSourceDestCheck` is ignored because the
+     * source/destination check is always disabled for VNICs in a VLAN. See
+     * {@link Vlan}.
+     * <p>
      * Example: `true`
      *
      **/
@@ -276,10 +303,26 @@ public class CreateVnicDetails {
      * use this `subnetId` instead of the deprecated `subnetId` in
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * At least one of them is required; if you provide both, the values must match.
+     * <p>
+     * If you are an Oracle Cloud VMware Solution customer and creating a secondary
+     * VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
+     * If you provide both a `vlanId` and `subnetId`, the request fails.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * Provide this attribute only if you are an Oracle Cloud VMware Solution
+     * customer and creating a secondary VNIC in a VLAN. The value is the OCID of the VLAN.
+     * See {@link Vlan}.
+     * <p>
+     * Provide a `vlanId` instead of a `subnetId`. If you provide both a
+     * `vlanId` and `subnetId`, the request fails.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+    String vlanId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -22,6 +22,7 @@ package com.oracle.bmc.database.model;
     builder = UpdateDbHomeDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class UpdateDbHomeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -32,6 +33,15 @@ public class UpdateDbHomeDetails {
         public Builder dbVersion(PatchDetails dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("oneOffPatches")
+        private java.util.List<String> oneOffPatches;
+
+        public Builder oneOffPatches(java.util.List<String> oneOffPatches) {
+            this.oneOffPatches = oneOffPatches;
+            this.__explicitlySet__.add("oneOffPatches");
             return this;
         }
 
@@ -59,7 +69,7 @@ public class UpdateDbHomeDetails {
 
         public UpdateDbHomeDetails build() {
             UpdateDbHomeDetails __instance__ =
-                    new UpdateDbHomeDetails(dbVersion, freeformTags, definedTags);
+                    new UpdateDbHomeDetails(dbVersion, oneOffPatches, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,6 +78,7 @@ public class UpdateDbHomeDetails {
         public Builder copy(UpdateDbHomeDetails o) {
             Builder copiedBuilder =
                     dbVersion(o.getDbVersion())
+                            .oneOffPatches(o.getOneOffPatches())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -85,6 +96,12 @@ public class UpdateDbHomeDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     PatchDetails dbVersion;
+
+    /**
+     * List of one-off patches for Database Homes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oneOffPatches")
+    java.util.List<String> oneOffPatches;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

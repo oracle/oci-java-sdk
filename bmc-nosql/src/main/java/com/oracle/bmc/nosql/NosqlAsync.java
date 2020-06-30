@@ -7,6 +7,13 @@ package com.oracle.bmc.nosql;
 import com.oracle.bmc.nosql.requests.*;
 import com.oracle.bmc.nosql.responses.*;
 
+/**
+ * The control plane API for NoSQL Database Cloud Service HTTPS
+ * provides endpoints to perform NDCS operations, including creation
+ * and deletion of tables and indexes; population and access of data
+ * in tables; and access of table usage metrics.
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 public interface NosqlAsync extends AutoCloseable {
 

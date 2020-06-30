@@ -54,6 +54,10 @@ package com.oracle.bmc.loadbalancer.model;
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AllowRule.class, name = "ALLOW"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HttpHeaderRule.class,
+        name = "HTTP_HEADER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AddHttpResponseHeaderRule.class,
         name = "ADD_HTTP_RESPONSE_HEADER"
     ),
@@ -78,6 +82,7 @@ public class Rule {
         Allow("ALLOW"),
         ControlAccessUsingHttpMethods("CONTROL_ACCESS_USING_HTTP_METHODS"),
         Redirect("REDIRECT"),
+        HttpHeader("HTTP_HEADER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

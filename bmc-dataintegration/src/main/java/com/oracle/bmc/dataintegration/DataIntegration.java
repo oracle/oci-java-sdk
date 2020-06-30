@@ -7,6 +7,9 @@ package com.oracle.bmc.dataintegration;
 import com.oracle.bmc.dataintegration.requests.*;
 import com.oracle.bmc.dataintegration.responses.*;
 
+/**
+ * Use the Data Integration Service APIs to perform common extract, load, and transform (ETL) tasks.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public interface DataIntegration extends AutoCloseable {
 
