@@ -21,6 +21,7 @@ package com.oracle.bmc.core.model;
     builder = InstanceConfigurationLaunchInstanceAgentConfigDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class InstanceConfigurationLaunchInstanceAgentConfigDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)

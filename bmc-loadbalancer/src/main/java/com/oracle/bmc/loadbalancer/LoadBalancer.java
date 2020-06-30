@@ -7,6 +7,11 @@ package com.oracle.bmc.loadbalancer;
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 
+/**
+ * API for the Load Balancing service. Use this API to manage load balancers, backend sets, and related items. For more
+ * information, see [Overview of Load Balancing](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public interface LoadBalancer extends AutoCloseable {
 

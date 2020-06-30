@@ -21,6 +21,7 @@ package com.oracle.bmc.resourcesearch.model;
     builder = ResourceSummaryCollection.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class ResourceSummaryCollection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)

@@ -27,6 +27,7 @@ package com.oracle.bmc.core.model;
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class InstanceConfigurationIscsiAttachVolumeDetails
         extends InstanceConfigurationAttachVolumeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -50,6 +51,24 @@ public class InstanceConfigurationIscsiAttachVolumeDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("device")
+        private String device;
+
+        public Builder device(String device) {
+            this.device = device;
+            this.__explicitlySet__.add("device");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
+        private Boolean isShareable;
+
+        public Builder isShareable(Boolean isShareable) {
+            this.isShareable = isShareable;
+            this.__explicitlySet__.add("isShareable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("useChap")
         private Boolean useChap;
 
@@ -65,7 +84,7 @@ public class InstanceConfigurationIscsiAttachVolumeDetails
         public InstanceConfigurationIscsiAttachVolumeDetails build() {
             InstanceConfigurationIscsiAttachVolumeDetails __instance__ =
                     new InstanceConfigurationIscsiAttachVolumeDetails(
-                            displayName, isReadOnly, useChap);
+                            displayName, isReadOnly, device, isShareable, useChap);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,6 +94,8 @@ public class InstanceConfigurationIscsiAttachVolumeDetails
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .isReadOnly(o.getIsReadOnly())
+                            .device(o.getDevice())
+                            .isShareable(o.getIsShareable())
                             .useChap(o.getUseChap());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -91,8 +112,12 @@ public class InstanceConfigurationIscsiAttachVolumeDetails
 
     @Deprecated
     public InstanceConfigurationIscsiAttachVolumeDetails(
-            String displayName, Boolean isReadOnly, Boolean useChap) {
-        super(displayName, isReadOnly);
+            String displayName,
+            Boolean isReadOnly,
+            String device,
+            Boolean isShareable,
+            Boolean useChap) {
+        super(displayName, isReadOnly, device, isShareable);
         this.useChap = useChap;
     }
 

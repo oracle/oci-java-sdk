@@ -37,6 +37,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DhcpOptions.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class DhcpOptions {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -267,7 +268,7 @@ public class DhcpOptions {
     java.util.List<DhcpOption> options;
 
     /**
-     * Date and time the set of DHCP options was created, in the format defined by RFC3339.
+     * Date and time the set of DHCP options was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

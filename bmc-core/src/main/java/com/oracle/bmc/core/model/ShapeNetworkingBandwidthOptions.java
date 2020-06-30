@@ -5,7 +5,10 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The possible configurations for the amount of networking bandwidth available to an instance of this shape. If this field is null, then all instances of this shape have a fixed amount of bandwidth equivalent to `networkingBandwidthInGbps`.
+ * For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+ * <p>
+ * If this field is null, then this shape has a fixed amount of bandwidth equivalent to `networkingBandwidthInGbps`.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -21,6 +24,7 @@ package com.oracle.bmc.core.model;
     builder = ShapeNetworkingBandwidthOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class ShapeNetworkingBandwidthOptions {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -96,8 +100,7 @@ public class ShapeNetworkingBandwidthOptions {
     Float maxInGbps;
 
     /**
-     * The default amount of networking bandwidth, in gigabits per second,
-     * per OCPU.
+     * The default amount of networking bandwidth per OCPU, in gigabits per second.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGbps")

@@ -21,6 +21,7 @@ package com.oracle.bmc.core.model;
     builder = CreateIpv6Details.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CreateIpv6Details {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -152,7 +153,7 @@ public class CreateIpv6Details {
      * assigns an IPv6 address from the subnet. The subnet is the one that
      * contains the VNIC you specify in `vnicId`.
      * <p>
-     * Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
+     * Example: `2001:DB8::`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")

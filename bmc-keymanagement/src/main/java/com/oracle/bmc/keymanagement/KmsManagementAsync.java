@@ -7,6 +7,9 @@ package com.oracle.bmc.keymanagement;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
+/**
+ * API for managing and performing operations with keys and vaults.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsManagementAsync extends AutoCloseable {
 

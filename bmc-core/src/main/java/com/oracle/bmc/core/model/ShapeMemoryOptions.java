@@ -5,9 +5,9 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The possible configurations for the amount of memory available to an instance of this shape.
- * If this field is null, then all instances of this shape have a fixed
- * amount of memory equivalent to `memoryInGBs`.
+ * For a flexible shape, the amount of memory available for instances that use this shape.
+ * <p>
+ * If this field is null, then this shape has a fixed amount of memory equivalent to `memoryInGBs`.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -24,6 +24,7 @@ package com.oracle.bmc.core.model;
     builder = ShapeMemoryOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class ShapeMemoryOptions {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -99,8 +100,7 @@ public class ShapeMemoryOptions {
     Float maxInGBs;
 
     /**
-     * The default amount of memory, in gigabytes, per OCPU available to an instance
-     * of this shape.
+     * The default amount of memory per OCPU available for this shape, in gigabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")

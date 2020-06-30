@@ -7,6 +7,9 @@ package com.oracle.bmc.waas;
 import com.oracle.bmc.waas.requests.*;
 import com.oracle.bmc.waas.responses.*;
 
+/**
+ * OCI Web Application Acceleration and Security Services
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public interface Redirect extends AutoCloseable {
 

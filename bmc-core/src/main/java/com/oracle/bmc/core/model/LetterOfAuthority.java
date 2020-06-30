@@ -23,6 +23,7 @@ package com.oracle.bmc.core.model;
     builder = LetterOfAuthority.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class LetterOfAuthority {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -206,14 +207,14 @@ public class LetterOfAuthority {
     String portName;
 
     /**
-     * The date and time when the Letter of Authority expires, in the format defined by RFC3339.
+     * The date and time when the Letter of Authority expires, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     java.util.Date timeExpires;
 
     /**
-     * The date and time the Letter of Authority was created, in the format defined by RFC3339.
+     * The date and time the Letter of Authority was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

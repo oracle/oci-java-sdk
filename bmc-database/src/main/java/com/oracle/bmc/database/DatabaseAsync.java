@@ -7,6 +7,10 @@ package com.oracle.bmc.database;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
 
+/**
+ * The API for the Database Service. Use this API to manage resources such as databases and DB Systems. For more information, see [Overview of the Database Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface DatabaseAsync extends AutoCloseable {
 

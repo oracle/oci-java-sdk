@@ -21,6 +21,7 @@ package com.oracle.bmc.dns.model;
     builder = SteeringPolicyPriorityAnswerData.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class SteeringPolicyPriorityAnswerData {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)

@@ -71,6 +71,14 @@ public class ListPrivateIpsConverter {
                                     request.getVnicId()));
         }
 
+        if (request.getVlanId() != null) {
+            target =
+                    target.queryParam(
+                            "vlanId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVlanId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

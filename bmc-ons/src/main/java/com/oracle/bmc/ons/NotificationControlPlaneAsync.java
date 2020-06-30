@@ -7,6 +7,11 @@ package com.oracle.bmc.ons;
 import com.oracle.bmc.ons.requests.*;
 import com.oracle.bmc.ons.responses.*;
 
+/**
+ * Use the Notifications API to broadcast messages to distributed components by topic, using a publish-subscribe pattern.
+ * For information about managing topics, subscriptions, and messages, see [Notifications Overview](https://docs.cloud.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm).
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public interface NotificationControlPlaneAsync extends AutoCloseable {
 

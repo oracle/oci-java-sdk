@@ -19,6 +19,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateCpeDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CreateCpeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -151,7 +152,7 @@ public class CreateCpeDetails {
     /**
      * The public IP address of the on-premises router.
      * <p>
-     * Example: `143.19.23.16`
+     * Example: `203.0.113.2`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")

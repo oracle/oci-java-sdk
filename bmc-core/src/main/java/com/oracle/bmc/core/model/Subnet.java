@@ -31,6 +31,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subnet.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class Subnet {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -306,7 +307,7 @@ public class Subnet {
     /**
      * The subnet's CIDR block.
      * <p>
-     * Example: `172.16.1.0/24`
+     * Example: `10.0.1.0/24`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
@@ -509,7 +510,7 @@ public class Subnet {
     String subnetDomainName;
 
     /**
-     * The date and time the subnet was created, in the format defined by RFC3339.
+     * The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
@@ -535,7 +536,7 @@ public class Subnet {
     /**
      * The MAC address of the virtual router.
      * <p>
-     * Example: `00:00:17:B6:4D:DD`
+     * Example: `00:00:00:00:00:01`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterMac")

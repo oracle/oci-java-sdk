@@ -19,9 +19,6 @@ import com.oracle.bmc.database.responses.CreateDbHomeResponse;
 import com.oracle.bmc.database.responses.GetDbHomeResponse;
 import com.oracle.bmc.database.responses.GetVmClusterResponse;
 import com.oracle.bmc.database.responses.ListDbHomesResponse;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NonNull;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -55,7 +52,6 @@ public class ExaCCDbHomeExample {
     /**
      * Defines the arguments for this example.
      */
-    @AllArgsConstructor
     private enum Opts {
         VM_CLUSTER_OCID("--vmClusterOcid", "The OCID of a VmCluster.", true, null),
         DB_NAME(
@@ -84,10 +80,38 @@ public class ExaCCDbHomeExample {
                         "The version to use. Defaults to %s if not specified.", DEFAULT_VERSION),
                 false,
                 o -> DEFAULT_VERSION);
-        @Getter public final String argName;
-        @Getter public final String description;
-        @Getter public final boolean required;
-        @Getter public final Function<Object, String> defaultSupplier;
+
+        Opts(
+                String argName,
+                String description,
+                boolean required,
+                Function<Object, String> defaultSupplier) {
+            this.argName = argName;
+            this.description = description;
+            this.required = required;
+            this.defaultSupplier = defaultSupplier;
+        }
+
+        public final String argName;
+        public final String description;
+        public final boolean required;
+        public final Function<Object, String> defaultSupplier;
+
+        public String getArgName() {
+            return argName;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public boolean isRequired() {
+            return required;
+        }
+
+        public Function<Object, String> getDefaultSupplier() {
+            return defaultSupplier;
+        }
     }
 
     /**
@@ -97,7 +121,10 @@ public class ExaCCDbHomeExample {
      * @return a mapping of argument to its value. Arguments may be missing from the map if they were not supplied by
      * the user and not required.
      */
-    private static Map<Opts, String> parseOpts(@NonNull String[] argv) {
+    private static Map<Opts, String> parseOpts(String[] argv) {
+        if (argv == null) {
+            throw new IllegalArgumentException("Arguments passed are null");
+        }
         final Iterable<String> iterable = Arrays.asList(argv);
         final Iterator<String> iterator = iterable.iterator();
         final Map<Opts, String> argsMap = new HashMap<>();
@@ -136,12 +163,22 @@ public class ExaCCDbHomeExample {
      * @return the OCID of the DbHome that is created
      */
     private static String create(
-            @NonNull final String vmClusterOcid,
-            @NonNull final DatabaseClient client,
-            @NonNull final String dbName,
-            @NonNull final String dbUniqueName,
-            @NonNull final String dbPassword,
-            @NonNull final String version) {
+            final String vmClusterOcid,
+            final DatabaseClient client,
+            final String dbName,
+            final String dbUniqueName,
+            final String dbPassword,
+            final String version) {
+
+        if (vmClusterOcid == null
+                || client == null
+                || dbName == null
+                || dbUniqueName == null
+                || dbPassword == null
+                || version == null) {
+            System.out.println(
+                    "vmClusterId, client, dbName, dbUniqueName, dbpassword or version is null. Please check if this values are valid");
+        }
 
         System.out.println(
                 String.format(
@@ -191,7 +228,11 @@ public class ExaCCDbHomeExample {
      * @return a Collection of OCIDs of the DbHomes
      */
     private static Collection<String> list(
-            @NonNull final String vmClusterOcid, @NonNull final DatabaseClient client) {
+            final String vmClusterOcid, final DatabaseClient client) {
+
+        if (vmClusterOcid == null || client == null) {
+            throw new RuntimeException("vmClusterId or client is null");
+        }
 
         System.out.printf("Listing dbHomes for VmCluster: %s ... %n", vmClusterOcid);
 
@@ -228,9 +269,12 @@ public class ExaCCDbHomeExample {
      * @param client     the DatabaseClient instance to be used
      * @return the OCID of the DbHome that was fetched.
      */
-    public static String get(
-            @NonNull final String dbHomeOcid, @NonNull final DatabaseClient client) {
+    public static String get(final String dbHomeOcid, final DatabaseClient client) {
 
+        if (dbHomeOcid == null || client == null) {
+            throw new IllegalArgumentException(
+                    "dbHomeOcid or client is null. Please provide valid values");
+        }
         System.out.println("Getting dbHome...");
 
         final GetDbHomeRequest request = GetDbHomeRequest.builder().dbHomeId(dbHomeOcid).build();

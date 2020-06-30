@@ -32,11 +32,9 @@ import com.oracle.bmc.core.responses.CreateSubnetResponse;
 import com.oracle.bmc.core.responses.CreateVcnResponse;
 import com.oracle.bmc.core.responses.GetSecurityListResponse;
 import com.oracle.bmc.core.responses.UpdateSecurityListResponse;
-import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -53,7 +51,11 @@ public class DatabaseExampleHelper {
         Tcp(6),
         Udp(17);
 
-        @Getter private final Integer protocolNumber;
+        private final Integer protocolNumber;
+
+        public Integer getProtocolNumber() {
+            return protocolNumber;
+        }
 
         NetworkProtocol(Integer protocol) {
             this.protocolNumber = protocol;

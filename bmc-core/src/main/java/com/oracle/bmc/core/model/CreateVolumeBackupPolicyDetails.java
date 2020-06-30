@@ -25,6 +25,7 @@ package com.oracle.bmc.core.model;
     builder = CreateVolumeBackupPolicyDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CreateVolumeBackupPolicyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -137,7 +138,8 @@ public class CreateVolumeBackupPolicyDetails {
     String displayName;
 
     /**
-     * The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example: `us-ashburn-1`
+     * The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`.
+     * See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")

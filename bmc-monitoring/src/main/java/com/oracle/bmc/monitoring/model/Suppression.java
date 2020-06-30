@@ -23,6 +23,7 @@ package com.oracle.bmc.monitoring.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Suppression.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class Suppression {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)

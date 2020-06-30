@@ -23,6 +23,7 @@ package com.oracle.bmc.core.model;
     builder = InstanceShapeConfig.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class InstanceShapeConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -171,21 +172,21 @@ public class InstanceShapeConfig {
     Float ocpus;
 
     /**
-     * The total amount of memory, in gigabytes, available to the instance.
+     * The total amount of memory available to the instance, in gigabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     Float memoryInGBs;
 
     /**
-     * A short description of the processors available to the instance.
+     * A short description of the instance's processor (CPU).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     String processorDescription;
 
     /**
-     * The networking bandwidth, in gigabits per second, available to the instance.
+     * The networking bandwidth available to the instance, in gigabits per second.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
@@ -199,15 +200,16 @@ public class InstanceShapeConfig {
     Integer maxVnicAttachments;
 
     /**
-     * The number of GPUs available to this instance.
+     * The number of GPUs available to the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpus")
     Integer gpus;
 
     /**
-     * A short description of the GPUs available to this instance.
-     * This field is `null` if `gpus` is `0`.
+     * A short description of the instance's graphics processing unit (GPU).
+     * <p>
+     * If the instance does not have any GPUs, this field is `null`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
@@ -221,8 +223,9 @@ public class InstanceShapeConfig {
     Integer localDisks;
 
     /**
-     * The size of the local disks, aggregated, in gigabytes.
-     * This field is `null` if `localDisks` is equal to `0`.
+     * The aggregate size of all local disks, in gigabytes.
+     * <p>
+     * If the instance does not have any local disks, this field is `null`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
@@ -230,7 +233,8 @@ public class InstanceShapeConfig {
 
     /**
      * A short description of the local disks available to this instance.
-     * This field is `null` if `localDisks` is equal to `0`.
+     * <p>
+     * If the instance does not have any local disks, this field is `null`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")

@@ -24,7 +24,6 @@ import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
 import com.oracle.bmc.responses.AsyncHandler;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.ws.rs.client.ClientBuilder;
 import java.io.ByteArrayInputStream;
@@ -39,7 +38,6 @@ import java.util.concurrent.Future;
  *
  * <scope>provided</scope> <!-- When running the Resteasy examples, comment out this line. -->
  */
-@Slf4j
 public class ResteasyClientWithObjectStorageExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";

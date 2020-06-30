@@ -19,6 +19,7 @@ package com.oracle.bmc.datacatalog.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobMetricSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class JobMetricSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)

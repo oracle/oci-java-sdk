@@ -7,6 +7,9 @@ package com.oracle.bmc.oda;
 import com.oracle.bmc.oda.requests.*;
 import com.oracle.bmc.oda.responses.*;
 
+/**
+ * API to create and maintain Oracle Digital Assistant service instances.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public interface OdaAsync extends AutoCloseable {
 

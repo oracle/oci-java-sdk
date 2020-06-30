@@ -7,6 +7,14 @@ package com.oracle.bmc.email;
 import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
 
+/**
+ * API for the Email Delivery service. Use this API to send high-volume, application-generated
+ * emails. For more information, see [Overview of the Email Delivery Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
+ *
+ *
+ **Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be reflected by the API. If a subsequent read request fails to reflect your changes, wait a few minutes and try again.
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public interface EmailAsync extends AutoCloseable {
 

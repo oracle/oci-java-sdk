@@ -28,6 +28,7 @@ package com.oracle.bmc.database.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbHomeSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class DbHomeSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -131,6 +132,15 @@ public class DbHomeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("oneOffPatches")
+        private java.util.List<String> oneOffPatches;
+
+        public Builder oneOffPatches(java.util.List<String> oneOffPatches) {
+            this.oneOffPatches = oneOffPatches;
+            this.__explicitlySet__.add("oneOffPatches");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -167,6 +177,7 @@ public class DbHomeSummary {
                             dbHomeLocation,
                             lifecycleDetails,
                             timeCreated,
+                            oneOffPatches,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -187,6 +198,7 @@ public class DbHomeSummary {
                             .dbHomeLocation(o.getDbHomeLocation())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
+                            .oneOffPatches(o.getOneOffPatches())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -316,6 +328,12 @@ public class DbHomeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * List of one-off patches for Database Homes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oneOffPatches")
+    java.util.List<String> oneOffPatches;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

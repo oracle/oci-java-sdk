@@ -17,6 +17,12 @@ package com.oracle.bmc.core.model;
  * information, see {@link #createPrivateIp(CreatePrivateIpRequest) createPrivateIp} and
  * [IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm).
  * <p>
+ *
+ * If you are an Oracle Cloud VMware Solution customer, you will have secondary VNICs
+ * that reside in a VLAN instead of a subnet. These VNICs have other differences, which
+ * are called out in the descriptions of the relevant attributes in the `Vnic` object.
+ * Also see {@link Vlan}.
+ * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
@@ -37,6 +43,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vnic.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class Vnic {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -141,6 +148,15 @@ public class Vnic {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+        private String vlanId;
+
+        public Builder vlanId(String vlanId) {
+            this.vlanId = vlanId;
+            this.__explicitlySet__.add("vlanId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
@@ -203,6 +219,7 @@ public class Vnic {
                             lifecycleState,
                             macAddress,
                             nsgIds,
+                            vlanId,
                             privateIp,
                             publicIp,
                             skipSourceDestCheck,
@@ -226,6 +243,7 @@ public class Vnic {
                             .lifecycleState(o.getLifecycleState())
                             .macAddress(o.getMacAddress())
                             .nsgIds(o.getNsgIds())
+                            .vlanId(o.getVlanId())
                             .privateIp(o.getPrivateIp())
                             .publicIp(o.getPublicIp())
                             .skipSourceDestCheck(o.getSkipSourceDestCheck())
@@ -374,20 +392,38 @@ public class Vnic {
     /**
      * The MAC address of the VNIC.
      * <p>
-     * Example: `00:00:17:B6:4D:DD`
+     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+     * the MAC address is learned. If the VNIC belongs to a subnet, the
+     * MAC address is a static, Oracle-provided value.
+     * <p>
+     * Example: `00:00:00:00:00:01`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
     String macAddress;
 
     /**
-     * A list of the OCIDs of the network security groups that the VNIC belongs to. For more
-     * information about NSGs, see
+     * A list of the OCIDs of the network security groups that the VNIC belongs to.
+     * <p>
+     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the value of the `nsgIds` attribute is ignored. Instead, the
+     * VNIC belongs to the NSGs that are associated with the VLAN itself. See {@link Vlan}.
+     * <p>
+     * For more information about NSGs, see
      * {@link NetworkSecurityGroup}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     java.util.List<String> nsgIds;
+
+    /**
+     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the `vlanId` is the OCID of the VLAN the VNIC is in. See
+     * {@link Vlan}. If the VNIC is instead in a subnet, `subnetId` has a value.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+    String vlanId;
 
     /**
      * The private IP address of the primary `privateIp` object on the VNIC.
@@ -412,6 +448,11 @@ public class Vnic {
      * about why you would skip the source/destination check, see
      * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
+     *
+     * If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+     * belonging to a subnet), the `skipSourceDestCheck` attribute is `true`.
+     * This is because the source/destination check is always disabled for VNICs in a VLAN.
+     * <p>
      * Example: `true`
      *
      **/
@@ -425,7 +466,7 @@ public class Vnic {
     String subnetId;
 
     /**
-     * The date and time the VNIC was created, in the format defined by RFC3339.
+     * The date and time the VNIC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

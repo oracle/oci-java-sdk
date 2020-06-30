@@ -19,6 +19,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateVcnDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CreateVcnDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -141,7 +142,7 @@ public class CreateVcnDetails {
     /**
      * The CIDR IP address block of the VCN.
      * <p>
-     * Example: `172.16.0.0/16`
+     * Example: `10.0.0.0/16`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")

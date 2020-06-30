@@ -27,6 +27,7 @@ package com.oracle.bmc.autoscaling.model;
     property = "policyType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class UpdateScheduledPolicyDetails extends UpdateAutoScalingPolicyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)

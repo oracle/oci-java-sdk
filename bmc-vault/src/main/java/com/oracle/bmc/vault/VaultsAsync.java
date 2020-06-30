@@ -7,6 +7,9 @@ package com.oracle.bmc.vault;
 import com.oracle.bmc.vault.requests.*;
 import com.oracle.bmc.vault.responses.*;
 
+/**
+ * API for managing secrets.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public interface VaultsAsync extends AutoCloseable {
 

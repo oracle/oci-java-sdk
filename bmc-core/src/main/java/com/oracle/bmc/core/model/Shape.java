@@ -6,7 +6,8 @@ package com.oracle.bmc.core.model;
 
 /**
  * A compute instance shape that can be used in {@link #launchInstance(LaunchInstanceRequest) launchInstance}.
- * For more information, see [Overview of the Compute Service](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
+ * For more information, see [Overview of the Compute Service](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm) and
+ * [Compute Shapes](https://docs.cloud.oracle.com/Content/Compute/References/computeshapes.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -21,6 +22,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Shape.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class Shape {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -227,73 +229,76 @@ public class Shape {
     String shape;
 
     /**
-     * A short description of the processors available to an instance of this shape.
+     * A short description of the shape's processor (CPU).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     String processorDescription;
 
     /**
-     * The default number of OCPUs available to an instance of this shape.
+     * The default number of OCPUs available for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     Float ocpus;
 
     /**
-     * The default amount of memory, in gigabytes, available to an instance of this shape.
+     * The default amount of memory available for this shape, in gigabytes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     Float memoryInGBs;
 
     /**
-     * The networking bandwidth, in gigabits per second, available to an instance of this shape.
+     * The networking bandwidth available for this shape, in gigabits per second.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
     Float networkingBandwidthInGbps;
 
     /**
-     * The maximum number of VNIC attachments available to an instance of this shape.
+     * The maximum number of VNIC attachments available for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachments")
     Integer maxVnicAttachments;
 
     /**
-     * The number of GPUs available to an instance of this shape.
+     * The number of GPUs available for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpus")
     Integer gpus;
 
     /**
-     * A short description of the GPUs available to instances of this shape.
-     * This field is `null` if `gpus` is `0`.
+     * A short description of the graphics processing unit (GPU) available for this shape.
+     * <p>
+     * If the shape does not have any GPUs, this field is `null`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
     String gpuDescription;
 
     /**
-     * The number of local disks available to the instance.
+     * The number of local disks available for this shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisks")
     Integer localDisks;
 
     /**
-     * The size of the local disks, aggregated, in gigabytes.
-     * This field is `null` if `localDisks` is equal to `0`.
+     * The aggregate size of the local disks available for this shape, in gigabytes.
+     * <p>
+     * If the shape does not have any local disks, this field is `null`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
     Float localDisksTotalSizeInGBs;
 
     /**
-     * A short description of the local disks available to instances of this shape.
-     * This field is `null` if `localDisks` is equal to `0`.
+     * A short description of the local disks available for this shape.
+     * <p>
+     * If the shape does not have any local disks, this field is `null`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")

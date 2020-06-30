@@ -7,6 +7,12 @@ package com.oracle.bmc.bds;
 import com.oracle.bmc.bds.requests.*;
 import com.oracle.bmc.bds.responses.*;
 
+/**
+ * API for the Big Data Service. Use this API to build, deploy, and manage fully elastic Big Data Service
+ * build on Hadoop, Spark and Data Science distribution, which can be fully integrated with existing enterprise
+ * data in Oracle Database and Oracle Applications..
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public interface Bds extends AutoCloseable {
 

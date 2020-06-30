@@ -22,7 +22,6 @@ import com.oracle.bmc.identity.responses.GetUserResponse;
 import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
 import com.oracle.bmc.identity.responses.UpdateUserResponse;
 import com.oracle.bmc.responses.AsyncHandler;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.ws.rs.client.ClientBuilder;
 import java.util.concurrent.CountDownLatch;
@@ -30,7 +29,6 @@ import java.util.concurrent.CountDownLatch;
 /**
  * An example to demonstrate how to use resteasy client with JavaSDK.
  */
-@Slf4j
 public class ResteasyClientExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";

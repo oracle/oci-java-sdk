@@ -21,6 +21,7 @@ package com.oracle.bmc.core.model;
     builder = IPSecConnectionTunnelSharedSecret.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class IPSecConnectionTunnelSharedSecret {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -62,8 +63,6 @@ public class IPSecConnectionTunnelSharedSecret {
 
     /**
      * The tunnel's shared secret (pre-shared key).
-     * <p>
-     * Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")

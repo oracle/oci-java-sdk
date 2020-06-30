@@ -29,6 +29,7 @@ package com.oracle.bmc.core.model;
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BootVolumeBackup.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class BootVolumeBackup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -298,7 +299,7 @@ public class BootVolumeBackup {
 
     /**
      * The date and time the volume backup will expire and be automatically deleted.
-     * Format defined by RFC3339. This parameter will always be present for backups that
+     * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that
      * were created automatically by a scheduled-backup policy. For manually created backups,
      * it will be absent, signifying that there is no expiration time and the backup will
      * last forever until manually deleted.
@@ -460,14 +461,14 @@ public class BootVolumeBackup {
 
     /**
      * The date and time the boot volume backup was created. This is the time the actual point-in-time image
-     * of the volume data was taken. Format defined by RFC3339.
+     * of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The date and time the request to create the boot volume backup was received. Format defined by RFC3339.
+     * The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")

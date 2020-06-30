@@ -3603,4 +3603,112 @@ public class VirtualNetworkPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listVlans operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListVlansResponse> listVlansResponseIterator(final ListVlansRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVlansRequest.Builder, ListVlansRequest, ListVlansResponse>(
+                new com.google.common.base.Supplier<ListVlansRequest.Builder>() {
+                    @Override
+                    public ListVlansRequest.Builder get() {
+                        return ListVlansRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVlansResponse, String>() {
+                    @Override
+                    public String apply(ListVlansResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVlansRequest.Builder>,
+                        ListVlansRequest>() {
+                    @Override
+                    public ListVlansRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVlansRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListVlansRequest, ListVlansResponse>() {
+                    @Override
+                    public ListVlansResponse apply(ListVlansRequest request) {
+                        return client.listVlans(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Vlan} objects
+     * contained in responses from the listVlans operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Vlan} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.Vlan> listVlansRecordIterator(
+            final ListVlansRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVlansRequest.Builder, ListVlansRequest, ListVlansResponse,
+                com.oracle.bmc.core.model.Vlan>(
+                new com.google.common.base.Supplier<ListVlansRequest.Builder>() {
+                    @Override
+                    public ListVlansRequest.Builder get() {
+                        return ListVlansRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVlansResponse, String>() {
+                    @Override
+                    public String apply(ListVlansResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVlansRequest.Builder>,
+                        ListVlansRequest>() {
+                    @Override
+                    public ListVlansRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVlansRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListVlansRequest, ListVlansResponse>() {
+                    @Override
+                    public ListVlansResponse apply(ListVlansRequest request) {
+                        return client.listVlans(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVlansResponse, java.util.List<com.oracle.bmc.core.model.Vlan>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.Vlan> apply(
+                            ListVlansResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
 }

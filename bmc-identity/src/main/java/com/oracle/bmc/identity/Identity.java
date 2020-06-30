@@ -7,6 +7,9 @@ package com.oracle.bmc.identity;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
 
+/**
+ * APIs for managing users, groups, compartments, and policies.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface Identity extends AutoCloseable {
 

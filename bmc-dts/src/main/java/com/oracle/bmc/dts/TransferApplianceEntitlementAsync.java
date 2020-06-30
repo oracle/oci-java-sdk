@@ -7,6 +7,9 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 
+/**
+ * Data Transfer Service API Specification
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 public interface TransferApplianceEntitlementAsync extends AutoCloseable {
 

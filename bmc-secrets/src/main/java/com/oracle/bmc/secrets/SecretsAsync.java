@@ -7,6 +7,9 @@ package com.oracle.bmc.secrets;
 import com.oracle.bmc.secrets.requests.*;
 import com.oracle.bmc.secrets.responses.*;
 
+/**
+ * API for retrieving secrets from vaults.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
 public interface SecretsAsync extends AutoCloseable {
 

@@ -22,6 +22,7 @@ package com.oracle.bmc.core.model;
     builder = InstanceConfigurationLaunchOptions.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class InstanceConfigurationLaunchOptions {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -121,13 +122,13 @@ public class InstanceConfigurationLaunchOptions {
 
     /**
      * Emulation type for volume.
-     * * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
-     * Storage volumes on Oracle provided images.
+     * * `ISCSI` - ISCSI attached block storage device.
      * * `SCSI` - Emulated SCSI disk.
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
      * volumes on Oracle provided images.
-     * * `PARAVIRTUALIZED` - Paravirtualized disk.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
+     * Storage volumes on Oracle provided images.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -178,13 +179,13 @@ public class InstanceConfigurationLaunchOptions {
     };
     /**
      * Emulation type for volume.
-     * * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
-     * Storage volumes on Oracle provided images.
+     * * `ISCSI` - ISCSI attached block storage device.
      * * `SCSI` - Emulated SCSI disk.
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
      * volumes on Oracle provided images.
-     * * `PARAVIRTUALIZED` - Paravirtualized disk.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
+     * Storage volumes on Oracle provided images.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
@@ -314,13 +315,13 @@ public class InstanceConfigurationLaunchOptions {
     NetworkType networkType;
     /**
      * Emulation type for volume.
-     * * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
-     * Storage volumes on Oracle provided images.
+     * * `ISCSI` - ISCSI attached block storage device.
      * * `SCSI` - Emulated SCSI disk.
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
      * volumes on Oracle provided images.
-     * * `PARAVIRTUALIZED` - Paravirtualized disk.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
+     * Storage volumes on Oracle provided images.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -371,13 +372,13 @@ public class InstanceConfigurationLaunchOptions {
     };
     /**
      * Emulation type for volume.
-     * * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
-     * Storage volumes on Oracle provided images.
+     * * `ISCSI` - ISCSI attached block storage device.
      * * `SCSI` - Emulated SCSI disk.
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
      * volumes on Oracle provided images.
-     * * `PARAVIRTUALIZED` - Paravirtualized disk.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
+     * Storage volumes on Oracle provided images.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteDataVolumeType")

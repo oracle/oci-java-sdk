@@ -7,6 +7,10 @@ package com.oracle.bmc.datascience;
 import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
 
+/**
+ * Use the Data Science APIs to organize your data science work, access data and computing resources, and build, train, deploy, and manage models on Oracle Cloud.
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public interface DataScience extends AutoCloseable {
 

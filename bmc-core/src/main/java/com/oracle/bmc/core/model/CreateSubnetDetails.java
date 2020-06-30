@@ -21,6 +21,7 @@ package com.oracle.bmc.core.model;
     builder = CreateSubnetDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class CreateSubnetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -217,7 +218,7 @@ public class CreateSubnetDetails {
     /**
      * The CIDR IP address range of the subnet.
      * <p>
-     * Example: `172.16.1.0/24`
+     * Example: `10.0.1.0/24`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")

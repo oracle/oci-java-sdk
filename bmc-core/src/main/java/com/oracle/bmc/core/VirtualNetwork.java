@@ -8,6 +8,14 @@ import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 import com.oracle.bmc.workrequests.WorkRequest;
 
+/**
+ * API covering the [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
+ * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services. Use this API
+ * to manage resources such as virtual cloud networks (VCNs), compute instances, and
+ * block storage volumes.
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface VirtualNetwork extends AutoCloseable {
 
@@ -305,6 +313,17 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     ChangeVirtualCircuitCompartmentResponse changeVirtualCircuitCompartment(
             ChangeVirtualCircuitCompartmentRequest request);
+
+    /**
+     * Moves a VLAN into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeVlanCompartmentResponse changeVlanCompartment(ChangeVlanCompartmentRequest request);
 
     /**
      * Connects this local peering gateway (LPG) to another one in the same region.
@@ -795,6 +814,15 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateVirtualCircuitResponse createVirtualCircuit(CreateVirtualCircuitRequest request);
 
     /**
+     * Creates a VLAN in the specified VCN and the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateVlanResponse createVlan(CreateVlanRequest request);
+
+    /**
      * Deletes the specified CPE object. The CPE must not be connected to a DRG. This is an asynchronous
      * operation. The CPE's `lifecycleState` will change to TERMINATING temporarily until the CPE is completely
      * removed.
@@ -1068,6 +1096,15 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteVirtualCircuitResponse deleteVirtualCircuit(DeleteVirtualCircuitRequest request);
+
+    /**
+     * Deletes the specified VLAN, but only if there are no VNICs in the VLAN.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteVlanResponse deleteVlan(DeleteVlanRequest request);
 
     /**
      * Removes the specified {@link Service} from the list of enabled
@@ -1384,7 +1421,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Gets the specified public IP. You must specify the object's OCID.
      * <p>
      * Alternatively, you can get the object by using {@link #getPublicIpByIpAddress(GetPublicIpByIpAddressRequest) getPublicIpByIpAddress}
-     * with the public IP address (for example, 129.146.2.1).
+     * with the public IP address (for example, 203.0.113.2).
      * <p>
      * Or you can use {@link #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest) getPublicIpByPrivateIpId}
      * with the OCID of the private IP that the public IP is assigned to.
@@ -1400,7 +1437,7 @@ public interface VirtualNetwork extends AutoCloseable {
     GetPublicIpResponse getPublicIp(GetPublicIpRequest request);
 
     /**
-     * Gets the public IP based on the public IP address (for example, 129.146.2.1).
+     * Gets the public IP based on the public IP address (for example, 203.0.113.2).
      * <p>
      **Note:** If you're fetching a reserved public IP that is in the process of being
      * moved to a different private IP, the service returns the public IP object with
@@ -1539,6 +1576,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request);
+
+    /**
+     * Gets the specified VLAN's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVlanResponse getVlan(GetVlanRequest request);
 
     /**
      * Gets the information for the specified virtual network interface card (VNIC).
@@ -1805,6 +1850,9 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * If you're listing all the private IPs associated with a given subnet
      * or VNIC, the response includes both primary and secondary private IPs.
+     * <p>
+     * If you are an Oracle Cloud VMware Solution customer and have VLANs
+     * in your VCN, you can filter the list by VLAN OCID. See {@link Vlan}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1938,6 +1986,15 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListVirtualCircuitsResponse listVirtualCircuits(ListVirtualCircuitsRequest request);
+
+    /**
+     * Lists the VLANs in the specified VCN and the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVlansResponse listVlans(ListVlansRequest request);
 
     /**
      * Removes one or more security rules from the specified network security group.
@@ -2305,6 +2362,17 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateVirtualCircuitResponse updateVirtualCircuit(UpdateVirtualCircuitRequest request);
+
+    /**
+     * Updates the specified VLAN. This could result in changes to all
+     * the VNICs in the VLAN, which can take time. During that transition
+     * period, the VLAN will be in the UPDATING state.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateVlanResponse updateVlan(UpdateVlanRequest request);
 
     /**
      * Updates the specified VNIC.

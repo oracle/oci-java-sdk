@@ -25,6 +25,7 @@ package com.oracle.bmc.core.model;
     builder = VolumeBackupPolicyAssignment.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class VolumeBackupPolicyAssignment {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -114,7 +115,7 @@ public class VolumeBackupPolicyAssignment {
     String policyId;
 
     /**
-     * The date and time the volume backup policy was assigned to the volume. The format is defined by RFC3339.
+     * The date and time the volume backup policy was assigned to the volume. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

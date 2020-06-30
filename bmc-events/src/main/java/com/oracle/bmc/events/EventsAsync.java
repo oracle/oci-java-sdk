@@ -7,6 +7,11 @@ package com.oracle.bmc.events;
 import com.oracle.bmc.events.requests.*;
 import com.oracle.bmc.events.responses.*;
 
+/**
+ * API for the Events Service. Use this API to manage rules and actions that create automation
+ * in your tenancy. For more information, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public interface EventsAsync extends AutoCloseable {
 

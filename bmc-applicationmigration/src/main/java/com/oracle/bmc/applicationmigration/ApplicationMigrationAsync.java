@@ -7,6 +7,10 @@ package com.oracle.bmc.applicationmigration;
 import com.oracle.bmc.applicationmigration.requests.*;
 import com.oracle.bmc.applicationmigration.responses.*;
 
+/**
+ * API for the Application Migration service. Use this API to migrate applications from Oracle Cloud Infrastructure - Classic to Oracle Cloud Infrastructure.
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public interface ApplicationMigrationAsync extends AutoCloseable {
 

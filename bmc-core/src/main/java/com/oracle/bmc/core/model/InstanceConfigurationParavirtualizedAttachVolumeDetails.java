@@ -27,6 +27,7 @@ package com.oracle.bmc.core.model;
     property = "type"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class InstanceConfigurationParavirtualizedAttachVolumeDetails
         extends InstanceConfigurationAttachVolumeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -50,20 +51,56 @@ public class InstanceConfigurationParavirtualizedAttachVolumeDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("device")
+        private String device;
+
+        public Builder device(String device) {
+            this.device = device;
+            this.__explicitlySet__.add("device");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
+        private Boolean isShareable;
+
+        public Builder isShareable(Boolean isShareable) {
+            this.isShareable = isShareable;
+            this.__explicitlySet__.add("isShareable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+        private Boolean isPvEncryptionInTransitEnabled;
+
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceConfigurationParavirtualizedAttachVolumeDetails build() {
             InstanceConfigurationParavirtualizedAttachVolumeDetails __instance__ =
                     new InstanceConfigurationParavirtualizedAttachVolumeDetails(
-                            displayName, isReadOnly);
+                            displayName,
+                            isReadOnly,
+                            device,
+                            isShareable,
+                            isPvEncryptionInTransitEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceConfigurationParavirtualizedAttachVolumeDetails o) {
-            Builder copiedBuilder = displayName(o.getDisplayName()).isReadOnly(o.getIsReadOnly());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName())
+                            .isReadOnly(o.getIsReadOnly())
+                            .device(o.getDevice())
+                            .isShareable(o.getIsShareable())
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -79,9 +116,20 @@ public class InstanceConfigurationParavirtualizedAttachVolumeDetails
 
     @Deprecated
     public InstanceConfigurationParavirtualizedAttachVolumeDetails(
-            String displayName, Boolean isReadOnly) {
-        super(displayName, isReadOnly);
+            String displayName,
+            Boolean isReadOnly,
+            String device,
+            Boolean isShareable,
+            Boolean isPvEncryptionInTransitEnabled) {
+        super(displayName, isReadOnly, device, isShareable);
+        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
     }
+
+    /**
+     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+    Boolean isPvEncryptionInTransitEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

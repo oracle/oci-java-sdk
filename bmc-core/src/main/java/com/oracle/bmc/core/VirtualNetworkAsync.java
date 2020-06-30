@@ -7,6 +7,14 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
+/**
+ * API covering the [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
+ * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services. Use this API
+ * to manage resources such as virtual cloud networks (VCNs), compute instances, and
+ * block storage volumes.
+ *
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface VirtualNetworkAsync extends AutoCloseable {
 
@@ -489,6 +497,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     ChangeVirtualCircuitCompartmentRequest,
                                     ChangeVirtualCircuitCompartmentResponse>
                             handler);
+
+    /**
+     * Moves a VLAN into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeVlanCompartmentResponse> changeVlanCompartment(
+            ChangeVlanCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeVlanCompartmentRequest, ChangeVlanCompartmentResponse>
+                    handler);
 
     /**
      * Connects this local peering gateway (LPG) to another one in the same region.
@@ -1149,6 +1176,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a VLAN in the specified VCN and the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVlanResponse> createVlan(
+            CreateVlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateVlanRequest, CreateVlanResponse> handler);
+
+    /**
      * Deletes the specified CPE object. The CPE must not be connected to a DRG. This is an asynchronous
      * operation. The CPE's `lifecycleState` will change to TERMINATING temporarily until the CPE is completely
      * removed.
@@ -1576,6 +1618,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse>
                     handler);
+
+    /**
+     * Deletes the specified VLAN, but only if there are no VNICs in the VLAN.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteVlanResponse> deleteVlan(
+            DeleteVlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteVlanRequest, DeleteVlanResponse> handler);
 
     /**
      * Removes the specified {@link Service} from the list of enabled
@@ -2093,7 +2150,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Gets the specified public IP. You must specify the object's OCID.
      * <p>
      * Alternatively, you can get the object by using {@link #getPublicIpByIpAddress(GetPublicIpByIpAddressRequest, Consumer, Consumer) getPublicIpByIpAddress}
-     * with the public IP address (for example, 129.146.2.1).
+     * with the public IP address (for example, 203.0.113.2).
      * <p>
      * Or you can use {@link #getPublicIpByPrivateIpId(GetPublicIpByPrivateIpIdRequest, Consumer, Consumer) getPublicIpByPrivateIpId}
      * with the OCID of the private IP that the public IP is assigned to.
@@ -2115,7 +2172,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetPublicIpRequest, GetPublicIpResponse> handler);
 
     /**
-     * Gets the public IP based on the public IP address (for example, 129.146.2.1).
+     * Gets the public IP based on the public IP address (for example, 203.0.113.2).
      * <p>
      **Note:** If you're fetching a reserved public IP that is in the process of being
      * moved to a different private IP, the service returns the public IP object with
@@ -2340,6 +2397,20 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetVirtualCircuitRequest, GetVirtualCircuitResponse>
                     handler);
+
+    /**
+     * Gets the specified VLAN's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVlanResponse> getVlan(
+            GetVlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVlanRequest, GetVlanResponse> handler);
 
     /**
      * Gets the information for the specified virtual network interface card (VNIC).
@@ -2773,6 +2844,9 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * If you're listing all the private IPs associated with a given subnet
      * or VNIC, the response includes both primary and secondary private IPs.
+     * <p>
+     * If you are an Oracle Cloud VMware Solution customer and have VLANs
+     * in your VCN, you can filter the list by VLAN OCID. See {@link Vlan}.
      *
      *
      * @param request The request object containing the details to send
@@ -2996,6 +3070,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>
                     handler);
+
+    /**
+     * Lists the VLANs in the specified VCN and the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVlansResponse> listVlans(
+            ListVlansRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListVlansRequest, ListVlansResponse> handler);
 
     /**
      * Removes one or more security rules from the specified network security group.
@@ -3558,6 +3647,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse>
                     handler);
+
+    /**
+     * Updates the specified VLAN. This could result in changes to all
+     * the VNICs in the VLAN, which can take time. During that transition
+     * period, the VLAN will be in the UPDATING state.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateVlanResponse> updateVlan(
+            UpdateVlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateVlanRequest, UpdateVlanResponse> handler);
 
     /**
      * Updates the specified VNIC.

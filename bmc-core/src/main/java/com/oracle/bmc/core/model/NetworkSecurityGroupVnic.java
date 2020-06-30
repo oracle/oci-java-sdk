@@ -22,6 +22,7 @@ package com.oracle.bmc.core.model;
     builder = NetworkSecurityGroupVnic.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class NetworkSecurityGroupVnic {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -92,7 +93,7 @@ public class NetworkSecurityGroupVnic {
 
     /**
      * The date and time the VNIC was added to the network security group, in the format
-     * defined by RFC3339.
+     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

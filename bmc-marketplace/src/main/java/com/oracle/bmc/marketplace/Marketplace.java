@@ -7,6 +7,9 @@ package com.oracle.bmc.marketplace;
 import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
 
+/**
+ * Manage applications in Oracle Cloud Infrastructure Marketplace.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public interface Marketplace extends AutoCloseable {
 

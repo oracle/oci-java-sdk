@@ -7,6 +7,9 @@ package com.oracle.bmc.datacatalog;
 import com.oracle.bmc.datacatalog.requests.*;
 import com.oracle.bmc.datacatalog.responses.*;
 
+/**
+ * Use the Data Catalog APIs to collect, organize, find, access, understand, enrich, and activate technical, business, and operational metadata.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public interface DataCatalogAsync extends AutoCloseable {
 

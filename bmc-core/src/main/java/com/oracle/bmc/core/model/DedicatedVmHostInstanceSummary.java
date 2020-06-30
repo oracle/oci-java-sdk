@@ -22,6 +22,7 @@ package com.oracle.bmc.core.model;
     builder = DedicatedVmHostInstanceSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class DedicatedVmHostInstanceSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
@@ -134,7 +135,7 @@ public class DedicatedVmHostInstanceSummary {
     String shape;
 
     /**
-     * The date and time the virtual machine instance was created, in the format defined by RFC3339.
+     * The date and time the virtual machine instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

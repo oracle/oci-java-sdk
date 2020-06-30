@@ -190,7 +190,7 @@ public class ContainerEngineNodePoolExample {
 
             // Add node pool in the cluster
             List<KeyValue> initialNodeLabels =
-                    Arrays.asList(new KeyValue.Builder().key("key1").value("value1").build());
+                    Arrays.asList(KeyValue.builder().key("key1").value("value1").build());
 
             List<NodePoolPlacementConfigDetails> nodePoolPlacementConfigDetails = new ArrayList<>();
             availabilityDomains.forEach(
