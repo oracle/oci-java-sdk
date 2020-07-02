@@ -70,8 +70,8 @@ public class UploadManager {
 
     static final RetryConfiguration RETRY_CONFIGURATION =
             RetryConfiguration.builder()
-                    .terminationStrategy(new MaxAttemptsTerminationStrategy(3))
-                    .delayStrategy(new ExponentialBackoffDelayStrategy(100))
+                    .terminationStrategy(new MaxAttemptsTerminationStrategy(UploadManagerUtils.MAX_RETRIES))
+                    .delayStrategy(new ExponentialBackoffDelayStrategy(UploadManagerUtils.EXPONENTIAL_BACKOFF_MAX_DELAY))
                     .retryCondition(exception -> RETRY_CONDITION.shouldBeRetried(exception))
                     .build();
 
