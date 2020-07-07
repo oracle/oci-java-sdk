@@ -3673,7 +3673,13 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                             final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
                                     new com.oracle.bmc.http.internal.ErrorConsumer<>(
                                             this, interceptedRequest);
-                            client.post(ib, interceptedRequest, onSuccess, onError);
+                            client.post(
+                                    ib,
+                                    interceptedRequest
+                                            .getDeregisterAutonomousDatabaseDataSafeDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
                         }
                     };
         }
@@ -3690,7 +3696,12 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                 handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.post(ib, interceptedRequest, onSuccess, onError);
+                client.post(
+                        ib,
+                        interceptedRequest.getDeregisterAutonomousDatabaseDataSafeDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -3704,7 +3715,13 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
                         @Override
                         public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.post(ib, interceptedRequest, onSuccess, onError);
+                            return client.post(
+                                    ib,
+                                    interceptedRequest
+                                            .getDeregisterAutonomousDatabaseDataSafeDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
                         }
                     });
         } else {
@@ -9144,7 +9161,13 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                             final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
                                     new com.oracle.bmc.http.internal.ErrorConsumer<>(
                                             this, interceptedRequest);
-                            client.post(ib, interceptedRequest, onSuccess, onError);
+                            client.post(
+                                    ib,
+                                    interceptedRequest
+                                            .getRegisterAutonomousDatabaseDataSafeDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
                         }
                     };
         }
@@ -9161,7 +9184,12 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                 handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.post(ib, interceptedRequest, onSuccess, onError);
+                client.post(
+                        ib,
+                        interceptedRequest.getRegisterAutonomousDatabaseDataSafeDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
@@ -9175,7 +9203,13 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
                         @Override
                         public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.post(ib, interceptedRequest, onSuccess, onError);
+                            return client.post(
+                                    ib,
+                                    interceptedRequest
+                                            .getRegisterAutonomousDatabaseDataSafeDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
                         }
                     });
         } else {

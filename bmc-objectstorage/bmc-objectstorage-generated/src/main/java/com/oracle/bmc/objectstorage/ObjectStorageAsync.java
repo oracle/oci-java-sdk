@@ -784,6 +784,30 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Re-encrypts the data encryption keys that encrypt the object and its chunks. By default, when you create a bucket, the Object Storage
+     * service manages the master encryption key used to encrypt each object's data encryption keys. The encryption mechanism that you specify for
+     * the bucket applies to the objects it contains.
+     * <p>
+     * You can alternatively employ one of these encryption strategies for an object:
+     * <p>
+     * - You can assign a key that you created and control through the Oracle Cloud Infrastructure Vault service.
+     * <p>
+     * - You can encrypt an object using your own encryption key. The key you supply is known as a customer-provided encryption key (SSE-C).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ReencryptObjectResponse> reencryptObject(
+            ReencryptObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ReencryptObjectRequest, ReencryptObjectResponse>
+                    handler);
+
+    /**
      * Rename an object in the given Object Storage namespace.
      *
      *

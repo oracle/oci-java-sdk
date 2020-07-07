@@ -54,6 +54,15 @@ public class IdentityProviderGroupSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("externalIdentifier")
         private String externalIdentifier;
 
@@ -90,6 +99,7 @@ public class IdentityProviderGroupSummary {
                             id,
                             identityProviderId,
                             displayName,
+                            name,
                             externalIdentifier,
                             timeCreated,
                             timeModified);
@@ -103,6 +113,7 @@ public class IdentityProviderGroupSummary {
                     id(o.getId())
                             .identityProviderId(o.getIdentityProviderId())
                             .displayName(o.getDisplayName())
+                            .name(o.getName())
                             .externalIdentifier(o.getExternalIdentifier())
                             .timeCreated(o.getTimeCreated())
                             .timeModified(o.getTimeModified());
@@ -136,6 +147,12 @@ public class IdentityProviderGroupSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Display name of the group
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    String name;
 
     /**
      * Identifier of the group in the identity provider

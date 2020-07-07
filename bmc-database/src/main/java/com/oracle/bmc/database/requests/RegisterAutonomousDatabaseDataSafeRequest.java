@@ -10,7 +10,7 @@ import com.oracle.bmc.database.model.*;
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class RegisterAutonomousDatabaseDataSafeRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<RegisterAutonomousDatabaseDataSafeDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -23,9 +23,25 @@ public class RegisterAutonomousDatabaseDataSafeRequest
      */
     private String opcRequestId;
 
+    /**
+     * Request to register an Autonomous Database with Data Safe.
+     */
+    private RegisterAutonomousDatabaseDataSafeDetails registerAutonomousDatabaseDataSafeDetails;
+
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public RegisterAutonomousDatabaseDataSafeDetails getBody$() {
+        return registerAutonomousDatabaseDataSafeDetails;
+    }
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RegisterAutonomousDatabaseDataSafeRequest, java.lang.Void> {
+                    RegisterAutonomousDatabaseDataSafeRequest,
+                    RegisterAutonomousDatabaseDataSafeDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -60,6 +76,8 @@ public class RegisterAutonomousDatabaseDataSafeRequest
         public Builder copy(RegisterAutonomousDatabaseDataSafeRequest o) {
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             opcRequestId(o.getOpcRequestId());
+            registerAutonomousDatabaseDataSafeDetails(
+                    o.getRegisterAutonomousDatabaseDataSafeDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -80,6 +98,17 @@ public class RegisterAutonomousDatabaseDataSafeRequest
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
+        }
+
+        /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(RegisterAutonomousDatabaseDataSafeDetails body) {
+            registerAutonomousDatabaseDataSafeDetails(body);
+            return this;
         }
     }
 }

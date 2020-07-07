@@ -13,13 +13,13 @@ public class ListBulkActionResourceTypesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The type of the bulk action.
+     * The type of bulk action.
      *
      */
     private BulkActionType bulkActionType;
 
     /**
-     * The type of the bulk action.
+     * The type of bulk action.
      *
      **/
     public enum BulkActionType {

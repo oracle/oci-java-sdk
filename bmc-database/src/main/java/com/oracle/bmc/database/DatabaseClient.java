@@ -1701,7 +1701,11 @@ public class DatabaseClient implements Database {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getDeregisterAutonomousDatabaseDataSafeDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -3771,7 +3775,11 @@ public class DatabaseClient implements Database {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRegisterAutonomousDatabaseDataSafeDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

@@ -454,6 +454,42 @@ public class AnalyticsClient implements Analytics {
     }
 
     @Override
+    public ChangeAnalyticsInstanceNetworkEndpointResponse changeAnalyticsInstanceNetworkEndpoint(
+            ChangeAnalyticsInstanceNetworkEndpointRequest request) {
+        LOG.trace("Called changeAnalyticsInstanceNetworkEndpoint");
+        final ChangeAnalyticsInstanceNetworkEndpointRequest interceptedRequest =
+                ChangeAnalyticsInstanceNetworkEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAnalyticsInstanceNetworkEndpointConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeAnalyticsInstanceNetworkEndpointResponse>
+                transformer = ChangeAnalyticsInstanceNetworkEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeAnalyticsInstanceNetworkEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateAnalyticsInstanceResponse createAnalyticsInstance(
             CreateAnalyticsInstanceRequest request) {
         LOG.trace("Called createAnalyticsInstance");

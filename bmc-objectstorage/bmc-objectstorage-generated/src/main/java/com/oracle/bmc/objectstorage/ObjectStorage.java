@@ -502,6 +502,23 @@ public interface ObjectStorage extends AutoCloseable {
     ReencryptBucketResponse reencryptBucket(ReencryptBucketRequest request);
 
     /**
+     * Re-encrypts the data encryption keys that encrypt the object and its chunks. By default, when you create a bucket, the Object Storage
+     * service manages the master encryption key used to encrypt each object's data encryption keys. The encryption mechanism that you specify for
+     * the bucket applies to the objects it contains.
+     * <p>
+     * You can alternatively employ one of these encryption strategies for an object:
+     * <p>
+     * - You can assign a key that you created and control through the Oracle Cloud Infrastructure Vault service.
+     * <p>
+     * - You can encrypt an object using your own encryption key. The key you supply is known as a customer-provided encryption key (SSE-C).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ReencryptObjectResponse reencryptObject(ReencryptObjectRequest request);
+
+    /**
      * Rename an object in the given Object Storage namespace.
      *
      * @param request The request object containing the details to send

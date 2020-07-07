@@ -74,8 +74,11 @@ public interface Identity extends AutoCloseable {
     AssembleEffectiveTagSetResponse assembleEffectiveTagSet(AssembleEffectiveTagSetRequest request);
 
     /**
-     * Bulk delete resources in the compartment. All resources must be in the same compartment.
-     * This API can only be invoked from tenancy's home region.
+     * Deletes multiple resources in the compartment. All resources must be in the same compartment. You must have the appropriate
+     * permissions to delete the resources in the request. This API can only be invoked from the tenancy's
+     * [home region](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingregions.htm#Home). This operation creates a
+     * {@link WorkRequest}. Use the {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest}
+     * API to monitor the status of the bulk action.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -113,8 +116,11 @@ public interface Identity extends AutoCloseable {
     BulkDeleteTagsResponse bulkDeleteTags(BulkDeleteTagsRequest request);
 
     /**
-     * Bulk move resources in the compartment. All resources must be in the same compartment.
-     * This API can only be invoked from tenancy's home region.
+     * Moves multiple resources from one compartment to another. All resources must be in the same compartment.
+     * This API can only be invoked from the tenancy's [home region](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingregions.htm#Home).
+     * To move resources, you must have the appropriate permissions to move the resource in both the source and target
+     * compartments. This operation creates a {@link WorkRequest}.
+     * Use the {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} API to monitor the status of the bulk action.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -975,7 +981,13 @@ public interface Identity extends AutoCloseable {
     ListAvailabilityDomainsResponse listAvailabilityDomains(ListAvailabilityDomainsRequest request);
 
     /**
-     * Lists the resource types supported by compartment bulk actions.
+     * Lists the resource-types supported by compartment bulk actions. Use this API to help you provide the correct
+     * resource-type information to the {@link #bulkDeleteResources(BulkDeleteResourcesRequest) bulkDeleteResources}
+     * and {@link #bulkMoveResources(BulkMoveResourcesRequest) bulkMoveResources} operations. The returned list of
+     * resource-types provides the appropriate resource-type names to use with the bulk action operations along with
+     * the type of identifying information you'll need to provide for each resource-type. Most resource-types just
+     * require an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to identify a specific resource, but some resource-types,
+     * such as buckets, require you to provide other identifying information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
