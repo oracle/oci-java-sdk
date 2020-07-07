@@ -53,6 +53,17 @@ public interface Analytics extends AutoCloseable {
             ChangeAnalyticsInstanceCompartmentRequest request);
 
     /**
+     * Change an Analytics instance network endpoint. The operation is long-running
+     * and creates a new WorkRequest.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeAnalyticsInstanceNetworkEndpointResponse changeAnalyticsInstanceNetworkEndpoint(
+            ChangeAnalyticsInstanceNetworkEndpointRequest request);
+
+    /**
      * Create a new AnalyticsInstance in the specified compartment. The operation is long-running
      * and creates a new WorkRequest.
      *

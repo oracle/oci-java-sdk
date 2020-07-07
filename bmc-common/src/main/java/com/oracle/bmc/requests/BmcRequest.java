@@ -6,6 +6,7 @@ package com.oracle.bmc.requests;
 
 import javax.ws.rs.client.Invocation;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.internal.Consumer;
 import lombok.Getter;
@@ -46,6 +47,7 @@ public class BmcRequest<B> {
      *
      * @throws IllegalStateException if this request does not support a body
      */
+    @JsonIgnore
     @com.oracle.bmc.InternalSdk
     public B getBody$() {
         throw new IllegalStateException("This request does not support a body");

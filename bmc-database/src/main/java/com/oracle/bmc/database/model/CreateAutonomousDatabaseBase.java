@@ -250,7 +250,7 @@ public class CreateAutonomousDatabaseBase {
     java.util.List<String> nsgIds;
 
     /**
-     * The private endpoint label for the resource.
+     * The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointLabel")
     String privateEndpointLabel;

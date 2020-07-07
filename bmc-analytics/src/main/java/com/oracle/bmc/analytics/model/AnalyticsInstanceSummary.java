@@ -108,6 +108,15 @@ public class AnalyticsInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+        private NetworkEndpointDetails networkEndpointDetails;
+
+        public Builder networkEndpointDetails(NetworkEndpointDetails networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
+            this.__explicitlySet__.add("networkEndpointDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
         private String serviceUrl;
 
@@ -150,6 +159,7 @@ public class AnalyticsInstanceSummary {
                             capacity,
                             licenseType,
                             emailNotification,
+                            networkEndpointDetails,
                             serviceUrl,
                             timeCreated,
                             timeUpdated);
@@ -169,6 +179,7 @@ public class AnalyticsInstanceSummary {
                             .capacity(o.getCapacity())
                             .licenseType(o.getLicenseType())
                             .emailNotification(o.getEmailNotification())
+                            .networkEndpointDetails(o.getNetworkEndpointDetails())
                             .serviceUrl(o.getServiceUrl())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated());
@@ -243,6 +254,9 @@ public class AnalyticsInstanceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailNotification")
     String emailNotification;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+    NetworkEndpointDetails networkEndpointDetails;
 
     /**
      * URL of the Analytics service.

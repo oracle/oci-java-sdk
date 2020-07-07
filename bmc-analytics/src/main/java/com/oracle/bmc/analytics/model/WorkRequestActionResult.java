@@ -17,6 +17,7 @@ public enum WorkRequestActionResult {
     Started("STARTED"),
     Stopped("STOPPED"),
     Scaled("SCALED"),
+    NetworkEndpointChanged("NETWORK_ENDPOINT_CHANGED"),
     None("NONE"),
 
     /**

@@ -84,13 +84,15 @@ public class BulkActionResource {
     }
 
     /**
-     * The resource identifier.
+     * The resource OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
 
     /**
-     * The resource type.
+     * The resource-type. To get the list of supported resource-types use
+     * {@link #listBulkActionResourceTypes(ListBulkActionResourceTypesRequest) listBulkActionResourceTypes}.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;
@@ -98,11 +100,30 @@ public class BulkActionResource {
     /**
      * Additional information that helps to identity the resource for bulk action.
      * <p>
-     * DELETE and UPDATE APIs for most resource types only require the resource identifier(ocid).
-     * But additional metadata is required for some resource types.
+     * The APIs to delete and move most resource types only require the resource identifier (ocid).
+     * But some resource-types require additional identifying information.
      * <p>
      * This information is provided in the resource's public API document. It is also
-     * available through the ListBulkActionResourceTypes API.
+     * available through the
+     * {@link #listBulkActionResourceTypes(ListBulkActionResourceTypesRequest) listBulkActionResourceTypes}.
+     * <p>
+     **Example**:
+     * The APIs to delete or move the `buckets` resource-type require `namespaceName` and `bucketName` to identify the resource, as
+     * shown in the APIs, {@link #deleteBucket(DeleteBucketRequest) deleteBucket} and
+     * {@link #updateBucket(UpdateBucketRequest) updateBucket}.
+     * <p>
+     * To add a bucket for bulk actions, specify `namespaceName` and `bucketName` in
+     * the metadata property as shown in this example
+     * <p>
+     * {
+     *       \"identifier\": \"<OCID_of_bucket>\"
+     *       \"entityType\": \"bucket\",
+     *       \"metadata\":
+     *       {
+     *         \"namespaceName\": \"sampleNamespace\",
+     *         \"bucketName\": \"sampleBucket\"
+     *       }
+     *     }
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")

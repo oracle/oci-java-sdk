@@ -124,7 +124,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
 
     /**
      * The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
-     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm).
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */
     private String opcSseCustomerAlgorithm;
@@ -132,7 +132,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
      * decrypt the data. For more information, see
-     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm).
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */
     private String opcSseCustomerKey;
@@ -140,7 +140,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     /**
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see
-     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm).
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */
     private String opcSseCustomerKeySha256;

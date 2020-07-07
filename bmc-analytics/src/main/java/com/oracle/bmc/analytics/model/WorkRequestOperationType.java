@@ -17,6 +17,7 @@ public enum WorkRequestOperationType {
     StopAnalyticsInstance("STOP_ANALYTICS_INSTANCE"),
     ScaleAnalyticsInstance("SCALE_ANALYTICS_INSTANCE"),
     ChangeAnalyticsInstanceCompartment("CHANGE_ANALYTICS_INSTANCE_COMPARTMENT"),
+    ChangeAnalyticsInstanceNetworkEndpoint("CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

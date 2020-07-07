@@ -90,6 +90,15 @@ public class CreateAnalyticsInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+        private NetworkEndpointDetails networkEndpointDetails;
+
+        public Builder networkEndpointDetails(NetworkEndpointDetails networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
+            this.__explicitlySet__.add("networkEndpointDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
         private String idcsAccessToken;
 
@@ -131,6 +140,7 @@ public class CreateAnalyticsInstanceDetails {
                             capacity,
                             licenseType,
                             emailNotification,
+                            networkEndpointDetails,
                             idcsAccessToken,
                             definedTags,
                             freeformTags);
@@ -148,6 +158,7 @@ public class CreateAnalyticsInstanceDetails {
                             .capacity(o.getCapacity())
                             .licenseType(o.getLicenseType())
                             .emailNotification(o.getEmailNotification())
+                            .networkEndpointDetails(o.getNetworkEndpointDetails())
                             .idcsAccessToken(o.getIdcsAccessToken())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags());
@@ -208,6 +219,9 @@ public class CreateAnalyticsInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailNotification")
     String emailNotification;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+    NetworkEndpointDetails networkEndpointDetails;
 
     /**
      * IDCS access token identifying a stripe and service administrator user.

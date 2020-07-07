@@ -12,6 +12,7 @@ package com.oracle.bmc.analytics.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 public enum SortBy {
     CapacityType("capacityType"),
+    CapacityValue("capacityValue"),
     FeatureSet("featureSet"),
     LifecycleState("lifecycleState"),
     Name("name"),

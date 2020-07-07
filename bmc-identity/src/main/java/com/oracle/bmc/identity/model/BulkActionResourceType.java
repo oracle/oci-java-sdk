@@ -70,17 +70,15 @@ public class BulkActionResourceType {
     }
 
     /**
-     * The unique name of the resource type.
+     * The unique name of the resource-type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * List of metadata keys required to identify the resource.
-     * E.g. for bucket, metadataKeys will be [\"namespaceName\", \"bucketName\"].
-     * This informatino will match the public API document:
-     * https://docs.cloud.oracle.com/en-us/iaas/api/#/en/objectstorage/20160918/Bucket/GetBucket
+     * List of metadata keys required to identify a specific resource. Some resource-types require information besides an OCID to identify
+     * a specific resource. For example, the resource-type `buckets` requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
