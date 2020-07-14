@@ -141,6 +141,134 @@ public class ResourceManagerPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listConfigurationSourceProviders operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListConfigurationSourceProvidersResponse>
+            listConfigurationSourceProvidersResponseIterator(
+                    final ListConfigurationSourceProvidersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListConfigurationSourceProvidersRequest.Builder,
+                ListConfigurationSourceProvidersRequest, ListConfigurationSourceProvidersResponse>(
+                new com.google.common.base.Supplier<
+                        ListConfigurationSourceProvidersRequest.Builder>() {
+                    @Override
+                    public ListConfigurationSourceProvidersRequest.Builder get() {
+                        return ListConfigurationSourceProvidersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConfigurationSourceProvidersResponse, String>() {
+                    @Override
+                    public String apply(ListConfigurationSourceProvidersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConfigurationSourceProvidersRequest.Builder>,
+                        ListConfigurationSourceProvidersRequest>() {
+                    @Override
+                    public ListConfigurationSourceProvidersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConfigurationSourceProvidersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConfigurationSourceProvidersRequest,
+                        ListConfigurationSourceProvidersResponse>() {
+                    @Override
+                    public ListConfigurationSourceProvidersResponse apply(
+                            ListConfigurationSourceProvidersRequest request) {
+                        return client.listConfigurationSourceProviders(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderSummary} objects
+     * contained in responses from the listConfigurationSourceProviders operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderSummary>
+            listConfigurationSourceProvidersRecordIterator(
+                    final ListConfigurationSourceProvidersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListConfigurationSourceProvidersRequest.Builder,
+                ListConfigurationSourceProvidersRequest, ListConfigurationSourceProvidersResponse,
+                com.oracle.bmc.resourcemanager.model.ConfigurationSourceProviderSummary>(
+                new com.google.common.base.Supplier<
+                        ListConfigurationSourceProvidersRequest.Builder>() {
+                    @Override
+                    public ListConfigurationSourceProvidersRequest.Builder get() {
+                        return ListConfigurationSourceProvidersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConfigurationSourceProvidersResponse, String>() {
+                    @Override
+                    public String apply(ListConfigurationSourceProvidersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConfigurationSourceProvidersRequest.Builder>,
+                        ListConfigurationSourceProvidersRequest>() {
+                    @Override
+                    public ListConfigurationSourceProvidersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConfigurationSourceProvidersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConfigurationSourceProvidersRequest,
+                        ListConfigurationSourceProvidersResponse>() {
+                    @Override
+                    public ListConfigurationSourceProvidersResponse apply(
+                            ListConfigurationSourceProvidersRequest request) {
+                        return client.listConfigurationSourceProviders(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConfigurationSourceProvidersResponse,
+                        java.util.List<
+                                com.oracle.bmc.resourcemanager.model
+                                        .ConfigurationSourceProviderSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.resourcemanager.model
+                                            .ConfigurationSourceProviderSummary>
+                            apply(ListConfigurationSourceProvidersResponse response) {
+                        return response.getConfigurationSourceProviderCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listJobs operation. This iterable
      * will fetch more data from the server as needed.
      *

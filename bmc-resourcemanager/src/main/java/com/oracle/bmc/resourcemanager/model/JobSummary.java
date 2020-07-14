@@ -240,20 +240,26 @@ public class JobSummary {
 
     /**
      * The date and time the job was created.
+     * Format is defined by RFC3339.
+     * Example: `2020-01-25T21:10:29.600Z`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
      * The date and time the job succeeded or failed.
+     * Format is defined by RFC3339.
+     * Example: `2020-01-25T21:10:29.600Z`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;
 
     /**
      * Current state of the specified job.
-     * For more information about resource states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts).
+     * For more information about job lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates).
      * <p>
      * Allowable values:
      * - ACCEPTED

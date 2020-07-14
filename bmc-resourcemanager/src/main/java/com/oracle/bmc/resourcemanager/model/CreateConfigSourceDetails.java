@@ -32,6 +32,10 @@ package com.oracle.bmc.resourcemanager.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateZipUploadConfigSourceDetails.class,
         name = "ZIP_UPLOAD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateGitConfigSourceDetails.class,
+        name = "GIT_CONFIG_SOURCE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

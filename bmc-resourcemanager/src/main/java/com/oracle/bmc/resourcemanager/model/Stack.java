@@ -222,13 +222,16 @@ public class Stack {
 
     /**
      * The date and time at which the stack was created.
+     * Format is defined by RFC3339.
+     * Example: `2020-01-25T21:10:29.600Z`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
      * The current lifecycle state of the stack.
-     * For more information about resource states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts).
+     * For more information about stack lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -278,8 +281,8 @@ public class Stack {
     };
     /**
      * The current lifecycle state of the stack.
-     * For more information about resource states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts).
+     * For more information about stack lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -362,8 +365,9 @@ public class Stack {
     StackDriftStatus stackDriftStatus;
 
     /**
-     * Date and time when the drift detection was last executed. Format is defined by RFC3339.
-     * Example: 2020-01-25T21:10:29.600Z
+     * The date and time when the drift detection was last executed.
+     * Format is defined by RFC3339.
+     * Example: `2020-01-25T21:10:29.600Z`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDriftLastChecked")

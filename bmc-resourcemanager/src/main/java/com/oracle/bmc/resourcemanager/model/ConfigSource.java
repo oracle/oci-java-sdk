@@ -30,6 +30,10 @@ package com.oracle.bmc.resourcemanager.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GitConfigSource.class,
+        name = "GIT_CONFIG_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ZipUploadConfigSource.class,
         name = "ZIP_UPLOAD"
     )
@@ -52,6 +56,7 @@ public class ConfigSource {
     @lombok.extern.slf4j.Slf4j
     public enum ConfigSourceType {
         ZipUpload("ZIP_UPLOAD"),
+        GitConfigSource("GIT_CONFIG_SOURCE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

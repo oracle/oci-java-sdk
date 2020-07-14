@@ -141,7 +141,6 @@ public class CreateVcnDetails {
 
     /**
      * The CIDR IP address block of the VCN.
-     * <p>
      * Example: `10.0.0.0/16`
      *
      **/

@@ -225,6 +225,12 @@ public class CreateAutonomousDatabaseBase {
     java.util.List<String> whitelistedIps;
 
     /**
+     * Indicates whether the Autonomous Database has Data Guard enabled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
+    Boolean isDataGuardEnabled;
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      * <p>
      **Subnet Restrictions:**

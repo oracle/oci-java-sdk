@@ -798,6 +798,23 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Initiates a failover the specified Autonomous Database to a standby.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<FailOverAutonomousDatabaseResponse> failOverAutonomousDatabase(
+            FailOverAutonomousDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            FailOverAutonomousDatabaseRequest, FailOverAutonomousDatabaseResponse>
+                    handler);
+
+    /**
      * Performs a failover to transition the standby database identified by the `databaseId` parameter into the
      * specified Data Guard association's primary role after the existing primary database fails or becomes unreachable.
      * <p>
@@ -2141,6 +2158,24 @@ public interface DatabaseAsync extends AutoCloseable {
             StopAutonomousDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             StopAutonomousDatabaseRequest, StopAutonomousDatabaseResponse>
+                    handler);
+
+    /**
+     * Initiates a switchover of the specified Autonomous Database to the associated standby database. Applicable only to databases with Autonomous Data Guard enabled.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SwitchoverAutonomousDatabaseResponse> switchoverAutonomousDatabase(
+            SwitchoverAutonomousDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SwitchoverAutonomousDatabaseRequest,
+                            SwitchoverAutonomousDatabaseResponse>
                     handler);
 
     /**

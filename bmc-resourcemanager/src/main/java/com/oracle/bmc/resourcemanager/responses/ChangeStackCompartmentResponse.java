@@ -17,7 +17,7 @@ public class ChangeStackCompartmentResponse {
     private String opcRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String opcWorkRequestId;
 

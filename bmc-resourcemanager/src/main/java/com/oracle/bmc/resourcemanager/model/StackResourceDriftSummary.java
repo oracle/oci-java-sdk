@@ -263,8 +263,9 @@ public class StackResourceDriftSummary {
     java.util.Map<String, String> expectedProperties;
 
     /**
-     * Date and time when the drift detection was executed. Format defined by RFC3339.
-     * Example: 2020-01-25T21:10:29.600Z
+     * The date and time when the drift detection was executed.
+     * Format is defined by RFC3339.
+     * Example: `2020-01-25T21:10:29.600Z`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDriftChecked")

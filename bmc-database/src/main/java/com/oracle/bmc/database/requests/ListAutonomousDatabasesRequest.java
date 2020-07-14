@@ -156,6 +156,11 @@ public class ListAutonomousDatabasesRequest
      */
     private String opcRequestId;
 
+    /**
+     * A filter to return only resources that have Data Guard enabled.
+     */
+    private Boolean isDataGuardEnabled;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAutonomousDatabasesRequest, java.lang.Void> {
@@ -204,6 +209,7 @@ public class ListAutonomousDatabasesRequest
             isFreeTier(o.getIsFreeTier());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
+            isDataGuardEnabled(o.getIsDataGuardEnabled());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

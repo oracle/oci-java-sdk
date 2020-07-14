@@ -162,6 +162,15 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
+        private Boolean isDataGuardEnabled;
+
+        public Builder isDataGuardEnabled(Boolean isDataGuardEnabled) {
+            this.isDataGuardEnabled = isDataGuardEnabled;
+            this.__explicitlySet__.add("isDataGuardEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -264,6 +273,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             isDedicated,
                             autonomousContainerDatabaseId,
                             whitelistedIps,
+                            isDataGuardEnabled,
                             subnetId,
                             nsgIds,
                             privateEndpointLabel,
@@ -295,6 +305,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .isDedicated(o.getIsDedicated())
                             .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
                             .whitelistedIps(o.getWhitelistedIps())
+                            .isDataGuardEnabled(o.getIsDataGuardEnabled())
                             .subnetId(o.getSubnetId())
                             .nsgIds(o.getNsgIds())
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
@@ -333,6 +344,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
             java.util.List<String> whitelistedIps,
+            Boolean isDataGuardEnabled,
             String subnetId,
             java.util.List<String> nsgIds,
             String privateEndpointLabel,
@@ -357,6 +369,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 isDedicated,
                 autonomousContainerDatabaseId,
                 whitelistedIps,
+                isDataGuardEnabled,
                 subnetId,
                 nsgIds,
                 privateEndpointLabel,

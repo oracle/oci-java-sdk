@@ -477,6 +477,16 @@ public interface Database extends AutoCloseable {
             DownloadVmClusterNetworkConfigFileRequest request);
 
     /**
+     * Initiates a failover the specified Autonomous Database to a standby.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    FailOverAutonomousDatabaseResponse failOverAutonomousDatabase(
+            FailOverAutonomousDatabaseRequest request);
+
+    /**
      * Performs a failover to transition the standby database identified by the `databaseId` parameter into the
      * specified Data Guard association's primary role after the existing primary database fails or becomes unreachable.
      * <p>
@@ -1212,6 +1222,16 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     StopAutonomousDatabaseResponse stopAutonomousDatabase(StopAutonomousDatabaseRequest request);
+
+    /**
+     * Initiates a switchover of the specified Autonomous Database to the associated standby database. Applicable only to databases with Autonomous Data Guard enabled.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    SwitchoverAutonomousDatabaseResponse switchoverAutonomousDatabase(
+            SwitchoverAutonomousDatabaseRequest request);
 
     /**
      * Performs a switchover to transition the primary database of a Data Guard association into a standby role. The

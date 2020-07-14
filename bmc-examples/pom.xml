@@ -4,9 +4,12 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.19.2</version>
+    <version>1.19.3</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
+  <properties>
+    <lombok-checkstyle-rules-file>${project.basedir}/lombok-checkstyle-rules.xml</lombok-checkstyle-rules-file>
+  </properties>
   <artifactId>oci-java-sdk-examples</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Examples</name>
   <description>This project contains the examples on how to use the SDK used for Oracle Cloud Infrastructure
@@ -17,7 +20,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>1.19.2</version>
+        <version>1.19.3</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -235,6 +238,10 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-usageapi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-blockchain</artifactId>
     </dependency>
   </dependencies>
 </project>

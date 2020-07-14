@@ -299,7 +299,7 @@ public class LaunchInstanceDetails {
     CreateVnicDetails createVnicDetails;
 
     /**
-     * The OCID of dedicated VM host.
+     * The OCID of the dedicated VM host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
@@ -411,6 +411,11 @@ public class LaunchInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
     String ipxeScript;
 
+    /**
+     * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any
+     * default values.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     LaunchOptions launchOptions;
 
