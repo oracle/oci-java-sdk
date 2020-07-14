@@ -501,6 +501,14 @@ public interface Compute extends AutoCloseable {
      * <p>
      * You can later add secondary VNICs to an instance. For more information, see
      * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm).
+     * <p>
+     * To launch an instance from a Marketplace image listing, you must provide the image ID of the
+     * listing resource version that you want, but you also must subscribe to the listing before you try
+     * to launch the instance. To subscribe to the listing, use the {@link #getAppCatalogListingAgreements(GetAppCatalogListingAgreementsRequest) getAppCatalogListingAgreements}
+     * operation to get the signature for the terms of use agreement for the desired listing resource version.
+     * Then, call {@link #createAppCatalogSubscription(CreateAppCatalogSubscriptionRequest) createAppCatalogSubscription}
+     * with the signature. To get the image ID for the LaunchInstance operation, call
+     * {@link #getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionRequest) getAppCatalogListingResourceVersion}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

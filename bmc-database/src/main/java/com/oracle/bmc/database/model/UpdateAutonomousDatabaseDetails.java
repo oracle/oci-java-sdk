@@ -129,6 +129,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
+        private Boolean isDataGuardEnabled;
+
+        public Builder isDataGuardEnabled(Boolean isDataGuardEnabled) {
+            this.isDataGuardEnabled = isDataGuardEnabled;
+            this.__explicitlySet__.add("isDataGuardEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
@@ -182,6 +191,7 @@ public class UpdateAutonomousDatabaseDetails {
                             licenseModel,
                             whitelistedIps,
                             isAutoScalingEnabled,
+                            isDataGuardEnabled,
                             dbVersion,
                             subnetId,
                             privateEndpointLabel,
@@ -204,6 +214,7 @@ public class UpdateAutonomousDatabaseDetails {
                             .licenseModel(o.getLicenseModel())
                             .whitelistedIps(o.getWhitelistedIps())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
+                            .isDataGuardEnabled(o.getIsDataGuardEnabled())
                             .dbVersion(o.getDbVersion())
                             .subnetId(o.getSubnetId())
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
@@ -342,6 +353,12 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     Boolean isAutoScalingEnabled;
+
+    /**
+     * Indicates whether the Autonomous Database has Data Guard enabled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
+    Boolean isDataGuardEnabled;
 
     /**
      * A valid Oracle Database version for Autonomous Database.

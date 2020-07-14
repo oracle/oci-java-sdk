@@ -126,6 +126,14 @@ public class ListAutonomousDatabasesConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getIsDataGuardEnabled() != null) {
+            target =
+                    target.queryParam(
+                            "isDataGuardEnabled",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsDataGuardEnabled()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

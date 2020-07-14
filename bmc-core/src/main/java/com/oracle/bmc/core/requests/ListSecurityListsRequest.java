@@ -17,11 +17,6 @@ public class ListSecurityListsRequest extends com.oracle.bmc.requests.BmcRequest
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
-     */
-    private String vcnId;
-
-    /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * \"List\" call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -38,6 +33,11 @@ public class ListSecurityListsRequest extends com.oracle.bmc.requests.BmcRequest
      *
      */
     private String page;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+     */
+    private String vcnId;
 
     /**
      * A filter to return only resources that match the given display name exactly.
@@ -187,9 +187,9 @@ public class ListSecurityListsRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(ListSecurityListsRequest o) {
             compartmentId(o.getCompartmentId());
-            vcnId(o.getVcnId());
             limit(o.getLimit());
             page(o.getPage());
+            vcnId(o.getVcnId());
             displayName(o.getDisplayName());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());

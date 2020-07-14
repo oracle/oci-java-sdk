@@ -5,7 +5,10 @@
 package com.oracle.bmc.core.model;
 
 /**
- * See Instance launch details - {@link LaunchInstanceDetails}
+ * Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails`
+ * parameter to specify whether a boot volume or an image should be used to launch a new instance.
+ * <p>
+ * See {@link LaunchInstanceDetails} for more information.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -524,6 +527,10 @@ public class InstanceConfigurationLaunchInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
     LaunchMode launchMode;
 
+    /**
+     * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     InstanceConfigurationLaunchOptions launchOptions;
 

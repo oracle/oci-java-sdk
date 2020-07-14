@@ -30,6 +30,10 @@ package com.oracle.bmc.resourcemanager.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateGitConfigSourceDetails.class,
+        name = "GIT_CONFIG_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateZipUploadConfigSourceDetails.class,
         name = "ZIP_UPLOAD"
     )

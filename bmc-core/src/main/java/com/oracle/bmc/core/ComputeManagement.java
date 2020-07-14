@@ -303,6 +303,14 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Terminate the specified instance pool.
+     * <p>
+     **Warning:** When you delete an instance pool, the resources that were created by the pool are permanently
+     * deleted, including associated instances, attached boot volumes, and block volumes.
+     * <p>
+     * If an autoscaling configuration applies to the instance pool, the autoscaling configuration will be deleted
+     * asynchronously after the pool is deleted. You can also manually delete the autoscaling configuration using
+     * the `DeleteAutoScalingConfiguration` operation in the Autoscaling API.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

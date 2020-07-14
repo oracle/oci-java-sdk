@@ -8,7 +8,11 @@ import com.oracle.bmc.resourcemanager.requests.*;
 import com.oracle.bmc.resourcemanager.responses.*;
 
 /**
- * API for the Resource Manager service. Use this API to install, configure, and manage resources via the "infrastructure-as-code" model. For more information, see [Overview of Resource Manager](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm).
+ * API for the Resource Manager service.
+ * Use this API to install, configure, and manage resources via the "infrastructure-as-code" model.
+ * For more information, see
+ * [Overview of Resource Manager](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm).
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public interface ResourceManagerAsync extends AutoCloseable {
@@ -58,6 +62,27 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CancelJobRequest, CancelJobResponse> handler);
 
     /**
+     * Moves a configuration source provider into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeConfigurationSourceProviderCompartmentResponse>
+            changeConfigurationSourceProviderCompartment(
+                    ChangeConfigurationSourceProviderCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeConfigurationSourceProviderCompartmentRequest,
+                                    ChangeConfigurationSourceProviderCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a Stack and it's associated Jobs into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -72,6 +97,27 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeStackCompartmentRequest, ChangeStackCompartmentResponse>
                     handler);
+
+    /**
+     * Creates a configuration source provider in the specified compartment.
+     * For more information, see
+     * [To create a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateConfigurationSourceProvider).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateConfigurationSourceProviderResponse>
+            createConfigurationSourceProvider(
+                    CreateConfigurationSourceProviderRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateConfigurationSourceProviderRequest,
+                                    CreateConfigurationSourceProviderResponse>
+                            handler);
 
     /**
      * Creates a job.
@@ -90,7 +136,8 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Creates a stack in the specified compartment.
      * Specify the compartment using the compartment ID.
-     * For more information, see [Create a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#CreateStack).
+     * For more information, see
+     * [To create a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateStack).
      *
      *
      * @param request The request object containing the details to send
@@ -103,6 +150,24 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateStackResponse> createStack(
             CreateStackRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateStackRequest, CreateStackResponse> handler);
+
+    /**
+     * Deletes the specified configuration source provider.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteConfigurationSourceProviderResponse>
+            deleteConfigurationSourceProvider(
+                    DeleteConfigurationSourceProviderRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteConfigurationSourceProviderRequest,
+                                    DeleteConfigurationSourceProviderResponse>
+                            handler);
 
     /**
      * Deletes the specified stack object.
@@ -132,6 +197,24 @@ public interface ResourceManagerAsync extends AutoCloseable {
             DetectStackDriftRequest request,
             com.oracle.bmc.responses.AsyncHandler<DetectStackDriftRequest, DetectStackDriftResponse>
                     handler);
+
+    /**
+     * Gets the properties of the specified configuration source provider.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetConfigurationSourceProviderResponse>
+            getConfigurationSourceProvider(
+                    GetConfigurationSourceProviderRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetConfigurationSourceProviderRequest,
+                                    GetConfigurationSourceProviderResponse>
+                            handler);
 
     /**
      * Returns the specified job along with the job details.
@@ -274,6 +357,27 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists configuration source providers according to the specified filter.
+     * - For `compartmentId`, lists all configuration source providers in the matching compartment.
+     * - For `configurationSourceProviderId`, lists the matching configuration source provider.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListConfigurationSourceProvidersResponse>
+            listConfigurationSourceProviders(
+                    ListConfigurationSourceProvidersRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListConfigurationSourceProvidersRequest,
+                                    ListConfigurationSourceProvidersResponse>
+                            handler);
+
+    /**
      * Returns a list of jobs in a stack or compartment, ordered by time created.
      * <p>
      * - To list all jobs in a stack, provide the stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -398,6 +502,27 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the properties of the specified configuration source provider.
+     * For more information, see
+     * [To update a configuration source provider](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#UpdateConfigurationSourceProvider).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateConfigurationSourceProviderResponse>
+            updateConfigurationSourceProvider(
+                    UpdateConfigurationSourceProviderRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateConfigurationSourceProviderRequest,
+                                    UpdateConfigurationSourceProviderResponse>
+                            handler);
+
+    /**
      * Updates the specified job.
      *
      * @param request The request object containing the details to send
@@ -415,8 +540,9 @@ public interface ResourceManagerAsync extends AutoCloseable {
      * Updates the specified stack object.
      * Use `UpdateStack` when you update your Terraform configuration
      * and want your changes to be reflected in the execution plan.
-     * For more information, see [Update a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#UpdateStack) and
-     * [Edit or Delete a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#EditStack).
+     * For more information, see
+     * [To update a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#UpdateStack) and
+     * [To edit a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#EditStack).
      *
      *
      * @param request The request object containing the details to send

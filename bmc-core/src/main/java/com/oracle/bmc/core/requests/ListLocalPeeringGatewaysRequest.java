@@ -18,11 +18,6 @@ public class ListLocalPeeringGatewaysRequest
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
-     */
-    private String vcnId;
-
-    /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated
      * \"List\" call. For important details about how pagination works, see
      * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -39,6 +34,11 @@ public class ListLocalPeeringGatewaysRequest
      *
      */
     private String page;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN.
+     */
+    private String vcnId;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -76,9 +76,9 @@ public class ListLocalPeeringGatewaysRequest
          */
         public Builder copy(ListLocalPeeringGatewaysRequest o) {
             compartmentId(o.getCompartmentId());
-            vcnId(o.getVcnId());
             limit(o.getLimit());
             page(o.getPage());
+            vcnId(o.getVcnId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

@@ -28,7 +28,6 @@ public class ListSubnetsConverter {
             com.oracle.bmc.core.requests.ListSubnetsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
-        Validate.notNull(request.getVcnId(), "vcnId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("subnets");
@@ -55,11 +54,13 @@ public class ListSubnetsConverter {
                                     request.getPage()));
         }
 
-        target =
-                target.queryParam(
-                        "vcnId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getVcnId()));
+        if (request.getVcnId() != null) {
+            target =
+                    target.queryParam(
+                            "vcnId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVcnId()));
+        }
 
         if (request.getDisplayName() != null) {
             target =

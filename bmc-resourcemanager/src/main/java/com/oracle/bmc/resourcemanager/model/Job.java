@@ -159,6 +159,15 @@ public class Job {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("configSource")
+        private ConfigSourceRecord configSource;
+
+        public Builder configSource(ConfigSourceRecord configSource) {
+            this.configSource = configSource;
+            this.__explicitlySet__.add("configSource");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -198,6 +207,7 @@ public class Job {
                             failureDetails,
                             workingDirectory,
                             variables,
+                            configSource,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -221,6 +231,7 @@ public class Job {
                             .failureDetails(o.getFailureDetails())
                             .workingDirectory(o.getWorkingDirectory())
                             .variables(o.getVariables())
+                            .configSource(o.getConfigSource())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -328,20 +339,26 @@ public class Job {
     String resolvedPlanJobId;
 
     /**
-     * The date and time at which the job was created.
+     * The date and time when the job was created.
+     * Format is defined by RFC3339.
+     * Example: `2020-01-25T21:10:29.600Z`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The date and time at which the job stopped running, irrespective of whether the job ran successfully.
+     * The date and time when the job stopped running, irrespective of whether the job ran successfully.
+     * Format is defined by RFC3339.
+     * Example: `2020-01-25T21:10:29.600Z`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;
     /**
      * Current state of the specified job.
-     * For more information about resource states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts).
+     * For more information about job lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -393,8 +410,8 @@ public class Job {
     };
     /**
      * Current state of the specified job.
-     * For more information about resource states in Resource Manager, see
-     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts).
+     * For more information about job lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -418,6 +435,9 @@ public class Job {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     java.util.Map<String, String> variables;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("configSource")
+    ConfigSourceRecord configSource;
 
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.

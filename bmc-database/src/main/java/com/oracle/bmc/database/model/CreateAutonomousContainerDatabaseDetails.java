@@ -189,7 +189,7 @@ public class CreateAutonomousContainerDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     String dbUniqueName;
     /**
-     * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For a mission critical Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+     * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      **/
     public enum ServiceLevelAgreementType {
         Standard("STANDARD"),
@@ -223,7 +223,7 @@ public class CreateAutonomousContainerDatabaseDetails {
         }
     };
     /**
-     * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For a mission critical Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+     * The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLevelAgreementType")
     ServiceLevelAgreementType serviceLevelAgreementType;

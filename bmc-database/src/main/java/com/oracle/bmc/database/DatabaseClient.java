@@ -1775,6 +1775,37 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public FailOverAutonomousDatabaseResponse failOverAutonomousDatabase(
+            FailOverAutonomousDatabaseRequest request) {
+        LOG.trace("Called failOverAutonomousDatabase");
+        final FailOverAutonomousDatabaseRequest interceptedRequest =
+                FailOverAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FailOverAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, FailOverAutonomousDatabaseResponse>
+                transformer = FailOverAutonomousDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public FailoverDataGuardAssociationResponse failoverDataGuardAssociation(
             FailoverDataGuardAssociationRequest request) {
         LOG.trace("Called failoverDataGuardAssociation");
@@ -4086,6 +4117,37 @@ public class DatabaseClient implements Database {
                 StopAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, StopAutonomousDatabaseResponse>
                 transformer = StopAutonomousDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SwitchoverAutonomousDatabaseResponse switchoverAutonomousDatabase(
+            SwitchoverAutonomousDatabaseRequest request) {
+        LOG.trace("Called switchoverAutonomousDatabase");
+        final SwitchoverAutonomousDatabaseRequest interceptedRequest =
+                SwitchoverAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchoverAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, SwitchoverAutonomousDatabaseResponse>
+                transformer = SwitchoverAutonomousDatabaseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

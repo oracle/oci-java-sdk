@@ -498,6 +498,10 @@ public class Instance {
     @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
     LaunchMode launchMode;
 
+    /**
+     * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     LaunchOptions launchOptions;
     /**

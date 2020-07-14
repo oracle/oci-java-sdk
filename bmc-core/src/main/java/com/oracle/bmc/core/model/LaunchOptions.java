@@ -5,7 +5,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Options for tuning compatibility and performance of VM shapes.
+ * Options for tuning the compatibility and performance of VM shapes. The values that you specify override any
+ * default values.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -383,7 +384,9 @@ public class LaunchOptions {
     RemoteDataVolumeType remoteDataVolumeType;
 
     /**
-     * Whether to enable in-transit encryption for the boot volume's paravirtualized attachment. The default value is false.
+     * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in
+     * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     Boolean isPvEncryptionInTransitEnabled;

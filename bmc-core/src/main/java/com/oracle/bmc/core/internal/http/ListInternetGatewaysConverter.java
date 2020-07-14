@@ -28,7 +28,6 @@ public class ListInternetGatewaysConverter {
             com.oracle.bmc.core.requests.ListInternetGatewaysRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
-        Validate.notNull(request.getVcnId(), "vcnId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("internetGateways");
@@ -39,11 +38,13 @@ public class ListInternetGatewaysConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
-        target =
-                target.queryParam(
-                        "vcnId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getVcnId()));
+        if (request.getVcnId() != null) {
+            target =
+                    target.queryParam(
+                            "vcnId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVcnId()));
+        }
 
         if (request.getLimit() != null) {
             target =

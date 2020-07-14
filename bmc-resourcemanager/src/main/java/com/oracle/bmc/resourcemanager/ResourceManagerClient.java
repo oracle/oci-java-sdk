@@ -448,6 +448,44 @@ public class ResourceManagerClient implements ResourceManager {
     }
 
     @Override
+    public ChangeConfigurationSourceProviderCompartmentResponse
+            changeConfigurationSourceProviderCompartment(
+                    ChangeConfigurationSourceProviderCompartmentRequest request) {
+        LOG.trace("Called changeConfigurationSourceProviderCompartment");
+        final ChangeConfigurationSourceProviderCompartmentRequest interceptedRequest =
+                ChangeConfigurationSourceProviderCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeConfigurationSourceProviderCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeConfigurationSourceProviderCompartmentResponse>
+                transformer = ChangeConfigurationSourceProviderCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeConfigurationSourceProviderCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeStackCompartmentResponse changeStackCompartment(
             ChangeStackCompartmentRequest request) {
         LOG.trace("Called changeStackCompartment");
@@ -474,6 +512,41 @@ public class ResourceManagerClient implements ResourceManager {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getChangeStackCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateConfigurationSourceProviderResponse createConfigurationSourceProvider(
+            CreateConfigurationSourceProviderRequest request) {
+        LOG.trace("Called createConfigurationSourceProvider");
+        final CreateConfigurationSourceProviderRequest interceptedRequest =
+                CreateConfigurationSourceProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateConfigurationSourceProviderConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateConfigurationSourceProviderResponse>
+                transformer = CreateConfigurationSourceProviderConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateConfigurationSourceProviderDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -544,6 +617,37 @@ public class ResourceManagerClient implements ResourceManager {
     }
 
     @Override
+    public DeleteConfigurationSourceProviderResponse deleteConfigurationSourceProvider(
+            DeleteConfigurationSourceProviderRequest request) {
+        LOG.trace("Called deleteConfigurationSourceProvider");
+        final DeleteConfigurationSourceProviderRequest interceptedRequest =
+                DeleteConfigurationSourceProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteConfigurationSourceProviderConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteConfigurationSourceProviderResponse>
+                transformer = DeleteConfigurationSourceProviderConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteStackResponse deleteStack(DeleteStackRequest request) {
         LOG.trace("Called deleteStack");
         final DeleteStackRequest interceptedRequest =
@@ -596,6 +700,36 @@ public class ResourceManagerClient implements ResourceManager {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetConfigurationSourceProviderResponse getConfigurationSourceProvider(
+            GetConfigurationSourceProviderRequest request) {
+        LOG.trace("Called getConfigurationSourceProvider");
+        final GetConfigurationSourceProviderRequest interceptedRequest =
+                GetConfigurationSourceProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetConfigurationSourceProviderConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetConfigurationSourceProviderResponse>
+                transformer = GetConfigurationSourceProviderConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -851,6 +985,36 @@ public class ResourceManagerClient implements ResourceManager {
     }
 
     @Override
+    public ListConfigurationSourceProvidersResponse listConfigurationSourceProviders(
+            ListConfigurationSourceProvidersRequest request) {
+        LOG.trace("Called listConfigurationSourceProviders");
+        final ListConfigurationSourceProvidersRequest interceptedRequest =
+                ListConfigurationSourceProvidersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListConfigurationSourceProvidersConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListConfigurationSourceProvidersResponse>
+                transformer = ListConfigurationSourceProvidersConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListJobsResponse listJobs(ListJobsRequest request) {
         LOG.trace("Called listJobs");
         final ListJobsRequest interceptedRequest = ListJobsConverter.interceptRequest(request);
@@ -1044,6 +1208,41 @@ public class ResourceManagerClient implements ResourceManager {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateConfigurationSourceProviderResponse updateConfigurationSourceProvider(
+            UpdateConfigurationSourceProviderRequest request) {
+        LOG.trace("Called updateConfigurationSourceProvider");
+        final UpdateConfigurationSourceProviderRequest interceptedRequest =
+                UpdateConfigurationSourceProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateConfigurationSourceProviderConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateConfigurationSourceProviderResponse>
+                transformer = UpdateConfigurationSourceProviderConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateConfigurationSourceProviderDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

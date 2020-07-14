@@ -78,6 +78,8 @@ public class FailureDetails {
         InvalidWorkingDirectory("INVALID_WORKING_DIRECTORY"),
         JobTimeout("JOB_TIMEOUT"),
         TerraformConfigVirusFound("TERRAFORM_CONFIG_VIRUS_FOUND"),
+        TerraformGitCloneFailure("TERRAFORM_GIT_CLONE_FAILURE"),
+        TerraformGitCheckoutFailure("TERRAFORM_GIT_CHECKOUT_FAILURE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

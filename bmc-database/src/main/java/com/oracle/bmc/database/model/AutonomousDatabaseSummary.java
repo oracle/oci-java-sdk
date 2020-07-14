@@ -356,6 +356,51 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastSwitchover")
+        private java.util.Date timeOfLastSwitchover;
+
+        public Builder timeOfLastSwitchover(java.util.Date timeOfLastSwitchover) {
+            this.timeOfLastSwitchover = timeOfLastSwitchover;
+            this.__explicitlySet__.add("timeOfLastSwitchover");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastFailover")
+        private java.util.Date timeOfLastFailover;
+
+        public Builder timeOfLastFailover(java.util.Date timeOfLastFailover) {
+            this.timeOfLastFailover = timeOfLastFailover;
+            this.__explicitlySet__.add("timeOfLastFailover");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
+        private Boolean isDataGuardEnabled;
+
+        public Builder isDataGuardEnabled(Boolean isDataGuardEnabled) {
+            this.isDataGuardEnabled = isDataGuardEnabled;
+            this.__explicitlySet__.add("isDataGuardEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("failedDataRecoveryInSeconds")
+        private Integer failedDataRecoveryInSeconds;
+
+        public Builder failedDataRecoveryInSeconds(Integer failedDataRecoveryInSeconds) {
+            this.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
+            this.__explicitlySet__.add("failedDataRecoveryInSeconds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("standbyDb")
+        private AutonomousDatabaseStandbySummary standbyDb;
+
+        public Builder standbyDb(AutonomousDatabaseStandbySummary standbyDb) {
+            this.standbyDb = standbyDb;
+            this.__explicitlySet__.add("standbyDb");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availableUpgradeVersions")
         private java.util.List<String> availableUpgradeVersions;
 
@@ -407,6 +452,11 @@ public class AutonomousDatabaseSummary {
                             dataSafeStatus,
                             timeMaintenanceBegin,
                             timeMaintenanceEnd,
+                            timeOfLastSwitchover,
+                            timeOfLastFailover,
+                            isDataGuardEnabled,
+                            failedDataRecoveryInSeconds,
+                            standbyDb,
                             availableUpgradeVersions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -453,6 +503,11 @@ public class AutonomousDatabaseSummary {
                             .dataSafeStatus(o.getDataSafeStatus())
                             .timeMaintenanceBegin(o.getTimeMaintenanceBegin())
                             .timeMaintenanceEnd(o.getTimeMaintenanceEnd())
+                            .timeOfLastSwitchover(o.getTimeOfLastSwitchover())
+                            .timeOfLastFailover(o.getTimeOfLastFailover())
+                            .isDataGuardEnabled(o.getIsDataGuardEnabled())
+                            .failedDataRecoveryInSeconds(o.getFailedDataRecoveryInSeconds())
+                            .standbyDb(o.getStandbyDb())
                             .availableUpgradeVersions(o.getAvailableUpgradeVersions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -499,6 +554,8 @@ public class AutonomousDatabaseSummary {
         Updating("UPDATING"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
         Restarting("RESTARTING"),
+        Recreating("RECREATING"),
+        RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
         Upgrading("UPGRADING"),
 
         /**
@@ -965,6 +1022,33 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
     java.util.Date timeMaintenanceEnd;
+
+    /**
+     * The timestamp of the last switchover operation for the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastSwitchover")
+    java.util.Date timeOfLastSwitchover;
+
+    /**
+     * The timestamp of the last failover operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastFailover")
+    java.util.Date timeOfLastFailover;
+
+    /**
+     * Indicates whether the Autonomous Database has Data Guard enabled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
+    Boolean isDataGuardEnabled;
+
+    /**
+     * Indicates the number of seconds of data loss for a Data Guard failover.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("failedDataRecoveryInSeconds")
+    Integer failedDataRecoveryInSeconds;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("standbyDb")
+    AutonomousDatabaseStandbySummary standbyDb;
 
     /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
