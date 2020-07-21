@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.19.3</version>
+  <version>1.19.4</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -41,8 +41,7 @@
     <lombok.version>1.18.4</lombok.version>
     <lombok.maven.version>1.18.4.0</lombok.maven.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <slf4j.version>1.7.26</slf4j.version>
-    <validation-api.version>1.1.0.Final</validation-api.version>
+    <slf4j.version>1.7.29</slf4j.version>
     <javax.ws.rs-api.version>2.1</javax.ws.rs-api.version>
     <commons-codec.version>1.13</commons-codec.version>
     <commons-lang3.version>3.8.1</commons-lang3.version>
@@ -531,11 +530,6 @@
       <groupId>javax.ws.rs</groupId>
       <artifactId>javax.ws.rs-api</artifactId>
       <version>${javax.ws.rs-api.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
-      <version>${validation-api.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>

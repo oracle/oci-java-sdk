@@ -105,12 +105,19 @@ public class ResponseRecordIterator<REQUESTBUILDER, REQUEST, RESPONSE, ITEMTYPE>
         } else if (nextPageToken == null) {
             return false;
         } else {
-            fetchNextPage();
-            currentItems = retrieveItemsFromResponseFunction.apply(currentResponse);
-            currentIterator = currentItems.iterator();
+            getNextPage();
 
+            while (currentItems.isEmpty() && nextPageToken != null) {
+                getNextPage();
+            }
             return currentIterator.hasNext();
         }
+    }
+
+    private void getNextPage() {
+        fetchNextPage();
+        currentItems = retrieveItemsFromResponseFunction.apply(currentResponse);
+        currentIterator = currentItems.iterator();
     }
 
     @Override
