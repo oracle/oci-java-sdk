@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.19.4 - 2020-07-21
+### Added
+- Support for license types on instances in the Content and Experience service
+
 ## 1.19.3 - 2020-07-14
 ### Added
 - Support for the Blockchain service

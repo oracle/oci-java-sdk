@@ -159,6 +159,15 @@ public class OceInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
+        private LicenseType instanceLicenseType;
+
+        public Builder instanceLicenseType(LicenseType instanceLicenseType) {
+            this.instanceLicenseType = instanceLicenseType;
+            this.__explicitlySet__.add("instanceLicenseType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -244,6 +253,7 @@ public class OceInstance {
                             adminEmail,
                             wafPrimaryDomain,
                             instanceAccessType,
+                            instanceLicenseType,
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
@@ -273,6 +283,7 @@ public class OceInstance {
                             .adminEmail(o.getAdminEmail())
                             .wafPrimaryDomain(o.getWafPrimaryDomain())
                             .instanceAccessType(o.getInstanceAccessType())
+                            .instanceLicenseType(o.getInstanceLicenseType())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
@@ -518,6 +529,12 @@ public class OceInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
     InstanceAccessType instanceAccessType;
+
+    /**
+     * Flag indicating whether the instance license is new cloud or bring your own license
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
+    LicenseType instanceLicenseType;
 
     /**
      * The time the the OceInstance was created. An RFC3339 formatted datetime string

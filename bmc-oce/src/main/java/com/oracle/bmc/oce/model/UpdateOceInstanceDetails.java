@@ -44,6 +44,15 @@ public class UpdateOceInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
+        private LicenseType instanceLicenseType;
+
+        public Builder instanceLicenseType(LicenseType instanceLicenseType) {
+            this.instanceLicenseType = instanceLicenseType;
+            this.__explicitlySet__.add("instanceLicenseType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -69,7 +78,11 @@ public class UpdateOceInstanceDetails {
         public UpdateOceInstanceDetails build() {
             UpdateOceInstanceDetails __instance__ =
                     new UpdateOceInstanceDetails(
-                            description, wafPrimaryDomain, freeformTags, definedTags);
+                            description,
+                            wafPrimaryDomain,
+                            instanceLicenseType,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -79,6 +92,7 @@ public class UpdateOceInstanceDetails {
             Builder copiedBuilder =
                     description(o.getDescription())
                             .wafPrimaryDomain(o.getWafPrimaryDomain())
+                            .instanceLicenseType(o.getInstanceLicenseType())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -105,6 +119,12 @@ public class UpdateOceInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wafPrimaryDomain")
     String wafPrimaryDomain;
+
+    /**
+     * Flag indicating whether the instance license is new cloud or bring your own license
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
+    LicenseType instanceLicenseType;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

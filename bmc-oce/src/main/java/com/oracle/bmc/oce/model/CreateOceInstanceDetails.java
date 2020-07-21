@@ -143,6 +143,15 @@ public class CreateOceInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
+        private LicenseType instanceLicenseType;
+
+        public Builder instanceLicenseType(LicenseType instanceLicenseType) {
+            this.instanceLicenseType = instanceLicenseType;
+            this.__explicitlySet__.add("instanceLicenseType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -181,6 +190,7 @@ public class CreateOceInstanceDetails {
                             upgradeSchedule,
                             wafPrimaryDomain,
                             instanceAccessType,
+                            instanceLicenseType,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -203,6 +213,7 @@ public class CreateOceInstanceDetails {
                             .upgradeSchedule(o.getUpgradeSchedule())
                             .wafPrimaryDomain(o.getWafPrimaryDomain())
                             .instanceAccessType(o.getInstanceAccessType())
+                            .instanceLicenseType(o.getInstanceLicenseType())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -362,6 +373,12 @@ public class CreateOceInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceAccessType")
     InstanceAccessType instanceAccessType;
+
+    /**
+     * Flag indicating whether the instance license is new cloud or bring your own license
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceLicenseType")
+    LicenseType instanceLicenseType;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
