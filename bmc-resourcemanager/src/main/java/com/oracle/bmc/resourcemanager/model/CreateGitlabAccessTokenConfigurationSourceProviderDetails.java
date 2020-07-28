@@ -155,7 +155,7 @@ public class CreateGitlabAccessTokenConfigurationSourceProviderDetails
 
     /**
      * The Git service API endpoint.
-     * Example: `https://gitlab.com/api/v3/`
+     * Example: `https://gitlab.com/api/v4/`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")

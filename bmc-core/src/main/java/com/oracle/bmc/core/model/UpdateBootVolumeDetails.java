@@ -72,13 +72,27 @@ public class UpdateBootVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
+        private Boolean isAutoTuneEnabled;
+
+        public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
+            this.isAutoTuneEnabled = isAutoTuneEnabled;
+            this.__explicitlySet__.add("isAutoTuneEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateBootVolumeDetails build() {
             UpdateBootVolumeDetails __instance__ =
                     new UpdateBootVolumeDetails(
-                            definedTags, displayName, freeformTags, sizeInGBs, vpusPerGB);
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            sizeInGBs,
+                            vpusPerGB,
+                            isAutoTuneEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,7 +104,8 @@ public class UpdateBootVolumeDetails {
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .sizeInGBs(o.getSizeInGBs())
-                            .vpusPerGB(o.getVpusPerGB());
+                            .vpusPerGB(o.getVpusPerGB())
+                            .isAutoTuneEnabled(o.getIsAutoTuneEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -152,6 +167,13 @@ public class UpdateBootVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
     Long vpusPerGB;
+
+    /**
+     * Specifies whether the auto-tune performance is enabled for this boot volume.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
+    Boolean isAutoTuneEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

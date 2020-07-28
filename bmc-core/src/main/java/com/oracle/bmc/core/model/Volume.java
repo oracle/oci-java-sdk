@@ -179,6 +179,24 @@ public class Volume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
+        private Boolean isAutoTuneEnabled;
+
+        public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
+            this.isAutoTuneEnabled = isAutoTuneEnabled;
+            this.__explicitlySet__.add("isAutoTuneEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoTunedVpusPerGB")
+        private Long autoTunedVpusPerGB;
+
+        public Builder autoTunedVpusPerGB(Long autoTunedVpusPerGB) {
+            this.autoTunedVpusPerGB = autoTunedVpusPerGB;
+            this.__explicitlySet__.add("autoTunedVpusPerGB");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -200,7 +218,9 @@ public class Volume {
                             sizeInMBs,
                             sourceDetails,
                             timeCreated,
-                            volumeGroupId);
+                            volumeGroupId,
+                            isAutoTuneEnabled,
+                            autoTunedVpusPerGB);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -223,7 +243,9 @@ public class Volume {
                             .sizeInMBs(o.getSizeInMBs())
                             .sourceDetails(o.getSourceDetails())
                             .timeCreated(o.getTimeCreated())
-                            .volumeGroupId(o.getVolumeGroupId());
+                            .volumeGroupId(o.getVolumeGroupId())
+                            .isAutoTuneEnabled(o.getIsAutoTuneEnabled())
+                            .autoTunedVpusPerGB(o.getAutoTunedVpusPerGB());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -409,6 +431,20 @@ public class Volume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
     String volumeGroupId;
+
+    /**
+     * Specifies whether the auto-tune performance is enabled for this volume.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
+    Boolean isAutoTuneEnabled;
+
+    /**
+     * The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoTunedVpusPerGB")
+    Long autoTunedVpusPerGB;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -510,6 +510,401 @@ public class ComputePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeGlobalImageCapabilitySchemaVersions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeGlobalImageCapabilitySchemaVersionsResponse>
+            listComputeGlobalImageCapabilitySchemaVersionsResponseIterator(
+                    final ListComputeGlobalImageCapabilitySchemaVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeGlobalImageCapabilitySchemaVersionsRequest.Builder,
+                ListComputeGlobalImageCapabilitySchemaVersionsRequest,
+                ListComputeGlobalImageCapabilitySchemaVersionsResponse>(
+                new com.google.common.base.Supplier<
+                        ListComputeGlobalImageCapabilitySchemaVersionsRequest.Builder>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemaVersionsRequest.Builder get() {
+                        return ListComputeGlobalImageCapabilitySchemaVersionsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemaVersionsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListComputeGlobalImageCapabilitySchemaVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGlobalImageCapabilitySchemaVersionsRequest.Builder>,
+                        ListComputeGlobalImageCapabilitySchemaVersionsRequest>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemaVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGlobalImageCapabilitySchemaVersionsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemaVersionsRequest,
+                        ListComputeGlobalImageCapabilitySchemaVersionsResponse>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemaVersionsResponse apply(
+                            ListComputeGlobalImageCapabilitySchemaVersionsRequest request) {
+                        return client.listComputeGlobalImageCapabilitySchemaVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary} objects
+     * contained in responses from the listComputeGlobalImageCapabilitySchemaVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary>
+            listComputeGlobalImageCapabilitySchemaVersionsRecordIterator(
+                    final ListComputeGlobalImageCapabilitySchemaVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeGlobalImageCapabilitySchemaVersionsRequest.Builder,
+                ListComputeGlobalImageCapabilitySchemaVersionsRequest,
+                ListComputeGlobalImageCapabilitySchemaVersionsResponse,
+                com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaVersionSummary>(
+                new com.google.common.base.Supplier<
+                        ListComputeGlobalImageCapabilitySchemaVersionsRequest.Builder>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemaVersionsRequest.Builder get() {
+                        return ListComputeGlobalImageCapabilitySchemaVersionsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemaVersionsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListComputeGlobalImageCapabilitySchemaVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGlobalImageCapabilitySchemaVersionsRequest.Builder>,
+                        ListComputeGlobalImageCapabilitySchemaVersionsRequest>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemaVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGlobalImageCapabilitySchemaVersionsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemaVersionsRequest,
+                        ListComputeGlobalImageCapabilitySchemaVersionsResponse>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemaVersionsResponse apply(
+                            ListComputeGlobalImageCapabilitySchemaVersionsRequest request) {
+                        return client.listComputeGlobalImageCapabilitySchemaVersions(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemaVersionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model
+                                        .ComputeGlobalImageCapabilitySchemaVersionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model
+                                            .ComputeGlobalImageCapabilitySchemaVersionSummary>
+                            apply(ListComputeGlobalImageCapabilitySchemaVersionsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeGlobalImageCapabilitySchemas operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeGlobalImageCapabilitySchemasResponse>
+            listComputeGlobalImageCapabilitySchemasResponseIterator(
+                    final ListComputeGlobalImageCapabilitySchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeGlobalImageCapabilitySchemasRequest.Builder,
+                ListComputeGlobalImageCapabilitySchemasRequest,
+                ListComputeGlobalImageCapabilitySchemasResponse>(
+                new com.google.common.base.Supplier<
+                        ListComputeGlobalImageCapabilitySchemasRequest.Builder>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemasRequest.Builder get() {
+                        return ListComputeGlobalImageCapabilitySchemasRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemasResponse, String>() {
+                    @Override
+                    public String apply(ListComputeGlobalImageCapabilitySchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGlobalImageCapabilitySchemasRequest.Builder>,
+                        ListComputeGlobalImageCapabilitySchemasRequest>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGlobalImageCapabilitySchemasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemasRequest,
+                        ListComputeGlobalImageCapabilitySchemasResponse>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemasResponse apply(
+                            ListComputeGlobalImageCapabilitySchemasRequest request) {
+                        return client.listComputeGlobalImageCapabilitySchemas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary} objects
+     * contained in responses from the listComputeGlobalImageCapabilitySchemas operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary>
+            listComputeGlobalImageCapabilitySchemasRecordIterator(
+                    final ListComputeGlobalImageCapabilitySchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeGlobalImageCapabilitySchemasRequest.Builder,
+                ListComputeGlobalImageCapabilitySchemasRequest,
+                ListComputeGlobalImageCapabilitySchemasResponse,
+                com.oracle.bmc.core.model.ComputeGlobalImageCapabilitySchemaSummary>(
+                new com.google.common.base.Supplier<
+                        ListComputeGlobalImageCapabilitySchemasRequest.Builder>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemasRequest.Builder get() {
+                        return ListComputeGlobalImageCapabilitySchemasRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemasResponse, String>() {
+                    @Override
+                    public String apply(ListComputeGlobalImageCapabilitySchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeGlobalImageCapabilitySchemasRequest.Builder>,
+                        ListComputeGlobalImageCapabilitySchemasRequest>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeGlobalImageCapabilitySchemasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemasRequest,
+                        ListComputeGlobalImageCapabilitySchemasResponse>() {
+                    @Override
+                    public ListComputeGlobalImageCapabilitySchemasResponse apply(
+                            ListComputeGlobalImageCapabilitySchemasRequest request) {
+                        return client.listComputeGlobalImageCapabilitySchemas(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeGlobalImageCapabilitySchemasResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model
+                                        .ComputeGlobalImageCapabilitySchemaSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model
+                                            .ComputeGlobalImageCapabilitySchemaSummary>
+                            apply(ListComputeGlobalImageCapabilitySchemasResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listComputeImageCapabilitySchemas operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListComputeImageCapabilitySchemasResponse>
+            listComputeImageCapabilitySchemasResponseIterator(
+                    final ListComputeImageCapabilitySchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComputeImageCapabilitySchemasRequest.Builder,
+                ListComputeImageCapabilitySchemasRequest,
+                ListComputeImageCapabilitySchemasResponse>(
+                new com.google.common.base.Supplier<
+                        ListComputeImageCapabilitySchemasRequest.Builder>() {
+                    @Override
+                    public ListComputeImageCapabilitySchemasRequest.Builder get() {
+                        return ListComputeImageCapabilitySchemasRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeImageCapabilitySchemasResponse, String>() {
+                    @Override
+                    public String apply(ListComputeImageCapabilitySchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeImageCapabilitySchemasRequest.Builder>,
+                        ListComputeImageCapabilitySchemasRequest>() {
+                    @Override
+                    public ListComputeImageCapabilitySchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeImageCapabilitySchemasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeImageCapabilitySchemasRequest,
+                        ListComputeImageCapabilitySchemasResponse>() {
+                    @Override
+                    public ListComputeImageCapabilitySchemasResponse apply(
+                            ListComputeImageCapabilitySchemasRequest request) {
+                        return client.listComputeImageCapabilitySchemas(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary} objects
+     * contained in responses from the listComputeImageCapabilitySchemas operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary>
+            listComputeImageCapabilitySchemasRecordIterator(
+                    final ListComputeImageCapabilitySchemasRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComputeImageCapabilitySchemasRequest.Builder,
+                ListComputeImageCapabilitySchemasRequest, ListComputeImageCapabilitySchemasResponse,
+                com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary>(
+                new com.google.common.base.Supplier<
+                        ListComputeImageCapabilitySchemasRequest.Builder>() {
+                    @Override
+                    public ListComputeImageCapabilitySchemasRequest.Builder get() {
+                        return ListComputeImageCapabilitySchemasRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeImageCapabilitySchemasResponse, String>() {
+                    @Override
+                    public String apply(ListComputeImageCapabilitySchemasResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComputeImageCapabilitySchemasRequest.Builder>,
+                        ListComputeImageCapabilitySchemasRequest>() {
+                    @Override
+                    public ListComputeImageCapabilitySchemasRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComputeImageCapabilitySchemasRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeImageCapabilitySchemasRequest,
+                        ListComputeImageCapabilitySchemasResponse>() {
+                    @Override
+                    public ListComputeImageCapabilitySchemasResponse apply(
+                            ListComputeImageCapabilitySchemasRequest request) {
+                        return client.listComputeImageCapabilitySchemas(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListComputeImageCapabilitySchemasResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model.ComputeImageCapabilitySchemaSummary>
+                            apply(ListComputeImageCapabilitySchemasResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listConsoleHistories operation. This iterable
      * will fetch more data from the server as needed.
      *

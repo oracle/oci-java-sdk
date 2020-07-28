@@ -146,6 +146,27 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a compute image capability schema into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     *         [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeComputeImageCapabilitySchemaCompartmentResponse>
+            changeComputeImageCapabilitySchemaCompartment(
+                    ChangeComputeImageCapabilitySchemaCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeImageCapabilitySchemaCompartmentRequest,
+                                    ChangeComputeImageCapabilitySchemaCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a dedicated virtual machine host from one compartment to another.
      *
      * @param request The request object containing the details to send
@@ -221,6 +242,25 @@ public interface ComputeAsync extends AutoCloseable {
                             CreateAppCatalogSubscriptionRequest,
                             CreateAppCatalogSubscriptionResponse>
                     handler);
+
+    /**
+     * Creates compute image capability schema.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>
+            createComputeImageCapabilitySchema(
+                    CreateComputeImageCapabilitySchemaRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeImageCapabilitySchemaRequest,
+                                    CreateComputeImageCapabilitySchemaResponse>
+                            handler);
 
     /**
      * Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
@@ -318,6 +358,25 @@ public interface ComputeAsync extends AutoCloseable {
                             DeleteAppCatalogSubscriptionRequest,
                             DeleteAppCatalogSubscriptionResponse>
                     handler);
+
+    /**
+     * Deletes the specified Compute Image Capability Schema
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteComputeImageCapabilitySchemaResponse>
+            deleteComputeImageCapabilitySchema(
+                    DeleteComputeImageCapabilitySchemaRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeImageCapabilitySchemaRequest,
+                                    DeleteComputeImageCapabilitySchemaResponse>
+                            handler);
 
     /**
      * Deletes the specified console history metadata and the console history data.
@@ -540,6 +599,61 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
                     handler);
+
+    /**
+     * Gets the specified Compute Global Image Capability Schema
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeGlobalImageCapabilitySchemaResponse>
+            getComputeGlobalImageCapabilitySchema(
+                    GetComputeGlobalImageCapabilitySchemaRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetComputeGlobalImageCapabilitySchemaRequest,
+                                    GetComputeGlobalImageCapabilitySchemaResponse>
+                            handler);
+
+    /**
+     * Gets the specified Compute Global Image Capability Schema Version
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeGlobalImageCapabilitySchemaVersionResponse>
+            getComputeGlobalImageCapabilitySchemaVersion(
+                    GetComputeGlobalImageCapabilitySchemaVersionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetComputeGlobalImageCapabilitySchemaVersionRequest,
+                                    GetComputeGlobalImageCapabilitySchemaVersionResponse>
+                            handler);
+
+    /**
+     * Gets the specified Compute Image Capability Schema
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetComputeImageCapabilitySchemaResponse>
+            getComputeImageCapabilitySchema(
+                    GetComputeImageCapabilitySchemaRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetComputeImageCapabilitySchemaRequest,
+                                    GetComputeImageCapabilitySchemaResponse>
+                            handler);
 
     /**
      * Shows the metadata for the specified console history.
@@ -866,6 +980,63 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists Compute Global Image Capability Schema versions in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeGlobalImageCapabilitySchemaVersionsResponse>
+            listComputeGlobalImageCapabilitySchemaVersions(
+                    ListComputeGlobalImageCapabilitySchemaVersionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGlobalImageCapabilitySchemaVersionsRequest,
+                                    ListComputeGlobalImageCapabilitySchemaVersionsResponse>
+                            handler);
+
+    /**
+     * Lists Compute Global Image Capability Schema in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeGlobalImageCapabilitySchemasResponse>
+            listComputeGlobalImageCapabilitySchemas(
+                    ListComputeGlobalImageCapabilitySchemasRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeGlobalImageCapabilitySchemasRequest,
+                                    ListComputeGlobalImageCapabilitySchemasResponse>
+                            handler);
+
+    /**
+     * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComputeImageCapabilitySchemasResponse>
+            listComputeImageCapabilitySchemas(
+                    ListComputeImageCapabilitySchemasRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeImageCapabilitySchemasRequest,
+                                    ListComputeImageCapabilitySchemasResponse>
+                            handler);
+
+    /**
      * Lists the console history metadata for the specified compartment or instance.
      *
      *
@@ -1148,6 +1319,25 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             TerminateInstanceRequest, TerminateInstanceResponse>
                     handler);
+
+    /**
+     * Updates the specified Compute Image Capability Schema
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateComputeImageCapabilitySchemaResponse>
+            updateComputeImageCapabilitySchema(
+                    UpdateComputeImageCapabilitySchemaRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeImageCapabilitySchemaRequest,
+                                    UpdateComputeImageCapabilitySchemaResponse>
+                            handler);
 
     /**
      * Updates the specified console history metadata.

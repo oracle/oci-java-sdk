@@ -110,6 +110,19 @@ public interface Compute extends AutoCloseable {
     CaptureConsoleHistoryResponse captureConsoleHistory(CaptureConsoleHistoryRequest request);
 
     /**
+     * Moves a compute image capability schema into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     *         [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeComputeImageCapabilitySchemaCompartmentResponse
+            changeComputeImageCapabilitySchemaCompartment(
+                    ChangeComputeImageCapabilitySchemaCompartmentRequest request);
+
+    /**
      * Moves a dedicated virtual machine host from one compartment to another.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -153,6 +166,16 @@ public interface Compute extends AutoCloseable {
      */
     CreateAppCatalogSubscriptionResponse createAppCatalogSubscription(
             CreateAppCatalogSubscriptionRequest request);
+
+    /**
+     * Creates compute image capability schema.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateComputeImageCapabilitySchemaResponse createComputeImageCapabilitySchema(
+            CreateComputeImageCapabilitySchemaRequest request);
 
     /**
      * Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
@@ -219,6 +242,16 @@ public interface Compute extends AutoCloseable {
      */
     DeleteAppCatalogSubscriptionResponse deleteAppCatalogSubscription(
             DeleteAppCatalogSubscriptionRequest request);
+
+    /**
+     * Deletes the specified Compute Image Capability Schema
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteComputeImageCapabilitySchemaResponse deleteComputeImageCapabilitySchema(
+            DeleteComputeImageCapabilitySchemaRequest request);
 
     /**
      * Deletes the specified console history metadata and the console history data.
@@ -350,6 +383,35 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetBootVolumeAttachmentResponse getBootVolumeAttachment(GetBootVolumeAttachmentRequest request);
+
+    /**
+     * Gets the specified Compute Global Image Capability Schema
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetComputeGlobalImageCapabilitySchemaResponse getComputeGlobalImageCapabilitySchema(
+            GetComputeGlobalImageCapabilitySchemaRequest request);
+
+    /**
+     * Gets the specified Compute Global Image Capability Schema Version
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetComputeGlobalImageCapabilitySchemaVersionResponse
+            getComputeGlobalImageCapabilitySchemaVersion(
+                    GetComputeGlobalImageCapabilitySchemaVersionRequest request);
+
+    /**
+     * Gets the specified Compute Image Capability Schema
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetComputeImageCapabilitySchemaResponse getComputeImageCapabilitySchema(
+            GetComputeImageCapabilitySchemaRequest request);
 
     /**
      * Shows the metadata for the specified console history.
@@ -554,6 +616,37 @@ public interface Compute extends AutoCloseable {
             ListBootVolumeAttachmentsRequest request);
 
     /**
+     * Lists Compute Global Image Capability Schema versions in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListComputeGlobalImageCapabilitySchemaVersionsResponse
+            listComputeGlobalImageCapabilitySchemaVersions(
+                    ListComputeGlobalImageCapabilitySchemaVersionsRequest request);
+
+    /**
+     * Lists Compute Global Image Capability Schema in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListComputeGlobalImageCapabilitySchemasResponse listComputeGlobalImageCapabilitySchemas(
+            ListComputeGlobalImageCapabilitySchemasRequest request);
+
+    /**
+     * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListComputeImageCapabilitySchemasResponse listComputeImageCapabilitySchemas(
+            ListComputeImageCapabilitySchemasRequest request);
+
+    /**
      * Lists the console history metadata for the specified compartment or instance.
      *
      * @param request The request object containing the details to send
@@ -718,6 +811,16 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     TerminateInstanceResponse terminateInstance(TerminateInstanceRequest request);
+
+    /**
+     * Updates the specified Compute Image Capability Schema
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateComputeImageCapabilitySchemaResponse updateComputeImageCapabilitySchema(
+            UpdateComputeImageCapabilitySchemaRequest request);
 
     /**
      * Updates the specified console history metadata.
