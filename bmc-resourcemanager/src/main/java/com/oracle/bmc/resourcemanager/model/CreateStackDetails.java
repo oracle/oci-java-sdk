@@ -5,7 +5,8 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Properties provided for creating a stack.
+ * The configuration details for creating a stack.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -164,7 +165,7 @@ public class CreateStackDetails {
 
     /**
      * Terraform variables associated with this resource.
-     * Maximum number of variables supported is 100.
+     * Maximum number of variables supported is 250.
      * The maximum size of each variable, including both name and value, is 4096 bytes.
      * Example: `{\"CompartmentId\": \"compartment-id-value\"}`
      *

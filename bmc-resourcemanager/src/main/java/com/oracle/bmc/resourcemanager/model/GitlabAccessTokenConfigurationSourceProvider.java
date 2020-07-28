@@ -116,15 +116,6 @@ public class GitlabAccessTokenConfigurationSourceProvider extends ConfigurationS
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
-        private String accessToken;
-
-        public Builder accessToken(String accessToken) {
-            this.accessToken = accessToken;
-            this.__explicitlySet__.add("accessToken");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -139,8 +130,7 @@ public class GitlabAccessTokenConfigurationSourceProvider extends ConfigurationS
                             lifecycleState,
                             freeformTags,
                             definedTags,
-                            apiEndpoint,
-                            accessToken);
+                            apiEndpoint);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -156,8 +146,7 @@ public class GitlabAccessTokenConfigurationSourceProvider extends ConfigurationS
                             .lifecycleState(o.getLifecycleState())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .apiEndpoint(o.getApiEndpoint())
-                            .accessToken(o.getAccessToken());
+                            .apiEndpoint(o.getApiEndpoint());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -181,8 +170,7 @@ public class GitlabAccessTokenConfigurationSourceProvider extends ConfigurationS
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String apiEndpoint,
-            String accessToken) {
+            String apiEndpoint) {
         super(
                 id,
                 compartmentId,
@@ -193,22 +181,15 @@ public class GitlabAccessTokenConfigurationSourceProvider extends ConfigurationS
                 freeformTags,
                 definedTags);
         this.apiEndpoint = apiEndpoint;
-        this.accessToken = accessToken;
     }
 
     /**
      * The Git service API endpoint.
-     * Example: `https://gitlab.com/api/v3/`
+     * Example: `https://gitlab.com/api/v4/`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
     String apiEndpoint;
-
-    /**
-     * The personal access token configured on the Git repository.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
-    String accessToken;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

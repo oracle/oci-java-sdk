@@ -421,14 +421,16 @@ public class Job {
     FailureDetails failureDetails;
 
     /**
-     * The file path to the directory within the configuration from which the job runs.
+     * File path to the directory from which Terraform runs.
+     * If not specified, the root directory is used.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
     String workingDirectory;
 
     /**
      * Terraform variables associated with this resource.
-     * Maximum number of variables supported is 100.
+     * Maximum number of variables supported is 250.
      * The maximum size of each variable, including both name and value, is 4096 bytes.
      * Example: `{\"CompartmentId\": \"compartment-id-value\"}`
      *

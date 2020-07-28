@@ -84,7 +84,7 @@ public class RegionTest {
     @BeforeClass
     public static void init() throws Exception {
         String regionBlob =
-                "{ \"realmKey\" : \"OC7\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"SDO\",\"regionIdentifier\" : \"us-sandiego-1\"}";
+                "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
         setEnvironmentVariable(newEnvMap);
@@ -97,7 +97,7 @@ public class RegionTest {
                         .property(ClientProperties.CONNECT_TIMEOUT, 10000)
                         .property(ClientProperties.READ_TIMEOUT, 60000));
         Region.hasUsedInstanceMetadataService = false;
-        Region.enableInstanceMetadataService();
+        Region.skipInstanceMetadataService();
     }
 
     @Test
@@ -336,21 +336,21 @@ public class RegionTest {
     @Test
     public void checkIfValidRegionSchema() {
         RegionSchema regionSchema =
-                new RegionSchema("OC6", "oraclensrcloud.com", "FRD", "us-florida-1");
+                new RegionSchema("RTC", "foobar-oraclecloud.com", "YTE", "us-yte-1");
         Assert.assertTrue(RegionSchema.isValid(regionSchema));
     }
 
     @Test
     public void checkIfInValidRealm() {
         RegionSchema regionSchema =
-                new RegionSchema(null, "oraclensrcloud.com", "FRD", "us-florida-1");
+                new RegionSchema(null, "foobar-oraclecloud.com", "YTE", "us-yte-1");
         Assert.assertFalse(RegionSchema.isValid(regionSchema));
     }
 
     @Test
     public void checkIfEmptyRealm() {
         RegionSchema regionSchema =
-                new RegionSchema("", "oraclensrcloud.com", "FRD", "us-florida-1");
+                new RegionSchema("", "foobar-oraclecloud.com", "YTE", "us-yte-1");
         Assert.assertFalse(RegionSchema.isValid(regionSchema));
     }
 
@@ -369,7 +369,7 @@ public class RegionTest {
                         .property(ClientProperties.READ_TIMEOUT, 5000));
 
         String regionBlob =
-                "{ \"realmKey\" : \"OC1\",\"realmDomainComponent\" : \"\",\"regionKey\" : \"MSW\",\"regionIdentifier\" : \"us-moscow-1\"}";
+                "{ \"realmKey\" : \"YCX\",\"realmDomainComponent\" : \"\",\"regionKey\" : \"MSW\",\"regionIdentifier\" : \"us-moscow-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
         setEnvironmentVariable(newEnvMap);
@@ -379,22 +379,21 @@ public class RegionTest {
     @Test
     public void testExistingEnvRegion() {
 
-        Region region = Region.fromRegionCodeOrId("SDO");
+        Region region = Region.fromRegionCodeOrId("ABV");
         Region US_SAN_DIEGO_TST =
-                Region.register(
-                        "us-sandiego-1", Realm.register("OC7", "oraclensrcloud.com"), "SDO");
+                Region.register("us-abv-1", Realm.register("UCX", "oracle-foobar.com"), "ABV");
         assertSame(US_SAN_DIEGO_TST, region);
     }
 
     @Test
     public void testExistingDuplicateEnv() throws Exception {
         String regionBlob =
-                "{ \"realmKey\" : \"OC7\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"SDO\",\"regionIdentifier\" : \"us-sandiego-1\"}";
+                "{ \"realmKey\" : \"UCX\",\"realmDomainComponent\" : \"oracle-foobar.com\",\"regionKey\" : \"ABV\",\"regionIdentifier\" : \"us-abv-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
         setEnvironmentVariable(newEnvMap);
         int count = Region.values().length;
-        Region.fromRegionCodeOrId("SDO");
+        Region.fromRegionCodeOrId("ABV");
         int afterCheckEnvCount = Region.values().length;
         assertSame(count, afterCheckEnvCount);
     }
@@ -407,11 +406,11 @@ public class RegionTest {
                         .property(ClientProperties.READ_TIMEOUT, 5000));
 
         String regionBlob =
-                "{ \"realmKey\" : \"OC6\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"DBI\",\"regionIdentifier\" : \"us-dubai-1\"}";
+                "{ \"realmKey\" : \"RTC\",\"realmDomainComponent\" : \"oracle-cloudfoobar.com\",\"regionKey\" : \"HHH\",\"regionIdentifier\" : \"us-hhh-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
         setEnvironmentVariable(newEnvMap);
-        Region.fromRegionCodeOrId("DBI");
+        Region.fromRegionCodeOrId("HHH");
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -422,7 +421,7 @@ public class RegionTest {
                         .property(ClientProperties.READ_TIMEOUT, 5000));
 
         String regionBlob =
-                "{ \"realmKey\" : \"\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"BRN\",\"regionIdentifier\" : \"us-berlin-1\"}";
+                "{ \"realmKey\" : \"\",\"realmDomainComponent\" : \"foobar-oraclecloud.com\",\"regionKey\" : \"BRN\",\"regionIdentifier\" : \"us-berlin-1\"}";
         Map<String, String> newEnvMap = new HashMap<>();
         newEnvMap.put("OCI_REGION_METADATA", regionBlob);
         setEnvironmentVariable(newEnvMap);
@@ -436,7 +435,7 @@ public class RegionTest {
         if (file.exists()) {
             Region region = Region.fromRegionCodeOrId("ATL");
             Region US_ATLANTA_TST =
-                    register("ap-atlanta-1", Realm.register("OC6", "oraclecloud.com"), "atl");
+                    register("ap-atl-1", Realm.register("RTC", "foobar-oraclecloud.com"), "atl");
             assertSame(US_ATLANTA_TST, region);
         }
     }

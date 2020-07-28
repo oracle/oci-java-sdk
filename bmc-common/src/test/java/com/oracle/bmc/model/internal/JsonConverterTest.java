@@ -17,19 +17,19 @@ public class JsonConverterTest {
     public void parseJsonSchema() {
 
         String regionBlob =
-                "{ \"realmKey\" : \"OC5\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"TIW\",\"regionIdentifier\" : \"us-tacoma-1\"}";
+                "{ \"realmKey\" : \"RTC\",\"realmDomainComponent\" : \"oraclecloud-foobar.com\",\"regionKey\" : \"rrr\",\"regionIdentifier\" : \"us-rrr-1\"}";
         RegionSchema regionSchema = JsonConverter.jsonBlobToObject(regionBlob, RegionSchema.class);
-        assertThat(regionSchema.getRegionIdentifier(), is("us-tacoma-1"));
-        assertThat(regionSchema.getRegionKey(), is("TIW"));
-        assertThat(regionSchema.getRealmKey(), is("OC5"));
-        assertThat(regionSchema.getRealmDomainComponent(), is("oraclensrcloud.com"));
+        assertThat(regionSchema.getRegionIdentifier(), is("us-rrr-1"));
+        assertThat(regionSchema.getRegionKey(), is("rrr"));
+        assertThat(regionSchema.getRealmKey(), is("RTC"));
+        assertThat(regionSchema.getRealmDomainComponent(), is("oraclecloud-foobar.com"));
     }
 
     @Test
     public void parseJsonSchemaInvalid() {
 
         String regionBlob =
-                "{ \"realmKey\" :: \"OC5\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"TIW\",\"regionIdentifier\" : \"us-tacoma-1\"}";
+                "{ \"realmKey\" :: \"RTC\",\"realmDomainComponent\" : \"oraclecloud-foobar.com\",\"regionKey\" : \"rrr\",\"regionIdentifier\" : \"us-rrr-1\"}";
         RegionSchema regionSchema = JsonConverter.jsonBlobToObject(regionBlob, RegionSchema.class);
         assertNull(regionSchema);
     }
@@ -37,7 +37,7 @@ public class JsonConverterTest {
     @Test
     public void parseJsonArray() {
         String jsonArr =
-                "[{ \"realmKey\" : \"OC6\",\"realmDomainComponent\" : \"oraclecloud.com\",\"regionKey\" : \"ATL\",\"regionIdentifier\" : \"ap-atlanta-1\"},{ \"realmKey\" :\"OC7\",\"realmDomainComponent\" : \"oraclensrcloud.com\",\"regionKey\" : \"LAV\",\"regionIdentifier\" : \"us-lasvegas-1\"}]";
+                "[{ \"realmKey\" : \"RYT\",\"realmDomainComponent\" : \"oracleclour-bar.com\",\"regionKey\" : \"atl\",\"regionIdentifier\" : \"ap-atl-1\"},{ \"realmKey\" :\"YUT\",\"realmDomainComponent\" : \"oraclefoobar-cloud.com\",\"regionKey\" : \"LAV\",\"regionIdentifier\" : \"us-lav-1\"}]";
         RegionSchema[] regionSchemas =
                 JsonConverter.jsonBlobToObject(jsonArr, RegionSchema[].class);
         assertThat(regionSchemas.length, is(2));
@@ -46,9 +46,9 @@ public class JsonConverterTest {
     @Test
     public void parseRegionObjToJson() {
         String regionExpected =
-                "{\"realmKey\":\"OC6\",\"realmDomainComponent\":\"oraclensrcloud.com\",\"regionKey\":\"FRD\",\"regionIdentifier\":\"us-florida-1\"}";
+                "{\"realmKey\":\"RTC\",\"realmDomainComponent\":\"oraclecloud-foobar.com\",\"regionKey\":\"gty\",\"regionIdentifier\":\"us-gty-1\"}";
         RegionSchema regionSchema =
-                new RegionSchema("OC6", "oraclensrcloud.com", "FRD", "us-florida-1");
+                new RegionSchema("RTC", "oraclecloud-foobar.com", "gty", "us-gty-1");
         String regionBlob = JsonConverter.objectToJsonBlob(regionSchema);
         assertThat(regionExpected, is(regionBlob));
     }

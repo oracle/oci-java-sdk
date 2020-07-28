@@ -45,19 +45,31 @@ public class UpdateMaintenanceRunDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPatchNowEnabled")
+        private Boolean isPatchNowEnabled;
+
+        public Builder isPatchNowEnabled(Boolean isPatchNowEnabled) {
+            this.isPatchNowEnabled = isPatchNowEnabled;
+            this.__explicitlySet__.add("isPatchNowEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateMaintenanceRunDetails build() {
             UpdateMaintenanceRunDetails __instance__ =
-                    new UpdateMaintenanceRunDetails(isEnabled, timeScheduled);
+                    new UpdateMaintenanceRunDetails(isEnabled, timeScheduled, isPatchNowEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateMaintenanceRunDetails o) {
-            Builder copiedBuilder = isEnabled(o.getIsEnabled()).timeScheduled(o.getTimeScheduled());
+            Builder copiedBuilder =
+                    isEnabled(o.getIsEnabled())
+                            .timeScheduled(o.getTimeScheduled())
+                            .isPatchNowEnabled(o.getIsPatchNowEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -82,6 +94,12 @@ public class UpdateMaintenanceRunDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     java.util.Date timeScheduled;
+
+    /**
+     * If set to `TRUE`, starts patching immediately.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPatchNowEnabled")
+    Boolean isPatchNowEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -586,6 +586,44 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ChangeComputeImageCapabilitySchemaCompartmentResponse
+            changeComputeImageCapabilitySchemaCompartment(
+                    ChangeComputeImageCapabilitySchemaCompartmentRequest request) {
+        LOG.trace("Called changeComputeImageCapabilitySchemaCompartment");
+        final ChangeComputeImageCapabilitySchemaCompartmentRequest interceptedRequest =
+                ChangeComputeImageCapabilitySchemaCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeImageCapabilitySchemaCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeComputeImageCapabilitySchemaCompartmentResponse>
+                transformer = ChangeComputeImageCapabilitySchemaCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeComputeImageCapabilitySchemaCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDedicatedVmHostCompartmentResponse changeDedicatedVmHostCompartment(
             ChangeDedicatedVmHostCompartmentRequest request) {
         LOG.trace("Called changeDedicatedVmHostCompartment");
@@ -724,6 +762,41 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public CreateComputeImageCapabilitySchemaResponse createComputeImageCapabilitySchema(
+            CreateComputeImageCapabilitySchemaRequest request) {
+        LOG.trace("Called createComputeImageCapabilitySchema");
+        final CreateComputeImageCapabilitySchemaRequest interceptedRequest =
+                CreateComputeImageCapabilitySchemaConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeImageCapabilitySchemaConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateComputeImageCapabilitySchemaResponse>
+                transformer = CreateComputeImageCapabilitySchemaConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateComputeImageCapabilitySchemaDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateDedicatedVmHostResponse createDedicatedVmHost(
             CreateDedicatedVmHostRequest request) {
         LOG.trace("Called createDedicatedVmHost");
@@ -834,6 +907,37 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAppCatalogSubscriptionResponse>
                 transformer = DeleteAppCatalogSubscriptionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteComputeImageCapabilitySchemaResponse deleteComputeImageCapabilitySchema(
+            DeleteComputeImageCapabilitySchemaRequest request) {
+        LOG.trace("Called deleteComputeImageCapabilitySchema");
+        final DeleteComputeImageCapabilitySchemaRequest interceptedRequest =
+                DeleteComputeImageCapabilitySchemaConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeImageCapabilitySchemaConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteComputeImageCapabilitySchemaResponse>
+                transformer = DeleteComputeImageCapabilitySchemaConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1190,6 +1294,100 @@ public class ComputeClient implements Compute {
                 GetBootVolumeAttachmentConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeAttachmentResponse>
                 transformer = GetBootVolumeAttachmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetComputeGlobalImageCapabilitySchemaResponse getComputeGlobalImageCapabilitySchema(
+            GetComputeGlobalImageCapabilitySchemaRequest request) {
+        LOG.trace("Called getComputeGlobalImageCapabilitySchema");
+        final GetComputeGlobalImageCapabilitySchemaRequest interceptedRequest =
+                GetComputeGlobalImageCapabilitySchemaConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeGlobalImageCapabilitySchemaConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetComputeGlobalImageCapabilitySchemaResponse>
+                transformer = GetComputeGlobalImageCapabilitySchemaConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetComputeGlobalImageCapabilitySchemaVersionResponse
+            getComputeGlobalImageCapabilitySchemaVersion(
+                    GetComputeGlobalImageCapabilitySchemaVersionRequest request) {
+        LOG.trace("Called getComputeGlobalImageCapabilitySchemaVersion");
+        final GetComputeGlobalImageCapabilitySchemaVersionRequest interceptedRequest =
+                GetComputeGlobalImageCapabilitySchemaVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeGlobalImageCapabilitySchemaVersionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        GetComputeGlobalImageCapabilitySchemaVersionResponse>
+                transformer = GetComputeGlobalImageCapabilitySchemaVersionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetComputeImageCapabilitySchemaResponse getComputeImageCapabilitySchema(
+            GetComputeImageCapabilitySchemaRequest request) {
+        LOG.trace("Called getComputeImageCapabilitySchema");
+        final GetComputeImageCapabilitySchemaRequest interceptedRequest =
+                GetComputeImageCapabilitySchemaConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeImageCapabilitySchemaConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetComputeImageCapabilitySchemaResponse>
+                transformer = GetComputeImageCapabilitySchemaConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1678,6 +1876,101 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ListComputeGlobalImageCapabilitySchemaVersionsResponse
+            listComputeGlobalImageCapabilitySchemaVersions(
+                    ListComputeGlobalImageCapabilitySchemaVersionsRequest request) {
+        LOG.trace("Called listComputeGlobalImageCapabilitySchemaVersions");
+        final ListComputeGlobalImageCapabilitySchemaVersionsRequest interceptedRequest =
+                ListComputeGlobalImageCapabilitySchemaVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeGlobalImageCapabilitySchemaVersionsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListComputeGlobalImageCapabilitySchemaVersionsResponse>
+                transformer =
+                        ListComputeGlobalImageCapabilitySchemaVersionsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListComputeGlobalImageCapabilitySchemasResponse listComputeGlobalImageCapabilitySchemas(
+            ListComputeGlobalImageCapabilitySchemasRequest request) {
+        LOG.trace("Called listComputeGlobalImageCapabilitySchemas");
+        final ListComputeGlobalImageCapabilitySchemasRequest interceptedRequest =
+                ListComputeGlobalImageCapabilitySchemasConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeGlobalImageCapabilitySchemasConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListComputeGlobalImageCapabilitySchemasResponse>
+                transformer = ListComputeGlobalImageCapabilitySchemasConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListComputeImageCapabilitySchemasResponse listComputeImageCapabilitySchemas(
+            ListComputeImageCapabilitySchemasRequest request) {
+        LOG.trace("Called listComputeImageCapabilitySchemas");
+        final ListComputeImageCapabilitySchemasRequest interceptedRequest =
+                ListComputeImageCapabilitySchemasConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeImageCapabilitySchemasConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListComputeImageCapabilitySchemasResponse>
+                transformer = ListComputeImageCapabilitySchemasConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request) {
         LOG.trace("Called listConsoleHistories");
         final ListConsoleHistoriesRequest interceptedRequest =
@@ -2105,6 +2398,41 @@ public class ComputeClient implements Compute {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateComputeImageCapabilitySchemaResponse updateComputeImageCapabilitySchema(
+            UpdateComputeImageCapabilitySchemaRequest request) {
+        LOG.trace("Called updateComputeImageCapabilitySchema");
+        final UpdateComputeImageCapabilitySchemaRequest interceptedRequest =
+                UpdateComputeImageCapabilitySchemaConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeImageCapabilitySchemaConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateComputeImageCapabilitySchemaResponse>
+                transformer = UpdateComputeImageCapabilitySchemaConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateComputeImageCapabilitySchemaDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

@@ -135,7 +135,8 @@ public interface ResourceManagerAsync extends AutoCloseable {
 
     /**
      * Creates a stack in the specified compartment.
-     * Specify the compartment using the compartment ID.
+     * You can create a stack from a Terraform configuration file.
+     * The Terraform configuration file can be directly uploaded or referenced from a source code control system.
      * For more information, see
      * [To create a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateStack).
      *

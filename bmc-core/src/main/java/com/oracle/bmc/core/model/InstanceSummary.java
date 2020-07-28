@@ -197,7 +197,7 @@ public class InstanceSummary {
     String displayName;
 
     /**
-     * The name of the Fault Domain the instance is running in.
+     * The fault domain the instance is running in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     String faultDomain;

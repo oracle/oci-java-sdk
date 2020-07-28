@@ -135,6 +135,15 @@ public class CreateVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
+        private Boolean isAutoTuneEnabled;
+
+        public Builder isAutoTuneEnabled(Boolean isAutoTuneEnabled) {
+            this.isAutoTuneEnabled = isAutoTuneEnabled;
+            this.__explicitlySet__.add("isAutoTuneEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -152,7 +161,8 @@ public class CreateVolumeDetails {
                             sizeInGBs,
                             sizeInMBs,
                             sourceDetails,
-                            volumeBackupId);
+                            volumeBackupId,
+                            isAutoTuneEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -171,7 +181,8 @@ public class CreateVolumeDetails {
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
                             .sourceDetails(o.getSourceDetails())
-                            .volumeBackupId(o.getVolumeBackupId());
+                            .volumeBackupId(o.getVolumeBackupId())
+                            .isAutoTuneEnabled(o.getIsAutoTuneEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -292,6 +303,13 @@ public class CreateVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeBackupId")
     String volumeBackupId;
+
+    /**
+     * Specifies whether the auto-tune performance is enabled for this volume.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoTuneEnabled")
+    Boolean isAutoTuneEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

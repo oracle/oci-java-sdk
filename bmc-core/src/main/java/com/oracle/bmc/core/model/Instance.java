@@ -358,9 +358,11 @@ public class Instance {
     String displayName;
 
     /**
-     * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
+     * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality
+     * as fields in the `metadata` object.
      * <p>
-     * They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+     * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata`
+     * fields are string/string maps only).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
@@ -375,8 +377,7 @@ public class Instance {
      * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
      * instances in other fault domains.
      * <p>
-     * If you do not specify the fault domain, the system selects one for you. To change the fault
-     * domain for an instance, terminate it and launch a new instance in the preferred fault domain.
+     * If you do not specify the fault domain, the system selects one for you.
      * <p>
      * Example: `FAULT-DOMAIN-1`
      *
@@ -438,7 +439,7 @@ public class Instance {
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
      * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      *
      **/
@@ -491,7 +492,7 @@ public class Instance {
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
      * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
      * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      *
      **/
