@@ -155,6 +155,7 @@ public class WorkRequest {
     @lombok.extern.slf4j.Slf4j
     public enum OperationType {
         ChangeStackCompartment("CHANGE_STACK_COMPARTMENT"),
+        CreateStackFromCompartment("CREATE_STACK_FROM_COMPARTMENT"),
         DriftDetection("DRIFT_DETECTION"),
 
         /**

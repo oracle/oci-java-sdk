@@ -17,6 +17,11 @@ public class CreateStackResponse {
     private String opcRequestId;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     */
+    private String opcWorkRequestId;
+
+    /**
      * For optimistic concurrency control. See `if-match`.
      */
     private String etag;
@@ -33,6 +38,7 @@ public class CreateStackResponse {
          */
         public Builder copy(CreateStackResponse o) {
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
             stack(o.getStack());
 

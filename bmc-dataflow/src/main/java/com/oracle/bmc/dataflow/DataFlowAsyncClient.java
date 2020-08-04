@@ -398,6 +398,101 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangePrivateEndpointCompartmentResponse>
+            changePrivateEndpointCompartment(
+                    final ChangePrivateEndpointCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePrivateEndpointCompartmentRequest,
+                                    ChangePrivateEndpointCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changePrivateEndpointCompartment");
+        final ChangePrivateEndpointCompartmentRequest interceptedRequest =
+                ChangePrivateEndpointCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePrivateEndpointCompartmentConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangePrivateEndpointCompartmentResponse>
+                transformer = ChangePrivateEndpointCompartmentConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangePrivateEndpointCompartmentRequest,
+                        ChangePrivateEndpointCompartmentResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ChangePrivateEndpointCompartmentRequest,
+                            ChangePrivateEndpointCompartmentResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getChangePrivateEndpointCompartmentDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getChangePrivateEndpointCompartmentDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, ChangePrivateEndpointCompartmentResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getChangePrivateEndpointCompartmentDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeRunCompartmentResponse> changeRunCompartment(
             final ChangeRunCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -578,6 +673,97 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePrivateEndpointResponse> createPrivateEndpoint(
+            final CreatePrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async createPrivateEndpoint");
+        final CreatePrivateEndpointRequest interceptedRequest =
+                CreatePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
+                transformer = CreatePrivateEndpointConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreatePrivateEndpointDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreatePrivateEndpointDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, CreatePrivateEndpointResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreatePrivateEndpointDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRunResponse> createRun(
             final CreateRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateRunRequest, CreateRunResponse>
@@ -721,6 +907,82 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteApplicationResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePrivateEndpointResponse> deletePrivateEndpoint(
+            final DeletePrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async deletePrivateEndpoint");
+        final DeletePrivateEndpointRequest interceptedRequest =
+                DeletePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeletePrivateEndpointResponse>
+                transformer = DeletePrivateEndpointConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, DeletePrivateEndpointResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
@@ -885,6 +1147,80 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetPrivateEndpointResponse> getPrivateEndpoint(
+            final GetPrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPrivateEndpointRequest, GetPrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async getPrivateEndpoint");
+        final GetPrivateEndpointRequest interceptedRequest =
+                GetPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateEndpointResponse>
+                transformer = GetPrivateEndpointConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetPrivateEndpointRequest, GetPrivateEndpointResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            GetPrivateEndpointRequest, GetPrivateEndpointResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, GetPrivateEndpointResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRunResponse> getRun(
             final GetRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetRunRequest, GetRunResponse> handler) {
@@ -1027,6 +1363,80 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            final GetWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+                transformer = GetWorkRequestConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            GetWorkRequestRequest, GetWorkRequestResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, GetWorkRequestResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationsResponse> listApplications(
             final ListApplicationsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1083,6 +1493,82 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListApplicationsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrivateEndpointsResponse> listPrivateEndpoints(
+            final ListPrivateEndpointsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>
+                    handler) {
+        LOG.trace("Called async listPrivateEndpoints");
+        final ListPrivateEndpointsRequest interceptedRequest =
+                ListPrivateEndpointsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPrivateEndpointsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListPrivateEndpointsResponse>
+                transformer = ListPrivateEndpointsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, ListPrivateEndpointsResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
@@ -1246,6 +1732,232 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            final ListWorkRequestErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer = ListWorkRequestErrorsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            final ListWorkRequestLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer = ListWorkRequestLogsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, ListWorkRequestLogsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            final ListWorkRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer = ListWorkRequestsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, ListWorkRequestsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateApplicationResponse> updateApplication(
             final UpdateApplicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1323,6 +2035,97 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                             return client.put(
                                     ib,
                                     interceptedRequest.getUpdateApplicationDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivateEndpointResponse> updatePrivateEndpoint(
+            final UpdatePrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async updatePrivateEndpoint");
+        final UpdatePrivateEndpointRequest interceptedRequest =
+                UpdatePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>
+                transformer = UpdatePrivateEndpointConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getUpdatePrivateEndpointDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        interceptedRequest.getUpdatePrivateEndpointDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getUpdatePrivateEndpointDetails(),
                                     interceptedRequest,
                                     onSuccess,
                                     onError);

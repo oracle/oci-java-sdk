@@ -194,6 +194,7 @@ public class StackSummary {
      * - ACTIVE
      * - DELETING
      * - DELETED
+     * - FAILED
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")

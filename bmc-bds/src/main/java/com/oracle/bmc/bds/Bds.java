@@ -84,6 +84,17 @@ public interface Bds extends AutoCloseable {
             ChangeBdsInstanceCompartmentRequest request);
 
     /**
+     * Scale-up/down individial nodes (per role type) in the cluster. Customer can choose
+     * arbitrarty VM_STANDARD shape to scale-up/down the instance. Only VM_STANDARD nodes
+     * can be re-shaped.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeShapeResponse changeShape(ChangeShapeRequest request);
+
+    /**
      * Creates a new BDS instance.
      *
      * @param request The request object containing the details to send
@@ -160,6 +171,15 @@ public interface Bds extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     RemoveCloudSqlResponse removeCloudSql(RemoveCloudSqlRequest request);
+
+    /**
+     * Restarts a single node of a BDS instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestartNodeResponse restartNode(RestartNodeRequest request);
 
     /**
      * Update the BDS instance identified by the id

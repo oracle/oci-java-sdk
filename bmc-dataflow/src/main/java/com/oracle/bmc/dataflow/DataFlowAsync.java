@@ -61,6 +61,25 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a private endpoint into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePrivateEndpointCompartmentResponse>
+            changePrivateEndpointCompartment(
+                    ChangePrivateEndpointCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePrivateEndpointCompartmentRequest,
+                                    ChangePrivateEndpointCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a run into a different compartment. When provided, If-Match is checked against ETag
      * values of the resource. Associated resources, like historical metrics, will not be
      * automatically moved. The run must be in a terminal state (CANCELED, FAILED, SUCCEEDED) in
@@ -98,6 +117,23 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a private endpoint to be used by an application.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePrivateEndpointResponse> createPrivateEndpoint(
+            CreatePrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
+                    handler);
+
+    /**
      * Creates a run for an application.
      *
      *
@@ -127,6 +163,23 @@ public interface DataFlowAsync extends AutoCloseable {
             DeleteApplicationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteApplicationRequest, DeleteApplicationResponse>
+                    handler);
+
+    /**
+     * Deletes a private endpoint using a `privateEndpointId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePrivateEndpointResponse> deletePrivateEndpoint(
+            DeletePrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>
                     handler);
 
     /**
@@ -162,6 +215,23 @@ public interface DataFlowAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves an private endpoint using a `privateEndpointId`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPrivateEndpointResponse> getPrivateEndpoint(
+            GetPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPrivateEndpointRequest, GetPrivateEndpointResponse>
+                    handler);
+
+    /**
      * Retrieves the run for the specified `runId`.
      *
      *
@@ -192,6 +262,22 @@ public interface DataFlowAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetRunLogRequest, GetRunLogResponse> handler);
 
     /**
+     * Gets the status of the work request with the given OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
      * Lists all applications in the specified compartment.
      *
      *
@@ -205,6 +291,23 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<ListApplicationsResponse> listApplications(
             ListApplicationsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListApplicationsRequest, ListApplicationsResponse>
+                    handler);
+
+    /**
+     * Lists all private endpoints in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPrivateEndpointsResponse> listPrivateEndpoints(
+            ListPrivateEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>
                     handler);
 
     /**
@@ -238,6 +341,56 @@ public interface DataFlowAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListRunsRequest, ListRunsResponse> handler);
 
     /**
+     * Return a (paginated) list of errors for a given work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler);
+
+    /**
+     * Return a paginated list of logs for a given work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler);
+
+    /**
+     * Lists the work requests in a compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
      * Updates an application using an `applicationId`.
      *
      *
@@ -252,6 +405,25 @@ public interface DataFlowAsync extends AutoCloseable {
             UpdateApplicationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateApplicationRequest, UpdateApplicationResponse>
+                    handler);
+
+    /**
+     * Updates a private endpoint using a `privateEndpointId`.  If changes to a private endpoint match
+     * a previously defined private endpoint, then a 409 status code will be returned.  This indicates
+     * that a conflict has been detected.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePrivateEndpointResponse> updatePrivateEndpoint(
+            UpdatePrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>
                     handler);
 
     /**

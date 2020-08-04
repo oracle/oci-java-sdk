@@ -137,6 +137,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
      * Creates a stack in the specified compartment.
      * You can create a stack from a Terraform configuration file.
      * The Terraform configuration file can be directly uploaded or referenced from a source code control system.
+     * You can also create a stack from an existing compartment.
      * For more information, see
      * [To create a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateStack).
      *
@@ -396,6 +397,25 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<ListJobsResponse> listJobs(
             ListJobsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handler);
+
+    /**
+     * Returns a list of supported services for Resource Discovery. For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourceDiscoveryServicesResponse>
+            listResourceDiscoveryServices(
+                    ListResourceDiscoveryServicesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListResourceDiscoveryServicesRequest,
+                                    ListResourceDiscoveryServicesResponse>
+                            handler);
 
     /**
      * Lists drift status details for each resource defined in the specified stack.

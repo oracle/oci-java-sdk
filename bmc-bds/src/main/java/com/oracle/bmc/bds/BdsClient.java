@@ -552,6 +552,38 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public ChangeShapeResponse changeShape(ChangeShapeRequest request) {
+        LOG.trace("Called changeShape");
+        final ChangeShapeRequest interceptedRequest =
+                ChangeShapeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeShapeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeShapeResponse>
+                transformer = ChangeShapeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeShapeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateBdsInstanceResponse createBdsInstance(CreateBdsInstanceRequest request) {
         LOG.trace("Called createBdsInstance");
         final CreateBdsInstanceRequest interceptedRequest =
@@ -807,6 +839,38 @@ public class BdsClient implements Bds {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getRemoveCloudSqlDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RestartNodeResponse restartNode(RestartNodeRequest request) {
+        LOG.trace("Called restartNode");
+        final RestartNodeRequest interceptedRequest =
+                RestartNodeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestartNodeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RestartNodeResponse>
+                transformer = RestartNodeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRestartNodeDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

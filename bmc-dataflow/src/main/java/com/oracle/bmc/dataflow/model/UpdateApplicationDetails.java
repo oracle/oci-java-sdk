@@ -172,6 +172,15 @@ public class UpdateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+        private String privateEndpointId;
+
+        public Builder privateEndpointId(String privateEndpointId) {
+            this.privateEndpointId = privateEndpointId;
+            this.__explicitlySet__.add("privateEndpointId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
         private String warehouseBucketUri;
 
@@ -203,6 +212,7 @@ public class UpdateApplicationDetails {
                             logsBucketUri,
                             numExecutors,
                             parameters,
+                            privateEndpointId,
                             warehouseBucketUri);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -227,6 +237,7 @@ public class UpdateApplicationDetails {
                             .logsBucketUri(o.getLogsBucketUri())
                             .numExecutors(o.getNumExecutors())
                             .parameters(o.getParameters())
+                            .privateEndpointId(o.getPrivateEndpointId())
                             .warehouseBucketUri(o.getWarehouseBucketUri());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -250,7 +261,7 @@ public class UpdateApplicationDetails {
 
     /**
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
@@ -271,8 +282,8 @@ public class UpdateApplicationDetails {
     ApplicationLanguage language;
 
     /**
-     * An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
@@ -294,7 +305,7 @@ public class UpdateApplicationDetails {
 
     /**
      * The Spark configuration passed to the running process.
-     * See https://spark.apache.org/docs/latest/configuration.html#available-properties
+     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
      * Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
      * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
      * not allowed to be overwritten will cause a 400 status to be returned.
@@ -350,7 +361,7 @@ public class UpdateApplicationDetails {
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
@@ -374,9 +385,16 @@ public class UpdateApplicationDetails {
     java.util.List<ApplicationParameter> parameters;
 
     /**
+     * The OCID of a private endpoint.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+    String privateEndpointId;
+
+    /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
      * for BATCH SQL runs.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")

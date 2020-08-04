@@ -423,6 +423,7 @@ public class Job {
     /**
      * File path to the directory from which Terraform runs.
      * If not specified, the root directory is used.
+     * This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")

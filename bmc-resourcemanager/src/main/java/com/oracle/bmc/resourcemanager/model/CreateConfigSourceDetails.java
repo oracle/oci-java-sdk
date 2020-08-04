@@ -36,6 +36,10 @@ package com.oracle.bmc.resourcemanager.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateGitConfigSourceDetails.class,
         name = "GIT_CONFIG_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateCompartmentConfigSourceDetails.class,
+        name = "COMPARTMENT_CONFIG_SOURCE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -44,6 +48,7 @@ public class CreateConfigSourceDetails {
     /**
      * File path to the directory from which Terraform runs.
      * If not specified, the root directory is used.
+     * This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")

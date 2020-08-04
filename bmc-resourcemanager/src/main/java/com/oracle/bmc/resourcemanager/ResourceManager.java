@@ -100,6 +100,7 @@ public interface ResourceManager extends AutoCloseable {
      * Creates a stack in the specified compartment.
      * You can create a stack from a Terraform configuration file.
      * The Terraform configuration file can be directly uploaded or referenced from a source code control system.
+     * You can also create a stack from an existing compartment.
      * For more information, see
      * [To create a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateStack).
      *
@@ -246,6 +247,16 @@ public interface ResourceManager extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListJobsResponse listJobs(ListJobsRequest request);
+
+    /**
+     * Returns a list of supported services for Resource Discovery. For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListResourceDiscoveryServicesResponse listResourceDiscoveryServices(
+            ListResourceDiscoveryServicesRequest request);
 
     /**
      * Lists drift status details for each resource defined in the specified stack.

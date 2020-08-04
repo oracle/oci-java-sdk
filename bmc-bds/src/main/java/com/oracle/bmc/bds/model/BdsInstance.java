@@ -274,6 +274,7 @@ public class BdsInstance {
         Creating("CREATING"),
         Active("ACTIVE"),
         Updating("UPDATING"),
+        UpdatingInfra("UPDATING_INFRA"),
         Suspending("SUSPENDING"),
         Suspended("SUSPENDED"),
         Resuming("RESUMING"),

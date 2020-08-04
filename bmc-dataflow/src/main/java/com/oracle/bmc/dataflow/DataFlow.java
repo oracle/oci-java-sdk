@@ -53,6 +53,16 @@ public interface DataFlow extends AutoCloseable {
             ChangeApplicationCompartmentRequest request);
 
     /**
+     * Moves a private endpoint into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangePrivateEndpointCompartmentResponse changePrivateEndpointCompartment(
+            ChangePrivateEndpointCompartmentRequest request);
+
+    /**
      * Moves a run into a different compartment. When provided, If-Match is checked against ETag
      * values of the resource. Associated resources, like historical metrics, will not be
      * automatically moved. The run must be in a terminal state (CANCELED, FAILED, SUCCEEDED) in
@@ -74,6 +84,15 @@ public interface DataFlow extends AutoCloseable {
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
 
     /**
+     * Creates a private endpoint to be used by an application.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreatePrivateEndpointResponse createPrivateEndpoint(CreatePrivateEndpointRequest request);
+
+    /**
      * Creates a run for an application.
      *
      * @param request The request object containing the details to send
@@ -90,6 +109,15 @@ public interface DataFlow extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
+
+    /**
+     * Deletes a private endpoint using a `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeletePrivateEndpointResponse deletePrivateEndpoint(DeletePrivateEndpointRequest request);
 
     /**
      * Cancels the specified run if it has not already completed or was previously cancelled.
@@ -111,6 +139,15 @@ public interface DataFlow extends AutoCloseable {
     GetApplicationResponse getApplication(GetApplicationRequest request);
 
     /**
+     * Retrieves an private endpoint using a `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetPrivateEndpointResponse getPrivateEndpoint(GetPrivateEndpointRequest request);
+
+    /**
      * Retrieves the run for the specified `runId`.
      *
      * @param request The request object containing the details to send
@@ -129,6 +166,15 @@ public interface DataFlow extends AutoCloseable {
     GetRunLogResponse getRunLog(GetRunLogRequest request);
 
     /**
+     * Gets the status of the work request with the given OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
      * Lists all applications in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -136,6 +182,15 @@ public interface DataFlow extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
+
+    /**
+     * Lists all private endpoints in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListPrivateEndpointsResponse listPrivateEndpoints(ListPrivateEndpointsRequest request);
 
     /**
      * Retrieves summaries of the run's logs.
@@ -156,6 +211,33 @@ public interface DataFlow extends AutoCloseable {
     ListRunsResponse listRuns(ListRunsRequest request);
 
     /**
+     * Return a (paginated) list of errors for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
+
+    /**
+     * Return a paginated list of logs for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
+
+    /**
+     * Lists the work requests in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
      * Updates an application using an `applicationId`.
      *
      * @param request The request object containing the details to send
@@ -163,6 +245,17 @@ public interface DataFlow extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
+
+    /**
+     * Updates a private endpoint using a `privateEndpointId`.  If changes to a private endpoint match
+     * a previously defined private endpoint, then a 409 status code will be returned.  This indicates
+     * that a conflict has been detected.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdatePrivateEndpointResponse updatePrivateEndpoint(UpdatePrivateEndpointRequest request);
 
     /**
      * Updates a run using a `runId`.

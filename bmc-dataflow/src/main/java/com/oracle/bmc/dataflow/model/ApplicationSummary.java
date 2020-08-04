@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * A data flow application object used in bulk listings.
+ * A Data Flow application object used in bulk listings.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
