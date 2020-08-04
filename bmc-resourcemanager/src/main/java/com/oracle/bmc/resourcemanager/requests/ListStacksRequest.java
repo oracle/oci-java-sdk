@@ -41,6 +41,7 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest<java.l
      * - ACTIVE
      * - DELETING
      * - DELETED
+     * - FAILED
      *
      */
     private Stack.LifecycleState lifecycleState;

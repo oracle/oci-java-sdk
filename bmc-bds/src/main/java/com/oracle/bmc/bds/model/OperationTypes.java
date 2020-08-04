@@ -18,6 +18,9 @@ public enum OperationTypes {
     AddCloudSql("ADD_CLOUD_SQL"),
     RemoveCloudSql("REMOVE_CLOUD_SQL"),
     ChangeCompartmentForBds("CHANGE_COMPARTMENT_FOR_BDS"),
+    ChangeShape("CHANGE_SHAPE"),
+    UpdateInfra("UPDATE_INFRA"),
+    RestartNode("RESTART_NODE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

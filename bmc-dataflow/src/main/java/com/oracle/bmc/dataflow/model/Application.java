@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * A data flow application object.
+ * A Data Flow application object.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -206,6 +206,15 @@ public class Application {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+        private String privateEndpointId;
+
+        public Builder privateEndpointId(String privateEndpointId) {
+            this.privateEndpointId = privateEndpointId;
+            this.__explicitlySet__.add("privateEndpointId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
         private String sparkVersion;
 
@@ -268,6 +277,7 @@ public class Application {
                             ownerPrincipalId,
                             ownerUserName,
                             parameters,
+                            privateEndpointId,
                             sparkVersion,
                             timeCreated,
                             timeUpdated,
@@ -299,6 +309,7 @@ public class Application {
                             .ownerPrincipalId(o.getOwnerPrincipalId())
                             .ownerUserName(o.getOwnerUserName())
                             .parameters(o.getParameters())
+                            .privateEndpointId(o.getPrivateEndpointId())
                             .sparkVersion(o.getSparkVersion())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
@@ -317,8 +328,8 @@ public class Application {
     }
 
     /**
-     * An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
@@ -347,7 +358,7 @@ public class Application {
 
     /**
      * The Spark configuration passed to the running process.
-     * See https://spark.apache.org/docs/latest/configuration.html#available-properties
+     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
      * Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
      * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
      * not allowed to be overwritten will cause a 400 status to be returned.
@@ -401,7 +412,7 @@ public class Application {
 
     /**
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
@@ -439,7 +450,7 @@ public class Application {
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
@@ -478,6 +489,13 @@ public class Application {
     java.util.List<ApplicationParameter> parameters;
 
     /**
+     * The OCID of a private endpoint.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+    String privateEndpointId;
+
+    /**
      * The Spark version utilized to run the application.
      *
      **/
@@ -503,7 +521,7 @@ public class Application {
     /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
      * for BATCH SQL runs.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")

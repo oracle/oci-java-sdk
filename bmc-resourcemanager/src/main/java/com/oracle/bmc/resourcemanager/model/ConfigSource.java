@@ -34,6 +34,10 @@ package com.oracle.bmc.resourcemanager.model;
         name = "GIT_CONFIG_SOURCE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CompartmentConfigSource.class,
+        name = "COMPARTMENT_CONFIG_SOURCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ZipUploadConfigSource.class,
         name = "ZIP_UPLOAD"
     )
@@ -44,6 +48,7 @@ public class ConfigSource {
     /**
      * File path to the directory to use for running Terraform.
      * If not specified, the root directory is used.
+     * This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
@@ -57,6 +62,7 @@ public class ConfigSource {
     public enum ConfigSourceType {
         ZipUpload("ZIP_UPLOAD"),
         GitConfigSource("GIT_CONFIG_SOURCE"),
+        CompartmentConfigSource("COMPARTMENT_CONFIG_SOURCE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -42,6 +42,51 @@ public class ClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bdsVersion")
+        private String bdsVersion;
+
+        public Builder bdsVersion(String bdsVersion) {
+            this.bdsVersion = bdsVersion;
+            this.__explicitlySet__.add("bdsVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
+        private String osVersion;
+
+        public Builder osVersion(String osVersion) {
+            this.osVersion = osVersion;
+            this.__explicitlySet__.add("osVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bdCellVersion")
+        private String bdCellVersion;
+
+        public Builder bdCellVersion(String bdCellVersion) {
+            this.bdCellVersion = bdCellVersion;
+            this.__explicitlySet__.add("bdCellVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("csqlCellVersion")
+        private String csqlCellVersion;
+
+        public Builder csqlCellVersion(String csqlCellVersion) {
+            this.csqlCellVersion = csqlCellVersion;
+            this.__explicitlySet__.add("csqlCellVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -95,6 +140,11 @@ public class ClusterDetails {
                     new ClusterDetails(
                             bdaVersion,
                             bdmVersion,
+                            bdsVersion,
+                            osVersion,
+                            dbVersion,
+                            bdCellVersion,
+                            csqlCellVersion,
                             timeCreated,
                             timeRefreshed,
                             clouderaManagerUrl,
@@ -109,6 +159,11 @@ public class ClusterDetails {
             Builder copiedBuilder =
                     bdaVersion(o.getBdaVersion())
                             .bdmVersion(o.getBdmVersion())
+                            .bdsVersion(o.getBdsVersion())
+                            .osVersion(o.getOsVersion())
+                            .dbVersion(o.getDbVersion())
+                            .bdCellVersion(o.getBdCellVersion())
+                            .csqlCellVersion(o.getCsqlCellVersion())
                             .timeCreated(o.getTimeCreated())
                             .timeRefreshed(o.getTimeRefreshed())
                             .clouderaManagerUrl(o.getClouderaManagerUrl())
@@ -134,10 +189,40 @@ public class ClusterDetails {
     String bdaVersion;
 
     /**
-     * BDM version installed in the cluster
+     * Big Data Manager version installed in the cluster
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdmVersion")
     String bdmVersion;
+
+    /**
+     * Big Data Service version installed in the cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bdsVersion")
+    String bdsVersion;
+
+    /**
+     * Oracle Linux version installed in the cluster
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
+    String osVersion;
+
+    /**
+     * Query Server Database version
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    String dbVersion;
+
+    /**
+     * Cloud SQL cell version
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bdCellVersion")
+    String bdCellVersion;
+
+    /**
+     * Big Data SQL version
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("csqlCellVersion")
+    String csqlCellVersion;
 
     /**
      * The time the cluster was created. An RFC3339 formatted datetime string

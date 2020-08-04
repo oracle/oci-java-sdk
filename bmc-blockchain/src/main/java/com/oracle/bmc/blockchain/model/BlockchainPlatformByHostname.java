@@ -116,12 +116,12 @@ public class BlockchainPlatformByHostname {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleDetails")
-        private String lifeCycleDetails;
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
 
-        public Builder lifeCycleDetails(String lifeCycleDetails) {
-            this.lifeCycleDetails = lifeCycleDetails;
-            this.__explicitlySet__.add("lifeCycleDetails");
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
 
@@ -160,7 +160,7 @@ public class BlockchainPlatformByHostname {
                             platformRole,
                             computeShape,
                             lifecycleState,
-                            lifeCycleDetails,
+                            lifecycleDetails,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -180,7 +180,7 @@ public class BlockchainPlatformByHostname {
                             .platformRole(o.getPlatformRole())
                             .computeShape(o.getComputeShape())
                             .lifecycleState(o.getLifecycleState())
-                            .lifeCycleDetails(o.getLifeCycleDetails())
+                            .lifecycleDetails(o.getLifecycleDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -259,8 +259,8 @@ public class BlockchainPlatformByHostname {
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleDetails")
-    String lifeCycleDetails;
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    String lifecycleDetails;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

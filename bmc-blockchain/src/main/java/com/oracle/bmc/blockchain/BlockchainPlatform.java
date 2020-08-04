@@ -8,7 +8,7 @@ import com.oracle.bmc.blockchain.requests.*;
 import com.oracle.bmc.blockchain.responses.*;
 
 /**
- * Blockchain Platform Plane API
+ * Blockchain Platform Control Plane API
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 public interface BlockchainPlatform extends AutoCloseable {

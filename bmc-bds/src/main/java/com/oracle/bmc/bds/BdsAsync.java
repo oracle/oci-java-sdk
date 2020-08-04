@@ -112,6 +112,23 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Scale-up/down individial nodes (per role type) in the cluster. Customer can choose
+     * arbitrarty VM_STANDARD shape to scale-up/down the instance. Only VM_STANDARD nodes
+     * can be re-shaped.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeShapeResponse> changeShape(
+            ChangeShapeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ChangeShapeRequest, ChangeShapeResponse> handler);
+
+    /**
      * Creates a new BDS instance.
      *
      *
@@ -255,6 +272,21 @@ public interface BdsAsync extends AutoCloseable {
             RemoveCloudSqlRequest request,
             com.oracle.bmc.responses.AsyncHandler<RemoveCloudSqlRequest, RemoveCloudSqlResponse>
                     handler);
+
+    /**
+     * Restarts a single node of a BDS instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestartNodeResponse> restartNode(
+            RestartNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RestartNodeRequest, RestartNodeResponse> handler);
 
     /**
      * Update the BDS instance identified by the id

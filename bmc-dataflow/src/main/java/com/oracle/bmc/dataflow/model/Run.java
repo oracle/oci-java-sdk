@@ -242,6 +242,51 @@ public class Run {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsZones")
+        private java.util.List<String> privateEndpointDnsZones;
+
+        public Builder privateEndpointDnsZones(java.util.List<String> privateEndpointDnsZones) {
+            this.privateEndpointDnsZones = privateEndpointDnsZones;
+            this.__explicitlySet__.add("privateEndpointDnsZones");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointMaxHostCount")
+        private Integer privateEndpointMaxHostCount;
+
+        public Builder privateEndpointMaxHostCount(Integer privateEndpointMaxHostCount) {
+            this.privateEndpointMaxHostCount = privateEndpointMaxHostCount;
+            this.__explicitlySet__.add("privateEndpointMaxHostCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointNsgIds")
+        private java.util.List<String> privateEndpointNsgIds;
+
+        public Builder privateEndpointNsgIds(java.util.List<String> privateEndpointNsgIds) {
+            this.privateEndpointNsgIds = privateEndpointNsgIds;
+            this.__explicitlySet__.add("privateEndpointNsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+        private String privateEndpointId;
+
+        public Builder privateEndpointId(String privateEndpointId) {
+            this.privateEndpointId = privateEndpointId;
+            this.__explicitlySet__.add("privateEndpointId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointSubnetId")
+        private String privateEndpointSubnetId;
+
+        public Builder privateEndpointSubnetId(String privateEndpointSubnetId) {
+            this.privateEndpointSubnetId = privateEndpointSubnetId;
+            this.__explicitlySet__.add("privateEndpointSubnetId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("runDurationInMilliseconds")
         private Long runDurationInMilliseconds;
 
@@ -326,6 +371,11 @@ public class Run {
                             ownerPrincipalId,
                             ownerUserName,
                             parameters,
+                            privateEndpointDnsZones,
+                            privateEndpointMaxHostCount,
+                            privateEndpointNsgIds,
+                            privateEndpointId,
+                            privateEndpointSubnetId,
                             runDurationInMilliseconds,
                             sparkVersion,
                             timeCreated,
@@ -363,6 +413,11 @@ public class Run {
                             .ownerPrincipalId(o.getOwnerPrincipalId())
                             .ownerUserName(o.getOwnerUserName())
                             .parameters(o.getParameters())
+                            .privateEndpointDnsZones(o.getPrivateEndpointDnsZones())
+                            .privateEndpointMaxHostCount(o.getPrivateEndpointMaxHostCount())
+                            .privateEndpointNsgIds(o.getPrivateEndpointNsgIds())
+                            .privateEndpointId(o.getPrivateEndpointId())
+                            .privateEndpointSubnetId(o.getPrivateEndpointSubnetId())
                             .runDurationInMilliseconds(o.getRunDurationInMilliseconds())
                             .sparkVersion(o.getSparkVersion())
                             .timeCreated(o.getTimeCreated())
@@ -383,8 +438,8 @@ public class Run {
     }
 
     /**
-     * An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
@@ -427,7 +482,7 @@ public class Run {
 
     /**
      * The Spark configuration passed to the running process.
-     * See https://spark.apache.org/docs/latest/configuration.html#available-properties
+     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
      * Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
      * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
      * not allowed to be overwritten will cause a 400 status to be returned.
@@ -481,7 +536,7 @@ public class Run {
 
     /**
      * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
@@ -526,7 +581,7 @@ public class Run {
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
@@ -540,7 +595,7 @@ public class Run {
     Integer numExecutors;
 
     /**
-     * Unique Oracle-assigned identifier for the request.
+     * Unique Oracle assigned identifier for the request.
      * If you need to contact Oracle about a particular request, please provide the request ID.
      *
      **/
@@ -571,6 +626,45 @@ public class Run {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     java.util.List<ApplicationParameter> parameters;
+
+    /**
+     * An array of DNS zone names.
+     * Example: `[ \"app.examplecorp.com\", \"app.examplecorp2.com\" ]`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsZones")
+    java.util.List<String> privateEndpointDnsZones;
+
+    /**
+     * The maximum number of hosts to be accessed through the private endpoint. This value is used
+     * to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
+     * multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
+     * to 512.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointMaxHostCount")
+    Integer privateEndpointMaxHostCount;
+
+    /**
+     * An array of network security group OCIDs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointNsgIds")
+    java.util.List<String> privateEndpointNsgIds;
+
+    /**
+     * The OCID of a private endpoint.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+    String privateEndpointId;
+
+    /**
+     * The OCID of a subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointSubnetId")
+    String privateEndpointSubnetId;
 
     /**
      * The duration of the run in milliseconds.
@@ -612,7 +706,7 @@ public class Run {
     /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
      * for BATCH SQL runs.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
