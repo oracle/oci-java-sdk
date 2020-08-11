@@ -24,6 +24,7 @@
         <include>CONTRIBUTING.md</include>
         <include>LICENSE.txt</include>
         <include>THIRD_PARTY_LICENSES.txt</include>
+        <include>NOTICE.txt</include>
       </includes>
     </fileSet>
     <!-- Include all of the examples -->

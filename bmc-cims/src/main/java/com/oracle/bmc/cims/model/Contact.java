@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Contact Details of the Customer
+ * Contact details for the customer.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -91,24 +91,24 @@ public class Contact {
     }
 
     /**
-     * Contact person name
+     * The name of the contact person.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactName")
     String contactName;
 
     /**
-     * Contact person email
+     * The email of the contact person.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
     String contactEmail;
 
     /**
-     * Contact person phone number
+     * The phone number of the contact person.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
     String contactPhone;
     /**
-     * ContactType enum. eg: MANAGER, PRIMARY
+     * The type of contact, such as primary or alternate.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ContactType {
@@ -157,7 +157,7 @@ public class Contact {
         }
     };
     /**
-     * ContactType enum. eg: MANAGER, PRIMARY
+     * The type of contact, such as primary or alternate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactType")
     ContactType contactType;

@@ -195,6 +195,33 @@ public class Job {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
+        private String jobDefinitionName;
+
+        public Builder jobDefinitionName(String jobDefinitionName) {
+            this.jobDefinitionName = jobDefinitionName;
+            this.__explicitlySet__.add("jobDefinitionName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+        private String errorCode;
+
+        public Builder errorCode(String errorCode) {
+            this.errorCode = errorCode;
+            this.__explicitlySet__.add("errorCode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
+        private String errorMessage;
+
+        public Builder errorMessage(String errorMessage) {
+            this.errorMessage = errorMessage;
+            this.__explicitlySet__.add("errorMessage");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
@@ -229,6 +256,9 @@ public class Job {
                             timeOfLatestExecution,
                             createdById,
                             updatedById,
+                            jobDefinitionName,
+                            errorCode,
+                            errorMessage,
                             uri);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -256,6 +286,9 @@ public class Job {
                             .timeOfLatestExecution(o.getTimeOfLatestExecution())
                             .createdById(o.getCreatedById())
                             .updatedById(o.getUpdatedById())
+                            .jobDefinitionName(o.getJobDefinitionName())
+                            .errorCode(o.getErrorCode())
+                            .errorMessage(o.getErrorMessage())
                             .uri(o.getUri());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -395,6 +428,26 @@ public class Job {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
     String updatedById;
+
+    /**
+     * The display name of the job definition resource that defined the scope of this job.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
+    String jobDefinitionName;
+
+    /**
+     * Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+    String errorCode;
+
+    /**
+     * Error message returned from the latest job execution for this job. Useful when the latest Job Execution is in a FAILED state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
+    String errorMessage;
 
     /**
      * URI to the job instance in the API.

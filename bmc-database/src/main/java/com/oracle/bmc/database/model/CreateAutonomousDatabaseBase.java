@@ -73,11 +73,13 @@ public class CreateAutonomousDatabaseBase {
      * <p>
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
      *
      **/
     public enum DbWorkload {
         Oltp("OLTP"),
         Dw("DW"),
+        Ajd("AJD"),
         ;
 
         private final String value;
@@ -112,6 +114,7 @@ public class CreateAutonomousDatabaseBase {
      * <p>
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")

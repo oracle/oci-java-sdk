@@ -110,6 +110,51 @@ public class JobDefinitionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
+        private String connectionKey;
+
+        public Builder connectionKey(String connectionKey) {
+            this.connectionKey = connectionKey;
+            this.__explicitlySet__.add("connectionKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLatestExecutionStarted")
+        private java.util.Date timeLatestExecutionStarted;
+
+        public Builder timeLatestExecutionStarted(java.util.Date timeLatestExecutionStarted) {
+            this.timeLatestExecutionStarted = timeLatestExecutionStarted;
+            this.__explicitlySet__.add("timeLatestExecutionStarted");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLatestExecutionEnded")
+        private java.util.Date timeLatestExecutionEnded;
+
+        public Builder timeLatestExecutionEnded(java.util.Date timeLatestExecutionEnded) {
+            this.timeLatestExecutionEnded = timeLatestExecutionEnded;
+            this.__explicitlySet__.add("timeLatestExecutionEnded");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionState")
+        private JobExecutionState jobExecutionState;
+
+        public Builder jobExecutionState(JobExecutionState jobExecutionState) {
+            this.jobExecutionState = jobExecutionState;
+            this.__explicitlySet__.add("jobExecutionState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
+        private JobScheduleType scheduleType;
+
+        public Builder scheduleType(JobScheduleType scheduleType) {
+            this.scheduleType = scheduleType;
+            this.__explicitlySet__.add("scheduleType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -124,7 +169,12 @@ public class JobDefinitionSummary {
                             jobType,
                             lifecycleState,
                             isSampleDataExtracted,
-                            timeCreated);
+                            timeCreated,
+                            connectionKey,
+                            timeLatestExecutionStarted,
+                            timeLatestExecutionEnded,
+                            jobExecutionState,
+                            scheduleType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -140,7 +190,12 @@ public class JobDefinitionSummary {
                             .jobType(o.getJobType())
                             .lifecycleState(o.getLifecycleState())
                             .isSampleDataExtracted(o.getIsSampleDataExtracted())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .connectionKey(o.getConnectionKey())
+                            .timeLatestExecutionStarted(o.getTimeLatestExecutionStarted())
+                            .timeLatestExecutionEnded(o.getTimeLatestExecutionEnded())
+                            .jobExecutionState(o.getJobExecutionState())
+                            .scheduleType(o.getScheduleType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -211,6 +266,39 @@ public class JobDefinitionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The key of the connection resource used in harvest, sampling, profiling jobs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
+    String connectionKey;
+
+    /**
+     * Time that the latest job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLatestExecutionStarted")
+    java.util.Date timeLatestExecutionStarted;
+
+    /**
+     * Time that the latest job execution ended or null if it hasn't yet completed.
+     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLatestExecutionEnded")
+    java.util.Date timeLatestExecutionEnded;
+
+    /**
+     * Status of the latest job execution, such as running, paused, or completed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionState")
+    JobExecutionState jobExecutionState;
+
+    /**
+     * Type of job schedule for the latest job executed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
+    JobScheduleType scheduleType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

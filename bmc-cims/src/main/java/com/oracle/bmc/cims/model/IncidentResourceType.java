@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of incident type
+ * Details about the resource associated with the support request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -104,31 +104,31 @@ public class IncidentResourceType {
     }
 
     /**
-     * Unique ID that identifies an Incident Type
+     * Unique identifier of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeKey")
     String resourceTypeKey;
 
     /**
-     * Name of Incident type
+     * The display name of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Label associated with Incident Type
+     * The label associated with the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     String label;
 
     /**
-     * Details of Incident Type
+     * The description of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Service Category List
+     * The service category list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceCategoryList")
     java.util.List<ServiceCategory> serviceCategoryList;

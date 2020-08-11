@@ -52,6 +52,7 @@ public class GetEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         IsLogical("isLogical"),
         IsPartition("isPartition"),
         FolderKey("folderKey"),
+        FolderName("folderName"),
         TypeKey("typeKey"),
         Path("path"),
         HarvestStatus("harvestStatus"),

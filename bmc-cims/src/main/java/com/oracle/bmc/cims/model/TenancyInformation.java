@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Customer Tenant
+ * Details about the customer's tenancy.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -71,13 +71,13 @@ public class TenancyInformation {
     }
 
     /**
-     * Tenant customer support identifier
+     * The Customer Support Identifier number associated with the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerSupportKey")
     String customerSupportKey;
 
     /**
-     * Tenant OCID
+     * The OCID of the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     String tenancyId;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Ticket created
+ * Details about the ticket created.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -150,12 +150,12 @@ public class Ticket {
     }
 
     /**
-     * Unique ID that identifies a Ticket
+     * Unique identifier for the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
     String ticketNumber;
     /**
-     * Severity of the ticket. eg: HIGH, MEDIUM
+     * The severity assigned to the ticket.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Severity {
@@ -202,49 +202,49 @@ public class Ticket {
         }
     };
     /**
-     * Severity of the ticket. eg: HIGH, MEDIUM
+     * The severity assigned to the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     Severity severity;
 
     /**
-     * List of resources
+     * The list of resources associated with the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
     java.util.List<Resource> resourceList;
 
     /**
-     * Title of ticket
+     * The title of the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     String title;
 
     /**
-     * Details of ticket
+     * The description of the issue addressed in the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Epoch time of ticket creation
+     * The time when the ticket was created, in milliseconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     Integer timeCreated;
 
     /**
-     * Epoch time of ticket updated
+     * The time when the ticket was updated, in milliseconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     Integer timeUpdated;
 
     /**
-     * Describes the lifecycles of a ticket
+     * The current state of the ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * Describes the lifecycle details of a ticket
+     * Additional information about the current `lifecycleState`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     LifecycleDetails lifecycleDetails;

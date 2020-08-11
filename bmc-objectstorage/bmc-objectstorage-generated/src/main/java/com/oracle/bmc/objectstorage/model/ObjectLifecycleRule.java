@@ -38,6 +38,15 @@ public class ObjectLifecycleRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("target")
+        private String target;
+
+        public Builder target(String target) {
+            this.target = target;
+            this.__explicitlySet__.add("target");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private String action;
 
@@ -89,7 +98,13 @@ public class ObjectLifecycleRule {
         public ObjectLifecycleRule build() {
             ObjectLifecycleRule __instance__ =
                     new ObjectLifecycleRule(
-                            name, action, timeAmount, timeUnit, isEnabled, objectNameFilter);
+                            name,
+                            target,
+                            action,
+                            timeAmount,
+                            timeUnit,
+                            isEnabled,
+                            objectNameFilter);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -98,6 +113,7 @@ public class ObjectLifecycleRule {
         public Builder copy(ObjectLifecycleRule o) {
             Builder copiedBuilder =
                     name(o.getName())
+                            .target(o.getTarget())
                             .action(o.getAction())
                             .timeAmount(o.getTimeAmount())
                             .timeUnit(o.getTimeUnit())
@@ -123,9 +139,16 @@ public class ObjectLifecycleRule {
     String name;
 
     /**
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("target")
+    String target;
+
+    /**
      * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects into the
      * [Archive Storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action
-     * 'DELETE' permanently delete objects from buckets. 'ARCHIVE' and 'DELETE' are the only two supported
+     * 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads
+     * and permanently delete their parts from buckets. 'ARCHIVE', 'DELETE' and 'ABORT' are the only three supported
      * actions at this time.
      *
      **/

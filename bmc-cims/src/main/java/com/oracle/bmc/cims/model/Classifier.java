@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Incident Classifier details
+ * Details about the incident classifier object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -121,36 +121,36 @@ public class Classifier {
     }
 
     /**
-     * Unique ID that identifies a classifier
+     * Unique identifier of the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Name of classifier. eg: LIMIT Increase
+     * The display name of the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Label of classifier
+     * The label associated with the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     String label;
 
     /**
-     * Description of classifier
+     * The description of the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * List of Issues
+     * The list of issues.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeList")
     java.util.List<IssueType> issueTypeList;
     /**
-     * Scope of Service category/resource
+     * The scope of the service category or resource.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Scope {
@@ -198,12 +198,12 @@ public class Classifier {
         }
     };
     /**
-     * Scope of Service category/resource
+     * The scope of the service category or resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Scope scope;
     /**
-     * Unit to measure Service category/ resource
+     * The unit to use to measure the service category or resource.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Unit {
@@ -249,7 +249,7 @@ public class Classifier {
         }
     };
     /**
-     * Unit to measure Service category/ resource
+     * The unit to use to measure the service category or resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     Unit unit;

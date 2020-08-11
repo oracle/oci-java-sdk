@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Ticket Status
+ * Details about the status of the support ticket.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class Status {
     }
 
     /**
-     * Unique code
+     * The code unique to this ticket status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     String code;
 
     /**
-     * Status message
+     * The status message for this ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;

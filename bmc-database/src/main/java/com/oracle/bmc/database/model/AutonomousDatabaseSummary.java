@@ -884,12 +884,14 @@ public class AutonomousDatabaseSummary {
      * <p>
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
      *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DbWorkload {
         Oltp("OLTP"),
         Dw("DW"),
+        Ajd("AJD"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -934,6 +936,7 @@ public class AutonomousDatabaseSummary {
      * <p>
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")

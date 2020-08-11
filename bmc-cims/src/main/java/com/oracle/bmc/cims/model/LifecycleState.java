@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Provides the current status of the ticket
+ * The current state of the ticket.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @lombok.extern.slf4j.Slf4j

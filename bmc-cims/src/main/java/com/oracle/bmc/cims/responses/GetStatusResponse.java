@@ -12,14 +12,9 @@ import com.oracle.bmc.cims.model.*;
 public class GetStatusResponse {
 
     /**
-     * OPC Request Id
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
-
-    /**
-     * e-Tag
-     */
-    private String etag;
 
     /**
      * The returned Status instance.
@@ -33,7 +28,6 @@ public class GetStatusResponse {
          */
         public Builder copy(GetStatusResponse o) {
             opcRequestId(o.getOpcRequestId());
-            etag(o.getEtag());
             status(o.getStatus());
 
             return this;

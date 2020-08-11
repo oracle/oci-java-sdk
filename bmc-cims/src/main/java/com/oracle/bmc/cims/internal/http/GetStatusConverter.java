@@ -50,6 +50,10 @@ public class GetStatusConverter {
 
         ib.header("ocid", request.getOcid());
 
+        if (request.getHomeregion() != null) {
+            ib.header("homeregion", request.getHomeregion());
+        }
+
         return ib;
     }
 
@@ -93,15 +97,6 @@ public class GetStatusConverter {
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
                                                     String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                headers, "etag");
-                                if (etagHeader.isPresent()) {
-                                    builder.etag(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "etag", etagHeader.get().get(0), String.class));
                                 }
 
                                 com.oracle.bmc.cims.responses.GetStatusResponse responseWrapper =

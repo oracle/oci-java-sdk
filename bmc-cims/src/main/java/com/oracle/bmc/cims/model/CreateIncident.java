@@ -5,7 +5,10 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Incident
+ * Details gathered during the creation of the support ticket.
+ * <p>
+ **Caution:** Avoid using any confidential information when you supply string values using the API.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -111,7 +114,7 @@ public class CreateIncident {
     }
 
     /**
-     * Tenancy Ocid
+     * The OCID of the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -120,25 +123,25 @@ public class CreateIncident {
     CreateTicketDetails ticket;
 
     /**
-     * Customer Support Identifier of the support account
+     * The Customer Support Identifier number for the support account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     String csi;
 
     /**
-     * States type of incident. eg: LIMIT, TECH
+     * The kind of support ticket, such as a technical issue request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     ProblemType problemType;
 
     /**
-     * List of contacts
+     * The list of contacts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     java.util.List<Contact> contacts;
 
     /**
-     * Referrer of the incident., its usually the URL for where the customer logged the incident
+     * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referrer")
     String referrer;

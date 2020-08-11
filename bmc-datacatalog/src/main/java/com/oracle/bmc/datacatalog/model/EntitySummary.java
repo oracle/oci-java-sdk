@@ -72,6 +72,15 @@ public class EntitySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("folderName")
+        private String folderName;
+
+        public Builder folderName(String folderName) {
+            this.folderName = folderName;
+            this.__explicitlySet__.add("folderName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
         private String externalKey;
 
@@ -146,6 +155,7 @@ public class EntitySummary {
                             description,
                             dataAssetKey,
                             folderKey,
+                            folderName,
                             externalKey,
                             path,
                             timeCreated,
@@ -165,6 +175,7 @@ public class EntitySummary {
                             .description(o.getDescription())
                             .dataAssetKey(o.getDataAssetKey())
                             .folderKey(o.getFolderKey())
+                            .folderName(o.getFolderName())
                             .externalKey(o.getExternalKey())
                             .path(o.getPath())
                             .timeCreated(o.getTimeCreated())
@@ -216,6 +227,12 @@ public class EntitySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("folderKey")
     String folderKey;
+
+    /**
+     * Name of the associated folder. This name is harvested from the source data asset when the parent folder for the entiy is harvested.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("folderName")
+    String folderName;
 
     /**
      * Unique external key of this object in the source system.

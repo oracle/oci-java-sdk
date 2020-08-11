@@ -180,6 +180,42 @@ public class JobDefinition {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLatestExecutionStarted")
+        private java.util.Date timeLatestExecutionStarted;
+
+        public Builder timeLatestExecutionStarted(java.util.Date timeLatestExecutionStarted) {
+            this.timeLatestExecutionStarted = timeLatestExecutionStarted;
+            this.__explicitlySet__.add("timeLatestExecutionStarted");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLatestExecutionEnded")
+        private java.util.Date timeLatestExecutionEnded;
+
+        public Builder timeLatestExecutionEnded(java.util.Date timeLatestExecutionEnded) {
+            this.timeLatestExecutionEnded = timeLatestExecutionEnded;
+            this.__explicitlySet__.add("timeLatestExecutionEnded");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionState")
+        private JobExecutionState jobExecutionState;
+
+        public Builder jobExecutionState(JobExecutionState jobExecutionState) {
+            this.jobExecutionState = jobExecutionState;
+            this.__explicitlySet__.add("jobExecutionState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
+        private JobScheduleType scheduleType;
+
+        public Builder scheduleType(JobScheduleType scheduleType) {
+            this.scheduleType = scheduleType;
+            this.__explicitlySet__.add("scheduleType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -212,6 +248,10 @@ public class JobDefinition {
                             uri,
                             isSampleDataExtracted,
                             sampleDataSizeInMBs,
+                            timeLatestExecutionStarted,
+                            timeLatestExecutionEnded,
+                            jobExecutionState,
+                            scheduleType,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -237,6 +277,10 @@ public class JobDefinition {
                             .uri(o.getUri())
                             .isSampleDataExtracted(o.getIsSampleDataExtracted())
                             .sampleDataSizeInMBs(o.getSampleDataSizeInMBs())
+                            .timeLatestExecutionStarted(o.getTimeLatestExecutionStarted())
+                            .timeLatestExecutionEnded(o.getTimeLatestExecutionEnded())
+                            .jobExecutionState(o.getJobExecutionState())
+                            .scheduleType(o.getScheduleType())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -358,6 +402,32 @@ public class JobDefinition {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleDataSizeInMBs")
     Integer sampleDataSizeInMBs;
+
+    /**
+     * Time that the latest job execution started. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLatestExecutionStarted")
+    java.util.Date timeLatestExecutionStarted;
+
+    /**
+     * Time that the latest job execution ended or null if it hasn't yet completed.
+     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLatestExecutionEnded")
+    java.util.Date timeLatestExecutionEnded;
+
+    /**
+     * Status of the latest job execution, such as running, paused, or completed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionState")
+    JobExecutionState jobExecutionState;
+
+    /**
+     * Type of job schedule for the latest job executed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
+    JobScheduleType scheduleType;
 
     /**
      * A map of maps that contains the properties which are specific to the job type. Each job type

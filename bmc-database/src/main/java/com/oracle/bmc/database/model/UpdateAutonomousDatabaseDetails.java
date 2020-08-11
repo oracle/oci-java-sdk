@@ -102,6 +102,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
+        private DbWorkload dbWorkload;
+
+        public Builder dbWorkload(DbWorkload dbWorkload) {
+            this.dbWorkload = dbWorkload;
+            this.__explicitlySet__.add("dbWorkload");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
@@ -188,6 +197,7 @@ public class UpdateAutonomousDatabaseDetails {
                             dbName,
                             freeformTags,
                             definedTags,
+                            dbWorkload,
                             licenseModel,
                             whitelistedIps,
                             isAutoScalingEnabled,
@@ -211,6 +221,7 @@ public class UpdateAutonomousDatabaseDetails {
                             .dbName(o.getDbName())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .dbWorkload(o.getDbWorkload())
                             .licenseModel(o.getLicenseModel())
                             .whitelistedIps(o.getWhitelistedIps())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
@@ -292,6 +303,57 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    /**
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
+     *
+     **/
+    public enum DbWorkload {
+        Oltp("OLTP"),
+        Dw("DW"),
+        Ajd("AJD"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DbWorkload> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DbWorkload v : DbWorkload.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DbWorkload(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DbWorkload create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DbWorkload: " + key);
+        }
+    };
+    /**
+     * The Autonomous Database workload type. The following values are valid:
+     * <p>
+     * - OLTP - indicates an Autonomous Transaction Processing database
+     * - DW - indicates an Autonomous Data Warehouse database
+     * - AJD - indicates an Autonomous JSON Database
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
+    DbWorkload dbWorkload;
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
      * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.

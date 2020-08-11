@@ -22,6 +22,19 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
     private String displayName;
 
     /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with \"Cu\".
+     *
+     */
+    private String displayNameContains;
+
+    /**
+     * Job execution state.
+     */
+    private com.oracle.bmc.datacatalog.model.JobExecutionState jobExecutionState;
+
+    /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
@@ -87,10 +100,15 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
         Description("description"),
         CatalogId("catalogId"),
         JobType("jobType"),
+        ConnectionKey("connectionKey"),
         LifecycleState("lifecycleState"),
         TimeCreated("timeCreated"),
         IsSampleDataExtracted("isSampleDataExtracted"),
         Uri("uri"),
+        TimeLatestExecutionStarted("timeLatestExecutionStarted"),
+        TimeLatestExecutionEnded("timeLatestExecutionEnded"),
+        JobExecutionState("jobExecutionState"),
+        ScheduleType("scheduleType"),
         ;
 
         private final String value;
@@ -121,18 +139,19 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for TIMELATESTEXECUTIONSTARTED is descending. If no value is specified TIMECREATED is default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for TIMELATESTEXECUTIONSTARTED is descending. If no value is specified TIMECREATED is default.
      *
      **/
     public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
+        Timelatestexecutionstarted("TIMELATESTEXECUTIONSTARTED"),
         ;
 
         private final String value;
@@ -254,6 +273,8 @@ public class ListJobDefinitionsRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(ListJobDefinitionsRequest o) {
             catalogId(o.getCatalogId());
             displayName(o.getDisplayName());
+            displayNameContains(o.getDisplayNameContains());
+            jobExecutionState(o.getJobExecutionState());
             lifecycleState(o.getLifecycleState());
             jobType(o.getJobType());
             isIncremental(o.getIsIncremental());

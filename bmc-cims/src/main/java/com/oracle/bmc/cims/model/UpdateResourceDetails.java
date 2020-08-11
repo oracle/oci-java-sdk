@@ -5,7 +5,10 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Update Resource details
+ * Details about updates to the resource.
+ * <p>
+ **Caution:** Avoid using any confidential information when you supply string values using the API.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

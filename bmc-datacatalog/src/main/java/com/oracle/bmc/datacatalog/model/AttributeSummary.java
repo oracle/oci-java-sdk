@@ -123,6 +123,69 @@ public class AttributeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("minCollectionCount")
+        private Integer minCollectionCount;
+
+        public Builder minCollectionCount(Integer minCollectionCount) {
+            this.minCollectionCount = minCollectionCount;
+            this.__explicitlySet__.add("minCollectionCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCollectionCount")
+        private Integer maxCollectionCount;
+
+        public Builder maxCollectionCount(Integer maxCollectionCount) {
+            this.maxCollectionCount = maxCollectionCount;
+            this.__explicitlySet__.add("maxCollectionCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("datatypeEntityKey")
+        private String datatypeEntityKey;
+
+        public Builder datatypeEntityKey(String datatypeEntityKey) {
+            this.datatypeEntityKey = datatypeEntityKey;
+            this.__explicitlySet__.add("datatypeEntityKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalDatatypeEntityKey")
+        private String externalDatatypeEntityKey;
+
+        public Builder externalDatatypeEntityKey(String externalDatatypeEntityKey) {
+            this.externalDatatypeEntityKey = externalDatatypeEntityKey;
+            this.__explicitlySet__.add("externalDatatypeEntityKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentAttributeKey")
+        private String parentAttributeKey;
+
+        public Builder parentAttributeKey(String parentAttributeKey) {
+            this.parentAttributeKey = parentAttributeKey;
+            this.__explicitlySet__.add("parentAttributeKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalParentAttributeKey")
+        private String externalParentAttributeKey;
+
+        public Builder externalParentAttributeKey(String externalParentAttributeKey) {
+            this.externalParentAttributeKey = externalParentAttributeKey;
+            this.__explicitlySet__.add("externalParentAttributeKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("path")
+        private String path;
+
+        public Builder path(String path) {
+            this.path = path;
+            this.__explicitlySet__.add("path");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -139,7 +202,14 @@ public class AttributeSummary {
                             uri,
                             lifecycleState,
                             timeCreated,
-                            externalDataType);
+                            externalDataType,
+                            minCollectionCount,
+                            maxCollectionCount,
+                            datatypeEntityKey,
+                            externalDatatypeEntityKey,
+                            parentAttributeKey,
+                            externalParentAttributeKey,
+                            path);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -157,7 +227,14 @@ public class AttributeSummary {
                             .uri(o.getUri())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
-                            .externalDataType(o.getExternalDataType());
+                            .externalDataType(o.getExternalDataType())
+                            .minCollectionCount(o.getMinCollectionCount())
+                            .maxCollectionCount(o.getMaxCollectionCount())
+                            .datatypeEntityKey(o.getDatatypeEntityKey())
+                            .externalDatatypeEntityKey(o.getExternalDatatypeEntityKey())
+                            .parentAttributeKey(o.getParentAttributeKey())
+                            .externalParentAttributeKey(o.getExternalParentAttributeKey())
+                            .path(o.getPath());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -240,6 +317,51 @@ public class AttributeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDataType")
     String externalDataType;
+
+    /**
+     * The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minCollectionCount")
+    Integer minCollectionCount;
+
+    /**
+     * The maximum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+     * For type specifications in systems that specify only \"capacity\" without upper or lower bound , this property can also be used to just mean \"capacity\".
+     * Some examples are Varray size in Oracle , Occurs Clause in Cobol , capacity in XmlSchemaObjectCollection , maxOccurs in  Xml , maxItems in Json
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxCollectionCount")
+    Integer maxCollectionCount;
+
+    /**
+     * Entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("datatypeEntityKey")
+    String datatypeEntityKey;
+
+    /**
+     * External entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalDatatypeEntityKey")
+    String externalDatatypeEntityKey;
+
+    /**
+     * Attribute key that represents the parent attribute of this attribute , applicable if the parent attribute is of complex datatype.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentAttributeKey")
+    String parentAttributeKey;
+
+    /**
+     * External attribute key that represents the parent attribute  of this attribute , applicable if the parent attribute is of complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalParentAttributeKey")
+    String externalParentAttributeKey;
+
+    /**
+     * Full path of the attribute.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("path")
+    String path;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

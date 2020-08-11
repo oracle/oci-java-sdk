@@ -46,6 +46,14 @@ public class ListDataAssetsConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getDisplayNameContains() != null) {
+            target =
+                    target.queryParam(
+                            "displayNameContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDisplayNameContains()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

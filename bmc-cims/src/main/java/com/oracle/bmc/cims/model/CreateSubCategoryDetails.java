@@ -5,7 +5,10 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Sub Category of the incident
+ * Details for creating the subcategory of the support ticket.
+ * <p>
+ **Caution:** Avoid using any confidential information when you supply string values using the API.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +64,7 @@ public class CreateSubCategoryDetails {
     }
 
     /**
-     * Unique ID that identifies a Sub Category
+     * Unique identifier for the subcategory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
     String subCategoryKey;

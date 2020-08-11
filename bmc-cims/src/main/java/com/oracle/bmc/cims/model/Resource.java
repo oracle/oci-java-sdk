@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Ticket Item
+ * Details about the ticket item object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,13 +83,13 @@ public class Resource {
     Item item;
 
     /**
-     * List of OCI regions
+     * The list of available Oracle Cloud Infrastructure regions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     Region region;
 
     /**
-     * List of OCI ADs
+     * The list of available Oracle Cloud Infrastructure availability domains.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     AvailabilityDomain availabilityDomain;

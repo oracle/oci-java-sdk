@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Validation Response
+ * The validation response returned when checking whether the requested user is valid.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class ValidationResponse {
     }
 
     /**
-     * Boolean value to check whether requested user is valid or not
+     * Boolean value that indicates whether the requested user is valid.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValidUser")
     Boolean isValidUser;

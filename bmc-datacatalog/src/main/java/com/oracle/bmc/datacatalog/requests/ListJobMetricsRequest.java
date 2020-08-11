@@ -32,6 +32,14 @@ public class ListJobMetricsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private String displayName;
 
     /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with \"Cu\".
+     *
+     */
+    private String displayNameContains;
+
+    /**
      * Category of this metric.
      */
     private String category;
@@ -271,6 +279,7 @@ public class ListJobMetricsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             jobKey(o.getJobKey());
             jobExecutionKey(o.getJobExecutionKey());
             displayName(o.getDisplayName());
+            displayNameContains(o.getDisplayNameContains());
             category(o.getCategory());
             subCategory(o.getSubCategory());
             unit(o.getUnit());

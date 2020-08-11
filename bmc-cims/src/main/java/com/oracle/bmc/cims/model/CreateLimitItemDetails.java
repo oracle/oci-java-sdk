@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Limit Item
+ * Reserved for future use.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -164,24 +164,24 @@ public class CreateLimitItemDetails extends CreateItemDetails {
     }
 
     /**
-     * Current available limit of the resource
+     * The limit of the resource currently available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentLimit")
     Integer currentLimit;
 
     /**
-     * Current used limit of the resource
+     * The current usage of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
     Integer currentUsage;
 
     /**
-     * Requested limit for the resource
+     * Reserved for future use.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
     Integer requestedLimit;
     /**
-     * Status of the Limit
+     * The current status of the request.
      **/
     public enum LimitStatus {
         Approved("APPROVED"),
@@ -217,7 +217,7 @@ public class CreateLimitItemDetails extends CreateItemDetails {
         }
     };
     /**
-     * Status of the Limit
+     * The current status of the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("limitStatus")
     LimitStatus limitStatus;

@@ -16,6 +16,7 @@ import com.oracle.bmc.ConfigFileReader.ConfigFile;
 
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Implementation of {@link AuthenticationDetailsProvider} that uses a standard
@@ -26,6 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ConfigFileAuthenticationDetailsProvider
         implements AuthenticationDetailsProvider, RegionProvider {
 
+    private final static String OCI_REGION_ENV_VAR_NAME = "OCI_REGION";
     private final SimpleAuthenticationDetailsProvider delegate;
     private final String pemFilePath;
 
@@ -84,19 +86,27 @@ public class ConfigFileAuthenticationDetailsProvider
         // that is not supported by the SDK yet.
         Region region = null;
         String regionId = configFile.get("region");
+
+        //if regionId is not defined in config file check env variable
+        if (StringUtils.isBlank(regionId)) {
+            regionId = System.getenv(OCI_REGION_ENV_VAR_NAME);
+            LOG.info("regionId from OCI_REGION env variable: " + regionId);
+        }
+
         if (regionId != null) {
             try {
                 region = Region.fromRegionId(regionId);
             } catch (IllegalArgumentException e) {
                 LOG.warn(
-                        "Found regionId '{}' in config file, but not supported by this version of the SDK",
+                        "Found regionId '{}' in config file or OCI_REGION env variable, but not supported by this version of the SDK",
                         regionId,
                         e);
                 // Proceed by assuming the region id in the config file belongs to OC1 realm.
                 region = Region.register(regionId, Realm.OC1);
             }
         } else {
-            LOG.info("Region not specified in Config file. Proceeding without setting a region.");
+            LOG.info(
+                    "Region not specified in Config file or OCI_REGION env variable. Proceeding without setting a region.");
         }
 
         SimpleAuthenticationDetailsProvider.SimpleAuthenticationDetailsProviderBuilder builder =

@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Incident
+ * Details about the support ticket.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -128,13 +128,13 @@ public class IncidentSummary {
     }
 
     /**
-     * Unique ID that identifies an Incident
+     * Unique identifier of the incident.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * Tenancy Ocid
+     * The OCID of the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -152,7 +152,7 @@ public class IncidentSummary {
     IncidentResourceType incidentType;
 
     /**
-     * States type of incident. eg: LIMIT, TECH
+     * The kind of support ticket, such as a technical support request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     ProblemType problemType;
