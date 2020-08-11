@@ -79,6 +79,15 @@ public class TermRelationship {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("relatedTermPath")
+        private String relatedTermPath;
+
+        public Builder relatedTermPath(String relatedTermPath) {
+            this.relatedTermPath = relatedTermPath;
+            this.__explicitlySet__.add("relatedTermPath");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
@@ -115,6 +124,15 @@ public class TermRelationship {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("parentTermPath")
+        private String parentTermPath;
+
+        public Builder parentTermPath(String parentTermPath) {
+            this.parentTermPath = parentTermPath;
+            this.__explicitlySet__.add("parentTermPath");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -145,10 +163,12 @@ public class TermRelationship {
                             relatedTermKey,
                             relatedTermDisplayName,
                             relatedTermDescription,
+                            relatedTermPath,
                             uri,
                             parentTermKey,
                             parentTermDisplayName,
                             parentTermDescription,
+                            parentTermPath,
                             timeCreated,
                             lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -164,10 +184,12 @@ public class TermRelationship {
                             .relatedTermKey(o.getRelatedTermKey())
                             .relatedTermDisplayName(o.getRelatedTermDisplayName())
                             .relatedTermDescription(o.getRelatedTermDescription())
+                            .relatedTermPath(o.getRelatedTermPath())
                             .uri(o.getUri())
                             .parentTermKey(o.getParentTermKey())
                             .parentTermDisplayName(o.getParentTermDisplayName())
                             .parentTermDescription(o.getParentTermDescription())
+                            .parentTermPath(o.getParentTermPath())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState());
 
@@ -222,6 +244,12 @@ public class TermRelationship {
     String relatedTermDescription;
 
     /**
+     * Full path of the related term.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("relatedTermPath")
+    String relatedTermPath;
+
+    /**
      * URI to the term relationship instance in the API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
@@ -244,6 +272,12 @@ public class TermRelationship {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermDescription")
     String parentTermDescription;
+
+    /**
+     * Full path of the parent term.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentTermPath")
+    String parentTermPath;
 
     /**
      * The date and time the term relationship was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

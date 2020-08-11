@@ -12,49 +12,61 @@ import com.oracle.bmc.cims.model.*;
 public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Customer Support Identifier of the support account
+     * The Customer Support Identifier associated with the support account.
      */
     private String csi;
 
     /**
-     * Tenancy Ocid
+     * The OCID of the tenancy.
      */
     private String compartmentId;
 
     /**
-     * User OCID for IDCS users that have a shadow in OCI
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
      */
     private String ocid;
 
     /**
-     * Limit query for number of returned results
+     * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
-     * The key to sort the returned items by
+     * The key to use to sort the returned items.
      */
     private com.oracle.bmc.cims.model.SortBy sortBy;
 
     /**
-     * The order in which to sort the results
+     * The order to sort the results in.
      */
     private com.oracle.bmc.cims.model.SortOrder sortOrder;
 
     /**
-     * The order in which to sort the results
+     * The current state of the ticket.
      */
     private com.oracle.bmc.cims.model.LifecycleState lifecycleState;
 
     /**
-     * Pagination for Incident list
+     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * Unique Header for request id
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
+
+    /**
+     * The region of the tenancy.
+     */
+    private String homeregion;
+
+    /**
+     * The kind of support request.
+     */
+    private String problemType;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -100,6 +112,8 @@ public class ListIncidentsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             lifecycleState(o.getLifecycleState());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            homeregion(o.getHomeregion());
+            problemType(o.getProblemType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

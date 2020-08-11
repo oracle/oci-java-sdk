@@ -116,6 +116,42 @@ public class CreateAttributeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("minCollectionCount")
+        private Integer minCollectionCount;
+
+        public Builder minCollectionCount(Integer minCollectionCount) {
+            this.minCollectionCount = minCollectionCount;
+            this.__explicitlySet__.add("minCollectionCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCollectionCount")
+        private Integer maxCollectionCount;
+
+        public Builder maxCollectionCount(Integer maxCollectionCount) {
+            this.maxCollectionCount = maxCollectionCount;
+            this.__explicitlySet__.add("maxCollectionCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalDatatypeEntityKey")
+        private String externalDatatypeEntityKey;
+
+        public Builder externalDatatypeEntityKey(String externalDatatypeEntityKey) {
+            this.externalDatatypeEntityKey = externalDatatypeEntityKey;
+            this.__explicitlySet__.add("externalDatatypeEntityKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalParentAttributeKey")
+        private String externalParentAttributeKey;
+
+        public Builder externalParentAttributeKey(String externalParentAttributeKey) {
+            this.externalParentAttributeKey = externalParentAttributeKey;
+            this.__explicitlySet__.add("externalParentAttributeKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -141,6 +177,10 @@ public class CreateAttributeDetails {
                             precision,
                             scale,
                             timeExternal,
+                            minCollectionCount,
+                            maxCollectionCount,
+                            externalDatatypeEntityKey,
+                            externalParentAttributeKey,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -159,6 +199,10 @@ public class CreateAttributeDetails {
                             .precision(o.getPrecision())
                             .scale(o.getScale())
                             .timeExternal(o.getTimeExternal())
+                            .minCollectionCount(o.getMinCollectionCount())
+                            .maxCollectionCount(o.getMaxCollectionCount())
+                            .externalDatatypeEntityKey(o.getExternalDatatypeEntityKey())
+                            .externalParentAttributeKey(o.getExternalParentAttributeKey())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -234,6 +278,33 @@ public class CreateAttributeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
     java.util.Date timeExternal;
+
+    /**
+     * The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minCollectionCount")
+    Integer minCollectionCount;
+
+    /**
+     * The maximum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+     * For type specifications in systems that specify only \"capacity\" without upper or lower bound , this property can also be used to just mean \"capacity\".
+     * Some examples are Varray size in Oracle , Occurs Clause in Cobol , capacity in XmlSchemaObjectCollection , maxOccurs in  Xml , maxItems in Json
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxCollectionCount")
+    Integer maxCollectionCount;
+
+    /**
+     * External entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalDatatypeEntityKey")
+    String externalDatatypeEntityKey;
+
+    /**
+     * External attribute key that represents the parent attribute  of this attribute , applicable if the parent attribute is of complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalParentAttributeKey")
+    String externalParentAttributeKey;
 
     /**
      * A map of maps that contains the properties which are specific to the attribute type. Each attribute type

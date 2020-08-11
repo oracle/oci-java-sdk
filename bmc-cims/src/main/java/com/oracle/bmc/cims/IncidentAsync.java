@@ -41,7 +41,7 @@ public interface IncidentAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * This API enables the customer to Create an Incident
+     * Enables the customer to create an support ticket.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -56,7 +56,7 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This API fetches the details of a requested Incident
+     * Gets the details of the support ticket.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -70,7 +70,7 @@ public interface IncidentAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetIncidentRequest, GetIncidentResponse> handler);
 
     /**
-     * GetStatus of the Service
+     * Gets the status of the service.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -84,7 +84,7 @@ public interface IncidentAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetStatusRequest, GetStatusResponse> handler);
 
     /**
-     * This API returns the list of all possible product that OCI supports, while creating an incident
+     * During support ticket creation, returns the list of all possible products that Oracle Cloud Infrastructure supports.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -100,7 +100,7 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This API returns the list of incidents raised by the tenant
+     * Returns the list of support tickets raised by the tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -115,7 +115,7 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This API updates an existing incident
+     * Updates the specified support ticket's information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -130,7 +130,7 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * ValidateUser
+     * Checks whether the requested user is valid.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

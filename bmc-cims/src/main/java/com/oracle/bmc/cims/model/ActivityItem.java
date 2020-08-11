@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Activity Item
+ * Details about the ActivityItem object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -187,24 +187,24 @@ public class ActivityItem extends Item {
     }
 
     /**
-     * Comments to update as part of Activity
+     * Comments added with the activity on the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("comments")
     String comments;
 
     /**
-     * Epoch time when activity was created
+     * The time when the activity was created, in milliseconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     Integer timeCreated;
 
     /**
-     * Epoch time when activity was updated
+     * The time when the activity was updated, in milliseconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     Integer timeUpdated;
     /**
-     * Type of activity. eg: NOTES, UPDATE
+     * The type of activity occuring on the support ticket.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ActivityType {
@@ -252,12 +252,12 @@ public class ActivityItem extends Item {
         }
     };
     /**
-     * Type of activity. eg: NOTES, UPDATE
+     * The type of activity occuring on the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityType")
     ActivityType activityType;
     /**
-     * Person who updates the activity
+     * The person who updates the activity on the support ticket.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ActivityAuthor {
@@ -303,7 +303,7 @@ public class ActivityItem extends Item {
         }
     };
     /**
-     * Person who updates the activity
+     * The person who updates the activity on the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityAuthor")
     ActivityAuthor activityAuthor;

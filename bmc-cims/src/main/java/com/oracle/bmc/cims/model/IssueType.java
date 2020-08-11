@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details Issue Type of the incident
+ * Details about the issue type associated with the support ticket.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class IssueType {
     }
 
     /**
-     * Unique ID that identifies an Issue Type
+     * Unique identifier for the issue type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeKey")
     String issueTypeKey;
 
     /**
-     * Label of issue type. eg: Instance Performance
+     * The label for the issue type. For example, `Instance Performance`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     String label;

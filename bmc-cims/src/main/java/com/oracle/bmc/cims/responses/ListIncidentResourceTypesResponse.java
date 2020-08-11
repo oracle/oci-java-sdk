@@ -12,19 +12,14 @@ import com.oracle.bmc.cims.model.*;
 public class ListIncidentResourceTypesResponse {
 
     /**
-     * OPC Request Id
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * OPC next page
+     * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
-
-    /**
-     * e-Tag
-     */
-    private String etag;
 
     /**
      * A list of IncidentResourceType instances.
@@ -39,7 +34,6 @@ public class ListIncidentResourceTypesResponse {
         public Builder copy(ListIncidentResourceTypesResponse o) {
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
-            etag(o.getEtag());
             items(o.getItems());
 
             return this;

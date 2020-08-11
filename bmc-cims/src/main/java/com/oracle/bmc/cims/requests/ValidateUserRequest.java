@@ -12,29 +12,29 @@ import com.oracle.bmc.cims.model.*;
 public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Customer support identifier of the support account
+     * The Customer Support Identifier number for the support account.
      */
     private String csi;
 
     /**
-     * User OCID for IDCS users that have a shadow in OCI
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
      */
     private String ocid;
 
     /**
-     * Retry-token header
-     */
-    private String opcRetryToken;
-
-    /**
-     * Unique request id
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Problem Type of Taxonomy - tech/limit
+     * The kind of support request.
      */
     private String problemType;
+
+    /**
+     * The region of the tenancy.
+     */
+    private String homeregion;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -73,9 +73,9 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
         public Builder copy(ValidateUserRequest o) {
             csi(o.getCsi());
             ocid(o.getOcid());
-            opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             problemType(o.getProblemType());
+            homeregion(o.getHomeregion());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

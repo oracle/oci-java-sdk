@@ -178,6 +178,33 @@ public class JobSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
+        private String jobDefinitionName;
+
+        public Builder jobDefinitionName(String jobDefinitionName) {
+            this.jobDefinitionName = jobDefinitionName;
+            this.__explicitlySet__.add("jobDefinitionName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+        private String errorCode;
+
+        public Builder errorCode(String errorCode) {
+            this.errorCode = errorCode;
+            this.__explicitlySet__.add("errorCode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
+        private String errorMessage;
+
+        public Builder errorMessage(String errorMessage) {
+            this.errorMessage = errorMessage;
+            this.__explicitlySet__.add("errorMessage");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("executions")
         private java.util.List<JobExecutionSummary> executions;
 
@@ -210,6 +237,9 @@ public class JobSummary {
                             timeScheduleBegin,
                             executionCount,
                             timeOfLatestExecution,
+                            jobDefinitionName,
+                            errorCode,
+                            errorMessage,
                             executions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -235,6 +265,9 @@ public class JobSummary {
                             .timeScheduleBegin(o.getTimeScheduleBegin())
                             .executionCount(o.getExecutionCount())
                             .timeOfLatestExecution(o.getTimeOfLatestExecution())
+                            .jobDefinitionName(o.getJobDefinitionName())
+                            .errorCode(o.getErrorCode())
+                            .errorMessage(o.getErrorMessage())
                             .executions(o.getExecutions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -360,6 +393,26 @@ public class JobSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLatestExecution")
     java.util.Date timeOfLatestExecution;
+
+    /**
+     * The display name of the job definition resource that defined the scope of this job.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
+    String jobDefinitionName;
+
+    /**
+     * Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+    String errorCode;
+
+    /**
+     * Error message returned from the latest job execution for this job. Useful when the latest Job Execution is in a FAILED state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
+    String errorMessage;
 
     /**
      * Array of the executions summary associated with this job.

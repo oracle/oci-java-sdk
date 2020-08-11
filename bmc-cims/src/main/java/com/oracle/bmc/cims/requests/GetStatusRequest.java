@@ -12,19 +12,24 @@ import com.oracle.bmc.cims.model.*;
 public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Source is a downstream system. Eg: JIRA or MOS or any other source in future.
+     * The system that generated the support ticket, such as My Oracle Support.
      */
     private String source;
 
     /**
-     * User OCID for IDCS users that have a shadow in OCI
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
      */
     private String ocid;
 
     /**
-     * Unique Header for request id
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
+
+    /**
+     * The region of the tenancy.
+     */
+    private String homeregion;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -64,6 +69,7 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             source(o.getSource());
             ocid(o.getOcid());
             opcRequestId(o.getOpcRequestId());
+            homeregion(o.getHomeregion());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

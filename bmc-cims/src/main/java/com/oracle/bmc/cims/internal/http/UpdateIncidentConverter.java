@@ -47,10 +47,6 @@ public class UpdateIncidentConverter {
 
         ib.header("csi", request.getCsi());
 
-        if (request.getOpcRetryToken() != null) {
-            ib.header("opc-retry-token", request.getOpcRetryToken());
-        }
-
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
@@ -60,6 +56,10 @@ public class UpdateIncidentConverter {
         }
 
         ib.header("ocid", request.getOcid());
+
+        if (request.getHomeregion() != null) {
+            ib.header("homeregion", request.getHomeregion());
+        }
 
         return ib;
     }
@@ -107,15 +107,6 @@ public class UpdateIncidentConverter {
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
                                                     String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                headers, "etag");
-                                if (etagHeader.isPresent()) {
-                                    builder.etag(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "etag", etagHeader.get().get(0), String.class));
                                 }
 
                                 com.oracle.bmc.cims.responses.UpdateIncidentResponse

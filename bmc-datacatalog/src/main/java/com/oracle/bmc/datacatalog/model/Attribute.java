@@ -143,6 +143,60 @@ public class Attribute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("minCollectionCount")
+        private Integer minCollectionCount;
+
+        public Builder minCollectionCount(Integer minCollectionCount) {
+            this.minCollectionCount = minCollectionCount;
+            this.__explicitlySet__.add("minCollectionCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maxCollectionCount")
+        private Integer maxCollectionCount;
+
+        public Builder maxCollectionCount(Integer maxCollectionCount) {
+            this.maxCollectionCount = maxCollectionCount;
+            this.__explicitlySet__.add("maxCollectionCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("datatypeEntityKey")
+        private String datatypeEntityKey;
+
+        public Builder datatypeEntityKey(String datatypeEntityKey) {
+            this.datatypeEntityKey = datatypeEntityKey;
+            this.__explicitlySet__.add("datatypeEntityKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalDatatypeEntityKey")
+        private String externalDatatypeEntityKey;
+
+        public Builder externalDatatypeEntityKey(String externalDatatypeEntityKey) {
+            this.externalDatatypeEntityKey = externalDatatypeEntityKey;
+            this.__explicitlySet__.add("externalDatatypeEntityKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentAttributeKey")
+        private String parentAttributeKey;
+
+        public Builder parentAttributeKey(String parentAttributeKey) {
+            this.parentAttributeKey = parentAttributeKey;
+            this.__explicitlySet__.add("parentAttributeKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalParentAttributeKey")
+        private String externalParentAttributeKey;
+
+        public Builder externalParentAttributeKey(String externalParentAttributeKey) {
+            this.externalParentAttributeKey = externalParentAttributeKey;
+            this.__explicitlySet__.add("externalParentAttributeKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Long length;
 
@@ -197,6 +251,15 @@ public class Attribute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("path")
+        private String path;
+
+        public Builder path(String path) {
+            this.path = path;
+            this.__explicitlySet__.add("path");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -225,12 +288,19 @@ public class Attribute {
                             externalKey,
                             isIncrementalData,
                             isNullable,
+                            minCollectionCount,
+                            maxCollectionCount,
+                            datatypeEntityKey,
+                            externalDatatypeEntityKey,
+                            parentAttributeKey,
+                            externalParentAttributeKey,
                             length,
                             position,
                             precision,
                             scale,
                             timeExternal,
                             uri,
+                            path,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -252,12 +322,19 @@ public class Attribute {
                             .externalKey(o.getExternalKey())
                             .isIncrementalData(o.getIsIncrementalData())
                             .isNullable(o.getIsNullable())
+                            .minCollectionCount(o.getMinCollectionCount())
+                            .maxCollectionCount(o.getMaxCollectionCount())
+                            .datatypeEntityKey(o.getDatatypeEntityKey())
+                            .externalDatatypeEntityKey(o.getExternalDatatypeEntityKey())
+                            .parentAttributeKey(o.getParentAttributeKey())
+                            .externalParentAttributeKey(o.getExternalParentAttributeKey())
                             .length(o.getLength())
                             .position(o.getPosition())
                             .precision(o.getPrecision())
                             .scale(o.getScale())
                             .timeExternal(o.getTimeExternal())
                             .uri(o.getUri())
+                            .path(o.getPath())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -360,6 +437,45 @@ public class Attribute {
     Boolean isNullable;
 
     /**
+     * The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minCollectionCount")
+    Integer minCollectionCount;
+
+    /**
+     * The maximum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+     * For type specifications in systems that specify only \"capacity\" without upper or lower bound , this property can also be used to just mean \"capacity\".
+     * Some examples are Varray size in Oracle , Occurs Clause in Cobol , capacity in XmlSchemaObjectCollection , maxOccurs in  Xml , maxItems in Json
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxCollectionCount")
+    Integer maxCollectionCount;
+
+    /**
+     * Entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("datatypeEntityKey")
+    String datatypeEntityKey;
+
+    /**
+     * External entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalDatatypeEntityKey")
+    String externalDatatypeEntityKey;
+
+    /**
+     * Attribute key that represents the parent attribute of this attribute , applicable if the parent attribute is of complex datatype.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentAttributeKey")
+    String parentAttributeKey;
+
+    /**
+     * External attribute key that represents the parent attribute  of this attribute , applicable if the parent attribute is of complex type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalParentAttributeKey")
+    String externalParentAttributeKey;
+
+    /**
      * Max allowed length of the attribute value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
@@ -394,6 +510,12 @@ public class Attribute {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     String uri;
+
+    /**
+     * Full path of the attribute.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("path")
+    String path;
 
     /**
      * A map of maps that contains the properties which are specific to the attribute type. Each attribute type

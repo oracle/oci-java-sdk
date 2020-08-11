@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Incident Classifier details
+ * Information about the incident classifier.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -132,49 +132,49 @@ public class ServiceCategory {
     }
 
     /**
-     * Unique ID that identifies a classifier
+     * The unique ID that identifies a classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * Name of classifier. eg: LIMIT Increase
+     * The name of the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Label of classifier
+     * The label for the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     String label;
 
     /**
-     * Description of classifier
+     * The text describing the classifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * List of Issues
+     * The list of issues.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeList")
     java.util.List<IssueType> issueTypeList;
 
     /**
-     * List of Scope
+     * The scope of the incident.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Scope scope;
 
     /**
-     * List of Units
+     * The unit to use to measure the service category or resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     Unit unit;
 
     /**
-     * Limit's unique id
+     * The unique ID for the limit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("limitId")
     String limitId;

@@ -22,6 +22,14 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     private String displayName;
 
     /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with \"Cu\".
+     *
+     */
+    private String displayNameContains;
+
+    /**
      * Job lifecycle state.
      */
     private com.oracle.bmc.datacatalog.model.JobLifecycleState lifecycleState;
@@ -113,6 +121,9 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         TimeOfLatestExecution("timeOfLatestExecution"),
         Executions("executions"),
         Uri("uri"),
+        JobDefinitionName("jobDefinitionName"),
+        ErrorCode("errorCode"),
+        ErrorMessage("errorMessage"),
         ;
 
         private final String value;
@@ -288,6 +299,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         public Builder copy(ListJobsRequest o) {
             catalogId(o.getCatalogId());
             displayName(o.getDisplayName());
+            displayNameContains(o.getDisplayNameContains());
             lifecycleState(o.getLifecycleState());
             timeCreated(o.getTimeCreated());
             timeUpdated(o.getTimeUpdated());

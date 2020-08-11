@@ -5,7 +5,10 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Ticket created
+ * Details relevant to the support ticket.
+ * <p>
+ **Caution:** Avoid using any confidential information when you supply string values using the API.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,12 +65,22 @@ public class CreateTicketDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("contextualData")
+        private ContextualData contextualData;
+
+        public Builder contextualData(ContextualData contextualData) {
+            this.contextualData = contextualData;
+            this.__explicitlySet__.add("contextualData");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTicketDetails build() {
             CreateTicketDetails __instance__ =
-                    new CreateTicketDetails(severity, resourceList, title, description);
+                    new CreateTicketDetails(
+                            severity, resourceList, title, description, contextualData);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,7 +91,8 @@ public class CreateTicketDetails {
                     severity(o.getSeverity())
                             .resourceList(o.getResourceList())
                             .title(o.getTitle())
-                            .description(o.getDescription());
+                            .description(o.getDescription())
+                            .contextualData(o.getContextualData());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -93,7 +107,7 @@ public class CreateTicketDetails {
     }
 
     /**
-     * Severity of the ticket. eg: HIGH, MEDIUM
+     * The severity of the support ticket.
      **/
     public enum Severity {
         Highest("HIGHEST"),
@@ -129,28 +143,34 @@ public class CreateTicketDetails {
         }
     };
     /**
-     * Severity of the ticket. eg: HIGH, MEDIUM
+     * The severity of the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     Severity severity;
 
     /**
-     * List of resources
+     * The list of resources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceList")
     java.util.List<CreateResourceDetails> resourceList;
 
     /**
-     * Title of ticket
+     * The title of the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     String title;
 
     /**
-     * Details of ticket
+     * The description of the support ticket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * The context from where the ticket is getting created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("contextualData")
+    ContextualData contextualData;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

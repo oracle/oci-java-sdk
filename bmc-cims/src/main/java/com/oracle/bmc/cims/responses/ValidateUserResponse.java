@@ -12,14 +12,9 @@ import com.oracle.bmc.cims.model.*;
 public class ValidateUserResponse {
 
     /**
-     * OPC Request Id
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
-
-    /**
-     * e-Tag
-     */
-    private String etag;
 
     /**
      * The returned ValidationResponse instance.
@@ -33,7 +28,6 @@ public class ValidateUserResponse {
          */
         public Builder copy(ValidateUserResponse o) {
             opcRequestId(o.getOpcRequestId());
-            etag(o.getEtag());
             validationResponse(o.getValidationResponse());
 
             return this;

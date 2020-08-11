@@ -49,6 +49,10 @@ public class GetJobDefinitionRequest extends com.oracle.bmc.requests.BmcRequest<
         Uri("uri"),
         IsSampleDataExtracted("isSampleDataExtracted"),
         SampleDataSizeInMBs("sampleDataSizeInMBs"),
+        TimeLatestExecutionStarted("timeLatestExecutionStarted"),
+        TimeLatestExecutionEnded("timeLatestExecutionEnded"),
+        JobExecutionState("jobExecutionState"),
+        ScheduleType("scheduleType"),
         Properties("properties"),
         ;
 

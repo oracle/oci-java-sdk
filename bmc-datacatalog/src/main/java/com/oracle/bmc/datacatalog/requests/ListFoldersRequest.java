@@ -27,6 +27,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String displayName;
 
     /**
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with \"Cu\".
+     *
+     */
+    private String displayNameContains;
+
+    /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
@@ -262,6 +270,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             catalogId(o.getCatalogId());
             dataAssetKey(o.getDataAssetKey());
             displayName(o.getDisplayName());
+            displayNameContains(o.getDisplayNameContains());
             lifecycleState(o.getLifecycleState());
             parentFolderKey(o.getParentFolderKey());
             path(o.getPath());

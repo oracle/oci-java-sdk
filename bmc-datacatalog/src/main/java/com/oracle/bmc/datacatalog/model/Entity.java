@@ -162,6 +162,15 @@ public class Entity {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("folderName")
+        private String folderName;
+
+        public Builder folderName(String folderName) {
+            this.folderName = folderName;
+            this.__explicitlySet__.add("folderName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
@@ -237,6 +246,7 @@ public class Entity {
                             isPartition,
                             dataAssetKey,
                             folderKey,
+                            folderName,
                             path,
                             harvestStatus,
                             lastJobKey,
@@ -265,6 +275,7 @@ public class Entity {
                             .isPartition(o.getIsPartition())
                             .dataAssetKey(o.getDataAssetKey())
                             .folderKey(o.getFolderKey())
+                            .folderName(o.getFolderName())
                             .path(o.getPath())
                             .harvestStatus(o.getHarvestStatus())
                             .lastJobKey(o.getLastJobKey())
@@ -380,6 +391,12 @@ public class Entity {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("folderKey")
     String folderKey;
+
+    /**
+     * Name of the associated folder. This name is harvested from the source data asset when the parent folder for the entiy is harvested.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("folderName")
+    String folderName;
 
     /**
      * Full path of the data entity.

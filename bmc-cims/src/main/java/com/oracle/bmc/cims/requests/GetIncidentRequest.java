@@ -12,24 +12,34 @@ import com.oracle.bmc.cims.model.*;
 public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Unique ID that identifies an incident
+     * Unique identifier for the support ticket.
      */
     private String incidentKey;
 
     /**
-     * Customer Support Identifier of the support account
+     * The Customer Support Identifier associated with the support account.
      */
     private String csi;
 
     /**
-     * User OCID for IDCS users that have a shadow in OCI
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
      */
     private String ocid;
 
     /**
-     * Unique Header for request id
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
+
+    /**
+     * The region of the tenancy.
+     */
+    private String homeregion;
+
+    /**
+     * The kind of support request.
+     */
+    private String problemType;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -70,6 +80,8 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
             csi(o.getCsi());
             ocid(o.getOcid());
             opcRequestId(o.getOpcRequestId());
+            homeregion(o.getHomeregion());
+            problemType(o.getProblemType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

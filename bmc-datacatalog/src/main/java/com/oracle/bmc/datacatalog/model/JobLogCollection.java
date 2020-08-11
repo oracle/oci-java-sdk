@@ -25,6 +25,15 @@ public class JobLogCollection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("count")
+        private Integer count;
+
+        public Builder count(Integer count) {
+            this.count = count;
+            this.__explicitlySet__.add("count");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<JobLogSummary> items;
 
@@ -38,14 +47,14 @@ public class JobLogCollection {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public JobLogCollection build() {
-            JobLogCollection __instance__ = new JobLogCollection(items);
+            JobLogCollection __instance__ = new JobLogCollection(count, items);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(JobLogCollection o) {
-            Builder copiedBuilder = items(o.getItems());
+            Builder copiedBuilder = count(o.getCount()).items(o.getItems());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -58,6 +67,12 @@ public class JobLogCollection {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * Total number of items returned.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("count")
+    Integer count;
 
     /**
      * Collection of Job logs.

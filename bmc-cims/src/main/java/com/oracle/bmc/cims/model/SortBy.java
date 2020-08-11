@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * The field to sort by. Only one sort order may be provided. If no value is specified dateUpdated is default.
+ * The field to sort by. You can only provide one sort order. The default value is dateUpdated.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public enum SortBy {

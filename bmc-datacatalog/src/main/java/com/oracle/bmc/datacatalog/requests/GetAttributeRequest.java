@@ -62,6 +62,13 @@ public class GetAttributeRequest extends com.oracle.bmc.requests.BmcRequest<java
         TimeExternal("timeExternal"),
         Uri("uri"),
         Properties("properties"),
+        Path("path"),
+        MinCollectionCount("minCollectionCount"),
+        MaxCollectionCount("maxCollectionCount"),
+        DatatypeEntityKey("datatypeEntityKey"),
+        ExternalDatatypeEntityKey("externalDatatypeEntityKey"),
+        ParentAttributeKey("parentAttributeKey"),
+        ExternalParentAttributeKey("externalParentAttributeKey"),
         ;
 
         private final String value;

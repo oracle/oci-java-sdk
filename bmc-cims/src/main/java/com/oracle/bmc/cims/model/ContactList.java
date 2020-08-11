@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * List of contacts
+ * The list of contacts for the ticket.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -59,7 +59,7 @@ public class ContactList {
     }
 
     /**
-     * List of contacts
+     * The list of contacts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactList")
     java.util.List<Contact> contactList;

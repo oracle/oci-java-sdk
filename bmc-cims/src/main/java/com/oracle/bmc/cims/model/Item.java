@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Item
+ * Details about the item object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -42,13 +42,13 @@ package com.oracle.bmc.cims.model;
 public class Item {
 
     /**
-     * Unique ID that identifies an Item
+     * Unique identifier for the item.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("itemKey")
     String itemKey;
 
     /**
-     * Name of item
+     * The display name of the item.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

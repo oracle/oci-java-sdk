@@ -5,7 +5,10 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Ticket updated
+ * Details about the ticket updated.
+ * <p>
+ **Caution:** Avoid using any confidential information when you supply string values using the API.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +64,7 @@ public class UpdateTicketDetails {
     }
 
     /**
-     * List of resources
+     * The list of resources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resource")
     Object resource;

@@ -432,6 +432,9 @@ public interface ObjectStorage extends AutoCloseable {
      * Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
      * PutObject is 50 GiB.
      * <p>
+     * See [Object Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * for object naming requirements.
+     * <p>
      * See [Special Instructions for Object Storage PUT](https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
      * for request signature requirements.
      *
@@ -520,6 +523,9 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Rename an object in the given Object Storage namespace.
+     * <p>
+     * See [Object Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * for object naming requirements.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

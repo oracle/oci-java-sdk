@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details of Category of the incident
+ * Details about the category associated with the support ticket.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class Category {
     }
 
     /**
-     * Unique ID that identifies a Category
+     * Unique identifier for the category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categoryKey")
     String categoryKey;
 
     /**
-     * Name of category. eg: Compute, Identity
+     * The name of the category. For example, `Compute` or `Identity`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

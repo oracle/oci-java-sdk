@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Unit to measure Service category/resource
+ * The unit to use to measure the service category or resource.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @lombok.extern.slf4j.Slf4j

@@ -46,6 +46,22 @@ public class ListJobDefinitionsConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getDisplayNameContains() != null) {
+            target =
+                    target.queryParam(
+                            "displayNameContains",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDisplayNameContains()));
+        }
+
+        if (request.getJobExecutionState() != null) {
+            target =
+                    target.queryParam(
+                            "jobExecutionState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getJobExecutionState().getValue()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

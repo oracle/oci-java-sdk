@@ -25,6 +25,11 @@ public enum ErrorCode {
     ExternalServiceProviderUnavailable("EXTERNAL_SERVICE_PROVIDER_UNAVAILABLE"),
     ExternalServiceProviderTimeout("EXTERNAL_SERVICE_PROVIDER_TIMEOUT"),
     TooManyRequests("TOO_MANY_REQUESTS"),
+    IdpScimNotSetup("IDP_SCIM_NOT_SETUP"),
+    IncidentNotFound("INCIDENT_NOT_FOUND"),
+    InvalidUserCsi("INVALID_USER_CSI"),
+    DataAlreadyExists("DATA_ALREADY_EXISTS"),
+    AuthUserNotMatching("AUTH_USER_NOT_MATCHING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

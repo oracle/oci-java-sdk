@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Problem Type of an Incident
+ * The kind of support ticket, such as a technical support request.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @lombok.extern.slf4j.Slf4j

@@ -80,6 +80,14 @@ public class ListIncidentsConverter {
                                     request.getPage()));
         }
 
+        if (request.getProblemType() != null) {
+            target =
+                    target.queryParam(
+                            "problemType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getProblemType()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -91,6 +99,10 @@ public class ListIncidentsConverter {
         }
 
         ib.header("ocid", request.getOcid());
+
+        if (request.getHomeregion() != null) {
+            ib.header("homeregion", request.getHomeregion());
+        }
 
         return ib;
     }
@@ -155,15 +167,6 @@ public class ListIncidentsConverter {
                                                     "opc-next-page",
                                                     opcNextPageHeader.get().get(0),
                                                     String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                headers, "etag");
-                                if (etagHeader.isPresent()) {
-                                    builder.etag(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "etag", etagHeader.get().get(0), String.class));
                                 }
 
                                 com.oracle.bmc.cims.responses.ListIncidentsResponse

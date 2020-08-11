@@ -53,6 +53,9 @@ public class GetJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         CreatedById("createdById"),
         UpdatedById("updatedById"),
         Uri("uri"),
+        JobDefinitionName("jobDefinitionName"),
+        ErrorCode("errorCode"),
+        ErrorMessage("errorMessage"),
         ;
 
         private final String value;
