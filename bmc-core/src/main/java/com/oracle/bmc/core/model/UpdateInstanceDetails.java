@@ -117,6 +117,16 @@ public class UpdateInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
+        private UpdateInstanceAvailabilityConfigDetails availabilityConfig;
+
+        public Builder availabilityConfig(
+                UpdateInstanceAvailabilityConfigDetails availabilityConfig) {
+            this.availabilityConfig = availabilityConfig;
+            this.__explicitlySet__.add("availabilityConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -132,7 +142,8 @@ public class UpdateInstanceDetails {
                             shape,
                             shapeConfig,
                             faultDomain,
-                            launchOptions);
+                            launchOptions,
+                            availabilityConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -149,7 +160,8 @@ public class UpdateInstanceDetails {
                             .shape(o.getShape())
                             .shapeConfig(o.getShapeConfig())
                             .faultDomain(o.getFaultDomain())
-                            .launchOptions(o.getLaunchOptions());
+                            .launchOptions(o.getLaunchOptions())
+                            .availabilityConfig(o.getAvailabilityConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -283,6 +295,9 @@ public class UpdateInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     UpdateLaunchOptions launchOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
+    UpdateInstanceAvailabilityConfigDetails availabilityConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

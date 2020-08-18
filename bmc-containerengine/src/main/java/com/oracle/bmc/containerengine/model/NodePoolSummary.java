@@ -96,6 +96,15 @@ public class NodePoolSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
+        private NodeSourceDetails nodeSourceDetails;
+
+        public Builder nodeSourceDetails(NodeSourceDetails nodeSourceDetails) {
+            this.nodeSourceDetails = nodeSourceDetails;
+            this.__explicitlySet__.add("nodeSourceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
         private String nodeShape;
 
@@ -164,6 +173,7 @@ public class NodePoolSummary {
                             nodeImageId,
                             nodeImageName,
                             nodeSource,
+                            nodeSourceDetails,
                             nodeShape,
                             initialNodeLabels,
                             sshPublicKey,
@@ -185,6 +195,7 @@ public class NodePoolSummary {
                             .nodeImageId(o.getNodeImageId())
                             .nodeImageName(o.getNodeImageName())
                             .nodeSource(o.getNodeSource())
+                            .nodeSourceDetails(o.getNodeSourceDetails())
                             .nodeShape(o.getNodeShape())
                             .initialNodeLabels(o.getInitialNodeLabels())
                             .sshPublicKey(o.getSshPublicKey())
@@ -249,10 +260,16 @@ public class NodePoolSummary {
     String nodeImageName;
 
     /**
-     * Source running on the nodes in the node pool.
+     * Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeSource")
     NodeSourceOption nodeSource;
+
+    /**
+     * Source running on the nodes in the node pool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
+    NodeSourceDetails nodeSourceDetails;
 
     /**
      * The name of the node shape of the nodes in the node pool.
@@ -267,7 +284,7 @@ public class NodePoolSummary {
     java.util.List<KeyValue> initialNodeLabels;
 
     /**
-     * The SSH public key on each node in the node pool.
+     * The SSH public key on each node in the node pool on launch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKey")
     String sshPublicKey;

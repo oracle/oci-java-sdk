@@ -205,6 +205,16 @@ public class InstanceConfigurationLaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
+        private InstanceConfigurationAvailabilityConfig availabilityConfig;
+
+        public Builder availabilityConfig(
+                InstanceConfigurationAvailabilityConfig availabilityConfig) {
+            this.availabilityConfig = availabilityConfig;
+            this.__explicitlySet__.add("availabilityConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -229,7 +239,8 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             launchOptions,
                             agentConfig,
                             isPvEncryptionInTransitEnabled,
-                            preferredMaintenanceAction);
+                            preferredMaintenanceAction,
+                            availabilityConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -255,7 +266,8 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             .launchOptions(o.getLaunchOptions())
                             .agentConfig(o.getAgentConfig())
                             .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
-                            .preferredMaintenanceAction(o.getPreferredMaintenanceAction());
+                            .preferredMaintenanceAction(o.getPreferredMaintenanceAction())
+                            .availabilityConfig(o.getAvailabilityConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -606,6 +618,9 @@ public class InstanceConfigurationLaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredMaintenanceAction")
     PreferredMaintenanceAction preferredMaintenanceAction;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
+    InstanceConfigurationAvailabilityConfig availabilityConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

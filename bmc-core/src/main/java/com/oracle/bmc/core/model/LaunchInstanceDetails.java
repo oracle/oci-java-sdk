@@ -146,6 +146,16 @@ public class LaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
+        private LaunchInstanceAvailabilityConfigDetails availabilityConfig;
+
+        public Builder availabilityConfig(
+                LaunchInstanceAvailabilityConfigDetails availabilityConfig) {
+            this.availabilityConfig = availabilityConfig;
+            this.__explicitlySet__.add("availabilityConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
@@ -228,6 +238,7 @@ public class LaunchInstanceDetails {
                             imageId,
                             ipxeScript,
                             launchOptions,
+                            availabilityConfig,
                             metadata,
                             agentConfig,
                             shape,
@@ -255,6 +266,7 @@ public class LaunchInstanceDetails {
                             .imageId(o.getImageId())
                             .ipxeScript(o.getIpxeScript())
                             .launchOptions(o.getLaunchOptions())
+                            .availabilityConfig(o.getAvailabilityConfig())
                             .metadata(o.getMetadata())
                             .agentConfig(o.getAgentConfig())
                             .shape(o.getShape())
@@ -423,6 +435,9 @@ public class LaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     LaunchOptions launchOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
+    LaunchInstanceAvailabilityConfigDetails availabilityConfig;
 
     /**
      * Custom metadata key/value pairs that you provide, such as the SSH public key

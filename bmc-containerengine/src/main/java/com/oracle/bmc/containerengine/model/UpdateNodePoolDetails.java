@@ -80,6 +80,42 @@ public class UpdateNodePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
+        private java.util.Map<String, String> nodeMetadata;
+
+        public Builder nodeMetadata(java.util.Map<String, String> nodeMetadata) {
+            this.nodeMetadata = nodeMetadata;
+            this.__explicitlySet__.add("nodeMetadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
+        private NodeSourceDetails nodeSourceDetails;
+
+        public Builder nodeSourceDetails(NodeSourceDetails nodeSourceDetails) {
+            this.nodeSourceDetails = nodeSourceDetails;
+            this.__explicitlySet__.add("nodeSourceDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKey")
+        private String sshPublicKey;
+
+        public Builder sshPublicKey(String sshPublicKey) {
+            this.sshPublicKey = sshPublicKey;
+            this.__explicitlySet__.add("sshPublicKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
+        private String nodeShape;
+
+        public Builder nodeShape(String nodeShape) {
+            this.nodeShape = nodeShape;
+            this.__explicitlySet__.add("nodeShape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -91,7 +127,11 @@ public class UpdateNodePoolDetails {
                             initialNodeLabels,
                             quantityPerSubnet,
                             subnetIds,
-                            nodeConfigDetails);
+                            nodeConfigDetails,
+                            nodeMetadata,
+                            nodeSourceDetails,
+                            sshPublicKey,
+                            nodeShape);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -104,7 +144,11 @@ public class UpdateNodePoolDetails {
                             .initialNodeLabels(o.getInitialNodeLabels())
                             .quantityPerSubnet(o.getQuantityPerSubnet())
                             .subnetIds(o.getSubnetIds())
-                            .nodeConfigDetails(o.getNodeConfigDetails());
+                            .nodeConfigDetails(o.getNodeConfigDetails())
+                            .nodeMetadata(o.getNodeMetadata())
+                            .nodeSourceDetails(o.getNodeSourceDetails())
+                            .sshPublicKey(o.getSshPublicKey())
+                            .nodeShape(o.getNodeShape());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -165,6 +209,31 @@ public class UpdateNodePoolDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
     UpdateNodePoolNodeConfigDetails nodeConfigDetails;
+
+    /**
+     * A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
+    java.util.Map<String, String> nodeMetadata;
+
+    /**
+     * Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
+    NodeSourceDetails nodeSourceDetails;
+
+    /**
+     * The SSH public key to add to each node in the node pool on launch.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKey")
+    String sshPublicKey;
+
+    /**
+     * The name of the node shape of the nodes in the node pool used on launch.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
+    String nodeShape;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
