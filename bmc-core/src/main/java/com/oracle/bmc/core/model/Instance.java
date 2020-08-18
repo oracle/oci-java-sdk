@@ -153,6 +153,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
+        private InstanceAvailabilityConfig availabilityConfig;
+
+        public Builder availabilityConfig(InstanceAvailabilityConfig availabilityConfig) {
+            this.availabilityConfig = availabilityConfig;
+            this.__explicitlySet__.add("availabilityConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -262,6 +271,7 @@ public class Instance {
                             ipxeScript,
                             launchMode,
                             launchOptions,
+                            availabilityConfig,
                             lifecycleState,
                             metadata,
                             region,
@@ -292,6 +302,7 @@ public class Instance {
                             .ipxeScript(o.getIpxeScript())
                             .launchMode(o.getLaunchMode())
                             .launchOptions(o.getLaunchOptions())
+                            .availabilityConfig(o.getAvailabilityConfig())
                             .lifecycleState(o.getLifecycleState())
                             .metadata(o.getMetadata())
                             .region(o.getRegion())
@@ -505,6 +516,9 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     LaunchOptions launchOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
+    InstanceAvailabilityConfig availabilityConfig;
     /**
      * The current state of the instance.
      **/

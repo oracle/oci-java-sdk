@@ -36,6 +36,10 @@ package com.oracle.bmc.database.model;
         name = "NewDbSystem"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDataGuardAssociationToExistingVmClusterDetails.class,
+        name = "ExistingVmCluster"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDataGuardAssociationToExistingDbSystemDetails.class,
         name = "ExistingDbSystem"
     )

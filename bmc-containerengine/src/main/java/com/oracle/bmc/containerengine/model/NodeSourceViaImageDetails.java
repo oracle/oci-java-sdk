@@ -41,18 +41,29 @@ public class NodeSourceViaImageDetails extends NodeSourceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
+        private Long bootVolumeSizeInGBs;
+
+        public Builder bootVolumeSizeInGBs(Long bootVolumeSizeInGBs) {
+            this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
+            this.__explicitlySet__.add("bootVolumeSizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodeSourceViaImageDetails build() {
-            NodeSourceViaImageDetails __instance__ = new NodeSourceViaImageDetails(imageId);
+            NodeSourceViaImageDetails __instance__ =
+                    new NodeSourceViaImageDetails(imageId, bootVolumeSizeInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(NodeSourceViaImageDetails o) {
-            Builder copiedBuilder = imageId(o.getImageId());
+            Builder copiedBuilder =
+                    imageId(o.getImageId()).bootVolumeSizeInGBs(o.getBootVolumeSizeInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -67,9 +78,10 @@ public class NodeSourceViaImageDetails extends NodeSourceDetails {
     }
 
     @Deprecated
-    public NodeSourceViaImageDetails(String imageId) {
+    public NodeSourceViaImageDetails(String imageId, Long bootVolumeSizeInGBs) {
         super();
         this.imageId = imageId;
+        this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
     }
 
     /**
@@ -77,6 +89,12 @@ public class NodeSourceViaImageDetails extends NodeSourceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;
+
+    /**
+     * The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
+    Long bootVolumeSizeInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -220,7 +220,7 @@ public class CreateNodePoolDetails {
     String kubernetesVersion;
 
     /**
-     * A list of key/value pairs to add to each underlying OCI instance in the node pool.
+     * A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
     java.util.Map<String, String> nodeMetadata;
@@ -254,7 +254,7 @@ public class CreateNodePoolDetails {
     java.util.List<KeyValue> initialNodeLabels;
 
     /**
-     * The SSH public key to add to each node in the node pool.
+     * The SSH public key on each node in the node pool on launch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKey")
     String sshPublicKey;
