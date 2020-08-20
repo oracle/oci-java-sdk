@@ -130,7 +130,8 @@ public class UploadManager {
                             .build();
         }
 
-        putObjectRequest.setRetryConfiguration(RETRY_CONFIGURATION);
+        /* RetryConfiguration used should either be the one set on this UploadRequest or a default */
+        putObjectRequest.setRetryConfiguration(getRetryToUse(putObjectRequest.getRetryConfiguration()));
 
         PutObjectResponse response = objectStorage.putObject(putObjectRequest);
         return new UploadResponse(
@@ -247,11 +248,33 @@ public class UploadManager {
         }
     }
 
+    /**
+     * Determines the first non-null RetryCondition
+     *    1 -> RetryConfiguration set on UploadConfiguration
+     *    2 -> Default static RetryConfiguration for UploadManager
+     *
+     * @return RetryConfiguration
+     */
+    private RetryConfiguration getRetryToUse(RetryConfiguration ...configs) {
+        for (RetryConfiguration cfg : configs) {
+            if (cfg != null)
+                return cfg;
+        }
+
+        return UploadManager.RETRY_CONFIGURATION;
+    }
+
     @VisibleForTesting
     protected MultipartObjectAssembler createAssembler(
             PutObjectRequest request,
             UploadRequest uploadRequest,
             ExecutorService executorService) {
+
+        // in case request != uploadRequest.putObjectRequest then choose the correct RetryConfiguration
+        RetryConfiguration retryToUse = getRetryToUse(
+                uploadRequest.putObjectRequest.getRetryConfiguration(),
+                request.getRetryConfiguration());
+
         return MultipartObjectAssembler.builder()
                 .allowOverwrite(uploadRequest.allowOverwrite)
                 .bucketName(request.getBucketName())
@@ -261,6 +284,7 @@ public class UploadManager {
                 .objectName(request.getObjectName())
                 .opcClientRequestId(request.getOpcClientRequestId())
                 .service(objectStorage)
+                .retryConfiguration(retryToUse)
                 .build();
     }
 
