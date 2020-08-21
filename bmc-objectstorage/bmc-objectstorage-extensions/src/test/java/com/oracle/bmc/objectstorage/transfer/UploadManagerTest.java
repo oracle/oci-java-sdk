@@ -242,6 +242,7 @@ public class UploadManagerTest {
                 new UploadManager(objectStorage, uploadConfiguration) {
                     @Override
                     protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
                             UploadRequest uploadRequest,
                             ExecutorService executorService) {
                         return assembler;
@@ -279,6 +280,7 @@ public class UploadManagerTest {
                 new UploadManager(objectStorage, uploadConfiguration) {
                     @Override
                     protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
                             UploadRequest uploadRequest,
                             ExecutorService executorService) {
                         return assembler;
@@ -318,6 +320,7 @@ public class UploadManagerTest {
                 new UploadManager(objectStorage, uploadConfiguration) {
                     @Override
                     protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
                             UploadRequest uploadRequest,
                             ExecutorService executorService) {
                         return assembler;
@@ -354,6 +357,7 @@ public class UploadManagerTest {
                 new UploadManager(objectStorage, uploadConfiguration) {
                     @Override
                     protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
                             UploadRequest uploadRequest,
                             ExecutorService executorService) {
                         return assembler;
@@ -387,6 +391,7 @@ public class UploadManagerTest {
                 new UploadManager(objectStorage, uploadConfiguration) {
                     @Override
                     protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
                             UploadRequest uploadRequest,
                             ExecutorService executorService) {
                         return assembler;
@@ -444,6 +449,7 @@ public class UploadManagerTest {
                 new UploadManager(objectStorage, getMultipartUploadConfiguration()) {
                     @Override
                     protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
                             UploadRequest uploadRequest,
                             ExecutorService executorService) {
                         return assembler;
@@ -640,6 +646,7 @@ public class UploadManagerTest {
                 new UploadManager(objectStorage, uploadConfiguration) {
                     @Override
                     protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
                             UploadRequest uploadRequest,
                             ExecutorService executorService) {
                         return assembler;
