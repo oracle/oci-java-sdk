@@ -90,7 +90,6 @@ public class UploadManager {
      * @param uploadDetails The upload request.
      * @return The response.
      * @throws BmcException if the upload fails for any reason.
-     * @throws IllegalArgumentException if UploadRequest
      */
     public UploadResponse upload(UploadRequest uploadDetails) {
         if (MultipartUtils.shouldUseMultipart(
@@ -172,7 +171,8 @@ public class UploadManager {
             shutdownExecutor = true;
         }
 
-        MultipartObjectAssembler assembler = createAssembler(uploadRequest, executorServiceToUse);
+        MultipartObjectAssembler assembler =
+                createAssembler(request, uploadRequest, executorServiceToUse);
         MultipartManifest manifest = null;
         try {
             manifest =
@@ -265,10 +265,15 @@ public class UploadManager {
     }
 
     @VisibleForTesting
-    protected MultipartObjectAssembler createAssembler(UploadRequest uploadRequest, ExecutorService executorService) {
+    protected MultipartObjectAssembler createAssembler(
+            PutObjectRequest request,
+            UploadRequest uploadRequest,
+            ExecutorService executorService) {
 
-        PutObjectRequest request = uploadRequest.putObjectRequest;
-        RetryConfiguration retryToUse = getRetryToUse(request.getRetryConfiguration());
+        // in case request != uploadRequest.putObjectRequest then choose the correct RetryConfiguration
+        RetryConfiguration retryToUse = getRetryToUse(
+                uploadRequest.putObjectRequest.getRetryConfiguration(),
+                request.getRetryConfiguration());
 
         return MultipartObjectAssembler.builder()
                 .allowOverwrite(uploadRequest.allowOverwrite)
