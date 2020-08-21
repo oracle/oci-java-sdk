@@ -249,13 +249,13 @@ public class UploadManager {
     }
 
     /**
-     * Determines the first non-null RetryCondition
+     * Determines the first non-null RetryConfiguration
      *    1 -> RetryConfiguration set on UploadConfiguration
      *    2 -> Default static RetryConfiguration for UploadManager
      *
-     * @return RetryConfiguration
+     * @return RetryConfiguration first non-null condition or UploadManager default
      */
-    private RetryConfiguration getRetryToUse(RetryConfiguration ...configs) {
+    private static RetryConfiguration getRetryToUse(RetryConfiguration ...configs) {
         for (RetryConfiguration cfg : configs) {
             if (cfg != null)
                 return cfg;
