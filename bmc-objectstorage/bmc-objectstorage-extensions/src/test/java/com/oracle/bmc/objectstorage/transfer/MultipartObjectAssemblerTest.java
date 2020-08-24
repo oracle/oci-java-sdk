@@ -115,7 +115,7 @@ public class MultipartObjectAssemblerTest {
     }
 
     @Test
-    public void newRequest_andVerifyManifest() {
+    public void newRequest_andVerifyManifestWithRetryConfiguration() {
         String uploadId = "uploadId";
 
         initializeCreateMultipartUpload(uploadId);
@@ -143,7 +143,7 @@ public class MultipartObjectAssemblerTest {
     }
 
     @Test
-    public void newRequest_andVerifyManifestWithRetryConfiguration() {
+    public void newRequest_andVerifyManifest() {
         String uploadId = "uploadId";
 
         initializeCreateMultipartUpload(uploadId);
