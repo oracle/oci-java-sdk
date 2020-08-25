@@ -38,7 +38,10 @@ import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadRequest;
 import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadResponse;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartManifestImpl;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartUtils;
+import com.oracle.bmc.retrier.DefaultRetryCondition;
+import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.StreamUtils;
+import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -144,6 +147,7 @@ public class UploadManagerTest {
         byte[] buffer = new byte[(int) CONTENT_LENGTH];
         putRequestCaptor.getValue().getPutObjectBody().read(buffer);
         assertEquals(CONTENT, new String(buffer));
+        assertSame(UploadManager.RETRY_CONFIGURATION, putRequestCaptor.getValue().getRetryConfiguration());
         assertEquals(CONTENT_LENGTH, putRequestCaptor.getValue().getContentLength().longValue());
         assertEquals(CLIENT_REQ_ID, putRequestCaptor.getValue().getOpcClientRequestId());
         assertSame(METADATA, putRequestCaptor.getValue().getOpcMeta());
@@ -171,6 +175,47 @@ public class UploadManagerTest {
         assertEquals(
                 "U2yw5mJhFHg/U4cBMrrFyw==",
                 putRequestCaptor.getValue().getContentMD5()); // 'a' times content-length
+    }
+
+    @Test
+    public void upload_singleUpload_uploadRequestRetryConfiguration() throws Exception {
+        RetryConfiguration retryConfiguration = RetryConfiguration.builder()
+                .delayStrategy(new ExponentialBackoffDelayStrategy(120000))
+                .retryCondition(new DefaultRetryCondition())
+                .build();
+
+        UploadConfiguration uploadConfiguration =
+                UploadConfiguration.builder().allowMultipartUploads(false).build();
+        UploadManager uploadManager = new UploadManager(objectStorage, uploadConfiguration);
+
+        UploadRequest request = createUploadRequest(retryConfiguration);
+
+        ArgumentCaptor<PutObjectRequest> putRequestCaptor =
+                ArgumentCaptor.forClass(PutObjectRequest.class);
+        PutObjectResponse putResponse =
+                PutObjectResponse.builder()
+                        .eTag("etag")
+                        .opcContentMd5("md5")
+                        .opcRequestId(REQ_ID)
+                        .opcClientRequestId(CLIENT_REQ_ID)
+                        .build();
+        when(objectStorage.putObject(putRequestCaptor.capture())).thenReturn(putResponse);
+
+        UploadResponse uploadResponse = uploadManager.upload(request);
+
+        assertNotNull(uploadResponse);
+        assertEquals("etag", uploadResponse.getETag());
+        assertEquals("md5", uploadResponse.getContentMd5());
+        assertNull(uploadResponse.getMultipartMd5());
+        assertEquals(REQ_ID, uploadResponse.getOpcRequestId());
+        assertEquals(CLIENT_REQ_ID, uploadResponse.getOpcClientRequestId());
+        byte[] buffer = new byte[(int) CONTENT_LENGTH];
+        putRequestCaptor.getValue().getPutObjectBody().read(buffer);
+        assertSame(retryConfiguration, putRequestCaptor.getValue().getRetryConfiguration());
+        assertEquals(CONTENT, new String(buffer));
+        assertEquals(CONTENT_LENGTH, putRequestCaptor.getValue().getContentLength().longValue());
+        assertEquals(CLIENT_REQ_ID, putRequestCaptor.getValue().getOpcClientRequestId());
+        assertSame(METADATA, putRequestCaptor.getValue().getOpcMeta());
     }
 
     @Test(expected = BmcException.class)
@@ -655,7 +700,7 @@ public class UploadManagerTest {
                 .build();
     }
 
-    private UploadRequest createUploadRequest(ProgressReporter progressReporter) {
+    private UploadRequest createUploadRequest(ProgressReporter progressReporter, RetryConfiguration retryConfiguration) {
         PutObjectRequest request =
                 PutObjectRequest.builder()
                         .opcMeta(METADATA)
@@ -666,14 +711,23 @@ public class UploadManagerTest {
                         .namespaceName(NAMESPACE_NAME)
                         .bucketName(BUCKET_NAME)
                         .objectName(OBJECT_NAME)
+                        .retryConfiguration(retryConfiguration)
                         .build();
         return UploadRequest.builder(body, CONTENT_LENGTH)
                 .progressReporter(progressReporter)
                 .build(request);
     }
 
+    private UploadRequest createUploadRequest(ProgressReporter progressReporter) {
+        return createUploadRequest(progressReporter, null);
+    }
+
     private UploadRequest createUploadRequest() {
-        return createUploadRequest(null);
+        return createUploadRequest(null, null);
+    }
+
+    private UploadRequest createUploadRequest(RetryConfiguration retryConfiguration) {
+        return createUploadRequest(null, retryConfiguration);
     }
 
     private static void validateUploadResponseForMultipart(final UploadResponse response) {

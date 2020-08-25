@@ -30,6 +30,7 @@ import com.oracle.bmc.objectstorage.responses.ListMultipartUploadPartsResponse;
 import com.oracle.bmc.objectstorage.responses.ListMultipartUploadsResponse;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartManifestImpl;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartTransferManager;
+import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.util.internal.Consumer;
 import lombok.Builder;
@@ -64,6 +65,8 @@ public class MultipartObjectAssembler {
     private MultipartManifestImpl manifest;
     private boolean initialized = false;
 
+    private RetryConfiguration retryConfiguration;
+
     /**
      * The opcClientRequestId to send for all requests related to this multi-part upload.
      */
@@ -96,7 +99,8 @@ public class MultipartObjectAssembler {
                 allowOverwrite,
                 executorService,
                 null /* opcClientRequestId */,
-                null /* invocationCallback */);
+                null /* invocationCallback */,
+                UploadManager.RETRY_CONFIGURATION); /* backwards compatibility */
     }
 
     @Builder
@@ -108,7 +112,8 @@ public class MultipartObjectAssembler {
             boolean allowOverwrite,
             ExecutorService executorService,
             String opcClientRequestId,
-            Consumer<Invocation.Builder> invocationCallback) {
+            Consumer<Invocation.Builder> invocationCallback,
+            RetryConfiguration retryConfiguration) {
         this.service = service;
         this.namespaceName = namespaceName;
         this.bucketName = bucketName;
@@ -117,6 +122,7 @@ public class MultipartObjectAssembler {
         this.executorService = executorService;
         this.opcClientRequestId = opcClientRequestId;
         this.invocationCallback = invocationCallback;
+        this.retryConfiguration = retryConfiguration;
     }
 
     /**
@@ -299,7 +305,7 @@ public class MultipartObjectAssembler {
                         .opcClientRequestId(createClientRequestId("-" + partNumber))
                         .build();
 
-        request.setRetryConfiguration(UploadManager.RETRY_CONFIGURATION);
+        request.setRetryConfiguration(this.retryConfiguration);
 
         transferManager.startTransfer(request);
         return partNumber;
