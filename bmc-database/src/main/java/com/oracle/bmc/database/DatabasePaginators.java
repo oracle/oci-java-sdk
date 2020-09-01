@@ -539,6 +539,128 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAutonomousDatabaseClones operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAutonomousDatabaseClonesResponse>
+            listAutonomousDatabaseClonesResponseIterator(
+                    final ListAutonomousDatabaseClonesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousDatabaseClonesRequest.Builder, ListAutonomousDatabaseClonesRequest,
+                ListAutonomousDatabaseClonesResponse>(
+                new com.google.common.base.Supplier<ListAutonomousDatabaseClonesRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabaseClonesRequest.Builder get() {
+                        return ListAutonomousDatabaseClonesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseClonesResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDatabaseClonesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabaseClonesRequest.Builder>,
+                        ListAutonomousDatabaseClonesRequest>() {
+                    @Override
+                    public ListAutonomousDatabaseClonesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabaseClonesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseClonesRequest,
+                        ListAutonomousDatabaseClonesResponse>() {
+                    @Override
+                    public ListAutonomousDatabaseClonesResponse apply(
+                            ListAutonomousDatabaseClonesRequest request) {
+                        return client.listAutonomousDatabaseClones(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.AutonomousDatabaseSummary} objects
+     * contained in responses from the listAutonomousDatabaseClones operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.AutonomousDatabaseSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousDatabaseSummary>
+            listAutonomousDatabaseClonesRecordIterator(
+                    final ListAutonomousDatabaseClonesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousDatabaseClonesRequest.Builder, ListAutonomousDatabaseClonesRequest,
+                ListAutonomousDatabaseClonesResponse,
+                com.oracle.bmc.database.model.AutonomousDatabaseSummary>(
+                new com.google.common.base.Supplier<ListAutonomousDatabaseClonesRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabaseClonesRequest.Builder get() {
+                        return ListAutonomousDatabaseClonesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseClonesResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDatabaseClonesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabaseClonesRequest.Builder>,
+                        ListAutonomousDatabaseClonesRequest>() {
+                    @Override
+                    public ListAutonomousDatabaseClonesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabaseClonesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseClonesRequest,
+                        ListAutonomousDatabaseClonesResponse>() {
+                    @Override
+                    public ListAutonomousDatabaseClonesResponse apply(
+                            ListAutonomousDatabaseClonesRequest request) {
+                        return client.listAutonomousDatabaseClones(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseClonesResponse,
+                        java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseSummary>
+                            apply(ListAutonomousDatabaseClonesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listAutonomousDatabases operation. This iterable
      * will fetch more data from the server as needed.
      *

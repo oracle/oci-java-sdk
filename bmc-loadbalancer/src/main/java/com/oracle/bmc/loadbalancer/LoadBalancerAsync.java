@@ -219,6 +219,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a custom SSL cipher suite.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSSLCipherSuiteResponse> createSSLCipherSuite(
+            CreateSSLCipherSuiteRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSSLCipherSuiteRequest, CreateSSLCipherSuiteResponse>
+                    handler);
+
+    /**
      * Removes a backend server from a given load balancer and backend set.
      *
      * @param request The request object containing the details to send
@@ -351,6 +367,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteRuleSetResponse> deleteRuleSet(
             DeleteRuleSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteRuleSetRequest, DeleteRuleSetResponse>
+                    handler);
+
+    /**
+     * Deletes an SSL cipher suite from a load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSSLCipherSuiteResponse> deleteSSLCipherSuite(
+            DeleteSSLCipherSuiteRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSSLCipherSuiteRequest, DeleteSSLCipherSuiteResponse>
                     handler);
 
     /**
@@ -501,6 +533,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
     java.util.concurrent.Future<GetRuleSetResponse> getRuleSet(
             GetRuleSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetRuleSetRequest, GetRuleSetResponse> handler);
+
+    /**
+     * Gets the specified SSL cipher suite's configuration information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSSLCipherSuiteResponse> getSSLCipherSuite(
+            GetSSLCipherSuiteRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSSLCipherSuiteRequest, GetSSLCipherSuiteResponse>
+                    handler);
 
     /**
      * Gets the details of a work request.
@@ -694,6 +742,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists all SSL cipher suites associated with the specified load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSSLCipherSuitesResponse> listSSLCipherSuites(
+            ListSSLCipherSuitesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSSLCipherSuitesRequest, ListSSLCipherSuitesResponse>
+                    handler);
+
+    /**
      * Lists the valid load balancer shapes.
      *
      * @param request The request object containing the details to send
@@ -871,5 +935,21 @@ public interface LoadBalancerAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateRuleSetResponse> updateRuleSet(
             UpdateRuleSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateRuleSetRequest, UpdateRuleSetResponse>
+                    handler);
+
+    /**
+     * Updates an existing SSL cipher suite for the specified load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSSLCipherSuiteResponse> updateSSLCipherSuite(
+            UpdateSSLCipherSuiteRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSSLCipherSuiteRequest, UpdateSSLCipherSuiteResponse>
                     handler);
 }

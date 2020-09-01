@@ -13,12 +13,12 @@ public class UpdateMaintenanceRunRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateMaintenanceRunDetails> {
 
     /**
-     * The Maintenance Run OCID.
+     * The maintenance run OCID.
      */
     private String maintenanceRunId;
 
     /**
-     * Request to update the properties of a Maintenance Run.
+     * Request to update the properties of a maintenance run.
      */
     private UpdateMaintenanceRunDetails updateMaintenanceRunDetails;
 

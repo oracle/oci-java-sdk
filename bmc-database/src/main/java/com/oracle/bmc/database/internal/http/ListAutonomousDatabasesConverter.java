@@ -126,6 +126,14 @@ public class ListAutonomousDatabasesConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getIsRefreshableClone() != null) {
+            target =
+                    target.queryParam(
+                            "isRefreshableClone",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsRefreshableClone()));
+        }
+
         if (request.getIsDataGuardEnabled() != null) {
             target =
                     target.queryParam(

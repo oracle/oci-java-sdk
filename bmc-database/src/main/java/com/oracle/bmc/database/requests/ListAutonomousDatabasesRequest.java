@@ -157,6 +157,13 @@ public class ListAutonomousDatabasesRequest
     private String opcRequestId;
 
     /**
+     * Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones.
+     * A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+     *
+     */
+    private Boolean isRefreshableClone;
+
+    /**
      * A filter to return only resources that have Data Guard enabled.
      */
     private Boolean isDataGuardEnabled;
@@ -209,6 +216,7 @@ public class ListAutonomousDatabasesRequest
             isFreeTier(o.getIsFreeTier());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
+            isRefreshableClone(o.getIsRefreshableClone());
             isDataGuardEnabled(o.getIsDataGuardEnabled());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

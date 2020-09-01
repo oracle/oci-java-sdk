@@ -232,6 +232,15 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
+        private String privateIp;
+
+        public Builder privateIp(String privateIp) {
+            this.privateIp = privateIp;
+            this.__explicitlySet__.add("privateIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
         private CreateDbHomeFromBackupDetails dbHome;
 
@@ -296,6 +305,7 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
                             nodeCount,
                             freeformTags,
                             definedTags,
+                            privateIp,
                             dbHome,
                             databaseEdition,
                             diskRedundancy,
@@ -329,6 +339,7 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
                             .nodeCount(o.getNodeCount())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .privateIp(o.getPrivateIp())
                             .dbHome(o.getDbHome())
                             .databaseEdition(o.getDatabaseEdition())
                             .diskRedundancy(o.getDiskRedundancy())
@@ -370,6 +381,7 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             Integer nodeCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String privateIp,
             CreateDbHomeFromBackupDetails dbHome,
             DatabaseEdition databaseEdition,
             DiskRedundancy diskRedundancy,
@@ -396,7 +408,8 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
                 initialDataStorageSizeInGB,
                 nodeCount,
                 freeformTags,
-                definedTags);
+                definedTags,
+                privateIp);
         this.dbHome = dbHome;
         this.databaseEdition = databaseEdition;
         this.diskRedundancy = diskRedundancy;

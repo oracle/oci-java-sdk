@@ -4,13 +4,16 @@
  */
 package com.oracle.bmc.circuitbreaker;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
 import lombok.Builder;
 import lombok.Getter;
 
 import java.time.Duration;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.ServiceUnavailableException;
@@ -70,8 +73,13 @@ public class CircuitBreakerConfiguration {
      * List of default http error codes to record as circuit breaker failure
      */
     @Getter @Builder.Default
-    private final ImmutableSet<Integer> recordHttpStatuses =
-            ImmutableSet.of(TOO_MANY_REQUESTS, INTERNAL_SERVER_ERROR, SERVICE_UNAVAILABLE);
+    private final Set<Integer> recordHttpStatuses =
+            Collections.unmodifiableSet(
+                    new HashSet<>(
+                            Arrays.asList(
+                                    TOO_MANY_REQUESTS,
+                                    INTERNAL_SERVER_ERROR,
+                                    SERVICE_UNAVAILABLE)));
 
     public static final Class<ProcessingException> PROCESSING_EXCEPTION_CLASS =
             ProcessingException.class;
@@ -85,9 +93,10 @@ public class CircuitBreakerConfiguration {
      * RuntimeException because all JaxRs exceptions inherit from the RuntimeException
      */
     @Getter @Builder.Default
-    private ImmutableList<Class<? extends RuntimeException>> recordExceptions =
-            ImmutableList.of(
-                    PROCESSING_EXCEPTION_CLASS,
-                    SERVICE_UNAVAILABLE_EXCEPTION_CLASS,
-                    INTERNAL_SERVER_ERROR_EXCEPTION_CLASS);
+    private final List<Class<? extends RuntimeException>> recordExceptions =
+            Collections.unmodifiableList(
+                    Arrays.asList(
+                            PROCESSING_EXCEPTION_CLASS,
+                            SERVICE_UNAVAILABLE_EXCEPTION_CLASS,
+                            INTERNAL_SERVER_ERROR_EXCEPTION_CLASS));
 }

@@ -13,6 +13,8 @@ import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.internal.X509FederationClient;
 
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.util.CircuitBreakerUtils;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -93,6 +95,11 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      */
     @Getter protected String tenancyId;
 
+    /**
+     * The configuration for the circuit breaker.
+     */
+    private CircuitBreakerConfiguration circuitBreakerConfiguration;
+
     private String purpose = null;
 
     /**
@@ -138,6 +145,14 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     }
 
     /**
+     * Configures the Circuit Breaker to use, if any.
+     */
+    public B circuitBreakerConfigurator(CircuitBreakerConfiguration circuitBreakerConfiguration) {
+        this.circuitBreakerConfiguration = circuitBreakerConfiguration;
+        return (B) this;
+    }
+
+    /**
      * Build a new AuthenticationDetailsProvider that uses the FederationClient.
      *
      * @return A new provider instance.
@@ -152,6 +167,12 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     }
 
     protected FederationClient createFederationClient(SessionKeySupplier sessionKeySupplier) {
+
+        CircuitBreakerConfiguration circuitBreakerConfig =
+                circuitBreakerConfiguration != null
+                        ? circuitBreakerConfiguration
+                        : CircuitBreakerUtils.getDefaultCircuitBreakerConfig();
+
         if (purpose != null) {
             return new X509FederationClient(
                     federationEndpoint,
@@ -161,6 +182,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                     intermediateCertificateSuppliers,
                     federationClientConfigurator,
                     additionalFederationClientConfigurators,
+                    circuitBreakerConfig,
                     purpose);
         } else {
             return new X509FederationClient(
@@ -170,7 +192,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                     sessionKeySupplier,
                     intermediateCertificateSuppliers,
                     federationClientConfigurator,
-                    additionalFederationClientConfigurators);
+                    additionalFederationClientConfigurators,
+                    circuitBreakerConfig);
         }
     }
 

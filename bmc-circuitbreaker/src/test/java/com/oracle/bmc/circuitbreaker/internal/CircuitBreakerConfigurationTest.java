@@ -15,6 +15,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.time.Duration;
+import java.util.Set;
 import java.util.function.Predicate;
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.ProcessingException;
@@ -71,7 +72,7 @@ public class CircuitBreakerConfigurationTest {
         assertFalse(recordExceptionPredicate.test(new InternalServerErrorException()));
         assertFalse(recordExceptionPredicate.test(new ProcessingException("test")));
 
-        ImmutableSet<Integer> recordHttpStatuses = circuitBreaker.getRecordHttpStatuses();
+        Set<Integer> recordHttpStatuses = circuitBreaker.getRecordHttpStatuses();
         assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.SERVICE_UNAVAILABLE));
         assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.TOO_MANY_REQUESTS));
         assertEquals(recordHttpStatuses.size(), 2);
@@ -126,7 +127,7 @@ public class CircuitBreakerConfigurationTest {
         assertTrue(recordExceptionPredicate.test(new InternalServerErrorException()));
         assertTrue(recordExceptionPredicate.test(new ProcessingException("test")));
 
-        ImmutableSet<Integer> recordHttpStatuses = circuitBreaker.getRecordHttpStatuses();
+        Set<Integer> recordHttpStatuses = circuitBreaker.getRecordHttpStatuses();
         assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.INTERNAL_SERVER_ERROR));
         assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.SERVICE_UNAVAILABLE));
         assertTrue(recordHttpStatuses.contains(CircuitBreakerConfiguration.TOO_MANY_REQUESTS));

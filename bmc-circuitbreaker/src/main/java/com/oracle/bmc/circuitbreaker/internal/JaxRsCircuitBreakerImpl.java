@@ -5,7 +5,6 @@
 package com.oracle.bmc.circuitbreaker.internal;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.ImmutableSet;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
@@ -13,6 +12,7 @@ import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 
+import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -26,7 +26,7 @@ import javax.ws.rs.core.Response;
 public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
 
     private final CircuitBreaker circuitBreaker;
-    private final ImmutableSet<Integer> recordHttpStatuses;
+    private final Set<Integer> recordHttpStatuses;
 
     /**
      * Creates a {@link JaxRsCircuitBreakerImpl}
@@ -139,7 +139,7 @@ public class JaxRsCircuitBreakerImpl implements JaxRsCircuitBreaker {
     }
 
     @VisibleForTesting
-    ImmutableSet<Integer> getRecordHttpStatuses() {
+    Set<Integer> getRecordHttpStatuses() {
         return recordHttpStatuses;
     }
 }

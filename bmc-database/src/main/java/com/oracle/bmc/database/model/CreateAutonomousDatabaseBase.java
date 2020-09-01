@@ -36,6 +36,10 @@ package com.oracle.bmc.database.model;
         name = "DATABASE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateRefreshableAutonomousDatabaseCloneDetails.class,
+        name = "CLONE_TO_REFRESHABLE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAutonomousDatabaseFromBackupDetails.class,
         name = "BACKUP_FROM_ID"
     ),
@@ -299,6 +303,7 @@ public class CreateAutonomousDatabaseBase {
         Database("DATABASE"),
         BackupFromId("BACKUP_FROM_ID"),
         BackupFromTimestamp("BACKUP_FROM_TIMESTAMP"),
+        CloneToRefreshable("CLONE_TO_REFRESHABLE"),
         ;
 
         private final String value;

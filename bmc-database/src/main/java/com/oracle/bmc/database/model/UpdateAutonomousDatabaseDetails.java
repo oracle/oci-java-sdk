@@ -138,6 +138,24 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isRefreshableClone")
+        private Boolean isRefreshableClone;
+
+        public Builder isRefreshableClone(Boolean isRefreshableClone) {
+            this.isRefreshableClone = isRefreshableClone;
+            this.__explicitlySet__.add("isRefreshableClone");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
+        private RefreshableMode refreshableMode;
+
+        public Builder refreshableMode(RefreshableMode refreshableMode) {
+            this.refreshableMode = refreshableMode;
+            this.__explicitlySet__.add("refreshableMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isDataGuardEnabled")
         private Boolean isDataGuardEnabled;
 
@@ -201,6 +219,8 @@ public class UpdateAutonomousDatabaseDetails {
                             licenseModel,
                             whitelistedIps,
                             isAutoScalingEnabled,
+                            isRefreshableClone,
+                            refreshableMode,
                             isDataGuardEnabled,
                             dbVersion,
                             subnetId,
@@ -225,6 +245,8 @@ public class UpdateAutonomousDatabaseDetails {
                             .licenseModel(o.getLicenseModel())
                             .whitelistedIps(o.getWhitelistedIps())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
+                            .isRefreshableClone(o.getIsRefreshableClone())
+                            .refreshableMode(o.getRefreshableMode())
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
                             .dbVersion(o.getDbVersion())
                             .subnetId(o.getSubnetId())
@@ -415,6 +437,52 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     Boolean isAutoScalingEnabled;
+
+    /**
+     * Indicates whether the Autonomous Database is a refreshable clone.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRefreshableClone")
+    Boolean isRefreshableClone;
+    /**
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     **/
+    public enum RefreshableMode {
+        Automatic("AUTOMATIC"),
+        Manual("MANUAL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, RefreshableMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RefreshableMode v : RefreshableMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        RefreshableMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RefreshableMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid RefreshableMode: " + key);
+        }
+    };
+    /**
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
+    RefreshableMode refreshableMode;
 
     /**
      * Indicates whether the Autonomous Database has Data Guard enabled.

@@ -60,6 +60,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AutonomousDatabaseManualRefreshResponse>
+            autonomousDatabaseManualRefresh(
+                    AutonomousDatabaseManualRefreshRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AutonomousDatabaseManualRefreshRequest,
+                                    AutonomousDatabaseManualRefreshResponse>
+                            handler);
+
+    /**
      * Move the Autonomous Container Database and its dependent resources to the specified compartment.
      * For more information about moving Autonomous Container Databases, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -1310,7 +1329,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Maintenance Run.
+     * Gets information about the specified maintenance run.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1508,6 +1527,24 @@ public interface DatabaseAsync extends AutoCloseable {
                                     ListAutonomousDatabaseBackupsRequest,
                                     ListAutonomousDatabaseBackupsResponse>
                             handler);
+
+    /**
+     * Gets a list of the Autonomous Database clones for the specified Autonomous Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousDatabaseClonesResponse> listAutonomousDatabaseClones(
+            ListAutonomousDatabaseClonesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAutonomousDatabaseClonesRequest,
+                            ListAutonomousDatabaseClonesResponse>
+                    handler);
 
     /**
      * Gets a list of Autonomous Databases.
@@ -1880,7 +1917,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Maintenance Runs in the specified compartment.
+     * Gets a list of the maintenance runs in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -2479,7 +2516,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the properties of a Maintenance Run, such as the state of a Maintenance Run.
+     * Updates the properties of a maintenance run, such as the state of a maintenance run.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

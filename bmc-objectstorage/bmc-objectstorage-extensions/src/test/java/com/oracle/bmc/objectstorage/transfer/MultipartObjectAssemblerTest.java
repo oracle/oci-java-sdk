@@ -68,10 +68,11 @@ public class MultipartObjectAssemblerTest {
     private static final Map<String, String> OPC_META = new HashMap<>();
     private static final boolean ALLOW_OVERWRITE = false;
 
-    private static final RetryConfiguration RETRY_CONFIGURATION = RetryConfiguration.builder()
-            .delayStrategy(new ExponentialBackoffDelayStrategy(120000))
-            .retryCondition(new DefaultRetryCondition())
-            .build();
+    private static final RetryConfiguration RETRY_CONFIGURATION =
+            RetryConfiguration.builder()
+                    .delayStrategy(new ExponentialBackoffDelayStrategy(120000))
+                    .retryCondition(new DefaultRetryCondition())
+                    .build();
 
     private ExecutorService executorService;
     private MultipartObjectAssembler assembler;
@@ -121,7 +122,8 @@ public class MultipartObjectAssemblerTest {
         initializeCreateMultipartUpload(uploadId);
 
         MultipartManifest manifest =
-                assemblerWithRetryConfiguration.newRequest(CONTENT_TYPE, CONTENT_LANGUAGE, CONTENT_ENCODING, OPC_META);
+                assemblerWithRetryConfiguration.newRequest(
+                        CONTENT_TYPE, CONTENT_LANGUAGE, CONTENT_ENCODING, OPC_META);
         assertNotNull(manifest);
         assertEquals(uploadId, manifest.getUploadId());
 
@@ -355,7 +357,8 @@ public class MultipartObjectAssemblerTest {
         String uploadId = "uploadId";
         initializeCreateMultipartUpload(uploadId);
         MultipartManifest manifest =
-                assemblerWithRetryConfiguration.newRequest(CONTENT_TYPE, CONTENT_LANGUAGE, CONTENT_ENCODING, OPC_META);
+                assemblerWithRetryConfiguration.newRequest(
+                        CONTENT_TYPE, CONTENT_LANGUAGE, CONTENT_ENCODING, OPC_META);
 
         byte[] bytes = "abcd".getBytes();
 
@@ -382,7 +385,8 @@ public class MultipartObjectAssemblerTest {
         String md5_2 = "md5_2";
 
         assemblerWithRetryConfiguration.addPart(file, md5_1);
-        assemblerWithRetryConfiguration.addPart(StreamUtils.createByteArrayInputStream(bytes), bytes.length, md5_2);
+        assemblerWithRetryConfiguration.addPart(
+                StreamUtils.createByteArrayInputStream(bytes), bytes.length, md5_2);
 
         CommitMultipartUploadResponse commitResponse = assemblerWithRetryConfiguration.commit();
         assertSame(finalCommitResponse, commitResponse);
@@ -411,7 +415,9 @@ public class MultipartObjectAssemblerTest {
         verifyUploadPart(uploadCaptor.getAllValues().get(0), uploadId, 1, md5_1);
         verifyUploadPart(uploadCaptor.getAllValues().get(1), uploadId, 2, md5_2);
 
-        uploadCaptor.getAllValues().forEach(r -> assertSame(RETRY_CONFIGURATION, r.getRetryConfiguration()));
+        uploadCaptor
+                .getAllValues()
+                .forEach(r -> assertSame(RETRY_CONFIGURATION, r.getRetryConfiguration()));
 
         file.delete();
     }

@@ -147,7 +147,9 @@ public class UploadManagerTest {
         byte[] buffer = new byte[(int) CONTENT_LENGTH];
         putRequestCaptor.getValue().getPutObjectBody().read(buffer);
         assertEquals(CONTENT, new String(buffer));
-        assertSame(UploadManager.RETRY_CONFIGURATION, putRequestCaptor.getValue().getRetryConfiguration());
+        assertSame(
+                UploadManager.RETRY_CONFIGURATION,
+                putRequestCaptor.getValue().getRetryConfiguration());
         assertEquals(CONTENT_LENGTH, putRequestCaptor.getValue().getContentLength().longValue());
         assertEquals(CLIENT_REQ_ID, putRequestCaptor.getValue().getOpcClientRequestId());
         assertSame(METADATA, putRequestCaptor.getValue().getOpcMeta());
@@ -179,10 +181,11 @@ public class UploadManagerTest {
 
     @Test
     public void upload_singleUpload_uploadRequestRetryConfiguration() throws Exception {
-        RetryConfiguration retryConfiguration = RetryConfiguration.builder()
-                .delayStrategy(new ExponentialBackoffDelayStrategy(120000))
-                .retryCondition(new DefaultRetryCondition())
-                .build();
+        RetryConfiguration retryConfiguration =
+                RetryConfiguration.builder()
+                        .delayStrategy(new ExponentialBackoffDelayStrategy(120000))
+                        .retryCondition(new DefaultRetryCondition())
+                        .build();
 
         UploadConfiguration uploadConfiguration =
                 UploadConfiguration.builder().allowMultipartUploads(false).build();
@@ -700,7 +703,8 @@ public class UploadManagerTest {
                 .build();
     }
 
-    private UploadRequest createUploadRequest(ProgressReporter progressReporter, RetryConfiguration retryConfiguration) {
+    private UploadRequest createUploadRequest(
+            ProgressReporter progressReporter, RetryConfiguration retryConfiguration) {
         PutObjectRequest request =
                 PutObjectRequest.builder()
                         .opcMeta(METADATA)

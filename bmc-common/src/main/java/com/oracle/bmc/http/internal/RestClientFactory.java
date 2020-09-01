@@ -150,9 +150,19 @@ public class RestClientFactory {
                         this.clientConfigurator);
 
         JaxRsCircuitBreaker circuitBreaker = null;
-        if (configuration != null && configuration.getCircuitBreakerConfiguration() != null) {
-            circuitBreaker =
-                    new JaxRsCircuitBreakerImpl(configuration.getCircuitBreakerConfiguration());
+        if (configuration != null) {
+
+            if (configuration.getCircuitBreakerConfiguration() != null
+                    && configuration.getCircuitBreaker() != null) {
+                throw new IllegalArgumentException(
+                        "Invalid CircuitBreaker setting. Please provide either CircuitBreaker configuration or CircuitBreaker and not both");
+            }
+
+            if (configuration.getCircuitBreakerConfiguration() != null) {
+                circuitBreaker =
+                        new JaxRsCircuitBreakerImpl(configuration.getCircuitBreakerConfiguration());
+            } else if (configuration.getCircuitBreaker() != null)
+                circuitBreaker = configuration.getCircuitBreaker();
         }
         return new RestClient(client, new EntityFactory(), circuitBreaker);
     }

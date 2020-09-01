@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc;
 
+import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 
@@ -44,6 +45,11 @@ public class ClientConfiguration {
      */
     private final CircuitBreakerConfiguration circuitBreakerConfiguration;
 
+    /**
+     * The circuit-breaker to use. Default is no circuit-breaker.
+     */
+    private final JaxRsCircuitBreaker circuitBreaker;
+
     // Explicit @Builder on constructor so we can enforce default values.
     @Builder
     private ClientConfiguration(
@@ -52,13 +58,21 @@ public class ClientConfiguration {
             Integer maxAsyncThreads,
             Boolean disableDataBufferingOnUpload,
             RetryConfiguration retryConfiguration,
-            CircuitBreakerConfiguration circuitBreakerConfiguration) {
+            CircuitBreakerConfiguration circuitBreakerConfiguration,
+            JaxRsCircuitBreaker circuitBreaker) {
+
+        if (circuitBreakerConfiguration != null && circuitBreaker != null) {
+            throw new IllegalArgumentException(
+                    "Invalid CircuitBreaker setting. Please provide either CircuitBreaker configuration or CircuitBreaker and not both");
+        }
+
         this.connectionTimeoutMillis =
                 getOrDefault(connectionTimeoutMillis, CONNECTION_TIMEOUT_MILLIS);
         this.readTimeoutMillis = getOrDefault(readTimeoutMillis, READ_TIMEOUT_MILLIS);
         this.maxAsyncThreads = getOrDefault(maxAsyncThreads, MAX_ASYNC_THREADS);
         this.retryConfiguration = retryConfiguration;
         this.circuitBreakerConfiguration = circuitBreakerConfiguration;
+        this.circuitBreaker = circuitBreaker;
     }
 
     private static <T> T getOrDefault(T value, T defaultValue) {

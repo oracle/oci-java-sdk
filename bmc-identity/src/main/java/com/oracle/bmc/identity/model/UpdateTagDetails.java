@@ -158,19 +158,6 @@ public class UpdateTagDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
     Boolean isCostTracking;
 
-    /**
-     * The tag must have a value type, which is specified with a validator. Tags can use either a
-     * static value or a list of possible values. Static values are entered by a user applying the tag
-     * to a resource. Lists are created by you and the user must apply a value from the list. Lists
-     * are validiated.
-     * <p>
-     * If you use the default validiator (or don't define a validator), the user applying the tag
-     * enters a value. No additional validation is performed.
-     * <p>
-     * To clear the validator, call UpdateTag with
-     * [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("validator")
     BaseTagDefinitionValidator validator;
 

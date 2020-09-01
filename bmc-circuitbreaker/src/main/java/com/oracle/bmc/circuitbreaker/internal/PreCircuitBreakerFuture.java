@@ -4,9 +4,9 @@
  */
 package com.oracle.bmc.circuitbreaker.internal;
 
-import com.google.common.collect.ImmutableSet;
 import lombok.NonNull;
 
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -16,10 +16,10 @@ import javax.ws.rs.core.Response;
 final class PreCircuitBreakerFuture implements Future<Response> {
 
     private final Future<Response> future;
-    private final ImmutableSet<Integer> recordHttpStatuses;
+    private final Set<Integer> recordHttpStatuses;
 
     PreCircuitBreakerFuture(
-            @NonNull Future<Response> future, @NonNull ImmutableSet<Integer> recordHttpStatuses) {
+            @NonNull Future<Response> future, @NonNull Set<Integer> recordHttpStatuses) {
         this.future = future;
         this.recordHttpStatuses = recordHttpStatuses;
     }

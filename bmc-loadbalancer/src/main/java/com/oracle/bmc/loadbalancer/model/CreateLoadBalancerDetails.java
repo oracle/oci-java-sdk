@@ -128,6 +128,16 @@ public class CreateLoadBalancerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sslCipherSuites")
+        private java.util.Map<String, SSLCipherSuiteDetails> sslCipherSuites;
+
+        public Builder sslCipherSuites(
+                java.util.Map<String, SSLCipherSuiteDetails> sslCipherSuites) {
+            this.sslCipherSuites = sslCipherSuites;
+            this.__explicitlySet__.add("sslCipherSuites");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSets")
         private java.util.Map<String, PathRouteSetDetails> pathRouteSets;
 
@@ -182,6 +192,7 @@ public class CreateLoadBalancerDetails {
                             networkSecurityGroupIds,
                             subnetIds,
                             certificates,
+                            sslCipherSuites,
                             pathRouteSets,
                             freeformTags,
                             definedTags,
@@ -204,6 +215,7 @@ public class CreateLoadBalancerDetails {
                             .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .subnetIds(o.getSubnetIds())
                             .certificates(o.getCertificates())
+                            .sslCipherSuites(o.getSslCipherSuites())
                             .pathRouteSets(o.getPathRouteSets())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -354,6 +366,9 @@ public class CreateLoadBalancerDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("certificates")
     java.util.Map<String, CertificateDetails> certificates;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sslCipherSuites")
+    java.util.Map<String, SSLCipherSuiteDetails> sslCipherSuites;
 
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSets")
     java.util.Map<String, PathRouteSetDetails> pathRouteSets;

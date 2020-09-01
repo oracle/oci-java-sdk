@@ -144,7 +144,22 @@ public class ResourcePrincipalAuthenticationDetailsProvider
 
             switch (OciResourcePrincipalVersion) {
                 case RP_VERSION_2_2:
-                    return build_2_2();
+                    final String ociResourcePrincipalPrivateKey =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM);
+                    final String ociResourcePrincipalPassphrase =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE);
+                    final String ociResourcePrincipalRPST =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_RPST);
+                    final String ociResourcePrincipalRegion =
+                            System.getenv(OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME);
+                    final String inputType = "environment variable";
+
+                    return build_2_2(
+                            ociResourcePrincipalPrivateKey,
+                            ociResourcePrincipalPassphrase,
+                            ociResourcePrincipalRPST,
+                            ociResourcePrincipalRegion,
+                            inputType);
                 default:
                     throw new IllegalArgumentException(
                             OCI_RESOURCE_PRINCIPAL_VERSION + " has unknown value");
@@ -155,19 +170,19 @@ public class ResourcePrincipalAuthenticationDetailsProvider
          * Helper method that interprets the runtime environment to build a v2.2-configured client
          * @return ResourcePrincipalAuthenticationDetailsProvider
          */
-        private static ResourcePrincipalAuthenticationDetailsProvider build_2_2() {
+        public static ResourcePrincipalAuthenticationDetailsProvider build_2_2(
+                String ociResourcePrincipalPrivateKey,
+                String ociResourcePrincipalPassphrase,
+                String ociResourcePrincipalRPST,
+                String ociResourcePrincipalRegion,
+                String inputType) {
             final FederationClient federationClient;
             final SessionKeySupplier sessionKeySupplier;
             final Region region;
 
-            final String ociResourcePrincipalPrivateKey =
-                    System.getenv(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM);
-            final String ociResourcePrincipalPassphrase =
-                    System.getenv(OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE);
-
             if (ociResourcePrincipalPrivateKey == null) {
                 throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM + " environment variable missing");
+                        OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM + " " + inputType + " missing");
             }
             if (new File(ociResourcePrincipalPrivateKey).isAbsolute()) {
                 if (ociResourcePrincipalPassphrase != null
@@ -175,8 +190,12 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                     throw new IllegalArgumentException(
                             "cannot mix path and constant settings for "
                                     + OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM
+                                    + " "
+                                    + ociResourcePrincipalPrivateKey
                                     + " and "
-                                    + OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE);
+                                    + OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE
+                                    + " "
+                                    + ociResourcePrincipalPassphrase);
                 }
                 sessionKeySupplier =
                         new FileBasedKeySupplier(
@@ -193,10 +212,9 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                                 ociResourcePrincipalPrivateKey, passPhraseChars);
             }
 
-            final String ociResourcePrincipalRPST = System.getenv(OCI_RESOURCE_PRINCIPAL_RPST);
             if (ociResourcePrincipalRPST == null) {
                 throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_RPST + " environment variable missing");
+                        OCI_RESOURCE_PRINCIPAL_RPST + " " + inputType + " missing");
             }
             if (new File(ociResourcePrincipalRPST).isAbsolute()) {
                 federationClient =
@@ -208,12 +226,9 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                                 ociResourcePrincipalRPST, sessionKeySupplier);
             }
 
-            final String ociResourcePrincipalRegion =
-                    System.getenv(OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME);
             if (ociResourcePrincipalRegion == null) {
                 throw new IllegalArgumentException(
-                        OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME
-                                + " environment variable missing");
+                        OCI_RESOURCE_PRINCIPAL_REGION_ENV_VAR_NAME + " " + inputType + " missing");
             } else {
                 region =
                         Region.valueOf(

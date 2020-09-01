@@ -131,7 +131,8 @@ public class UploadManager {
         }
 
         /* RetryConfiguration used should either be the one set on this UploadRequest or a default */
-        putObjectRequest.setRetryConfiguration(getRetryToUse(putObjectRequest.getRetryConfiguration()));
+        putObjectRequest.setRetryConfiguration(
+                getRetryToUse(putObjectRequest.getRetryConfiguration()));
 
         PutObjectResponse response = objectStorage.putObject(putObjectRequest);
         return new UploadResponse(
@@ -255,10 +256,9 @@ public class UploadManager {
      *
      * @return RetryConfiguration first non-null condition or UploadManager default
      */
-    private static RetryConfiguration getRetryToUse(RetryConfiguration ...configs) {
+    private static RetryConfiguration getRetryToUse(RetryConfiguration... configs) {
         for (RetryConfiguration cfg : configs) {
-            if (cfg != null)
-                return cfg;
+            if (cfg != null) return cfg;
         }
 
         return UploadManager.RETRY_CONFIGURATION;
@@ -271,9 +271,10 @@ public class UploadManager {
             ExecutorService executorService) {
 
         // in case request != uploadRequest.putObjectRequest then choose the correct RetryConfiguration
-        RetryConfiguration retryToUse = getRetryToUse(
-                uploadRequest.putObjectRequest.getRetryConfiguration(),
-                request.getRetryConfiguration());
+        RetryConfiguration retryToUse =
+                getRetryToUse(
+                        uploadRequest.putObjectRequest.getRetryConfiguration(),
+                        request.getRetryConfiguration());
 
         return MultipartObjectAssembler.builder()
                 .allowOverwrite(uploadRequest.allowOverwrite)

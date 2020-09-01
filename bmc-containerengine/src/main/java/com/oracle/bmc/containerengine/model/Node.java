@@ -42,6 +42,15 @@ public class Node {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
+        private String kubernetesVersion;
+
+        public Builder kubernetesVersion(String kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
+            this.__explicitlySet__.add("kubernetesVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -131,6 +140,7 @@ public class Node {
                     new Node(
                             id,
                             name,
+                            kubernetesVersion,
                             availabilityDomain,
                             subnetId,
                             nodePoolId,
@@ -149,6 +159,7 @@ public class Node {
             Builder copiedBuilder =
                     id(o.getId())
                             .name(o.getName())
+                            .kubernetesVersion(o.getKubernetesVersion())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .subnetId(o.getSubnetId())
                             .nodePoolId(o.getNodePoolId())
@@ -182,6 +193,12 @@ public class Node {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
+
+    /**
+     * The version of Kubernetes this node is running.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
+    String kubernetesVersion;
 
     /**
      * The name of the availability domain in which this node is placed.

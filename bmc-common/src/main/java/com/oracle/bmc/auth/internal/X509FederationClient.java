@@ -13,6 +13,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.X509CertificateSupplier;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.internal.ResponseConversionFunctionFactory;
 import com.oracle.bmc.http.internal.RestClient;
@@ -71,7 +72,8 @@ public class X509FederationClient implements FederationClient {
             SessionKeySupplier sessionKeySupplier,
             Set<X509CertificateSupplier> intermediateCertificateSuppliers,
             ClientConfigurator clientConfigurator,
-            List<ClientConfigurator> additionalClientConfigurators) {
+            List<ClientConfigurator> additionalClientConfigurators,
+            CircuitBreakerConfiguration circuitBreakerConfig) {
         this(
                 federationEndpoint,
                 tenancyId,
@@ -80,6 +82,7 @@ public class X509FederationClient implements FederationClient {
                 intermediateCertificateSuppliers,
                 clientConfigurator,
                 additionalClientConfigurators,
+                circuitBreakerConfig,
                 DEFAULT_PURPOSE);
     }
 
@@ -102,6 +105,7 @@ public class X509FederationClient implements FederationClient {
             Set<X509CertificateSupplier> intermediateCertificateSuppliers,
             ClientConfigurator clientConfigurator,
             List<ClientConfigurator> additionalClientConfigurators,
+            CircuitBreakerConfiguration circuitBreakerConfig,
             String purpose) {
         this.leafCertificateSupplier = Preconditions.checkNotNull(leafCertificateSupplier);
         this.sessionKeySupplier = Preconditions.checkNotNull(sessionKeySupplier);
@@ -112,7 +116,8 @@ public class X509FederationClient implements FederationClient {
                         federationEndpoint,
                         clientConfigurator,
                         additionalClientConfigurators,
-                        this);
+                        this,
+                        circuitBreakerConfig);
         this.securityTokenAdapter = new SecurityTokenAdapter(null, sessionKeySupplier);
         this.purpose = Preconditions.checkNotNull(purpose);
     }
