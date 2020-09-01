@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Describes the modification parameters for the Maintenance Run.
+ * Describes the modification parameters for the maintenance run.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -84,13 +84,13 @@ public class UpdateMaintenanceRunDetails {
     }
 
     /**
-     * If set to false, skips the Maintenance Run.
+     * If `FALSE`, skips the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
 
     /**
-     * The scheduled date and time of the Maintenance Run to update.
+     * The scheduled date and time of the maintenance run to update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     java.util.Date timeScheduled;

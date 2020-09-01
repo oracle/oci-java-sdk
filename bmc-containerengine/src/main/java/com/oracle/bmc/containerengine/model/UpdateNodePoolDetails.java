@@ -116,6 +116,15 @@ public class UpdateNodePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
+        private UpdateNodeShapeConfigDetails nodeShapeConfig;
+
+        public Builder nodeShapeConfig(UpdateNodeShapeConfigDetails nodeShapeConfig) {
+            this.nodeShapeConfig = nodeShapeConfig;
+            this.__explicitlySet__.add("nodeShapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -131,7 +140,8 @@ public class UpdateNodePoolDetails {
                             nodeMetadata,
                             nodeSourceDetails,
                             sshPublicKey,
-                            nodeShape);
+                            nodeShape,
+                            nodeShapeConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -148,7 +158,8 @@ public class UpdateNodePoolDetails {
                             .nodeMetadata(o.getNodeMetadata())
                             .nodeSourceDetails(o.getNodeSourceDetails())
                             .sshPublicKey(o.getSshPublicKey())
-                            .nodeShape(o.getNodeShape());
+                            .nodeShape(o.getNodeShape())
+                            .nodeShapeConfig(o.getNodeShapeConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -234,6 +245,13 @@ public class UpdateNodePoolDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
     String nodeShape;
+
+    /**
+     * Specify the configuration of the shape to launch nodes in the node pool.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
+    UpdateNodeShapeConfigDetails nodeShapeConfig;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

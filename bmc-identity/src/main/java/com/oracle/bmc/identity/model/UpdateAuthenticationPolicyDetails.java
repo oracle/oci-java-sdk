@@ -36,19 +36,29 @@ public class UpdateAuthenticationPolicyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkPolicy")
+        private NetworkPolicy networkPolicy;
+
+        public Builder networkPolicy(NetworkPolicy networkPolicy) {
+            this.networkPolicy = networkPolicy;
+            this.__explicitlySet__.add("networkPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAuthenticationPolicyDetails build() {
             UpdateAuthenticationPolicyDetails __instance__ =
-                    new UpdateAuthenticationPolicyDetails(passwordPolicy);
+                    new UpdateAuthenticationPolicyDetails(passwordPolicy, networkPolicy);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateAuthenticationPolicyDetails o) {
-            Builder copiedBuilder = passwordPolicy(o.getPasswordPolicy());
+            Builder copiedBuilder =
+                    passwordPolicy(o.getPasswordPolicy()).networkPolicy(o.getNetworkPolicy());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -62,11 +72,11 @@ public class UpdateAuthenticationPolicyDetails {
         return new Builder();
     }
 
-    /**
-     * Password policy.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordPolicy")
     PasswordPolicy passwordPolicy;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("networkPolicy")
+    NetworkPolicy networkPolicy;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

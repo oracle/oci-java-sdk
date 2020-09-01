@@ -52,6 +52,16 @@ public interface Database extends AutoCloseable {
             ActivateExadataInfrastructureRequest request);
 
     /**
+     * Initiates a data refresh for an Autonomous Database refreshable clone. Data is refreshed from the source database to the point of a specified timestamp.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AutonomousDatabaseManualRefreshResponse autonomousDatabaseManualRefresh(
+            AutonomousDatabaseManualRefreshRequest request);
+
+    /**
      * Move the Autonomous Container Database and its dependent resources to the specified compartment.
      * For more information about moving Autonomous Container Databases, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -759,7 +769,7 @@ public interface Database extends AutoCloseable {
     GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request);
 
     /**
-     * Gets information about the specified Maintenance Run.
+     * Gets information about the specified maintenance run.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -866,6 +876,16 @@ public interface Database extends AutoCloseable {
      */
     ListAutonomousDatabaseBackupsResponse listAutonomousDatabaseBackups(
             ListAutonomousDatabaseBackupsRequest request);
+
+    /**
+     * Gets a list of the Autonomous Database clones for the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousDatabaseClonesResponse listAutonomousDatabaseClones(
+            ListAutonomousDatabaseClonesRequest request);
 
     /**
      * Gets a list of Autonomous Databases.
@@ -1071,7 +1091,7 @@ public interface Database extends AutoCloseable {
     ListGiVersionsResponse listGiVersions(ListGiVersionsRequest request);
 
     /**
-     * Gets a list of the Maintenance Runs in the specified compartment.
+     * Gets a list of the maintenance runs in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1396,7 +1416,7 @@ public interface Database extends AutoCloseable {
     UpdateExadataIormConfigResponse updateExadataIormConfig(UpdateExadataIormConfigRequest request);
 
     /**
-     * Updates the properties of a Maintenance Run, such as the state of a Maintenance Run.
+     * Updates the properties of a maintenance run, such as the state of a maintenance run.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

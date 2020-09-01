@@ -87,6 +87,15 @@ public class NodePoolSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
+        private NodeShapeConfig nodeShapeConfig;
+
+        public Builder nodeShapeConfig(NodeShapeConfig nodeShapeConfig) {
+            this.nodeShapeConfig = nodeShapeConfig;
+            this.__explicitlySet__.add("nodeShapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("nodeSource")
         private NodeSourceOption nodeSource;
 
@@ -172,6 +181,7 @@ public class NodePoolSummary {
                             kubernetesVersion,
                             nodeImageId,
                             nodeImageName,
+                            nodeShapeConfig,
                             nodeSource,
                             nodeSourceDetails,
                             nodeShape,
@@ -194,6 +204,7 @@ public class NodePoolSummary {
                             .kubernetesVersion(o.getKubernetesVersion())
                             .nodeImageId(o.getNodeImageId())
                             .nodeImageName(o.getNodeImageName())
+                            .nodeShapeConfig(o.getNodeShapeConfig())
                             .nodeSource(o.getNodeSource())
                             .nodeSourceDetails(o.getNodeSourceDetails())
                             .nodeShape(o.getNodeShape())
@@ -258,6 +269,12 @@ public class NodePoolSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeImageName")
     String nodeImageName;
+
+    /**
+     * The shape configuration of the nodes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
+    NodeShapeConfig nodeShapeConfig;
 
     /**
      * Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.

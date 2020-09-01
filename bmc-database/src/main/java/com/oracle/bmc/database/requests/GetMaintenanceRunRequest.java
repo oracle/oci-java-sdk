@@ -12,7 +12,7 @@ import com.oracle.bmc.database.model.*;
 public class GetMaintenanceRunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Maintenance Run OCID.
+     * The maintenance run OCID.
      */
     private String maintenanceRunId;
 

@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of a Maintenance Run.
+ * Details of a maintenance run.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -195,7 +195,7 @@ public class MaintenanceRun {
     }
 
     /**
-     * The OCID of the Maintenance Run.
+     * The OCID of the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -207,18 +207,18 @@ public class MaintenanceRun {
     String compartmentId;
 
     /**
-     * The user-friendly name for the Maintenance Run.
+     * The user-friendly name for the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The text describing this Maintenance Run.
+     * Description of the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
     /**
-     * The current state of the Maintenance Run.
+     * The current state of the maintenance run.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -270,7 +270,7 @@ public class MaintenanceRun {
         }
     };
     /**
-     * The current state of the Maintenance Run.
+     * The current state of the maintenance run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -282,24 +282,24 @@ public class MaintenanceRun {
     String lifecycleDetails;
 
     /**
-     * The date and time the Maintenance Run is scheduled for.
+     * The date and time the maintenance run is scheduled to occur.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     java.util.Date timeScheduled;
 
     /**
-     * The date and time the Maintenance Run starts.
+     * The date and time the maintenance run starts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The date and time the Maintenance Run was completed.
+     * The date and time the maintenance run was completed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     java.util.Date timeEnded;
     /**
-     * The type of the target resource on which the Maintenance Run occurs.
+     * The type of the target resource on which the maintenance run occurs.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum TargetResourceType {
@@ -346,13 +346,13 @@ public class MaintenanceRun {
         }
     };
     /**
-     * The type of the target resource on which the Maintenance Run occurs.
+     * The type of the target resource on which the maintenance run occurs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     TargetResourceType targetResourceType;
 
     /**
-     * The ID of the target resource on which the Maintenance Run occurs.
+     * The ID of the target resource on which the maintenance run occurs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     String targetResourceId;

@@ -201,6 +201,17 @@ public class DatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabasePointInTimeRecoveryTimestamp")
+        private java.util.Date sourceDatabasePointInTimeRecoveryTimestamp;
+
+        public Builder sourceDatabasePointInTimeRecoveryTimestamp(
+                java.util.Date sourceDatabasePointInTimeRecoveryTimestamp) {
+            this.sourceDatabasePointInTimeRecoveryTimestamp =
+                    sourceDatabasePointInTimeRecoveryTimestamp;
+            this.__explicitlySet__.add("sourceDatabasePointInTimeRecoveryTimestamp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -225,7 +236,8 @@ public class DatabaseSummary {
                             dbBackupConfig,
                             freeformTags,
                             definedTags,
-                            connectionStrings);
+                            connectionStrings,
+                            sourceDatabasePointInTimeRecoveryTimestamp);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -251,7 +263,9 @@ public class DatabaseSummary {
                             .dbBackupConfig(o.getDbBackupConfig())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .connectionStrings(o.getConnectionStrings());
+                            .connectionStrings(o.getConnectionStrings())
+                            .sourceDatabasePointInTimeRecoveryTimestamp(
+                                    o.getSourceDatabasePointInTimeRecoveryTimestamp());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -433,6 +447,12 @@ public class DatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
     DatabaseConnectionStrings connectionStrings;
+
+    /**
+     * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabasePointInTimeRecoveryTimestamp")
+    java.util.Date sourceDatabasePointInTimeRecoveryTimestamp;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

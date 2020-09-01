@@ -36,6 +36,10 @@ package com.oracle.bmc.database.model;
         name = "NONE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = LaunchDbSystemFromDbSystemDetails.class,
+        name = "DB_SYSTEM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LaunchDbSystemFromDatabaseDetails.class,
         name = "DATABASE"
     ),
@@ -252,6 +256,14 @@ public class LaunchDbSystemBase {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
+     * A private IP address of your choice. Must be an available IP address within the subnet's CIDR.
+     * If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
+    String privateIp;
+
+    /**
      * The source of the database:
      * Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating
      * a new database from an existing database, including archive redo log data. The default is `NONE`.
@@ -261,6 +273,7 @@ public class LaunchDbSystemBase {
         None("NONE"),
         DbBackup("DB_BACKUP"),
         Database("DATABASE"),
+        DbSystem("DB_SYSTEM"),
         ;
 
         private final String value;

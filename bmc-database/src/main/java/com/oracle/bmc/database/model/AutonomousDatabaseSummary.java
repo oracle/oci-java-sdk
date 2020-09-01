@@ -356,6 +356,78 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isRefreshableClone")
+        private Boolean isRefreshableClone;
+
+        public Builder isRefreshableClone(Boolean isRefreshableClone) {
+            this.isRefreshableClone = isRefreshableClone;
+            this.__explicitlySet__.add("isRefreshableClone");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastRefresh")
+        private java.util.Date timeOfLastRefresh;
+
+        public Builder timeOfLastRefresh(java.util.Date timeOfLastRefresh) {
+            this.timeOfLastRefresh = timeOfLastRefresh;
+            this.__explicitlySet__.add("timeOfLastRefresh");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastRefreshPoint")
+        private java.util.Date timeOfLastRefreshPoint;
+
+        public Builder timeOfLastRefreshPoint(java.util.Date timeOfLastRefreshPoint) {
+            this.timeOfLastRefreshPoint = timeOfLastRefreshPoint;
+            this.__explicitlySet__.add("timeOfLastRefreshPoint");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextRefresh")
+        private java.util.Date timeOfNextRefresh;
+
+        public Builder timeOfNextRefresh(java.util.Date timeOfNextRefresh) {
+            this.timeOfNextRefresh = timeOfNextRefresh;
+            this.__explicitlySet__.add("timeOfNextRefresh");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("openMode")
+        private OpenMode openMode;
+
+        public Builder openMode(OpenMode openMode) {
+            this.openMode = openMode;
+            this.__explicitlySet__.add("openMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("refreshableStatus")
+        private RefreshableStatus refreshableStatus;
+
+        public Builder refreshableStatus(RefreshableStatus refreshableStatus) {
+            this.refreshableStatus = refreshableStatus;
+            this.__explicitlySet__.add("refreshableStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
+        private RefreshableMode refreshableMode;
+
+        public Builder refreshableMode(RefreshableMode refreshableMode) {
+            this.refreshableMode = refreshableMode;
+            this.__explicitlySet__.add("refreshableMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
+        private String sourceId;
+
+        public Builder sourceId(String sourceId) {
+            this.sourceId = sourceId;
+            this.__explicitlySet__.add("sourceId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastSwitchover")
         private java.util.Date timeOfLastSwitchover;
 
@@ -452,6 +524,14 @@ public class AutonomousDatabaseSummary {
                             dataSafeStatus,
                             timeMaintenanceBegin,
                             timeMaintenanceEnd,
+                            isRefreshableClone,
+                            timeOfLastRefresh,
+                            timeOfLastRefreshPoint,
+                            timeOfNextRefresh,
+                            openMode,
+                            refreshableStatus,
+                            refreshableMode,
+                            sourceId,
                             timeOfLastSwitchover,
                             timeOfLastFailover,
                             isDataGuardEnabled,
@@ -503,6 +583,14 @@ public class AutonomousDatabaseSummary {
                             .dataSafeStatus(o.getDataSafeStatus())
                             .timeMaintenanceBegin(o.getTimeMaintenanceBegin())
                             .timeMaintenanceEnd(o.getTimeMaintenanceEnd())
+                            .isRefreshableClone(o.getIsRefreshableClone())
+                            .timeOfLastRefresh(o.getTimeOfLastRefresh())
+                            .timeOfLastRefreshPoint(o.getTimeOfLastRefreshPoint())
+                            .timeOfNextRefresh(o.getTimeOfNextRefresh())
+                            .openMode(o.getOpenMode())
+                            .refreshableStatus(o.getRefreshableStatus())
+                            .refreshableMode(o.getRefreshableMode())
+                            .sourceId(o.getSourceId())
                             .timeOfLastSwitchover(o.getTimeOfLastSwitchover())
                             .timeOfLastFailover(o.getTimeOfLastFailover())
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
@@ -1025,6 +1113,189 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
     java.util.Date timeMaintenanceEnd;
+
+    /**
+     * Indicates whether the Autonomous Database is a refreshable clone.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRefreshableClone")
+    Boolean isRefreshableClone;
+
+    /**
+     * The date and time when last refresh happened.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastRefresh")
+    java.util.Date timeOfLastRefresh;
+
+    /**
+     * The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastRefreshPoint")
+    java.util.Date timeOfLastRefreshPoint;
+
+    /**
+     * The date and time of next refresh.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextRefresh")
+    java.util.Date timeOfNextRefresh;
+    /**
+     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum OpenMode {
+        ReadOnly("READ_ONLY"),
+        ReadWrite("READ_WRITE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, OpenMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OpenMode v : OpenMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        OpenMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OpenMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'OpenMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("openMode")
+    OpenMode openMode;
+    /**
+     * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum RefreshableStatus {
+        Refreshing("REFRESHING"),
+        NotRefreshing("NOT_REFRESHING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, RefreshableStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RefreshableStatus v : RefreshableStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RefreshableStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RefreshableStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RefreshableStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("refreshableStatus")
+    RefreshableStatus refreshableStatus;
+    /**
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum RefreshableMode {
+        Automatic("AUTOMATIC"),
+        Manual("MANUAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, RefreshableMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RefreshableMode v : RefreshableMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RefreshableMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RefreshableMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RefreshableMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("refreshableMode")
+    RefreshableMode refreshableMode;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
+    String sourceId;
 
     /**
      * The timestamp of the last switchover operation for the Autonomous Database.

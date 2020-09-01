@@ -142,6 +142,15 @@ public class LoadBalancer {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sslCipherSuites")
+        private java.util.Map<String, SSLCipherSuite> sslCipherSuites;
+
+        public Builder sslCipherSuites(java.util.Map<String, SSLCipherSuite> sslCipherSuites) {
+            this.sslCipherSuites = sslCipherSuites;
+            this.__explicitlySet__.add("sslCipherSuites");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("certificates")
         private java.util.Map<String, Certificate> certificates;
 
@@ -224,6 +233,7 @@ public class LoadBalancer {
                             networkSecurityGroupIds,
                             listeners,
                             hostnames,
+                            sslCipherSuites,
                             certificates,
                             backendSets,
                             pathRouteSets,
@@ -250,6 +260,7 @@ public class LoadBalancer {
                             .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .listeners(o.getListeners())
                             .hostnames(o.getHostnames())
+                            .sslCipherSuites(o.getSslCipherSuites())
                             .certificates(o.getCertificates())
                             .backendSets(o.getBackendSets())
                             .pathRouteSets(o.getPathRouteSets())
@@ -421,6 +432,9 @@ public class LoadBalancer {
 
     @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
     java.util.Map<String, Hostname> hostnames;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sslCipherSuites")
+    java.util.Map<String, SSLCipherSuite> sslCipherSuites;
 
     @com.fasterxml.jackson.annotation.JsonProperty("certificates")
     java.util.Map<String, Certificate> certificates;

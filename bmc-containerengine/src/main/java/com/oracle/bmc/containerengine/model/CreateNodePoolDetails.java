@@ -98,6 +98,15 @@ public class CreateNodePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
+        private CreateNodeShapeConfigDetails nodeShapeConfig;
+
+        public Builder nodeShapeConfig(CreateNodeShapeConfigDetails nodeShapeConfig) {
+            this.nodeShapeConfig = nodeShapeConfig;
+            this.__explicitlySet__.add("nodeShapeConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("initialNodeLabels")
         private java.util.List<KeyValue> initialNodeLabels;
 
@@ -157,6 +166,7 @@ public class CreateNodePoolDetails {
                             nodeImageName,
                             nodeSourceDetails,
                             nodeShape,
+                            nodeShapeConfig,
                             initialNodeLabels,
                             sshPublicKey,
                             quantityPerSubnet,
@@ -177,6 +187,7 @@ public class CreateNodePoolDetails {
                             .nodeImageName(o.getNodeImageName())
                             .nodeSourceDetails(o.getNodeSourceDetails())
                             .nodeShape(o.getNodeShape())
+                            .nodeShapeConfig(o.getNodeShapeConfig())
                             .initialNodeLabels(o.getInitialNodeLabels())
                             .sshPublicKey(o.getSshPublicKey())
                             .quantityPerSubnet(o.getQuantityPerSubnet())
@@ -246,6 +257,13 @@ public class CreateNodePoolDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
     String nodeShape;
+
+    /**
+     * Specify the configuration of the shape to launch nodes in the node pool.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeShapeConfig")
+    CreateNodeShapeConfigDetails nodeShapeConfig;
 
     /**
      * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.

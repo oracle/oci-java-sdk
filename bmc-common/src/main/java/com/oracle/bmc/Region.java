@@ -110,6 +110,9 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region UK_GOV_LONDON_1 = register("uk-gov-london-1", Realm.OC4, "ltn");
     public static final Region UK_GOV_CARDIFF_1 = register("uk-gov-cardiff-1", Realm.OC4, "brs");
 
+    // OC8
+    public static final Region AP_CHIYODA_1 = register("ap-chiyoda-1", Realm.OC8, "nja");
+
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
 

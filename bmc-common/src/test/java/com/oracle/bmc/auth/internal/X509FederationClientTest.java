@@ -7,6 +7,7 @@ package com.oracle.bmc.auth.internal;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.X509CertificateSupplier;
+import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.internal.RestClient;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
@@ -66,7 +67,8 @@ public class X509FederationClientTest {
                                 anyString(),
                                 Mockito.<ClientConfigurator>any(),
                                 Mockito.<List<ClientConfigurator>>any(),
-                                Mockito.<X509FederationClient>any()))
+                                Mockito.<X509FederationClient>any(),
+                                Mockito.any()))
                 .thenReturn(mockFederationClient);
 
         final Set<X509CertificateSupplier> intermediateCertificateSuppliers =
@@ -79,7 +81,8 @@ public class X509FederationClientTest {
                         mock(SessionKeySupplier.class),
                         intermediateCertificateSuppliers,
                         mock(ClientConfigurator.class),
-                        mockAddlConfigurators);
+                        mockAddlConfigurators,
+                        mock(CircuitBreakerConfiguration.class));
 
         // Speed up the tests to mock out the sleep call between retries
         mockStatic(Thread.class);

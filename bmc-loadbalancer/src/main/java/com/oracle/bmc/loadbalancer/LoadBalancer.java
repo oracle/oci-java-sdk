@@ -151,6 +151,14 @@ public interface LoadBalancer extends AutoCloseable {
     CreateRuleSetResponse createRuleSet(CreateRuleSetRequest request);
 
     /**
+     * Creates a custom SSL cipher suite.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateSSLCipherSuiteResponse createSSLCipherSuite(CreateSSLCipherSuiteRequest request);
+
+    /**
      * Removes a backend server from a given load balancer and backend set.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -225,6 +233,14 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteRuleSetResponse deleteRuleSet(DeleteRuleSetRequest request);
+
+    /**
+     * Deletes an SSL cipher suite from a load balancer.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteSSLCipherSuiteResponse deleteSSLCipherSuite(DeleteSSLCipherSuiteRequest request);
 
     /**
      * Gets the specified backend server's configuration information.
@@ -305,6 +321,14 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetRuleSetResponse getRuleSet(GetRuleSetRequest request);
+
+    /**
+     * Gets the specified SSL cipher suite's configuration information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetSSLCipherSuiteResponse getSSLCipherSuite(GetSSLCipherSuiteRequest request);
 
     /**
      * Gets the details of a work request.
@@ -410,6 +434,14 @@ public interface LoadBalancer extends AutoCloseable {
     ListRuleSetsResponse listRuleSets(ListRuleSetsRequest request);
 
     /**
+     * Lists all SSL cipher suites associated with the specified load balancer.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListSSLCipherSuitesResponse listSSLCipherSuites(ListSSLCipherSuitesRequest request);
+
+    /**
      * Lists the valid load balancer shapes.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -509,6 +541,14 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateRuleSetResponse updateRuleSet(UpdateRuleSetRequest request);
+
+    /**
+     * Updates an existing SSL cipher suite for the specified load balancer.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateSSLCipherSuiteResponse updateSSLCipherSuite(UpdateSSLCipherSuiteRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

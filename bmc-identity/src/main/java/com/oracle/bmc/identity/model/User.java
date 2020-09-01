@@ -386,9 +386,6 @@ public class User {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
-    /**
-     * Properties indicating how the user is allowed to authenticate.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
     UserCapabilities capabilities;
 

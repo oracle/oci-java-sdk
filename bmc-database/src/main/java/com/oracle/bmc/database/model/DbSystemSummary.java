@@ -393,6 +393,25 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
+        private String sourceDbSystemId;
+
+        public Builder sourceDbSystemId(String sourceDbSystemId) {
+            this.sourceDbSystemId = sourceDbSystemId;
+            this.__explicitlySet__.add("sourceDbSystemId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("pointInTimeDataDiskCloneTimestamp")
+        private java.util.Date pointInTimeDataDiskCloneTimestamp;
+
+        public Builder pointInTimeDataDiskCloneTimestamp(
+                java.util.Date pointInTimeDataDiskCloneTimestamp) {
+            this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
+            this.__explicitlySet__.add("pointInTimeDataDiskCloneTimestamp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -437,7 +456,9 @@ public class DbSystemSummary {
                             lastMaintenanceRunId,
                             nextMaintenanceRunId,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            sourceDbSystemId,
+                            pointInTimeDataDiskCloneTimestamp);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -483,7 +504,10 @@ public class DbSystemSummary {
                             .lastMaintenanceRunId(o.getLastMaintenanceRunId())
                             .nextMaintenanceRunId(o.getNextMaintenanceRunId())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .sourceDbSystemId(o.getSourceDbSystemId())
+                            .pointInTimeDataDiskCloneTimestamp(
+                                    o.getPointInTimeDataDiskCloneTimestamp());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -707,6 +731,7 @@ public class DbSystemSummary {
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
         Failed("FAILED"),
+        MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -963,6 +988,18 @@ public class DbSystemSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
+    String sourceDbSystemId;
+
+    /**
+     * The point in time for a cloned database system when the data disks were cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pointInTimeDataDiskCloneTimestamp")
+    java.util.Date pointInTimeDataDiskCloneTimestamp;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
