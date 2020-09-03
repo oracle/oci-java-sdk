@@ -17,12 +17,15 @@ For details on compatibility, advanced configurations, and add-ons, see [Configu
 
 Examples can be found [here](/bmc-examples/src/main/java/).
 
-You may run any example by invoking the `exec:java` goal and passing appropriate values for `exec.mainClass` and `.exec.arguments` properties, for example
+You may run any example by invoking the `exec:java` goal and passing appropriate values for `exec.mainClass` and `.exec.arguments` properties, such as it's the case 
+for the `ObjectStorageGetBucketExample` class that requires 3 arguments: OCID of the compartment, name of bucket, name of object.
 
 ```
 mvn -am -pl bmc-examples exec:java -Dexec.mainClass=ObjectStorageGetBucketExample \
-  -Dexec.arguments=ocid1.compartment.oc1..aaaaabaaoht5722yrrthjpjdpvrfkng2rgzfbh32rbwa5hlanhqlafpl3tsa,test,sample
+  -Dexec.arguments=compartment_ocid,bucket_name,object_name
 ```
+
+Where `compartment_id`, `bucket_name`, and `object_name` should be substituted with appropriate values according to your setup.
 
 ## Documentation
 
