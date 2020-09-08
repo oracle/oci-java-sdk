@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -135,8 +136,14 @@ public class VcnTransitRouting {
             throw new IllegalStateException("A compartment ID must be defined");
         }
 
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
+
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+
         final AuthenticationDetailsProvider authProvider =
-                new ConfigFileAuthenticationDetailsProvider("~/.oci/config", "DEFAULT");
+                new ConfigFileAuthenticationDetailsProvider(configFile);
 
         final VirtualNetworkClient phxVirtualNetworkClient = new VirtualNetworkClient(authProvider);
         phxVirtualNetworkClient.setRegion(Region.US_PHOENIX_1);

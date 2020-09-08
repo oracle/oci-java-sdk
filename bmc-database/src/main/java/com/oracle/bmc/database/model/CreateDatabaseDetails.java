@@ -47,6 +47,15 @@ public class CreateDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
         private String pdbName;
 
@@ -128,6 +137,7 @@ public class CreateDatabaseDetails {
                     new CreateDatabaseDetails(
                             dbName,
                             dbUniqueName,
+                            databaseSoftwareImageId,
                             pdbName,
                             adminPassword,
                             characterSet,
@@ -145,6 +155,7 @@ public class CreateDatabaseDetails {
             Builder copiedBuilder =
                     dbName(o.getDbName())
                             .dbUniqueName(o.getDbUniqueName())
+                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .pdbName(o.getPdbName())
                             .adminPassword(o.getAdminPassword())
                             .characterSet(o.getCharacterSet())
@@ -177,6 +188,12 @@ public class CreateDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     String dbUniqueName;
+
+    /**
+     * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    String databaseSoftwareImageId;
 
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.

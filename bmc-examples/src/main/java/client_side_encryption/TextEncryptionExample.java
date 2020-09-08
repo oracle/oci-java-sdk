@@ -4,6 +4,7 @@
  */
 package client_side_encryption;
 
+import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.*;
@@ -43,13 +44,15 @@ public class TextEncryptionExample {
         }
 
         // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "", and a profile in that config with the name "DEFAULT". Make changes to the following
-        // line if needed.
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
         final String configurationFilePath = "~/.oci/config";
         final String profile = "DEFAULT";
 
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+
         final AuthenticationDetailsProvider provider =
-                new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
+                new ConfigFileAuthenticationDetailsProvider(configFile);
 
         // Create Key provider
         KmsMasterKey kmsMasterKey = new KmsMasterKey(provider, region, vaultId, masterKeyId);

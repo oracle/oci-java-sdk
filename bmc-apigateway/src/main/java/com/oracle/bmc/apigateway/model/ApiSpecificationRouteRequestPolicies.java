@@ -45,19 +45,46 @@ public class ApiSpecificationRouteRequestPolicies {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("headerTransformations")
+        private HeaderTransformationPolicy headerTransformations;
+
+        public Builder headerTransformations(HeaderTransformationPolicy headerTransformations) {
+            this.headerTransformations = headerTransformations;
+            this.__explicitlySet__.add("headerTransformations");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("queryParameterTransformations")
+        private QueryParameterTransformationPolicy queryParameterTransformations;
+
+        public Builder queryParameterTransformations(
+                QueryParameterTransformationPolicy queryParameterTransformations) {
+            this.queryParameterTransformations = queryParameterTransformations;
+            this.__explicitlySet__.add("queryParameterTransformations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApiSpecificationRouteRequestPolicies build() {
             ApiSpecificationRouteRequestPolicies __instance__ =
-                    new ApiSpecificationRouteRequestPolicies(authorization, cors);
+                    new ApiSpecificationRouteRequestPolicies(
+                            authorization,
+                            cors,
+                            headerTransformations,
+                            queryParameterTransformations);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ApiSpecificationRouteRequestPolicies o) {
-            Builder copiedBuilder = authorization(o.getAuthorization()).cors(o.getCors());
+            Builder copiedBuilder =
+                    authorization(o.getAuthorization())
+                            .cors(o.getCors())
+                            .headerTransformations(o.getHeaderTransformations())
+                            .queryParameterTransformations(o.getQueryParameterTransformations());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -76,6 +103,12 @@ public class ApiSpecificationRouteRequestPolicies {
 
     @com.fasterxml.jackson.annotation.JsonProperty("cors")
     CorsPolicy cors;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("headerTransformations")
+    HeaderTransformationPolicy headerTransformations;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("queryParameterTransformations")
+    QueryParameterTransformationPolicy queryParameterTransformations;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

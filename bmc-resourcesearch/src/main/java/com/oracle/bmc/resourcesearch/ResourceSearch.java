@@ -59,7 +59,7 @@ public interface ResourceSearch extends AutoCloseable {
     ListResourceTypesResponse listResourceTypes(ListResourceTypesRequest request);
 
     /**
-     * Queries any and all compartments in the tenancy to find resources that match the specified criteria.
+     * Queries any and all compartments in the specified tenancy to find resources that match the specified criteria.
      * Results include resources that you have permission to view and can span different resource types.
      * You can also sort results based on a specified resource attribute.
      *

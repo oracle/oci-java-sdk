@@ -36,6 +36,15 @@ public class PatchDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
@@ -49,14 +58,17 @@ public class PatchDetails {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchDetails build() {
-            PatchDetails __instance__ = new PatchDetails(patchId, action);
+            PatchDetails __instance__ = new PatchDetails(patchId, databaseSoftwareImageId, action);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PatchDetails o) {
-            Builder copiedBuilder = patchId(o.getPatchId()).action(o.getAction());
+            Builder copiedBuilder =
+                    patchId(o.getPatchId())
+                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
+                            .action(o.getAction());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -75,6 +87,12 @@ public class PatchDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchId")
     String patchId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database software image.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    String databaseSoftwareImageId;
     /**
      * The action to perform on the patch.
      **/

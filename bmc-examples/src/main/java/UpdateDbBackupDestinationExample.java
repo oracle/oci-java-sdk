@@ -2,6 +2,7 @@
  * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
+import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.database.DatabaseClient;
@@ -132,8 +133,14 @@ public class UpdateDbBackupDestinationExample {
         final String vpcUser = argumentMap.getOrDefault(Opts.VPC_USER, null);
         final String vpcPassword = argumentMap.getOrDefault(Opts.VPC_PASSWORD, null);
 
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
+
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+
         final AuthenticationDetailsProvider provider =
-                new ConfigFileAuthenticationDetailsProvider(CONFIG_LOCATION, CONFIG_PROFILE);
+                new ConfigFileAuthenticationDetailsProvider(configFile);
 
         databaseClient = new DatabaseClient(provider);
 

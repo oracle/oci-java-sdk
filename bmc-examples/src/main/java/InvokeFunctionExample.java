@@ -2,6 +2,7 @@
  * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
+import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -158,8 +159,14 @@ public class InvokeFunctionExample {
         // Configure Auth
         final String configurationFilePath = "~/.oci/config";
         final String profile = "DEFAULT";
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
+
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+
         final AuthenticationDetailsProvider provider =
-                new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
+                new ConfigFileAuthenticationDetailsProvider(configFile);
 
         try {
             if (command.equalsIgnoreCase(SETUP)) {

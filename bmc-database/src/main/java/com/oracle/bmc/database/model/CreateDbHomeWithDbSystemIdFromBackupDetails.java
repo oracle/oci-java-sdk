@@ -42,6 +42,15 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -85,7 +94,12 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBas
         public CreateDbHomeWithDbSystemIdFromBackupDetails build() {
             CreateDbHomeWithDbSystemIdFromBackupDetails __instance__ =
                     new CreateDbHomeWithDbSystemIdFromBackupDetails(
-                            displayName, freeformTags, definedTags, dbSystemId, database);
+                            displayName,
+                            databaseSoftwareImageId,
+                            freeformTags,
+                            definedTags,
+                            dbSystemId,
+                            database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -94,6 +108,7 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBas
         public Builder copy(CreateDbHomeWithDbSystemIdFromBackupDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .dbSystemId(o.getDbSystemId())
@@ -114,11 +129,12 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBas
     @Deprecated
     public CreateDbHomeWithDbSystemIdFromBackupDetails(
             String displayName,
+            String databaseSoftwareImageId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbSystemId,
             CreateDatabaseFromBackupDetails database) {
-        super(displayName, freeformTags, definedTags);
+        super(displayName, databaseSoftwareImageId, freeformTags, definedTags);
         this.dbSystemId = dbSystemId;
         this.database = database;
     }

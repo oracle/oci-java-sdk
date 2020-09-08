@@ -183,6 +183,27 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Move the Database Software Image and its dependent resources to the specified compartment.
+     * For more information about moving Databse Software Images, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDatabaseSoftwareImageCompartmentResponse>
+            changeDatabaseSoftwareImageCompartment(
+                    ChangeDatabaseSoftwareImageCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDatabaseSoftwareImageCompartmentRequest,
+                                    ChangeDatabaseSoftwareImageCompartmentResponse>
+                            handler);
+
+    /**
      * Move the DB system and its dependent resources to the specified compartment.
      * For more information about moving DB systems, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -461,6 +482,23 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * create database software image in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDatabaseSoftwareImageResponse> createDatabaseSoftwareImage(
+            CreateDatabaseSoftwareImageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDatabaseSoftwareImageRequest, CreateDatabaseSoftwareImageResponse>
+                    handler);
+
+    /**
      * Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies to bare metal DB systems, Exadata DB systems, and Exadata Cloud at Customer systems.
      *
      *
@@ -689,6 +727,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteDatabaseResponse> deleteDatabase(
             DeleteDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteDatabaseRequest, DeleteDatabaseResponse>
+                    handler);
+
+    /**
+     * Delete a database software image
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDatabaseSoftwareImageResponse> deleteDatabaseSoftwareImage(
+            DeleteDatabaseSoftwareImageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDatabaseSoftwareImageRequest, DeleteDatabaseSoftwareImageResponse>
                     handler);
 
     /**
@@ -1054,6 +1108,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets information about the specified Autonomous Patch.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutonomousPatchResponse> getAutonomousPatch(
+            GetAutonomousPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAutonomousPatchRequest, GetAutonomousPatchResponse>
+                    handler);
+
+    /**
      * Gets information about the specified Autonomous VM cluster.
      *
      * @param request The request object containing the details to send
@@ -1146,6 +1216,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<GetDatabaseResponse> getDatabase(
             GetDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetDatabaseRequest, GetDatabaseResponse> handler);
+
+    /**
+     * Gets information about the specified database software image.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseSoftwareImageResponse> getDatabaseSoftwareImage(
+            GetDatabaseSoftwareImageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseSoftwareImageRequest, GetDatabaseSoftwareImageResponse>
+                    handler);
 
     /**
      * Gets information about the specified Database Home.
@@ -1703,6 +1789,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the patches applicable to the requested container database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListContainerDatabasePatchesResponse> listContainerDatabasePatches(
+            ListContainerDatabasePatchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListContainerDatabasePatchesRequest,
+                            ListContainerDatabasePatchesResponse>
+                    handler);
+
+    /**
      * Lists all Data Guard associations for the specified database.
      *
      *
@@ -1717,6 +1821,23 @@ public interface DatabaseAsync extends AutoCloseable {
             ListDataGuardAssociationsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDataGuardAssociationsRequest, ListDataGuardAssociationsResponse>
+                    handler);
+
+    /**
+     * Gets a list of the database software images in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseSoftwareImagesResponse> listDatabaseSoftwareImages(
+            ListDatabaseSoftwareImagesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDatabaseSoftwareImagesRequest, ListDatabaseSoftwareImagesResponse>
                     handler);
 
     /**
@@ -2449,6 +2570,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateDatabaseResponse> updateDatabase(
             UpdateDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateDatabaseRequest, UpdateDatabaseResponse>
+                    handler);
+
+    /**
+     * Updates the properties of a Database Software Image, like Display Nmae
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDatabaseSoftwareImageResponse> updateDatabaseSoftwareImage(
+            UpdateDatabaseSoftwareImageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDatabaseSoftwareImageRequest, UpdateDatabaseSoftwareImageResponse>
                     handler);
 
     /**

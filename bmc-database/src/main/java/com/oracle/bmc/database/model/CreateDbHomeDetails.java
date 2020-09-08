@@ -47,6 +47,15 @@ public class CreateDbHomeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("database")
         private CreateDatabaseDetails database;
 
@@ -81,7 +90,12 @@ public class CreateDbHomeDetails {
         public CreateDbHomeDetails build() {
             CreateDbHomeDetails __instance__ =
                     new CreateDbHomeDetails(
-                            displayName, dbVersion, database, freeformTags, definedTags);
+                            displayName,
+                            dbVersion,
+                            databaseSoftwareImageId,
+                            database,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -91,6 +105,7 @@ public class CreateDbHomeDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .dbVersion(o.getDbVersion())
+                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .database(o.getDatabase())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -118,6 +133,12 @@ public class CreateDbHomeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
+
+    /**
+     * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    String databaseSoftwareImageId;
 
     @com.fasterxml.jackson.annotation.JsonProperty("database")
     CreateDatabaseDetails database;

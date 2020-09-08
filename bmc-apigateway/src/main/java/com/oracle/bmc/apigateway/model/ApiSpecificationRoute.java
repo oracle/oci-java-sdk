@@ -54,6 +54,15 @@ public class ApiSpecificationRoute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("responsePolicies")
+        private ApiSpecificationRouteResponsePolicies responsePolicies;
+
+        public Builder responsePolicies(ApiSpecificationRouteResponsePolicies responsePolicies) {
+            this.responsePolicies = responsePolicies;
+            this.__explicitlySet__.add("responsePolicies");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("loggingPolicies")
         private ApiSpecificationLoggingPolicies loggingPolicies;
 
@@ -78,7 +87,12 @@ public class ApiSpecificationRoute {
         public ApiSpecificationRoute build() {
             ApiSpecificationRoute __instance__ =
                     new ApiSpecificationRoute(
-                            path, methods, requestPolicies, loggingPolicies, backend);
+                            path,
+                            methods,
+                            requestPolicies,
+                            responsePolicies,
+                            loggingPolicies,
+                            backend);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,6 +103,7 @@ public class ApiSpecificationRoute {
                     path(o.getPath())
                             .methods(o.getMethods())
                             .requestPolicies(o.getRequestPolicies())
+                            .responsePolicies(o.getResponsePolicies())
                             .loggingPolicies(o.getLoggingPolicies())
                             .backend(o.getBackend());
 
@@ -171,6 +186,9 @@ public class ApiSpecificationRoute {
 
     @com.fasterxml.jackson.annotation.JsonProperty("requestPolicies")
     ApiSpecificationRouteRequestPolicies requestPolicies;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("responsePolicies")
+    ApiSpecificationRouteResponsePolicies responsePolicies;
 
     @com.fasterxml.jackson.annotation.JsonProperty("loggingPolicies")
     ApiSpecificationLoggingPolicies loggingPolicies;

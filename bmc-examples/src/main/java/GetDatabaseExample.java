@@ -23,8 +23,12 @@ public class GetDatabaseExample {
             throw new Exception("This example expects 1 argument:  A Database OCID");
         }
 
-        final ConfigFileReader.ConfigFile configFile =
-                ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
+
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 

@@ -209,7 +209,11 @@ public class GatewaySummary {
     String compartmentId;
 
     /**
-     * Gateway endpoint type.
+     * Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be
+     * accessible on a private IP address on the subnet.
+     * <p>
+     * Example: `PUBLIC` or `PRIVATE`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointType")
     Gateway.EndpointType endpointType;
