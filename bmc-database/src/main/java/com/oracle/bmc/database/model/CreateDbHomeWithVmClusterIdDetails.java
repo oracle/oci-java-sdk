@@ -42,6 +42,15 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -95,6 +104,7 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             CreateDbHomeWithVmClusterIdDetails __instance__ =
                     new CreateDbHomeWithVmClusterIdDetails(
                             displayName,
+                            databaseSoftwareImageId,
                             freeformTags,
                             definedTags,
                             vmClusterId,
@@ -108,6 +118,7 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
         public Builder copy(CreateDbHomeWithVmClusterIdDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .vmClusterId(o.getVmClusterId())
@@ -129,12 +140,13 @@ public class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
     @Deprecated
     public CreateDbHomeWithVmClusterIdDetails(
             String displayName,
+            String databaseSoftwareImageId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vmClusterId,
             String dbVersion,
             CreateDatabaseDetails database) {
-        super(displayName, freeformTags, definedTags);
+        super(displayName, databaseSoftwareImageId, freeformTags, definedTags);
         this.vmClusterId = vmClusterId;
         this.dbVersion = dbVersion;
         this.database = database;

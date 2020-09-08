@@ -78,9 +78,14 @@ public class NotificationExample {
         String ociConfigurationFilePath = "~/.oci/config";
         String ociConfigurationProfile = "DEFAULT";
 
-        AuthenticationDetailsProvider provider =
-                new ConfigFileAuthenticationDetailsProvider(
-                        ociConfigurationFilePath, ociConfigurationProfile);
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // line if needed and use ConfigFileReader.parse(ociConfigurationFilePath, ociConfigurationProfile);
+
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+
+        final AuthenticationDetailsProvider provider =
+                new ConfigFileAuthenticationDetailsProvider(configFile);
 
         final NotificationControlPlaneClient controlPlaneClient =
                 new NotificationControlPlaneClient(provider);

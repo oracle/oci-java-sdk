@@ -4,6 +4,7 @@
  */
 import java.util.Date;
 
+import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.audit.Audit;
 import com.oracle.bmc.audit.AuditClient;
@@ -26,8 +27,14 @@ public class ListAuditEventsExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        AuthenticationDetailsProvider provider =
-                new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
+
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+
+        final AuthenticationDetailsProvider provider =
+                new ConfigFileAuthenticationDetailsProvider(configFile);
 
         Audit auditService = new AuditClient(provider);
         auditService.setRegion(region);

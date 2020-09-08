@@ -136,6 +136,15 @@ public class AutonomousContainerDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patchId")
+        private String patchId;
+
+        public Builder patchId(String patchId) {
+            this.patchId = patchId;
+            this.__explicitlySet__.add("patchId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lastMaintenanceRunId")
         private String lastMaintenanceRunId;
 
@@ -227,6 +236,7 @@ public class AutonomousContainerDatabaseSummary {
                             lifecycleDetails,
                             timeCreated,
                             patchModel,
+                            patchId,
                             lastMaintenanceRunId,
                             nextMaintenanceRunId,
                             maintenanceWindow,
@@ -255,6 +265,7 @@ public class AutonomousContainerDatabaseSummary {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
                             .patchModel(o.getPatchModel())
+                            .patchId(o.getPatchId())
                             .lastMaintenanceRunId(o.getLastMaintenanceRunId())
                             .nextMaintenanceRunId(o.getNextMaintenanceRunId())
                             .maintenanceWindow(o.getMaintenanceWindow())
@@ -536,6 +547,12 @@ public class AutonomousContainerDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
     PatchModel patchModel;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchId")
+    String patchId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last maintenance run.

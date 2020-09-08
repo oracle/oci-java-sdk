@@ -136,8 +136,14 @@ public class BackupDestinationExample {
         final String vpcUser = argumentMap.getOrDefault(Opts.VPC_USER, null);
         final String connectionString = argumentMap.getOrDefault(Opts.CONNECTION_STRING, null);
 
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
+
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+
         final AuthenticationDetailsProvider provider =
-                new ConfigFileAuthenticationDetailsProvider(CONFIG_LOCATION, CONFIG_PROFILE);
+                new ConfigFileAuthenticationDetailsProvider(configFile);
         databaseClient = new DatabaseClient(provider);
 
         List<String> vpcusers = new ArrayList<>();

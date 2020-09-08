@@ -259,7 +259,7 @@ public class PatchHistoryEntrySummary {
     java.util.Date timeStarted;
 
     /**
-     * The date and time when the patch action completed.
+     * The date and time when the patch action completed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     java.util.Date timeEnded;

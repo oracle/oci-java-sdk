@@ -72,7 +72,13 @@ public class GenerateAutonomousDatabaseWalletDetails {
     }
 
     /**
-     * The type of wallet to generate. `SINGLE` is used to generate a wallet for a single database. `ALL` is used to generate wallet for all databases in the region.
+     * The type of wallet to generate.
+     * <p>
+     **Shared Exadata infrastructure usage:**
+     * * `SINGLE` - used to generate a wallet for a single database
+     * * `ALL` - used to generate wallet for all databases in the region
+     * <p>
+     **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      *
      **/
     public enum GenerateType {
@@ -108,7 +114,13 @@ public class GenerateAutonomousDatabaseWalletDetails {
         }
     };
     /**
-     * The type of wallet to generate. `SINGLE` is used to generate a wallet for a single database. `ALL` is used to generate wallet for all databases in the region.
+     * The type of wallet to generate.
+     * <p>
+     **Shared Exadata infrastructure usage:**
+     * * `SINGLE` - used to generate a wallet for a single database
+     * * `ALL` - used to generate wallet for all databases in the region
+     * <p>
+     **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("generateType")

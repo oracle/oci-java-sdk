@@ -42,6 +42,15 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -95,6 +104,7 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
             CreateDbHomeWithDbSystemIdDetails __instance__ =
                     new CreateDbHomeWithDbSystemIdDetails(
                             displayName,
+                            databaseSoftwareImageId,
                             freeformTags,
                             definedTags,
                             dbSystemId,
@@ -108,6 +118,7 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
         public Builder copy(CreateDbHomeWithDbSystemIdDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .dbSystemId(o.getDbSystemId())
@@ -129,12 +140,13 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
     @Deprecated
     public CreateDbHomeWithDbSystemIdDetails(
             String displayName,
+            String databaseSoftwareImageId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbSystemId,
             String dbVersion,
             CreateDatabaseDetails database) {
-        super(displayName, freeformTags, definedTags);
+        super(displayName, databaseSoftwareImageId, freeformTags, definedTags);
         this.dbSystemId = dbSystemId;
         this.dbVersion = dbVersion;
         this.database = database;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Configures the pushing of access logs to OCI Public Logging.
+ * Configures the logging policies for the access logs of an API Deployment.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -60,7 +60,16 @@ public class AccessLogPolicy {
     }
 
     /**
-     * Enables pushing of access logs to OCI Public Logging.
+     * Enables pushing of access logs to the legacy OCI Object Storage log archival bucket.
+     * <p>
+     * Oracle recommends using the OCI Logging service to enable, retrieve, and query access logs
+     * for an API Deployment. If there is an active log object for the API Deployment and its
+     * category is set to 'access' in OCI Logging service, the logs will not be uploaded to the
+     * legacy OCI Object Storage log archival bucket.
+     * <p>
+     * Please note that the functionality to push to the legacy OCI Object Storage log
+     * archival bucket has been deprecated and will be removed in the future.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;

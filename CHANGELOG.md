@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.23.1 - 2020-09-08
+### Added
+- Support for Logging Service
+- Support for Logging Analytics Service
+- Support for Logging Search Service
+- Support for Logging Ingestion Service
+- Support for Management Agent Cloud Service
+- Support for Management Dashboard Service
+- Support for Service Connector Hub service
+- Support for Policy based Request/Response transformation in the API Gateway Service
+- Support for sending diagnostic interrupt to a VM instance in the Compute Service
+- Support for custom Database Software Images in the Database Service
+- Support for getting and listing container database patches for Autonomous Container Database resources in the Database Service
+- Support for updating patch id on maintenance run for Autonomous Container Database resources in the Database Service
+- Support for searching Oracle Cloud resources across tenancies in the Search Service
+- Documentation update for Logging Policies in the API Gateway service
+
 ## 1.23.0 - 2020-09-01
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the ap-chiyoda-1 region

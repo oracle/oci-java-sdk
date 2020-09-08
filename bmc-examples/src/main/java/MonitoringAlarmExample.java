@@ -92,7 +92,7 @@ public class MonitoringAlarmExample {
         final String destination = args[2];
         final String profile_name = args.length > 3 ? args[3] : CONFIG_PROFILE_DEFAULT;
 
-        final ConfigFile configFile = ConfigFileReader.parse(CONFIG_LOCATION, profile_name);
+        final ConfigFile configFile = ConfigFileReader.parseDefault(profile_name);
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 

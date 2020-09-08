@@ -48,6 +48,14 @@ public class SearchResourcesConverter {
                                     request.getPage()));
         }
 
+        if (request.getTenantId() != null) {
+            target =
+                    target.queryParam(
+                            "tenantId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTenantId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

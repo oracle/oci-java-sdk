@@ -133,6 +133,15 @@ public class MaintenanceRun {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patchId")
+        private String patchId;
+
+        public Builder patchId(String patchId) {
+            this.patchId = patchId;
+            this.__explicitlySet__.add("patchId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("maintenanceSubtype")
         private MaintenanceSubtype maintenanceSubtype;
 
@@ -160,6 +169,7 @@ public class MaintenanceRun {
                             targetResourceType,
                             targetResourceId,
                             maintenanceType,
+                            patchId,
                             maintenanceSubtype);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -180,6 +190,7 @@ public class MaintenanceRun {
                             .targetResourceType(o.getTargetResourceType())
                             .targetResourceId(o.getTargetResourceId())
                             .maintenanceType(o.getMaintenanceType())
+                            .patchId(o.getPatchId())
                             .maintenanceSubtype(o.getMaintenanceSubtype());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -407,6 +418,12 @@ public class MaintenanceRun {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceType")
     MaintenanceType maintenanceType;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the patch to be applied in the maintenance run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchId")
+    String patchId;
     /**
      * Maintenance sub-type.
      **/

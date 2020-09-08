@@ -80,7 +80,8 @@ public class MonitoringMetricListExample {
     }
 
     private static MonitoringClient getMonitoringClient(String profile) throws IOException {
-        final ConfigFile configFile = ConfigFileReader.parse(CONFIG_LOCATION, profile);
+        final ConfigFile configFile = ConfigFileReader.parseDefault(profile);
+        // or use ConfigFileReader.parse(configurationFilePath, profileName)
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
         final MonitoringClient monitoringClient = new MonitoringClient(provider);

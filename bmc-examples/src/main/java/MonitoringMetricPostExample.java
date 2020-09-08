@@ -129,7 +129,11 @@ public class MonitoringMetricPostExample {
     }
 
     private static MonitoringClient getMonitoringClient(String profile) throws IOException {
-        final ConfigFile configFile = ConfigFileReader.parse(CONFIG_LOCATION, profile);
+
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", use ConfigFileReader.parse(configurationFilePath, profileName)
+        final ConfigFile configFile = ConfigFileReader.parseDefault(profile);
+
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
         final MonitoringClient monitoringClient = new MonitoringClient(provider);

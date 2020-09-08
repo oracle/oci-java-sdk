@@ -1630,6 +1630,128 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listContainerDatabasePatches operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListContainerDatabasePatchesResponse>
+            listContainerDatabasePatchesResponseIterator(
+                    final ListContainerDatabasePatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListContainerDatabasePatchesRequest.Builder, ListContainerDatabasePatchesRequest,
+                ListContainerDatabasePatchesResponse>(
+                new com.google.common.base.Supplier<ListContainerDatabasePatchesRequest.Builder>() {
+                    @Override
+                    public ListContainerDatabasePatchesRequest.Builder get() {
+                        return ListContainerDatabasePatchesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerDatabasePatchesResponse, String>() {
+                    @Override
+                    public String apply(ListContainerDatabasePatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListContainerDatabasePatchesRequest.Builder>,
+                        ListContainerDatabasePatchesRequest>() {
+                    @Override
+                    public ListContainerDatabasePatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListContainerDatabasePatchesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerDatabasePatchesRequest,
+                        ListContainerDatabasePatchesResponse>() {
+                    @Override
+                    public ListContainerDatabasePatchesResponse apply(
+                            ListContainerDatabasePatchesRequest request) {
+                        return client.listContainerDatabasePatches(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.AutonomousPatchSummary} objects
+     * contained in responses from the listContainerDatabasePatches operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.AutonomousPatchSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousPatchSummary>
+            listContainerDatabasePatchesRecordIterator(
+                    final ListContainerDatabasePatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListContainerDatabasePatchesRequest.Builder, ListContainerDatabasePatchesRequest,
+                ListContainerDatabasePatchesResponse,
+                com.oracle.bmc.database.model.AutonomousPatchSummary>(
+                new com.google.common.base.Supplier<ListContainerDatabasePatchesRequest.Builder>() {
+                    @Override
+                    public ListContainerDatabasePatchesRequest.Builder get() {
+                        return ListContainerDatabasePatchesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerDatabasePatchesResponse, String>() {
+                    @Override
+                    public String apply(ListContainerDatabasePatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListContainerDatabasePatchesRequest.Builder>,
+                        ListContainerDatabasePatchesRequest>() {
+                    @Override
+                    public ListContainerDatabasePatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListContainerDatabasePatchesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerDatabasePatchesRequest,
+                        ListContainerDatabasePatchesResponse>() {
+                    @Override
+                    public ListContainerDatabasePatchesResponse apply(
+                            ListContainerDatabasePatchesRequest request) {
+                        return client.listContainerDatabasePatches(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListContainerDatabasePatchesResponse,
+                        java.util.List<com.oracle.bmc.database.model.AutonomousPatchSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.AutonomousPatchSummary>
+                            apply(ListContainerDatabasePatchesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDataGuardAssociations operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1742,6 +1864,125 @@ public class DatabasePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.database.model.DataGuardAssociationSummary>
                             apply(ListDataGuardAssociationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDatabaseSoftwareImages operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDatabaseSoftwareImagesResponse> listDatabaseSoftwareImagesResponseIterator(
+            final ListDatabaseSoftwareImagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDatabaseSoftwareImagesRequest.Builder, ListDatabaseSoftwareImagesRequest,
+                ListDatabaseSoftwareImagesResponse>(
+                new com.google.common.base.Supplier<ListDatabaseSoftwareImagesRequest.Builder>() {
+                    @Override
+                    public ListDatabaseSoftwareImagesRequest.Builder get() {
+                        return ListDatabaseSoftwareImagesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDatabaseSoftwareImagesResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseSoftwareImagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseSoftwareImagesRequest.Builder>,
+                        ListDatabaseSoftwareImagesRequest>() {
+                    @Override
+                    public ListDatabaseSoftwareImagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseSoftwareImagesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDatabaseSoftwareImagesRequest, ListDatabaseSoftwareImagesResponse>() {
+                    @Override
+                    public ListDatabaseSoftwareImagesResponse apply(
+                            ListDatabaseSoftwareImagesRequest request) {
+                        return client.listDatabaseSoftwareImages(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.DatabaseSoftwareImageSummary} objects
+     * contained in responses from the listDatabaseSoftwareImages operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.DatabaseSoftwareImageSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.DatabaseSoftwareImageSummary>
+            listDatabaseSoftwareImagesRecordIterator(
+                    final ListDatabaseSoftwareImagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDatabaseSoftwareImagesRequest.Builder, ListDatabaseSoftwareImagesRequest,
+                ListDatabaseSoftwareImagesResponse,
+                com.oracle.bmc.database.model.DatabaseSoftwareImageSummary>(
+                new com.google.common.base.Supplier<ListDatabaseSoftwareImagesRequest.Builder>() {
+                    @Override
+                    public ListDatabaseSoftwareImagesRequest.Builder get() {
+                        return ListDatabaseSoftwareImagesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDatabaseSoftwareImagesResponse, String>() {
+                    @Override
+                    public String apply(ListDatabaseSoftwareImagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDatabaseSoftwareImagesRequest.Builder>,
+                        ListDatabaseSoftwareImagesRequest>() {
+                    @Override
+                    public ListDatabaseSoftwareImagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDatabaseSoftwareImagesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDatabaseSoftwareImagesRequest, ListDatabaseSoftwareImagesResponse>() {
+                    @Override
+                    public ListDatabaseSoftwareImagesResponse apply(
+                            ListDatabaseSoftwareImagesRequest request) {
+                        return client.listDatabaseSoftwareImages(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDatabaseSoftwareImagesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.DatabaseSoftwareImageSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.DatabaseSoftwareImageSummary>
+                            apply(ListDatabaseSoftwareImagesResponse response) {
                         return response.getItems();
                     }
                 });

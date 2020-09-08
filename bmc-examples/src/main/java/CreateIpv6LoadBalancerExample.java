@@ -45,9 +45,13 @@ public class CreateIpv6LoadBalancerExample {
         final String compartmentId = args[0];
         final String loadBalSubnet = args[1];
 
-        ConfigFileReader.ConfigFile configFile =
-                ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
-        AuthenticationDetailsProvider provider =
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
+
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+
+        final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
         LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
 

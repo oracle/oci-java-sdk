@@ -210,7 +210,11 @@ public class Gateway {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
     /**
-     * Gateway endpoint type.
+     * Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be
+     * accessible on a private IP address on the subnet.
+     * <p>
+     * Example: `PUBLIC` or `PRIVATE`
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum EndpointType {
@@ -256,7 +260,11 @@ public class Gateway {
         }
     };
     /**
-     * Gateway endpoint type.
+     * Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be
+     * accessible on a private IP address on the subnet.
+     * <p>
+     * Example: `PUBLIC` or `PRIVATE`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointType")
     EndpointType endpointType;

@@ -207,6 +207,15 @@ public class Database {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -232,7 +241,8 @@ public class Database {
                             freeformTags,
                             definedTags,
                             connectionStrings,
-                            sourceDatabasePointInTimeRecoveryTimestamp);
+                            sourceDatabasePointInTimeRecoveryTimestamp,
+                            databaseSoftwareImageId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -260,7 +270,8 @@ public class Database {
                             .definedTags(o.getDefinedTags())
                             .connectionStrings(o.getConnectionStrings())
                             .sourceDatabasePointInTimeRecoveryTimestamp(
-                                    o.getSourceDatabasePointInTimeRecoveryTimestamp());
+                                    o.getSourceDatabasePointInTimeRecoveryTimestamp())
+                            .databaseSoftwareImageId(o.getDatabaseSoftwareImageId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -448,6 +459,12 @@ public class Database {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabasePointInTimeRecoveryTimestamp")
     java.util.Date sourceDatabasePointInTimeRecoveryTimestamp;
+
+    /**
+     * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    String databaseSoftwareImageId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

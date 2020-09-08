@@ -6,6 +6,8 @@ package com.oracle.bmc.auth;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
@@ -14,6 +16,9 @@ import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 
+import com.oracle.bmc.auth.internal.DelegationTokenConfigurator;
+import com.oracle.bmc.http.ClientConfigurator;
+import com.oracle.bmc.auth.internal.ConfigFileDelegationTokenUtils;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -25,11 +30,11 @@ import org.apache.commons.lang3.StringUtils;
 @ToString
 @Slf4j
 public class ConfigFileAuthenticationDetailsProvider
-        implements AuthenticationDetailsProvider, RegionProvider {
+        implements AuthenticationDetailsProvider, RegionProvider, ProvidesClientConfigurators {
 
     private final static String OCI_REGION_ENV_VAR_NAME = "OCI_REGION";
-    private final SimpleAuthenticationDetailsProvider delegate;
-    private final String pemFilePath;
+    private final BasicConfigFileAuthenticationProvider delegate;
+    private final Region region;
 
     /**
      * Creates a new instance using the config file at the default location,
@@ -66,20 +71,17 @@ public class ConfigFileAuthenticationDetailsProvider
      *            The configuration file to use.
      */
     public ConfigFileAuthenticationDetailsProvider(ConfigFile configFile) {
-        String fingerprint =
-                Preconditions.checkNotNull(
-                        configFile.get("fingerprint"), "missing fingerprint in config");
-        String tenantId =
-                Preconditions.checkNotNull(configFile.get("tenancy"), "missing tenancy in config");
-        String userId =
-                Preconditions.checkNotNull(configFile.get("user"), "missing user in config");
-        String pemFilePath =
-                Preconditions.checkNotNull(
-                        configFile.get("key_file"), "missing key_file in config");
-        // pass phrase is optional
-        String passPhrase = configFile.get("pass_phrase");
+        String authentication_type = configFile.get("authentication_type");
+        if (authentication_type != null && authentication_type.equals("instance_principal")) {
+            this.delegate =
+                    new ConfigFileInstancePrincipalAuthenticationDetailsProvider(configFile);
+        } else {
+            this.delegate = new ConfigFileSimpleAuthenticationDetailsProvider(configFile);
+        }
+        this.region = getRegionFromConfigFile(configFile);
+    }
 
-        Supplier<InputStream> privateKeySupplier = new SimplePrivateKeySupplier(pemFilePath);
+    public static Region getRegionFromConfigFile(ConfigFile configFile) {
 
         // region is optional, for backwards compatibility, if region is not known, log an error and continue.
         // the same file may be used by other tools, where the region can be a newly launched region value
@@ -108,19 +110,7 @@ public class ConfigFileAuthenticationDetailsProvider
             LOG.info(
                     "Region not specified in Config file or OCI_REGION env variable. Proceeding without setting a region.");
         }
-
-        SimpleAuthenticationDetailsProvider.SimpleAuthenticationDetailsProviderBuilder builder =
-                SimpleAuthenticationDetailsProvider.builder()
-                        .fingerprint(fingerprint)
-                        .privateKeySupplier(privateKeySupplier)
-                        .tenantId(tenantId)
-                        .userId(userId)
-                        .region(region);
-        if (passPhrase != null) {
-            builder = builder.passphraseCharacters(passPhrase.toCharArray());
-        }
-        this.delegate = builder.build();
-        this.pemFilePath = pemFilePath;
+        return region;
     }
 
     @Override
@@ -136,6 +126,11 @@ public class ConfigFileAuthenticationDetailsProvider
     @Override
     public String getUserId() {
         return this.delegate.getUserId();
+    }
+
+    @Override
+    public List<ClientConfigurator> getClientConfigurators() {
+        return this.delegate.getClientConfigurators();
     }
 
     @Deprecated
@@ -161,7 +156,7 @@ public class ConfigFileAuthenticationDetailsProvider
 
     @Override
     public Region getRegion() {
-        return this.delegate.getRegion();
+        return this.region;
     }
 
     /**
@@ -170,6 +165,155 @@ public class ConfigFileAuthenticationDetailsProvider
      * @return the PEM File Path.
      */
     public String getPemFilePath() {
-        return this.pemFilePath;
+        return this.delegate.getPemFilePath();
+    }
+
+    private static class ConfigFileSimpleAuthenticationDetailsProvider
+            implements BasicConfigFileAuthenticationProvider {
+
+        private final SimpleAuthenticationDetailsProvider delegate;
+        private final String pemFilePath;
+        private final List<ClientConfigurator> clientConfigurators;
+
+        private ConfigFileSimpleAuthenticationDetailsProvider(ConfigFile configFile) {
+            String fingerprint =
+                    Preconditions.checkNotNull(
+                            configFile.get("fingerprint"), "missing fingerprint in config");
+            String tenantId =
+                    Preconditions.checkNotNull(
+                            configFile.get("tenancy"), "missing tenancy in config");
+            String userId =
+                    Preconditions.checkNotNull(configFile.get("user"), "missing user in config");
+            String pemFilePath =
+                    Preconditions.checkNotNull(
+                            configFile.get("key_file"), "missing key_file in config");
+            // pass phrase is optional
+            String passPhrase = configFile.get("pass_phrase");
+
+            Supplier<InputStream> privateKeySupplier = new SimplePrivateKeySupplier(pemFilePath);
+
+            SimpleAuthenticationDetailsProvider.SimpleAuthenticationDetailsProviderBuilder builder =
+                    SimpleAuthenticationDetailsProvider.builder()
+                            .privateKeySupplier(privateKeySupplier)
+                            .fingerprint(fingerprint)
+                            .userId(userId)
+                            .tenantId(tenantId);
+            if (passPhrase != null) {
+                builder = builder.passphraseCharacters(passPhrase.toCharArray());
+            }
+            this.delegate = builder.build();
+            this.pemFilePath = pemFilePath;
+            this.clientConfigurators = new ArrayList<>();
+        }
+
+        public String getFingerprint() {
+            return this.delegate.getFingerprint();
+        }
+
+        public String getTenantId() {
+            return this.delegate.getTenantId();
+        }
+
+        public String getUserId() {
+            return this.delegate.getUserId();
+        }
+
+        @Deprecated
+        public String getPassPhrase() {
+            return this.delegate.getPassPhrase();
+        }
+
+        @Deprecated
+        public char[] getPassphraseCharacters() {
+            return this.delegate.getPassphraseCharacters();
+        }
+
+        public InputStream getPrivateKey() {
+            return this.delegate.getPrivateKey();
+        }
+
+        public String getKeyId() {
+            return this.delegate.getKeyId();
+        }
+
+        @Override
+        public String getPemFilePath() {
+            return this.pemFilePath;
+        }
+
+        @Override
+        public List<ClientConfigurator> getClientConfigurators() {
+            return this.clientConfigurators;
+        }
+    }
+
+    private static class ConfigFileInstancePrincipalAuthenticationDetailsProvider
+            implements BasicConfigFileAuthenticationProvider {
+
+        private final InstancePrincipalsAuthenticationDetailsProvider delegate;
+        private final String tenantId;
+        private final List<ClientConfigurator> clientConfigurators;
+
+        private ConfigFileInstancePrincipalAuthenticationDetailsProvider(ConfigFile configFile) {
+            this.delegate = InstancePrincipalsAuthenticationDetailsProvider.builder().build();
+            String tenantId = configFile.get("tenancy");
+            if (tenantId == null) tenantId = StringUtils.EMPTY;
+            this.tenantId = tenantId;
+            this.clientConfigurators = new ArrayList<>();
+            try {
+                String delegationToken =
+                        ConfigFileDelegationTokenUtils.parseAndGetToken(configFile);
+                if (!StringUtils.isBlank(delegationToken)) {
+                    this.clientConfigurators.add(new DelegationTokenConfigurator(delegationToken));
+                }
+            } catch (Exception e) {
+                LOG.debug("Could not load delegation token!");
+            }
+        }
+
+        @Override
+        public String getFingerprint() {
+            return null;
+        }
+
+        @Override
+        public String getTenantId() {
+            return this.tenantId;
+        }
+
+        @Override
+        public String getUserId() {
+            return null;
+        }
+
+        @Override
+        public String getKeyId() {
+            return this.delegate.getKeyId();
+        }
+
+        @Override
+        public InputStream getPrivateKey() {
+            return this.delegate.getPrivateKey();
+        }
+
+        @Override
+        public String getPassPhrase() {
+            return null;
+        }
+
+        @Override
+        public char[] getPassphraseCharacters() {
+            return null;
+        }
+
+        @Override
+        public String getPemFilePath() {
+            return null;
+        }
+
+        @Override
+        public List<ClientConfigurator> getClientConfigurators() {
+            return this.clientConfigurators;
+        }
     }
 }
