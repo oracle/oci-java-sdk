@@ -272,4 +272,16 @@
       <artifactId>oci-java-sdk-managementagent</artifactId>
     </dependency>
   </dependencies>
+
+  <build>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <configuration>
+            <skip>false</skip>
+          </configuration>
+        </plugin>
+      </plugins>
+  </build>
 </project>

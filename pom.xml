@@ -55,6 +55,8 @@
     <powermock.version>1.7.4</powermock.version>
     <excluded.testcases>**/*IntegrationAutoTest.java</excluded.testcases>
     <dev.profile.skip.javadoc>true</dev.profile.skip.javadoc>
+    <exec.skip>true</exec.skip>
+    <exec.mainClass>com.acme.Undefined</exec.mainClass>
   </properties>
   <profiles>
     <profile>
@@ -457,6 +459,12 @@
             </dependency>
           </dependencies>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.6.0</version>
+          <inherited>true</inherited>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -477,6 +485,10 @@
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>
