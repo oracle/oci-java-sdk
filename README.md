@@ -18,7 +18,7 @@ For details on compatibility, advanced configurations, and add-ons, see [Configu
 Examples can be found [here](/bmc-examples/src/main/java/).
 
 You may run any example by invoking the `exec:java` goal and passing appropriate values for `exec.mainClass` and `.exec.arguments` properties,
-for exiample in the `ObjectStorageGetBucketExample` class which requires 3 arguments: OCID of the compartment, name of bucket, name of object.
+for example: `ObjectStorageGetBucketExample` class dwwhich requires 3 argumentsxi which are OCID of the compartment, name of bucket, name of object. This example class can be run as follows:
 
 ```
 mvn -am -pl bmc-examples exec:java -Dexec.mainClass=ObjectStorageGetBucketExample \
