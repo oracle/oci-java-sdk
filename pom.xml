@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.23.1</version>
+  <version>1.23.2</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -409,8 +409,8 @@
             </docletArtifact>
             <useStandardDocletOptions>true</useStandardDocletOptions>
             <aggregate>true</aggregate>
-            <minmemory>128m</minmemory>
-            <maxmemory>1024m</maxmemory>
+            <minmemory>256m</minmemory>
+            <maxmemory>2048m</maxmemory>
             <additionalparam>-Xdoclint:none -disable-highlight</additionalparam>
             <sourcepath>target/generated-sources-for-docs/delombok</sourcepath>
             <links>
@@ -448,6 +448,12 @@
           <version>3.1.0</version>
         </plugin>
         <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.6.0</version>
+          <inherited>true</inherited>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
           <version>3.0.0-M1</version>
@@ -458,12 +464,6 @@
               <version>1.0-beta-9</version>
             </dependency>
           </dependencies>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>exec-maven-plugin</artifactId>
-          <version>1.6.0</version>
-          <inherited>true</inherited>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -718,6 +718,7 @@
     <module>bmc-sch</module>
     <module>bmc-loggingsearch</module>
     <module>bmc-managementagent</module>
+    <module>bmc-cloudguard</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>
