@@ -134,6 +134,15 @@ public class IntegrationInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
+        private ConsumptionModel consumptionModel;
+
+        public Builder consumptionModel(ConsumptionModel consumptionModel) {
+            this.consumptionModel = consumptionModel;
+            this.__explicitlySet__.add("consumptionModel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -151,7 +160,8 @@ public class IntegrationInstanceSummary {
                             isByol,
                             instanceUrl,
                             messagePacks,
-                            isFileServerEnabled);
+                            isFileServerEnabled,
+                            consumptionModel);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -170,7 +180,8 @@ public class IntegrationInstanceSummary {
                             .isByol(o.getIsByol())
                             .instanceUrl(o.getInstanceUrl())
                             .messagePacks(o.getMessagePacks())
-                            .isFileServerEnabled(o.getIsFileServerEnabled());
+                            .isFileServerEnabled(o.getIsFileServerEnabled())
+                            .consumptionModel(o.getConsumptionModel());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -350,6 +361,58 @@ public class IntegrationInstanceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
     Boolean isFileServerEnabled;
+    /**
+     * The entitlement used for billing purposes.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ConsumptionModel {
+        Ucm("UCM"),
+        Gov("GOV"),
+        Oic4Saas("OIC4SAAS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ConsumptionModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ConsumptionModel v : ConsumptionModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ConsumptionModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ConsumptionModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ConsumptionModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The entitlement used for billing purposes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
+    ConsumptionModel consumptionModel;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

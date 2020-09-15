@@ -508,6 +508,20 @@ public interface LoadBalancer extends AutoCloseable {
     UpdateLoadBalancerResponse updateLoadBalancer(UpdateLoadBalancerRequest request);
 
     /**
+     * Update the shape of a load balancer. The new shape can be larger or smaller compared to existing shape of the
+     * LB. The service will try to perform this operation in the least disruptive way to existing connections, but
+     * there is a possibility that they might be lost during the LB resizing process. The new shape becomes effective
+     * as soon as the related work request completes successfully, i.e. when reshaping to a larger shape, the LB will
+     * start accepting larger bandwidth and when reshaping to a smaller one, the LB will be accepting smaller
+     * bandwidth.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateLoadBalancerShapeResponse updateLoadBalancerShape(UpdateLoadBalancerShapeRequest request);
+
+    /**
      * Updates the network security groups associated with the specified load balancer.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

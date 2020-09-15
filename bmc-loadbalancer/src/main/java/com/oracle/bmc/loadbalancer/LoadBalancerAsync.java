@@ -881,6 +881,28 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update the shape of a load balancer. The new shape can be larger or smaller compared to existing shape of the
+     * LB. The service will try to perform this operation in the least disruptive way to existing connections, but
+     * there is a possibility that they might be lost during the LB resizing process. The new shape becomes effective
+     * as soon as the related work request completes successfully, i.e. when reshaping to a larger shape, the LB will
+     * start accepting larger bandwidth and when reshaping to a smaller one, the LB will be accepting smaller
+     * bandwidth.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateLoadBalancerShapeResponse> updateLoadBalancerShape(
+            UpdateLoadBalancerShapeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateLoadBalancerShapeRequest, UpdateLoadBalancerShapeResponse>
+                    handler);
+
+    /**
      * Updates the network security groups associated with the specified load balancer.
      *
      * @param request The request object containing the details to send

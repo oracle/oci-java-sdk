@@ -99,6 +99,15 @@ public class CreateIntegrationInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
+        private ConsumptionModel consumptionModel;
+
+        public Builder consumptionModel(ConsumptionModel consumptionModel) {
+            this.consumptionModel = consumptionModel;
+            this.__explicitlySet__.add("consumptionModel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
         private Boolean isFileServerEnabled;
 
@@ -122,6 +131,7 @@ public class CreateIntegrationInstanceDetails {
                             isByol,
                             idcsAt,
                             messagePacks,
+                            consumptionModel,
                             isFileServerEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -138,6 +148,7 @@ public class CreateIntegrationInstanceDetails {
                             .isByol(o.getIsByol())
                             .idcsAt(o.getIdcsAt())
                             .messagePacks(o.getMessagePacks())
+                            .consumptionModel(o.getConsumptionModel())
                             .isFileServerEnabled(o.getIsFileServerEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -239,6 +250,47 @@ public class CreateIntegrationInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
     Integer messagePacks;
+    /**
+     * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+     **/
+    public enum ConsumptionModel {
+        Ucm("UCM"),
+        Gov("GOV"),
+        Oic4Saas("OIC4SAAS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ConsumptionModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ConsumptionModel v : ConsumptionModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ConsumptionModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ConsumptionModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ConsumptionModel: " + key);
+        }
+    };
+    /**
+     * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
+    ConsumptionModel consumptionModel;
 
     /**
      * The file server is enabled or not.
