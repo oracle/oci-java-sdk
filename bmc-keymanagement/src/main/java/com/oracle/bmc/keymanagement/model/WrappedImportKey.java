@@ -69,12 +69,12 @@ public class WrappedImportKey {
     }
 
     /**
-     * The wrapped/encrypted key material to import. It is encrypted using RSA wrapped key and Base64 encoded.
+     * The key material to import, wrapped by the vault's public RSA wrapping key and base64-encoded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMaterial")
     String keyMaterial;
     /**
-     * The wrapping mechanism to be used during key import
+     * The wrapping mechanism to use during key import.
      **/
     public enum WrappingAlgorithm {
         RsaOaepSha256("RSA_OAEP_SHA256"),
@@ -108,7 +108,7 @@ public class WrappedImportKey {
         }
     };
     /**
-     * The wrapping mechanism to be used during key import
+     * The wrapping mechanism to use during key import.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wrappingAlgorithm")
     WrappingAlgorithm wrappingAlgorithm;

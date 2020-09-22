@@ -20,6 +20,11 @@ public interface Oda extends AutoCloseable {
     void setEndpoint(String endpoint);
 
     /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
+    String getEndpoint();
+
+    /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
      * <p>
      * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this Region, however, an IllegalArgumentException will be raised.

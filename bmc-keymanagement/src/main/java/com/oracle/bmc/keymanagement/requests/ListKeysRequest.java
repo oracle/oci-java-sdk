@@ -125,6 +125,56 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             throw new IllegalArgumentException("Invalid SortOrder: " + key);
         }
     };
+    /**
+     * A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A
+     * protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are
+     * performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's
+     * RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of
+     * `SOFTWARE` are performed on the server.
+     *
+     */
+    private ProtectionMode protectionMode;
+
+    /**
+     * A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A
+     * protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are
+     * performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's
+     * RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of
+     * `SOFTWARE` are performed on the server.
+     *
+     **/
+    public enum ProtectionMode {
+        Hsm("HSM"),
+        Software("SOFTWARE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ProtectionMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ProtectionMode v : ProtectionMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ProtectionMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ProtectionMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ProtectionMode: " + key);
+        }
+    };
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<ListKeysRequest, java.lang.Void> {
@@ -166,6 +216,7 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             opcRequestId(o.getOpcRequestId());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            protectionMode(o.getProtectionMode());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

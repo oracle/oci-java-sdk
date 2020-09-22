@@ -192,7 +192,7 @@ public class WrappingKey {
     LifecycleState lifecycleState;
 
     /**
-     * The public key in PEM format to encrypt the key material before importing it with ImportKey/ImportKeyVersion.
+     * The public key, in PEM format, to use to wrap the key material before importing it.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")

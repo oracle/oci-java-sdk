@@ -5,10 +5,8 @@
 package com.oracle.bmc.auth.internal;
 
 import com.oracle.bmc.ConfigFileReader;
-import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.util.internal.FileUtils;
 import org.apache.commons.lang3.StringUtils;
-import sun.security.krb5.Config;
 
 import java.io.File;
 import java.io.IOException;

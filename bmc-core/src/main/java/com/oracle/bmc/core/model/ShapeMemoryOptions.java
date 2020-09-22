@@ -56,12 +56,35 @@ public class ShapeMemoryOptions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
+        private Float minPerOcpuInGBs;
+
+        public Builder minPerOcpuInGBs(Float minPerOcpuInGBs) {
+            this.minPerOcpuInGBs = minPerOcpuInGBs;
+            this.__explicitlySet__.add("minPerOcpuInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
+        private Float maxPerOcpuInGBs;
+
+        public Builder maxPerOcpuInGBs(Float maxPerOcpuInGBs) {
+            this.maxPerOcpuInGBs = maxPerOcpuInGBs;
+            this.__explicitlySet__.add("maxPerOcpuInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeMemoryOptions build() {
             ShapeMemoryOptions __instance__ =
-                    new ShapeMemoryOptions(minInGBs, maxInGBs, defaultPerOcpuInGBs);
+                    new ShapeMemoryOptions(
+                            minInGBs,
+                            maxInGBs,
+                            defaultPerOcpuInGBs,
+                            minPerOcpuInGBs,
+                            maxPerOcpuInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -71,7 +94,9 @@ public class ShapeMemoryOptions {
             Builder copiedBuilder =
                     minInGBs(o.getMinInGBs())
                             .maxInGBs(o.getMaxInGBs())
-                            .defaultPerOcpuInGBs(o.getDefaultPerOcpuInGBs());
+                            .defaultPerOcpuInGBs(o.getDefaultPerOcpuInGBs())
+                            .minPerOcpuInGBs(o.getMinPerOcpuInGBs())
+                            .maxPerOcpuInGBs(o.getMaxPerOcpuInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -105,6 +130,20 @@ public class ShapeMemoryOptions {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")
     Float defaultPerOcpuInGBs;
+
+    /**
+     * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
+    Float minPerOcpuInGBs;
+
+    /**
+     * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
+    Float maxPerOcpuInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

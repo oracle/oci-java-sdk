@@ -44,6 +44,15 @@ public class ImageShapeCompatibilitySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryConstraints")
+        private ImageMemoryConstraints memoryConstraints;
+
+        public Builder memoryConstraints(ImageMemoryConstraints memoryConstraints) {
+            this.memoryConstraints = memoryConstraints;
+            this.__explicitlySet__.add("memoryConstraints");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuConstraints")
         private ImageOcpuConstraints ocpuConstraints;
 
@@ -58,7 +67,8 @@ public class ImageShapeCompatibilitySummary {
 
         public ImageShapeCompatibilitySummary build() {
             ImageShapeCompatibilitySummary __instance__ =
-                    new ImageShapeCompatibilitySummary(imageId, shape, ocpuConstraints);
+                    new ImageShapeCompatibilitySummary(
+                            imageId, shape, memoryConstraints, ocpuConstraints);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,6 +78,7 @@ public class ImageShapeCompatibilitySummary {
             Builder copiedBuilder =
                     imageId(o.getImageId())
                             .shape(o.getShape())
+                            .memoryConstraints(o.getMemoryConstraints())
                             .ocpuConstraints(o.getOcpuConstraints());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -93,6 +104,9 @@ public class ImageShapeCompatibilitySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryConstraints")
+    ImageMemoryConstraints memoryConstraints;
 
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuConstraints")
     ImageOcpuConstraints ocpuConstraints;

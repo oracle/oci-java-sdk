@@ -70,6 +70,14 @@ public class ListKeysConverter {
                                     request.getSortOrder().getValue()));
         }
 
+        if (request.getProtectionMode() != null) {
+            target =
+                    target.queryParam(
+                            "protectionMode",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getProtectionMode().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

@@ -97,6 +97,15 @@ public class KeySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+        private ProtectionMode protectionMode;
+
+        public Builder protectionMode(ProtectionMode protectionMode) {
+            this.protectionMode = protectionMode;
+            this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -110,7 +119,8 @@ public class KeySummary {
                             id,
                             lifecycleState,
                             timeCreated,
-                            vaultId);
+                            vaultId,
+                            protectionMode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -125,7 +135,8 @@ public class KeySummary {
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
-                            .vaultId(o.getVaultId());
+                            .vaultId(o.getVaultId())
+                            .protectionMode(o.getProtectionMode());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -259,6 +270,67 @@ public class KeySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     String vaultId;
+    /**
+     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+     * A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+     * a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ProtectionMode {
+        Hsm("HSM"),
+        Software("SOFTWARE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ProtectionMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ProtectionMode v : ProtectionMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ProtectionMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ProtectionMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ProtectionMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+     * A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+     * a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+    ProtectionMode protectionMode;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
