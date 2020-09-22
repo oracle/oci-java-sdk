@@ -87,7 +87,7 @@ public class GeneratedKey {
 
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
-     * included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey)
+     * included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * request includes the `includePlaintextKey` parameter and sets its value to \"true\".
      *
      **/
@@ -96,7 +96,7 @@ public class GeneratedKey {
 
     /**
      * The checksum of the plaintext data encryption key, which is included if the
-     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey)
+     * [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey)
      * request includes the `includePlaintextKey` parameter and sets its value to \"true\".
      *
      **/

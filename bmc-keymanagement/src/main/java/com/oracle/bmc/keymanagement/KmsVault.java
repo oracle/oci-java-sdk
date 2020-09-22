@@ -8,7 +8,9 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
 /**
- * API for managing and performing operations with keys and vaults.
+ * API for managing and performing operations with keys and vaults. (For the API for managing secrets, see the Vault Service
+ * Secret Management API. For the API for retrieving secrets, see the Vault Service Secret Retrieval API.)
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsVault extends AutoCloseable {
@@ -18,6 +20,11 @@ public interface KmsVault extends AutoCloseable {
      * @param endpoint The endpoint of the service.
      */
     void setEndpoint(String endpoint);
+
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
+    String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).

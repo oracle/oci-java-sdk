@@ -42,11 +42,31 @@ public class VaultUsage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyCount")
+        private Integer softwareKeyCount;
+
+        public Builder softwareKeyCount(Integer softwareKeyCount) {
+            this.softwareKeyCount = softwareKeyCount;
+            this.__explicitlySet__.add("softwareKeyCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyVersionCount")
+        private Integer softwareKeyVersionCount;
+
+        public Builder softwareKeyVersionCount(Integer softwareKeyVersionCount) {
+            this.softwareKeyVersionCount = softwareKeyVersionCount;
+            this.__explicitlySet__.add("softwareKeyVersionCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VaultUsage build() {
-            VaultUsage __instance__ = new VaultUsage(keyCount, keyVersionCount);
+            VaultUsage __instance__ =
+                    new VaultUsage(
+                            keyCount, keyVersionCount, softwareKeyCount, softwareKeyVersionCount);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -54,7 +74,10 @@ public class VaultUsage {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VaultUsage o) {
             Builder copiedBuilder =
-                    keyCount(o.getKeyCount()).keyVersionCount(o.getKeyVersionCount());
+                    keyCount(o.getKeyCount())
+                            .keyVersionCount(o.getKeyVersionCount())
+                            .softwareKeyCount(o.getSoftwareKeyCount())
+                            .softwareKeyVersionCount(o.getSoftwareKeyVersionCount());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -68,11 +91,29 @@ public class VaultUsage {
         return new Builder();
     }
 
+    /**
+     * The number of keys in this vault that persist on a hardware security module (HSM), across all compartments, excluding keys in a `DELETED` state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyCount")
     Integer keyCount;
 
+    /**
+     * The number of key versions in this vault that persist on a hardware security module (HSM), across all compartments, excluding key versions in a `DELETED` state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionCount")
     Integer keyVersionCount;
+
+    /**
+     * The number of keys in this vault that persist on the server, across all compartments, excluding keys in a `DELETED` state.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyCount")
+    Integer softwareKeyCount;
+
+    /**
+     * The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a `DELETED` state.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyVersionCount")
+    Integer softwareKeyVersionCount;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

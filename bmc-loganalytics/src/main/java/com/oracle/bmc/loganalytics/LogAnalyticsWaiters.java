@@ -355,6 +355,63 @@ public class LogAnalyticsWaiters {
     }
 
     /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetQueryWorkRequestRequest, GetQueryWorkRequestResponse>
+            forQueryWorkRequest(GetQueryWorkRequestRequest request) {
+        return forQueryWorkRequest(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@linkcom.oracle.bmc.waiter. DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetQueryWorkRequestRequest, GetQueryWorkRequestResponse>
+            forQueryWorkRequest(
+                    GetQueryWorkRequestRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forQueryWorkRequest(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request);
+    }
+
+    // Helper method to create a new Waiter for QueryWorkRequest.
+    private com.oracle.bmc.waiter.Waiter<GetQueryWorkRequestRequest, GetQueryWorkRequestResponse>
+            forQueryWorkRequest(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetQueryWorkRequestRequest request) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetQueryWorkRequestRequest, GetQueryWorkRequestResponse>() {
+                            @Override
+                            public GetQueryWorkRequestResponse apply(
+                                    GetQueryWorkRequestRequest request) {
+                                return client.getQueryWorkRequest(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetQueryWorkRequestResponse>() {
+                            @Override
+                            public boolean apply(GetQueryWorkRequestResponse response) {
+                                // work requests are complete once the time finished is available
+                                return response.getQueryWorkRequest().getTimeFinished() != null;
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
@@ -456,6 +513,64 @@ public class LogAnalyticsWaiters {
                         targetStatesSet.contains(
                                 com.oracle.bmc.loganalytics.model.ScheduledTask.LifecycleState
                                         .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStorageWorkRequestRequest, GetStorageWorkRequestResponse>
+            forStorageWorkRequest(GetStorageWorkRequestRequest request) {
+        return forStorageWorkRequest(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@linkcom.oracle.bmc.waiter. DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetStorageWorkRequestRequest, GetStorageWorkRequestResponse>
+            forStorageWorkRequest(
+                    GetStorageWorkRequestRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forStorageWorkRequest(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request);
+    }
+
+    // Helper method to create a new Waiter for StorageWorkRequest.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetStorageWorkRequestRequest, GetStorageWorkRequestResponse>
+            forStorageWorkRequest(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetStorageWorkRequestRequest request) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetStorageWorkRequestRequest, GetStorageWorkRequestResponse>() {
+                            @Override
+                            public GetStorageWorkRequestResponse apply(
+                                    GetStorageWorkRequestRequest request) {
+                                return client.getStorageWorkRequest(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetStorageWorkRequestResponse>() {
+                            @Override
+                            public boolean apply(GetStorageWorkRequestResponse response) {
+                                // work requests are complete once the time finished is available
+                                return response.getStorageWorkRequest().getTimeFinished() != null;
+                            }
+                        },
+                        false),
                 request);
     }
 

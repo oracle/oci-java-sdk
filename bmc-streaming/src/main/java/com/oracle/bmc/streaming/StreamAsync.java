@@ -20,6 +20,11 @@ public interface StreamAsync extends AutoCloseable {
     void setEndpoint(String endpoint);
 
     /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
+    String getEndpoint();
+
+    /**
      * Provides a mechanism to manually commit offsets, if not using commit-on-get consumer semantics.
      * This commits offsets assicated with the provided cursor, extends the timeout on each of the affected partitions, and returns an updated cursor.
      *

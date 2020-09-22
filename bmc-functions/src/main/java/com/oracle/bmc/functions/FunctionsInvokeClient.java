@@ -222,11 +222,11 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
+        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(additionalClientConfigurators)
-                        .additionalClientConfigurators(authenticationDetailsConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -320,6 +320,16 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
     public void setEndpoint(String endpoint) {
         LOG.info("Setting endpoint to {}", endpoint);
         client.setEndpoint(endpoint);
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
     }
 
     @Override

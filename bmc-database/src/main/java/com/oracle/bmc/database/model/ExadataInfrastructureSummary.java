@@ -251,6 +251,24 @@ public class ExadataInfrastructureSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
+        private String csiNumber;
+
+        public Builder csiNumber(String csiNumber) {
+            this.csiNumber = csiNumber;
+            this.__explicitlySet__.add("csiNumber");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("contacts")
+        private java.util.List<ExadataInfrastructureContact> contacts;
+
+        public Builder contacts(java.util.List<ExadataInfrastructureContact> contacts) {
+            this.contacts = contacts;
+            this.__explicitlySet__.add("contacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -301,6 +319,8 @@ public class ExadataInfrastructureSummary {
                             ntpServer,
                             timeCreated,
                             lifecycleDetails,
+                            csiNumber,
+                            contacts,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -335,6 +355,8 @@ public class ExadataInfrastructureSummary {
                             .ntpServer(o.getNtpServer())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .csiNumber(o.getCsiNumber())
+                            .contacts(o.getContacts())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -554,6 +576,18 @@ public class ExadataInfrastructureSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
+
+    /**
+     * The CSI Number of the Exadata Infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
+    String csiNumber;
+
+    /**
+     * The list of contacts for the Exadata Infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("contacts")
+    java.util.List<ExadataInfrastructureContact> contacts;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

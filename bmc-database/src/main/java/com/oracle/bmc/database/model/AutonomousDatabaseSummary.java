@@ -428,6 +428,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("permissionLevel")
+        private PermissionLevel permissionLevel;
+
+        public Builder permissionLevel(PermissionLevel permissionLevel) {
+            this.permissionLevel = permissionLevel;
+            this.__explicitlySet__.add("permissionLevel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastSwitchover")
         private java.util.Date timeOfLastSwitchover;
 
@@ -532,6 +541,7 @@ public class AutonomousDatabaseSummary {
                             refreshableStatus,
                             refreshableMode,
                             sourceId,
+                            permissionLevel,
                             timeOfLastSwitchover,
                             timeOfLastFailover,
                             isDataGuardEnabled,
@@ -591,6 +601,7 @@ public class AutonomousDatabaseSummary {
                             .refreshableStatus(o.getRefreshableStatus())
                             .refreshableMode(o.getRefreshableMode())
                             .sourceId(o.getSourceId())
+                            .permissionLevel(o.getPermissionLevel())
                             .timeOfLastSwitchover(o.getTimeOfLastSwitchover())
                             .timeOfLastFailover(o.getTimeOfLastFailover())
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
@@ -1297,6 +1308,57 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     String sourceId;
+    /**
+     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum PermissionLevel {
+        Restricted("RESTRICTED"),
+        Unrestricted("UNRESTRICTED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, PermissionLevel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PermissionLevel v : PermissionLevel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PermissionLevel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PermissionLevel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PermissionLevel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("permissionLevel")
+    PermissionLevel permissionLevel;
 
     /**
      * The timestamp of the last switchover operation for the Autonomous Database.

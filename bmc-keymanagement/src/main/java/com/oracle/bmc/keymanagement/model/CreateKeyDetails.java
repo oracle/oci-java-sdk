@@ -70,13 +70,27 @@ public class CreateKeyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+        private ProtectionMode protectionMode;
+
+        public Builder protectionMode(ProtectionMode protectionMode) {
+            this.protectionMode = protectionMode;
+            this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateKeyDetails build() {
             CreateKeyDetails __instance__ =
                     new CreateKeyDetails(
-                            compartmentId, definedTags, displayName, freeformTags, keyShape);
+                            compartmentId,
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            keyShape,
+                            protectionMode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -88,7 +102,8 @@ public class CreateKeyDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
-                            .keyShape(o.getKeyShape());
+                            .keyShape(o.getKeyShape())
+                            .protectionMode(o.getProtectionMode());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -136,6 +151,56 @@ public class CreateKeyDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("keyShape")
     KeyShape keyShape;
+    /**
+     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+     * A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+     * a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+     *
+     **/
+    public enum ProtectionMode {
+        Hsm("HSM"),
+        Software("SOFTWARE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ProtectionMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ProtectionMode v : ProtectionMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ProtectionMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ProtectionMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ProtectionMode: " + key);
+        }
+    };
+    /**
+     * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+     * A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+     * the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+     * on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+     * a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+    ProtectionMode protectionMode;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

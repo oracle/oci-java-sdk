@@ -90,6 +90,15 @@ public class UpdateExadataInfrastructureDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("contacts")
+        private java.util.List<ExadataInfrastructureContact> contacts;
+
+        public Builder contacts(java.util.List<ExadataInfrastructureContact> contacts) {
+            this.contacts = contacts;
+            this.__explicitlySet__.add("contacts");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
         private java.util.List<String> dnsServer;
 
@@ -149,6 +158,7 @@ public class UpdateExadataInfrastructureDetails {
                             adminNetworkCIDR,
                             infiniBandNetworkCIDR,
                             corporateProxy,
+                            contacts,
                             dnsServer,
                             ntpServer,
                             timeZone,
@@ -168,6 +178,7 @@ public class UpdateExadataInfrastructureDetails {
                             .adminNetworkCIDR(o.getAdminNetworkCIDR())
                             .infiniBandNetworkCIDR(o.getInfiniBandNetworkCIDR())
                             .corporateProxy(o.getCorporateProxy())
+                            .contacts(o.getContacts())
                             .dnsServer(o.getDnsServer())
                             .ntpServer(o.getNtpServer())
                             .timeZone(o.getTimeZone())
@@ -227,6 +238,12 @@ public class UpdateExadataInfrastructureDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("corporateProxy")
     String corporateProxy;
+
+    /**
+     * The list of contacts for the Exadata Infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("contacts")
+    java.util.List<ExadataInfrastructureContact> contacts;
 
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.

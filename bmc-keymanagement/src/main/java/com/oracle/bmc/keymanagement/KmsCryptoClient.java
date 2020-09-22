@@ -222,11 +222,11 @@ public class KmsCryptoClient implements KmsCrypto {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
+        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(additionalClientConfigurators)
-                        .additionalClientConfigurators(authenticationDetailsConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -273,6 +273,16 @@ public class KmsCryptoClient implements KmsCrypto {
     public void setEndpoint(String endpoint) {
         LOG.info("Setting endpoint to {}", endpoint);
         client.setEndpoint(endpoint);
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
     }
 
     @Override
@@ -336,6 +346,37 @@ public class KmsCryptoClient implements KmsCrypto {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getEncryptDataDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ExportKeyResponse exportKey(ExportKeyRequest request) {
+        LOG.trace("Called exportKey");
+        final ExportKeyRequest interceptedRequest = ExportKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ExportKeyResponse> transformer =
+                ExportKeyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getExportKeyDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

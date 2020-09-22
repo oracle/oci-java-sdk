@@ -8,7 +8,9 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
 /**
- * API for managing and performing operations with keys and vaults.
+ * API for managing and performing operations with keys and vaults. (For the API for managing secrets, see the Vault Service
+ * Secret Management API. For the API for retrieving secrets, see the Vault Service Secret Retrieval API.)
+ *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsManagementAsync extends AutoCloseable {
@@ -18,6 +20,11 @@ public interface KmsManagementAsync extends AutoCloseable {
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
+
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
+    String getEndpoint();
 
     /**
      * Backs up an encrypted file that contains all key versions and metadata of the specified key so that you can restore
@@ -129,7 +136,7 @@ public interface KmsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateKeyRequest, CreateKeyResponse> handler);
 
     /**
-     * Generates a new [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/release/KeyVersion/) resource that provides new cryptographic
+     * Generates a new [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/) resource that provides new cryptographic
      * material for a master encryption key. The key must be in an `ENABLED` state to be rotated.
      * <p>
      * As a management operation, this call is subject to a Key Management limit that applies to the total number
@@ -288,7 +295,7 @@ public interface KmsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/release/KeyVersion/) resources for the specified
+     * Lists all [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/) resources for the specified
      * master encryption key.
      * <p>
      * As a management operation, this call is subject to a Key Management limit that applies to the total number

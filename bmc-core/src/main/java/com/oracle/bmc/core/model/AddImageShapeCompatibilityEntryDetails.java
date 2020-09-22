@@ -26,6 +26,15 @@ public class AddImageShapeCompatibilityEntryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryConstraints")
+        private ImageMemoryConstraints memoryConstraints;
+
+        public Builder memoryConstraints(ImageMemoryConstraints memoryConstraints) {
+            this.memoryConstraints = memoryConstraints;
+            this.__explicitlySet__.add("memoryConstraints");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuConstraints")
         private ImageOcpuConstraints ocpuConstraints;
 
@@ -40,14 +49,16 @@ public class AddImageShapeCompatibilityEntryDetails {
 
         public AddImageShapeCompatibilityEntryDetails build() {
             AddImageShapeCompatibilityEntryDetails __instance__ =
-                    new AddImageShapeCompatibilityEntryDetails(ocpuConstraints);
+                    new AddImageShapeCompatibilityEntryDetails(memoryConstraints, ocpuConstraints);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AddImageShapeCompatibilityEntryDetails o) {
-            Builder copiedBuilder = ocpuConstraints(o.getOcpuConstraints());
+            Builder copiedBuilder =
+                    memoryConstraints(o.getMemoryConstraints())
+                            .ocpuConstraints(o.getOcpuConstraints());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -60,6 +71,9 @@ public class AddImageShapeCompatibilityEntryDetails {
     public static Builder builder() {
         return new Builder();
     }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryConstraints")
+    ImageMemoryConstraints memoryConstraints;
 
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuConstraints")
     ImageOcpuConstraints ocpuConstraints;

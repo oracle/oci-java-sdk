@@ -174,6 +174,24 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("openMode")
+        private OpenMode openMode;
+
+        public Builder openMode(OpenMode openMode) {
+            this.openMode = openMode;
+            this.__explicitlySet__.add("openMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("permissionLevel")
+        private PermissionLevel permissionLevel;
+
+        public Builder permissionLevel(PermissionLevel permissionLevel) {
+            this.permissionLevel = permissionLevel;
+            this.__explicitlySet__.add("permissionLevel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -223,6 +241,8 @@ public class UpdateAutonomousDatabaseDetails {
                             refreshableMode,
                             isDataGuardEnabled,
                             dbVersion,
+                            openMode,
+                            permissionLevel,
                             subnetId,
                             privateEndpointLabel,
                             nsgIds);
@@ -249,6 +269,8 @@ public class UpdateAutonomousDatabaseDetails {
                             .refreshableMode(o.getRefreshableMode())
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
                             .dbVersion(o.getDbVersion())
+                            .openMode(o.getOpenMode())
+                            .permissionLevel(o.getPermissionLevel())
                             .subnetId(o.getSubnetId())
                             .privateEndpointLabel(o.getPrivateEndpointLabel())
                             .nsgIds(o.getNsgIds());
@@ -497,6 +519,86 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
+    /**
+     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     **/
+    public enum OpenMode {
+        ReadOnly("READ_ONLY"),
+        ReadWrite("READ_WRITE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, OpenMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OpenMode v : OpenMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        OpenMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OpenMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid OpenMode: " + key);
+        }
+    };
+    /**
+     * The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("openMode")
+    OpenMode openMode;
+    /**
+     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     **/
+    public enum PermissionLevel {
+        Restricted("RESTRICTED"),
+        Unrestricted("UNRESTRICTED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, PermissionLevel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PermissionLevel v : PermissionLevel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        PermissionLevel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PermissionLevel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid PermissionLevel: " + key);
+        }
+    };
+    /**
+     * The Autonomous Database permission level. Restricted mode allows access only to admin users.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("permissionLevel")
+    PermissionLevel permissionLevel;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
