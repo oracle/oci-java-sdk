@@ -62,6 +62,15 @@ public class CreateGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
+        private String certificateId;
+
+        public Builder certificateId(String certificateId) {
+            this.certificateId = certificateId;
+            this.__explicitlySet__.add("certificateId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -91,6 +100,7 @@ public class CreateGatewayDetails {
                             compartmentId,
                             endpointType,
                             subnetId,
+                            certificateId,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -104,6 +114,7 @@ public class CreateGatewayDetails {
                             .compartmentId(o.getCompartmentId())
                             .endpointType(o.getEndpointType())
                             .subnetId(o.getSubnetId())
+                            .certificateId(o.getCertificateId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -154,6 +165,13 @@ public class CreateGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
+    String certificateId;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair

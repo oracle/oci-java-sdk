@@ -869,6 +869,15 @@ public interface Compute extends AutoCloseable {
     UpdateInstanceResponse updateInstance(UpdateInstanceRequest request);
 
     /**
+     * Updates the defined tags and free-form tags for the specified instance console connection.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateInstanceConsoleConnectionResponse updateInstanceConsoleConnection(
+            UpdateInstanceConsoleConnectionRequest request);
+
+    /**
      * Gets the pre-configured waiters available for resources for this service.
      *
      * @return The service waiters.

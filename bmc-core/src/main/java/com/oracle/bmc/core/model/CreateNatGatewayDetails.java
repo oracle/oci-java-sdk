@@ -81,6 +81,15 @@ public class CreateNatGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("publicIpId")
+        private String publicIpId;
+
+        public Builder publicIpId(String publicIpId) {
+            this.publicIpId = publicIpId;
+            this.__explicitlySet__.add("publicIpId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -92,7 +101,8 @@ public class CreateNatGatewayDetails {
                             displayName,
                             freeformTags,
                             blockTraffic,
-                            vcnId);
+                            vcnId,
+                            publicIpId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -105,7 +115,8 @@ public class CreateNatGatewayDetails {
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .blockTraffic(o.getBlockTraffic())
-                            .vcnId(o.getVcnId());
+                            .vcnId(o.getVcnId())
+                            .publicIpId(o.getPublicIpId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -170,6 +181,13 @@ public class CreateNatGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Public IP associated with the NAT gateway.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publicIpId")
+    String publicIpId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

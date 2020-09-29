@@ -619,6 +619,10 @@ public class InstanceConfigurationLaunchInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("preferredMaintenanceAction")
     PreferredMaintenanceAction preferredMaintenanceAction;
 
+    /**
+     * Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
     InstanceConfigurationAvailabilityConfig availabilityConfig;
 

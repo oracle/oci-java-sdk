@@ -85,6 +85,36 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private String opcSseCustomerKeySha256;
 
+    /**
+     * This value will be used in Content-Disposition header of the response.
+     */
+    private String httpResponseContentDisposition;
+
+    /**
+     * This value will be used in Cache-Control header of the response.
+     */
+    private String httpResponseCacheControl;
+
+    /**
+     * This value will be used in Content-Type header of the response.
+     */
+    private String httpResponseContentType;
+
+    /**
+     * This value will be used in Content-Language header of the response.
+     */
+    private String httpResponseContentLanguage;
+
+    /**
+     * This value will be used in Content-Encoding header of the response
+     */
+    private String httpResponseContentEncoding;
+
+    /**
+     * This value will be used in Expires header of the response
+     */
+    private String httpResponseExpires;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetObjectRequest, java.lang.Void> {
@@ -131,6 +161,12 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             opcSseCustomerAlgorithm(o.getOpcSseCustomerAlgorithm());
             opcSseCustomerKey(o.getOpcSseCustomerKey());
             opcSseCustomerKeySha256(o.getOpcSseCustomerKeySha256());
+            httpResponseContentDisposition(o.getHttpResponseContentDisposition());
+            httpResponseCacheControl(o.getHttpResponseCacheControl());
+            httpResponseContentType(o.getHttpResponseContentType());
+            httpResponseContentLanguage(o.getHttpResponseContentLanguage());
+            httpResponseContentEncoding(o.getHttpResponseContentEncoding());
+            httpResponseExpires(o.getHttpResponseExpires());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

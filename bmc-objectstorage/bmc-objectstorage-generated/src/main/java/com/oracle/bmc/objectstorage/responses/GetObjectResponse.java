@@ -106,6 +106,11 @@ public class GetObjectResponse {
     private String versionId;
 
     /**
+     * Time after which object is no longer cacheable, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.21).
+     */
+    private java.util.Date expires;
+
+    /**
      * The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true.
      */
     private java.io.InputStream inputStream;
@@ -141,6 +146,7 @@ public class GetObjectResponse {
             archivalState(o.getArchivalState());
             timeOfArchival(o.getTimeOfArchival());
             versionId(o.getVersionId());
+            expires(o.getExpires());
             inputStream(o.getInputStream());
             isNotModified(o.isNotModified());
             return this;

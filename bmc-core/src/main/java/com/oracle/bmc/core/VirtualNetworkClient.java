@@ -479,6 +479,68 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public AddPublicIpPoolCapacityResponse addPublicIpPoolCapacity(
+            AddPublicIpPoolCapacityRequest request) {
+        LOG.trace("Called addPublicIpPoolCapacity");
+        final AddPublicIpPoolCapacityRequest interceptedRequest =
+                AddPublicIpPoolCapacityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddPublicIpPoolCapacityConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddPublicIpPoolCapacityResponse>
+                transformer = AddPublicIpPoolCapacityConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddPublicIpPoolCapacityDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public AdvertiseByoipRangeResponse advertiseByoipRange(AdvertiseByoipRangeRequest request) {
+        LOG.trace("Called advertiseByoipRange");
+        final AdvertiseByoipRangeRequest interceptedRequest =
+                AdvertiseByoipRangeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AdvertiseByoipRangeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AdvertiseByoipRangeResponse>
+                transformer = AdvertiseByoipRangeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AttachServiceIdResponse attachServiceId(AttachServiceIdRequest request) {
         LOG.trace("Called attachServiceId");
         final AttachServiceIdRequest interceptedRequest =
@@ -576,6 +638,41 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest
                                                         .getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeByoipRangeCompartmentResponse changeByoipRangeCompartment(
+            ChangeByoipRangeCompartmentRequest request) {
+        LOG.trace("Called changeByoipRangeCompartment");
+        final ChangeByoipRangeCompartmentRequest interceptedRequest =
+                ChangeByoipRangeCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeByoipRangeCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeByoipRangeCompartmentResponse>
+                transformer = ChangeByoipRangeCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeByoipRangeCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -964,6 +1061,41 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ChangePublicIpPoolCompartmentResponse changePublicIpPoolCompartment(
+            ChangePublicIpPoolCompartmentRequest request) {
+        LOG.trace("Called changePublicIpPoolCompartment");
+        final ChangePublicIpPoolCompartmentRequest interceptedRequest =
+                ChangePublicIpPoolCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePublicIpPoolCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangePublicIpPoolCompartmentResponse>
+                transformer = ChangePublicIpPoolCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangePublicIpPoolCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeRemotePeeringConnectionCompartmentResponse
             changeRemotePeeringConnectionCompartment(
                     ChangeRemotePeeringConnectionCompartmentRequest request) {
@@ -1302,6 +1434,38 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest
                                                         .getConnectRemotePeeringConnectionsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateByoipRangeResponse createByoipRange(CreateByoipRangeRequest request) {
+        LOG.trace("Called createByoipRange");
+        final CreateByoipRangeRequest interceptedRequest =
+                CreateByoipRangeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateByoipRangeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateByoipRangeResponse>
+                transformer = CreateByoipRangeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateByoipRangeDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1763,6 +1927,38 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public CreatePublicIpPoolResponse createPublicIpPool(CreatePublicIpPoolRequest request) {
+        LOG.trace("Called createPublicIpPool");
+        final CreatePublicIpPoolRequest interceptedRequest =
+                CreatePublicIpPoolConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePublicIpPoolConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicIpPoolResponse>
+                transformer = CreatePublicIpPoolConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreatePublicIpPoolDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateRemotePeeringConnectionResponse createRemotePeeringConnection(
             CreateRemotePeeringConnectionRequest request) {
         LOG.trace("Called createRemotePeeringConnection");
@@ -2014,6 +2210,35 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest.getCreateVlanDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteByoipRangeResponse deleteByoipRange(DeleteByoipRangeRequest request) {
+        LOG.trace("Called deleteByoipRange");
+        final DeleteByoipRangeRequest interceptedRequest =
+                DeleteByoipRangeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteByoipRangeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteByoipRangeResponse>
+                transformer = DeleteByoipRangeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -2430,6 +2655,35 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public DeletePublicIpPoolResponse deletePublicIpPool(DeletePublicIpPoolRequest request) {
+        LOG.trace("Called deletePublicIpPool");
+        final DeletePublicIpPoolRequest interceptedRequest =
+                DeletePublicIpPoolConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePublicIpPoolConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpPoolResponse>
+                transformer = DeletePublicIpPoolConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteRemotePeeringConnectionResponse deleteRemotePeeringConnection(
             DeleteRemotePeeringConnectionRequest request) {
         LOG.trace("Called deleteRemotePeeringConnection");
@@ -2688,6 +2942,34 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest.getDetachServiceDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetByoipRangeResponse getByoipRange(GetByoipRangeRequest request) {
+        LOG.trace("Called getByoipRange");
+        final GetByoipRangeRequest interceptedRequest =
+                GetByoipRangeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetByoipRangeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetByoipRangeResponse>
+                transformer = GetByoipRangeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -3507,6 +3789,34 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetPublicIpPoolResponse getPublicIpPool(GetPublicIpPoolRequest request) {
+        LOG.trace("Called getPublicIpPool");
+        final GetPublicIpPoolRequest interceptedRequest =
+                GetPublicIpPoolConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublicIpPoolConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpPoolResponse>
+                transformer = GetPublicIpPoolConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetRemotePeeringConnectionResponse getRemotePeeringConnection(
             GetRemotePeeringConnectionRequest request) {
         LOG.trace("Called getRemotePeeringConnection");
@@ -3854,6 +4164,63 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAllowedPeerRegionsForRemotePeeringResponse>
                 transformer = ListAllowedPeerRegionsForRemotePeeringConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListByoipAllocatedRangesResponse listByoipAllocatedRanges(
+            ListByoipAllocatedRangesRequest request) {
+        LOG.trace("Called listByoipAllocatedRanges");
+        final ListByoipAllocatedRangesRequest interceptedRequest =
+                ListByoipAllocatedRangesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListByoipAllocatedRangesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListByoipAllocatedRangesResponse>
+                transformer = ListByoipAllocatedRangesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListByoipRangesResponse listByoipRanges(ListByoipRangesRequest request) {
+        LOG.trace("Called listByoipRanges");
+        final ListByoipRangesRequest interceptedRequest =
+                ListByoipRangesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListByoipRangesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListByoipRangesResponse>
+                transformer = ListByoipRangesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -4484,6 +4851,34 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListPublicIpPoolsResponse listPublicIpPools(ListPublicIpPoolsRequest request) {
+        LOG.trace("Called listPublicIpPools");
+        final ListPublicIpPoolsRequest interceptedRequest =
+                ListPublicIpPoolsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPublicIpPoolsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpPoolsResponse>
+                transformer = ListPublicIpPoolsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListPublicIpsResponse listPublicIps(ListPublicIpsRequest request) {
         LOG.trace("Called listPublicIps");
         final ListPublicIpsRequest interceptedRequest =
@@ -4853,6 +5248,73 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest
                                                         .getRemoveNetworkSecurityGroupSecurityRulesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemovePublicIpPoolCapacityResponse removePublicIpPoolCapacity(
+            RemovePublicIpPoolCapacityRequest request) {
+        LOG.trace("Called removePublicIpPoolCapacity");
+        final RemovePublicIpPoolCapacityRequest interceptedRequest =
+                RemovePublicIpPoolCapacityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemovePublicIpPoolCapacityConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemovePublicIpPoolCapacityResponse>
+                transformer = RemovePublicIpPoolCapacityConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemovePublicIpPoolCapacityDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateByoipRangeResponse updateByoipRange(UpdateByoipRangeRequest request) {
+        LOG.trace("Called updateByoipRange");
+        final UpdateByoipRangeRequest interceptedRequest =
+                UpdateByoipRangeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateByoipRangeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateByoipRangeResponse>
+                transformer = UpdateByoipRangeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateByoipRangeDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -5421,6 +5883,38 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public UpdatePublicIpPoolResponse updatePublicIpPool(UpdatePublicIpPoolRequest request) {
+        LOG.trace("Called updatePublicIpPool");
+        final UpdatePublicIpPoolRequest interceptedRequest =
+                UpdatePublicIpPoolConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePublicIpPoolConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicIpPoolResponse>
+                transformer = UpdatePublicIpPoolConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdatePublicIpPoolDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateRemotePeeringConnectionResponse updateRemotePeeringConnection(
             UpdateRemotePeeringConnectionRequest request) {
         LOG.trace("Called updateRemotePeeringConnection");
@@ -5738,6 +6232,64 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest.getUpdateVnicDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ValidateByoipRangeResponse validateByoipRange(ValidateByoipRangeRequest request) {
+        LOG.trace("Called validateByoipRange");
+        final ValidateByoipRangeRequest interceptedRequest =
+                ValidateByoipRangeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateByoipRangeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ValidateByoipRangeResponse>
+                transformer = ValidateByoipRangeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public WithdrawByoipRangeResponse withdrawByoipRange(WithdrawByoipRangeRequest request) {
+        LOG.trace("Called withdrawByoipRange");
+        final WithdrawByoipRangeRequest interceptedRequest =
+                WithdrawByoipRangeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                WithdrawByoipRangeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, WithdrawByoipRangeResponse>
+                transformer = WithdrawByoipRangeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

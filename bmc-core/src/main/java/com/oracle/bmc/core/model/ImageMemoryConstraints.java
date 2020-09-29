@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * OCPU options for an image and shape.
+ * For a flexible image and shape, the amount of memory supported for instances that use this image.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,13 +70,13 @@ public class ImageMemoryConstraints {
     }
 
     /**
-     * The minimum amount of memory supported for this image and shape, in gigabytes.
+     * The minimum amount of memory, in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
     Integer minInGBs;
 
     /**
-     * The maximum amount of memory supported for this image and shape, in gigabytes.
+     * The maximum amount of memory, in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
     Integer maxInGBs;

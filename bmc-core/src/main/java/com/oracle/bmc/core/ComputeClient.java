@@ -2588,6 +2588,41 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public UpdateInstanceConsoleConnectionResponse updateInstanceConsoleConnection(
+            UpdateInstanceConsoleConnectionRequest request) {
+        LOG.trace("Called updateInstanceConsoleConnection");
+        final UpdateInstanceConsoleConnectionRequest interceptedRequest =
+                UpdateInstanceConsoleConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateInstanceConsoleConnectionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateInstanceConsoleConnectionResponse>
+                transformer = UpdateInstanceConsoleConnectionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateInstanceConsoleConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ComputeWaiters getWaiters() {
         return waiters;
     }

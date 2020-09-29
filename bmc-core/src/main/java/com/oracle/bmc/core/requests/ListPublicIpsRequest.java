@@ -144,6 +144,11 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             throw new IllegalArgumentException("Invalid Lifetime: " + key);
         }
     };
+    /**
+     * A filter to return only resources that belong to the given public IP pool.
+     *
+     */
+    private String publicIpPoolId;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -186,6 +191,7 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             page(o.getPage());
             availabilityDomain(o.getAvailabilityDomain());
             lifetime(o.getLifetime());
+            publicIpPoolId(o.getPublicIpPoolId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

@@ -296,6 +296,10 @@ public class UpdateInstanceDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     UpdateLaunchOptions launchOptions;
 
+    /**
+     * Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
     UpdateInstanceAvailabilityConfigDetails availabilityConfig;
 

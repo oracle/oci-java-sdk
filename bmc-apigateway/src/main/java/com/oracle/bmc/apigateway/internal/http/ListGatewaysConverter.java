@@ -38,6 +38,14 @@ public class ListGatewaysConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getCertificateId() != null) {
+            target =
+                    target.queryParam(
+                            "certificateId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCertificateId()));
+        }
+
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(
