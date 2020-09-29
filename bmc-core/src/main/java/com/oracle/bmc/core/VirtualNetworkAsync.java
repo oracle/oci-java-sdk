@@ -70,6 +70,44 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Adds a Cidr from the named Byoip Range prefix to the referenced Public IP Pool.
+     * The cidr must be a subset of the Byoip Range in question.
+     * The cidr must not overlap with any other cidr already added to this
+     * or any other Public Ip Pool.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddPublicIpPoolCapacityResponse> addPublicIpPoolCapacity(
+            AddPublicIpPoolCapacityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddPublicIpPoolCapacityRequest, AddPublicIpPoolCapacityResponse>
+                    handler);
+
+    /**
+     * initiate route advertisements for the Byoip Range prefix.
+     * the prefix must be in PROVISIONED state
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AdvertiseByoipRangeResponse> advertiseByoipRange(
+            AdvertiseByoipRangeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AdvertiseByoipRangeRequest, AdvertiseByoipRangeResponse>
+                    handler);
+
+    /**
      * Adds the specified {@link Service} to the list of enabled
      * `Service` objects for the specified gateway. You must also set up a route rule with the
      * `cidrBlock` of the `Service` as the rule's destination and the service gateway as the rule's
@@ -137,6 +175,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     BulkDeleteVirtualCircuitPublicPrefixesRequest,
                                     BulkDeleteVirtualCircuitPublicPrefixesResponse>
                             handler);
+
+    /**
+     * Moves a byoip range into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeByoipRangeCompartmentResponse> changeByoipRangeCompartment(
+            ChangeByoipRangeCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeByoipRangeCompartmentRequest, ChangeByoipRangeCompartmentResponse>
+                    handler);
 
     /**
      * Moves a CPE object into a different compartment within the same tenancy. For information
@@ -363,6 +420,27 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a public IP pool into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePublicIpPoolCompartmentResponse>
+            changePublicIpPoolCompartment(
+                    ChangePublicIpPoolCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangePublicIpPoolCompartmentRequest,
+                                    ChangePublicIpPoolCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a remote peering connection (RPC) into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -571,6 +649,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     ConnectRemotePeeringConnectionsRequest,
                                     ConnectRemotePeeringConnectionsResponse>
                             handler);
+
+    /**
+     * Creates a Byoip Range prefix.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateByoipRangeResponse> createByoipRange(
+            CreateByoipRangeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateByoipRangeRequest, CreateByoipRangeResponse>
+                    handler);
 
     /**
      * Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
@@ -951,6 +1045,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a Public Ip Pool
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePublicIpPoolResponse> createPublicIpPool(
+            CreatePublicIpPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePublicIpPoolRequest, CreatePublicIpPoolResponse>
+                    handler);
+
+    /**
      * Creates a new remote peering connection (RPC) for the specified DRG.
      *
      *
@@ -1194,6 +1305,27 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateVlanResponse> createVlan(
             CreateVlanRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateVlanRequest, CreateVlanResponse> handler);
+
+    /**
+     * Deletes the specified Byoip Range prefix.
+     * The prefix must be in CREATING, PROVISIONED or FAILED state.
+     * It must not have any subranges allocated to a Public Ip Pool object.
+     * You must specify the object's OCID.
+     * <p>
+     * In case the range is currently PROVISIONED, the operation will be asynchronous as it needs to be de-ptovisioned first.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteByoipRangeResponse> deleteByoipRange(
+            DeleteByoipRangeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteByoipRangeRequest, DeleteByoipRangeResponse>
+                    handler);
 
     /**
      * Deletes the specified CPE object. The CPE must not be connected to a DRG. This is an asynchronous
@@ -1488,6 +1620,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified Public Ip Pool
+     * It must not have any active address allocations
+     * You must specify the object's OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePublicIpPoolResponse> deletePublicIpPool(
+            DeletePublicIpPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePublicIpPoolRequest, DeletePublicIpPoolResponse>
+                    handler);
+
+    /**
      * Deletes the remote peering connection (RPC).
      * <p>
      * This is an asynchronous operation; the RPC's `lifecycleState` changes to TERMINATING temporarily
@@ -1664,6 +1815,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<DetachServiceIdResponse> detachServiceId(
             DetachServiceIdRequest request,
             com.oracle.bmc.responses.AsyncHandler<DetachServiceIdRequest, DetachServiceIdResponse>
+                    handler);
+
+    /**
+     * Gets the specified Byoip Range object. You must specify the object's OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetByoipRangeResponse> getByoipRange(
+            GetByoipRangeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetByoipRangeRequest, GetByoipRangeResponse>
                     handler);
 
     /**
@@ -2225,6 +2392,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified Public Ip Pool object. You must specify the object's OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPublicIpPoolResponse> getPublicIpPool(
+            GetPublicIpPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPublicIpPoolRequest, GetPublicIpPoolResponse>
+                    handler);
+
+    /**
      * Get the specified remote peering connection's information.
      *
      *
@@ -2454,6 +2637,41 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     ListAllowedPeerRegionsForRemotePeeringRequest,
                                     ListAllowedPeerRegionsForRemotePeeringResponse>
                             handler);
+
+    /**
+     * Lists the ByoipAllocatedRange objects for the ByoipRange.
+     * Each ByoipAllocatedRange object has a CIDR block part of the ByoipRange and the PublicIpPool it is assigned to.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListByoipAllocatedRangesResponse> listByoipAllocatedRanges(
+            ListByoipAllocatedRangesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>
+                    handler);
+
+    /**
+     * Lists the ByoipRange objects in the specified compartment.
+     * You can filter the list by using query parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListByoipRangesResponse> listByoipRanges(
+            ListByoipRangesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListByoipRangesRequest, ListByoipRangesResponse>
+                    handler);
 
     /**
      * Lists the CPE device types that the Networking service provides CPE configuration
@@ -2869,6 +3087,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the PublicIpPool objects in the specified compartment.
+     * You can filter the list by using query parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPublicIpPoolsResponse> listPublicIpPools(
+            ListPublicIpPoolsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>
+                    handler);
+
+    /**
      * Lists the {@link PublicIp} objects
      * in the specified compartment. You can filter the list by using query parameters.
      * <p>
@@ -3114,6 +3350,39 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     RemoveNetworkSecurityGroupSecurityRulesRequest,
                                     RemoveNetworkSecurityGroupSecurityRulesResponse>
                             handler);
+
+    /**
+     * Removes a Cidr from the referenced Public IP Pool.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemovePublicIpPoolCapacityResponse> removePublicIpPoolCapacity(
+            RemovePublicIpPoolCapacityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemovePublicIpPoolCapacityRequest, RemovePublicIpPoolCapacityResponse>
+                    handler);
+
+    /**
+     * Updates the specified Byoip Range.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateByoipRangeResponse> updateByoipRange(
+            UpdateByoipRangeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateByoipRangeRequest, UpdateByoipRangeResponse>
+                    handler);
 
     /**
      * Updates the specified CPE's display name or tags.
@@ -3492,6 +3761,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the specified Public Ip Pool.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePublicIpPoolResponse> updatePublicIpPool(
+            UpdatePublicIpPoolRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePublicIpPoolRequest, UpdatePublicIpPoolResponse>
+                    handler);
+
+    /**
      * Updates the specified remote peering connection (RPC).
      *
      *
@@ -3689,4 +3975,39 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateVnicResponse> updateVnic(
             UpdateVnicRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateVnicRequest, UpdateVnicResponse> handler);
+
+    /**
+     * submit the Byoip Range for validation. This presumes the user has
+     * updated their IP registry record in accordance to validation requirements
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidateByoipRangeResponse> validateByoipRange(
+            ValidateByoipRangeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ValidateByoipRangeRequest, ValidateByoipRangeResponse>
+                    handler);
+
+    /**
+     * stop route advertisements for the Byoip Range prefix.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<WithdrawByoipRangeResponse> withdrawByoipRange(
+            WithdrawByoipRangeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            WithdrawByoipRangeRequest, WithdrawByoipRangeResponse>
+                    handler);
 }

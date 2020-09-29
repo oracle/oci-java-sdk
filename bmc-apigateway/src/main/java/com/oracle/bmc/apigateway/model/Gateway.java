@@ -116,6 +116,24 @@ public class Gateway {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
+        private String certificateId;
+
+        public Builder certificateId(String certificateId) {
+            this.certificateId = certificateId;
+            this.__explicitlySet__.add("certificateId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
+        private java.util.List<IpAddress> ipAddresses;
+
+        public Builder ipAddresses(java.util.List<IpAddress> ipAddresses) {
+            this.ipAddresses = ipAddresses;
+            this.__explicitlySet__.add("ipAddresses");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -151,6 +169,8 @@ public class Gateway {
                             lifecycleState,
                             lifecycleDetails,
                             hostname,
+                            certificateId,
+                            ipAddresses,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -170,6 +190,8 @@ public class Gateway {
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .hostname(o.getHostname())
+                            .certificateId(o.getCertificateId())
+                            .ipAddresses(o.getIpAddresses())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -358,6 +380,19 @@ public class Gateway {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     String hostname;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
+    String certificateId;
+
+    /**
+     * An array of IP addresses associated with the gateway.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
+    java.util.List<IpAddress> ipAddresses;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair

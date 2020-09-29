@@ -17,6 +17,11 @@ public class ListGatewaysRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String compartmentId;
 
     /**
+     * Filter gateways by the certificate ocid.
+     */
+    private String certificateId;
+
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
      * Example: `My new resource`
@@ -171,6 +176,7 @@ public class ListGatewaysRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public Builder copy(ListGatewaysRequest o) {
             compartmentId(o.getCompartmentId());
+            certificateId(o.getCertificateId());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());

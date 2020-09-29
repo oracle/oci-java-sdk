@@ -54,6 +54,54 @@ public class GetObjectConverter {
                                     request.getVersionId()));
         }
 
+        if (request.getHttpResponseContentDisposition() != null) {
+            target =
+                    target.queryParam(
+                            "httpResponseContentDisposition",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHttpResponseContentDisposition()));
+        }
+
+        if (request.getHttpResponseCacheControl() != null) {
+            target =
+                    target.queryParam(
+                            "httpResponseCacheControl",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHttpResponseCacheControl()));
+        }
+
+        if (request.getHttpResponseContentType() != null) {
+            target =
+                    target.queryParam(
+                            "httpResponseContentType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHttpResponseContentType()));
+        }
+
+        if (request.getHttpResponseContentLanguage() != null) {
+            target =
+                    target.queryParam(
+                            "httpResponseContentLanguage",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHttpResponseContentLanguage()));
+        }
+
+        if (request.getHttpResponseContentEncoding() != null) {
+            target =
+                    target.queryParam(
+                            "httpResponseContentEncoding",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHttpResponseContentEncoding()));
+        }
+
+        if (request.getHttpResponseExpires() != null) {
+            target =
+                    target.queryParam(
+                            "httpResponseExpires",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHttpResponseExpires()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -332,6 +380,18 @@ public class GetObjectConverter {
                                                     "version-id",
                                                     versionIdHeader.get().get(0),
                                                     String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        expiresHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "expires");
+                                if (expiresHeader.isPresent()) {
+                                    builder.expires(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "expires",
+                                                    expiresHeader.get().get(0),
+                                                    java.util.Date.class));
                                 }
 
                                 com.oracle.bmc.objectstorage.responses.GetObjectResponse

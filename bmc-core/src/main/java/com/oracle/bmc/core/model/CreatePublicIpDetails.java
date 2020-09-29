@@ -81,6 +81,15 @@ public class CreatePublicIpDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
+        private String publicIpPoolId;
+
+        public Builder publicIpPoolId(String publicIpPoolId) {
+            this.publicIpPoolId = publicIpPoolId;
+            this.__explicitlySet__.add("publicIpPoolId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -92,7 +101,8 @@ public class CreatePublicIpDetails {
                             displayName,
                             freeformTags,
                             lifetime,
-                            privateIpId);
+                            privateIpId,
+                            publicIpPoolId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -105,7 +115,8 @@ public class CreatePublicIpDetails {
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .lifetime(o.getLifetime())
-                            .privateIpId(o.getPrivateIpId());
+                            .privateIpId(o.getPrivateIpId())
+                            .publicIpPoolId(o.getPublicIpPoolId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -214,6 +225,12 @@ public class CreatePublicIpDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
     String privateIpId;
+
+    /**
+     * OCID of the pool object created by the current tenancy
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
+    String publicIpPoolId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

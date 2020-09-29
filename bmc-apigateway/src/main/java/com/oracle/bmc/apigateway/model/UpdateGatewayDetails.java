@@ -35,6 +35,15 @@ public class UpdateGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
+        private String certificateId;
+
+        public Builder certificateId(String certificateId) {
+            this.certificateId = certificateId;
+            this.__explicitlySet__.add("certificateId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -59,7 +68,7 @@ public class UpdateGatewayDetails {
 
         public UpdateGatewayDetails build() {
             UpdateGatewayDetails __instance__ =
-                    new UpdateGatewayDetails(displayName, freeformTags, definedTags);
+                    new UpdateGatewayDetails(displayName, certificateId, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,6 +77,7 @@ public class UpdateGatewayDetails {
         public Builder copy(UpdateGatewayDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .certificateId(o.getCertificateId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -92,6 +102,13 @@ public class UpdateGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
+    String certificateId;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair

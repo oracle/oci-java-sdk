@@ -31,6 +31,234 @@ public class VirtualNetworkPaginators {
     private final VirtualNetwork client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listByoipAllocatedRanges operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListByoipAllocatedRangesResponse> listByoipAllocatedRangesResponseIterator(
+            final ListByoipAllocatedRangesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListByoipAllocatedRangesRequest.Builder, ListByoipAllocatedRangesRequest,
+                ListByoipAllocatedRangesResponse>(
+                new com.google.common.base.Supplier<ListByoipAllocatedRangesRequest.Builder>() {
+                    @Override
+                    public ListByoipAllocatedRangesRequest.Builder get() {
+                        return ListByoipAllocatedRangesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListByoipAllocatedRangesResponse, String>() {
+                    @Override
+                    public String apply(ListByoipAllocatedRangesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListByoipAllocatedRangesRequest.Builder>,
+                        ListByoipAllocatedRangesRequest>() {
+                    @Override
+                    public ListByoipAllocatedRangesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListByoipAllocatedRangesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>() {
+                    @Override
+                    public ListByoipAllocatedRangesResponse apply(
+                            ListByoipAllocatedRangesRequest request) {
+                        return client.listByoipAllocatedRanges(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ByoipAllocatedRangeSummary} objects
+     * contained in responses from the listByoipAllocatedRanges operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ByoipAllocatedRangeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ByoipAllocatedRangeSummary>
+            listByoipAllocatedRangesRecordIterator(final ListByoipAllocatedRangesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListByoipAllocatedRangesRequest.Builder, ListByoipAllocatedRangesRequest,
+                ListByoipAllocatedRangesResponse,
+                com.oracle.bmc.core.model.ByoipAllocatedRangeSummary>(
+                new com.google.common.base.Supplier<ListByoipAllocatedRangesRequest.Builder>() {
+                    @Override
+                    public ListByoipAllocatedRangesRequest.Builder get() {
+                        return ListByoipAllocatedRangesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListByoipAllocatedRangesResponse, String>() {
+                    @Override
+                    public String apply(ListByoipAllocatedRangesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListByoipAllocatedRangesRequest.Builder>,
+                        ListByoipAllocatedRangesRequest>() {
+                    @Override
+                    public ListByoipAllocatedRangesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListByoipAllocatedRangesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>() {
+                    @Override
+                    public ListByoipAllocatedRangesResponse apply(
+                            ListByoipAllocatedRangesRequest request) {
+                        return client.listByoipAllocatedRanges(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListByoipAllocatedRangesResponse,
+                        java.util.List<com.oracle.bmc.core.model.ByoipAllocatedRangeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ByoipAllocatedRangeSummary>
+                            apply(ListByoipAllocatedRangesResponse response) {
+                        return response.getByoipAllocatedRangeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listByoipRanges operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListByoipRangesResponse> listByoipRangesResponseIterator(
+            final ListByoipRangesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListByoipRangesRequest.Builder, ListByoipRangesRequest, ListByoipRangesResponse>(
+                new com.google.common.base.Supplier<ListByoipRangesRequest.Builder>() {
+                    @Override
+                    public ListByoipRangesRequest.Builder get() {
+                        return ListByoipRangesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListByoipRangesResponse, String>() {
+                    @Override
+                    public String apply(ListByoipRangesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListByoipRangesRequest.Builder>,
+                        ListByoipRangesRequest>() {
+                    @Override
+                    public ListByoipRangesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListByoipRangesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListByoipRangesRequest, ListByoipRangesResponse>() {
+                    @Override
+                    public ListByoipRangesResponse apply(ListByoipRangesRequest request) {
+                        return client.listByoipRanges(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ByoipRangeSummary} objects
+     * contained in responses from the listByoipRanges operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ByoipRangeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ByoipRangeSummary> listByoipRangesRecordIterator(
+            final ListByoipRangesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListByoipRangesRequest.Builder, ListByoipRangesRequest, ListByoipRangesResponse,
+                com.oracle.bmc.core.model.ByoipRangeSummary>(
+                new com.google.common.base.Supplier<ListByoipRangesRequest.Builder>() {
+                    @Override
+                    public ListByoipRangesRequest.Builder get() {
+                        return ListByoipRangesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListByoipRangesResponse, String>() {
+                    @Override
+                    public String apply(ListByoipRangesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListByoipRangesRequest.Builder>,
+                        ListByoipRangesRequest>() {
+                    @Override
+                    public ListByoipRangesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListByoipRangesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListByoipRangesRequest, ListByoipRangesResponse>() {
+                    @Override
+                    public ListByoipRangesResponse apply(ListByoipRangesRequest request) {
+                        return client.listByoipRanges(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListByoipRangesResponse,
+                        java.util.List<com.oracle.bmc.core.model.ByoipRangeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ByoipRangeSummary> apply(
+                            ListByoipRangesResponse response) {
+                        return response.getByoipRangeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCpeDeviceShapes operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2466,6 +2694,119 @@ public class VirtualNetworkPaginators {
                     public java.util.List<com.oracle.bmc.core.model.PrivateIp> apply(
                             ListPrivateIpsResponse response) {
                         return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPublicIpPools operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPublicIpPoolsResponse> listPublicIpPoolsResponseIterator(
+            final ListPublicIpPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPublicIpPoolsRequest.Builder, ListPublicIpPoolsRequest,
+                ListPublicIpPoolsResponse>(
+                new com.google.common.base.Supplier<ListPublicIpPoolsRequest.Builder>() {
+                    @Override
+                    public ListPublicIpPoolsRequest.Builder get() {
+                        return ListPublicIpPoolsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPublicIpPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListPublicIpPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPublicIpPoolsRequest.Builder>,
+                        ListPublicIpPoolsRequest>() {
+                    @Override
+                    public ListPublicIpPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPublicIpPoolsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>() {
+                    @Override
+                    public ListPublicIpPoolsResponse apply(ListPublicIpPoolsRequest request) {
+                        return client.listPublicIpPools(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.PublicIpPoolSummary} objects
+     * contained in responses from the listPublicIpPools operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.PublicIpPoolSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.PublicIpPoolSummary> listPublicIpPoolsRecordIterator(
+            final ListPublicIpPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPublicIpPoolsRequest.Builder, ListPublicIpPoolsRequest,
+                ListPublicIpPoolsResponse, com.oracle.bmc.core.model.PublicIpPoolSummary>(
+                new com.google.common.base.Supplier<ListPublicIpPoolsRequest.Builder>() {
+                    @Override
+                    public ListPublicIpPoolsRequest.Builder get() {
+                        return ListPublicIpPoolsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPublicIpPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListPublicIpPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPublicIpPoolsRequest.Builder>,
+                        ListPublicIpPoolsRequest>() {
+                    @Override
+                    public ListPublicIpPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPublicIpPoolsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>() {
+                    @Override
+                    public ListPublicIpPoolsResponse apply(ListPublicIpPoolsRequest request) {
+                        return client.listPublicIpPools(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPublicIpPoolsResponse,
+                        java.util.List<com.oracle.bmc.core.model.PublicIpPoolSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.PublicIpPoolSummary> apply(
+                            ListPublicIpPoolsResponse response) {
+                        return response.getPublicIpPoolCollection().getItems();
                     }
                 });
     }

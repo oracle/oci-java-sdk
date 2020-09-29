@@ -62,6 +62,28 @@ public interface VirtualNetwork extends AutoCloseable {
             AddNetworkSecurityGroupSecurityRulesRequest request);
 
     /**
+     * Adds a Cidr from the named Byoip Range prefix to the referenced Public IP Pool.
+     * The cidr must be a subset of the Byoip Range in question.
+     * The cidr must not overlap with any other cidr already added to this
+     * or any other Public Ip Pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AddPublicIpPoolCapacityResponse addPublicIpPoolCapacity(AddPublicIpPoolCapacityRequest request);
+
+    /**
+     * initiate route advertisements for the Byoip Range prefix.
+     * the prefix must be in PROVISIONED state
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AdvertiseByoipRangeResponse advertiseByoipRange(AdvertiseByoipRangeRequest request);
+
+    /**
      * Adds the specified {@link Service} to the list of enabled
      * `Service` objects for the specified gateway. You must also set up a route rule with the
      * `cidrBlock` of the `Service` as the rule's destination and the service gateway as the rule's
@@ -104,6 +126,18 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     BulkDeleteVirtualCircuitPublicPrefixesResponse bulkDeleteVirtualCircuitPublicPrefixes(
             BulkDeleteVirtualCircuitPublicPrefixesRequest request);
+
+    /**
+     * Moves a byoip range into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeByoipRangeCompartmentResponse changeByoipRangeCompartment(
+            ChangeByoipRangeCompartmentRequest request);
 
     /**
      * Moves a CPE object into a different compartment within the same tenancy. For information
@@ -238,6 +272,18 @@ public interface VirtualNetwork extends AutoCloseable {
             ChangePublicIpCompartmentRequest request);
 
     /**
+     * Moves a public IP pool into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangePublicIpPoolCompartmentResponse changePublicIpPoolCompartment(
+            ChangePublicIpPoolCompartmentRequest request);
+
+    /**
      * Moves a remote peering connection (RPC) into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -363,6 +409,15 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     ConnectRemotePeeringConnectionsResponse connectRemotePeeringConnections(
             ConnectRemotePeeringConnectionsRequest request);
+
+    /**
+     * Creates a Byoip Range prefix.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateByoipRangeResponse createByoipRange(CreateByoipRangeRequest request);
 
     /**
      * Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
@@ -642,6 +697,15 @@ public interface VirtualNetwork extends AutoCloseable {
     CreatePublicIpResponse createPublicIp(CreatePublicIpRequest request);
 
     /**
+     * Creates a Public Ip Pool
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreatePublicIpPoolResponse createPublicIpPool(CreatePublicIpPoolRequest request);
+
+    /**
      * Creates a new remote peering connection (RPC) for the specified DRG.
      *
      * @param request The request object containing the details to send
@@ -826,6 +890,20 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateVlanResponse createVlan(CreateVlanRequest request);
+
+    /**
+     * Deletes the specified Byoip Range prefix.
+     * The prefix must be in CREATING, PROVISIONED or FAILED state.
+     * It must not have any subranges allocated to a Public Ip Pool object.
+     * You must specify the object's OCID.
+     * <p>
+     * In case the range is currently PROVISIONED, the operation will be asynchronous as it needs to be de-ptovisioned first.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteByoipRangeResponse deleteByoipRange(DeleteByoipRangeRequest request);
 
     /**
      * Deletes the specified CPE object. The CPE must not be connected to a DRG. This is an asynchronous
@@ -1019,6 +1097,17 @@ public interface VirtualNetwork extends AutoCloseable {
     DeletePublicIpResponse deletePublicIp(DeletePublicIpRequest request);
 
     /**
+     * Deletes the specified Public Ip Pool
+     * It must not have any active address allocations
+     * You must specify the object's OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeletePublicIpPoolResponse deletePublicIpPool(DeletePublicIpPoolRequest request);
+
+    /**
      * Deletes the remote peering connection (RPC).
      * <p>
      * This is an asynchronous operation; the RPC's `lifecycleState` changes to TERMINATING temporarily
@@ -1130,6 +1219,15 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DetachServiceIdResponse detachServiceId(DetachServiceIdRequest request);
+
+    /**
+     * Gets the specified Byoip Range object. You must specify the object's OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetByoipRangeResponse getByoipRange(GetByoipRangeRequest request);
 
     /**
      * Gets the specified CPE's information.
@@ -1475,6 +1573,15 @@ public interface VirtualNetwork extends AutoCloseable {
             GetPublicIpByPrivateIpIdRequest request);
 
     /**
+     * Gets the specified Public Ip Pool object. You must specify the object's OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetPublicIpPoolResponse getPublicIpPool(GetPublicIpPoolRequest request);
+
+    /**
      * Get the specified remote peering connection's information.
      *
      * @param request The request object containing the details to send
@@ -1612,6 +1719,27 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     ListAllowedPeerRegionsForRemotePeeringResponse listAllowedPeerRegionsForRemotePeering(
             ListAllowedPeerRegionsForRemotePeeringRequest request);
+
+    /**
+     * Lists the ByoipAllocatedRange objects for the ByoipRange.
+     * Each ByoipAllocatedRange object has a CIDR block part of the ByoipRange and the PublicIpPool it is assigned to.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListByoipAllocatedRangesResponse listByoipAllocatedRanges(
+            ListByoipAllocatedRangesRequest request);
+
+    /**
+     * Lists the ByoipRange objects in the specified compartment.
+     * You can filter the list by using query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListByoipRangesResponse listByoipRanges(ListByoipRangesRequest request);
 
     /**
      * Lists the CPE device types that the Networking service provides CPE configuration
@@ -1868,6 +1996,16 @@ public interface VirtualNetwork extends AutoCloseable {
     ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request);
 
     /**
+     * Lists the PublicIpPool objects in the specified compartment.
+     * You can filter the list by using query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListPublicIpPoolsResponse listPublicIpPools(ListPublicIpPoolsRequest request);
+
+    /**
      * Lists the {@link PublicIp} objects
      * in the specified compartment. You can filter the list by using query parameters.
      * <p>
@@ -2015,6 +2153,25 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     RemoveNetworkSecurityGroupSecurityRulesResponse removeNetworkSecurityGroupSecurityRules(
             RemoveNetworkSecurityGroupSecurityRulesRequest request);
+
+    /**
+     * Removes a Cidr from the referenced Public IP Pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RemovePublicIpPoolCapacityResponse removePublicIpPoolCapacity(
+            RemovePublicIpPoolCapacityRequest request);
+
+    /**
+     * Updates the specified Byoip Range.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateByoipRangeResponse updateByoipRange(UpdateByoipRangeRequest request);
 
     /**
      * Updates the specified CPE's display name or tags.
@@ -2267,6 +2424,15 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdatePublicIpResponse updatePublicIp(UpdatePublicIpRequest request);
 
     /**
+     * Updates the specified Public Ip Pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdatePublicIpPoolResponse updatePublicIpPool(UpdatePublicIpPoolRequest request);
+
+    /**
      * Updates the specified remote peering connection (RPC).
      *
      * @param request The request object containing the details to send
@@ -2392,6 +2558,25 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateVnicResponse updateVnic(UpdateVnicRequest request);
+
+    /**
+     * submit the Byoip Range for validation. This presumes the user has
+     * updated their IP registry record in accordance to validation requirements
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ValidateByoipRangeResponse validateByoipRange(ValidateByoipRangeRequest request);
+
+    /**
+     * stop route advertisements for the Byoip Range prefix.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    WithdrawByoipRangeResponse withdrawByoipRange(WithdrawByoipRangeRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.
