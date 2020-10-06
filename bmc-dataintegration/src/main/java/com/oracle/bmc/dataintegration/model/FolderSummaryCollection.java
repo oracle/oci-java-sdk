@@ -61,7 +61,7 @@ public class FolderSummaryCollection {
     }
 
     /**
-     * The array of Folder summaries
+     * The array of folder summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<FolderSummary> items;

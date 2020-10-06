@@ -185,7 +185,7 @@ public class ProxyField extends TypedObject {
     }
 
     /**
-     * Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+     * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Object scope;
@@ -194,7 +194,7 @@ public class ProxyField extends TypedObject {
     BaseType type;
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     java.util.List<String> labels;

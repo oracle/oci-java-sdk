@@ -12,7 +12,7 @@ import com.oracle.bmc.dataintegration.model.*;
 public class ListTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
@@ -25,52 +25,52 @@ public class ListTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String opcRequestId;
 
     /**
-     * Unique key of the folder
+     * Unique key of the folder.
      */
     private String folderId;
 
     /**
-     * This parameter allows users to specify which fields to get for an object.
+     * Specifies the fields to get for an object.
      */
     private java.util.List<String> fields;
 
     /**
-     * This filter parameter can be used to filter by the name of the object.
+     * Used to filter by the name of the object.
      */
     private String name;
 
     /**
-     * This filter parameter can be used to filter by the key of the object.
+     * Used to filter by the key of the object.
      */
     private java.util.List<String> key;
 
     /**
-     * This filter parameter can be used to filter by the identifier of the object.
+     * Used to filter by the identifier of the object.
      */
     private java.util.List<String> identifier;
 
     /**
-     * This filter parameter can be used to filter by the object type of the object. This parameter can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:-</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+     * Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
      */
     private java.util.List<String> type;
 
     /**
-     * This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+     * Sets the maximum number of results per page, or items to return in a paginated `List` call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+     * For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+     * Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
      */
     private SortOrder sortOrder;
 
     /**
-     * This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+     * Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
      **/
     public enum SortOrder {
         Asc("ASC"),
@@ -105,12 +105,12 @@ public class ListTasksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
     /**
-     * This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
      **/
     public enum SortBy {
         TimeCreated("TIME_CREATED"),

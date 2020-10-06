@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * List of dataflow validation summaries
+ * A list of data flow validation summaries.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class DataFlowValidationSummaryCollection {
     }
 
     /**
-     * The array of validation summaries
+     * The array of validation summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DataFlowValidationSummary> items;

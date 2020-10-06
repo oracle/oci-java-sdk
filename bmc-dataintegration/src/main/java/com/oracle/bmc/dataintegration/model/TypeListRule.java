@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The type list rule which defines how fields are projected.
+ * The type list rule that defines how fields are projected.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -148,9 +148,9 @@ public class TypeListRule extends ProjectionRule {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("types")
-        private java.util.List<BaseType> types;
+        private java.util.List<Object> types;
 
-        public Builder types(java.util.List<BaseType> types) {
+        public Builder types(java.util.List<Object> types) {
             this.types = types;
             this.__explicitlySet__.add("types");
             return this;
@@ -225,7 +225,7 @@ public class TypeListRule extends ProjectionRule {
             MatchingStrategy matchingStrategy,
             Boolean isCaseSensitive,
             RuleType ruleType,
-            java.util.List<BaseType> types) {
+            java.util.List<Object> types) {
         super(
                 key,
                 modelVersion,
@@ -244,24 +244,24 @@ public class TypeListRule extends ProjectionRule {
     }
 
     /**
-     * skipRemainingRulesOnMatch
+     * Specifies whether to skip remaining rules when a match is found.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
     Boolean isSkipRemainingRulesOnMatch;
 
     /**
-     * Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+     * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Object scope;
 
     /**
-     * cascade
+     * Specifies whether to cascade or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCascade")
     Boolean isCascade;
     /**
-     * matchingStrategy
+     * The pattern matching strategy.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum MatchingStrategy {
@@ -308,18 +308,18 @@ public class TypeListRule extends ProjectionRule {
         }
     };
     /**
-     * matchingStrategy
+     * The pattern matching strategy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingStrategy")
     MatchingStrategy matchingStrategy;
 
     /**
-     * caseSensitive
+     * Specifies if the rule is case sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
     Boolean isCaseSensitive;
     /**
-     * ruleType
+     * The rule type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum RuleType {
@@ -365,16 +365,16 @@ public class TypeListRule extends ProjectionRule {
         }
     };
     /**
-     * ruleType
+     * The rule type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
     RuleType ruleType;
 
     /**
-     * types
+     * An arry of types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("types")
-    java.util.List<BaseType> types;
+    java.util.List<Object> types;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

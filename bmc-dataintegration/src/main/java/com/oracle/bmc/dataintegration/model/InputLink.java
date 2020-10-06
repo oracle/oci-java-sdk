@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about input links.
+ * Details about the incoming data to an operator in a data flow design.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -160,7 +160,7 @@ public class InputLink extends FlowPortLink {
     }
 
     /**
-     * From link reference.
+     * The from link reference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fromLink")
     String fromLink;

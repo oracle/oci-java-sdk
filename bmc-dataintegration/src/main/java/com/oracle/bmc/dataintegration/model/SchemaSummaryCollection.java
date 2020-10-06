@@ -61,7 +61,7 @@ public class SchemaSummaryCollection {
     }
 
     /**
-     * The array of Schema summaries
+     * The array of schema summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<SchemaSummary> items;

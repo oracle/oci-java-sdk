@@ -18,7 +18,7 @@ public class CreateVmClusterNetworkRequest
     private String exadataInfrastructureId;
 
     /**
-     * Request to create the VM cluster network.
+     * Request to create the Cloud@Customer VM cluster network.
      */
     private VmClusterNetworkDetails vmClusterNetworkDetails;
 

@@ -61,7 +61,7 @@ public class DataAssetSummaryCollection {
     }
 
     /**
-     * The array of DataAsset summaries
+     * The array of data asset summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DataAssetSummary> items;

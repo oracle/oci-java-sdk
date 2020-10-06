@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The Oracle data asset details.
+ * Summary details for the Autonomous Transaction Processing data asset type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -272,7 +272,7 @@ public class DataAssetSummaryFromAtp extends DataAssetSummary {
     }
 
     /**
-     * The service name for the data asset.
+     * The Autonomous Transaction Processing instance service name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     String serviceName;
@@ -284,7 +284,7 @@ public class DataAssetSummaryFromAtp extends DataAssetSummary {
     java.util.List<String> serviceNames;
 
     /**
-     * The driver class for the data asset.
+     * The Autonomous Transaction Processing driver class.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     String driverClass;

@@ -89,6 +89,15 @@ public class CreateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceApplicationInfo")
+        private CreateSourceApplicationInfo sourceApplicationInfo;
+
+        public Builder sourceApplicationInfo(CreateSourceApplicationInfo sourceApplicationInfo) {
+            this.sourceApplicationInfo = sourceApplicationInfo;
+            this.__explicitlySet__.add("sourceApplicationInfo");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
         private RegistryMetadata registryMetadata;
 
@@ -111,6 +120,7 @@ public class CreateApplicationDetails {
                             description,
                             objectStatus,
                             identifier,
+                            sourceApplicationInfo,
                             registryMetadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -126,6 +136,7 @@ public class CreateApplicationDetails {
                             .description(o.getDescription())
                             .objectStatus(o.getObjectStatus())
                             .identifier(o.getIdentifier())
+                            .sourceApplicationInfo(o.getSourceApplicationInfo())
                             .registryMetadata(o.getRegistryMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -147,7 +158,7 @@ public class CreateApplicationDetails {
     String key;
 
     /**
-     * The model version of an object.
+     * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;
@@ -192,7 +203,7 @@ public class CreateApplicationDetails {
     ModelType modelType;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -210,10 +221,13 @@ public class CreateApplicationDetails {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceApplicationInfo")
+    CreateSourceApplicationInfo sourceApplicationInfo;
 
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
     RegistryMetadata registryMetadata;

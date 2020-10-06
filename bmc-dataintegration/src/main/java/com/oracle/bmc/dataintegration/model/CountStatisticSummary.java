@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Detail of object.
+ * Details of the count statistic summary object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,7 +70,7 @@ public class CountStatisticSummary {
     }
 
     /**
-     * the type of object for the object count statistic.
+     * The type of object for the count statistic object.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ObjectType {
@@ -121,13 +121,13 @@ public class CountStatisticSummary {
         }
     };
     /**
-     * the type of object for the object count statistic.
+     * The type of object for the count statistic object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     ObjectType objectType;
 
     /**
-     * the value for the object count statistic.
+     * The value for the count statistic object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
     Long objectCount;

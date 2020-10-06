@@ -444,7 +444,7 @@ public class ExadataInfrastructure {
     LifecycleState lifecycleState;
 
     /**
-     * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -578,13 +578,13 @@ public class ExadataInfrastructure {
     String lifecycleDetails;
 
     /**
-     * The CSI Number of the Exadata Infrastructure.
+     * The CSI Number of the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
     String csiNumber;
 
     /**
-     * The list of contacts for the Exadata Infrastructure.
+     * The list of contacts for the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     java.util.List<ExadataInfrastructureContact> contacts;

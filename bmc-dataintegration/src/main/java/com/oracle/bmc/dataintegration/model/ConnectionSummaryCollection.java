@@ -61,7 +61,7 @@ public class ConnectionSummaryCollection {
     }
 
     /**
-     * The array of Connection summaries
+     * The array of connection summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ConnectionSummary> items;

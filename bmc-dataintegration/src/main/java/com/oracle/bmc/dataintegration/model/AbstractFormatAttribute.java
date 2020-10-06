@@ -29,6 +29,10 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AvroFormatAttribute.class,
+        name = "AVRO_FORMAT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = JsonFormatAttribute.class,
         name = "JSON_FORMAT"
     ),
@@ -47,6 +51,7 @@ public class AbstractFormatAttribute {
     public enum ModelType {
         JsonFormat("JSON_FORMAT"),
         CsvFormat("CSV_FORMAT"),
+        AvroFormat("AVRO_FORMAT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

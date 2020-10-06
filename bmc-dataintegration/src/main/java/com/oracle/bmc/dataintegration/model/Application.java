@@ -134,6 +134,24 @@ public class Application {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceApplicationInfo")
+        private SourceApplicationInfo sourceApplicationInfo;
+
+        public Builder sourceApplicationInfo(SourceApplicationInfo sourceApplicationInfo) {
+            this.sourceApplicationInfo = sourceApplicationInfo;
+            this.__explicitlySet__.add("sourceApplicationInfo");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timePatched")
+        private java.util.Date timePatched;
+
+        public Builder timePatched(java.util.Date timePatched) {
+            this.timePatched = timePatched;
+            this.__explicitlySet__.add("timePatched");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private ObjectMetadata metadata;
 
@@ -170,6 +188,8 @@ public class Application {
                             objectVersion,
                             dependentObjectMetadata,
                             publishedObjectMetadata,
+                            sourceApplicationInfo,
+                            timePatched,
                             metadata,
                             keyMap);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -191,6 +211,8 @@ public class Application {
                             .objectVersion(o.getObjectVersion())
                             .dependentObjectMetadata(o.getDependentObjectMetadata())
                             .publishedObjectMetadata(o.getPublishedObjectMetadata())
+                            .sourceApplicationInfo(o.getSourceApplicationInfo())
+                            .timePatched(o.getTimePatched())
                             .metadata(o.getMetadata())
                             .keyMap(o.getKeyMap());
 
@@ -213,19 +235,19 @@ public class Application {
     String key;
 
     /**
-     * The type of the object.
+     * The object type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     String modelType;
 
     /**
-     * The model version of an object.
+     * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -237,7 +259,7 @@ public class Application {
     String description;
 
     /**
-     * version
+     * The application's version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationVersion")
     Integer applicationVersion;
@@ -249,7 +271,7 @@ public class Application {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
@@ -264,22 +286,32 @@ public class Application {
     Integer objectVersion;
 
     /**
-     * List of dependent objects in this patch.
+     * A list of dependent objects in this patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependentObjectMetadata")
     java.util.List<PatchObjectMetadata> dependentObjectMetadata;
 
     /**
-     * List of objects that are published / unpublished in this patch.
+     * A list of objects that are published or unpublished in this patch.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publishedObjectMetadata")
     java.util.Map<String, PatchObjectMetadata> publishedObjectMetadata;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceApplicationInfo")
+    SourceApplicationInfo sourceApplicationInfo;
+
+    /**
+     * The date and time the application was patched, in the timestamp format defined by RFC3339.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timePatched")
+    java.util.Date timePatched;
 
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     ObjectMetadata metadata;
 
     /**
-     * A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
     java.util.Map<String, String> keyMap;

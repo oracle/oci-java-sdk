@@ -166,6 +166,15 @@ public class DbSystemShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCountPerNode")
+        private Integer availableCoreCountPerNode;
+
+        public Builder availableCoreCountPerNode(Integer availableCoreCountPerNode) {
+            this.availableCoreCountPerNode = availableCoreCountPerNode;
+            this.__explicitlySet__.add("availableCoreCountPerNode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -186,7 +195,8 @@ public class DbSystemShapeSummary {
                             availableDataStorageInTBs,
                             minDataStorageInTBs,
                             minimumNodeCount,
-                            maximumNodeCount);
+                            maximumNodeCount,
+                            availableCoreCountPerNode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -208,7 +218,8 @@ public class DbSystemShapeSummary {
                             .availableDataStorageInTBs(o.getAvailableDataStorageInTBs())
                             .minDataStorageInTBs(o.getMinDataStorageInTBs())
                             .minimumNodeCount(o.getMinimumNodeCount())
-                            .maximumNodeCount(o.getMaximumNodeCount());
+                            .maximumNodeCount(o.getMaximumNodeCount())
+                            .availableCoreCountPerNode(o.getAvailableCoreCountPerNode());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -311,6 +322,12 @@ public class DbSystemShapeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
     Integer maximumNodeCount;
+
+    /**
+     * The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape. Does not apply to X6, X7, and X8 fixed-shape systems.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCountPerNode")
+    Integer availableCoreCountPerNode;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

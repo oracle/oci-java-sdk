@@ -471,7 +471,8 @@ public class Listing {
     UploadData banner;
 
     /**
-     * The regions where the listing is eligible to be deployed.
+     * The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     java.util.List<Region> regions;

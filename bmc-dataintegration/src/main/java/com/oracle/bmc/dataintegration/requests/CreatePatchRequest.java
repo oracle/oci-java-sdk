@@ -12,12 +12,12 @@ import com.oracle.bmc.dataintegration.model.*;
 public class CreatePatchRequest extends com.oracle.bmc.requests.BmcRequest<CreatePatchDetails> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * DIS application key
+     * The application key.
      */
     private String applicationKey;
 
@@ -35,7 +35,7 @@ public class CreatePatchRequest extends com.oracle.bmc.requests.BmcRequest<Creat
     private String opcRequestId;
 
     /**
-     * Caller may provide \"retry tokens\" allowing them to retry an operation
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
      *
      */
     private String opcRetryToken;

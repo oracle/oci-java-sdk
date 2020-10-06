@@ -18,7 +18,7 @@ public class GenerateRecommendedVmClusterNetworkRequest
     private String exadataInfrastructureId;
 
     /**
-     * Request to generate a recommended VM cluster network configuration.
+     * Request to generate a recommended Cloud@Customer VM cluster network configuration.
      */
     private GenerateRecommendedNetworkDetails generateRecommendedNetworkDetails;
 

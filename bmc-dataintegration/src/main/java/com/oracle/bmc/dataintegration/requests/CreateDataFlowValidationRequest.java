@@ -13,12 +13,12 @@ public class CreateDataFlowValidationRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateDataFlowValidationDetails> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * Details for the new DataFlow object.
+     * The information needed to create the data flow validation for the data flow object.
      */
     private CreateDataFlowValidationDetails createDataFlowValidationDetails;
 
@@ -31,7 +31,7 @@ public class CreateDataFlowValidationRequest
     private String opcRequestId;
 
     /**
-     * Caller may provide \"retry tokens\" allowing them to retry an operation
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
      *
      */
     private String opcRetryToken;

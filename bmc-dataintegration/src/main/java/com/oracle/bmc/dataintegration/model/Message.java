@@ -129,13 +129,13 @@ public class Message {
     Type type;
 
     /**
-     * The message code
+     * The message code.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     String code;
 
     /**
-     * The message text
+     * The message text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;

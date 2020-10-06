@@ -46,7 +46,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * The workspace will be moved to the desired compartment.
+     * Moves a workspace to a specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -142,7 +142,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The endpoint accepts the DataFlow object definition in the request payload and creates a DataFlow object validation.
+     * Accepts the data flow definition in the request payload and creates a data flow validation.
      *
      *
      * @param request The request object containing the details to send
@@ -159,7 +159,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves the data entity shape from the end data system. The input can specify the data entity to get the shape for. For databases, this can be retrieved from the database data dictionary. For files, some hints as to the file properties can also be supplied in the input.
+     * Creates the data entity shape using the shape from the data asset.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -173,6 +173,40 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateEntityShapeRequest, CreateEntityShapeResponse>
                     handler);
+
+    /**
+     * Publish a DataFlow in a OCI DataFlow application.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalPublicationResponse> createExternalPublication(
+            CreateExternalPublicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExternalPublicationRequest, CreateExternalPublicationResponse>
+                    handler);
+
+    /**
+     * Validates a specific task.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalPublicationValidationResponse>
+            createExternalPublicationValidation(
+                    CreateExternalPublicationValidationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExternalPublicationValidationRequest,
+                                    CreateExternalPublicationValidationResponse>
+                            handler);
 
     /**
      * Creates a folder in a project or in another folder, limited to two levels of folders. |
@@ -237,7 +271,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateTaskRequest, CreateTaskResponse> handler);
 
     /**
-     * Creates a data integration task or task run. The task can be based on a dataflow design or a task.
+     * Creates a data integration task run for the specified task.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -268,7 +302,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Data Integration Workspace ready for performing data integration.
+     * Creates a new Data Integration workspace ready for performing data integration tasks.
      *
      *
      * @param request The request object containing the details to send
@@ -315,7 +349,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Successfully accepted the delete request. The connection validation will be deleted.
+     * Deletes a connection validation.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -375,6 +409,41 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteDataFlowValidationRequest, DeleteDataFlowValidationResponse>
                     handler);
+
+    /**
+     * Removes a published object using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalPublicationResponse> deleteExternalPublication(
+            DeleteExternalPublicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExternalPublicationRequest, DeleteExternalPublicationResponse>
+                    handler);
+
+    /**
+     * Removes a task validation using the specified identifier.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExternalPublicationValidationResponse>
+            deleteExternalPublicationValidation(
+                    DeleteExternalPublicationValidationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExternalPublicationValidationRequest,
+                                    DeleteExternalPublicationValidationResponse>
+                            handler);
 
     /**
      * Removes a folder from a project using the specified identifier.
@@ -467,7 +536,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Data Integration Workspace resource by identifier
+     * Deletes a Data Integration workspace resource using the specified identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -622,6 +691,40 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a publshed object in an task using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalPublicationResponse> getExternalPublication(
+            GetExternalPublicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalPublicationRequest, GetExternalPublicationResponse>
+                    handler);
+
+    /**
+     * Retrieves an external publication validation using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalPublicationValidationResponse>
+            getExternalPublicationValidation(
+                    GetExternalPublicationValidationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetExternalPublicationValidationRequest,
+                                    GetExternalPublicationValidationResponse>
+                            handler);
+
+    /**
      * Retrieves a folder using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -677,6 +780,21 @@ public interface DataIntegrationAsync extends AutoCloseable {
             GetPublishedObjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetPublishedObjectRequest, GetPublishedObjectResponse>
+                    handler);
+
+    /**
+     * Retrieves a reference in an application.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetReferenceResponse> getReference(
+            GetReferenceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetReferenceRequest, GetReferenceResponse>
                     handler);
 
     /**
@@ -739,7 +857,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the status of the work request with the given ID.
+     * Retrieves the status of the work request with the given ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -754,7 +872,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a Data Integration Workspace by identifier
+     * Retrieves a Data Integration workspace using the specified identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -815,7 +933,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * This endpoint can be used to list all data asset summaries
+     * Retrieves a list of all data asset summaries.
      *
      *
      * @param request The request object containing the details to send
@@ -831,8 +949,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves a list of summaries of data entities present in the schema identified by schema name. |
-     * A live query is run on the data asset identified via the connection specified.
+     * Lists a summary of data entities from the data asset using the specified connection.
      *
      *
      * @param request The request object containing the details to send
@@ -848,7 +965,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieves a list of data flow validations within the specified workspace
+     * Retrieves a list of data flow validations within the specified workspace.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -896,6 +1013,41 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a lists of external publication validations in a workspace and provides options to filter the list.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalPublicationValidationsResponse>
+            listExternalPublicationValidations(
+                    ListExternalPublicationValidationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListExternalPublicationValidationsRequest,
+                                    ListExternalPublicationValidationsResponse>
+                            handler);
+
+    /**
+     * Retrieves a list of external publications in an application and provides options to filter the list.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExternalPublicationsResponse> listExternalPublications(
+            ListExternalPublicationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExternalPublicationsRequest, ListExternalPublicationsResponse>
+                    handler);
+
+    /**
      * Retrieves a list of folders in a project and provides options to filter the list.
      *
      *
@@ -912,6 +1064,21 @@ public interface DataIntegrationAsync extends AutoCloseable {
 
     /**
      * Retrieves a list of patches in an application and provides options to filter the list.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPatchChangesResponse> listPatchChanges(
+            ListPatchChangesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPatchChangesRequest, ListPatchChangesResponse>
+                    handler);
+
+    /**
+     * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -957,6 +1124,21 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a list of references in an application. Reference objects are created when dataflows and tasks use objects, such as data assets and connections.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListReferencesResponse> listReferences(
+            ListReferencesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListReferencesRequest, ListReferencesResponse>
+                    handler);
+
+    /**
      * Retrieves a list of all the schemas that can be accessed using the specified connection.
      *
      * @param request The request object containing the details to send
@@ -971,7 +1153,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListSchemasRequest, ListSchemasResponse> handler);
 
     /**
-     * Get log entries for task runs using its key
+     * Gets log entries for task runs using its key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1033,7 +1215,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListTasksRequest, ListTasksResponse> handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Retrieves a paginated list of errors for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -1050,7 +1232,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Retrieves a paginated list of logs for a given work request.
      *
      *
      * @param request The request object containing the details to send
@@ -1083,7 +1265,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Data Integration Workspaces.
+     * Retrieves a list of Data Integration workspaces.
      *
      *
      * @param request The request object containing the details to send
@@ -1099,7 +1281,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The workspace will be started.
+     * Starts a workspace.
      *
      *
      * @param request The request object containing the details to send
@@ -1115,7 +1297,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The workspace will be stopped.
+     * Stops a workspace.
      *
      *
      * @param request The request object containing the details to send
@@ -1192,6 +1374,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the external publication object.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExternalPublicationResponse> updateExternalPublication(
+            UpdateExternalPublicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalPublicationRequest, UpdateExternalPublicationResponse>
+                    handler);
+
+    /**
      * Updates a specific folder.
      *
      * @param request The request object containing the details to send
@@ -1219,6 +1417,21 @@ public interface DataIntegrationAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateProjectResponse> updateProject(
             UpdateProjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
+                    handler);
+
+    /**
+     * Updates the application references. For example, to map a data asset to a different target object.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateReferenceResponse> updateReference(
+            UpdateReferenceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateReferenceRequest, UpdateReferenceResponse>
                     handler);
 
     /**
@@ -1251,7 +1464,7 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Data Integration Workspace
+     * Updates the specified Data Integration workspace.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

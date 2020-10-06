@@ -12,12 +12,12 @@ import com.oracle.bmc.dataintegration.model.*;
 public class GetDataAssetRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * Data asset key.
+     * The data asset key.
      */
     private String dataAssetKey;
 

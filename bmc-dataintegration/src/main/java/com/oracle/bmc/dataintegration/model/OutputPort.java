@@ -172,7 +172,7 @@ public class OutputPort extends TypedObject {
     }
 
     /**
-     * The port details for the data asset.Type
+     * The port details for the data asset.Type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PortType {
@@ -219,13 +219,13 @@ public class OutputPort extends TypedObject {
         }
     };
     /**
-     * The port details for the data asset.Type
+     * The port details for the data asset.Type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portType")
     PortType portType;
 
     /**
-     * fields
+     * An array of fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     java.util.List<TypedObject> fields;

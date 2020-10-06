@@ -13,7 +13,7 @@ public class CreateVmClusterRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateVmClusterDetails> {
 
     /**
-     * Request to create a VM cluster.
+     * Request to create an Exadata Cloud@Customer VM cluster.
      */
     private CreateVmClusterDetails createVmClusterDetails;
 

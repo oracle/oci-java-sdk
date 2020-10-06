@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Updates the Exadata infrastructure.
+ * Updates the Exadata Cloud@Customer infrastructure.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -240,7 +240,7 @@ public class UpdateExadataInfrastructureDetails {
     String corporateProxy;
 
     /**
-     * The list of contacts for the Exadata Infrastructure.
+     * The list of contacts for the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     java.util.List<ExadataInfrastructureContact> contacts;

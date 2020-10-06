@@ -297,13 +297,13 @@ public class DataEntitySummaryFromTable extends DataEntitySummary {
     }
 
     /**
-     * The key of the object.
+     * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * The model version of an object.
+     * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;
@@ -312,7 +312,7 @@ public class DataEntitySummaryFromTable extends DataEntitySummary {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -433,7 +433,7 @@ public class DataEntitySummaryFromTable extends DataEntitySummary {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;

@@ -46,7 +46,7 @@ public interface DataIntegration extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * The workspace will be moved to the desired compartment.
+     * Moves a workspace to a specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -98,7 +98,7 @@ public interface DataIntegration extends AutoCloseable {
     CreateDataFlowResponse createDataFlow(CreateDataFlowRequest request);
 
     /**
-     * The endpoint accepts the DataFlow object definition in the request payload and creates a DataFlow object validation.
+     * Accepts the data flow definition in the request payload and creates a data flow validation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -108,12 +108,30 @@ public interface DataIntegration extends AutoCloseable {
             CreateDataFlowValidationRequest request);
 
     /**
-     * Retrieves the data entity shape from the end data system. The input can specify the data entity to get the shape for. For databases, this can be retrieved from the database data dictionary. For files, some hints as to the file properties can also be supplied in the input.
+     * Creates the data entity shape using the shape from the data asset.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     CreateEntityShapeResponse createEntityShape(CreateEntityShapeRequest request);
+
+    /**
+     * Publish a DataFlow in a OCI DataFlow application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateExternalPublicationResponse createExternalPublication(
+            CreateExternalPublicationRequest request);
+
+    /**
+     * Validates a specific task.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateExternalPublicationValidationResponse createExternalPublicationValidation(
+            CreateExternalPublicationValidationRequest request);
 
     /**
      * Creates a folder in a project or in another folder, limited to two levels of folders. |
@@ -152,7 +170,7 @@ public interface DataIntegration extends AutoCloseable {
     CreateTaskResponse createTask(CreateTaskRequest request);
 
     /**
-     * Creates a data integration task or task run. The task can be based on a dataflow design or a task.
+     * Creates a data integration task run for the specified task.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -168,7 +186,7 @@ public interface DataIntegration extends AutoCloseable {
     CreateTaskValidationResponse createTaskValidation(CreateTaskValidationRequest request);
 
     /**
-     * Creates a new Data Integration Workspace ready for performing data integration.
+     * Creates a new Data Integration workspace ready for performing data integration tasks.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -193,7 +211,7 @@ public interface DataIntegration extends AutoCloseable {
     DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request);
 
     /**
-     * Successfully accepted the delete request. The connection validation will be deleted.
+     * Deletes a connection validation.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -225,6 +243,25 @@ public interface DataIntegration extends AutoCloseable {
      */
     DeleteDataFlowValidationResponse deleteDataFlowValidation(
             DeleteDataFlowValidationRequest request);
+
+    /**
+     * Removes a published object using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteExternalPublicationResponse deleteExternalPublication(
+            DeleteExternalPublicationRequest request);
+
+    /**
+     * Removes a task validation using the specified identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteExternalPublicationValidationResponse deleteExternalPublicationValidation(
+            DeleteExternalPublicationValidationRequest request);
 
     /**
      * Removes a folder from a project using the specified identifier.
@@ -276,7 +313,7 @@ public interface DataIntegration extends AutoCloseable {
     DeleteTaskValidationResponse deleteTaskValidation(DeleteTaskValidationRequest request);
 
     /**
-     * Deletes a Data Integration Workspace resource by identifier
+     * Deletes a Data Integration workspace resource using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -358,6 +395,23 @@ public interface DataIntegration extends AutoCloseable {
     GetDependentObjectResponse getDependentObject(GetDependentObjectRequest request);
 
     /**
+     * Retrieves a publshed object in an task using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetExternalPublicationResponse getExternalPublication(GetExternalPublicationRequest request);
+
+    /**
+     * Retrieves an external publication validation using the specified identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetExternalPublicationValidationResponse getExternalPublicationValidation(
+            GetExternalPublicationValidationRequest request);
+
+    /**
      * Retrieves a folder using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -388,6 +442,14 @@ public interface DataIntegration extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetPublishedObjectResponse getPublishedObject(GetPublishedObjectRequest request);
+
+    /**
+     * Retrieves a reference in an application.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetReferenceResponse getReference(GetReferenceRequest request);
 
     /**
      * Retrieves a schema that can be accessed using the specified connection.
@@ -423,7 +485,7 @@ public interface DataIntegration extends AutoCloseable {
     GetTaskValidationResponse getTaskValidation(GetTaskValidationRequest request);
 
     /**
-     * Gets the status of the work request with the given ID.
+     * Retrieves the status of the work request with the given ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -431,7 +493,7 @@ public interface DataIntegration extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Gets a Data Integration Workspace by identifier
+     * Retrieves a Data Integration workspace using the specified identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -464,7 +526,7 @@ public interface DataIntegration extends AutoCloseable {
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
 
     /**
-     * This endpoint can be used to list all data asset summaries
+     * Retrieves a list of all data asset summaries.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -473,8 +535,7 @@ public interface DataIntegration extends AutoCloseable {
     ListDataAssetsResponse listDataAssets(ListDataAssetsRequest request);
 
     /**
-     * Retrieves a list of summaries of data entities present in the schema identified by schema name. |
-     * A live query is run on the data asset identified via the connection specified.
+     * Lists a summary of data entities from the data asset using the specified connection.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -483,7 +544,7 @@ public interface DataIntegration extends AutoCloseable {
     ListDataEntitiesResponse listDataEntities(ListDataEntitiesRequest request);
 
     /**
-     * Retrieves a list of data flow validations within the specified workspace
+     * Retrieves a list of data flow validations within the specified workspace.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -508,6 +569,25 @@ public interface DataIntegration extends AutoCloseable {
     ListDependentObjectsResponse listDependentObjects(ListDependentObjectsRequest request);
 
     /**
+     * Retrieves a lists of external publication validations in a workspace and provides options to filter the list.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListExternalPublicationValidationsResponse listExternalPublicationValidations(
+            ListExternalPublicationValidationsRequest request);
+
+    /**
+     * Retrieves a list of external publications in an application and provides options to filter the list.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListExternalPublicationsResponse listExternalPublications(
+            ListExternalPublicationsRequest request);
+
+    /**
      * Retrieves a list of folders in a project and provides options to filter the list.
      *
      * @param request The request object containing the details to send
@@ -518,6 +598,14 @@ public interface DataIntegration extends AutoCloseable {
 
     /**
      * Retrieves a list of patches in an application and provides options to filter the list.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListPatchChangesResponse listPatchChanges(ListPatchChangesRequest request);
+
+    /**
+     * Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -542,6 +630,14 @@ public interface DataIntegration extends AutoCloseable {
     ListPublishedObjectsResponse listPublishedObjects(ListPublishedObjectsRequest request);
 
     /**
+     * Retrieves a list of references in an application. Reference objects are created when dataflows and tasks use objects, such as data assets and connections.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListReferencesResponse listReferences(ListReferencesRequest request);
+
+    /**
      * Retrieves a list of all the schemas that can be accessed using the specified connection.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -550,7 +646,7 @@ public interface DataIntegration extends AutoCloseable {
     ListSchemasResponse listSchemas(ListSchemasRequest request);
 
     /**
-     * Get log entries for task runs using its key
+     * Gets log entries for task runs using its key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -584,7 +680,7 @@ public interface DataIntegration extends AutoCloseable {
     ListTasksResponse listTasks(ListTasksRequest request);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Retrieves a paginated list of errors for a given work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -593,7 +689,7 @@ public interface DataIntegration extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Retrieves a paginated list of logs for a given work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -611,7 +707,7 @@ public interface DataIntegration extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Returns a list of Data Integration Workspaces.
+     * Retrieves a list of Data Integration workspaces.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -620,7 +716,7 @@ public interface DataIntegration extends AutoCloseable {
     ListWorkspacesResponse listWorkspaces(ListWorkspacesRequest request);
 
     /**
-     * The workspace will be started.
+     * Starts a workspace.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -629,7 +725,7 @@ public interface DataIntegration extends AutoCloseable {
     StartWorkspaceResponse startWorkspace(StartWorkspaceRequest request);
 
     /**
-     * The workspace will be stopped.
+     * Stops a workspace.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -670,6 +766,15 @@ public interface DataIntegration extends AutoCloseable {
     UpdateDataFlowResponse updateDataFlow(UpdateDataFlowRequest request);
 
     /**
+     * Updates the external publication object.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateExternalPublicationResponse updateExternalPublication(
+            UpdateExternalPublicationRequest request);
+
+    /**
      * Updates a specific folder.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -684,6 +789,14 @@ public interface DataIntegration extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateProjectResponse updateProject(UpdateProjectRequest request);
+
+    /**
+     * Updates the application references. For example, to map a data asset to a different target object.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateReferenceResponse updateReference(UpdateReferenceRequest request);
 
     /**
      * Updates a specific task. For example, you can update the task description or move the task to a different folder by changing the `aggregatorKey` to a different folder in the registry.
@@ -702,7 +815,7 @@ public interface DataIntegration extends AutoCloseable {
     UpdateTaskRunResponse updateTaskRun(UpdateTaskRunRequest request);
 
     /**
-     * Updates the Data Integration Workspace
+     * Updates the specified Data Integration workspace.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

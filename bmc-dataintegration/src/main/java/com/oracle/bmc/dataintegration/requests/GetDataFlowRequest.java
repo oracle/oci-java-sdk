@@ -12,12 +12,12 @@ import com.oracle.bmc.dataintegration.model.*;
 public class GetDataFlowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * DIS DataFlow key
+     * The data flow key.
      */
     private String dataFlowKey;
 

@@ -52,6 +52,9 @@ public class AbstractWriteAttribute {
         Oraclewriteattribute("ORACLEWRITEATTRIBUTE"),
         Oracleatpwriteattribute("ORACLEATPWRITEATTRIBUTE"),
         Oracleadwcwriteattribute("ORACLEADWCWRITEATTRIBUTE"),
+        OracleWriteAttribute("ORACLE_WRITE_ATTRIBUTE"),
+        OracleAtpWriteAttribute("ORACLE_ATP_WRITE_ATTRIBUTE"),
+        OracleAdwcWriteAttribute("ORACLE_ADWC_WRITE_ATTRIBUTE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

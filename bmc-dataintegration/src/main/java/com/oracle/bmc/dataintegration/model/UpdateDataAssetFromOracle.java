@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The Oracle data asset details.
+ * Details for the Oracle Database data asset type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -285,31 +285,31 @@ public class UpdateDataAssetFromOracle extends UpdateDataAssetDetails {
     }
 
     /**
-     * The host details for the data asset.
+     * The Oracle Database hostname.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     String host;
 
     /**
-     * The port details for the data asset.
+     * The Oracle Database port.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     String port;
 
     /**
-     * The service name for the data asset.
+     * The Oracle Database service name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     String serviceName;
 
     /**
-     * The driver class for the data asset.
+     * The Oracle Database driver class.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     String driverClass;
 
     /**
-     * sid
+     * The Oracle Database SID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sid")
     String sid;

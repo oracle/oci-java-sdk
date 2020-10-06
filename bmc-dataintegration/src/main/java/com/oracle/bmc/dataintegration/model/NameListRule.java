@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The name list rule which defines how fields are projected. For example this may be all fields begining with STR.
+ * The name list rule which defines how fields are projected. For example, this may be all fields begining with STR.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -244,24 +244,24 @@ public class NameListRule extends ProjectionRule {
     }
 
     /**
-     * skipRemainingRulesOnMatch
+     * Specifies whether to skip remaining rules when a match is found.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
     Boolean isSkipRemainingRulesOnMatch;
 
     /**
-     * Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+     * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Object scope;
 
     /**
-     * cascade
+     * Specifies whether to cascade or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCascade")
     Boolean isCascade;
     /**
-     * matchingStrategy
+     * The pattern matching strategy.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum MatchingStrategy {
@@ -308,18 +308,18 @@ public class NameListRule extends ProjectionRule {
         }
     };
     /**
-     * matchingStrategy
+     * The pattern matching strategy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingStrategy")
     MatchingStrategy matchingStrategy;
 
     /**
-     * caseSensitive
+     * Specifies if the rule is case sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
     Boolean isCaseSensitive;
     /**
-     * ruleType
+     * The rule type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum RuleType {
@@ -365,13 +365,13 @@ public class NameListRule extends ProjectionRule {
         }
     };
     /**
-     * ruleType
+     * The rule type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
     RuleType ruleType;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("names")
     java.util.List<String> names;

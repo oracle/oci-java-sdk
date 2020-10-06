@@ -153,6 +153,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
+        private InstanceOptions instanceOptions;
+
+        public Builder instanceOptions(InstanceOptions instanceOptions) {
+            this.instanceOptions = instanceOptions;
+            this.__explicitlySet__.add("instanceOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
         private InstanceAvailabilityConfig availabilityConfig;
 
@@ -271,6 +280,7 @@ public class Instance {
                             ipxeScript,
                             launchMode,
                             launchOptions,
+                            instanceOptions,
                             availabilityConfig,
                             lifecycleState,
                             metadata,
@@ -302,6 +312,7 @@ public class Instance {
                             .ipxeScript(o.getIpxeScript())
                             .launchMode(o.getLaunchMode())
                             .launchOptions(o.getLaunchOptions())
+                            .instanceOptions(o.getInstanceOptions())
                             .availabilityConfig(o.getAvailabilityConfig())
                             .lifecycleState(o.getLifecycleState())
                             .metadata(o.getMetadata())
@@ -516,6 +527,9 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
     LaunchOptions launchOptions;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
+    InstanceOptions instanceOptions;
 
     /**
      * Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A reference to the object's parent
+ * A reference to the object's parent.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -59,7 +59,7 @@ public class ParentReference {
     }
 
     /**
-     * Key of the parent object
+     * Key of the parent object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parent")
     String parent;

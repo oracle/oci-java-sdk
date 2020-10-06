@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for the create VM cluster operation.
+ * Details for the create Exadata Cloud@Customer VM cluster operation.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

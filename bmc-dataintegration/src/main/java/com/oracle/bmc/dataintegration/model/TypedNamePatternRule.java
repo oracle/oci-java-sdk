@@ -96,9 +96,9 @@ public class TypedNamePatternRule extends ProjectionRule {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("types")
-        private java.util.List<BaseType> types;
+        private java.util.List<Object> types;
 
-        public Builder types(java.util.List<BaseType> types) {
+        public Builder types(java.util.List<Object> types) {
             this.types = types;
             this.__explicitlySet__.add("types");
             return this;
@@ -158,6 +158,15 @@ public class TypedNamePatternRule extends ProjectionRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pattern")
+        private String pattern;
+
+        public Builder pattern(String pattern) {
+            this.pattern = pattern;
+            this.__explicitlySet__.add("pattern");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("names")
         private java.util.List<String> names;
 
@@ -187,6 +196,7 @@ public class TypedNamePatternRule extends ProjectionRule {
                             matchingStrategy,
                             isCaseSensitive,
                             ruleType,
+                            pattern,
                             names);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -209,6 +219,7 @@ public class TypedNamePatternRule extends ProjectionRule {
                             .matchingStrategy(o.getMatchingStrategy())
                             .isCaseSensitive(o.getIsCaseSensitive())
                             .ruleType(o.getRuleType())
+                            .pattern(o.getPattern())
                             .names(o.getNames());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -232,13 +243,14 @@ public class TypedNamePatternRule extends ProjectionRule {
             ConfigValues configValues,
             Integer objectStatus,
             String description,
-            java.util.List<BaseType> types,
+            java.util.List<Object> types,
             Boolean isSkipRemainingRulesOnMatch,
             Object scope,
             Boolean isCascade,
             MatchingStrategy matchingStrategy,
             Boolean isCaseSensitive,
             RuleType ruleType,
+            String pattern,
             java.util.List<String> names) {
         super(
                 key,
@@ -255,34 +267,35 @@ public class TypedNamePatternRule extends ProjectionRule {
         this.matchingStrategy = matchingStrategy;
         this.isCaseSensitive = isCaseSensitive;
         this.ruleType = ruleType;
+        this.pattern = pattern;
         this.names = names;
     }
 
     /**
-     * types
+     * An array of types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("types")
-    java.util.List<BaseType> types;
+    java.util.List<Object> types;
 
     /**
-     * skipRemainingRulesOnMatch
+     * Specifies whether to skip remaining rules when a match is found.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
     Boolean isSkipRemainingRulesOnMatch;
 
     /**
-     * Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+     * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Object scope;
 
     /**
-     * cascade
+     * Specifies whether to cascade or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCascade")
     Boolean isCascade;
     /**
-     * matchingStrategy
+     * The pattern matching strategy.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum MatchingStrategy {
@@ -329,18 +342,18 @@ public class TypedNamePatternRule extends ProjectionRule {
         }
     };
     /**
-     * matchingStrategy
+     * The pattern matching strategy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingStrategy")
     MatchingStrategy matchingStrategy;
 
     /**
-     * caseSensitive
+     * Specifies if the rule is case sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
     Boolean isCaseSensitive;
     /**
-     * ruleType
+     * The rule type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum RuleType {
@@ -386,13 +399,19 @@ public class TypedNamePatternRule extends ProjectionRule {
         }
     };
     /**
-     * ruleType
+     * The rule type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
     RuleType ruleType;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * The rule pattern.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pattern")
+    String pattern;
+
+    /**
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("names")
     java.util.List<String> names;

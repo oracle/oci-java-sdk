@@ -69,6 +69,15 @@ public class SchemaSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+        private String resourceName;
+
+        public Builder resourceName(String resourceName) {
+            this.resourceName = resourceName;
+            this.__explicitlySet__.add("resourceName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -152,6 +161,7 @@ public class SchemaSummary {
                             modelVersion,
                             parentRef,
                             name,
+                            resourceName,
                             description,
                             objectVersion,
                             externalKey,
@@ -172,6 +182,7 @@ public class SchemaSummary {
                             .modelVersion(o.getModelVersion())
                             .parentRef(o.getParentRef())
                             .name(o.getName())
+                            .resourceName(o.getResourceName())
                             .description(o.getDescription())
                             .objectVersion(o.getObjectVersion())
                             .externalKey(o.getExternalKey())
@@ -194,19 +205,19 @@ public class SchemaSummary {
     }
 
     /**
-     * The key of the object.
+     * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * The type of the object.
+     * The object's type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     String modelType;
 
     /**
-     * The model version of an object.
+     * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;
@@ -215,13 +226,19 @@ public class SchemaSummary {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Detailed description for the object.
+     * A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
+    String resourceName;
+
+    /**
+     * User-defined description for the schema.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -239,13 +256,13 @@ public class SchemaSummary {
     String externalKey;
 
     /**
-     * hasContainers
+     * Specifies whether the schema has containers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHasContainers")
     Boolean isHasContainers;
 
     /**
-     * Connection key which is the default.
+     * The default connection key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultConnection")
     String defaultConnection;
@@ -257,7 +274,7 @@ public class SchemaSummary {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;

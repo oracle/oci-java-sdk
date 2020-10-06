@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Configuration values can be string, objects or parameters.
+ * Configuration values can be string, objects, or parameters.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,7 +70,7 @@ public class ConfigValues {
     }
 
     /**
-     * configParamValues
+     * The configuration parameter values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configParamValues")
     java.util.Map<String, ConfigParameterValue> configParamValues;

@@ -160,7 +160,7 @@ public class JavaType extends BaseType {
     }
 
     /**
-     * javaTypeName
+     * The java type name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("javaTypeName")
     String javaTypeName;

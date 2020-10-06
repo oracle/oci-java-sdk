@@ -165,13 +165,13 @@ public class DirectFieldMap extends FieldMap {
     }
 
     /**
-     * The key of the object.
+     * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * The model version of an object.
+     * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;
@@ -183,13 +183,13 @@ public class DirectFieldMap extends FieldMap {
     ConfigValues configValues;
 
     /**
-     * Reference to a typed object
+     * Reference to a typed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTypedObject")
     String sourceTypedObject;
 
     /**
-     * Reference to a typed object
+     * Reference to a typed object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetTypedObject")
     String targetTypedObject;

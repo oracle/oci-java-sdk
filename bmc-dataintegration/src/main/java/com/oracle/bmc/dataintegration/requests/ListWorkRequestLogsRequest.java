@@ -12,7 +12,7 @@ import com.oracle.bmc.dataintegration.model.*;
 public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the asynchronous request.
+     * The ID of the asynchronous work request to retrieve.
      */
     private String workRequestId;
 
@@ -25,22 +25,22 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     private String opcRequestId;
 
     /**
-     * This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+     * For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+     * Sets the maximum number of results per page, or items to return in a paginated `List` call. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+     * Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
      */
     private SortOrder sortOrder;
 
     /**
-     * This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+     * Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
      **/
     public enum SortOrder {
         Asc("ASC"),
@@ -75,12 +75,12 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
     /**
-     * This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
      **/
     public enum SortBy {
         TimeCreated("TIME_CREATED"),

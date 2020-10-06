@@ -13,12 +13,12 @@ public class CreateDataAssetRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateDataAssetDetails> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * Request body parameter for data asset details
+     * The information needed to create a data asset.
      */
     private CreateDataAssetDetails createDataAssetDetails;
 
@@ -31,7 +31,7 @@ public class CreateDataAssetRequest
     private String opcRequestId;
 
     /**
-     * Caller may provide \"retry tokens\" allowing them to retry an operation
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
      *
      */
     private String opcRetryToken;

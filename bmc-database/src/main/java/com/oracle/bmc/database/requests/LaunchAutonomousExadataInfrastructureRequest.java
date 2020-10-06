@@ -13,7 +13,7 @@ public class LaunchAutonomousExadataInfrastructureRequest
         extends com.oracle.bmc.requests.BmcRequest<LaunchAutonomousExadataInfrastructureDetails> {
 
     /**
-     * Request to launch a Autonomous Exadata Infrastructure.
+     * Request to create an Autonomous Exadata Infrastructure resource.
      */
     private LaunchAutonomousExadataInfrastructureDetails
             launchAutonomousExadataInfrastructureDetails;

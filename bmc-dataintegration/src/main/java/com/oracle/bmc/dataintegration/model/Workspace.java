@@ -241,7 +241,7 @@ public class Workspace {
     String dnsServerZone;
 
     /**
-     * Whether the private network connection is enabled or disabled.
+     * Specifies whether the private network connection is enabled or disabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivateNetworkEnabled")
     Boolean isPrivateNetworkEnabled;
@@ -377,13 +377,13 @@ public class Workspace {
     LifecycleState lifecycleState;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
     String stateMessage;
 
     /**
-     * Unique identifier that is immutable on creation
+     * A system-generated and immutable identifier assigned to the workspace upon creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

@@ -13,12 +13,12 @@ public class GetConnectionValidationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * key of the connection validation.
+     * The key of the connection validation.
      */
     private String connectionValidationKey;
 

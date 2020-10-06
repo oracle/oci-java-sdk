@@ -37,12 +37,20 @@ package com.oracle.bmc.dataintegration.model;
         name = "JOINER_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Distinct.class,
+        name = "DISTINCT_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Filter.class,
         name = "FILTER_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Aggregator.class,
         name = "AGGREGATOR_OPERATOR"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = SortOper.class,
+        name = "SORT_OPERATOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = Projection.class,
@@ -72,13 +80,13 @@ public class Operator {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Detailed description for the object.
+     * Details about the operator.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -108,13 +116,13 @@ public class Operator {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
 
     /**
-     * An array of parameters.
+     * An array of parameters used in the data flow.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     java.util.List<Parameter> parameters;
@@ -133,6 +141,8 @@ public class Operator {
         AggregatorOperator("AGGREGATOR_OPERATOR"),
         ProjectionOperator("PROJECTION_OPERATOR"),
         TargetOperator("TARGET_OPERATOR"),
+        DistinctOperator("DISTINCT_OPERATOR"),
+        SortOperator("SORT_OPERATOR"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

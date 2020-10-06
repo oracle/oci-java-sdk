@@ -181,19 +181,19 @@ public class RuleTypeConfig extends DynamicTypeHandler {
     ParentReference parentRef;
 
     /**
-     * Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+     * Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a `TypedObject` or a full `TypedObject` definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Object scope;
 
     /**
-     * orderByRule
+     * Specifies whether it is ordered by rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOrderByRule")
     Boolean isOrderByRule;
 
     /**
-     * projectionRules
+     * The projection rules.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectionRules")
     java.util.List<ProjectionRule> projectionRules;

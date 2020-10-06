@@ -61,7 +61,7 @@ public class TaskSummaryCollection {
     }
 
     /**
-     * The array of Task summaries.
+     * The array of task summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<TaskSummary> items;

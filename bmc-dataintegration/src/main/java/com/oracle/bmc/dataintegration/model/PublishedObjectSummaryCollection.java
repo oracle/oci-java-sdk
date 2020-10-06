@@ -62,7 +62,7 @@ public class PublishedObjectSummaryCollection {
     }
 
     /**
-     * The array of PublishedObject summaries
+     * The array of published object summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<PublishedObjectSummary> items;

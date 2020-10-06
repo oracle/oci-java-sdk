@@ -104,6 +104,15 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("mergeKey")
+        private UniqueKey mergeKey;
+
+        public Builder mergeKey(UniqueKey mergeKey) {
+            this.mergeKey = mergeKey;
+            this.__explicitlySet__.add("mergeKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
@@ -127,6 +136,7 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
                             partitionConfig,
                             writeAttribute,
                             writeMode,
+                            mergeKey,
                             objectStatus);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -143,6 +153,7 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
                             .partitionConfig(o.getPartitionConfig())
                             .writeAttribute(o.getWriteAttribute())
                             .writeMode(o.getWriteMode())
+                            .mergeKey(o.getMergeKey())
                             .objectStatus(o.getObjectStatus());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -167,6 +178,7 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
             PartitionConfig partitionConfig,
             AbstractWriteAttribute writeAttribute,
             WriteMode writeMode,
+            UniqueKey mergeKey,
             Integer objectStatus) {
         super();
         this.key = key;
@@ -177,17 +189,18 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
         this.partitionConfig = partitionConfig;
         this.writeAttribute = writeAttribute;
         this.writeMode = writeMode;
+        this.mergeKey = mergeKey;
         this.objectStatus = objectStatus;
     }
 
     /**
-     * The key of the object.
+     * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * The model version of an object.
+     * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;
@@ -262,6 +275,9 @@ public class WriteOperationConfig extends AbstractDataOperationConfig {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("writeMode")
     WriteMode writeMode;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("mergeKey")
+    UniqueKey mergeKey;
 
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.

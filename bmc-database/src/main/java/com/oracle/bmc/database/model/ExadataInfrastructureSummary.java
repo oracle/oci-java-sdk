@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the Exadata infrastructure.
+ * Details of the Exadata Cloud@Customer infrastructure.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -444,7 +444,7 @@ public class ExadataInfrastructureSummary {
     LifecycleState lifecycleState;
 
     /**
-     * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -578,13 +578,13 @@ public class ExadataInfrastructureSummary {
     String lifecycleDetails;
 
     /**
-     * The CSI Number of the Exadata Infrastructure.
+     * The CSI Number of the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csiNumber")
     String csiNumber;
 
     /**
-     * The list of contacts for the Exadata Infrastructure.
+     * The list of contacts for the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     java.util.List<ExadataInfrastructureContact> contacts;

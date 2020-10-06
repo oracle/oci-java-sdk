@@ -230,6 +230,14 @@ public interface Marketplace extends AutoCloseable {
     ListReportsResponse listReports(ListReportsRequest request);
 
     /**
+     * Returns list of all tax implications that current tenant may be liable to once they launch the listing.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListTaxesResponse listTaxes(ListTaxesRequest request);
+
+    /**
      * Updates the display name or tags associated with a listing's previously accepted terms of use agreement.
      *
      * @param request The request object containing the details to send

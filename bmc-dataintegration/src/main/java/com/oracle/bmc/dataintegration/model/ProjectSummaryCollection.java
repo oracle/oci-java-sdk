@@ -61,7 +61,7 @@ public class ProjectSummaryCollection {
     }
 
     /**
-     * The array of Project summaries
+     * The array of project summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ProjectSummary> items;

@@ -13,12 +13,12 @@ public class GetDataFlowValidationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * key of the dataflow validation.
+     * The key of the dataflow validation.
      */
     private String dataFlowValidationKey;
 

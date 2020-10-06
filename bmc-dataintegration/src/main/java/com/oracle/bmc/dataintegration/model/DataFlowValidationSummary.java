@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about dataflow validation
+ * The information about a data flow validation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -219,37 +219,37 @@ public class DataFlowValidationSummary {
     }
 
     /**
-     * Total number of validation messages
+     * The total number of validation messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMessageCount")
     Integer totalMessageCount;
 
     /**
-     * Total number of validation error messages
+     * The total number of validation error messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessageCount")
     Integer errorMessageCount;
 
     /**
-     * Total number of validation warning messages
+     * The total number of validation warning messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warnMessageCount")
     Integer warnMessageCount;
 
     /**
-     * Total number of validation information messages
+     * The total number of validation information messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infoMessageCount")
     Integer infoMessageCount;
 
     /**
-     * Detailed information of the DataFlow object validation.
+     * The detailed information of the data flow object validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationMessages")
     java.util.Map<String, java.util.List<ValidationMessage>> validationMessages;
 
     /**
-     * Objects will use a 36 character key as unique ID. It is system generated and cannot be edited by user
+     * Objects will use a 36 character key as unique ID. It is system generated and cannot be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
@@ -261,7 +261,7 @@ public class DataFlowValidationSummary {
     String modelType;
 
     /**
-     * The model version of an object.
+     * The model version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;
@@ -270,7 +270,7 @@ public class DataFlowValidationSummary {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -294,7 +294,7 @@ public class DataFlowValidationSummary {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;

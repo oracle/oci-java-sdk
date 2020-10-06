@@ -41,7 +41,7 @@ package com.oracle.bmc.dataintegration.model;
 public class CreateTaskValidationDetails {
 
     /**
-     * Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in the create operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
@@ -56,7 +56,7 @@ public class CreateTaskValidationDetails {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -80,7 +80,7 @@ public class CreateTaskValidationDetails {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;

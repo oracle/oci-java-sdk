@@ -12,7 +12,7 @@ import com.oracle.bmc.database.model.*;
 public class GetAutonomousPatchRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Autonomous Patch [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The autonomous patch [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousPatchId;
 

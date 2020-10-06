@@ -128,19 +128,19 @@ public class Expression {
     }
 
     /**
-     * The key of the object.
+     * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * The type of the object.
+     * The object type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     String modelType;
 
     /**
-     * The model version of an object.
+     * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;

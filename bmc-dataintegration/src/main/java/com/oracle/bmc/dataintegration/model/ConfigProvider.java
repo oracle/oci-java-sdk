@@ -68,13 +68,13 @@ public class ConfigProvider {
     }
 
     /**
-     * bindings
+     * The configuration provider bindings.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bindings")
     java.util.Map<String, ParameterValue> bindings;
 
     /**
-     * childProviders
+     * The child providers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("childProviders")
     java.util.Map<String, ConfigProvider> childProviders;

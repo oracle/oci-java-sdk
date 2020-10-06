@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the VM cluster.
+ * Details of the Exadata Cloud@Customer VM cluster.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -368,7 +368,7 @@ public class VmClusterSummary {
     LifecycleState lifecycleState;
 
     /**
-     * The user-friendly name for the VM cluster. The name does not need to be unique.
+     * The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

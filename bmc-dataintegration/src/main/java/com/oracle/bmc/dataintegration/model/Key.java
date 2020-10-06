@@ -41,7 +41,7 @@ package com.oracle.bmc.dataintegration.model;
 public class Key {
 
     /**
-     * The type of the key.
+     * The key type.
      **/
     public enum ModelType {
         ForeignKey("FOREIGN_KEY"),

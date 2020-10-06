@@ -1630,6 +1630,490 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCloudExadataInfrastructures operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCloudExadataInfrastructuresResponse>
+            listCloudExadataInfrastructuresResponseIterator(
+                    final ListCloudExadataInfrastructuresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudExadataInfrastructuresRequest.Builder,
+                ListCloudExadataInfrastructuresRequest, ListCloudExadataInfrastructuresResponse>(
+                new com.google.common.base.Supplier<
+                        ListCloudExadataInfrastructuresRequest.Builder>() {
+                    @Override
+                    public ListCloudExadataInfrastructuresRequest.Builder get() {
+                        return ListCloudExadataInfrastructuresRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudExadataInfrastructuresResponse, String>() {
+                    @Override
+                    public String apply(ListCloudExadataInfrastructuresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudExadataInfrastructuresRequest.Builder>,
+                        ListCloudExadataInfrastructuresRequest>() {
+                    @Override
+                    public ListCloudExadataInfrastructuresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudExadataInfrastructuresRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudExadataInfrastructuresRequest,
+                        ListCloudExadataInfrastructuresResponse>() {
+                    @Override
+                    public ListCloudExadataInfrastructuresResponse apply(
+                            ListCloudExadataInfrastructuresRequest request) {
+                        return client.listCloudExadataInfrastructures(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.CloudExadataInfrastructureSummary} objects
+     * contained in responses from the listCloudExadataInfrastructures operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.CloudExadataInfrastructureSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.CloudExadataInfrastructureSummary>
+            listCloudExadataInfrastructuresRecordIterator(
+                    final ListCloudExadataInfrastructuresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudExadataInfrastructuresRequest.Builder,
+                ListCloudExadataInfrastructuresRequest, ListCloudExadataInfrastructuresResponse,
+                com.oracle.bmc.database.model.CloudExadataInfrastructureSummary>(
+                new com.google.common.base.Supplier<
+                        ListCloudExadataInfrastructuresRequest.Builder>() {
+                    @Override
+                    public ListCloudExadataInfrastructuresRequest.Builder get() {
+                        return ListCloudExadataInfrastructuresRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudExadataInfrastructuresResponse, String>() {
+                    @Override
+                    public String apply(ListCloudExadataInfrastructuresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudExadataInfrastructuresRequest.Builder>,
+                        ListCloudExadataInfrastructuresRequest>() {
+                    @Override
+                    public ListCloudExadataInfrastructuresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudExadataInfrastructuresRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudExadataInfrastructuresRequest,
+                        ListCloudExadataInfrastructuresResponse>() {
+                    @Override
+                    public ListCloudExadataInfrastructuresResponse apply(
+                            ListCloudExadataInfrastructuresRequest request) {
+                        return client.listCloudExadataInfrastructures(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudExadataInfrastructuresResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .CloudExadataInfrastructureSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.CloudExadataInfrastructureSummary>
+                            apply(ListCloudExadataInfrastructuresResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listCloudVmClusterUpdateHistoryEntries operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCloudVmClusterUpdateHistoryEntriesResponse>
+            listCloudVmClusterUpdateHistoryEntriesResponseIterator(
+                    final ListCloudVmClusterUpdateHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudVmClusterUpdateHistoryEntriesRequest.Builder,
+                ListCloudVmClusterUpdateHistoryEntriesRequest,
+                ListCloudVmClusterUpdateHistoryEntriesResponse>(
+                new com.google.common.base.Supplier<
+                        ListCloudVmClusterUpdateHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListCloudVmClusterUpdateHistoryEntriesRequest.Builder get() {
+                        return ListCloudVmClusterUpdateHistoryEntriesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClusterUpdateHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudVmClusterUpdateHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudVmClusterUpdateHistoryEntriesRequest.Builder>,
+                        ListCloudVmClusterUpdateHistoryEntriesRequest>() {
+                    @Override
+                    public ListCloudVmClusterUpdateHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudVmClusterUpdateHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClusterUpdateHistoryEntriesRequest,
+                        ListCloudVmClusterUpdateHistoryEntriesResponse>() {
+                    @Override
+                    public ListCloudVmClusterUpdateHistoryEntriesResponse apply(
+                            ListCloudVmClusterUpdateHistoryEntriesRequest request) {
+                        return client.listCloudVmClusterUpdateHistoryEntries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.UpdateHistoryEntrySummary} objects
+     * contained in responses from the listCloudVmClusterUpdateHistoryEntries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.UpdateHistoryEntrySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.UpdateHistoryEntrySummary>
+            listCloudVmClusterUpdateHistoryEntriesRecordIterator(
+                    final ListCloudVmClusterUpdateHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudVmClusterUpdateHistoryEntriesRequest.Builder,
+                ListCloudVmClusterUpdateHistoryEntriesRequest,
+                ListCloudVmClusterUpdateHistoryEntriesResponse,
+                com.oracle.bmc.database.model.UpdateHistoryEntrySummary>(
+                new com.google.common.base.Supplier<
+                        ListCloudVmClusterUpdateHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListCloudVmClusterUpdateHistoryEntriesRequest.Builder get() {
+                        return ListCloudVmClusterUpdateHistoryEntriesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClusterUpdateHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudVmClusterUpdateHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudVmClusterUpdateHistoryEntriesRequest.Builder>,
+                        ListCloudVmClusterUpdateHistoryEntriesRequest>() {
+                    @Override
+                    public ListCloudVmClusterUpdateHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudVmClusterUpdateHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClusterUpdateHistoryEntriesRequest,
+                        ListCloudVmClusterUpdateHistoryEntriesResponse>() {
+                    @Override
+                    public ListCloudVmClusterUpdateHistoryEntriesResponse apply(
+                            ListCloudVmClusterUpdateHistoryEntriesRequest request) {
+                        return client.listCloudVmClusterUpdateHistoryEntries(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClusterUpdateHistoryEntriesResponse,
+                        java.util.List<com.oracle.bmc.database.model.UpdateHistoryEntrySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.UpdateHistoryEntrySummary>
+                            apply(ListCloudVmClusterUpdateHistoryEntriesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listCloudVmClusterUpdates operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCloudVmClusterUpdatesResponse> listCloudVmClusterUpdatesResponseIterator(
+            final ListCloudVmClusterUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudVmClusterUpdatesRequest.Builder, ListCloudVmClusterUpdatesRequest,
+                ListCloudVmClusterUpdatesResponse>(
+                new com.google.common.base.Supplier<ListCloudVmClusterUpdatesRequest.Builder>() {
+                    @Override
+                    public ListCloudVmClusterUpdatesRequest.Builder get() {
+                        return ListCloudVmClusterUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCloudVmClusterUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudVmClusterUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudVmClusterUpdatesRequest.Builder>,
+                        ListCloudVmClusterUpdatesRequest>() {
+                    @Override
+                    public ListCloudVmClusterUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudVmClusterUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClusterUpdatesRequest, ListCloudVmClusterUpdatesResponse>() {
+                    @Override
+                    public ListCloudVmClusterUpdatesResponse apply(
+                            ListCloudVmClusterUpdatesRequest request) {
+                        return client.listCloudVmClusterUpdates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.UpdateSummary} objects
+     * contained in responses from the listCloudVmClusterUpdates operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.UpdateSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.UpdateSummary>
+            listCloudVmClusterUpdatesRecordIterator(
+                    final ListCloudVmClusterUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudVmClusterUpdatesRequest.Builder, ListCloudVmClusterUpdatesRequest,
+                ListCloudVmClusterUpdatesResponse, com.oracle.bmc.database.model.UpdateSummary>(
+                new com.google.common.base.Supplier<ListCloudVmClusterUpdatesRequest.Builder>() {
+                    @Override
+                    public ListCloudVmClusterUpdatesRequest.Builder get() {
+                        return ListCloudVmClusterUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCloudVmClusterUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListCloudVmClusterUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudVmClusterUpdatesRequest.Builder>,
+                        ListCloudVmClusterUpdatesRequest>() {
+                    @Override
+                    public ListCloudVmClusterUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudVmClusterUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClusterUpdatesRequest, ListCloudVmClusterUpdatesResponse>() {
+                    @Override
+                    public ListCloudVmClusterUpdatesResponse apply(
+                            ListCloudVmClusterUpdatesRequest request) {
+                        return client.listCloudVmClusterUpdates(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClusterUpdatesResponse,
+                        java.util.List<com.oracle.bmc.database.model.UpdateSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.UpdateSummary> apply(
+                            ListCloudVmClusterUpdatesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listCloudVmClusters operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCloudVmClustersResponse> listCloudVmClustersResponseIterator(
+            final ListCloudVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCloudVmClustersRequest.Builder, ListCloudVmClustersRequest,
+                ListCloudVmClustersResponse>(
+                new com.google.common.base.Supplier<ListCloudVmClustersRequest.Builder>() {
+                    @Override
+                    public ListCloudVmClustersRequest.Builder get() {
+                        return ListCloudVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCloudVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudVmClustersRequest.Builder>,
+                        ListCloudVmClustersRequest>() {
+                    @Override
+                    public ListCloudVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClustersRequest, ListCloudVmClustersResponse>() {
+                    @Override
+                    public ListCloudVmClustersResponse apply(ListCloudVmClustersRequest request) {
+                        return client.listCloudVmClusters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.CloudVmClusterSummary} objects
+     * contained in responses from the listCloudVmClusters operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.CloudVmClusterSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.CloudVmClusterSummary>
+            listCloudVmClustersRecordIterator(final ListCloudVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCloudVmClustersRequest.Builder, ListCloudVmClustersRequest,
+                ListCloudVmClustersResponse, com.oracle.bmc.database.model.CloudVmClusterSummary>(
+                new com.google.common.base.Supplier<ListCloudVmClustersRequest.Builder>() {
+                    @Override
+                    public ListCloudVmClustersRequest.Builder get() {
+                        return ListCloudVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCloudVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListCloudVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCloudVmClustersRequest.Builder>,
+                        ListCloudVmClustersRequest>() {
+                    @Override
+                    public ListCloudVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCloudVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClustersRequest, ListCloudVmClustersResponse>() {
+                    @Override
+                    public ListCloudVmClustersResponse apply(ListCloudVmClustersRequest request) {
+                        return client.listCloudVmClusters(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCloudVmClustersResponse,
+                        java.util.List<com.oracle.bmc.database.model.CloudVmClusterSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.CloudVmClusterSummary>
+                            apply(ListCloudVmClustersResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listContainerDatabasePatches operation. This iterable
      * will fetch more data from the server as needed.
      *

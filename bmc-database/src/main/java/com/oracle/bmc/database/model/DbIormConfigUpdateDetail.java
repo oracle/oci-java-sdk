@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * IORM Config setting request for this database
+ * Details of the IORM configuration settings update request.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -71,14 +71,14 @@ public class DbIormConfigUpdateDetail {
     }
 
     /**
-     * Database Name. For updating default DbPlan, pass in dbName as `default`
+     * The database name. For the default `DbPlan`, the `dbName` is `default`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     String dbName;
 
     /**
-     * Relative priority of a database
+     * The relative priority of this database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("share")

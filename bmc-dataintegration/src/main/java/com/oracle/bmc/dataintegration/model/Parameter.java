@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Parameters are created and assigned values that can be deferred to execution/runtime.
+ * Parameters are created and assigned values that can be configured for each integration task.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -252,18 +252,18 @@ public class Parameter extends TypedObject {
     Object rootObjectDefaultValue;
 
     /**
-     * Whether the parameter is input value.
+     * Specifies whether the parameter is input value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInput")
     Boolean isInput;
 
     /**
-     * Whether the parameter is output value.
+     * Specifies whether the parameter is output value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOutput")
     Boolean isOutput;
     /**
-     * The output aggregation type
+     * The output aggregation type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum OutputAggregationType {
@@ -311,13 +311,13 @@ public class Parameter extends TypedObject {
         }
     };
     /**
-     * The output aggregation type
+     * The output aggregation type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputAggregationType")
     OutputAggregationType outputAggregationType;
 
     /**
-     * The name of the object type.
+     * The type of value the parameter was created for.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     String typeName;

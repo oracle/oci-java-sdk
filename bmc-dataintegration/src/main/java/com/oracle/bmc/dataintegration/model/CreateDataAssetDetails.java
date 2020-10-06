@@ -29,6 +29,14 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDataAssetFromJdbc.class,
+        name = "GENERIC_JDBC_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDataAssetFromMySQL.class,
+        name = "MYSQL_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDataAssetFromOracle.class,
         name = "ORACLE_DATA_ASSET"
     ),
@@ -61,13 +69,13 @@ public class CreateDataAssetDetails {
     String modelVersion;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Detailed description for the object.
+     * User-defined description of the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -79,19 +87,19 @@ public class CreateDataAssetDetails {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
 
     /**
-     * The external key for the object
+     * The external key for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     String externalKey;
 
     /**
-     * assetProperties
+     * Additional properties for the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetProperties")
     java.util.Map<String, String> assetProperties;
@@ -107,6 +115,8 @@ public class CreateDataAssetDetails {
         OracleObjectStorageDataAsset("ORACLE_OBJECT_STORAGE_DATA_ASSET"),
         OracleAtpDataAsset("ORACLE_ATP_DATA_ASSET"),
         OracleAdwcDataAsset("ORACLE_ADWC_DATA_ASSET"),
+        MysqlDataAsset("MYSQL_DATA_ASSET"),
+        GenericJdbcDataAsset("GENERIC_JDBC_DATA_ASSET"),
         ;
 
         private final String value;

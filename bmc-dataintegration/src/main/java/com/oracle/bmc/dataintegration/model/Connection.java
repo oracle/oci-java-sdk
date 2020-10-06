@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The connection object.
+ * The connection for a data asset.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -43,6 +43,14 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConnectionFromOracle.class,
         name = "ORACLEDB_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConnectionFromMySQL.class,
+        name = "MYSQL_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConnectionFromJdbc.class,
+        name = "GENERIC_JDBC_CONNECTION"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -64,13 +72,13 @@ public class Connection {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Detailed description for the object.
+     * User-defined description for the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -88,7 +96,7 @@ public class Connection {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
@@ -112,7 +120,7 @@ public class Connection {
     ObjectMetadata metadata;
 
     /**
-     * A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
     java.util.Map<String, String> keyMap;
@@ -126,6 +134,8 @@ public class Connection {
         OracleAtpConnection("ORACLE_ATP_CONNECTION"),
         OracleObjectStorageConnection("ORACLE_OBJECT_STORAGE_CONNECTION"),
         OracledbConnection("ORACLEDB_CONNECTION"),
+        MysqlConnection("MYSQL_CONNECTION"),
+        GenericJdbcConnection("GENERIC_JDBC_CONNECTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
