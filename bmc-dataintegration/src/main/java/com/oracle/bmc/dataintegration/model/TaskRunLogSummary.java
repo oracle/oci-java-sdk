@@ -61,7 +61,7 @@ public class TaskRunLogSummary {
     }
 
     /**
-     * Human-readable log message.
+     * A user-friendly log message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;

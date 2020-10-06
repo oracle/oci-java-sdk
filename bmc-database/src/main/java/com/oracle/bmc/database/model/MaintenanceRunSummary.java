@@ -319,6 +319,7 @@ public class MaintenanceRunSummary {
         AutonomousExadataInfrastructure("AUTONOMOUS_EXADATA_INFRASTRUCTURE"),
         AutonomousContainerDatabase("AUTONOMOUS_CONTAINER_DATABASE"),
         ExadataDbSystem("EXADATA_DB_SYSTEM"),
+        CloudExadataInfrastructure("CLOUD_EXADATA_INFRASTRUCTURE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

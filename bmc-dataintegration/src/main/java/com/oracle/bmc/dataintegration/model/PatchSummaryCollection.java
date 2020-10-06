@@ -61,7 +61,7 @@ public class PatchSummaryCollection {
     }
 
     /**
-     * The array of patch summaries
+     * The array of patch summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<PatchSummary> items;

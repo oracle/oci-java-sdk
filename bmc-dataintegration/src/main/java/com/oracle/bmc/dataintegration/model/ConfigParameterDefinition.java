@@ -139,7 +139,7 @@ public class ConfigParameterDefinition {
     String parameterName;
 
     /**
-     * Detailed description for the object.
+     * A user defined description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -157,13 +157,13 @@ public class ConfigParameterDefinition {
     String classFieldName;
 
     /**
-     * Whether the parameter is static or not.
+     * Specifies whether the parameter is static or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStatic")
     Boolean isStatic;
 
     /**
-     * Whether the parameter is a class field or not.
+     * Specifies whether the parameter is a class field or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isClassFieldValue")
     Boolean isClassFieldValue;

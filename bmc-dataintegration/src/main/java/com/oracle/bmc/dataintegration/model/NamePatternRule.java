@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * This rule projects fields by a name pattern, for example it may start with STR_ or end with _DATE, this is defined using a regular expression.
+ * This rule projects fields by a name pattern, for example it may start with STR_ or end with _DATE. This is defined using a regular expression.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -244,24 +244,24 @@ public class NamePatternRule extends ProjectionRule {
     }
 
     /**
-     * skipRemainingRulesOnMatch
+     * Specifies whether to skip remaining rules when a match is found.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
     Boolean isSkipRemainingRulesOnMatch;
 
     /**
-     * Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+     * Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     Object scope;
 
     /**
-     * cascade
+     * Specifies whether to cascade or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCascade")
     Boolean isCascade;
     /**
-     * matchingStrategy
+     * The pattern matching strategy.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum MatchingStrategy {
@@ -308,18 +308,18 @@ public class NamePatternRule extends ProjectionRule {
         }
     };
     /**
-     * matchingStrategy
+     * The pattern matching strategy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingStrategy")
     MatchingStrategy matchingStrategy;
 
     /**
-     * caseSensitive
+     * Specifies if the rule is case sensitive.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCaseSensitive")
     Boolean isCaseSensitive;
     /**
-     * ruleType
+     * The rule type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum RuleType {
@@ -365,13 +365,13 @@ public class NamePatternRule extends ProjectionRule {
         }
     };
     /**
-     * ruleType
+     * The rule type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleType")
     RuleType ruleType;
 
     /**
-     * pattern
+     * The rule pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     String pattern;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * List of DependentObject summaries
+ * A list of dependent object summaries.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class DependentObjectSummaryCollection {
     }
 
     /**
-     * The array of DependentObject summaries
+     * An array of dependent object summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DependentObjectSummary> items;

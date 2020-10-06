@@ -274,6 +274,8 @@ public class DatabaseSoftwareImageSummary {
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Terminating("TERMINATING"),
+        Terminated("TERMINATED"),
         Updating("UPDATING"),
 
         /**

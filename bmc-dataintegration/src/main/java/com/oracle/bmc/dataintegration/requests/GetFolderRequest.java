@@ -12,12 +12,12 @@ import com.oracle.bmc.dataintegration.model.*;
 public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * DIS Folder key
+     * The folder key.
      */
     private String folderKey;
 

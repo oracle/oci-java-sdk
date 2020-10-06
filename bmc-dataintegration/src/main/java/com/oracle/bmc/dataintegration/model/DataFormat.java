@@ -79,6 +79,7 @@ public class DataFormat {
         Csv("CSV"),
         Orc("ORC"),
         Parquet("PARQUET"),
+        Avro("AVRO"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

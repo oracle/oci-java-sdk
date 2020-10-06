@@ -119,7 +119,7 @@ public class ListingPackageSummary {
     }
 
     /**
-     * The id of the listing the specified package belongs to.
+     * The ID of the listing that the specified package belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     String listingId;
@@ -137,7 +137,8 @@ public class ListingPackageSummary {
     PackageTypeEnum packageType;
 
     /**
-     * The regions where the package is eligible to be deployed.
+     * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     java.util.List<Region> regions;

@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.24.0 - 2020-10-06
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the me-dubai-1 region
+- Support for rotating keys on autonomous container databases and autonomous databases in the Database service
+- Support for cloud Exadata infrastructure and cloud VM clusters in the Database service
+- Support for controlling the display of tax banners in the Marketplace service
+- Support for application references, patch changes, generic JDBC and MySQL data asset types, and publishing tasks to OCI Dataflow in the Data Integration service
+- Support for disabling the legacy Instance Metadata endpoints v1 in the Compute service
+- Support for instance configurations specifying instance options in the Compute Management service
+
+### Breaking Changes
+- Enum `ModelType` in the Data Integration service has restricted values to `Shape`, `InputPort`, `ShapeField`, `InputField`, `DerivedField`, `MacroField`, `OutputPort`, `DynamicProxyField`, `OutputPort`, `DynamicInputField`, `ProxyField`, `Parameter`
+- The return type of method `getWrappedType()` in `com.oracle.bmc.dataintegration.model.ConfiguredType` has been changed from `com.oracle.bmc.dataintegration.model.BaseType` to `java.lang.Object` in the Data Integration Service
+
 ## 1.23.4 - 2020-09-29
 ### Added
 - Support for specifying custom content dispositions when downloading objects in the Object Storage service

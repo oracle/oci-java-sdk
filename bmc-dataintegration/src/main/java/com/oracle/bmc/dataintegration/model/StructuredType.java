@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A StructuredType object represents a data type that exists in a physical data asset object such as a table column, but is more complex, for example an Oracle database OBJECT type.   It can be composed of multiple DataType objects.
+ * A `StructuredType` object represents a data type that exists in a physical data asset object such as a table column, but is more complex. For example, an Oracle database `OBJECT` type. It can be composed of multiple `DataType` objects.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -93,7 +93,7 @@ public class StructuredType {
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
     BaseType schema;
     /**
-     * dtType
+     * The data type.
      **/
     public enum DtType {
         Primitive("PRIMITIVE"),
@@ -128,13 +128,13 @@ public class StructuredType {
         }
     };
     /**
-     * dtType
+     * The data type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dtType")
     DtType dtType;
 
     /**
-     * typeSystemName
+     * The data type system name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeSystemName")
     String typeSystemName;

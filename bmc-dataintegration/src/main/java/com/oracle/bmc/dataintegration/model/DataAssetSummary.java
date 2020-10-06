@@ -29,12 +29,20 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetSummaryFromMySQL.class,
+        name = "MYSQL_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetSummaryFromAtp.class,
         name = "ORACLE_ATP_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetSummaryFromAdwc.class,
         name = "ORACLE_ADWC_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetSummaryFromJdbc.class,
+        name = "GENERIC_JDBC_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetSummaryFromObjectStorage.class,
@@ -61,13 +69,13 @@ public class DataAssetSummary {
     String modelVersion;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Detailed description for the object.
+     * The user-defined description of the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -79,19 +87,19 @@ public class DataAssetSummary {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
 
     /**
-     * The external key for the object
+     * The external key for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     String externalKey;
 
     /**
-     * assetProperties
+     * Additional properties for the data asset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetProperties")
     java.util.Map<String, String> assetProperties;
@@ -120,6 +128,8 @@ public class DataAssetSummary {
         OracleObjectStorageDataAsset("ORACLE_OBJECT_STORAGE_DATA_ASSET"),
         OracleAtpDataAsset("ORACLE_ATP_DATA_ASSET"),
         OracleAdwcDataAsset("ORACLE_ADWC_DATA_ASSET"),
+        MysqlDataAsset("MYSQL_DATA_ASSET"),
+        GenericJdbcDataAsset("GENERIC_JDBC_DATA_ASSET"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

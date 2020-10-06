@@ -146,7 +146,7 @@ public class UpdateTaskRunDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
     /**
-     * status
+     * The status of the object.
      **/
     public enum Status {
         Terminating("TERMINATING"),
@@ -180,7 +180,7 @@ public class UpdateTaskRunDetails {
         }
     };
     /**
-     * status
+     * The status of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;
@@ -198,7 +198,7 @@ public class UpdateTaskRunDetails {
     String modelVersion;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

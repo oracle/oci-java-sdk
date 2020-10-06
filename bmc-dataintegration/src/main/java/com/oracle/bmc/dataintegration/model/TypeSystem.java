@@ -204,13 +204,13 @@ public class TypeSystem {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Detailed description for the object.
+     * A user defined description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -222,13 +222,13 @@ public class TypeSystem {
     Integer objectVersion;
 
     /**
-     * typeMappingTo
+     * The type system to map to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeMappingTo")
     java.util.Map<String, String> typeMappingTo;
 
     /**
-     * typeMappingFrom
+     * The type system to map from.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeMappingFrom")
     java.util.Map<String, String> typeMappingFrom;
@@ -240,13 +240,13 @@ public class TypeSystem {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
 
     /**
-     * types
+     * An array of types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("types")
     java.util.List<DataType> types;

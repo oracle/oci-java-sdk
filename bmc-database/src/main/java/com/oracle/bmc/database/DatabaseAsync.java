@@ -47,7 +47,7 @@ public interface DatabaseAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Activates the specified Exadata infrastructure.
+     * Activates the specified Exadata Cloud@Customer infrastructure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -126,8 +126,8 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the Autonomous Exadata Infrastructure and its dependent resources to the specified compartment.
-     * For more information about moving Autonomous Exadata Infrastructures, see
+     * Moves the Autonomous Exadata Infrastructure resource and its dependent resources to the specified compartment.
+     * For more information, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      *
@@ -168,7 +168,7 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Move the backup destination and its dependent resources to the specified compartment.
-     * For more information about moving backup destinations, see
+     * For more information, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      *
@@ -185,6 +185,46 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeBackupDestinationCompartmentRequest,
                                     ChangeBackupDestinationCompartmentResponse>
+                            handler);
+
+    /**
+     * To move a cloud Exadata infrastructure resource and its dependent resources to another compartment, use the
+     * {@link #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest, Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudExadataInfrastructureCompartmentResponse>
+            changeCloudExadataInfrastructureCompartment(
+                    ChangeCloudExadataInfrastructureCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudExadataInfrastructureCompartmentRequest,
+                                    ChangeCloudExadataInfrastructureCompartmentResponse>
+                            handler);
+
+    /**
+     * To move a cloud VM cluster and its dependent resources to another compartment, use the
+     * {@link #changeCloudVmClusterCompartment(ChangeCloudVmClusterCompartmentRequest, Consumer, Consumer) changeCloudVmClusterCompartment} operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudVmClusterCompartmentResponse>
+            changeCloudVmClusterCompartment(
+                    ChangeCloudVmClusterCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudVmClusterCompartmentRequest,
+                                    ChangeCloudVmClusterCompartmentResponse>
                             handler);
 
     /**
@@ -228,7 +268,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * To move an Exadata infrastructure and its dependent resources to another compartment, use the
+     * To move an Exadata Cloud@Customer infrastructure resource and its dependent resources to another compartment, use the
      * {@link #changeExadataInfrastructureCompartment(ChangeExadataInfrastructureCompartmentRequest, Consumer, Consumer) changeExadataInfrastructureCompartment} operation.
      *
      *
@@ -248,7 +288,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * To move a VM cluster and its dependent resources to another compartment, use the
+     * To move an Exadata Cloud@Customer VM cluster and its dependent resources to another compartment, use the
      * {@link #changeVmClusterCompartment(ChangeVmClusterCompartmentRequest, Consumer, Consumer) changeVmClusterCompartment} operation.
      *
      *
@@ -285,7 +325,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a new Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+     * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
      *
      *
      * @param request The request object containing the details to send
@@ -378,7 +418,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates an Autonomous VM cluster.
+     * Creates an Autonomous VM cluster for Exadata Cloud@Customer.
      *
      *
      * @param request The request object containing the details to send
@@ -411,7 +451,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a backup destination.
+     * Creates a backup destination in an Exadata Cloud@Customer system.
      *
      *
      * @param request The request object containing the details to send
@@ -428,7 +468,42 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new console connection to the specified dbNode.
+     * Creates a cloud Exadata infrastructure resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCloudExadataInfrastructureResponse>
+            createCloudExadataInfrastructure(
+                    CreateCloudExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateCloudExadataInfrastructureRequest,
+                                    CreateCloudExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Creates a cloud VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCloudVmClusterResponse> createCloudVmCluster(
+            CreateCloudVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCloudVmClusterRequest, CreateCloudVmClusterResponse>
+                    handler);
+
+    /**
+     * Creates a new console connection to the specified database node.
      * After the console connection has been created and is available,
      * you connect to the console using SSH.
      *
@@ -471,7 +546,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies to Exadata DB systems and Exadata Cloud at Customer.
+     * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies to Exadata and Exadata Cloud@Customer systems.
      *
      *
      * @param request The request object containing the details to send
@@ -504,7 +579,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies to bare metal DB systems, Exadata DB systems, and Exadata Cloud at Customer systems.
+     * Creates a new Database Home in the specified database system based on the request parameters you provide. Applies to bare metal DB systems, Exadata systems, and Exadata Cloud@Customer systems.
      *
      *
      * @param request The request object containing the details to send
@@ -520,7 +595,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create Exadata infrastructure.
+     * Creates Exadata Cloud@Customer infrastructure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -555,7 +630,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a VM cluster.
+     * Creates an Exadata Cloud@Customer VM cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -571,7 +646,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates the VM cluster network.
+     * Creates the Exadata Cloud@Customer VM cluster network.
      *
      *
      * @param request The request object containing the details to send
@@ -595,7 +670,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * - reset - power off and power on
      * <p>
      **Note:** Stopping a node affects billing differently, depending on the type of DB system:
-     * *Bare metal and Exadata DB systems* - The _stop_ state has no effect on the resources you consume.
+     * *Bare metal and Exadata systems* - The _stop_ state has no effect on the resources you consume.
      * Billing continues for DB nodes that you stop, and related resources continue
      * to apply against any relevant quotas. You must terminate the DB system
      * ({@link #terminateDbSystem(TerminateDbSystemRequest, Consumer, Consumer) terminateDbSystem})
@@ -652,7 +727,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified Autonomous VM cluster.
+     * Deletes the specified Autonomous VM cluster in an Exadata Cloud@Customer system.
      *
      *
      * @param request The request object containing the details to send
@@ -684,7 +759,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a backup destination.
+     * Deletes a backup destination in an Exadata Cloud@Customer system.
      *
      *
      * @param request The request object containing the details to send
@@ -701,7 +776,43 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified Db node console connection.
+     * Deletes the cloud Exadata infrastructure resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCloudExadataInfrastructureResponse>
+            deleteCloudExadataInfrastructure(
+                    DeleteCloudExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteCloudExadataInfrastructureRequest,
+                                    DeleteCloudExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Deletes the specified cloud VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCloudVmClusterResponse> deleteCloudVmCluster(
+            DeleteCloudVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCloudVmClusterRequest, DeleteCloudVmClusterResponse>
+                    handler);
+
+    /**
+     * Deletes the specified database node console connection.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -717,9 +828,9 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the database. Applies only to Exadata DB systems.
+     * Deletes the specified database. Applies only to Exadata systems.
      * <p>
-     * The data in this database is local to the DB system and will be lost when the database is deleted. Oracle recommends that you back up any data in the DB system prior to deleting it. You can use the `performFinalBackup` parameter to have the Exadata DB system database backed up before it is deleted.
+     * The data in this database is local to the Exadata system and will be lost when the database is deleted. Oracle recommends that you back up any data in the Exadata system prior to deleting it. You can use the `performFinalBackup` parameter to have the Exadata system database backed up before it is deleted.
      *
      *
      * @param request The request object containing the details to send
@@ -751,9 +862,9 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Database Home. Applies to bare metal DB systems, Exadata DB systems, and Exadata Cloud at Customer systems.
+     * Deletes a Database Home. Applies to bare metal DB systems, Exadata Cloud Service, and Exadata Cloud@Customer systems.
      * <p>
-     * Oracle recommends that you use the `performFinalBackup` parameter to back up any data on a bare metal DB system before you delete a Database Home. On an Exadata Cloud at Customer system or an Exadata DB system, you can delete a Database Home only when there are no databases in it and therefore you cannot use the `performFinalBackup` parameter to back up data.
+     * Oracle recommends that you use the `performFinalBackup` parameter to back up any data on a bare metal DB system before you delete a Database Home. On an Exadata Cloud@Customer system or an Exadata Cloud Service system, you can delete a Database Home only when there are no databases in it and therefore you cannot use the `performFinalBackup` parameter to back up data.
      *
      *
      * @param request The request object containing the details to send
@@ -769,7 +880,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the Exadata infrastructure.
+     * Deletes the Exadata Cloud@Customer infrastructure.
      *
      *
      * @param request The request object containing the details to send
@@ -786,7 +897,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified VM cluster.
+     * Deletes the specified Exadata Cloud@Customer VM cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -802,7 +913,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified VM cluster network.
+     * Deletes the specified Exadata Cloud@Customer VM cluster network.
      *
      *
      * @param request The request object containing the details to send
@@ -838,7 +949,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Downloads the configuration file for the specified Exadata infrastructure.
+     * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      *
      *
      * @param request The request object containing the details to send
@@ -857,7 +968,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Downloads the configuration file for the specified VM Cluster Network.
+     * Downloads the configuration file for the specified Exadata Cloud@Customer VM cluster network.
      *
      *
      * @param request The request object containing the details to send
@@ -953,7 +1064,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Generates a recommended VM cluster network configuration.
+     * Generates a recommended Cloud@Customer VM cluster network configuration.
      *
      *
      * @param request The request object containing the details to send
@@ -1095,7 +1206,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Autonomous Exadata Infrastructure.
+     * Gets information about the specified Autonomous Exadata Infrastructure resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1113,7 +1224,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information about the specified Autonomous Patch.
+     * Gets information about a specific autonomous patch.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1129,7 +1240,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Autonomous VM cluster.
+     * Gets information about the specified Autonomous VM cluster for an Exadata Cloud@Customer system.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1159,7 +1270,7 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetBackupRequest, GetBackupResponse> handler);
 
     /**
-     * Gets information about the specified backup destination.
+     * Gets information about the specified backup destination in an Exadata Cloud@Customer system.
      *
      *
      * @param request The request object containing the details to send
@@ -1176,7 +1287,95 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the specified Db node console connection's information.
+     * Gets information about the specified cloud Exadata infrastructure resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudExadataInfrastructureResponse>
+            getCloudExadataInfrastructure(
+                    GetCloudExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudExadataInfrastructureRequest,
+                                    GetCloudExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Gets information about the specified cloud VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudVmClusterResponse> getCloudVmCluster(
+            GetCloudVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudVmClusterRequest, GetCloudVmClusterResponse>
+                    handler);
+
+    /**
+     * Gets the IORM configuration for the specified cloud VM cluster.
+     * If you have not specified an IORM configuration, the default configuration is returned.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudVmClusterIormConfigResponse> getCloudVmClusterIormConfig(
+            GetCloudVmClusterIormConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudVmClusterIormConfigRequest, GetCloudVmClusterIormConfigResponse>
+                    handler);
+
+    /**
+     * Gets information about a specified maintenance update package.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudVmClusterUpdateResponse> getCloudVmClusterUpdate(
+            GetCloudVmClusterUpdateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCloudVmClusterUpdateRequest, GetCloudVmClusterUpdateResponse>
+                    handler);
+
+    /**
+     * Gets the maintenance update history details for the specified update history entry.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCloudVmClusterUpdateHistoryEntryResponse>
+            getCloudVmClusterUpdateHistoryEntry(
+                    GetCloudVmClusterUpdateHistoryEntryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetCloudVmClusterUpdateHistoryEntryRequest,
+                                    GetCloudVmClusterUpdateHistoryEntryResponse>
+                            handler);
+
+    /**
+     * Gets the specified database node console connection's information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1209,7 +1408,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about a specific database.
+     * Gets information about the specified database.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1314,7 +1513,7 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse> handler);
 
     /**
-     * Gets information about a specified patch package.
+     * Gets information the specified patch.
      *
      *
      * @param request The request object containing the details to send
@@ -1330,7 +1529,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the patch history details for the specified patchHistoryEntryId.
+     * Gets the details of the specified patch operation on the specified DB system.
      *
      *
      * @param request The request object containing the details to send
@@ -1348,7 +1547,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Exadata infrastructure.
+     * Gets information about the specified Exadata Cloud@Customer infrastructure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1364,7 +1563,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure instance.
+     * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
      *
      *
      * @param request The request object containing the details to send
@@ -1383,8 +1582,8 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets `IORM` Setting for the requested Exadata DB System.
-     * The default IORM Settings is pre-created in all the Exadata DB System.
+     * Gets the IORM configuration settings for the specified cloud Exadata system.
+     * All Exadata service instances have default IORM settings.
      *
      *
      * @param request The request object containing the details to send
@@ -1436,7 +1635,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified VM cluster.
+     * Gets information about the specified Exadata Cloud@Customer VM cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1451,7 +1650,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified VM cluster network.
+     * Gets information about the specified Exadata Cloud@Customer VM cluster network.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1484,7 +1683,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the patch history details for the specified patchHistoryEntryId.
+     * Gets the patch history details for the specified patch history entry.
      *
      *
      * @param request The request object containing the details to send
@@ -1503,7 +1702,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Launches a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
+     * Creates a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
      *
      *
      * @param request The request object containing the details to send
@@ -1620,7 +1819,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of the Autonomous Database clones for the specified Autonomous Database.
+     * Lists the Autonomous Database clones for the specified Autonomous Database.
      *
      *
      * @param request The request object containing the details to send
@@ -1638,7 +1837,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of Autonomous Databases.
+     * Gets a list of Autonomous Databases based on the query parameters specified.
      *
      *
      * @param request The request object containing the details to send
@@ -1691,7 +1890,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the shapes that can be used to launch a new Autonomous Exadata Infrastructure DB system. The shape determines resources to allocate to the DB system (CPU cores, memory and storage).
+     * Gets a list of the shapes that can be used to launch a new Autonomous Exadata Infrastructure resource. The shape determines resources to allocate (CPU cores, memory and storage).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1728,7 +1927,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of Autonomous VM clusters in the specified compartment.
+     * Gets a list of Exadata Cloud@Customer Autonomous VM clusters in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -1762,7 +1961,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of backups based on the databaseId or compartmentId specified. Either one of the query parameters must be provided.
+     * Gets a list of backups based on the `databaseId` or `compartmentId` specified. Either one of these query parameters must be provided.
      *
      *
      * @param request The request object containing the details to send
@@ -1777,7 +1976,79 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse> handler);
 
     /**
-     * Lists the console connections for the specified Db node.
+     * Gets a list of the cloud Exadata infrastructure in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCloudExadataInfrastructuresResponse>
+            listCloudExadataInfrastructures(
+                    ListCloudExadataInfrastructuresRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudExadataInfrastructuresRequest,
+                                    ListCloudExadataInfrastructuresResponse>
+                            handler);
+
+    /**
+     * Gets the history of the maintenance update actions performed on the specified cloud VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCloudVmClusterUpdateHistoryEntriesResponse>
+            listCloudVmClusterUpdateHistoryEntries(
+                    ListCloudVmClusterUpdateHistoryEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCloudVmClusterUpdateHistoryEntriesRequest,
+                                    ListCloudVmClusterUpdateHistoryEntriesResponse>
+                            handler);
+
+    /**
+     * Lists the maintenance updates that can be applied to the requested cloud VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCloudVmClusterUpdatesResponse> listCloudVmClusterUpdates(
+            ListCloudVmClusterUpdatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudVmClusterUpdatesRequest, ListCloudVmClusterUpdatesResponse>
+                    handler);
+
+    /**
+     * Gets a list of the cloud VM clusters in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCloudVmClustersResponse> listCloudVmClusters(
+            ListCloudVmClustersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCloudVmClustersRequest, ListCloudVmClustersResponse>
+                    handler);
+
+    /**
+     * Lists the console connections for the specified database node.
      *
      *
      * @param request The request object containing the details to send
@@ -1862,7 +2133,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets history of the actions taken for patches for the specified Database Home.
+     * Lists the history of patch operations on the specified Database Home.
      *
      *
      * @param request The request object containing the details to send
@@ -1898,7 +2169,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
+     * Lists the Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
      *
      *
      * @param request The request object containing the details to send
@@ -1913,7 +2184,7 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListDbHomesRequest, ListDbHomesResponse> handler);
 
     /**
-     * Gets a list of database nodes in the specified DB system and compartment. A database node is a server running database software.
+     * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
      *
      *
      * @param request The request object containing the details to send
@@ -1947,7 +2218,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the patches applicable to the requested DB system.
+     * Lists the patches applicable to the specified DB system.
      *
      *
      * @param request The request object containing the details to send
@@ -1980,7 +2251,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the DB systems in the specified compartment. You can specify a backupId to list only the DB systems that support creating a database using this backup in this compartment.
+     * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -2011,7 +2282,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Exadata infrastructure in the specified compartment.
+     * Gets a list of the Exadata Cloud@Customer infrastructure resources in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -2028,7 +2299,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of supported GI versions for VM Cluster.
+     * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2060,7 +2331,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the VM cluster networks in the specified compartment.
+     * Gets a list of the Exadata Cloud@Customer VM cluster networks in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -2077,7 +2348,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the history of the patch actions performed on the specified Vm cluster.
+     * Gets the history of the patch actions performed on the specified VM cluster in an Exadata Cloud@Customer system.
      *
      *
      * @param request The request object containing the details to send
@@ -2096,7 +2367,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the patches applicable to the requested Vm cluster.
+     * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
      *
      *
      * @param request The request object containing the details to send
@@ -2113,7 +2384,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the VM clusters in the specified compartment.
+     * Gets a list of the Exadata Cloud@Customer VM clusters in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -2127,6 +2398,25 @@ public interface DatabaseAsync extends AutoCloseable {
             ListVmClustersRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListVmClustersRequest, ListVmClustersResponse>
                     handler);
+
+    /**
+     * Migrates the Exadata DB system to the cloud Exadata infrastructure model. All related resources will be migrated.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<MigrateExadataDbSystemResourceModelResponse>
+            migrateExadataDbSystemResourceModel(
+                    MigrateExadataDbSystemResourceModelRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    MigrateExadataDbSystemResourceModelRequest,
+                                    MigrateExadataDbSystemResourceModelResponse>
+                            handler);
 
     /**
      * Asynchronously registers this Autonomous Database with Data Safe.
@@ -2253,6 +2543,42 @@ public interface DatabaseAsync extends AutoCloseable {
             RestoreDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<RestoreDatabaseRequest, RestoreDatabaseResponse>
                     handler);
+
+    /**
+     * Creates a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateAutonomousContainerDatabaseEncryptionKeyResponse>
+            rotateAutonomousContainerDatabaseEncryptionKey(
+                    RotateAutonomousContainerDatabaseEncryptionKeyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RotateAutonomousContainerDatabaseEncryptionKeyRequest,
+                                    RotateAutonomousContainerDatabaseEncryptionKeyResponse>
+                            handler);
+
+    /**
+     * Rotate existing AutonomousDatabase [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateAutonomousDatabaseEncryptionKeyResponse>
+            rotateAutonomousDatabaseEncryptionKey(
+                    RotateAutonomousDatabaseEncryptionKeyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RotateAutonomousDatabaseEncryptionKeyRequest,
+                                    RotateAutonomousDatabaseEncryptionKeyResponse>
+                            handler);
 
     /**
      * **Deprecated.** To start an Autonomous Data Warehouse, use the {@link #startAutonomousDatabase(StartAutonomousDatabaseRequest, Consumer, Consumer) startAutonomousDatabase} operation.
@@ -2382,7 +2708,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Terminates an Autonomous Exadata Infrastructure, which permanently deletes the Exadata Infrastructure and any container databases and databases contained in the Exadata Infrastructure. The database data is local to the Autonomous Exadata Infrastructure and will be lost when the system is terminated. Oracle recommends that you back up any data in the Autonomous Exadata Infrastructure prior to terminating it.
+     * Terminates an Autonomous Exadata Infrastructure, which permanently deletes the infrastructure resource and any container databases and databases contained in the resource. The database data is local to the Autonomous Exadata Infrastructure and will be lost when the system is terminated. Oracle recommends that you back up any data in the Autonomous Exadata Infrastructure prior to terminating it.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2526,7 +2852,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the specified Autonomous VM cluster.
+     * Updates the specified Autonomous VM cluster for the Exadata Cloud@Customer system.
      *
      *
      * @param request The request object containing the details to send
@@ -2562,7 +2888,62 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update a Database based on the request parameters you provide.
+     * Updates the Cloud Exadata infrastructure resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCloudExadataInfrastructureResponse>
+            updateCloudExadataInfrastructure(
+                    UpdateCloudExadataInfrastructureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudExadataInfrastructureRequest,
+                                    UpdateCloudExadataInfrastructureResponse>
+                            handler);
+
+    /**
+     * Updates the specified cloud VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCloudVmClusterResponse> updateCloudVmCluster(
+            UpdateCloudVmClusterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCloudVmClusterRequest, UpdateCloudVmClusterResponse>
+                    handler);
+
+    /**
+     * Updates the IORM settings for the specified cloud VM cluster.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCloudVmClusterIormConfigResponse>
+            updateCloudVmClusterIormConfig(
+                    UpdateCloudVmClusterIormConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCloudVmClusterIormConfigRequest,
+                                    UpdateCloudVmClusterIormConfigResponse>
+                            handler);
+
+    /**
+     * Update the specified database based on the request parameters provided.
      *
      *
      * @param request The request object containing the details to send
@@ -2594,7 +2975,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Patches the specified dbHome.
+     * Patches the specified Database Home.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2609,7 +2990,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the properties of a DB system, such as the CPU core count.
+     * Updates the properties of the specified DB system.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2624,7 +3005,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Exadata infrastructure.
+     * Updates the Exadata Cloud@Customer infrastructure.
      *
      *
      * @param request The request object containing the details to send
@@ -2641,7 +3022,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update `IORM` Settings for the requested Exadata DB System.
+     * Updates IORM settings for the specified Exadata system.
      *
      *
      * @param request The request object containing the details to send
@@ -2674,7 +3055,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified VM cluster.
+     * Updates the specified Exadata Cloud@Customer VM cluster.
      *
      *
      * @param request The request object containing the details to send
@@ -2690,7 +3071,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified VM cluster network.
+     * Updates the specified Exadata Cloud@Customer VM cluster network.
      *
      *
      * @param request The request object containing the details to send
@@ -2707,7 +3088,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Validates the specified VM cluster network.
+     * Validates the specified Exadata Cloud@Customer VM cluster network.
      *
      *
      * @param request The request object containing the details to send

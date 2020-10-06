@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A summary type containing information about the object including its key, name and when/who created/updated it
+ * A summary type containing information about the object including its key, name and when/who created/updated it.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -130,13 +130,13 @@ public class PatchObjectMetadata {
     String key;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The fully qualified path of the published object which would include its project and folder.
+     * The fully qualified path of the published object, which would include its project and folder.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namePath")
     String namePath;
@@ -198,12 +198,12 @@ public class PatchObjectMetadata {
     Integer objectVersion;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
     /**
-     * The patch action, if object was created, updated or deleted.
+     * The patch action indicating if object was created, updated, or deleted.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -250,7 +250,7 @@ public class PatchObjectMetadata {
         }
     };
     /**
-     * The patch action, if object was created, updated or deleted.
+     * The patch action indicating if object was created, updated, or deleted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;

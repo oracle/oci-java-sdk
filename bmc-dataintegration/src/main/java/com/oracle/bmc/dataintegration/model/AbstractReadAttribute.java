@@ -42,6 +42,7 @@ public class AbstractReadAttribute {
     @lombok.extern.slf4j.Slf4j
     public enum ModelType {
         Oraclereadattribute("ORACLEREADATTRIBUTE"),
+        OracleReadAttribute("ORACLE_READ_ATTRIBUTE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

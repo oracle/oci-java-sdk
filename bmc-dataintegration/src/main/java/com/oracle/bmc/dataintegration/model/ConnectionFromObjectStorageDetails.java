@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The Object Storage connection details.
+ * The connection summary details for an Oracle Object Storage data asset.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -273,7 +273,7 @@ public class ConnectionFromObjectStorageDetails extends ConnectionDetails {
     }
 
     /**
-     * The credential file content from a wallet for the data asset.
+     * The credential file content from an Oracle Object Storage wallet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
     String credentialFileContent;
@@ -285,13 +285,13 @@ public class ConnectionFromObjectStorageDetails extends ConnectionDetails {
     String userId;
 
     /**
-     * The fingeprint for the user.
+     * The fingerprint for the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerPrint")
     String fingerPrint;
 
     /**
-     * The pass phrase for the connection.
+     * The passphrase for the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passPhrase")
     String passPhrase;

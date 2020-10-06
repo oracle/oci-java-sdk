@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A parameter value.
+ * User defined value for a parameter.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -75,7 +75,7 @@ public class ParameterValue {
     Object simpleValue;
 
     /**
-     * This can be any object such as a file entity, or a schema or a table.
+     * This can be any object such as a file entity, a schema, or a table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootObjectValue")
     Object rootObjectValue;

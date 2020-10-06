@@ -18,7 +18,7 @@ public class DeleteAcceptedAgreementRequest
     private String acceptedAgreementId;
 
     /**
-     * Deprecated. The signature value is ignored.
+     * Previously, the signature generated for the listing package terms of use agreement, but now deprecated and ignored.
      */
     private String signature;
 

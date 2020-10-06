@@ -110,7 +110,7 @@ public class UpdateWorkspaceDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A detailed description for the workspace.
+     * A user defined description for the workspace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

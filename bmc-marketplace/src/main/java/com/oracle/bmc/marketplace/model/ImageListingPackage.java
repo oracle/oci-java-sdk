@@ -202,13 +202,14 @@ public class ImageListingPackage extends ListingPackage {
     String appCatalogListingResourceVersion;
 
     /**
-     * The id of the image corresponding to the package.
+     * The ID of the image corresponding to the package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;
 
     /**
-     * List of regions in which this ListingPackage is available.
+     * The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     java.util.List<Region> regions;

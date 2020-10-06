@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The Object Storage data asset details.
+ * Details for the Oracle Object storage data asset type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -285,7 +285,7 @@ public class DataAssetFromObjectStorageDetails extends DataAsset {
     }
 
     /**
-     * url
+     * The Oracle Object storage URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     String url;
@@ -297,7 +297,7 @@ public class DataAssetFromObjectStorageDetails extends DataAsset {
     String tenancyId;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;

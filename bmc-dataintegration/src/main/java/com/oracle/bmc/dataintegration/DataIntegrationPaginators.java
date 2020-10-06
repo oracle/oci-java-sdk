@@ -944,6 +944,256 @@ public class DataIntegrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listExternalPublicationValidations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExternalPublicationValidationsResponse>
+            listExternalPublicationValidationsResponseIterator(
+                    final ListExternalPublicationValidationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalPublicationValidationsRequest.Builder,
+                ListExternalPublicationValidationsRequest,
+                ListExternalPublicationValidationsResponse>(
+                new com.google.common.base.Supplier<
+                        ListExternalPublicationValidationsRequest.Builder>() {
+                    @Override
+                    public ListExternalPublicationValidationsRequest.Builder get() {
+                        return ListExternalPublicationValidationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPublicationValidationsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalPublicationValidationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalPublicationValidationsRequest.Builder>,
+                        ListExternalPublicationValidationsRequest>() {
+                    @Override
+                    public ListExternalPublicationValidationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalPublicationValidationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPublicationValidationsRequest,
+                        ListExternalPublicationValidationsResponse>() {
+                    @Override
+                    public ListExternalPublicationValidationsResponse apply(
+                            ListExternalPublicationValidationsRequest request) {
+                        return client.listExternalPublicationValidations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.ExternalPublicationValidationSummary} objects
+     * contained in responses from the listExternalPublicationValidations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.ExternalPublicationValidationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.ExternalPublicationValidationSummary>
+            listExternalPublicationValidationsRecordIterator(
+                    final ListExternalPublicationValidationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalPublicationValidationsRequest.Builder,
+                ListExternalPublicationValidationsRequest,
+                ListExternalPublicationValidationsResponse,
+                com.oracle.bmc.dataintegration.model.ExternalPublicationValidationSummary>(
+                new com.google.common.base.Supplier<
+                        ListExternalPublicationValidationsRequest.Builder>() {
+                    @Override
+                    public ListExternalPublicationValidationsRequest.Builder get() {
+                        return ListExternalPublicationValidationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPublicationValidationsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalPublicationValidationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalPublicationValidationsRequest.Builder>,
+                        ListExternalPublicationValidationsRequest>() {
+                    @Override
+                    public ListExternalPublicationValidationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalPublicationValidationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPublicationValidationsRequest,
+                        ListExternalPublicationValidationsResponse>() {
+                    @Override
+                    public ListExternalPublicationValidationsResponse apply(
+                            ListExternalPublicationValidationsRequest request) {
+                        return client.listExternalPublicationValidations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPublicationValidationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model
+                                        .ExternalPublicationValidationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model
+                                            .ExternalPublicationValidationSummary>
+                            apply(ListExternalPublicationValidationsResponse response) {
+                        return response.getExternalPublicationValidationSummaryCollection()
+                                .getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExternalPublications operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExternalPublicationsResponse> listExternalPublicationsResponseIterator(
+            final ListExternalPublicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalPublicationsRequest.Builder, ListExternalPublicationsRequest,
+                ListExternalPublicationsResponse>(
+                new com.google.common.base.Supplier<ListExternalPublicationsRequest.Builder>() {
+                    @Override
+                    public ListExternalPublicationsRequest.Builder get() {
+                        return ListExternalPublicationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExternalPublicationsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalPublicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalPublicationsRequest.Builder>,
+                        ListExternalPublicationsRequest>() {
+                    @Override
+                    public ListExternalPublicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalPublicationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPublicationsRequest, ListExternalPublicationsResponse>() {
+                    @Override
+                    public ListExternalPublicationsResponse apply(
+                            ListExternalPublicationsRequest request) {
+                        return client.listExternalPublications(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.ExternalPublicationSummary} objects
+     * contained in responses from the listExternalPublications operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.ExternalPublicationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.ExternalPublicationSummary>
+            listExternalPublicationsRecordIterator(final ListExternalPublicationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalPublicationsRequest.Builder, ListExternalPublicationsRequest,
+                ListExternalPublicationsResponse,
+                com.oracle.bmc.dataintegration.model.ExternalPublicationSummary>(
+                new com.google.common.base.Supplier<ListExternalPublicationsRequest.Builder>() {
+                    @Override
+                    public ListExternalPublicationsRequest.Builder get() {
+                        return ListExternalPublicationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExternalPublicationsResponse, String>() {
+                    @Override
+                    public String apply(ListExternalPublicationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalPublicationsRequest.Builder>,
+                        ListExternalPublicationsRequest>() {
+                    @Override
+                    public ListExternalPublicationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalPublicationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPublicationsRequest, ListExternalPublicationsResponse>() {
+                    @Override
+                    public ListExternalPublicationsResponse apply(
+                            ListExternalPublicationsRequest request) {
+                        return client.listExternalPublications(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExternalPublicationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dataintegration.model
+                                        .ExternalPublicationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.dataintegration.model.ExternalPublicationSummary>
+                            apply(ListExternalPublicationsResponse response) {
+                        return response.getExternalPublicationSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listFolders operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1049,6 +1299,118 @@ public class DataIntegrationPaginators {
                     public java.util.List<com.oracle.bmc.dataintegration.model.FolderSummary> apply(
                             ListFoldersResponse response) {
                         return response.getFolderSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPatchChanges operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPatchChangesResponse> listPatchChangesResponseIterator(
+            final ListPatchChangesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPatchChangesRequest.Builder, ListPatchChangesRequest, ListPatchChangesResponse>(
+                new com.google.common.base.Supplier<ListPatchChangesRequest.Builder>() {
+                    @Override
+                    public ListPatchChangesRequest.Builder get() {
+                        return ListPatchChangesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPatchChangesResponse, String>() {
+                    @Override
+                    public String apply(ListPatchChangesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatchChangesRequest.Builder>,
+                        ListPatchChangesRequest>() {
+                    @Override
+                    public ListPatchChangesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatchChangesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPatchChangesRequest, ListPatchChangesResponse>() {
+                    @Override
+                    public ListPatchChangesResponse apply(ListPatchChangesRequest request) {
+                        return client.listPatchChanges(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.PatchChangeSummary} objects
+     * contained in responses from the listPatchChanges operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.PatchChangeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.PatchChangeSummary>
+            listPatchChangesRecordIterator(final ListPatchChangesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPatchChangesRequest.Builder, ListPatchChangesRequest, ListPatchChangesResponse,
+                com.oracle.bmc.dataintegration.model.PatchChangeSummary>(
+                new com.google.common.base.Supplier<ListPatchChangesRequest.Builder>() {
+                    @Override
+                    public ListPatchChangesRequest.Builder get() {
+                        return ListPatchChangesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPatchChangesResponse, String>() {
+                    @Override
+                    public String apply(ListPatchChangesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatchChangesRequest.Builder>,
+                        ListPatchChangesRequest>() {
+                    @Override
+                    public ListPatchChangesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatchChangesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPatchChangesRequest, ListPatchChangesResponse>() {
+                    @Override
+                    public ListPatchChangesResponse apply(ListPatchChangesRequest request) {
+                        return client.listPatchChanges(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPatchChangesResponse,
+                        java.util.List<com.oracle.bmc.dataintegration.model.PatchChangeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataintegration.model.PatchChangeSummary>
+                            apply(ListPatchChangesResponse response) {
+                        return response.getPatchChangeSummaryCollection().getItems();
                     }
                 });
     }
@@ -1385,6 +1747,118 @@ public class DataIntegrationPaginators {
                                     com.oracle.bmc.dataintegration.model.PublishedObjectSummary>
                             apply(ListPublishedObjectsResponse response) {
                         return response.getPublishedObjectSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listReferences operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListReferencesResponse> listReferencesResponseIterator(
+            final ListReferencesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListReferencesRequest.Builder, ListReferencesRequest, ListReferencesResponse>(
+                new com.google.common.base.Supplier<ListReferencesRequest.Builder>() {
+                    @Override
+                    public ListReferencesRequest.Builder get() {
+                        return ListReferencesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReferencesResponse, String>() {
+                    @Override
+                    public String apply(ListReferencesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReferencesRequest.Builder>,
+                        ListReferencesRequest>() {
+                    @Override
+                    public ListReferencesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReferencesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReferencesRequest, ListReferencesResponse>() {
+                    @Override
+                    public ListReferencesResponse apply(ListReferencesRequest request) {
+                        return client.listReferences(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dataintegration.model.ReferenceSummary} objects
+     * contained in responses from the listReferences operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dataintegration.model.ReferenceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dataintegration.model.ReferenceSummary>
+            listReferencesRecordIterator(final ListReferencesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListReferencesRequest.Builder, ListReferencesRequest, ListReferencesResponse,
+                com.oracle.bmc.dataintegration.model.ReferenceSummary>(
+                new com.google.common.base.Supplier<ListReferencesRequest.Builder>() {
+                    @Override
+                    public ListReferencesRequest.Builder get() {
+                        return ListReferencesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListReferencesResponse, String>() {
+                    @Override
+                    public String apply(ListReferencesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListReferencesRequest.Builder>,
+                        ListReferencesRequest>() {
+                    @Override
+                    public ListReferencesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListReferencesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReferencesRequest, ListReferencesResponse>() {
+                    @Override
+                    public ListReferencesResponse apply(ListReferencesRequest request) {
+                        return client.listReferences(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListReferencesResponse,
+                        java.util.List<com.oracle.bmc.dataintegration.model.ReferenceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dataintegration.model.ReferenceSummary>
+                            apply(ListReferencesResponse response) {
+                        return response.getReferenceSummaryCollection().getItems();
                     }
                 });
     }

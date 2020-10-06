@@ -13,7 +13,7 @@ public class ChangeVmClusterCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeVmClusterCompartmentDetails> {
 
     /**
-     * Request to move VM cluster to a different compartment
+     * Request to move the Exadata Cloud@Customer VM cluster to a different compartment.
      */
     private ChangeVmClusterCompartmentDetails changeVmClusterCompartmentDetails;
 

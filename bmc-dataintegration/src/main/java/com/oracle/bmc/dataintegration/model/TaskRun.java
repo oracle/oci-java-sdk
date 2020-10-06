@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about TaskRun.
+ * The information about a task run.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -303,7 +303,7 @@ public class TaskRun {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -323,7 +323,7 @@ public class TaskRun {
     @com.fasterxml.jackson.annotation.JsonProperty("configProvider")
     ConfigProvider configProvider;
     /**
-     * status
+     * The status of the task run.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -374,49 +374,49 @@ public class TaskRun {
         }
     };
     /**
-     * status
+     * The status of the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;
 
     /**
-     * startTimeMillis
+     * The start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTimeMillis")
     Long startTimeMillis;
 
     /**
-     * endTimeMillis
+     * The end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimeMillis")
     Long endTimeMillis;
 
     /**
-     * lastUpdated
+     * The date and time the object was last updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdated")
     Long lastUpdated;
 
     /**
-     * Number of records processed in task run.
+     * The number of records processed in the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordsWritten")
     Long recordsWritten;
 
     /**
-     * Number of bytes processed in task run.
+     * The number of bytes processed in the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bytesProcessed")
     Long bytesProcessed;
 
     /**
-     * Error message if status is ERROR
+     * Contains an error message if status is `ERROR`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     String errorMessage;
 
     /**
-     * Opc request id of execution of task run
+     * The OPC request ID of execution of the task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("opcRequestId")
     String opcRequestId;
@@ -427,7 +427,7 @@ public class TaskRun {
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     Integer objectStatus;
     /**
-     * The type of the task for the run.
+     * The type of task run.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum TaskType {
@@ -473,13 +473,13 @@ public class TaskRun {
         }
     };
     /**
-     * The type of the task for the run.
+     * The type of task run.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     TaskType taskType;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
@@ -488,7 +488,7 @@ public class TaskRun {
     ObjectMetadata metadata;
 
     /**
-     * A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
     java.util.Map<String, String> keyMap;

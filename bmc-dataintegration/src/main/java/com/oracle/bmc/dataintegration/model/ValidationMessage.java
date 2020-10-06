@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The level, message key and validation message.
+ * The level, message key, and validation message.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,19 +83,19 @@ public class ValidationMessage {
     }
 
     /**
-     * Total number of validation messages
+     * The total number of validation messages.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     String level;
 
     /**
-     * The key.
+     * The validation message key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageKey")
     String messageKey;
 
     /**
-     * The message itself.
+     * The validation message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationMessage")
     String validationMessage;

@@ -205,6 +205,15 @@ public class InstanceConfigurationLaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
+        private InstanceConfigurationInstanceOptions instanceOptions;
+
+        public Builder instanceOptions(InstanceConfigurationInstanceOptions instanceOptions) {
+            this.instanceOptions = instanceOptions;
+            this.__explicitlySet__.add("instanceOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityConfig")
         private InstanceConfigurationAvailabilityConfig availabilityConfig;
 
@@ -240,6 +249,7 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             agentConfig,
                             isPvEncryptionInTransitEnabled,
                             preferredMaintenanceAction,
+                            instanceOptions,
                             availabilityConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -267,6 +277,7 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             .agentConfig(o.getAgentConfig())
                             .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
                             .preferredMaintenanceAction(o.getPreferredMaintenanceAction())
+                            .instanceOptions(o.getInstanceOptions())
                             .availabilityConfig(o.getAvailabilityConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -618,6 +629,9 @@ public class InstanceConfigurationLaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredMaintenanceAction")
     PreferredMaintenanceAction preferredMaintenanceAction;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
+    InstanceConfigurationInstanceOptions instanceOptions;
 
     /**
      * Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.

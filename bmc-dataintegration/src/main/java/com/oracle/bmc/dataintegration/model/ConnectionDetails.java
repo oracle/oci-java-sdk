@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The connection details object.
+ * The connection details for a data asset.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,8 +29,16 @@ package com.oracle.bmc.dataintegration.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConnectionFromJdbcDetails.class,
+        name = "GENERIC_JDBC_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConnectionFromObjectStorageDetails.class,
         name = "ORACLE_OBJECT_STORAGE_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ConnectionFromMySQLDetails.class,
+        name = "MYSQL_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ConnectionFromAdwcDetails.class,
@@ -64,13 +72,13 @@ public class ConnectionDetails {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Detailed description for the object.
+     * User-defined description for the connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -88,7 +96,7 @@ public class ConnectionDetails {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
@@ -119,6 +127,8 @@ public class ConnectionDetails {
         OracleAtpConnection("ORACLE_ATP_CONNECTION"),
         OracleObjectStorageConnection("ORACLE_OBJECT_STORAGE_CONNECTION"),
         OracledbConnection("ORACLEDB_CONNECTION"),
+        MysqlConnection("MYSQL_CONNECTION"),
+        GenericJdbcConnection("GENERIC_JDBC_CONNECTION"),
         ;
 
         private final String value;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about new Workspace.
+ * The information needed to create a new workspace.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -204,7 +204,7 @@ public class CreateWorkspaceDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A detailed description for the workspace.
+     * A user defined description for the workspace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
@@ -222,7 +222,7 @@ public class CreateWorkspaceDetails {
     String compartmentId;
 
     /**
-     * Whether the private network connection is enabled or disabled.
+     * Specifies whether the private network connection is enabled or disabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivateNetworkEnabled")
     Boolean isPrivateNetworkEnabled;

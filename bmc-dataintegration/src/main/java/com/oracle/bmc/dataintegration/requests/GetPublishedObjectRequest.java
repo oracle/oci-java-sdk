@@ -12,17 +12,17 @@ import com.oracle.bmc.dataintegration.model.*;
 public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * DIS application key
+     * The application key.
      */
     private String applicationKey;
 
     /**
-     * DIS published object key
+     * The published object key.
      */
     private String publishedObjectKey;
 
@@ -35,7 +35,7 @@ public class GetPublishedObjectRequest extends com.oracle.bmc.requests.BmcReques
     private String opcRequestId;
 
     /**
-     * This is used to expand references of the object. If value is true, then all referenced objects will be expanded. If value is false, then shallow objects will be returned in place of references. Default is false. <br><br><B>Examples:-</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+     * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
      */
     private String expandReferences;
 

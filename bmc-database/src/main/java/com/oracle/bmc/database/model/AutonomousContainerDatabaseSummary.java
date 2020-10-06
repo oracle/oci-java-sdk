@@ -100,6 +100,24 @@ public class AutonomousContainerDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+        private String vaultId;
+
+        public Builder vaultId(String vaultId) {
+            this.vaultId = vaultId;
+            this.__explicitlySet__.add("vaultId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -232,6 +250,8 @@ public class AutonomousContainerDatabaseSummary {
                             autonomousExadataInfrastructureId,
                             autonomousVmClusterId,
                             infrastructureType,
+                            kmsKeyId,
+                            vaultId,
                             lifecycleState,
                             lifecycleDetails,
                             timeCreated,
@@ -261,6 +281,8 @@ public class AutonomousContainerDatabaseSummary {
                                     o.getAutonomousExadataInfrastructureId())
                             .autonomousVmClusterId(o.getAutonomousVmClusterId())
                             .infrastructureType(o.getInfrastructureType())
+                            .kmsKeyId(o.getKmsKeyId())
+                            .vaultId(o.getVaultId())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
@@ -424,6 +446,18 @@ public class AutonomousContainerDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
     InfrastructureType infrastructureType;
+
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+    String vaultId;
     /**
      * The current state of the Autonomous Container Database.
      **/
@@ -594,7 +628,7 @@ public class AutonomousContainerDatabaseSummary {
     String availabilityDomain;
 
     /**
-     * Oracle Database version of the Autonomous Container Database
+     * Oracle Database version of the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;

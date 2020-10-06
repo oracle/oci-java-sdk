@@ -18,7 +18,7 @@ public class UpdateExadataInfrastructureRequest
     private String exadataInfrastructureId;
 
     /**
-     * Request to update the properties of an Exadata infrastructure
+     * Request to update the properties of an Exadata Cloud@Customer infrastructure.
      */
     private UpdateExadataInfrastructureDetails updateExadataInfrastructureDetails;
 

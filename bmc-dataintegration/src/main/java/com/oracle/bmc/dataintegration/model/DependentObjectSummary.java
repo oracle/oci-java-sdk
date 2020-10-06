@@ -125,6 +125,15 @@ public class DependentObjectSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
+        private Boolean isFavorite;
+
+        public Builder isFavorite(Boolean isFavorite) {
+            this.isFavorite = isFavorite;
+            this.__explicitlySet__.add("isFavorite");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -141,7 +150,8 @@ public class DependentObjectSummary {
                             identifierPath,
                             infoFields,
                             registryVersion,
-                            labels);
+                            labels,
+                            isFavorite);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -159,7 +169,8 @@ public class DependentObjectSummary {
                             .identifierPath(o.getIdentifierPath())
                             .infoFields(o.getInfoFields())
                             .registryVersion(o.getRegistryVersion())
-                            .labels(o.getLabels());
+                            .labels(o.getLabels())
+                            .isFavorite(o.getIsFavorite());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -222,22 +233,28 @@ public class DependentObjectSummary {
     String identifierPath;
 
     /**
-     * infoFields
+     * Information property fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infoFields")
     java.util.Map<String, String> infoFields;
 
     /**
-     * registryVersion
+     * The registry version of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("registryVersion")
     Integer registryVersion;
 
     /**
-     * Labels are keywords or tags that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     java.util.List<String> labels;
+
+    /**
+     * Specifies whether this object is a favorite or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
+    Boolean isFavorite;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

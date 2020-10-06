@@ -12,17 +12,17 @@ import com.oracle.bmc.dataintegration.model.*;
 public class GetDependentObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * DIS application key
+     * The application key.
      */
     private String applicationKey;
 
     /**
-     * DIS dependent object key
+     * The dependent object key.
      */
     private String dependentObjectKey;
 

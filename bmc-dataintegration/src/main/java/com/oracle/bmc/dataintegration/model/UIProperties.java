@@ -68,13 +68,13 @@ public class UIProperties {
     }
 
     /**
-     * coordinateX
+     * The X coordinate of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coordinateX")
     java.math.BigDecimal coordinateX;
 
     /**
-     * coordinateY
+     * The Y coordinate of the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coordinateY")
     java.math.BigDecimal coordinateY;

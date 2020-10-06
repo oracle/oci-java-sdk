@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A CompositeType represents a type that is composed of a list of sub-types, for example an \"Address\" type.   The sub-types can be simple DataType or other CompositeType objects. Thus in general a CompositeType may represent an arbitrarily deep hierarchy of types.
+ * A `CompositeType` represents a type that is composed of a list of sub-types, for example an `Address` type.   The sub-types can be simple `DataType` or other `CompositeType` objects. Typically, a `CompositeType` may represent an arbitrarily deep hierarchy of types.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -176,7 +176,7 @@ public class CompositeType extends BaseType {
     CompositeType parentType;
 
     /**
-     * elements
+     * An array of elements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("elements")
     java.util.List<TypedObject> elements;

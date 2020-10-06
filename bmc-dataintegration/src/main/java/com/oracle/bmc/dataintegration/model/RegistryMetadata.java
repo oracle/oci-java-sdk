@@ -60,12 +60,21 @@ public class RegistryMetadata {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
+        private Boolean isFavorite;
+
+        public Builder isFavorite(Boolean isFavorite) {
+            this.isFavorite = isFavorite;
+            this.__explicitlySet__.add("isFavorite");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RegistryMetadata build() {
             RegistryMetadata __instance__ =
-                    new RegistryMetadata(aggregatorKey, labels, registryVersion, key);
+                    new RegistryMetadata(aggregatorKey, labels, registryVersion, key, isFavorite);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,7 +85,8 @@ public class RegistryMetadata {
                     aggregatorKey(o.getAggregatorKey())
                             .labels(o.getLabels())
                             .registryVersion(o.getRegistryVersion())
-                            .key(o.getKey());
+                            .key(o.getKey())
+                            .isFavorite(o.getIsFavorite());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -103,7 +113,7 @@ public class RegistryMetadata {
     java.util.List<String> labels;
 
     /**
-     * Registry version.
+     * The registry version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("registryVersion")
     Integer registryVersion;
@@ -113,6 +123,12 @@ public class RegistryMetadata {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
+
+    /**
+     * Specifies whether this object is a favorite or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
+    Boolean isFavorite;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

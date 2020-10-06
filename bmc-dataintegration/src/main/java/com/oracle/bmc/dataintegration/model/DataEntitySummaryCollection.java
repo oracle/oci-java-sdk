@@ -61,7 +61,7 @@ public class DataEntitySummaryCollection {
     }
 
     /**
-     * The array of DataEntity summaries
+     * The array of data entity summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DataEntitySummary> items;

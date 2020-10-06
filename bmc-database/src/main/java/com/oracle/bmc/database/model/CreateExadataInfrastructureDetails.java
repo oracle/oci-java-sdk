@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Request to create Exadata infrastructure.
+ * Request to create Exadata Cloud@Customer infrastructure resource.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -303,7 +303,7 @@ public class CreateExadataInfrastructureDetails {
     String corporateProxy;
 
     /**
-     * The list of contacts for the Exadata Infrastructure.
+     * The list of contacts for the Exadata infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     java.util.List<ExadataInfrastructureContact> contacts;

@@ -99,6 +99,15 @@ public class UpdateInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
+        private InstanceOptions instanceOptions;
+
+        public Builder instanceOptions(InstanceOptions instanceOptions) {
+            this.instanceOptions = instanceOptions;
+            this.__explicitlySet__.add("instanceOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
@@ -141,6 +150,7 @@ public class UpdateInstanceDetails {
                             extendedMetadata,
                             shape,
                             shapeConfig,
+                            instanceOptions,
                             faultDomain,
                             launchOptions,
                             availabilityConfig);
@@ -159,6 +169,7 @@ public class UpdateInstanceDetails {
                             .extendedMetadata(o.getExtendedMetadata())
                             .shape(o.getShape())
                             .shapeConfig(o.getShapeConfig())
+                            .instanceOptions(o.getInstanceOptions())
                             .faultDomain(o.getFaultDomain())
                             .launchOptions(o.getLaunchOptions())
                             .availabilityConfig(o.getAvailabilityConfig());
@@ -271,6 +282,9 @@ public class UpdateInstanceDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
     UpdateInstanceShapeConfigDetails shapeConfig;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceOptions")
+    InstanceOptions instanceOptions;
 
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain.

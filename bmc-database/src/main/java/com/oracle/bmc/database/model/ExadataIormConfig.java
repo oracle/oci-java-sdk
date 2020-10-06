@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Response details which has IORM Settings for this Exadata System
+ * The IORM settings of the Exadata DB system.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -94,7 +94,7 @@ public class ExadataIormConfig {
     }
 
     /**
-     * The current config state of IORM settings for this Exadata System.
+     * The current state of IORM configuration for the Exadata DB system.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -144,21 +144,21 @@ public class ExadataIormConfig {
         }
     };
     /**
-     * The current config state of IORM settings for this Exadata System.
+     * The current state of IORM configuration for the Exadata DB system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * Additional information about the current lifecycleState.
+     * Additional information about the current `lifecycleState`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
     /**
-     * Value for the IORM objective
-     * Default is \"Auto\"
+     * The current value for the IORM objective.
+     * The default is `AUTO`.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -208,16 +208,16 @@ public class ExadataIormConfig {
         }
     };
     /**
-     * Value for the IORM objective
-     * Default is \"Auto\"
+     * The current value for the IORM objective.
+     * The default is `AUTO`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objective")
     Objective objective;
 
     /**
-     * Array of IORM Setting for all the database in
-     * this Exadata DB System
+     * An array of IORM settings for all the database in
+     * the Exadata DB system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPlans")

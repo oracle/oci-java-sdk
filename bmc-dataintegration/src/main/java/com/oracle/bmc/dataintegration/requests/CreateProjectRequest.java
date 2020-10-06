@@ -12,7 +12,7 @@ import com.oracle.bmc.dataintegration.model.*;
 public class CreateProjectRequest extends com.oracle.bmc.requests.BmcRequest<CreateProjectDetails> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
@@ -22,7 +22,7 @@ public class CreateProjectRequest extends com.oracle.bmc.requests.BmcRequest<Cre
     private CreateProjectDetails createProjectDetails;
 
     /**
-     * Caller may provide \"retry tokens\" allowing them to retry an operation
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
      *
      */
     private String opcRetryToken;

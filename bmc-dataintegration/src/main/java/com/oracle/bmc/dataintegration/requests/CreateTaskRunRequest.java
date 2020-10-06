@@ -12,12 +12,12 @@ import com.oracle.bmc.dataintegration.model.*;
 public class CreateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<CreateTaskRunDetails> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * DIS application key
+     * The application key.
      */
     private String applicationKey;
 
@@ -27,7 +27,7 @@ public class CreateTaskRunRequest extends com.oracle.bmc.requests.BmcRequest<Cre
     private CreateTaskRunDetails createTaskRunDetails;
 
     /**
-     * Caller may provide \"retry tokens\" allowing them to retry an operation
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
      *
      */
     private String opcRetryToken;

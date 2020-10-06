@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The rename rule can rename fields from one to another.
+ * Lets you rename an attribute.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -192,19 +192,19 @@ public class RenameRule extends ProjectionRule {
     }
 
     /**
-     * skipRemainingRulesOnMatch
+     * Specifies whether to skip remaining rules when a match is found.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipRemainingRulesOnMatch")
     Boolean isSkipRemainingRulesOnMatch;
 
     /**
-     * fromName
+     * The attribute name that needs to be renamed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fromName")
     String fromName;
 
     /**
-     * toName
+     * The new attribute name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("toName")
     String toName;

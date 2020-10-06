@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Base type for the type system
+ * Base type for the type system.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -66,7 +66,7 @@ public class BaseType {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -78,7 +78,7 @@ public class BaseType {
     Integer objectStatus;
 
     /**
-     * Detailed description for the object.
+     * A user defined description for the object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

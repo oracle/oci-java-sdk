@@ -13,7 +13,7 @@ public class ChangeBackupDestinationCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
 
     /**
-     * Request to move backup destination to a different compartment
+     * Request to move backup destination to a different compartment.
      *
      */
     private ChangeCompartmentDetails changeCompartmentDetails;

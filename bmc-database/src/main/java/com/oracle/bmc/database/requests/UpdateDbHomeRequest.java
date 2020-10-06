@@ -17,7 +17,7 @@ public class UpdateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest<Upda
     private String dbHomeId;
 
     /**
-     * Request to update the properties of a DB Home.
+     * Request to update the properties of a Database Home.
      */
     private UpdateDbHomeDetails updateDbHomeDetails;
 

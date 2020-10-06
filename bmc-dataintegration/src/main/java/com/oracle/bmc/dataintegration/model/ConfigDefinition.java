@@ -161,13 +161,13 @@ public class ConfigDefinition {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Whether the configuration is contained or not.
+     * Specifies whether the configuration is contained or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isContained")
     Boolean isContained;
@@ -179,7 +179,7 @@ public class ConfigDefinition {
     Integer objectStatus;
 
     /**
-     * configParamDefs
+     * The parameter configuration details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configParameterDefinitions")
     java.util.Map<String, ConfigParameterDefinition> configParameterDefinitions;

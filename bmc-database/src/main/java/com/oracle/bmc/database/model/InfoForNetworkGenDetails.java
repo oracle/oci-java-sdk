@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Parameters for generation of the client or backup network in a VM cluster network.
+ * Parameters for generation of the client or backup network in a VM cluster network in an Exadata Cloud@Customer system.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

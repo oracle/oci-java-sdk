@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about TaskRun.
+ * The information about a task run.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -238,19 +238,19 @@ public class TaskRunSummary {
     }
 
     /**
-     * The key of the object.
+     * The object key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * The type of the object.
+     * The object type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     String modelType;
 
     /**
-     * The model version of an object.
+     * The object's model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     String modelVersion;
@@ -259,7 +259,7 @@ public class TaskRunSummary {
     ParentReference parentRef;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -333,19 +333,19 @@ public class TaskRunSummary {
     Status status;
 
     /**
-     * startTimeMillis
+     * The task run start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTimeMillis")
     Long startTimeMillis;
 
     /**
-     * endTimeMillis
+     * The task run end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimeMillis")
     Long endTimeMillis;
 
     /**
-     * lastUpdated
+     * The date and time the task run was last updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastUpdated")
     Long lastUpdated;
@@ -420,7 +420,7 @@ public class TaskRunSummary {
     TaskType taskType;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;

@@ -13,12 +13,12 @@ public class CreateConnectionValidationRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateConnectionValidationDetails> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * Connection info
+     * The information needed to validate a connection.
      */
     private CreateConnectionValidationDetails createConnectionValidationDetails;
 
@@ -31,7 +31,7 @@ public class CreateConnectionValidationRequest
     private String opcRequestId;
 
     /**
-     * Caller may provide \"retry tokens\" allowing them to retry an operation
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
      *
      */
     private String opcRetryToken;

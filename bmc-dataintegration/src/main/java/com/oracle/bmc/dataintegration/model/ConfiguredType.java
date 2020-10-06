@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A ConfiguraedType represents a type that has built-in configuration to the type itself. An example is a SSN type whose basic type is VARCHAR, but the type itself also has a built-in configuration like length=10
+ * A `ConfiguredType` represents a type that has built-in configuration to the type itself. An example is a `SSN` type whose basic type is `VARCHAR`, but the type itself also has a built-in configuration like length=10.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -85,9 +85,9 @@ public class ConfiguredType extends BaseType {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("wrappedType")
-        private BaseType wrappedType;
+        private Object wrappedType;
 
-        public Builder wrappedType(BaseType wrappedType) {
+        public Builder wrappedType(Object wrappedType) {
             this.wrappedType = wrappedType;
             this.__explicitlySet__.add("wrappedType");
             return this;
@@ -163,7 +163,7 @@ public class ConfiguredType extends BaseType {
             String name,
             Integer objectStatus,
             String description,
-            BaseType wrappedType,
+            Object wrappedType,
             ConfigValues configValues,
             ConfigDefinition configDefinition) {
         super(key, modelVersion, parentRef, name, objectStatus, description);
@@ -172,8 +172,11 @@ public class ConfiguredType extends BaseType {
         this.configDefinition = configDefinition;
     }
 
+    /**
+     * A wrapped type, may be a string or a BaseType.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("wrappedType")
-    BaseType wrappedType;
+    Object wrappedType;
 
     @com.fasterxml.jackson.annotation.JsonProperty("configValues")
     ConfigValues configValues;

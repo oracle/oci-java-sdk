@@ -12,12 +12,12 @@ import com.oracle.bmc.dataintegration.model.*;
 public class GetApplicationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * DIS workspace id
+     * The workspace ID.
      */
     private String workspaceId;
 
     /**
-     * DIS application key
+     * The application key.
      */
     private String applicationKey;
 

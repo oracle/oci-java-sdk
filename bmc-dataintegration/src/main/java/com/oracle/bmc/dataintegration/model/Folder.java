@@ -201,19 +201,19 @@ public class Folder {
     String modelVersion;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Detailed description for the object.
+     * A user defined description for the folder.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * categoryName
+     * The category name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categoryName")
     String categoryName;
@@ -225,7 +225,7 @@ public class Folder {
     Integer objectStatus;
 
     /**
-     * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
@@ -243,7 +243,7 @@ public class Folder {
     ObjectMetadata metadata;
 
     /**
-     * A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+     * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
     java.util.Map<String, String> keyMap;

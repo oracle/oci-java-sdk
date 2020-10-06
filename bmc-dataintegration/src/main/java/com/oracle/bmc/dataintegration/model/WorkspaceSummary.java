@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Summary of a Workspace.
+ * Summary details of a workspace.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -162,13 +162,13 @@ public class WorkspaceSummary {
     }
 
     /**
-     * Unique identifier that is immutable.
+     * A system-generated and immutable identifier assigned to the workspace upon creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * A detailed description of the workspace.
+     * A user defined description for the workspace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

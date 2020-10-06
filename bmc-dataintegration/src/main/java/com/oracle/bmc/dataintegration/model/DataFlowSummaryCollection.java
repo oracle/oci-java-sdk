@@ -61,7 +61,7 @@ public class DataFlowSummaryCollection {
     }
 
     /**
-     * The array of DataFlow summaries
+     * The array of data flow summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<DataFlowSummary> items;

@@ -13,7 +13,7 @@ public class ChangeDbSystemCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeCompartmentDetails> {
 
     /**
-     * Request to move Db System to a different compartment
+     * Request to move the DB system to a different compartment.
      */
     private ChangeCompartmentDetails changeCompartmentDetails;
 

@@ -12,7 +12,7 @@ import com.oracle.bmc.dataintegration.model.*;
 public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the asynchronous request.
+     * The ID of the asynchronous work request to retrieve.
      */
     private String workRequestId;
 

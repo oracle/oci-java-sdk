@@ -61,7 +61,7 @@ public class ApplicationSummaryCollection {
     }
 
     /**
-     * The array of Application summaries
+     * The array of application summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<ApplicationSummary> items;

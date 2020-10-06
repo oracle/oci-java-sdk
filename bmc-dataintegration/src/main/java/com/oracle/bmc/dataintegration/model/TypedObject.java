@@ -5,7 +5,7 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The TypedObject class is a base class for any model object that has a type.
+ * The `TypedObject` class is a base class for any model object that has a type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,6 +70,10 @@ package com.oracle.bmc.dataintegration.model;
         name = "OUTPUT_FIELD"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MacroField.class,
+        name = "MACRO_FIELD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DerivedField.class,
         name = "DERIVED_FIELD"
     ),
@@ -103,7 +107,7 @@ public class TypedObject {
     Integer objectStatus;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -117,25 +121,20 @@ public class TypedObject {
     /**
      * The type of the types object.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum ModelType {
         Shape("SHAPE"),
         InputPort("INPUT_PORT"),
         ShapeField("SHAPE_FIELD"),
         InputField("INPUT_FIELD"),
         DerivedField("DERIVED_FIELD"),
+        MacroField("MACRO_FIELD"),
         OutputField("OUTPUT_FIELD"),
         DynamicProxyField("DYNAMIC_PROXY_FIELD"),
         OutputPort("OUTPUT_PORT"),
         DynamicInputField("DYNAMIC_INPUT_FIELD"),
         ProxyField("PROXY_FIELD"),
         Parameter("PARAMETER"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
+        ;
 
         private final String value;
         private static java.util.Map<String, ModelType> map;
@@ -143,9 +142,7 @@ public class TypedObject {
         static {
             map = new java.util.HashMap<>();
             for (ModelType v : ModelType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -163,10 +160,7 @@ public class TypedObject {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'ModelType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid ModelType: " + key);
         }
     };
 }

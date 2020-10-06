@@ -194,7 +194,7 @@ public class DerivedField extends TypedObject {
     String type;
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     java.util.List<String> labels;

@@ -77,6 +77,15 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
+        private Boolean isFilePattern;
+
+        public Builder isFilePattern(Boolean isFilePattern) {
+            this.isFilePattern = isFilePattern;
+            this.__explicitlySet__.add("isFilePattern");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timestampFormat")
         private String timestampFormat;
 
@@ -97,6 +106,7 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
                             delimiter,
                             quoteCharacter,
                             hasHeader,
+                            isFilePattern,
                             timestampFormat);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -110,6 +120,7 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
                             .delimiter(o.getDelimiter())
                             .quoteCharacter(o.getQuoteCharacter())
                             .hasHeader(o.getHasHeader())
+                            .isFilePattern(o.getIsFilePattern())
                             .timestampFormat(o.getTimestampFormat());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -131,6 +142,7 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
             String delimiter,
             String quoteCharacter,
             Boolean hasHeader,
+            Boolean isFilePattern,
             String timestampFormat) {
         super();
         this.encoding = encoding;
@@ -138,6 +150,7 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
         this.delimiter = delimiter;
         this.quoteCharacter = quoteCharacter;
         this.hasHeader = hasHeader;
+        this.isFilePattern = isFilePattern;
         this.timestampFormat = timestampFormat;
     }
 
@@ -172,7 +185,13 @@ public class CsvFormatAttribute extends AbstractFormatAttribute {
     Boolean hasHeader;
 
     /**
-     * Format for timestamp data.
+     * Defines whether a file pattern is supported.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
+    Boolean isFilePattern;
+
+    /**
+     * Format for timestamp information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestampFormat")
     String timestampFormat;
