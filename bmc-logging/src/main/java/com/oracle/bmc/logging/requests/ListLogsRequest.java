@@ -17,12 +17,12 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     private String logGroupId;
 
     /**
-     * The logType that the log object is for, custom or service.
+     * The logType that the log object is for, whether custom or service.
      */
     private LogType logType;
 
     /**
-     * The logType that the log object is for, custom or service.
+     * The logType that the log object is for, whether custom or service.
      **/
     public enum LogType {
         Custom("CUSTOM"),
@@ -57,12 +57,12 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * Service created the log object
+     * Service that created the log object.
      */
     private String sourceService;
 
     /**
-     * Log object resource
+     * Log object resource.
      */
     private String sourceResource;
 
@@ -134,13 +134,13 @@ public class ListLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * The sort order to use, either 'asc' or 'desc'
+     * The sort order to use, whether 'asc' or 'desc'.
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'
+     * The sort order to use, whether 'asc' or 'desc'.
      *
      **/
     public enum SortOrder {

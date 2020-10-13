@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Unified Agent configuration summary object returned by list API.
+ * Unified Agent configuration summary object returned by the list API.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -199,7 +199,7 @@ public class UnifiedAgentConfigurationSummary {
     String compartmentId;
 
     /**
-     * The display name of a user-friendly name. It has to be unique within enclosing resource,
+     * The user-friendly display name. This must be unique within the enclosing resource,
      * and it's changeable. Avoid entering confidential information.
      *
      **/
@@ -244,7 +244,7 @@ public class UnifiedAgentConfigurationSummary {
     java.util.Date timeLastModified;
 
     /**
-     * The state of an pipeline.
+     * The pipeline state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LogLifecycleState lifecycleState;
@@ -256,7 +256,7 @@ public class UnifiedAgentConfigurationSummary {
     Boolean isEnabled;
 
     /**
-     * Type of unified agent service configuration.
+     * Type of Unified Agent service configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationType")
     UnifiedAgentServiceConfigurationTypes configurationType;

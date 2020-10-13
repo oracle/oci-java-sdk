@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * logging source object.
+ * Logging source object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -47,7 +47,7 @@ public class UnifiedAgentLoggingSource {
     String name;
 
     /**
-     * unified schema logging source Type
+     * Unified schema logging source type.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum SourceType {

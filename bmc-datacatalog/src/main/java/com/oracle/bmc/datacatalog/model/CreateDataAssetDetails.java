@@ -53,6 +53,16 @@ public class CreateDataAssetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertySetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -67,7 +77,8 @@ public class CreateDataAssetDetails {
 
         public CreateDataAssetDetails build() {
             CreateDataAssetDetails __instance__ =
-                    new CreateDataAssetDetails(displayName, description, typeKey, properties);
+                    new CreateDataAssetDetails(
+                            displayName, description, typeKey, customPropertyMembers, properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,6 +89,7 @@ public class CreateDataAssetDetails {
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .typeKey(o.getTypeKey())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -111,6 +123,12 @@ public class CreateDataAssetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
     String typeKey;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the data asset type. Each data asset type

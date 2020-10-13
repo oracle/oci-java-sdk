@@ -143,6 +143,11 @@ public class ListAutonomousContainerDatabasesRequest
      */
     private String displayName;
 
+    /**
+     * A filter to return only resources that match the given service-level agreement type exactly.
+     */
+    private String serviceLevelAgreementType;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAutonomousContainerDatabasesRequest, java.lang.Void> {
@@ -189,6 +194,7 @@ public class ListAutonomousContainerDatabasesRequest
             lifecycleState(o.getLifecycleState());
             availabilityDomain(o.getAvailabilityDomain());
             displayName(o.getDisplayName());
+            serviceLevelAgreementType(o.getServiceLevelAgreementType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

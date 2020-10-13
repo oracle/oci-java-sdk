@@ -13,7 +13,7 @@ public class ListLogIncludedSearchesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Compartment OCID to list resources in. Please see compartmentIdInSubtree
+     * Compartment OCID to list resources in. See compartmentIdInSubtree
      *      for nested compartments traversal.
      *
      */
@@ -88,13 +88,13 @@ public class ListLogIncludedSearchesRequest
         }
     };
     /**
-     * The sort order to use, either 'asc' or 'desc'
+     * The sort order to use, whether 'asc' or 'desc'.
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'
+     * The sort order to use, whether 'asc' or 'desc'.
      *
      **/
     public enum SortOrder {

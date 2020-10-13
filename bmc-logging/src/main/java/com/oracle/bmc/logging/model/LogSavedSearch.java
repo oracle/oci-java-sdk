@@ -88,15 +88,6 @@ public class LogSavedSearch {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("isQuickStart")
-        private Boolean isQuickStart;
-
-        public Builder isQuickStart(Boolean isQuickStart) {
-            this.isQuickStart = isQuickStart;
-            this.__explicitlySet__.add("isQuickStart");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -116,6 +107,15 @@ public class LogSavedSearch {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LogSavedSearchLifecycleState lifecycleState;
+
+        public Builder lifecycleState(LogSavedSearchLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -129,9 +129,9 @@ public class LogSavedSearch {
                             timeLastModified,
                             description,
                             query,
-                            isQuickStart,
                             definedTags,
-                            freeformTags);
+                            freeformTags,
+                            lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -146,9 +146,9 @@ public class LogSavedSearch {
                             .timeLastModified(o.getTimeLastModified())
                             .description(o.getDescription())
                             .query(o.getQuery())
-                            .isQuickStart(o.getIsQuickStart())
                             .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .lifecycleState(o.getLifecycleState());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -175,7 +175,7 @@ public class LogSavedSearch {
     String compartmentId;
 
     /**
-     * The display name of a user-friendly name. It has to be unique within enclosing resource,
+     * The user-friendly display name. This must be unique within the enclosing resource,
      * and it's changeable. Avoid entering confidential information.
      *
      **/
@@ -208,12 +208,6 @@ public class LogSavedSearch {
     String query;
 
     /**
-     * True if the LogSavedSearch should be show as quickstart in the UI
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isQuickStart")
-    Boolean isQuickStart;
-
-    /**
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -231,6 +225,13 @@ public class LogSavedSearch {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The state of the LogSavedSearch
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LogSavedSearchLifecycleState lifecycleState;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -90,6 +90,24 @@ public class EntitySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patternKey")
+        private String patternKey;
+
+        public Builder patternKey(String patternKey) {
+            this.patternKey = patternKey;
+            this.__explicitlySet__.add("patternKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
+        private String realizedExpression;
+
+        public Builder realizedExpression(String realizedExpression) {
+            this.realizedExpression = realizedExpression;
+            this.__explicitlySet__.add("realizedExpression");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
@@ -157,6 +175,8 @@ public class EntitySummary {
                             folderKey,
                             folderName,
                             externalKey,
+                            patternKey,
+                            realizedExpression,
                             path,
                             timeCreated,
                             timeUpdated,
@@ -177,6 +197,8 @@ public class EntitySummary {
                             .folderKey(o.getFolderKey())
                             .folderName(o.getFolderName())
                             .externalKey(o.getExternalKey())
+                            .patternKey(o.getPatternKey())
+                            .realizedExpression(o.getRealizedExpression())
                             .path(o.getPath())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
@@ -239,6 +261,18 @@ public class EntitySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     String externalKey;
+
+    /**
+     * Key of the associated pattern if this is a logical entity.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patternKey")
+    String patternKey;
+
+    /**
+     * The expression realized after resolving qualifiers . Used in deriving this logical entity
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
+    String realizedExpression;
 
     /**
      * Full path of the data entity.

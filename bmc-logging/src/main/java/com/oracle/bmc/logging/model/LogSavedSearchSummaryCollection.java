@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * A collection of LogSavedSearchSummary items
+ * A collection of LogSavedSearchSummary items.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

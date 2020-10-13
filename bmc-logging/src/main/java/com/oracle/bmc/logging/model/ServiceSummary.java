@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Summary of Services that are integrated with public logging
+ * Summary of services that are integrated with public logging.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -134,13 +134,13 @@ public class ServiceSummary {
     String tenantId;
 
     /**
-     * Apollo project namespace if any.
+     * Apollo project namespace, if any.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
 
     /**
-     * Service id as set in Service Principal.
+     * Service ID as set in Service Principal.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipalName")
     String servicePrincipalName;
@@ -152,19 +152,19 @@ public class ServiceSummary {
     String endpoint;
 
     /**
-     * User friendly service name.
+     * User-friendly service name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Service id.
+     * Service ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Type of Resource that a Service provides.
+     * Type of resource that a service provides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypes")
     java.util.List<ResourceType> resourceTypes;

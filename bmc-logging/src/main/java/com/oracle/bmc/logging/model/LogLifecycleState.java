@@ -5,11 +5,11 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * The state of the log object. The states workflow is:
- *    1. *CREATING* Object is being created, back end service contacted
- *    2. *ACTIVE* Logging is active
- *    3. *UPDATING* Object configuration change requested, but backend service haven't confirmed the update
- *    4. *INACTIVE* Logging is disabled
+ * The log object state. The states workflow is:
+ *    1. *CREATING* Object is being created, backend service contacted.
+ *    2. *ACTIVE* Logging is active.
+ *    3. *UPDATING* Object configuration change requested, but the backend service has not confirmed the update.
+ *    4. *INACTIVE* Logging is disabled.
  *    5. *DELETING* Log object is being deleted.
  *
  **/

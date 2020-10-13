@@ -107,8 +107,8 @@ public class LogEntryBatch {
     java.util.List<LogEntry> entries;
 
     /**
-     * Source of the logs that generated the message. It could be the
-     * instance name, hostname or the source used to read the event.
+     * Source of the logs that generated the message. This could be the
+     * instance name, hostname, or the source used to read the event. For example, \"ServerA\".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
@@ -116,25 +116,25 @@ public class LogEntryBatch {
 
     /**
      * This field signifies the type of logs being ingested.
-     * For example: ServerA.requestLogs
+     * For example: ServerA.requestLogs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     String type;
 
     /**
-     * This optional field is useful for specifying the specific subresource
+     * This optional field is useful for specifying the specific sub-resource
      * or input file used to read the event.
-     * For example: \"/var/log/application.log\"
+     * For example: \"/var/log/application.log\".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subject")
     String subject;
 
     /**
-     * The timestamp for all log entries in this request. This can be
+     * The timestamp for all log entries in this batch. This can be
      * considered as the default timestamp for each entry, unless it is
-     * overwritten by the entry time. An RFC3339 formatted datetime
+     * overwritten by the entry time. An RFC3339-formatted date-time
      * string.
      *
      **/

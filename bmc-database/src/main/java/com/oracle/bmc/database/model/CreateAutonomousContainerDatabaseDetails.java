@@ -64,6 +64,36 @@ public class CreateAutonomousContainerDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousExadataInfrastructureId")
+        private String peerAutonomousExadataInfrastructureId;
+
+        public Builder peerAutonomousExadataInfrastructureId(
+                String peerAutonomousExadataInfrastructureId) {
+            this.peerAutonomousExadataInfrastructureId = peerAutonomousExadataInfrastructureId;
+            this.__explicitlySet__.add("peerAutonomousExadataInfrastructureId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseDisplayName")
+        private String peerAutonomousContainerDatabaseDisplayName;
+
+        public Builder peerAutonomousContainerDatabaseDisplayName(
+                String peerAutonomousContainerDatabaseDisplayName) {
+            this.peerAutonomousContainerDatabaseDisplayName =
+                    peerAutonomousContainerDatabaseDisplayName;
+            this.__explicitlySet__.add("peerAutonomousContainerDatabaseDisplayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+        private ProtectionMode protectionMode;
+
+        public Builder protectionMode(ProtectionMode protectionMode) {
+            this.protectionMode = protectionMode;
+            this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
         private String autonomousVmClusterId;
 
@@ -97,6 +127,15 @@ public class CreateAutonomousContainerDatabaseDetails {
         public Builder maintenanceWindowDetails(MaintenanceWindow maintenanceWindowDetails) {
             this.maintenanceWindowDetails = maintenanceWindowDetails;
             this.__explicitlySet__.add("maintenanceWindowDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+        private Integer standbyMaintenanceBufferInDays;
+
+        public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
+            this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+            this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
             return this;
         }
 
@@ -165,10 +204,14 @@ public class CreateAutonomousContainerDatabaseDetails {
                             dbUniqueName,
                             serviceLevelAgreementType,
                             autonomousExadataInfrastructureId,
+                            peerAutonomousExadataInfrastructureId,
+                            peerAutonomousContainerDatabaseDisplayName,
+                            protectionMode,
                             autonomousVmClusterId,
                             compartmentId,
                             patchModel,
                             maintenanceWindowDetails,
+                            standbyMaintenanceBufferInDays,
                             freeformTags,
                             definedTags,
                             backupConfig,
@@ -187,10 +230,16 @@ public class CreateAutonomousContainerDatabaseDetails {
                             .serviceLevelAgreementType(o.getServiceLevelAgreementType())
                             .autonomousExadataInfrastructureId(
                                     o.getAutonomousExadataInfrastructureId())
+                            .peerAutonomousExadataInfrastructureId(
+                                    o.getPeerAutonomousExadataInfrastructureId())
+                            .peerAutonomousContainerDatabaseDisplayName(
+                                    o.getPeerAutonomousContainerDatabaseDisplayName())
+                            .protectionMode(o.getProtectionMode())
                             .autonomousVmClusterId(o.getAutonomousVmClusterId())
                             .compartmentId(o.getCompartmentId())
                             .patchModel(o.getPatchModel())
                             .maintenanceWindowDetails(o.getMaintenanceWindowDetails())
+                            .standbyMaintenanceBufferInDays(o.getStandbyMaintenanceBufferInDays())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .backupConfig(o.getBackupConfig())
@@ -226,6 +275,7 @@ public class CreateAutonomousContainerDatabaseDetails {
      **/
     public enum ServiceLevelAgreementType {
         Standard("STANDARD"),
+        AutonomousDataguard("AUTONOMOUS_DATAGUARD"),
         ;
 
         private final String value;
@@ -266,6 +316,64 @@ public class CreateAutonomousContainerDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousExadataInfrastructureId")
     String autonomousExadataInfrastructureId;
+
+    /**
+     * The OCID of the peer Autonomous Exadata Infrastructure for Autonomous Data Guard.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousExadataInfrastructureId")
+    String peerAutonomousExadataInfrastructureId;
+
+    /**
+     * The display name for the peer Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseDisplayName")
+    String peerAutonomousContainerDatabaseDisplayName;
+    /**
+     * The protection mode of this Autonomous Data Guard association. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     **/
+    public enum ProtectionMode {
+        MaximumAvailability("MAXIMUM_AVAILABILITY"),
+        MaximumPerformance("MAXIMUM_PERFORMANCE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ProtectionMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ProtectionMode v : ProtectionMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ProtectionMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ProtectionMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ProtectionMode: " + key);
+        }
+    };
+    /**
+     * The protection mode of this Autonomous Data Guard association. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * in the Oracle Data Guard documentation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
+    ProtectionMode protectionMode;
 
     /**
      * The OCID of the Autonomous VM Cluster.
@@ -321,6 +429,14 @@ public class CreateAutonomousContainerDatabaseDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
     MaintenanceWindow maintenanceWindowDetails;
+
+    /**
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+     * This value represents the number of days before the primary database maintenance schedule.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+    Integer standbyMaintenanceBufferInDays;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

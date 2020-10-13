@@ -135,6 +135,25 @@ public class DataAsset {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertyGetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSelectorPatterns")
+        private java.util.List<PatternSummary> dataSelectorPatterns;
+
+        public Builder dataSelectorPatterns(java.util.List<PatternSummary> dataSelectorPatterns) {
+            this.dataSelectorPatterns = dataSelectorPatterns;
+            this.__explicitlySet__.add("dataSelectorPatterns");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -162,6 +181,8 @@ public class DataAsset {
                             createdById,
                             updatedById,
                             uri,
+                            customPropertyMembers,
+                            dataSelectorPatterns,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -182,6 +203,8 @@ public class DataAsset {
                             .createdById(o.getCreatedById())
                             .updatedById(o.getUpdatedById())
                             .uri(o.getUri())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
+                            .dataSelectorPatterns(o.getDataSelectorPatterns())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -273,6 +296,18 @@ public class DataAsset {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     String uri;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+    /**
+     * The list of data selector patterns used in the harvest for this data asset to derive logical entities.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSelectorPatterns")
+    java.util.List<PatternSummary> dataSelectorPatterns;
 
     /**
      * A map of maps that contains the properties which are specific to the asset type. Each data asset type

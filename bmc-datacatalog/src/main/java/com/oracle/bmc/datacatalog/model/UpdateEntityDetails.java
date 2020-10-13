@@ -80,6 +80,24 @@ public class UpdateEntityDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patternKey")
+        private String patternKey;
+
+        public Builder patternKey(String patternKey) {
+            this.patternKey = patternKey;
+            this.__explicitlySet__.add("patternKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
+        private String realizedExpression;
+
+        public Builder realizedExpression(String realizedExpression) {
+            this.realizedExpression = realizedExpression;
+            this.__explicitlySet__.add("realizedExpression");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("harvestStatus")
         private HarvestStatus harvestStatus;
 
@@ -95,6 +113,16 @@ public class UpdateEntityDetails {
         public Builder lastJobKey(String lastJobKey) {
             this.lastJobKey = lastJobKey;
             this.__explicitlySet__.add("lastJobKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertySetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
             return this;
         }
 
@@ -119,8 +147,11 @@ public class UpdateEntityDetails {
                             isLogical,
                             isPartition,
                             folderKey,
+                            patternKey,
+                            realizedExpression,
                             harvestStatus,
                             lastJobKey,
+                            customPropertyMembers,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -135,8 +166,11 @@ public class UpdateEntityDetails {
                             .isLogical(o.getIsLogical())
                             .isPartition(o.getIsPartition())
                             .folderKey(o.getFolderKey())
+                            .patternKey(o.getPatternKey())
+                            .realizedExpression(o.getRealizedExpression())
                             .harvestStatus(o.getHarvestStatus())
                             .lastJobKey(o.getLastJobKey())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -190,6 +224,18 @@ public class UpdateEntityDetails {
     String folderKey;
 
     /**
+     * Key of the associated pattern if this is a logical entity.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patternKey")
+    String patternKey;
+
+    /**
+     * The expression realized after resolving qualifiers . Used in deriving this logical entity
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
+    String realizedExpression;
+
+    /**
      * Status of the object as updated by the harvest process. When an entity object is created, it's harvest status
      * will indicate if the entity's metadata has been fully harvested or not. The harvest process can perform
      * shallow harvesting to allow users to browse the metadata and can on-demand deep harvest on any object
@@ -204,6 +250,12 @@ public class UpdateEntityDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastJobKey")
     String lastJobKey;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the entity type. Each entity type

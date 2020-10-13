@@ -151,6 +151,15 @@ public class MaintenanceRun {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunId")
+        private String peerMaintenanceRunId;
+
+        public Builder peerMaintenanceRunId(String peerMaintenanceRunId) {
+            this.peerMaintenanceRunId = peerMaintenanceRunId;
+            this.__explicitlySet__.add("peerMaintenanceRunId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -170,7 +179,8 @@ public class MaintenanceRun {
                             targetResourceId,
                             maintenanceType,
                             patchId,
-                            maintenanceSubtype);
+                            maintenanceSubtype,
+                            peerMaintenanceRunId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -191,7 +201,8 @@ public class MaintenanceRun {
                             .targetResourceId(o.getTargetResourceId())
                             .maintenanceType(o.getMaintenanceType())
                             .patchId(o.getPatchId())
-                            .maintenanceSubtype(o.getMaintenanceSubtype());
+                            .maintenanceSubtype(o.getMaintenanceSubtype())
+                            .peerMaintenanceRunId(o.getPeerMaintenanceRunId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -477,6 +488,12 @@ public class MaintenanceRun {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceSubtype")
     MaintenanceSubtype maintenanceSubtype;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerMaintenanceRunId")
+    String peerMaintenanceRunId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

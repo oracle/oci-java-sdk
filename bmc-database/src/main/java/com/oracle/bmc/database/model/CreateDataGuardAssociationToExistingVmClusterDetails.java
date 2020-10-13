@@ -70,13 +70,26 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
+        private String peerDbHomeId;
+
+        public Builder peerDbHomeId(String peerDbHomeId) {
+            this.peerDbHomeId = peerDbHomeId;
+            this.__explicitlySet__.add("peerDbHomeId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDataGuardAssociationToExistingVmClusterDetails build() {
             CreateDataGuardAssociationToExistingVmClusterDetails __instance__ =
                     new CreateDataGuardAssociationToExistingVmClusterDetails(
-                            databaseAdminPassword, protectionMode, transportType, peerVmClusterId);
+                            databaseAdminPassword,
+                            protectionMode,
+                            transportType,
+                            peerVmClusterId,
+                            peerDbHomeId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,7 +100,8 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
                     databaseAdminPassword(o.getDatabaseAdminPassword())
                             .protectionMode(o.getProtectionMode())
                             .transportType(o.getTransportType())
-                            .peerVmClusterId(o.getPeerVmClusterId());
+                            .peerVmClusterId(o.getPeerVmClusterId())
+                            .peerDbHomeId(o.getPeerDbHomeId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -106,9 +120,11 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
             String databaseAdminPassword,
             ProtectionMode protectionMode,
             TransportType transportType,
-            String peerVmClusterId) {
+            String peerVmClusterId,
+            String peerDbHomeId) {
         super(databaseAdminPassword, protectionMode, transportType);
         this.peerVmClusterId = peerVmClusterId;
+        this.peerDbHomeId = peerDbHomeId;
     }
 
     /**
@@ -118,6 +134,14 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerVmClusterId")
     String peerVmClusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+     * You must supply this value to create standby database with an existing DB home
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
+    String peerDbHomeId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

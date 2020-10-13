@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Represents a Log object
+ * Represents a log object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -224,14 +224,14 @@ public class Log {
     String logGroupId;
 
     /**
-     * The display name of a user-friendly name. It has to be unique within enclosing resource,
+     * The user-friendly display name. This must be unique within the enclosing resource,
      * and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
     /**
-     * The logType that the log object is for, custom or service.
+     * The logType that the log object is for, whether custom or service.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LogType {
@@ -277,7 +277,7 @@ public class Log {
         }
     };
     /**
-     * The logType that the log object is for, custom or service.
+     * The logType that the log object is for, whether custom or service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logType")
     LogType logType;
@@ -311,7 +311,7 @@ public class Log {
     Configuration configuration;
 
     /**
-     * The state of an pipeline.
+     * The pipeline state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LogLifecycleState lifecycleState;
@@ -329,7 +329,7 @@ public class Log {
     java.util.Date timeLastModified;
 
     /**
-     * Log retention duration in days.
+     * Log retention duration in 30-day increments (30, 60, 90 and so on).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionDuration")
     Integer retentionDuration;

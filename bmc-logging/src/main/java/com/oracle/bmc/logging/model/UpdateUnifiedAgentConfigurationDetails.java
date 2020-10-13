@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Update Object for Unified Agent configuration.
+ * Update Object for the Unified Agent configuration.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -132,7 +132,7 @@ public class UpdateUnifiedAgentConfigurationDetails {
     }
 
     /**
-     * The display name of a user-friendly name. It has to be unique within enclosing resource,
+     * The user-friendly display name. This must be unique within the enclosing resource,
      * and it's changeable. Avoid entering confidential information.
      *
      **/

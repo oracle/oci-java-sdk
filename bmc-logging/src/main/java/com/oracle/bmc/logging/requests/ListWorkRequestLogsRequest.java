@@ -12,7 +12,7 @@ import com.oracle.bmc.logging.model.*;
 public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the asynchronous request.
+     * The asynchronous request ID.
      */
     private String workRequestId;
 

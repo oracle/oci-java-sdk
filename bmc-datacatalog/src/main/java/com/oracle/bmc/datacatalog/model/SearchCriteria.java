@@ -34,18 +34,60 @@ public class SearchCriteria {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("facetedQuery")
+        private String facetedQuery;
+
+        public Builder facetedQuery(String facetedQuery) {
+            this.facetedQuery = facetedQuery;
+            this.__explicitlySet__.add("facetedQuery");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
+        private java.util.List<String> dimensions;
+
+        public Builder dimensions(java.util.List<String> dimensions) {
+            this.dimensions = dimensions;
+            this.__explicitlySet__.add("dimensions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sort")
+        private java.util.List<FacetedSearchSortRequest> sort;
+
+        public Builder sort(java.util.List<FacetedSearchSortRequest> sort) {
+            this.sort = sort;
+            this.__explicitlySet__.add("sort");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("filters")
+        private FacetedSearchFilterRequest filters;
+
+        public Builder filters(FacetedSearchFilterRequest filters) {
+            this.filters = filters;
+            this.__explicitlySet__.add("filters");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchCriteria build() {
-            SearchCriteria __instance__ = new SearchCriteria(query);
+            SearchCriteria __instance__ =
+                    new SearchCriteria(query, facetedQuery, dimensions, sort, filters);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SearchCriteria o) {
-            Builder copiedBuilder = query(o.getQuery());
+            Builder copiedBuilder =
+                    query(o.getQuery())
+                            .facetedQuery(o.getFacetedQuery())
+                            .dimensions(o.getDimensions())
+                            .sort(o.getSort())
+                            .filters(o.getFilters());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -64,6 +106,27 @@ public class SearchCriteria {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     String query;
+
+    /**
+     * Query string that a dataObject is to be searched with. Used in the faceted query request
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("facetedQuery")
+    String facetedQuery;
+
+    /**
+     * List of properties of dataObjects that needs to aggregated on for facets.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
+    java.util.List<String> dimensions;
+
+    /**
+     * Array of objects having details about sort field and order.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sort")
+    java.util.List<FacetedSearchSortRequest> sort;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("filters")
+    FacetedSearchFilterRequest filters;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

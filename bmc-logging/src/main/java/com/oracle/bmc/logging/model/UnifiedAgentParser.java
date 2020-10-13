@@ -85,31 +85,31 @@ package com.oracle.bmc.logging.model;
 public class UnifiedAgentParser {
 
     /**
-     * Specify time field for event time. If the event doesn't have this field, current time is used.
+     * Specify time field for the event time. If the event doesn't have this field, the current time is used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
     String fieldTimeKey;
 
     /**
-     * Specify types for converting field into other type.
+     * Specify types for converting a field into another type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("types")
     java.util.Map<String, String> types;
 
     /**
-     * Specify null value pattern
+     * Specify the null value pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nullValuePattern")
     String nullValuePattern;
 
     /**
-     * If true, empty string field is replaced with nil
+     * If true, an empty string field is replaced with nil.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNullEmptyString")
     Boolean isNullEmptyString;
 
     /**
-     * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified
+     * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEstimateCurrentEvent")
     Boolean isEstimateCurrentEvent;
@@ -121,13 +121,13 @@ public class UnifiedAgentParser {
     Boolean isKeepTimeKey;
 
     /**
-     * Specify timeout for parse processing. This is mainly for detecting wrong regexp pattern.
+     * Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMilliseconds")
     Integer timeoutInMilliseconds;
 
     /**
-     * type of fluent parser.
+     * Type of fluent parser.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ParserType {

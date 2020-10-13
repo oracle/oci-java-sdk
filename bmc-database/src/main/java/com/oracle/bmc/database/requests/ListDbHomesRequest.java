@@ -32,6 +32,11 @@ public class ListDbHomesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String backupId;
 
     /**
+     * A filter to return only DB Homes that match the specified dbVersion.
+     */
+    private String dbVersion;
+
+    /**
      * The maximum number of items to return per page.
      */
     private Integer limit;
@@ -170,6 +175,7 @@ public class ListDbHomesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             dbSystemId(o.getDbSystemId());
             vmClusterId(o.getVmClusterId());
             backupId(o.getBackupId());
+            dbVersion(o.getDbVersion());
             limit(o.getLimit());
             page(o.getPage());
             sortBy(o.getSortBy());

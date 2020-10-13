@@ -269,6 +269,7 @@ public class Update {
      **/
     @lombok.extern.slf4j.Slf4j
     public enum UpdateType {
+        GiUpgrade("GI_UPGRADE"),
         GiPatch("GI_PATCH"),
 
         /**

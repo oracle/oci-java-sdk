@@ -31,6 +31,148 @@ public class DatabasePaginators {
     private final Database client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAutonomousContainerDatabaseDataguardAssociations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAutonomousContainerDatabaseDataguardAssociationsResponse>
+            listAutonomousContainerDatabaseDataguardAssociationsResponseIterator(
+                    final ListAutonomousContainerDatabaseDataguardAssociationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousContainerDatabaseDataguardAssociationsRequest.Builder,
+                ListAutonomousContainerDatabaseDataguardAssociationsRequest,
+                ListAutonomousContainerDatabaseDataguardAssociationsResponse>(
+                new com.google.common.base.Supplier<
+                        ListAutonomousContainerDatabaseDataguardAssociationsRequest.Builder>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseDataguardAssociationsRequest.Builder
+                            get() {
+                        return ListAutonomousContainerDatabaseDataguardAssociationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousContainerDatabaseDataguardAssociationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListAutonomousContainerDatabaseDataguardAssociationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousContainerDatabaseDataguardAssociationsRequest
+                                        .Builder>,
+                        ListAutonomousContainerDatabaseDataguardAssociationsRequest>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseDataguardAssociationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousContainerDatabaseDataguardAssociationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousContainerDatabaseDataguardAssociationsRequest,
+                        ListAutonomousContainerDatabaseDataguardAssociationsResponse>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseDataguardAssociationsResponse apply(
+                            ListAutonomousContainerDatabaseDataguardAssociationsRequest request) {
+                        return client.listAutonomousContainerDatabaseDataguardAssociations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation} objects
+     * contained in responses from the listAutonomousContainerDatabaseDataguardAssociations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation>
+            listAutonomousContainerDatabaseDataguardAssociationsRecordIterator(
+                    final ListAutonomousContainerDatabaseDataguardAssociationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousContainerDatabaseDataguardAssociationsRequest.Builder,
+                ListAutonomousContainerDatabaseDataguardAssociationsRequest,
+                ListAutonomousContainerDatabaseDataguardAssociationsResponse,
+                com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation>(
+                new com.google.common.base.Supplier<
+                        ListAutonomousContainerDatabaseDataguardAssociationsRequest.Builder>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseDataguardAssociationsRequest.Builder
+                            get() {
+                        return ListAutonomousContainerDatabaseDataguardAssociationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousContainerDatabaseDataguardAssociationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListAutonomousContainerDatabaseDataguardAssociationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousContainerDatabaseDataguardAssociationsRequest
+                                        .Builder>,
+                        ListAutonomousContainerDatabaseDataguardAssociationsRequest>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseDataguardAssociationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousContainerDatabaseDataguardAssociationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousContainerDatabaseDataguardAssociationsRequest,
+                        ListAutonomousContainerDatabaseDataguardAssociationsResponse>() {
+                    @Override
+                    public ListAutonomousContainerDatabaseDataguardAssociationsResponse apply(
+                            ListAutonomousContainerDatabaseDataguardAssociationsRequest request) {
+                        return client.listAutonomousContainerDatabaseDataguardAssociations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousContainerDatabaseDataguardAssociationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .AutonomousContainerDatabaseDataguardAssociation>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .AutonomousContainerDatabaseDataguardAssociation>
+                            apply(
+                                    ListAutonomousContainerDatabaseDataguardAssociationsResponse
+                                            response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listAutonomousContainerDatabases operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -655,6 +797,142 @@ public class DatabasePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.database.model.AutonomousDatabaseSummary>
                             apply(ListAutonomousDatabaseClonesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAutonomousDatabaseDataguardAssociations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAutonomousDatabaseDataguardAssociationsResponse>
+            listAutonomousDatabaseDataguardAssociationsResponseIterator(
+                    final ListAutonomousDatabaseDataguardAssociationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousDatabaseDataguardAssociationsRequest.Builder,
+                ListAutonomousDatabaseDataguardAssociationsRequest,
+                ListAutonomousDatabaseDataguardAssociationsResponse>(
+                new com.google.common.base.Supplier<
+                        ListAutonomousDatabaseDataguardAssociationsRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabaseDataguardAssociationsRequest.Builder get() {
+                        return ListAutonomousDatabaseDataguardAssociationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseDataguardAssociationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListAutonomousDatabaseDataguardAssociationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabaseDataguardAssociationsRequest.Builder>,
+                        ListAutonomousDatabaseDataguardAssociationsRequest>() {
+                    @Override
+                    public ListAutonomousDatabaseDataguardAssociationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabaseDataguardAssociationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseDataguardAssociationsRequest,
+                        ListAutonomousDatabaseDataguardAssociationsResponse>() {
+                    @Override
+                    public ListAutonomousDatabaseDataguardAssociationsResponse apply(
+                            ListAutonomousDatabaseDataguardAssociationsRequest request) {
+                        return client.listAutonomousDatabaseDataguardAssociations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation} objects
+     * contained in responses from the listAutonomousDatabaseDataguardAssociations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>
+            listAutonomousDatabaseDataguardAssociationsRecordIterator(
+                    final ListAutonomousDatabaseDataguardAssociationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousDatabaseDataguardAssociationsRequest.Builder,
+                ListAutonomousDatabaseDataguardAssociationsRequest,
+                ListAutonomousDatabaseDataguardAssociationsResponse,
+                com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation>(
+                new com.google.common.base.Supplier<
+                        ListAutonomousDatabaseDataguardAssociationsRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabaseDataguardAssociationsRequest.Builder get() {
+                        return ListAutonomousDatabaseDataguardAssociationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseDataguardAssociationsResponse, String>() {
+                    @Override
+                    public String apply(
+                            ListAutonomousDatabaseDataguardAssociationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabaseDataguardAssociationsRequest.Builder>,
+                        ListAutonomousDatabaseDataguardAssociationsRequest>() {
+                    @Override
+                    public ListAutonomousDatabaseDataguardAssociationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabaseDataguardAssociationsRequest
+                                                    .Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseDataguardAssociationsRequest,
+                        ListAutonomousDatabaseDataguardAssociationsResponse>() {
+                    @Override
+                    public ListAutonomousDatabaseDataguardAssociationsResponse apply(
+                            ListAutonomousDatabaseDataguardAssociationsRequest request) {
+                        return client.listAutonomousDatabaseDataguardAssociations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDatabaseDataguardAssociationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .AutonomousDatabaseDataguardAssociation>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .AutonomousDatabaseDataguardAssociation>
+                            apply(ListAutonomousDatabaseDataguardAssociationsResponse response) {
                         return response.getItems();
                     }
                 });

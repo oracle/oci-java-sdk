@@ -107,6 +107,14 @@ public class ListEntitiesConverter {
                                     request.getExternalKey()));
         }
 
+        if (request.getPatternKey() != null) {
+            target =
+                    target.queryParam(
+                            "patternKey",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPatternKey()));
+        }
+
         if (request.getTimeExternal() != null) {
             target =
                     target.queryParam(

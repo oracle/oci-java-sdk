@@ -169,6 +169,10 @@ public class WorkRequest {
         CreateCertificate("CREATE_CERTIFICATE"),
         UpdateCertificate("UPDATE_CERTIFICATE"),
         DeleteCertificate("DELETE_CERTIFICATE"),
+        CreateApi("CREATE_API"),
+        UpdateApi("UPDATE_API"),
+        DeleteApi("DELETE_API"),
+        ValidateApi("VALIDATE_API"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

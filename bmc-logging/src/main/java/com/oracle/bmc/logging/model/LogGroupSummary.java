@@ -97,6 +97,15 @@ public class LogGroupSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LogGroupLifecycleState lifecycleState;
+
+        public Builder lifecycleState(LogGroupLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -110,7 +119,8 @@ public class LogGroupSummary {
                             definedTags,
                             freeformTags,
                             timeCreated,
-                            timeLastModified);
+                            timeLastModified,
+                            lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -125,7 +135,8 @@ public class LogGroupSummary {
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags())
                             .timeCreated(o.getTimeCreated())
-                            .timeLastModified(o.getTimeLastModified());
+                            .timeLastModified(o.getTimeLastModified())
+                            .lifecycleState(o.getLifecycleState());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -152,7 +163,7 @@ public class LogGroupSummary {
     String compartmentId;
 
     /**
-     * The display name of a user-friendly name. It has to be unique within enclosing resource,
+     * The user-friendly display name. This must be unique within the enclosing resource,
      * and it's changeable. Avoid entering confidential information.
      *
      **/
@@ -195,6 +206,12 @@ public class LogGroupSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     java.util.Date timeLastModified;
+
+    /**
+     * The log group object state.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LogGroupLifecycleState lifecycleState;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -8,7 +8,7 @@ import com.oracle.bmc.loggingingestion.requests.*;
 import com.oracle.bmc.loggingingestion.responses.*;
 
 /**
- * PublicLoggingDataplane API specification
+ * Use the Logging Ingestion API to ingest your application logs.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200831")
 public interface LoggingAsync extends AutoCloseable {
@@ -46,7 +46,7 @@ public interface LoggingAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * This Api allows ingesting logs associated with a logId. Success
+     * This API allows ingesting logs associated with a logId. A success
      * response implies the data has been accepted.
      *
      *

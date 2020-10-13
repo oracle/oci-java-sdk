@@ -260,6 +260,16 @@ public class Attribute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertyGetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -301,6 +311,7 @@ public class Attribute {
                             timeExternal,
                             uri,
                             path,
+                            customPropertyMembers,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -335,6 +346,7 @@ public class Attribute {
                             .timeExternal(o.getTimeExternal())
                             .uri(o.getUri())
                             .path(o.getPath())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -516,6 +528,12 @@ public class Attribute {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     String path;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertyGetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the attribute type. Each attribute type

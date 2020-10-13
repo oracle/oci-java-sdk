@@ -53,6 +53,16 @@ public class UpdateFolderDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertySetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -98,6 +108,7 @@ public class UpdateFolderDetails {
                             displayName,
                             description,
                             parentFolderKey,
+                            customPropertyMembers,
                             properties,
                             timeExternal,
                             harvestStatus,
@@ -112,6 +123,7 @@ public class UpdateFolderDetails {
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .parentFolderKey(o.getParentFolderKey())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties())
                             .timeExternal(o.getTimeExternal())
                             .harvestStatus(o.getHarvestStatus())
@@ -148,6 +160,12 @@ public class UpdateFolderDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentFolderKey")
     String parentFolderKey;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the folder type. Each folder type

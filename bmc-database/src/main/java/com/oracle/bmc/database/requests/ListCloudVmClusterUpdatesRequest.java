@@ -26,6 +26,7 @@ public class ListCloudVmClusterUpdatesRequest
      * A filter to return only resources that match the given update type exactly.
      **/
     public enum UpdateType {
+        GiUpgrade("GI_UPGRADE"),
         GiPatch("GI_PATCH"),
         ;
 

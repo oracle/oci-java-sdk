@@ -13,7 +13,7 @@ public class GetLogIncludedSearchRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Compartment OCID to list resources in. Please see compartmentIdInSubtree
+     * Compartment OCID to list resources in. See compartmentIdInSubtree
      *      for nested compartments traversal.
      *
      */

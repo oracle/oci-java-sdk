@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Contains details indicating which compartment the resource should move to
+ * Contains details indicating which compartment the resource should move to.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class ChangeLogGroupCompartmentDetails {
     }
 
     /**
-     * The of the compartment into which the resource should be moved.
+     * The compartment into which the resource should be moved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

@@ -480,6 +480,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("role")
+        private Role role;
+
+        public Builder role(Role role) {
+            this.role = role;
+            this.__explicitlySet__.add("role");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availableUpgradeVersions")
         private java.util.List<String> availableUpgradeVersions;
 
@@ -545,6 +554,7 @@ public class AutonomousDatabase {
                             isDataGuardEnabled,
                             failedDataRecoveryInSeconds,
                             standbyDb,
+                            role,
                             availableUpgradeVersions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -605,6 +615,7 @@ public class AutonomousDatabase {
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
                             .failedDataRecoveryInSeconds(o.getFailedDataRecoveryInSeconds())
                             .standbyDb(o.getStandbyDb())
+                            .role(o.getRole())
                             .availableUpgradeVersions(o.getAvailableUpgradeVersions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -1384,6 +1395,57 @@ public class AutonomousDatabase {
 
     @com.fasterxml.jackson.annotation.JsonProperty("standbyDb")
     AutonomousDatabaseStandbySummary standbyDb;
+    /**
+     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Role {
+        Primary("PRIMARY"),
+        Standby("STANDBY"),
+        DisabledStandby("DISABLED_STANDBY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Role> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Role v : Role.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Role(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Role create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Role', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("role")
+    Role role;
 
     /**
      * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.

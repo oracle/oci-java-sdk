@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Type of Resource that Service provides.
+ * Type of resource that a service provides.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -74,7 +74,7 @@ public class ResourceType {
     String name;
 
     /**
-     * categories for resources.
+     * Categories for resources.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     java.util.List<Category> categories;

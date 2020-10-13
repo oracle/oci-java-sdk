@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Parameters that a category of resource supports.
+ * Parameters that a resource category supports.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -134,7 +134,7 @@ public class Parameter {
     Type type;
 
     /**
-     * Java regex pattern to validate parameter value.
+     * Java regex pattern to validate a parameter value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     String pattern;

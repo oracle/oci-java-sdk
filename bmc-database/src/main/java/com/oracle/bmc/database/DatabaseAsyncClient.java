@@ -4890,6 +4890,93 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<
+                    FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
+            failoverAutonomousContainerDatabaseDataguardAssociation(
+                    final FailoverAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    FailoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler) {
+        LOG.trace("Called async failoverAutonomousContainerDatabaseDataguardAssociation");
+        final FailoverAutonomousContainerDatabaseDataguardAssociationRequest interceptedRequest =
+                FailoverAutonomousContainerDatabaseDataguardAssociationConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FailoverAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        FailoverAutonomousContainerDatabaseDataguardAssociationConverter
+                                .fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        FailoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                        FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            FailoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                            FailoverAutonomousContainerDatabaseDataguardAssociationResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response,
+                    FailoverAutonomousContainerDatabaseDataguardAssociationResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<FailoverDataGuardAssociationResponse>
             failoverDataGuardAssociation(
                     final FailoverDataGuardAssociationRequest request,
@@ -5353,6 +5440,91 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAutonomousContainerDatabaseDataguardAssociationResponse>
+            getAutonomousContainerDatabaseDataguardAssociation(
+                    final GetAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    GetAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler) {
+        LOG.trace("Called async getAutonomousContainerDatabaseDataguardAssociation");
+        final GetAutonomousContainerDatabaseDataguardAssociationRequest interceptedRequest =
+                GetAutonomousContainerDatabaseDataguardAssociationConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        GetAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        GetAutonomousContainerDatabaseDataguardAssociationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAutonomousContainerDatabaseDataguardAssociationRequest,
+                        GetAutonomousContainerDatabaseDataguardAssociationResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            GetAutonomousContainerDatabaseDataguardAssociationRequest,
+                            GetAutonomousContainerDatabaseDataguardAssociationResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response,
+                    GetAutonomousContainerDatabaseDataguardAssociationResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutonomousDataWarehouseResponse>
             getAutonomousDataWarehouse(
                     final GetAutonomousDataWarehouseRequest request,
@@ -5648,6 +5820,88 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetAutonomousDatabaseBackupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAutonomousDatabaseDataguardAssociationResponse>
+            getAutonomousDatabaseDataguardAssociation(
+                    final GetAutonomousDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousDatabaseDataguardAssociationRequest,
+                                    GetAutonomousDatabaseDataguardAssociationResponse>
+                            handler) {
+        LOG.trace("Called async getAutonomousDatabaseDataguardAssociation");
+        final GetAutonomousDatabaseDataguardAssociationRequest interceptedRequest =
+                GetAutonomousDatabaseDataguardAssociationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutonomousDatabaseDataguardAssociationConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        GetAutonomousDatabaseDataguardAssociationResponse>
+                transformer = GetAutonomousDatabaseDataguardAssociationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAutonomousDatabaseDataguardAssociationRequest,
+                        GetAutonomousDatabaseDataguardAssociationResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            GetAutonomousDatabaseDataguardAssociationRequest,
+                            GetAutonomousDatabaseDataguardAssociationResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, GetAutonomousDatabaseDataguardAssociationResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
@@ -8286,6 +8540,92 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutonomousContainerDatabaseDataguardAssociationsResponse>
+            listAutonomousContainerDatabaseDataguardAssociations(
+                    final ListAutonomousContainerDatabaseDataguardAssociationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousContainerDatabaseDataguardAssociationsRequest,
+                                    ListAutonomousContainerDatabaseDataguardAssociationsResponse>
+                            handler) {
+        LOG.trace("Called async listAutonomousContainerDatabaseDataguardAssociations");
+        final ListAutonomousContainerDatabaseDataguardAssociationsRequest interceptedRequest =
+                ListAutonomousContainerDatabaseDataguardAssociationsConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousContainerDatabaseDataguardAssociationsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListAutonomousContainerDatabaseDataguardAssociationsResponse>
+                transformer =
+                        ListAutonomousContainerDatabaseDataguardAssociationsConverter
+                                .fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAutonomousContainerDatabaseDataguardAssociationsRequest,
+                        ListAutonomousContainerDatabaseDataguardAssociationsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ListAutonomousContainerDatabaseDataguardAssociationsRequest,
+                            ListAutonomousContainerDatabaseDataguardAssociationsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response,
+                    ListAutonomousContainerDatabaseDataguardAssociationsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAutonomousContainerDatabasesResponse>
             listAutonomousContainerDatabases(
                     final ListAutonomousContainerDatabasesRequest request,
@@ -8665,6 +9005,88 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListAutonomousDatabaseClonesResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAutonomousDatabaseDataguardAssociationsResponse>
+            listAutonomousDatabaseDataguardAssociations(
+                    final ListAutonomousDatabaseDataguardAssociationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabaseDataguardAssociationsRequest,
+                                    ListAutonomousDatabaseDataguardAssociationsResponse>
+                            handler) {
+        LOG.trace("Called async listAutonomousDatabaseDataguardAssociations");
+        final ListAutonomousDatabaseDataguardAssociationsRequest interceptedRequest =
+                ListAutonomousDatabaseDataguardAssociationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousDatabaseDataguardAssociationsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListAutonomousDatabaseDataguardAssociationsResponse>
+                transformer = ListAutonomousDatabaseDataguardAssociationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAutonomousDatabaseDataguardAssociationsRequest,
+                        ListAutonomousDatabaseDataguardAssociationsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ListAutonomousDatabaseDataguardAssociationsRequest,
+                            ListAutonomousDatabaseDataguardAssociationsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, ListAutonomousDatabaseDataguardAssociationsResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
@@ -11386,6 +11808,93 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<
+                    ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
+            reinstateAutonomousContainerDatabaseDataguardAssociation(
+                    final ReinstateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReinstateAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler) {
+        LOG.trace("Called async reinstateAutonomousContainerDatabaseDataguardAssociation");
+        final ReinstateAutonomousContainerDatabaseDataguardAssociationRequest interceptedRequest =
+                ReinstateAutonomousContainerDatabaseDataguardAssociationConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReinstateAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        ReinstateAutonomousContainerDatabaseDataguardAssociationConverter
+                                .fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ReinstateAutonomousContainerDatabaseDataguardAssociationRequest,
+                        ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ReinstateAutonomousContainerDatabaseDataguardAssociationRequest,
+                            ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response,
+                    ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ReinstateDataGuardAssociationResponse>
             reinstateDataGuardAssociation(
                     final ReinstateDataGuardAssociationRequest request,
@@ -12368,6 +12877,93 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, StopAutonomousDatabaseResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<
+                    SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
+            switchoverAutonomousContainerDatabaseDataguardAssociation(
+                    final SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                                    SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
+                            handler) {
+        LOG.trace("Called async switchoverAutonomousContainerDatabaseDataguardAssociation");
+        final SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest interceptedRequest =
+                SwitchoverAutonomousContainerDatabaseDataguardAssociationConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchoverAutonomousContainerDatabaseDataguardAssociationConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
+                transformer =
+                        SwitchoverAutonomousContainerDatabaseDataguardAssociationConverter
+                                .fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                        SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                            SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response,
+                    SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)

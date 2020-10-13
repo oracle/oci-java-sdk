@@ -189,6 +189,15 @@ public class AutonomousContainerDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+        private Integer standbyMaintenanceBufferInDays;
+
+        public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
+            this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+            this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -205,6 +214,15 @@ public class AutonomousContainerDatabase {
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("role")
+        private Role role;
+
+        public Builder role(Role role) {
+            this.role = role;
+            this.__explicitlySet__.add("role");
             return this;
         }
 
@@ -259,8 +277,10 @@ public class AutonomousContainerDatabase {
                             lastMaintenanceRunId,
                             nextMaintenanceRunId,
                             maintenanceWindow,
+                            standbyMaintenanceBufferInDays,
                             freeformTags,
                             definedTags,
+                            role,
                             availabilityDomain,
                             dbVersion,
                             backupConfig);
@@ -290,8 +310,10 @@ public class AutonomousContainerDatabase {
                             .lastMaintenanceRunId(o.getLastMaintenanceRunId())
                             .nextMaintenanceRunId(o.getNextMaintenanceRunId())
                             .maintenanceWindow(o.getMaintenanceWindow())
+                            .standbyMaintenanceBufferInDays(o.getStandbyMaintenanceBufferInDays())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .role(o.getRole())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .dbVersion(o.getDbVersion())
                             .backupConfig(o.getBackupConfig());
@@ -338,6 +360,7 @@ public class AutonomousContainerDatabase {
     public enum ServiceLevelAgreementType {
         Standard("STANDARD"),
         MissionCritical("MISSION_CRITICAL"),
+        AutonomousDataguard("AUTONOMOUS_DATAGUARD"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -473,6 +496,7 @@ public class AutonomousContainerDatabase {
         RestoreFailed("RESTORE_FAILED"),
         Restarting("RESTARTING"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
+        RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -603,6 +627,14 @@ public class AutonomousContainerDatabase {
     MaintenanceWindow maintenanceWindow;
 
     /**
+     * The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database.
+     * This value represents the number of days before the primary database maintenance schedule.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+    Integer standbyMaintenanceBufferInDays;
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -619,6 +651,57 @@ public class AutonomousContainerDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    /**
+     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Role {
+        Primary("PRIMARY"),
+        Standby("STANDBY"),
+        DisabledStandby("DISABLED_STANDBY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Role> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Role v : Role.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Role(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Role create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Role', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("role")
+    Role role;
 
     /**
      * The availability domain of the Autonomous Container Database.

@@ -26,6 +26,7 @@ import javax.ws.rs.client.CompletionStageRxInvoker;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.InvocationCallback;
+import javax.ws.rs.client.ResponseProcessingException;
 import javax.ws.rs.client.RxInvoker;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
@@ -650,6 +651,25 @@ public class RestClient implements AutoCloseable {
      */
     private static BmcException convertToBmcException(
             WebTarget target, ProcessingException e, InvocationInformation info) {
+
+        if (e instanceof ResponseProcessingException) {
+            final ResponseProcessingException responseProcessingException =
+                    (ResponseProcessingException) e;
+            final Response response = responseProcessingException.getResponse();
+            if (response != null) {
+                final String statusMessage =
+                        response.getStatusInfo() != null
+                                ? response.getStatusInfo().getReasonPhrase()
+                                : "";
+                throw new BmcException(
+                        response.getStatus(),
+                        statusMessage,
+                        e.getMessage(),
+                        info.getRequestId(),
+                        e);
+            }
+        }
+
         Throwable t = Throwables.getRootCause(e);
         if (t instanceof InterruptedIOException) {
             return new BmcException(
@@ -658,6 +678,7 @@ public class RestClient implements AutoCloseable {
                     e,
                     info.getRequestId());
         }
+
         return new BmcException(
                 false,
                 "Processing exception while communicating to: " + target.getUri().toString(),

@@ -72,13 +72,26 @@ public class CreateDataGuardAssociationToExistingDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
+        private String peerDbHomeId;
+
+        public Builder peerDbHomeId(String peerDbHomeId) {
+            this.peerDbHomeId = peerDbHomeId;
+            this.__explicitlySet__.add("peerDbHomeId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDataGuardAssociationToExistingDbSystemDetails build() {
             CreateDataGuardAssociationToExistingDbSystemDetails __instance__ =
                     new CreateDataGuardAssociationToExistingDbSystemDetails(
-                            databaseAdminPassword, protectionMode, transportType, peerDbSystemId);
+                            databaseAdminPassword,
+                            protectionMode,
+                            transportType,
+                            peerDbSystemId,
+                            peerDbHomeId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,7 +102,8 @@ public class CreateDataGuardAssociationToExistingDbSystemDetails
                     databaseAdminPassword(o.getDatabaseAdminPassword())
                             .protectionMode(o.getProtectionMode())
                             .transportType(o.getTransportType())
-                            .peerDbSystemId(o.getPeerDbSystemId());
+                            .peerDbSystemId(o.getPeerDbSystemId())
+                            .peerDbHomeId(o.getPeerDbHomeId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -108,9 +122,11 @@ public class CreateDataGuardAssociationToExistingDbSystemDetails
             String databaseAdminPassword,
             ProtectionMode protectionMode,
             TransportType transportType,
-            String peerDbSystemId) {
+            String peerDbSystemId,
+            String peerDbHomeId) {
         super(databaseAdminPassword, protectionMode, transportType);
         this.peerDbSystemId = peerDbSystemId;
+        this.peerDbHomeId = peerDbHomeId;
     }
 
     /**
@@ -120,6 +136,14 @@ public class CreateDataGuardAssociationToExistingDbSystemDetails
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
     String peerDbSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+     * You must supply this value to create standby database with an existing DB home
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
+    String peerDbHomeId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

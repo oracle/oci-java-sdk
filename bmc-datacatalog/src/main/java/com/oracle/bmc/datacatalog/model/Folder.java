@@ -82,6 +82,16 @@ public class Folder {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertyGetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -193,6 +203,7 @@ public class Folder {
                             parentFolderKey,
                             path,
                             dataAssetKey,
+                            customPropertyMembers,
                             properties,
                             externalKey,
                             timeCreated,
@@ -217,6 +228,7 @@ public class Folder {
                             .parentFolderKey(o.getParentFolderKey())
                             .path(o.getPath())
                             .dataAssetKey(o.getDataAssetKey())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties())
                             .externalKey(o.getExternalKey())
                             .timeCreated(o.getTimeCreated())
@@ -278,6 +290,12 @@ public class Folder {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     String dataAssetKey;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertyGetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the folder type. Each folder type
