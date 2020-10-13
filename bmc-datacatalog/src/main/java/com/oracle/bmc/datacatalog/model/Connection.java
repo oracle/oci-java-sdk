@@ -87,6 +87,16 @@ public class Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertyGetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -172,6 +182,7 @@ public class Connection {
                             timeUpdated,
                             createdById,
                             updatedById,
+                            customPropertyMembers,
                             properties,
                             externalKey,
                             timeStatusUpdated,
@@ -194,6 +205,7 @@ public class Connection {
                             .timeUpdated(o.getTimeUpdated())
                             .createdById(o.getCreatedById())
                             .updatedById(o.getUpdatedById())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties())
                             .externalKey(o.getExternalKey())
                             .timeStatusUpdated(o.getTimeStatusUpdated())
@@ -261,6 +273,12 @@ public class Connection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
     String updatedById;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertyGetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the connection type. Each connection type

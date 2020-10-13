@@ -261,6 +261,25 @@ public class SearchResult {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("expression")
+        private String expression;
+
+        public Builder expression(String expression) {
+            this.expression = expression;
+            this.__explicitlySet__.add("expression");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
+        private java.util.List<FacetedSearchCustomProperty> customProperties;
+
+        public Builder customProperties(
+                java.util.List<FacetedSearchCustomProperty> customProperties) {
+            this.customProperties = customProperties;
+            this.__explicitlySet__.add("customProperties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -292,7 +311,9 @@ public class SearchResult {
                             parentTermName,
                             createdById,
                             updatedById,
-                            path);
+                            path,
+                            expression,
+                            customProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -325,7 +346,9 @@ public class SearchResult {
                             .parentTermName(o.getParentTermName())
                             .createdById(o.getCreatedById())
                             .updatedById(o.getUpdatedById())
-                            .path(o.getPath());
+                            .path(o.getPath())
+                            .expression(o.getExpression())
+                            .customProperties(o.getCustomProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -498,6 +521,18 @@ public class SearchResult {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     String path;
+
+    /**
+     * Expression for logical entities against which names of dataObjects will be matched.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("expression")
+    String expression;
+
+    /**
+     * Custom properties defined by users.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
+    java.util.List<FacetedSearchCustomProperty> customProperties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -62,6 +62,14 @@ public class ListDbHomesConverter {
                                     request.getBackupId()));
         }
 
+        if (request.getDbVersion() != null) {
+            target =
+                    target.queryParam(
+                            "dbVersion",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDbVersion()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

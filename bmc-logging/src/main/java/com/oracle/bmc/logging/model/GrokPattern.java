@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * grok pattern object
+ * grok pattern object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -101,31 +101,31 @@ public class GrokPattern {
     }
 
     /**
-     * The grok pattern
+     * The grok pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     String pattern;
 
     /**
-     * The name key to tag this grok pattern
+     * The name key to tag this grok pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Specify time field for event time. If the event doesn't have this field, current time is used.
+     * Specify the time field for the event time. If the event doesn't have this field, the current time is used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
     String fieldTimeKey;
 
     /**
-     * Process value using specified format. This is available only when time_type is string.
+     * Process value using the specified format. This is available only when time_type is a string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeFormat")
     String fieldTimeFormat;
 
     /**
-     * Use specified timezone. One can parse/format the time value in the specified timezone.
+     * Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeZone")
     String fieldTimeZone;

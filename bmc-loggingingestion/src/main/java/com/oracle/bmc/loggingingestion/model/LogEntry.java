@@ -5,7 +5,7 @@
 package com.oracle.bmc.loggingingestion.model;
 
 /**
- * Contains the content of the log with associated timestamp and id. Each
+ * Contains the log content with the associated timestamp and ID. Each
  * entry should be less than 1 MB size.
  *
  * <br/>
@@ -79,7 +79,7 @@ public class LogEntry {
     }
 
     /**
-     * The content of the log entry.
+     * The log entry content.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     String data;
@@ -93,9 +93,8 @@ public class LogEntry {
     String id;
 
     /**
-     * Optional. The timestamp associated with the log entry. Defaults to
-     * PutLogsDetails.defaultlogentrytime if unspecified. An RFC3339 formatted
-     * datetime string.
+     * Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string.
+     * If unspecified, defaults to PutLogsDetails.defaultlogentrytime.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")

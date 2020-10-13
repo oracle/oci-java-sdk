@@ -211,7 +211,7 @@ public class UnifiedAgentConfiguration {
     String compartmentId;
 
     /**
-     * The display name of a user-friendly name. It has to be unique within enclosing resource,
+     * The user-friendly display name. This must be unique within the enclosing resource,
      * and it's changeable. Avoid entering confidential information.
      *
      **/
@@ -256,7 +256,7 @@ public class UnifiedAgentConfiguration {
     java.util.Date timeLastModified;
 
     /**
-     * The state of an pipeline.
+     * The pipeline state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LogLifecycleState lifecycleState;

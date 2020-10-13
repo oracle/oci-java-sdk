@@ -44,6 +44,16 @@ public class UpdateDataAssetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertySetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -58,7 +68,8 @@ public class UpdateDataAssetDetails {
 
         public UpdateDataAssetDetails build() {
             UpdateDataAssetDetails __instance__ =
-                    new UpdateDataAssetDetails(displayName, description, properties);
+                    new UpdateDataAssetDetails(
+                            displayName, description, customPropertyMembers, properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,6 +79,7 @@ public class UpdateDataAssetDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .description(o.getDescription())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -95,6 +107,12 @@ public class UpdateDataAssetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the asset type. Each data asset type

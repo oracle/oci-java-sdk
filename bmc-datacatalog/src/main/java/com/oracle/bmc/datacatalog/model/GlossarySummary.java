@@ -104,6 +104,42 @@ public class GlossarySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("importJobDefinitionKey")
+        private String importJobDefinitionKey;
+
+        public Builder importJobDefinitionKey(String importJobDefinitionKey) {
+            this.importJobDefinitionKey = importJobDefinitionKey;
+            this.__explicitlySet__.add("importJobDefinitionKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("importJobKey")
+        private String importJobKey;
+
+        public Builder importJobKey(String importJobKey) {
+            this.importJobKey = importJobKey;
+            this.__explicitlySet__.add("importJobKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionKey")
+        private String latestImportJobExecutionKey;
+
+        public Builder latestImportJobExecutionKey(String latestImportJobExecutionKey) {
+            this.latestImportJobExecutionKey = latestImportJobExecutionKey;
+            this.__explicitlySet__.add("latestImportJobExecutionKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionStatus")
+        private String latestImportJobExecutionStatus;
+
+        public Builder latestImportJobExecutionStatus(String latestImportJobExecutionStatus) {
+            this.latestImportJobExecutionStatus = latestImportJobExecutionStatus;
+            this.__explicitlySet__.add("latestImportJobExecutionStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -117,7 +153,11 @@ public class GlossarySummary {
                             description,
                             uri,
                             workflowStatus,
-                            lifecycleState);
+                            lifecycleState,
+                            importJobDefinitionKey,
+                            importJobKey,
+                            latestImportJobExecutionKey,
+                            latestImportJobExecutionStatus);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -132,7 +172,11 @@ public class GlossarySummary {
                             .description(o.getDescription())
                             .uri(o.getUri())
                             .workflowStatus(o.getWorkflowStatus())
-                            .lifecycleState(o.getLifecycleState());
+                            .lifecycleState(o.getLifecycleState())
+                            .importJobDefinitionKey(o.getImportJobDefinitionKey())
+                            .importJobKey(o.getImportJobKey())
+                            .latestImportJobExecutionKey(o.getLatestImportJobExecutionKey())
+                            .latestImportJobExecutionStatus(o.getLatestImportJobExecutionStatus());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -197,6 +241,32 @@ public class GlossarySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The unique key of the job definition resource that was used in the Glossary import.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importJobDefinitionKey")
+    String importJobDefinitionKey;
+
+    /**
+     * The unique key of the job policy for Glossary import.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("importJobKey")
+    String importJobKey;
+
+    /**
+     * The unique key of the parent job execution for which the log resource was created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionKey")
+    String latestImportJobExecutionKey;
+
+    /**
+     * Status of the latest glossary import job execution, such as running, paused, or completed.
+     * This may include additional information like time import started , import file size and % of completion
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("latestImportJobExecutionStatus")
+    String latestImportJobExecutionStatus;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

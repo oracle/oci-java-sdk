@@ -46,6 +46,38 @@ public interface DataCatalogAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Add data selector pattern to the data asset.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDataSelectorPatternsResponse> addDataSelectorPatterns(
+            AddDataSelectorPatternsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddDataSelectorPatternsRequest, AddDataSelectorPatternsResponse>
+                    handler);
+
+    /**
+     * Associate the custom property for the given type
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AssociateCustomPropertyResponse> associateCustomProperty(
+            AssociateCustomPropertyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AssociateCustomPropertyRequest, AssociateCustomPropertyResponse>
+                    handler);
+
+    /**
      * Attaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
      *
      * @param request The request object containing the details to send
@@ -174,6 +206,22 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateConnectionResponse> createConnection(
             CreateConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateConnectionRequest, CreateConnectionResponse>
+                    handler);
+
+    /**
+     * Create a new Custom Property
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCustomPropertyResponse> createCustomProperty(
+            CreateCustomPropertyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCustomPropertyRequest, CreateCustomPropertyResponse>
                     handler);
 
     /**
@@ -329,6 +377,36 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a new Namespace to be used by a custom property
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNamespaceResponse> createNamespace(
+            CreateNamespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateNamespaceRequest, CreateNamespaceResponse>
+                    handler);
+
+    /**
+     * Create a new pattern.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePatternResponse> createPattern(
+            CreatePatternRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePatternRequest, CreatePatternResponse>
+                    handler);
+
+    /**
      * Create a new term within a glossary.
      *
      * @param request The request object containing the details to send
@@ -434,6 +512,22 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteConnectionResponse> deleteConnection(
             DeleteConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResponse>
+                    handler);
+
+    /**
+     * Deletes a specific custom property identified by it's key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCustomPropertyResponse> deleteCustomProperty(
+            DeleteCustomPropertyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCustomPropertyRequest, DeleteCustomPropertyResponse>
                     handler);
 
     /**
@@ -573,6 +667,36 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a specific Namespace identified by it's key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNamespaceResponse> deleteNamespace(
+            DeleteNamespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteNamespaceRequest, DeleteNamespaceResponse>
+                    handler);
+
+    /**
+     * Deletes a specific pattern identified by it's key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePatternResponse> deletePattern(
+            DeletePatternRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeletePatternRequest, DeletePatternResponse>
+                    handler);
+
+    /**
      * Deletes a specific glossary term.
      *
      * @param request The request object containing the details to send
@@ -617,6 +741,22 @@ public interface DataCatalogAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DetachCatalogPrivateEndpointRequest,
                             DetachCatalogPrivateEndpointResponse>
+                    handler);
+
+    /**
+     * Remove the custom property for the given type
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisassociateCustomPropertyResponse> disassociateCustomProperty(
+            DisassociateCustomPropertyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DisassociateCustomPropertyRequest, DisassociateCustomPropertyResponse>
                     handler);
 
     /**
@@ -723,6 +863,22 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
+                    handler);
+
+    /**
+     * Gets a specific custom property for the given key within a data catalog.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCustomPropertyResponse> getCustomProperty(
+            GetCustomPropertyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCustomPropertyRequest, GetCustomPropertyResponse>
                     handler);
 
     /**
@@ -901,6 +1057,35 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a specific namespace for the given key within a data catalog.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNamespaceResponse> getNamespace(
+            GetNamespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetNamespaceRequest, GetNamespaceResponse>
+                    handler);
+
+    /**
+     * Gets a specific pattern for the given key within a data catalog.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPatternResponse> getPattern(
+            GetPatternRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPatternRequest, GetPatternResponse> handler);
+
+    /**
      * Gets a specific glossary term by key.
      *
      * @param request The request object containing the details to send
@@ -990,6 +1175,24 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List the physical entities aggregated by this logical entity.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAggregatedPhysicalEntitiesResponse>
+            listAggregatedPhysicalEntities(
+                    ListAggregatedPhysicalEntitiesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAggregatedPhysicalEntitiesRequest,
+                                    ListAggregatedPhysicalEntitiesResponse>
+                            handler);
+
+    /**
      * Returns a list of all tags for an entity attribute.
      *
      * @param request The request object containing the details to send
@@ -1069,6 +1272,22 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of custom properties within a data catalog.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCustomPropertiesResponse> listCustomProperties(
+            ListCustomPropertiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCustomPropertiesRequest, ListCustomPropertiesResponse>
+                    handler);
+
+    /**
      * Returns a list of all tags for a data asset.
      *
      * @param request The request object containing the details to send
@@ -1097,6 +1316,22 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<ListDataAssetsResponse> listDataAssets(
             ListDataAssetsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListDataAssetsRequest, ListDataAssetsResponse>
+                    handler);
+
+    /**
+     * List logical entities derived from this pattern.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDerivedLogicalEntitiesResponse> listDerivedLogicalEntities(
+            ListDerivedLogicalEntitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDerivedLogicalEntitiesRequest, ListDerivedLogicalEntitiesResponse>
                     handler);
 
     /**
@@ -1249,6 +1484,36 @@ public interface DataCatalogAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handler);
 
     /**
+     * Returns a list of namespaces within a data catalog.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNamespacesResponse> listNamespaces(
+            ListNamespacesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListNamespacesRequest, ListNamespacesResponse>
+                    handler);
+
+    /**
+     * Returns a list of patterns within a data catalog.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPatternsResponse> listPatterns(
+            ListPatternsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPatternsRequest, ListPatternsResponse>
+                    handler);
+
+    /**
      * Returns a list of all user created tags in the system.
      *
      * @param request The request object containing the details to send
@@ -1386,6 +1651,22 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Remove data selector pattern from the data asset.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDataSelectorPatternsResponse> removeDataSelectorPatterns(
+            RemoveDataSelectorPatternsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDataSelectorPatternsRequest, RemoveDataSelectorPatternsResponse>
+                    handler);
+
+    /**
      * Returns a list of search results within a data catalog.
      *
      * @param request The request object containing the details to send
@@ -1475,6 +1756,22 @@ public interface DataCatalogAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateConnectionResponse> updateConnection(
             UpdateConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResponse>
+                    handler);
+
+    /**
+     * Updates a specific custom property identified by the given key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCustomPropertyResponse> updateCustomProperty(
+            UpdateCustomPropertyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCustomPropertyRequest, UpdateCustomPropertyResponse>
                     handler);
 
     /**
@@ -1568,6 +1865,36 @@ public interface DataCatalogAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates a specific namespace identified by the given key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNamespaceResponse> updateNamespace(
+            UpdateNamespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateNamespaceRequest, UpdateNamespaceResponse>
+                    handler);
+
+    /**
+     * Updates a specific pattern identified by the given key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePatternResponse> updatePattern(
+            UpdatePatternRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdatePatternRequest, UpdatePatternResponse>
+                    handler);
+
+    /**
      * Updates a specific glossary term.
      *
      * @param request The request object containing the details to send
@@ -1641,5 +1968,20 @@ public interface DataCatalogAsync extends AutoCloseable {
             ValidateConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ValidateConnectionRequest, ValidateConnectionResponse>
+                    handler);
+
+    /**
+     * Validate pattern by deriving file groups representing logical entities using the expression
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidatePatternResponse> validatePattern(
+            ValidatePatternRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ValidatePatternRequest, ValidatePatternResponse>
                     handler);
 }

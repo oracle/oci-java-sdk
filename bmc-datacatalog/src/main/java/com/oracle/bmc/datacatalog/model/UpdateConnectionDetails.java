@@ -44,6 +44,16 @@ public class UpdateConnectionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertySetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -78,7 +88,12 @@ public class UpdateConnectionDetails {
         public UpdateConnectionDetails build() {
             UpdateConnectionDetails __instance__ =
                     new UpdateConnectionDetails(
-                            description, displayName, properties, encProperties, isDefault);
+                            description,
+                            displayName,
+                            customPropertyMembers,
+                            properties,
+                            encProperties,
+                            isDefault);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -88,6 +103,7 @@ public class UpdateConnectionDetails {
             Builder copiedBuilder =
                     description(o.getDescription())
                             .displayName(o.getDisplayName())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties())
                             .encProperties(o.getEncProperties())
                             .isDefault(o.getIsDefault());
@@ -117,6 +133,12 @@ public class UpdateConnectionDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the connection type. Each connection type

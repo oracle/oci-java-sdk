@@ -108,6 +108,24 @@ public class Entity {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patternKey")
+        private String patternKey;
+
+        public Builder patternKey(String patternKey) {
+            this.patternKey = patternKey;
+            this.__explicitlySet__.add("patternKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
+        private String realizedExpression;
+
+        public Builder realizedExpression(String realizedExpression) {
+            this.realizedExpression = realizedExpression;
+            this.__explicitlySet__.add("realizedExpression");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
         private java.util.Date timeExternal;
 
@@ -216,6 +234,16 @@ public class Entity {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertyGetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertyGetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -240,6 +268,8 @@ public class Entity {
                             updatedById,
                             lifecycleState,
                             externalKey,
+                            patternKey,
+                            realizedExpression,
                             timeExternal,
                             timeStatusUpdated,
                             isLogical,
@@ -252,6 +282,7 @@ public class Entity {
                             lastJobKey,
                             typeKey,
                             uri,
+                            customPropertyMembers,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -269,6 +300,8 @@ public class Entity {
                             .updatedById(o.getUpdatedById())
                             .lifecycleState(o.getLifecycleState())
                             .externalKey(o.getExternalKey())
+                            .patternKey(o.getPatternKey())
+                            .realizedExpression(o.getRealizedExpression())
                             .timeExternal(o.getTimeExternal())
                             .timeStatusUpdated(o.getTimeStatusUpdated())
                             .isLogical(o.getIsLogical())
@@ -281,6 +314,7 @@ public class Entity {
                             .lastJobKey(o.getLastJobKey())
                             .typeKey(o.getTypeKey())
                             .uri(o.getUri())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -355,6 +389,18 @@ public class Entity {
     String externalKey;
 
     /**
+     * Key of the associated pattern if this is a logical entity.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patternKey")
+    String patternKey;
+
+    /**
+     * The expression realized after resolving qualifiers . Used in deriving this logical entity
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("realizedExpression")
+    String realizedExpression;
+
+    /**
      * Last modified timestamp of this object in the external system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
@@ -427,6 +473,12 @@ public class Entity {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     String uri;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertyGetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the entity type. Each entity type

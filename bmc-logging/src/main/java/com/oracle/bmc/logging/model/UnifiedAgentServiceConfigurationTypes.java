@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Type of unified agent service configuration.
+ * Type of Unified Agent service configuration.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @lombok.extern.slf4j.Slf4j

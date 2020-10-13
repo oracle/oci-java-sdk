@@ -65,6 +65,11 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String externalKey;
 
     /**
+     * Unique pattern key.
+     */
+    private String patternKey;
+
+    /**
      * Last modified timestamp of this object in the external system.
      */
     private java.util.Date timeExternal;
@@ -300,6 +305,7 @@ public class ListEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java
             createdById(o.getCreatedById());
             updatedById(o.getUpdatedById());
             externalKey(o.getExternalKey());
+            patternKey(o.getPatternKey());
             timeExternal(o.getTimeExternal());
             timeStatusUpdated(o.getTimeStatusUpdated());
             isLogical(o.getIsLogical());

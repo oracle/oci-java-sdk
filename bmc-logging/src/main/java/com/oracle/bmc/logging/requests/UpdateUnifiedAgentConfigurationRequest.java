@@ -13,7 +13,7 @@ public class UpdateUnifiedAgentConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateUnifiedAgentConfigurationDetails> {
 
     /**
-     * The OCID of the unified agent configuration.
+     * The OCID of the Unified Agent configuration.
      */
     private String unifiedAgentConfigurationId;
 

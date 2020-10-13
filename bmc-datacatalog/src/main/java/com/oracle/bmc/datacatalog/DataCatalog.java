@@ -46,6 +46,22 @@ public interface DataCatalog extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Add data selector pattern to the data asset.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AddDataSelectorPatternsResponse addDataSelectorPatterns(AddDataSelectorPatternsRequest request);
+
+    /**
+     * Associate the custom property for the given type
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AssociateCustomPropertyResponse associateCustomProperty(AssociateCustomPropertyRequest request);
+
+    /**
      * Attaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -114,6 +130,14 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateConnectionResponse createConnection(CreateConnectionRequest request);
+
+    /**
+     * Create a new Custom Property
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateCustomPropertyResponse createCustomProperty(CreateCustomPropertyRequest request);
 
     /**
      * Create a new data asset.
@@ -196,6 +220,22 @@ public interface DataCatalog extends AutoCloseable {
     CreateJobExecutionResponse createJobExecution(CreateJobExecutionRequest request);
 
     /**
+     * Create a new Namespace to be used by a custom property
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateNamespaceResponse createNamespace(CreateNamespaceRequest request);
+
+    /**
+     * Create a new pattern.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreatePatternResponse createPattern(CreatePatternRequest request);
+
+    /**
      * Create a new term within a glossary.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -251,6 +291,14 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request);
+
+    /**
+     * Deletes a specific custom property identified by it's key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteCustomPropertyResponse deleteCustomProperty(DeleteCustomPropertyRequest request);
 
     /**
      * Deletes a specific data asset identified by it's key.
@@ -325,6 +373,22 @@ public interface DataCatalog extends AutoCloseable {
     DeleteJobDefinitionResponse deleteJobDefinition(DeleteJobDefinitionRequest request);
 
     /**
+     * Deletes a specific Namespace identified by it's key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteNamespaceResponse deleteNamespace(DeleteNamespaceRequest request);
+
+    /**
+     * Deletes a specific pattern identified by it's key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeletePatternResponse deletePattern(DeletePatternRequest request);
+
+    /**
      * Deletes a specific glossary term.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -348,6 +412,15 @@ public interface DataCatalog extends AutoCloseable {
      */
     DetachCatalogPrivateEndpointResponse detachCatalogPrivateEndpoint(
             DetachCatalogPrivateEndpointRequest request);
+
+    /**
+     * Remove the custom property for the given type
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DisassociateCustomPropertyResponse disassociateCustomProperty(
+            DisassociateCustomPropertyRequest request);
 
     /**
      * Returns the fully expanded tree hierarchy of parent and child terms in this glossary.
@@ -405,6 +478,14 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetConnectionResponse getConnection(GetConnectionRequest request);
+
+    /**
+     * Gets a specific custom property for the given key within a data catalog.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetCustomPropertyResponse getCustomProperty(GetCustomPropertyRequest request);
 
     /**
      * Gets a specific data asset for the given key within a data catalog.
@@ -503,6 +584,22 @@ public interface DataCatalog extends AutoCloseable {
     GetJobMetricsResponse getJobMetrics(GetJobMetricsRequest request);
 
     /**
+     * Gets a specific namespace for the given key within a data catalog.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetNamespaceResponse getNamespace(GetNamespaceRequest request);
+
+    /**
+     * Gets a specific pattern for the given key within a data catalog.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetPatternResponse getPattern(GetPatternRequest request);
+
+    /**
      * Gets a specific glossary term by key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -551,6 +648,15 @@ public interface DataCatalog extends AutoCloseable {
     ImportGlossaryResponse importGlossary(ImportGlossaryRequest request);
 
     /**
+     * List the physical entities aggregated by this logical entity.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAggregatedPhysicalEntitiesResponse listAggregatedPhysicalEntities(
+            ListAggregatedPhysicalEntitiesRequest request);
+
+    /**
      * Returns a list of all tags for an entity attribute.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -594,6 +700,14 @@ public interface DataCatalog extends AutoCloseable {
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
 
     /**
+     * Returns a list of custom properties within a data catalog.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCustomPropertiesResponse listCustomProperties(ListCustomPropertiesRequest request);
+
+    /**
      * Returns a list of all tags for a data asset.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -608,6 +722,15 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListDataAssetsResponse listDataAssets(ListDataAssetsRequest request);
+
+    /**
+     * List logical entities derived from this pattern.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListDerivedLogicalEntitiesResponse listDerivedLogicalEntities(
+            ListDerivedLogicalEntitiesRequest request);
 
     /**
      * Returns a list of all entities of a data asset.
@@ -690,6 +813,22 @@ public interface DataCatalog extends AutoCloseable {
     ListJobsResponse listJobs(ListJobsRequest request);
 
     /**
+     * Returns a list of namespaces within a data catalog.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListNamespacesResponse listNamespaces(ListNamespacesRequest request);
+
+    /**
+     * Returns a list of patterns within a data catalog.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListPatternsResponse listPatterns(ListPatternsRequest request);
+
+    /**
      * Returns a list of all user created tags in the system.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -765,6 +904,15 @@ public interface DataCatalog extends AutoCloseable {
     ParseConnectionResponse parseConnection(ParseConnectionRequest request);
 
     /**
+     * Remove data selector pattern from the data asset.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RemoveDataSelectorPatternsResponse removeDataSelectorPatterns(
+            RemoveDataSelectorPatternsRequest request);
+
+    /**
      * Returns a list of search results within a data catalog.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -812,6 +960,14 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateConnectionResponse updateConnection(UpdateConnectionRequest request);
+
+    /**
+     * Updates a specific custom property identified by the given key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateCustomPropertyResponse updateCustomProperty(UpdateCustomPropertyRequest request);
 
     /**
      * Updates a specific data asset identified by the given key.
@@ -862,6 +1018,22 @@ public interface DataCatalog extends AutoCloseable {
     UpdateJobDefinitionResponse updateJobDefinition(UpdateJobDefinitionRequest request);
 
     /**
+     * Updates a specific namespace identified by the given key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateNamespaceResponse updateNamespace(UpdateNamespaceRequest request);
+
+    /**
+     * Updates a specific pattern identified by the given key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdatePatternResponse updatePattern(UpdatePatternRequest request);
+
+    /**
      * Updates a specific glossary term.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -900,6 +1072,14 @@ public interface DataCatalog extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ValidateConnectionResponse validateConnection(ValidateConnectionRequest request);
+
+    /**
+     * Validate pattern by deriving file groups representing logical entities using the expression
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ValidatePatternResponse validatePattern(ValidatePatternRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

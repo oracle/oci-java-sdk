@@ -49,6 +49,14 @@ public interface ApiGateway extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Changes the API compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeApiCompartmentResponse changeApiCompartment(ChangeApiCompartmentRequest request);
+
+    /**
      * Changes the certificate compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -56,6 +64,15 @@ public interface ApiGateway extends AutoCloseable {
      */
     ChangeCertificateCompartmentResponse changeCertificateCompartment(
             ChangeCertificateCompartmentRequest request);
+
+    /**
+     * Creates a new API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateApiResponse createApi(CreateApiRequest request);
 
     /**
      * Creates a new Certificate.
@@ -67,12 +84,53 @@ public interface ApiGateway extends AutoCloseable {
     CreateCertificateResponse createCertificate(CreateCertificateRequest request);
 
     /**
+     * Deletes the API with the given identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteApiResponse deleteApi(DeleteApiRequest request);
+
+    /**
      * Deletes the certificate with the given identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request);
+
+    /**
+     * Gets an API by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetApiResponse getApi(GetApiRequest request);
+
+    /**
+     * Get the raw API content.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetApiContentResponse getApiContent(GetApiContentRequest request);
+
+    /**
+     * Gets an API Deployment specification by identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetApiDeploymentSpecificationResponse getApiDeploymentSpecification(
+            GetApiDeploymentSpecificationRequest request);
+
+    /**
+     * Gets the API validation results.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetApiValidationsResponse getApiValidations(GetApiValidationsRequest request);
 
     /**
      * Gets a certificate by identifier.
@@ -83,6 +141,15 @@ public interface ApiGateway extends AutoCloseable {
     GetCertificateResponse getCertificate(GetCertificateRequest request);
 
     /**
+     * Returns a list of APIs.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListApisResponse listApis(ListApisRequest request);
+
+    /**
      * Returns a list of certificates.
      *
      * @param request The request object containing the details to send
@@ -90,6 +157,14 @@ public interface ApiGateway extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
+
+    /**
+     * Updates the API with the given identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateApiResponse updateApi(UpdateApiRequest request);
 
     /**
      * Updates a certificate with the given identifier

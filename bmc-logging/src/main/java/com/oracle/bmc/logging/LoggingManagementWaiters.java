@@ -215,6 +215,108 @@ public class LoggingManagementWaiters {
      * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetLogSavedSearchRequest, GetLogSavedSearchResponse>
+            forLogSavedSearch(
+                    GetLogSavedSearchRequest request,
+                    com.oracle.bmc.logging.model.LogSavedSearchLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forLogSavedSearch(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetLogSavedSearchRequest, GetLogSavedSearchResponse>
+            forLogSavedSearch(
+                    GetLogSavedSearchRequest request,
+                    com.oracle.bmc.logging.model.LogSavedSearchLifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forLogSavedSearch(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetLogSavedSearchRequest, GetLogSavedSearchResponse>
+            forLogSavedSearch(
+                    GetLogSavedSearchRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.logging.model.LogSavedSearchLifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forLogSavedSearch(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for LogSavedSearch.
+    private com.oracle.bmc.waiter.Waiter<GetLogSavedSearchRequest, GetLogSavedSearchResponse>
+            forLogSavedSearch(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetLogSavedSearchRequest request,
+                    final com.oracle.bmc.logging.model.LogSavedSearchLifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.logging.model.LogSavedSearchLifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetLogSavedSearchRequest, GetLogSavedSearchResponse>() {
+                            @Override
+                            public GetLogSavedSearchResponse apply(
+                                    GetLogSavedSearchRequest request) {
+                                return client.getLogSavedSearch(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetLogSavedSearchResponse>() {
+                            @Override
+                            public boolean apply(GetLogSavedSearchResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getLogSavedSearch().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<
                     GetUnifiedAgentConfigurationRequest, GetUnifiedAgentConfigurationResponse>
             forUnifiedAgentConfiguration(

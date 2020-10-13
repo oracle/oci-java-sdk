@@ -135,6 +135,15 @@ public class Type {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
+        private java.util.List<CustomPropertySummary> customProperties;
+
+        public Builder customProperties(java.util.List<CustomPropertySummary> customProperties) {
+            this.customProperties = customProperties;
+            this.__explicitlySet__.add("customProperties");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -152,7 +161,8 @@ public class Type {
                             isApproved,
                             typeCategory,
                             externalTypeName,
-                            uri);
+                            uri,
+                            customProperties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -171,7 +181,8 @@ public class Type {
                             .isApproved(o.getIsApproved())
                             .typeCategory(o.getTypeCategory())
                             .externalTypeName(o.getExternalTypeName())
-                            .uri(o.getUri());
+                            .uri(o.getUri())
+                            .customProperties(o.getCustomProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -275,6 +286,12 @@ public class Type {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     String uri;
+
+    /**
+     * Custom properties associated with this Type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
+    java.util.List<CustomPropertySummary> customProperties;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

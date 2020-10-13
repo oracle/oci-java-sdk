@@ -54,6 +54,15 @@ public class UpdateAutonomousContainerDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+        private Integer standbyMaintenanceBufferInDays;
+
+        public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
+            this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+            this.__explicitlySet__.add("standbyMaintenanceBufferInDays");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -91,6 +100,7 @@ public class UpdateAutonomousContainerDatabaseDetails {
                             displayName,
                             patchModel,
                             maintenanceWindowDetails,
+                            standbyMaintenanceBufferInDays,
                             freeformTags,
                             definedTags,
                             backupConfig);
@@ -104,6 +114,7 @@ public class UpdateAutonomousContainerDatabaseDetails {
                     displayName(o.getDisplayName())
                             .patchModel(o.getPatchModel())
                             .maintenanceWindowDetails(o.getMaintenanceWindowDetails())
+                            .standbyMaintenanceBufferInDays(o.getStandbyMaintenanceBufferInDays())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .backupConfig(o.getBackupConfig());
@@ -168,6 +179,14 @@ public class UpdateAutonomousContainerDatabaseDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
     MaintenanceWindow maintenanceWindowDetails;
+
+    /**
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+     * This value represents the number of days before the primary database maintenance schedule.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")
+    Integer standbyMaintenanceBufferInDays;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

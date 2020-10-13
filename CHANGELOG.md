@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.25.0 - 2020-10-13
+### Added
+- Support for API definitions in the API Gateway service
+- Support for pattern-based logical entities, namespace-bound custom properties, and faceted search in the Data Catalog service
+- Support for autonomous Data Guard on autonomous infrastructure in the Database service
+- Support for creating a Data Guard association on an existing standby database home in the Database service
+- Support for upgrading cloud VM cluster grid infrastructure in the Database service
+
+
+### Breaking Changes
+- Attribute `isQuickStart` & method `isQuickStart(Boolean isQuickStart)` in models `CreateLogSavedSearchDetails`, `LogSavedSearchSummary`,`UpdateLogSavedSearchDetails` and `LogSavedSearch` is removed from the Logging Management service
+- Lifecycle State `DELETED` is removed from the Logging Management service
+
 ## 1.24.0 - 2020-10-06
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the me-dubai-1 region

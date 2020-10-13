@@ -2584,6 +2584,73 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    FailoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                    FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
+            forFailoverAutonomousContainerDatabaseDataguardAssociation(
+                    FailoverAutonomousContainerDatabaseDataguardAssociationRequest request) {
+        return forFailoverAutonomousContainerDatabaseDataguardAssociation(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    FailoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                    FailoverAutonomousContainerDatabaseDataguardAssociationResponse>
+            forFailoverAutonomousContainerDatabaseDataguardAssociation(
+                    FailoverAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        FailoverAutonomousContainerDatabaseDataguardAssociationResponse>() {
+                    @Override
+                    public FailoverAutonomousContainerDatabaseDataguardAssociationResponse call()
+                            throws Exception {
+                        final FailoverAutonomousContainerDatabaseDataguardAssociationResponse
+                                response =
+                                        client
+                                                .failoverAutonomousContainerDatabaseDataguardAssociation(
+                                                        request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     FailoverDataGuardAssociationRequest, FailoverDataGuardAssociationResponse>
             forFailoverDataGuardAssociation(FailoverDataGuardAssociationRequest request) {
         return forFailoverDataGuardAssociation(
@@ -2748,6 +2815,136 @@ public class DatabaseWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.database.model.AutonomousContainerDatabase
+                                        .LifecycleState.Terminated)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousContainerDatabaseDataguardAssociationRequest,
+                    GetAutonomousContainerDatabaseDataguardAssociationResponse>
+            forAutonomousContainerDatabaseDataguardAssociation(
+                    GetAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
+                                    .LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAutonomousContainerDatabaseDataguardAssociation(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousContainerDatabaseDataguardAssociationRequest,
+                    GetAutonomousContainerDatabaseDataguardAssociationResponse>
+            forAutonomousContainerDatabaseDataguardAssociation(
+                    GetAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
+                                    .LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAutonomousContainerDatabaseDataguardAssociation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousContainerDatabaseDataguardAssociationRequest,
+                    GetAutonomousContainerDatabaseDataguardAssociationResponse>
+            forAutonomousContainerDatabaseDataguardAssociation(
+                    GetAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
+                                    .LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forAutonomousContainerDatabaseDataguardAssociation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AutonomousContainerDatabaseDataguardAssociation.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousContainerDatabaseDataguardAssociationRequest,
+                    GetAutonomousContainerDatabaseDataguardAssociationResponse>
+            forAutonomousContainerDatabaseDataguardAssociation(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.database.model
+                                    .AutonomousContainerDatabaseDataguardAssociation
+                                    .LifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.database.model
+                                .AutonomousContainerDatabaseDataguardAssociation.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetAutonomousContainerDatabaseDataguardAssociationRequest,
+                                GetAutonomousContainerDatabaseDataguardAssociationResponse>() {
+                            @Override
+                            public GetAutonomousContainerDatabaseDataguardAssociationResponse apply(
+                                    GetAutonomousContainerDatabaseDataguardAssociationRequest
+                                            request) {
+                                return client.getAutonomousContainerDatabaseDataguardAssociation(
+                                        request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetAutonomousContainerDatabaseDataguardAssociationResponse>() {
+                            @Override
+                            public boolean apply(
+                                    GetAutonomousContainerDatabaseDataguardAssociationResponse
+                                            response) {
+                                return targetStatesSet.contains(
+                                        response.getAutonomousContainerDatabaseDataguardAssociation()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.database.model
+                                        .AutonomousContainerDatabaseDataguardAssociation
                                         .LifecycleState.Terminated)),
                 request);
     }
@@ -3202,6 +3399,131 @@ public class DatabaseWaiters {
                         targetStatesSet.contains(
                                 com.oracle.bmc.database.model.AutonomousDatabaseBackup
                                         .LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseDataguardAssociationRequest,
+                    GetAutonomousDatabaseDataguardAssociationResponse>
+            forAutonomousDatabaseDataguardAssociation(
+                    GetAutonomousDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
+                                    .LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAutonomousDatabaseDataguardAssociation(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseDataguardAssociationRequest,
+                    GetAutonomousDatabaseDataguardAssociationResponse>
+            forAutonomousDatabaseDataguardAssociation(
+                    GetAutonomousDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
+                                    .LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAutonomousDatabaseDataguardAssociation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseDataguardAssociationRequest,
+                    GetAutonomousDatabaseDataguardAssociationResponse>
+            forAutonomousDatabaseDataguardAssociation(
+                    GetAutonomousDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
+                                    .LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forAutonomousDatabaseDataguardAssociation(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AutonomousDatabaseDataguardAssociation.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseDataguardAssociationRequest,
+                    GetAutonomousDatabaseDataguardAssociationResponse>
+            forAutonomousDatabaseDataguardAssociation(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAutonomousDatabaseDataguardAssociationRequest request,
+                    final com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
+                                    .LifecycleState...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
+                                .LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetAutonomousDatabaseDataguardAssociationRequest,
+                                GetAutonomousDatabaseDataguardAssociationResponse>() {
+                            @Override
+                            public GetAutonomousDatabaseDataguardAssociationResponse apply(
+                                    GetAutonomousDatabaseDataguardAssociationRequest request) {
+                                return client.getAutonomousDatabaseDataguardAssociation(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetAutonomousDatabaseDataguardAssociationResponse>() {
+                            @Override
+                            public boolean apply(
+                                    GetAutonomousDatabaseDataguardAssociationResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAutonomousDatabaseDataguardAssociation()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
+                                        .LifecycleState.Terminated)),
                 request);
     }
 
@@ -5552,6 +5874,73 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    ReinstateAutonomousContainerDatabaseDataguardAssociationRequest,
+                    ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
+            forReinstateAutonomousContainerDatabaseDataguardAssociation(
+                    ReinstateAutonomousContainerDatabaseDataguardAssociationRequest request) {
+        return forReinstateAutonomousContainerDatabaseDataguardAssociation(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ReinstateAutonomousContainerDatabaseDataguardAssociationRequest,
+                    ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>
+            forReinstateAutonomousContainerDatabaseDataguardAssociation(
+                    ReinstateAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        ReinstateAutonomousContainerDatabaseDataguardAssociationResponse>() {
+                    @Override
+                    public ReinstateAutonomousContainerDatabaseDataguardAssociationResponse call()
+                            throws Exception {
+                        final ReinstateAutonomousContainerDatabaseDataguardAssociationResponse
+                                response =
+                                        client
+                                                .reinstateAutonomousContainerDatabaseDataguardAssociation(
+                                                        request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     ReinstateDataGuardAssociationRequest, ReinstateDataGuardAssociationResponse>
             forReinstateDataGuardAssociation(ReinstateDataGuardAssociationRequest request) {
         return forReinstateDataGuardAssociation(
@@ -6066,6 +6455,73 @@ public class DatabaseWaiters {
                     public StopAutonomousDatabaseResponse call() throws Exception {
                         final StopAutonomousDatabaseResponse response =
                                 client.stopAutonomousDatabase(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                    SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
+            forSwitchoverAutonomousContainerDatabaseDataguardAssociation(
+                    SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest request) {
+        return forSwitchoverAutonomousContainerDatabaseDataguardAssociation(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest,
+                    SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>
+            forSwitchoverAutonomousContainerDatabaseDataguardAssociation(
+                    SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse>() {
+                    @Override
+                    public SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse call()
+                            throws Exception {
+                        final SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
+                                response =
+                                        client
+                                                .switchoverAutonomousContainerDatabaseDataguardAssociation(
+                                                        request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =

@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * categories for resources.
+ * Categories for resources.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -78,19 +78,19 @@ public class Category {
     }
 
     /**
-     * Category name
+     * Category name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Category display name
+     * Category display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Parameters category supports.
+     * Parameters the category supports.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     java.util.List<Parameter> parameters;

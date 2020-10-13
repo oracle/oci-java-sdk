@@ -5,7 +5,7 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Update Log Object properties
+ * Update log object properties.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -118,7 +118,7 @@ public class UpdateLogDetails {
     }
 
     /**
-     * The display name of a user-friendly name. It has to be unique within enclosing resource,
+     * The user-friendly display name. This must be unique within the enclosing resource,
      * and it's changeable. Avoid entering confidential information.
      *
      **/
@@ -151,7 +151,7 @@ public class UpdateLogDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Log retention duration in days.
+     * Log retention duration in 30-day increments (30, 60, 90 and so on).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionDuration")
     Integer retentionDuration;

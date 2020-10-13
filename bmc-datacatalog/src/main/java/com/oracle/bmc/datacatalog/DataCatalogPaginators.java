@@ -598,6 +598,120 @@ public class DataCatalogPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCustomProperties operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCustomPropertiesResponse> listCustomPropertiesResponseIterator(
+            final ListCustomPropertiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCustomPropertiesRequest.Builder, ListCustomPropertiesRequest,
+                ListCustomPropertiesResponse>(
+                new com.google.common.base.Supplier<ListCustomPropertiesRequest.Builder>() {
+                    @Override
+                    public ListCustomPropertiesRequest.Builder get() {
+                        return ListCustomPropertiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCustomPropertiesResponse, String>() {
+                    @Override
+                    public String apply(ListCustomPropertiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomPropertiesRequest.Builder>,
+                        ListCustomPropertiesRequest>() {
+                    @Override
+                    public ListCustomPropertiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomPropertiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCustomPropertiesRequest, ListCustomPropertiesResponse>() {
+                    @Override
+                    public ListCustomPropertiesResponse apply(ListCustomPropertiesRequest request) {
+                        return client.listCustomProperties(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datacatalog.model.CustomPropertySummary} objects
+     * contained in responses from the listCustomProperties operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datacatalog.model.CustomPropertySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datacatalog.model.CustomPropertySummary>
+            listCustomPropertiesRecordIterator(final ListCustomPropertiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCustomPropertiesRequest.Builder, ListCustomPropertiesRequest,
+                ListCustomPropertiesResponse,
+                com.oracle.bmc.datacatalog.model.CustomPropertySummary>(
+                new com.google.common.base.Supplier<ListCustomPropertiesRequest.Builder>() {
+                    @Override
+                    public ListCustomPropertiesRequest.Builder get() {
+                        return ListCustomPropertiesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCustomPropertiesResponse, String>() {
+                    @Override
+                    public String apply(ListCustomPropertiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomPropertiesRequest.Builder>,
+                        ListCustomPropertiesRequest>() {
+                    @Override
+                    public ListCustomPropertiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomPropertiesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCustomPropertiesRequest, ListCustomPropertiesResponse>() {
+                    @Override
+                    public ListCustomPropertiesResponse apply(ListCustomPropertiesRequest request) {
+                        return client.listCustomProperties(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCustomPropertiesResponse,
+                        java.util.List<com.oracle.bmc.datacatalog.model.CustomPropertySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datacatalog.model.CustomPropertySummary>
+                            apply(ListCustomPropertiesResponse response) {
+                        return response.getCustomPropertyCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDataAssetTags operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1931,6 +2045,228 @@ public class DataCatalogPaginators {
                     public java.util.List<com.oracle.bmc.datacatalog.model.JobSummary> apply(
                             ListJobsResponse response) {
                         return response.getJobCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listNamespaces operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListNamespacesResponse> listNamespacesResponseIterator(
+            final ListNamespacesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNamespacesRequest.Builder, ListNamespacesRequest, ListNamespacesResponse>(
+                new com.google.common.base.Supplier<ListNamespacesRequest.Builder>() {
+                    @Override
+                    public ListNamespacesRequest.Builder get() {
+                        return ListNamespacesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListNamespacesResponse, String>() {
+                    @Override
+                    public String apply(ListNamespacesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNamespacesRequest.Builder>,
+                        ListNamespacesRequest>() {
+                    @Override
+                    public ListNamespacesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNamespacesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNamespacesRequest, ListNamespacesResponse>() {
+                    @Override
+                    public ListNamespacesResponse apply(ListNamespacesRequest request) {
+                        return client.listNamespaces(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datacatalog.model.NamespaceSummary} objects
+     * contained in responses from the listNamespaces operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datacatalog.model.NamespaceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datacatalog.model.NamespaceSummary> listNamespacesRecordIterator(
+            final ListNamespacesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNamespacesRequest.Builder, ListNamespacesRequest, ListNamespacesResponse,
+                com.oracle.bmc.datacatalog.model.NamespaceSummary>(
+                new com.google.common.base.Supplier<ListNamespacesRequest.Builder>() {
+                    @Override
+                    public ListNamespacesRequest.Builder get() {
+                        return ListNamespacesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListNamespacesResponse, String>() {
+                    @Override
+                    public String apply(ListNamespacesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNamespacesRequest.Builder>,
+                        ListNamespacesRequest>() {
+                    @Override
+                    public ListNamespacesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNamespacesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNamespacesRequest, ListNamespacesResponse>() {
+                    @Override
+                    public ListNamespacesResponse apply(ListNamespacesRequest request) {
+                        return client.listNamespaces(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNamespacesResponse,
+                        java.util.List<com.oracle.bmc.datacatalog.model.NamespaceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datacatalog.model.NamespaceSummary> apply(
+                            ListNamespacesResponse response) {
+                        return response.getNamespaceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPatterns operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPatternsResponse> listPatternsResponseIterator(
+            final ListPatternsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPatternsRequest.Builder, ListPatternsRequest, ListPatternsResponse>(
+                new com.google.common.base.Supplier<ListPatternsRequest.Builder>() {
+                    @Override
+                    public ListPatternsRequest.Builder get() {
+                        return ListPatternsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPatternsResponse, String>() {
+                    @Override
+                    public String apply(ListPatternsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatternsRequest.Builder>,
+                        ListPatternsRequest>() {
+                    @Override
+                    public ListPatternsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatternsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListPatternsRequest, ListPatternsResponse>() {
+                    @Override
+                    public ListPatternsResponse apply(ListPatternsRequest request) {
+                        return client.listPatterns(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datacatalog.model.PatternSummary} objects
+     * contained in responses from the listPatterns operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datacatalog.model.PatternSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datacatalog.model.PatternSummary> listPatternsRecordIterator(
+            final ListPatternsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPatternsRequest.Builder, ListPatternsRequest, ListPatternsResponse,
+                com.oracle.bmc.datacatalog.model.PatternSummary>(
+                new com.google.common.base.Supplier<ListPatternsRequest.Builder>() {
+                    @Override
+                    public ListPatternsRequest.Builder get() {
+                        return ListPatternsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListPatternsResponse, String>() {
+                    @Override
+                    public String apply(ListPatternsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatternsRequest.Builder>,
+                        ListPatternsRequest>() {
+                    @Override
+                    public ListPatternsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatternsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListPatternsRequest, ListPatternsResponse>() {
+                    @Override
+                    public ListPatternsResponse apply(ListPatternsRequest request) {
+                        return client.listPatterns(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListPatternsResponse,
+                        java.util.List<com.oracle.bmc.datacatalog.model.PatternSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datacatalog.model.PatternSummary> apply(
+                            ListPatternsResponse response) {
+                        return response.getPatternCollection().getItems();
                     }
                 });
     }

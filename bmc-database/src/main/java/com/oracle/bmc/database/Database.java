@@ -592,6 +592,19 @@ public interface Database extends AutoCloseable {
             FailOverAutonomousDatabaseRequest request);
 
     /**
+     * Fails over the standby Autonomous Container Database identified by the autonomousContainerDatabaseId parameter to the primary Autonomous Container Database after the existing primary Autonomous Container Database fails or becomes unreachable.
+     * <p>
+     * A failover can result in data loss, depending on the protection mode in effect at the time the primary Autonomous Container Database fails.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    FailoverAutonomousContainerDatabaseDataguardAssociationResponse
+            failoverAutonomousContainerDatabaseDataguardAssociation(
+                    FailoverAutonomousContainerDatabaseDataguardAssociationRequest request);
+
+    /**
      * Performs a failover to transition the standby database identified by the `databaseId` parameter into the
      * specified Data Guard association's primary role after the existing primary database fails or becomes unreachable.
      * <p>
@@ -645,6 +658,17 @@ public interface Database extends AutoCloseable {
             GetAutonomousContainerDatabaseRequest request);
 
     /**
+     * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousContainerDatabaseDataguardAssociationResponse
+            getAutonomousContainerDatabaseDataguardAssociation(
+                    GetAutonomousContainerDatabaseDataguardAssociationRequest request);
+
+    /**
      * **Deprecated.** To get the details of an Autonomous Data Warehouse, use the {@link #getAutonomousDatabase(GetAutonomousDatabaseRequest) getAutonomousDatabase} operation.
      *
      * @param request The request object containing the details to send
@@ -681,6 +705,16 @@ public interface Database extends AutoCloseable {
      */
     GetAutonomousDatabaseBackupResponse getAutonomousDatabaseBackup(
             GetAutonomousDatabaseBackupRequest request);
+
+    /**
+     * Gets an Autonomous Data Guard-enabled database associated with the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousDatabaseDataguardAssociationResponse getAutonomousDatabaseDataguardAssociation(
+            GetAutonomousDatabaseDataguardAssociationRequest request);
 
     /**
      * Gets the Autonomous Database regional wallet details.
@@ -997,6 +1031,17 @@ public interface Database extends AutoCloseable {
     LaunchDbSystemResponse launchDbSystem(LaunchDbSystemRequest request);
 
     /**
+     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard enabled associated with the specified Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousContainerDatabaseDataguardAssociationsResponse
+            listAutonomousContainerDatabaseDataguardAssociations(
+                    ListAutonomousContainerDatabaseDataguardAssociationsRequest request);
+
+    /**
      * Gets a list of the Autonomous Container Databases in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -1045,6 +1090,16 @@ public interface Database extends AutoCloseable {
      */
     ListAutonomousDatabaseClonesResponse listAutonomousDatabaseClones(
             ListAutonomousDatabaseClonesRequest request);
+
+    /**
+     * Gets a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousDatabaseDataguardAssociationsResponse listAutonomousDatabaseDataguardAssociations(
+            ListAutonomousDatabaseDataguardAssociationsRequest request);
 
     /**
      * Gets a list of Autonomous Databases based on the query parameters specified.
@@ -1375,6 +1430,17 @@ public interface Database extends AutoCloseable {
             RegisterAutonomousDatabaseDataSafeRequest request);
 
     /**
+     * Reinstates a disabled standby Autonomous Container Database, identified by the autonomousContainerDatabaseId parameter, to an active standby Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ReinstateAutonomousContainerDatabaseDataguardAssociationResponse
+            reinstateAutonomousContainerDatabaseDataguardAssociation(
+                    ReinstateAutonomousContainerDatabaseDataguardAssociationRequest request);
+
+    /**
      * Reinstates the database identified by the `databaseId` parameter into the standby role in a Data Guard association.
      *
      * @param request The request object containing the details to send
@@ -1489,6 +1555,19 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     StopAutonomousDatabaseResponse stopAutonomousDatabase(StopAutonomousDatabaseRequest request);
+
+    /**
+     * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association into a standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
+     * <p>
+     * A switchover incurs no data loss.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
+            switchoverAutonomousContainerDatabaseDataguardAssociation(
+                    SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest request);
 
     /**
      * Initiates a switchover of the specified Autonomous Database to the associated standby database. Applicable only to databases with Autonomous Data Guard enabled.

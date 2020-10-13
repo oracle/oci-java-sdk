@@ -53,6 +53,16 @@ public class CreateConnectionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertySetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -90,6 +100,7 @@ public class CreateConnectionDetails {
                             description,
                             displayName,
                             typeKey,
+                            customPropertyMembers,
                             properties,
                             encProperties,
                             isDefault);
@@ -103,6 +114,7 @@ public class CreateConnectionDetails {
                     description(o.getDescription())
                             .displayName(o.getDisplayName())
                             .typeKey(o.getTypeKey())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties())
                             .encProperties(o.getEncProperties())
                             .isDefault(o.getIsDefault());
@@ -138,6 +150,12 @@ public class CreateConnectionDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
     String typeKey;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the connection type. Each connection type

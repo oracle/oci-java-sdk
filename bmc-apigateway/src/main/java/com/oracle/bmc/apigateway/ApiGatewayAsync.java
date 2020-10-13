@@ -49,6 +49,22 @@ public interface ApiGatewayAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Changes the API compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeApiCompartmentResponse> changeApiCompartment(
+            ChangeApiCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeApiCompartmentRequest, ChangeApiCompartmentResponse>
+                    handler);
+
+    /**
      * Changes the certificate compartment.
      *
      * @param request The request object containing the details to send
@@ -64,6 +80,21 @@ public interface ApiGatewayAsync extends AutoCloseable {
                             ChangeCertificateCompartmentRequest,
                             ChangeCertificateCompartmentResponse>
                     handler);
+
+    /**
+     * Creates a new API.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateApiResponse> createApi(
+            CreateApiRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateApiRequest, CreateApiResponse> handler);
 
     /**
      * Creates a new Certificate.
@@ -83,6 +114,20 @@ public interface ApiGatewayAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the API with the given identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteApiResponse> deleteApi(
+            DeleteApiRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteApiRequest, DeleteApiResponse> handler);
+
+    /**
      * Deletes the certificate with the given identifier.
      *
      * @param request The request object containing the details to send
@@ -96,6 +141,69 @@ public interface ApiGatewayAsync extends AutoCloseable {
             DeleteCertificateRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteCertificateRequest, DeleteCertificateResponse>
+                    handler);
+
+    /**
+     * Gets an API by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetApiResponse> getApi(
+            GetApiRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetApiRequest, GetApiResponse> handler);
+
+    /**
+     * Get the raw API content.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetApiContentResponse> getApiContent(
+            GetApiContentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetApiContentRequest, GetApiContentResponse>
+                    handler);
+
+    /**
+     * Gets an API Deployment specification by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetApiDeploymentSpecificationResponse>
+            getApiDeploymentSpecification(
+                    GetApiDeploymentSpecificationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetApiDeploymentSpecificationRequest,
+                                    GetApiDeploymentSpecificationResponse>
+                            handler);
+
+    /**
+     * Gets the API validation results.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetApiValidationsResponse> getApiValidations(
+            GetApiValidationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetApiValidationsRequest, GetApiValidationsResponse>
                     handler);
 
     /**
@@ -114,6 +222,21 @@ public interface ApiGatewayAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of APIs.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListApisResponse> listApis(
+            ListApisRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListApisRequest, ListApisResponse> handler);
+
+    /**
      * Returns a list of certificates.
      *
      *
@@ -128,6 +251,20 @@ public interface ApiGatewayAsync extends AutoCloseable {
             ListCertificatesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
                     handler);
+
+    /**
+     * Updates the API with the given identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateApiResponse> updateApi(
+            UpdateApiRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateApiRequest, UpdateApiResponse> handler);
 
     /**
      * Updates a certificate with the given identifier

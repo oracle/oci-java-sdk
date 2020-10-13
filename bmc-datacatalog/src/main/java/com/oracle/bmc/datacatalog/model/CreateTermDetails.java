@@ -80,6 +80,16 @@ public class CreateTermDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertySetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -91,7 +101,8 @@ public class CreateTermDetails {
                             isAllowedToHaveChildTerms,
                             parentTermKey,
                             owner,
-                            workflowStatus);
+                            workflowStatus,
+                            customPropertyMembers);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -104,7 +115,8 @@ public class CreateTermDetails {
                             .isAllowedToHaveChildTerms(o.getIsAllowedToHaveChildTerms())
                             .parentTermKey(o.getParentTermKey())
                             .owner(o.getOwner())
-                            .workflowStatus(o.getWorkflowStatus());
+                            .workflowStatus(o.getWorkflowStatus())
+                            .customPropertyMembers(o.getCustomPropertyMembers());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -155,6 +167,12 @@ public class CreateTermDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("workflowStatus")
     TermWorkflowStatus workflowStatus;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

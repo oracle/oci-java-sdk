@@ -8,7 +8,7 @@ import com.oracle.bmc.logging.requests.*;
 import com.oracle.bmc.logging.responses.*;
 
 /**
- * loggingManagementControlplane API specification
+ * Use the Logging Management API to create, read, list, update, and delete log groups, log objects, and agent configurations.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public interface LoggingManagementAsync extends AutoCloseable {
@@ -46,7 +46,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Moves a log group into a different compartment within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.
+     * Moves a log group into a different compartment within the same tenancy.  When provided, the If-Match is checked against the resource ETag values.
      * For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
@@ -64,7 +64,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a log into a different log group within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.
+     * Moves a log into a different log group within the same tenancy.  When provided, the If-Match is checked against the ETag values of the resource.
      *
      *
      * @param request The request object containing the details to send
@@ -101,7 +101,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves unified agent configuration into a different compartment within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.
+     * Moves the unified agent configuration into a different compartment within the same tenancy.  When provided, the If-Match is checked against the ETag values of the resource.
      * For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
@@ -121,8 +121,8 @@ public interface LoggingManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a log within specified log group. This call fails if log group is already created
-     * with same displayName or (service, resource, category) triplet.
+     * Creates a log within the specified log group. This call fails if a log group has already been created
+     * with the same displayName or (service, resource, category) triplet.
      *
      *
      * @param request The request object containing the details to send
@@ -137,8 +137,8 @@ public interface LoggingManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateLogRequest, CreateLogResponse> handler);
 
     /**
-     * Create new log group with unique display name. This call fails
-     * if log group is already created with same displayName in the compartment.
+     * Create a new log group with a unique display name. This call fails
+     * if the log group is already created with the same displayName in the compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -171,7 +171,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create unified agent config registration
+     * Create unified agent configuration registration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -234,7 +234,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete unified agent configuration
+     * Delete unified agent configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -269,7 +269,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the log object config for log object OCID.
+     * Gets the log object configuration for the log object OCID.
      *
      *
      * @param request The request object containing the details to send
@@ -330,7 +330,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get unified agent configuration for an id
+     * Get the unified agent configuration for an ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -425,7 +425,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListLogsRequest, ListLogsResponse> handler);
 
     /**
-     * Lists all services supporting logging.
+     * Lists all services that support logging.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -440,7 +440,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all unified agent configurations in the specified compartment
+     * Lists all unified agent configurations in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -508,8 +508,8 @@ public interface LoggingManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates existing log object with the associated config. This call
-     *       fails if log object does not exist.
+     * Updates the existing log object with the associated configuration. This call
+     *       fails if the log object does not exist.
      *
      *
      * @param request The request object containing the details to send
@@ -524,8 +524,8 @@ public interface LoggingManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateLogRequest, UpdateLogResponse> handler);
 
     /**
-     * Updates existing log group with the associated config. This call
-     *       fails if log group does not exist.
+     * Updates the existing log group with the associated configuration. This call
+     *       fails if the log group does not exist.
      *
      *
      * @param request The request object containing the details to send
@@ -559,7 +559,7 @@ public interface LoggingManagementAsync extends AutoCloseable {
 
     /**
      * Update an existing unified agent configuration. This call
-     *       fails if log group does not exist.
+     *       fails if the log group does not exist.
      *
      *
      * @param request The request object containing the details to send

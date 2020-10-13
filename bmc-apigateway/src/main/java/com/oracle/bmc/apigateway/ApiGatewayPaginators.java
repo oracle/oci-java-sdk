@@ -31,6 +31,115 @@ public class ApiGatewayPaginators {
     private final ApiGateway client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listApis operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListApisResponse> listApisResponseIterator(final ListApisRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListApisRequest.Builder, ListApisRequest, ListApisResponse>(
+                new com.google.common.base.Supplier<ListApisRequest.Builder>() {
+                    @Override
+                    public ListApisRequest.Builder get() {
+                        return ListApisRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListApisResponse, String>() {
+                    @Override
+                    public String apply(ListApisResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListApisRequest.Builder>,
+                        ListApisRequest>() {
+                    @Override
+                    public ListApisRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListApisRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListApisRequest, ListApisResponse>() {
+                    @Override
+                    public ListApisResponse apply(ListApisRequest request) {
+                        return client.listApis(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.apigateway.model.ApiSummary} objects
+     * contained in responses from the listApis operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.apigateway.model.ApiSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.apigateway.model.ApiSummary> listApisRecordIterator(
+            final ListApisRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListApisRequest.Builder, ListApisRequest, ListApisResponse,
+                com.oracle.bmc.apigateway.model.ApiSummary>(
+                new com.google.common.base.Supplier<ListApisRequest.Builder>() {
+                    @Override
+                    public ListApisRequest.Builder get() {
+                        return ListApisRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListApisResponse, String>() {
+                    @Override
+                    public String apply(ListApisResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListApisRequest.Builder>,
+                        ListApisRequest>() {
+                    @Override
+                    public ListApisRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListApisRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListApisRequest, ListApisResponse>() {
+                    @Override
+                    public ListApisResponse apply(ListApisRequest request) {
+                        return client.listApis(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListApisResponse,
+                        java.util.List<com.oracle.bmc.apigateway.model.ApiSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.apigateway.model.ApiSummary> apply(
+                            ListApisResponse response) {
+                        return response.getApiCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCertificates operation. This iterable
      * will fetch more data from the server as needed.
      *

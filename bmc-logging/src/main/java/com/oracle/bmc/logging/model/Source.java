@@ -37,7 +37,7 @@ package com.oracle.bmc.logging.model;
 public class Source {
 
     /**
-     * The source of the log.
+     * The log source.
      * * **OCISERVICE:** Oracle Service.
      *
      **/

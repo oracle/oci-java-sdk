@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.24.0</version>
+  <version>1.25.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -45,7 +45,7 @@
     <javax.ws.rs-api.version>2.1</javax.ws.rs-api.version>
     <commons-codec.version>1.13</commons-codec.version>
     <commons-lang3.version>3.8.1</commons-lang3.version>
-    <commons-io.version>2.6</commons-io.version>
+    <commons-io.version>2.8.0</commons-io.version>
     <!-- Update resilience4jVersion and io.vavr.version together -->
     <resilience4jVersion>1.2.0</resilience4jVersion>
     <io.vavr.version>0.10.2</io.vavr.version>

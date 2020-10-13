@@ -6,15 +6,23 @@ package com.oracle.bmc.logging.model;
 
 /**
  * The state of the LogSavedSearch
- *    1. *ACTIVE* LogSavedSearch is active and can be used by other users
- *    2. *DELETED* LogSavedSearch is deleted and cannot be used by other users
+ *   1. CREATING
+ *   2. ACTIVE   LogSavedSearch is active and can be used by other users
+ *   3. UPDATING
+ *   4. INACTIVE
+ *   5. DELETING
+ *   6. FAILED
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @lombok.extern.slf4j.Slf4j
 public enum LogSavedSearchLifecycleState {
+    Creating("CREATING"),
     Active("ACTIVE"),
-    Deleted("DELETED"),
+    Updating("UPDATING"),
+    Inactive("INACTIVE"),
+    Deleting("DELETING"),
+    Failed("FAILED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

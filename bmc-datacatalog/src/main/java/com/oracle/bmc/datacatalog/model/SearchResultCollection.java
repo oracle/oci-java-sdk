@@ -46,18 +46,42 @@ public class SearchResultCollection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("query")
+        private String query;
+
+        public Builder query(String query) {
+            this.query = query;
+            this.__explicitlySet__.add("query");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("facetedSearchAggregation")
+        private java.util.List<FacetedSearchAggregation> facetedSearchAggregation;
+
+        public Builder facetedSearchAggregation(
+                java.util.List<FacetedSearchAggregation> facetedSearchAggregation) {
+            this.facetedSearchAggregation = facetedSearchAggregation;
+            this.__explicitlySet__.add("facetedSearchAggregation");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchResultCollection build() {
-            SearchResultCollection __instance__ = new SearchResultCollection(count, items);
+            SearchResultCollection __instance__ =
+                    new SearchResultCollection(count, items, query, facetedSearchAggregation);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SearchResultCollection o) {
-            Builder copiedBuilder = count(o.getCount()).items(o.getItems());
+            Builder copiedBuilder =
+                    count(o.getCount())
+                            .items(o.getItems())
+                            .query(o.getQuery())
+                            .facetedSearchAggregation(o.getFacetedSearchAggregation());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -82,6 +106,18 @@ public class SearchResultCollection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<SearchResult> items;
+
+    /**
+     * String that data objects are to be searched with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("query")
+    String query;
+
+    /**
+     * Aggregations/facets on properties of data objects.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("facetedSearchAggregation")
+    java.util.List<FacetedSearchAggregation> facetedSearchAggregation;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -150,7 +150,7 @@ public class WorkRequest {
     }
 
     /**
-     * The OCID of the work request.
+     * The work request OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -168,7 +168,7 @@ public class WorkRequest {
     OperationStatus status;
 
     /**
-     * The OCID of the work request\u2019s compartment.
+     * The work request\u2019s compartment OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

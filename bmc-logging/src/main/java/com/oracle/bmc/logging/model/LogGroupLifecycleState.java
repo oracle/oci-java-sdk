@@ -5,11 +5,11 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * The state of the log group object. The states workflow is:
- *    1. *CREATING* Log group is being created, back end service contacted
- *    2. *ACTIVE* Logg group is active
- *    3. *UPDATING* Object configuration change requested, but backend service haven't confirmed the update
- *    4. *INACTIVE* Log group is disabled
+ * The log group object state. The states workflow is:
+ *    1. *CREATING* Log group is being created, backend service contacted.
+ *    2. *ACTIVE* Log group is active.
+ *    3. *UPDATING* Object configuration change requested, but the backend service has not confirmed the update.
+ *    4. *INACTIVE* Log group is disabled.
  *    5. *DELETING* Log group is being deleted.
  *
  **/

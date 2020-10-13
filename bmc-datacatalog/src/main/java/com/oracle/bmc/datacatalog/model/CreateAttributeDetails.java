@@ -152,6 +152,16 @@ public class CreateAttributeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+        private java.util.List<CustomPropertySetUsage> customPropertyMembers;
+
+        public Builder customPropertyMembers(
+                java.util.List<CustomPropertySetUsage> customPropertyMembers) {
+            this.customPropertyMembers = customPropertyMembers;
+            this.__explicitlySet__.add("customPropertyMembers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
@@ -181,6 +191,7 @@ public class CreateAttributeDetails {
                             maxCollectionCount,
                             externalDatatypeEntityKey,
                             externalParentAttributeKey,
+                            customPropertyMembers,
                             properties);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -203,6 +214,7 @@ public class CreateAttributeDetails {
                             .maxCollectionCount(o.getMaxCollectionCount())
                             .externalDatatypeEntityKey(o.getExternalDatatypeEntityKey())
                             .externalParentAttributeKey(o.getExternalParentAttributeKey())
+                            .customPropertyMembers(o.getCustomPropertyMembers())
                             .properties(o.getProperties());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -305,6 +317,12 @@ public class CreateAttributeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalParentAttributeKey")
     String externalParentAttributeKey;
+
+    /**
+     * The list of customized properties along with the values for this object
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
+    java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     /**
      * A map of maps that contains the properties which are specific to the attribute type. Each attribute type
