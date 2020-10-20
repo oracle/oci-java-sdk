@@ -338,6 +338,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
+        private OperationsInsightsStatus operationsInsightsStatus;
+
+        public Builder operationsInsightsStatus(OperationsInsightsStatus operationsInsightsStatus) {
+            this.operationsInsightsStatus = operationsInsightsStatus;
+            this.__explicitlySet__.add("operationsInsightsStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceBegin")
         private java.util.Date timeMaintenanceBegin;
 
@@ -540,6 +549,7 @@ public class AutonomousDatabaseSummary {
                             whitelistedIps,
                             isAutoScalingEnabled,
                             dataSafeStatus,
+                            operationsInsightsStatus,
                             timeMaintenanceBegin,
                             timeMaintenanceEnd,
                             isRefreshableClone,
@@ -601,6 +611,7 @@ public class AutonomousDatabaseSummary {
                             .whitelistedIps(o.getWhitelistedIps())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .dataSafeStatus(o.getDataSafeStatus())
+                            .operationsInsightsStatus(o.getOperationsInsightsStatus())
                             .timeMaintenanceBegin(o.getTimeMaintenanceBegin())
                             .timeMaintenanceEnd(o.getTimeMaintenanceEnd())
                             .isRefreshableClone(o.getIsRefreshableClone())
@@ -1124,6 +1135,61 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataSafeStatus")
     DataSafeStatus dataSafeStatus;
+    /**
+     * Status of the Operations Insights for this Autonomous Database.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum OperationsInsightsStatus {
+        Enabling("ENABLING"),
+        Enabled("ENABLED"),
+        Disabling("DISABLING"),
+        NotEnabled("NOT_ENABLED"),
+        FailedEnabling("FAILED_ENABLING"),
+        FailedDisabling("FAILED_DISABLING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, OperationsInsightsStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OperationsInsightsStatus v : OperationsInsightsStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        OperationsInsightsStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OperationsInsightsStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'OperationsInsightsStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Status of the Operations Insights for this Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
+    OperationsInsightsStatus operationsInsightsStatus;
 
     /**
      * The date and time when maintenance will begin.

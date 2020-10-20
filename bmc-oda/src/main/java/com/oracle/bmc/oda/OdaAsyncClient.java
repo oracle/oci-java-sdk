@@ -194,11 +194,13 @@ public class OdaAsyncClient implements OdaAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -340,6 +342,7 @@ public class OdaAsyncClient implements OdaAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeOdaInstanceCompartmentResponse>
                 transformer = ChangeOdaInstanceCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeOdaInstanceCompartmentRequest, ChangeOdaInstanceCompartmentResponse>
@@ -431,6 +434,7 @@ public class OdaAsyncClient implements OdaAsync {
                 CreateOdaInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateOdaInstanceResponse>
                 transformer = CreateOdaInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateOdaInstanceRequest, CreateOdaInstanceResponse>
                 handlerToUse = handler;
@@ -1042,6 +1046,7 @@ public class OdaAsyncClient implements OdaAsync {
                 StartOdaInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, StartOdaInstanceResponse>
                 transformer = StartOdaInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<StartOdaInstanceRequest, StartOdaInstanceResponse>
                 handlerToUse = handler;
@@ -1116,6 +1121,7 @@ public class OdaAsyncClient implements OdaAsync {
                 StopOdaInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, StopOdaInstanceResponse>
                 transformer = StopOdaInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<StopOdaInstanceRequest, StopOdaInstanceResponse>
                 handlerToUse = handler;

@@ -661,7 +661,7 @@ public class RestClient implements AutoCloseable {
                         response.getStatusInfo() != null
                                 ? response.getStatusInfo().getReasonPhrase()
                                 : "";
-                throw new BmcException(
+                return new BmcException(
                         response.getStatus(),
                         statusMessage,
                         e.getMessage(),

@@ -193,11 +193,13 @@ public class RedirectAsyncClient implements RedirectAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -339,6 +341,7 @@ public class RedirectAsyncClient implements RedirectAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeHttpRedirectCompartmentResponse>
                 transformer = ChangeHttpRedirectCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeHttpRedirectCompartmentRequest, ChangeHttpRedirectCompartmentResponse>
@@ -430,6 +433,7 @@ public class RedirectAsyncClient implements RedirectAsync {
                 CreateHttpRedirectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpRedirectResponse>
                 transformer = CreateHttpRedirectConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateHttpRedirectRequest, CreateHttpRedirectResponse>
                 handlerToUse = handler;
@@ -519,6 +523,7 @@ public class RedirectAsyncClient implements RedirectAsync {
                 DeleteHttpRedirectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHttpRedirectResponse>
                 transformer = DeleteHttpRedirectConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeleteHttpRedirectRequest, DeleteHttpRedirectResponse>
                 handlerToUse = handler;
@@ -741,6 +746,7 @@ public class RedirectAsyncClient implements RedirectAsync {
                 UpdateHttpRedirectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHttpRedirectResponse>
                 transformer = UpdateHttpRedirectConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpdateHttpRedirectRequest, UpdateHttpRedirectResponse>
                 handlerToUse = handler;

@@ -193,11 +193,13 @@ public class DnsAsyncClient implements DnsAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -339,6 +341,7 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSteeringPolicyCompartmentResponse>
                 transformer = ChangeSteeringPolicyCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSteeringPolicyCompartmentRequest,
@@ -432,6 +435,7 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeTsigKeyCompartmentResponse>
                 transformer = ChangeTsigKeyCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTsigKeyCompartmentRequest, ChangeTsigKeyCompartmentResponse>
@@ -523,6 +527,7 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeZoneCompartmentResponse>
                 transformer = ChangeZoneCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeZoneCompartmentRequest, ChangeZoneCompartmentResponse>
@@ -614,6 +619,7 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSteeringPolicyResponse>
                 transformer = CreateSteeringPolicyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSteeringPolicyRequest, CreateSteeringPolicyResponse>
@@ -707,6 +713,7 @@ public class DnsAsyncClient implements DnsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSteeringPolicyAttachmentResponse>
                 transformer = CreateSteeringPolicyAttachmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSteeringPolicyAttachmentRequest,

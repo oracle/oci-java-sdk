@@ -193,11 +193,13 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -338,6 +340,7 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeTopicCompartmentResponse>
                 transformer = ChangeTopicCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTopicCompartmentRequest, ChangeTopicCompartmentResponse>
@@ -427,6 +430,7 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
                 CreateTopicConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTopicResponse>
                 transformer = CreateTopicConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateTopicRequest, CreateTopicResponse>
                 handlerToUse = handler;

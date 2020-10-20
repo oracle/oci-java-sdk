@@ -193,11 +193,13 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -337,6 +339,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 AttachLoadBalancerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AttachLoadBalancerResponse>
                 transformer = AttachLoadBalancerConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<AttachLoadBalancerRequest, AttachLoadBalancerResponse>
                 handlerToUse = handler;
@@ -429,6 +432,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeClusterNetworkCompartmentResponse>
                 transformer = ChangeClusterNetworkCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeClusterNetworkCompartmentRequest,
@@ -525,6 +529,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeInstanceConfigurationCompartmentResponse>
                 transformer = ChangeInstanceConfigurationCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeInstanceConfigurationCompartmentRequest,
@@ -622,6 +627,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeInstancePoolCompartmentResponse>
                 transformer = ChangeInstancePoolCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeInstancePoolCompartmentRequest, ChangeInstancePoolCompartmentResponse>
@@ -714,6 +720,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateClusterNetworkResponse>
                 transformer = CreateClusterNetworkConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateClusterNetworkRequest, CreateClusterNetworkResponse>
@@ -807,6 +814,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateInstanceConfigurationResponse>
                 transformer = CreateInstanceConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateInstanceConfigurationRequest, CreateInstanceConfigurationResponse>
@@ -898,6 +906,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 CreateInstancePoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateInstancePoolResponse>
                 transformer = CreateInstancePoolConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateInstancePoolRequest, CreateInstancePoolResponse>
                 handlerToUse = handler;
@@ -1066,6 +1075,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 DetachLoadBalancerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DetachLoadBalancerResponse>
                 transformer = DetachLoadBalancerConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DetachLoadBalancerRequest, DetachLoadBalancerResponse>
                 handlerToUse = handler;
@@ -1463,6 +1473,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, LaunchInstanceConfigurationResponse>
                 transformer = LaunchInstanceConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         LaunchInstanceConfigurationRequest, LaunchInstanceConfigurationResponse>
@@ -1937,6 +1948,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 ResetInstancePoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ResetInstancePoolResponse>
                 transformer = ResetInstancePoolConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ResetInstancePoolRequest, ResetInstancePoolResponse>
                 handlerToUse = handler;
@@ -2012,6 +2024,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SoftresetInstancePoolResponse>
                 transformer = SoftresetInstancePoolConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         SoftresetInstancePoolRequest, SoftresetInstancePoolResponse>
@@ -2087,6 +2100,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 StartInstancePoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, StartInstancePoolResponse>
                 transformer = StartInstancePoolConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<StartInstancePoolRequest, StartInstancePoolResponse>
                 handlerToUse = handler;
@@ -2161,6 +2175,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 StopInstancePoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, StopInstancePoolResponse>
                 transformer = StopInstancePoolConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<StopInstancePoolRequest, StopInstancePoolResponse>
                 handlerToUse = handler;
@@ -2388,6 +2403,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateClusterNetworkResponse>
                 transformer = UpdateClusterNetworkConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateClusterNetworkRequest, UpdateClusterNetworkResponse>
@@ -2481,6 +2497,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateInstanceConfigurationResponse>
                 transformer = UpdateInstanceConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
@@ -2572,6 +2589,7 @@ public class ComputeManagementAsyncClient implements ComputeManagementAsync {
                 UpdateInstancePoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInstancePoolResponse>
                 transformer = UpdateInstancePoolConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpdateInstancePoolRequest, UpdateInstancePoolResponse>
                 handlerToUse = handler;

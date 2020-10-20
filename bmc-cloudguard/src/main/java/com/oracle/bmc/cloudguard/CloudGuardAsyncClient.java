@@ -194,11 +194,13 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -340,6 +342,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDetectorRecipeCompartmentResponse>
                 transformer = ChangeDetectorRecipeCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDetectorRecipeCompartmentRequest,
@@ -435,6 +438,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeManagedListCompartmentResponse>
                 transformer = ChangeManagedListCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeManagedListCompartmentRequest, ChangeManagedListCompartmentResponse>
@@ -529,6 +533,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeResponderRecipeCompartmentResponse>
                 transformer = ChangeResponderRecipeCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeResponderRecipeCompartmentRequest,
@@ -622,6 +627,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDetectorRecipeResponse>
                 transformer = CreateDetectorRecipeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDetectorRecipeRequest, CreateDetectorRecipeResponse>
@@ -712,6 +718,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 CreateManagedListConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateManagedListResponse>
                 transformer = CreateManagedListConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateManagedListRequest, CreateManagedListResponse>
                 handlerToUse = handler;
@@ -802,6 +809,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateResponderRecipeResponse>
                 transformer = CreateResponderRecipeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateResponderRecipeRequest, CreateResponderRecipeResponse>
@@ -891,6 +899,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 CreateTargetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTargetResponse>
                 transformer = CreateTargetConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateTargetRequest, CreateTargetResponse>
                 handlerToUse = handler;
@@ -983,6 +992,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTargetDetectorRecipeResponse>
                 transformer = CreateTargetDetectorRecipeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTargetDetectorRecipeRequest, CreateTargetDetectorRecipeResponse>
@@ -1076,6 +1086,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTargetResponderRecipeResponse>
                 transformer = CreateTargetResponderRecipeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTargetResponderRecipeRequest, CreateTargetResponderRecipeResponse>
@@ -1168,6 +1179,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDetectorRecipeResponse>
                 transformer = DeleteDetectorRecipeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteDetectorRecipeRequest, DeleteDetectorRecipeResponse>
@@ -1243,6 +1255,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 DeleteManagedListConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteManagedListResponse>
                 transformer = DeleteManagedListConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeleteManagedListRequest, DeleteManagedListResponse>
                 handlerToUse = handler;
@@ -1624,6 +1637,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ExecuteResponderExecutionResponse>
                 transformer = ExecuteResponderExecutionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ExecuteResponderExecutionRequest, ExecuteResponderExecutionResponse>
@@ -5641,6 +5655,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SkipResponderExecutionResponse>
                 transformer = SkipResponderExecutionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         SkipResponderExecutionRequest, SkipResponderExecutionResponse>
@@ -5716,6 +5731,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 TriggerResponderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, TriggerResponderResponse>
                 transformer = TriggerResponderConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<TriggerResponderRequest, TriggerResponderResponse>
                 handlerToUse = handler;
@@ -5897,6 +5913,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer = UpdateConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateConfigurationRequest, UpdateConfigurationResponse>
@@ -5988,6 +6005,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDetectorRecipeResponse>
                 transformer = UpdateDetectorRecipeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDetectorRecipeRequest, UpdateDetectorRecipeResponse>
@@ -6173,6 +6191,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 UpdateManagedListConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateManagedListResponse>
                 transformer = UpdateManagedListConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpdateManagedListRequest, UpdateManagedListResponse>
                 handlerToUse = handler;
@@ -6263,6 +6282,7 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateProblemStatusResponse>
                 transformer = UpdateProblemStatusConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateProblemStatusRequest, UpdateProblemStatusResponse>

@@ -276,6 +276,60 @@ public class Sddc {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxPrivateIpId")
+        private String hcxPrivateIpId;
+
+        public Builder hcxPrivateIpId(String hcxPrivateIpId) {
+            this.hcxPrivateIpId = hcxPrivateIpId;
+            this.__explicitlySet__.add("hcxPrivateIpId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxFqdn")
+        private String hcxFqdn;
+
+        public Builder hcxFqdn(String hcxFqdn) {
+            this.hcxFqdn = hcxFqdn;
+            this.__explicitlySet__.add("hcxFqdn");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxInitialPassword")
+        private String hcxInitialPassword;
+
+        public Builder hcxInitialPassword(String hcxInitialPassword) {
+            this.hcxInitialPassword = hcxInitialPassword;
+            this.__explicitlySet__.add("hcxInitialPassword");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
+        private String hcxVlanId;
+
+        public Builder hcxVlanId(String hcxVlanId) {
+            this.hcxVlanId = hcxVlanId;
+            this.__explicitlySet__.add("hcxVlanId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
+        private Boolean isHcxEnabled;
+
+        public Builder isHcxEnabled(Boolean isHcxEnabled) {
+            this.isHcxEnabled = isHcxEnabled;
+            this.__explicitlySet__.add("isHcxEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxOnPremKey")
+        private String hcxOnPremKey;
+
+        public Builder hcxOnPremKey(String hcxOnPremKey) {
+            this.hcxOnPremKey = hcxOnPremKey;
+            this.__explicitlySet__.add("hcxOnPremKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -355,6 +409,12 @@ public class Sddc {
                             nsxEdgeVTepVlanId,
                             nsxEdgeUplink1VlanId,
                             nsxEdgeUplink2VlanId,
+                            hcxPrivateIpId,
+                            hcxFqdn,
+                            hcxInitialPassword,
+                            hcxVlanId,
+                            isHcxEnabled,
+                            hcxOnPremKey,
                             timeCreated,
                             timeUpdated,
                             lifecycleState,
@@ -394,6 +454,12 @@ public class Sddc {
                             .nsxEdgeVTepVlanId(o.getNsxEdgeVTepVlanId())
                             .nsxEdgeUplink1VlanId(o.getNsxEdgeUplink1VlanId())
                             .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
+                            .hcxPrivateIpId(o.getHcxPrivateIpId())
+                            .hcxFqdn(o.getHcxFqdn())
+                            .hcxInitialPassword(o.getHcxInitialPassword())
+                            .hcxVlanId(o.getHcxVlanId())
+                            .isHcxEnabled(o.getIsHcxEnabled())
+                            .hcxOnPremKey(o.getHcxOnPremKey())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .lifecycleState(o.getLifecycleState())
@@ -735,6 +801,46 @@ public class Sddc {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink2VlanId")
     String nsxEdgeUplink2VlanId;
+
+    /**
+     * HCX Private IP
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxPrivateIpId")
+    String hcxPrivateIpId;
+
+    /**
+     * HCX Fully Qualified Domain Name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxFqdn")
+    String hcxFqdn;
+
+    /**
+     * HCX initial password
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxInitialPassword")
+    String hcxInitialPassword;
+
+    /**
+     * HCX vlan id
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
+    String hcxVlanId;
+
+    /**
+     * HCX enabled or not
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
+    Boolean isHcxEnabled;
+
+    /**
+     * HCX on-premise license key
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxOnPremKey")
+    String hcxOnPremKey;
 
     /**
      * The date and time the SDDC was created, in the format defined by

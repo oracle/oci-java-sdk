@@ -13,7 +13,7 @@ package com.oracle.bmc.sch.model;
  * the request. WorkRequest objects provide visibility for
  * in-progress work flows. For more information about work
  * requests, see
- * [Viewing the State of a Work Request](https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm).
+ * [Viewing the State of a Work Request](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/workrequests.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

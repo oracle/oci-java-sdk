@@ -10,7 +10,7 @@ import com.oracle.bmc.sch.responses.*;
 /**
  * Use the Service Connector Hub API to transfer data between services in Oracle Cloud Infrastructure.
  * For more information about Service Connector Hub, see
- * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm).
+ * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
@@ -53,9 +53,9 @@ public interface ServiceConnectorAsync extends AutoCloseable {
      * <p>
      * After you send your request, the service connector's state is temporarily
      * UPDATING. When the state changes to ACTIVE, data begins transferring from the
-     * source service to the target service. For instructions on deactivating and
-     * activating service connectors, see
-     * [To activate or deactivate a service connector](https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm).
+     * source service to the target service. For instructions on activating service
+     * connectors, see
+     * [To activate a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#activate).
      *
      *
      * @param request The request object containing the details to send
@@ -99,7 +99,7 @@ public interface ServiceConnectorAsync extends AutoCloseable {
      * A service connector is a logically defined flow for moving data from
      * a source service to a destination service in Oracle Cloud Infrastructure.
      * For general information about service connectors, see
-     * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm).
+     * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
      * <p>
      * For purposes of access control, you must provide the
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where
@@ -112,7 +112,7 @@ public interface ServiceConnectorAsync extends AutoCloseable {
      * CREATING. When the state changes to ACTIVE, data begins transferring from the
      * source service to the target service. For instructions on deactivating and
      * activating service connectors, see
-     * [To activate or deactivate a service connector](https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm).
+     * [To activate or deactivate a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -133,8 +133,8 @@ public interface ServiceConnectorAsync extends AutoCloseable {
      * <p>
      * After you send your request, the service connector's state is temporarily
      * UPDATING and any data transfer stops. The state then changes to INACTIVE.
-     * For instructions on deactivating and activating service connectors, see
-     * [To activate or deactivate a service connector](https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm).
+     * For instructions on deactivating service connectors, see
+     * [To deactivate a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#deactivate).
      *
      *
      * @param request The request object containing the details to send

@@ -193,11 +193,13 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -436,6 +438,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddPublicIpPoolCapacityResponse>
                 transformer = AddPublicIpPoolCapacityConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddPublicIpPoolCapacityRequest, AddPublicIpPoolCapacityResponse>
@@ -890,6 +893,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeByoipRangeCompartmentResponse>
                 transformer = ChangeByoipRangeCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeByoipRangeCompartmentRequest, ChangeByoipRangeCompartmentResponse>
@@ -982,6 +986,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeCpeCompartmentResponse>
                 transformer = ChangeCpeCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCpeCompartmentRequest, ChangeCpeCompartmentResponse>
@@ -1075,6 +1080,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeCrossConnectCompartmentResponse>
                 transformer = ChangeCrossConnectCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCrossConnectCompartmentRequest, ChangeCrossConnectCompartmentResponse>
@@ -1169,6 +1175,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeCrossConnectGroupCompartmentResponse>
                 transformer = ChangeCrossConnectGroupCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCrossConnectGroupCompartmentRequest,
@@ -1266,6 +1273,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>
                 transformer = ChangeDhcpOptionsCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDhcpOptionsCompartmentRequest, ChangeDhcpOptionsCompartmentResponse>
@@ -1358,6 +1366,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDrgCompartmentResponse>
                 transformer = ChangeDrgCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDrgCompartmentRequest, ChangeDrgCompartmentResponse>
@@ -1451,6 +1460,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeIPSecConnectionCompartmentResponse>
                 transformer = ChangeIPSecConnectionCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeIPSecConnectionCompartmentRequest,
@@ -1546,6 +1556,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeInternetGatewayCompartmentResponse>
                 transformer = ChangeInternetGatewayCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeInternetGatewayCompartmentRequest,
@@ -1642,6 +1653,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeLocalPeeringGatewayCompartmentResponse>
                 transformer = ChangeLocalPeeringGatewayCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLocalPeeringGatewayCompartmentRequest,
@@ -1739,6 +1751,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeNatGatewayCompartmentResponse>
                 transformer = ChangeNatGatewayCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNatGatewayCompartmentRequest, ChangeNatGatewayCompartmentResponse>
@@ -1834,6 +1847,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeNetworkSecurityGroupCompartmentResponse>
                 transformer = ChangeNetworkSecurityGroupCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNetworkSecurityGroupCompartmentRequest,
@@ -1929,6 +1943,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>
                 transformer = ChangePublicIpCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangePublicIpCompartmentRequest, ChangePublicIpCompartmentResponse>
@@ -2022,6 +2037,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangePublicIpPoolCompartmentResponse>
                 transformer = ChangePublicIpPoolCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangePublicIpPoolCompartmentRequest, ChangePublicIpPoolCompartmentResponse>
@@ -2117,6 +2133,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeRemotePeeringConnectionCompartmentResponse>
                 transformer = ChangeRemotePeeringConnectionCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRemotePeeringConnectionCompartmentRequest,
@@ -2214,6 +2231,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeRouteTableCompartmentResponse>
                 transformer = ChangeRouteTableCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRouteTableCompartmentRequest, ChangeRouteTableCompartmentResponse>
@@ -2308,6 +2326,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSecurityListCompartmentResponse>
                 transformer = ChangeSecurityListCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSecurityListCompartmentRequest, ChangeSecurityListCompartmentResponse>
@@ -2402,6 +2421,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeServiceGatewayCompartmentResponse>
                 transformer = ChangeServiceGatewayCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeServiceGatewayCompartmentRequest,
@@ -2495,6 +2515,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>
                 transformer = ChangeSubnetCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSubnetCompartmentRequest, ChangeSubnetCompartmentResponse>
@@ -2586,6 +2607,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>
                 transformer = ChangeVcnCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVcnCompartmentRequest, ChangeVcnCompartmentResponse>
@@ -2679,6 +2701,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVirtualCircuitCompartmentResponse>
                 transformer = ChangeVirtualCircuitCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVirtualCircuitCompartmentRequest,
@@ -2772,6 +2795,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVlanCompartmentResponse>
                 transformer = ChangeVlanCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVlanCompartmentRequest, ChangeVlanCompartmentResponse>
@@ -3051,6 +3075,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateByoipRangeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateByoipRangeResponse>
                 transformer = CreateByoipRangeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateByoipRangeRequest, CreateByoipRangeResponse>
                 handlerToUse = handler;
@@ -3138,6 +3163,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateCpeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCpeResponse>
                 transformer = CreateCpeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateCpeRequest, CreateCpeResponse> handlerToUse =
                 handler;
@@ -3227,6 +3253,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateCrossConnectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
                 transformer = CreateCrossConnectConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateCrossConnectRequest, CreateCrossConnectResponse>
                 handlerToUse = handler;
@@ -3317,6 +3344,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
                 transformer = CreateCrossConnectGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse>
@@ -3407,6 +3435,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateDhcpOptionsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
                 transformer = CreateDhcpOptionsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>
                 handlerToUse = handler;
@@ -3494,6 +3523,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateDrgConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgResponse>
                 transformer = CreateDrgConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDrgRequest, CreateDrgResponse> handlerToUse =
                 handler;
@@ -3584,6 +3614,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDrgAttachmentResponse>
                 transformer = CreateDrgAttachmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>
@@ -3675,6 +3706,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateIPSecConnectionResponse>
                 transformer = CreateIPSecConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIPSecConnectionRequest, CreateIPSecConnectionResponse>
@@ -3766,6 +3798,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateInternetGatewayResponse>
                 transformer = CreateInternetGatewayConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateInternetGatewayRequest, CreateInternetGatewayResponse>
@@ -3854,6 +3887,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateIpv6Converter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateIpv6Response>
                 transformer = CreateIpv6Converter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateIpv6Request, CreateIpv6Response> handlerToUse =
                 handler;
@@ -3944,6 +3978,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
                 transformer = CreateLocalPeeringGatewayConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLocalPeeringGatewayRequest, CreateLocalPeeringGatewayResponse>
@@ -4034,6 +4069,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateNatGatewayConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateNatGatewayResponse>
                 transformer = CreateNatGatewayConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateNatGatewayRequest, CreateNatGatewayResponse>
                 handlerToUse = handler;
@@ -4126,6 +4162,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>
                 transformer = CreateNetworkSecurityGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNetworkSecurityGroupRequest, CreateNetworkSecurityGroupResponse>
@@ -4216,6 +4253,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreatePrivateIpConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePrivateIpResponse>
                 transformer = CreatePrivateIpConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreatePrivateIpRequest, CreatePrivateIpResponse>
                 handlerToUse = handler;
@@ -4305,6 +4343,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreatePublicIpConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicIpResponse>
                 transformer = CreatePublicIpConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreatePublicIpRequest, CreatePublicIpResponse>
                 handlerToUse = handler;
@@ -4394,6 +4433,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreatePublicIpPoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicIpPoolResponse>
                 transformer = CreatePublicIpPoolConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreatePublicIpPoolRequest, CreatePublicIpPoolResponse>
                 handlerToUse = handler;
@@ -4486,6 +4526,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>
                 transformer = CreateRemotePeeringConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateRemotePeeringConnectionRequest, CreateRemotePeeringConnectionResponse>
@@ -4577,6 +4618,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateRouteTableConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRouteTableResponse>
                 transformer = CreateRouteTableConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateRouteTableRequest, CreateRouteTableResponse>
                 handlerToUse = handler;
@@ -4666,6 +4708,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateSecurityListConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityListResponse>
                 transformer = CreateSecurityListConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateSecurityListRequest, CreateSecurityListResponse>
                 handlerToUse = handler;
@@ -4756,6 +4799,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateServiceGatewayResponse>
                 transformer = CreateServiceGatewayConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateServiceGatewayRequest, CreateServiceGatewayResponse>
@@ -4845,6 +4889,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateSubnetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubnetResponse>
                 transformer = CreateSubnetConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateSubnetRequest, CreateSubnetResponse>
                 handlerToUse = handler;
@@ -4932,6 +4977,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateVcnConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVcnResponse>
                 transformer = CreateVcnConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateVcnRequest, CreateVcnResponse> handlerToUse =
                 handler;
@@ -5022,6 +5068,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVirtualCircuitResponse>
                 transformer = CreateVirtualCircuitConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVirtualCircuitRequest, CreateVirtualCircuitResponse>
@@ -5110,6 +5157,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 CreateVlanConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVlanResponse>
                 transformer = CreateVlanConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateVlanRequest, CreateVlanResponse> handlerToUse =
                 handler;
@@ -13166,6 +13214,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemovePublicIpPoolCapacityResponse>
                 transformer = RemovePublicIpPoolCapacityConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemovePublicIpPoolCapacityRequest, RemovePublicIpPoolCapacityResponse>
@@ -15432,6 +15481,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>
                 transformer = UpdateTunnelCpeDeviceConfigConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateTunnelCpeDeviceConfigRequest, UpdateTunnelCpeDeviceConfigResponse>

@@ -8,7 +8,6 @@ import java.util.Locale;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-import com.oracle.bmc.workrequests.WorkRequest;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -268,11 +267,13 @@ public class ComputeManagementClient implements ComputeManagement {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -455,6 +456,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -489,6 +491,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -525,6 +528,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -560,6 +564,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -593,6 +598,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -627,6 +633,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -659,6 +666,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -722,6 +730,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -872,6 +881,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1050,6 +1060,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1080,6 +1091,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1109,6 +1121,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1138,6 +1151,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1227,6 +1241,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1261,6 +1276,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1294,6 +1310,7 @@ public class ComputeManagementClient implements ComputeManagement {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1319,7 +1336,8 @@ public class ComputeManagementClient implements ComputeManagement {
     }
 
     @Override
-    public ComputeManagementWaiters newWaiters(WorkRequest workRequestClient) {
+    public ComputeManagementWaiters newWaiters(
+            com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
         return new ComputeManagementWaiters(executorService, this, workRequestClient);
     }
 

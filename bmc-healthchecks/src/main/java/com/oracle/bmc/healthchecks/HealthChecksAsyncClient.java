@@ -194,11 +194,13 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -340,6 +342,7 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeHttpMonitorCompartmentResponse>
                 transformer = ChangeHttpMonitorCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeHttpMonitorCompartmentRequest, ChangeHttpMonitorCompartmentResponse>
@@ -434,6 +437,7 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangePingMonitorCompartmentResponse>
                 transformer = ChangePingMonitorCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangePingMonitorCompartmentRequest, ChangePingMonitorCompartmentResponse>
@@ -525,6 +529,7 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 CreateHttpMonitorConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateHttpMonitorResponse>
                 transformer = CreateHttpMonitorConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateHttpMonitorRequest, CreateHttpMonitorResponse>
                 handlerToUse = handler;
@@ -796,6 +801,7 @@ public class HealthChecksAsyncClient implements HealthChecksAsync {
                 CreatePingMonitorConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePingMonitorResponse>
                 transformer = CreatePingMonitorConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreatePingMonitorRequest, CreatePingMonitorResponse>
                 handlerToUse = handler;

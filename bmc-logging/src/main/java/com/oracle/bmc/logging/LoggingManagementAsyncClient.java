@@ -193,11 +193,13 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -520,6 +522,7 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeLogSavedSearchCompartmentResponse>
                 transformer = ChangeLogSavedSearchCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLogSavedSearchCompartmentRequest,
@@ -617,6 +620,7 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                         javax.ws.rs.core.Response,
                         ChangeUnifiedAgentConfigurationCompartmentResponse>
                 transformer = ChangeUnifiedAgentConfigurationCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeUnifiedAgentConfigurationCompartmentRequest,
@@ -709,6 +713,7 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 CreateLogConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogResponse>
                 transformer = CreateLogConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateLogRequest, CreateLogResponse> handlerToUse =
                 handler;
@@ -798,6 +803,7 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
                 CreateLogGroupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateLogGroupResponse>
                 transformer = CreateLogGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateLogGroupRequest, CreateLogGroupResponse>
                 handlerToUse = handler;
@@ -888,6 +894,7 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateLogSavedSearchResponse>
                 transformer = CreateLogSavedSearchConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogSavedSearchRequest, CreateLogSavedSearchResponse>
@@ -981,6 +988,7 @@ public class LoggingManagementAsyncClient implements LoggingManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateUnifiedAgentConfigurationResponse>
                 transformer = CreateUnifiedAgentConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateUnifiedAgentConfigurationRequest,

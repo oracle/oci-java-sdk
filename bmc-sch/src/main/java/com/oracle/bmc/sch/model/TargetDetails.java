@@ -8,7 +8,7 @@ package com.oracle.bmc.sch.model;
  * An object that represents the target of the flow defined by the service connector.
  * An example target is a stream.
  * For more information about flows defined by service connectors, see
- * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm).
+ * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

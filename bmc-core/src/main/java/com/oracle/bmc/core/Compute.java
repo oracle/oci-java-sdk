@@ -6,7 +6,6 @@ package com.oracle.bmc.core;
 
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-import com.oracle.bmc.workrequests.WorkRequest;
 
 /**
  * API covering the [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
@@ -894,7 +893,7 @@ public interface Compute extends AutoCloseable {
      * @param workRequestClient The work request service client used to query for work request status
      * @return The service waiters.
      */
-    ComputeWaiters newWaiters(WorkRequest workRequestClient);
+    ComputeWaiters newWaiters(com.oracle.bmc.workrequests.WorkRequest workRequestClient);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

@@ -193,11 +193,13 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -337,6 +339,7 @@ public class MonitoringAsyncClient implements MonitoringAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAlarmCompartmentResponse>
                 transformer = ChangeAlarmCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAlarmCompartmentRequest, ChangeAlarmCompartmentResponse>
@@ -426,6 +429,7 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 CreateAlarmConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAlarmResponse>
                 transformer = CreateAlarmConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateAlarmRequest, CreateAlarmResponse>
                 handlerToUse = handler;

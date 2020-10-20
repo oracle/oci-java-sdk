@@ -194,11 +194,13 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -338,6 +340,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddEntityAssociationResponse>
                 transformer = AddEntityAssociationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddEntityAssociationRequest, AddEntityAssociationResponse>
@@ -597,6 +600,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeLogAnalyticsEntityCompartmentResponse>
                 transformer = ChangeLogAnalyticsEntityCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLogAnalyticsEntityCompartmentRequest,
@@ -695,6 +699,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeLogAnalyticsLogGroupCompartmentResponse>
                 transformer = ChangeLogAnalyticsLogGroupCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeLogAnalyticsLogGroupCompartmentRequest,
@@ -895,6 +900,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeScheduledTaskCompartmentResponse>
                 transformer = ChangeScheduledTaskCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeScheduledTaskCompartmentRequest,
@@ -984,6 +990,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 CleanConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CleanResponse>
                 transformer = CleanConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CleanRequest, CleanResponse> handlerToUse = handler;
         if (handler != null
@@ -1058,6 +1065,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateLogAnalyticsEntityResponse>
                 transformer = CreateLogAnalyticsEntityConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogAnalyticsEntityRequest, CreateLogAnalyticsEntityResponse>
@@ -1151,6 +1159,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateLogAnalyticsEntityTypeResponse>
                 transformer = CreateLogAnalyticsEntityTypeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogAnalyticsEntityTypeRequest, CreateLogAnalyticsEntityTypeResponse>
@@ -1245,6 +1254,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateLogAnalyticsLogGroupResponse>
                 transformer = CreateLogAnalyticsLogGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateLogAnalyticsLogGroupRequest, CreateLogAnalyticsLogGroupResponse>
@@ -1434,6 +1444,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateScheduledTaskResponse>
                 transformer = CreateScheduledTaskConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateScheduledTaskRequest, CreateScheduledTaskResponse>
@@ -1524,6 +1535,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 DeleteAssociationsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAssociationsResponse>
                 transformer = DeleteAssociationsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeleteAssociationsRequest, DeleteAssociationsResponse>
                 handlerToUse = handler;
@@ -1612,6 +1624,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 DeleteFieldConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFieldResponse>
                 transformer = DeleteFieldConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeleteFieldRequest, DeleteFieldResponse>
                 handlerToUse = handler;
@@ -1685,6 +1698,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 DeleteLabelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLabelResponse>
                 transformer = DeleteLabelConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeleteLabelRequest, DeleteLabelResponse>
                 handlerToUse = handler;
@@ -2072,6 +2086,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 DeleteParserConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteParserResponse>
                 transformer = DeleteParserConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeleteParserRequest, DeleteParserResponse>
                 handlerToUse = handler;
@@ -2221,6 +2236,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 DeleteSourceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSourceResponse>
                 transformer = DeleteSourceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeleteSourceRequest, DeleteSourceResponse>
                 handlerToUse = handler;
@@ -2667,6 +2683,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, EstimatePurgeDataSizeResponse>
                 transformer = EstimatePurgeDataSizeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         EstimatePurgeDataSizeRequest, EstimatePurgeDataSizeResponse>
@@ -2758,6 +2775,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ExportCustomContentResponse>
                 transformer = ExportCustomContentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ExportCustomContentRequest, ExportCustomContentResponse>
@@ -2940,6 +2958,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ExtractStructuredLogFieldPathsResponse>
                 transformer = ExtractStructuredLogFieldPathsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ExtractStructuredLogFieldPathsRequest,
@@ -3035,6 +3054,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ExtractStructuredLogHeaderPathsResponse>
                 transformer = ExtractStructuredLogHeaderPathsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ExtractStructuredLogHeaderPathsRequest,
@@ -3288,6 +3308,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 GetColumnNamesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, GetColumnNamesResponse>
                 transformer = GetColumnNamesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<GetColumnNamesRequest, GetColumnNamesResponse>
                 handlerToUse = handler;
@@ -5157,6 +5178,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ImportCustomContentResponse>
                 transformer = ImportCustomContentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ImportCustomContentRequest, ImportCustomContentResponse>
@@ -7972,6 +7994,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 OnboardNamespaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, OnboardNamespaceResponse>
                 transformer = OnboardNamespaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<OnboardNamespaceRequest, OnboardNamespaceResponse>
                 handlerToUse = handler;
@@ -8133,6 +8156,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 PurgeStorageDataConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, PurgeStorageDataResponse>
                 transformer = PurgeStorageDataConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<PurgeStorageDataRequest, PurgeStorageDataResponse>
                 handlerToUse = handler;
@@ -8386,6 +8410,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 RecallArchivedDataConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RecallArchivedDataResponse>
                 transformer = RecallArchivedDataConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<RecallArchivedDataRequest, RecallArchivedDataResponse>
                 handlerToUse = handler;
@@ -8475,6 +8500,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 RegisterLookupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RegisterLookupResponse>
                 transformer = RegisterLookupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<RegisterLookupRequest, RegisterLookupResponse>
                 handlerToUse = handler;
@@ -8565,6 +8591,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ReleaseRecalledDataResponse>
                 transformer = ReleaseRecalledDataConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ReleaseRecalledDataRequest, ReleaseRecalledDataResponse>
@@ -8656,6 +8683,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveEntityAssociationsResponse>
                 transformer = RemoveEntityAssociationsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveEntityAssociationsRequest, RemoveEntityAssociationsResponse>
@@ -8743,6 +8771,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 RunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RunResponse> transformer =
                 RunConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<RunRequest, RunResponse> handlerToUse = handler;
         if (handler != null
@@ -8900,6 +8929,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 TestParserConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, TestParserResponse>
                 transformer = TestParserConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<TestParserRequest, TestParserResponse> handlerToUse =
                 handler;
@@ -9547,6 +9577,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         ib.property(
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UploadLogFileRequest, UploadLogFileResponse>
                 handlerToUse = handler;
@@ -9636,6 +9667,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 UpsertAssociationsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertAssociationsResponse>
                 transformer = UpsertAssociationsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpsertAssociationsRequest, UpsertAssociationsResponse>
                 handlerToUse = handler;
@@ -9724,6 +9756,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 UpsertFieldConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertFieldResponse>
                 transformer = UpsertFieldConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpsertFieldRequest, UpsertFieldResponse>
                 handlerToUse = handler;
@@ -9812,6 +9845,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 UpsertLabelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertLabelResponse>
                 transformer = UpsertLabelConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpsertLabelRequest, UpsertLabelResponse>
                 handlerToUse = handler;
@@ -9900,6 +9934,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 UpsertParserConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertParserResponse>
                 transformer = UpsertParserConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpsertParserRequest, UpsertParserResponse>
                 handlerToUse = handler;
@@ -9988,6 +10023,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 UpsertSourceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpsertSourceResponse>
                 transformer = UpsertSourceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpsertSourceRequest, UpsertSourceResponse>
                 handlerToUse = handler;
@@ -10080,6 +10116,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ValidateAssociationParametersResponse>
                 transformer = ValidateAssociationParametersConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateAssociationParametersRequest, ValidateAssociationParametersResponse>
@@ -10244,6 +10281,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 ValidateSourceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ValidateSourceResponse>
                 transformer = ValidateSourceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ValidateSourceRequest, ValidateSourceResponse>
                 handlerToUse = handler;
@@ -10336,6 +10374,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ValidateSourceExtendedFieldDetailsResponse>
                 transformer = ValidateSourceExtendedFieldDetailsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateSourceExtendedFieldDetailsRequest,

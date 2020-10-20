@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.25.0</version>
+    <version>1.25.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <properties>
@@ -15,7 +15,6 @@
   <description>This project contains the examples on how to use the SDK used for Oracle Cloud Infrastructure
   </description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
-
   <build>
     <plugins>
       <plugin>
@@ -27,13 +26,12 @@
       </plugin>
     </plugins>
   </build>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>1.25.0</version>
+        <version>1.25.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -287,6 +285,10 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-cloudguard</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-opsi</artifactId>
     </dependency>
   </dependencies>
 </project>

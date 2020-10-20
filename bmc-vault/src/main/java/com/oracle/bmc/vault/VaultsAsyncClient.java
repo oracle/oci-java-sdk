@@ -193,11 +193,13 @@ public class VaultsAsyncClient implements VaultsAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -492,6 +494,7 @@ public class VaultsAsyncClient implements VaultsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSecretCompartmentResponse>
                 transformer = ChangeSecretCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>
@@ -581,6 +584,7 @@ public class VaultsAsyncClient implements VaultsAsync {
                 CreateSecretConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecretResponse>
                 transformer = CreateSecretConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateSecretRequest, CreateSecretResponse>
                 handlerToUse = handler;

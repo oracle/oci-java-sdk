@@ -193,11 +193,13 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -339,6 +341,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ActivateExadataInfrastructureResponse>
                 transformer = ActivateExadataInfrastructureConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ActivateExadataInfrastructureRequest, ActivateExadataInfrastructureResponse>
@@ -433,6 +436,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AutonomousDatabaseManualRefreshResponse>
                 transformer = AutonomousDatabaseManualRefreshConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         AutonomousDatabaseManualRefreshRequest,
@@ -530,6 +534,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                         javax.ws.rs.core.Response,
                         ChangeAutonomousContainerDatabaseCompartmentResponse>
                 transformer = ChangeAutonomousContainerDatabaseCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAutonomousContainerDatabaseCompartmentRequest,
@@ -627,6 +632,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAutonomousDatabaseCompartmentResponse>
                 transformer = ChangeAutonomousDatabaseCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAutonomousDatabaseCompartmentRequest,
@@ -725,6 +731,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                         ChangeAutonomousExadataInfrastructureCompartmentResponse>
                 transformer =
                         ChangeAutonomousExadataInfrastructureCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAutonomousExadataInfrastructureCompartmentRequest,
@@ -822,6 +829,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAutonomousVmClusterCompartmentResponse>
                 transformer = ChangeAutonomousVmClusterCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAutonomousVmClusterCompartmentRequest,
@@ -919,6 +927,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeBackupDestinationCompartmentResponse>
                 transformer = ChangeBackupDestinationCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeBackupDestinationCompartmentRequest,
@@ -1016,6 +1025,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                         javax.ws.rs.core.Response,
                         ChangeCloudExadataInfrastructureCompartmentResponse>
                 transformer = ChangeCloudExadataInfrastructureCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCloudExadataInfrastructureCompartmentRequest,
@@ -1113,6 +1123,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeCloudVmClusterCompartmentResponse>
                 transformer = ChangeCloudVmClusterCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCloudVmClusterCompartmentRequest,
@@ -1209,6 +1220,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDatabaseSoftwareImageCompartmentResponse>
                 transformer = ChangeDatabaseSoftwareImageCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDatabaseSoftwareImageCompartmentRequest,
@@ -1302,6 +1314,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDbSystemCompartmentResponse>
                 transformer = ChangeDbSystemCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDbSystemCompartmentRequest, ChangeDbSystemCompartmentResponse>
@@ -1396,6 +1409,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeExadataInfrastructureCompartmentResponse>
                 transformer = ChangeExadataInfrastructureCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeExadataInfrastructureCompartmentRequest,
@@ -1493,6 +1507,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVmClusterCompartmentResponse>
                 transformer = ChangeVmClusterCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVmClusterCompartmentRequest, ChangeVmClusterCompartmentResponse>
@@ -1584,6 +1599,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CompleteExternalBackupJobResponse>
                 transformer = CompleteExternalBackupJobConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CompleteExternalBackupJobRequest, CompleteExternalBackupJobResponse>
@@ -1677,6 +1693,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousContainerDatabaseResponse>
                 transformer = CreateAutonomousContainerDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousContainerDatabaseRequest,
@@ -1774,6 +1791,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousDataWarehouseResponse>
                 transformer = CreateAutonomousDataWarehouseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousDataWarehouseRequest, CreateAutonomousDataWarehouseResponse>
@@ -1869,6 +1887,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousDataWarehouseBackupResponse>
                 transformer = CreateAutonomousDataWarehouseBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousDataWarehouseBackupRequest,
@@ -1964,6 +1983,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousDatabaseResponse>
                 transformer = CreateAutonomousDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousDatabaseRequest, CreateAutonomousDatabaseResponse>
@@ -2057,6 +2077,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousDatabaseBackupResponse>
                 transformer = CreateAutonomousDatabaseBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousDatabaseBackupRequest,
@@ -2150,6 +2171,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAutonomousVmClusterResponse>
                 transformer = CreateAutonomousVmClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAutonomousVmClusterRequest, CreateAutonomousVmClusterResponse>
@@ -2239,6 +2261,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateBackupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
                 transformer = CreateBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateBackupRequest, CreateBackupResponse>
                 handlerToUse = handler;
@@ -2329,6 +2352,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateBackupDestinationResponse>
                 transformer = CreateBackupDestinationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateBackupDestinationRequest, CreateBackupDestinationResponse>
@@ -2422,6 +2446,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCloudExadataInfrastructureResponse>
                 transformer = CreateCloudExadataInfrastructureConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCloudExadataInfrastructureRequest,
@@ -2515,6 +2540,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCloudVmClusterResponse>
                 transformer = CreateCloudVmClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCloudVmClusterRequest, CreateCloudVmClusterResponse>
@@ -2606,6 +2632,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateConsoleConnectionResponse>
                 transformer = CreateConsoleConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConsoleConnectionRequest, CreateConsoleConnectionResponse>
@@ -2699,6 +2726,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDataGuardAssociationResponse>
                 transformer = CreateDataGuardAssociationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDataGuardAssociationRequest, CreateDataGuardAssociationResponse>
@@ -2789,6 +2817,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateDatabaseConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDatabaseResponse>
                 transformer = CreateDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDatabaseRequest, CreateDatabaseResponse>
                 handlerToUse = handler;
@@ -2881,6 +2910,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDatabaseSoftwareImageResponse>
                 transformer = CreateDatabaseSoftwareImageConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDatabaseSoftwareImageRequest, CreateDatabaseSoftwareImageResponse>
@@ -2971,6 +3001,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateDbHomeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbHomeResponse>
                 transformer = CreateDbHomeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDbHomeRequest, CreateDbHomeResponse>
                 handlerToUse = handler;
@@ -3063,6 +3094,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExadataInfrastructureResponse>
                 transformer = CreateExadataInfrastructureConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExadataInfrastructureRequest, CreateExadataInfrastructureResponse>
@@ -3155,6 +3187,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExternalBackupJobResponse>
                 transformer = CreateExternalBackupJobConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalBackupJobRequest, CreateExternalBackupJobResponse>
@@ -3245,6 +3278,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 CreateVmClusterConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterResponse>
                 transformer = CreateVmClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateVmClusterRequest, CreateVmClusterResponse>
                 handlerToUse = handler;
@@ -3335,6 +3369,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVmClusterNetworkResponse>
                 transformer = CreateVmClusterNetworkConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVmClusterNetworkRequest, CreateVmClusterNetworkResponse>
@@ -3424,6 +3459,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 DbNodeActionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DbNodeActionResponse>
                 transformer = DbNodeActionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DbNodeActionRequest, DbNodeActionResponse>
                 handlerToUse = handler;
@@ -4651,6 +4687,88 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAutonomousDatabaseOperationsInsightsResponse>
+            disableAutonomousDatabaseOperationsInsights(
+                    final DisableAutonomousDatabaseOperationsInsightsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutonomousDatabaseOperationsInsightsRequest,
+                                    DisableAutonomousDatabaseOperationsInsightsResponse>
+                            handler) {
+        LOG.trace("Called async disableAutonomousDatabaseOperationsInsights");
+        final DisableAutonomousDatabaseOperationsInsightsRequest interceptedRequest =
+                DisableAutonomousDatabaseOperationsInsightsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAutonomousDatabaseOperationsInsightsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        DisableAutonomousDatabaseOperationsInsightsResponse>
+                transformer = DisableAutonomousDatabaseOperationsInsightsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableAutonomousDatabaseOperationsInsightsRequest,
+                        DisableAutonomousDatabaseOperationsInsightsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            DisableAutonomousDatabaseOperationsInsightsRequest,
+                            DisableAutonomousDatabaseOperationsInsightsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, DisableAutonomousDatabaseOperationsInsightsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DownloadExadataInfrastructureConfigFileResponse>
             downloadExadataInfrastructureConfigFile(
                     final DownloadExadataInfrastructureConfigFileRequest request,
@@ -4667,6 +4785,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DownloadExadataInfrastructureConfigFileResponse>
                 transformer = DownloadExadataInfrastructureConfigFileConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadExadataInfrastructureConfigFileRequest,
@@ -4747,6 +4866,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DownloadVmClusterNetworkConfigFileResponse>
                 transformer = DownloadVmClusterNetworkConfigFileConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DownloadVmClusterNetworkConfigFileRequest,
@@ -4812,6 +4932,88 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<EnableAutonomousDatabaseOperationsInsightsResponse>
+            enableAutonomousDatabaseOperationsInsights(
+                    final EnableAutonomousDatabaseOperationsInsightsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutonomousDatabaseOperationsInsightsRequest,
+                                    EnableAutonomousDatabaseOperationsInsightsResponse>
+                            handler) {
+        LOG.trace("Called async enableAutonomousDatabaseOperationsInsights");
+        final EnableAutonomousDatabaseOperationsInsightsRequest interceptedRequest =
+                EnableAutonomousDatabaseOperationsInsightsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAutonomousDatabaseOperationsInsightsConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        EnableAutonomousDatabaseOperationsInsightsResponse>
+                transformer = EnableAutonomousDatabaseOperationsInsightsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableAutonomousDatabaseOperationsInsightsRequest,
+                        EnableAutonomousDatabaseOperationsInsightsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            EnableAutonomousDatabaseOperationsInsightsRequest,
+                            EnableAutonomousDatabaseOperationsInsightsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, EnableAutonomousDatabaseOperationsInsightsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<FailOverAutonomousDatabaseResponse>
             failOverAutonomousDatabase(
                     final FailOverAutonomousDatabaseRequest request,
@@ -4827,6 +5029,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, FailOverAutonomousDatabaseResponse>
                 transformer = FailOverAutonomousDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         FailOverAutonomousDatabaseRequest, FailOverAutonomousDatabaseResponse>
@@ -5087,6 +5290,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateAutonomousDataWarehouseWalletResponse>
                 transformer = GenerateAutonomousDataWarehouseWalletConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateAutonomousDataWarehouseWalletRequest,
@@ -5184,6 +5388,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateAutonomousDatabaseWalletResponse>
                 transformer = GenerateAutonomousDatabaseWalletConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateAutonomousDatabaseWalletRequest,
@@ -5280,6 +5485,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GenerateRecommendedVmClusterNetworkResponse>
                 transformer = GenerateRecommendedVmClusterNetworkConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         GenerateRecommendedVmClusterNetworkRequest,
@@ -8369,6 +8575,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, LaunchAutonomousExadataInfrastructureResponse>
                 transformer = LaunchAutonomousExadataInfrastructureConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         LaunchAutonomousExadataInfrastructureRequest,
@@ -8463,6 +8670,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 LaunchDbSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, LaunchDbSystemResponse>
                 transformer = LaunchDbSystemConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<LaunchDbSystemRequest, LaunchDbSystemResponse>
                 handlerToUse = handler;
@@ -11646,6 +11854,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, MigrateExadataDbSystemResourceModelResponse>
                 transformer = MigrateExadataDbSystemResourceModelConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         MigrateExadataDbSystemResourceModelRequest,
@@ -12438,6 +12647,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                         RotateAutonomousContainerDatabaseEncryptionKeyResponse>
                 transformer =
                         RotateAutonomousContainerDatabaseEncryptionKeyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         RotateAutonomousContainerDatabaseEncryptionKeyRequest,
@@ -12520,6 +12730,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RotateAutonomousDatabaseEncryptionKeyResponse>
                 transformer = RotateAutonomousDatabaseEncryptionKeyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         RotateAutonomousDatabaseEncryptionKeyRequest,
@@ -12997,6 +13208,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SwitchoverAutonomousDatabaseResponse>
                 transformer = SwitchoverAutonomousDatabaseConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         SwitchoverAutonomousDatabaseRequest, SwitchoverAutonomousDatabaseResponse>
@@ -15255,6 +15467,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ValidateVmClusterNetworkResponse>
                 transformer = ValidateVmClusterNetworkConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ValidateVmClusterNetworkRequest, ValidateVmClusterNetworkResponse>

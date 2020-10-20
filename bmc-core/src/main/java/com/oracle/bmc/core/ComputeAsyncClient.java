@@ -193,11 +193,13 @@ public class ComputeAsyncClient implements ComputeAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -431,6 +433,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                 AttachBootVolumeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AttachBootVolumeResponse>
                 transformer = AttachBootVolumeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<AttachBootVolumeRequest, AttachBootVolumeResponse>
                 handlerToUse = handler;
@@ -518,6 +521,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                 AttachVnicConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AttachVnicResponse>
                 transformer = AttachVnicConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<AttachVnicRequest, AttachVnicResponse> handlerToUse =
                 handler;
@@ -606,6 +610,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                 AttachVolumeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AttachVolumeResponse>
                 transformer = AttachVolumeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<AttachVolumeRequest, AttachVolumeResponse>
                 handlerToUse = handler;
@@ -696,6 +701,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>
                 transformer = CaptureConsoleHistoryConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CaptureConsoleHistoryRequest, CaptureConsoleHistoryResponse>
@@ -791,6 +797,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                         javax.ws.rs.core.Response,
                         ChangeComputeImageCapabilitySchemaCompartmentResponse>
                 transformer = ChangeComputeImageCapabilitySchemaCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeComputeImageCapabilitySchemaCompartmentRequest,
@@ -890,6 +897,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeDedicatedVmHostCompartmentResponse>
                 transformer = ChangeDedicatedVmHostCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeDedicatedVmHostCompartmentRequest,
@@ -983,6 +991,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeImageCompartmentResponse>
                 transformer = ChangeImageCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeImageCompartmentRequest, ChangeImageCompartmentResponse>
@@ -1074,6 +1083,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeInstanceCompartmentResponse>
                 transformer = ChangeInstanceCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeInstanceCompartmentRequest, ChangeInstanceCompartmentResponse>
@@ -1167,6 +1177,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAppCatalogSubscriptionResponse>
                 transformer = CreateAppCatalogSubscriptionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAppCatalogSubscriptionRequest, CreateAppCatalogSubscriptionResponse>
@@ -1261,6 +1272,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateComputeImageCapabilitySchemaResponse>
                 transformer = CreateComputeImageCapabilitySchemaConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateComputeImageCapabilitySchemaRequest,
@@ -1356,6 +1368,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDedicatedVmHostResponse>
                 transformer = CreateDedicatedVmHostConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDedicatedVmHostRequest, CreateDedicatedVmHostResponse>
@@ -1445,6 +1458,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                 CreateImageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateImageResponse>
                 transformer = CreateImageConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateImageRequest, CreateImageResponse>
                 handlerToUse = handler;
@@ -1537,6 +1551,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateInstanceConsoleConnectionResponse>
                 transformer = CreateInstanceConsoleConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateInstanceConsoleConnectionRequest,
@@ -2311,6 +2326,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                 ExportImageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ExportImageResponse>
                 transformer = ExportImageConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ExportImageRequest, ExportImageResponse>
                 handlerToUse = handler;
@@ -3716,6 +3732,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                 InstanceActionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, InstanceActionResponse>
                 transformer = InstanceActionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<InstanceActionRequest, InstanceActionResponse>
                 handlerToUse = handler;
@@ -3790,6 +3807,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                 LaunchInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, LaunchInstanceResponse>
                 transformer = LaunchInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<LaunchInstanceRequest, LaunchInstanceResponse>
                 handlerToUse = handler;
@@ -5771,6 +5789,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateDedicatedVmHostResponse>
                 transformer = UpdateDedicatedVmHostConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateDedicatedVmHostRequest, UpdateDedicatedVmHostResponse>
@@ -5860,6 +5879,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                 UpdateImageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateImageResponse>
                 transformer = UpdateImageConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpdateImageRequest, UpdateImageResponse>
                 handlerToUse = handler;
@@ -5949,6 +5969,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                 UpdateInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInstanceResponse>
                 transformer = UpdateInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpdateInstanceRequest, UpdateInstanceResponse>
                 handlerToUse = handler;

@@ -193,11 +193,13 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -336,6 +338,7 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 CreateDbSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbSystemResponse>
                 transformer = CreateDbSystemConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDbSystemRequest, CreateDbSystemResponse>
                 handlerToUse = handler;
@@ -645,6 +648,7 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 RestartDbSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RestartDbSystemResponse>
                 transformer = RestartDbSystemConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<RestartDbSystemRequest, RestartDbSystemResponse>
                 handlerToUse = handler;
@@ -733,6 +737,7 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 StartDbSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, StartDbSystemResponse>
                 transformer = StartDbSystemConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<StartDbSystemRequest, StartDbSystemResponse>
                 handlerToUse = handler;
@@ -806,6 +811,7 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 StopDbSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, StopDbSystemResponse>
                 transformer = StopDbSystemConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<StopDbSystemRequest, StopDbSystemResponse>
                 handlerToUse = handler;
