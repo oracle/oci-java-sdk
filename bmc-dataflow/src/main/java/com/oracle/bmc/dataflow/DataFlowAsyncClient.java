@@ -193,11 +193,13 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -339,6 +341,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeApplicationCompartmentResponse>
                 transformer = ChangeApplicationCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeApplicationCompartmentRequest, ChangeApplicationCompartmentResponse>
@@ -526,6 +529,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeRunCompartmentResponse>
                 transformer = ChangeRunCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeRunCompartmentRequest, ChangeRunCompartmentResponse>
@@ -616,6 +620,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 CreateApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer = CreateApplicationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateApplicationRequest, CreateApplicationResponse>
                 handlerToUse = handler;
@@ -706,6 +711,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
                 transformer = CreatePrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
@@ -794,6 +800,7 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 CreateRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRunResponse>
                 transformer = CreateRunConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateRunRequest, CreateRunResponse> handlerToUse =
                 handler;

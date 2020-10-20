@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.25.1 - 2020-10-20
+### Added
+- Support for the Operations Insights service
+- Support for updating autonomous databases to enable/disable Operations Insights service integration, in the Database service
+- Support for the NEEDS_ATTENTION lifecycle state on database systems in the Database service
+- Support for HCX in the VMware Solutions service
+
 ## 1.25.0 - 2020-10-13
 ### Added
 - Support for API definitions in the API Gateway service

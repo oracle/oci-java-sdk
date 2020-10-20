@@ -266,11 +266,13 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -455,6 +457,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -489,6 +492,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -520,6 +524,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -551,6 +556,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -837,6 +843,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -864,6 +871,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1012,6 +1020,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1136,6 +1145,7 @@ public class BlockchainPlatformClient implements BlockchainPlatform {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

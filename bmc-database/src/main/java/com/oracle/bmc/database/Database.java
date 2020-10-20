@@ -6,7 +6,6 @@ package com.oracle.bmc.database;
 
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
-import com.oracle.bmc.workrequests.WorkRequest;
 
 /**
  * The API for the Database Service. Use this API to manage resources such as databases and DB Systems. For more information, see [Overview of the Database Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databaseoverview.htm).
@@ -562,6 +561,16 @@ public interface Database extends AutoCloseable {
             DeregisterAutonomousDatabaseDataSafeRequest request);
 
     /**
+     * Disables Operations Insights for the Autonomous Database resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DisableAutonomousDatabaseOperationsInsightsResponse disableAutonomousDatabaseOperationsInsights(
+            DisableAutonomousDatabaseOperationsInsightsRequest request);
+
+    /**
      * Downloads the configuration file for the specified Exadata Cloud@Customer infrastructure.
      *
      * @param request The request object containing the details to send
@@ -580,6 +589,16 @@ public interface Database extends AutoCloseable {
      */
     DownloadVmClusterNetworkConfigFileResponse downloadVmClusterNetworkConfigFile(
             DownloadVmClusterNetworkConfigFileRequest request);
+
+    /**
+     * Enables the specified Autonomous Database with Operations Insights.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    EnableAutonomousDatabaseOperationsInsightsResponse enableAutonomousDatabaseOperationsInsights(
+            EnableAutonomousDatabaseOperationsInsightsRequest request);
 
     /**
      * Initiates a failover the specified Autonomous Database to a standby.
@@ -1832,7 +1851,7 @@ public interface Database extends AutoCloseable {
      * @param workRequestClient The work request service client used to query for work request status
      * @return The service waiters.
      */
-    DatabaseWaiters newWaiters(WorkRequest workRequestClient);
+    DatabaseWaiters newWaiters(com.oracle.bmc.workrequests.WorkRequest workRequestClient);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

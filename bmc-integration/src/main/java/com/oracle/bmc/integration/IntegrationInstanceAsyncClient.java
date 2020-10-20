@@ -193,11 +193,13 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -341,6 +343,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeIntegrationInstanceCompartmentResponse>
                 transformer = ChangeIntegrationInstanceCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeIntegrationInstanceCompartmentRequest,
@@ -436,6 +439,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateIntegrationInstanceResponse>
                 transformer = CreateIntegrationInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIntegrationInstanceRequest, CreateIntegrationInstanceResponse>
@@ -1055,6 +1059,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StartIntegrationInstanceResponse>
                 transformer = StartIntegrationInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         StartIntegrationInstanceRequest, StartIntegrationInstanceResponse>
@@ -1131,6 +1136,7 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StopIntegrationInstanceResponse>
                 transformer = StopIntegrationInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         StopIntegrationInstanceRequest, StopIntegrationInstanceResponse>

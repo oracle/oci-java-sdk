@@ -194,11 +194,13 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -339,6 +341,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ActivateServiceConnectorResponse>
                 transformer = ActivateServiceConnectorConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ActivateServiceConnectorRequest, ActivateServiceConnectorResponse>
@@ -512,6 +515,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateServiceConnectorResponse>
                 transformer = CreateServiceConnectorConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateServiceConnectorRequest, CreateServiceConnectorResponse>
@@ -605,6 +609,7 @@ public class ServiceConnectorAsyncClient implements ServiceConnectorAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeactivateServiceConnectorResponse>
                 transformer = DeactivateServiceConnectorConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeactivateServiceConnectorRequest, DeactivateServiceConnectorResponse>

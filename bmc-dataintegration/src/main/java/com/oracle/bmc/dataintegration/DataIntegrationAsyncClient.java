@@ -194,11 +194,13 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -338,6 +340,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 ChangeCompartmentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ChangeCompartmentResponse>
                 transformer = ChangeCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ChangeCompartmentRequest, ChangeCompartmentResponse>
                 handlerToUse = handler;
@@ -427,6 +430,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateApplicationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
                 transformer = CreateApplicationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateApplicationRequest, CreateApplicationResponse>
                 handlerToUse = handler;
@@ -516,6 +520,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer = CreateConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateConnectionRequest, CreateConnectionResponse>
                 handlerToUse = handler;
@@ -608,6 +613,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateConnectionValidationResponse>
                 transformer = CreateConnectionValidationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConnectionValidationRequest, CreateConnectionValidationResponse>
@@ -698,6 +704,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateDataAssetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer = CreateDataAssetConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataAssetRequest, CreateDataAssetResponse>
                 handlerToUse = handler;
@@ -787,6 +794,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateDataFlowConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataFlowResponse>
                 transformer = CreateDataFlowConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataFlowRequest, CreateDataFlowResponse>
                 handlerToUse = handler;
@@ -877,6 +885,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateDataFlowValidationResponse>
                 transformer = CreateDataFlowValidationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateDataFlowValidationRequest, CreateDataFlowValidationResponse>
@@ -967,6 +976,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateEntityShapeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityShapeResponse>
                 transformer = CreateEntityShapeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateEntityShapeRequest, CreateEntityShapeResponse>
                 handlerToUse = handler;
@@ -1057,6 +1067,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExternalPublicationResponse>
                 transformer = CreateExternalPublicationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalPublicationRequest, CreateExternalPublicationResponse>
@@ -1151,6 +1162,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateExternalPublicationValidationResponse>
                 transformer = CreateExternalPublicationValidationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateExternalPublicationValidationRequest,
@@ -1244,6 +1256,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateFolderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFolderResponse>
                 transformer = CreateFolderConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateFolderRequest, CreateFolderResponse>
                 handlerToUse = handler;
@@ -1332,6 +1345,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreatePatchConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePatchResponse>
                 transformer = CreatePatchConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreatePatchRequest, CreatePatchResponse>
                 handlerToUse = handler;
@@ -1420,6 +1434,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
                 transformer = CreateProjectConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
                 handlerToUse = handler;
@@ -1507,6 +1522,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateTaskConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskResponse>
                 transformer = CreateTaskConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateTaskRequest, CreateTaskResponse> handlerToUse =
                 handler;
@@ -1595,6 +1611,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateTaskRunConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTaskRunResponse>
                 transformer = CreateTaskRunConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateTaskRunRequest, CreateTaskRunResponse>
                 handlerToUse = handler;
@@ -1685,6 +1702,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTaskValidationResponse>
                 transformer = CreateTaskValidationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTaskValidationRequest, CreateTaskValidationResponse>
@@ -1775,6 +1793,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 CreateWorkspaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateWorkspaceResponse>
                 transformer = CreateWorkspaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateWorkspaceRequest, CreateWorkspaceResponse>
                 handlerToUse = handler;
@@ -6470,6 +6489,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 StartWorkspaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, StartWorkspaceResponse>
                 transformer = StartWorkspaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<StartWorkspaceRequest, StartWorkspaceResponse>
                 handlerToUse = handler;
@@ -6543,6 +6563,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 StopWorkspaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, StopWorkspaceResponse>
                 transformer = StopWorkspaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<StopWorkspaceRequest, StopWorkspaceResponse>
                 handlerToUse = handler;
@@ -7240,6 +7261,7 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 UpdateReferenceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateReferenceResponse>
                 transformer = UpdateReferenceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpdateReferenceRequest, UpdateReferenceResponse>
                 handlerToUse = handler;

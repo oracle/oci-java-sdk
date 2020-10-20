@@ -193,11 +193,13 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -560,6 +562,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
                 transformer = ChangeModelCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>
@@ -653,6 +656,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeNotebookSessionCompartmentResponse>
                 transformer = ChangeNotebookSessionCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeNotebookSessionCompartmentRequest,
@@ -746,6 +750,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
                 transformer = ChangeProjectCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
@@ -835,6 +840,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 CreateModelConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateModelResponse>
                 transformer = CreateModelConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
                 handlerToUse = handler;
@@ -929,6 +935,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         ib.property(
                 com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
                 com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateModelArtifactRequest, CreateModelArtifactResponse>
@@ -1020,6 +1027,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateModelProvenanceResponse>
                 transformer = CreateModelProvenanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateModelProvenanceRequest, CreateModelProvenanceResponse>
@@ -1111,6 +1119,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateNotebookSessionResponse>
                 transformer = CreateNotebookSessionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNotebookSessionRequest, CreateNotebookSessionResponse>
@@ -1200,6 +1209,7 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 CreateProjectConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateProjectResponse>
                 transformer = CreateProjectConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
                 handlerToUse = handler;

@@ -193,11 +193,13 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -523,6 +525,7 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 CreateExportConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateExportResponse>
                 transformer = CreateExportConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateExportRequest, CreateExportResponse>
                 handlerToUse = handler;
@@ -612,6 +615,7 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 CreateFileSystemConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFileSystemResponse>
                 transformer = CreateFileSystemConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateFileSystemRequest, CreateFileSystemResponse>
                 handlerToUse = handler;
@@ -701,6 +705,7 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 CreateMountTargetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMountTargetResponse>
                 transformer = CreateMountTargetConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateMountTargetRequest, CreateMountTargetResponse>
                 handlerToUse = handler;
@@ -790,6 +795,7 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 CreateSnapshotConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSnapshotResponse>
                 transformer = CreateSnapshotConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResponse>
                 handlerToUse = handler;

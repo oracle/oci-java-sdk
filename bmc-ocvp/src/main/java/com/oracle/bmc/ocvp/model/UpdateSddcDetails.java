@@ -123,6 +123,15 @@ public class UpdateSddcDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
+        private String hcxVlanId;
+
+        public Builder hcxVlanId(String hcxVlanId) {
+            this.hcxVlanId = hcxVlanId;
+            this.__explicitlySet__.add("hcxVlanId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -158,6 +167,7 @@ public class UpdateSddcDetails {
                             nsxEdgeVTepVlanId,
                             nsxEdgeUplink1VlanId,
                             nsxEdgeUplink2VlanId,
+                            hcxVlanId,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -177,6 +187,7 @@ public class UpdateSddcDetails {
                             .nsxEdgeVTepVlanId(o.getNsxEdgeVTepVlanId())
                             .nsxEdgeUplink1VlanId(o.getNsxEdgeUplink1VlanId())
                             .nsxEdgeUplink2VlanId(o.getNsxEdgeUplink2VlanId())
+                            .hcxVlanId(o.getHcxVlanId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -194,6 +205,7 @@ public class UpdateSddcDetails {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC.
+     * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -275,6 +287,13 @@ public class UpdateSddcDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsxEdgeUplink2VlanId")
     String nsxEdgeUplink2VlanId;
+
+    /**
+     * This id is editable only when hcxEnabled is true
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
+    String hcxVlanId;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

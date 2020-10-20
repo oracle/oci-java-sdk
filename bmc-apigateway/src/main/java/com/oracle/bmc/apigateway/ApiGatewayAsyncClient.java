@@ -193,11 +193,13 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -337,6 +339,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeApiCompartmentResponse>
                 transformer = ChangeApiCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeApiCompartmentRequest, ChangeApiCompartmentResponse>
@@ -430,6 +433,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
                 transformer = ChangeCertificateCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeCertificateCompartmentRequest, ChangeCertificateCompartmentResponse>
@@ -519,6 +523,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                 CreateApiConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateApiResponse>
                 transformer = CreateApiConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateApiRequest, CreateApiResponse> handlerToUse =
                 handler;
@@ -608,6 +613,7 @@ public class ApiGatewayAsyncClient implements ApiGatewayAsync {
                 CreateCertificateConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer = CreateCertificateConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateCertificateRequest, CreateCertificateResponse>
                 handlerToUse = handler;

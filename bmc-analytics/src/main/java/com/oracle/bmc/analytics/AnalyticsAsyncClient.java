@@ -193,11 +193,13 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -339,6 +341,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAnalyticsInstanceCompartmentResponse>
                 transformer = ChangeAnalyticsInstanceCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAnalyticsInstanceCompartmentRequest,
@@ -435,6 +438,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeAnalyticsInstanceNetworkEndpointResponse>
                 transformer = ChangeAnalyticsInstanceNetworkEndpointConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeAnalyticsInstanceNetworkEndpointRequest,
@@ -530,6 +534,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateAnalyticsInstanceResponse>
                 transformer = CreateAnalyticsInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateAnalyticsInstanceRequest, CreateAnalyticsInstanceResponse>
@@ -621,6 +626,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteAnalyticsInstanceResponse>
                 transformer = DeleteAnalyticsInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteAnalyticsInstanceRequest, DeleteAnalyticsInstanceResponse>
@@ -1223,6 +1229,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ScaleAnalyticsInstanceResponse>
                 transformer = ScaleAnalyticsInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ScaleAnalyticsInstanceRequest, ScaleAnalyticsInstanceResponse>
@@ -1314,6 +1321,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StartAnalyticsInstanceResponse>
                 transformer = StartAnalyticsInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         StartAnalyticsInstanceRequest, StartAnalyticsInstanceResponse>
@@ -1390,6 +1398,7 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StopAnalyticsInstanceResponse>
                 transformer = StopAnalyticsInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         StopAnalyticsInstanceRequest, StopAnalyticsInstanceResponse>

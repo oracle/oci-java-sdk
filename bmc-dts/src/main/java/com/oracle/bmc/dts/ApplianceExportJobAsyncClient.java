@@ -194,11 +194,13 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -342,6 +344,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeApplianceExportJobCompartmentResponse>
                 transformer = ChangeApplianceExportJobCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeApplianceExportJobCompartmentRequest,
@@ -437,6 +440,7 @@ public class ApplianceExportJobAsyncClient implements ApplianceExportJobAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateApplianceExportJobResponse>
                 transformer = CreateApplianceExportJobConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateApplianceExportJobRequest, CreateApplianceExportJobResponse>

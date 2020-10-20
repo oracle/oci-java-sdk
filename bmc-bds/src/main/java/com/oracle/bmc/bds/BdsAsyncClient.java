@@ -194,11 +194,13 @@ public class BdsAsyncClient implements BdsAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -337,6 +339,7 @@ public class BdsAsyncClient implements BdsAsync {
                 AddBlockStorageConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AddBlockStorageResponse>
                 transformer = AddBlockStorageConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<AddBlockStorageRequest, AddBlockStorageResponse>
                 handlerToUse = handler;
@@ -425,6 +428,7 @@ public class BdsAsyncClient implements BdsAsync {
                 AddCloudSqlConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AddCloudSqlResponse>
                 transformer = AddCloudSqlConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<AddCloudSqlRequest, AddCloudSqlResponse>
                 handlerToUse = handler;
@@ -514,6 +518,7 @@ public class BdsAsyncClient implements BdsAsync {
                 AddWorkerNodesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AddWorkerNodesResponse>
                 transformer = AddWorkerNodesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<AddWorkerNodesRequest, AddWorkerNodesResponse>
                 handlerToUse = handler;
@@ -606,6 +611,7 @@ public class BdsAsyncClient implements BdsAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeBdsInstanceCompartmentResponse>
                 transformer = ChangeBdsInstanceCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeBdsInstanceCompartmentRequest, ChangeBdsInstanceCompartmentResponse>
@@ -696,6 +702,7 @@ public class BdsAsyncClient implements BdsAsync {
                 ChangeShapeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ChangeShapeResponse>
                 transformer = ChangeShapeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ChangeShapeRequest, ChangeShapeResponse>
                 handlerToUse = handler;
@@ -785,6 +792,7 @@ public class BdsAsyncClient implements BdsAsync {
                 CreateBdsInstanceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBdsInstanceResponse>
                 transformer = CreateBdsInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateBdsInstanceRequest, CreateBdsInstanceResponse>
                 handlerToUse = handler;
@@ -1484,6 +1492,7 @@ public class BdsAsyncClient implements BdsAsync {
                 RestartNodeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RestartNodeResponse>
                 transformer = RestartNodeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<RestartNodeRequest, RestartNodeResponse>
                 handlerToUse = handler;

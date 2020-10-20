@@ -2525,6 +2525,134 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    DisableAutonomousDatabaseOperationsInsightsRequest,
+                    DisableAutonomousDatabaseOperationsInsightsResponse>
+            forDisableAutonomousDatabaseOperationsInsights(
+                    DisableAutonomousDatabaseOperationsInsightsRequest request) {
+        return forDisableAutonomousDatabaseOperationsInsights(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DisableAutonomousDatabaseOperationsInsightsRequest,
+                    DisableAutonomousDatabaseOperationsInsightsResponse>
+            forDisableAutonomousDatabaseOperationsInsights(
+                    DisableAutonomousDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        DisableAutonomousDatabaseOperationsInsightsResponse>() {
+                    @Override
+                    public DisableAutonomousDatabaseOperationsInsightsResponse call()
+                            throws Exception {
+                        final DisableAutonomousDatabaseOperationsInsightsResponse response =
+                                client.disableAutonomousDatabaseOperationsInsights(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EnableAutonomousDatabaseOperationsInsightsRequest,
+                    EnableAutonomousDatabaseOperationsInsightsResponse>
+            forEnableAutonomousDatabaseOperationsInsights(
+                    EnableAutonomousDatabaseOperationsInsightsRequest request) {
+        return forEnableAutonomousDatabaseOperationsInsights(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    EnableAutonomousDatabaseOperationsInsightsRequest,
+                    EnableAutonomousDatabaseOperationsInsightsResponse>
+            forEnableAutonomousDatabaseOperationsInsights(
+                    EnableAutonomousDatabaseOperationsInsightsRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        EnableAutonomousDatabaseOperationsInsightsResponse>() {
+                    @Override
+                    public EnableAutonomousDatabaseOperationsInsightsResponse call()
+                            throws Exception {
+                        final EnableAutonomousDatabaseOperationsInsightsResponse response =
+                                client.enableAutonomousDatabaseOperationsInsights(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     FailOverAutonomousDatabaseRequest, FailOverAutonomousDatabaseResponse>
             forFailOverAutonomousDatabase(FailOverAutonomousDatabaseRequest request) {
         return forFailOverAutonomousDatabase(

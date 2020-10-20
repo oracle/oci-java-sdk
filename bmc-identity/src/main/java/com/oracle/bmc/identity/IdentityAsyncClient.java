@@ -192,11 +192,13 @@ public class IdentityAsyncClient implements IdentityAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -336,6 +338,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>
                 transformer = ActivateMfaTotpDeviceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ActivateMfaTotpDeviceRequest, ActivateMfaTotpDeviceResponse>
@@ -426,6 +429,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 AddUserToGroupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
                 transformer = AddUserToGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<AddUserToGroupRequest, AddUserToGroupResponse>
                 handlerToUse = handler;
@@ -592,6 +596,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, BulkDeleteResourcesResponse>
                 transformer = BulkDeleteResourcesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         BulkDeleteResourcesRequest, BulkDeleteResourcesResponse>
@@ -682,6 +687,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 BulkDeleteTagsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, BulkDeleteTagsResponse>
                 transformer = BulkDeleteTagsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<BulkDeleteTagsRequest, BulkDeleteTagsResponse>
                 handlerToUse = handler;
@@ -771,6 +777,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 BulkMoveResourcesConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, BulkMoveResourcesResponse>
                 transformer = BulkMoveResourcesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<BulkMoveResourcesRequest, BulkMoveResourcesResponse>
                 handlerToUse = handler;
@@ -861,6 +868,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CascadeDeleteTagNamespaceResponse>
                 transformer = CascadeDeleteTagNamespaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CascadeDeleteTagNamespaceRequest, CascadeDeleteTagNamespaceResponse>
@@ -939,6 +947,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeTagNamespaceCompartmentResponse>
                 transformer = ChangeTagNamespaceCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeTagNamespaceCompartmentRequest, ChangeTagNamespaceCompartmentResponse>
@@ -1030,6 +1039,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateAuthTokenConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAuthTokenResponse>
                 transformer = CreateAuthTokenConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateAuthTokenRequest, CreateAuthTokenResponse>
                 handlerToUse = handler;
@@ -1119,6 +1129,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateCompartmentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
                 transformer = CreateCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateCompartmentRequest, CreateCompartmentResponse>
                 handlerToUse = handler;
@@ -1209,6 +1220,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
                 transformer = CreateCustomerSecretKeyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCustomerSecretKeyRequest, CreateCustomerSecretKeyResponse>
@@ -1299,6 +1311,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateDynamicGroupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDynamicGroupResponse>
                 transformer = CreateDynamicGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDynamicGroupRequest, CreateDynamicGroupResponse>
                 handlerToUse = handler;
@@ -1387,6 +1400,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateGroupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupResponse>
                 transformer = CreateGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateGroupRequest, CreateGroupResponse>
                 handlerToUse = handler;
@@ -1477,6 +1491,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateIdentityProviderResponse>
                 transformer = CreateIdentityProviderConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIdentityProviderRequest, CreateIdentityProviderResponse>
@@ -1568,6 +1583,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
                 transformer = CreateIdpGroupMappingConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateIdpGroupMappingRequest, CreateIdpGroupMappingResponse>
@@ -1659,6 +1675,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>
                 transformer = CreateMfaTotpDeviceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateMfaTotpDeviceRequest, CreateMfaTotpDeviceResponse>
@@ -1735,6 +1752,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateNetworkSourceResponse>
                 transformer = CreateNetworkSourceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateNetworkSourceRequest, CreateNetworkSourceResponse>
@@ -1828,6 +1846,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateOAuthClientCredentialResponse>
                 transformer = CreateOAuthClientCredentialConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateOAuthClientCredentialRequest, CreateOAuthClientCredentialResponse>
@@ -1920,6 +1939,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
                 transformer = CreateOrResetUIPasswordConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateOrResetUIPasswordRequest, CreateOrResetUIPasswordResponse>
@@ -1994,6 +2014,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreatePolicyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
                 transformer = CreatePolicyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreatePolicyRequest, CreatePolicyResponse>
                 handlerToUse = handler;
@@ -2084,6 +2105,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
                 transformer = CreateRegionSubscriptionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateRegionSubscriptionRequest, CreateRegionSubscriptionResponse>
@@ -2175,6 +2197,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSmtpCredentialResponse>
                 transformer = CreateSmtpCredentialConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSmtpCredentialRequest, CreateSmtpCredentialResponse>
@@ -2266,6 +2289,7 @@ public class IdentityAsyncClient implements IdentityAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
                 transformer = CreateSwiftPasswordConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSwiftPasswordRequest, CreateSwiftPasswordResponse>
@@ -2354,6 +2378,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateTagConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagResponse>
                 transformer = CreateTagConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateTagRequest, CreateTagResponse> handlerToUse =
                 handler;
@@ -2443,6 +2468,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateTagDefaultConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagDefaultResponse>
                 transformer = CreateTagDefaultConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateTagDefaultRequest, CreateTagDefaultResponse>
                 handlerToUse = handler;
@@ -2532,6 +2558,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateTagNamespaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
                 transformer = CreateTagNamespaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateTagNamespaceRequest, CreateTagNamespaceResponse>
                 handlerToUse = handler;
@@ -2619,6 +2646,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 CreateUserConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse>
                 transformer = CreateUserConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse> handlerToUse =
                 handler;
@@ -7708,6 +7736,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 MoveCompartmentConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, MoveCompartmentResponse>
                 transformer = MoveCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<MoveCompartmentRequest, MoveCompartmentResponse>
                 handlerToUse = handler;
@@ -9728,6 +9757,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                 UploadApiKeyConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
                 transformer = UploadApiKeyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UploadApiKeyRequest, UploadApiKeyResponse>
                 handlerToUse = handler;

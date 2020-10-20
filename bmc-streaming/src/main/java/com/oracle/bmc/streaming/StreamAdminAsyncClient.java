@@ -193,11 +193,13 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -617,6 +619,7 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateConnectHarnessResponse>
                 transformer = CreateConnectHarnessConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConnectHarnessRequest, CreateConnectHarnessResponse>
@@ -795,6 +798,7 @@ public class StreamAdminAsyncClient implements StreamAdminAsync {
                 CreateStreamPoolConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStreamPoolResponse>
                 transformer = CreateStreamPoolConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateStreamPoolRequest, CreateStreamPoolResponse>
                 handlerToUse = handler;

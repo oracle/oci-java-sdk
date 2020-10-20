@@ -193,11 +193,13 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -414,6 +416,7 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                         javax.ws.rs.core.Response,
                         ChangeConfigurationSourceProviderCompartmentResponse>
                 transformer = ChangeConfigurationSourceProviderCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeConfigurationSourceProviderCompartmentRequest,
@@ -510,6 +513,7 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeStackCompartmentResponse>
                 transformer = ChangeStackCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeStackCompartmentRequest, ChangeStackCompartmentResponse>
@@ -603,6 +607,7 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateConfigurationSourceProviderResponse>
                 transformer = CreateConfigurationSourceProviderConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConfigurationSourceProviderRequest,
@@ -695,6 +700,7 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 CreateJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
                 transformer = CreateJobConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
                 handler;
@@ -783,6 +789,7 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 CreateStackConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateStackResponse>
                 transformer = CreateStackConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateStackRequest, CreateStackResponse>
                 handlerToUse = handler;
@@ -1025,6 +1032,7 @@ public class ResourceManagerAsyncClient implements ResourceManagerAsync {
                 DetectStackDriftConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DetectStackDriftResponse>
                 transformer = DetectStackDriftConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DetectStackDriftRequest, DetectStackDriftResponse>
                 handlerToUse = handler;

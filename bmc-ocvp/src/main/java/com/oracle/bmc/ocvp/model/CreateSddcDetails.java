@@ -80,6 +80,24 @@ public class CreateSddcDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
+        private Boolean isHcxEnabled;
+
+        public Builder isHcxEnabled(Boolean isHcxEnabled) {
+            this.isHcxEnabled = isHcxEnabled;
+            this.__explicitlySet__.add("isHcxEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
+        private String hcxVlanId;
+
+        public Builder hcxVlanId(String hcxVlanId) {
+            this.hcxVlanId = hcxVlanId;
+            this.__explicitlySet__.add("hcxVlanId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sshAuthorizedKeys")
         private String sshAuthorizedKeys;
 
@@ -201,6 +219,8 @@ public class CreateSddcDetails {
                             compartmentId,
                             instanceDisplayNamePrefix,
                             esxiHostsCount,
+                            isHcxEnabled,
+                            hcxVlanId,
                             sshAuthorizedKeys,
                             workloadNetworkCidr,
                             provisioningSubnetId,
@@ -226,6 +246,8 @@ public class CreateSddcDetails {
                             .compartmentId(o.getCompartmentId())
                             .instanceDisplayNamePrefix(o.getInstanceDisplayNamePrefix())
                             .esxiHostsCount(o.getEsxiHostsCount())
+                            .isHcxEnabled(o.getIsHcxEnabled())
+                            .hcxVlanId(o.getHcxVlanId())
                             .sshAuthorizedKeys(o.getSshAuthorizedKeys())
                             .workloadNetworkCidr(o.getWorkloadNetworkCidr())
                             .provisioningSubnetId(o.getProvisioningSubnetId())
@@ -259,8 +281,8 @@ public class CreateSddcDetails {
     String computeAvailabilityDomain;
 
     /**
-     * A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits,
-     * whitespaces, dashes and underscores.
+     * A descriptive name for the SDDC.
+     * SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
      * Avoid entering confidential information.
      *
      **/
@@ -306,6 +328,20 @@ public class CreateSddcDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
     Integer esxiHostsCount;
+
+    /**
+     * This flag tells us if HCX is enabled or not.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
+    Boolean isHcxEnabled;
+
+    /**
+     * This id is required only when hcxEnabled is true
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxVlanId")
+    String hcxVlanId;
 
     /**
      * One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for

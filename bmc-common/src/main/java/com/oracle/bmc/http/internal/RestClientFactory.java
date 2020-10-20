@@ -41,7 +41,6 @@ public class RestClientFactory {
                     DEFAULT_MAPPER, JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS);
     private static final ClientIdFilter CLIENT_ID_FILTER = new ClientIdFilter();
     private static final LogHeadersFilter LOG_HEADERS_FILTER = new LogHeadersFilter();
-    private static final RetryTokenFilter RETRY_TOKEN_FILTER = new RetryTokenFilter();
 
     static {
         // Our default object mapper will ignore unknown properties when
@@ -192,7 +191,6 @@ public class RestClientFactory {
         client.register(new AuthnClientFilter(defaultRequestSigner, requestSigners));
         client.register(CLIENT_ID_FILTER);
         client.register(LOG_HEADERS_FILTER);
-        client.register(RETRY_TOKEN_FILTER);
 
         clientConfigurator.customizeClient(client);
         return client;

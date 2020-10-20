@@ -194,11 +194,13 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -341,6 +343,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeManagementDashboardsCompartmentResponse>
                 transformer = ChangeManagementDashboardsCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeManagementDashboardsCompartmentRequest,
@@ -439,6 +442,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeManagementSavedSearchesCompartmentResponse>
                 transformer = ChangeManagementSavedSearchesCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeManagementSavedSearchesCompartmentRequest,
@@ -534,6 +538,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateManagementDashboardResponse>
                 transformer = CreateManagementDashboardConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateManagementDashboardRequest, CreateManagementDashboardResponse>
@@ -627,6 +632,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateManagementSavedSearchResponse>
                 transformer = CreateManagementSavedSearchConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateManagementSavedSearchRequest, CreateManagementSavedSearchResponse>
@@ -873,6 +879,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 ExportDashboardConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ExportDashboardResponse>
                 transformer = ExportDashboardConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ExportDashboardRequest, ExportDashboardResponse>
                 handlerToUse = handler;
@@ -948,6 +955,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetManagementDashboardResponse>
                 transformer = GetManagementDashboardConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetManagementDashboardRequest, GetManagementDashboardResponse>
@@ -1024,6 +1032,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetManagementSavedSearchResponse>
                 transformer = GetManagementSavedSearchConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         GetManagementSavedSearchRequest, GetManagementSavedSearchResponse>
@@ -1099,6 +1108,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                 ImportDashboardConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ImportDashboardResponse>
                 transformer = ImportDashboardConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ImportDashboardRequest, ImportDashboardResponse>
                 handlerToUse = handler;
@@ -1344,6 +1354,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagementDashboardResponse>
                 transformer = UpdateManagementDashboardConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagementDashboardRequest, UpdateManagementDashboardResponse>
@@ -1437,6 +1448,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagementSavedSearchResponse>
                 transformer = UpdateManagementSavedSearchConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagementSavedSearchRequest, UpdateManagementSavedSearchResponse>

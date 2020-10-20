@@ -102,13 +102,15 @@ public class CreateEsxiHostDetails {
     String sddcId;
 
     /**
-     * A descriptive name for the ESXi host. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A descriptive name for the ESXi host. It's changeable.
+     * Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
      * <p>
      * If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used
      * to name and incrementally number the ESXi host. For example, if you're creating the fourth
      * ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display
      * name is `MySDDC-4`.
+     * <p>
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

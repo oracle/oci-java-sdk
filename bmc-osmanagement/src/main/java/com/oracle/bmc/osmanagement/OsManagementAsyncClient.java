@@ -193,11 +193,13 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -435,6 +437,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         AttachChildSoftwareSourceToManagedInstanceResponse>
                 transformer = AttachChildSoftwareSourceToManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         AttachChildSoftwareSourceToManagedInstanceRequest,
@@ -534,6 +537,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         AttachManagedInstanceToManagedInstanceGroupResponse>
                 transformer = AttachManagedInstanceToManagedInstanceGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         AttachManagedInstanceToManagedInstanceGroupRequest,
@@ -616,6 +620,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         AttachParentSoftwareSourceToManagedInstanceResponse>
                 transformer = AttachParentSoftwareSourceToManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         AttachParentSoftwareSourceToManagedInstanceRequest,
@@ -714,6 +719,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeManagedInstanceGroupCompartmentResponse>
                 transformer = ChangeManagedInstanceGroupCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeManagedInstanceGroupCompartmentRequest,
@@ -811,6 +817,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeScheduledJobCompartmentResponse>
                 transformer = ChangeScheduledJobCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeScheduledJobCompartmentRequest, ChangeScheduledJobCompartmentResponse>
@@ -905,6 +912,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSoftwareSourceCompartmentResponse>
                 transformer = ChangeSoftwareSourceCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSoftwareSourceCompartmentRequest,
@@ -1000,6 +1008,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateManagedInstanceGroupResponse>
                 transformer = CreateManagedInstanceGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateManagedInstanceGroupRequest, CreateManagedInstanceGroupResponse>
@@ -1090,6 +1099,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 CreateScheduledJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateScheduledJobResponse>
                 transformer = CreateScheduledJobConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateScheduledJobRequest, CreateScheduledJobResponse>
                 handlerToUse = handler;
@@ -1180,6 +1190,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
                 transformer = CreateSoftwareSourceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateSoftwareSourceRequest, CreateSoftwareSourceResponse>
@@ -1503,6 +1514,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         DetachChildSoftwareSourceFromManagedInstanceResponse>
                 transformer = DetachChildSoftwareSourceFromManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DetachChildSoftwareSourceFromManagedInstanceRequest,
@@ -1603,6 +1615,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         DetachManagedInstanceFromManagedInstanceGroupResponse>
                 transformer = DetachManagedInstanceFromManagedInstanceGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DetachManagedInstanceFromManagedInstanceGroupRequest,
@@ -1686,6 +1699,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         DetachParentSoftwareSourceFromManagedInstanceResponse>
                 transformer = DetachParentSoftwareSourceFromManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DetachParentSoftwareSourceFromManagedInstanceRequest,
@@ -2379,6 +2393,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         InstallAllPackageUpdatesOnManagedInstanceResponse>
                 transformer = InstallAllPackageUpdatesOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallAllPackageUpdatesOnManagedInstanceRequest,
@@ -2461,6 +2476,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                         javax.ws.rs.core.Response,
                         InstallAllWindowsUpdatesOnManagedInstanceResponse>
                 transformer = InstallAllWindowsUpdatesOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallAllWindowsUpdatesOnManagedInstanceRequest,
@@ -2541,6 +2557,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, InstallPackageOnManagedInstanceResponse>
                 transformer = InstallPackageOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallPackageOnManagedInstanceRequest,
@@ -2622,6 +2639,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, InstallPackageUpdateOnManagedInstanceResponse>
                 transformer = InstallPackageUpdateOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallPackageUpdateOnManagedInstanceRequest,
@@ -2703,6 +2721,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, InstallWindowsUpdateOnManagedInstanceResponse>
                 transformer = InstallWindowsUpdateOnManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         InstallWindowsUpdateOnManagedInstanceRequest,
@@ -4032,6 +4051,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemovePackageFromManagedInstanceResponse>
                 transformer = RemovePackageFromManagedInstanceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemovePackageFromManagedInstanceRequest,
@@ -4204,6 +4224,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
                 RunScheduledJobNowConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RunScheduledJobNowResponse>
                 transformer = RunScheduledJobNowConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<RunScheduledJobNowRequest, RunScheduledJobNowResponse>
                 handlerToUse = handler;
@@ -4357,6 +4378,7 @@ public class OsManagementAsyncClient implements OsManagementAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, SkipNextScheduledJobExecutionResponse>
                 transformer = SkipNextScheduledJobExecutionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         SkipNextScheduledJobExecutionRequest, SkipNextScheduledJobExecutionResponse>

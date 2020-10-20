@@ -78,6 +78,24 @@ public class SddcSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxFqdn")
+        private String hcxFqdn;
+
+        public Builder hcxFqdn(String hcxFqdn) {
+            this.hcxFqdn = hcxFqdn;
+            this.__explicitlySet__.add("hcxFqdn");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
+        private Boolean isHcxEnabled;
+
+        public Builder isHcxEnabled(Boolean isHcxEnabled) {
+            this.isHcxEnabled = isHcxEnabled;
+            this.__explicitlySet__.add("isHcxEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vcenterFqdn")
         private String vcenterFqdn;
 
@@ -154,6 +172,8 @@ public class SddcSummary {
                             vmwareSoftwareVersion,
                             compartmentId,
                             esxiHostsCount,
+                            hcxFqdn,
+                            isHcxEnabled,
                             vcenterFqdn,
                             nsxManagerFqdn,
                             timeCreated,
@@ -174,6 +194,8 @@ public class SddcSummary {
                             .vmwareSoftwareVersion(o.getVmwareSoftwareVersion())
                             .compartmentId(o.getCompartmentId())
                             .esxiHostsCount(o.getEsxiHostsCount())
+                            .hcxFqdn(o.getHcxFqdn())
+                            .isHcxEnabled(o.getIsHcxEnabled())
                             .vcenterFqdn(o.getVcenterFqdn())
                             .nsxManagerFqdn(o.getNsxManagerFqdn())
                             .timeCreated(o.getTimeCreated())
@@ -251,6 +273,18 @@ public class SddcSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
     Integer esxiHostsCount;
+
+    /**
+     * HCX Fully Qualified Domain Name
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxFqdn")
+    String hcxFqdn;
+
+    /**
+     * HCX enabled or not
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
+    Boolean isHcxEnabled;
 
     /**
      * FQDN for vCenter

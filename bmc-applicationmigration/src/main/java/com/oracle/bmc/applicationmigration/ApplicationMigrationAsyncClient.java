@@ -194,11 +194,13 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -415,6 +417,7 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeMigrationCompartmentResponse>
                 transformer = ChangeMigrationCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeMigrationCompartmentRequest, ChangeMigrationCompartmentResponse>
@@ -506,6 +509,7 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeSourceCompartmentResponse>
                 transformer = ChangeSourceCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeSourceCompartmentRequest, ChangeSourceCompartmentResponse>
@@ -596,6 +600,7 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 CreateMigrationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMigrationResponse>
                 transformer = CreateMigrationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateMigrationRequest, CreateMigrationResponse>
                 handlerToUse = handler;
@@ -684,6 +689,7 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 CreateSourceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSourceResponse>
                 transformer = CreateSourceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateSourceRequest, CreateSourceResponse>
                 handlerToUse = handler;
@@ -1662,6 +1668,7 @@ public class ApplicationMigrationAsyncClient implements ApplicationMigrationAsyn
                 UpdateMigrationConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMigrationResponse>
                 transformer = UpdateMigrationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpdateMigrationRequest, UpdateMigrationResponse>
                 handlerToUse = handler;

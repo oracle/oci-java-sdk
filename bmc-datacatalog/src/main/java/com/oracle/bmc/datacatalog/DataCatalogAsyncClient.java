@@ -193,11 +193,13 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -337,6 +339,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AddDataSelectorPatternsResponse>
                 transformer = AddDataSelectorPatternsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         AddDataSelectorPatternsRequest, AddDataSelectorPatternsResponse>
@@ -428,6 +431,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AssociateCustomPropertyResponse>
                 transformer = AssociateCustomPropertyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         AssociateCustomPropertyRequest, AssociateCustomPropertyResponse>
@@ -521,6 +525,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, AttachCatalogPrivateEndpointResponse>
                 transformer = AttachCatalogPrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         AttachCatalogPrivateEndpointRequest, AttachCatalogPrivateEndpointResponse>
@@ -801,6 +806,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateAttributeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAttributeResponse>
                 transformer = CreateAttributeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateAttributeRequest, CreateAttributeResponse>
                 handlerToUse = handler;
@@ -890,6 +896,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateAttributeTagConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateAttributeTagResponse>
                 transformer = CreateAttributeTagConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateAttributeTagRequest, CreateAttributeTagResponse>
                 handlerToUse = handler;
@@ -978,6 +985,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateCatalogConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateCatalogResponse>
                 transformer = CreateCatalogConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateCatalogRequest, CreateCatalogResponse>
                 handlerToUse = handler;
@@ -1070,6 +1078,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCatalogPrivateEndpointResponse>
                 transformer = CreateCatalogPrivateEndpointConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCatalogPrivateEndpointRequest, CreateCatalogPrivateEndpointResponse>
@@ -1161,6 +1170,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateConnectionResponse>
                 transformer = CreateConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateConnectionRequest, CreateConnectionResponse>
                 handlerToUse = handler;
@@ -1251,6 +1261,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateCustomPropertyResponse>
                 transformer = CreateCustomPropertyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateCustomPropertyRequest, CreateCustomPropertyResponse>
@@ -1341,6 +1352,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateDataAssetConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetResponse>
                 transformer = CreateDataAssetConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataAssetRequest, CreateDataAssetResponse>
                 handlerToUse = handler;
@@ -1430,6 +1442,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateDataAssetTagConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateDataAssetTagResponse>
                 transformer = CreateDataAssetTagConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateDataAssetTagRequest, CreateDataAssetTagResponse>
                 handlerToUse = handler;
@@ -1518,6 +1531,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateEntityConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityResponse>
                 transformer = CreateEntityConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateEntityRequest, CreateEntityResponse>
                 handlerToUse = handler;
@@ -1607,6 +1621,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateEntityTagConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateEntityTagResponse>
                 transformer = CreateEntityTagConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateEntityTagRequest, CreateEntityTagResponse>
                 handlerToUse = handler;
@@ -1695,6 +1710,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateFolderConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFolderResponse>
                 transformer = CreateFolderConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateFolderRequest, CreateFolderResponse>
                 handlerToUse = handler;
@@ -1784,6 +1800,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateFolderTagConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFolderTagResponse>
                 transformer = CreateFolderTagConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateFolderTagRequest, CreateFolderTagResponse>
                 handlerToUse = handler;
@@ -1873,6 +1890,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateGlossaryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateGlossaryResponse>
                 transformer = CreateGlossaryConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateGlossaryRequest, CreateGlossaryResponse>
                 handlerToUse = handler;
@@ -1960,6 +1978,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateJobConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobResponse>
                 transformer = CreateJobConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
                 handler;
@@ -2050,6 +2069,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateJobDefinitionResponse>
                 transformer = CreateJobDefinitionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateJobDefinitionRequest, CreateJobDefinitionResponse>
@@ -2140,6 +2160,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateJobExecutionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateJobExecutionResponse>
                 transformer = CreateJobExecutionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateJobExecutionRequest, CreateJobExecutionResponse>
                 handlerToUse = handler;
@@ -2229,6 +2250,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateNamespaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateNamespaceResponse>
                 transformer = CreateNamespaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateNamespaceRequest, CreateNamespaceResponse>
                 handlerToUse = handler;
@@ -2317,6 +2339,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreatePatternConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePatternResponse>
                 transformer = CreatePatternConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreatePatternRequest, CreatePatternResponse>
                 handlerToUse = handler;
@@ -2404,6 +2427,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 CreateTermConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateTermResponse>
                 transformer = CreateTermConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateTermRequest, CreateTermResponse> handlerToUse =
                 handler;
@@ -2494,6 +2518,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateTermRelationshipResponse>
                 transformer = CreateTermRelationshipConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateTermRelationshipRequest, CreateTermRelationshipResponse>
@@ -4090,6 +4115,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, DisassociateCustomPropertyResponse>
                 transformer = DisassociateCustomPropertyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         DisassociateCustomPropertyRequest, DisassociateCustomPropertyResponse>
@@ -4181,6 +4207,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ExpandTreeForGlossaryResponse>
                 transformer = ExpandTreeForGlossaryConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ExpandTreeForGlossaryRequest, ExpandTreeForGlossaryResponse>
@@ -4256,6 +4283,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 ExportGlossaryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ExportGlossaryResponse>
                 transformer = ExportGlossaryConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ExportGlossaryRequest, ExportGlossaryResponse>
                 handlerToUse = handler;
@@ -6082,6 +6110,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 ImportConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ImportConnectionResponse>
                 transformer = ImportConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ImportConnectionRequest, ImportConnectionResponse>
                 handlerToUse = handler;
@@ -6171,6 +6200,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 ImportGlossaryConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ImportGlossaryResponse>
                 transformer = ImportGlossaryConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ImportGlossaryRequest, ImportGlossaryResponse>
                 handlerToUse = handler;
@@ -6941,6 +6971,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDerivedLogicalEntitiesResponse>
                 transformer = ListDerivedLogicalEntitiesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListDerivedLogicalEntitiesRequest, ListDerivedLogicalEntitiesResponse>
@@ -8489,6 +8520,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 ParseConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ParseConnectionResponse>
                 transformer = ParseConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ParseConnectionRequest, ParseConnectionResponse>
                 handlerToUse = handler;
@@ -8581,6 +8613,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RemoveDataSelectorPatternsResponse>
                 transformer = RemoveDataSelectorPatternsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         RemoveDataSelectorPatternsRequest, RemoveDataSelectorPatternsResponse>
@@ -8760,6 +8793,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 TestConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, TestConnectionResponse>
                 transformer = TestConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<TestConnectionRequest, TestConnectionResponse>
                 handlerToUse = handler;
@@ -10172,6 +10206,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 UploadCredentialsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UploadCredentialsResponse>
                 transformer = UploadCredentialsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UploadCredentialsRequest, UploadCredentialsResponse>
                 handlerToUse = handler;
@@ -10331,6 +10366,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 ValidateConnectionConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ValidateConnectionResponse>
                 transformer = ValidateConnectionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ValidateConnectionRequest, ValidateConnectionResponse>
                 handlerToUse = handler;
@@ -10420,6 +10456,7 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 ValidatePatternConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ValidatePatternResponse>
                 transformer = ValidatePatternConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ValidatePatternRequest, ValidatePatternResponse>
                 handlerToUse = handler;

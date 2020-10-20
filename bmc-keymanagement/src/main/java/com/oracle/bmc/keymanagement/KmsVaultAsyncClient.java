@@ -193,11 +193,13 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -335,6 +337,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 BackupVaultConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, BackupVaultResponse>
                 transformer = BackupVaultConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<BackupVaultRequest, BackupVaultResponse>
                 handlerToUse = handler;
@@ -425,6 +428,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CancelVaultDeletionResponse>
                 transformer = CancelVaultDeletionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CancelVaultDeletionRequest, CancelVaultDeletionResponse>
@@ -501,6 +505,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeVaultCompartmentResponse>
                 transformer = ChangeVaultCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeVaultCompartmentRequest, ChangeVaultCompartmentResponse>
@@ -590,6 +595,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
                 CreateVaultConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVaultResponse>
                 transformer = CreateVaultConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateVaultRequest, CreateVaultResponse>
                 handlerToUse = handler;
@@ -897,6 +903,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RestoreVaultFromFileResponse>
                 transformer = RestoreVaultFromFileConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         RestoreVaultFromFileRequest, RestoreVaultFromFileResponse>
@@ -990,6 +997,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, RestoreVaultFromObjectStoreResponse>
                 transformer = RestoreVaultFromObjectStoreConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         RestoreVaultFromObjectStoreRequest, RestoreVaultFromObjectStoreResponse>
@@ -1082,6 +1090,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ScheduleVaultDeletionResponse>
                 transformer = ScheduleVaultDeletionConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ScheduleVaultDeletionRequest, ScheduleVaultDeletionResponse>

@@ -193,11 +193,13 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -904,6 +906,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CopyBootVolumeBackupResponse>
                 transformer = CopyBootVolumeBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CopyBootVolumeBackupRequest, CopyBootVolumeBackupResponse>
@@ -994,6 +997,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CopyVolumeBackupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CopyVolumeBackupResponse>
                 transformer = CopyVolumeBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CopyVolumeBackupRequest, CopyVolumeBackupResponse>
                 handlerToUse = handler;
@@ -1083,6 +1087,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateBootVolumeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeResponse>
                 transformer = CreateBootVolumeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateBootVolumeRequest, CreateBootVolumeResponse>
                 handlerToUse = handler;
@@ -1173,6 +1178,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateBootVolumeBackupResponse>
                 transformer = CreateBootVolumeBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateBootVolumeBackupRequest, CreateBootVolumeBackupResponse>
@@ -1262,6 +1268,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateVolumeConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeResponse>
                 transformer = CreateVolumeConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateVolumeRequest, CreateVolumeResponse>
                 handlerToUse = handler;
@@ -1351,6 +1358,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateVolumeBackupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
                 transformer = CreateVolumeBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateVolumeBackupRequest, CreateVolumeBackupResponse>
                 handlerToUse = handler;
@@ -1441,6 +1449,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVolumeBackupPolicyResponse>
                 transformer = CreateVolumeBackupPolicyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVolumeBackupPolicyRequest, CreateVolumeBackupPolicyResponse>
@@ -1628,6 +1637,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 CreateVolumeGroupConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupResponse>
                 transformer = CreateVolumeGroupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateVolumeGroupRequest, CreateVolumeGroupResponse>
                 handlerToUse = handler;
@@ -1718,6 +1728,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVolumeGroupBackupResponse>
                 transformer = CreateVolumeGroupBackupConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateVolumeGroupBackupRequest, CreateVolumeGroupBackupResponse>
@@ -4365,6 +4376,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateVolumeBackupPolicyResponse>
                 transformer = UpdateVolumeBackupPolicyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateVolumeBackupPolicyRequest, UpdateVolumeBackupPolicyResponse>

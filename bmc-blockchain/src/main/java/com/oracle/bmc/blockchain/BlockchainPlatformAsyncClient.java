@@ -193,11 +193,13 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -341,6 +343,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ChangeBlockchainPlatformCompartmentResponse>
                 transformer = ChangeBlockchainPlatformCompartmentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ChangeBlockchainPlatformCompartmentRequest,
@@ -436,6 +439,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateBlockchainPlatformResponse>
                 transformer = CreateBlockchainPlatformConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateBlockchainPlatformRequest, CreateBlockchainPlatformResponse>
@@ -524,6 +528,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                 CreateOsnConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreateOsnResponse>
                 transformer = CreateOsnConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreateOsnRequest, CreateOsnResponse> handlerToUse =
                 handler;
@@ -611,6 +616,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                 CreatePeerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, CreatePeerResponse>
                 transformer = CreatePeerConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<CreatePeerRequest, CreatePeerResponse> handlerToUse =
                 handler;
@@ -1359,6 +1365,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                 ListOsnsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListOsnsResponse>
                 transformer = ListOsnsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ListOsnsRequest, ListOsnsResponse> handlerToUse =
                 handler;
@@ -1431,6 +1438,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                 ListPeersConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, ListPeersResponse>
                 transformer = ListPeersConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<ListPeersRequest, ListPeersResponse> handlerToUse =
                 handler;
@@ -1827,6 +1835,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ScaleBlockchainPlatformResponse>
                 transformer = ScaleBlockchainPlatformConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ScaleBlockchainPlatformRequest, ScaleBlockchainPlatformResponse>
@@ -2158,6 +2167,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                 UpdateOsnConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOsnResponse>
                 transformer = UpdateOsnConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpdateOsnRequest, UpdateOsnResponse> handlerToUse =
                 handler;

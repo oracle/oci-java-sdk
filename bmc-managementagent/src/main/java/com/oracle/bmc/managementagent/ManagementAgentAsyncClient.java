@@ -194,11 +194,13 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                                     this.authenticationDetailsProvider)
                             .getClientConfigurators());
         }
-        additionalClientConfigurators.addAll(authenticationDetailsConfigurators);
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .additionalClientConfigurators(allConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
                 defaultRequestSignerFactory.createRequestSigner(
@@ -341,6 +343,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateManagementAgentInstallKeyResponse>
                 transformer = CreateManagementAgentInstallKeyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         CreateManagementAgentInstallKeyRequest,
@@ -662,6 +665,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                 DeployPluginsConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, DeployPluginsResponse>
                 transformer = DeployPluginsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<DeployPluginsRequest, DeployPluginsResponse>
                 handlerToUse = handler;
@@ -1060,6 +1064,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListManagementAgentImagesResponse>
                 transformer = ListManagementAgentImagesConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         ListManagementAgentImagesRequest, ListManagementAgentImagesResponse>
@@ -1596,6 +1601,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagementAgentResponse>
                 transformer = UpdateManagementAgentConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagementAgentRequest, UpdateManagementAgentResponse>
@@ -1689,6 +1695,7 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateManagementAgentInstallKeyResponse>
                 transformer = UpdateManagementAgentInstallKeyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateManagementAgentInstallKeyRequest,
