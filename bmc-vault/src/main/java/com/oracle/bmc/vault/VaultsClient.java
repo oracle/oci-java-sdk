@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.vault;
 
-import java.util.Locale;
 import com.oracle.bmc.vault.internal.http.*;
 import com.oracle.bmc.vault.requests.*;
 import com.oracle.bmc.vault.responses.*;
@@ -425,7 +424,7 @@ public class VaultsClient implements Vaults {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);

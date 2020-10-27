@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.mysql;
 
-import java.util.Locale;
 import com.oracle.bmc.mysql.internal.http.*;
 import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
@@ -309,7 +308,7 @@ public class MysqlaasAsyncClient implements MysqlaasAsync {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -327,7 +326,7 @@ public class MysqlaasAsyncClient implements MysqlaasAsync {
 
     @Override
     public java.util.concurrent.Future<CreateConfigurationResponse> createConfiguration(
-            final CreateConfigurationRequest request,
+            CreateConfigurationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateConfigurationRequest, CreateConfigurationResponse>
                     handler) {
@@ -344,82 +343,32 @@ public class MysqlaasAsyncClient implements MysqlaasAsync {
         com.oracle.bmc.responses.AsyncHandler<
                         CreateConfigurationRequest, CreateConfigurationResponse>
                 handlerToUse = handler;
-        if (handler != null
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            handlerToUse =
-                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
-                            CreateConfigurationRequest, CreateConfigurationResponse>(
-                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                                    this.authenticationDetailsProvider,
-                            handler) {
-                        @Override
-                        public void retryCall() {
-                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
-                                    onSuccess =
-                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                                    this, transformer, interceptedRequest);
-                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                            this, interceptedRequest);
-                            client.post(
-                                    ib,
-                                    interceptedRequest.getCreateConfigurationDetails(),
-                                    interceptedRequest,
-                                    onSuccess,
-                                    onError);
-                        }
-                    };
-        }
 
-        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                handlerToUse, transformer, interceptedRequest);
-        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                handlerToUse, interceptedRequest);
-
-        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.post(
-                        ib,
-                        interceptedRequest.getCreateConfigurationDetails(),
-                        interceptedRequest,
-                        onSuccess,
-                        onError);
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateConfigurationRequest, CreateConfigurationResponse>,
+                        java.util.concurrent.Future<CreateConfigurationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, CreateConfigurationResponse>(
-                    responseFuture,
-                    transformer,
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateConfigurationRequest, CreateConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
-                    new com.google.common.base.Supplier<
-                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
-                        @Override
-                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.post(
-                                    ib,
-                                    interceptedRequest.getCreateConfigurationDetails(),
-                                    interceptedRequest,
-                                    onSuccess,
-                                    onError);
-                        }
-                    });
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
         } else {
-            return new com.oracle.bmc.util.internal.TransformingFuture<>(
-                    responseFuture, transformer);
+            return futureSupplier.apply(handlerToUse);
         }
     }
 
     @Override
     public java.util.concurrent.Future<DeleteConfigurationResponse> deleteConfiguration(
-            final DeleteConfigurationRequest request,
+            DeleteConfigurationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteConfigurationRequest, DeleteConfigurationResponse>
                     handler) {
@@ -435,67 +384,32 @@ public class MysqlaasAsyncClient implements MysqlaasAsync {
         com.oracle.bmc.responses.AsyncHandler<
                         DeleteConfigurationRequest, DeleteConfigurationResponse>
                 handlerToUse = handler;
-        if (handler != null
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            handlerToUse =
-                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
-                            DeleteConfigurationRequest, DeleteConfigurationResponse>(
-                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                                    this.authenticationDetailsProvider,
-                            handler) {
-                        @Override
-                        public void retryCall() {
-                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
-                                    onSuccess =
-                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                                    this, transformer, interceptedRequest);
-                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                            this, interceptedRequest);
-                            client.delete(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    };
-        }
 
-        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                handlerToUse, transformer, interceptedRequest);
-        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                handlerToUse, interceptedRequest);
-
-        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.delete(ib, interceptedRequest, onSuccess, onError);
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteConfigurationRequest, DeleteConfigurationResponse>,
+                        java.util.concurrent.Future<DeleteConfigurationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, DeleteConfigurationResponse>(
-                    responseFuture,
-                    transformer,
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteConfigurationRequest, DeleteConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
-                    new com.google.common.base.Supplier<
-                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
-                        @Override
-                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.delete(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    });
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
         } else {
-            return new com.oracle.bmc.util.internal.TransformingFuture<>(
-                    responseFuture, transformer);
+            return futureSupplier.apply(handlerToUse);
         }
     }
 
     @Override
     public java.util.concurrent.Future<GetConfigurationResponse> getConfiguration(
-            final GetConfigurationRequest request,
+            GetConfigurationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
                             GetConfigurationRequest, GetConfigurationResponse>
                     handler) {
@@ -509,67 +423,32 @@ public class MysqlaasAsyncClient implements MysqlaasAsync {
 
         com.oracle.bmc.responses.AsyncHandler<GetConfigurationRequest, GetConfigurationResponse>
                 handlerToUse = handler;
-        if (handler != null
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            handlerToUse =
-                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
-                            GetConfigurationRequest, GetConfigurationResponse>(
-                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                                    this.authenticationDetailsProvider,
-                            handler) {
-                        @Override
-                        public void retryCall() {
-                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
-                                    onSuccess =
-                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                                    this, transformer, interceptedRequest);
-                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                            this, interceptedRequest);
-                            client.get(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    };
-        }
 
-        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                handlerToUse, transformer, interceptedRequest);
-        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                handlerToUse, interceptedRequest);
-
-        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.get(ib, interceptedRequest, onSuccess, onError);
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetConfigurationRequest, GetConfigurationResponse>,
+                        java.util.concurrent.Future<GetConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, GetConfigurationResponse>(
-                    responseFuture,
-                    transformer,
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetConfigurationRequest, GetConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
-                    new com.google.common.base.Supplier<
-                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
-                        @Override
-                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.get(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    });
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
         } else {
-            return new com.oracle.bmc.util.internal.TransformingFuture<>(
-                    responseFuture, transformer);
+            return futureSupplier.apply(handlerToUse);
         }
     }
 
     @Override
     public java.util.concurrent.Future<ListConfigurationsResponse> listConfigurations(
-            final ListConfigurationsRequest request,
+            ListConfigurationsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
                             ListConfigurationsRequest, ListConfigurationsResponse>
                     handler) {
@@ -583,67 +462,32 @@ public class MysqlaasAsyncClient implements MysqlaasAsync {
 
         com.oracle.bmc.responses.AsyncHandler<ListConfigurationsRequest, ListConfigurationsResponse>
                 handlerToUse = handler;
-        if (handler != null
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            handlerToUse =
-                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
-                            ListConfigurationsRequest, ListConfigurationsResponse>(
-                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                                    this.authenticationDetailsProvider,
-                            handler) {
-                        @Override
-                        public void retryCall() {
-                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
-                                    onSuccess =
-                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                                    this, transformer, interceptedRequest);
-                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                            this, interceptedRequest);
-                            client.get(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    };
-        }
 
-        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                handlerToUse, transformer, interceptedRequest);
-        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                handlerToUse, interceptedRequest);
-
-        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.get(ib, interceptedRequest, onSuccess, onError);
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListConfigurationsRequest, ListConfigurationsResponse>,
+                        java.util.concurrent.Future<ListConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, ListConfigurationsResponse>(
-                    responseFuture,
-                    transformer,
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListConfigurationsRequest, ListConfigurationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
-                    new com.google.common.base.Supplier<
-                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
-                        @Override
-                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.get(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    });
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
         } else {
-            return new com.oracle.bmc.util.internal.TransformingFuture<>(
-                    responseFuture, transformer);
+            return futureSupplier.apply(handlerToUse);
         }
     }
 
     @Override
     public java.util.concurrent.Future<ListShapesResponse> listShapes(
-            final ListShapesRequest request,
+            ListShapesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse>
                     handler) {
         LOG.trace("Called async listShapes");
@@ -655,67 +499,32 @@ public class MysqlaasAsyncClient implements MysqlaasAsync {
 
         com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse> handlerToUse =
                 handler;
-        if (handler != null
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            handlerToUse =
-                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
-                            ListShapesRequest, ListShapesResponse>(
-                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                                    this.authenticationDetailsProvider,
-                            handler) {
-                        @Override
-                        public void retryCall() {
-                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
-                                    onSuccess =
-                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                                    this, transformer, interceptedRequest);
-                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                            this, interceptedRequest);
-                            client.get(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    };
-        }
 
-        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                handlerToUse, transformer, interceptedRequest);
-        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                handlerToUse, interceptedRequest);
-
-        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.get(ib, interceptedRequest, onSuccess, onError);
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListShapesRequest, ListShapesResponse>,
+                        java.util.concurrent.Future<ListShapesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, ListShapesResponse>(
-                    responseFuture,
-                    transformer,
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListShapesRequest, ListShapesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
-                    new com.google.common.base.Supplier<
-                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
-                        @Override
-                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.get(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    });
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
         } else {
-            return new com.oracle.bmc.util.internal.TransformingFuture<>(
-                    responseFuture, transformer);
+            return futureSupplier.apply(handlerToUse);
         }
     }
 
     @Override
     public java.util.concurrent.Future<ListVersionsResponse> listVersions(
-            final ListVersionsRequest request,
+            ListVersionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListVersionsRequest, ListVersionsResponse>
                     handler) {
         LOG.trace("Called async listVersions");
@@ -728,67 +537,32 @@ public class MysqlaasAsyncClient implements MysqlaasAsync {
 
         com.oracle.bmc.responses.AsyncHandler<ListVersionsRequest, ListVersionsResponse>
                 handlerToUse = handler;
-        if (handler != null
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            handlerToUse =
-                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
-                            ListVersionsRequest, ListVersionsResponse>(
-                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                                    this.authenticationDetailsProvider,
-                            handler) {
-                        @Override
-                        public void retryCall() {
-                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
-                                    onSuccess =
-                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                                    this, transformer, interceptedRequest);
-                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                            this, interceptedRequest);
-                            client.get(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    };
-        }
 
-        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                handlerToUse, transformer, interceptedRequest);
-        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                handlerToUse, interceptedRequest);
-
-        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.get(ib, interceptedRequest, onSuccess, onError);
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVersionsRequest, ListVersionsResponse>,
+                        java.util.concurrent.Future<ListVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, ListVersionsResponse>(
-                    responseFuture,
-                    transformer,
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVersionsRequest, ListVersionsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
-                    new com.google.common.base.Supplier<
-                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
-                        @Override
-                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.get(ib, interceptedRequest, onSuccess, onError);
-                        }
-                    });
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
         } else {
-            return new com.oracle.bmc.util.internal.TransformingFuture<>(
-                    responseFuture, transformer);
+            return futureSupplier.apply(handlerToUse);
         }
     }
 
     @Override
     public java.util.concurrent.Future<UpdateConfigurationResponse> updateConfiguration(
-            final UpdateConfigurationRequest request,
+            UpdateConfigurationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateConfigurationRequest, UpdateConfigurationResponse>
                     handler) {
@@ -804,76 +578,26 @@ public class MysqlaasAsyncClient implements MysqlaasAsync {
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateConfigurationRequest, UpdateConfigurationResponse>
                 handlerToUse = handler;
-        if (handler != null
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            handlerToUse =
-                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
-                            UpdateConfigurationRequest, UpdateConfigurationResponse>(
-                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                                    this.authenticationDetailsProvider,
-                            handler) {
-                        @Override
-                        public void retryCall() {
-                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
-                                    onSuccess =
-                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                                    this, transformer, interceptedRequest);
-                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                            this, interceptedRequest);
-                            client.put(
-                                    ib,
-                                    interceptedRequest.getUpdateConfigurationDetails(),
-                                    interceptedRequest,
-                                    onSuccess,
-                                    onError);
-                        }
-                    };
-        }
 
-        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                                handlerToUse, transformer, interceptedRequest);
-        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                (handler == null)
-                        ? null
-                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
-                                handlerToUse, interceptedRequest);
-
-        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
-                client.put(
-                        ib,
-                        interceptedRequest.getUpdateConfigurationDetails(),
-                        interceptedRequest,
-                        onSuccess,
-                        onError);
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateConfigurationRequest, UpdateConfigurationResponse>,
+                        java.util.concurrent.Future<UpdateConfigurationResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, UpdateConfigurationResponse>(
-                    responseFuture,
-                    transformer,
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateConfigurationRequest, UpdateConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
-                    new com.google.common.base.Supplier<
-                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
-                        @Override
-                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
-                            return client.put(
-                                    ib,
-                                    interceptedRequest.getUpdateConfigurationDetails(),
-                                    interceptedRequest,
-                                    onSuccess,
-                                    onError);
-                        }
-                    });
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
         } else {
-            return new com.oracle.bmc.util.internal.TransformingFuture<>(
-                    responseFuture, transformer);
+            return futureSupplier.apply(handlerToUse);
         }
     }
 }

@@ -194,6 +194,15 @@ public class CreateAutonomousContainerDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+        private String keyStoreId;
+
+        public Builder keyStoreId(String keyStoreId) {
+            this.keyStoreId = keyStoreId;
+            this.__explicitlySet__.add("keyStoreId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -217,7 +226,8 @@ public class CreateAutonomousContainerDatabaseDetails {
                             backupConfig,
                             kmsKeyId,
                             kmsKeyVersionId,
-                            vaultId);
+                            vaultId,
+                            keyStoreId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -245,7 +255,8 @@ public class CreateAutonomousContainerDatabaseDetails {
                             .backupConfig(o.getBackupConfig())
                             .kmsKeyId(o.getKmsKeyId())
                             .kmsKeyVersionId(o.getKmsKeyVersionId())
-                            .vaultId(o.getVaultId());
+                            .vaultId(o.getVaultId())
+                            .keyStoreId(o.getKeyStoreId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -477,6 +488,12 @@ public class CreateAutonomousContainerDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     String vaultId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+    String keyStoreId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.healthchecks;
 
-import java.util.Locale;
 import com.oracle.bmc.healthchecks.internal.http.*;
 import com.oracle.bmc.healthchecks.requests.*;
 import com.oracle.bmc.healthchecks.responses.*;
@@ -352,7 +351,7 @@ public class HealthChecksClient implements HealthChecks {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);

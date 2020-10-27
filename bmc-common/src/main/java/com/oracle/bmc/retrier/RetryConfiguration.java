@@ -27,13 +27,16 @@ public class RetryConfiguration extends WaiterConfiguration {
     static final RetryConfiguration NO_RETRY_CONFIGURATION = RetryConfiguration.builder().build();
 
     @Getter private final RetryCondition retryCondition;
+    @Getter private final RetryOptions retryOptions;
 
     private RetryConfiguration(
             @NonNull final TerminationStrategy terminationStrategy,
             @NonNull final DelayStrategy delayStrategy,
-            @NonNull final RetryCondition retryCondition) {
+            @NonNull final RetryCondition retryCondition,
+            @NonNull final RetryOptions retryOptions) {
         super(terminationStrategy, delayStrategy);
         this.retryCondition = retryCondition;
+        this.retryOptions = retryOptions;
     }
 
     /**
@@ -52,10 +55,13 @@ public class RetryConfiguration extends WaiterConfiguration {
                 new MaxAttemptsTerminationStrategy(1);
         private static final DelayStrategy EXPONENTIAL_BACKOFF_DELAY_STRATEGY =
                 new ExponentialBackoffDelayStrategy(TimeUnit.SECONDS.toMillis(30));
+        private static final RetryOptions DEFAULT_RETRY_OPTIONS =
+                new RetryOptions(Integer.MAX_VALUE);
 
         private TerminationStrategy terminationStrategy = NO_RETRY_TERMINATION_STRATEGY;
         private DelayStrategy delayStrategy = EXPONENTIAL_BACKOFF_DELAY_STRATEGY;
         private RetryCondition retryCondition = new DefaultRetryCondition();
+        private RetryOptions retryOptions = DEFAULT_RETRY_OPTIONS;
 
         public Builder terminationStrategy(@NonNull final TerminationStrategy terminationStrategy) {
             this.terminationStrategy = terminationStrategy;
@@ -72,12 +78,18 @@ public class RetryConfiguration extends WaiterConfiguration {
             return this;
         }
 
+        public Builder retryOptions(@NonNull final RetryOptions retryOptions) {
+            this.retryOptions = retryOptions;
+            return this;
+        }
+
         /**
          * Build the retry configuration
          * @return the retry configuration
          */
         public RetryConfiguration build() {
-            return new RetryConfiguration(terminationStrategy, delayStrategy, retryCondition);
+            return new RetryConfiguration(
+                    terminationStrategy, delayStrategy, retryCondition, retryOptions);
         }
     }
 }

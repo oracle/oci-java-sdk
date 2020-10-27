@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.functions;
 
-import java.util.Locale;
 import com.oracle.bmc.functions.internal.http.*;
 import com.oracle.bmc.functions.requests.*;
 import com.oracle.bmc.functions.responses.*;
@@ -347,7 +346,7 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -367,7 +366,10 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
     public InvokeFunctionResponse invokeFunction(InvokeFunctionRequest request) {
         LOG.trace("Called invokeFunction");
         try {
-            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
                         com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
                                 request, InvokeFunctionRequest.builder());
@@ -400,9 +402,17 @@ public class FunctionsInvokeClient implements FunctionsInvoke {
                                         return transformer.apply(response);
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null) {
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
                                             com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
-                                                    interceptedRequest.getInvokeFunctionBody());
+                                                    interceptedRequest.getInvokeFunctionBody(),
+                                                    true);
                                         }
                                         throw e; // rethrow
                                     }

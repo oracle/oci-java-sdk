@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.streaming;
 
-import java.util.Locale;
 import com.oracle.bmc.streaming.internal.http.*;
 import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;

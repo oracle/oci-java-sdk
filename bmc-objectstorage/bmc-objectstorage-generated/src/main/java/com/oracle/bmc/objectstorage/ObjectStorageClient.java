@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.objectstorage;
 
-import java.util.Locale;
 import com.oracle.bmc.objectstorage.internal.http.*;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
@@ -427,7 +426,7 @@ public class ObjectStorageClient implements ObjectStorage {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -1593,7 +1592,10 @@ public class ObjectStorageClient implements ObjectStorage {
     public PutObjectResponse putObject(PutObjectRequest request) {
         LOG.trace("Called putObject");
         try {
-            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
                         com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
                                 request, PutObjectRequest.builder());
@@ -1630,9 +1632,16 @@ public class ObjectStorageClient implements ObjectStorage {
                                         return transformer.apply(response);
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null) {
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
                                             com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
-                                                    interceptedRequest.getPutObjectBody());
+                                                    interceptedRequest.getPutObjectBody(), true);
                                         }
                                         throw e; // rethrow
                                     }
@@ -1902,7 +1911,10 @@ public class ObjectStorageClient implements ObjectStorage {
     public UploadPartResponse uploadPart(UploadPartRequest request) {
         LOG.trace("Called uploadPart");
         try {
-            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
                         com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
                                 request, UploadPartRequest.builder());
@@ -1939,9 +1951,16 @@ public class ObjectStorageClient implements ObjectStorage {
                                         return transformer.apply(response);
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null) {
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
                                             com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
-                                                    interceptedRequest.getUploadPartBody());
+                                                    interceptedRequest.getUploadPartBody(), true);
                                         }
                                         throw e; // rethrow
                                     }

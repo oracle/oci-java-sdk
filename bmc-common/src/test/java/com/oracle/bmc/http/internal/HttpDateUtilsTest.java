@@ -42,6 +42,18 @@ public class HttpDateUtilsTest {
     }
 
     @Test
+    public void otherDateHeader_rfc3339_dateTime_withNanos() {
+        Date date = HttpDateUtils.parse("other-date", "1996-12-19T16:39:57.0527396-08:00");
+        assertEquals(851042397052L, date.getTime());
+    }
+
+    @Test
+    public void otherDateHeader_rfc3339_dateTime_withNanos_utc() {
+        Date date = HttpDateUtils.parse("other-date", "1985-04-12T23:20:50.0527396Z");
+        assertEquals(482196050052L, date.getTime());
+    }
+
+    @Test
     public void otherDateHeader_rfc3339_dateTime_utc() {
         Date date = HttpDateUtils.parse("other-date", "1985-04-12T23:20:50Z");
         assertEquals(482196050000L, date.getTime());

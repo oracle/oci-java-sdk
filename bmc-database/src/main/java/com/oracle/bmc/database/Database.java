@@ -184,6 +184,18 @@ public interface Database extends AutoCloseable {
             ChangeExadataInfrastructureCompartmentRequest request);
 
     /**
+     * Move the key store resource to the specified compartment.
+     * For more information about moving key stores, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeKeyStoreCompartmentResponse changeKeyStoreCompartment(
+            ChangeKeyStoreCompartmentRequest request);
+
+    /**
      * To move an Exadata Cloud@Customer VM cluster and its dependent resources to another compartment, use the
      * {@link #changeVmClusterCompartment(ChangeVmClusterCompartmentRequest) changeVmClusterCompartment} operation.
      *
@@ -379,6 +391,15 @@ public interface Database extends AutoCloseable {
     CreateExternalBackupJobResponse createExternalBackupJob(CreateExternalBackupJobRequest request);
 
     /**
+     * Creates a Key Store.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateKeyStoreResponse createKeyStore(CreateKeyStoreRequest request);
+
+    /**
      * Creates an Exadata Cloud@Customer VM cluster.
      *
      * @param request The request object containing the details to send
@@ -531,6 +552,15 @@ public interface Database extends AutoCloseable {
      */
     DeleteExadataInfrastructureResponse deleteExadataInfrastructure(
             DeleteExadataInfrastructureRequest request);
+
+    /**
+     * Deletes a key store.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteKeyStoreResponse deleteKeyStore(DeleteKeyStoreRequest request);
 
     /**
      * Deletes the specified Exadata Cloud@Customer VM cluster.
@@ -981,6 +1011,15 @@ public interface Database extends AutoCloseable {
     GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request);
 
     /**
+     * Gets information about the specified key store.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetKeyStoreResponse getKeyStore(GetKeyStoreRequest request);
+
+    /**
      * Gets information about the specified maintenance run.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1381,6 +1420,15 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListGiVersionsResponse listGiVersions(ListGiVersionsRequest request);
+
+    /**
+     * Gets a list of key stores in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListKeyStoresResponse listKeyStores(ListKeyStoresRequest request);
 
     /**
      * Gets a list of the maintenance runs in the specified compartment.
@@ -1797,6 +1845,15 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateExadataIormConfigResponse updateExadataIormConfig(UpdateExadataIormConfigRequest request);
+
+    /**
+     * If no database is associated with the key store, edit the key store.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateKeyStoreResponse updateKeyStore(UpdateKeyStoreRequest request);
 
     /**
      * Updates the properties of a maintenance run, such as the state of a maintenance run.

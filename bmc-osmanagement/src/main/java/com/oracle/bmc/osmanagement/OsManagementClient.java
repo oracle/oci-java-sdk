@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.osmanagement;
 
-import java.util.Locale;
 import com.oracle.bmc.osmanagement.internal.http.*;
 import com.oracle.bmc.osmanagement.requests.*;
 import com.oracle.bmc.osmanagement.responses.*;
@@ -425,7 +424,7 @@ public class OsManagementClient implements OsManagement {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);

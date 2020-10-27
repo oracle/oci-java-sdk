@@ -135,6 +135,24 @@ public class AutonomousDatabaseBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+        private String keyStoreId;
+
+        public Builder keyStoreId(String keyStoreId) {
+            this.keyStoreId = keyStoreId;
+            this.__explicitlySet__.add("keyStoreId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
+        private String keyStoreWalletName;
+
+        public Builder keyStoreWalletName(String keyStoreWalletName) {
+            this.keyStoreWalletName = keyStoreWalletName;
+            this.__explicitlySet__.add("keyStoreWalletName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -152,7 +170,9 @@ public class AutonomousDatabaseBackup {
                             lifecycleDetails,
                             databaseSizeInTBs,
                             lifecycleState,
-                            isRestorable);
+                            isRestorable,
+                            keyStoreId,
+                            keyStoreWalletName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -171,7 +191,9 @@ public class AutonomousDatabaseBackup {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .databaseSizeInTBs(o.getDatabaseSizeInTBs())
                             .lifecycleState(o.getLifecycleState())
-                            .isRestorable(o.getIsRestorable());
+                            .isRestorable(o.getIsRestorable())
+                            .keyStoreId(o.getKeyStoreId())
+                            .keyStoreWalletName(o.getKeyStoreWalletName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -349,6 +371,18 @@ public class AutonomousDatabaseBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRestorable")
     Boolean isRestorable;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+    String keyStoreId;
+
+    /**
+     * The wallet name for Oracle Key Vault.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreWalletName")
+    String keyStoreWalletName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -5,7 +5,7 @@
 package com.oracle.bmc.loggingsearch.model;
 
 /**
- * A log search result entry
+ * A log search result entry.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -59,7 +59,7 @@ public class SearchResult {
     }
 
     /**
-     * JSON blob containing the search entry with projected fields.
+     * JSON blob containing the search entry with the projected fields.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("data")
     Object data;

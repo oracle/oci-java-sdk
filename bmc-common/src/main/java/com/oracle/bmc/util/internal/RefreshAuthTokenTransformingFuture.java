@@ -4,17 +4,17 @@
  */
 package com.oracle.bmc.util.internal;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.model.BmcException;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Future that both delegates to another one and provides the ability to transform
@@ -27,14 +27,32 @@ import java.util.concurrent.TimeoutException;
  *
  * @param <FROM> The type returned by the delegate Future.
  * @param <TO> The type to convert to.
+ *
+ * @deprecated in favor of RefreshAuthTokenWrapper -- versions after 1.25.1 do not use RefreshAuthTokenTransformingFuture anymore
  */
-@RequiredArgsConstructor
+@Slf4j
 public class RefreshAuthTokenTransformingFuture<FROM, TO> implements Future<TO> {
     @NonNull private Future<FROM> delegate;
 
     private final Function<FROM, TO> transformer;
     private final RefreshableOnNotAuthenticatedProvider<?> authProvider;
     private final Supplier<Future<FROM>> generateNewFutureForRetry;
+
+    public RefreshAuthTokenTransformingFuture(
+            @NonNull Future<FROM> delegate,
+            Function<FROM, TO> transformer,
+            RefreshableOnNotAuthenticatedProvider<?> authProvider,
+            Supplier<Future<FROM>> generateNewFutureForRetry) {
+        this.delegate = delegate;
+        this.transformer = transformer;
+        this.authProvider = authProvider;
+        this.generateNewFutureForRetry = generateNewFutureForRetry;
+        LOG.warn(
+                "The class {} should not be used after version 1.25.1. You are using an oci-java-sdk-common "
+                        + "version newer than 1.25.1 with a service client of version 1.25.1 or older. Upgrade your "
+                        + "service client version to match your oci-java-sdk-common version.",
+                this.getClass().getName());
+    }
 
     @Override
     public boolean cancel(boolean mayInterruptIfRunning) {

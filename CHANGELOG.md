@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.25.2 - 2020-10-27
+### Added
+- Support for the Compute Instance Agent service
+- Support for key store resources and operations in the Database service
+- Support for specifying a key store when creating autonomous container databases in the Database service
+
+### Fixed
+- Fixed a potential data curruption problem for binary data upload with `RefreshableOnNotAuthenticatedProvider`. We recommend that you update to this version `1.25.2` or later. For details, see https://github.com/oracle/oci-java-sdk/issues/255
+
 ## 1.25.1 - 2020-10-20
 ### Added
 - Support for the Operations Insights service

@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.keymanagement;
 
-import java.util.Locale;
 import com.oracle.bmc.keymanagement.internal.http.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
@@ -810,7 +809,10 @@ public class KmsManagementClient implements KmsManagement {
     public RestoreKeyFromFileResponse restoreKeyFromFile(RestoreKeyFromFileRequest request) {
         LOG.trace("Called restoreKeyFromFile");
         try {
-            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
                         com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
                                 request, RestoreKeyFromFileRequest.builder());
@@ -845,10 +847,18 @@ public class KmsManagementClient implements KmsManagement {
                                         return transformer.apply(response);
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null) {
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
                                             com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
                                                     interceptedRequest
-                                                            .getRestoreKeyFromFileDetails());
+                                                            .getRestoreKeyFromFileDetails(),
+                                                    true);
                                         }
                                         throw e; // rethrow
                                     }
