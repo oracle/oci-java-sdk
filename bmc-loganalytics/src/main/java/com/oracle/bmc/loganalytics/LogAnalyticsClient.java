@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.loganalytics;
 
-import java.util.Locale;
 import com.oracle.bmc.loganalytics.internal.http.*;
 import com.oracle.bmc.loganalytics.requests.*;
 import com.oracle.bmc.loganalytics.responses.*;
@@ -426,7 +425,7 @@ public class LogAnalyticsClient implements LogAnalytics {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -2283,7 +2282,10 @@ public class LogAnalyticsClient implements LogAnalytics {
     public ImportCustomContentResponse importCustomContent(ImportCustomContentRequest request) {
         LOG.trace("Called importCustomContent");
         try {
-            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
                         com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
                                 request, ImportCustomContentRequest.builder());
@@ -2318,10 +2320,18 @@ public class LogAnalyticsClient implements LogAnalytics {
                                         return transformer.apply(response);
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null) {
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
                                             com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
                                                     interceptedRequest
-                                                            .getImportCustomContentFileBody());
+                                                            .getImportCustomContentFileBody(),
+                                                    true);
                                         }
                                         throw e; // rethrow
                                     }
@@ -3560,7 +3570,10 @@ public class LogAnalyticsClient implements LogAnalytics {
     public RegisterLookupResponse registerLookup(RegisterLookupRequest request) {
         LOG.trace("Called registerLookup");
         try {
-            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
                         com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
                                 request, RegisterLookupRequest.builder());
@@ -3595,10 +3608,18 @@ public class LogAnalyticsClient implements LogAnalytics {
                                         return transformer.apply(response);
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null) {
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
                                             com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
                                                     interceptedRequest
-                                                            .getRegisterLookupContentFileBody());
+                                                            .getRegisterLookupContentFileBody(),
+                                                    true);
                                         }
                                         throw e; // rethrow
                                     }
@@ -3976,7 +3997,10 @@ public class LogAnalyticsClient implements LogAnalytics {
     public UploadLogFileResponse uploadLogFile(UploadLogFileRequest request) {
         LOG.trace("Called uploadLogFile");
         try {
-            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
                         com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
                                 request, UploadLogFileRequest.builder());
@@ -4014,9 +4038,17 @@ public class LogAnalyticsClient implements LogAnalytics {
                                         return transformer.apply(response);
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null) {
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
                                             com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
-                                                    interceptedRequest.getUploadLogFileBody());
+                                                    interceptedRequest.getUploadLogFileBody(),
+                                                    true);
                                         }
                                         throw e; // rethrow
                                     }

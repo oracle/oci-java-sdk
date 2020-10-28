@@ -8,7 +8,7 @@ import com.oracle.bmc.loggingsearch.requests.*;
 import com.oracle.bmc.loggingsearch.responses.*;
 
 /**
- * Search for logs in your compartements / log groups / log objects.
+ * Search for logs in your compartments, log groups, and log objects.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 public interface LogSearchAsync extends AutoCloseable {

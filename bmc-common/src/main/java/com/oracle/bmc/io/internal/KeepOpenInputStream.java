@@ -39,6 +39,7 @@ public final class KeepOpenInputStream extends FilterInputStream {
      * @throws IOException
      */
     public void doClose() throws IOException {
+        LOG.debug("Closing stream now");
         super.close();
     }
 

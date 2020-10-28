@@ -288,6 +288,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Move the key store resource to the specified compartment.
+     * For more information about moving key stores, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeKeyStoreCompartmentResponse> changeKeyStoreCompartment(
+            ChangeKeyStoreCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeKeyStoreCompartmentRequest, ChangeKeyStoreCompartmentResponse>
+                    handler);
+
+    /**
      * To move an Exadata Cloud@Customer VM cluster and its dependent resources to another compartment, use the
      * {@link #changeVmClusterCompartment(ChangeVmClusterCompartmentRequest, Consumer, Consumer) changeVmClusterCompartment} operation.
      *
@@ -630,6 +649,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a Key Store.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateKeyStoreResponse> createKeyStore(
+            CreateKeyStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateKeyStoreRequest, CreateKeyStoreResponse>
+                    handler);
+
+    /**
      * Creates an Exadata Cloud@Customer VM cluster.
      *
      *
@@ -894,6 +929,22 @@ public interface DatabaseAsync extends AutoCloseable {
             DeleteExadataInfrastructureRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteExadataInfrastructureRequest, DeleteExadataInfrastructureResponse>
+                    handler);
+
+    /**
+     * Deletes a key store.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteKeyStoreResponse> deleteKeyStore(
+            DeleteKeyStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteKeyStoreRequest, DeleteKeyStoreResponse>
                     handler);
 
     /**
@@ -1716,6 +1767,21 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified key store.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetKeyStoreResponse> getKeyStore(
+            GetKeyStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetKeyStoreRequest, GetKeyStoreResponse> handler);
+
+    /**
      * Gets information about the specified maintenance run.
      *
      * @param request The request object containing the details to send
@@ -2446,6 +2512,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<ListGiVersionsResponse> listGiVersions(
             ListGiVersionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListGiVersionsRequest, ListGiVersionsResponse>
+                    handler);
+
+    /**
+     * Gets a list of key stores in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListKeyStoresResponse> listKeyStores(
+            ListKeyStoresRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListKeyStoresRequest, ListKeyStoresResponse>
                     handler);
 
     /**
@@ -3211,6 +3293,22 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdateExadataIormConfigRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateExadataIormConfigRequest, UpdateExadataIormConfigResponse>
+                    handler);
+
+    /**
+     * If no database is associated with the key store, edit the key store.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateKeyStoreResponse> updateKeyStore(
+            UpdateKeyStoreRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateKeyStoreRequest, UpdateKeyStoreResponse>
                     handler);
 
     /**

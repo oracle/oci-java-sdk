@@ -8,6 +8,7 @@ import com.google.common.base.Optional;
 import com.google.common.base.Suppliers;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.waiter.GenericWaiter;
+import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.mutable.MutableObject;
@@ -23,7 +24,7 @@ import java.util.function.Function;
 @Slf4j
 public class BmcGenericRetrier {
     private final GenericWaiter waiter;
-    private final RetryCondition retryCondition;
+    @Getter private final RetryCondition retryCondition;
 
     /**
      * Creates a new retrier with the given configuration.

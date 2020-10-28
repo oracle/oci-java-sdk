@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.keymanagement;
 
-import java.util.Locale;
 import com.oracle.bmc.keymanagement.internal.http.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;

@@ -26,14 +26,14 @@ public class SearchLogsRequest extends com.oracle.bmc.requests.BmcRequest<Search
 
     /**
      * The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
      * The value of the `opc-next-page` response header from the previous \"List\" call. For information about
-     * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;

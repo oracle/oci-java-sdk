@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.datascience;
 
-import java.util.Locale;
 import com.oracle.bmc.datascience.internal.http.*;
 import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
@@ -425,7 +424,7 @@ public class DataScienceClient implements DataScience {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -670,7 +669,10 @@ public class DataScienceClient implements DataScience {
     public CreateModelArtifactResponse createModelArtifact(CreateModelArtifactRequest request) {
         LOG.trace("Called createModelArtifact");
         try {
-            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
                         com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
                                 request, CreateModelArtifactRequest.builder());
@@ -708,9 +710,16 @@ public class DataScienceClient implements DataScience {
                                         return transformer.apply(response);
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null) {
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
                                             com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
-                                                    interceptedRequest.getModelArtifact());
+                                                    interceptedRequest.getModelArtifact(), true);
                                         }
                                         throw e; // rethrow
                                     }

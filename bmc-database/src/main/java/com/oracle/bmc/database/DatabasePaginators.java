@@ -4121,6 +4121,116 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listKeyStores operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListKeyStoresResponse> listKeyStoresResponseIterator(
+            final ListKeyStoresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListKeyStoresRequest.Builder, ListKeyStoresRequest, ListKeyStoresResponse>(
+                new com.google.common.base.Supplier<ListKeyStoresRequest.Builder>() {
+                    @Override
+                    public ListKeyStoresRequest.Builder get() {
+                        return ListKeyStoresRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListKeyStoresResponse, String>() {
+                    @Override
+                    public String apply(ListKeyStoresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListKeyStoresRequest.Builder>,
+                        ListKeyStoresRequest>() {
+                    @Override
+                    public ListKeyStoresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListKeyStoresRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListKeyStoresRequest, ListKeyStoresResponse>() {
+                    @Override
+                    public ListKeyStoresResponse apply(ListKeyStoresRequest request) {
+                        return client.listKeyStores(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.KeyStoreSummary} objects
+     * contained in responses from the listKeyStores operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.KeyStoreSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.KeyStoreSummary> listKeyStoresRecordIterator(
+            final ListKeyStoresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListKeyStoresRequest.Builder, ListKeyStoresRequest, ListKeyStoresResponse,
+                com.oracle.bmc.database.model.KeyStoreSummary>(
+                new com.google.common.base.Supplier<ListKeyStoresRequest.Builder>() {
+                    @Override
+                    public ListKeyStoresRequest.Builder get() {
+                        return ListKeyStoresRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListKeyStoresResponse, String>() {
+                    @Override
+                    public String apply(ListKeyStoresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListKeyStoresRequest.Builder>,
+                        ListKeyStoresRequest>() {
+                    @Override
+                    public ListKeyStoresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListKeyStoresRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListKeyStoresRequest, ListKeyStoresResponse>() {
+                    @Override
+                    public ListKeyStoresResponse apply(ListKeyStoresRequest request) {
+                        return client.listKeyStores(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListKeyStoresResponse,
+                        java.util.List<com.oracle.bmc.database.model.KeyStoreSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.KeyStoreSummary> apply(
+                            ListKeyStoresResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listMaintenanceRuns operation. This iterable
      * will fetch more data from the server as needed.
      *

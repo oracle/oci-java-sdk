@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.keymanagement;
 
-import java.util.Locale;
 import com.oracle.bmc.keymanagement.internal.http.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
@@ -425,7 +424,7 @@ public class KmsVaultClient implements KmsVault {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -657,7 +656,10 @@ public class KmsVaultClient implements KmsVault {
     public RestoreVaultFromFileResponse restoreVaultFromFile(RestoreVaultFromFileRequest request) {
         LOG.trace("Called restoreVaultFromFile");
         try {
-            if (request.getRetryConfiguration() != null || retryConfiguration != null) {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
                 request =
                         com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
                                 request, RestoreVaultFromFileRequest.builder());
@@ -692,10 +694,18 @@ public class KmsVaultClient implements KmsVault {
                                         return transformer.apply(response);
                                     } catch (RuntimeException e) {
                                         if (interceptedRequest.getRetryConfiguration() != null
-                                                || retryConfiguration != null) {
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
                                             com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
                                                     interceptedRequest
-                                                            .getRestoreVaultFromFileDetails());
+                                                            .getRestoreVaultFromFileDetails(),
+                                                    true);
                                         }
                                         throw e; // rethrow
                                     }

@@ -95,6 +95,28 @@ public final class Retriers {
      */
     @InternalSdk
     public static void tryResetStreamForRetry(InputStream body) {
+        tryResetStreamForRetry(body, false);
+    }
+
+    /**
+     * Try to reset the {@link InputStream} for the next retry, if supported. If not supported, fail if requested.
+     *
+     * If the stream supports {@link InputStream#mark(int)} and {@link InputStream#reset()}, we reset the stream so it
+     * starts at the beginning (or wherever the stream has been marked using {@link InputStream#mark(int)}.
+     *
+     * Note that this means that if the caller has used {@link InputStream#mark(int)} and the mark does not represent
+     * the place in the stream where retries should commence (if retries are requested and necessary), then incorrect
+     * data may be processed.
+     *
+     * If the stream does not support {@link InputStream#mark(int)} and {@link InputStream#reset()}, then retries
+     * will not work. Therefore, those streams should be wrapped in a {@link java.io.BufferedInputStream} before
+     * they are sent here.
+     *
+     * @param body
+     * @param failIfUnsupported if true, fail if unsupported
+     */
+    @InternalSdk
+    public static void tryResetStreamForRetry(InputStream body, boolean failIfUnsupported) {
         if (body.markSupported()) {
             LOG.debug("mark/reset is supported, resetting stream {}", body.getClass().getName());
             try {
@@ -103,9 +125,16 @@ public final class Retriers {
                 throw new RuntimeException("Failed to reset stream for next retry");
             }
         } else {
-            LOG.warn(
-                    "Stream {} does not support mark/reset, retries will not work",
-                    body.getClass().getName());
+            if (failIfUnsupported) {
+                throw new RuntimeException(
+                        String.format(
+                                "Stream {} does not support mark/reset, retries do not work",
+                                body.getClass().getName()));
+            } else {
+                LOG.warn(
+                        "Stream {} does not support mark/reset, retries will not work",
+                        body.getClass().getName());
+            }
         }
     }
 
@@ -142,6 +171,8 @@ public final class Retriers {
             T request, BmcRequest.Builder<T, InputStream> builder) {
         final java.io.InputStream body = request.getBody$();
         final java.io.InputStream wrappedStream;
+        final RetryConfiguration retryConfiguration = request.getRetryConfiguration();
+
         if (body instanceof java.io.FileInputStream
                 && com.oracle.bmc.io.internal.ResettableFileInputStream.canBeWrapped(
                         (java.io.FileInputStream) body)) {
@@ -162,8 +193,11 @@ public final class Retriers {
 
         request = builder.copy(request).body$(wrappedStream).build();
         // mark the current position of the stream so we can rewind to it if a retry is necessary
+        // The markLimit = retryConfiguration.getRetryOptions().getMarkReadLimit() reads from the requests retryConfiguration
         // The markLimit = Integer.MAX_VALUE guarantees that we can read at least that many bytes before we cannot rewind anymore.
-        wrappedStream.mark(Integer.MAX_VALUE);
+        if (retryConfiguration != null && retryConfiguration.getRetryOptions() != null) {
+            wrappedStream.mark(retryConfiguration.getRetryOptions().getMarkReadLimit());
+        } else wrappedStream.mark(Integer.MAX_VALUE);
 
         return request;
     }

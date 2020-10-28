@@ -10,6 +10,7 @@ import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
+import com.oracle.bmc.responses.AsyncHandler;
 import com.oracle.bmc.util.internal.Consumer;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
 import lombok.NonNull;
@@ -37,6 +38,7 @@ import java.io.InputStream;
 import java.io.InterruptedIOException;
 import java.util.UUID;
 import java.util.concurrent.Future;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
@@ -195,6 +197,34 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Return the function that, given an {@link AsyncHandler}, makes the get request and returns the future.
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the get request
+     */
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> getFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+        return h -> {
+            final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
+                    new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                            h, transformer, interceptedRequest);
+            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                    new com.oracle.bmc.http.internal.ErrorConsumer<>(h, interceptedRequest);
+
+            Future<Response> responseFuture = get(ib, interceptedRequest, onSuccess, onError);
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        };
+    }
+
+    /**
      * Post a request object to the endpoint represented by the web target and
      * get the response.
      *
@@ -272,6 +302,35 @@ public class RestClient implements AutoCloseable {
                                                             baseTarget, info, onSuccess, onError)))
                     .get();
         }
+    }
+
+    /**
+     * Return the function that, given an {@link AsyncHandler}, makes the post request and returns the future
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the post request
+     */
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> postFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+        return h -> {
+            final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
+                    new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                            h, transformer, interceptedRequest);
+            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                    new com.oracle.bmc.http.internal.ErrorConsumer<>(h, interceptedRequest);
+
+            Future<Response> responseFuture =
+                    post(ib, interceptedRequest.getBody$(), interceptedRequest, onSuccess, onError);
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        };
     }
 
     /**
@@ -411,6 +470,40 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Return the function that, given an {@link AsyncHandler}, makes the patch request and returns the future
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the patch request
+     */
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> patchFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+        return h -> {
+            final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
+                    new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                            h, transformer, interceptedRequest);
+            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                    new com.oracle.bmc.http.internal.ErrorConsumer<>(h, interceptedRequest);
+
+            Future<Response> responseFuture =
+                    patch(
+                            ib,
+                            interceptedRequest.getBody$(),
+                            interceptedRequest,
+                            onSuccess,
+                            onError);
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        };
+    }
+
+    /**
      * Put a request object without body to the endpoint represented by the web target and
      * get the response.
      *
@@ -522,6 +615,35 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Return the function that, given an {@link AsyncHandler}, makes the put request and returns the future
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the put request
+     */
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> putFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+        return h -> {
+            final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
+                    new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                            h, transformer, interceptedRequest);
+            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                    new com.oracle.bmc.http.internal.ErrorConsumer<>(h, interceptedRequest);
+
+            Future<Response> responseFuture =
+                    put(ib, interceptedRequest.getBody$(), interceptedRequest, onSuccess, onError);
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        };
+    }
+
+    /**
      * Execute a delete on a resource and get the response.
      *
      * @param ib
@@ -578,6 +700,34 @@ public class RestClient implements AutoCloseable {
                                                             baseTarget, info, onSuccess, onError)))
                     .get();
         }
+    }
+
+    /**
+     * Return the function that, given an {@link AsyncHandler}, makes the delete request and returns the future.
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the post request
+     */
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> deleteFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+        return h -> {
+            final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
+                    new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                            h, transformer, interceptedRequest);
+            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                    new com.oracle.bmc.http.internal.ErrorConsumer<>(h, interceptedRequest);
+
+            Future<Response> responseFuture = delete(ib, interceptedRequest, onSuccess, onError);
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        };
     }
 
     /**
@@ -638,6 +788,34 @@ public class RestClient implements AutoCloseable {
                                                             baseTarget, info, onSuccess, onError)))
                     .get();
         }
+    }
+
+    /**
+     * Return the function that, given an {@link AsyncHandler}, makes the head request and returns the future.
+     * @param interceptedRequest intercepted request
+     * @param ib invocation builder
+     * @param transformer transformer from JAX-RS response to model response
+     * @param <B> type of the body
+     * @param <REQUEST> type of the request
+     * @param <RESPONSE> type of the response
+     * @return future for the head request
+     */
+    public <B, REQUEST extends BmcRequest<B>, RESPONSE>
+            Function<AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE>> headFutureSupplier(
+                    REQUEST interceptedRequest,
+                    WrappedInvocationBuilder ib,
+                    com.google.common.base.Function<Response, RESPONSE> transformer) {
+        return h -> {
+            final com.oracle.bmc.util.internal.Consumer<Response> onSuccess =
+                    new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                            h, transformer, interceptedRequest);
+            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                    new com.oracle.bmc.http.internal.ErrorConsumer<>(h, interceptedRequest);
+
+            Future<Response> responseFuture = head(ib, interceptedRequest, onSuccess, onError);
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        };
     }
 
     /**
@@ -924,7 +1102,7 @@ public class RestClient implements AutoCloseable {
             try {
                 onSuccess.accept(response);
             } catch (Exception e) {
-                LOG.debug("Failure during success handling");
+                LOG.debug("Failure during success handling", e);
                 failed(e);
             }
         }
