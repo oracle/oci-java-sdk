@@ -91,11 +91,18 @@ public final class Retriers {
      * will not work. Therefore, those streams should be wrapped in a {@link java.io.BufferedInputStream} before
      * they are sent here.
      *
+     * If the stream does not support being reset, this method throws an IllegalArgumentException. This is never
+     * the case using the auto-generated code, since streams are always wrapped and/or buffered appropriately.
+     * It could happen if someone sent in a {@link com.oracle.bmc.io.internal.KeepOpenInputStream} directly,
+     * but users are not supposed to do that, since it's an internal class.
+     *
      * @param body
+     * @throws IllegalArgumentException if stream does not support being reset
+     * @throws RuntimeException if stream does support being reset, but the reset failed
      */
     @InternalSdk
     public static void tryResetStreamForRetry(InputStream body) {
-        tryResetStreamForRetry(body, false);
+        tryResetStreamForRetry(body, true);
     }
 
     /**
@@ -114,6 +121,8 @@ public final class Retriers {
      *
      * @param body
      * @param failIfUnsupported if true, fail if unsupported
+     * @throws IllegalArgumentException if stream does not support being reset and failIfUnsupported is true
+     * @throws RuntimeException if stream does support being reset, but the reset failed
      */
     @InternalSdk
     public static void tryResetStreamForRetry(InputStream body, boolean failIfUnsupported) {
@@ -170,9 +179,52 @@ public final class Retriers {
     public static <T extends BmcRequest<InputStream>> T wrapBodyInputStreamIfNecessary(
             T request, BmcRequest.Builder<T, InputStream> builder) {
         final java.io.InputStream body = request.getBody$();
-        final java.io.InputStream wrappedStream;
-        final RetryConfiguration retryConfiguration = request.getRetryConfiguration();
 
+        final InputStream wrappedStream = wrapInputStreamForRetry(body);
+
+        request = builder.copy(request).body$(wrappedStream).build();
+
+        // mark the current position of the stream so we can rewind to it if a retry is necessary
+        // The markLimit = retryConfiguration.getRetryOptions().getMarkReadLimit() reads from the requests retryConfiguration
+        // The markLimit = Integer.MAX_VALUE guarantees that we can read at least that many bytes before we cannot rewind anymore.
+        final RetryConfiguration retryConfiguration = request.getRetryConfiguration();
+        if (retryConfiguration != null && retryConfiguration.getRetryOptions() != null) {
+            wrappedStream.mark(retryConfiguration.getRetryOptions().getMarkReadLimit());
+        } else {
+            wrappedStream.mark(Integer.MAX_VALUE);
+        }
+
+        return request;
+    }
+
+    /**
+     * Wrap the input stream so retries can work.
+     *
+     * Note: The stream in the request may be wrapped in a {@link com.oracle.bmc.io.internal.KeepOpenInputStream},
+     * which prevents a call to {@code close()} from actually closing the stream (this is necessary, since a closed
+     * stream would not be able to serve in a potentially required retry).
+     *
+     * After using this method, you now have to close the stream in a {@code try-finally} block that calls
+     * {@link com.oracle.bmc.io.internal.KeepOpenInputStream#closeStream(InputStream)}.
+     *
+     * Example:
+     *
+     * <pre>
+     * <code>try {
+     *     stream = Retriers.wrapInputStreamForRetry(stream);
+     *     ...
+     * } finally {
+     *     com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(stream);
+     * }
+     * </code>
+     * </pre>
+     *
+     * @param body input stream body
+     * @return the input stream wrapped
+     */
+    @InternalSdk
+    public static InputStream wrapInputStreamForRetry(InputStream body) {
+        final InputStream wrappedStream;
         if (body instanceof java.io.FileInputStream
                 && com.oracle.bmc.io.internal.ResettableFileInputStream.canBeWrapped(
                         (java.io.FileInputStream) body)) {
@@ -190,15 +242,6 @@ public final class Retriers {
         } else {
             wrappedStream = new com.oracle.bmc.io.internal.KeepOpenInputStream(body);
         }
-
-        request = builder.copy(request).body$(wrappedStream).build();
-        // mark the current position of the stream so we can rewind to it if a retry is necessary
-        // The markLimit = retryConfiguration.getRetryOptions().getMarkReadLimit() reads from the requests retryConfiguration
-        // The markLimit = Integer.MAX_VALUE guarantees that we can read at least that many bytes before we cannot rewind anymore.
-        if (retryConfiguration != null && retryConfiguration.getRetryOptions() != null) {
-            wrappedStream.mark(retryConfiguration.getRetryOptions().getMarkReadLimit());
-        } else wrappedStream.mark(Integer.MAX_VALUE);
-
-        return request;
+        return wrappedStream;
     }
 }

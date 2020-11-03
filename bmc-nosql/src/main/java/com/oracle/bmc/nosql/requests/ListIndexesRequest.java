@@ -45,6 +45,7 @@ public class ListIndexesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Inactive("INACTIVE"),
         ;
 
         private final String value;

@@ -13,7 +13,7 @@ public class RequestSummarizedUsagesRequest
         extends com.oracle.bmc.requests.BmcRequest<RequestSummarizedUsagesDetails> {
 
     /**
-     * getUsageRequest contain query inforamtion
+     * getUsageRequest contains query inforamtion.
      *
      */
     private RequestSummarizedUsagesDetails requestSummarizedUsagesDetails;

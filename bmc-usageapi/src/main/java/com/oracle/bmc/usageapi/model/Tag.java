@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The tag use for filtering.
+ * The tag used for filtering.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -83,13 +83,13 @@ public class Tag {
     String namespace;
 
     /**
-     * The key of the tag.
+     * The tag key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     String key;
 
     /**
-     * The value of the tag.
+     * The tag value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     String value;

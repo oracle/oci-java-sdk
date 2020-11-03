@@ -87,6 +87,24 @@ public class Table {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
+        private Boolean isAutoReclaimable;
+
+        public Builder isAutoReclaimable(Boolean isAutoReclaimable) {
+            this.isAutoReclaimable = isAutoReclaimable;
+            this.__explicitlySet__.add("isAutoReclaimable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
+        private java.util.Date timeOfExpiration;
+
+        public Builder timeOfExpiration(java.util.Date timeOfExpiration) {
+            this.timeOfExpiration = timeOfExpiration;
+            this.__explicitlySet__.add("timeOfExpiration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -133,6 +151,15 @@ public class Table {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -146,11 +173,14 @@ public class Table {
                             timeUpdated,
                             tableLimits,
                             lifecycleState,
+                            isAutoReclaimable,
+                            timeOfExpiration,
                             lifecycleDetails,
                             schema,
                             ddlStatement,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            systemTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -165,11 +195,14 @@ public class Table {
                             .timeUpdated(o.getTimeUpdated())
                             .tableLimits(o.getTableLimits())
                             .lifecycleState(o.getLifecycleState())
+                            .isAutoReclaimable(o.getIsAutoReclaimable())
+                            .timeOfExpiration(o.getTimeOfExpiration())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .schema(o.getSchema())
                             .ddlStatement(o.getDdlStatement())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -230,6 +263,7 @@ public class Table {
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Inactive("INACTIVE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -276,6 +310,21 @@ public class Table {
     LifecycleState lifecycleState;
 
     /**
+     * True if this table can be reclaimed after an idle period.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
+    Boolean isAutoReclaimable;
+
+    /**
+     * If lifecycleState is INACTIVE, indicates when
+     * this table will be automatically removed.
+     * An RFC3339 formatted datetime string.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
+    java.util.Date timeOfExpiration;
+
+    /**
      * A message describing the current state in more detail.
      *
      **/
@@ -308,6 +357,17 @@ public class Table {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Read-only system tag. These predefined keys are scoped to
+     * namespaces.  At present the only supported namespace is
+     * `\"orcl-cloud\"`; and the only key in that namespace is
+     * `\"free-tier-retained\"`.
+     * Example: `{\"orcl-cloud\"\": {\"free-tier-retained\": \"true\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

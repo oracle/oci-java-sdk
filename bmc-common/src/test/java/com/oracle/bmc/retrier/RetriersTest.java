@@ -31,7 +31,7 @@ public class RetriersTest {
     public void testTryResetStreamForRetry_CanReset() throws IOException {
         when(is.markSupported()).thenReturn(true);
 
-        Retriers.tryResetStreamForRetry(is);
+        Retriers.tryResetStreamForRetry(is, true);
 
         verify(is).markSupported();
         verify(is).reset();

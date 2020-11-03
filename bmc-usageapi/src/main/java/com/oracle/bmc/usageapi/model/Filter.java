@@ -90,7 +90,7 @@ public class Filter {
     }
 
     /**
-     * The operator of the filter. Example: 'AND', 'OR', 'NOT'.
+     * The filter operator. Example: 'AND', 'OR', 'NOT'.
      **/
     public enum Operator {
         And("AND"),
@@ -126,7 +126,7 @@ public class Filter {
         }
     };
     /**
-     * The operator of the filter. Example: 'AND', 'OR', 'NOT'.
+     * The filter operator. Example: 'AND', 'OR', 'NOT'.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     Operator operator;

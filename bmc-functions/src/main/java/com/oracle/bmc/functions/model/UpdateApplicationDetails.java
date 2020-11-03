@@ -36,6 +36,15 @@ public class UpdateApplicationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
+        private String syslogUrl;
+
+        public Builder syslogUrl(String syslogUrl) {
+            this.syslogUrl = syslogUrl;
+            this.__explicitlySet__.add("syslogUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -60,7 +69,7 @@ public class UpdateApplicationDetails {
 
         public UpdateApplicationDetails build() {
             UpdateApplicationDetails __instance__ =
-                    new UpdateApplicationDetails(config, freeformTags, definedTags);
+                    new UpdateApplicationDetails(config, syslogUrl, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -69,6 +78,7 @@ public class UpdateApplicationDetails {
         public Builder copy(UpdateApplicationDetails o) {
             Builder copiedBuilder =
                     config(o.getConfig())
+                            .syslogUrl(o.getSyslogUrl())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -95,6 +105,17 @@ public class UpdateApplicationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     java.util.Map<String, String> config;
+
+    /**
+     * A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
+     * The syslog URL must be reachable from all of the subnets configured for the application.
+     * Note: If you enable the OCI Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the OCI Logging service, and not to the syslog URL.
+     * <p>
+     * Example: `tcp://logserver.myserver:1234`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("syslogUrl")
+    String syslogUrl;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
