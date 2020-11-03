@@ -143,6 +143,7 @@ public class ListTablesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Inactive("INACTIVE"),
         ;
 
         private final String value;

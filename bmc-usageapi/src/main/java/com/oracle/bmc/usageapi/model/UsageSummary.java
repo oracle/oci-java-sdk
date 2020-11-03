@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The result from usage store.
+ * The usage store result.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -24,6 +24,24 @@ public class UsageSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
+        private String tenantId;
+
+        public Builder tenantId(String tenantId) {
+            this.tenantId = tenantId;
+            this.__explicitlySet__.add("tenantId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
+        private String tenantName;
+
+        public Builder tenantName(String tenantName) {
+            this.tenantName = tenantName;
+            this.__explicitlySet__.add("tenantName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -264,6 +282,8 @@ public class UsageSummary {
         public UsageSummary build() {
             UsageSummary __instance__ =
                     new UsageSummary(
+                            tenantId,
+                            tenantName,
                             compartmentId,
                             compartmentPath,
                             compartmentName,
@@ -297,7 +317,9 @@ public class UsageSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UsageSummary o) {
             Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
+                    tenantId(o.getTenantId())
+                            .tenantName(o.getTenantName())
+                            .compartmentId(o.getCompartmentId())
                             .compartmentPath(o.getCompartmentPath())
                             .compartmentName(o.getCompartmentName())
                             .service(o.getService())
@@ -337,37 +359,49 @@ public class UsageSummary {
     }
 
     /**
-     * The OCID of the compartment.
+     * The tenancy OCID.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
+    String tenantId;
+
+    /**
+     * The tenancy name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
+    String tenantName;
+
+    /**
+     * The compartment OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The path of the compartment, starting from root.
+     * The compartment path, starting from root.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentPath")
     String compartmentPath;
 
     /**
-     * The name of the compartment.
+     * The compartment name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
     String compartmentName;
 
     /**
-     * The name of the service that is incurring the cost.
+     * The service name that is incurring the cost.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     String service;
 
     /**
-     * The name of the resource that is incurring the cost.
+     * The resource name that is incurring the cost.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     String resourceName;
 
     /**
-     * The Ocid of the resource that is incurring the cost.
+     * The resource OCID that is incurring the cost.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     String resourceId;
@@ -385,31 +419,31 @@ public class UsageSummary {
     String ad;
 
     /**
-     * The size of resource being metered.
+     * The resource size being metered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     java.math.BigDecimal weight;
 
     /**
-     * The shape of the resource.
+     * The resource shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
 
     /**
-     * The part number of the SKU.
+     * The SKU part number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuPartNumber")
     String skuPartNumber;
 
     /**
-     * The friendly name for the SKU.
+     * The SKU friendly name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuName")
     String skuName;
 
     /**
-     * The unit of the usage.
+     * The usage unit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     String unit;
@@ -421,7 +455,7 @@ public class UsageSummary {
     java.math.BigDecimal discount;
 
     /**
-     * The list rate for the SKU (not discount).
+     * The SKU list rate (not discount).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listRate")
     java.math.BigDecimal listRate;
@@ -433,13 +467,13 @@ public class UsageSummary {
     String platform;
 
     /**
-     * The start time of the usage.
+     * The usage start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
     java.util.Date timeUsageStarted;
 
     /**
-     * The end time of the usage.
+     * The usage end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
     java.util.Date timeUsageEnded;
@@ -469,13 +503,13 @@ public class UsageSummary {
     java.math.BigDecimal unitPrice;
 
     /**
-     * The currency for the price.
+     * The price currency.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
     String currency;
 
     /**
-     * The subscription Id.
+     * The subscription ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     String subscriptionId;
@@ -487,7 +521,7 @@ public class UsageSummary {
     String overage;
 
     /**
-     * For grouping, a tag definition. For filtering, a definition and key
+     * For grouping, a tag definition. For filtering, a definition and key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     java.util.List<Tag> tags;

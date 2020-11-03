@@ -5,7 +5,7 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * details for the '/usage' query
+ * Details for the '/usage' query.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -141,28 +141,28 @@ public class RequestSummarizedUsagesDetails {
     }
 
     /**
-     * tenant id
+     * Tenant ID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     String tenantId;
 
     /**
-     * The start time of the usage.
+     * The usage start time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
     java.util.Date timeUsageStarted;
 
     /**
-     * The end time of the usage.
+     * The usage end time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
     java.util.Date timeUsageEnded;
     /**
-     * The granularity of the usage.
-     * HOURLY - Hourly aggregation of data
-     * DAILY - Daily aggregation of data
-     * MONTHLY - Monthly aggregation of data
-     * TOTAL - Not Supported Yet
+     * The usage granularity.
+     * HOURLY - Hourly data aggregation.
+     * DAILY - Daily data aggregation.
+     * MONTHLY - Monthly data aggregation.
+     * TOTAL - Not yet supported.
      *
      **/
     public enum Granularity {
@@ -200,19 +200,19 @@ public class RequestSummarizedUsagesDetails {
         }
     };
     /**
-     * The granularity of the usage.
-     * HOURLY - Hourly aggregation of data
-     * DAILY - Daily aggregation of data
-     * MONTHLY - Monthly aggregation of data
-     * TOTAL - Not Supported Yet
+     * The usage granularity.
+     * HOURLY - Hourly data aggregation.
+     * DAILY - Daily data aggregation.
+     * MONTHLY - Monthly data aggregation.
+     * TOTAL - Not yet supported.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("granularity")
     Granularity granularity;
     /**
-     * The type of query of the usage.
+     * The query usage type.
      * Usage - Query the usage data.
-     * Cost - Query the cost / billing data.
+     * Cost - Query the cost/billing data.
      *
      **/
     public enum QueryType {
@@ -248,9 +248,9 @@ public class RequestSummarizedUsagesDetails {
         }
     };
     /**
-     * The type of query of the usage.
+     * The query usage type.
      * Usage - Query the usage data.
-     * Cost - Query the cost / billing data.
+     * Cost - Query the cost/billing data.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
@@ -266,7 +266,7 @@ public class RequestSummarizedUsagesDetails {
     java.util.List<String> groupBy;
 
     /**
-     * The depth level of the compartment.
+     * The compartment depth level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
     java.math.BigDecimal compartmentDepth;

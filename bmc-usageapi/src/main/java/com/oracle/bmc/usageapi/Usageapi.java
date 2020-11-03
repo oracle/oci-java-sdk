@@ -8,7 +8,7 @@ import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
 
 /**
- * A description of the UsageApi API.
+ * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the dimension of your choosing. The Usage API is used by the Cost Analysis tool in the Console.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public interface Usageapi extends AutoCloseable {
@@ -46,7 +46,7 @@ public interface Usageapi extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Returns the list of config for UI dropdown list
+     * Returns the configurations list for the UI drop-down list.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -56,7 +56,7 @@ public interface Usageapi extends AutoCloseable {
             RequestSummarizedConfigurationsRequest request);
 
     /**
-     * Returns the usage for the given account
+     * Returns usage for the given account.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

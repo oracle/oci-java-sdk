@@ -52,7 +52,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String displayName;
 
     /**
-     * A filter to return only applications with the specfied OCID.
+     * A filter to return only applications with the specified OCID.
      *
      */
     private String id;

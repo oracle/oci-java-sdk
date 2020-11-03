@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.25.3 - 2020-11-03
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the uk-cardiff-1 region
+- Support for the Organizations service
+- Support for the Optimizer service
+- Support for tenancy ID and name on responses in the Usage service
+- Support for object versioning in object lifecycle management in the Object Storage service
+- Support for specifying a syslog URL for applications in the Functions service
+- Support for creation of always-free NoSQL database tables in the NoSQL Database service
+
 ## 1.25.2 - 2020-10-27
 ### Added
 - Support for the Compute Instance Agent service

@@ -33,18 +33,40 @@ public class TableCollection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maxAutoReclaimableTables")
+        private Integer maxAutoReclaimableTables;
+
+        public Builder maxAutoReclaimableTables(Integer maxAutoReclaimableTables) {
+            this.maxAutoReclaimableTables = maxAutoReclaimableTables;
+            this.__explicitlySet__.add("maxAutoReclaimableTables");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoReclaimableTables")
+        private Integer autoReclaimableTables;
+
+        public Builder autoReclaimableTables(Integer autoReclaimableTables) {
+            this.autoReclaimableTables = autoReclaimableTables;
+            this.__explicitlySet__.add("autoReclaimableTables");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TableCollection build() {
-            TableCollection __instance__ = new TableCollection(items);
+            TableCollection __instance__ =
+                    new TableCollection(items, maxAutoReclaimableTables, autoReclaimableTables);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TableCollection o) {
-            Builder copiedBuilder = items(o.getItems());
+            Builder copiedBuilder =
+                    items(o.getItems())
+                            .maxAutoReclaimableTables(o.getMaxAutoReclaimableTables())
+                            .autoReclaimableTables(o.getAutoReclaimableTables());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -63,6 +85,18 @@ public class TableCollection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<TableSummary> items;
+
+    /**
+     * The maximum number of reclaimable tables allowed in the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxAutoReclaimableTables")
+    Integer maxAutoReclaimableTables;
+
+    /**
+     * The current number of reclaimable tables in the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoReclaimableTables")
+    Integer autoReclaimableTables;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

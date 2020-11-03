@@ -492,7 +492,7 @@ public class RequestSignerImpl implements RequestSigner {
             return ByteStreams.toByteArray(duplicatedBody);
         } else if (body instanceof KeepOpenInputStream) {
             byte[] byteArr = ByteStreams.toByteArray((KeepOpenInputStream) body);
-            Retriers.tryResetStreamForRetry((InputStream) body);
+            Retriers.tryResetStreamForRetry((InputStream) body, true);
             return byteArr;
         } else if (body instanceof InputStream) {
             // TODO: Allow input streams to be signed, but for now restrict to DIS until we can refactor

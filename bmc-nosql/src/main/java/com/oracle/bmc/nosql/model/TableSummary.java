@@ -96,6 +96,24 @@ public class TableSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
+        private Boolean isAutoReclaimable;
+
+        public Builder isAutoReclaimable(Boolean isAutoReclaimable) {
+            this.isAutoReclaimable = isAutoReclaimable;
+            this.__explicitlySet__.add("isAutoReclaimable");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
+        private java.util.Date timeOfExpiration;
+
+        public Builder timeOfExpiration(java.util.Date timeOfExpiration) {
+            this.timeOfExpiration = timeOfExpiration;
+            this.__explicitlySet__.add("timeOfExpiration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -115,6 +133,15 @@ public class TableSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -129,8 +156,11 @@ public class TableSummary {
                             tableLimits,
                             lifecycleState,
                             lifecycleDetails,
+                            isAutoReclaimable,
+                            timeOfExpiration,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            systemTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -146,8 +176,11 @@ public class TableSummary {
                             .tableLimits(o.getTableLimits())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .isAutoReclaimable(o.getIsAutoReclaimable())
+                            .timeOfExpiration(o.getTimeOfExpiration())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -212,6 +245,21 @@ public class TableSummary {
     String lifecycleDetails;
 
     /**
+     * True if this table can be reclaimed after an idle period.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
+    Boolean isAutoReclaimable;
+
+    /**
+     * If lifecycleState is INACTIVE, indicates when
+     * this table will be automatically removed.
+     * An RFC3339 formatted datetime string.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
+    java.util.Date timeOfExpiration;
+
+    /**
      * Simple key-value pair that is applied without any predefined
      * name, type or scope. Exists for cross-compatibility only.
      * Example: `{\"bar-key\": \"value\"}`
@@ -228,6 +276,17 @@ public class TableSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Read-only system tag. These predefined keys are scoped to
+     * namespaces.  At present the only supported namespace is
+     * `\"orcl-cloud\"`; and the only key in that namespace is
+     * `\"free-tier-retained\"`.
+     * Example: `{\"orcl-cloud\"\": {\"free-tier-retained\": \"true\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -62,6 +62,15 @@ public class CreateTableDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
+        private Boolean isAutoReclaimable;
+
+        public Builder isAutoReclaimable(Boolean isAutoReclaimable) {
+            this.isAutoReclaimable = isAutoReclaimable;
+            this.__explicitlySet__.add("isAutoReclaimable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -91,6 +100,7 @@ public class CreateTableDetails {
                             compartmentId,
                             ddlStatement,
                             tableLimits,
+                            isAutoReclaimable,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -104,6 +114,7 @@ public class CreateTableDetails {
                             .compartmentId(o.getCompartmentId())
                             .ddlStatement(o.getDdlStatement())
                             .tableLimits(o.getTableLimits())
+                            .isAutoReclaimable(o.getIsAutoReclaimable())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -139,6 +150,12 @@ public class CreateTableDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("tableLimits")
     TableLimits tableLimits;
+
+    /**
+     * True if table can be reclaimed after an idle period.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoReclaimable")
+    Boolean isAutoReclaimable;
 
     /**
      * Simple key-value pair that is applied without any predefined
