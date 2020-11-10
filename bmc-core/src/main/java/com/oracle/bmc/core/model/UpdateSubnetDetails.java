@@ -81,6 +81,15 @@ public class UpdateSubnetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
+        private String cidrBlock;
+
+        public Builder cidrBlock(String cidrBlock) {
+            this.cidrBlock = cidrBlock;
+            this.__explicitlySet__.add("cidrBlock");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -92,7 +101,8 @@ public class UpdateSubnetDetails {
                             displayName,
                             freeformTags,
                             routeTableId,
-                            securityListIds);
+                            securityListIds,
+                            cidrBlock);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -105,7 +115,8 @@ public class UpdateSubnetDetails {
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .routeTableId(o.getRouteTableId())
-                            .securityListIds(o.getSecurityListIds());
+                            .securityListIds(o.getSecurityListIds())
+                            .cidrBlock(o.getCidrBlock());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -170,6 +181,21 @@ public class UpdateSubnetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
     java.util.List<String> securityListIds;
+
+    /**
+     * The CIDR IP address block of the Subnet. The CIDR must maintain the following rules -
+     * <p>
+     * a. The CIDR block is valid and correctly formatted.
+     * b. The new range is within one of the parent VCN ranges.
+     * c. The old and new CIDR ranges both use the same base address. Example: 10.0.0.0/25 and 10.0.0.0/24.
+     * d. The new CIDR range contains all previously allocated private IP addresses in the old CIDR range.
+     * e. No previously allocated IP address overlaps the broadcast address (the last IP of a subnet CIDR range) of the new CIDR range.
+     * <p>
+     * Example: `172.16.0.0/16`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
+    String cidrBlock;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -362,6 +362,231 @@ public class DnsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listResolverEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListResolverEndpointsResponse> listResolverEndpointsResponseIterator(
+            final ListResolverEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResolverEndpointsRequest.Builder, ListResolverEndpointsRequest,
+                ListResolverEndpointsResponse>(
+                new com.google.common.base.Supplier<ListResolverEndpointsRequest.Builder>() {
+                    @Override
+                    public ListResolverEndpointsRequest.Builder get() {
+                        return ListResolverEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListResolverEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListResolverEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResolverEndpointsRequest.Builder>,
+                        ListResolverEndpointsRequest>() {
+                    @Override
+                    public ListResolverEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResolverEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResolverEndpointsRequest, ListResolverEndpointsResponse>() {
+                    @Override
+                    public ListResolverEndpointsResponse apply(
+                            ListResolverEndpointsRequest request) {
+                        return client.listResolverEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.ResolverEndpointSummary} objects
+     * contained in responses from the listResolverEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.ResolverEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dns.model.ResolverEndpointSummary>
+            listResolverEndpointsRecordIterator(final ListResolverEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResolverEndpointsRequest.Builder, ListResolverEndpointsRequest,
+                ListResolverEndpointsResponse, com.oracle.bmc.dns.model.ResolverEndpointSummary>(
+                new com.google.common.base.Supplier<ListResolverEndpointsRequest.Builder>() {
+                    @Override
+                    public ListResolverEndpointsRequest.Builder get() {
+                        return ListResolverEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListResolverEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListResolverEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResolverEndpointsRequest.Builder>,
+                        ListResolverEndpointsRequest>() {
+                    @Override
+                    public ListResolverEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResolverEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResolverEndpointsRequest, ListResolverEndpointsResponse>() {
+                    @Override
+                    public ListResolverEndpointsResponse apply(
+                            ListResolverEndpointsRequest request) {
+                        return client.listResolverEndpoints(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResolverEndpointsResponse,
+                        java.util.List<com.oracle.bmc.dns.model.ResolverEndpointSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dns.model.ResolverEndpointSummary> apply(
+                            ListResolverEndpointsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listResolvers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListResolversResponse> listResolversResponseIterator(
+            final ListResolversRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResolversRequest.Builder, ListResolversRequest, ListResolversResponse>(
+                new com.google.common.base.Supplier<ListResolversRequest.Builder>() {
+                    @Override
+                    public ListResolversRequest.Builder get() {
+                        return ListResolversRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListResolversResponse, String>() {
+                    @Override
+                    public String apply(ListResolversResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResolversRequest.Builder>,
+                        ListResolversRequest>() {
+                    @Override
+                    public ListResolversRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResolversRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListResolversRequest, ListResolversResponse>() {
+                    @Override
+                    public ListResolversResponse apply(ListResolversRequest request) {
+                        return client.listResolvers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.ResolverSummary} objects
+     * contained in responses from the listResolvers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.ResolverSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dns.model.ResolverSummary> listResolversRecordIterator(
+            final ListResolversRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResolversRequest.Builder, ListResolversRequest, ListResolversResponse,
+                com.oracle.bmc.dns.model.ResolverSummary>(
+                new com.google.common.base.Supplier<ListResolversRequest.Builder>() {
+                    @Override
+                    public ListResolversRequest.Builder get() {
+                        return ListResolversRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListResolversResponse, String>() {
+                    @Override
+                    public String apply(ListResolversResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResolversRequest.Builder>,
+                        ListResolversRequest>() {
+                    @Override
+                    public ListResolversRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResolversRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListResolversRequest, ListResolversResponse>() {
+                    @Override
+                    public ListResolversResponse apply(ListResolversRequest request) {
+                        return client.listResolvers(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListResolversResponse,
+                        java.util.List<com.oracle.bmc.dns.model.ResolverSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dns.model.ResolverSummary> apply(
+                            ListResolversResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSteeringPolicies operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -704,6 +929,114 @@ public class DnsPaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.dns.model.TsigKeySummary> apply(
                             ListTsigKeysResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listViews operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListViewsResponse> listViewsResponseIterator(final ListViewsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListViewsRequest.Builder, ListViewsRequest, ListViewsResponse>(
+                new com.google.common.base.Supplier<ListViewsRequest.Builder>() {
+                    @Override
+                    public ListViewsRequest.Builder get() {
+                        return ListViewsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListViewsResponse, String>() {
+                    @Override
+                    public String apply(ListViewsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListViewsRequest.Builder>,
+                        ListViewsRequest>() {
+                    @Override
+                    public ListViewsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListViewsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListViewsRequest, ListViewsResponse>() {
+                    @Override
+                    public ListViewsResponse apply(ListViewsRequest request) {
+                        return client.listViews(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.ViewSummary} objects
+     * contained in responses from the listViews operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.ViewSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dns.model.ViewSummary> listViewsRecordIterator(
+            final ListViewsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListViewsRequest.Builder, ListViewsRequest, ListViewsResponse,
+                com.oracle.bmc.dns.model.ViewSummary>(
+                new com.google.common.base.Supplier<ListViewsRequest.Builder>() {
+                    @Override
+                    public ListViewsRequest.Builder get() {
+                        return ListViewsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListViewsResponse, String>() {
+                    @Override
+                    public String apply(ListViewsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListViewsRequest.Builder>,
+                        ListViewsRequest>() {
+                    @Override
+                    public ListViewsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListViewsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListViewsRequest, ListViewsResponse>() {
+                    @Override
+                    public ListViewsResponse apply(ListViewsRequest request) {
+                        return client.listViews(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListViewsResponse, java.util.List<com.oracle.bmc.dns.model.ViewSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dns.model.ViewSummary> apply(
+                            ListViewsResponse response) {
                         return response.getItems();
                     }
                 });

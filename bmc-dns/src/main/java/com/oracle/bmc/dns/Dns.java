@@ -48,6 +48,17 @@ public interface Dns extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a resolver into a different compartment along with its protected default view and any endpoints.
+     * Zones in the default view are not moved.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeResolverCompartmentResponse changeResolverCompartment(
+            ChangeResolverCompartmentRequest request);
+
+    /**
      * Moves a steering policy into a different compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -66,13 +77,33 @@ public interface Dns extends AutoCloseable {
             ChangeTsigKeyCompartmentRequest request);
 
     /**
-     * Moves a zone into a different compartment.
-     * **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
+     * Moves a view into a different compartment. Protected views cannot have their compartment changed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeViewCompartmentResponse changeViewCompartment(ChangeViewCompartmentRequest request);
+
+    /**
+     * Moves a zone into a different compartment. Protected zones cannot have their compartment changed.
+     * <p>
+     **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     ChangeZoneCompartmentResponse changeZoneCompartment(ChangeZoneCompartmentRequest request);
+
+    /**
+     * Creates a new resolver endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateResolverEndpointResponse createResolverEndpoint(CreateResolverEndpointRequest request);
 
     /**
      * Creates a new steering policy in the specified compartment. For more information on
@@ -110,9 +141,18 @@ public interface Dns extends AutoCloseable {
     CreateTsigKeyResponse createTsigKey(CreateTsigKeyRequest request);
 
     /**
-     * Creates a new zone in the specified compartment. The `compartmentId`
-     * query parameter is required if the `Content-Type` header for the
-     * request is `text/dns`.
+     * Creates a new view in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateViewResponse createView(CreateViewRequest request);
+
+    /**
+     * Creates a new zone in the specified compartment. If the `Content-Type` header for the request is `text/dns`, the
+     * `compartmentId` query parameter is required. Additionally, for `text/dns`, the `scope` and `viewId` query
+     * parameters are required to create a private zone.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -136,6 +176,17 @@ public interface Dns extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteRRSetResponse deleteRRSet(DeleteRRSetRequest request);
+
+    /**
+     * Deletes the specified resolver endpoint. Note that attempting to delete a resolver endpoint in the
+     * DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
+     * Resolver endpoints may not be deleted if they are referenced by a resolver rule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteResolverEndpointResponse deleteResolverEndpoint(DeleteResolverEndpointRequest request);
 
     /**
      * Deletes the specified steering policy.
@@ -170,8 +221,22 @@ public interface Dns extends AutoCloseable {
     DeleteTsigKeyResponse deleteTsigKey(DeleteTsigKeyRequest request);
 
     /**
+     * Deletes the specified view. Note that attempting to delete a
+     * view in the DELETED lifecycleState will result in a 404 to be
+     * consistent with other operations of the API. Views can not be
+     * deleted if they are referenced by non-deleted zones or resolvers.
+     * Protected views cannot be deleted.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteViewResponse deleteView(DeleteViewRequest request);
+
+    /**
      * Deletes the specified zone and all its steering policy attachments.
-     * A `204` response indicates that zone has been successfully deleted.
+     * A `204` response indicates that the zone has been successfully deleted.
+     * Protected zones cannot be deleted.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -199,6 +264,27 @@ public interface Dns extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetRRSetResponse getRRSet(GetRRSetRequest request);
+
+    /**
+     * Get information about a specific resolver. Note that attempting to get a
+     * resolver in the DELETED lifecycleState will result in a 404 to be
+     * consistent with other operations of the API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetResolverResponse getResolver(GetResolverRequest request);
+
+    /**
+     * Get information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
+     * in the DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetResolverEndpointResponse getResolverEndpoint(GetResolverEndpointRequest request);
 
     /**
      * Gets information about the specified steering policy.
@@ -229,6 +315,17 @@ public interface Dns extends AutoCloseable {
     GetTsigKeyResponse getTsigKey(GetTsigKeyRequest request);
 
     /**
+     * Get information about a specific view. Note that attempting to get a
+     * view in the DELETED lifecycleState will result in a 404 to be
+     * consistent with other operations of the API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetViewResponse getView(GetViewRequest request);
+
+    /**
      * Gets information about the specified zone, including its creation date,
      * zone type, and serial.
      *
@@ -248,6 +345,32 @@ public interface Dns extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetZoneRecordsResponse getZoneRecords(GetZoneRecordsRequest request);
+
+    /**
+     * Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
+     * It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided that the collection does not include resolver endpoints in the DELETED
+     * lifecycle state to be consistent with other operations of the API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListResolverEndpointsResponse listResolverEndpoints(ListResolverEndpointsRequest request);
+
+    /**
+     * Gets a list of all resolvers within a compartment. The collection can
+     * be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that
+     * when no lifecycleState query parameter is provided that the collection
+     * does not include resolvers in the DELETED lifecycleState to be consistent
+     * with other operations of the API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListResolversResponse listResolvers(ListResolversRequest request);
 
     /**
      * Gets a list of all steering policies in the specified compartment.
@@ -278,8 +401,22 @@ public interface Dns extends AutoCloseable {
     ListTsigKeysResponse listTsigKeys(ListTsigKeysRequest request);
 
     /**
+     * Gets a list of all views within a compartment. The collection can
+     * be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that
+     * when no lifecycleState query parameter is provided that the collection
+     * does not include views in the DELETED lifecycleState to be consistent
+     * with other operations of the API.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListViewsResponse listViews(ListViewsRequest request);
+
+    /**
      * Gets a list of all zones in the specified compartment. The collection
-     * can be filtered by name, time created, and zone type.
+     * can be filtered by name, time created, scope, associated view, and zone type.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -342,6 +479,24 @@ public interface Dns extends AutoCloseable {
     UpdateRRSetResponse updateRRSet(UpdateRRSetRequest request);
 
     /**
+     * Updates the specified resolver with your new information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateResolverResponse updateResolver(UpdateResolverRequest request);
+
+    /**
+     * Updates the specified resolver endpoint with your new information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateResolverEndpointResponse updateResolverEndpoint(UpdateResolverEndpointRequest request);
+
+    /**
      * Updates the configuration of the specified steering policy.
      *
      * @param request The request object containing the details to send
@@ -368,6 +523,15 @@ public interface Dns extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateTsigKeyResponse updateTsigKey(UpdateTsigKeyRequest request);
+
+    /**
+     * Updates the specified view with your new information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateViewResponse updateView(UpdateViewRequest request);
 
     /**
      * Updates the specified secondary zone with your new external master

@@ -48,6 +48,24 @@ public interface DnsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a resolver into a different compartment along with its protected default view and any endpoints.
+     * Zones in the default view are not moved.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeResolverCompartmentResponse> changeResolverCompartment(
+            ChangeResolverCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeResolverCompartmentRequest, ChangeResolverCompartmentResponse>
+                    handler);
+
+    /**
      * Moves a steering policy into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -82,8 +100,27 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a zone into a different compartment.
-     * **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
+     * Moves a view into a different compartment. Protected views cannot have their compartment changed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeViewCompartmentResponse> changeViewCompartment(
+            ChangeViewCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeViewCompartmentRequest, ChangeViewCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a zone into a different compartment. Protected zones cannot have their compartment changed.
+     * <p>
+     **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -96,6 +133,23 @@ public interface DnsAsync extends AutoCloseable {
             ChangeZoneCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeZoneCompartmentRequest, ChangeZoneCompartmentResponse>
+                    handler);
+
+    /**
+     * Creates a new resolver endpoint.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateResolverEndpointResponse> createResolverEndpoint(
+            CreateResolverEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateResolverEndpointRequest, CreateResolverEndpointResponse>
                     handler);
 
     /**
@@ -158,9 +212,24 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new zone in the specified compartment. The `compartmentId`
-     * query parameter is required if the `Content-Type` header for the
-     * request is `text/dns`.
+     * Creates a new view in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateViewResponse> createView(
+            CreateViewRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateViewRequest, CreateViewResponse> handler);
+
+    /**
+     * Creates a new zone in the specified compartment. If the `Content-Type` header for the request is `text/dns`, the
+     * `compartmentId` query parameter is required. Additionally, for `text/dns`, the `scope` and `viewId` query
+     * parameters are required to create a private zone.
      *
      *
      * @param request The request object containing the details to send
@@ -204,6 +273,25 @@ public interface DnsAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteRRSetResponse> deleteRRSet(
             DeleteRRSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteRRSetRequest, DeleteRRSetResponse> handler);
+
+    /**
+     * Deletes the specified resolver endpoint. Note that attempting to delete a resolver endpoint in the
+     * DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
+     * Resolver endpoints may not be deleted if they are referenced by a resolver rule.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteResolverEndpointResponse> deleteResolverEndpoint(
+            DeleteResolverEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteResolverEndpointRequest, DeleteResolverEndpointResponse>
+                    handler);
 
     /**
      * Deletes the specified steering policy.
@@ -262,8 +350,28 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified view. Note that attempting to delete a
+     * view in the DELETED lifecycleState will result in a 404 to be
+     * consistent with other operations of the API. Views can not be
+     * deleted if they are referenced by non-deleted zones or resolvers.
+     * Protected views cannot be deleted.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteViewResponse> deleteView(
+            DeleteViewRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteViewRequest, DeleteViewResponse> handler);
+
+    /**
      * Deletes the specified zone and all its steering policy attachments.
-     * A `204` response indicates that zone has been successfully deleted.
+     * A `204` response indicates that the zone has been successfully deleted.
+     * Protected zones cannot be deleted.
      *
      *
      * @param request The request object containing the details to send
@@ -310,6 +418,41 @@ public interface DnsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetRRSetResponse> getRRSet(
             GetRRSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetRRSetRequest, GetRRSetResponse> handler);
+
+    /**
+     * Get information about a specific resolver. Note that attempting to get a
+     * resolver in the DELETED lifecycleState will result in a 404 to be
+     * consistent with other operations of the API.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetResolverResponse> getResolver(
+            GetResolverRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetResolverRequest, GetResolverResponse> handler);
+
+    /**
+     * Get information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
+     * in the DELETED lifecycle state will result in a 404 to be consistent with other operations of the API.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetResolverEndpointResponse> getResolverEndpoint(
+            GetResolverEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetResolverEndpointRequest, GetResolverEndpointResponse>
+                    handler);
 
     /**
      * Gets information about the specified steering policy.
@@ -361,6 +504,23 @@ public interface DnsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetTsigKeyRequest, GetTsigKeyResponse> handler);
 
     /**
+     * Get information about a specific view. Note that attempting to get a
+     * view in the DELETED lifecycleState will result in a 404 to be
+     * consistent with other operations of the API.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetViewResponse> getView(
+            GetViewRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetViewRequest, GetViewResponse> handler);
+
+    /**
      * Gets information about the specified zone, including its creation date,
      * zone type, and serial.
      *
@@ -392,6 +552,47 @@ public interface DnsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetZoneRecordsResponse> getZoneRecords(
             GetZoneRecordsRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetZoneRecordsRequest, GetZoneRecordsResponse>
+                    handler);
+
+    /**
+     * Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
+     * It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
+     * query parameter is provided that the collection does not include resolver endpoints in the DELETED
+     * lifecycle state to be consistent with other operations of the API.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResolverEndpointsResponse> listResolverEndpoints(
+            ListResolverEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListResolverEndpointsRequest, ListResolverEndpointsResponse>
+                    handler);
+
+    /**
+     * Gets a list of all resolvers within a compartment. The collection can
+     * be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that
+     * when no lifecycleState query parameter is provided that the collection
+     * does not include resolvers in the DELETED lifecycleState to be consistent
+     * with other operations of the API.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResolversResponse> listResolvers(
+            ListResolversRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListResolversRequest, ListResolversResponse>
                     handler);
 
     /**
@@ -447,8 +648,28 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of all views within a compartment. The collection can
+     * be filtered by display name, id, or lifecycle state. It can be sorted
+     * on creation time or displayName both in ASC or DESC order. Note that
+     * when no lifecycleState query parameter is provided that the collection
+     * does not include views in the DELETED lifecycleState to be consistent
+     * with other operations of the API.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListViewsResponse> listViews(
+            ListViewsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListViewsRequest, ListViewsResponse> handler);
+
+    /**
      * Gets a list of all zones in the specified compartment. The collection
-     * can be filtered by name, time created, and zone type.
+     * can be filtered by name, time created, scope, associated view, and zone type.
      *
      *
      * @param request The request object containing the details to send
@@ -552,6 +773,39 @@ public interface DnsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateRRSetRequest, UpdateRRSetResponse> handler);
 
     /**
+     * Updates the specified resolver with your new information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateResolverResponse> updateResolver(
+            UpdateResolverRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateResolverRequest, UpdateResolverResponse>
+                    handler);
+
+    /**
+     * Updates the specified resolver endpoint with your new information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateResolverEndpointResponse> updateResolverEndpoint(
+            UpdateResolverEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateResolverEndpointRequest, UpdateResolverEndpointResponse>
+                    handler);
+
+    /**
      * Updates the configuration of the specified steering policy.
      *
      *
@@ -602,6 +856,21 @@ public interface DnsAsync extends AutoCloseable {
             UpdateTsigKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateTsigKeyRequest, UpdateTsigKeyResponse>
                     handler);
+
+    /**
+     * Updates the specified view with your new information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateViewResponse> updateView(
+            UpdateViewRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateViewRequest, UpdateViewResponse> handler);
 
     /**
      * Updates the specified secondary zone with your new external master

@@ -5,7 +5,13 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * An application being migrated from a source environment to OCI.
+ * The properties that define a migration. A migration represents the end-to-end workflow of moving an application from a source
+ * environment to Oracle Cloud Infrastructure. Each migration moves a single application to Oracle Cloud Infrastructure.
+ * For more information, see [Manage Migrations](https://docs.cloud.oracle.com/iaas/application-migration/manage_migrations.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
+ * If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -97,6 +103,16 @@ public class Migration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("preCreatedTargetDatabaseType")
+        private TargetDatabaseTypes preCreatedTargetDatabaseType;
+
+        public Builder preCreatedTargetDatabaseType(
+                TargetDatabaseTypes preCreatedTargetDatabaseType) {
+            this.preCreatedTargetDatabaseType = preCreatedTargetDatabaseType;
+            this.__explicitlySet__.add("preCreatedTargetDatabaseType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
         private java.util.Map<String, ConfigurationField> serviceConfig;
 
@@ -176,6 +192,7 @@ public class Migration {
                             sourceId,
                             applicationName,
                             applicationType,
+                            preCreatedTargetDatabaseType,
                             serviceConfig,
                             applicationConfig,
                             lifecycleState,
@@ -198,6 +215,7 @@ public class Migration {
                             .sourceId(o.getSourceId())
                             .applicationName(o.getApplicationName())
                             .applicationType(o.getApplicationType())
+                            .preCreatedTargetDatabaseType(o.getPreCreatedTargetDatabaseType())
                             .serviceConfig(o.getServiceConfig())
                             .applicationConfig(o.getApplicationConfig())
                             .lifecycleState(o.getLifecycleState())
@@ -219,20 +237,20 @@ public class Migration {
     }
 
     /**
-     * Unique identifier (OCID) for the application
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Unique idenfifier (OCID) for the compartment where the Source is located.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the migration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Human-readable name of the migration.
+     * User-friendly name of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -244,19 +262,19 @@ public class Migration {
     String description;
 
     /**
-     * The date and time at which the migration was created.
+     * The date and time at which the migration was created, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * Unique identifier (OCID) of the application source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source with which this migration is associated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     String sourceId;
 
     /**
-     * Name of the application being migrated from the source.
+     * Name of the application which is being migrated. This is the name of the application in the source environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
     String applicationName;
@@ -268,40 +286,52 @@ public class Migration {
     MigrationTypes applicationType;
 
     /**
-     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the CreateMigration operation.
+     * The pre-existing database type to be used in this migration. Currently, Application migration only supports Oracle Cloud
+     * Infrastrure databases and this option is currently available only for `JAVA_CLOUD_SERVICE` and `WEBLOGIC_CLOUD_SERVICE` target instance types.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("preCreatedTargetDatabaseType")
+    TargetDatabaseTypes preCreatedTargetDatabaseType;
+
+    /**
+     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+     * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+     * CreateMigration operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceConfig")
     java.util.Map<String, ConfigurationField> serviceConfig;
 
     /**
-     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the CreateMigration operation.
+     * Configuration required to migrate the application. In addition to the key and value, additional fields are provided
+     * to describe type type and purpose of each field. Only the value for each key is required when passing configuration to the
+     * CreateMigration operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationConfig")
     java.util.Map<String, ConfigurationField> applicationConfig;
 
     /**
-     * The current state of the Migration
+     * The current state of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     MigrationLifecycleStates lifecycleState;
 
     /**
-     * Details about the current lifecycle state
+     * Details about the current lifecycle state of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
 
     /**
-     * The current state of the overall Migration process
+     * The current state of the overall migration process.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("migrationState")
     MigrationStates migrationState;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -309,7 +339,7 @@ public class Migration {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

@@ -5,7 +5,7 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * An application being migrated from a source environment to OCI.
+ * Details about the migration. Each migration moves a single application from a specified source to Oracle Cloud Infrastructure.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -196,20 +196,20 @@ public class MigrationSummary {
     }
 
     /**
-     * Unique identifier (OCID) for the application
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Unique idenfifier (OCID) for the compartment where the Source is located.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the migration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Human-readable name of the migration.
+     * User-friendly name of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -221,19 +221,19 @@ public class MigrationSummary {
     String description;
 
     /**
-     * The date and time at which the migration was created.
+     * The date and time at which the migration was created, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * Unique identifier (OCID) of the source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     String sourceId;
 
     /**
-     * Name of the application being migrated from the source.
+     * Name of the application which is being migrated from the source environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationName")
     String applicationName;
@@ -245,26 +245,26 @@ public class MigrationSummary {
     MigrationTypes applicationType;
 
     /**
-     * The current state of the Migration
+     * The current state of the migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     MigrationLifecycleStates lifecycleState;
 
     /**
-     * Details about the current lifecycle state
+     * Details about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
 
     /**
-     * The current state of the overall Migration process
+     * The current state of the overall migration process.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("migrationState")
     MigrationStates migrationState;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -272,7 +272,7 @@ public class MigrationSummary {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

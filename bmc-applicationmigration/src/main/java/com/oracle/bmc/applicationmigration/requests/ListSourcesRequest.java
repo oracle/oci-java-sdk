@@ -12,7 +12,7 @@ import com.oracle.bmc.applicationmigration.model.*;
 public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment OCID on which to filter.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment. Retrieves details of objects in the specified compartment.
      */
     private String compartmentId;
 
@@ -24,7 +24,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String opcRequestId;
 
     /**
-     * The OCID on which to query for a source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a source.
      *
      */
     private String id;
@@ -101,9 +101,9 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String displayName;
 
     /**
-     * The lifecycle state on which to filter.
+     * Retrieves details of sources in the specified lifecycle state.
      */
-    private SourceLifecycleStates lifecycleState;
+    private com.oracle.bmc.applicationmigration.model.SourceLifecycleStates lifecycleState;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<

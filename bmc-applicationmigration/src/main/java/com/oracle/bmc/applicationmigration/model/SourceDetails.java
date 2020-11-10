@@ -5,7 +5,14 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Base model for different source environment types
+ * Specify one of the following values depending for the 'type' attribute based on the application that you want to migrate.
+ * <p>
+ * Specify `OCIC` if you want to migrate Oracle Java Cloud Service, Oracle Analytics Cloud - Classic, Oracle Integration, and Oracle
+ * SOA Cloud Service applications from Oracle Cloud Infrastructure - Classic.
+ * <p>
+ * Specify `INTERNAL_COMPUTE` if you have a traditional Oracle Cloud Infrastructure - Classic account and you want to migrate Oracle
+ * Process Cloud Service or Oracle Integration Cloud Service applications.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

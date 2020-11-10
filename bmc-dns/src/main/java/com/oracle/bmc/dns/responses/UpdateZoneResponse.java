@@ -12,6 +12,14 @@ import com.oracle.bmc.dns.model.*;
 public class UpdateZoneResponse {
 
     /**
+     * The current version of the zone, ending with a
+     * representation-specific suffix. This value may be used in If-Match
+     * and If-None-Match headers for later requests of the same resource.
+     *
+     */
+    private String eTag;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to
      * contact Oracle about a particular request, please provide the request ID.
      *
@@ -19,12 +27,11 @@ public class UpdateZoneResponse {
     private String opcRequestId;
 
     /**
-     * The current version of the zone, ending with a
-     * representation-specific suffix. This value may be used in If-Match
-     * and If-None-Match headers for later requests of the same resource.
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
      *
      */
-    private String eTag;
+    private String opcWorkRequestId;
 
     /**
      * The returned Zone instance.
@@ -37,8 +44,9 @@ public class UpdateZoneResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateZoneResponse o) {
-            opcRequestId(o.getOpcRequestId());
             eTag(o.getETag());
+            opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             zone(o.getZone());
 
             return this;

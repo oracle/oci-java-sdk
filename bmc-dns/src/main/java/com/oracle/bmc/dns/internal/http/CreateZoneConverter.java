@@ -40,6 +40,22 @@ public class CreateZoneConverter {
                                     request.getCompartmentId()));
         }
 
+        if (request.getScope() != null) {
+            target =
+                    target.queryParam(
+                            "scope",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getScope().getValue()));
+        }
+
+        if (request.getViewId() != null) {
+            target =
+                    target.queryParam(
+                            "viewId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getViewId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -80,6 +96,27 @@ public class CreateZoneConverter {
 
                                 builder.zone(response.getItem());
 
+                                com.google.common.base.Optional<java.util.List<String>> eTagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "ETag");
+                                if (eTagHeader.isPresent()) {
+                                    builder.eTag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "ETag", eTagHeader.get().get(0), String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        locationHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "Location");
+                                if (locationHeader.isPresent()) {
+                                    builder.location(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "Location",
+                                                    locationHeader.get().get(0),
+                                                    String.class));
+                                }
+
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -92,13 +129,16 @@ public class CreateZoneConverter {
                                                     String.class));
                                 }
 
-                                com.google.common.base.Optional<java.util.List<String>> eTagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                headers, "ETag");
-                                if (eTagHeader.isPresent()) {
-                                    builder.eTag(
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcWorkRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "ETag", eTagHeader.get().get(0), String.class));
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
+                                                    String.class));
                                 }
 
                                 com.oracle.bmc.dns.responses.CreateZoneResponse responseWrapper =

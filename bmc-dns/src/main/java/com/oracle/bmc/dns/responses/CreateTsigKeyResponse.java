@@ -20,12 +20,25 @@ public class CreateTsigKeyResponse {
     private String eTag;
 
     /**
+     * The full URI of the resource related to the request.
+     *
+     */
+    private String location;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to
      * contact Oracle about a particular request, please provide the request
      * ID.
      *
      */
     private String opcRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
 
     /**
      * The returned TsigKey instance.
@@ -39,7 +52,9 @@ public class CreateTsigKeyResponse {
          */
         public Builder copy(CreateTsigKeyResponse o) {
             eTag(o.getETag());
+            location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             tsigKey(o.getTsigKey());
 
             return this;

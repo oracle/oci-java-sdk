@@ -33,6 +33,15 @@ public class CreateVcnDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
+        private java.util.List<String> cidrBlocks;
+
+        public Builder cidrBlocks(java.util.List<String> cidrBlocks) {
+            this.cidrBlocks = cidrBlocks;
+            this.__explicitlySet__.add("cidrBlocks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -104,6 +113,7 @@ public class CreateVcnDetails {
             CreateVcnDetails __instance__ =
                     new CreateVcnDetails(
                             cidrBlock,
+                            cidrBlocks,
                             compartmentId,
                             ipv6CidrBlock,
                             definedTags,
@@ -119,6 +129,7 @@ public class CreateVcnDetails {
         public Builder copy(CreateVcnDetails o) {
             Builder copiedBuilder =
                     cidrBlock(o.getCidrBlock())
+                            .cidrBlocks(o.getCidrBlocks())
                             .compartmentId(o.getCompartmentId())
                             .ipv6CidrBlock(o.getIpv6CidrBlock())
                             .definedTags(o.getDefinedTags())
@@ -140,12 +151,26 @@ public class CreateVcnDetails {
     }
 
     /**
-     * The CIDR IP address block of the VCN.
+     * Deprecated. Instead use 'cidrBlocks'. It is an error to set both cidrBlock and
+     * cidrBlocks.
      * Example: `10.0.0.0/16`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     String cidrBlock;
+
+    /**
+     * List of IPv4 CIDR blocks associated with the VCN. The CIDRs must maintain the following
+     * rules -
+     * <p>
+     * a. The list of CIDRs provided are valid
+     * b. There is no overlap between different CIDRs
+     * c. The number of CIDRs should not exceed the max limit of CIDRs per VCN
+     * d. It is an error to set both cidrBlock and cidrBlocks.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
+    java.util.List<String> cidrBlocks;
 
     /**
      * The OCID of the compartment to contain the VCN.

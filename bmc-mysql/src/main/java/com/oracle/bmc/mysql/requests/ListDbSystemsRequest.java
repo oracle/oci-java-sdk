@@ -25,6 +25,14 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String opcRequestId;
 
     /**
+     * If true, return only DB Systems with an Analytics Cluster attached, if false
+     * return only DB Systems with no Analytics Cluster attached. If not
+     * present, return all DB Systems.
+     *
+     */
+    private Boolean isAnalyticsClusterAttached;
+
+    /**
      * The DB System [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String dbSystemId;
@@ -185,6 +193,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public Builder copy(ListDbSystemsRequest o) {
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
+            isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached());
             dbSystemId(o.getDbSystemId());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());

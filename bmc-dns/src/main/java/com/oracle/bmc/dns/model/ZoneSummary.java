@@ -54,6 +54,24 @@ public class ZoneSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("viewId")
+        private String viewId;
+
+        public Builder viewId(String viewId) {
+            this.viewId = viewId;
+            this.__explicitlySet__.add("viewId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scope")
+        private Scope scope;
+
+        public Builder scope(Scope scope) {
+            this.scope = scope;
+            this.__explicitlySet__.add("scope");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -127,6 +145,15 @@ public class ZoneSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
+        private Boolean isProtected;
+
+        public Builder isProtected(Boolean isProtected) {
+            this.isProtected = isProtected;
+            this.__explicitlySet__.add("isProtected");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -136,6 +163,8 @@ public class ZoneSummary {
                             name,
                             zoneType,
                             compartmentId,
+                            viewId,
+                            scope,
                             freeformTags,
                             definedTags,
                             self,
@@ -143,7 +172,8 @@ public class ZoneSummary {
                             timeCreated,
                             version,
                             serial,
-                            lifecycleState);
+                            lifecycleState,
+                            isProtected);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -154,6 +184,8 @@ public class ZoneSummary {
                     name(o.getName())
                             .zoneType(o.getZoneType())
                             .compartmentId(o.getCompartmentId())
+                            .viewId(o.getViewId())
+                            .scope(o.getScope())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .self(o.getSelf())
@@ -161,7 +193,8 @@ public class ZoneSummary {
                             .timeCreated(o.getTimeCreated())
                             .version(o.getVersion())
                             .serial(o.getSerial())
-                            .lifecycleState(o.getLifecycleState());
+                            .lifecycleState(o.getLifecycleState())
+                            .isProtected(o.getIsProtected());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -181,7 +214,7 @@ public class ZoneSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`.
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -228,7 +261,7 @@ public class ZoneSummary {
         }
     };
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`.
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
@@ -239,6 +272,21 @@ public class ZoneSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The OCID of the private view containing the zone. This value will
+     * be null for zones in the global DNS, which are publicly resolvable and
+     * not part of a private view.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("viewId")
+    String viewId;
+
+    /**
+     * The scope of the zone.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scope")
+    Scope scope;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -275,7 +323,7 @@ public class ZoneSummary {
     String id;
 
     /**
-     * The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
+     * The date and time the resource was created in \"YYYY-MM-ddThh:mm:ssZ\" format
      * with a Z offset, as defined by RFC 3339.
      * <p>
      **Example:** `2016-07-22T17:23:59:60Z`
@@ -353,6 +401,13 @@ public class ZoneSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isProtected")
+    Boolean isProtected;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -25,6 +25,48 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     private String opcRequestId;
 
     /**
+     * Return shapes that are supported by the service feature.
+     *
+     */
+    private java.util.List<IsSupportedFor> isSupportedFor;
+
+    /**
+     * Return shapes that are supported by the service feature.
+     *
+     **/
+    public enum IsSupportedFor {
+        Dbsystem("DBSYSTEM"),
+        Analyticscluster("ANALYTICSCLUSTER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, IsSupportedFor> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IsSupportedFor v : IsSupportedFor.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        IsSupportedFor(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IsSupportedFor create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid IsSupportedFor: " + key);
+        }
+    };
+    /**
      * The name of the Availability Domain.
      */
     private String availabilityDomain;
@@ -71,6 +113,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         public Builder copy(ListShapesRequest o) {
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
+            isSupportedFor(o.getIsSupportedFor());
             availabilityDomain(o.getAvailabilityDomain());
             name(o.getName());
             invocationCallback(o.getInvocationCallback());

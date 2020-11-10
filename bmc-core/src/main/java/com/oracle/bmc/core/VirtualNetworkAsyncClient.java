@@ -415,6 +415,44 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddVcnCidrResponse> addVcnCidr(
+            AddVcnCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<AddVcnCidrRequest, AddVcnCidrResponse>
+                    handler) {
+        LOG.trace("Called async addVcnCidr");
+        final AddVcnCidrRequest interceptedRequest = AddVcnCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddVcnCidrConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, AddVcnCidrResponse>
+                transformer = AddVcnCidrConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<AddVcnCidrRequest, AddVcnCidrResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddVcnCidrRequest, AddVcnCidrResponse>,
+                        java.util.concurrent.Future<AddVcnCidrResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddVcnCidrRequest, AddVcnCidrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AdvertiseByoipRangeResponse> advertiseByoipRange(
             AdvertiseByoipRangeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5154,6 +5192,50 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetVcnDnsResolverAssociationResponse>
+            getVcnDnsResolverAssociation(
+                    GetVcnDnsResolverAssociationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetVcnDnsResolverAssociationRequest,
+                                    GetVcnDnsResolverAssociationResponse>
+                            handler) {
+        LOG.trace("Called async getVcnDnsResolverAssociation");
+        final GetVcnDnsResolverAssociationRequest interceptedRequest =
+                GetVcnDnsResolverAssociationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVcnDnsResolverAssociationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetVcnDnsResolverAssociationResponse>
+                transformer = GetVcnDnsResolverAssociationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetVcnDnsResolverAssociationRequest, GetVcnDnsResolverAssociationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVcnDnsResolverAssociationRequest,
+                                GetVcnDnsResolverAssociationResponse>,
+                        java.util.concurrent.Future<GetVcnDnsResolverAssociationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVcnDnsResolverAssociationRequest, GetVcnDnsResolverAssociationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVirtualCircuitResponse> getVirtualCircuit(
             GetVirtualCircuitRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6782,6 +6864,45 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyVcnCidrResponse> modifyVcnCidr(
+            ModifyVcnCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ModifyVcnCidrRequest, ModifyVcnCidrResponse>
+                    handler) {
+        LOG.trace("Called async modifyVcnCidr");
+        final ModifyVcnCidrRequest interceptedRequest =
+                ModifyVcnCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ModifyVcnCidrConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ModifyVcnCidrResponse>
+                transformer = ModifyVcnCidrConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<ModifyVcnCidrRequest, ModifyVcnCidrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ModifyVcnCidrRequest, ModifyVcnCidrResponse>,
+                        java.util.concurrent.Future<ModifyVcnCidrResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ModifyVcnCidrRequest, ModifyVcnCidrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveNetworkSecurityGroupSecurityRulesResponse>
             removeNetworkSecurityGroupSecurityRules(
                     RemoveNetworkSecurityGroupSecurityRulesRequest request,
@@ -6862,6 +6983,45 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RemovePublicIpPoolCapacityRequest, RemovePublicIpPoolCapacityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveVcnCidrResponse> removeVcnCidr(
+            RemoveVcnCidrRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<RemoveVcnCidrRequest, RemoveVcnCidrResponse>
+                    handler) {
+        LOG.trace("Called async removeVcnCidr");
+        final RemoveVcnCidrRequest interceptedRequest =
+                RemoveVcnCidrConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveVcnCidrConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveVcnCidrResponse>
+                transformer = RemoveVcnCidrConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<RemoveVcnCidrRequest, RemoveVcnCidrResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveVcnCidrRequest, RemoveVcnCidrResponse>,
+                        java.util.concurrent.Future<RemoveVcnCidrResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveVcnCidrRequest, RemoveVcnCidrResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

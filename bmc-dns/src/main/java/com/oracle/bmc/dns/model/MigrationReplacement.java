@@ -94,7 +94,7 @@ public class MigrationReplacement {
     }
 
     /**
-     * The canonical name for the type of the replacement record, such as A or CNAME.
+     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rtype")

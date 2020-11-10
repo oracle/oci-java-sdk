@@ -37,6 +37,12 @@ public class CreateSteeringPolicyRequest
     private String opcRequestId;
 
     /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
+    private com.oracle.bmc.dns.model.Scope scope;
+
+    /**
      * Alternative accessor for the body parameter.
      * @return body parameter
      */
@@ -84,6 +90,7 @@ public class CreateSteeringPolicyRequest
             createSteeringPolicyDetails(o.getCreateSteeringPolicyDetails());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            scope(o.getScope());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

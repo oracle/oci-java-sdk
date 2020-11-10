@@ -198,6 +198,17 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
+    private com.oracle.bmc.dns.model.Scope scope;
+
+    /**
+     * The OCID of the view the resource is associated with.
+     */
+    private String viewId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListZonesRequest, java.lang.Void> {
@@ -245,6 +256,8 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             lifecycleState(o.getLifecycleState());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            scope(o.getScope());
+            viewId(o.getViewId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

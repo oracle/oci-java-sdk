@@ -5,7 +5,9 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Specifies the credentials to access the source JCS instance
+ * Credentials to access the Oracle Java Cloud Service application in the source environment. When you create and update a migration,
+ * Application Migration connects to the application in the source environment with the supplied credentials and exports the domain
+ * configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -86,13 +88,13 @@ public class JcsDiscoveryDetails extends DiscoveryDetails {
     }
 
     /**
-     * The JCS instance weblogic admin user
+     * WebLogic administrator username for the Oracle Java Cloud Service application in the source environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weblogicUser")
     String weblogicUser;
 
     /**
-     * The JCS instance weblogic admin password
+     * The password of the WebLogic administrator for the Oracle Java Cloud Service application in the source environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weblogicPassword")
     String weblogicPassword;

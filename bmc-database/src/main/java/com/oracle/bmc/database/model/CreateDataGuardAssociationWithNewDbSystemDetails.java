@@ -36,6 +36,15 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
 
@@ -132,6 +141,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
         public CreateDataGuardAssociationWithNewDbSystemDetails build() {
             CreateDataGuardAssociationWithNewDbSystemDetails __instance__ =
                     new CreateDataGuardAssociationWithNewDbSystemDetails(
+                            databaseSoftwareImageId,
                             databaseAdminPassword,
                             protectionMode,
                             transportType,
@@ -149,7 +159,8 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDataGuardAssociationWithNewDbSystemDetails o) {
             Builder copiedBuilder =
-                    databaseAdminPassword(o.getDatabaseAdminPassword())
+                    databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
+                            .databaseAdminPassword(o.getDatabaseAdminPassword())
                             .protectionMode(o.getProtectionMode())
                             .transportType(o.getTransportType())
                             .displayName(o.getDisplayName())
@@ -174,6 +185,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
 
     @Deprecated
     public CreateDataGuardAssociationWithNewDbSystemDetails(
+            String databaseSoftwareImageId,
             String databaseAdminPassword,
             ProtectionMode protectionMode,
             TransportType transportType,
@@ -184,7 +196,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
             String hostname) {
-        super(databaseAdminPassword, protectionMode, transportType);
+        super(databaseSoftwareImageId, databaseAdminPassword, protectionMode, transportType);
         this.displayName = displayName;
         this.availabilityDomain = availabilityDomain;
         this.shape = shape;

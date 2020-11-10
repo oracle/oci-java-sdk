@@ -49,6 +49,14 @@ public class MigrateApplicationConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (request.getIfMatch() != null) {
+            ib.header("if-match", request.getIfMatch());
+        }
+
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
+        }
+
         return ib;
     }
 

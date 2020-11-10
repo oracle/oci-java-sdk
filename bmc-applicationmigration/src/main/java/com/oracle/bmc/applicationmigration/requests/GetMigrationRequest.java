@@ -12,7 +12,7 @@ import com.oracle.bmc.applicationmigration.model.*;
 public class GetMigrationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The application OCID
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the migration.
      */
     private String migrationId;
 

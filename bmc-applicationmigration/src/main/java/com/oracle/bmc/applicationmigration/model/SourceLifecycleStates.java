@@ -8,6 +8,7 @@ package com.oracle.bmc.applicationmigration.model;
  * Resource lifecycle state
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
+@lombok.extern.slf4j.Slf4j
 public enum SourceLifecycleStates {
     Creating("CREATING"),
     Deleting("DELETING"),
@@ -15,7 +16,12 @@ public enum SourceLifecycleStates {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
     Deleted("DELETED"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
 
     private final String value;
     private static java.util.Map<String, SourceLifecycleStates> map;
@@ -23,7 +29,9 @@ public enum SourceLifecycleStates {
     static {
         map = new java.util.HashMap<>();
         for (SourceLifecycleStates v : SourceLifecycleStates.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -41,6 +49,9 @@ public enum SourceLifecycleStates {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid SourceLifecycleStates: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'SourceLifecycleStates', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

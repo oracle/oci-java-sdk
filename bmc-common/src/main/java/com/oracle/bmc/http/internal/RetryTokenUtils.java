@@ -15,6 +15,13 @@ public class RetryTokenUtils {
     private RetryTokenUtils() {}
 
     public static void addRetryToken(WrappedInvocationBuilder ib) {
+
+        boolean isOpcRetryTokenAlreadySet = ib.getHeaders().containsKey(OPC_RETRY_TOKEN_HEADER);
+
+        if (isOpcRetryTokenAlreadySet) {
+            return;
+        }
+
         ib.header(OPC_RETRY_TOKEN_HEADER, generateRetryToken());
     }
 

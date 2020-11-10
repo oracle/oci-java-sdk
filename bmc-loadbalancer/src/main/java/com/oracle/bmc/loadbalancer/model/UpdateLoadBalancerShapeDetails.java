@@ -5,7 +5,6 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The configuration details for update a load balancer to a different shape.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -63,11 +62,13 @@ public class UpdateLoadBalancerShapeDetails {
     }
 
     /**
-     * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
-     * To get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
-     * operation.
+     * The new shape name for the load balancer.
      * <p>
-     * Example: `100Mbps`
+     * Allowed values are :
+     *   *  10Mbps
+     *   *  100Mbps
+     *   *  400Mbps
+     *   *  8000Mbps
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")

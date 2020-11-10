@@ -181,7 +181,7 @@ public class WorkRequest {
     java.util.List<WorkRequestResource> resources;
 
     /**
-     * The amount of work done relative to the total amount of work.
+     * The percentage completion of the operation relative to the total amount of work that is tracked by this work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     Float percentComplete;

@@ -56,6 +56,17 @@ public class UpdateDomainRecordsRequest
     private String opcRequestId;
 
     /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
+    private com.oracle.bmc.dns.model.Scope scope;
+
+    /**
+     * The OCID of the view the resource is associated with.
+     */
+    private String viewId;
+
+    /**
      * The OCID of the compartment the resource belongs to.
      */
     private String compartmentId;
@@ -111,6 +122,8 @@ public class UpdateDomainRecordsRequest
             ifMatch(o.getIfMatch());
             ifUnmodifiedSince(o.getIfUnmodifiedSince());
             opcRequestId(o.getOpcRequestId());
+            scope(o.getScope());
+            viewId(o.getViewId());
             compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

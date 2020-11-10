@@ -5,7 +5,9 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Specifies the credentials to access the source SOACS instance
+ * Credentials to access the Oracle SOA Cloud Service application in the source environment. When you create and update a migration,
+ * Application Migration connects to the application in the source environment with the supplied credentials and exports the domain
+ * configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -86,13 +88,13 @@ public class SoacsDiscoveryDetails extends DiscoveryDetails {
     }
 
     /**
-     * The SOACS instance weblogic admin user
+     * WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weblogicUser")
     String weblogicUser;
 
     /**
-     * The SOACS instance weblogic admin password
+     * Password for this user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weblogicPassword")
     String weblogicPassword;

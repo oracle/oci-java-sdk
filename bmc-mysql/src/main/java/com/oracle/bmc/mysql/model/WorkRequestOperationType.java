@@ -16,6 +16,13 @@ public enum WorkRequestOperationType {
     StartDbsystem("START_DBSYSTEM"),
     StopDbsystem("STOP_DBSYSTEM"),
     RestartDbsystem("RESTART_DBSYSTEM"),
+    AddAnalyticsCluster("ADD_ANALYTICS_CLUSTER"),
+    UpdateAnalyticsCluster("UPDATE_ANALYTICS_CLUSTER"),
+    DeleteAnalyticsCluster("DELETE_ANALYTICS_CLUSTER"),
+    StartAnalyticsCluster("START_ANALYTICS_CLUSTER"),
+    StopAnalyticsCluster("STOP_ANALYTICS_CLUSTER"),
+    RestartAnalyticsCluster("RESTART_ANALYTICS_CLUSTER"),
+    GenerateAnalyticsClusterMemoryEstimate("GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

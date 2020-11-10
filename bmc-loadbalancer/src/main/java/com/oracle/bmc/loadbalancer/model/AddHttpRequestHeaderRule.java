@@ -7,11 +7,12 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * An object that represents the action of adding a header to a request.
  * This rule applies only to HTTP listeners.
- * <p>
- **NOTES:**
+ * **NOTES:**
  * <p>
  *  If a matching header already exists in the request, the system removes all of its occurrences, and then adds the
  *    new header.
+ * <p>
+ * If a customer adds empty value, it has the same effect as dropping that header.
  * <p>
  *  The system does not distinquish between underscore and dash characters in headers. That is, it treats
  *   `example_header_name` and `example-header-name` as identical. Oracle recommends that you do not rely on underscore

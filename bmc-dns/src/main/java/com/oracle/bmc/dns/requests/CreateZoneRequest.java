@@ -30,6 +30,17 @@ public class CreateZoneRequest extends com.oracle.bmc.requests.BmcRequest<Create
     private String compartmentId;
 
     /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
+    private com.oracle.bmc.dns.model.Scope scope;
+
+    /**
+     * The OCID of the view the resource is associated with.
+     */
+    private String viewId;
+
+    /**
      * Alternative accessor for the body parameter.
      * @return body parameter
      */
@@ -77,6 +88,8 @@ public class CreateZoneRequest extends com.oracle.bmc.requests.BmcRequest<Create
             createZoneDetails(o.getCreateZoneDetails());
             opcRequestId(o.getOpcRequestId());
             compartmentId(o.getCompartmentId());
+            scope(o.getScope());
+            viewId(o.getViewId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

@@ -61,6 +61,24 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
+        private Boolean isAnalyticsClusterAttached;
+
+        public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
+            this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
+            this.__explicitlySet__.add("isAnalyticsClusterAttached");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
+        private AnalyticsClusterSummary analyticsCluster;
+
+        public Builder analyticsCluster(AnalyticsClusterSummary analyticsCluster) {
+            this.analyticsCluster = analyticsCluster;
+            this.__explicitlySet__.add("analyticsCluster");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -153,6 +171,8 @@ public class DbSystemSummary {
                             displayName,
                             description,
                             compartmentId,
+                            isAnalyticsClusterAttached,
+                            analyticsCluster,
                             availabilityDomain,
                             faultDomain,
                             endpoints,
@@ -173,6 +193,8 @@ public class DbSystemSummary {
                             .displayName(o.getDisplayName())
                             .description(o.getDescription())
                             .compartmentId(o.getCompartmentId())
+                            .isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached())
+                            .analyticsCluster(o.getAnalyticsCluster())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .faultDomain(o.getFaultDomain())
                             .endpoints(o.getEndpoints())
@@ -218,6 +240,16 @@ public class DbSystemSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * If the DB System has an Analytics Cluster attached.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
+    Boolean isAnalyticsClusterAttached;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
+    AnalyticsClusterSummary analyticsCluster;
 
     /**
      * The Availability Domain where the primary DB System should be located.

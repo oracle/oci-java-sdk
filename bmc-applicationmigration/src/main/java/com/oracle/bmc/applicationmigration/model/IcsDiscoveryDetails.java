@@ -5,7 +5,8 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Specifies the credentials to access the source ICS instance
+ * Credentials to access the Oracle Integration Cloud Service application in the source environment. Application Migration connects
+ * to the application in the source environment with the supplied credentials.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -87,13 +88,13 @@ public class IcsDiscoveryDetails extends DiscoveryDetails {
     }
 
     /**
-     * The ICS instance admin user
+     * Application administrator username to access the Oracle Integration Cloud Service application in the source environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
     String serviceInstanceUser;
 
     /**
-     * The ICS instance admin password
+     * Password for this user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
     String serviceInstancePassword;

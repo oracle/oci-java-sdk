@@ -42,18 +42,30 @@ public class IpAddress {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedIp")
+        private ReservedIP reservedIp;
+
+        public Builder reservedIp(ReservedIP reservedIp) {
+            this.reservedIp = reservedIp;
+            this.__explicitlySet__.add("reservedIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public IpAddress build() {
-            IpAddress __instance__ = new IpAddress(ipAddress, isPublic);
+            IpAddress __instance__ = new IpAddress(ipAddress, isPublic, reservedIp);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IpAddress o) {
-            Builder copiedBuilder = ipAddress(o.getIpAddress()).isPublic(o.getIsPublic());
+            Builder copiedBuilder =
+                    ipAddress(o.getIpAddress())
+                            .isPublic(o.getIsPublic())
+                            .reservedIp(o.getReservedIp());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -86,6 +98,9 @@ public class IpAddress {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     Boolean isPublic;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedIp")
+    ReservedIP reservedIp;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

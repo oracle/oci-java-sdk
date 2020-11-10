@@ -325,6 +325,48 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddAnalyticsClusterResponse> addAnalyticsCluster(
+            AddAnalyticsClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddAnalyticsClusterRequest, AddAnalyticsClusterResponse>
+                    handler) {
+        LOG.trace("Called async addAnalyticsCluster");
+        final AddAnalyticsClusterRequest interceptedRequest =
+                AddAnalyticsClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddAnalyticsClusterResponse>
+                transformer = AddAnalyticsClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddAnalyticsClusterRequest, AddAnalyticsClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddAnalyticsClusterRequest, AddAnalyticsClusterResponse>,
+                        java.util.concurrent.Future<AddAnalyticsClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddAnalyticsClusterRequest, AddAnalyticsClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDbSystemResponse> createDbSystem(
             CreateDbSystemRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -365,6 +407,47 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAnalyticsClusterResponse> deleteAnalyticsCluster(
+            DeleteAnalyticsClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAnalyticsClusterRequest, DeleteAnalyticsClusterResponse>
+                    handler) {
+        LOG.trace("Called async deleteAnalyticsCluster");
+        final DeleteAnalyticsClusterRequest interceptedRequest =
+                DeleteAnalyticsClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteAnalyticsClusterResponse>
+                transformer = DeleteAnalyticsClusterConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteAnalyticsClusterRequest, DeleteAnalyticsClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteAnalyticsClusterRequest, DeleteAnalyticsClusterResponse>,
+                        java.util.concurrent.Future<DeleteAnalyticsClusterResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteAnalyticsClusterRequest, DeleteAnalyticsClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDbSystemResponse> deleteDbSystem(
             DeleteDbSystemRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -391,6 +474,141 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteDbSystemRequest, DeleteDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateAnalyticsClusterMemoryEstimateResponse>
+            generateAnalyticsClusterMemoryEstimate(
+                    GenerateAnalyticsClusterMemoryEstimateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateAnalyticsClusterMemoryEstimateRequest,
+                                    GenerateAnalyticsClusterMemoryEstimateResponse>
+                            handler) {
+        LOG.trace("Called async generateAnalyticsClusterMemoryEstimate");
+        final GenerateAnalyticsClusterMemoryEstimateRequest interceptedRequest =
+                GenerateAnalyticsClusterMemoryEstimateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateAnalyticsClusterMemoryEstimateConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateAnalyticsClusterMemoryEstimateResponse>
+                transformer = GenerateAnalyticsClusterMemoryEstimateConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateAnalyticsClusterMemoryEstimateRequest,
+                        GenerateAnalyticsClusterMemoryEstimateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateAnalyticsClusterMemoryEstimateRequest,
+                                GenerateAnalyticsClusterMemoryEstimateResponse>,
+                        java.util.concurrent.Future<GenerateAnalyticsClusterMemoryEstimateResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateAnalyticsClusterMemoryEstimateRequest,
+                    GenerateAnalyticsClusterMemoryEstimateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnalyticsClusterResponse> getAnalyticsCluster(
+            GetAnalyticsClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAnalyticsClusterRequest, GetAnalyticsClusterResponse>
+                    handler) {
+        LOG.trace("Called async getAnalyticsCluster");
+        final GetAnalyticsClusterRequest interceptedRequest =
+                GetAnalyticsClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAnalyticsClusterResponse>
+                transformer = GetAnalyticsClusterConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAnalyticsClusterRequest, GetAnalyticsClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAnalyticsClusterRequest, GetAnalyticsClusterResponse>,
+                        java.util.concurrent.Future<GetAnalyticsClusterResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAnalyticsClusterRequest, GetAnalyticsClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnalyticsClusterMemoryEstimateResponse>
+            getAnalyticsClusterMemoryEstimate(
+                    GetAnalyticsClusterMemoryEstimateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAnalyticsClusterMemoryEstimateRequest,
+                                    GetAnalyticsClusterMemoryEstimateResponse>
+                            handler) {
+        LOG.trace("Called async getAnalyticsClusterMemoryEstimate");
+        final GetAnalyticsClusterMemoryEstimateRequest interceptedRequest =
+                GetAnalyticsClusterMemoryEstimateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAnalyticsClusterMemoryEstimateConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAnalyticsClusterMemoryEstimateResponse>
+                transformer = GetAnalyticsClusterMemoryEstimateConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAnalyticsClusterMemoryEstimateRequest,
+                        GetAnalyticsClusterMemoryEstimateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAnalyticsClusterMemoryEstimateRequest,
+                                GetAnalyticsClusterMemoryEstimateResponse>,
+                        java.util.concurrent.Future<GetAnalyticsClusterMemoryEstimateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAnalyticsClusterMemoryEstimateRequest,
+                    GetAnalyticsClusterMemoryEstimateResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -480,6 +698,48 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RestartAnalyticsClusterResponse> restartAnalyticsCluster(
+            RestartAnalyticsClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RestartAnalyticsClusterRequest, RestartAnalyticsClusterResponse>
+                    handler) {
+        LOG.trace("Called async restartAnalyticsCluster");
+        final RestartAnalyticsClusterRequest interceptedRequest =
+                RestartAnalyticsClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestartAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestartAnalyticsClusterResponse>
+                transformer = RestartAnalyticsClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RestartAnalyticsClusterRequest, RestartAnalyticsClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RestartAnalyticsClusterRequest, RestartAnalyticsClusterResponse>,
+                        java.util.concurrent.Future<RestartAnalyticsClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RestartAnalyticsClusterRequest, RestartAnalyticsClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RestartDbSystemResponse> restartDbSystem(
             RestartDbSystemRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -507,6 +767,48 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RestartDbSystemRequest, RestartDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAnalyticsClusterResponse> startAnalyticsCluster(
+            StartAnalyticsClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartAnalyticsClusterRequest, StartAnalyticsClusterResponse>
+                    handler) {
+        LOG.trace("Called async startAnalyticsCluster");
+        final StartAnalyticsClusterRequest interceptedRequest =
+                StartAnalyticsClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, StartAnalyticsClusterResponse>
+                transformer = StartAnalyticsClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        StartAnalyticsClusterRequest, StartAnalyticsClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartAnalyticsClusterRequest, StartAnalyticsClusterResponse>,
+                        java.util.concurrent.Future<StartAnalyticsClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartAnalyticsClusterRequest, StartAnalyticsClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -559,6 +861,48 @@ public class DbSystemAsyncClient implements DbSystemAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StopAnalyticsClusterResponse> stopAnalyticsCluster(
+            StopAnalyticsClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopAnalyticsClusterRequest, StopAnalyticsClusterResponse>
+                    handler) {
+        LOG.trace("Called async stopAnalyticsCluster");
+        final StopAnalyticsClusterRequest interceptedRequest =
+                StopAnalyticsClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, StopAnalyticsClusterResponse>
+                transformer = StopAnalyticsClusterConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        StopAnalyticsClusterRequest, StopAnalyticsClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopAnalyticsClusterRequest, StopAnalyticsClusterResponse>,
+                        java.util.concurrent.Future<StopAnalyticsClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopAnalyticsClusterRequest, StopAnalyticsClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StopDbSystemResponse> stopDbSystem(
             StopDbSystemRequest request,
             final com.oracle.bmc.responses.AsyncHandler<StopDbSystemRequest, StopDbSystemResponse>
@@ -585,6 +929,47 @@ public class DbSystemAsyncClient implements DbSystemAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     StopDbSystemRequest, StopDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnalyticsClusterResponse> updateAnalyticsCluster(
+            UpdateAnalyticsClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAnalyticsClusterRequest, UpdateAnalyticsClusterResponse>
+                    handler) {
+        LOG.trace("Called async updateAnalyticsCluster");
+        final UpdateAnalyticsClusterRequest interceptedRequest =
+                UpdateAnalyticsClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAnalyticsClusterResponse>
+                transformer = UpdateAnalyticsClusterConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAnalyticsClusterRequest, UpdateAnalyticsClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAnalyticsClusterRequest, UpdateAnalyticsClusterResponse>,
+                        java.util.concurrent.Future<UpdateAnalyticsClusterResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAnalyticsClusterRequest, UpdateAnalyticsClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

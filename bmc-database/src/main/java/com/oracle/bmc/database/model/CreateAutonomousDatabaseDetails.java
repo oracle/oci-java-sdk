@@ -152,6 +152,15 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlEnabled")
+        private Boolean isAccessControlEnabled;
+
+        public Builder isAccessControlEnabled(Boolean isAccessControlEnabled) {
+            this.isAccessControlEnabled = isAccessControlEnabled;
+            this.__explicitlySet__.add("isAccessControlEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
         private java.util.List<String> whitelistedIps;
 
@@ -244,6 +253,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             isAutoScalingEnabled,
                             isDedicated,
                             autonomousContainerDatabaseId,
+                            isAccessControlEnabled,
                             whitelistedIps,
                             isDataGuardEnabled,
                             subnetId,
@@ -273,6 +283,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .isDedicated(o.getIsDedicated())
                             .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
+                            .isAccessControlEnabled(o.getIsAccessControlEnabled())
                             .whitelistedIps(o.getWhitelistedIps())
                             .isDataGuardEnabled(o.getIsDataGuardEnabled())
                             .subnetId(o.getSubnetId())
@@ -309,6 +320,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             Boolean isAutoScalingEnabled,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            Boolean isAccessControlEnabled,
             java.util.List<String> whitelistedIps,
             Boolean isDataGuardEnabled,
             String subnetId,
@@ -331,6 +343,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 isAutoScalingEnabled,
                 isDedicated,
                 autonomousContainerDatabaseId,
+                isAccessControlEnabled,
                 whitelistedIps,
                 isDataGuardEnabled,
                 subnetId,

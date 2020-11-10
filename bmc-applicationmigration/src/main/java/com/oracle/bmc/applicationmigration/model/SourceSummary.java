@@ -5,8 +5,7 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * The Source object. Sources represent external locations from which
- * applications may be imported into an OCI tenancy.
+ * Details of the source. In Application Migration, a source refers to the environment from which the application is migrated to Oracle Cloud Infrastructure.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -164,57 +163,57 @@ public class SourceSummary {
     }
 
     /**
-     * Unique identifier (OCID) for the source
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The type of source environment
+     * The type of source environment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     SourceTypes type;
 
     /**
-     * Unique idenfifier (OCID) for the compartment where the Source is located.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the source.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Human-readable name of the source.
+     * Name of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Description of the source.
+     * Description of the source. This helps you to identify the appropriate source environment when you have multiple sources defined.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The date and time at which the source was created.
+     * The date and time at which the source was created, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The current state of the Source
+     * The current state of the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     SourceLifecycleStates lifecycleState;
 
     /**
-     * Details about the current lifecycle state
+     * Details about the current lifecycle state of the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -222,7 +221,7 @@ public class SourceSummary {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

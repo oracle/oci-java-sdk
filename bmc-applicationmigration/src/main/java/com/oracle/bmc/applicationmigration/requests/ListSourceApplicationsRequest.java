@@ -13,12 +13,12 @@ public class ListSourceApplicationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The source OCID
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
      */
     private String sourceId;
 
     /**
-     * The compartment OCID on which to filter.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment. Retrieves details of objects in the specified compartment.
      */
     private String compartmentId;
 
