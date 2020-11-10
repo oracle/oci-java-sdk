@@ -5,7 +5,7 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Specifies the credentials to access the source OAC instance
+ * Details about the Oracle Analytics Cloud - Classic application in the source environment.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -87,13 +87,13 @@ public class OacDiscoveryDetails extends DiscoveryDetails {
     }
 
     /**
-     * The OAC instance admin user
+     * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
     String serviceInstanceUser;
 
     /**
-     * The OAC instance admin password
+     * This field is currently not supported. You must enter a value, such as <code>unused</code>. However, the value that you enter is ignored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
     String serviceInstancePassword;

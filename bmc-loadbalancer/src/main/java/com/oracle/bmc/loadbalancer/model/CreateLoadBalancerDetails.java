@@ -74,6 +74,15 @@ public class CreateLoadBalancerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
+        private java.util.List<ReservedIP> reservedIps;
+
+        public Builder reservedIps(java.util.List<ReservedIP> reservedIps) {
+            this.reservedIps = reservedIps;
+            this.__explicitlySet__.add("reservedIps");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("listeners")
         private java.util.Map<String, ListenerDetails> listeners;
 
@@ -186,6 +195,7 @@ public class CreateLoadBalancerDetails {
                             shapeName,
                             isPrivate,
                             ipMode,
+                            reservedIps,
                             listeners,
                             hostnames,
                             backendSets,
@@ -209,6 +219,7 @@ public class CreateLoadBalancerDetails {
                             .shapeName(o.getShapeName())
                             .isPrivate(o.getIsPrivate())
                             .ipMode(o.getIpMode())
+                            .reservedIps(o.getReservedIps())
                             .listeners(o.getListeners())
                             .hostnames(o.getHostnames())
                             .backendSets(o.getBackendSets())
@@ -330,6 +341,13 @@ public class CreateLoadBalancerDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
     IpMode ipMode;
+
+    /**
+     * An array of reserved Ips.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
+    java.util.List<ReservedIP> reservedIps;
 
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
     java.util.Map<String, ListenerDetails> listeners;

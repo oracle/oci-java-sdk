@@ -12,7 +12,7 @@ import com.oracle.bmc.applicationmigration.model.*;
 public class MigrateApplicationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The application OCID
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the migration.
      */
     private String migrationId;
 
@@ -22,6 +22,24 @@ public class MigrateApplicationRequest extends com.oracle.bmc.requests.BmcReques
      *
      */
     private String opcRequestId;
+
+    /**
+     * For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
+     * parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
+    private String ifMatch;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of retrying the same action. Retry tokens expire after
+     * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+     * if a resource has been deleted and purged from the system, then a retry of the original
+     * creation request may be rejected.
+     *
+     */
+    private String opcRetryToken;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -60,6 +78,8 @@ public class MigrateApplicationRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(MigrateApplicationRequest o) {
             migrationId(o.getMigrationId());
             opcRequestId(o.getOpcRequestId());
+            ifMatch(o.getIfMatch());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

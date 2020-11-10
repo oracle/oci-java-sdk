@@ -513,6 +513,38 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public AddVcnCidrResponse addVcnCidr(AddVcnCidrRequest request) {
+        LOG.trace("Called addVcnCidr");
+        final AddVcnCidrRequest interceptedRequest = AddVcnCidrConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddVcnCidrConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddVcnCidrResponse> transformer =
+                AddVcnCidrConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddVcnCidrDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AdvertiseByoipRangeResponse advertiseByoipRange(AdvertiseByoipRangeRequest request) {
         LOG.trace("Called advertiseByoipRange");
         final AdvertiseByoipRangeRequest interceptedRequest =
@@ -4117,6 +4149,36 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetVcnDnsResolverAssociationResponse getVcnDnsResolverAssociation(
+            GetVcnDnsResolverAssociationRequest request) {
+        LOG.trace("Called getVcnDnsResolverAssociation");
+        final GetVcnDnsResolverAssociationRequest interceptedRequest =
+                GetVcnDnsResolverAssociationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVcnDnsResolverAssociationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetVcnDnsResolverAssociationResponse>
+                transformer = GetVcnDnsResolverAssociationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request) {
         LOG.trace("Called getVirtualCircuit");
         final GetVirtualCircuitRequest interceptedRequest =
@@ -5265,6 +5327,39 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ModifyVcnCidrResponse modifyVcnCidr(ModifyVcnCidrRequest request) {
+        LOG.trace("Called modifyVcnCidr");
+        final ModifyVcnCidrRequest interceptedRequest =
+                ModifyVcnCidrConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ModifyVcnCidrConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ModifyVcnCidrResponse>
+                transformer = ModifyVcnCidrConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getModifyVcnCidrDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RemoveNetworkSecurityGroupSecurityRulesResponse removeNetworkSecurityGroupSecurityRules(
             RemoveNetworkSecurityGroupSecurityRulesRequest request) {
         LOG.trace("Called removeNetworkSecurityGroupSecurityRules");
@@ -5330,6 +5425,39 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest
                                                         .getRemovePublicIpPoolCapacityDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveVcnCidrResponse removeVcnCidr(RemoveVcnCidrRequest request) {
+        LOG.trace("Called removeVcnCidr");
+        final RemoveVcnCidrRequest interceptedRequest =
+                RemoveVcnCidrConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveVcnCidrConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveVcnCidrResponse>
+                transformer = RemoveVcnCidrConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveVcnCidrDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

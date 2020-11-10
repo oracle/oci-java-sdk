@@ -32,6 +32,14 @@ public class ListDbSystemsConverter {
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20190415").path("dbSystems");
 
+        if (request.getIsAnalyticsClusterAttached() != null) {
+            target =
+                    target.queryParam(
+                            "isAnalyticsClusterAttached",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsAnalyticsClusterAttached()));
+        }
+
         target =
                 target.queryParam(
                         "compartmentId",

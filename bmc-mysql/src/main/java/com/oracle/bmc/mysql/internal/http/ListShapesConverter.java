@@ -32,6 +32,15 @@ public class ListShapesConverter {
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20190415").path("shapes");
 
+        if (request.getIsSupportedFor() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "isSupportedFor",
+                            request.getIsSupportedFor(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         if (request.getAvailabilityDomain() != null) {
             target =
                     target.queryParam(

@@ -5,7 +5,7 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * The type of application service to be migrated.
+ * The type of application to be migrated.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @lombok.extern.slf4j.Slf4j

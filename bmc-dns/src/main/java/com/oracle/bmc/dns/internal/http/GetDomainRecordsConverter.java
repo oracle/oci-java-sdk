@@ -74,6 +74,22 @@ public class GetDomainRecordsConverter {
                                     request.getRtype()));
         }
 
+        if (request.getScope() != null) {
+            target =
+                    target.queryParam(
+                            "scope",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getScope().getValue()));
+        }
+
+        if (request.getViewId() != null) {
+            target =
+                    target.queryParam(
+                            "viewId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getViewId()));
+        }
+
         if (request.getSortBy() != null) {
             target =
                     target.queryParam(

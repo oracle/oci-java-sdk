@@ -42,6 +42,15 @@ public class Vcn {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
+        private java.util.List<String> cidrBlocks;
+
+        public Builder cidrBlocks(java.util.List<String> cidrBlocks) {
+            this.cidrBlocks = cidrBlocks;
+            this.__explicitlySet__.add("cidrBlocks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -176,6 +185,7 @@ public class Vcn {
             Vcn __instance__ =
                     new Vcn(
                             cidrBlock,
+                            cidrBlocks,
                             compartmentId,
                             defaultDhcpOptionsId,
                             defaultRouteTableId,
@@ -198,6 +208,7 @@ public class Vcn {
         public Builder copy(Vcn o) {
             Builder copiedBuilder =
                     cidrBlock(o.getCidrBlock())
+                            .cidrBlocks(o.getCidrBlocks())
                             .compartmentId(o.getCompartmentId())
                             .defaultDhcpOptionsId(o.getDefaultDhcpOptionsId())
                             .defaultRouteTableId(o.getDefaultRouteTableId())
@@ -226,13 +237,20 @@ public class Vcn {
     }
 
     /**
-     * The CIDR IP address block of the VCN.
+     * Deprecated. The first CIDR IP address from cidrBlocks.
      * <p>
      * Example: `172.16.0.0/16`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     String cidrBlock;
+
+    /**
+     * The list of IPv4 CIDR blocks the VCN will use.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
+    java.util.List<String> cidrBlocks;
 
     /**
      * The OCID of the compartment containing the VCN.
@@ -347,6 +365,7 @@ public class Vcn {
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

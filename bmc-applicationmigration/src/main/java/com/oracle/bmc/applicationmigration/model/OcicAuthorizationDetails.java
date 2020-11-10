@@ -5,7 +5,7 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Specifies the credentials to access the source Oracle Cloud Infrastructure - Classic environment.
+ * Credentials to access Oracle Cloud Infrastructure - Classic, which is the source environment from which you want to migrate the application.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

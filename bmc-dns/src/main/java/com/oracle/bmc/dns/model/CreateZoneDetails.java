@@ -81,6 +81,24 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("viewId")
+        private String viewId;
+
+        public Builder viewId(String viewId) {
+            this.viewId = viewId;
+            this.__explicitlySet__.add("viewId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scope")
+        private Scope scope;
+
+        public Builder scope(Scope scope) {
+            this.scope = scope;
+            this.__explicitlySet__.add("scope");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
         private java.util.List<ExternalMaster> externalMasters;
 
@@ -101,6 +119,8 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
                             freeformTags,
                             definedTags,
                             zoneType,
+                            viewId,
+                            scope,
                             externalMasters);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -114,6 +134,8 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .zoneType(o.getZoneType())
+                            .viewId(o.getViewId())
+                            .scope(o.getScope())
                             .externalMasters(o.getExternalMasters());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -135,14 +157,19 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             ZoneType zoneType,
+            String viewId,
+            Scope scope,
             java.util.List<ExternalMaster> externalMasters) {
         super(name, compartmentId, freeformTags, definedTags);
         this.zoneType = zoneType;
+        this.viewId = viewId;
+        this.scope = scope;
         this.externalMasters = externalMasters;
     }
 
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`.
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL
+     * zones.
      *
      **/
     public enum ZoneType {
@@ -178,11 +205,25 @@ public class CreateZoneDetails extends CreateZoneBaseDetails {
         }
     };
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`.
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL
+     * zones.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
     ZoneType zoneType;
+
+    /**
+     * This value will be null for zones in the global DNS.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("viewId")
+    String viewId;
+
+    /**
+     * The scope of the zone.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scope")
+    Scope scope;
 
     /**
      * External master servers for the zone. `externalMasters` becomes a

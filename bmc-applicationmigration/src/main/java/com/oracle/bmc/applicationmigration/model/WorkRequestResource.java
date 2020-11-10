@@ -151,7 +151,7 @@ public class WorkRequestResource {
     ActionType actionType;
 
     /**
-     * The resource type the work request affects.
+     * The resource type that the work request affects, source or migration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;

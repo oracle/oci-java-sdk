@@ -44,6 +44,22 @@ public class UpdateDomainRecordsConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getDomain()));
 
+        if (request.getScope() != null) {
+            target =
+                    target.queryParam(
+                            "scope",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getScope().getValue()));
+        }
+
+        if (request.getViewId() != null) {
+            target =
+                    target.queryParam(
+                            "viewId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getViewId()));
+        }
+
         if (request.getCompartmentId() != null) {
             target =
                     target.queryParam(

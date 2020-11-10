@@ -70,6 +70,24 @@ public class DbSystem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
+        private Boolean isAnalyticsClusterAttached;
+
+        public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
+            this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
+            this.__explicitlySet__.add("isAnalyticsClusterAttached");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
+        private AnalyticsClusterSummary analyticsCluster;
+
+        public Builder analyticsCluster(AnalyticsClusterSummary analyticsCluster) {
+            this.analyticsCluster = analyticsCluster;
+            this.__explicitlySet__.add("analyticsCluster");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -262,6 +280,8 @@ public class DbSystem {
                             description,
                             compartmentId,
                             subnetId,
+                            isAnalyticsClusterAttached,
+                            analyticsCluster,
                             availabilityDomain,
                             faultDomain,
                             shapeName,
@@ -294,6 +314,8 @@ public class DbSystem {
                             .description(o.getDescription())
                             .compartmentId(o.getCompartmentId())
                             .subnetId(o.getSubnetId())
+                            .isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached())
+                            .analyticsCluster(o.getAnalyticsCluster())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .faultDomain(o.getFaultDomain())
                             .shapeName(o.getShapeName())
@@ -357,6 +379,16 @@ public class DbSystem {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * If the DB System has an Analytics Cluster attached.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
+    Boolean isAnalyticsClusterAttached;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
+    AnalyticsClusterSummary analyticsCluster;
 
     /**
      * The Availability Domain where the primary DB System should be located.

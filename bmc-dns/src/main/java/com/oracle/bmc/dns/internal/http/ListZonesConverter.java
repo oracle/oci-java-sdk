@@ -118,6 +118,22 @@ public class ListZonesConverter {
                                     request.getSortOrder().getValue()));
         }
 
+        if (request.getScope() != null) {
+            target =
+                    target.queryParam(
+                            "scope",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getScope().getValue()));
+        }
+
+        if (request.getViewId() != null) {
+            target =
+                    target.queryParam(
+                            "viewId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getViewId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

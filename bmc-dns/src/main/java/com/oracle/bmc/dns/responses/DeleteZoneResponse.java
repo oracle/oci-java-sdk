@@ -19,6 +19,13 @@ public class DeleteZoneResponse {
      */
     private String opcRequestId;
 
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
+
     public static class Builder {
         /**
          * Copy method to populate the builder with values from the given instance.
@@ -26,6 +33,7 @@ public class DeleteZoneResponse {
          */
         public Builder copy(DeleteZoneResponse o) {
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * A log message from executing an operation that is tracked by a work request.
+ * A log message about the execution of an operation that is tracked by a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,7 +70,7 @@ public class WorkRequestLogEntry {
     }
 
     /**
-     * A human-readable log message.
+     * A user-friendly log message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;

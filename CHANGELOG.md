@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.25.4 - 2020-11-10
+### Added
+- Support for the 21C autonomous database version in the Database service
+- Support for creating a Data Guard association with a standby database from a database software image in the Database service
+- Support for specifying a TDE wallet password when creating a database or database system in the Database service
+- Support for enabling access control lists for autonomous databases on Exadata Cloud At Customer in the Database service
+- Support for private DNS resolvers, resolver endpoints, and views in the DNS service
+- Support for getting a VCN and resolver association in the Networking service
+- Support for additional parameters when updating subnets and VLANs in the Networking service
+- Support for analytics clusters (database accelerators) in the MySQL Database service
+- Support for migrations to Java Cloud Service and Oracle Weblogic Server instances that use existing databases in the Application Migration service
+- Support for specifying reserved IPs when creating load balancers in the Load Balancing service
+
 ## 1.25.3 - 2020-11-03
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the uk-cardiff-1 region

@@ -5,7 +5,8 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * An application running in the source environment that is available for export.
+ * The properties that define an application, that is running in the source environment and which can be migrated to Oracle
+ * Cloud Infrastructure.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -104,31 +105,31 @@ public class SourceApplicationSummary {
     }
 
     /**
-     * The name of the application
+     * The name of the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The type of application
+     * The type of the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     MigrationTypes type;
 
     /**
-     * Unique identifier (OCID) for the Source to which the application belongs
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source to which the application belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     String sourceId;
 
     /**
-     * The version of the application server
+     * The version of the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;
 
     /**
-     * The current application running state
+     * The current state of the application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     String state;

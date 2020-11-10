@@ -74,6 +74,15 @@ public class CreateDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+        private String tdeWalletPassword;
+
+        public Builder tdeWalletPassword(String tdeWalletPassword) {
+            this.tdeWalletPassword = tdeWalletPassword;
+            this.__explicitlySet__.add("tdeWalletPassword");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
         private String characterSet;
 
@@ -140,6 +149,7 @@ public class CreateDatabaseDetails {
                             databaseSoftwareImageId,
                             pdbName,
                             adminPassword,
+                            tdeWalletPassword,
                             characterSet,
                             ncharacterSet,
                             dbWorkload,
@@ -158,6 +168,7 @@ public class CreateDatabaseDetails {
                             .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .pdbName(o.getPdbName())
                             .adminPassword(o.getAdminPassword())
+                            .tdeWalletPassword(o.getTdeWalletPassword())
                             .characterSet(o.getCharacterSet())
                             .ncharacterSet(o.getNcharacterSet())
                             .dbWorkload(o.getDbWorkload())
@@ -206,6 +217,12 @@ public class CreateDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     String adminPassword;
+
+    /**
+     * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPassword")
+    String tdeWalletPassword;
 
     /**
      * The character set for the database.  The default is AL32UTF8. Allowed values are:

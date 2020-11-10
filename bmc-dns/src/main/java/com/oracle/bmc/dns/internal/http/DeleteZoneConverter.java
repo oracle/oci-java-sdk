@@ -37,6 +37,22 @@ public class DeleteZoneConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getZoneNameOrId()));
 
+        if (request.getScope() != null) {
+            target =
+                    target.queryParam(
+                            "scope",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getScope().getValue()));
+        }
+
+        if (request.getViewId() != null) {
+            target =
+                    target.queryParam(
+                            "viewId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getViewId()));
+        }
+
         if (request.getCompartmentId() != null) {
             target =
                     target.queryParam(
@@ -100,6 +116,18 @@ public class DeleteZoneConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcWorkRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
                                                     String.class));
                                 }
 

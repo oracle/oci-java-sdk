@@ -46,6 +46,15 @@ public interface DbSystem extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds an Analytics Cluster to the DB System.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AddAnalyticsClusterResponse addAnalyticsCluster(AddAnalyticsClusterRequest request);
+
+    /**
      * Creates and launches a DB System.
      *
      * @param request The request object containing the details to send
@@ -53,6 +62,16 @@ public interface DbSystem extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request);
+
+    /**
+     * Deletes the Analytics Cluster including terminating, detaching, removing, finalizing and
+     * otherwise deleting all related resources.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteAnalyticsClusterResponse deleteAnalyticsCluster(DeleteAnalyticsClusterRequest request);
 
     /**
      * Delete a DB System, including terminating, detaching,
@@ -63,6 +82,35 @@ public interface DbSystem extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteDbSystemResponse deleteDbSystem(DeleteDbSystemRequest request);
+
+    /**
+     * Sends a request to estimate the memory footprints of user tables when loaded to Analytics Cluster memory.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GenerateAnalyticsClusterMemoryEstimateResponse generateAnalyticsClusterMemoryEstimate(
+            GenerateAnalyticsClusterMemoryEstimateRequest request);
+
+    /**
+     * Gets information about the Analytics Cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAnalyticsClusterResponse getAnalyticsCluster(GetAnalyticsClusterRequest request);
+
+    /**
+     * Gets the most recent Analytics Cluster memory estimate that can be used to determine a suitable
+     * Analytics Cluster size.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAnalyticsClusterMemoryEstimateResponse getAnalyticsClusterMemoryEstimate(
+            GetAnalyticsClusterMemoryEstimateRequest request);
 
     /**
      * Get information about the specified DB System.
@@ -83,6 +131,14 @@ public interface DbSystem extends AutoCloseable {
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
 
     /**
+     * Restarts the Analytics Cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestartAnalyticsClusterResponse restartAnalyticsCluster(RestartAnalyticsClusterRequest request);
+
+    /**
      * Restarts the specified DB System.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -91,12 +147,28 @@ public interface DbSystem extends AutoCloseable {
     RestartDbSystemResponse restartDbSystem(RestartDbSystemRequest request);
 
     /**
+     * Starts the Analytics Cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StartAnalyticsClusterResponse startAnalyticsCluster(StartAnalyticsClusterRequest request);
+
+    /**
      * Start the specified DB System.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     StartDbSystemResponse startDbSystem(StartDbSystemRequest request);
+
+    /**
+     * Stops the Analytics Cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StopAnalyticsClusterResponse stopAnalyticsCluster(StopAnalyticsClusterRequest request);
 
     /**
      * Stops the specified DB System.
@@ -108,6 +180,15 @@ public interface DbSystem extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     StopDbSystemResponse stopDbSystem(StopDbSystemRequest request);
+
+    /**
+     * Updates the Analytics Cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAnalyticsClusterResponse updateAnalyticsCluster(UpdateAnalyticsClusterRequest request);
 
     /**
      * Update the configuration of a DB System.

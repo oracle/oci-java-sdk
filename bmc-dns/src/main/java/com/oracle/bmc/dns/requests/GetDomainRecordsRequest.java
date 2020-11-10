@@ -73,6 +73,17 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
     private String rtype;
 
     /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
+    private com.oracle.bmc.dns.model.Scope scope;
+
+    /**
+     * The OCID of the view the resource is associated with.
+     */
+    private String viewId;
+
+    /**
      * The field by which to sort records.
      */
     private SortBy sortBy;
@@ -167,6 +178,8 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest<
             page(o.getPage());
             zoneVersion(o.getZoneVersion());
             rtype(o.getRtype());
+            scope(o.getScope());
+            viewId(o.getViewId());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             compartmentId(o.getCompartmentId());

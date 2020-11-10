@@ -97,6 +97,12 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
+    private com.oracle.bmc.dns.model.Scope scope;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTsigKeysRequest, java.lang.Void> {
@@ -141,6 +147,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             lifecycleState(o.getLifecycleState());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            scope(o.getScope());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

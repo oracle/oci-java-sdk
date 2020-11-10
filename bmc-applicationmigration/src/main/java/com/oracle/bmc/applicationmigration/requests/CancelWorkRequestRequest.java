@@ -12,7 +12,7 @@ import com.oracle.bmc.applicationmigration.model.*;
 public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String workRequestId;
 
@@ -25,7 +25,7 @@ public class CancelWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
-     * parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource
+     * parameter to the value of the etag from a previous `GET` or `POST` response for that resource. The resource
      * will be updated or deleted only if the etag you provide matches the resource's current etag value.
      *
      */

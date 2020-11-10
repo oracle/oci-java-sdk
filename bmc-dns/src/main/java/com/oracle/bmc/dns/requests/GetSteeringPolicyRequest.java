@@ -42,6 +42,12 @@ public class GetSteeringPolicyRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String opcRequestId;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
+    private com.oracle.bmc.dns.model.Scope scope;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetSteeringPolicyRequest, java.lang.Void> {
@@ -81,6 +87,7 @@ public class GetSteeringPolicyRequest extends com.oracle.bmc.requests.BmcRequest
             ifNoneMatch(o.getIfNoneMatch());
             ifModifiedSince(o.getIfModifiedSince());
             opcRequestId(o.getOpcRequestId());
+            scope(o.getScope());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

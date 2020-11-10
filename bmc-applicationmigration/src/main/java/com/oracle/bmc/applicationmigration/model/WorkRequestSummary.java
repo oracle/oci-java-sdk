@@ -167,7 +167,7 @@ public class WorkRequestSummary {
     String compartmentId;
 
     /**
-     * The percentage complete of the operation tracked by this work request.
+     * The percentage completion of the operation tracked by this work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     Float percentComplete;

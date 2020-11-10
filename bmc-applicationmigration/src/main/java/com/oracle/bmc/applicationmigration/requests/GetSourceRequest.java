@@ -12,7 +12,7 @@ import com.oracle.bmc.applicationmigration.model.*;
 public class GetSourceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The source OCID
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
      */
     private String sourceId;
 

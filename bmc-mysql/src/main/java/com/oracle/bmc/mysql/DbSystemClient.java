@@ -441,6 +441,39 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
+    public AddAnalyticsClusterResponse addAnalyticsCluster(AddAnalyticsClusterRequest request) {
+        LOG.trace("Called addAnalyticsCluster");
+        final AddAnalyticsClusterRequest interceptedRequest =
+                AddAnalyticsClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddAnalyticsClusterResponse>
+                transformer = AddAnalyticsClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddAnalyticsClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request) {
         LOG.trace("Called createDbSystem");
         final CreateDbSystemRequest interceptedRequest =
@@ -474,6 +507,36 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
+    public DeleteAnalyticsClusterResponse deleteAnalyticsCluster(
+            DeleteAnalyticsClusterRequest request) {
+        LOG.trace("Called deleteAnalyticsCluster");
+        final DeleteAnalyticsClusterRequest interceptedRequest =
+                DeleteAnalyticsClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAnalyticsClusterResponse>
+                transformer = DeleteAnalyticsClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteDbSystemResponse deleteDbSystem(DeleteDbSystemRequest request) {
         LOG.trace("Called deleteDbSystem");
         final DeleteDbSystemRequest interceptedRequest =
@@ -497,6 +560,97 @@ public class DbSystemClient implements DbSystem {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GenerateAnalyticsClusterMemoryEstimateResponse generateAnalyticsClusterMemoryEstimate(
+            GenerateAnalyticsClusterMemoryEstimateRequest request) {
+        LOG.trace("Called generateAnalyticsClusterMemoryEstimate");
+        final GenerateAnalyticsClusterMemoryEstimateRequest interceptedRequest =
+                GenerateAnalyticsClusterMemoryEstimateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateAnalyticsClusterMemoryEstimateConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateAnalyticsClusterMemoryEstimateResponse>
+                transformer = GenerateAnalyticsClusterMemoryEstimateConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetAnalyticsClusterResponse getAnalyticsCluster(GetAnalyticsClusterRequest request) {
+        LOG.trace("Called getAnalyticsCluster");
+        final GetAnalyticsClusterRequest interceptedRequest =
+                GetAnalyticsClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAnalyticsClusterResponse>
+                transformer = GetAnalyticsClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetAnalyticsClusterMemoryEstimateResponse getAnalyticsClusterMemoryEstimate(
+            GetAnalyticsClusterMemoryEstimateRequest request) {
+        LOG.trace("Called getAnalyticsClusterMemoryEstimate");
+        final GetAnalyticsClusterMemoryEstimateRequest interceptedRequest =
+                GetAnalyticsClusterMemoryEstimateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAnalyticsClusterMemoryEstimateConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAnalyticsClusterMemoryEstimateResponse>
+                transformer = GetAnalyticsClusterMemoryEstimateConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -559,6 +713,37 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
+    public RestartAnalyticsClusterResponse restartAnalyticsCluster(
+            RestartAnalyticsClusterRequest request) {
+        LOG.trace("Called restartAnalyticsCluster");
+        final RestartAnalyticsClusterRequest interceptedRequest =
+                RestartAnalyticsClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestartAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RestartAnalyticsClusterResponse>
+                transformer = RestartAnalyticsClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RestartDbSystemResponse restartDbSystem(RestartDbSystemRequest request) {
         LOG.trace("Called restartDbSystem");
         final RestartDbSystemRequest interceptedRequest =
@@ -592,6 +777,37 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
+    public StartAnalyticsClusterResponse startAnalyticsCluster(
+            StartAnalyticsClusterRequest request) {
+        LOG.trace("Called startAnalyticsCluster");
+        final StartAnalyticsClusterRequest interceptedRequest =
+                StartAnalyticsClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StartAnalyticsClusterResponse>
+                transformer = StartAnalyticsClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public StartDbSystemResponse startDbSystem(StartDbSystemRequest request) {
         LOG.trace("Called startDbSystem");
         final StartDbSystemRequest interceptedRequest =
@@ -600,6 +816,36 @@ public class DbSystemClient implements DbSystem {
                 StartDbSystemConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, StartDbSystemResponse>
                 transformer = StartDbSystemConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public StopAnalyticsClusterResponse stopAnalyticsCluster(StopAnalyticsClusterRequest request) {
+        LOG.trace("Called stopAnalyticsCluster");
+        final StopAnalyticsClusterRequest interceptedRequest =
+                StopAnalyticsClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StopAnalyticsClusterResponse>
+                transformer = StopAnalyticsClusterConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -648,6 +894,39 @@ public class DbSystemClient implements DbSystem {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getStopDbSystemDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateAnalyticsClusterResponse updateAnalyticsCluster(
+            UpdateAnalyticsClusterRequest request) {
+        LOG.trace("Called updateAnalyticsCluster");
+        final UpdateAnalyticsClusterRequest interceptedRequest =
+                UpdateAnalyticsClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAnalyticsClusterResponse>
+                transformer = UpdateAnalyticsClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateAnalyticsClusterDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

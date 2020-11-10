@@ -72,13 +72,47 @@ public class AutonomousDbVersionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
+        private Boolean isPaidEnabled;
+
+        public Builder isPaidEnabled(Boolean isPaidEnabled) {
+            this.isPaidEnabled = isPaidEnabled;
+            this.__explicitlySet__.add("isPaidEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForFree")
+        private Boolean isDefaultForFree;
+
+        public Builder isDefaultForFree(Boolean isDefaultForFree) {
+            this.isDefaultForFree = isDefaultForFree;
+            this.__explicitlySet__.add("isDefaultForFree");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForPaid")
+        private Boolean isDefaultForPaid;
+
+        public Builder isDefaultForPaid(Boolean isDefaultForPaid) {
+            this.isDefaultForPaid = isDefaultForPaid;
+            this.__explicitlySet__.add("isDefaultForPaid");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDbVersionSummary build() {
             AutonomousDbVersionSummary __instance__ =
                     new AutonomousDbVersionSummary(
-                            version, dbWorkload, isDedicated, details, isFreeTierEnabled);
+                            version,
+                            dbWorkload,
+                            isDedicated,
+                            details,
+                            isFreeTierEnabled,
+                            isPaidEnabled,
+                            isDefaultForFree,
+                            isDefaultForPaid);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,7 +124,10 @@ public class AutonomousDbVersionSummary {
                             .dbWorkload(o.getDbWorkload())
                             .isDedicated(o.getIsDedicated())
                             .details(o.getDetails())
-                            .isFreeTierEnabled(o.getIsFreeTierEnabled());
+                            .isFreeTierEnabled(o.getIsFreeTierEnabled())
+                            .isPaidEnabled(o.getIsPaidEnabled())
+                            .isDefaultForFree(o.getIsDefaultForFree())
+                            .isDefaultForPaid(o.getIsDefaultForPaid());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -190,6 +227,24 @@ public class AutonomousDbVersionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTierEnabled")
     Boolean isFreeTierEnabled;
+
+    /**
+     * True if this version of the Oracle Database software has payments enabled.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPaidEnabled")
+    Boolean isPaidEnabled;
+
+    /**
+     * True if this version of the Oracle Database software's default is free.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForFree")
+    Boolean isDefaultForFree;
+
+    /**
+     * True if this version of the Oracle Database software's default is paid.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefaultForPaid")
+    Boolean isDefaultForPaid;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

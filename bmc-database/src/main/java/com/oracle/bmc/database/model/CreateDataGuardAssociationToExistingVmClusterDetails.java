@@ -34,6 +34,15 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
 
@@ -85,6 +94,7 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
         public CreateDataGuardAssociationToExistingVmClusterDetails build() {
             CreateDataGuardAssociationToExistingVmClusterDetails __instance__ =
                     new CreateDataGuardAssociationToExistingVmClusterDetails(
+                            databaseSoftwareImageId,
                             databaseAdminPassword,
                             protectionMode,
                             transportType,
@@ -97,7 +107,8 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDataGuardAssociationToExistingVmClusterDetails o) {
             Builder copiedBuilder =
-                    databaseAdminPassword(o.getDatabaseAdminPassword())
+                    databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
+                            .databaseAdminPassword(o.getDatabaseAdminPassword())
                             .protectionMode(o.getProtectionMode())
                             .transportType(o.getTransportType())
                             .peerVmClusterId(o.getPeerVmClusterId())
@@ -117,12 +128,13 @@ public class CreateDataGuardAssociationToExistingVmClusterDetails
 
     @Deprecated
     public CreateDataGuardAssociationToExistingVmClusterDetails(
+            String databaseSoftwareImageId,
             String databaseAdminPassword,
             ProtectionMode protectionMode,
             TransportType transportType,
             String peerVmClusterId,
             String peerDbHomeId) {
-        super(databaseAdminPassword, protectionMode, transportType);
+        super(databaseSoftwareImageId, databaseAdminPassword, protectionMode, transportType);
         this.peerVmClusterId = peerVmClusterId;
         this.peerDbHomeId = peerDbHomeId;
     }

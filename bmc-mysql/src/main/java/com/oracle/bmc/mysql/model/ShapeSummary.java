@@ -55,11 +55,21 @@ public class ShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isSupportedFor")
+        private java.util.List<IsSupportedFor> isSupportedFor;
+
+        public Builder isSupportedFor(java.util.List<IsSupportedFor> isSupportedFor) {
+            this.isSupportedFor = isSupportedFor;
+            this.__explicitlySet__.add("isSupportedFor");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeSummary build() {
-            ShapeSummary __instance__ = new ShapeSummary(name, cpuCoreCount, memorySizeInGBs);
+            ShapeSummary __instance__ =
+                    new ShapeSummary(name, cpuCoreCount, memorySizeInGBs, isSupportedFor);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -69,7 +79,8 @@ public class ShapeSummary {
             Builder copiedBuilder =
                     name(o.getName())
                             .cpuCoreCount(o.getCpuCoreCount())
-                            .memorySizeInGBs(o.getMemorySizeInGBs());
+                            .memorySizeInGBs(o.getMemorySizeInGBs())
+                            .isSupportedFor(o.getIsSupportedFor());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -100,6 +111,57 @@ public class ShapeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     Integer memorySizeInGBs;
+    /**
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum IsSupportedFor {
+        Dbsystem("DBSYSTEM"),
+        Analyticscluster("ANALYTICSCLUSTER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, IsSupportedFor> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IsSupportedFor v : IsSupportedFor.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IsSupportedFor(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IsSupportedFor create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IsSupportedFor', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * What service features the shape is supported for.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSupportedFor")
+    java.util.List<IsSupportedFor> isSupportedFor;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

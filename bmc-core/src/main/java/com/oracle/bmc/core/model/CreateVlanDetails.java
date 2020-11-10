@@ -177,6 +177,7 @@ public class CreateVlanDetails {
      * hosts outside the VLAN. The CIDR must maintain the following rules -
      * <p>
      * a. The CIDR block is valid and correctly formatted.
+     * b. The new range is within one of the parent VCN ranges.
      * <p>
      * Example: `192.0.2.0/24`
      *

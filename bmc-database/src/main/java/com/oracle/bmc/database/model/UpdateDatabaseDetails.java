@@ -47,6 +47,33 @@ public class UpdateDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("newAdminPassword")
+        private String newAdminPassword;
+
+        public Builder newAdminPassword(String newAdminPassword) {
+            this.newAdminPassword = newAdminPassword;
+            this.__explicitlySet__.add("newAdminPassword");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("oldTdeWalletPassword")
+        private String oldTdeWalletPassword;
+
+        public Builder oldTdeWalletPassword(String oldTdeWalletPassword) {
+            this.oldTdeWalletPassword = oldTdeWalletPassword;
+            this.__explicitlySet__.add("oldTdeWalletPassword");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("newTdeWalletPassword")
+        private String newTdeWalletPassword;
+
+        public Builder newTdeWalletPassword(String newTdeWalletPassword) {
+            this.newTdeWalletPassword = newTdeWalletPassword;
+            this.__explicitlySet__.add("newTdeWalletPassword");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -71,7 +98,14 @@ public class UpdateDatabaseDetails {
 
         public UpdateDatabaseDetails build() {
             UpdateDatabaseDetails __instance__ =
-                    new UpdateDatabaseDetails(dbBackupConfig, dbHomeId, freeformTags, definedTags);
+                    new UpdateDatabaseDetails(
+                            dbBackupConfig,
+                            dbHomeId,
+                            newAdminPassword,
+                            oldTdeWalletPassword,
+                            newTdeWalletPassword,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -81,6 +115,9 @@ public class UpdateDatabaseDetails {
             Builder copiedBuilder =
                     dbBackupConfig(o.getDbBackupConfig())
                             .dbHomeId(o.getDbHomeId())
+                            .newAdminPassword(o.getNewAdminPassword())
+                            .oldTdeWalletPassword(o.getOldTdeWalletPassword())
+                            .newTdeWalletPassword(o.getNewTdeWalletPassword())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -104,6 +141,24 @@ public class UpdateDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     String dbHomeId;
+
+    /**
+     * A new strong password for SYS, SYSTEM, and the plugbable database ADMIN user. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("newAdminPassword")
+    String newAdminPassword;
+
+    /**
+     * The existing password to open the TDE wallet. It is required to set a new tde password.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oldTdeWalletPassword")
+    String oldTdeWalletPassword;
+
+    /**
+     * The new password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("newTdeWalletPassword")
+    String newTdeWalletPassword;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

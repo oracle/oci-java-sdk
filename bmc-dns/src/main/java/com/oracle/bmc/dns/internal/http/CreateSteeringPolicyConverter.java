@@ -34,6 +34,14 @@ public class CreateSteeringPolicyConverter {
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20180115").path("steeringPolicies");
 
+        if (request.getScope() != null) {
+            target =
+                    target.queryParam(
+                            "scope",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getScope().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -85,6 +93,27 @@ public class CreateSteeringPolicyConverter {
 
                                 builder.steeringPolicy(response.getItem());
 
+                                com.google.common.base.Optional<java.util.List<String>> eTagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "ETag");
+                                if (eTagHeader.isPresent()) {
+                                    builder.eTag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "ETag", eTagHeader.get().get(0), String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        locationHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "Location");
+                                if (locationHeader.isPresent()) {
+                                    builder.location(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "Location",
+                                                    locationHeader.get().get(0),
+                                                    String.class));
+                                }
+
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
@@ -95,15 +124,6 @@ public class CreateSteeringPolicyConverter {
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
                                                     String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>> eTagHeader =
-                                        com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                headers, "ETag");
-                                if (eTagHeader.isPresent()) {
-                                    builder.eTag(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
                                 com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse

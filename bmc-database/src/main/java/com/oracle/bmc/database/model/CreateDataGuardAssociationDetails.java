@@ -48,6 +48,12 @@ package com.oracle.bmc.database.model;
 public class CreateDataGuardAssociationDetails {
 
     /**
+     * The database software image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    String databaseSoftwareImageId;
+
+    /**
      * A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
      * <p>
      * The password must contain no fewer than nine characters and include:

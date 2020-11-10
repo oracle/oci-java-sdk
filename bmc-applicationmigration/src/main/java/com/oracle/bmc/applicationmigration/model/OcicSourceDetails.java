@@ -5,7 +5,7 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Specifies configuration specific to the source environment.
+ * Details about the Oracle Cloud Infrastructure Classic account, the source environment from which you want to migrate the application.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -84,13 +84,18 @@ public class OcicSourceDetails extends SourceDetails {
     }
 
     /**
-     * The Oracle Cloud Infrastructure - Classic region name (e.g. us2-z11 or uscom-central-1)
+     * The Oracle Cloud Infrastructure - Classic region from which you want to migrate your applications. For example, uscom-east-1 or uscom-central-1.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     String region;
 
     /**
-     * The compute account id
+     * If you are using a Oracle Cloud Infrastructure - Classic account with Identity Cloud Service (IDCS), enter the service instance ID.
+     * For example, if Compute-567890123 is the account name of your Oracle Cloud Infrastructure Classic Compute service entitlement,
+     * then enter 567890123.
+     * <p>
+     * If you are using a traditional Oracle Cloud Infrastructure - Classic account, enter your identity domain ID.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeAccount")
     String computeAccount;

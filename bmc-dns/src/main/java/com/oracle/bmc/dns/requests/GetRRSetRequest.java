@@ -75,6 +75,17 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      */
     private String compartmentId;
 
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
+    private com.oracle.bmc.dns.model.Scope scope;
+
+    /**
+     * The OCID of the view the resource is associated with.
+     */
+    private String viewId;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetRRSetRequest, java.lang.Void> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
@@ -119,6 +130,8 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             page(o.getPage());
             zoneVersion(o.getZoneVersion());
             compartmentId(o.getCompartmentId());
+            scope(o.getScope());
+            viewId(o.getViewId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
