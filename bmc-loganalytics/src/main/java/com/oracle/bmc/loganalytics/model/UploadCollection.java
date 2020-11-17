@@ -59,7 +59,7 @@ public class UploadCollection {
     }
 
     /**
-     * list of UploadSummary objects.
+     * List of UploadSummary objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<UploadSummary> items;

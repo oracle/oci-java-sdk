@@ -69,7 +69,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * A work request status to filter on. Can have multiple parameters of this name.
      */
-    private java.util.List<com.oracle.bmc.containerengine.model.WorkRequestStatus> status;
+    private java.util.List<String> status;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.

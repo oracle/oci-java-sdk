@@ -174,6 +174,15 @@ public class DatabaseSoftwareImage {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isUpgradeSupported")
+        private Boolean isUpgradeSupported;
+
+        public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
+            this.isUpgradeSupported = isUpgradeSupported;
+            this.__explicitlySet__.add("isUpgradeSupported");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -195,7 +204,8 @@ public class DatabaseSoftwareImage {
                             databaseSoftwareImageIncludedPatches,
                             includedPatchesSummary,
                             databaseSoftwareImageOneOffPatches,
-                            lsInventory);
+                            lsInventory,
+                            isUpgradeSupported);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -220,7 +230,8 @@ public class DatabaseSoftwareImage {
                             .includedPatchesSummary(o.getIncludedPatchesSummary())
                             .databaseSoftwareImageOneOffPatches(
                                     o.getDatabaseSoftwareImageOneOffPatches())
-                            .lsInventory(o.getLsInventory());
+                            .lsInventory(o.getLsInventory())
+                            .isUpgradeSupported(o.getIsUpgradeSupported());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -476,6 +487,12 @@ public class DatabaseSoftwareImage {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lsInventory")
     String lsInventory;
+
+    /**
+     * True if this Database software image is supported for Upgrade.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUpgradeSupported")
+    Boolean isUpgradeSupported;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

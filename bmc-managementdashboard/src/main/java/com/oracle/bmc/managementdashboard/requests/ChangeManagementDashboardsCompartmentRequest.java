@@ -13,12 +13,12 @@ public class ChangeManagementDashboardsCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangeManagementDashboardsCompartmentDetails> {
 
     /**
-     * unique dashboard identifier
+     * A unique dashboard identifier.
      */
     private String managementDashboardId;
 
     /**
-     * Id for dashboard to be moved.
+     * ID of the dashboard that is being moved.
      */
     private ChangeManagementDashboardsCompartmentDetails
             changeManagementDashboardsCompartmentDetails;

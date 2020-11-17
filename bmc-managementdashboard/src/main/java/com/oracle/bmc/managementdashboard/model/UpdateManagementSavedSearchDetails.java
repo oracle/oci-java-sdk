@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementdashboard.model;
 
 /**
- * Properties of a saved search.  Saved search id must not be provided.
+ * Properties of a saved search.  Saved search ID must not be provided.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -241,73 +241,73 @@ public class UpdateManagementSavedSearchDetails {
     }
 
     /**
-     * Display name for saved search.
+     * Display name of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Id for application (LA, APM, etc.) that owners this saved search.  Each owner has a unique Id.
+     * ID of the service (for example log-analytics) that owns the saved search. Each service has a unique ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerId")
     String providerId;
 
     /**
-     * Version.
+     * Version of the service that owns this saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
     String providerVersion;
 
     /**
-     * Name for application (LA, APM, etc.) that owners this saved search.
+     * Name of the service (for example, Logging Analytics) that owns the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     String providerName;
 
     /**
-     * The ocid of the compartment that owns the saved search.
+     * OCID of the compartment in which the saved search resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * String boolean (\"true\" or \"false\") to indicate Out Of the Box saved search.
+     * Determines whether the saved search is an Out-of-the-Box (OOB) saved search. Note that OOB saved searches are only provided by Oracle and cannot be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOobSavedSearch")
     Boolean isOobSavedSearch;
 
     /**
-     * Description.
+     * Description of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Json for internationalization.
+     * JSON that contains internationalization options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
     Object nls;
 
     /**
-     * How to show the saved search.
+     * Determines how the saved search is displayed in a dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     SavedSearchTypes type;
 
     /**
-     * Json to contain options for UI.
+     * JSON that contains user interface options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     Object uiConfig;
 
     /**
-     * Array of Json to contain options for source of data.
+     * Array of JSON that contain data source options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     java.util.List<Object> dataConfig;
 
     /**
-     * Screenshot.
+     * Screen image of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
     String screenImage;
@@ -319,13 +319,13 @@ public class UpdateManagementSavedSearchDetails {
     String metadataVersion;
 
     /**
-     * Template.
+     * Reference to the HTML file of the widget.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("widgetTemplate")
     String widgetTemplate;
 
     /**
-     * View Model
+     * Reference to the view model of the widget.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("widgetVM")
     String widgetVM;

@@ -12,7 +12,7 @@ import com.oracle.bmc.loganalytics.model.*;
 public class GetLabelSummaryRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;

@@ -85,7 +85,7 @@ public class ManagementDashboardImportDetails {
     }
 
     /**
-     * Array of dashboards
+     * Array of dashboards.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dashboards")
     java.util.List<ManagementDashboardForImportExportDetails> dashboards;

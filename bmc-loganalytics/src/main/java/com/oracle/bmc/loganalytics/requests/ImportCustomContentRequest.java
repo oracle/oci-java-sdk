@@ -13,7 +13,7 @@ public class ImportCustomContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;

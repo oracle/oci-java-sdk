@@ -909,6 +909,16 @@ public interface Database extends AutoCloseable {
             GetDatabaseSoftwareImageRequest request);
 
     /**
+     * gets the upgrade history for a specified database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetDatabaseUpgradeHistoryEntryResponse getDatabaseUpgradeHistoryEntry(
+            GetDatabaseUpgradeHistoryEntryRequest request);
+
+    /**
      * Gets information about the specified Database Home.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1312,6 +1322,16 @@ public interface Database extends AutoCloseable {
      */
     ListDatabaseSoftwareImagesResponse listDatabaseSoftwareImages(
             ListDatabaseSoftwareImagesRequest request);
+
+    /**
+     * gets the upgrade history for a specified database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListDatabaseUpgradeHistoryEntriesResponse listDatabaseUpgradeHistoryEntries(
+            ListDatabaseUpgradeHistoryEntriesRequest request);
 
     /**
      * Gets a list of the databases in the specified Database Home.
@@ -1880,6 +1900,15 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateVmClusterNetworkResponse updateVmClusterNetwork(UpdateVmClusterNetworkRequest request);
+
+    /**
+     * Upgrade the specified database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpgradeDatabaseResponse upgradeDatabase(UpgradeDatabaseRequest request);
 
     /**
      * Validates the specified Exadata Cloud@Customer VM cluster network.

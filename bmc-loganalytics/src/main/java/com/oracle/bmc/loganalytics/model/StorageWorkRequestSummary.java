@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Storage work request summary for list operation.
+ * This is the summary of a storage work request.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -263,7 +263,7 @@ public class StorageWorkRequestSummary {
     }
 
     /**
-     * Unique OCID identifier to reference this storage work Request with.
+     * This is the OCID of the storage work Request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -308,74 +308,74 @@ public class StorageWorkRequestSummary {
     Integer percentComplete;
 
     /**
-     * Work request status.
+     * This is the work request status.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     WorkRequestStatus status;
 
     /**
-     * the start of the time interval
+     * This is the start of the time interval
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     java.util.Date timeDataStarted;
 
     /**
-     * the end of the time interval
+     * This is the end of the time interval
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     java.util.Date timeDataEnded;
 
     /**
-     * the solr data filter query, '*' means all
+     * This is the solr query used to filter data for purge, '*' means all
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
     String purgeQueryString;
 
     /**
-     * the type of the log data to be purged
+     * Thie is the type of data to be purged
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     StorageDataType dataType;
 
     /**
-     * more detailed status if applicable
+     * This provides more detailed status if applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
     String statusDetails;
 
     /**
-     * more detailed info about this operation if applicable
+     * This provides more detailed info about the work request if applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationDetails")
     String operationDetails;
 
     /**
-     * policy name if applicable (e.g. purge policy)
+     * This is the policy name if applicable (e.g. purge policy)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyName")
     String policyName;
 
     /**
-     * purge policy ID
+     * This is the purge policy ID if applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     String policyId;
 
     /**
-     * storage usage in bytes if applicable
+     * This is the data usage in bytes if applicable
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsageInBytes")
     Long storageUsageInBytes;
 
     /**
-     * if true, purge child compartments data, only applicable to purge request
+     * If true, purge child compartments data, only applicable to purge request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     Boolean compartmentIdInSubtree;
 
     /**
-     * Asynchronous storage request name.
+     * This is the type of the work request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")

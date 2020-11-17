@@ -3229,6 +3229,36 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetDatabaseUpgradeHistoryEntryResponse getDatabaseUpgradeHistoryEntry(
+            GetDatabaseUpgradeHistoryEntryRequest request) {
+        LOG.trace("Called getDatabaseUpgradeHistoryEntry");
+        final GetDatabaseUpgradeHistoryEntryRequest interceptedRequest =
+                GetDatabaseUpgradeHistoryEntryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseUpgradeHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDatabaseUpgradeHistoryEntryResponse>
+                transformer = GetDatabaseUpgradeHistoryEntryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetDbHomeResponse getDbHome(GetDbHomeRequest request) {
         LOG.trace("Called getDbHome");
         final GetDbHomeRequest interceptedRequest = GetDbHomeConverter.interceptRequest(request);
@@ -4457,6 +4487,36 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDatabaseSoftwareImagesResponse>
                 transformer = ListDatabaseSoftwareImagesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDatabaseUpgradeHistoryEntriesResponse listDatabaseUpgradeHistoryEntries(
+            ListDatabaseUpgradeHistoryEntriesRequest request) {
+        LOG.trace("Called listDatabaseUpgradeHistoryEntries");
+        final ListDatabaseUpgradeHistoryEntriesRequest interceptedRequest =
+                ListDatabaseUpgradeHistoryEntriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseUpgradeHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDatabaseUpgradeHistoryEntriesResponse>
+                transformer = ListDatabaseUpgradeHistoryEntriesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -6384,6 +6444,38 @@ public class DatabaseClient implements Database {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateVmClusterNetworkDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpgradeDatabaseResponse upgradeDatabase(UpgradeDatabaseRequest request) {
+        LOG.trace("Called upgradeDatabase");
+        final UpgradeDatabaseRequest interceptedRequest =
+                UpgradeDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDatabaseResponse>
+                transformer = UpgradeDatabaseConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpgradeDatabaseDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

@@ -12,7 +12,7 @@ import com.oracle.bmc.loganalytics.model.*;
 public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
@@ -37,7 +37,6 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * The log group OCID to which the log data in this upload will be mapped to.
-     *   Example: `ocid1.loganalyticsloggroup.oc1..aaaaaaaad3q4sosi5i7z7onw2kgbwyk1581620537198`
      *
      */
     private String opcMetaLoggrpid;
@@ -60,7 +59,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String timezone;
 
     /**
-     * character Encoding
+     * Character Encoding
      */
     private String charEncoding;
 
@@ -87,7 +86,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String opcRequestId;
 
     /**
-     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Log Analytics performs an integrity check
+     * The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Logging Analytics performs an integrity check
      * on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
      * If the two hashes do not match, the log data is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
      * <p>
@@ -97,7 +96,7 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String contentMd5;
 
     /**
-     * The content type of the log data. Defaults to 'application/octet-stream' if not overridden during the UploadLogFile call.
+     * The content type of the log data.
      */
     private String contentType;
 

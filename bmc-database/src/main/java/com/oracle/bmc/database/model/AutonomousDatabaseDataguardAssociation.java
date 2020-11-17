@@ -129,6 +129,24 @@ public class AutonomousDatabaseDataguardAssociation {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("transportLag")
+        private String transportLag;
+
+        public Builder transportLag(String transportLag) {
+            this.transportLag = transportLag;
+            this.__explicitlySet__.add("transportLag");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
+        private java.util.Date timeLastSynced;
+
+        public Builder timeLastSynced(java.util.Date timeLastSynced) {
+            this.timeLastSynced = timeLastSynced;
+            this.__explicitlySet__.add("timeLastSynced");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -164,6 +182,8 @@ public class AutonomousDatabaseDataguardAssociation {
                             protectionMode,
                             applyLag,
                             applyRate,
+                            transportLag,
+                            timeLastSynced,
                             timeCreated,
                             timeLastRoleChanged);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -185,6 +205,8 @@ public class AutonomousDatabaseDataguardAssociation {
                             .protectionMode(o.getProtectionMode())
                             .applyLag(o.getApplyLag())
                             .applyRate(o.getApplyRate())
+                            .transportLag(o.getTransportLag())
+                            .timeLastSynced(o.getTimeLastSynced())
                             .timeCreated(o.getTimeCreated())
                             .timeLastRoleChanged(o.getTimeLastRoleChanged());
 
@@ -516,6 +538,22 @@ public class AutonomousDatabaseDataguardAssociation {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyRate")
     String applyRate;
+
+    /**
+     * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database,
+     * as computed by the reporting database.
+     * <p>
+     * Example: `7 seconds`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("transportLag")
+    String transportLag;
+
+    /**
+     * The date and time of the last update to the apply lag, apply rate, and transport lag values.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
+    java.util.Date timeLastSynced;
 
     /**
      * The date and time the Data Guard association was created.

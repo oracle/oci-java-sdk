@@ -6,8 +6,8 @@ package com.oracle.bmc.identity.model;
 
 /**
  * A `CustomerSecretKey` is an Oracle-provided key for using the Object Storage Service's
- * [Amazon S3 compatible API](https://docs.cloud.oracle.com/Content/Object/Tasks/s3compatibleapi.htm).
- * A user can have up to two secret keys at a time.
+ * [Amazon S3 compatible API](https://docs.cloud.oracle.com/Content/Object/Tasks/s3compatibleapi.htm). The key consists of a
+ * secret key/access key pair. A user can have up to two secret keys at a time.
  * <p>
  **Note:** The secret key is always an Oracle-generated string; you can't change it to a string of your choice.
  * <p>
@@ -155,7 +155,7 @@ public class CustomerSecretKey {
     String key;
 
     /**
-     * The OCID of the secret key.
+     * The access key portion of the key pair.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

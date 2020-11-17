@@ -13,7 +13,7 @@ public class CreateManagementSavedSearchRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateManagementSavedSearchDetails> {
 
     /**
-     * Json metadata for the saved search.
+     * JSON metadata for the saved search.
      */
     private CreateManagementSavedSearchDetails createManagementSavedSearchDetails;
 

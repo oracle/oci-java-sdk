@@ -149,6 +149,130 @@ public class IdentityPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBulkEditTagsResourceTypes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBulkEditTagsResourceTypesResponse>
+            listBulkEditTagsResourceTypesResponseIterator(
+                    final ListBulkEditTagsResourceTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBulkEditTagsResourceTypesRequest.Builder, ListBulkEditTagsResourceTypesRequest,
+                ListBulkEditTagsResourceTypesResponse>(
+                new com.google.common.base.Supplier<
+                        ListBulkEditTagsResourceTypesRequest.Builder>() {
+                    @Override
+                    public ListBulkEditTagsResourceTypesRequest.Builder get() {
+                        return ListBulkEditTagsResourceTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBulkEditTagsResourceTypesResponse, String>() {
+                    @Override
+                    public String apply(ListBulkEditTagsResourceTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBulkEditTagsResourceTypesRequest.Builder>,
+                        ListBulkEditTagsResourceTypesRequest>() {
+                    @Override
+                    public ListBulkEditTagsResourceTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBulkEditTagsResourceTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBulkEditTagsResourceTypesRequest,
+                        ListBulkEditTagsResourceTypesResponse>() {
+                    @Override
+                    public ListBulkEditTagsResourceTypesResponse apply(
+                            ListBulkEditTagsResourceTypesRequest request) {
+                        return client.listBulkEditTagsResourceTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.BulkEditTagsResourceType} objects
+     * contained in responses from the listBulkEditTagsResourceTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.BulkEditTagsResourceType} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.BulkEditTagsResourceType>
+            listBulkEditTagsResourceTypesRecordIterator(
+                    final ListBulkEditTagsResourceTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBulkEditTagsResourceTypesRequest.Builder, ListBulkEditTagsResourceTypesRequest,
+                ListBulkEditTagsResourceTypesResponse,
+                com.oracle.bmc.identity.model.BulkEditTagsResourceType>(
+                new com.google.common.base.Supplier<
+                        ListBulkEditTagsResourceTypesRequest.Builder>() {
+                    @Override
+                    public ListBulkEditTagsResourceTypesRequest.Builder get() {
+                        return ListBulkEditTagsResourceTypesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBulkEditTagsResourceTypesResponse, String>() {
+                    @Override
+                    public String apply(ListBulkEditTagsResourceTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBulkEditTagsResourceTypesRequest.Builder>,
+                        ListBulkEditTagsResourceTypesRequest>() {
+                    @Override
+                    public ListBulkEditTagsResourceTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBulkEditTagsResourceTypesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBulkEditTagsResourceTypesRequest,
+                        ListBulkEditTagsResourceTypesResponse>() {
+                    @Override
+                    public ListBulkEditTagsResourceTypesResponse apply(
+                            ListBulkEditTagsResourceTypesRequest request) {
+                        return client.listBulkEditTagsResourceTypes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBulkEditTagsResourceTypesResponse,
+                        java.util.List<com.oracle.bmc.identity.model.BulkEditTagsResourceType>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.identity.model.BulkEditTagsResourceType>
+                            apply(ListBulkEditTagsResourceTypesResponse response) {
+                        return response.getBulkEditTagsResourceTypeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCompartments operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -94,6 +94,41 @@ public class CreateAutonomousContainerDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
+        private String peerAutonomousVmClusterId;
+
+        public Builder peerAutonomousVmClusterId(String peerAutonomousVmClusterId) {
+            this.peerAutonomousVmClusterId = peerAutonomousVmClusterId;
+            this.__explicitlySet__.add("peerAutonomousVmClusterId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "peerAutonomousContainerDatabaseCompartmentId")
+        private String peerAutonomousContainerDatabaseCompartmentId;
+
+        public Builder peerAutonomousContainerDatabaseCompartmentId(
+                String peerAutonomousContainerDatabaseCompartmentId) {
+            this.peerAutonomousContainerDatabaseCompartmentId =
+                    peerAutonomousContainerDatabaseCompartmentId;
+            this.__explicitlySet__.add("peerAutonomousContainerDatabaseCompartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "peerAutonomousContainerDatabaseBackupConfig")
+        private PeerAutonomousContainerDatabaseBackupConfig
+                peerAutonomousContainerDatabaseBackupConfig;
+
+        public Builder peerAutonomousContainerDatabaseBackupConfig(
+                PeerAutonomousContainerDatabaseBackupConfig
+                        peerAutonomousContainerDatabaseBackupConfig) {
+            this.peerAutonomousContainerDatabaseBackupConfig =
+                    peerAutonomousContainerDatabaseBackupConfig;
+            this.__explicitlySet__.add("peerAutonomousContainerDatabaseBackupConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
         private String autonomousVmClusterId;
 
@@ -216,6 +251,9 @@ public class CreateAutonomousContainerDatabaseDetails {
                             peerAutonomousExadataInfrastructureId,
                             peerAutonomousContainerDatabaseDisplayName,
                             protectionMode,
+                            peerAutonomousVmClusterId,
+                            peerAutonomousContainerDatabaseCompartmentId,
+                            peerAutonomousContainerDatabaseBackupConfig,
                             autonomousVmClusterId,
                             compartmentId,
                             patchModel,
@@ -245,6 +283,11 @@ public class CreateAutonomousContainerDatabaseDetails {
                             .peerAutonomousContainerDatabaseDisplayName(
                                     o.getPeerAutonomousContainerDatabaseDisplayName())
                             .protectionMode(o.getProtectionMode())
+                            .peerAutonomousVmClusterId(o.getPeerAutonomousVmClusterId())
+                            .peerAutonomousContainerDatabaseCompartmentId(
+                                    o.getPeerAutonomousContainerDatabaseCompartmentId())
+                            .peerAutonomousContainerDatabaseBackupConfig(
+                                    o.getPeerAutonomousContainerDatabaseBackupConfig())
                             .autonomousVmClusterId(o.getAutonomousVmClusterId())
                             .compartmentId(o.getCompartmentId())
                             .patchModel(o.getPatchModel())
@@ -385,6 +428,24 @@ public class CreateAutonomousContainerDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     ProtectionMode protectionMode;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousVmClusterId")
+    String peerAutonomousVmClusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database
+     * will be created.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseCompartmentId")
+    String peerAutonomousContainerDatabaseCompartmentId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseBackupConfig")
+    PeerAutonomousContainerDatabaseBackupConfig peerAutonomousContainerDatabaseBackupConfig;
 
     /**
      * The OCID of the Autonomous VM Cluster.

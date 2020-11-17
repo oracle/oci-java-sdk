@@ -12,7 +12,7 @@ import com.oracle.bmc.loganalytics.model.*;
 public class OffboardNamespaceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
@@ -21,6 +21,16 @@ public class OffboardNamespaceRequest extends com.oracle.bmc.requests.BmcRequest
      * The client request ID for tracing.
      */
     private String opcRequestId;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    private String opcRetryToken;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -59,6 +69,7 @@ public class OffboardNamespaceRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(OffboardNamespaceRequest o) {
             namespaceName(o.getNamespaceName());
             opcRequestId(o.getOpcRequestId());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

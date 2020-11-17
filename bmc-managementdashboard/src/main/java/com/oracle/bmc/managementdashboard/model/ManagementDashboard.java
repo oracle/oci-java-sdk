@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementdashboard.model;
 
 /**
- * Properties for a dashboard, including dashboard id.
+ * Properties of a dashboard, including dashboard ID.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -329,85 +329,85 @@ public class ManagementDashboard {
     }
 
     /**
-     * Dashboard Id. Must be providied if OOB, otherwise must not be provided.
+     * ID of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dashboardId")
     String dashboardId;
 
     /**
-     * Provider Id.
+     * ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerId")
     String providerId;
 
     /**
-     * Provider name.
+     * Name of the service (for example, Logging Analytics) that owns the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     String providerName;
 
     /**
-     * Provider version.
+     * Version of the service that owns the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerVersion")
     String providerVersion;
 
     /**
-     * Dashboard tiles array
+     * Array of dashboard tiles.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tiles")
     java.util.List<ManagementDashboardTileDetails> tiles;
 
     /**
-     * Display name for dashboard.
+     * Display name of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Dashboard's description.
+     * Description of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The ocid of the compartment that owns the dashboard.
+     * OCID of the compartment in which the dashboard resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * String boolean (\"true\" or \"false\"). OOB (Out of the Box) dashboards are only provided by Oracle.  They cannot be modified by non-Oracle.
+     * Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOobDashboard")
     Boolean isOobDashboard;
 
     /**
-     * String boolean (\"true\" or \"false\").  When false, dashboard is not shown in dashboard home.
+     * Determines whether the dashboard will be displayed in Dashboard Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShowInHome")
     Boolean isShowInHome;
 
     /**
-     * Created by which user.
+     * User who created the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     String createdBy;
 
     /**
-     * Time created.
+     * Date and time the dashboard was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * Updated by which user.
+     * User who updated the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     String updatedBy;
 
     /**
-     * Time updated.
+     * Date and time the dashboard was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
@@ -419,49 +419,49 @@ public class ManagementDashboard {
     String metadataVersion;
 
     /**
-     * String boolean (\"true\" or \"false\").  When false, dashboard is not automatically refreshed in intervals.
+     * Determines whether the description of the dashboard is displayed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isShowDescription")
     Boolean isShowDescription;
 
     /**
-     * screen image.
+     * Screen image of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
     String screenImage;
 
     /**
-     * Json for internationalization.
+     * JSON that contains internationalization options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
     Object nls;
 
     /**
-     * Json to contain options for UI.
+     * JSON that contains user interface options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     Object uiConfig;
 
     /**
-     * Array of Json to contain options for source of data.
+     * Array of JSON that contain data source options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     java.util.List<Object> dataConfig;
 
     /**
-     * NORMAL means single dashboard, SET means dashboard set.
+     * Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     String type;
 
     /**
-     * String boolean (\"true\" or \"false\").
+     * Determines whether the dashboard is set as favorite.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFavorite")
     Boolean isFavorite;
 
     /**
-     * Array of saved searches.
+     * Array of saved searches in the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearches")
     java.util.List<ManagementSavedSearch> savedSearches;

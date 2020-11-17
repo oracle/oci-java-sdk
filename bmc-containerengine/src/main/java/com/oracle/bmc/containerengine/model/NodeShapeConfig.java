@@ -33,18 +33,27 @@ public class NodeShapeConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
+        private Float memoryInGBs;
+
+        public Builder memoryInGBs(Float memoryInGBs) {
+            this.memoryInGBs = memoryInGBs;
+            this.__explicitlySet__.add("memoryInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodeShapeConfig build() {
-            NodeShapeConfig __instance__ = new NodeShapeConfig(ocpus);
+            NodeShapeConfig __instance__ = new NodeShapeConfig(ocpus, memoryInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(NodeShapeConfig o) {
-            Builder copiedBuilder = ocpus(o.getOcpus());
+            Builder copiedBuilder = ocpus(o.getOcpus()).memoryInGBs(o.getMemoryInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -65,6 +74,13 @@ public class NodeShapeConfig {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     Float ocpus;
+
+    /**
+     * The total amount of memory available to each node, in gigabytes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
+    Float memoryInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

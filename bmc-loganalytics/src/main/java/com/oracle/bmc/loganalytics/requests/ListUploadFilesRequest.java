@@ -12,7 +12,7 @@ import com.oracle.bmc.loganalytics.model.*;
 public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
@@ -120,17 +120,17 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
     /**
-     * Search string
+     * Search string used to filtering uploads based on file name, log group name and log source name.
      */
     private String searchStr;
 
     /**
-     * Status
+     * Upload Status.
      */
     private java.util.List<Status> status;
 
     /**
-     * Status
+     * Upload Status.
      **/
     public enum Status {
         InProgress("IN_PROGRESS"),

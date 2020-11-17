@@ -27,9 +27,9 @@ public class LogAnalyticsParserFilter {
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private Object id;
+        private String id;
 
-        public Builder id(Object id) {
+        public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
@@ -127,7 +127,7 @@ public class LogAnalyticsParserFilter {
      * id
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    Object id;
+    String id;
 
     @com.fasterxml.jackson.annotation.JsonProperty("parser")
     LogAnalyticsParser parser;

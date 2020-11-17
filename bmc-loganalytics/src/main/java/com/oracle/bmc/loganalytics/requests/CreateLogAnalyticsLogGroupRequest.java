@@ -13,7 +13,7 @@ public class CreateLogAnalyticsLogGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateLogAnalyticsLogGroupDetails> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;

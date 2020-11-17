@@ -233,7 +233,7 @@ public class AbstractCommandDescriptor {
         LinkDetails("LINK_DETAILS"),
         Cluster("CLUSTER"),
         ClusterDetails("CLUSTER_DETAILS"),
-        CuslterSplit("CUSLTER_SPLIT"),
+        ClusterSplit("CLUSTER_SPLIT"),
         Eval("EVAL"),
         Extract("EXTRACT"),
         EventStats("EVENT_STATS"),

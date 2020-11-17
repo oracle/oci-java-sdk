@@ -164,7 +164,7 @@ public class UploadSummary {
     java.util.Date timeLatestLogEntry;
 
     /**
-     * Warnings summary.
+     * Number of warnings associated to the upload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningsCount")
     Integer warningsCount;

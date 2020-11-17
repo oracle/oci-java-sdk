@@ -13,12 +13,12 @@ public class UpdateManagementSavedSearchRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateManagementSavedSearchDetails> {
 
     /**
-     * unique saved search identifier
+     * A unique saved search identifier.
      */
     private String managementSavedSearchId;
 
     /**
-     * Json metadata for changed properties in existing saved search.
+     * JSON metadata for changed saved search properties.
      */
     private UpdateManagementSavedSearchDetails updateManagementSavedSearchDetails;
 

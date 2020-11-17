@@ -477,7 +477,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * disable archiving
+     * This API disables archiving.
      *
      *
      * @param request The request object containing the details to send
@@ -493,7 +493,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * enable archiving.
+     * THis API enables archiving.
      *
      *
      * @param request The request object containing the details to send
@@ -509,7 +509,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * estimate the size of data to be purged based on query parameters.
+     * This API estimates the size of data to be purged based based on time interval, purge query etc.
      *
      *
      * @param request The request object containing the details to send
@@ -594,7 +594,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Each filter specifies an operator, a field and one or more values.
+     * Each filter specifies an operator, a field and one or more values to be inserted into the provided query as criteria.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -815,7 +815,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get Namespace of a tenancy already onboarded in Log Analytics Application
+     * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      *
      *
      * @param request The request object containing the details to send
@@ -937,7 +937,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Storage configuration and status.
+     * This API gets the storage configuration of a tenancy
      *
      *
      * @param request The request object containing the details to send
@@ -952,7 +952,8 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetStorageRequest, GetStorageResponse> handler);
 
     /**
-     * Storage usage info includes active, archived or recalled data.  The unit of return value is in bytes.
+     * This API gets storage usage information of a tenancy.  Storage usage information includes active, archived or recalled
+     * data.  The unit of return data is in bytes.
      *
      *
      * @param request The request object containing the details to send
@@ -968,8 +969,8 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retrieve work request details by key. This endpoint can be polled for status tracking of work request.
-     * Clients should poll using the interval returned in retry-after header.
+     * This API returns work request details specified by {workRequestId}. This API can be polled for status tracking of
+     * work request.  Clients should poll using the interval returned in retry-after header.
      *
      *
      * @param request The request object containing the details to send
@@ -1238,7 +1239,9 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List Namespaces.
+     * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
+     * result also indicates if the tenancy is onboarded with Logging Analytics.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1427,7 +1430,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListSourcesRequest, ListSourcesResponse> handler);
 
     /**
-     * Retrieve work request errors if any
+     * This API returns the list of work request errors if any.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1444,7 +1447,8 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List non-expired storage manager work requests.
+     * This API lists storage work requests.  Use query parameters to narrow down or sort the result list.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1635,7 +1639,8 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ParseQueryRequest, ParseQueryResponse> handler);
 
     /**
-     * submit work requests to purge old data based on the type.
+     * This API submits a work request to purge data. Only data from log groups that the user has permission to delete
+     * will be purged.  To purge all data, the user must have permission to all log groups.
      *
      *
      * @param request The request object containing the details to send
@@ -1651,7 +1656,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Put the work request specified by {workRequestId} into the background.
+     * Put the work request specified by {workRequestId} into the background. Backgrounded queries will preserve query results on query completion for up to 7 days for recall. After 7 days the results and query expire.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1684,7 +1689,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<QueryRequest, QueryResponse> handler);
 
     /**
-     * submit work requests to recall archived data.
+     * This API submits a work request to recall archived data based on time interval and data type.
      *
      *
      * @param request The request object containing the details to send
@@ -1716,7 +1721,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * submit work requests to release recalled data.
+     * This API submits a work request to release recalled data based on time interval and data type.
      *
      *
      * @param request The request object containing the details to send
@@ -1766,7 +1771,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<RunRequest, RunResponse> handler);
 
     /**
-     * Returns a context specific list of either commands, fields, or values to add to the end of the query string.
+     * Returns a context specific list of either commands, fields, or values to append to the end of the specified query string if applicable.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1877,7 +1882,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * update the archiving configuration
+     * This API updates the archiving configuration
      *
      *
      * @param request The request object containing the details to send
@@ -1893,7 +1898,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Accepts log data for processing by Log Analytics.
+     * Accepts log data for processing by Logging Analytics.
      *
      *
      * @param request The request object containing the details to send

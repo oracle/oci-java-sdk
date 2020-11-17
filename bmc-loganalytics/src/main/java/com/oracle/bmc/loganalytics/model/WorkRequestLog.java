@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * A log message from the execution of a work request.
+ * This is a log message from the execution of a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +68,13 @@ public class WorkRequestLog {
     }
 
     /**
-     * Human-readable log message.
+     * This is a human-readable log message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
 
     /**
-     * The time the log message was written. An RFC3339 formatted datetime string
+     * This is the time the log message was written. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;

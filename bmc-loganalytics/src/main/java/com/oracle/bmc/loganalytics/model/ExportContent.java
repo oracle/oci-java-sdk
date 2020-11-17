@@ -85,6 +85,9 @@ public class ExportContent {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
     java.util.List<String> fieldNames;
 
+    /**
+     * parserNames
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserNames")
     java.util.List<String> parserNames;
 

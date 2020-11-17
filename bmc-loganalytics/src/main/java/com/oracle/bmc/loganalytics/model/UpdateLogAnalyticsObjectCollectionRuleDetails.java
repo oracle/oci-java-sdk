@@ -152,19 +152,19 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
     String description;
 
     /**
-     * Log Analytics Log group OCID to associate the processed logs with.
+     * Logging Analytics Log group OCID to associate the processed logs with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     String logGroupId;
 
     /**
-     * Name of the Log Analytics Source to use for the processing.
+     * Name of the Logging Analytics Source to use for the processing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logSourceName")
     String logSourceName;
 
     /**
-     * Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
+     * Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     String entityId;

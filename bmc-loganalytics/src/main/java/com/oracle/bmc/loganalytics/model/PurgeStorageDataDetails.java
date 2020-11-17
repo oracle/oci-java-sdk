@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Work request details to purge old data
+ * This is the input used to purge data
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -109,31 +109,31 @@ public class PurgeStorageDataDetails {
     }
 
     /**
-     * the compartment OCID under which the data will be purged and required permission will be checked
+     * This is the compartment OCID under which the data will be purged and required permission will be checked
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * if true, purge child compartments data
+     * If true, purge child compartments data
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     Boolean compartmentIdInSubtree;
 
     /**
-     * the end of the time interval
+     * This is the end of the purge time interval
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     java.util.Date timeDataEnded;
 
     /**
-     * the solr data filter query, '*' means all
+     * This is the solr query used to filter data, '*' means all
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
     String purgeQueryString;
 
     /**
-     * the type of the log data to be purged
+     * This is the type of the log data to be purged
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     StorageDataType dataType;

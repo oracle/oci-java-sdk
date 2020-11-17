@@ -13,7 +13,7 @@ public class ListSourceMetaFunctionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
@@ -29,7 +29,7 @@ public class ListSourceMetaFunctionsRequest
     private String page;
 
     /**
-     * orderBy
+     * sort by field
      */
     private String sortBy;
 

@@ -77,13 +77,10 @@ public class DeleteAssociationsConverter {
                                         "Transform function invoked for com.oracle.bmc.loganalytics.responses.DeleteAssociationsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<
-                                                        ErrorDetails>>
-                                        responseFn =
-                                                RESPONSE_CONVERSION_FACTORY.create(
-                                                        ErrorDetails.class);
+                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
+                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
 
-                                com.oracle.bmc.http.internal.WithHeaders<ErrorDetails> response =
+                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
                                         responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
@@ -94,7 +91,17 @@ public class DeleteAssociationsConverter {
                                                 com.oracle.bmc.loganalytics.responses
                                                         .DeleteAssociationsResponse.builder();
 
-                                builder.errorDetails(response.getItem());
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcWorkRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementdashboard.model;
 
 /**
- * How to show the saved search.
+ * Determines how the saved search is displayed in a dashboard.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 @lombok.extern.slf4j.Slf4j

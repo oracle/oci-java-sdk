@@ -83,19 +83,19 @@ public class FileValidationResponse {
     }
 
     /**
-     * Input File
+     * Input File Name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputFile")
     String inputFile;
 
     /**
-     * Object Location
+     * Object Location where file content is available.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectLocation")
     String objectLocation;
 
     /**
-     * Files
+     * List of files inside the given archive file and their corresponding status information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("files")
     java.util.List<UploadFileStatus> files;

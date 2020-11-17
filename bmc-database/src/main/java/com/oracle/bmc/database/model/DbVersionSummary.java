@@ -63,13 +63,26 @@ public class DbVersionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isUpgradeSupported")
+        private Boolean isUpgradeSupported;
+
+        public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
+            this.isUpgradeSupported = isUpgradeSupported;
+            this.__explicitlySet__.add("isUpgradeSupported");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbVersionSummary build() {
             DbVersionSummary __instance__ =
                     new DbVersionSummary(
-                            version, isLatestForMajorVersion, supportsPdb, isPreviewDbVersion);
+                            version,
+                            isLatestForMajorVersion,
+                            supportsPdb,
+                            isPreviewDbVersion,
+                            isUpgradeSupported);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -80,7 +93,8 @@ public class DbVersionSummary {
                     version(o.getVersion())
                             .isLatestForMajorVersion(o.getIsLatestForMajorVersion())
                             .supportsPdb(o.getSupportsPdb())
-                            .isPreviewDbVersion(o.getIsPreviewDbVersion());
+                            .isPreviewDbVersion(o.getIsPreviewDbVersion())
+                            .isUpgradeSupported(o.getIsUpgradeSupported());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -117,6 +131,12 @@ public class DbVersionSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreviewDbVersion")
     Boolean isPreviewDbVersion;
+
+    /**
+     * True if this version of the Oracle Database software is supported for Upgrade.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUpgradeSupported")
+    Boolean isUpgradeSupported;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

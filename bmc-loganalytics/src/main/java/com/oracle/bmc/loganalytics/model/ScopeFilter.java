@@ -69,7 +69,7 @@ public class ScopeFilter {
     }
 
     /**
-     * Field must be a valid enterprise logging out-of-the-box field.
+     * Field must be a valid logging-analytics out-of-the-box field.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")

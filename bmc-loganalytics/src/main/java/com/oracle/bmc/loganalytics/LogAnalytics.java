@@ -278,7 +278,7 @@ public interface LogAnalytics extends AutoCloseable {
     DeleteUploadWarningResponse deleteUploadWarning(DeleteUploadWarningRequest request);
 
     /**
-     * disable archiving
+     * This API disables archiving.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -287,7 +287,7 @@ public interface LogAnalytics extends AutoCloseable {
     DisableArchivingResponse disableArchiving(DisableArchivingRequest request);
 
     /**
-     * enable archiving.
+     * THis API enables archiving.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -296,7 +296,7 @@ public interface LogAnalytics extends AutoCloseable {
     EnableArchivingResponse enableArchiving(EnableArchivingRequest request);
 
     /**
-     * estimate the size of data to be purged based on query parameters.
+     * This API estimates the size of data to be purged based based on time interval, purge query etc.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -339,7 +339,7 @@ public interface LogAnalytics extends AutoCloseable {
             ExtractStructuredLogHeaderPathsRequest request);
 
     /**
-     * Each filter specifies an operator, a field and one or more values.
+     * Each filter specifies an operator, a field and one or more values to be inserted into the provided query as criteria.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -455,7 +455,7 @@ public interface LogAnalytics extends AutoCloseable {
             GetLogAnalyticsObjectCollectionRuleRequest request);
 
     /**
-     * Get Namespace of a tenancy already onboarded in Log Analytics Application
+     * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -522,7 +522,7 @@ public interface LogAnalytics extends AutoCloseable {
     GetSourceSummaryResponse getSourceSummary(GetSourceSummaryRequest request);
 
     /**
-     * Storage configuration and status.
+     * This API gets the storage configuration of a tenancy
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -531,7 +531,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetStorageResponse getStorage(GetStorageRequest request);
 
     /**
-     * Storage usage info includes active, archived or recalled data.  The unit of return value is in bytes.
+     * This API gets storage usage information of a tenancy.  Storage usage information includes active, archived or recalled
+     * data.  The unit of return data is in bytes.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -540,8 +541,8 @@ public interface LogAnalytics extends AutoCloseable {
     GetStorageUsageResponse getStorageUsage(GetStorageUsageRequest request);
 
     /**
-     * Retrieve work request details by key. This endpoint can be polled for status tracking of work request.
-     * Clients should poll using the interval returned in retry-after header.
+     * This API returns work request details specified by {workRequestId}. This API can be polled for status tracking of
+     * work request.  Clients should poll using the interval returned in retry-after header.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -710,7 +711,9 @@ public interface LogAnalytics extends AutoCloseable {
     ListMetaSourceTypesResponse listMetaSourceTypes(ListMetaSourceTypesRequest request);
 
     /**
-     * List Namespaces.
+     * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
+     * result also indicates if the tenancy is onboarded with Logging Analytics.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -808,7 +811,7 @@ public interface LogAnalytics extends AutoCloseable {
     ListSourcesResponse listSources(ListSourcesRequest request);
 
     /**
-     * Retrieve work request errors if any
+     * This API returns the list of work request errors if any.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -817,7 +820,8 @@ public interface LogAnalytics extends AutoCloseable {
             ListStorageWorkRequestErrorsRequest request);
 
     /**
-     * List non-expired storage manager work requests.
+     * This API lists storage work requests.  Use query parameters to narrow down or sort the result list.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -920,7 +924,8 @@ public interface LogAnalytics extends AutoCloseable {
     ParseQueryResponse parseQuery(ParseQueryRequest request);
 
     /**
-     * submit work requests to purge old data based on the type.
+     * This API submits a work request to purge data. Only data from log groups that the user has permission to delete
+     * will be purged.  To purge all data, the user must have permission to all log groups.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -929,7 +934,7 @@ public interface LogAnalytics extends AutoCloseable {
     PurgeStorageDataResponse purgeStorageData(PurgeStorageDataRequest request);
 
     /**
-     * Put the work request specified by {workRequestId} into the background.
+     * Put the work request specified by {workRequestId} into the background. Backgrounded queries will preserve query results on query completion for up to 7 days for recall. After 7 days the results and query expire.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -947,7 +952,7 @@ public interface LogAnalytics extends AutoCloseable {
     QueryResponse query(QueryRequest request);
 
     /**
-     * submit work requests to recall archived data.
+     * This API submits a work request to recall archived data based on time interval and data type.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -991,7 +996,7 @@ public interface LogAnalytics extends AutoCloseable {
     RegisterLookupResponse registerLookup(RegisterLookupRequest request);
 
     /**
-     * submit work requests to release recalled data.
+     * This API submits a work request to release recalled data based on time interval and data type.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1020,7 +1025,7 @@ public interface LogAnalytics extends AutoCloseable {
     RunResponse run(RunRequest request);
 
     /**
-     * Returns a context specific list of either commands, fields, or values to add to the end of the query string.
+     * Returns a context specific list of either commands, fields, or values to append to the end of the specified query string if applicable.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1080,7 +1085,7 @@ public interface LogAnalytics extends AutoCloseable {
     UpdateScheduledTaskResponse updateScheduledTask(UpdateScheduledTaskRequest request);
 
     /**
-     * update the archiving configuration
+     * This API updates the archiving configuration
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1089,7 +1094,7 @@ public interface LogAnalytics extends AutoCloseable {
     UpdateStorageResponse updateStorage(UpdateStorageRequest request);
 
     /**
-     * Accepts log data for processing by Log Analytics.
+     * Accepts log data for processing by Logging Analytics.
      *
      *
      * Note: This operation consumes a stream.

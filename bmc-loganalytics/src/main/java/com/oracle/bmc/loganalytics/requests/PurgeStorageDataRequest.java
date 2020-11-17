@@ -13,13 +13,13 @@ public class PurgeStorageDataRequest
         extends com.oracle.bmc.requests.BmcRequest<PurgeStorageDataDetails> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
 
     /**
-     * purge old data request details
+     * This is the input to purge old data.
      */
     private PurgeStorageDataDetails purgeStorageDataDetails;
 

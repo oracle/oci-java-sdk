@@ -79,11 +79,14 @@ public class GetColumnNamesConverter {
                                         "Transform function invoked for com.oracle.bmc.loganalytics.responses.GetColumnNamesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        ColumnNameCollection>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        ColumnNameCollection.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<ColumnNameCollection>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
@@ -91,6 +94,8 @@ public class GetColumnNamesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .GetColumnNamesResponse.builder();
+
+                                builder.columnNameCollection(response.getItem());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

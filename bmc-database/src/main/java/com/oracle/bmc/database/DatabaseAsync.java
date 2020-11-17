@@ -1586,6 +1586,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * gets the upgrade history for a specified database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDatabaseUpgradeHistoryEntryResponse>
+            getDatabaseUpgradeHistoryEntry(
+                    GetDatabaseUpgradeHistoryEntryRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseUpgradeHistoryEntryRequest,
+                                    GetDatabaseUpgradeHistoryEntryResponse>
+                            handler);
+
+    /**
      * Gets information about the specified Database Home.
      *
      * @param request The request object containing the details to send
@@ -2316,6 +2335,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListDatabaseSoftwareImagesRequest, ListDatabaseSoftwareImagesResponse>
                     handler);
+
+    /**
+     * gets the upgrade history for a specified database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDatabaseUpgradeHistoryEntriesResponse>
+            listDatabaseUpgradeHistoryEntries(
+                    ListDatabaseUpgradeHistoryEntriesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseUpgradeHistoryEntriesRequest,
+                                    ListDatabaseUpgradeHistoryEntriesResponse>
+                            handler);
 
     /**
      * Gets a list of the databases in the specified Database Home.
@@ -3358,6 +3396,22 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdateVmClusterNetworkRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateVmClusterNetworkRequest, UpdateVmClusterNetworkResponse>
+                    handler);
+
+    /**
+     * Upgrade the specified database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpgradeDatabaseResponse> upgradeDatabase(
+            UpgradeDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpgradeDatabaseRequest, UpgradeDatabaseResponse>
                     handler);
 
     /**

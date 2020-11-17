@@ -13,12 +13,12 @@ public class UpdateManagementDashboardRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateManagementDashboardDetails> {
 
     /**
-     * unique dashboard identifier
+     * A unique dashboard identifier.
      */
     private String managementDashboardId;
 
     /**
-     * Json Metadata for changed dashboard properties.
+     * JSON metadata for changed dashboard properties.
      */
     private UpdateManagementDashboardDetails updateManagementDashboardDetails;
 

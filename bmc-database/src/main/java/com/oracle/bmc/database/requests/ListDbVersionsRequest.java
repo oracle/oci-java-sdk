@@ -44,6 +44,11 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
      */
     private DbSystemOptions.StorageManagement storageManagement;
 
+    /**
+     * If provided, filters the results to the set of database versions which are supported for Upgrade.
+     */
+    private Boolean isUpgradeSupported;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDbVersionsRequest, java.lang.Void> {
@@ -85,6 +90,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             dbSystemShape(o.getDbSystemShape());
             dbSystemId(o.getDbSystemId());
             storageManagement(o.getStorageManagement());
+            isUpgradeSupported(o.getIsUpgradeSupported());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

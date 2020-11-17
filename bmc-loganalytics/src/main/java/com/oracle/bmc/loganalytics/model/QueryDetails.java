@@ -231,14 +231,14 @@ public class QueryDetails {
     Boolean compartmentIdInSubtree;
 
     /**
-     * Saved search OCID for this query if known, used to track usage of saved search queryString.
+     * Saved search OCID for this query if known.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
     String savedSearchId;
 
     /**
-     * Query to perform.
+     * Query to perform. Must conform to logging analytic querylanguage syntax. Syntax errors will be returned if present.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     String queryString;
@@ -274,14 +274,14 @@ public class QueryDetails {
     Integer queryTimeoutInSeconds;
 
     /**
-     * Option to run the query asynchronously. This will lead to a LogAnalyticsQueryJobWorkRequest being submitted and the {workRequestId} will be returned to fetch the results.
+     * Option to run the query asynchronously. This will lead to a LogAnalyticsQueryJobWorkRequest being submitted and the {workRequestId} will be returned to use for fetching the results.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldRunAsync")
     Boolean shouldRunAsync;
 
     /**
-     * Execution mode for the query if running asynchronously  (shouldRunAsync is true).
+     * Execution mode for the query if running asynchronously i.e (shouldRunAsync is set to true).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("asyncMode")
     JobMode asyncMode;
@@ -305,7 +305,7 @@ public class QueryDetails {
     Boolean shouldIncludeFields;
 
     /**
-     * Controls if query should ignore pre-calculated results if available and only use raw data.
+     * Controls if query should ignore pre-calculated results if available and only use raw data. If set and no acceleration data is found it will fallback to raw data.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseAcceleration")

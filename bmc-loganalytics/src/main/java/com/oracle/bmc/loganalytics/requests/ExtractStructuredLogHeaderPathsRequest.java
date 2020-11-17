@@ -13,7 +13,7 @@ public class ExtractStructuredLogHeaderPathsRequest
         extends com.oracle.bmc.requests.BmcRequest<LogAnalyticsParser> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;

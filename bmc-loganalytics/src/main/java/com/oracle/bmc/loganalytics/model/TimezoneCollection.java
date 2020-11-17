@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Set of supported timezones.
+ * List of supported timezones.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +61,7 @@ public class TimezoneCollection {
     }
 
     /**
-     * timezones.
+     * List of supported timezones.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<String> items;

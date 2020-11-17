@@ -112,6 +112,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupConfig")
+        private AutonomousDatabaseBackupConfig backupConfig;
+
+        public Builder backupConfig(AutonomousDatabaseBackupConfig backupConfig) {
+            this.backupConfig = backupConfig;
+            this.__explicitlySet__.add("backupConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
@@ -551,6 +560,7 @@ public class AutonomousDatabaseSummary {
                             systemTags,
                             timeReclamationOfFreeAutonomousDatabase,
                             timeDeletionOfFreeAutonomousDatabase,
+                            backupConfig,
                             cpuCoreCount,
                             dataStorageSizeInTBs,
                             infrastructureType,
@@ -616,6 +626,7 @@ public class AutonomousDatabaseSummary {
                                     o.getTimeReclamationOfFreeAutonomousDatabase())
                             .timeDeletionOfFreeAutonomousDatabase(
                                     o.getTimeDeletionOfFreeAutonomousDatabase())
+                            .backupConfig(o.getBackupConfig())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .infrastructureType(o.getInfrastructureType())
@@ -796,6 +807,9 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDeletionOfFreeAutonomousDatabase")
     java.util.Date timeDeletionOfFreeAutonomousDatabase;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupConfig")
+    AutonomousDatabaseBackupConfig backupConfig;
 
     /**
      * The number of OCPU cores to be made available to the database.

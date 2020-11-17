@@ -121,9 +121,6 @@ public class LogAnalyticsImportCustomContent {
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
     java.util.List<String> fieldNames;
 
-    /**
-     * changeList
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeList")
     LogAnalyticsImportCustomChangeList changeList;
 

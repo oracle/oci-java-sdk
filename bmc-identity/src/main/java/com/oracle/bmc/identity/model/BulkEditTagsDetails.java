@@ -2,10 +2,10 @@
  * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.loganalytics.model;
+package com.oracle.bmc.identity.model;
 
 /**
- * Onboard a tenancy request parameter in Logan Analytics application
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,15 +14,15 @@ package com.oracle.bmc.loganalytics.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateNamespaceDetails.Builder.class
+    builder = BulkEditTagsDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 @lombok.Builder(builderClassName = "Builder", toBuilder = true)
-public class CreateNamespaceDetails {
+public class BulkEditTagsDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
@@ -35,18 +35,41 @@ public class CreateNamespaceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resources")
+        private java.util.List<BulkEditResource> resources;
+
+        public Builder resources(java.util.List<BulkEditResource> resources) {
+            this.resources = resources;
+            this.__explicitlySet__.add("resources");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bulkEditOperations")
+        private java.util.List<BulkEditOperationDetails> bulkEditOperations;
+
+        public Builder bulkEditOperations(
+                java.util.List<BulkEditOperationDetails> bulkEditOperations) {
+            this.bulkEditOperations = bulkEditOperations;
+            this.__explicitlySet__.add("bulkEditOperations");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public CreateNamespaceDetails build() {
-            CreateNamespaceDetails __instance__ = new CreateNamespaceDetails(compartmentId);
+        public BulkEditTagsDetails build() {
+            BulkEditTagsDetails __instance__ =
+                    new BulkEditTagsDetails(compartmentId, resources, bulkEditOperations);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateNamespaceDetails o) {
-            Builder copiedBuilder = compartmentId(o.getCompartmentId());
+        public Builder copy(BulkEditTagsDetails o) {
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .resources(o.getResources())
+                            .bulkEditOperations(o.getBulkEditOperations());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -61,10 +84,25 @@ public class CreateNamespaceDetails {
     }
 
     /**
-     * Tenancy ID
+     * The OCID of the compartment where the bulk tag edit request is submitted.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The resources to be updated.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resources")
+    java.util.List<BulkEditResource> resources;
+
+    /**
+     * The operations associated with the request to bulk edit tags.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bulkEditOperations")
+    java.util.List<BulkEditOperationDetails> bulkEditOperations;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

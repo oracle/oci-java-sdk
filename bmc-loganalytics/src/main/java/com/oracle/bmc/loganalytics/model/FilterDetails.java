@@ -81,7 +81,7 @@ public class FilterDetails {
     }
 
     /**
-     * Query to update.
+     * Query to apply edits to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     String queryString;

@@ -4062,6 +4062,51 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDatabaseUpgradeHistoryEntryResponse>
+            getDatabaseUpgradeHistoryEntry(
+                    GetDatabaseUpgradeHistoryEntryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseUpgradeHistoryEntryRequest,
+                                    GetDatabaseUpgradeHistoryEntryResponse>
+                            handler) {
+        LOG.trace("Called async getDatabaseUpgradeHistoryEntry");
+        final GetDatabaseUpgradeHistoryEntryRequest interceptedRequest =
+                GetDatabaseUpgradeHistoryEntryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseUpgradeHistoryEntryConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetDatabaseUpgradeHistoryEntryResponse>
+                transformer = GetDatabaseUpgradeHistoryEntryConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDatabaseUpgradeHistoryEntryRequest,
+                        GetDatabaseUpgradeHistoryEntryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDatabaseUpgradeHistoryEntryRequest,
+                                GetDatabaseUpgradeHistoryEntryResponse>,
+                        java.util.concurrent.Future<GetDatabaseUpgradeHistoryEntryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDatabaseUpgradeHistoryEntryRequest, GetDatabaseUpgradeHistoryEntryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDbHomeResponse> getDbHome(
             GetDbHomeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetDbHomeRequest, GetDbHomeResponse>
@@ -5835,6 +5880,52 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDatabaseSoftwareImagesRequest, ListDatabaseSoftwareImagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatabaseUpgradeHistoryEntriesResponse>
+            listDatabaseUpgradeHistoryEntries(
+                    ListDatabaseUpgradeHistoryEntriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseUpgradeHistoryEntriesRequest,
+                                    ListDatabaseUpgradeHistoryEntriesResponse>
+                            handler) {
+        LOG.trace("Called async listDatabaseUpgradeHistoryEntries");
+        final ListDatabaseUpgradeHistoryEntriesRequest interceptedRequest =
+                ListDatabaseUpgradeHistoryEntriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseUpgradeHistoryEntriesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDatabaseUpgradeHistoryEntriesResponse>
+                transformer = ListDatabaseUpgradeHistoryEntriesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDatabaseUpgradeHistoryEntriesRequest,
+                        ListDatabaseUpgradeHistoryEntriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDatabaseUpgradeHistoryEntriesRequest,
+                                ListDatabaseUpgradeHistoryEntriesResponse>,
+                        java.util.concurrent.Future<ListDatabaseUpgradeHistoryEntriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDatabaseUpgradeHistoryEntriesRequest,
+                    ListDatabaseUpgradeHistoryEntriesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8405,6 +8496,45 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateVmClusterNetworkRequest, UpdateVmClusterNetworkResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeDatabaseResponse> upgradeDatabase(
+            UpgradeDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpgradeDatabaseRequest, UpgradeDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async upgradeDatabase");
+        final UpgradeDatabaseRequest interceptedRequest =
+                UpgradeDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeDatabaseConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpgradeDatabaseResponse>
+                transformer = UpgradeDatabaseConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpgradeDatabaseRequest, UpgradeDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpgradeDatabaseRequest, UpgradeDatabaseResponse>,
+                        java.util.concurrent.Future<UpgradeDatabaseResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpgradeDatabaseRequest, UpgradeDatabaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
