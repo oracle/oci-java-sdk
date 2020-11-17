@@ -14,18 +14,18 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentRequest
                 ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
 
     /**
-     * The log analytics os collection rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     private String logAnalyticsObjectCollectionRuleId;
 
     /**
-     * Log Analytics Object Storage based collection rule compartment to be updated to.
+     * The new compartment this Object Collection Rule will be moved to.
      */
     private ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails
             changeLogAnalyticsObjectCollectionRuleCompartmentDetails;

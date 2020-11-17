@@ -13,7 +13,7 @@ public class CreateManagementDashboardRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateManagementDashboardDetails> {
 
     /**
-     * Json metadata for creating a new dashboard.
+     * JSON metadata for creating a new dashboard.
      */
     private CreateManagementDashboardDetails createManagementDashboardDetails;
 

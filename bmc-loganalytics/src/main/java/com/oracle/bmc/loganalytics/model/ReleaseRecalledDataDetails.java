@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Work request details to release recalled data
+ * This is the input used to release recalled data
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -95,25 +95,25 @@ public class ReleaseRecalledDataDetails {
     }
 
     /**
-     * the compartment OCID for permission checking
+     * This is the compartment OCID for permission checking
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * the end of the time interval
+     * This is the end of the time interval
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     java.util.Date timeDataEnded;
 
     /**
-     * the start of the time interval
+     * This is the start of the time interval
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     java.util.Date timeDataStarted;
 
     /**
-     * the type of the log data to be purged
+     * This is the type of the recalled data to be released
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     StorageDataType dataType;

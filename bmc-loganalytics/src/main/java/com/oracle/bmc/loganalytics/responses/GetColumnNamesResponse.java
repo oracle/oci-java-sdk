@@ -12,11 +12,15 @@ import com.oracle.bmc.loganalytics.model.*;
 public class GetColumnNamesResponse {
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      */
     private String opcRequestId;
+
+    /**
+     * The returned ColumnNameCollection instance.
+     */
+    private ColumnNameCollection columnNameCollection;
 
     public static class Builder {
         /**
@@ -25,6 +29,7 @@ public class GetColumnNamesResponse {
          */
         public Builder copy(GetColumnNamesResponse o) {
             opcRequestId(o.getOpcRequestId());
+            columnNameCollection(o.getColumnNameCollection());
 
             return this;
         }

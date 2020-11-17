@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * List of work request summaries.
+ * This is a list of work request summaries.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,7 +62,7 @@ public class StorageWorkRequestCollection {
     }
 
     /**
-     * List of work request summaries.
+     * This is an array of work request summaries.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")

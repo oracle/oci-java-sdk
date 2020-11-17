@@ -63,7 +63,7 @@ public class EstimatePurgeDataSizeResult {
     }
 
     /**
-     * purge data size in bytes
+     * This is the size of data to be purged in bytes
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeDataSizeInBytes")
     Long purgeDataSizeInBytes;

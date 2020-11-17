@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementdashboard.model;
 
 /**
- * Compartment to move the dashboard to.
+ * Compartment to which the dashboard is being moved.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class ChangeManagementDashboardsCompartmentDetails {
     }
 
     /**
-     * Compartment Identifier
+     * OCID of the compartment to which the dashboard is being moved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

@@ -180,6 +180,24 @@ public class User {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulLoginTime")
+        private java.util.Date lastSuccessfulLoginTime;
+
+        public Builder lastSuccessfulLoginTime(java.util.Date lastSuccessfulLoginTime) {
+            this.lastSuccessfulLoginTime = lastSuccessfulLoginTime;
+            this.__explicitlySet__.add("lastSuccessfulLoginTime");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("previousSuccessfulLoginTime")
+        private java.util.Date previousSuccessfulLoginTime;
+
+        public Builder previousSuccessfulLoginTime(java.util.Date previousSuccessfulLoginTime) {
+            this.previousSuccessfulLoginTime = previousSuccessfulLoginTime;
+            this.__explicitlySet__.add("previousSuccessfulLoginTime");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -200,7 +218,9 @@ public class User {
                             freeformTags,
                             definedTags,
                             capabilities,
-                            isMfaActivated);
+                            isMfaActivated,
+                            lastSuccessfulLoginTime,
+                            previousSuccessfulLoginTime);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -222,7 +242,9 @@ public class User {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .capabilities(o.getCapabilities())
-                            .isMfaActivated(o.getIsMfaActivated());
+                            .isMfaActivated(o.getIsMfaActivated())
+                            .lastSuccessfulLoginTime(o.getLastSuccessfulLoginTime())
+                            .previousSuccessfulLoginTime(o.getPreviousSuccessfulLoginTime());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -394,6 +416,40 @@ public class User {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMfaActivated")
     Boolean isMfaActivated;
+
+    /**
+     * The date and time of when the user most recently logged in the
+     * format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`).
+     * If there is no login history, this field is null.
+     * <p>
+     * For illustrative purposes, suppose we have a user who has logged in
+     * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+     * They then login again on July 2nd, 2020 at 1500 PST.
+     * <p>
+     * Their previousSuccessfulLoginTime would be `2020-07-01:19:00.000Z`.
+     * <p>
+     * Their lastSuccessfulLoginTime would be `2020-07-02:22:00.000Z`.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulLoginTime")
+    java.util.Date lastSuccessfulLoginTime;
+
+    /**
+     * The date and time of when the user most recently logged in the
+     * format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`).
+     * If there is no login history, this field is null.
+     * <p>
+     * For illustrative purposes, suppose we have a user who has logged in
+     * at July 1st, 2020 at 1200 PST and logged out 30 minutes later.
+     * They then login again on July 2nd, 2020 at 1500 PST.
+     * <p>
+     * Their previousSuccessfulLoginTime would be `2020-07-01:19:00.000Z`.
+     * <p>
+     * Their lastSuccessfulLoginTime would be `2020-07-02:22:00.000Z`.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("previousSuccessfulLoginTime")
+    java.util.Date previousSuccessfulLoginTime;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

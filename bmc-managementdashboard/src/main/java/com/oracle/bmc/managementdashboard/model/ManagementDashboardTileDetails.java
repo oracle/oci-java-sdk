@@ -5,7 +5,9 @@
 package com.oracle.bmc.managementdashboard.model;
 
 /**
- * Properties of dashboard tile representing a saved search.
+ * Properties of the dashboard tile representing a saved search.
+ * Tiles are laid out in a twelve column grid system with (0,0) at upper left corner.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -174,60 +176,60 @@ public class ManagementDashboardTileDetails {
     }
 
     /**
-     * Display name for saved search.
+     * Display name of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Id of saved search.
+     * ID of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
     String savedSearchId;
 
     /**
-     * Row, Y position
+     * Tile's row number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("row")
     Integer row;
 
     /**
-     * Column, X position
+     * Tile's column number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("column")
     Integer column;
 
     /**
-     * Height position
+     * The number of rows the tile occupies.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("height")
     Integer height;
 
     /**
-     * Width position
+     * The number of columns the tile occupies.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("width")
     Integer width;
 
     /**
-     * Json for internationalization.
+     * JSON that contains internationalization options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
     Object nls;
 
     /**
-     * Json to contain options for UI.
+     * JSON that contains user interface options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     Object uiConfig;
 
     /**
-     * Array of Json to contain options for source of data.
+     * Array of JSON that contain data source options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     java.util.List<Object> dataConfig;
     /**
-     * State of saved search.
+     * Current state of the saved search.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum State {
@@ -274,13 +276,13 @@ public class ManagementDashboardTileDetails {
         }
     };
     /**
-     * State of saved search.
+     * Current state of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     State state;
 
     /**
-     * Drill down configuration
+     * Drill-down configuration to define the destination of a drill-down action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drilldownConfig")
     Object drilldownConfig;

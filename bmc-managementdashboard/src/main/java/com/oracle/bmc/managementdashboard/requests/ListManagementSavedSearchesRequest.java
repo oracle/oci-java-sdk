@@ -33,7 +33,7 @@ public class ListManagementSavedSearchesRequest
     private Integer limit;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page on which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
@@ -43,13 +43,13 @@ public class ListManagementSavedSearchesRequest
     private com.oracle.bmc.managementdashboard.model.SortOrders sortOrder;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is the default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is the default.
      *
      **/
     public enum SortBy {

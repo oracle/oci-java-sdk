@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Storage configuration and status of a tenancy in Logan Analytics application
+ * This is the storage configuration and status of a tenancy in Logan Analytics application
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,7 +70,7 @@ public class Storage {
     }
 
     /**
-     * if old data can be archived for a tenancy
+     * This indicates if old data can be archived for a tenancy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isArchivingEnabled")
     Boolean isArchivingEnabled;

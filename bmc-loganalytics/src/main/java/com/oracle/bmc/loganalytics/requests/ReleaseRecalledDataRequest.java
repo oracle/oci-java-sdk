@@ -13,13 +13,13 @@ public class ReleaseRecalledDataRequest
         extends com.oracle.bmc.requests.BmcRequest<ReleaseRecalledDataDetails> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
 
     /**
-     * release recalled data request details
+     * This is the input to release recalled data
      */
     private ReleaseRecalledDataDetails releaseRecalledDataDetails;
 

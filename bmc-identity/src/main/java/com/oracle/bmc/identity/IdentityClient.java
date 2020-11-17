@@ -602,6 +602,39 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public BulkEditTagsResponse bulkEditTags(BulkEditTagsRequest request) {
+        LOG.trace("Called bulkEditTags");
+        final BulkEditTagsRequest interceptedRequest =
+                BulkEditTagsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkEditTagsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, BulkEditTagsResponse>
+                transformer = BulkEditTagsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getBulkEditTagsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public BulkMoveResourcesResponse bulkMoveResources(BulkMoveResourcesRequest request) {
         LOG.trace("Called bulkMoveResources");
         final BulkMoveResourcesRequest interceptedRequest =
@@ -2483,6 +2516,36 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListBulkActionResourceTypesResponse>
                 transformer = ListBulkActionResourceTypesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBulkEditTagsResourceTypesResponse listBulkEditTagsResourceTypes(
+            ListBulkEditTagsResourceTypesRequest request) {
+        LOG.trace("Called listBulkEditTagsResourceTypes");
+        final ListBulkEditTagsResourceTypesRequest interceptedRequest =
+                ListBulkEditTagsResourceTypesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBulkEditTagsResourceTypesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBulkEditTagsResourceTypesResponse>
+                transformer = ListBulkEditTagsResourceTypesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementdashboard.model;
 
 /**
- * Summary of properties of a saved search.
+ * Summary of the properties of a saved search.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -134,6 +134,24 @@ public class ManagementSavedSearchSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
         private String screenImage;
 
@@ -216,6 +234,8 @@ public class ManagementSavedSearchSummary {
                             dataConfig,
                             createdBy,
                             updatedBy,
+                            timeCreated,
+                            timeUpdated,
                             screenImage,
                             metadataVersion,
                             widgetTemplate,
@@ -242,6 +262,8 @@ public class ManagementSavedSearchSummary {
                             .dataConfig(o.getDataConfig())
                             .createdBy(o.getCreatedBy())
                             .updatedBy(o.getUpdatedBy())
+                            .timeCreated(o.getTimeCreated())
+                            .timeUpdated(o.getTimeUpdated())
                             .screenImage(o.getScreenImage())
                             .metadataVersion(o.getMetadataVersion())
                             .widgetTemplate(o.getWidgetTemplate())
@@ -263,79 +285,91 @@ public class ManagementSavedSearchSummary {
     }
 
     /**
-     * id for saved search.  Must be provided if OOB, otherwise must not be provided.
+     * ID of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Display name for saved search.
+     * Display name of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * String boolean (\"true\" or \"false\") to indicate Out Of the Box saved search.
+     * Determines whether the saved search is an Out-of-the-Box (OOB) saved search. Note that OOB saved searches are only provided by Oracle and cannot be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOobSavedSearch")
     Boolean isOobSavedSearch;
 
     /**
-     * Id for application (LA, APM, etc.) that owners this saved search.  Each owner has a unique Id.
+     * ID of the service (for example log-analytics) that owns the saved search. Each service has a unique ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerId")
     String providerId;
 
     /**
-     * The ocid of the compartment that owns the saved search.
+     * OCID of the compartment in which the saved search resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * Description.
+     * Description of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Json for internationalization.
+     * JSON that contains internationalization options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
     Object nls;
 
     /**
-     * How to show the saved search.
+     * Determines how the saved search is displayed in a dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     SavedSearchTypes type;
 
     /**
-     * Json to contain options for UI.
+     * JSON that contains user interface options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uiConfig")
     Object uiConfig;
 
     /**
-     * Array of Json to contain options for source of data.
+     * Array of JSON that contain data source options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataConfig")
     java.util.List<Object> dataConfig;
 
     /**
-     * Created by which user.
+     * User who created the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     String createdBy;
 
     /**
-     * Updated by which user.
+     * User who updated the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     String updatedBy;
 
     /**
-     * Screenshot.
+     * Date and time the saved search was created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
+
+    /**
+     * Date and time the saved search was updated.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    java.util.Date timeUpdated;
+
+    /**
+     * Screen image of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
     String screenImage;
@@ -347,19 +381,19 @@ public class ManagementSavedSearchSummary {
     String metadataVersion;
 
     /**
-     * Template.
+     * Reference to the HTML file of the widget.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("widgetTemplate")
     String widgetTemplate;
 
     /**
-     * View Model
+     * Reference to the view model of the widget.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("widgetVM")
     String widgetVM;
 
     /**
-     * Current state of saved search.
+     * Current lifecycle state of the saved search.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;

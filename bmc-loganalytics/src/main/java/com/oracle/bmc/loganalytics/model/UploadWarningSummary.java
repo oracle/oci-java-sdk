@@ -99,7 +99,7 @@ public class UploadWarningSummary {
     String reference;
 
     /**
-     * Status
+     * Status of the upload. Ex - Failed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     String status;

@@ -14,12 +14,12 @@ public class ChangeManagementSavedSearchesCompartmentRequest
                 ChangeManagementSavedSearchesCompartmentDetails> {
 
     /**
-     * unique saved search identifier
+     * A unique saved search identifier.
      */
     private String managementSavedSearchId;
 
     /**
-     * Compartment id to move the saved search to.
+     * ID of the saved search that is being moved.
      */
     private ChangeManagementSavedSearchesCompartmentDetails
             changeManagementSavedSearchesCompartmentDetails;

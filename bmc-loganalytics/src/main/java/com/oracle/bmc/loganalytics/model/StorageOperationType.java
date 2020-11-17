@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Asynchronous operation name for a storage work Request
+ * These are the asynchronous operation name for a storage work Request
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")

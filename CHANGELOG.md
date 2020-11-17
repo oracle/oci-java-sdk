@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.26.0 - 2020-11-17
+### Added
+- Support for specifying memory for AMD E3 shapes during node pool creation and update in the Container Engine for Kubernetes service
+- Support for upgrading a database on a VM database system in the Database service
+- Support for listing autonomous database clones in the Database service
+- Support for Data Guard with autonomous container databases on Exadata Cloud at Customer in the Database service
+- Support for getting the last login time of a user in the Identity service
+- Support to bulk editing tags on resources in the Identity service
+
+### Breaking Changes
+- The models `AgentUpload`, `Attribute`, `FieldMap`, `GenerateAgentObjectNameDetails`, `LogAnalytics`, `LogAnalyticsSummary`, `OutOfBoxEntityTypeDetails`, `Query`, `QueryWorkRequestResource`, `ServiceTenancy`, `SortOrders`, `StringListDetails` are removed from the Log Analytics service
+- The enum `name` removed value `CuslterSplit` and added `ClusterSplit` in the Log Analytics service
+- Datatype for property status in ListWorkRequestsRequest changed from `com.oracle.bmc.containerengine.model.WorkRequestStatus` to `String` in the Container Engine service
+- Method `public com.oracle.bmc.loganalytics.model.ErrorDetails getErrorDetails()` has been removed from DeleteAssociationsResponse in the Log Analytics service
+
 ## 1.25.4 - 2020-11-10
 ### Added
 - Support for the 21C autonomous database version in the Database service

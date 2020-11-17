@@ -12,16 +12,16 @@ import com.oracle.bmc.loganalytics.model.*;
 public class DeleteAssociationsResponse {
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      */
     private String opcRequestId;
-
-    /**
-     * The returned ErrorDetails instance.
-     */
-    private ErrorDetails errorDetails;
 
     public static class Builder {
         /**
@@ -29,8 +29,8 @@ public class DeleteAssociationsResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteAssociationsResponse o) {
+            opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
-            errorDetails(o.getErrorDetails());
 
             return this;
         }

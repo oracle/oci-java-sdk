@@ -12,13 +12,13 @@ import com.oracle.bmc.loganalytics.model.*;
 public class ExportCustomContentRequest extends com.oracle.bmc.requests.BmcRequest<ExportContent> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
 
     /**
-     *
+     * content to export
      */
     private ExportContent exportCustomContentDetails;
 

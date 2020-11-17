@@ -135,13 +135,13 @@ public class ParsedContent {
     java.util.List<ParsedField> parsedFieldValues;
 
     /**
-     * Log Content
+     * Sample log entries picked up from the given file for validation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logContent")
     String logContent;
 
     /**
-     * Sample Size
+     * Sample Size taken for validation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleSize")
     Integer sampleSize;

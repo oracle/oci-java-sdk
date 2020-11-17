@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Namespace of a tenancy in Logan Analytics application
+ * This is the namespace details of a tenancy in Logan Analytics application
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -80,19 +80,19 @@ public class Namespace {
     }
 
     /**
-     * namespace name
+     * This is the namespace name of a tenancy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     String namespaceName;
 
     /**
-     * Tenancy ID
+     * The is the tenancy ID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * if tenancy is onboarded to logging analytics
+     * This indicates if the tenancy is onboarded to Logging Analytics
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOnboarded")
     Boolean isOnboarded;

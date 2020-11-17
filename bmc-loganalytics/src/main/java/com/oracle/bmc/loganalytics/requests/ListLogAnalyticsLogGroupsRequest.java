@@ -13,7 +13,7 @@ public class ListLogAnalyticsLogGroupsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
@@ -24,7 +24,7 @@ public class ListLogAnalyticsLogGroupsRequest
     private String compartmentId;
 
     /**
-     * A filter to return only log analytics entities whose displayName matches the entire display name given.
+     * A filter to return only log analytics log groups whose displayName matches the entire display name given.
      * The match is case-insensitive.
      *
      */

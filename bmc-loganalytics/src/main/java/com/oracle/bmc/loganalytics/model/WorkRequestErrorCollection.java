@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * List of errors for the specified work request if any.
+ * This is a list of errors for the work request.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,7 +62,7 @@ public class WorkRequestErrorCollection {
     }
 
     /**
-     * List of errors for the specified work request if any.
+     * This is an array of errors for the work request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")

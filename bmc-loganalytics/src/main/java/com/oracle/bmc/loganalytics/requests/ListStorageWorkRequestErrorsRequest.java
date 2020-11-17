@@ -23,7 +23,7 @@ public class ListStorageWorkRequestErrorsRequest
     private String workRequestId;
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;

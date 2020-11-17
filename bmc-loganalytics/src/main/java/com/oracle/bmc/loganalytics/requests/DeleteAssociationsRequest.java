@@ -13,7 +13,7 @@ public class DeleteAssociationsRequest
         extends com.oracle.bmc.requests.BmcRequest<DeleteLogAnalyticsAssociationDetails> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;

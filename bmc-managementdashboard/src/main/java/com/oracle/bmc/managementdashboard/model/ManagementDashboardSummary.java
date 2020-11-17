@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementdashboard.model;
 
 /**
- * Summary of properties for a dashboard.
+ * Summary of the properties of a dashboard.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -230,55 +230,55 @@ public class ManagementDashboardSummary {
     }
 
     /**
-     * Dashboard Id. Must be providied if OOB, otherwise must not be provided.
+     * ID of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dashboardId")
     String dashboardId;
 
     /**
-     * Display name for dashboard.
+     * Display name of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Dashboard's description.
+     * Description of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * The ocid of the compartment that owns the dashboard.
+     * OCID of the compartment in which the dashboard resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * String boolean (\"true\" or \"false\").  OOB (Out of the Box) dashboards are only provided by Oracle.  They cannot be modified by non-Oracle.
+     * Determines whether the dashboard is an Out-of-the-Box (OOB) dashboard. Note that OOB dashboards are only provided by Oracle and cannot be modified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOobDashboard")
     Boolean isOobDashboard;
 
     /**
-     * Created by which user.
+     * User who created the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     String createdBy;
 
     /**
-     * Time created.
+     * Date and time the dashboard was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * Updated by which user.
+     * User who updated the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     String updatedBy;
 
     /**
-     * Time updated.
+     * Date and time the dashboard was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
@@ -290,25 +290,25 @@ public class ManagementDashboardSummary {
     String metadataVersion;
 
     /**
-     * screen image.
+     * Screen image of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("screenImage")
     String screenImage;
 
     /**
-     * Json for internationalization.
+     * JSON that contains internationalization options.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nls")
     Object nls;
 
     /**
-     * NORMAL means single dashboard, SET means dashboard set.
+     * Type of dashboard. NORMAL denotes a single dashboard and SET denotes a dashboard set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     String type;
 
     /**
-     * State of dashboard.
+     * Current lifecycle state of the dashboard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;

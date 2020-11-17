@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Log Analytics Object Storage based collection rule compartment to be updated to.
+ * The new compartment this Object Collection Rule will be moved to.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

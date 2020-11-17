@@ -4285,6 +4285,7 @@ public class LogAnalyticsAsyncClient implements LogAnalyticsAsync {
                 OffboardNamespaceConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, OffboardNamespaceResponse>
                 transformer = OffboardNamespaceConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<OffboardNamespaceRequest, OffboardNamespaceResponse>
                 handlerToUse = handler;

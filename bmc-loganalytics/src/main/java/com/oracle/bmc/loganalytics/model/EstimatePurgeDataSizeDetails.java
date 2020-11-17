@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Parameters used to estimate purge data size
+ * This is the input used to estimate the size of data that might be purged
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -109,31 +109,31 @@ public class EstimatePurgeDataSizeDetails {
     }
 
     /**
-     * the compartment OCID under which the data will be purged
+     * This is the compartment OCID under which the data will be purged
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * if true, purge child compartments data
+     * If true, purge child compartments data
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     Boolean compartmentIdInSubtree;
 
     /**
-     * the time before which data will be purged
+     * This is the time before which data will be purged
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     java.util.Date timeDataEnded;
 
     /**
-     * the solr data filter query, '*' means all
+     * This is the solr data filter query, '*' means all
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
     String purgeQueryString;
 
     /**
-     * the type of the log data to be purged
+     * This is the type of the log data to be purged
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     StorageDataType dataType;

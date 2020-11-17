@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * configuration for archiving data in object storage
+ * This is the configuration for data archiving in object storage
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -73,7 +73,7 @@ public class ArchivingConfiguration {
     }
 
     /**
-     * duration in active storage before data is archived, as described in
+     * Thi is the duration data in active storage before data is archived, as described in
      * https://en.wikipedia.org/wiki/ISO_8601#Durations.
      * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
      *
@@ -82,7 +82,7 @@ public class ArchivingConfiguration {
     String activeStorageDuration;
 
     /**
-     * duration before data is deleted from object storage, as described in
+     * The is the duration before archived data is deleted from object storage, as described in
      * https://en.wikipedia.org/wiki/ISO_8601#Durations
      * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
      *

@@ -255,15 +255,9 @@ public class LogAnalyticsLookup {
     @com.fasterxml.jackson.annotation.JsonProperty("lookupDisplayName")
     String lookupDisplayName;
 
-    /**
-     * sources using
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referringSources")
     AutoLookups referringSources;
 
-    /**
-     * status summary
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusSummary")
     StatusSummary statusSummary;
 

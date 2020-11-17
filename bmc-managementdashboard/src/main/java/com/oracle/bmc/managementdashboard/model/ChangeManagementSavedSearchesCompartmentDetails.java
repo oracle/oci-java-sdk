@@ -5,7 +5,7 @@
 package com.oracle.bmc.managementdashboard.model;
 
 /**
- * Details required for changing the compartment of saved search.
+ * Compartment to which the saved search is being moved.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class ChangeManagementSavedSearchesCompartmentDetails {
     }
 
     /**
-     * Compartment Identifier
+     * OCID of the compartment to which the saved search is being moved.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

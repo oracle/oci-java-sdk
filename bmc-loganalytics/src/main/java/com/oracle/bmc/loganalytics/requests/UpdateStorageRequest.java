@@ -12,13 +12,13 @@ import com.oracle.bmc.loganalytics.model.*;
 public class UpdateStorageRequest extends com.oracle.bmc.requests.BmcRequest<UpdateStorageDetails> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
 
     /**
-     * archiving configuration
+     * This is the archiving configuration
      */
     private UpdateStorageDetails updateStorageDetails;
 

@@ -529,6 +529,45 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BulkEditTagsResponse> bulkEditTags(
+            BulkEditTagsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<BulkEditTagsRequest, BulkEditTagsResponse>
+                    handler) {
+        LOG.trace("Called async bulkEditTags");
+        final BulkEditTagsRequest interceptedRequest =
+                BulkEditTagsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkEditTagsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, BulkEditTagsResponse>
+                transformer = BulkEditTagsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<BulkEditTagsRequest, BulkEditTagsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkEditTagsRequest, BulkEditTagsResponse>,
+                        java.util.concurrent.Future<BulkEditTagsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkEditTagsRequest, BulkEditTagsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<BulkMoveResourcesResponse> bulkMoveResources(
             BulkMoveResourcesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3031,6 +3070,50 @@ public class IdentityAsyncClient implements IdentityAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListBulkActionResourceTypesRequest, ListBulkActionResourceTypesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkEditTagsResourceTypesResponse>
+            listBulkEditTagsResourceTypes(
+                    ListBulkEditTagsResourceTypesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListBulkEditTagsResourceTypesRequest,
+                                    ListBulkEditTagsResourceTypesResponse>
+                            handler) {
+        LOG.trace("Called async listBulkEditTagsResourceTypes");
+        final ListBulkEditTagsResourceTypesRequest interceptedRequest =
+                ListBulkEditTagsResourceTypesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBulkEditTagsResourceTypesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBulkEditTagsResourceTypesResponse>
+                transformer = ListBulkEditTagsResourceTypesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBulkEditTagsResourceTypesRequest, ListBulkEditTagsResourceTypesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBulkEditTagsResourceTypesRequest,
+                                ListBulkEditTagsResourceTypesResponse>,
+                        java.util.concurrent.Future<ListBulkEditTagsResourceTypesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBulkEditTagsResourceTypesRequest, ListBulkEditTagsResourceTypesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

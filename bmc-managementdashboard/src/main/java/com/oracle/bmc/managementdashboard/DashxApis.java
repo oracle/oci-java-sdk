@@ -8,8 +8,7 @@ import com.oracle.bmc.managementdashboard.requests.*;
 import com.oracle.bmc.managementdashboard.responses.*;
 
 /**
- * Management Dashboard micro-service provides a set of CRUD, import, export, and compartment related APIs (such as change compartment)   to support dashboard and saved search metadata preservation.  These APIs are mainly for client UIs, for various UI activities such as get list of all saved searches in a compartment, create a dashboard, open a saved search, etc.  Use export to retrieve  dashboards and their saved searches, then edit the Json if necessary (for example change compartmentIds), then import the result to  destination dashboard service.
- * APIs validate all required properties to ensure properties are present and have correct type and values.
+ * API for the Management Dashboard micro-service. Use this API for dashboard and saved search metadata preservation and to perform  tasks such as creating a dashboard, creating a saved search, and obtaining a list of dashboards and saved searches in a compartment.
  *
  *
  */
@@ -49,7 +48,7 @@ public interface DashxApis extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Move the dashboard from existing compartment to a new compartment.
+     * Moves the dashboard from the existing compartment to a new compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -59,7 +58,7 @@ public interface DashxApis extends AutoCloseable {
             ChangeManagementDashboardsCompartmentRequest request);
 
     /**
-     * Move the saved search from existing compartment to a new compartment.
+     * Moves the saved search from the existing compartment to a new compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -89,7 +88,7 @@ public interface DashxApis extends AutoCloseable {
             CreateManagementSavedSearchRequest request);
 
     /**
-     * Deletes a Dashboard by id.
+     * Deletes a Dashboard by ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -98,7 +97,7 @@ public interface DashxApis extends AutoCloseable {
             DeleteManagementDashboardRequest request);
 
     /**
-     * Deletes a saved search by Id
+     * Deletes a saved search by ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -115,7 +114,7 @@ public interface DashxApis extends AutoCloseable {
     ExportDashboardResponse exportDashboard(ExportDashboardRequest request);
 
     /**
-     * Get a Dashboard and its saved searches by id.  Deleted or unauthorized saved searches are marked by tile's state property.
+     * Gets a dashboard and its saved searches by ID.  Deleted or unauthorized saved searches are marked by tile's state property.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -123,7 +122,7 @@ public interface DashxApis extends AutoCloseable {
     GetManagementDashboardResponse getManagementDashboard(GetManagementDashboardRequest request);
 
     /**
-     * Get a saved search by Id.
+     * Gets a saved search by ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -132,7 +131,7 @@ public interface DashxApis extends AutoCloseable {
             GetManagementSavedSearchRequest request);
 
     /**
-     * Import an array of dashboards and their saved searches.
+     * Imports an array of dashboards and their saved searches.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -141,7 +140,7 @@ public interface DashxApis extends AutoCloseable {
     ImportDashboardResponse importDashboard(ImportDashboardRequest request);
 
     /**
-     * Gets list of dashboards and their saved searches for compartment with pagination.  Returned properties are a summary.
+     * Gets the list of dashboards and their saved searches in a compartment with pagination.  Returned properties are the summary.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -150,7 +149,7 @@ public interface DashxApis extends AutoCloseable {
             ListManagementDashboardsRequest request);
 
     /**
-     * Gets list of saved searches with pagination.  Returned properties are a summary.
+     * Gets the list of saved searches in a compartment with pagination.  Returned properties are the summary.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -159,7 +158,7 @@ public interface DashxApis extends AutoCloseable {
             ListManagementSavedSearchesRequest request);
 
     /**
-     * Updates an existing dashboard identified by id path parameter.  Limit for number of saved searches in a dashboard is 20.
+     * Updates an existing dashboard identified by ID path parameter.  CompartmentId can be modified only by the changeCompartment API. Limit for number of saved searches in a dashboard is 20.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -169,7 +168,7 @@ public interface DashxApis extends AutoCloseable {
             UpdateManagementDashboardRequest request);
 
     /**
-     * Update an existing saved search.  Id cannot be updated.
+     * Updates an existing saved search identified by ID path parameter.  CompartmentId can be modified only by the changeCompartment API.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

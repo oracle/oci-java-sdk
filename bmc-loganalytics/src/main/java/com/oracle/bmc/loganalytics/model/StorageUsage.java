@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Storage usage of a tenancy in Logan Analytics application
+ * This is the storage usage information of a tenancy in Logan Analytics application
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -85,19 +85,19 @@ public class StorageUsage {
     }
 
     /**
-     * number of bytes
+     * This is the number of bytes of active data (non-archived)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("activeDataSizeInBytes")
     Long activeDataSizeInBytes;
 
     /**
-     * number of bytes archived in object store
+     * This is the number of bytes of archived data in object storage
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archivedDataSizeInBytes")
     Long archivedDataSizeInBytes;
 
     /**
-     * number of bytes recalled from archived data in object store
+     * This is the number of bytes of recalled data from archived in object store
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recalledArchivedDataSizeInBytes")
     Long recalledArchivedDataSizeInBytes;

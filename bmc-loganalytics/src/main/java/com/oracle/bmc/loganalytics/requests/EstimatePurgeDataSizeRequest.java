@@ -13,13 +13,13 @@ public class EstimatePurgeDataSizeRequest
         extends com.oracle.bmc.requests.BmcRequest<EstimatePurgeDataSizeDetails> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
 
     /**
-     * Parameters used to estimate purge data size
+     * This is the input to estimate the size of data to be purged.
      */
     private EstimatePurgeDataSizeDetails estimatePurgeDataSizeDetails;
 

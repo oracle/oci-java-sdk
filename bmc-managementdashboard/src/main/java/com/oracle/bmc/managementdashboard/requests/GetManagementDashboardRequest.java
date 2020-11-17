@@ -13,7 +13,7 @@ public class GetManagementDashboardRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique dashboard identifier
+     * A unique dashboard identifier.
      */
     private String managementDashboardId;
 

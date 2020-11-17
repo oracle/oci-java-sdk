@@ -93,7 +93,7 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Deletes the specified tag key definitions. This operation triggers a process that removes the
-     * tags from all resources in your tenancy.
+     * tags from all resources in your tenancy. The tag key definitions must be within the same tag namespace.
      * <p>
      * The following actions happen immediately:
      * \u00A0
@@ -119,6 +119,28 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     BulkDeleteTagsResponse bulkDeleteTags(BulkDeleteTagsRequest request);
+
+    /**
+     * Edits the specified list of tag key definitions for the selected resources.
+     * This operation triggers a process that edits the tags on all selected resources. The possible actions are:
+     * <p>
+     * Add a defined tag when the tag does not already exist on the resource.
+     *   * Update the value for a defined tag when the tag is present on the resource.
+     *   * Add a defined tag when it does not already exist on the resource or update the value for a defined tag when the tag is present on the resource.
+     *   * Remove a defined tag from a resource. The tag is removed from the resource regardless of the tag value.
+     * <p>
+     * See {@link #bulkEditOperationDetails(BulkEditOperationDetailsRequest) bulkEditOperationDetails} for more information.
+     * <p>
+     * The edits can include a combination of operations and tag sets.
+     * However, multiple operations cannot apply to one key definition in the same request.
+     * For example, if one request adds `tag set-1` to a resource and sets a tag value to `tag set-2`,
+     * `tag set-1` and `tag set-2` cannot have any common tag definitions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    BulkEditTagsResponse bulkEditTags(BulkEditTagsRequest request);
 
     /**
      * Moves multiple resources from one compartment to another. All resources must be in the same compartment.
@@ -223,7 +245,7 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
-     * compatible API. For information, see
+     * compatible API. The secret key consists of an Access Key/Secret Key pair. For information, see
      * [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm).
      * <p>
      * You must specify a *description* for the secret key (although it can be an empty string). It does not
@@ -1000,6 +1022,16 @@ public interface Identity extends AutoCloseable {
      */
     ListBulkActionResourceTypesResponse listBulkActionResourceTypes(
             ListBulkActionResourceTypesRequest request);
+
+    /**
+     * Lists the resource types that support bulk tag editing.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListBulkEditTagsResourceTypesResponse listBulkEditTagsResourceTypes(
+            ListBulkEditTagsResourceTypesRequest request);
 
     /**
      * Lists the compartments in a specified compartment. The members of the list

@@ -18,7 +18,7 @@ public class ListStorageWorkRequestsRequest
     private String compartmentId;
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
@@ -81,13 +81,15 @@ public class ListStorageWorkRequestsRequest
         }
     };
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending. If no value is specified timeAccepted is default.
+     * This is the query parameter of which field to sort by. Only one sort order may be provided. Default order for timeAccepted
+     * is descending. If no value is specified timeAccepted is default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending. If no value is specified timeAccepted is default.
+     * This is the query parameter of which field to sort by. Only one sort order may be provided. Default order for timeAccepted
+     * is descending. If no value is specified timeAccepted is default.
      *
      **/
     public enum SortBy {
@@ -124,32 +126,32 @@ public class ListStorageWorkRequestsRequest
         }
     };
     /**
-     * storage operation type
+     * The is the work request type query parameter
      */
     private com.oracle.bmc.loganalytics.model.StorageOperationType operationType;
 
     /**
-     * storage operation status
+     * The is the work request status query parameter
      */
     private com.oracle.bmc.loganalytics.model.WorkRequestStatus status;
 
     /**
-     * storage operation started time
+     * The is the query parameter of when the processing of work request was started
      */
     private java.util.Date timeStarted;
 
     /**
-     * storage operation time finished
+     * The is the query parameter of when the processing of work request was finished
      */
     private java.util.Date timeFinished;
 
     /**
-     * policy name e.g. purge policy
+     * This is the query parameter of purge policy name
      */
     private String policyName;
 
     /**
-     * policy ID e.g. purge policy ID
+     * This is the query parameter of purge policy ID
      */
     private String policyId;
 

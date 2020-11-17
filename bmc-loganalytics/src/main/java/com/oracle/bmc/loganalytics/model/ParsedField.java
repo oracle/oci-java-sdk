@@ -68,7 +68,7 @@ public class ParsedField {
     }
 
     /**
-     * Log Content
+     * Sample log entries picked up from the given file for validation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logContent")
     String logContent;

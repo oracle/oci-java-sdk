@@ -13,7 +13,7 @@ public class DeleteManagementSavedSearchRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique saved search identifier
+     * A unique saved search identifier.
      */
     private String managementSavedSearchId;
 

@@ -47,6 +47,10 @@ public class OffboardNamespaceConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
+        }
+
         return ib;
     }
 

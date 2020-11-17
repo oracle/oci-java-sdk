@@ -13,7 +13,7 @@ public class ImportDashboardRequest
         extends com.oracle.bmc.requests.BmcRequest<ManagementDashboardImportDetails> {
 
     /**
-     * Json metadata for dashboards and their saved searches to import.
+     * JSON metadata for importing dashboards and their saved searches.
      */
     private ManagementDashboardImportDetails managementDashboardImportDetails;
 

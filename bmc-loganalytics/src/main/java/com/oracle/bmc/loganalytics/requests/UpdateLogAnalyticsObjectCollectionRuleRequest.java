@@ -13,13 +13,13 @@ public class UpdateLogAnalyticsObjectCollectionRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdateLogAnalyticsObjectCollectionRuleDetails> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
 
     /**
-     * The log analytics os collection rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     private String logAnalyticsObjectCollectionRuleId;
 

@@ -12,7 +12,7 @@ import com.oracle.bmc.loganalytics.model.*;
 public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
@@ -75,7 +75,7 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
     private String description;
 
     /**
-     * character Encoding
+     * Character Encoding
      */
     private String charEncoding;
 

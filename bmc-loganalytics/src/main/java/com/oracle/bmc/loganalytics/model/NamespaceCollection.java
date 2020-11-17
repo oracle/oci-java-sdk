@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * List of NamespaceSummary: there is at most one item.
+ * This is a list of NamespaceSummary: there is at most one item in the list.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -62,7 +62,7 @@ public class NamespaceCollection {
     }
 
     /**
-     * List of NamespaceSummary: there is at most one item.
+     * There is at most one item in the items array.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")

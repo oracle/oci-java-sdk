@@ -13,13 +13,13 @@ public class RecallArchivedDataRequest
         extends com.oracle.bmc.requests.BmcRequest<RecallArchivedDataDetails> {
 
     /**
-     * The Log Analytics namespace used for the request.
+     * The Logging Analytics namespace used for the request.
      *
      */
     private String namespaceName;
 
     /**
-     * recall archived data request details
+     * This is the input to recall archived data.
      */
     private RecallArchivedDataDetails recallArchivedDataDetails;
 
