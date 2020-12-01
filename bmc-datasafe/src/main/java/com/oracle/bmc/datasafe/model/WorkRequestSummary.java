@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A summary of the work request status.
+ * Summary of a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -161,6 +161,11 @@ public class WorkRequestSummary {
         UpdatePrivateEndpoint("UPDATE_PRIVATE_ENDPOINT"),
         DeletePrivateEndpoint("DELETE_PRIVATE_ENDPOINT"),
         ChangePrivateEndpointCompartment("CHANGE_PRIVATE_ENDPOINT_COMPARTMENT"),
+        CreateOnpremConnector("CREATE_ONPREM_CONNECTOR"),
+        UpdateOnpremConnector("UPDATE_ONPREM_CONNECTOR"),
+        DeleteOnpremConnector("DELETE_ONPREM_CONNECTOR"),
+        UpdateOnpremConnectorWallet("UPDATE_ONPREM_CONNECTOR_WALLET"),
+        ChangeOnpremConnectorCompartment("CHANGE_ONPREM_CONNECTOR_COMPARTMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -206,7 +211,7 @@ public class WorkRequestSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     OperationType operationType;
     /**
-     * The status of the work request.
+     * The current status of the work request.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -254,7 +259,7 @@ public class WorkRequestSummary {
         }
     };
     /**
-     * The status of the work request.
+     * The current status of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;
@@ -266,40 +271,40 @@ public class WorkRequestSummary {
     String id;
 
     /**
-     * The OCID of the compartment containing this work request.
+     * The OCID of the compartment that contains the work request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The resources impacted by the work request.
+     * The resources that are affected by the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     java.util.List<WorkRequestResource> resources;
 
     /**
-     * Progress of the request in percentage.
+     * Progress of the work request in percentage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     Float percentComplete;
 
     /**
-     * The date and time the work request was created, in the format defined by RFC3339.
+     * The date and time the work request was accepted, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     java.util.Date timeAccepted;
 
     /**
-     * The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, in the format defined by RFC3339.
+     * The date and time the work request transitioned from ACCEPTED to IN_PROGRESS, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The date and time the work request reached a terminal state, either FAILED or SUCCEEDED, in the format defined by RFC3339.
+     * The date and time the work request reached a terminal state, either FAILED or SUCCEEDED, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")

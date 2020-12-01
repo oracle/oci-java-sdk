@@ -116,6 +116,15 @@ public class BlockchainPlatform {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("platformShapeType")
+        private PlatformShapeType platformShapeType;
+
+        public Builder platformShapeType(PlatformShapeType platformShapeType) {
+            this.platformShapeType = platformShapeType;
+            this.__explicitlySet__.add("platformShapeType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serviceEndpoint")
         private String serviceEndpoint;
 
@@ -242,6 +251,7 @@ public class BlockchainPlatform {
                             serviceVersion,
                             platformRole,
                             computeShape,
+                            platformShapeType,
                             serviceEndpoint,
                             lifecycleState,
                             lifecycleDetails,
@@ -271,6 +281,7 @@ public class BlockchainPlatform {
                             .serviceVersion(o.getServiceVersion())
                             .platformRole(o.getPlatformRole())
                             .computeShape(o.getComputeShape())
+                            .platformShapeType(o.getPlatformShapeType())
                             .serviceEndpoint(o.getServiceEndpoint())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
@@ -344,7 +355,7 @@ public class BlockchainPlatform {
     @com.fasterxml.jackson.annotation.JsonProperty("serviceVersion")
     String serviceVersion;
     /**
-     * Role of platform - founder or participant
+     * Role of platform - FOUNDER or PARTICIPANT
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PlatformRole {
@@ -390,12 +401,12 @@ public class BlockchainPlatform {
         }
     };
     /**
-     * Role of platform - founder or participant
+     * Role of platform - FOUNDER or PARTICIPANT
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformRole")
     PlatformRole platformRole;
     /**
-     * Type of compute shape - one of Standard, (Enterprise) Small, Medium, Large or Extra Large
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ComputeShape {
@@ -445,10 +456,61 @@ public class BlockchainPlatform {
         }
     };
     /**
-     * Type of compute shape - one of Standard, (Enterprise) Small, Medium, Large or Extra Large
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
     ComputeShape computeShape;
+    /**
+     * Type of Platform shape - DEFAULT or CUSTOM
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum PlatformShapeType {
+        Default("DEFAULT"),
+        Custom("CUSTOM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, PlatformShapeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PlatformShapeType v : PlatformShapeType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PlatformShapeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PlatformShapeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PlatformShapeType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of Platform shape - DEFAULT or CUSTOM
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("platformShapeType")
+    PlatformShapeType platformShapeType;
 
     /**
      * Service endpoint URL, valid post-provisioning

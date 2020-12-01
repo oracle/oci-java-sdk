@@ -478,6 +478,42 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ChangeOnPremConnectorCompartmentResponse changeOnPremConnectorCompartment(
+            ChangeOnPremConnectorCompartmentRequest request) {
+        LOG.trace("Called changeOnPremConnectorCompartment");
+        final ChangeOnPremConnectorCompartmentRequest interceptedRequest =
+                ChangeOnPremConnectorCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeOnPremConnectorCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeOnPremConnectorCompartmentResponse>
+                transformer = ChangeOnPremConnectorCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeOnPremConnectorCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateDataSafePrivateEndpointResponse createDataSafePrivateEndpoint(
             CreateDataSafePrivateEndpointRequest request) {
         LOG.trace("Called createDataSafePrivateEndpoint");
@@ -514,6 +550,40 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public CreateOnPremConnectorResponse createOnPremConnector(
+            CreateOnPremConnectorRequest request) {
+        LOG.trace("Called createOnPremConnector");
+        final CreateOnPremConnectorRequest interceptedRequest =
+                CreateOnPremConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOnPremConnectorConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateOnPremConnectorResponse>
+                transformer = CreateOnPremConnectorConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateOnPremConnectorDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteDataSafePrivateEndpointResponse deleteDataSafePrivateEndpoint(
             DeleteDataSafePrivateEndpointRequest request) {
         LOG.trace("Called deleteDataSafePrivateEndpoint");
@@ -524,6 +594,36 @@ public class DataSafeClient implements DataSafe {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteDataSafePrivateEndpointResponse>
                 transformer = DeleteDataSafePrivateEndpointConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteOnPremConnectorResponse deleteOnPremConnector(
+            DeleteOnPremConnectorRequest request) {
+        LOG.trace("Called deleteOnPremConnector");
+        final DeleteOnPremConnectorRequest interceptedRequest =
+                DeleteOnPremConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOnPremConnectorConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteOnPremConnectorResponse>
+                transformer = DeleteOnPremConnectorConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -573,6 +673,43 @@ public class DataSafeClient implements DataSafe {
                                                 ib,
                                                 retriedRequest
                                                         .getEnableDataSafeConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GenerateOnPremConnectorConfigurationResponse generateOnPremConnectorConfiguration(
+            GenerateOnPremConnectorConfigurationRequest request) {
+        LOG.trace("Called generateOnPremConnectorConfiguration");
+        final GenerateOnPremConnectorConfigurationRequest interceptedRequest =
+                GenerateOnPremConnectorConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateOnPremConnectorConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateOnPremConnectorConfigurationResponse>
+                transformer = GenerateOnPremConnectorConfigurationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getGenerateOnPremConnectorConfigurationDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -639,6 +776,34 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public GetOnPremConnectorResponse getOnPremConnector(GetOnPremConnectorRequest request) {
+        LOG.trace("Called getOnPremConnector");
+        final GetOnPremConnectorRequest interceptedRequest =
+                GetOnPremConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOnPremConnectorConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetOnPremConnectorResponse>
+                transformer = GetOnPremConnectorConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
         LOG.trace("Called getWorkRequest");
         final GetWorkRequestRequest interceptedRequest =
@@ -677,6 +842,34 @@ public class DataSafeClient implements DataSafe {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListDataSafePrivateEndpointsResponse>
                 transformer = ListDataSafePrivateEndpointsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOnPremConnectorsResponse listOnPremConnectors(ListOnPremConnectorsRequest request) {
+        LOG.trace("Called listOnPremConnectors");
+        final ListOnPremConnectorsRequest interceptedRequest =
+                ListOnPremConnectorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOnPremConnectorsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListOnPremConnectorsResponse>
+                transformer = ListOnPremConnectorsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -810,6 +1003,75 @@ public class DataSafeClient implements DataSafe {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateDataSafePrivateEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateOnPremConnectorResponse updateOnPremConnector(
+            UpdateOnPremConnectorRequest request) {
+        LOG.trace("Called updateOnPremConnector");
+        final UpdateOnPremConnectorRequest interceptedRequest =
+                UpdateOnPremConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOnPremConnectorConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateOnPremConnectorResponse>
+                transformer = UpdateOnPremConnectorConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateOnPremConnectorDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateOnPremConnectorWalletResponse updateOnPremConnectorWallet(
+            UpdateOnPremConnectorWalletRequest request) {
+        LOG.trace("Called updateOnPremConnectorWallet");
+        final UpdateOnPremConnectorWalletRequest interceptedRequest =
+                UpdateOnPremConnectorWalletConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOnPremConnectorWalletConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateOnPremConnectorWalletResponse>
+                transformer = UpdateOnPremConnectorWalletConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateOnPremConnectorWalletDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

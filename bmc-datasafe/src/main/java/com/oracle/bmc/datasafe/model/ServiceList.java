@@ -14,6 +14,7 @@ public enum ServiceList {
     DataSafeDev1("DataSafe-dev1"),
     DataSafeDev2("DataSafe-dev2"),
     DataSafeDev3("DataSafe-dev3"),
+    DataSafeDev4("DataSafe-dev4"),
     DataSafeLrg1("DataSafe-lrg1"),
     DataSafeLrg2("DataSafe-lrg2"),
     DataSafeLrg3("DataSafe-lrg3"),

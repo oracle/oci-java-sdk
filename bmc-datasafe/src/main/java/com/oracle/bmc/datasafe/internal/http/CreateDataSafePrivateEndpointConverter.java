@@ -70,11 +70,14 @@ public class CreateDataSafePrivateEndpointConverter {
                                         "Transform function invoked for com.oracle.bmc.datasafe.responses.CreateDataSafePrivateEndpointResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
-                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
-                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        DataSafePrivateEndpoint>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        DataSafePrivateEndpoint.class);
 
-                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
-                                        responseFn.apply(rawResponse);
+                                com.oracle.bmc.http.internal.WithHeaders<DataSafePrivateEndpoint>
+                                        response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
@@ -84,6 +87,17 @@ public class CreateDataSafePrivateEndpointConverter {
                                                 com.oracle.bmc.datasafe.responses
                                                         .CreateDataSafePrivateEndpointResponse
                                                         .builder();
+
+                                builder.dataSafePrivateEndpoint(response.getItem());
+
+                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "etag");
+                                if (etagHeader.isPresent()) {
+                                    builder.etag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "etag", etagHeader.get().get(0), String.class));
+                                }
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
@@ -106,6 +120,18 @@ public class CreateDataSafePrivateEndpointConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        locationHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "location");
+                                if (locationHeader.isPresent()) {
+                                    builder.location(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "location",
+                                                    locationHeader.get().get(0),
                                                     String.class));
                                 }
 

@@ -64,6 +64,24 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the specified on-premises connector into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeOnPremConnectorCompartmentResponse>
+            changeOnPremConnectorCompartment(
+                    ChangeOnPremConnectorCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOnPremConnectorCompartmentRequest,
+                                    ChangeOnPremConnectorCompartmentResponse>
+                            handler);
+
+    /**
      * Creates a new Data Safe private endpoint.
      *
      *
@@ -81,6 +99,23 @@ public interface DataSafeAsync extends AutoCloseable {
                                     CreateDataSafePrivateEndpointRequest,
                                     CreateDataSafePrivateEndpointResponse>
                             handler);
+
+    /**
+     * Creates a new on-premises connector.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOnPremConnectorResponse> createOnPremConnector(
+            CreateOnPremConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOnPremConnectorRequest, CreateOnPremConnectorResponse>
+                    handler);
 
     /**
      * Deletes the specified Data Safe private endpoint.
@@ -101,6 +136,22 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes the specified on-premises connector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOnPremConnectorResponse> deleteOnPremConnector(
+            DeleteOnPremConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOnPremConnectorRequest, DeleteOnPremConnectorResponse>
+                    handler);
+
+    /**
      * Enables Data Safe in the tenancy and region.
      *
      *
@@ -116,6 +167,25 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             EnableDataSafeConfigurationRequest, EnableDataSafeConfigurationResponse>
                     handler);
+
+    /**
+     * Creates and downloads the configuration of the specified on-premises connector.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateOnPremConnectorConfigurationResponse>
+            generateOnPremConnectorConfiguration(
+                    GenerateOnPremConnectorConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateOnPremConnectorConfigurationRequest,
+                                    GenerateOnPremConnectorConfigurationResponse>
+                            handler);
 
     /**
      * Gets the details of the Data Safe configuration.
@@ -150,6 +220,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details of the specified on-premises connector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOnPremConnectorResponse> getOnPremConnector(
+            GetOnPremConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOnPremConnectorRequest, GetOnPremConnectorResponse>
+                    handler);
+
+    /**
      * Gets the details of the specified work request.
      *
      * @param request The request object containing the details to send
@@ -180,6 +266,23 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListDataSafePrivateEndpointsRequest,
                             ListDataSafePrivateEndpointsResponse>
+                    handler);
+
+    /**
+     * Gets a list of on-premises connectors.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOnPremConnectorsResponse> listOnPremConnectors(
+            ListOnPremConnectorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOnPremConnectorsRequest, ListOnPremConnectorsResponse>
                     handler);
 
     /**
@@ -249,4 +352,37 @@ public interface DataSafeAsync extends AutoCloseable {
                                     UpdateDataSafePrivateEndpointRequest,
                                     UpdateDataSafePrivateEndpointResponse>
                             handler);
+
+    /**
+     * Updates one or more attributes of the specified on-premises connector.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOnPremConnectorResponse> updateOnPremConnector(
+            UpdateOnPremConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOnPremConnectorRequest, UpdateOnPremConnectorResponse>
+                    handler);
+
+    /**
+     * Updates the wallet for the specified on-premises connector to a new version.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOnPremConnectorWalletResponse> updateOnPremConnectorWallet(
+            UpdateOnPremConnectorWalletRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOnPremConnectorWalletRequest, UpdateOnPremConnectorWalletResponse>
+                    handler);
 }

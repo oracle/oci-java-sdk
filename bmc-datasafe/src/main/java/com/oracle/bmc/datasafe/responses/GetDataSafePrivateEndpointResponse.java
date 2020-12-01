@@ -12,7 +12,7 @@ import com.oracle.bmc.datasafe.model.*;
 public class GetDataSafePrivateEndpointResponse {
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
      */
     private String etag;

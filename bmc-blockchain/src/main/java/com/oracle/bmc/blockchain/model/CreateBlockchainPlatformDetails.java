@@ -199,7 +199,7 @@ public class CreateBlockchainPlatformDetails {
     BlockchainPlatform.PlatformRole platformRole;
 
     /**
-     * Type of compute shape - one of Standard, (Enterprise) Small, Medium, Large or Extra Large
+     * Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeShape")
     BlockchainPlatform.ComputeShape computeShape;
@@ -211,7 +211,7 @@ public class CreateBlockchainPlatformDetails {
     Boolean isByol;
 
     /**
-     * IDCS access token
+     * IDCS access token with Identity Domain Administrator role
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
     String idcsAccessToken;

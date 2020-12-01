@@ -24,7 +24,7 @@ public class ListDataSafePrivateEndpointsRequest
     private String displayName;
 
     /**
-     * A filter to return only the private endpoints that match the specified VCN OCID.
+     * A filter to return only resources that match the specified VCN OCID.
      */
     private String vcnId;
 
@@ -39,7 +39,7 @@ public class ListDataSafePrivateEndpointsRequest
     private Integer limit;
 
     /**
-     * The beginning page from which the results start retrieving.
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous \"List\" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 

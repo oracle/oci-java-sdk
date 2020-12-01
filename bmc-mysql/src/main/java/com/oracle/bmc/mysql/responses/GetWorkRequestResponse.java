@@ -12,18 +12,19 @@ import com.oracle.bmc.mysql.model.*;
 public class GetWorkRequestResponse {
 
     /**
-     * For optimistic concurrency control. See `If-None-Match`.
+     * For optimistic concurrency control. See `if-match`.
+     *
      */
     private String etag;
 
     /**
-     * Retry the request after the specified number of seconds.
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Integer retryAfter;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a specific request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;

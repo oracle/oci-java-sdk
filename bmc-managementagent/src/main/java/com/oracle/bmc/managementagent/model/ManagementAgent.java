@@ -159,6 +159,15 @@ public class ManagementAgent {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
+        private AvailabilityStatus availabilityStatus;
+
+        public Builder availabilityStatus(AvailabilityStatus availabilityStatus) {
+            this.availabilityStatus = availabilityStatus;
+            this.__explicitlySet__.add("availabilityStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
@@ -217,6 +226,7 @@ public class ManagementAgent {
                             timeCreated,
                             timeUpdated,
                             timeLastHeartbeat,
+                            availabilityStatus,
                             lifecycleState,
                             lifecycleDetails,
                             freeformTags,
@@ -243,6 +253,7 @@ public class ManagementAgent {
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
                             .timeLastHeartbeat(o.getTimeLastHeartbeat())
+                            .availabilityStatus(o.getAvailabilityStatus())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .freeformTags(o.getFreeformTags())
@@ -349,6 +360,12 @@ public class ManagementAgent {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastHeartbeat")
     java.util.Date timeLastHeartbeat;
+
+    /**
+     * The current availability status of managementAgent
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
+    AvailabilityStatus availabilityStatus;
 
     /**
      * The current state of managementAgent

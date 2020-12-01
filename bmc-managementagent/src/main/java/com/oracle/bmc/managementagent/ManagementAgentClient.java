@@ -718,6 +718,36 @@ public class ManagementAgentClient implements ManagementAgent {
     }
 
     @Override
+    public ListAvailabilityHistoriesResponse listAvailabilityHistories(
+            ListAvailabilityHistoriesRequest request) {
+        LOG.trace("Called listAvailabilityHistories");
+        final ListAvailabilityHistoriesRequest interceptedRequest =
+                ListAvailabilityHistoriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAvailabilityHistoriesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAvailabilityHistoriesResponse>
+                transformer = ListAvailabilityHistoriesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListManagementAgentImagesResponse listManagementAgentImages(
             ListManagementAgentImagesRequest request) {
         LOG.trace("Called listManagementAgentImages");

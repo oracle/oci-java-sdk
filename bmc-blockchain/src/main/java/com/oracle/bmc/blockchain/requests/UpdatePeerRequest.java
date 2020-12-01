@@ -43,6 +43,16 @@ public class UpdatePeerRequest extends com.oracle.bmc.requests.BmcRequest<Update
     private String opcRequestId;
 
     /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    private String opcRetryToken;
+
+    /**
      * Alternative accessor for the body parameter.
      * @return body parameter
      */
@@ -92,6 +102,7 @@ public class UpdatePeerRequest extends com.oracle.bmc.requests.BmcRequest<Update
             updatePeerDetails(o.getUpdatePeerDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

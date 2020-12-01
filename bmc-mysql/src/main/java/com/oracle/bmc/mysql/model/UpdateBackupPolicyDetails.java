@@ -131,6 +131,9 @@ public class UpdateBackupPolicyDetails {
 
     /**
      * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * <p>
      * Example: `{\"bar-key\": \"value\"}`
      *
      **/
