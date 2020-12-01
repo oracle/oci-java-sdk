@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A Data Safe Configuration that allows customer to enable Data Safe in their tenancy.
+ * A Data Safe configuration for a tenancy and region.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -149,13 +149,13 @@ public class DataSafeConfiguration {
     String compartmentId;
 
     /**
-     * The specific time when Data Safe configuration was enabled.
+     * The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnabled")
     java.util.Date timeEnabled;
 
     /**
-     * The current state of Data Safe configuration.
+     * The current state of Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -172,7 +172,7 @@ public class DataSafeConfiguration {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

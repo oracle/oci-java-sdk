@@ -131,6 +131,15 @@ public class Backup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemSnapshot")
+        private DbSystemSnapshot dbSystemSnapshot;
+
+        public Builder dbSystemSnapshot(DbSystemSnapshot dbSystemSnapshot) {
+            this.dbSystemSnapshot = dbSystemSnapshot;
+            this.__explicitlySet__.add("dbSystemSnapshot");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("backupSizeInGBs")
         private Integer backupSizeInGBs;
 
@@ -212,6 +221,7 @@ public class Backup {
                             backupType,
                             creationType,
                             dbSystemId,
+                            dbSystemSnapshot,
                             backupSizeInGBs,
                             retentionInDays,
                             dataStorageSizeInGBs,
@@ -237,6 +247,7 @@ public class Backup {
                             .backupType(o.getBackupType())
                             .creationType(o.getCreationType())
                             .dbSystemId(o.getDbSystemId())
+                            .dbSystemSnapshot(o.getDbSystemSnapshot())
                             .backupSizeInGBs(o.getBackupSizeInGBs())
                             .retentionInDays(o.getRetentionInDays())
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
@@ -463,6 +474,9 @@ public class Backup {
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     String dbSystemId;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemSnapshot")
+    DbSystemSnapshot dbSystemSnapshot;
+
     /**
      * The size of the backup in base-2 (IEC) gibibytes. (GiB).
      **/
@@ -495,7 +509,7 @@ public class Backup {
     String shapeName;
 
     /**
-     * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: `{\"bar-key\": \"value\"}`
      *
      **/
@@ -503,7 +517,7 @@ public class Backup {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
      *
      **/

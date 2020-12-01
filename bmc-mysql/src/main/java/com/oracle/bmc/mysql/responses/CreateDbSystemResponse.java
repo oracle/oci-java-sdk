@@ -13,6 +13,7 @@ public class CreateDbSystemResponse {
 
     /**
      * For optimistic concurrency control. See `if-match`.
+     *
      */
     private String etag;
 
@@ -22,14 +23,15 @@ public class CreateDbSystemResponse {
     private String location;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a specific request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * OCID of the WorkRequest associated with this operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 

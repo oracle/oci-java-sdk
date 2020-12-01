@@ -70,6 +70,14 @@ public class ListBackupsConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getCreationType() != null) {
+            target =
+                    target.queryParam(
+                            "creationType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCreationType().getValue()));
+        }
+
         if (request.getSortBy() != null) {
             target =
                     target.queryParam(

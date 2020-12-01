@@ -49,7 +49,16 @@ Oracle gratefully acknowledges the contributions to oci-java-sdk that have been 
 
 ## Known Issues
 
-You can find information on any known issues with the SDK [here](https://docs.cloud.oracle.com/iaas/Content/knownissues.htm) and under the “Issues” tab of this GitHub repository.
+You can find information on any known issues with the SDK [here](https://docs.cloud.oracle.com/iaas/Content/knownissues.htm) and under the [“Issues” tab of this GitHub repository](https://github.com/oracle/oci-java-sdk/issues).
+
+### Potential data corruption issue with OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`
+
+**Details**: When using version 1.25.1 or earlier of the OCI Java SDK clients that upload streams of data (for example `ObjectStorageClient` or `FunctionsInvokeClient`), either synchronously and asynchronously, and you use a `RefreshableOnNotAuthenticatedProvider` (for example, for Resource Principals or Instance Principals) you may be affected by **silent data corruption**.
+
+**Workaround**: Update the OCI Java SDK client to version 1.25.2 or later. For more information about this issue and workarounds, see [Potential data corruption issue for OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`](https://github.com/oracle/oci-java-sdk/issues/255).
+
+**Direct link to this issue**: [Potential data corruption issue with OCI Java SDK on binary data upload with `RefreshableOnNotAuthenticatedProvider`](https://docs.cloud.oracle.com/en-us/iaas/Content/knownissues.htm#javaSDKStreamDataCorrupt)
+
 
 ## License
 

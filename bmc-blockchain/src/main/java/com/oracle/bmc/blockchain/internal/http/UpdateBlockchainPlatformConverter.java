@@ -54,6 +54,10 @@ public class UpdateBlockchainPlatformConverter {
             ib.header("if-match", request.getIfMatch());
         }
 
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
+        }
+
         return ib;
     }
 

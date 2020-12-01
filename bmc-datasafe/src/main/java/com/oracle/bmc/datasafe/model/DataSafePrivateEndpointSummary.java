@@ -194,7 +194,7 @@ public class DataSafePrivateEndpointSummary {
     String description;
 
     /**
-     * The date and time the private endpoint was created, in the format defined by RFC3339.
+     * The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;

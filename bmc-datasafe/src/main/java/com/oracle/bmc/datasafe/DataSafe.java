@@ -55,6 +55,15 @@ public interface DataSafe extends AutoCloseable {
             ChangeDataSafePrivateEndpointCompartmentRequest request);
 
     /**
+     * Moves the specified on-premises connector into a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeOnPremConnectorCompartmentResponse changeOnPremConnectorCompartment(
+            ChangeOnPremConnectorCompartmentRequest request);
+
+    /**
      * Creates a new Data Safe private endpoint.
      *
      * @param request The request object containing the details to send
@@ -63,6 +72,15 @@ public interface DataSafe extends AutoCloseable {
      */
     CreateDataSafePrivateEndpointResponse createDataSafePrivateEndpoint(
             CreateDataSafePrivateEndpointRequest request);
+
+    /**
+     * Creates a new on-premises connector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateOnPremConnectorResponse createOnPremConnector(CreateOnPremConnectorRequest request);
 
     /**
      * Deletes the specified Data Safe private endpoint.
@@ -74,6 +92,14 @@ public interface DataSafe extends AutoCloseable {
             DeleteDataSafePrivateEndpointRequest request);
 
     /**
+     * Deletes the specified on-premises connector.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteOnPremConnectorResponse deleteOnPremConnector(DeleteOnPremConnectorRequest request);
+
+    /**
      * Enables Data Safe in the tenancy and region.
      *
      * @param request The request object containing the details to send
@@ -82,6 +108,16 @@ public interface DataSafe extends AutoCloseable {
      */
     EnableDataSafeConfigurationResponse enableDataSafeConfiguration(
             EnableDataSafeConfigurationRequest request);
+
+    /**
+     * Creates and downloads the configuration of the specified on-premises connector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GenerateOnPremConnectorConfigurationResponse generateOnPremConnectorConfiguration(
+            GenerateOnPremConnectorConfigurationRequest request);
 
     /**
      * Gets the details of the Data Safe configuration.
@@ -102,6 +138,14 @@ public interface DataSafe extends AutoCloseable {
             GetDataSafePrivateEndpointRequest request);
 
     /**
+     * Gets the details of the specified on-premises connector.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetOnPremConnectorResponse getOnPremConnector(GetOnPremConnectorRequest request);
+
+    /**
      * Gets the details of the specified work request.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -118,6 +162,15 @@ public interface DataSafe extends AutoCloseable {
      */
     ListDataSafePrivateEndpointsResponse listDataSafePrivateEndpoints(
             ListDataSafePrivateEndpointsRequest request);
+
+    /**
+     * Gets a list of on-premises connectors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListOnPremConnectorsResponse listOnPremConnectors(ListOnPremConnectorsRequest request);
 
     /**
      * Gets a list of errors for the specified work request.
@@ -154,6 +207,24 @@ public interface DataSafe extends AutoCloseable {
      */
     UpdateDataSafePrivateEndpointResponse updateDataSafePrivateEndpoint(
             UpdateDataSafePrivateEndpointRequest request);
+
+    /**
+     * Updates one or more attributes of the specified on-premises connector.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateOnPremConnectorResponse updateOnPremConnector(UpdateOnPremConnectorRequest request);
+
+    /**
+     * Updates the wallet for the specified on-premises connector to a new version.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateOnPremConnectorWalletResponse updateOnPremConnectorWallet(
+            UpdateOnPremConnectorWalletRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

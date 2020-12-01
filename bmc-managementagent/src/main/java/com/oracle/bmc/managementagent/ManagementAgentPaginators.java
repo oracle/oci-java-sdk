@@ -31,6 +31,126 @@ public class ManagementAgentPaginators {
     private final ManagementAgent client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAvailabilityHistories operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAvailabilityHistoriesResponse> listAvailabilityHistoriesResponseIterator(
+            final ListAvailabilityHistoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAvailabilityHistoriesRequest.Builder, ListAvailabilityHistoriesRequest,
+                ListAvailabilityHistoriesResponse>(
+                new com.google.common.base.Supplier<ListAvailabilityHistoriesRequest.Builder>() {
+                    @Override
+                    public ListAvailabilityHistoriesRequest.Builder get() {
+                        return ListAvailabilityHistoriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAvailabilityHistoriesResponse, String>() {
+                    @Override
+                    public String apply(ListAvailabilityHistoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailabilityHistoriesRequest.Builder>,
+                        ListAvailabilityHistoriesRequest>() {
+                    @Override
+                    public ListAvailabilityHistoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailabilityHistoriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>() {
+                    @Override
+                    public ListAvailabilityHistoriesResponse apply(
+                            ListAvailabilityHistoriesRequest request) {
+                        return client.listAvailabilityHistories(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.managementagent.model.AvailabilityHistorySummary} objects
+     * contained in responses from the listAvailabilityHistories operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.managementagent.model.AvailabilityHistorySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.managementagent.model.AvailabilityHistorySummary>
+            listAvailabilityHistoriesRecordIterator(
+                    final ListAvailabilityHistoriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAvailabilityHistoriesRequest.Builder, ListAvailabilityHistoriesRequest,
+                ListAvailabilityHistoriesResponse,
+                com.oracle.bmc.managementagent.model.AvailabilityHistorySummary>(
+                new com.google.common.base.Supplier<ListAvailabilityHistoriesRequest.Builder>() {
+                    @Override
+                    public ListAvailabilityHistoriesRequest.Builder get() {
+                        return ListAvailabilityHistoriesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAvailabilityHistoriesResponse, String>() {
+                    @Override
+                    public String apply(ListAvailabilityHistoriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAvailabilityHistoriesRequest.Builder>,
+                        ListAvailabilityHistoriesRequest>() {
+                    @Override
+                    public ListAvailabilityHistoriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAvailabilityHistoriesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>() {
+                    @Override
+                    public ListAvailabilityHistoriesResponse apply(
+                            ListAvailabilityHistoriesRequest request) {
+                        return client.listAvailabilityHistories(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAvailabilityHistoriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.managementagent.model
+                                        .AvailabilityHistorySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.managementagent.model.AvailabilityHistorySummary>
+                            apply(ListAvailabilityHistoriesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listManagementAgentImages operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -125,6 +125,15 @@ public interface ManagementAgent extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
+     * Lists the availability history records of Management Agent
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAvailabilityHistoriesResponse listAvailabilityHistories(
+            ListAvailabilityHistoriesRequest request);
+
+    /**
      * Get supported agent image information
      *
      * @param request The request object containing the details to send

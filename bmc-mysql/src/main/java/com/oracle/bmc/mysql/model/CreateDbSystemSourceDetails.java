@@ -34,6 +34,10 @@ package com.oracle.bmc.mysql.model;
         name = "BACKUP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDbSystemSourceFromNoneDetails.class,
+        name = "NONE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDbSystemSourceImportFromUrlDetails.class,
         name = "IMPORTURL"
     )

@@ -45,6 +45,11 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String displayName;
 
     /**
+     * Backup creationType
+     */
+    private Backup.CreationType creationType;
+
+    /**
      * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.
      *
      */
@@ -183,6 +188,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             lifecycleState(o.getLifecycleState());
             dbSystemId(o.getDbSystemId());
             displayName(o.getDisplayName());
+            creationType(o.getCreationType());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             limit(o.getLimit());

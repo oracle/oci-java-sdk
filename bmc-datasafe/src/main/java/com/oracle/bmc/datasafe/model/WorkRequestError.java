@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * An error encountered while executing an operation that is tracked by a work request.
+ * An error related to a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -78,8 +78,7 @@ public class WorkRequestError {
     }
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm)
+     * A machine-usable error code. For a list of common errors, see [API Errors](https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
@@ -92,7 +91,7 @@ public class WorkRequestError {
     String message;
 
     /**
-     * The date and time the error occurred, in the format defined by RFC3339.
+     * The date and time the error occurred, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;

@@ -1129,6 +1129,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StartBlockchainPlatformResponse>
                 transformer = StartBlockchainPlatformConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         StartBlockchainPlatformRequest, StartBlockchainPlatformResponse>
@@ -1170,6 +1171,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, StopBlockchainPlatformResponse>
                 transformer = StopBlockchainPlatformConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         StopBlockchainPlatformRequest, StopBlockchainPlatformResponse>
@@ -1211,6 +1213,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
         final com.google.common.base.Function<
                         javax.ws.rs.core.Response, UpdateBlockchainPlatformResponse>
                 transformer = UpdateBlockchainPlatformConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<
                         UpdateBlockchainPlatformRequest, UpdateBlockchainPlatformResponse>
@@ -1286,6 +1289,7 @@ public class BlockchainPlatformAsyncClient implements BlockchainPlatformAsync {
                 UpdatePeerConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePeerResponse>
                 transformer = UpdatePeerConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<UpdatePeerRequest, UpdatePeerResponse> handlerToUse =
                 handler;

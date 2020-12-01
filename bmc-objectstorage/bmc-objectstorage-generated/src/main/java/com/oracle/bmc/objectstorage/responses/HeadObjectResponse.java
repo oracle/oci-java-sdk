@@ -91,6 +91,44 @@ public class HeadObjectResponse {
     private String archivalState;
 
     /**
+     * The current state of the object.
+     **/
+    public enum ArchivalState {
+        Available("AVAILABLE"),
+        Archived("ARCHIVED"),
+        Restoring("RESTORING"),
+        Restored("RESTORED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ArchivalState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ArchivalState v : ArchivalState.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ArchivalState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ArchivalState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ArchivalState: " + key);
+        }
+    };
+
+    /**
      * Time that the object is returned to the archived state. This field is only present for restored objects.
      */
     private java.util.Date timeOfArchival;

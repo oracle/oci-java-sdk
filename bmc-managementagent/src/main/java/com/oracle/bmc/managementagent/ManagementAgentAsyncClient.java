@@ -708,6 +708,48 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAvailabilityHistoriesResponse> listAvailabilityHistories(
+            ListAvailabilityHistoriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>
+                    handler) {
+        LOG.trace("Called async listAvailabilityHistories");
+        final ListAvailabilityHistoriesRequest interceptedRequest =
+                ListAvailabilityHistoriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAvailabilityHistoriesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAvailabilityHistoriesResponse>
+                transformer = ListAvailabilityHistoriesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAvailabilityHistoriesRequest,
+                                ListAvailabilityHistoriesResponse>,
+                        java.util.concurrent.Future<ListAvailabilityHistoriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagementAgentImagesResponse> listManagementAgentImages(
             ListManagementAgentImagesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

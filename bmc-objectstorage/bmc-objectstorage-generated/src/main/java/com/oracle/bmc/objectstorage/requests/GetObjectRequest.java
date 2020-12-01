@@ -86,32 +86,32 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String opcSseCustomerKeySha256;
 
     /**
-     * This value will be used in Content-Disposition header of the response.
+     * Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
      */
     private String httpResponseContentDisposition;
 
     /**
-     * This value will be used in Cache-Control header of the response.
+     * Specify this query parameter to override the Cache-Control response header in the GetObject response.
      */
     private String httpResponseCacheControl;
 
     /**
-     * This value will be used in Content-Type header of the response.
+     * Specify this query parameter to override the Content-Type response header in the GetObject response.
      */
     private String httpResponseContentType;
 
     /**
-     * This value will be used in Content-Language header of the response.
+     * Specify this query parameter to override the Content-Language response header in the GetObject response.
      */
     private String httpResponseContentLanguage;
 
     /**
-     * This value will be used in Content-Encoding header of the response
+     * Specify this query parameter to override the Content-Encoding response header in the GetObject response.
      */
     private String httpResponseContentEncoding;
 
     /**
-     * This value will be used in Expires header of the response
+     * Specify this query parameter to override the Expires response header in the GetObject response.
      */
     private String httpResponseExpires;
 

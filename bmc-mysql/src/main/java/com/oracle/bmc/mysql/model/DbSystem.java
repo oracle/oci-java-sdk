@@ -6,6 +6,8 @@ package com.oracle.bmc.mysql.model;
 
 /**
  * A DB System is the core logical unit of MySQL Database Service.
+ * # NOTE: definitions/DbSystemSnapshot is a snapshot version of DbSystem which is stored during backup. Any
+ * # addition/deletion of properties should also consider snapshot's definition
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -205,6 +207,15 @@ public class DbSystem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("channels")
+        private java.util.List<ChannelSummary> channels;
+
+        public Builder channels(java.util.List<ChannelSummary> channels) {
+            this.channels = channels;
+            this.__explicitlySet__.add("channels");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -295,6 +306,7 @@ public class DbSystem {
                             port,
                             portX,
                             endpoints,
+                            channels,
                             lifecycleState,
                             lifecycleDetails,
                             maintenance,
@@ -329,6 +341,7 @@ public class DbSystem {
                             .port(o.getPort())
                             .portX(o.getPortX())
                             .endpoints(o.getEndpoints())
+                            .channels(o.getChannels())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .maintenance(o.getMaintenance())
@@ -479,6 +492,12 @@ public class DbSystem {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
     java.util.List<DbSystemEndpoint> endpoints;
+
+    /**
+     * A list with a summary of all the Channels attached to the DB System.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("channels")
+    java.util.List<ChannelSummary> channels;
     /**
      * The current state of the DB System.
      **/
@@ -558,7 +577,7 @@ public class DbSystem {
     java.util.Date timeUpdated;
 
     /**
-     * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: `{\"bar-key\": \"value\"}`
      *
      **/
@@ -566,7 +585,7 @@ public class DbSystem {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
      *
      **/

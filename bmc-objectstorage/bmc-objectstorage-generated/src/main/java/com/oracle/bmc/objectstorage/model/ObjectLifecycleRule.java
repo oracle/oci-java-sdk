@@ -140,21 +140,23 @@ public class ObjectLifecycleRule {
 
     /**
      * The target of the object lifecycle policy rule. The values of target can be either \"objects\",
-     * \"multipart-uploads\" or \"previous-object-versions\". This field when declared as \"objects\" is used to specify
-     * archive or delete rule for objects. This field when declared as \"multipart-uploads\" is used to specify
-     * the abort (only) rule for uncommitted multipart-uploads. This field when declared as \"previous-object-versions\"
-     * is used to specify archive or delete rule for previous versions of existing objects.
+     * \"multipart-uploads\" or \"previous-object-versions\".
+     * This field when declared as \"objects\" is used to specify ARCHIVE or DELETE rule for objects.
+     * This field when declared as \"previous-object-versions\" is used to specify ARCHIVE or DELETE
+     * rule for previous versions of existing objects.
+     * This field when declared as \"multipart-uploads\" is used to specify the ABORT (only) rule for
+     * uncommitted multipart-uploads.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     String target;
 
     /**
-     * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects into the
-     * [Archive Storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action
-     * 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads
-     * and permanently delete their parts from buckets. 'ARCHIVE', 'DELETE' and 'ABORT' are the only three supported
-     * actions at this time.
+     * The action of the object lifecycle policy rule.
+     * Rules using the action 'ARCHIVE' move objects from Standard storage tier into the
+     * [Archive Storage tier] (https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+     * Rules using the action 'DELETE' permanently delete objects from buckets.
+     * Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")

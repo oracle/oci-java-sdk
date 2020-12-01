@@ -62,12 +62,23 @@ public class WorkRequestResource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("subTypeDetails")
+        private java.util.List<WorkRequestResourceSubTypeDetail> subTypeDetails;
+
+        public Builder subTypeDetails(
+                java.util.List<WorkRequestResourceSubTypeDetail> subTypeDetails) {
+            this.subTypeDetails = subTypeDetails;
+            this.__explicitlySet__.add("subTypeDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public WorkRequestResource build() {
             WorkRequestResource __instance__ =
-                    new WorkRequestResource(entityType, actionType, identifier, entityUri);
+                    new WorkRequestResource(
+                            entityType, actionType, identifier, entityUri, subTypeDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,7 +89,8 @@ public class WorkRequestResource {
                     entityType(o.getEntityType())
                             .actionType(o.getActionType())
                             .identifier(o.getIdentifier())
-                            .entityUri(o.getEntityUri());
+                            .entityUri(o.getEntityUri())
+                            .subTypeDetails(o.getSubTypeDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -171,6 +183,12 @@ public class WorkRequestResource {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     String entityUri;
+
+    /**
+     * Collection of SubType information for a work request resource\u00A9
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subTypeDetails")
+    java.util.List<WorkRequestResourceSubTypeDetail> subTypeDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

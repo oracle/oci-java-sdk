@@ -463,6 +463,16 @@ public class ConfigurationVariables {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdDefaultCompressionLevel")
+        private Integer mysqlxZstdDefaultCompressionLevel;
+
+        public Builder mysqlxZstdDefaultCompressionLevel(
+                Integer mysqlxZstdDefaultCompressionLevel) {
+            this.mysqlxZstdDefaultCompressionLevel = mysqlxZstdDefaultCompressionLevel;
+            this.__explicitlySet__.add("mysqlxZstdDefaultCompressionLevel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlZstdDefaultCompressionLevel")
         private Integer mysqlZstdDefaultCompressionLevel;
 
@@ -526,6 +536,7 @@ public class ConfigurationVariables {
                             mysqlxLz4MaxClientCompressionLevel,
                             mysqlxLz4DefaultCompressionLevel,
                             mysqlxZstdMaxClientCompressionLevel,
+                            mysqlxZstdDefaultCompressionLevel,
                             mysqlZstdDefaultCompressionLevel);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -587,6 +598,8 @@ public class ConfigurationVariables {
                                     o.getMysqlxLz4DefaultCompressionLevel())
                             .mysqlxZstdMaxClientCompressionLevel(
                                     o.getMysqlxZstdMaxClientCompressionLevel())
+                            .mysqlxZstdDefaultCompressionLevel(
+                                    o.getMysqlxZstdDefaultCompressionLevel())
                             .mysqlZstdDefaultCompressionLevel(
                                     o.getMysqlZstdDefaultCompressionLevel());
 
@@ -713,6 +726,7 @@ public class ConfigurationVariables {
     public enum TransactionIsolation {
         ReadUncommitted("READ-UNCOMMITTED"),
         ReadCommited("READ-COMMITED"),
+        ReadCommitted("READ-COMMITTED"),
         RepeatableRead("REPEATABLE-READ"),
         Serializable("SERIALIZABLE"),
 
@@ -803,7 +817,7 @@ public class ConfigurationVariables {
     Boolean mysqlFirewallMode;
 
     /**
-     * (\"mysqlx_enable_hello_notice\")
+     * (\"mysqlx_enable_hello_notice\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxEnableHelloNotice")
     Boolean mysqlxEnableHelloNotice;
@@ -821,7 +835,7 @@ public class ConfigurationVariables {
     Boolean sqlWarnings;
 
     /**
-     * (\"binlog_expire_logs_seconds\")
+     * (\"binlog_expire_logs_seconds\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("binlogExpireLogsSeconds")
     Integer binlogExpireLogsSeconds;
@@ -863,7 +877,7 @@ public class ConfigurationVariables {
     Integer cteMaxRecursionDepth;
 
     /**
-     * (\"generated_random_password_length\")
+     * (\"generated_random_password_length\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("generatedRandomPasswordLength")
     Integer generatedRandomPasswordLength;
@@ -923,55 +937,55 @@ public class ConfigurationVariables {
     Integer maxExecutionTime;
 
     /**
-     * (\"mysqlx_connect_timeout\")
+     * (\"mysqlx_connect_timeout\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxConnectTimeout")
     Integer mysqlxConnectTimeout;
 
     /**
-     * (\"mysqlx_document_id_unique_prefix\")
+     * (\"mysqlx_document_id_unique_prefix\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxDocumentIdUniquePrefix")
     Integer mysqlxDocumentIdUniquePrefix;
 
     /**
-     * (\"mysqlx_idle_worker_thread_timeout\")
+     * (\"mysqlx_idle_worker_thread_timeout\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxIdleWorkerThreadTimeout")
     Integer mysqlxIdleWorkerThreadTimeout;
 
     /**
-     * (\"mysqlx_interactive_timeout\")
+     * (\"mysqlx_interactive_timeout\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxInteractiveTimeout")
     Integer mysqlxInteractiveTimeout;
 
     /**
-     * (\"mysqlx_max_allowed_packet\")
+     * (\"mysqlx_max_allowed_packet\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMaxAllowedPacket")
     Integer mysqlxMaxAllowedPacket;
 
     /**
-     * (\"mysqlx_min_worker_threads\")
+     * (\"mysqlx_min_worker_threads\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxMinWorkerThreads")
     Integer mysqlxMinWorkerThreads;
 
     /**
-     * (\"mysqlx_read_timeout\")
+     * (\"mysqlx_read_timeout\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxReadTimeout")
     Integer mysqlxReadTimeout;
 
     /**
-     * (\"mysqlx_wait_timeout\")
+     * (\"mysqlx_wait_timeout\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWaitTimeout")
     Integer mysqlxWaitTimeout;
 
     /**
-     * (\"mysqlx_write_timeout\")
+     * (\"mysqlx_write_timeout\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlxWriteTimeout")
     Integer mysqlxWriteTimeout;
@@ -983,13 +997,13 @@ public class ConfigurationVariables {
     Integer parserMaxMemSize;
 
     /**
-     * (\"query_alloc_block_size\")
+     * (\"query_alloc_block_size\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryAllocBlockSize")
     Integer queryAllocBlockSize;
 
     /**
-     * (\"query_prealloc_size\")
+     * (\"query_prealloc_size\") DEPRECATED -- variable should not be settable and will be ignored
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryPreallocSize")
     Integer queryPreallocSize;
@@ -1032,6 +1046,12 @@ public class ConfigurationVariables {
 
     /**
      * Set the default compression level for the zstd algorithm. (\"mysqlx_zstd_default_compression_level\")
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mysqlxZstdDefaultCompressionLevel")
+    Integer mysqlxZstdDefaultCompressionLevel;
+
+    /**
+     * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlZstdDefaultCompressionLevel")
     Integer mysqlZstdDefaultCompressionLevel;

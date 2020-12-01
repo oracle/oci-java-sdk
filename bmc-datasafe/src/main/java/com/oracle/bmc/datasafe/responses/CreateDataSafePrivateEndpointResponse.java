@@ -12,7 +12,13 @@ import com.oracle.bmc.datasafe.model.*;
 public class CreateDataSafePrivateEndpointResponse {
 
     /**
-     * The OCID of the work request. Use GetWorkRequest with this OCID to track the status of the request.
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     *
+     */
+    private String etag;
+
+    /**
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
      *
      */
     private String opcWorkRequestId;
@@ -23,14 +29,28 @@ public class CreateDataSafePrivateEndpointResponse {
      */
     private String opcRequestId;
 
+    /**
+     * The full URI of the Data Safe private endpoint.
+     *
+     */
+    private String location;
+
+    /**
+     * The returned DataSafePrivateEndpoint instance.
+     */
+    private DataSafePrivateEndpoint dataSafePrivateEndpoint;
+
     public static class Builder {
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
         public Builder copy(CreateDataSafePrivateEndpointResponse o) {
+            etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            location(o.getLocation());
+            dataSafePrivateEndpoint(o.getDataSafePrivateEndpoint());
 
             return this;
         }
