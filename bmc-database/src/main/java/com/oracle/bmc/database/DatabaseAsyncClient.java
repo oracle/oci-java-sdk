@@ -7172,6 +7172,86 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RotateOrdsCertsResponse> rotateOrdsCerts(
+            RotateOrdsCertsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RotateOrdsCertsRequest, RotateOrdsCertsResponse>
+                    handler) {
+        LOG.trace("Called async rotateOrdsCerts");
+        final RotateOrdsCertsRequest interceptedRequest =
+                RotateOrdsCertsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateOrdsCertsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateOrdsCertsResponse>
+                transformer = RotateOrdsCertsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<RotateOrdsCertsRequest, RotateOrdsCertsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RotateOrdsCertsRequest, RotateOrdsCertsResponse>,
+                        java.util.concurrent.Future<RotateOrdsCertsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RotateOrdsCertsRequest, RotateOrdsCertsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateSslCertsResponse> rotateSslCerts(
+            RotateSslCertsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RotateSslCertsRequest, RotateSslCertsResponse>
+                    handler) {
+        LOG.trace("Called async rotateSslCerts");
+        final RotateSslCertsRequest interceptedRequest =
+                RotateSslCertsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateSslCertsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateSslCertsResponse>
+                transformer = RotateSslCertsConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<RotateSslCertsRequest, RotateSslCertsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RotateSslCertsRequest, RotateSslCertsResponse>,
+                        java.util.concurrent.Future<RotateSslCertsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RotateSslCertsRequest, RotateSslCertsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StartAutonomousDataWarehouseResponse>
             startAutonomousDataWarehouse(
                     StartAutonomousDataWarehouseRequest request,

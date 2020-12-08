@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.27.0</version>
+  <version>1.27.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -35,14 +35,14 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jackson.version>2.11.3</jackson.version>
-    <jersey.version>2.27</jersey.version>
+    <jersey.version>2.32</jersey.version>
     <guava.version>27.1-jre</guava.version>
     <junit.version>4.12</junit.version>
     <lombok.version>1.18.4</lombok.version>
     <lombok.maven.version>1.18.4.0</lombok.maven.version>
     <jsr305.version>3.0.2</jsr305.version>
     <slf4j.version>1.7.29</slf4j.version>
-    <javax.ws.rs-api.version>2.1</javax.ws.rs-api.version>
+    <jakarta.ws.rs-api.version>2.1.6</jakarta.ws.rs-api.version>
     <commons-codec.version>1.13</commons-codec.version>
     <commons-lang3.version>3.8.1</commons-lang3.version>
     <commons-io.version>2.8.0</commons-io.version>
@@ -461,7 +461,7 @@
             <dependency>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>extra-enforcer-rules</artifactId>
-              <version>1.0-beta-9</version>
+              <version>1.3</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -539,9 +539,9 @@
     </dependency>
     <!-- Direct dependencies -->
     <dependency>
-      <groupId>javax.ws.rs</groupId>
-      <artifactId>javax.ws.rs-api</artifactId>
-      <version>${javax.ws.rs-api.version}</version>
+      <groupId>jakarta.ws.rs</groupId>
+      <artifactId>jakarta.ws.rs-api</artifactId>
+      <version>${jakarta.ws.rs-api.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>

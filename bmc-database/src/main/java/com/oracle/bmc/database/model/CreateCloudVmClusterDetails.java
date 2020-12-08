@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for the create cloud VM cluster operation.
+ * Details for the create cloud VM cluster operation. Applies to Exadata Cloud Service instances only.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -353,6 +353,7 @@ public class CreateCloudVmClusterDetails {
      * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN
      * resolver is enabled for the specified subnet, the domain name for the subnet is used
      * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     * Applies to Exadata Cloud Service instances only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")

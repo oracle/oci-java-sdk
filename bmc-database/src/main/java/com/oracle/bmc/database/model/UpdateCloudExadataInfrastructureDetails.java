@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Updates the cloud Exadata infrastructure.
+ * Updates the cloud Exadata infrastructure. Applies to Exadata Cloud Service instances only.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

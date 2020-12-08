@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Request to create cloud Exadata infrastructure.
+ * Request to create cloud Exadata infrastructure. Applies to Exadata Cloud Service instances only.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

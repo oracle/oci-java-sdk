@@ -134,6 +134,34 @@ public class IntegrationInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
+        private Boolean isVisualBuilderEnabled;
+
+        public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
+            this.isVisualBuilderEnabled = isVisualBuilderEnabled;
+            this.__explicitlySet__.add("isVisualBuilderEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customEndpoint")
+        private CustomEndpointDetails customEndpoint;
+
+        public Builder customEndpoint(CustomEndpointDetails customEndpoint) {
+            this.customEndpoint = customEndpoint;
+            this.__explicitlySet__.add("customEndpoint");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
+        private java.util.List<CustomEndpointDetails> alternateCustomEndpoints;
+
+        public Builder alternateCustomEndpoints(
+                java.util.List<CustomEndpointDetails> alternateCustomEndpoints) {
+            this.alternateCustomEndpoints = alternateCustomEndpoints;
+            this.__explicitlySet__.add("alternateCustomEndpoints");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
         private ConsumptionModel consumptionModel;
 
@@ -161,6 +189,9 @@ public class IntegrationInstanceSummary {
                             instanceUrl,
                             messagePacks,
                             isFileServerEnabled,
+                            isVisualBuilderEnabled,
+                            customEndpoint,
+                            alternateCustomEndpoints,
                             consumptionModel);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -181,6 +212,9 @@ public class IntegrationInstanceSummary {
                             .instanceUrl(o.getInstanceUrl())
                             .messagePacks(o.getMessagePacks())
                             .isFileServerEnabled(o.getIsFileServerEnabled())
+                            .isVisualBuilderEnabled(o.getIsVisualBuilderEnabled())
+                            .customEndpoint(o.getCustomEndpoint())
+                            .alternateCustomEndpoints(o.getAlternateCustomEndpoints())
                             .consumptionModel(o.getConsumptionModel());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -361,6 +395,22 @@ public class IntegrationInstanceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
     Boolean isFileServerEnabled;
+
+    /**
+     * Visual Builder is enabled or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
+    Boolean isVisualBuilderEnabled;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("customEndpoint")
+    CustomEndpointDetails customEndpoint;
+
+    /**
+     * A list of alternate custom endpoints used for the integration instance URL.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
+    java.util.List<CustomEndpointDetails> alternateCustomEndpoints;
     /**
      * The entitlement used for billing purposes.
      **/

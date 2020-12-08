@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details specifying which maintenance update to apply to the target and which actions are to be performed by the maintenance update.
+ * Details specifying which maintenance update to apply to the cloud VM cluster and which actions are to be performed by the maintenance update. Applies to Exadata Cloud Service instances only.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

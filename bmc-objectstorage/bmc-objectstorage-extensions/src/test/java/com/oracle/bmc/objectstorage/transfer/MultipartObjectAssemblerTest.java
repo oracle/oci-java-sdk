@@ -438,10 +438,12 @@ public class MultipartObjectAssemblerTest {
         }
 
         String etag1 = "etag1";
+        String failureCauseMsg = "failureCauseMsg1";
+
         UploadPartResponse uploadPartResponse1 = UploadPartResponse.builder().eTag(etag1).build();
         when(service.uploadPart(any(UploadPartRequest.class)))
                 .thenReturn(uploadPartResponse1)
-                .thenThrow(new RuntimeException());
+                .thenThrow(new RuntimeException(failureCauseMsg));
 
         String md5_1 = "md5_1";
         String md5_2 = "md5_2";
@@ -461,6 +463,10 @@ public class MultipartObjectAssemblerTest {
         assertEquals(1, manifest.listCompletedParts().get(0).getPartNum().intValue());
         assertEquals(etag1, manifest.listCompletedParts().get(0).getEtag());
         assertEquals(2, manifest.listFailedParts().get(0).intValue());
+        assertEquals(2, manifest.listFailedPartsDetails().get(0).getPartNumber());
+        assertEquals(
+                manifest.listFailedPartsDetails().get(0).getFailureCause().getMessage(),
+                failureCauseMsg);
 
         ArgumentCaptor<UploadPartRequest> uploadCaptor =
                 ArgumentCaptor.forClass(UploadPartRequest.class);

@@ -5,7 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Updates the Exadata Cloud@Customer infrastructure.
+ * Updates the Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+ * See {@link #updateCloudExadataInfrastructureDetails(UpdateCloudExadataInfrastructureDetailsRequest) updateCloudExadataInfrastructureDetails} for information on updating Exadata Cloud Service cloud Exadata infrastructure resources.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -99,6 +100,15 @@ public class UpdateExadataInfrastructureDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private MaintenanceWindow maintenanceWindow;
+
+        public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
         private java.util.List<String> dnsServer;
 
@@ -159,6 +169,7 @@ public class UpdateExadataInfrastructureDetails {
                             infiniBandNetworkCIDR,
                             corporateProxy,
                             contacts,
+                            maintenanceWindow,
                             dnsServer,
                             ntpServer,
                             timeZone,
@@ -179,6 +190,7 @@ public class UpdateExadataInfrastructureDetails {
                             .infiniBandNetworkCIDR(o.getInfiniBandNetworkCIDR())
                             .corporateProxy(o.getCorporateProxy())
                             .contacts(o.getContacts())
+                            .maintenanceWindow(o.getMaintenanceWindow())
                             .dnsServer(o.getDnsServer())
                             .ntpServer(o.getNtpServer())
                             .timeZone(o.getTimeZone())
@@ -244,6 +256,9 @@ public class UpdateExadataInfrastructureDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     java.util.List<ExadataInfrastructureContact> contacts;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    MaintenanceWindow maintenanceWindow;
 
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.

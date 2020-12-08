@@ -5,7 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for updating the cloud VM cluster.
+ * Details for updating the cloud VM cluster. Applies to Exadata Cloud Service instances only.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -187,7 +188,7 @@ public class UpdateCloudVmClusterDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
     /**
-     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
      *
      **/
     public enum LicenseModel {
@@ -223,7 +224,7 @@ public class UpdateCloudVmClusterDetails {
         }
     };
     /**
-     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE. Applies to Exadata Cloud Service instances only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")

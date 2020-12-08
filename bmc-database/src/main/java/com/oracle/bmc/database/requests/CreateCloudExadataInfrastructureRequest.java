@@ -13,7 +13,8 @@ public class CreateCloudExadataInfrastructureRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateCloudExadataInfrastructureDetails> {
 
     /**
-     * Request to create cloud Exadata infrastructure.
+     * Request to create a cloud Exadata infrastructure resource in an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.
+     *
      */
     private CreateCloudExadataInfrastructureDetails createCloudExadataInfrastructureDetails;
 

@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Information about Exadata DB system migration. The migration is used to move the system to the Exadata infrastructure resource model.
+ * Information about the Exadata DB system migration. The migration is used to move the Exadata Cloud Service instance from the DB system resource model to the new cloud Exadata infrastructure resource model.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

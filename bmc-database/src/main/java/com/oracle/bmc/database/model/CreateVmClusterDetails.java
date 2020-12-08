@@ -5,7 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for the create Exadata Cloud@Customer VM cluster operation.
+ * Details for the create Exadata VM cluster operation. Applies to Exadata Cloud@Customer instances only.
+ * For details on the create cloud Exadata VM cluster operation used with Exadata Cloud Service instances, see {@link #createCloudVmClusterDetails(CreateCloudVmClusterDetailsRequest) createCloudVmClusterDetails}
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
