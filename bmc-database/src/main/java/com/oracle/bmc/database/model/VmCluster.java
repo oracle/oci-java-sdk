@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the Exadata Cloud@Customer VM cluster.
+ * Details of the VM cluster resource. Applies to Exadata Cloud@Customer instances only.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -322,6 +322,7 @@ public class VmCluster {
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
         Failed("FAILED"),
+        MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

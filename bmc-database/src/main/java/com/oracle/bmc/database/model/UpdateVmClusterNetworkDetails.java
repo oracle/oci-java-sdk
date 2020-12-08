@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for an Exadata Cloud@Customer VM cluster network.
+ * Details for an Exadata VM cluster network. Applies to Exadata Cloud@Customer instances only.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

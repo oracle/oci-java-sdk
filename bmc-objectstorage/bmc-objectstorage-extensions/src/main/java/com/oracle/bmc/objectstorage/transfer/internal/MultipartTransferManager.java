@@ -58,7 +58,7 @@ public class MultipartTransferManager {
                                     LOG.error(
                                             "Failed to upload part " + request.getUploadPartNum(),
                                             e);
-                                    manifest.registerFailure(request.getUploadPartNum());
+                                    manifest.registerFailure(request.getUploadPartNum(), e);
                                 }
                                 return null;
                             }

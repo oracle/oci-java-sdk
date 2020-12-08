@@ -90,6 +90,34 @@ public class UpdateIntegrationInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
+        private Boolean isVisualBuilderEnabled;
+
+        public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
+            this.isVisualBuilderEnabled = isVisualBuilderEnabled;
+            this.__explicitlySet__.add("isVisualBuilderEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customEndpoint")
+        private UpdateCustomEndpointDetails customEndpoint;
+
+        public Builder customEndpoint(UpdateCustomEndpointDetails customEndpoint) {
+            this.customEndpoint = customEndpoint;
+            this.__explicitlySet__.add("customEndpoint");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
+        private java.util.List<UpdateCustomEndpointDetails> alternateCustomEndpoints;
+
+        public Builder alternateCustomEndpoints(
+                java.util.List<UpdateCustomEndpointDetails> alternateCustomEndpoints) {
+            this.alternateCustomEndpoints = alternateCustomEndpoints;
+            this.__explicitlySet__.add("alternateCustomEndpoints");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -102,7 +130,10 @@ public class UpdateIntegrationInstanceDetails {
                             definedTags,
                             isByol,
                             messagePacks,
-                            isFileServerEnabled);
+                            isFileServerEnabled,
+                            isVisualBuilderEnabled,
+                            customEndpoint,
+                            alternateCustomEndpoints);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -116,7 +147,10 @@ public class UpdateIntegrationInstanceDetails {
                             .definedTags(o.getDefinedTags())
                             .isByol(o.getIsByol())
                             .messagePacks(o.getMessagePacks())
-                            .isFileServerEnabled(o.getIsFileServerEnabled());
+                            .isFileServerEnabled(o.getIsFileServerEnabled())
+                            .isVisualBuilderEnabled(o.getIsVisualBuilderEnabled())
+                            .customEndpoint(o.getCustomEndpoint())
+                            .alternateCustomEndpoints(o.getAlternateCustomEndpoints());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -211,6 +245,23 @@ public class UpdateIntegrationInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
     Boolean isFileServerEnabled;
+
+    /**
+     * Visual Builder is enabled or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
+    Boolean isVisualBuilderEnabled;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("customEndpoint")
+    UpdateCustomEndpointDetails customEndpoint;
+
+    /**
+     * A list of alternate custom endpoints to be used for the integration instance URL
+     * (contact Oracle for alternateCustomEndpoints availability for a specific instance).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
+    java.util.List<UpdateCustomEndpointDetails> alternateCustomEndpoints;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

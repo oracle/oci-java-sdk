@@ -298,7 +298,7 @@ public class AutonomousContainerDatabaseDataguardAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     Role role;
     /**
-     * The current state of the Autonomous Data Guard.
+     * The current state of Autonomous Data Guard.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -348,7 +348,7 @@ public class AutonomousContainerDatabaseDataguardAssociation {
         }
     };
     /**
-     * The current state of the Autonomous Data Guard.
+     * The current state of Autonomous Data Guard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -426,7 +426,7 @@ public class AutonomousContainerDatabaseDataguardAssociation {
     @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
     PeerRole peerRole;
     /**
-     * The current state of the Autonomous Data Guard.
+     * The current state of Autonomous Data Guard.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PeerLifecycleState {
@@ -476,7 +476,7 @@ public class AutonomousContainerDatabaseDataguardAssociation {
         }
     };
     /**
-     * The current state of the Autonomous Data Guard.
+     * The current state of Autonomous Data Guard.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerLifecycleState")
     PeerLifecycleState peerLifecycleState;

@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The configuration details for moving the resource.
+ * The configuration details for moving the cloud Exadata infrastructure resource to another compartment. Applies to Exadata Cloud Service instances only.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

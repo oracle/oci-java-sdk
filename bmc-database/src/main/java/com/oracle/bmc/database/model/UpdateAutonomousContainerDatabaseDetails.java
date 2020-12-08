@@ -182,7 +182,7 @@ public class UpdateAutonomousContainerDatabaseDetails {
 
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
-     * This value represents the number of days before the primary database maintenance schedule.
+     * This value represents the number of days before schedlued maintenance of the primary database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("standbyMaintenanceBufferInDays")

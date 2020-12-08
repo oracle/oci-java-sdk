@@ -5,7 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Request to create Exadata Cloud@Customer infrastructure resource.
+ * Request to create Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
+ * See {@link #createCloudExadataInfrastructureDetails(CreateCloudExadataInfrastructureDetailsRequest) createCloudExadataInfrastructureDetails} for information on creating a cloud Exadata infrastructure resource in an Exadata Cloud Service instance.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -135,6 +136,15 @@ public class CreateExadataInfrastructureDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private MaintenanceWindow maintenanceWindow;
+
+        public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
         private java.util.List<String> dnsServer;
 
@@ -190,6 +200,7 @@ public class CreateExadataInfrastructureDetails {
                             infiniBandNetworkCIDR,
                             corporateProxy,
                             contacts,
+                            maintenanceWindow,
                             dnsServer,
                             ntpServer,
                             freeformTags,
@@ -213,6 +224,7 @@ public class CreateExadataInfrastructureDetails {
                             .infiniBandNetworkCIDR(o.getInfiniBandNetworkCIDR())
                             .corporateProxy(o.getCorporateProxy())
                             .contacts(o.getContacts())
+                            .maintenanceWindow(o.getMaintenanceWindow())
                             .dnsServer(o.getDnsServer())
                             .ntpServer(o.getNtpServer())
                             .freeformTags(o.getFreeformTags())
@@ -307,6 +319,9 @@ public class CreateExadataInfrastructureDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     java.util.List<ExadataInfrastructureContact> contacts;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    MaintenanceWindow maintenanceWindow;
 
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.

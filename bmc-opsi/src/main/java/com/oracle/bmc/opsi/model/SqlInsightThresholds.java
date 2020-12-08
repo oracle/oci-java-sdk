@@ -80,6 +80,15 @@ public class SqlInsightThresholds {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("improvedInPct")
+        private Integer improvedInPct;
+
+        public Builder improvedInPct(Integer improvedInPct) {
+            this.improvedInPct = improvedInPct;
+            this.__explicitlySet__.add("improvedInPct");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -91,7 +100,8 @@ public class SqlInsightThresholds {
                             inefficiencyInPct,
                             increaseInIOInPct,
                             increaseInCPUInPct,
-                            increaseInInefficientWaitInPct);
+                            increaseInInefficientWaitInPct,
+                            improvedInPct);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -104,7 +114,8 @@ public class SqlInsightThresholds {
                             .inefficiencyInPct(o.getInefficiencyInPct())
                             .increaseInIOInPct(o.getIncreaseInIOInPct())
                             .increaseInCPUInPct(o.getIncreaseInCPUInPct())
-                            .increaseInInefficientWaitInPct(o.getIncreaseInInefficientWaitInPct());
+                            .increaseInInefficientWaitInPct(o.getIncreaseInInefficientWaitInPct())
+                            .improvedInPct(o.getImprovedInPct());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -165,6 +176,13 @@ public class SqlInsightThresholds {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("increaseInInefficientWaitInPct")
     Integer increaseInInefficientWaitInPct;
+
+    /**
+     * Improved Percent Threshold is used to derive improving SQLs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("improvedInPct")
+    Integer improvedInPct;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

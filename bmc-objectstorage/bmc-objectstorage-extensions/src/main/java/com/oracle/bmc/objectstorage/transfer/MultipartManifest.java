@@ -5,6 +5,7 @@
 package com.oracle.bmc.objectstorage.transfer;
 
 import com.oracle.bmc.objectstorage.model.CommitMultipartUploadPartDetails;
+import com.oracle.bmc.objectstorage.transfer.internal.MultipartUploadFailedPartDetails;
 
 import java.util.List;
 
@@ -58,4 +59,10 @@ public interface MultipartManifest {
      * @return The list of part numbers still in progress.
      */
     List<Integer> listInProgressParts();
+
+    /**
+     * Lists all the parts that have failed to upload and the cause of the failure
+     * @return The list of failed parts details.
+     */
+    List<MultipartUploadFailedPartDetails> listFailedPartsDetails();
 }

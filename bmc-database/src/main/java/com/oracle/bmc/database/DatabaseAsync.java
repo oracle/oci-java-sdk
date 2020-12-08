@@ -47,7 +47,8 @@ public interface DatabaseAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Activates the specified Exadata Cloud@Customer infrastructure.
+     * Activates the specified Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -188,8 +189,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * To move a cloud Exadata infrastructure resource and its dependent resources to another compartment, use the
-     * {@link #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest, Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation.
+     * Moves a cloud Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud Service instances only. For more information about moving resources to a different compartment, see [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -208,8 +208,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * To move a cloud VM cluster and its dependent resources to another compartment, use the
-     * {@link #changeCloudVmClusterCompartment(ChangeCloudVmClusterCompartmentRequest, Consumer, Consumer) changeCloudVmClusterCompartment} operation.
+     * Moves a cloud VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -249,7 +248,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the DB system and its dependent resources to the specified compartment.
+     * Moves the DB system and its dependent resources to the specified compartment.
      * For more information about moving DB systems, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
      *
@@ -268,8 +267,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * To move an Exadata Cloud@Customer infrastructure resource and its dependent resources to another compartment, use the
-     * {@link #changeExadataInfrastructureCompartment(ChangeExadataInfrastructureCompartmentRequest, Consumer, Consumer) changeExadataInfrastructureCompartment} operation.
+     * Moves an Exadata infrastructure resource and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
+     * To move an Exadata Cloud Service infrastructure resource to another compartment, use the  {@link #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest, Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -307,8 +306,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * To move an Exadata Cloud@Customer VM cluster and its dependent resources to another compartment, use the
-     * {@link #changeVmClusterCompartment(ChangeVmClusterCompartmentRequest, Consumer, Consumer) changeVmClusterCompartment} operation.
+     * Moves a VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
+     * To move a cloud VM cluster in an Exadata Cloud Service instance to another compartment, use the {@link #changeCloudVmClusterCompartment(ChangeCloudVmClusterCompartmentRequest, Consumer, Consumer) changeCloudVmClusterCompartment} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -487,7 +486,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a cloud Exadata infrastructure resource.
+     * Creates a cloud Exadata infrastructure resource. This resource is used to create an [Exadata Cloud Service](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm) instance.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -614,7 +614,9 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates Exadata Cloud@Customer infrastructure.
+     * Creates an Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
+     * To create an Exadata Cloud Service infrastructure resource, use the  {@link #createCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest, Consumer, Consumer) createCloudExadataInfrastructure} operation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -681,7 +683,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates the Exadata Cloud@Customer VM cluster network.
+     * Creates the VM cluster network. Applies to Exadata Cloud@Customer instances only.
+     * To create a cloud VM cluster in an Exadata Cloud Service instance, use the {@link #createCloudVmCluster(CreateCloudVmClusterRequest, Consumer, Consumer) createCloudVmCluster} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -811,7 +814,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the cloud Exadata infrastructure resource.
+     * Deletes the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -830,7 +833,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes the specified cloud VM cluster.
+     * Deletes the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -948,7 +951,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified Exadata Cloud@Customer VM cluster.
+     * Deletes the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -964,7 +967,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified Exadata Cloud@Customer VM cluster network.
+     * Deletes the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+     * To delete a cloud VM cluster in an Exadata Cloud Service instance, use the {@link #deleteCloudVmCluster(DeleteCloudVmClusterRequest, Consumer, Consumer) deleteCloudVmCluster} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -1038,7 +1042,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Downloads the configuration file for the specified Exadata Cloud@Customer VM cluster network.
+     * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -1435,7 +1439,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified cloud Exadata infrastructure resource.
+     * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1453,7 +1458,8 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information about the specified cloud VM cluster.
+     * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1469,7 +1475,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the IORM configuration for the specified cloud VM cluster.
+     * Gets the IORM configuration for the specified cloud VM cluster in an Exadata Cloud Service instance.
      * If you have not specified an IORM configuration, the default configuration is returned.
      *
      *
@@ -1487,7 +1493,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about a specified maintenance update package.
+     * Gets information about a specified maintenance update package for a cloud VM cluster. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -1504,7 +1510,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the maintenance update history details for the specified update history entry.
+     * Gets the maintenance update history details for the specified update history entry. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -1714,7 +1720,9 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Exadata Cloud@Customer infrastructure.
+     * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+     * To get information on an Exadata Cloud Service infrastructure resource, use the  {@link #getCloudExadataInfrastructure(GetCloudExadataInfrastructureRequest, Consumer, Consumer) getCloudExadataInfrastructure} operation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1817,7 +1825,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Exadata Cloud@Customer VM cluster.
+     * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1832,7 +1841,9 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Exadata Cloud@Customer VM cluster network.
+     * Gets information about the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+     * To get information about a cloud VM cluster in an Exadata Cloud Service instance, use the {@link #getCloudVmCluster(GetCloudVmClusterRequest, Consumer, Consumer) getCloudVmCluster} operation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1926,7 +1937,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard enabled associated with the specified Autonomous Container Database.
+     * Gets a list of the Autonomous Container Databases with Autonomous Data Guard-enabled associated with the specified Autonomous Container Database.
      *
      *
      * @param request The request object containing the details to send
@@ -2196,7 +2207,7 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse> handler);
 
     /**
-     * Gets a list of the cloud Exadata infrastructure in the specified compartment.
+     * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -2215,7 +2226,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the history of the maintenance update actions performed on the specified cloud VM cluster.
+     * Gets the history of the maintenance update actions performed on the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -2234,7 +2245,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the maintenance updates that can be applied to the requested cloud VM cluster.
+     * Lists the maintenance updates that can be applied to the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -2251,7 +2262,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the cloud VM clusters in the specified compartment.
+     * Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -2521,7 +2532,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Exadata Cloud@Customer infrastructure resources in the specified compartment.
+     * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
+     * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  {@link #listCloudExadataInfrastructures(ListCloudExadataInfrastructuresRequest, Consumer, Consumer) listCloudExadataInfrastructures} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -2586,7 +2598,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Exadata Cloud@Customer VM cluster networks in the specified compartment.
+     * Gets a list of the VM cluster networks in the specified compartment. Applies to Exadata Cloud@Customer instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -2639,7 +2651,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the Exadata Cloud@Customer VM clusters in the specified compartment.
+     * Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer instances only.
+     * To list the cloud VM clusters in an Exadata Cloud Service instance, use the {@link #listCloudVmClusters(ListCloudVmClustersRequest, Consumer, Consumer) listCloudVmClusters} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -2855,6 +2868,38 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Rotates Oracle REST Data Services (ORDS) certs for an Autonomous Exadata Infrastructure resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateOrdsCertsResponse> rotateOrdsCerts(
+            RotateOrdsCertsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RotateOrdsCertsRequest, RotateOrdsCertsResponse>
+                    handler);
+
+    /**
+     * Rotates SSL certs for an Autonomous Exadata Infrastructure resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RotateSslCertsResponse> rotateSslCerts(
+            RotateSslCertsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RotateSslCertsRequest, RotateSslCertsResponse>
+                    handler);
+
+    /**
      * **Deprecated.** To start an Autonomous Data Warehouse, use the {@link #startAutonomousDatabase(StartAutonomousDatabaseRequest, Consumer, Consumer) startAutonomousDatabase} operation.
      *
      *
@@ -2924,7 +2969,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association into a standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
+     * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer association to standby role. The standby Autonomous Container Database associated with autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container Database role.
      * <p>
      * A switchover incurs no data loss.
      *
@@ -3183,7 +3228,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Cloud Exadata infrastructure resource.
+     * Updates the Cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -3202,7 +3247,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the specified cloud VM cluster.
+     * Updates the specified cloud VM cluster. Applies to Exadata Cloud Service instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -3219,7 +3264,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the IORM settings for the specified cloud VM cluster.
+     * Updates the IORM settings for the specified cloud VM cluster in an Exadata Cloud Service instance.
      *
      *
      * @param request The request object containing the details to send
@@ -3300,7 +3345,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Exadata Cloud@Customer infrastructure.
+     * Updates the Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
+     * To update an Exadata Cloud Service infrastructure resource, use the  {@link #updateCloudExadataInfrastructure(UpdateCloudExadataInfrastructureRequest, Consumer, Consumer) updateCloudExadataInfrastructure} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -3366,7 +3412,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified Exadata Cloud@Customer VM cluster.
+     * Updates the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
      *
      * @param request The request object containing the details to send
@@ -3382,7 +3428,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified Exadata Cloud@Customer VM cluster network.
+     * Updates the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+     * To update a cloud VM cluster in an Exadata Cloud Service instance, use the {@link #updateCloudVmCluster(UpdateCloudVmClusterRequest, Consumer, Consumer) updateCloudVmCluster} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -3415,7 +3462,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Validates the specified Exadata Cloud@Customer VM cluster network.
+     * Validates the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
      *
      *
      * @param request The request object containing the details to send

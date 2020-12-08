@@ -5,7 +5,9 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the Exadata Cloud@Customer infrastructure.
+ * Details of the Exadata Cloud@Customer infrastructure. Applies to Exadata Cloud@Customer instances only.
+ * See {@link #cloudExadataInfrastructureSummary(CloudExadataInfrastructureSummaryRequest) cloudExadataInfrastructureSummary} for details of the cloud Exadata infrastructure resource used by Exadata Cloud Service instances.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -269,6 +271,15 @@ public class ExadataInfrastructureSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private MaintenanceWindow maintenanceWindow;
+
+        public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -321,6 +332,7 @@ public class ExadataInfrastructureSummary {
                             lifecycleDetails,
                             csiNumber,
                             contacts,
+                            maintenanceWindow,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -357,6 +369,7 @@ public class ExadataInfrastructureSummary {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .csiNumber(o.getCsiNumber())
                             .contacts(o.getContacts())
+                            .maintenanceWindow(o.getMaintenanceWindow())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -398,6 +411,7 @@ public class ExadataInfrastructureSummary {
         Deleting("DELETING"),
         Deleted("DELETED"),
         Disconnected("DISCONNECTED"),
+        MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -588,6 +602,9 @@ public class ExadataInfrastructureSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     java.util.List<ExadataInfrastructureContact> contacts;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    MaintenanceWindow maintenanceWindow;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

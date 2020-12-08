@@ -5,7 +5,9 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for updating the Exadata Cloud@Customer VM cluster.
+ * Details for updating the VM cluster. Applies to Exadata Cloud@Customer instances only.
+ * For details on updating a cloud VM cluster in an Exadata Cloud Service instance, see {@link #updateCloudVmClusterDetails(UpdateCloudVmClusterDetailsRequest) updateCloudVmClusterDetails}
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

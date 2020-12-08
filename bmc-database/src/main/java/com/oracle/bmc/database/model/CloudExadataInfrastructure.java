@@ -5,7 +5,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the cloud Exadata infrastructure resource.
+ * Details of the cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

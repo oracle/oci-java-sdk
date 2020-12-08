@@ -1198,7 +1198,7 @@ public class AutonomousDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("dataSafeStatus")
     DataSafeStatus dataSafeStatus;
     /**
-     * Status of the Operations Insights for this Autonomous Database.
+     * Status of Operations Insights for this Autonomous Database.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum OperationsInsightsStatus {
@@ -1248,7 +1248,7 @@ public class AutonomousDatabase {
         }
     };
     /**
-     * Status of the Operations Insights for this Autonomous Database.
+     * Status of Operations Insights for this Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
     OperationsInsightsStatus operationsInsightsStatus;
