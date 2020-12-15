@@ -32,6 +32,10 @@ package com.oracle.bmc.resourcemanager.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabAccessTokenConfigurationSourceProviderSummary.class,
         name = "GITLAB_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GithubAccessTokenConfigurationSourceProviderSummary.class,
+        name = "GITHUB_ACCESS_TOKEN"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

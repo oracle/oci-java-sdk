@@ -53,6 +53,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ChangeApiCompartmentExample.java.html">here</a> to see how to use ChangeApiCompartment API.
      */
     ChangeApiCompartmentResponse changeApiCompartment(ChangeApiCompartmentRequest request);
 
@@ -61,6 +63,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ChangeCertificateCompartmentExample.java.html">here</a> to see how to use ChangeCertificateCompartment API.
      */
     ChangeCertificateCompartmentResponse changeCertificateCompartment(
             ChangeCertificateCompartmentRequest request);
@@ -71,6 +75,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CreateApiExample.java.html">here</a> to see how to use CreateApi API.
      */
     CreateApiResponse createApi(CreateApiRequest request);
 
@@ -80,6 +86,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CreateCertificateExample.java.html">here</a> to see how to use CreateCertificate API.
      */
     CreateCertificateResponse createCertificate(CreateCertificateRequest request);
 
@@ -88,6 +96,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteApiExample.java.html">here</a> to see how to use DeleteApi API.
      */
     DeleteApiResponse deleteApi(DeleteApiRequest request);
 
@@ -96,6 +106,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteCertificateExample.java.html">here</a> to see how to use DeleteCertificate API.
      */
     DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request);
 
@@ -104,6 +116,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetApiExample.java.html">here</a> to see how to use GetApi API.
      */
     GetApiResponse getApi(GetApiRequest request);
 
@@ -112,6 +126,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetApiContentExample.java.html">here</a> to see how to use GetApiContent API.
      */
     GetApiContentResponse getApiContent(GetApiContentRequest request);
 
@@ -120,6 +136,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetApiDeploymentSpecificationExample.java.html">here</a> to see how to use GetApiDeploymentSpecification API.
      */
     GetApiDeploymentSpecificationResponse getApiDeploymentSpecification(
             GetApiDeploymentSpecificationRequest request);
@@ -129,6 +147,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetApiValidationsExample.java.html">here</a> to see how to use GetApiValidations API.
      */
     GetApiValidationsResponse getApiValidations(GetApiValidationsRequest request);
 
@@ -137,6 +157,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetCertificateExample.java.html">here</a> to see how to use GetCertificate API.
      */
     GetCertificateResponse getCertificate(GetCertificateRequest request);
 
@@ -146,6 +168,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListApisExample.java.html">here</a> to see how to use ListApis API.
      */
     ListApisResponse listApis(ListApisRequest request);
 
@@ -155,6 +179,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListCertificatesExample.java.html">here</a> to see how to use ListCertificates API.
      */
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
 
@@ -163,6 +189,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateApiExample.java.html">here</a> to see how to use UpdateApi API.
      */
     UpdateApiResponse updateApi(UpdateApiRequest request);
 
@@ -171,6 +199,8 @@ public interface ApiGateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateCertificateExample.java.html">here</a> to see how to use UpdateCertificate API.
      */
     UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request);
 

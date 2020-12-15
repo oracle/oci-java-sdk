@@ -97,6 +97,15 @@ public class LoadBalancer {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
+        private ShapeDetails shapeDetails;
+
+        public Builder shapeDetails(ShapeDetails shapeDetails) {
+            this.shapeDetails = shapeDetails;
+            this.__explicitlySet__.add("shapeDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
@@ -228,6 +237,7 @@ public class LoadBalancer {
                             timeCreated,
                             ipAddresses,
                             shapeName,
+                            shapeDetails,
                             isPrivate,
                             subnetIds,
                             networkSecurityGroupIds,
@@ -255,6 +265,7 @@ public class LoadBalancer {
                             .timeCreated(o.getTimeCreated())
                             .ipAddresses(o.getIpAddresses())
                             .shapeName(o.getShapeName())
+                            .shapeDetails(o.getShapeDetails())
                             .isPrivate(o.getIsPrivate())
                             .subnetIds(o.getSubnetIds())
                             .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
@@ -384,6 +395,9 @@ public class LoadBalancer {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     String shapeName;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
+    ShapeDetails shapeDetails;
 
     /**
      * Whether the load balancer has a VCN-local (private) IP address.

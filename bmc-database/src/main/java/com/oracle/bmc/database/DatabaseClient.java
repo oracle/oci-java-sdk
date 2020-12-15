@@ -1027,79 +1027,6 @@ public class DatabaseClient implements Database {
     }
 
     @Override
-    public CreateAutonomousDataWarehouseResponse createAutonomousDataWarehouse(
-            CreateAutonomousDataWarehouseRequest request) {
-        LOG.trace("Called createAutonomousDataWarehouse");
-        final CreateAutonomousDataWarehouseRequest interceptedRequest =
-                CreateAutonomousDataWarehouseConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAutonomousDataWarehouseResponse>
-                transformer = CreateAutonomousDataWarehouseConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateAutonomousDataWarehouseDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public CreateAutonomousDataWarehouseBackupResponse createAutonomousDataWarehouseBackup(
-            CreateAutonomousDataWarehouseBackupRequest request) {
-        LOG.trace("Called createAutonomousDataWarehouseBackup");
-        final CreateAutonomousDataWarehouseBackupRequest interceptedRequest =
-                CreateAutonomousDataWarehouseBackupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateAutonomousDataWarehouseBackupConverter.fromRequest(
-                        client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAutonomousDataWarehouseBackupResponse>
-                transformer = CreateAutonomousDataWarehouseBackupConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateAutonomousDataWarehouseBackupDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public CreateAutonomousDatabaseResponse createAutonomousDatabase(
             CreateAutonomousDatabaseRequest request) {
         LOG.trace("Called createAutonomousDatabase");
@@ -1709,37 +1636,6 @@ public class DatabaseClient implements Database {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public DeleteAutonomousDataWarehouseResponse deleteAutonomousDataWarehouse(
-            DeleteAutonomousDataWarehouseRequest request) {
-        LOG.trace("Called deleteAutonomousDataWarehouse");
-        final DeleteAutonomousDataWarehouseRequest interceptedRequest =
-                DeleteAutonomousDataWarehouseConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteAutonomousDataWarehouseResponse>
-                transformer = DeleteAutonomousDataWarehouseConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -2437,43 +2333,6 @@ public class DatabaseClient implements Database {
     }
 
     @Override
-    public GenerateAutonomousDataWarehouseWalletResponse generateAutonomousDataWarehouseWallet(
-            GenerateAutonomousDataWarehouseWalletRequest request) {
-        LOG.trace("Called generateAutonomousDataWarehouseWallet");
-        final GenerateAutonomousDataWarehouseWalletRequest interceptedRequest =
-                GenerateAutonomousDataWarehouseWalletConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GenerateAutonomousDataWarehouseWalletConverter.fromRequest(
-                        client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateAutonomousDataWarehouseWalletResponse>
-                transformer = GenerateAutonomousDataWarehouseWalletConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getGenerateAutonomousDataWarehouseWalletDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public GenerateAutonomousDatabaseWalletResponse generateAutonomousDatabaseWallet(
             GenerateAutonomousDatabaseWalletRequest request) {
         LOG.trace("Called generateAutonomousDatabaseWallet");
@@ -2592,66 +2451,6 @@ public class DatabaseClient implements Database {
                         GetAutonomousContainerDatabaseDataguardAssociationResponse>
                 transformer =
                         GetAutonomousContainerDatabaseDataguardAssociationConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public GetAutonomousDataWarehouseResponse getAutonomousDataWarehouse(
-            GetAutonomousDataWarehouseRequest request) {
-        LOG.trace("Called getAutonomousDataWarehouse");
-        final GetAutonomousDataWarehouseRequest interceptedRequest =
-                GetAutonomousDataWarehouseConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousDataWarehouseResponse>
-                transformer = GetAutonomousDataWarehouseConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public GetAutonomousDataWarehouseBackupResponse getAutonomousDataWarehouseBackup(
-            GetAutonomousDataWarehouseBackupRequest request) {
-        LOG.trace("Called getAutonomousDataWarehouseBackup");
-        final GetAutonomousDataWarehouseBackupRequest interceptedRequest =
-                GetAutonomousDataWarehouseBackupConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAutonomousDataWarehouseBackupConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousDataWarehouseBackupResponse>
-                transformer = GetAutonomousDataWarehouseBackupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -3878,66 +3677,6 @@ public class DatabaseClient implements Database {
     }
 
     @Override
-    public ListAutonomousDataWarehouseBackupsResponse listAutonomousDataWarehouseBackups(
-            ListAutonomousDataWarehouseBackupsRequest request) {
-        LOG.trace("Called listAutonomousDataWarehouseBackups");
-        final ListAutonomousDataWarehouseBackupsRequest interceptedRequest =
-                ListAutonomousDataWarehouseBackupsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAutonomousDataWarehouseBackupsConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDataWarehouseBackupsResponse>
-                transformer = ListAutonomousDataWarehouseBackupsConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public ListAutonomousDataWarehousesResponse listAutonomousDataWarehouses(
-            ListAutonomousDataWarehousesRequest request) {
-        LOG.trace("Called listAutonomousDataWarehouses");
-        final ListAutonomousDataWarehousesRequest interceptedRequest =
-                ListAutonomousDataWarehousesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAutonomousDataWarehousesConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDataWarehousesResponse>
-                transformer = ListAutonomousDataWarehousesConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public ListAutonomousDatabaseBackupsResponse listAutonomousDatabaseBackups(
             ListAutonomousDatabaseBackupsRequest request) {
         LOG.trace("Called listAutonomousDatabaseBackups");
@@ -4851,6 +4590,34 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ListFlexComponentsResponse listFlexComponents(ListFlexComponentsRequest request) {
+        LOG.trace("Called listFlexComponents");
+        final ListFlexComponentsRequest interceptedRequest =
+                ListFlexComponentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFlexComponentsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListFlexComponentsResponse>
+                transformer = ListFlexComponentsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListGiVersionsResponse listGiVersions(ListGiVersionsRequest request) {
         LOG.trace("Called listGiVersions");
         final ListGiVersionsRequest interceptedRequest =
@@ -5083,6 +4850,39 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public MigrateVaultKeyResponse migrateVaultKey(MigrateVaultKeyRequest request) {
+        LOG.trace("Called migrateVaultKey");
+        final MigrateVaultKeyRequest interceptedRequest =
+                MigrateVaultKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MigrateVaultKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, MigrateVaultKeyResponse>
+                transformer = MigrateVaultKeyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getMigrateVaultKeyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RegisterAutonomousDatabaseDataSafeResponse registerAutonomousDatabaseDataSafe(
             RegisterAutonomousDatabaseDataSafeRequest request) {
         LOG.trace("Called registerAutonomousDatabaseDataSafe");
@@ -5246,41 +5046,6 @@ public class DatabaseClient implements Database {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public RestoreAutonomousDataWarehouseResponse restoreAutonomousDataWarehouse(
-            RestoreAutonomousDataWarehouseRequest request) {
-        LOG.trace("Called restoreAutonomousDataWarehouse");
-        final RestoreAutonomousDataWarehouseRequest interceptedRequest =
-                RestoreAutonomousDataWarehouseConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RestoreAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestoreAutonomousDataWarehouseResponse>
-                transformer = RestoreAutonomousDataWarehouseConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getRestoreAutonomousDataWarehouseDetails(),
-                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -5483,20 +5248,19 @@ public class DatabaseClient implements Database {
     }
 
     @Override
-    public StartAutonomousDataWarehouseResponse startAutonomousDataWarehouse(
-            StartAutonomousDataWarehouseRequest request) {
-        LOG.trace("Called startAutonomousDataWarehouse");
-        final StartAutonomousDataWarehouseRequest interceptedRequest =
-                StartAutonomousDataWarehouseConverter.interceptRequest(request);
+    public RotateVaultKeyResponse rotateVaultKey(RotateVaultKeyRequest request) {
+        LOG.trace("Called rotateVaultKey");
+        final RotateVaultKeyRequest interceptedRequest =
+                RotateVaultKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StartAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, StartAutonomousDataWarehouseResponse>
-                transformer = StartAutonomousDataWarehouseConverter.fromResponse();
+                RotateVaultKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RotateVaultKeyResponse>
+                transformer = RotateVaultKeyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -5523,37 +5287,6 @@ public class DatabaseClient implements Database {
                 StartAutonomousDatabaseConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, StartAutonomousDatabaseResponse>
                 transformer = StartAutonomousDatabaseConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public StopAutonomousDataWarehouseResponse stopAutonomousDataWarehouse(
-            StopAutonomousDataWarehouseRequest request) {
-        LOG.trace("Called stopAutonomousDataWarehouse");
-        final StopAutonomousDataWarehouseRequest interceptedRequest =
-                StopAutonomousDataWarehouseConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StopAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, StopAutonomousDataWarehouseResponse>
-                transformer = StopAutonomousDataWarehouseConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -5831,41 +5564,6 @@ public class DatabaseClient implements Database {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateAutonomousContainerDatabaseDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public UpdateAutonomousDataWarehouseResponse updateAutonomousDataWarehouse(
-            UpdateAutonomousDataWarehouseRequest request) {
-        LOG.trace("Called updateAutonomousDataWarehouse");
-        final UpdateAutonomousDataWarehouseRequest interceptedRequest =
-                UpdateAutonomousDataWarehouseConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAutonomousDataWarehouseResponse>
-                transformer = UpdateAutonomousDataWarehouseConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateAutonomousDataWarehouseDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

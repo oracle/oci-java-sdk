@@ -51,6 +51,8 @@ public interface Channels extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateChannelExample.java.html">here</a> to see how to use CreateChannel API.
      */
     CreateChannelResponse createChannel(CreateChannelRequest request);
 
@@ -59,6 +61,8 @@ public interface Channels extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteChannelExample.java.html">here</a> to see how to use DeleteChannel API.
      */
     DeleteChannelResponse deleteChannel(DeleteChannelRequest request);
 
@@ -70,6 +74,8 @@ public interface Channels extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetChannelExample.java.html">here</a> to see how to use GetChannel API.
      */
     GetChannelResponse getChannel(GetChannelRequest request);
 
@@ -78,6 +84,8 @@ public interface Channels extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListChannelsExample.java.html">here</a> to see how to use ListChannels API.
      */
     ListChannelsResponse listChannels(ListChannelsRequest request);
 
@@ -88,6 +96,8 @@ public interface Channels extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResetChannelExample.java.html">here</a> to see how to use ResetChannel API.
      */
     ResetChannelResponse resetChannel(ResetChannelRequest request);
 
@@ -99,6 +109,8 @@ public interface Channels extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResumeChannelExample.java.html">here</a> to see how to use ResumeChannel API.
      */
     ResumeChannelResponse resumeChannel(ResumeChannelRequest request);
 
@@ -111,6 +123,8 @@ public interface Channels extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateChannelExample.java.html">here</a> to see how to use UpdateChannel API.
      */
     UpdateChannelResponse updateChannel(UpdateChannelRequest request);
 

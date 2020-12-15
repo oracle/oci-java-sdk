@@ -176,6 +176,15 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
@@ -433,6 +442,7 @@ public class DbSystemSummary {
                             timeZone,
                             hostname,
                             domain,
+                            kmsKeyId,
                             version,
                             cpuCoreCount,
                             clusterName,
@@ -481,6 +491,7 @@ public class DbSystemSummary {
                             .timeZone(o.getTimeZone())
                             .hostname(o.getHostname())
                             .domain(o.getDomain())
+                            .kmsKeyId(o.getKmsKeyId())
                             .version(o.getVersion())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .clusterName(o.getClusterName())
@@ -626,6 +637,12 @@ public class DbSystemSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     String domain;
+
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     /**
      * The Oracle Database version of the DB system.
@@ -786,7 +803,7 @@ public class DbSystemSummary {
     java.util.Date timeCreated;
 
     /**
-     * Additional information about the current lifecycleState.
+     * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;

@@ -5,7 +5,9 @@
 package com.oracle.bmc.resourcemanager.requests;
 
 import com.oracle.bmc.resourcemanager.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListConfigurationSourceProvidersExample.java.html">here</a> to see how to use ListConfigurationSourceProvidersRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
@@ -139,6 +141,12 @@ public class ListConfigurationSourceProvidersRequest
      */
     private String page;
 
+    /**
+     * A filter to return only configuration source providers of the specified type (GitHub or GitLab).
+     *
+     */
+    private String configSourceProviderType;
+
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListConfigurationSourceProvidersRequest, java.lang.Void> {
@@ -182,6 +190,7 @@ public class ListConfigurationSourceProvidersRequest
             sortOrder(o.getSortOrder());
             limit(o.getLimit());
             page(o.getPage());
+            configSourceProviderType(o.getConfigSourceProviderType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

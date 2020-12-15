@@ -6,23 +6,6 @@ package com.oracle.bmc.audit.model;
 
 /**
  * A container object for identity attributes.
- * <p>
- * Example:
- * <p>
- * -----
- *     {
- *       \"principalName\": \"ExampleName\",
- *       \"principalId\": \"ocid1.user.oc1..<unique_ID>\",
- *       \"authType\": \"natv\",
- *       \"callerName\": null,
- *       \"callerId\": null,
- *       \"tenantId\": \"ocid1.tenancy.oc1..<unique_ID>\",
- *       \"ipAddress\": \"172.24.80.88\",
- *       \"credentials\": null,
- *       \"userAgent\": \"Jersey/2.23 (HttpUrlConnection 1.8.0_212)\",
- *       \"consoleSessionId\": null
- *     }
- *   -----
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

@@ -50,6 +50,8 @@ public interface Redirect extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeHttpRedirectCompartmentExample.java.html">here</a> to see how to use ChangeHttpRedirectCompartment API.
      */
     ChangeHttpRedirectCompartmentResponse changeHttpRedirectCompartment(
             ChangeHttpRedirectCompartmentRequest request);
@@ -59,6 +61,8 @@ public interface Redirect extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateHttpRedirectExample.java.html">here</a> to see how to use CreateHttpRedirect API.
      */
     CreateHttpRedirectResponse createHttpRedirect(CreateHttpRedirectRequest request);
 
@@ -67,6 +71,8 @@ public interface Redirect extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteHttpRedirectExample.java.html">here</a> to see how to use DeleteHttpRedirect API.
      */
     DeleteHttpRedirectResponse deleteHttpRedirect(DeleteHttpRedirectRequest request);
 
@@ -75,6 +81,8 @@ public interface Redirect extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetHttpRedirectExample.java.html">here</a> to see how to use GetHttpRedirect API.
      */
     GetHttpRedirectResponse getHttpRedirect(GetHttpRedirectRequest request);
 
@@ -83,6 +91,8 @@ public interface Redirect extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListHttpRedirectsExample.java.html">here</a> to see how to use ListHttpRedirects API.
      */
     ListHttpRedirectsResponse listHttpRedirects(ListHttpRedirectsRequest request);
 
@@ -91,6 +101,8 @@ public interface Redirect extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateHttpRedirectExample.java.html">here</a> to see how to use UpdateHttpRedirect API.
      */
     UpdateHttpRedirectResponse updateHttpRedirect(UpdateHttpRedirectRequest request);
 

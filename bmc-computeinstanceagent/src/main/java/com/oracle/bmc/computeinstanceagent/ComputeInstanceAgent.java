@@ -51,6 +51,8 @@ public interface ComputeInstanceAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computeinstanceagent/CancelInstanceAgentCommandExample.java.html">here</a> to see how to use CancelInstanceAgentCommand API.
      */
     CancelInstanceAgentCommandResponse cancelInstanceAgentCommand(
             CancelInstanceAgentCommandRequest request);
@@ -61,6 +63,8 @@ public interface ComputeInstanceAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computeinstanceagent/CreateInstanceAgentCommandExample.java.html">here</a> to see how to use CreateInstanceAgentCommand API.
      */
     CreateInstanceAgentCommandResponse createInstanceAgentCommand(
             CreateInstanceAgentCommandRequest request);
@@ -70,6 +74,8 @@ public interface ComputeInstanceAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computeinstanceagent/GetInstanceAgentCommandExample.java.html">here</a> to see how to use GetInstanceAgentCommand API.
      */
     GetInstanceAgentCommandResponse getInstanceAgentCommand(GetInstanceAgentCommandRequest request);
 
@@ -78,6 +84,8 @@ public interface ComputeInstanceAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computeinstanceagent/GetInstanceAgentCommandExecutionExample.java.html">here</a> to see how to use GetInstanceAgentCommandExecution API.
      */
     GetInstanceAgentCommandExecutionResponse getInstanceAgentCommandExecution(
             GetInstanceAgentCommandExecutionRequest request);
@@ -89,6 +97,8 @@ public interface ComputeInstanceAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computeinstanceagent/ListInstanceAgentCommandExecutionsExample.java.html">here</a> to see how to use ListInstanceAgentCommandExecutions API.
      */
     ListInstanceAgentCommandExecutionsResponse listInstanceAgentCommandExecutions(
             ListInstanceAgentCommandExecutionsRequest request);
@@ -100,6 +110,8 @@ public interface ComputeInstanceAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computeinstanceagent/ListInstanceAgentCommandsExample.java.html">here</a> to see how to use ListInstanceAgentCommands API.
      */
     ListInstanceAgentCommandsResponse listInstanceAgentCommands(
             ListInstanceAgentCommandsRequest request);

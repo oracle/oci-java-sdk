@@ -51,6 +51,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/CreateAlertRuleExample.java.html">here</a> to see how to use CreateAlertRule API.
      */
     CreateAlertRuleResponse createAlertRule(CreateAlertRuleRequest request);
 
@@ -60,6 +62,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/CreateBudgetExample.java.html">here</a> to see how to use CreateBudget API.
      */
     CreateBudgetResponse createBudget(CreateBudgetRequest request);
 
@@ -68,6 +72,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/DeleteAlertRuleExample.java.html">here</a> to see how to use DeleteAlertRule API.
      */
     DeleteAlertRuleResponse deleteAlertRule(DeleteAlertRuleRequest request);
 
@@ -76,6 +82,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/DeleteBudgetExample.java.html">here</a> to see how to use DeleteBudget API.
      */
     DeleteBudgetResponse deleteBudget(DeleteBudgetRequest request);
 
@@ -84,6 +92,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/GetAlertRuleExample.java.html">here</a> to see how to use GetAlertRule API.
      */
     GetAlertRuleResponse getAlertRule(GetAlertRuleRequest request);
 
@@ -92,6 +102,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/GetBudgetExample.java.html">here</a> to see how to use GetBudget API.
      */
     GetBudgetResponse getBudget(GetBudgetRequest request);
 
@@ -101,6 +113,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/ListAlertRulesExample.java.html">here</a> to see how to use ListAlertRules API.
      */
     ListAlertRulesResponse listAlertRules(ListAlertRulesRequest request);
 
@@ -119,6 +133,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/ListBudgetsExample.java.html">here</a> to see how to use ListBudgets API.
      */
     ListBudgetsResponse listBudgets(ListBudgetsRequest request);
 
@@ -127,6 +143,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/UpdateAlertRuleExample.java.html">here</a> to see how to use UpdateAlertRule API.
      */
     UpdateAlertRuleResponse updateAlertRule(UpdateAlertRuleRequest request);
 
@@ -135,6 +153,8 @@ public interface Budget extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/budget/UpdateBudgetExample.java.html">here</a> to see how to use UpdateBudget API.
      */
     UpdateBudgetResponse updateBudget(UpdateBudgetRequest request);
 

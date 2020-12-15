@@ -50,6 +50,8 @@ public interface TransferJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ChangeTransferJobCompartmentExample.java.html">here</a> to see how to use ChangeTransferJobCompartment API.
      */
     ChangeTransferJobCompartmentResponse changeTransferJobCompartment(
             ChangeTransferJobCompartmentRequest request);
@@ -59,6 +61,8 @@ public interface TransferJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferJobExample.java.html">here</a> to see how to use CreateTransferJob API.
      */
     CreateTransferJobResponse createTransferJob(CreateTransferJobRequest request);
 
@@ -67,6 +71,8 @@ public interface TransferJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferJobExample.java.html">here</a> to see how to use DeleteTransferJob API.
      */
     DeleteTransferJobResponse deleteTransferJob(DeleteTransferJobRequest request);
 
@@ -75,6 +81,8 @@ public interface TransferJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferJobExample.java.html">here</a> to see how to use GetTransferJob API.
      */
     GetTransferJobResponse getTransferJob(GetTransferJobRequest request);
 
@@ -83,6 +91,8 @@ public interface TransferJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferJobsExample.java.html">here</a> to see how to use ListTransferJobs API.
      */
     ListTransferJobsResponse listTransferJobs(ListTransferJobsRequest request);
 
@@ -91,6 +101,8 @@ public interface TransferJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferJobExample.java.html">here</a> to see how to use UpdateTransferJob API.
      */
     UpdateTransferJobResponse updateTransferJob(UpdateTransferJobRequest request);
 

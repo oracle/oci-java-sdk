@@ -53,6 +53,8 @@ public interface Deployment extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ChangeDeploymentCompartmentExample.java.html">here</a> to see how to use ChangeDeploymentCompartment API.
      */
     ChangeDeploymentCompartmentResponse changeDeploymentCompartment(
             ChangeDeploymentCompartmentRequest request);
@@ -63,6 +65,8 @@ public interface Deployment extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CreateDeploymentExample.java.html">here</a> to see how to use CreateDeployment API.
      */
     CreateDeploymentResponse createDeployment(CreateDeploymentRequest request);
 
@@ -71,6 +75,8 @@ public interface Deployment extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteDeploymentExample.java.html">here</a> to see how to use DeleteDeployment API.
      */
     DeleteDeploymentResponse deleteDeployment(DeleteDeploymentRequest request);
 
@@ -79,6 +85,8 @@ public interface Deployment extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetDeploymentExample.java.html">here</a> to see how to use GetDeployment API.
      */
     GetDeploymentResponse getDeployment(GetDeploymentRequest request);
 
@@ -88,6 +96,8 @@ public interface Deployment extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListDeploymentsExample.java.html">here</a> to see how to use ListDeployments API.
      */
     ListDeploymentsResponse listDeployments(ListDeploymentsRequest request);
 
@@ -96,6 +106,8 @@ public interface Deployment extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateDeploymentExample.java.html">here</a> to see how to use UpdateDeployment API.
      */
     UpdateDeploymentResponse updateDeployment(UpdateDeploymentRequest request);
 

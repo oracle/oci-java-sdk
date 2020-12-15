@@ -149,7 +149,7 @@ public class UpdateDatabaseDetails {
     String newAdminPassword;
 
     /**
-     * The existing password to open the TDE wallet. It is required to set a new tde password.
+     * The existing TDE wallet password. You must provide the existing password in order to set a new TDE wallet password.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldTdeWalletPassword")
     String oldTdeWalletPassword;

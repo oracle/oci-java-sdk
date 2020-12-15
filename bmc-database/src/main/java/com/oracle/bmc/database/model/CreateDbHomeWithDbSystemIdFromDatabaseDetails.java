@@ -42,6 +42,24 @@ public class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateDbHomeB
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
         private String databaseSoftwareImageId;
 
@@ -95,6 +113,8 @@ public class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateDbHomeB
             CreateDbHomeWithDbSystemIdFromDatabaseDetails __instance__ =
                     new CreateDbHomeWithDbSystemIdFromDatabaseDetails(
                             displayName,
+                            kmsKeyId,
+                            kmsKeyVersionId,
                             databaseSoftwareImageId,
                             freeformTags,
                             definedTags,
@@ -108,6 +128,8 @@ public class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateDbHomeB
         public Builder copy(CreateDbHomeWithDbSystemIdFromDatabaseDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .kmsKeyId(o.getKmsKeyId())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId())
                             .databaseSoftwareImageId(o.getDatabaseSoftwareImageId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -129,12 +151,20 @@ public class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateDbHomeB
     @Deprecated
     public CreateDbHomeWithDbSystemIdFromDatabaseDetails(
             String displayName,
+            String kmsKeyId,
+            String kmsKeyVersionId,
             String databaseSoftwareImageId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String dbSystemId,
             CreateDatabaseFromAnotherDatabaseDetails database) {
-        super(displayName, databaseSoftwareImageId, freeformTags, definedTags);
+        super(
+                displayName,
+                kmsKeyId,
+                kmsKeyVersionId,
+                databaseSoftwareImageId,
+                freeformTags,
+                definedTags);
         this.dbSystemId = dbSystemId;
         this.database = database;
     }

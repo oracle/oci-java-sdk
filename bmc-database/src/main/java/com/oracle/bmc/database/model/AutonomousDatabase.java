@@ -137,6 +137,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Integer dataStorageSizeInGBs;
+
+        public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
         private InfrastructureType infrastructureType;
 
@@ -333,6 +342,15 @@ public class AutonomousDatabase {
         public Builder whitelistedIps(java.util.List<String> whitelistedIps) {
             this.whitelistedIps = whitelistedIps;
             this.__explicitlySet__.add("whitelistedIps");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("apexDetails")
+        private AutonomousDatabaseApex apexDetails;
+
+        public Builder apexDetails(AutonomousDatabaseApex apexDetails) {
+            this.apexDetails = apexDetails;
+            this.__explicitlySet__.add("apexDetails");
             return this;
         }
 
@@ -561,6 +579,7 @@ public class AutonomousDatabase {
                             backupConfig,
                             cpuCoreCount,
                             dataStorageSizeInTBs,
+                            dataStorageSizeInGBs,
                             infrastructureType,
                             isDedicated,
                             autonomousContainerDatabaseId,
@@ -583,6 +602,7 @@ public class AutonomousDatabase {
                             dbWorkload,
                             isAccessControlEnabled,
                             whitelistedIps,
+                            apexDetails,
                             isAutoScalingEnabled,
                             dataSafeStatus,
                             operationsInsightsStatus,
@@ -627,6 +647,7 @@ public class AutonomousDatabase {
                             .backupConfig(o.getBackupConfig())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .infrastructureType(o.getInfrastructureType())
                             .isDedicated(o.getIsDedicated())
                             .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
@@ -649,6 +670,7 @@ public class AutonomousDatabase {
                             .dbWorkload(o.getDbWorkload())
                             .isAccessControlEnabled(o.getIsAccessControlEnabled())
                             .whitelistedIps(o.getWhitelistedIps())
+                            .apexDetails(o.getApexDetails())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .dataSafeStatus(o.getDataSafeStatus())
                             .operationsInsightsStatus(o.getOperationsInsightsStatus())
@@ -820,6 +842,12 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     Integer dataStorageSizeInTBs;
+
+    /**
+     * The quantity of data in the database, in gigabytes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Integer dataStorageSizeInGBs;
     /**
      * The infrastructure type this resource belongs to.
      **/
@@ -912,7 +940,9 @@ public class AutonomousDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUrls")
     AutonomousDatabaseConnectionUrls connectionUrls;
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
+     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
      * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      *
      **/
@@ -960,7 +990,9 @@ public class AutonomousDatabase {
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
+     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the
      * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      *
      **/
@@ -1051,6 +1083,7 @@ public class AutonomousDatabase {
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
      * - AJD - indicates an Autonomous JSON Database
+     * - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -1058,6 +1091,7 @@ public class AutonomousDatabase {
         Oltp("OLTP"),
         Dw("DW"),
         Ajd("AJD"),
+        Apex("APEX"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1103,6 +1137,7 @@ public class AutonomousDatabase {
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
      * - AJD - indicates an Autonomous JSON Database
+     * - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
@@ -1136,6 +1171,12 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     java.util.List<String> whitelistedIps;
+
+    /**
+     * Information about Autonomous Application Express.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("apexDetails")
+    AutonomousDatabaseApex apexDetails;
 
     /**
      * Indicates if auto scaling is enabled for the Autonomous Database CPU core count.

@@ -53,6 +53,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateClusterExample.java.html">here</a> to see how to use CreateCluster API.
      */
     CreateClusterResponse createCluster(CreateClusterRequest request);
 
@@ -61,6 +63,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateKubeconfigExample.java.html">here</a> to see how to use CreateKubeconfig API.
      */
     CreateKubeconfigResponse createKubeconfig(CreateKubeconfigRequest request);
 
@@ -69,6 +73,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateNodePoolExample.java.html">here</a> to see how to use CreateNodePool API.
      */
     CreateNodePoolResponse createNodePool(CreateNodePoolRequest request);
 
@@ -77,6 +83,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/DeleteClusterExample.java.html">here</a> to see how to use DeleteCluster API.
      */
     DeleteClusterResponse deleteCluster(DeleteClusterRequest request);
 
@@ -85,6 +93,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/DeleteNodePoolExample.java.html">here</a> to see how to use DeleteNodePool API.
      */
     DeleteNodePoolResponse deleteNodePool(DeleteNodePoolRequest request);
 
@@ -93,6 +103,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/DeleteWorkRequestExample.java.html">here</a> to see how to use DeleteWorkRequest API.
      */
     DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request);
 
@@ -101,6 +113,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetClusterExample.java.html">here</a> to see how to use GetCluster API.
      */
     GetClusterResponse getCluster(GetClusterRequest request);
 
@@ -109,6 +123,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetClusterOptionsExample.java.html">here</a> to see how to use GetClusterOptions API.
      */
     GetClusterOptionsResponse getClusterOptions(GetClusterOptionsRequest request);
 
@@ -117,6 +133,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetNodePoolExample.java.html">here</a> to see how to use GetNodePool API.
      */
     GetNodePoolResponse getNodePool(GetNodePoolRequest request);
 
@@ -125,6 +143,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetNodePoolOptionsExample.java.html">here</a> to see how to use GetNodePoolOptions API.
      */
     GetNodePoolOptionsResponse getNodePoolOptions(GetNodePoolOptionsRequest request);
 
@@ -133,6 +153,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -141,6 +163,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListClustersExample.java.html">here</a> to see how to use ListClusters API.
      */
     ListClustersResponse listClusters(ListClustersRequest request);
 
@@ -149,6 +173,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListNodePoolsExample.java.html">here</a> to see how to use ListNodePools API.
      */
     ListNodePoolsResponse listNodePools(ListNodePoolsRequest request);
 
@@ -157,6 +183,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -165,6 +193,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -173,6 +203,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -181,6 +213,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/UpdateClusterExample.java.html">here</a> to see how to use UpdateCluster API.
      */
     UpdateClusterResponse updateCluster(UpdateClusterRequest request);
 
@@ -189,6 +223,8 @@ public interface ContainerEngine extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/UpdateNodePoolExample.java.html">here</a> to see how to use UpdateNodePool API.
      */
     UpdateNodePoolResponse updateNodePool(UpdateNodePoolRequest request);
 

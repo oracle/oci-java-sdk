@@ -5,7 +5,9 @@
 package com.oracle.bmc.logging.requests;
 
 import com.oracle.bmc.logging.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListServicesExample.java.html">here</a> to see how to use ListServicesRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

@@ -150,6 +150,15 @@ public class Backup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -169,7 +178,8 @@ public class Backup {
                             databaseEdition,
                             databaseSizeInGBs,
                             shape,
-                            version);
+                            version,
+                            kmsKeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -190,7 +200,8 @@ public class Backup {
                             .databaseEdition(o.getDatabaseEdition())
                             .databaseSizeInGBs(o.getDatabaseSizeInGBs())
                             .shape(o.getShape())
-                            .version(o.getVersion());
+                            .version(o.getVersion())
+                            .kmsKeyId(o.getKmsKeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -292,7 +303,7 @@ public class Backup {
     java.util.Date timeEnded;
 
     /**
-     * Additional information about the current lifecycleState.
+     * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
@@ -431,6 +442,12 @@ public class Backup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;
+
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

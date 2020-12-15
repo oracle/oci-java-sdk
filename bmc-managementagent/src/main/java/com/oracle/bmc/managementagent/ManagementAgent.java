@@ -51,6 +51,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/CreateManagementAgentInstallKeyExample.java.html">here</a> to see how to use CreateManagementAgentInstallKey API.
      */
     CreateManagementAgentInstallKeyResponse createManagementAgentInstallKey(
             CreateManagementAgentInstallKeyRequest request);
@@ -60,6 +62,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/DeleteManagementAgentExample.java.html">here</a> to see how to use DeleteManagementAgent API.
      */
     DeleteManagementAgentResponse deleteManagementAgent(DeleteManagementAgentRequest request);
 
@@ -68,6 +72,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/DeleteManagementAgentInstallKeyExample.java.html">here</a> to see how to use DeleteManagementAgentInstallKey API.
      */
     DeleteManagementAgentInstallKeyResponse deleteManagementAgentInstallKey(
             DeleteManagementAgentInstallKeyRequest request);
@@ -77,6 +83,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/DeleteWorkRequestExample.java.html">here</a> to see how to use DeleteWorkRequest API.
      */
     DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request);
 
@@ -86,6 +94,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/DeployPluginsExample.java.html">here</a> to see how to use DeployPlugins API.
      */
     DeployPluginsResponse deployPlugins(DeployPluginsRequest request);
 
@@ -94,6 +104,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/GetManagementAgentExample.java.html">here</a> to see how to use GetManagementAgent API.
      */
     GetManagementAgentResponse getManagementAgent(GetManagementAgentRequest request);
 
@@ -102,6 +114,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/GetManagementAgentInstallKeyExample.java.html">here</a> to see how to use GetManagementAgentInstallKey API.
      */
     GetManagementAgentInstallKeyResponse getManagementAgentInstallKey(
             GetManagementAgentInstallKeyRequest request);
@@ -112,6 +126,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/GetManagementAgentInstallKeyContentExample.java.html">here</a> to see how to use GetManagementAgentInstallKeyContent API.
      */
     GetManagementAgentInstallKeyContentResponse getManagementAgentInstallKeyContent(
             GetManagementAgentInstallKeyContentRequest request);
@@ -121,6 +137,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -129,6 +147,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListAvailabilityHistoriesExample.java.html">here</a> to see how to use ListAvailabilityHistories API.
      */
     ListAvailabilityHistoriesResponse listAvailabilityHistories(
             ListAvailabilityHistoriesRequest request);
@@ -139,6 +159,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListManagementAgentImagesExample.java.html">here</a> to see how to use ListManagementAgentImages API.
      */
     ListManagementAgentImagesResponse listManagementAgentImages(
             ListManagementAgentImagesRequest request);
@@ -149,6 +171,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListManagementAgentInstallKeysExample.java.html">here</a> to see how to use ListManagementAgentInstallKeys API.
      */
     ListManagementAgentInstallKeysResponse listManagementAgentInstallKeys(
             ListManagementAgentInstallKeysRequest request);
@@ -159,6 +183,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListManagementAgentPluginsExample.java.html">here</a> to see how to use ListManagementAgentPlugins API.
      */
     ListManagementAgentPluginsResponse listManagementAgentPlugins(
             ListManagementAgentPluginsRequest request);
@@ -169,6 +195,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListManagementAgentsExample.java.html">here</a> to see how to use ListManagementAgents API.
      */
     ListManagementAgentsResponse listManagementAgents(ListManagementAgentsRequest request);
 
@@ -178,6 +206,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -187,6 +217,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -196,6 +228,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -205,6 +239,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/UpdateManagementAgentExample.java.html">here</a> to see how to use UpdateManagementAgent API.
      */
     UpdateManagementAgentResponse updateManagementAgent(UpdateManagementAgentRequest request);
 
@@ -214,6 +250,8 @@ public interface ManagementAgent extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/UpdateManagementAgentInstallKeyExample.java.html">here</a> to see how to use UpdateManagementAgentInstallKey API.
      */
     UpdateManagementAgentInstallKeyResponse updateManagementAgentInstallKey(
             UpdateManagementAgentInstallKeyRequest request);

@@ -285,6 +285,8 @@ public class UploadManager {
                 .objectName(request.getObjectName())
                 .opcClientRequestId(request.getOpcClientRequestId())
                 .service(objectStorage)
+                .cacheControl(request.getCacheControl())
+                .contentDisposition(request.getContentDisposition())
                 .retryConfiguration(retryToUse)
                 .build();
     }

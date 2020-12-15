@@ -31,6 +31,8 @@ public interface Stream extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ConsumerCommitExample.java.html">here</a> to see how to use ConsumerCommit API.
      */
     ConsumerCommitResponse consumerCommit(ConsumerCommitRequest request);
 
@@ -40,6 +42,8 @@ public interface Stream extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ConsumerHeartbeatExample.java.html">here</a> to see how to use ConsumerHeartbeat API.
      */
     ConsumerHeartbeatResponse consumerHeartbeat(ConsumerHeartbeatRequest request);
 
@@ -53,6 +57,8 @@ public interface Stream extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateCursorExample.java.html">here</a> to see how to use CreateCursor API.
      */
     CreateCursorResponse createCursor(CreateCursorRequest request);
 
@@ -62,6 +68,8 @@ public interface Stream extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateGroupCursorExample.java.html">here</a> to see how to use CreateGroupCursor API.
      */
     CreateGroupCursorResponse createGroupCursor(CreateGroupCursorRequest request);
 
@@ -71,6 +79,8 @@ public interface Stream extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetGroupExample.java.html">here</a> to see how to use GetGroup API.
      */
     GetGroupResponse getGroup(GetGroupRequest request);
 
@@ -82,6 +92,8 @@ public interface Stream extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetMessagesExample.java.html">here</a> to see how to use GetMessages API.
      */
     GetMessagesResponse getMessages(GetMessagesRequest request);
 
@@ -94,6 +106,8 @@ public interface Stream extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/PutMessagesExample.java.html">here</a> to see how to use PutMessages API.
      */
     PutMessagesResponse putMessages(PutMessagesRequest request);
 
@@ -103,6 +117,8 @@ public interface Stream extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateGroupExample.java.html">here</a> to see how to use UpdateGroup API.
      */
     UpdateGroupResponse updateGroup(UpdateGroupRequest request);
 }

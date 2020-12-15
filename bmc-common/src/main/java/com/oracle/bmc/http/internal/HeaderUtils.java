@@ -4,6 +4,8 @@
  */
 package com.oracle.bmc.http.internal;
 
+import java.lang.reflect.InvocationTargetException;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -78,6 +80,22 @@ public class HeaderUtils {
         }
         if (clazz == Range.class) {
             return (T) Range.parse(value);
+        }
+        if (clazz == BigDecimal.class) {
+            return (T) new BigDecimal(value);
+        }
+        if (clazz.isEnum()) {
+            try {
+                return clazz.cast(
+                        clazz.getDeclaredMethod("create", String.class).invoke(null, value));
+            } catch (IllegalAccessException
+                    | InvocationTargetException
+                    | NoSuchMethodException
+                    | IllegalArgumentException e) {
+                throw new IllegalArgumentException(
+                        "Could not create enum '" + clazz.getName() + "', value '" + value + "'",
+                        e);
+            }
         }
         throw new IllegalArgumentException("Unknown header type: " + clazz);
     }

@@ -90,6 +90,14 @@ public class ListConfigurationSourceProvidersConverter {
                                     request.getPage()));
         }
 
+        if (request.getConfigSourceProviderType() != null) {
+            target =
+                    target.queryParam(
+                            "configSourceProviderType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getConfigSourceProviderType()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

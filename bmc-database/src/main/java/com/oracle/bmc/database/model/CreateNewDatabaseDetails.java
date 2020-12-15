@@ -53,6 +53,24 @@ public class CreateNewDatabaseDetails extends CreateDatabaseBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("database")
         private CreateDatabaseDetails database;
 
@@ -67,7 +85,8 @@ public class CreateNewDatabaseDetails extends CreateDatabaseBase {
 
         public CreateNewDatabaseDetails build() {
             CreateNewDatabaseDetails __instance__ =
-                    new CreateNewDatabaseDetails(dbHomeId, dbVersion, database);
+                    new CreateNewDatabaseDetails(
+                            dbHomeId, dbVersion, kmsKeyId, kmsKeyVersionId, database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +94,11 @@ public class CreateNewDatabaseDetails extends CreateDatabaseBase {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateNewDatabaseDetails o) {
             Builder copiedBuilder =
-                    dbHomeId(o.getDbHomeId()).dbVersion(o.getDbVersion()).database(o.getDatabase());
+                    dbHomeId(o.getDbHomeId())
+                            .dbVersion(o.getDbVersion())
+                            .kmsKeyId(o.getKmsKeyId())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId())
+                            .database(o.getDatabase());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -91,8 +114,12 @@ public class CreateNewDatabaseDetails extends CreateDatabaseBase {
 
     @Deprecated
     public CreateNewDatabaseDetails(
-            String dbHomeId, String dbVersion, CreateDatabaseDetails database) {
-        super(dbHomeId, dbVersion);
+            String dbHomeId,
+            String dbVersion,
+            String kmsKeyId,
+            String kmsKeyVersionId,
+            CreateDatabaseDetails database) {
+        super(dbHomeId, dbVersion, kmsKeyId, kmsKeyVersionId);
         this.database = database;
     }
 

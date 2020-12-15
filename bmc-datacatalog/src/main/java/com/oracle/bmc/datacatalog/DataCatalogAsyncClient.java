@@ -4115,6 +4115,42 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListRulesResponse> listRules(
+            ListRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse>
+                    handler) {
+        LOG.trace("Called async listRules");
+        final ListRulesRequest interceptedRequest = ListRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRulesConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRulesResponse>
+                transformer = ListRulesConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListRulesRequest, ListRulesResponse>,
+                        java.util.concurrent.Future<ListRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRulesRequest, ListRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResponse> listTags(
             ListTagsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListTagsRequest, ListTagsResponse>

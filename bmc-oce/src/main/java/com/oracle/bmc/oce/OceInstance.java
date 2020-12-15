@@ -50,6 +50,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/ChangeOceInstanceCompartmentExample.java.html">here</a> to see how to use ChangeOceInstanceCompartment API.
      */
     ChangeOceInstanceCompartmentResponse changeOceInstanceCompartment(
             ChangeOceInstanceCompartmentRequest request);
@@ -60,6 +62,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/CreateOceInstanceExample.java.html">here</a> to see how to use CreateOceInstance API.
      */
     CreateOceInstanceResponse createOceInstance(CreateOceInstanceRequest request);
 
@@ -68,6 +72,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/DeleteOceInstanceExample.java.html">here</a> to see how to use DeleteOceInstance API.
      */
     DeleteOceInstanceResponse deleteOceInstance(DeleteOceInstanceRequest request);
 
@@ -76,6 +82,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/GetOceInstanceExample.java.html">here</a> to see how to use GetOceInstance API.
      */
     GetOceInstanceResponse getOceInstance(GetOceInstanceRequest request);
 
@@ -84,6 +92,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -93,6 +103,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/ListOceInstancesExample.java.html">here</a> to see how to use ListOceInstances API.
      */
     ListOceInstancesResponse listOceInstances(ListOceInstancesRequest request);
 
@@ -102,6 +114,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -111,6 +125,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -120,6 +136,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -128,6 +146,8 @@ public interface OceInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/UpdateOceInstanceExample.java.html">here</a> to see how to use UpdateOceInstance API.
      */
     UpdateOceInstanceResponse updateOceInstance(UpdateOceInstanceRequest request);
 

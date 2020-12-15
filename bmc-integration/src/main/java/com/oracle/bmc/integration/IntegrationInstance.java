@@ -51,6 +51,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangeIntegrationInstanceCompartmentExample.java.html">here</a> to see how to use ChangeIntegrationInstanceCompartment API.
      */
     ChangeIntegrationInstanceCompartmentResponse changeIntegrationInstanceCompartment(
             ChangeIntegrationInstanceCompartmentRequest request);
@@ -61,6 +63,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/CreateIntegrationInstanceExample.java.html">here</a> to see how to use CreateIntegrationInstance API.
      */
     CreateIntegrationInstanceResponse createIntegrationInstance(
             CreateIntegrationInstanceRequest request);
@@ -70,6 +74,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/DeleteIntegrationInstanceExample.java.html">here</a> to see how to use DeleteIntegrationInstance API.
      */
     DeleteIntegrationInstanceResponse deleteIntegrationInstance(
             DeleteIntegrationInstanceRequest request);
@@ -79,6 +85,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetIntegrationInstanceExample.java.html">here</a> to see how to use GetIntegrationInstance API.
      */
     GetIntegrationInstanceResponse getIntegrationInstance(GetIntegrationInstanceRequest request);
 
@@ -87,6 +95,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -96,6 +106,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListIntegrationInstancesExample.java.html">here</a> to see how to use ListIntegrationInstances API.
      */
     ListIntegrationInstancesResponse listIntegrationInstances(
             ListIntegrationInstancesRequest request);
@@ -105,6 +117,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -113,6 +127,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -122,6 +138,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -131,6 +149,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StartIntegrationInstanceExample.java.html">here</a> to see how to use StartIntegrationInstance API.
      */
     StartIntegrationInstanceResponse startIntegrationInstance(
             StartIntegrationInstanceRequest request);
@@ -141,6 +161,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StopIntegrationInstanceExample.java.html">here</a> to see how to use StopIntegrationInstance API.
      */
     StopIntegrationInstanceResponse stopIntegrationInstance(StopIntegrationInstanceRequest request);
 
@@ -149,6 +171,8 @@ public interface IntegrationInstance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/UpdateIntegrationInstanceExample.java.html">here</a> to see how to use UpdateIntegrationInstance API.
      */
     UpdateIntegrationInstanceResponse updateIntegrationInstance(
             UpdateIntegrationInstanceRequest request);

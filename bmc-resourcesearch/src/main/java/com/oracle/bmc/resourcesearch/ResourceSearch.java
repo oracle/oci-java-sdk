@@ -51,6 +51,8 @@ public interface ResourceSearch extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcesearch/GetResourceTypeExample.java.html">here</a> to see how to use GetResourceType API.
      */
     GetResourceTypeResponse getResourceType(GetResourceTypeRequest request);
 
@@ -60,6 +62,8 @@ public interface ResourceSearch extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcesearch/ListResourceTypesExample.java.html">here</a> to see how to use ListResourceTypes API.
      */
     ListResourceTypesResponse listResourceTypes(ListResourceTypesRequest request);
 
@@ -71,6 +75,8 @@ public interface ResourceSearch extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcesearch/SearchResourcesExample.java.html">here</a> to see how to use SearchResources API.
      */
     SearchResourcesResponse searchResources(SearchResourcesRequest request);
 

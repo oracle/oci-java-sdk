@@ -53,6 +53,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/AddPackagesToSoftwareSourceExample.java.html">here</a> to see how to use AddPackagesToSoftwareSource API.
      */
     AddPackagesToSoftwareSourceResponse addPackagesToSoftwareSource(
             AddPackagesToSoftwareSourceRequest request);
@@ -65,6 +67,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/AttachChildSoftwareSourceToManagedInstanceExample.java.html">here</a> to see how to use AttachChildSoftwareSourceToManagedInstance API.
      */
     AttachChildSoftwareSourceToManagedInstanceResponse attachChildSoftwareSourceToManagedInstance(
             AttachChildSoftwareSourceToManagedInstanceRequest request);
@@ -78,6 +82,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/AttachManagedInstanceToManagedInstanceGroupExample.java.html">here</a> to see how to use AttachManagedInstanceToManagedInstanceGroup API.
      */
     AttachManagedInstanceToManagedInstanceGroupResponse attachManagedInstanceToManagedInstanceGroup(
             AttachManagedInstanceToManagedInstanceGroupRequest request);
@@ -91,6 +97,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/AttachParentSoftwareSourceToManagedInstanceExample.java.html">here</a> to see how to use AttachParentSoftwareSourceToManagedInstance API.
      */
     AttachParentSoftwareSourceToManagedInstanceResponse attachParentSoftwareSourceToManagedInstance(
             AttachParentSoftwareSourceToManagedInstanceRequest request);
@@ -102,6 +110,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ChangeManagedInstanceGroupCompartmentExample.java.html">here</a> to see how to use ChangeManagedInstanceGroupCompartment API.
      */
     ChangeManagedInstanceGroupCompartmentResponse changeManagedInstanceGroupCompartment(
             ChangeManagedInstanceGroupCompartmentRequest request);
@@ -113,6 +123,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ChangeScheduledJobCompartmentExample.java.html">here</a> to see how to use ChangeScheduledJobCompartment API.
      */
     ChangeScheduledJobCompartmentResponse changeScheduledJobCompartment(
             ChangeScheduledJobCompartmentRequest request);
@@ -124,6 +136,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ChangeSoftwareSourceCompartmentExample.java.html">here</a> to see how to use ChangeSoftwareSourceCompartment API.
      */
     ChangeSoftwareSourceCompartmentResponse changeSoftwareSourceCompartment(
             ChangeSoftwareSourceCompartmentRequest request);
@@ -136,6 +150,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/CreateManagedInstanceGroupExample.java.html">here</a> to see how to use CreateManagedInstanceGroup API.
      */
     CreateManagedInstanceGroupResponse createManagedInstanceGroup(
             CreateManagedInstanceGroupRequest request);
@@ -149,6 +165,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/CreateScheduledJobExample.java.html">here</a> to see how to use CreateScheduledJob API.
      */
     CreateScheduledJobResponse createScheduledJob(CreateScheduledJobRequest request);
 
@@ -160,6 +178,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/CreateSoftwareSourceExample.java.html">here</a> to see how to use CreateSoftwareSource API.
      */
     CreateSoftwareSourceResponse createSoftwareSource(CreateSoftwareSourceRequest request);
 
@@ -169,6 +189,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/DeleteManagedInstanceGroupExample.java.html">here</a> to see how to use DeleteManagedInstanceGroup API.
      */
     DeleteManagedInstanceGroupResponse deleteManagedInstanceGroup(
             DeleteManagedInstanceGroupRequest request);
@@ -179,6 +201,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/DeleteScheduledJobExample.java.html">here</a> to see how to use DeleteScheduledJob API.
      */
     DeleteScheduledJobResponse deleteScheduledJob(DeleteScheduledJobRequest request);
 
@@ -188,6 +212,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/DeleteSoftwareSourceExample.java.html">here</a> to see how to use DeleteSoftwareSource API.
      */
     DeleteSoftwareSourceResponse deleteSoftwareSource(DeleteSoftwareSourceRequest request);
 
@@ -198,6 +224,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/DetachChildSoftwareSourceFromManagedInstanceExample.java.html">here</a> to see how to use DetachChildSoftwareSourceFromManagedInstance API.
      */
     DetachChildSoftwareSourceFromManagedInstanceResponse
             detachChildSoftwareSourceFromManagedInstance(
@@ -209,6 +237,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/DetachManagedInstanceFromManagedInstanceGroupExample.java.html">here</a> to see how to use DetachManagedInstanceFromManagedInstanceGroup API.
      */
     DetachManagedInstanceFromManagedInstanceGroupResponse
             detachManagedInstanceFromManagedInstanceGroup(
@@ -221,6 +251,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/DetachParentSoftwareSourceFromManagedInstanceExample.java.html">here</a> to see how to use DetachParentSoftwareSourceFromManagedInstance API.
      */
     DetachParentSoftwareSourceFromManagedInstanceResponse
             detachParentSoftwareSourceFromManagedInstance(
@@ -232,6 +264,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetErratumExample.java.html">here</a> to see how to use GetErratum API.
      */
     GetErratumResponse getErratum(GetErratumRequest request);
 
@@ -241,6 +275,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetManagedInstanceExample.java.html">here</a> to see how to use GetManagedInstance API.
      */
     GetManagedInstanceResponse getManagedInstance(GetManagedInstanceRequest request);
 
@@ -250,6 +286,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetManagedInstanceGroupExample.java.html">here</a> to see how to use GetManagedInstanceGroup API.
      */
     GetManagedInstanceGroupResponse getManagedInstanceGroup(GetManagedInstanceGroupRequest request);
 
@@ -259,6 +297,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetScheduledJobExample.java.html">here</a> to see how to use GetScheduledJob API.
      */
     GetScheduledJobResponse getScheduledJob(GetScheduledJobRequest request);
 
@@ -268,6 +308,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetSoftwarePackageExample.java.html">here</a> to see how to use GetSoftwarePackage API.
      */
     GetSoftwarePackageResponse getSoftwarePackage(GetSoftwarePackageRequest request);
 
@@ -277,6 +319,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetSoftwareSourceExample.java.html">here</a> to see how to use GetSoftwareSource API.
      */
     GetSoftwareSourceResponse getSoftwareSource(GetSoftwareSourceRequest request);
 
@@ -286,6 +330,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetWindowsUpdateExample.java.html">here</a> to see how to use GetWindowsUpdate API.
      */
     GetWindowsUpdateResponse getWindowsUpdate(GetWindowsUpdateRequest request);
 
@@ -294,6 +340,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -303,6 +351,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/InstallAllPackageUpdatesOnManagedInstanceExample.java.html">here</a> to see how to use InstallAllPackageUpdatesOnManagedInstance API.
      */
     InstallAllPackageUpdatesOnManagedInstanceResponse installAllPackageUpdatesOnManagedInstance(
             InstallAllPackageUpdatesOnManagedInstanceRequest request);
@@ -313,6 +363,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/InstallAllWindowsUpdatesOnManagedInstanceExample.java.html">here</a> to see how to use InstallAllWindowsUpdatesOnManagedInstance API.
      */
     InstallAllWindowsUpdatesOnManagedInstanceResponse installAllWindowsUpdatesOnManagedInstance(
             InstallAllWindowsUpdatesOnManagedInstanceRequest request);
@@ -323,6 +375,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/InstallPackageOnManagedInstanceExample.java.html">here</a> to see how to use InstallPackageOnManagedInstance API.
      */
     InstallPackageOnManagedInstanceResponse installPackageOnManagedInstance(
             InstallPackageOnManagedInstanceRequest request);
@@ -333,6 +387,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/InstallPackageUpdateOnManagedInstanceExample.java.html">here</a> to see how to use InstallPackageUpdateOnManagedInstance API.
      */
     InstallPackageUpdateOnManagedInstanceResponse installPackageUpdateOnManagedInstance(
             InstallPackageUpdateOnManagedInstanceRequest request);
@@ -343,6 +399,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/InstallWindowsUpdateOnManagedInstanceExample.java.html">here</a> to see how to use InstallWindowsUpdateOnManagedInstance API.
      */
     InstallWindowsUpdateOnManagedInstanceResponse installWindowsUpdateOnManagedInstance(
             InstallWindowsUpdateOnManagedInstanceRequest request);
@@ -353,6 +411,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListAvailablePackagesForManagedInstanceExample.java.html">here</a> to see how to use ListAvailablePackagesForManagedInstance API.
      */
     ListAvailablePackagesForManagedInstanceResponse listAvailablePackagesForManagedInstance(
             ListAvailablePackagesForManagedInstanceRequest request);
@@ -363,6 +423,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListAvailableSoftwareSourcesForManagedInstanceExample.java.html">here</a> to see how to use ListAvailableSoftwareSourcesForManagedInstance API.
      */
     ListAvailableSoftwareSourcesForManagedInstanceResponse
             listAvailableSoftwareSourcesForManagedInstance(
@@ -374,6 +436,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListAvailableUpdatesForManagedInstanceExample.java.html">here</a> to see how to use ListAvailableUpdatesForManagedInstance API.
      */
     ListAvailableUpdatesForManagedInstanceResponse listAvailableUpdatesForManagedInstance(
             ListAvailableUpdatesForManagedInstanceRequest request);
@@ -384,6 +448,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListAvailableWindowsUpdatesForManagedInstanceExample.java.html">here</a> to see how to use ListAvailableWindowsUpdatesForManagedInstance API.
      */
     ListAvailableWindowsUpdatesForManagedInstanceResponse
             listAvailableWindowsUpdatesForManagedInstance(
@@ -395,6 +461,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListManagedInstanceGroupsExample.java.html">here</a> to see how to use ListManagedInstanceGroups API.
      */
     ListManagedInstanceGroupsResponse listManagedInstanceGroups(
             ListManagedInstanceGroupsRequest request);
@@ -405,6 +473,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListManagedInstancesExample.java.html">here</a> to see how to use ListManagedInstances API.
      */
     ListManagedInstancesResponse listManagedInstances(ListManagedInstancesRequest request);
 
@@ -414,6 +484,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListPackagesInstalledOnManagedInstanceExample.java.html">here</a> to see how to use ListPackagesInstalledOnManagedInstance API.
      */
     ListPackagesInstalledOnManagedInstanceResponse listPackagesInstalledOnManagedInstance(
             ListPackagesInstalledOnManagedInstanceRequest request);
@@ -424,6 +496,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListScheduledJobsExample.java.html">here</a> to see how to use ListScheduledJobs API.
      */
     ListScheduledJobsResponse listScheduledJobs(ListScheduledJobsRequest request);
 
@@ -433,6 +507,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListSoftwareSourcePackagesExample.java.html">here</a> to see how to use ListSoftwareSourcePackages API.
      */
     ListSoftwareSourcePackagesResponse listSoftwareSourcePackages(
             ListSoftwareSourcePackagesRequest request);
@@ -443,6 +519,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListSoftwareSourcesExample.java.html">here</a> to see how to use ListSoftwareSources API.
      */
     ListSoftwareSourcesResponse listSoftwareSources(ListSoftwareSourcesRequest request);
 
@@ -452,6 +530,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListUpcomingScheduledJobsExample.java.html">here</a> to see how to use ListUpcomingScheduledJobs API.
      */
     ListUpcomingScheduledJobsResponse listUpcomingScheduledJobs(
             ListUpcomingScheduledJobsRequest request);
@@ -462,6 +542,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListWindowsUpdatesExample.java.html">here</a> to see how to use ListWindowsUpdates API.
      */
     ListWindowsUpdatesResponse listWindowsUpdates(ListWindowsUpdatesRequest request);
 
@@ -471,6 +553,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListWindowsUpdatesInstalledOnManagedInstanceExample.java.html">here</a> to see how to use ListWindowsUpdatesInstalledOnManagedInstance API.
      */
     ListWindowsUpdatesInstalledOnManagedInstanceResponse
             listWindowsUpdatesInstalledOnManagedInstance(
@@ -481,6 +565,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -489,6 +575,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -498,6 +586,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -507,6 +597,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/RemovePackageFromManagedInstanceExample.java.html">here</a> to see how to use RemovePackageFromManagedInstance API.
      */
     RemovePackageFromManagedInstanceResponse removePackageFromManagedInstance(
             RemovePackageFromManagedInstanceRequest request);
@@ -517,6 +609,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/RemovePackagesFromSoftwareSourceExample.java.html">here</a> to see how to use RemovePackagesFromSoftwareSource API.
      */
     RemovePackagesFromSoftwareSourceResponse removePackagesFromSoftwareSource(
             RemovePackagesFromSoftwareSourceRequest request);
@@ -528,6 +622,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/RunScheduledJobNowExample.java.html">here</a> to see how to use RunScheduledJobNow API.
      */
     RunScheduledJobNowResponse runScheduledJobNow(RunScheduledJobNowRequest request);
 
@@ -538,6 +634,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/SearchSoftwarePackagesExample.java.html">here</a> to see how to use SearchSoftwarePackages API.
      */
     SearchSoftwarePackagesResponse searchSoftwarePackages(SearchSoftwarePackagesRequest request);
 
@@ -548,6 +646,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/SkipNextScheduledJobExecutionExample.java.html">here</a> to see how to use SkipNextScheduledJobExecution API.
      */
     SkipNextScheduledJobExecutionResponse skipNextScheduledJobExecution(
             SkipNextScheduledJobExecutionRequest request);
@@ -558,6 +658,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/UpdateManagedInstanceGroupExample.java.html">here</a> to see how to use UpdateManagedInstanceGroup API.
      */
     UpdateManagedInstanceGroupResponse updateManagedInstanceGroup(
             UpdateManagedInstanceGroupRequest request);
@@ -568,6 +670,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/UpdateScheduledJobExample.java.html">here</a> to see how to use UpdateScheduledJob API.
      */
     UpdateScheduledJobResponse updateScheduledJob(UpdateScheduledJobRequest request);
 
@@ -577,6 +681,8 @@ public interface OsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/UpdateSoftwareSourceExample.java.html">here</a> to see how to use UpdateSoftwareSource API.
      */
     UpdateSoftwareSourceResponse updateSoftwareSource(UpdateSoftwareSourceRequest request);
 

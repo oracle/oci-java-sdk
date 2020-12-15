@@ -35,19 +35,28 @@ public class UpdateLoadBalancerShapeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
+        private ShapeDetails shapeDetails;
+
+        public Builder shapeDetails(ShapeDetails shapeDetails) {
+            this.shapeDetails = shapeDetails;
+            this.__explicitlySet__.add("shapeDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateLoadBalancerShapeDetails build() {
             UpdateLoadBalancerShapeDetails __instance__ =
-                    new UpdateLoadBalancerShapeDetails(shapeName);
+                    new UpdateLoadBalancerShapeDetails(shapeName, shapeDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateLoadBalancerShapeDetails o) {
-            Builder copiedBuilder = shapeName(o.getShapeName());
+            Builder copiedBuilder = shapeName(o.getShapeName()).shapeDetails(o.getShapeDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -69,10 +78,20 @@ public class UpdateLoadBalancerShapeDetails {
      *   *  100Mbps
      *   *  400Mbps
      *   *  8000Mbps
+     *   *  Flexible
+     * <p>
+     * Example: `Flexible`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     String shapeName;
+
+    /**
+     * The configuration details to update load balancer to a different profile.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeDetails")
+    ShapeDetails shapeDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

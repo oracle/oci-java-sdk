@@ -50,6 +50,8 @@ public interface TransferDevice extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferDeviceExample.java.html">here</a> to see how to use CreateTransferDevice API.
      */
     CreateTransferDeviceResponse createTransferDevice(CreateTransferDeviceRequest request);
 
@@ -58,6 +60,8 @@ public interface TransferDevice extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferDeviceExample.java.html">here</a> to see how to use DeleteTransferDevice API.
      */
     DeleteTransferDeviceResponse deleteTransferDevice(DeleteTransferDeviceRequest request);
 
@@ -66,6 +70,8 @@ public interface TransferDevice extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferDeviceExample.java.html">here</a> to see how to use GetTransferDevice API.
      */
     GetTransferDeviceResponse getTransferDevice(GetTransferDeviceRequest request);
 
@@ -74,6 +80,8 @@ public interface TransferDevice extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferDevicesExample.java.html">here</a> to see how to use ListTransferDevices API.
      */
     ListTransferDevicesResponse listTransferDevices(ListTransferDevicesRequest request);
 
@@ -82,6 +90,8 @@ public interface TransferDevice extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferDeviceExample.java.html">here</a> to see how to use UpdateTransferDevice API.
      */
     UpdateTransferDeviceResponse updateTransferDevice(UpdateTransferDeviceRequest request);
 

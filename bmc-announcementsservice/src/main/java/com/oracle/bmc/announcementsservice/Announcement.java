@@ -51,6 +51,8 @@ public interface Announcement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/GetAnnouncementExample.java.html">here</a> to see how to use GetAnnouncement API.
      */
     GetAnnouncementResponse getAnnouncement(GetAnnouncementRequest request);
 
@@ -60,6 +62,8 @@ public interface Announcement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/GetAnnouncementUserStatusExample.java.html">here</a> to see how to use GetAnnouncementUserStatus API.
      */
     GetAnnouncementUserStatusResponse getAnnouncementUserStatus(
             GetAnnouncementUserStatusRequest request);
@@ -70,6 +74,8 @@ public interface Announcement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/ListAnnouncementsExample.java.html">here</a> to see how to use ListAnnouncements API.
      */
     ListAnnouncementsResponse listAnnouncements(ListAnnouncementsRequest request);
 
@@ -79,6 +85,8 @@ public interface Announcement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateAnnouncementUserStatusExample.java.html">here</a> to see how to use UpdateAnnouncementUserStatus API.
      */
     UpdateAnnouncementUserStatusResponse updateAnnouncementUserStatus(
             UpdateAnnouncementUserStatusRequest request);

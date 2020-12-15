@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.28.0 - 2020-12-15
+### Added
+- Support for filtering listKeys based on KeyShape in KeyManagement service
+- Support for the Oracle Roving Edge Infrastructure service
+- Support for flexible ShapeDetails in Load Balancer service
+- Support for listing of harvested Rules, additional filtering for Logical Entity list calls in Data Catalog service
+- Support second level domain for audit SDK
+- Support for listing flex components in Database service
+- Support for APEX service for ADBS on OCI console for Database service
+- Support for Customer-Managed Key features as a part of the Database service
+- Support for Github configuration source provider as part of the Resource Manager service
+
+### Breaking Changes
+- The following deprecated API methods have been removed from the Database Service : `createAutonomousDataWarehouse`,`createAutonomousDataWarehouseBackup`,`deleteAutonomousDataWarehouse`,`generateAutonomousDataWarehouseWallet`,`getAutonomousDataWarehouse`,`getAutonomousDataWarehouseBackup`,`listAutonomousDataWarehouseBackups`,`listAutonomousDataWarehouses`,`restoreAutonomousDataWarehouse`,`startAutonomousDataWarehouse`,`stopAutonomousDataWarehouse`,`updateAutonomousDataWarehouse`
+
 ## 1.27.1 - 2020-12-08
 ### Added
 - Support for Integration Service custom endpoint feature

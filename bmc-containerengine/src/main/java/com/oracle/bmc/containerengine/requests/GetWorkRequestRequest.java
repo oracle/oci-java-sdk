@@ -5,7 +5,9 @@
 package com.oracle.bmc.containerengine.requests;
 
 import com.oracle.bmc.containerengine.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequestRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

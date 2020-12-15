@@ -5,7 +5,9 @@
 package com.oracle.bmc.dataflow.requests;
 
 import com.oracle.bmc.dataflow.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreatePrivateEndpointExample.java.html">here</a> to see how to use CreatePrivateEndpointRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

@@ -57,6 +57,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ChangeSubscriptionCompartmentExample.java.html">here</a> to see how to use ChangeSubscriptionCompartment API.
      */
     ChangeSubscriptionCompartmentResponse changeSubscriptionCompartment(
             ChangeSubscriptionCompartmentRequest request);
@@ -71,6 +73,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/CreateSubscriptionExample.java.html">here</a> to see how to use CreateSubscription API.
      */
     CreateSubscriptionResponse createSubscription(CreateSubscriptionRequest request);
 
@@ -82,6 +86,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/DeleteSubscriptionExample.java.html">here</a> to see how to use DeleteSubscription API.
      */
     DeleteSubscriptionResponse deleteSubscription(DeleteSubscriptionRequest request);
 
@@ -93,6 +99,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetConfirmSubscriptionExample.java.html">here</a> to see how to use GetConfirmSubscription API.
      */
     GetConfirmSubscriptionResponse getConfirmSubscription(GetConfirmSubscriptionRequest request);
 
@@ -104,6 +112,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetSubscriptionExample.java.html">here</a> to see how to use GetSubscription API.
      */
     GetSubscriptionResponse getSubscription(GetSubscriptionRequest request);
 
@@ -115,6 +125,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetUnsubscriptionExample.java.html">here</a> to see how to use GetUnsubscription API.
      */
     GetUnsubscriptionResponse getUnsubscription(GetUnsubscriptionRequest request);
 
@@ -126,6 +138,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ListSubscriptionsExample.java.html">here</a> to see how to use ListSubscriptions API.
      */
     ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request);
 
@@ -151,6 +165,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/PublishMessageExample.java.html">here</a> to see how to use PublishMessage API.
      */
     PublishMessageResponse publishMessage(PublishMessageRequest request);
 
@@ -162,6 +178,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ResendSubscriptionConfirmationExample.java.html">here</a> to see how to use ResendSubscriptionConfirmation API.
      */
     ResendSubscriptionConfirmationResponse resendSubscriptionConfirmation(
             ResendSubscriptionConfirmationRequest request);
@@ -174,6 +192,8 @@ public interface NotificationDataPlane extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateSubscriptionExample.java.html">here</a> to see how to use UpdateSubscription API.
      */
     UpdateSubscriptionResponse updateSubscription(UpdateSubscriptionRequest request);
 

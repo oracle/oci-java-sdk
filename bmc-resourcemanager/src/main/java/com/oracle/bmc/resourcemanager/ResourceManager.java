@@ -57,6 +57,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CancelJobExample.java.html">here</a> to see how to use CancelJob API.
      */
     CancelJobResponse cancelJob(CancelJobRequest request);
 
@@ -68,6 +70,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeConfigurationSourceProviderCompartmentExample.java.html">here</a> to see how to use ChangeConfigurationSourceProviderCompartment API.
      */
     ChangeConfigurationSourceProviderCompartmentResponse
             changeConfigurationSourceProviderCompartment(
@@ -78,6 +82,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ChangeStackCompartmentExample.java.html">here</a> to see how to use ChangeStackCompartment API.
      */
     ChangeStackCompartmentResponse changeStackCompartment(ChangeStackCompartmentRequest request);
 
@@ -89,6 +95,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateConfigurationSourceProviderExample.java.html">here</a> to see how to use CreateConfigurationSourceProvider API.
      */
     CreateConfigurationSourceProviderResponse createConfigurationSourceProvider(
             CreateConfigurationSourceProviderRequest request);
@@ -98,13 +106,15 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateJobExample.java.html">here</a> to see how to use CreateJob API.
      */
     CreateJobResponse createJob(CreateJobRequest request);
 
     /**
      * Creates a stack in the specified compartment.
-     * You can create a stack from a Terraform configuration file.
-     * The Terraform configuration file can be directly uploaded or referenced from a source code control system.
+     * You can create a stack from a Terraform configuration.
+     * The Terraform configuration can be directly uploaded or referenced from a source code control system.
      * You can also create a stack from an existing compartment.
      * For more information, see
      * [To create a stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateStack).
@@ -112,6 +122,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/CreateStackExample.java.html">here</a> to see how to use CreateStack API.
      */
     CreateStackResponse createStack(CreateStackRequest request);
 
@@ -120,6 +132,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteConfigurationSourceProviderExample.java.html">here</a> to see how to use DeleteConfigurationSourceProvider API.
      */
     DeleteConfigurationSourceProviderResponse deleteConfigurationSourceProvider(
             DeleteConfigurationSourceProviderRequest request);
@@ -129,6 +143,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteStackExample.java.html">here</a> to see how to use DeleteStack API.
      */
     DeleteStackResponse deleteStack(DeleteStackRequest request);
 
@@ -137,6 +153,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DetectStackDriftExample.java.html">here</a> to see how to use DetectStackDrift API.
      */
     DetectStackDriftResponse detectStackDrift(DetectStackDriftRequest request);
 
@@ -145,6 +163,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetConfigurationSourceProviderExample.java.html">here</a> to see how to use GetConfigurationSourceProvider API.
      */
     GetConfigurationSourceProviderResponse getConfigurationSourceProvider(
             GetConfigurationSourceProviderRequest request);
@@ -154,6 +174,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobExample.java.html">here</a> to see how to use GetJob API.
      */
     GetJobResponse getJob(GetJobRequest request);
 
@@ -163,6 +185,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobLogsExample.java.html">here</a> to see how to use GetJobLogs API.
      */
     GetJobLogsResponse getJobLogs(GetJobLogsRequest request);
 
@@ -173,6 +197,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobLogsContentExample.java.html">here</a> to see how to use GetJobLogsContent API.
      */
     GetJobLogsContentResponse getJobLogsContent(GetJobLogsContentRequest request);
 
@@ -183,6 +209,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfConfigExample.java.html">here</a> to see how to use GetJobTfConfig API.
      */
     GetJobTfConfigResponse getJobTfConfig(GetJobTfConfigRequest request);
 
@@ -191,6 +219,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetJobTfStateExample.java.html">here</a> to see how to use GetJobTfState API.
      */
     GetJobTfStateResponse getJobTfState(GetJobTfStateRequest request);
 
@@ -199,6 +229,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetStackExample.java.html">here</a> to see how to use GetStack API.
      */
     GetStackResponse getStack(GetStackRequest request);
 
@@ -209,6 +241,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetStackTfConfigExample.java.html">here</a> to see how to use GetStackTfConfig API.
      */
     GetStackTfConfigResponse getStackTfConfig(GetStackTfConfigRequest request);
 
@@ -217,6 +251,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetStackTfStateExample.java.html">here</a> to see how to use GetStackTfState API.
      */
     GetStackTfStateResponse getStackTfState(GetStackTfStateRequest request);
 
@@ -225,6 +261,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -236,6 +274,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListConfigurationSourceProvidersExample.java.html">here</a> to see how to use ListConfigurationSourceProviders API.
      */
     ListConfigurationSourceProvidersResponse listConfigurationSourceProviders(
             ListConfigurationSourceProvidersRequest request);
@@ -250,6 +290,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListJobsExample.java.html">here</a> to see how to use ListJobs API.
      */
     ListJobsResponse listJobs(ListJobsRequest request);
 
@@ -259,6 +301,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListResourceDiscoveryServicesExample.java.html">here</a> to see how to use ListResourceDiscoveryServices API.
      */
     ListResourceDiscoveryServicesResponse listResourceDiscoveryServices(
             ListResourceDiscoveryServicesRequest request);
@@ -271,6 +315,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStackResourceDriftDetailsExample.java.html">here</a> to see how to use ListStackResourceDriftDetails API.
      */
     ListStackResourceDriftDetailsResponse listStackResourceDriftDetails(
             ListStackResourceDriftDetailsRequest request);
@@ -283,6 +329,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStacksExample.java.html">here</a> to see how to use ListStacks API.
      */
     ListStacksResponse listStacks(ListStacksRequest request);
 
@@ -292,6 +340,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTerraformVersionsExample.java.html">here</a> to see how to use ListTerraformVersions API.
      */
     ListTerraformVersionsResponse listTerraformVersions(ListTerraformVersionsRequest request);
 
@@ -301,6 +351,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -310,6 +362,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -319,6 +373,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -330,6 +386,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateConfigurationSourceProviderExample.java.html">here</a> to see how to use UpdateConfigurationSourceProvider API.
      */
     UpdateConfigurationSourceProviderResponse updateConfigurationSourceProvider(
             UpdateConfigurationSourceProviderRequest request);
@@ -339,6 +397,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateJobExample.java.html">here</a> to see how to use UpdateJob API.
      */
     UpdateJobResponse updateJob(UpdateJobRequest request);
 
@@ -353,6 +413,8 @@ public interface ResourceManager extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/UpdateStackExample.java.html">here</a> to see how to use UpdateStack API.
      */
     UpdateStackResponse updateStack(UpdateStackRequest request);
 

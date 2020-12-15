@@ -3143,239 +3143,6 @@ public class DatabaseWaiters {
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
-    public com.oracle.bmc.waiter.Waiter<
-                    GetAutonomousDataWarehouseRequest, GetAutonomousDataWarehouseResponse>
-            forAutonomousDataWarehouse(
-                    GetAutonomousDataWarehouseRequest request,
-                    com.oracle.bmc.database.model.AutonomousDataWarehouse.LifecycleState...
-                            targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
-                targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
-                targetStates, "Null targetState values are not permitted");
-
-        return forAutonomousDataWarehouse(
-                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
-    }
-
-    /**
-     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
-     *
-     * @param request the request to send
-     * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
-     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
-     */
-    public com.oracle.bmc.waiter.Waiter<
-                    GetAutonomousDataWarehouseRequest, GetAutonomousDataWarehouseResponse>
-            forAutonomousDataWarehouse(
-                    GetAutonomousDataWarehouseRequest request,
-                    com.oracle.bmc.database.model.AutonomousDataWarehouse.LifecycleState
-                            targetState,
-                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
-                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
-
-        return forAutonomousDataWarehouse(
-                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
-                request,
-                targetState);
-    }
-
-    /**
-     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
-     *
-     * @param request the request to send
-     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
-     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
-     */
-    public com.oracle.bmc.waiter.Waiter<
-                    GetAutonomousDataWarehouseRequest, GetAutonomousDataWarehouseResponse>
-            forAutonomousDataWarehouse(
-                    GetAutonomousDataWarehouseRequest request,
-                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
-                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.database.model.AutonomousDataWarehouse.LifecycleState...
-                            targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
-                targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
-                targetStates, "Null target states are not permitted");
-
-        return forAutonomousDataWarehouse(
-                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
-                request,
-                targetStates);
-    }
-
-    // Helper method to create a new Waiter for AutonomousDataWarehouse.
-    private com.oracle.bmc.waiter.Waiter<
-                    GetAutonomousDataWarehouseRequest, GetAutonomousDataWarehouseResponse>
-            forAutonomousDataWarehouse(
-                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
-                    final GetAutonomousDataWarehouseRequest request,
-                    final com.oracle.bmc.database.model.AutonomousDataWarehouse.LifecycleState...
-                            targetStates) {
-        final java.util.Set<com.oracle.bmc.database.model.AutonomousDataWarehouse.LifecycleState>
-                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
-
-        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
-                executorService,
-                waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetAutonomousDataWarehouseRequest,
-                                GetAutonomousDataWarehouseResponse>() {
-                            @Override
-                            public GetAutonomousDataWarehouseResponse apply(
-                                    GetAutonomousDataWarehouseRequest request) {
-                                return client.getAutonomousDataWarehouse(request);
-                            }
-                        },
-                        new com.google.common.base.Predicate<GetAutonomousDataWarehouseResponse>() {
-                            @Override
-                            public boolean apply(GetAutonomousDataWarehouseResponse response) {
-                                return targetStatesSet.contains(
-                                        response.getAutonomousDataWarehouse().getLifecycleState());
-                            }
-                        },
-                        targetStatesSet.contains(
-                                com.oracle.bmc.database.model.AutonomousDataWarehouse.LifecycleState
-                                        .Terminated)),
-                request);
-    }
-
-    /**
-     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
-     *
-     * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
-     */
-    public com.oracle.bmc.waiter.Waiter<
-                    GetAutonomousDataWarehouseBackupRequest,
-                    GetAutonomousDataWarehouseBackupResponse>
-            forAutonomousDataWarehouseBackup(
-                    GetAutonomousDataWarehouseBackupRequest request,
-                    com.oracle.bmc.database.model.AutonomousDataWarehouseBackup.LifecycleState...
-                            targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
-                targetStates, "At least one targetState must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
-                targetStates, "Null targetState values are not permitted");
-
-        return forAutonomousDataWarehouseBackup(
-                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
-    }
-
-    /**
-     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
-     *
-     * @param request the request to send
-     * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
-     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
-     */
-    public com.oracle.bmc.waiter.Waiter<
-                    GetAutonomousDataWarehouseBackupRequest,
-                    GetAutonomousDataWarehouseBackupResponse>
-            forAutonomousDataWarehouseBackup(
-                    GetAutonomousDataWarehouseBackupRequest request,
-                    com.oracle.bmc.database.model.AutonomousDataWarehouseBackup.LifecycleState
-                            targetState,
-                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
-                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
-        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
-
-        return forAutonomousDataWarehouseBackup(
-                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
-                request,
-                targetState);
-    }
-
-    /**
-     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
-     *
-     * @param request the request to send
-     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
-     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
-     */
-    public com.oracle.bmc.waiter.Waiter<
-                    GetAutonomousDataWarehouseBackupRequest,
-                    GetAutonomousDataWarehouseBackupResponse>
-            forAutonomousDataWarehouseBackup(
-                    GetAutonomousDataWarehouseBackupRequest request,
-                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
-                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.database.model.AutonomousDataWarehouseBackup.LifecycleState...
-                            targetStates) {
-        org.apache.commons.lang3.Validate.notEmpty(
-                targetStates, "At least one target state must be provided");
-        org.apache.commons.lang3.Validate.noNullElements(
-                targetStates, "Null target states are not permitted");
-
-        return forAutonomousDataWarehouseBackup(
-                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
-                request,
-                targetStates);
-    }
-
-    // Helper method to create a new Waiter for AutonomousDataWarehouseBackup.
-    private com.oracle.bmc.waiter.Waiter<
-                    GetAutonomousDataWarehouseBackupRequest,
-                    GetAutonomousDataWarehouseBackupResponse>
-            forAutonomousDataWarehouseBackup(
-                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
-                    final GetAutonomousDataWarehouseBackupRequest request,
-                    final com.oracle.bmc.database.model.AutonomousDataWarehouseBackup
-                                    .LifecycleState...
-                            targetStates) {
-        final java.util.Set<
-                        com.oracle.bmc.database.model.AutonomousDataWarehouseBackup.LifecycleState>
-                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
-
-        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
-                executorService,
-                waiter.toCallable(
-                        com.google.common.base.Suppliers.ofInstance(request),
-                        new com.google.common.base.Function<
-                                GetAutonomousDataWarehouseBackupRequest,
-                                GetAutonomousDataWarehouseBackupResponse>() {
-                            @Override
-                            public GetAutonomousDataWarehouseBackupResponse apply(
-                                    GetAutonomousDataWarehouseBackupRequest request) {
-                                return client.getAutonomousDataWarehouseBackup(request);
-                            }
-                        },
-                        new com.google.common.base.Predicate<
-                                GetAutonomousDataWarehouseBackupResponse>() {
-                            @Override
-                            public boolean apply(
-                                    GetAutonomousDataWarehouseBackupResponse response) {
-                                return targetStatesSet.contains(
-                                        response.getAutonomousDataWarehouseBackup()
-                                                .getLifecycleState());
-                            }
-                        },
-                        targetStatesSet.contains(
-                                com.oracle.bmc.database.model.AutonomousDataWarehouseBackup
-                                        .LifecycleState.Deleted)),
-                request);
-    }
-
-    /**
-     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
-     *
-     * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
-     */
     public com.oracle.bmc.waiter.Waiter<GetAutonomousDatabaseRequest, GetAutonomousDatabaseResponse>
             forAutonomousDatabase(
                     GetAutonomousDatabaseRequest request,
@@ -6209,6 +5976,62 @@ public class DatabaseWaiters {
      * @param request the request to send
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<MigrateVaultKeyRequest, MigrateVaultKeyResponse>
+            forMigrateVaultKey(MigrateVaultKeyRequest request) {
+        return forMigrateVaultKey(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<MigrateVaultKeyRequest, MigrateVaultKeyResponse>
+            forMigrateVaultKey(
+                    MigrateVaultKeyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<MigrateVaultKeyResponse>() {
+                    @Override
+                    public MigrateVaultKeyResponse call() throws Exception {
+                        final MigrateVaultKeyResponse response = client.migrateVaultKey(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<
                     RegisterAutonomousDatabaseDataSafeRequest,
                     RegisterAutonomousDatabaseDataSafeResponse>
@@ -6847,6 +6670,62 @@ public class DatabaseWaiters {
                     @Override
                     public RotateSslCertsResponse call() throws Exception {
                         final RotateSslCertsResponse response = client.rotateSslCerts(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<RotateVaultKeyRequest, RotateVaultKeyResponse>
+            forRotateVaultKey(RotateVaultKeyRequest request) {
+        return forRotateVaultKey(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<RotateVaultKeyRequest, RotateVaultKeyResponse>
+            forRotateVaultKey(
+                    RotateVaultKeyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<RotateVaultKeyResponse>() {
+                    @Override
+                    public RotateVaultKeyResponse call() throws Exception {
+                        final RotateVaultKeyResponse response = client.rotateVaultKey(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =

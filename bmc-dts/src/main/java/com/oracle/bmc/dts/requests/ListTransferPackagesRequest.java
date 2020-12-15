@@ -5,7 +5,9 @@
 package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferPackagesExample.java.html">here</a> to see how to use ListTransferPackagesRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.015")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

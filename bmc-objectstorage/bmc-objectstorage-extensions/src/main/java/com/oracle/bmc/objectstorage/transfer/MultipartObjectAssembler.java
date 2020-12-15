@@ -60,6 +60,8 @@ public class MultipartObjectAssembler {
     private final Consumer<Invocation.Builder> invocationCallback;
     private final boolean allowOverwrite;
     private final ExecutorService executorService;
+    private final String cacheControl;
+    private final String contentDisposition;
 
     private MultipartTransferManager transferManager;
     private MultipartManifestImpl manifest;
@@ -100,7 +102,9 @@ public class MultipartObjectAssembler {
                 executorService,
                 null /* opcClientRequestId */,
                 null /* invocationCallback */,
-                UploadManager.RETRY_CONFIGURATION); /* backwards compatibility */
+                UploadManager.RETRY_CONFIGURATION, /* backwards compatibility */
+                null /* cacheControl */,
+                null /* contentDisposition */);
     }
 
     @Builder
@@ -113,7 +117,9 @@ public class MultipartObjectAssembler {
             ExecutorService executorService,
             String opcClientRequestId,
             Consumer<Invocation.Builder> invocationCallback,
-            RetryConfiguration retryConfiguration) {
+            RetryConfiguration retryConfiguration,
+            String cacheControl,
+            String contentDisposition) {
         this.service = service;
         this.namespaceName = namespaceName;
         this.bucketName = bucketName;
@@ -123,6 +129,8 @@ public class MultipartObjectAssembler {
         this.opcClientRequestId = opcClientRequestId;
         this.invocationCallback = invocationCallback;
         this.retryConfiguration = retryConfiguration;
+        this.cacheControl = cacheControl;
+        this.contentDisposition = contentDisposition;
     }
 
     /**
@@ -155,6 +163,8 @@ public class MultipartObjectAssembler {
                                                 .contentLanguage(contentLanguage)
                                                 .contentType(contentType)
                                                 .metadata(opcMeta)
+                                                .cacheControl(cacheControl)
+                                                .contentDisposition(contentDisposition)
                                                 .build())
                                 .opcClientRequestId(createClientRequestId("-create"))
                                 .build());

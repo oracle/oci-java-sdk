@@ -50,6 +50,8 @@ public interface RecipientInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/AcceptRecipientInvitationExample.java.html">here</a> to see how to use AcceptRecipientInvitation API.
      */
     AcceptRecipientInvitationResponse acceptRecipientInvitation(
             AcceptRecipientInvitationRequest request);
@@ -59,6 +61,8 @@ public interface RecipientInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetRecipientInvitationExample.java.html">here</a> to see how to use GetRecipientInvitation API.
      */
     GetRecipientInvitationResponse getRecipientInvitation(GetRecipientInvitationRequest request);
 
@@ -67,6 +71,8 @@ public interface RecipientInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/IgnoreRecipientInvitationExample.java.html">here</a> to see how to use IgnoreRecipientInvitation API.
      */
     IgnoreRecipientInvitationResponse ignoreRecipientInvitation(
             IgnoreRecipientInvitationRequest request);
@@ -77,6 +83,8 @@ public interface RecipientInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListRecipientInvitationsExample.java.html">here</a> to see how to use ListRecipientInvitations API.
      */
     ListRecipientInvitationsResponse listRecipientInvitations(
             ListRecipientInvitationsRequest request);
@@ -86,6 +94,8 @@ public interface RecipientInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/UpdateRecipientInvitationExample.java.html">here</a> to see how to use UpdateRecipientInvitation API.
      */
     UpdateRecipientInvitationResponse updateRecipientInvitation(
             UpdateRecipientInvitationRequest request);
