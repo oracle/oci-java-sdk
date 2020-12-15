@@ -54,6 +54,8 @@ public interface Limits extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/GetResourceAvailabilityExample.java.html">here</a> to see how to use GetResourceAvailability API.
      */
     GetResourceAvailabilityResponse getResourceAvailability(GetResourceAvailabilityRequest request);
 
@@ -65,6 +67,8 @@ public interface Limits extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListLimitDefinitionsExample.java.html">here</a> to see how to use ListLimitDefinitions API.
      */
     ListLimitDefinitionsResponse listLimitDefinitions(ListLimitDefinitionsRequest request);
 
@@ -74,6 +78,8 @@ public interface Limits extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListLimitValuesExample.java.html">here</a> to see how to use ListLimitValues API.
      */
     ListLimitValuesResponse listLimitValues(ListLimitValuesRequest request);
 
@@ -84,6 +90,8 @@ public interface Limits extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListServicesExample.java.html">here</a> to see how to use ListServices API.
      */
     ListServicesResponse listServices(ListServicesRequest request);
 

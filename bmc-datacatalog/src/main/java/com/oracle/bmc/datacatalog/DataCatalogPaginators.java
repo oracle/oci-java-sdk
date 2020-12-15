@@ -2272,6 +2272,115 @@ public class DataCatalogPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRulesResponse> listRulesResponseIterator(final ListRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRulesRequest.Builder, ListRulesRequest, ListRulesResponse>(
+                new com.google.common.base.Supplier<ListRulesRequest.Builder>() {
+                    @Override
+                    public ListRulesRequest.Builder get() {
+                        return ListRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRulesResponse, String>() {
+                    @Override
+                    public String apply(ListRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRulesRequest.Builder>,
+                        ListRulesRequest>() {
+                    @Override
+                    public ListRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListRulesRequest, ListRulesResponse>() {
+                    @Override
+                    public ListRulesResponse apply(ListRulesRequest request) {
+                        return client.listRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datacatalog.model.RuleSummary} objects
+     * contained in responses from the listRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datacatalog.model.RuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datacatalog.model.RuleSummary> listRulesRecordIterator(
+            final ListRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRulesRequest.Builder, ListRulesRequest, ListRulesResponse,
+                com.oracle.bmc.datacatalog.model.RuleSummary>(
+                new com.google.common.base.Supplier<ListRulesRequest.Builder>() {
+                    @Override
+                    public ListRulesRequest.Builder get() {
+                        return ListRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRulesResponse, String>() {
+                    @Override
+                    public String apply(ListRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRulesRequest.Builder>,
+                        ListRulesRequest>() {
+                    @Override
+                    public ListRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListRulesRequest, ListRulesResponse>() {
+                    @Override
+                    public ListRulesResponse apply(ListRulesRequest request) {
+                        return client.listRules(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRulesResponse,
+                        java.util.List<com.oracle.bmc.datacatalog.model.RuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datacatalog.model.RuleSummary> apply(
+                            ListRulesResponse response) {
+                        return response.getRuleCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listTags operation. This iterable
      * will fetch more data from the server as needed.
      *

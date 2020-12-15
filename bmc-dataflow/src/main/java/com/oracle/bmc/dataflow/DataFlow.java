@@ -53,6 +53,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangeApplicationCompartmentExample.java.html">here</a> to see how to use ChangeApplicationCompartment API.
      */
     ChangeApplicationCompartmentResponse changeApplicationCompartment(
             ChangeApplicationCompartmentRequest request);
@@ -63,6 +65,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangePrivateEndpointCompartmentExample.java.html">here</a> to see how to use ChangePrivateEndpointCompartment API.
      */
     ChangePrivateEndpointCompartmentResponse changePrivateEndpointCompartment(
             ChangePrivateEndpointCompartmentRequest request);
@@ -76,6 +80,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangeRunCompartmentExample.java.html">here</a> to see how to use ChangeRunCompartment API.
      */
     ChangeRunCompartmentResponse changeRunCompartment(ChangeRunCompartmentRequest request);
 
@@ -85,6 +91,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateApplicationExample.java.html">here</a> to see how to use CreateApplication API.
      */
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
 
@@ -94,6 +102,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreatePrivateEndpointExample.java.html">here</a> to see how to use CreatePrivateEndpoint API.
      */
     CreatePrivateEndpointResponse createPrivateEndpoint(CreatePrivateEndpointRequest request);
 
@@ -103,6 +113,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateRunExample.java.html">here</a> to see how to use CreateRun API.
      */
     CreateRunResponse createRun(CreateRunRequest request);
 
@@ -112,6 +124,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteApplicationExample.java.html">here</a> to see how to use DeleteApplication API.
      */
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
 
@@ -121,6 +135,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeletePrivateEndpointExample.java.html">here</a> to see how to use DeletePrivateEndpoint API.
      */
     DeletePrivateEndpointResponse deletePrivateEndpoint(DeletePrivateEndpointRequest request);
 
@@ -131,6 +147,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteRunExample.java.html">here</a> to see how to use DeleteRun API.
      */
     DeleteRunResponse deleteRun(DeleteRunRequest request);
 
@@ -140,6 +158,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetApplicationExample.java.html">here</a> to see how to use GetApplication API.
      */
     GetApplicationResponse getApplication(GetApplicationRequest request);
 
@@ -149,6 +169,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetPrivateEndpointExample.java.html">here</a> to see how to use GetPrivateEndpoint API.
      */
     GetPrivateEndpointResponse getPrivateEndpoint(GetPrivateEndpointRequest request);
 
@@ -158,6 +180,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetRunExample.java.html">here</a> to see how to use GetRun API.
      */
     GetRunResponse getRun(GetRunRequest request);
 
@@ -167,6 +191,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetRunLogExample.java.html">here</a> to see how to use GetRunLog API.
      */
     GetRunLogResponse getRunLog(GetRunLogRequest request);
 
@@ -176,6 +202,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -185,6 +213,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListApplicationsExample.java.html">here</a> to see how to use ListApplications API.
      */
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
 
@@ -194,6 +224,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListPrivateEndpointsExample.java.html">here</a> to see how to use ListPrivateEndpoints API.
      */
     ListPrivateEndpointsResponse listPrivateEndpoints(ListPrivateEndpointsRequest request);
 
@@ -203,6 +235,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListRunLogsExample.java.html">here</a> to see how to use ListRunLogs API.
      */
     ListRunLogsResponse listRunLogs(ListRunLogsRequest request);
 
@@ -212,6 +246,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListRunsExample.java.html">here</a> to see how to use ListRuns API.
      */
     ListRunsResponse listRuns(ListRunsRequest request);
 
@@ -221,6 +257,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -230,6 +268,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -239,6 +279,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -248,6 +290,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdateApplicationExample.java.html">here</a> to see how to use UpdateApplication API.
      */
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
 
@@ -259,6 +303,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdatePrivateEndpointExample.java.html">here</a> to see how to use UpdatePrivateEndpoint API.
      */
     UpdatePrivateEndpointResponse updatePrivateEndpoint(UpdatePrivateEndpointRequest request);
 
@@ -268,6 +314,8 @@ public interface DataFlow extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdateRunExample.java.html">here</a> to see how to use UpdateRun API.
      */
     UpdateRunResponse updateRun(UpdateRunRequest request);
 

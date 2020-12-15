@@ -5,7 +5,9 @@
 package com.oracle.bmc.keymanagement.requests;
 
 import com.oracle.bmc.keymanagement.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListKeysExample.java.html">here</a> to see how to use ListKeysRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
@@ -175,6 +177,52 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             throw new IllegalArgumentException("Invalid ProtectionMode: " + key);
         }
     };
+    /**
+     * The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES is supported.
+     *
+     */
+    private Algorithm algorithm;
+
+    /**
+     * The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES is supported.
+     *
+     **/
+    public enum Algorithm {
+        Aes("AES"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Algorithm> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Algorithm v : Algorithm.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Algorithm(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Algorithm create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Algorithm: " + key);
+        }
+    };
+    /**
+     * The length of the key in bytes, expressed as an integer. Values of 16, 24, or 32 are supported.
+     *
+     */
+    private Integer length;
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<ListKeysRequest, java.lang.Void> {
@@ -217,6 +265,8 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             protectionMode(o.getProtectionMode());
+            algorithm(o.getAlgorithm());
+            length(o.getLength());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

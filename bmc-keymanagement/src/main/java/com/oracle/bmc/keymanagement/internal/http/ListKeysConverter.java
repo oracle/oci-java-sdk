@@ -78,6 +78,22 @@ public class ListKeysConverter {
                                     request.getProtectionMode().getValue()));
         }
 
+        if (request.getAlgorithm() != null) {
+            target =
+                    target.queryParam(
+                            "algorithm",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAlgorithm().getValue()));
+        }
+
+        if (request.getLength() != null) {
+            target =
+                    target.queryParam(
+                            "length",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLength()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

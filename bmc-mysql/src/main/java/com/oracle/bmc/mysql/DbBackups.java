@@ -51,6 +51,8 @@ public interface DbBackups extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateBackupExample.java.html">here</a> to see how to use CreateBackup API.
      */
     CreateBackupResponse createBackup(CreateBackupRequest request);
 
@@ -60,6 +62,8 @@ public interface DbBackups extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteBackupExample.java.html">here</a> to see how to use DeleteBackup API.
      */
     DeleteBackupResponse deleteBackup(DeleteBackupRequest request);
 
@@ -68,6 +72,8 @@ public interface DbBackups extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetBackupExample.java.html">here</a> to see how to use GetBackup API.
      */
     GetBackupResponse getBackup(GetBackupRequest request);
 
@@ -77,6 +83,8 @@ public interface DbBackups extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListBackupsExample.java.html">here</a> to see how to use ListBackups API.
      */
     ListBackupsResponse listBackups(ListBackupsRequest request);
 
@@ -85,6 +93,8 @@ public interface DbBackups extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateBackupExample.java.html">here</a> to see how to use UpdateBackup API.
      */
     UpdateBackupResponse updateBackup(UpdateBackupRequest request);
 

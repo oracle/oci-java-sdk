@@ -204,6 +204,24 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
@@ -302,6 +320,8 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
                             clusterName,
                             dataStoragePercentage,
                             initialDataStorageSizeInGB,
+                            kmsKeyId,
+                            kmsKeyVersionId,
                             nodeCount,
                             freeformTags,
                             definedTags,
@@ -336,6 +356,8 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
                             .clusterName(o.getClusterName())
                             .dataStoragePercentage(o.getDataStoragePercentage())
                             .initialDataStorageSizeInGB(o.getInitialDataStorageSizeInGB())
+                            .kmsKeyId(o.getKmsKeyId())
+                            .kmsKeyVersionId(o.getKmsKeyVersionId())
                             .nodeCount(o.getNodeCount())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -378,6 +400,8 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             String clusterName,
             Integer dataStoragePercentage,
             Integer initialDataStorageSizeInGB,
+            String kmsKeyId,
+            String kmsKeyVersionId,
             Integer nodeCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -406,6 +430,8 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
                 clusterName,
                 dataStoragePercentage,
                 initialDataStorageSizeInGB,
+                kmsKeyId,
+                kmsKeyVersionId,
                 nodeCount,
                 freeformTags,
                 definedTags,

@@ -50,6 +50,8 @@ public interface TransferAppliance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferApplianceExample.java.html">here</a> to see how to use CreateTransferAppliance API.
      */
     CreateTransferApplianceResponse createTransferAppliance(CreateTransferApplianceRequest request);
 
@@ -58,6 +60,8 @@ public interface TransferAppliance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferApplianceAdminCredentialsExample.java.html">here</a> to see how to use CreateTransferApplianceAdminCredentials API.
      */
     CreateTransferApplianceAdminCredentialsResponse createTransferApplianceAdminCredentials(
             CreateTransferApplianceAdminCredentialsRequest request);
@@ -67,6 +71,8 @@ public interface TransferAppliance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferApplianceExample.java.html">here</a> to see how to use DeleteTransferAppliance API.
      */
     DeleteTransferApplianceResponse deleteTransferAppliance(DeleteTransferApplianceRequest request);
 
@@ -75,6 +81,8 @@ public interface TransferAppliance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferApplianceExample.java.html">here</a> to see how to use GetTransferAppliance API.
      */
     GetTransferApplianceResponse getTransferAppliance(GetTransferApplianceRequest request);
 
@@ -83,6 +91,8 @@ public interface TransferAppliance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferApplianceCertificateAuthorityCertificateExample.java.html">here</a> to see how to use GetTransferApplianceCertificateAuthorityCertificate API.
      */
     GetTransferApplianceCertificateAuthorityCertificateResponse
             getTransferApplianceCertificateAuthorityCertificate(
@@ -93,6 +103,8 @@ public interface TransferAppliance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferApplianceEncryptionPassphraseExample.java.html">here</a> to see how to use GetTransferApplianceEncryptionPassphrase API.
      */
     GetTransferApplianceEncryptionPassphraseResponse getTransferApplianceEncryptionPassphrase(
             GetTransferApplianceEncryptionPassphraseRequest request);
@@ -102,6 +114,8 @@ public interface TransferAppliance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferAppliancesExample.java.html">here</a> to see how to use ListTransferAppliances API.
      */
     ListTransferAppliancesResponse listTransferAppliances(ListTransferAppliancesRequest request);
 
@@ -110,6 +124,8 @@ public interface TransferAppliance extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferApplianceExample.java.html">here</a> to see how to use UpdateTransferAppliance API.
      */
     UpdateTransferApplianceResponse updateTransferAppliance(UpdateTransferApplianceRequest request);
 

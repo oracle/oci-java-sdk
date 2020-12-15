@@ -566,7 +566,7 @@ public class AutonomousContainerDatabaseSummary {
     LifecycleState lifecycleState;
 
     /**
-     * Additional information about the current lifecycleState.
+     * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;

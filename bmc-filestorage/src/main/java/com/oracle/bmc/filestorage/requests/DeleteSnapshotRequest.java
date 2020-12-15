@@ -5,7 +5,9 @@
 package com.oracle.bmc.filestorage.requests;
 
 import com.oracle.bmc.filestorage.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteSnapshotExample.java.html">here</a> to see how to use DeleteSnapshotRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

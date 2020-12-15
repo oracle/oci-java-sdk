@@ -5,7 +5,9 @@
 package com.oracle.bmc.optimizer.requests;
 
 import com.oracle.bmc.optimizer.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListHistoriesExample.java.html">here</a> to see how to use ListHistoriesRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

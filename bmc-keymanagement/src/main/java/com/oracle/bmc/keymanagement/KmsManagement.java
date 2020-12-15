@@ -33,6 +33,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/BackupKeyExample.java.html">here</a> to see how to use BackupKey API.
      */
     BackupKeyResponse backupKey(BackupKeyRequest request);
 
@@ -49,6 +51,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelKeyDeletionExample.java.html">here</a> to see how to use CancelKeyDeletion API.
      */
     CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request);
 
@@ -65,6 +69,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelKeyVersionDeletionExample.java.html">here</a> to see how to use CancelKeyVersionDeletion API.
      */
     CancelKeyVersionDeletionResponse cancelKeyVersionDeletion(
             CancelKeyVersionDeletionRequest request);
@@ -83,6 +89,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ChangeKeyCompartmentExample.java.html">here</a> to see how to use ChangeKeyCompartment API.
      */
     ChangeKeyCompartmentResponse changeKeyCompartment(ChangeKeyCompartmentRequest request);
 
@@ -97,6 +105,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateKeyExample.java.html">here</a> to see how to use CreateKey API.
      */
     CreateKeyResponse createKey(CreateKeyRequest request);
 
@@ -112,6 +122,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateKeyVersionExample.java.html">here</a> to see how to use CreateKeyVersion API.
      */
     CreateKeyVersionResponse createKeyVersion(CreateKeyVersionRequest request);
 
@@ -127,6 +139,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DisableKeyExample.java.html">here</a> to see how to use DisableKey API.
      */
     DisableKeyResponse disableKey(DisableKeyRequest request);
 
@@ -142,6 +156,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/EnableKeyExample.java.html">here</a> to see how to use EnableKey API.
      */
     EnableKeyResponse enableKey(EnableKeyRequest request);
 
@@ -156,6 +172,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetKeyExample.java.html">here</a> to see how to use GetKey API.
      */
     GetKeyResponse getKey(GetKeyRequest request);
 
@@ -170,6 +188,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetKeyVersionExample.java.html">here</a> to see how to use GetKeyVersion API.
      */
     GetKeyVersionResponse getKeyVersion(GetKeyVersionRequest request);
 
@@ -180,6 +200,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetWrappingKeyExample.java.html">here</a> to see how to use GetWrappingKey API.
      */
     GetWrappingKeyResponse getWrappingKey(GetWrappingKeyRequest request);
 
@@ -191,6 +213,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ImportKeyExample.java.html">here</a> to see how to use ImportKey API.
      */
     ImportKeyResponse importKey(ImportKeyRequest request);
 
@@ -204,6 +228,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ImportKeyVersionExample.java.html">here</a> to see how to use ImportKeyVersion API.
      */
     ImportKeyVersionResponse importKeyVersion(ImportKeyVersionRequest request);
 
@@ -219,6 +245,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListKeyVersionsExample.java.html">here</a> to see how to use ListKeyVersions API.
      */
     ListKeyVersionsResponse listKeyVersions(ListKeyVersionsRequest request);
 
@@ -233,6 +261,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListKeysExample.java.html">here</a> to see how to use ListKeys API.
      */
     ListKeysResponse listKeys(ListKeysRequest request);
 
@@ -271,6 +301,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreKeyFromFileExample.java.html">here</a> to see how to use RestoreKeyFromFile API.
      */
     RestoreKeyFromFileResponse restoreKeyFromFile(RestoreKeyFromFileRequest request);
 
@@ -282,6 +314,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreKeyFromObjectStoreExample.java.html">here</a> to see how to use RestoreKeyFromObjectStore API.
      */
     RestoreKeyFromObjectStoreResponse restoreKeyFromObjectStore(
             RestoreKeyFromObjectStoreRequest request);
@@ -298,6 +332,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleKeyDeletionExample.java.html">here</a> to see how to use ScheduleKeyDeletion API.
      */
     ScheduleKeyDeletionResponse scheduleKeyDeletion(ScheduleKeyDeletionRequest request);
 
@@ -313,6 +349,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleKeyVersionDeletionExample.java.html">here</a> to see how to use ScheduleKeyVersionDeletion API.
      */
     ScheduleKeyVersionDeletionResponse scheduleKeyVersionDeletion(
             ScheduleKeyVersionDeletionRequest request);
@@ -330,6 +368,8 @@ public interface KmsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UpdateKeyExample.java.html">here</a> to see how to use UpdateKey API.
      */
     UpdateKeyResponse updateKey(UpdateKeyRequest request);
 

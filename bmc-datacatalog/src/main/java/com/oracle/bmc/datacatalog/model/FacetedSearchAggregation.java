@@ -44,18 +44,41 @@ public class FacetedSearchAggregation {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataType")
+        private String dataType;
+
+        public Builder dataType(String dataType) {
+            this.dataType = dataType;
+            this.__explicitlySet__.add("dataType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("propertyType")
+        private PropertyType propertyType;
+
+        public Builder propertyType(PropertyType propertyType) {
+            this.propertyType = propertyType;
+            this.__explicitlySet__.add("propertyType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public FacetedSearchAggregation build() {
-            FacetedSearchAggregation __instance__ = new FacetedSearchAggregation(type, aggregation);
+            FacetedSearchAggregation __instance__ =
+                    new FacetedSearchAggregation(type, aggregation, dataType, propertyType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(FacetedSearchAggregation o) {
-            Builder copiedBuilder = type(o.getType()).aggregation(o.getAggregation());
+            Builder copiedBuilder =
+                    type(o.getType())
+                            .aggregation(o.getAggregation())
+                            .dataType(o.getDataType())
+                            .propertyType(o.getPropertyType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -80,6 +103,69 @@ public class FacetedSearchAggregation {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregation")
     java.util.Map<String, Long> aggregation;
+
+    /**
+     * Data type of object property.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataType")
+    String dataType;
+    /**
+     * Type of property that indicates if it was defined by the user or system.
+     * CUSTOM_PROPERTY is defined by the user on a data object.
+     * DEFAULT_PROPERTY is defined by the system on a data object.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum PropertyType {
+        CustomProperty("CUSTOM_PROPERTY"),
+        DefaultProperty("DEFAULT_PROPERTY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, PropertyType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PropertyType v : PropertyType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PropertyType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PropertyType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PropertyType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of property that indicates if it was defined by the user or system.
+     * CUSTOM_PROPERTY is defined by the user on a data object.
+     * DEFAULT_PROPERTY is defined by the system on a data object.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("propertyType")
+    PropertyType propertyType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

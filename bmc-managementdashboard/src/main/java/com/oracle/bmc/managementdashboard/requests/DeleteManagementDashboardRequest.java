@@ -5,7 +5,9 @@
 package com.oracle.bmc.managementdashboard.requests;
 
 import com.oracle.bmc.managementdashboard.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/DeleteManagementDashboardExample.java.html">here</a> to see how to use DeleteManagementDashboardRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200901")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

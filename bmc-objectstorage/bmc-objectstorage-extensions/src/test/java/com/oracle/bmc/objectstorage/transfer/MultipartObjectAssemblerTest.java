@@ -65,6 +65,8 @@ public class MultipartObjectAssemblerTest {
     private static final String CONTENT_TYPE = "json";
     private static final String CONTENT_LANGUAGE = "en";
     private static final String CONTENT_ENCODING = "gzip";
+    private static final String CACHE_CONTROL = "no-cache";
+    private static final String CONTENT_DISPOSITION = "inline";
     private static final Map<String, String> OPC_META = new HashMap<>();
     private static final boolean ALLOW_OVERWRITE = false;
 
@@ -96,6 +98,8 @@ public class MultipartObjectAssemblerTest {
                         .namespaceName(NAMESPACE)
                         .objectName(OBJECT)
                         .service(service)
+                        .cacheControl(CACHE_CONTROL)
+                        .contentDisposition(CONTENT_DISPOSITION)
                         .build();
         assemblerWithRetryConfiguration =
                 MultipartObjectAssembler.builder()
@@ -106,6 +110,8 @@ public class MultipartObjectAssemblerTest {
                         .namespaceName(NAMESPACE)
                         .objectName(OBJECT)
                         .service(service)
+                        .cacheControl(CACHE_CONTROL)
+                        .contentDisposition(CONTENT_DISPOSITION)
                         .retryConfiguration(RETRY_CONFIGURATION)
                         .build();
     }
@@ -142,6 +148,10 @@ public class MultipartObjectAssemblerTest {
                 CONTENT_ENCODING, request.getCreateMultipartUploadDetails().getContentEncoding());
         assertEquals(OPC_META, request.getCreateMultipartUploadDetails().getMetadata());
         assertEquals(mockInvocationCallback, request.getInvocationCallback());
+        assertEquals(CACHE_CONTROL, request.getCreateMultipartUploadDetails().getCacheControl());
+        assertEquals(
+                CONTENT_DISPOSITION,
+                request.getCreateMultipartUploadDetails().getContentDisposition());
     }
 
     @Test
@@ -170,6 +180,10 @@ public class MultipartObjectAssemblerTest {
                 CONTENT_ENCODING, request.getCreateMultipartUploadDetails().getContentEncoding());
         assertEquals(OPC_META, request.getCreateMultipartUploadDetails().getMetadata());
         assertEquals(mockInvocationCallback, request.getInvocationCallback());
+        assertEquals(CACHE_CONTROL, request.getCreateMultipartUploadDetails().getCacheControl());
+        assertEquals(
+                CONTENT_DISPOSITION,
+                request.getCreateMultipartUploadDetails().getContentDisposition());
     }
 
     @Test

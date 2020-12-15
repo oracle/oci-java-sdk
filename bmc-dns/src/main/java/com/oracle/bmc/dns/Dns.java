@@ -54,6 +54,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeResolverCompartmentExample.java.html">here</a> to see how to use ChangeResolverCompartment API.
      */
     ChangeResolverCompartmentResponse changeResolverCompartment(
             ChangeResolverCompartmentRequest request);
@@ -63,6 +65,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeSteeringPolicyCompartmentExample.java.html">here</a> to see how to use ChangeSteeringPolicyCompartment API.
      */
     ChangeSteeringPolicyCompartmentResponse changeSteeringPolicyCompartment(
             ChangeSteeringPolicyCompartmentRequest request);
@@ -72,6 +76,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeTsigKeyCompartmentExample.java.html">here</a> to see how to use ChangeTsigKeyCompartment API.
      */
     ChangeTsigKeyCompartmentResponse changeTsigKeyCompartment(
             ChangeTsigKeyCompartmentRequest request);
@@ -82,6 +88,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeViewCompartmentExample.java.html">here</a> to see how to use ChangeViewCompartment API.
      */
     ChangeViewCompartmentResponse changeViewCompartment(ChangeViewCompartmentRequest request);
 
@@ -93,6 +101,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ChangeZoneCompartmentExample.java.html">here</a> to see how to use ChangeZoneCompartment API.
      */
     ChangeZoneCompartmentResponse changeZoneCompartment(ChangeZoneCompartmentRequest request);
 
@@ -102,6 +112,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateResolverEndpointExample.java.html">here</a> to see how to use CreateResolverEndpoint API.
      */
     CreateResolverEndpointResponse createResolverEndpoint(CreateResolverEndpointRequest request);
 
@@ -112,6 +124,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateSteeringPolicyExample.java.html">here</a> to see how to use CreateSteeringPolicy API.
      */
     CreateSteeringPolicyResponse createSteeringPolicy(CreateSteeringPolicyRequest request);
 
@@ -126,6 +140,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateSteeringPolicyAttachmentExample.java.html">here</a> to see how to use CreateSteeringPolicyAttachment API.
      */
     CreateSteeringPolicyAttachmentResponse createSteeringPolicyAttachment(
             CreateSteeringPolicyAttachmentRequest request);
@@ -137,6 +153,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateTsigKeyExample.java.html">here</a> to see how to use CreateTsigKey API.
      */
     CreateTsigKeyResponse createTsigKey(CreateTsigKeyRequest request);
 
@@ -146,6 +164,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateViewExample.java.html">here</a> to see how to use CreateView API.
      */
     CreateViewResponse createView(CreateViewRequest request);
 
@@ -157,6 +177,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/CreateZoneExample.java.html">here</a> to see how to use CreateZone API.
      */
     CreateZoneResponse createZone(CreateZoneRequest request);
 
@@ -165,6 +187,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteDomainRecordsExample.java.html">here</a> to see how to use DeleteDomainRecords API.
      */
     DeleteDomainRecordsResponse deleteDomainRecords(DeleteDomainRecordsRequest request);
 
@@ -174,6 +198,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteRRSetExample.java.html">here</a> to see how to use DeleteRRSet API.
      */
     DeleteRRSetResponse deleteRRSet(DeleteRRSetRequest request);
 
@@ -185,6 +211,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteResolverEndpointExample.java.html">here</a> to see how to use DeleteResolverEndpoint API.
      */
     DeleteResolverEndpointResponse deleteResolverEndpoint(DeleteResolverEndpointRequest request);
 
@@ -197,6 +225,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteSteeringPolicyExample.java.html">here</a> to see how to use DeleteSteeringPolicy API.
      */
     DeleteSteeringPolicyResponse deleteSteeringPolicy(DeleteSteeringPolicyRequest request);
 
@@ -207,6 +237,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteSteeringPolicyAttachmentExample.java.html">here</a> to see how to use DeleteSteeringPolicyAttachment API.
      */
     DeleteSteeringPolicyAttachmentResponse deleteSteeringPolicyAttachment(
             DeleteSteeringPolicyAttachmentRequest request);
@@ -217,6 +249,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteTsigKeyExample.java.html">here</a> to see how to use DeleteTsigKey API.
      */
     DeleteTsigKeyResponse deleteTsigKey(DeleteTsigKeyRequest request);
 
@@ -230,6 +264,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteViewExample.java.html">here</a> to see how to use DeleteView API.
      */
     DeleteViewResponse deleteView(DeleteViewRequest request);
 
@@ -241,6 +277,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/DeleteZoneExample.java.html">here</a> to see how to use DeleteZone API.
      */
     DeleteZoneResponse deleteZone(DeleteZoneRequest request);
 
@@ -252,6 +290,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetDomainRecordsExample.java.html">here</a> to see how to use GetDomainRecords API.
      */
     GetDomainRecordsResponse getDomainRecords(GetDomainRecordsRequest request);
 
@@ -262,6 +302,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetRRSetExample.java.html">here</a> to see how to use GetRRSet API.
      */
     GetRRSetResponse getRRSet(GetRRSetRequest request);
 
@@ -273,6 +315,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetResolverExample.java.html">here</a> to see how to use GetResolver API.
      */
     GetResolverResponse getResolver(GetResolverRequest request);
 
@@ -283,6 +327,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetResolverEndpointExample.java.html">here</a> to see how to use GetResolverEndpoint API.
      */
     GetResolverEndpointResponse getResolverEndpoint(GetResolverEndpointRequest request);
 
@@ -292,6 +338,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetSteeringPolicyExample.java.html">here</a> to see how to use GetSteeringPolicy API.
      */
     GetSteeringPolicyResponse getSteeringPolicy(GetSteeringPolicyRequest request);
 
@@ -301,6 +349,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetSteeringPolicyAttachmentExample.java.html">here</a> to see how to use GetSteeringPolicyAttachment API.
      */
     GetSteeringPolicyAttachmentResponse getSteeringPolicyAttachment(
             GetSteeringPolicyAttachmentRequest request);
@@ -311,6 +361,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetTsigKeyExample.java.html">here</a> to see how to use GetTsigKey API.
      */
     GetTsigKeyResponse getTsigKey(GetTsigKeyRequest request);
 
@@ -322,6 +374,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetViewExample.java.html">here</a> to see how to use GetView API.
      */
     GetViewResponse getView(GetViewRequest request);
 
@@ -332,6 +386,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneExample.java.html">here</a> to see how to use GetZone API.
      */
     GetZoneResponse getZone(GetZoneRequest request);
 
@@ -343,6 +399,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetZoneRecordsExample.java.html">here</a> to see how to use GetZoneRecords API.
      */
     GetZoneRecordsResponse getZoneRecords(GetZoneRecordsRequest request);
 
@@ -355,6 +413,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListResolverEndpointsExample.java.html">here</a> to see how to use ListResolverEndpoints API.
      */
     ListResolverEndpointsResponse listResolverEndpoints(ListResolverEndpointsRequest request);
 
@@ -369,6 +429,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListResolversExample.java.html">here</a> to see how to use ListResolvers API.
      */
     ListResolversResponse listResolvers(ListResolversRequest request);
 
@@ -378,6 +440,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListSteeringPoliciesExample.java.html">here</a> to see how to use ListSteeringPolicies API.
      */
     ListSteeringPoliciesResponse listSteeringPolicies(ListSteeringPoliciesRequest request);
 
@@ -387,6 +451,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListSteeringPolicyAttachmentsExample.java.html">here</a> to see how to use ListSteeringPolicyAttachments API.
      */
     ListSteeringPolicyAttachmentsResponse listSteeringPolicyAttachments(
             ListSteeringPolicyAttachmentsRequest request);
@@ -397,6 +463,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListTsigKeysExample.java.html">here</a> to see how to use ListTsigKeys API.
      */
     ListTsigKeysResponse listTsigKeys(ListTsigKeysRequest request);
 
@@ -411,6 +479,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListViewsExample.java.html">here</a> to see how to use ListViews API.
      */
     ListViewsResponse listViews(ListViewsRequest request);
 
@@ -421,6 +491,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZonesExample.java.html">here</a> to see how to use ListZones API.
      */
     ListZonesResponse listZones(ListZonesRequest request);
 
@@ -433,6 +505,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PatchDomainRecordsExample.java.html">here</a> to see how to use PatchDomainRecords API.
      */
     PatchDomainRecordsResponse patchDomainRecords(PatchDomainRecordsRequest request);
 
@@ -441,6 +515,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PatchRRSetExample.java.html">here</a> to see how to use PatchRRSet API.
      */
     PatchRRSetResponse patchRRSet(PatchRRSetRequest request);
 
@@ -453,6 +529,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PatchZoneRecordsExample.java.html">here</a> to see how to use PatchZoneRecords API.
      */
     PatchZoneRecordsResponse patchZoneRecords(PatchZoneRecordsRequest request);
 
@@ -467,6 +545,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateDomainRecordsExample.java.html">here</a> to see how to use UpdateDomainRecords API.
      */
     UpdateDomainRecordsResponse updateDomainRecords(UpdateDomainRecordsRequest request);
 
@@ -475,6 +555,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateRRSetExample.java.html">here</a> to see how to use UpdateRRSet API.
      */
     UpdateRRSetResponse updateRRSet(UpdateRRSetRequest request);
 
@@ -484,6 +566,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateResolverExample.java.html">here</a> to see how to use UpdateResolver API.
      */
     UpdateResolverResponse updateResolver(UpdateResolverRequest request);
 
@@ -493,6 +577,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateResolverEndpointExample.java.html">here</a> to see how to use UpdateResolverEndpoint API.
      */
     UpdateResolverEndpointResponse updateResolverEndpoint(UpdateResolverEndpointRequest request);
 
@@ -502,6 +588,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateSteeringPolicyExample.java.html">here</a> to see how to use UpdateSteeringPolicy API.
      */
     UpdateSteeringPolicyResponse updateSteeringPolicy(UpdateSteeringPolicyRequest request);
 
@@ -511,6 +599,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateSteeringPolicyAttachmentExample.java.html">here</a> to see how to use UpdateSteeringPolicyAttachment API.
      */
     UpdateSteeringPolicyAttachmentResponse updateSteeringPolicyAttachment(
             UpdateSteeringPolicyAttachmentRequest request);
@@ -521,6 +611,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateTsigKeyExample.java.html">here</a> to see how to use UpdateTsigKey API.
      */
     UpdateTsigKeyResponse updateTsigKey(UpdateTsigKeyRequest request);
 
@@ -530,6 +622,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateViewExample.java.html">here</a> to see how to use UpdateView API.
      */
     UpdateViewResponse updateView(UpdateViewRequest request);
 
@@ -541,6 +635,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateZoneExample.java.html">here</a> to see how to use UpdateZone API.
      */
     UpdateZoneResponse updateZone(UpdateZoneRequest request);
 
@@ -554,6 +650,8 @@ public interface Dns extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/UpdateZoneRecordsExample.java.html">here</a> to see how to use UpdateZoneRecords API.
      */
     UpdateZoneRecordsResponse updateZoneRecords(UpdateZoneRecordsRequest request);
 

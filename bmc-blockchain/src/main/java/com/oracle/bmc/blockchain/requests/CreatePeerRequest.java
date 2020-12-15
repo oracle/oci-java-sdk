@@ -5,7 +5,9 @@
 package com.oracle.bmc.blockchain.requests;
 
 import com.oracle.bmc.blockchain.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreatePeerExample.java.html">here</a> to see how to use CreatePeerRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

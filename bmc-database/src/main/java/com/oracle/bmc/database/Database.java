@@ -52,6 +52,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ActivateExadataInfrastructureExample.java.html">here</a> to see how to use ActivateExadataInfrastructure API.
      */
     ActivateExadataInfrastructureResponse activateExadataInfrastructure(
             ActivateExadataInfrastructureRequest request);
@@ -62,6 +64,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/AutonomousDatabaseManualRefreshExample.java.html">here</a> to see how to use AutonomousDatabaseManualRefresh API.
      */
     AutonomousDatabaseManualRefreshResponse autonomousDatabaseManualRefresh(
             AutonomousDatabaseManualRefreshRequest request);
@@ -74,6 +78,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousContainerDatabaseCompartmentExample.java.html">here</a> to see how to use ChangeAutonomousContainerDatabaseCompartment API.
      */
     ChangeAutonomousContainerDatabaseCompartmentResponse
             changeAutonomousContainerDatabaseCompartment(
@@ -87,6 +93,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseCompartmentExample.java.html">here</a> to see how to use ChangeAutonomousDatabaseCompartment API.
      */
     ChangeAutonomousDatabaseCompartmentResponse changeAutonomousDatabaseCompartment(
             ChangeAutonomousDatabaseCompartmentRequest request);
@@ -99,6 +107,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousExadataInfrastructureCompartmentExample.java.html">here</a> to see how to use ChangeAutonomousExadataInfrastructureCompartment API.
      */
     ChangeAutonomousExadataInfrastructureCompartmentResponse
             changeAutonomousExadataInfrastructureCompartment(
@@ -111,6 +121,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousVmClusterCompartmentExample.java.html">here</a> to see how to use ChangeAutonomousVmClusterCompartment API.
      */
     ChangeAutonomousVmClusterCompartmentResponse changeAutonomousVmClusterCompartment(
             ChangeAutonomousVmClusterCompartmentRequest request);
@@ -123,6 +135,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeBackupDestinationCompartmentExample.java.html">here</a> to see how to use ChangeBackupDestinationCompartment API.
      */
     ChangeBackupDestinationCompartmentResponse changeBackupDestinationCompartment(
             ChangeBackupDestinationCompartmentRequest request);
@@ -133,6 +147,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudExadataInfrastructureCompartmentExample.java.html">here</a> to see how to use ChangeCloudExadataInfrastructureCompartment API.
      */
     ChangeCloudExadataInfrastructureCompartmentResponse changeCloudExadataInfrastructureCompartment(
             ChangeCloudExadataInfrastructureCompartmentRequest request);
@@ -143,6 +159,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudVmClusterCompartmentExample.java.html">here</a> to see how to use ChangeCloudVmClusterCompartment API.
      */
     ChangeCloudVmClusterCompartmentResponse changeCloudVmClusterCompartment(
             ChangeCloudVmClusterCompartmentRequest request);
@@ -155,6 +173,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDatabaseSoftwareImageCompartmentExample.java.html">here</a> to see how to use ChangeDatabaseSoftwareImageCompartment API.
      */
     ChangeDatabaseSoftwareImageCompartmentResponse changeDatabaseSoftwareImageCompartment(
             ChangeDatabaseSoftwareImageCompartmentRequest request);
@@ -167,6 +187,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeDbSystemCompartmentExample.java.html">here</a> to see how to use ChangeDbSystemCompartment API.
      */
     ChangeDbSystemCompartmentResponse changeDbSystemCompartment(
             ChangeDbSystemCompartmentRequest request);
@@ -178,6 +200,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExadataInfrastructureCompartmentExample.java.html">here</a> to see how to use ChangeExadataInfrastructureCompartment API.
      */
     ChangeExadataInfrastructureCompartmentResponse changeExadataInfrastructureCompartment(
             ChangeExadataInfrastructureCompartmentRequest request);
@@ -190,6 +214,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeKeyStoreCompartmentExample.java.html">here</a> to see how to use ChangeKeyStoreCompartment API.
      */
     ChangeKeyStoreCompartmentResponse changeKeyStoreCompartment(
             ChangeKeyStoreCompartmentRequest request);
@@ -201,6 +227,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeVmClusterCompartmentExample.java.html">here</a> to see how to use ChangeVmClusterCompartment API.
      */
     ChangeVmClusterCompartmentResponse changeVmClusterCompartment(
             ChangeVmClusterCompartmentRequest request);
@@ -213,6 +241,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CompleteExternalBackupJobExample.java.html">here</a> to see how to use CompleteExternalBackupJob API.
      */
     CompleteExternalBackupJobResponse completeExternalBackupJob(
             CompleteExternalBackupJobRequest request);
@@ -223,29 +253,11 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousContainerDatabaseExample.java.html">here</a> to see how to use CreateAutonomousContainerDatabase API.
      */
     CreateAutonomousContainerDatabaseResponse createAutonomousContainerDatabase(
             CreateAutonomousContainerDatabaseRequest request);
-
-    /**
-     * **Deprecated.** To create a new Autonomous Data Warehouse, use the {@link #createAutonomousDatabase(CreateAutonomousDatabaseRequest) createAutonomousDatabase} operation and specify `DW` as the workload type.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    CreateAutonomousDataWarehouseResponse createAutonomousDataWarehouse(
-            CreateAutonomousDataWarehouseRequest request);
-
-    /**
-     * **Deprecated.** To create a new Autonomous Data Warehouse backup for a specified database, use the {@link #createAutonomousDatabaseBackup(CreateAutonomousDatabaseBackupRequest) createAutonomousDatabaseBackup} operation.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    CreateAutonomousDataWarehouseBackupResponse createAutonomousDataWarehouseBackup(
-            CreateAutonomousDataWarehouseBackupRequest request);
 
     /**
      * Creates a new Autonomous Database.
@@ -253,6 +265,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseExample.java.html">here</a> to see how to use CreateAutonomousDatabase API.
      */
     CreateAutonomousDatabaseResponse createAutonomousDatabase(
             CreateAutonomousDatabaseRequest request);
@@ -263,6 +277,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseBackupExample.java.html">here</a> to see how to use CreateAutonomousDatabaseBackup API.
      */
     CreateAutonomousDatabaseBackupResponse createAutonomousDatabaseBackup(
             CreateAutonomousDatabaseBackupRequest request);
@@ -273,6 +289,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousVmClusterExample.java.html">here</a> to see how to use CreateAutonomousVmCluster API.
      */
     CreateAutonomousVmClusterResponse createAutonomousVmCluster(
             CreateAutonomousVmClusterRequest request);
@@ -283,6 +301,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateBackupExample.java.html">here</a> to see how to use CreateBackup API.
      */
     CreateBackupResponse createBackup(CreateBackupRequest request);
 
@@ -292,6 +312,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateBackupDestinationExample.java.html">here</a> to see how to use CreateBackupDestination API.
      */
     CreateBackupDestinationResponse createBackupDestination(CreateBackupDestinationRequest request);
 
@@ -301,6 +323,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudExadataInfrastructureExample.java.html">here</a> to see how to use CreateCloudExadataInfrastructure API.
      */
     CreateCloudExadataInfrastructureResponse createCloudExadataInfrastructure(
             CreateCloudExadataInfrastructureRequest request);
@@ -311,6 +335,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateCloudVmClusterExample.java.html">here</a> to see how to use CreateCloudVmCluster API.
      */
     CreateCloudVmClusterResponse createCloudVmCluster(CreateCloudVmClusterRequest request);
 
@@ -322,6 +348,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateConsoleConnectionExample.java.html">here</a> to see how to use CreateConsoleConnection API.
      */
     CreateConsoleConnectionResponse createConsoleConnection(CreateConsoleConnectionRequest request);
 
@@ -338,6 +366,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDataGuardAssociationExample.java.html">here</a> to see how to use CreateDataGuardAssociation API.
      */
     CreateDataGuardAssociationResponse createDataGuardAssociation(
             CreateDataGuardAssociationRequest request);
@@ -348,6 +378,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDatabaseExample.java.html">here</a> to see how to use CreateDatabase API.
      */
     CreateDatabaseResponse createDatabase(CreateDatabaseRequest request);
 
@@ -357,6 +389,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDatabaseSoftwareImageExample.java.html">here</a> to see how to use CreateDatabaseSoftwareImage API.
      */
     CreateDatabaseSoftwareImageResponse createDatabaseSoftwareImage(
             CreateDatabaseSoftwareImageRequest request);
@@ -367,6 +401,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateDbHomeExample.java.html">here</a> to see how to use CreateDbHome API.
      */
     CreateDbHomeResponse createDbHome(CreateDbHomeRequest request);
 
@@ -377,6 +413,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExadataInfrastructureExample.java.html">here</a> to see how to use CreateExadataInfrastructure API.
      */
     CreateExadataInfrastructureResponse createExadataInfrastructure(
             CreateExadataInfrastructureRequest request);
@@ -389,6 +427,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExternalBackupJobExample.java.html">here</a> to see how to use CreateExternalBackupJob API.
      */
     CreateExternalBackupJobResponse createExternalBackupJob(CreateExternalBackupJobRequest request);
 
@@ -398,6 +438,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateKeyStoreExample.java.html">here</a> to see how to use CreateKeyStore API.
      */
     CreateKeyStoreResponse createKeyStore(CreateKeyStoreRequest request);
 
@@ -407,6 +449,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateVmClusterExample.java.html">here</a> to see how to use CreateVmCluster API.
      */
     CreateVmClusterResponse createVmCluster(CreateVmClusterRequest request);
 
@@ -417,6 +461,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateVmClusterNetworkExample.java.html">here</a> to see how to use CreateVmClusterNetwork API.
      */
     CreateVmClusterNetworkResponse createVmClusterNetwork(CreateVmClusterNetworkRequest request);
 
@@ -438,18 +484,10 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DbNodeActionExample.java.html">here</a> to see how to use DbNodeAction API.
      */
     DbNodeActionResponse dbNodeAction(DbNodeActionRequest request);
-
-    /**
-     * **Deprecated.** To delete an Autonomous Data Warehouse, use the {@link #deleteAutonomousDatabase(DeleteAutonomousDatabaseRequest) deleteAutonomousDatabase} operation.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    DeleteAutonomousDataWarehouseResponse deleteAutonomousDataWarehouse(
-            DeleteAutonomousDataWarehouseRequest request);
 
     /**
      * Deletes the specified Autonomous Database.
@@ -457,6 +495,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousDatabaseExample.java.html">here</a> to see how to use DeleteAutonomousDatabase API.
      */
     DeleteAutonomousDatabaseResponse deleteAutonomousDatabase(
             DeleteAutonomousDatabaseRequest request);
@@ -467,6 +507,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousVmClusterExample.java.html">here</a> to see how to use DeleteAutonomousVmCluster API.
      */
     DeleteAutonomousVmClusterResponse deleteAutonomousVmCluster(
             DeleteAutonomousVmClusterRequest request);
@@ -476,6 +518,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteBackupExample.java.html">here</a> to see how to use DeleteBackup API.
      */
     DeleteBackupResponse deleteBackup(DeleteBackupRequest request);
 
@@ -485,6 +529,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteBackupDestinationExample.java.html">here</a> to see how to use DeleteBackupDestination API.
      */
     DeleteBackupDestinationResponse deleteBackupDestination(DeleteBackupDestinationRequest request);
 
@@ -494,6 +540,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteCloudExadataInfrastructureExample.java.html">here</a> to see how to use DeleteCloudExadataInfrastructure API.
      */
     DeleteCloudExadataInfrastructureResponse deleteCloudExadataInfrastructure(
             DeleteCloudExadataInfrastructureRequest request);
@@ -504,6 +552,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteCloudVmClusterExample.java.html">here</a> to see how to use DeleteCloudVmCluster API.
      */
     DeleteCloudVmClusterResponse deleteCloudVmCluster(DeleteCloudVmClusterRequest request);
 
@@ -512,6 +562,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteConsoleConnectionExample.java.html">here</a> to see how to use DeleteConsoleConnection API.
      */
     DeleteConsoleConnectionResponse deleteConsoleConnection(DeleteConsoleConnectionRequest request);
 
@@ -523,6 +575,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDatabaseExample.java.html">here</a> to see how to use DeleteDatabase API.
      */
     DeleteDatabaseResponse deleteDatabase(DeleteDatabaseRequest request);
 
@@ -531,6 +585,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDatabaseSoftwareImageExample.java.html">here</a> to see how to use DeleteDatabaseSoftwareImage API.
      */
     DeleteDatabaseSoftwareImageResponse deleteDatabaseSoftwareImage(
             DeleteDatabaseSoftwareImageRequest request);
@@ -543,6 +599,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteDbHomeExample.java.html">here</a> to see how to use DeleteDbHome API.
      */
     DeleteDbHomeResponse deleteDbHome(DeleteDbHomeRequest request);
 
@@ -552,6 +610,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExadataInfrastructureExample.java.html">here</a> to see how to use DeleteExadataInfrastructure API.
      */
     DeleteExadataInfrastructureResponse deleteExadataInfrastructure(
             DeleteExadataInfrastructureRequest request);
@@ -562,6 +622,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteKeyStoreExample.java.html">here</a> to see how to use DeleteKeyStore API.
      */
     DeleteKeyStoreResponse deleteKeyStore(DeleteKeyStoreRequest request);
 
@@ -571,6 +633,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteVmClusterExample.java.html">here</a> to see how to use DeleteVmCluster API.
      */
     DeleteVmClusterResponse deleteVmCluster(DeleteVmClusterRequest request);
 
@@ -581,6 +645,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteVmClusterNetworkExample.java.html">here</a> to see how to use DeleteVmClusterNetwork API.
      */
     DeleteVmClusterNetworkResponse deleteVmClusterNetwork(DeleteVmClusterNetworkRequest request);
 
@@ -590,6 +656,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeregisterAutonomousDatabaseDataSafeExample.java.html">here</a> to see how to use DeregisterAutonomousDatabaseDataSafe API.
      */
     DeregisterAutonomousDatabaseDataSafeResponse deregisterAutonomousDatabaseDataSafe(
             DeregisterAutonomousDatabaseDataSafeRequest request);
@@ -600,6 +668,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DisableAutonomousDatabaseOperationsInsightsExample.java.html">here</a> to see how to use DisableAutonomousDatabaseOperationsInsights API.
      */
     DisableAutonomousDatabaseOperationsInsightsResponse disableAutonomousDatabaseOperationsInsights(
             DisableAutonomousDatabaseOperationsInsightsRequest request);
@@ -610,6 +680,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadExadataInfrastructureConfigFileExample.java.html">here</a> to see how to use DownloadExadataInfrastructureConfigFile API.
      */
     DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
             DownloadExadataInfrastructureConfigFileRequest request);
@@ -620,6 +692,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DownloadVmClusterNetworkConfigFileExample.java.html">here</a> to see how to use DownloadVmClusterNetworkConfigFile API.
      */
     DownloadVmClusterNetworkConfigFileResponse downloadVmClusterNetworkConfigFile(
             DownloadVmClusterNetworkConfigFileRequest request);
@@ -630,6 +704,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/EnableAutonomousDatabaseOperationsInsightsExample.java.html">here</a> to see how to use EnableAutonomousDatabaseOperationsInsights API.
      */
     EnableAutonomousDatabaseOperationsInsightsResponse enableAutonomousDatabaseOperationsInsights(
             EnableAutonomousDatabaseOperationsInsightsRequest request);
@@ -640,6 +716,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailOverAutonomousDatabaseExample.java.html">here</a> to see how to use FailOverAutonomousDatabase API.
      */
     FailOverAutonomousDatabaseResponse failOverAutonomousDatabase(
             FailOverAutonomousDatabaseRequest request);
@@ -652,6 +730,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailoverAutonomousContainerDatabaseDataguardAssociationExample.java.html">here</a> to see how to use FailoverAutonomousContainerDatabaseDataguardAssociation API.
      */
     FailoverAutonomousContainerDatabaseDataguardAssociationResponse
             failoverAutonomousContainerDatabaseDataguardAssociation(
@@ -667,19 +747,11 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailoverDataGuardAssociationExample.java.html">here</a> to see how to use FailoverDataGuardAssociation API.
      */
     FailoverDataGuardAssociationResponse failoverDataGuardAssociation(
             FailoverDataGuardAssociationRequest request);
-
-    /**
-     * **Deprecated.** To create and download a wallet for an Autonomous Data Warehouse, use the {@link #generateAutonomousDatabaseWallet(GenerateAutonomousDatabaseWalletRequest) generateAutonomousDatabaseWallet} operation.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    GenerateAutonomousDataWarehouseWalletResponse generateAutonomousDataWarehouseWallet(
-            GenerateAutonomousDataWarehouseWalletRequest request);
 
     /**
      * Creates and downloads a wallet for the specified Autonomous Database.
@@ -687,6 +759,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GenerateAutonomousDatabaseWalletExample.java.html">here</a> to see how to use GenerateAutonomousDatabaseWallet API.
      */
     GenerateAutonomousDatabaseWalletResponse generateAutonomousDatabaseWallet(
             GenerateAutonomousDatabaseWalletRequest request);
@@ -697,6 +771,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GenerateRecommendedVmClusterNetworkExample.java.html">here</a> to see how to use GenerateRecommendedVmClusterNetwork API.
      */
     GenerateRecommendedVmClusterNetworkResponse generateRecommendedVmClusterNetwork(
             GenerateRecommendedVmClusterNetworkRequest request);
@@ -706,6 +782,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseExample.java.html">here</a> to see how to use GetAutonomousContainerDatabase API.
      */
     GetAutonomousContainerDatabaseResponse getAutonomousContainerDatabase(
             GetAutonomousContainerDatabaseRequest request);
@@ -716,30 +794,12 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousContainerDatabaseDataguardAssociationExample.java.html">here</a> to see how to use GetAutonomousContainerDatabaseDataguardAssociation API.
      */
     GetAutonomousContainerDatabaseDataguardAssociationResponse
             getAutonomousContainerDatabaseDataguardAssociation(
                     GetAutonomousContainerDatabaseDataguardAssociationRequest request);
-
-    /**
-     * **Deprecated.** To get the details of an Autonomous Data Warehouse, use the {@link #getAutonomousDatabase(GetAutonomousDatabaseRequest) getAutonomousDatabase} operation.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    GetAutonomousDataWarehouseResponse getAutonomousDataWarehouse(
-            GetAutonomousDataWarehouseRequest request);
-
-    /**
-     * **Deprecated.** To get information about a specified Autonomous Data Warehouse backup, use the {@link #getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupRequest) getAutonomousDatabaseBackup} operation.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    GetAutonomousDataWarehouseBackupResponse getAutonomousDataWarehouseBackup(
-            GetAutonomousDataWarehouseBackupRequest request);
 
     /**
      * Gets the details of the specified Autonomous Database.
@@ -747,6 +807,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseExample.java.html">here</a> to see how to use GetAutonomousDatabase API.
      */
     GetAutonomousDatabaseResponse getAutonomousDatabase(GetAutonomousDatabaseRequest request);
 
@@ -755,6 +817,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseBackupExample.java.html">here</a> to see how to use GetAutonomousDatabaseBackup API.
      */
     GetAutonomousDatabaseBackupResponse getAutonomousDatabaseBackup(
             GetAutonomousDatabaseBackupRequest request);
@@ -765,6 +829,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseDataguardAssociationExample.java.html">here</a> to see how to use GetAutonomousDatabaseDataguardAssociation API.
      */
     GetAutonomousDatabaseDataguardAssociationResponse getAutonomousDatabaseDataguardAssociation(
             GetAutonomousDatabaseDataguardAssociationRequest request);
@@ -775,6 +841,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseRegionalWalletExample.java.html">here</a> to see how to use GetAutonomousDatabaseRegionalWallet API.
      */
     GetAutonomousDatabaseRegionalWalletResponse getAutonomousDatabaseRegionalWallet(
             GetAutonomousDatabaseRegionalWalletRequest request);
@@ -785,6 +853,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseWalletExample.java.html">here</a> to see how to use GetAutonomousDatabaseWallet API.
      */
     GetAutonomousDatabaseWalletResponse getAutonomousDatabaseWallet(
             GetAutonomousDatabaseWalletRequest request);
@@ -794,6 +864,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousExadataInfrastructureExample.java.html">here</a> to see how to use GetAutonomousExadataInfrastructure API.
      */
     GetAutonomousExadataInfrastructureResponse getAutonomousExadataInfrastructure(
             GetAutonomousExadataInfrastructureRequest request);
@@ -803,6 +875,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousPatchExample.java.html">here</a> to see how to use GetAutonomousPatch API.
      */
     GetAutonomousPatchResponse getAutonomousPatch(GetAutonomousPatchRequest request);
 
@@ -811,6 +885,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousVmClusterExample.java.html">here</a> to see how to use GetAutonomousVmCluster API.
      */
     GetAutonomousVmClusterResponse getAutonomousVmCluster(GetAutonomousVmClusterRequest request);
 
@@ -819,6 +895,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetBackupExample.java.html">here</a> to see how to use GetBackup API.
      */
     GetBackupResponse getBackup(GetBackupRequest request);
 
@@ -828,6 +906,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetBackupDestinationExample.java.html">here</a> to see how to use GetBackupDestination API.
      */
     GetBackupDestinationResponse getBackupDestination(GetBackupDestinationRequest request);
 
@@ -837,6 +917,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudExadataInfrastructureExample.java.html">here</a> to see how to use GetCloudExadataInfrastructure API.
      */
     GetCloudExadataInfrastructureResponse getCloudExadataInfrastructure(
             GetCloudExadataInfrastructureRequest request);
@@ -847,6 +929,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterExample.java.html">here</a> to see how to use GetCloudVmCluster API.
      */
     GetCloudVmClusterResponse getCloudVmCluster(GetCloudVmClusterRequest request);
 
@@ -857,6 +941,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterIormConfigExample.java.html">here</a> to see how to use GetCloudVmClusterIormConfig API.
      */
     GetCloudVmClusterIormConfigResponse getCloudVmClusterIormConfig(
             GetCloudVmClusterIormConfigRequest request);
@@ -867,6 +953,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterUpdateExample.java.html">here</a> to see how to use GetCloudVmClusterUpdate API.
      */
     GetCloudVmClusterUpdateResponse getCloudVmClusterUpdate(GetCloudVmClusterUpdateRequest request);
 
@@ -876,6 +964,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetCloudVmClusterUpdateHistoryEntryExample.java.html">here</a> to see how to use GetCloudVmClusterUpdateHistoryEntry API.
      */
     GetCloudVmClusterUpdateHistoryEntryResponse getCloudVmClusterUpdateHistoryEntry(
             GetCloudVmClusterUpdateHistoryEntryRequest request);
@@ -885,6 +975,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetConsoleConnectionExample.java.html">here</a> to see how to use GetConsoleConnection API.
      */
     GetConsoleConnectionResponse getConsoleConnection(GetConsoleConnectionRequest request);
 
@@ -894,6 +986,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDataGuardAssociationExample.java.html">here</a> to see how to use GetDataGuardAssociation API.
      */
     GetDataGuardAssociationResponse getDataGuardAssociation(GetDataGuardAssociationRequest request);
 
@@ -902,6 +996,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseExample.java.html">here</a> to see how to use GetDatabase API.
      */
     GetDatabaseResponse getDatabase(GetDatabaseRequest request);
 
@@ -910,6 +1006,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseSoftwareImageExample.java.html">here</a> to see how to use GetDatabaseSoftwareImage API.
      */
     GetDatabaseSoftwareImageResponse getDatabaseSoftwareImage(
             GetDatabaseSoftwareImageRequest request);
@@ -920,6 +1018,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDatabaseUpgradeHistoryEntryExample.java.html">here</a> to see how to use GetDatabaseUpgradeHistoryEntry API.
      */
     GetDatabaseUpgradeHistoryEntryResponse getDatabaseUpgradeHistoryEntry(
             GetDatabaseUpgradeHistoryEntryRequest request);
@@ -929,6 +1029,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomeExample.java.html">here</a> to see how to use GetDbHome API.
      */
     GetDbHomeResponse getDbHome(GetDbHomeRequest request);
 
@@ -938,6 +1040,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomePatchExample.java.html">here</a> to see how to use GetDbHomePatch API.
      */
     GetDbHomePatchResponse getDbHomePatch(GetDbHomePatchRequest request);
 
@@ -947,6 +1051,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbHomePatchHistoryEntryExample.java.html">here</a> to see how to use GetDbHomePatchHistoryEntry API.
      */
     GetDbHomePatchHistoryEntryResponse getDbHomePatchHistoryEntry(
             GetDbHomePatchHistoryEntryRequest request);
@@ -956,6 +1062,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbNodeExample.java.html">here</a> to see how to use GetDbNode API.
      */
     GetDbNodeResponse getDbNode(GetDbNodeRequest request);
 
@@ -964,6 +1072,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemExample.java.html">here</a> to see how to use GetDbSystem API.
      */
     GetDbSystemResponse getDbSystem(GetDbSystemRequest request);
 
@@ -973,6 +1083,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemPatchExample.java.html">here</a> to see how to use GetDbSystemPatch API.
      */
     GetDbSystemPatchResponse getDbSystemPatch(GetDbSystemPatchRequest request);
 
@@ -982,6 +1094,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetDbSystemPatchHistoryEntryExample.java.html">here</a> to see how to use GetDbSystemPatchHistoryEntry API.
      */
     GetDbSystemPatchHistoryEntryResponse getDbSystemPatchHistoryEntry(
             GetDbSystemPatchHistoryEntryRequest request);
@@ -993,6 +1107,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataInfrastructureExample.java.html">here</a> to see how to use GetExadataInfrastructure API.
      */
     GetExadataInfrastructureResponse getExadataInfrastructure(
             GetExadataInfrastructureRequest request);
@@ -1003,6 +1119,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataInfrastructureOcpusExample.java.html">here</a> to see how to use GetExadataInfrastructureOcpus API.
      */
     GetExadataInfrastructureOcpusResponse getExadataInfrastructureOcpus(
             GetExadataInfrastructureOcpusRequest request);
@@ -1014,6 +1132,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadataIormConfigExample.java.html">here</a> to see how to use GetExadataIormConfig API.
      */
     GetExadataIormConfigResponse getExadataIormConfig(GetExadataIormConfigRequest request);
 
@@ -1025,6 +1145,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExternalBackupJobExample.java.html">here</a> to see how to use GetExternalBackupJob API.
      */
     GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request);
 
@@ -1034,6 +1156,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetKeyStoreExample.java.html">here</a> to see how to use GetKeyStore API.
      */
     GetKeyStoreResponse getKeyStore(GetKeyStoreRequest request);
 
@@ -1042,6 +1166,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetMaintenanceRunExample.java.html">here</a> to see how to use GetMaintenanceRun API.
      */
     GetMaintenanceRunResponse getMaintenanceRun(GetMaintenanceRunRequest request);
 
@@ -1051,6 +1177,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterExample.java.html">here</a> to see how to use GetVmCluster API.
      */
     GetVmClusterResponse getVmCluster(GetVmClusterRequest request);
 
@@ -1061,6 +1189,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterNetworkExample.java.html">here</a> to see how to use GetVmClusterNetwork API.
      */
     GetVmClusterNetworkResponse getVmClusterNetwork(GetVmClusterNetworkRequest request);
 
@@ -1070,6 +1200,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterPatchExample.java.html">here</a> to see how to use GetVmClusterPatch API.
      */
     GetVmClusterPatchResponse getVmClusterPatch(GetVmClusterPatchRequest request);
 
@@ -1079,6 +1211,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetVmClusterPatchHistoryEntryExample.java.html">here</a> to see how to use GetVmClusterPatchHistoryEntry API.
      */
     GetVmClusterPatchHistoryEntryResponse getVmClusterPatchHistoryEntry(
             GetVmClusterPatchHistoryEntryRequest request);
@@ -1089,6 +1223,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LaunchAutonomousExadataInfrastructureExample.java.html">here</a> to see how to use LaunchAutonomousExadataInfrastructure API.
      */
     LaunchAutonomousExadataInfrastructureResponse launchAutonomousExadataInfrastructure(
             LaunchAutonomousExadataInfrastructureRequest request);
@@ -1106,6 +1242,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/LaunchDbSystemExample.java.html">here</a> to see how to use LaunchDbSystem API.
      */
     LaunchDbSystemResponse launchDbSystem(LaunchDbSystemRequest request);
 
@@ -1115,6 +1253,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabaseDataguardAssociationsExample.java.html">here</a> to see how to use ListAutonomousContainerDatabaseDataguardAssociations API.
      */
     ListAutonomousContainerDatabaseDataguardAssociationsResponse
             listAutonomousContainerDatabaseDataguardAssociations(
@@ -1126,29 +1266,11 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousContainerDatabasesExample.java.html">here</a> to see how to use ListAutonomousContainerDatabases API.
      */
     ListAutonomousContainerDatabasesResponse listAutonomousContainerDatabases(
             ListAutonomousContainerDatabasesRequest request);
-
-    /**
-     * **Deprecated.** To get a list of Autonomous Data Warehouse backups, use the {@link #listAutonomousDatabaseBackups(ListAutonomousDatabaseBackupsRequest) listAutonomousDatabaseBackups} operation.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    ListAutonomousDataWarehouseBackupsResponse listAutonomousDataWarehouseBackups(
-            ListAutonomousDataWarehouseBackupsRequest request);
-
-    /**
-     * **Deprecated.** To get a list of Autonomous Data Warehouses, use the {@link #listAutonomousDatabases(ListAutonomousDatabasesRequest) listAutonomousDatabases} operation and specify `DW` as the workload type.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    ListAutonomousDataWarehousesResponse listAutonomousDataWarehouses(
-            ListAutonomousDataWarehousesRequest request);
 
     /**
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
@@ -1156,6 +1278,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseBackupsExample.java.html">here</a> to see how to use ListAutonomousDatabaseBackups API.
      */
     ListAutonomousDatabaseBackupsResponse listAutonomousDatabaseBackups(
             ListAutonomousDatabaseBackupsRequest request);
@@ -1166,6 +1290,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseClonesExample.java.html">here</a> to see how to use ListAutonomousDatabaseClones API.
      */
     ListAutonomousDatabaseClonesResponse listAutonomousDatabaseClones(
             ListAutonomousDatabaseClonesRequest request);
@@ -1176,6 +1302,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseDataguardAssociationsExample.java.html">here</a> to see how to use ListAutonomousDatabaseDataguardAssociations API.
      */
     ListAutonomousDatabaseDataguardAssociationsResponse listAutonomousDatabaseDataguardAssociations(
             ListAutonomousDatabaseDataguardAssociationsRequest request);
@@ -1186,6 +1314,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabasesExample.java.html">here</a> to see how to use ListAutonomousDatabases API.
      */
     ListAutonomousDatabasesResponse listAutonomousDatabases(ListAutonomousDatabasesRequest request);
 
@@ -1196,6 +1326,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDbPreviewVersionsExample.java.html">here</a> to see how to use ListAutonomousDbPreviewVersions API.
      */
     ListAutonomousDbPreviewVersionsResponse listAutonomousDbPreviewVersions(
             ListAutonomousDbPreviewVersionsRequest request);
@@ -1205,6 +1337,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDbVersionsExample.java.html">here</a> to see how to use ListAutonomousDbVersions API.
      */
     ListAutonomousDbVersionsResponse listAutonomousDbVersions(
             ListAutonomousDbVersionsRequest request);
@@ -1214,6 +1348,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousExadataInfrastructureShapesExample.java.html">here</a> to see how to use ListAutonomousExadataInfrastructureShapes API.
      */
     ListAutonomousExadataInfrastructureShapesResponse listAutonomousExadataInfrastructureShapes(
             ListAutonomousExadataInfrastructureShapesRequest request);
@@ -1224,6 +1360,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousExadataInfrastructuresExample.java.html">here</a> to see how to use ListAutonomousExadataInfrastructures API.
      */
     ListAutonomousExadataInfrastructuresResponse listAutonomousExadataInfrastructures(
             ListAutonomousExadataInfrastructuresRequest request);
@@ -1234,6 +1372,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousVmClustersExample.java.html">here</a> to see how to use ListAutonomousVmClusters API.
      */
     ListAutonomousVmClustersResponse listAutonomousVmClusters(
             ListAutonomousVmClustersRequest request);
@@ -1244,6 +1384,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBackupDestinationExample.java.html">here</a> to see how to use ListBackupDestination API.
      */
     ListBackupDestinationResponse listBackupDestination(ListBackupDestinationRequest request);
 
@@ -1253,6 +1395,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBackupsExample.java.html">here</a> to see how to use ListBackups API.
      */
     ListBackupsResponse listBackups(ListBackupsRequest request);
 
@@ -1262,6 +1406,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudExadataInfrastructuresExample.java.html">here</a> to see how to use ListCloudExadataInfrastructures API.
      */
     ListCloudExadataInfrastructuresResponse listCloudExadataInfrastructures(
             ListCloudExadataInfrastructuresRequest request);
@@ -1272,6 +1418,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClusterUpdateHistoryEntriesExample.java.html">here</a> to see how to use ListCloudVmClusterUpdateHistoryEntries API.
      */
     ListCloudVmClusterUpdateHistoryEntriesResponse listCloudVmClusterUpdateHistoryEntries(
             ListCloudVmClusterUpdateHistoryEntriesRequest request);
@@ -1282,6 +1430,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClusterUpdatesExample.java.html">here</a> to see how to use ListCloudVmClusterUpdates API.
      */
     ListCloudVmClusterUpdatesResponse listCloudVmClusterUpdates(
             ListCloudVmClusterUpdatesRequest request);
@@ -1292,6 +1442,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListCloudVmClustersExample.java.html">here</a> to see how to use ListCloudVmClusters API.
      */
     ListCloudVmClustersResponse listCloudVmClusters(ListCloudVmClustersRequest request);
 
@@ -1301,6 +1453,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListConsoleConnectionsExample.java.html">here</a> to see how to use ListConsoleConnections API.
      */
     ListConsoleConnectionsResponse listConsoleConnections(ListConsoleConnectionsRequest request);
 
@@ -1310,6 +1464,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListContainerDatabasePatchesExample.java.html">here</a> to see how to use ListContainerDatabasePatches API.
      */
     ListContainerDatabasePatchesResponse listContainerDatabasePatches(
             ListContainerDatabasePatchesRequest request);
@@ -1320,6 +1476,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDataGuardAssociationsExample.java.html">here</a> to see how to use ListDataGuardAssociations API.
      */
     ListDataGuardAssociationsResponse listDataGuardAssociations(
             ListDataGuardAssociationsRequest request);
@@ -1330,6 +1488,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabaseSoftwareImagesExample.java.html">here</a> to see how to use ListDatabaseSoftwareImages API.
      */
     ListDatabaseSoftwareImagesResponse listDatabaseSoftwareImages(
             ListDatabaseSoftwareImagesRequest request);
@@ -1340,6 +1500,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabaseUpgradeHistoryEntriesExample.java.html">here</a> to see how to use ListDatabaseUpgradeHistoryEntries API.
      */
     ListDatabaseUpgradeHistoryEntriesResponse listDatabaseUpgradeHistoryEntries(
             ListDatabaseUpgradeHistoryEntriesRequest request);
@@ -1350,6 +1512,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDatabasesExample.java.html">here</a> to see how to use ListDatabases API.
      */
     ListDatabasesResponse listDatabases(ListDatabasesRequest request);
 
@@ -1359,6 +1523,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbHomePatchHistoryEntriesExample.java.html">here</a> to see how to use ListDbHomePatchHistoryEntries API.
      */
     ListDbHomePatchHistoryEntriesResponse listDbHomePatchHistoryEntries(
             ListDbHomePatchHistoryEntriesRequest request);
@@ -1369,6 +1535,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbHomePatchesExample.java.html">here</a> to see how to use ListDbHomePatches API.
      */
     ListDbHomePatchesResponse listDbHomePatches(ListDbHomePatchesRequest request);
 
@@ -1378,6 +1546,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbHomesExample.java.html">here</a> to see how to use ListDbHomes API.
      */
     ListDbHomesResponse listDbHomes(ListDbHomesRequest request);
 
@@ -1387,6 +1557,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbNodesExample.java.html">here</a> to see how to use ListDbNodes API.
      */
     ListDbNodesResponse listDbNodes(ListDbNodesRequest request);
 
@@ -1396,6 +1568,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemPatchHistoryEntriesExample.java.html">here</a> to see how to use ListDbSystemPatchHistoryEntries API.
      */
     ListDbSystemPatchHistoryEntriesResponse listDbSystemPatchHistoryEntries(
             ListDbSystemPatchHistoryEntriesRequest request);
@@ -1406,6 +1580,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemPatchesExample.java.html">here</a> to see how to use ListDbSystemPatches API.
      */
     ListDbSystemPatchesResponse listDbSystemPatches(ListDbSystemPatchesRequest request);
 
@@ -1414,6 +1590,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemShapesExample.java.html">here</a> to see how to use ListDbSystemShapes API.
      */
     ListDbSystemShapesResponse listDbSystemShapes(ListDbSystemShapesRequest request);
 
@@ -1423,6 +1601,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbSystemsExample.java.html">here</a> to see how to use ListDbSystems API.
      */
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
 
@@ -1431,6 +1611,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbVersionsExample.java.html">here</a> to see how to use ListDbVersions API.
      */
     ListDbVersionsResponse listDbVersions(ListDbVersionsRequest request);
 
@@ -1441,15 +1623,29 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadataInfrastructuresExample.java.html">here</a> to see how to use ListExadataInfrastructures API.
      */
     ListExadataInfrastructuresResponse listExadataInfrastructures(
             ListExadataInfrastructuresRequest request);
+
+    /**
+     * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListFlexComponentsExample.java.html">here</a> to see how to use ListFlexComponents API.
+     */
+    ListFlexComponentsResponse listFlexComponents(ListFlexComponentsRequest request);
 
     /**
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListGiVersionsExample.java.html">here</a> to see how to use ListGiVersions API.
      */
     ListGiVersionsResponse listGiVersions(ListGiVersionsRequest request);
 
@@ -1459,6 +1655,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListKeyStoresExample.java.html">here</a> to see how to use ListKeyStores API.
      */
     ListKeyStoresResponse listKeyStores(ListKeyStoresRequest request);
 
@@ -1468,6 +1666,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunsExample.java.html">here</a> to see how to use ListMaintenanceRuns API.
      */
     ListMaintenanceRunsResponse listMaintenanceRuns(ListMaintenanceRunsRequest request);
 
@@ -1477,6 +1677,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterNetworksExample.java.html">here</a> to see how to use ListVmClusterNetworks API.
      */
     ListVmClusterNetworksResponse listVmClusterNetworks(ListVmClusterNetworksRequest request);
 
@@ -1486,6 +1688,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterPatchHistoryEntriesExample.java.html">here</a> to see how to use ListVmClusterPatchHistoryEntries API.
      */
     ListVmClusterPatchHistoryEntriesResponse listVmClusterPatchHistoryEntries(
             ListVmClusterPatchHistoryEntriesRequest request);
@@ -1496,6 +1700,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClusterPatchesExample.java.html">here</a> to see how to use ListVmClusterPatches API.
      */
     ListVmClusterPatchesResponse listVmClusterPatches(ListVmClusterPatchesRequest request);
 
@@ -1506,6 +1712,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListVmClustersExample.java.html">here</a> to see how to use ListVmClusters API.
      */
     ListVmClustersResponse listVmClusters(ListVmClustersRequest request);
 
@@ -1515,9 +1723,21 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateExadataDbSystemResourceModelExample.java.html">here</a> to see how to use MigrateExadataDbSystemResourceModel API.
      */
     MigrateExadataDbSystemResourceModelResponse migrateExadataDbSystemResourceModel(
             MigrateExadataDbSystemResourceModelRequest request);
+
+    /**
+     * Changes encryption key management from customer-managed, using the [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm), to Oracle-managed.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateVaultKeyExample.java.html">here</a> to see how to use MigrateVaultKey API.
+     */
+    MigrateVaultKeyResponse migrateVaultKey(MigrateVaultKeyRequest request);
 
     /**
      * Asynchronously registers this Autonomous Database with Data Safe.
@@ -1525,6 +1745,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RegisterAutonomousDatabaseDataSafeExample.java.html">here</a> to see how to use RegisterAutonomousDatabaseDataSafe API.
      */
     RegisterAutonomousDatabaseDataSafeResponse registerAutonomousDatabaseDataSafe(
             RegisterAutonomousDatabaseDataSafeRequest request);
@@ -1535,6 +1757,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateAutonomousContainerDatabaseDataguardAssociationExample.java.html">here</a> to see how to use ReinstateAutonomousContainerDatabaseDataguardAssociation API.
      */
     ReinstateAutonomousContainerDatabaseDataguardAssociationResponse
             reinstateAutonomousContainerDatabaseDataguardAssociation(
@@ -1546,6 +1770,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateDataGuardAssociationExample.java.html">here</a> to see how to use ReinstateDataGuardAssociation API.
      */
     ReinstateDataGuardAssociationResponse reinstateDataGuardAssociation(
             ReinstateDataGuardAssociationRequest request);
@@ -1556,6 +1782,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartAutonomousContainerDatabaseExample.java.html">here</a> to see how to use RestartAutonomousContainerDatabase API.
      */
     RestartAutonomousContainerDatabaseResponse restartAutonomousContainerDatabase(
             RestartAutonomousContainerDatabaseRequest request);
@@ -1566,19 +1794,11 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestartAutonomousDatabaseExample.java.html">here</a> to see how to use RestartAutonomousDatabase API.
      */
     RestartAutonomousDatabaseResponse restartAutonomousDatabase(
             RestartAutonomousDatabaseRequest request);
-
-    /**
-     * **Deprecated.** To restore an Autonomous Data Warehouse, use the {@link #restoreAutonomousDatabase(RestoreAutonomousDatabaseRequest) restoreAutonomousDatabase} operation.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    RestoreAutonomousDataWarehouseResponse restoreAutonomousDataWarehouse(
-            RestoreAutonomousDataWarehouseRequest request);
 
     /**
      * Restores an Autonomous Database based on the provided request parameters.
@@ -1586,6 +1806,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestoreAutonomousDatabaseExample.java.html">here</a> to see how to use RestoreAutonomousDatabase API.
      */
     RestoreAutonomousDatabaseResponse restoreAutonomousDatabase(
             RestoreAutonomousDatabaseRequest request);
@@ -1596,6 +1818,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RestoreDatabaseExample.java.html">here</a> to see how to use RestoreDatabase API.
      */
     RestoreDatabaseResponse restoreDatabase(RestoreDatabaseRequest request);
 
@@ -1604,6 +1828,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousContainerDatabaseEncryptionKeyExample.java.html">here</a> to see how to use RotateAutonomousContainerDatabaseEncryptionKey API.
      */
     RotateAutonomousContainerDatabaseEncryptionKeyResponse
             rotateAutonomousContainerDatabaseEncryptionKey(
@@ -1614,6 +1840,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateAutonomousDatabaseEncryptionKeyExample.java.html">here</a> to see how to use RotateAutonomousDatabaseEncryptionKey API.
      */
     RotateAutonomousDatabaseEncryptionKeyResponse rotateAutonomousDatabaseEncryptionKey(
             RotateAutonomousDatabaseEncryptionKeyRequest request);
@@ -1624,6 +1852,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateOrdsCertsExample.java.html">here</a> to see how to use RotateOrdsCerts API.
      */
     RotateOrdsCertsResponse rotateOrdsCerts(RotateOrdsCertsRequest request);
 
@@ -1633,18 +1863,20 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateSslCertsExample.java.html">here</a> to see how to use RotateSslCerts API.
      */
     RotateSslCertsResponse rotateSslCerts(RotateSslCertsRequest request);
 
     /**
-     * **Deprecated.** To start an Autonomous Data Warehouse, use the {@link #startAutonomousDatabase(StartAutonomousDatabaseRequest) startAutonomousDatabase} operation.
-     *
+     * Creates a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RotateVaultKeyExample.java.html">here</a> to see how to use RotateVaultKey API.
      */
-    StartAutonomousDataWarehouseResponse startAutonomousDataWarehouse(
-            StartAutonomousDataWarehouseRequest request);
+    RotateVaultKeyResponse rotateVaultKey(RotateVaultKeyRequest request);
 
     /**
      * Starts the specified Autonomous Database.
@@ -1652,18 +1884,10 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StartAutonomousDatabaseExample.java.html">here</a> to see how to use StartAutonomousDatabase API.
      */
     StartAutonomousDatabaseResponse startAutonomousDatabase(StartAutonomousDatabaseRequest request);
-
-    /**
-     * **Deprecated.** To stop an Autonomous Data Warehouse, use the {@link #stopAutonomousDatabase(StopAutonomousDatabaseRequest) stopAutonomousDatabase} operation.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    StopAutonomousDataWarehouseResponse stopAutonomousDataWarehouse(
-            StopAutonomousDataWarehouseRequest request);
 
     /**
      * Stops the specified Autonomous Database.
@@ -1671,6 +1895,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/StopAutonomousDatabaseExample.java.html">here</a> to see how to use StopAutonomousDatabase API.
      */
     StopAutonomousDatabaseResponse stopAutonomousDatabase(StopAutonomousDatabaseRequest request);
 
@@ -1682,6 +1908,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverAutonomousContainerDatabaseDataguardAssociationExample.java.html">here</a> to see how to use SwitchoverAutonomousContainerDatabaseDataguardAssociation API.
      */
     SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
             switchoverAutonomousContainerDatabaseDataguardAssociation(
@@ -1693,6 +1921,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverAutonomousDatabaseExample.java.html">here</a> to see how to use SwitchoverAutonomousDatabase API.
      */
     SwitchoverAutonomousDatabaseResponse switchoverAutonomousDatabase(
             SwitchoverAutonomousDatabaseRequest request);
@@ -1706,6 +1936,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchoverDataGuardAssociationExample.java.html">here</a> to see how to use SwitchoverDataGuardAssociation API.
      */
     SwitchoverDataGuardAssociationResponse switchoverDataGuardAssociation(
             SwitchoverDataGuardAssociationRequest request);
@@ -1715,6 +1947,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/TerminateAutonomousContainerDatabaseExample.java.html">here</a> to see how to use TerminateAutonomousContainerDatabase API.
      */
     TerminateAutonomousContainerDatabaseResponse terminateAutonomousContainerDatabase(
             TerminateAutonomousContainerDatabaseRequest request);
@@ -1724,6 +1958,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/TerminateAutonomousExadataInfrastructureExample.java.html">here</a> to see how to use TerminateAutonomousExadataInfrastructure API.
      */
     TerminateAutonomousExadataInfrastructureResponse terminateAutonomousExadataInfrastructure(
             TerminateAutonomousExadataInfrastructureRequest request);
@@ -1733,6 +1969,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/TerminateDbSystemExample.java.html">here</a> to see how to use TerminateDbSystem API.
      */
     TerminateDbSystemResponse terminateDbSystem(TerminateDbSystemRequest request);
 
@@ -1741,19 +1979,11 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousContainerDatabaseExample.java.html">here</a> to see how to use UpdateAutonomousContainerDatabase API.
      */
     UpdateAutonomousContainerDatabaseResponse updateAutonomousContainerDatabase(
             UpdateAutonomousContainerDatabaseRequest request);
-
-    /**
-     * **Deprecated.** To update the CPU core count and storage size of an Autonomous Data Warehouse, use the {@link #updateAutonomousDatabase(UpdateAutonomousDatabaseRequest) updateAutonomousDatabase} operation.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    UpdateAutonomousDataWarehouseResponse updateAutonomousDataWarehouse(
-            UpdateAutonomousDataWarehouseRequest request);
 
     /**
      * Updates one or more attributes of the specified Autonomous Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
@@ -1761,6 +1991,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseExample.java.html">here</a> to see how to use UpdateAutonomousDatabase API.
      */
     UpdateAutonomousDatabaseResponse updateAutonomousDatabase(
             UpdateAutonomousDatabaseRequest request);
@@ -1771,6 +2003,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseRegionalWalletExample.java.html">here</a> to see how to use UpdateAutonomousDatabaseRegionalWallet API.
      */
     UpdateAutonomousDatabaseRegionalWalletResponse updateAutonomousDatabaseRegionalWallet(
             UpdateAutonomousDatabaseRegionalWalletRequest request);
@@ -1781,6 +2015,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseWalletExample.java.html">here</a> to see how to use UpdateAutonomousDatabaseWallet API.
      */
     UpdateAutonomousDatabaseWalletResponse updateAutonomousDatabaseWallet(
             UpdateAutonomousDatabaseWalletRequest request);
@@ -1790,6 +2026,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousExadataInfrastructureExample.java.html">here</a> to see how to use UpdateAutonomousExadataInfrastructure API.
      */
     UpdateAutonomousExadataInfrastructureResponse updateAutonomousExadataInfrastructure(
             UpdateAutonomousExadataInfrastructureRequest request);
@@ -1800,6 +2038,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousVmClusterExample.java.html">here</a> to see how to use UpdateAutonomousVmCluster API.
      */
     UpdateAutonomousVmClusterResponse updateAutonomousVmCluster(
             UpdateAutonomousVmClusterRequest request);
@@ -1812,6 +2052,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateBackupDestinationExample.java.html">here</a> to see how to use UpdateBackupDestination API.
      */
     UpdateBackupDestinationResponse updateBackupDestination(UpdateBackupDestinationRequest request);
 
@@ -1821,6 +2063,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudExadataInfrastructureExample.java.html">here</a> to see how to use UpdateCloudExadataInfrastructure API.
      */
     UpdateCloudExadataInfrastructureResponse updateCloudExadataInfrastructure(
             UpdateCloudExadataInfrastructureRequest request);
@@ -1831,6 +2075,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudVmClusterExample.java.html">here</a> to see how to use UpdateCloudVmCluster API.
      */
     UpdateCloudVmClusterResponse updateCloudVmCluster(UpdateCloudVmClusterRequest request);
 
@@ -1840,6 +2086,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateCloudVmClusterIormConfigExample.java.html">here</a> to see how to use UpdateCloudVmClusterIormConfig API.
      */
     UpdateCloudVmClusterIormConfigResponse updateCloudVmClusterIormConfig(
             UpdateCloudVmClusterIormConfigRequest request);
@@ -1850,6 +2098,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDatabaseExample.java.html">here</a> to see how to use UpdateDatabase API.
      */
     UpdateDatabaseResponse updateDatabase(UpdateDatabaseRequest request);
 
@@ -1858,6 +2108,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDatabaseSoftwareImageExample.java.html">here</a> to see how to use UpdateDatabaseSoftwareImage API.
      */
     UpdateDatabaseSoftwareImageResponse updateDatabaseSoftwareImage(
             UpdateDatabaseSoftwareImageRequest request);
@@ -1867,6 +2119,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDbHomeExample.java.html">here</a> to see how to use UpdateDbHome API.
      */
     UpdateDbHomeResponse updateDbHome(UpdateDbHomeRequest request);
 
@@ -1875,6 +2129,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDbSystemExample.java.html">here</a> to see how to use UpdateDbSystem API.
      */
     UpdateDbSystemResponse updateDbSystem(UpdateDbSystemRequest request);
 
@@ -1885,6 +2141,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadataInfrastructureExample.java.html">here</a> to see how to use UpdateExadataInfrastructure API.
      */
     UpdateExadataInfrastructureResponse updateExadataInfrastructure(
             UpdateExadataInfrastructureRequest request);
@@ -1895,6 +2153,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadataIormConfigExample.java.html">here</a> to see how to use UpdateExadataIormConfig API.
      */
     UpdateExadataIormConfigResponse updateExadataIormConfig(UpdateExadataIormConfigRequest request);
 
@@ -1904,6 +2164,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateKeyStoreExample.java.html">here</a> to see how to use UpdateKeyStore API.
      */
     UpdateKeyStoreResponse updateKeyStore(UpdateKeyStoreRequest request);
 
@@ -1912,6 +2174,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateMaintenanceRunExample.java.html">here</a> to see how to use UpdateMaintenanceRun API.
      */
     UpdateMaintenanceRunResponse updateMaintenanceRun(UpdateMaintenanceRunRequest request);
 
@@ -1921,6 +2185,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateVmClusterExample.java.html">here</a> to see how to use UpdateVmCluster API.
      */
     UpdateVmClusterResponse updateVmCluster(UpdateVmClusterRequest request);
 
@@ -1931,6 +2197,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateVmClusterNetworkExample.java.html">here</a> to see how to use UpdateVmClusterNetwork API.
      */
     UpdateVmClusterNetworkResponse updateVmClusterNetwork(UpdateVmClusterNetworkRequest request);
 
@@ -1940,6 +2208,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpgradeDatabaseExample.java.html">here</a> to see how to use UpgradeDatabase API.
      */
     UpgradeDatabaseResponse upgradeDatabase(UpgradeDatabaseRequest request);
 
@@ -1949,6 +2219,8 @@ public interface Database extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ValidateVmClusterNetworkExample.java.html">here</a> to see how to use ValidateVmClusterNetwork API.
      */
     ValidateVmClusterNetworkResponse validateVmClusterNetwork(
             ValidateVmClusterNetworkRequest request);

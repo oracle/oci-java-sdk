@@ -53,6 +53,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestSqlBucketExample.java.html">here</a> to see how to use IngestSqlBucket API.
      */
     IngestSqlBucketResponse ingestSqlBucket(IngestSqlBucketRequest request);
 
@@ -61,6 +63,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestSqlPlanLinesExample.java.html">here</a> to see how to use IngestSqlPlanLines API.
      */
     IngestSqlPlanLinesResponse ingestSqlPlanLines(IngestSqlPlanLinesRequest request);
 
@@ -71,6 +75,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestSqlTextExample.java.html">here</a> to see how to use IngestSqlText API.
      */
     IngestSqlTextResponse ingestSqlText(IngestSqlTextRequest request);
 
@@ -79,6 +85,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListDatabaseInsightsExample.java.html">here</a> to see how to use ListDatabaseInsights API.
      */
     ListDatabaseInsightsResponse listDatabaseInsights(ListDatabaseInsightsRequest request);
 
@@ -87,6 +95,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListSqlPlansExample.java.html">here</a> to see how to use ListSqlPlans API.
      */
     ListSqlPlansResponse listSqlPlans(ListSqlPlansRequest request);
 
@@ -95,6 +105,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListSqlSearchesExample.java.html">here</a> to see how to use ListSqlSearches API.
      */
     ListSqlSearchesResponse listSqlSearches(ListSqlSearchesRequest request);
 
@@ -103,6 +115,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListSqlTextsExample.java.html">here</a> to see how to use ListSqlTexts API.
      */
     ListSqlTextsResponse listSqlTexts(ListSqlTextsRequest request);
 
@@ -113,6 +127,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeDatabaseInsightResourceCapacityTrendExample.java.html">here</a> to see how to use SummarizeDatabaseInsightResourceCapacityTrend API.
      */
     SummarizeDatabaseInsightResourceCapacityTrendResponse
             summarizeDatabaseInsightResourceCapacityTrend(
@@ -124,6 +140,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeDatabaseInsightResourceForecastTrendExample.java.html">here</a> to see how to use SummarizeDatabaseInsightResourceForecastTrend API.
      */
     SummarizeDatabaseInsightResourceForecastTrendResponse
             summarizeDatabaseInsightResourceForecastTrend(
@@ -134,6 +152,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeDatabaseInsightResourceStatisticsExample.java.html">here</a> to see how to use SummarizeDatabaseInsightResourceStatistics API.
      */
     SummarizeDatabaseInsightResourceStatisticsResponse summarizeDatabaseInsightResourceStatistics(
             SummarizeDatabaseInsightResourceStatisticsRequest request);
@@ -146,6 +166,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeDatabaseInsightResourceUsageExample.java.html">here</a> to see how to use SummarizeDatabaseInsightResourceUsage API.
      */
     SummarizeDatabaseInsightResourceUsageResponse summarizeDatabaseInsightResourceUsage(
             SummarizeDatabaseInsightResourceUsageRequest request);
@@ -157,6 +179,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeDatabaseInsightResourceUsageTrendExample.java.html">here</a> to see how to use SummarizeDatabaseInsightResourceUsageTrend API.
      */
     SummarizeDatabaseInsightResourceUsageTrendResponse summarizeDatabaseInsightResourceUsageTrend(
             SummarizeDatabaseInsightResourceUsageTrendRequest request);
@@ -166,6 +190,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeDatabaseInsightResourceUtilizationInsightExample.java.html">here</a> to see how to use SummarizeDatabaseInsightResourceUtilizationInsight API.
      */
     SummarizeDatabaseInsightResourceUtilizationInsightResponse
             summarizeDatabaseInsightResourceUtilizationInsight(
@@ -176,6 +202,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeSqlInsightsExample.java.html">here</a> to see how to use SummarizeSqlInsights API.
      */
     SummarizeSqlInsightsResponse summarizeSqlInsights(SummarizeSqlInsightsRequest request);
 
@@ -184,6 +212,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeSqlPlanInsightsExample.java.html">here</a> to see how to use SummarizeSqlPlanInsights API.
      */
     SummarizeSqlPlanInsightsResponse summarizeSqlPlanInsights(
             SummarizeSqlPlanInsightsRequest request);
@@ -193,6 +223,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeSqlResponseTimeDistributionsExample.java.html">here</a> to see how to use SummarizeSqlResponseTimeDistributions API.
      */
     SummarizeSqlResponseTimeDistributionsResponse summarizeSqlResponseTimeDistributions(
             SummarizeSqlResponseTimeDistributionsRequest request);
@@ -202,6 +234,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeSqlStatisticsExample.java.html">here</a> to see how to use SummarizeSqlStatistics API.
      */
     SummarizeSqlStatisticsResponse summarizeSqlStatistics(SummarizeSqlStatisticsRequest request);
 
@@ -210,6 +244,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeSqlStatisticsTimeSeriesExample.java.html">here</a> to see how to use SummarizeSqlStatisticsTimeSeries API.
      */
     SummarizeSqlStatisticsTimeSeriesResponse summarizeSqlStatisticsTimeSeries(
             SummarizeSqlStatisticsTimeSeriesRequest request);
@@ -219,6 +255,8 @@ public interface OperationsInsights extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeSqlStatisticsTimeSeriesByPlanExample.java.html">here</a> to see how to use SummarizeSqlStatisticsTimeSeriesByPlan API.
      */
     SummarizeSqlStatisticsTimeSeriesByPlanResponse summarizeSqlStatisticsTimeSeriesByPlan(
             SummarizeSqlStatisticsTimeSeriesByPlanRequest request);

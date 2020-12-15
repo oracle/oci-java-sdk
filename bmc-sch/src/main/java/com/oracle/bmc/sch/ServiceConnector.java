@@ -60,6 +60,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ActivateServiceConnectorExample.java.html">here</a> to see how to use ActivateServiceConnector API.
      */
     ActivateServiceConnectorResponse activateServiceConnector(
             ActivateServiceConnectorRequest request);
@@ -74,6 +76,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ChangeServiceConnectorCompartmentExample.java.html">here</a> to see how to use ChangeServiceConnectorCompartment API.
      */
     ChangeServiceConnectorCompartmentResponse changeServiceConnectorCompartment(
             ChangeServiceConnectorCompartmentRequest request);
@@ -101,6 +105,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/CreateServiceConnectorExample.java.html">here</a> to see how to use CreateServiceConnector API.
      */
     CreateServiceConnectorResponse createServiceConnector(CreateServiceConnectorRequest request);
 
@@ -115,6 +121,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/DeactivateServiceConnectorExample.java.html">here</a> to see how to use DeactivateServiceConnector API.
      */
     DeactivateServiceConnectorResponse deactivateServiceConnector(
             DeactivateServiceConnectorRequest request);
@@ -128,6 +136,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/DeleteServiceConnectorExample.java.html">here</a> to see how to use DeleteServiceConnector API.
      */
     DeleteServiceConnectorResponse deleteServiceConnector(DeleteServiceConnectorRequest request);
 
@@ -137,6 +147,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/GetServiceConnectorExample.java.html">here</a> to see how to use GetServiceConnector API.
      */
     GetServiceConnectorResponse getServiceConnector(GetServiceConnectorRequest request);
 
@@ -146,6 +158,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -155,6 +169,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListServiceConnectorsExample.java.html">here</a> to see how to use ListServiceConnectors API.
      */
     ListServiceConnectorsResponse listServiceConnectors(ListServiceConnectorsRequest request);
 
@@ -164,6 +180,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -173,6 +191,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -182,6 +202,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -195,6 +217,8 @@ public interface ServiceConnector extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/UpdateServiceConnectorExample.java.html">here</a> to see how to use UpdateServiceConnector API.
      */
     UpdateServiceConnectorResponse updateServiceConnector(UpdateServiceConnectorRequest request);
 

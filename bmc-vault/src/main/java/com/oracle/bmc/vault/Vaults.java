@@ -53,6 +53,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretDeletionExample.java.html">here</a> to see how to use CancelSecretDeletion API.
      */
     CancelSecretDeletionResponse cancelSecretDeletion(CancelSecretDeletionRequest request);
 
@@ -61,6 +63,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretVersionDeletionExample.java.html">here</a> to see how to use CancelSecretVersionDeletion API.
      */
     CancelSecretVersionDeletionResponse cancelSecretVersionDeletion(
             CancelSecretVersionDeletionRequest request);
@@ -74,6 +78,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ChangeSecretCompartmentExample.java.html">here</a> to see how to use ChangeSecretCompartment API.
      */
     ChangeSecretCompartmentResponse changeSecretCompartment(ChangeSecretCompartmentRequest request);
 
@@ -85,6 +91,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CreateSecretExample.java.html">here</a> to see how to use CreateSecret API.
      */
     CreateSecretResponse createSecret(CreateSecretRequest request);
 
@@ -93,6 +101,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretExample.java.html">here</a> to see how to use GetSecret API.
      */
     GetSecretResponse getSecret(GetSecretRequest request);
 
@@ -102,6 +112,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretVersionExample.java.html">here</a> to see how to use GetSecretVersion API.
      */
     GetSecretVersionResponse getSecretVersion(GetSecretVersionRequest request);
 
@@ -110,6 +122,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretVersionsExample.java.html">here</a> to see how to use ListSecretVersions API.
      */
     ListSecretVersionsResponse listSecretVersions(ListSecretVersionsRequest request);
 
@@ -118,6 +132,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretsExample.java.html">here</a> to see how to use ListSecrets API.
      */
     ListSecretsResponse listSecrets(ListSecretsRequest request);
 
@@ -128,6 +144,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretDeletionExample.java.html">here</a> to see how to use ScheduleSecretDeletion API.
      */
     ScheduleSecretDeletionResponse scheduleSecretDeletion(ScheduleSecretDeletionRequest request);
 
@@ -138,6 +156,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretVersionDeletionExample.java.html">here</a> to see how to use ScheduleSecretVersionDeletion API.
      */
     ScheduleSecretVersionDeletionResponse scheduleSecretVersionDeletion(
             ScheduleSecretVersionDeletionRequest request);
@@ -153,6 +173,8 @@ public interface Vaults extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/UpdateSecretExample.java.html">here</a> to see how to use UpdateSecret API.
      */
     UpdateSecretResponse updateSecret(UpdateSecretRequest request);
 

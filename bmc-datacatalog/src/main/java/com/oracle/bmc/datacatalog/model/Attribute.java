@@ -279,6 +279,15 @@ public class Attribute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedRuleTypes")
+        private java.util.List<RuleType> associatedRuleTypes;
+
+        public Builder associatedRuleTypes(java.util.List<RuleType> associatedRuleTypes) {
+            this.associatedRuleTypes = associatedRuleTypes;
+            this.__explicitlySet__.add("associatedRuleTypes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -312,7 +321,8 @@ public class Attribute {
                             uri,
                             path,
                             customPropertyMembers,
-                            properties);
+                            properties,
+                            associatedRuleTypes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -347,7 +357,8 @@ public class Attribute {
                             .uri(o.getUri())
                             .path(o.getPath())
                             .customPropertyMembers(o.getCustomPropertyMembers())
-                            .properties(o.getProperties());
+                            .properties(o.getProperties())
+                            .associatedRuleTypes(o.getAssociatedRuleTypes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -545,6 +556,12 @@ public class Attribute {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     java.util.Map<String, java.util.Map<String, String>> properties;
+
+    /**
+     * Rule types associated with attribute.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedRuleTypes")
+    java.util.List<RuleType> associatedRuleTypes;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

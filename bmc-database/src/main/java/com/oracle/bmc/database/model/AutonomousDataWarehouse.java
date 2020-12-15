@@ -234,7 +234,6 @@ public class AutonomousDataWarehouse {
     /**
      * The current state of the database.
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
@@ -249,12 +248,7 @@ public class AutonomousDataWarehouse {
         ScaleInProgress("SCALE_IN_PROGRESS"),
         AvailableNeedsAttention("AVAILABLE_NEEDS_ATTENTION"),
         Updating("UPDATING"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
+        ;
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -262,9 +256,7 @@ public class AutonomousDataWarehouse {
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -282,10 +274,7 @@ public class AutonomousDataWarehouse {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
     /**
@@ -345,16 +334,10 @@ public class AutonomousDataWarehouse {
      * The Oracle license model that applies to the Oracle Autonomous Data Warehouse. The default is BRING_YOUR_OWN_LICENSE.
      *
      **/
-    @lombok.extern.slf4j.Slf4j
     public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
+        ;
 
         private final String value;
         private static java.util.Map<String, LicenseModel> map;
@@ -362,9 +345,7 @@ public class AutonomousDataWarehouse {
         static {
             map = new java.util.HashMap<>();
             for (LicenseModel v : LicenseModel.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -382,10 +363,7 @@ public class AutonomousDataWarehouse {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LicenseModel', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid LicenseModel: " + key);
         }
     };
     /**

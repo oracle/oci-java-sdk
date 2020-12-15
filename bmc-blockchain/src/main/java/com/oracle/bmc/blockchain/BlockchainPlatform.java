@@ -50,6 +50,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ChangeBlockchainPlatformCompartmentExample.java.html">here</a> to see how to use ChangeBlockchainPlatformCompartment API.
      */
     ChangeBlockchainPlatformCompartmentResponse changeBlockchainPlatformCompartment(
             ChangeBlockchainPlatformCompartmentRequest request);
@@ -60,6 +62,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreateBlockchainPlatformExample.java.html">here</a> to see how to use CreateBlockchainPlatform API.
      */
     CreateBlockchainPlatformResponse createBlockchainPlatform(
             CreateBlockchainPlatformRequest request);
@@ -69,6 +73,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreateOsnExample.java.html">here</a> to see how to use CreateOsn API.
      */
     CreateOsnResponse createOsn(CreateOsnRequest request);
 
@@ -77,6 +83,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreatePeerExample.java.html">here</a> to see how to use CreatePeer API.
      */
     CreatePeerResponse createPeer(CreatePeerRequest request);
 
@@ -85,6 +93,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeleteBlockchainPlatformExample.java.html">here</a> to see how to use DeleteBlockchainPlatform API.
      */
     DeleteBlockchainPlatformResponse deleteBlockchainPlatform(
             DeleteBlockchainPlatformRequest request);
@@ -94,6 +104,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeleteOsnExample.java.html">here</a> to see how to use DeleteOsn API.
      */
     DeleteOsnResponse deleteOsn(DeleteOsnRequest request);
 
@@ -102,6 +114,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeletePeerExample.java.html">here</a> to see how to use DeletePeer API.
      */
     DeletePeerResponse deletePeer(DeletePeerRequest request);
 
@@ -110,6 +124,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeleteWorkRequestExample.java.html">here</a> to see how to use DeleteWorkRequest API.
      */
     DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request);
 
@@ -118,6 +134,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetBlockchainPlatformExample.java.html">here</a> to see how to use GetBlockchainPlatform API.
      */
     GetBlockchainPlatformResponse getBlockchainPlatform(GetBlockchainPlatformRequest request);
 
@@ -126,6 +144,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetOsnExample.java.html">here</a> to see how to use GetOsn API.
      */
     GetOsnResponse getOsn(GetOsnRequest request);
 
@@ -134,6 +154,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetPeerExample.java.html">here</a> to see how to use GetPeer API.
      */
     GetPeerResponse getPeer(GetPeerRequest request);
 
@@ -142,6 +164,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -150,6 +174,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListBlockchainPlatformsExample.java.html">here</a> to see how to use ListBlockchainPlatforms API.
      */
     ListBlockchainPlatformsResponse listBlockchainPlatforms(ListBlockchainPlatformsRequest request);
 
@@ -158,6 +184,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListOsnsExample.java.html">here</a> to see how to use ListOsns API.
      */
     ListOsnsResponse listOsns(ListOsnsRequest request);
 
@@ -166,6 +194,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListPeersExample.java.html">here</a> to see how to use ListPeers API.
      */
     ListPeersResponse listPeers(ListPeersRequest request);
 
@@ -175,6 +205,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -184,6 +216,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -193,6 +227,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -201,6 +237,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/PreviewScaleBlockchainPlatformExample.java.html">here</a> to see how to use PreviewScaleBlockchainPlatform API.
      */
     PreviewScaleBlockchainPlatformResponse previewScaleBlockchainPlatform(
             PreviewScaleBlockchainPlatformRequest request);
@@ -210,6 +248,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ScaleBlockchainPlatformExample.java.html">here</a> to see how to use ScaleBlockchainPlatform API.
      */
     ScaleBlockchainPlatformResponse scaleBlockchainPlatform(ScaleBlockchainPlatformRequest request);
 
@@ -218,6 +258,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/StartBlockchainPlatformExample.java.html">here</a> to see how to use StartBlockchainPlatform API.
      */
     StartBlockchainPlatformResponse startBlockchainPlatform(StartBlockchainPlatformRequest request);
 
@@ -226,6 +268,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/StopBlockchainPlatformExample.java.html">here</a> to see how to use StopBlockchainPlatform API.
      */
     StopBlockchainPlatformResponse stopBlockchainPlatform(StopBlockchainPlatformRequest request);
 
@@ -234,6 +278,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdateBlockchainPlatformExample.java.html">here</a> to see how to use UpdateBlockchainPlatform API.
      */
     UpdateBlockchainPlatformResponse updateBlockchainPlatform(
             UpdateBlockchainPlatformRequest request);
@@ -243,6 +289,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdateOsnExample.java.html">here</a> to see how to use UpdateOsn API.
      */
     UpdateOsnResponse updateOsn(UpdateOsnRequest request);
 
@@ -251,6 +299,8 @@ public interface BlockchainPlatform extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdatePeerExample.java.html">here</a> to see how to use UpdatePeer API.
      */
     UpdatePeerResponse updatePeer(UpdatePeerRequest request);
 

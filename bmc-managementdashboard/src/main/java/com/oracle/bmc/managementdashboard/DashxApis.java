@@ -53,6 +53,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/ChangeManagementDashboardsCompartmentExample.java.html">here</a> to see how to use ChangeManagementDashboardsCompartment API.
      */
     ChangeManagementDashboardsCompartmentResponse changeManagementDashboardsCompartment(
             ChangeManagementDashboardsCompartmentRequest request);
@@ -63,6 +65,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/ChangeManagementSavedSearchesCompartmentExample.java.html">here</a> to see how to use ChangeManagementSavedSearchesCompartment API.
      */
     ChangeManagementSavedSearchesCompartmentResponse changeManagementSavedSearchesCompartment(
             ChangeManagementSavedSearchesCompartmentRequest request);
@@ -73,6 +77,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/CreateManagementDashboardExample.java.html">here</a> to see how to use CreateManagementDashboard API.
      */
     CreateManagementDashboardResponse createManagementDashboard(
             CreateManagementDashboardRequest request);
@@ -83,6 +89,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/CreateManagementSavedSearchExample.java.html">here</a> to see how to use CreateManagementSavedSearch API.
      */
     CreateManagementSavedSearchResponse createManagementSavedSearch(
             CreateManagementSavedSearchRequest request);
@@ -92,6 +100,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/DeleteManagementDashboardExample.java.html">here</a> to see how to use DeleteManagementDashboard API.
      */
     DeleteManagementDashboardResponse deleteManagementDashboard(
             DeleteManagementDashboardRequest request);
@@ -101,6 +111,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/DeleteManagementSavedSearchExample.java.html">here</a> to see how to use DeleteManagementSavedSearch API.
      */
     DeleteManagementSavedSearchResponse deleteManagementSavedSearch(
             DeleteManagementSavedSearchRequest request);
@@ -110,6 +122,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/ExportDashboardExample.java.html">here</a> to see how to use ExportDashboard API.
      */
     ExportDashboardResponse exportDashboard(ExportDashboardRequest request);
 
@@ -118,6 +132,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/GetManagementDashboardExample.java.html">here</a> to see how to use GetManagementDashboard API.
      */
     GetManagementDashboardResponse getManagementDashboard(GetManagementDashboardRequest request);
 
@@ -126,6 +142,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/GetManagementSavedSearchExample.java.html">here</a> to see how to use GetManagementSavedSearch API.
      */
     GetManagementSavedSearchResponse getManagementSavedSearch(
             GetManagementSavedSearchRequest request);
@@ -136,6 +154,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/ImportDashboardExample.java.html">here</a> to see how to use ImportDashboard API.
      */
     ImportDashboardResponse importDashboard(ImportDashboardRequest request);
 
@@ -144,6 +164,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/ListManagementDashboardsExample.java.html">here</a> to see how to use ListManagementDashboards API.
      */
     ListManagementDashboardsResponse listManagementDashboards(
             ListManagementDashboardsRequest request);
@@ -153,6 +175,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/ListManagementSavedSearchesExample.java.html">here</a> to see how to use ListManagementSavedSearches API.
      */
     ListManagementSavedSearchesResponse listManagementSavedSearches(
             ListManagementSavedSearchesRequest request);
@@ -163,6 +187,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/UpdateManagementDashboardExample.java.html">here</a> to see how to use UpdateManagementDashboard API.
      */
     UpdateManagementDashboardResponse updateManagementDashboard(
             UpdateManagementDashboardRequest request);
@@ -173,6 +199,8 @@ public interface DashxApis extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementdashboard/UpdateManagementSavedSearchExample.java.html">here</a> to see how to use UpdateManagementSavedSearch API.
      */
     UpdateManagementSavedSearchResponse updateManagementSavedSearch(
             UpdateManagementSavedSearchRequest request);

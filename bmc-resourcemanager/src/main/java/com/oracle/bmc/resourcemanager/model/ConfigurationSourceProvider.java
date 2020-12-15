@@ -32,6 +32,10 @@ package com.oracle.bmc.resourcemanager.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GithubAccessTokenConfigurationSourceProvider.class,
+        name = "GITHUB_ACCESS_TOKEN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GitlabAccessTokenConfigurationSourceProvider.class,
         name = "GITLAB_ACCESS_TOKEN"
     )
@@ -147,12 +151,15 @@ public class ConfigurationSourceProvider {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The type of configuration source provider. The `GITLAB_ACCESS_TOKEN` type corresponds to Git.
+     * The type of configuration source provider.
+     * The `GITLAB_ACCESS_TOKEN` type corresponds to GitLab.
+     * The `GITHUB_ACCESS_TOKEN` type corresponds to GitHub.
      *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ConfigSourceProviderType {
         GitlabAccessToken("GITLAB_ACCESS_TOKEN"),
+        GithubAccessToken("GITHUB_ACCESS_TOKEN"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

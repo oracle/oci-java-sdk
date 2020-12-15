@@ -50,6 +50,8 @@ public interface SenderInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/CancelSenderInvitationExample.java.html">here</a> to see how to use CancelSenderInvitation API.
      */
     CancelSenderInvitationResponse cancelSenderInvitation(CancelSenderInvitationRequest request);
 
@@ -58,6 +60,8 @@ public interface SenderInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/CreateSenderInvitationExample.java.html">here</a> to see how to use CreateSenderInvitation API.
      */
     CreateSenderInvitationResponse createSenderInvitation(CreateSenderInvitationRequest request);
 
@@ -66,6 +70,8 @@ public interface SenderInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetSenderInvitationExample.java.html">here</a> to see how to use GetSenderInvitation API.
      */
     GetSenderInvitationResponse getSenderInvitation(GetSenderInvitationRequest request);
 
@@ -75,6 +81,8 @@ public interface SenderInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListSenderInvitationsExample.java.html">here</a> to see how to use ListSenderInvitations API.
      */
     ListSenderInvitationsResponse listSenderInvitations(ListSenderInvitationsRequest request);
 
@@ -83,6 +91,8 @@ public interface SenderInvitation extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/UpdateSenderInvitationExample.java.html">here</a> to see how to use UpdateSenderInvitation API.
      */
     UpdateSenderInvitationResponse updateSenderInvitation(UpdateSenderInvitationRequest request);
 

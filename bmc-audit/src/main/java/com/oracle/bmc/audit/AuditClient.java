@@ -18,7 +18,7 @@ public class AuditClient implements Audit {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("AUDIT")
                     .serviceEndpointPrefix("audit")
-                    .serviceEndpointTemplate("https://audit.{region}.oraclecloud.com")
+                    .serviceEndpointTemplate("https://audit.{region}.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;

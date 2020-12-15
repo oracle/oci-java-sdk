@@ -56,6 +56,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddNetworkSecurityGroupSecurityRulesExample.java.html">here</a> to see how to use AddNetworkSecurityGroupSecurityRules API.
      */
     AddNetworkSecurityGroupSecurityRulesResponse addNetworkSecurityGroupSecurityRules(
             AddNetworkSecurityGroupSecurityRulesRequest request);
@@ -69,6 +71,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddPublicIpPoolCapacityExample.java.html">here</a> to see how to use AddPublicIpPoolCapacity API.
      */
     AddPublicIpPoolCapacityResponse addPublicIpPoolCapacity(AddPublicIpPoolCapacityRequest request);
 
@@ -83,6 +87,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddVcnCidrExample.java.html">here</a> to see how to use AddVcnCidr API.
      */
     AddVcnCidrResponse addVcnCidr(AddVcnCidrRequest request);
 
@@ -93,6 +99,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AdvertiseByoipRangeExample.java.html">here</a> to see how to use AdvertiseByoipRange API.
      */
     AdvertiseByoipRangeResponse advertiseByoipRange(AdvertiseByoipRangeRequest request);
 
@@ -111,6 +119,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachServiceIdExample.java.html">here</a> to see how to use AttachServiceId API.
      */
     AttachServiceIdResponse attachServiceId(AttachServiceIdRequest request);
 
@@ -123,6 +133,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/BulkAddVirtualCircuitPublicPrefixesExample.java.html">here</a> to see how to use BulkAddVirtualCircuitPublicPrefixes API.
      */
     BulkAddVirtualCircuitPublicPrefixesResponse bulkAddVirtualCircuitPublicPrefixes(
             BulkAddVirtualCircuitPublicPrefixesRequest request);
@@ -136,6 +148,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/BulkDeleteVirtualCircuitPublicPrefixesExample.java.html">here</a> to see how to use BulkDeleteVirtualCircuitPublicPrefixes API.
      */
     BulkDeleteVirtualCircuitPublicPrefixesResponse bulkDeleteVirtualCircuitPublicPrefixes(
             BulkDeleteVirtualCircuitPublicPrefixesRequest request);
@@ -148,6 +162,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeByoipRangeCompartmentExample.java.html">here</a> to see how to use ChangeByoipRangeCompartment API.
      */
     ChangeByoipRangeCompartmentResponse changeByoipRangeCompartment(
             ChangeByoipRangeCompartmentRequest request);
@@ -160,6 +176,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCpeCompartmentExample.java.html">here</a> to see how to use ChangeCpeCompartment API.
      */
     ChangeCpeCompartmentResponse changeCpeCompartment(ChangeCpeCompartmentRequest request);
 
@@ -171,6 +189,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCrossConnectCompartmentExample.java.html">here</a> to see how to use ChangeCrossConnectCompartment API.
      */
     ChangeCrossConnectCompartmentResponse changeCrossConnectCompartment(
             ChangeCrossConnectCompartmentRequest request);
@@ -183,6 +203,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeCrossConnectGroupCompartmentExample.java.html">here</a> to see how to use ChangeCrossConnectGroupCompartment API.
      */
     ChangeCrossConnectGroupCompartmentResponse changeCrossConnectGroupCompartment(
             ChangeCrossConnectGroupCompartmentRequest request);
@@ -195,6 +217,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDhcpOptionsCompartmentExample.java.html">here</a> to see how to use ChangeDhcpOptionsCompartment API.
      */
     ChangeDhcpOptionsCompartmentResponse changeDhcpOptionsCompartment(
             ChangeDhcpOptionsCompartmentRequest request);
@@ -207,6 +231,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDrgCompartmentExample.java.html">here</a> to see how to use ChangeDrgCompartment API.
      */
     ChangeDrgCompartmentResponse changeDrgCompartment(ChangeDrgCompartmentRequest request);
 
@@ -218,6 +244,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeIPSecConnectionCompartmentExample.java.html">here</a> to see how to use ChangeIPSecConnectionCompartment API.
      */
     ChangeIPSecConnectionCompartmentResponse changeIPSecConnectionCompartment(
             ChangeIPSecConnectionCompartmentRequest request);
@@ -230,6 +258,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInternetGatewayCompartmentExample.java.html">here</a> to see how to use ChangeInternetGatewayCompartment API.
      */
     ChangeInternetGatewayCompartmentResponse changeInternetGatewayCompartment(
             ChangeInternetGatewayCompartmentRequest request);
@@ -242,6 +272,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeLocalPeeringGatewayCompartmentExample.java.html">here</a> to see how to use ChangeLocalPeeringGatewayCompartment API.
      */
     ChangeLocalPeeringGatewayCompartmentResponse changeLocalPeeringGatewayCompartment(
             ChangeLocalPeeringGatewayCompartmentRequest request);
@@ -254,6 +286,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeNatGatewayCompartmentExample.java.html">here</a> to see how to use ChangeNatGatewayCompartment API.
      */
     ChangeNatGatewayCompartmentResponse changeNatGatewayCompartment(
             ChangeNatGatewayCompartmentRequest request);
@@ -265,6 +299,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeNetworkSecurityGroupCompartmentExample.java.html">here</a> to see how to use ChangeNetworkSecurityGroupCompartment API.
      */
     ChangeNetworkSecurityGroupCompartmentResponse changeNetworkSecurityGroupCompartment(
             ChangeNetworkSecurityGroupCompartmentRequest request);
@@ -280,6 +316,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangePublicIpCompartmentExample.java.html">here</a> to see how to use ChangePublicIpCompartment API.
      */
     ChangePublicIpCompartmentResponse changePublicIpCompartment(
             ChangePublicIpCompartmentRequest request);
@@ -292,6 +330,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangePublicIpPoolCompartmentExample.java.html">here</a> to see how to use ChangePublicIpPoolCompartment API.
      */
     ChangePublicIpPoolCompartmentResponse changePublicIpPoolCompartment(
             ChangePublicIpPoolCompartmentRequest request);
@@ -304,6 +344,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeRemotePeeringConnectionCompartmentExample.java.html">here</a> to see how to use ChangeRemotePeeringConnectionCompartment API.
      */
     ChangeRemotePeeringConnectionCompartmentResponse changeRemotePeeringConnectionCompartment(
             ChangeRemotePeeringConnectionCompartmentRequest request);
@@ -316,6 +358,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeRouteTableCompartmentExample.java.html">here</a> to see how to use ChangeRouteTableCompartment API.
      */
     ChangeRouteTableCompartmentResponse changeRouteTableCompartment(
             ChangeRouteTableCompartmentRequest request);
@@ -328,6 +372,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeSecurityListCompartmentExample.java.html">here</a> to see how to use ChangeSecurityListCompartment API.
      */
     ChangeSecurityListCompartmentResponse changeSecurityListCompartment(
             ChangeSecurityListCompartmentRequest request);
@@ -340,6 +386,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeServiceGatewayCompartmentExample.java.html">here</a> to see how to use ChangeServiceGatewayCompartment API.
      */
     ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
             ChangeServiceGatewayCompartmentRequest request);
@@ -352,6 +400,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeSubnetCompartmentExample.java.html">here</a> to see how to use ChangeSubnetCompartment API.
      */
     ChangeSubnetCompartmentResponse changeSubnetCompartment(ChangeSubnetCompartmentRequest request);
 
@@ -363,6 +413,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVcnCompartmentExample.java.html">here</a> to see how to use ChangeVcnCompartment API.
      */
     ChangeVcnCompartmentResponse changeVcnCompartment(ChangeVcnCompartmentRequest request);
 
@@ -374,6 +426,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVirtualCircuitCompartmentExample.java.html">here</a> to see how to use ChangeVirtualCircuitCompartment API.
      */
     ChangeVirtualCircuitCompartmentResponse changeVirtualCircuitCompartment(
             ChangeVirtualCircuitCompartmentRequest request);
@@ -386,6 +440,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVlanCompartmentExample.java.html">here</a> to see how to use ChangeVlanCompartment API.
      */
     ChangeVlanCompartmentResponse changeVlanCompartment(ChangeVlanCompartmentRequest request);
 
@@ -402,6 +458,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectLocalPeeringGatewaysExample.java.html">here</a> to see how to use ConnectLocalPeeringGateways API.
      */
     ConnectLocalPeeringGatewaysResponse connectLocalPeeringGateways(
             ConnectLocalPeeringGatewaysRequest request);
@@ -419,6 +477,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ConnectRemotePeeringConnectionsExample.java.html">here</a> to see how to use ConnectRemotePeeringConnections API.
      */
     ConnectRemotePeeringConnectionsResponse connectRemotePeeringConnections(
             ConnectRemotePeeringConnectionsRequest request);
@@ -429,6 +489,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateByoipRangeExample.java.html">here</a> to see how to use CreateByoipRange API.
      */
     CreateByoipRangeResponse createByoipRange(CreateByoipRangeRequest request);
 
@@ -452,6 +514,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCpeExample.java.html">here</a> to see how to use CreateCpe API.
      */
     CreateCpeResponse createCpe(CreateCpeRequest request);
 
@@ -479,6 +543,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCrossConnectExample.java.html">here</a> to see how to use CreateCrossConnect API.
      */
     CreateCrossConnectResponse createCrossConnect(CreateCrossConnectRequest request);
 
@@ -502,6 +568,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateCrossConnectGroupExample.java.html">here</a> to see how to use CreateCrossConnectGroup API.
      */
     CreateCrossConnectGroupResponse createCrossConnectGroup(CreateCrossConnectGroupRequest request);
 
@@ -522,6 +590,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDhcpOptionsExample.java.html">here</a> to see how to use CreateDhcpOptions API.
      */
     CreateDhcpOptionsResponse createDhcpOptions(CreateDhcpOptionsRequest request);
 
@@ -542,6 +612,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgExample.java.html">here</a> to see how to use CreateDrg API.
      */
     CreateDrgResponse createDrg(CreateDrgRequest request);
 
@@ -561,6 +633,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDrgAttachmentExample.java.html">here</a> to see how to use CreateDrgAttachment API.
      */
     CreateDrgAttachmentResponse createDrgAttachment(CreateDrgAttachmentRequest request);
 
@@ -598,6 +672,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateIPSecConnectionExample.java.html">here</a> to see how to use CreateIPSecConnection API.
      */
     CreateIPSecConnectionResponse createIPSecConnection(CreateIPSecConnectionRequest request);
 
@@ -627,6 +703,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInternetGatewayExample.java.html">here</a> to see how to use CreateInternetGateway API.
      */
     CreateInternetGatewayResponse createInternetGateway(CreateInternetGatewayRequest request);
 
@@ -636,6 +714,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateIpv6Example.java.html">here</a> to see how to use CreateIpv6 API.
      */
     CreateIpv6Response createIpv6(CreateIpv6Request request);
 
@@ -645,6 +725,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateLocalPeeringGatewayExample.java.html">here</a> to see how to use CreateLocalPeeringGateway API.
      */
     CreateLocalPeeringGatewayResponse createLocalPeeringGateway(
             CreateLocalPeeringGatewayRequest request);
@@ -656,6 +738,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateNatGatewayExample.java.html">here</a> to see how to use CreateNatGateway API.
      */
     CreateNatGatewayResponse createNatGateway(CreateNatGatewayRequest request);
 
@@ -665,6 +749,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateNetworkSecurityGroupExample.java.html">here</a> to see how to use CreateNetworkSecurityGroup API.
      */
     CreateNetworkSecurityGroupResponse createNetworkSecurityGroup(
             CreateNetworkSecurityGroupRequest request);
@@ -677,6 +763,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreatePrivateIpExample.java.html">here</a> to see how to use CreatePrivateIp API.
      */
     CreatePrivateIpResponse createPrivateIp(CreatePrivateIpRequest request);
 
@@ -706,6 +794,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreatePublicIpExample.java.html">here</a> to see how to use CreatePublicIp API.
      */
     CreatePublicIpResponse createPublicIp(CreatePublicIpRequest request);
 
@@ -715,6 +805,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreatePublicIpPoolExample.java.html">here</a> to see how to use CreatePublicIpPool API.
      */
     CreatePublicIpPoolResponse createPublicIpPool(CreatePublicIpPoolRequest request);
 
@@ -724,6 +816,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateRemotePeeringConnectionExample.java.html">here</a> to see how to use CreateRemotePeeringConnection API.
      */
     CreateRemotePeeringConnectionResponse createRemotePeeringConnection(
             CreateRemotePeeringConnectionRequest request);
@@ -748,6 +842,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateRouteTableExample.java.html">here</a> to see how to use CreateRouteTable API.
      */
     CreateRouteTableResponse createRouteTable(CreateRouteTableRequest request);
 
@@ -770,6 +866,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateSecurityListExample.java.html">here</a> to see how to use CreateSecurityList API.
      */
     CreateSecurityListResponse createSecurityList(CreateSecurityListRequest request);
 
@@ -787,6 +885,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateServiceGatewayExample.java.html">here</a> to see how to use CreateServiceGateway API.
      */
     CreateServiceGatewayResponse createServiceGateway(CreateServiceGatewayRequest request);
 
@@ -826,6 +926,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateSubnetExample.java.html">here</a> to see how to use CreateSubnet API.
      */
     CreateSubnetResponse createSubnet(CreateSubnetRequest request);
 
@@ -870,6 +972,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVcnExample.java.html">here</a> to see how to use CreateVcn API.
      */
     CreateVcnResponse createVcn(CreateVcnRequest request);
 
@@ -899,6 +1003,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVirtualCircuitExample.java.html">here</a> to see how to use CreateVirtualCircuit API.
      */
     CreateVirtualCircuitResponse createVirtualCircuit(CreateVirtualCircuitRequest request);
 
@@ -908,6 +1014,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVlanExample.java.html">here</a> to see how to use CreateVlan API.
      */
     CreateVlanResponse createVlan(CreateVlanRequest request);
 
@@ -922,6 +1030,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteByoipRangeExample.java.html">here</a> to see how to use DeleteByoipRange API.
      */
     DeleteByoipRangeResponse deleteByoipRange(DeleteByoipRangeRequest request);
 
@@ -933,6 +1043,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCpeExample.java.html">here</a> to see how to use DeleteCpe API.
      */
     DeleteCpeResponse deleteCpe(DeleteCpeRequest request);
 
@@ -943,6 +1055,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCrossConnectExample.java.html">here</a> to see how to use DeleteCrossConnect API.
      */
     DeleteCrossConnectResponse deleteCrossConnect(DeleteCrossConnectRequest request);
 
@@ -954,6 +1068,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteCrossConnectGroupExample.java.html">here</a> to see how to use DeleteCrossConnectGroup API.
      */
     DeleteCrossConnectGroupResponse deleteCrossConnectGroup(DeleteCrossConnectGroupRequest request);
 
@@ -967,6 +1083,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDhcpOptionsExample.java.html">here</a> to see how to use DeleteDhcpOptions API.
      */
     DeleteDhcpOptionsResponse deleteDhcpOptions(DeleteDhcpOptionsRequest request);
 
@@ -979,6 +1097,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgExample.java.html">here</a> to see how to use DeleteDrg API.
      */
     DeleteDrgResponse deleteDrg(DeleteDrgRequest request);
 
@@ -990,6 +1110,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDrgAttachmentExample.java.html">here</a> to see how to use DeleteDrgAttachment API.
      */
     DeleteDrgAttachmentResponse deleteDrgAttachment(DeleteDrgAttachmentRequest request);
 
@@ -1006,6 +1128,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteIPSecConnectionExample.java.html">here</a> to see how to use DeleteIPSecConnection API.
      */
     DeleteIPSecConnectionResponse deleteIPSecConnection(DeleteIPSecConnectionRequest request);
 
@@ -1019,6 +1143,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInternetGatewayExample.java.html">here</a> to see how to use DeleteInternetGateway API.
      */
     DeleteInternetGatewayResponse deleteInternetGateway(DeleteInternetGatewayRequest request);
 
@@ -1029,6 +1155,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteIpv6Example.java.html">here</a> to see how to use DeleteIpv6 API.
      */
     DeleteIpv6Response deleteIpv6(DeleteIpv6Request request);
 
@@ -1041,6 +1169,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteLocalPeeringGatewayExample.java.html">here</a> to see how to use DeleteLocalPeeringGateway API.
      */
     DeleteLocalPeeringGatewayResponse deleteLocalPeeringGateway(
             DeleteLocalPeeringGatewayRequest request);
@@ -1055,6 +1185,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteNatGatewayExample.java.html">here</a> to see how to use DeleteNatGateway API.
      */
     DeleteNatGatewayResponse deleteNatGateway(DeleteNatGatewayRequest request);
 
@@ -1070,6 +1202,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteNetworkSecurityGroupExample.java.html">here</a> to see how to use DeleteNetworkSecurityGroup API.
      */
     DeleteNetworkSecurityGroupResponse deleteNetworkSecurityGroup(
             DeleteNetworkSecurityGroupRequest request);
@@ -1090,6 +1224,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeletePrivateIpExample.java.html">here</a> to see how to use DeletePrivateIp API.
      */
     DeletePrivateIpResponse deletePrivateIp(DeletePrivateIpRequest request);
 
@@ -1113,6 +1249,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeletePublicIpExample.java.html">here</a> to see how to use DeletePublicIp API.
      */
     DeletePublicIpResponse deletePublicIp(DeletePublicIpRequest request);
 
@@ -1124,6 +1262,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeletePublicIpPoolExample.java.html">here</a> to see how to use DeletePublicIpPool API.
      */
     DeletePublicIpPoolResponse deletePublicIpPool(DeletePublicIpPoolRequest request);
 
@@ -1136,6 +1276,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteRemotePeeringConnectionExample.java.html">here</a> to see how to use DeleteRemotePeeringConnection API.
      */
     DeleteRemotePeeringConnectionResponse deleteRemotePeeringConnection(
             DeleteRemotePeeringConnectionRequest request);
@@ -1150,6 +1292,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteRouteTableExample.java.html">here</a> to see how to use DeleteRouteTable API.
      */
     DeleteRouteTableResponse deleteRouteTable(DeleteRouteTableRequest request);
 
@@ -1163,6 +1307,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteSecurityListExample.java.html">here</a> to see how to use DeleteSecurityList API.
      */
     DeleteSecurityListResponse deleteSecurityList(DeleteSecurityListRequest request);
 
@@ -1173,6 +1319,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteServiceGatewayExample.java.html">here</a> to see how to use DeleteServiceGateway API.
      */
     DeleteServiceGatewayResponse deleteServiceGateway(DeleteServiceGatewayRequest request);
 
@@ -1184,6 +1332,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteSubnetExample.java.html">here</a> to see how to use DeleteSubnet API.
      */
     DeleteSubnetResponse deleteSubnet(DeleteSubnetRequest request);
 
@@ -1195,6 +1345,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVcnExample.java.html">here</a> to see how to use DeleteVcn API.
      */
     DeleteVcnResponse deleteVcn(DeleteVcnRequest request);
 
@@ -1208,6 +1360,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVirtualCircuitExample.java.html">here</a> to see how to use DeleteVirtualCircuit API.
      */
     DeleteVirtualCircuitResponse deleteVirtualCircuit(DeleteVirtualCircuitRequest request);
 
@@ -1217,6 +1371,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVlanExample.java.html">here</a> to see how to use DeleteVlan API.
      */
     DeleteVlanResponse deleteVlan(DeleteVlanRequest request);
 
@@ -1237,6 +1393,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachServiceIdExample.java.html">here</a> to see how to use DetachServiceId API.
      */
     DetachServiceIdResponse detachServiceId(DetachServiceIdRequest request);
 
@@ -1246,6 +1404,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetByoipRangeExample.java.html">here</a> to see how to use GetByoipRange API.
      */
     GetByoipRangeResponse getByoipRange(GetByoipRangeRequest request);
 
@@ -1254,6 +1414,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeExample.java.html">here</a> to see how to use GetCpe API.
      */
     GetCpeResponse getCpe(GetCpeRequest request);
 
@@ -1280,6 +1442,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeDeviceConfigContentExample.java.html">here</a> to see how to use GetCpeDeviceConfigContent API.
      */
     GetCpeDeviceConfigContentResponse getCpeDeviceConfigContent(
             GetCpeDeviceConfigContentRequest request);
@@ -1298,6 +1462,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCpeDeviceShapeExample.java.html">here</a> to see how to use GetCpeDeviceShape API.
      */
     GetCpeDeviceShapeResponse getCpeDeviceShape(GetCpeDeviceShapeRequest request);
 
@@ -1306,6 +1472,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectExample.java.html">here</a> to see how to use GetCrossConnect API.
      */
     GetCrossConnectResponse getCrossConnect(GetCrossConnectRequest request);
 
@@ -1314,6 +1482,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectGroupExample.java.html">here</a> to see how to use GetCrossConnectGroup API.
      */
     GetCrossConnectGroupResponse getCrossConnectGroup(GetCrossConnectGroupRequest request);
 
@@ -1322,6 +1492,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectLetterOfAuthorityExample.java.html">here</a> to see how to use GetCrossConnectLetterOfAuthority API.
      */
     GetCrossConnectLetterOfAuthorityResponse getCrossConnectLetterOfAuthority(
             GetCrossConnectLetterOfAuthorityRequest request);
@@ -1332,6 +1504,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetCrossConnectStatusExample.java.html">here</a> to see how to use GetCrossConnectStatus API.
      */
     GetCrossConnectStatusResponse getCrossConnectStatus(GetCrossConnectStatusRequest request);
 
@@ -1340,6 +1514,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDhcpOptionsExample.java.html">here</a> to see how to use GetDhcpOptions API.
      */
     GetDhcpOptionsResponse getDhcpOptions(GetDhcpOptionsRequest request);
 
@@ -1348,6 +1524,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgExample.java.html">here</a> to see how to use GetDrg API.
      */
     GetDrgResponse getDrg(GetDrgRequest request);
 
@@ -1356,6 +1534,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgAttachmentExample.java.html">here</a> to see how to use GetDrgAttachment API.
      */
     GetDrgAttachmentResponse getDrgAttachment(GetDrgAttachmentRequest request);
 
@@ -1366,6 +1546,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDrgRedundancyStatusExample.java.html">here</a> to see how to use GetDrgRedundancyStatus API.
      */
     GetDrgRedundancyStatusResponse getDrgRedundancyStatus(GetDrgRedundancyStatusRequest request);
 
@@ -1376,6 +1558,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceExample.java.html">here</a> to see how to use GetFastConnectProviderService API.
      */
     GetFastConnectProviderServiceResponse getFastConnectProviderService(
             GetFastConnectProviderServiceRequest request);
@@ -1387,6 +1571,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceKeyExample.java.html">here</a> to see how to use GetFastConnectProviderServiceKey API.
      */
     GetFastConnectProviderServiceKeyResponse getFastConnectProviderServiceKey(
             GetFastConnectProviderServiceKeyRequest request);
@@ -1399,6 +1585,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionExample.java.html">here</a> to see how to use GetIPSecConnection API.
      */
     GetIPSecConnectionResponse getIPSecConnection(GetIPSecConnectionRequest request);
 
@@ -1411,6 +1599,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionDeviceConfigExample.java.html">here</a> to see how to use GetIPSecConnectionDeviceConfig API.
      */
     GetIPSecConnectionDeviceConfigResponse getIPSecConnectionDeviceConfig(
             GetIPSecConnectionDeviceConfigRequest request);
@@ -1422,6 +1612,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionDeviceStatusExample.java.html">here</a> to see how to use GetIPSecConnectionDeviceStatus API.
      */
     GetIPSecConnectionDeviceStatusResponse getIPSecConnectionDeviceStatus(
             GetIPSecConnectionDeviceStatusRequest request);
@@ -1434,6 +1626,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionTunnelExample.java.html">here</a> to see how to use GetIPSecConnectionTunnel API.
      */
     GetIPSecConnectionTunnelResponse getIPSecConnectionTunnel(
             GetIPSecConnectionTunnelRequest request);
@@ -1445,6 +1639,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIPSecConnectionTunnelSharedSecretExample.java.html">here</a> to see how to use GetIPSecConnectionTunnelSharedSecret API.
      */
     GetIPSecConnectionTunnelSharedSecretResponse getIPSecConnectionTunnelSharedSecret(
             GetIPSecConnectionTunnelSharedSecretRequest request);
@@ -1454,6 +1650,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInternetGatewayExample.java.html">here</a> to see how to use GetInternetGateway API.
      */
     GetInternetGatewayResponse getInternetGateway(GetInternetGatewayRequest request);
 
@@ -1481,6 +1679,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIpsecCpeDeviceConfigContentExample.java.html">here</a> to see how to use GetIpsecCpeDeviceConfigContent API.
      */
     GetIpsecCpeDeviceConfigContentResponse getIpsecCpeDeviceConfigContent(
             GetIpsecCpeDeviceConfigContentRequest request);
@@ -1494,6 +1694,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetIpv6Example.java.html">here</a> to see how to use GetIpv6 API.
      */
     GetIpv6Response getIpv6(GetIpv6Request request);
 
@@ -1502,6 +1704,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetLocalPeeringGatewayExample.java.html">here</a> to see how to use GetLocalPeeringGateway API.
      */
     GetLocalPeeringGatewayResponse getLocalPeeringGateway(GetLocalPeeringGatewayRequest request);
 
@@ -1510,6 +1714,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNatGatewayExample.java.html">here</a> to see how to use GetNatGateway API.
      */
     GetNatGatewayResponse getNatGateway(GetNatGatewayRequest request);
 
@@ -1525,6 +1731,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkSecurityGroupExample.java.html">here</a> to see how to use GetNetworkSecurityGroup API.
      */
     GetNetworkSecurityGroupResponse getNetworkSecurityGroup(GetNetworkSecurityGroupRequest request);
 
@@ -1537,6 +1745,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPrivateIpExample.java.html">here</a> to see how to use GetPrivateIp API.
      */
     GetPrivateIpResponse getPrivateIp(GetPrivateIpRequest request);
 
@@ -1556,6 +1766,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpExample.java.html">here</a> to see how to use GetPublicIp API.
      */
     GetPublicIpResponse getPublicIp(GetPublicIpRequest request);
 
@@ -1569,6 +1781,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpByIpAddressExample.java.html">here</a> to see how to use GetPublicIpByIpAddress API.
      */
     GetPublicIpByIpAddressResponse getPublicIpByIpAddress(GetPublicIpByIpAddressRequest request);
 
@@ -1588,6 +1802,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpByPrivateIpIdExample.java.html">here</a> to see how to use GetPublicIpByPrivateIpId API.
      */
     GetPublicIpByPrivateIpIdResponse getPublicIpByPrivateIpId(
             GetPublicIpByPrivateIpIdRequest request);
@@ -1598,6 +1814,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetPublicIpPoolExample.java.html">here</a> to see how to use GetPublicIpPool API.
      */
     GetPublicIpPoolResponse getPublicIpPool(GetPublicIpPoolRequest request);
 
@@ -1607,6 +1825,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetRemotePeeringConnectionExample.java.html">here</a> to see how to use GetRemotePeeringConnection API.
      */
     GetRemotePeeringConnectionResponse getRemotePeeringConnection(
             GetRemotePeeringConnectionRequest request);
@@ -1616,6 +1836,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetRouteTableExample.java.html">here</a> to see how to use GetRouteTable API.
      */
     GetRouteTableResponse getRouteTable(GetRouteTableRequest request);
 
@@ -1624,6 +1846,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSecurityListExample.java.html">here</a> to see how to use GetSecurityList API.
      */
     GetSecurityListResponse getSecurityList(GetSecurityListRequest request);
 
@@ -1633,6 +1857,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetServiceExample.java.html">here</a> to see how to use GetService API.
      */
     GetServiceResponse getService(GetServiceRequest request);
 
@@ -1641,6 +1867,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetServiceGatewayExample.java.html">here</a> to see how to use GetServiceGateway API.
      */
     GetServiceGatewayResponse getServiceGateway(GetServiceGatewayRequest request);
 
@@ -1649,6 +1877,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetExample.java.html">here</a> to see how to use GetSubnet API.
      */
     GetSubnetResponse getSubnet(GetSubnetRequest request);
 
@@ -1662,6 +1892,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetTunnelCpeDeviceConfigExample.java.html">here</a> to see how to use GetTunnelCpeDeviceConfig API.
      */
     GetTunnelCpeDeviceConfigResponse getTunnelCpeDeviceConfig(
             GetTunnelCpeDeviceConfigRequest request);
@@ -1689,6 +1921,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetTunnelCpeDeviceConfigContentExample.java.html">here</a> to see how to use GetTunnelCpeDeviceConfigContent API.
      */
     GetTunnelCpeDeviceConfigContentResponse getTunnelCpeDeviceConfigContent(
             GetTunnelCpeDeviceConfigContentRequest request);
@@ -1698,6 +1932,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnExample.java.html">here</a> to see how to use GetVcn API.
      */
     GetVcnResponse getVcn(GetVcnRequest request);
 
@@ -1706,6 +1942,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnDnsResolverAssociationExample.java.html">here</a> to see how to use GetVcnDnsResolverAssociation API.
      */
     GetVcnDnsResolverAssociationResponse getVcnDnsResolverAssociation(
             GetVcnDnsResolverAssociationRequest request);
@@ -1715,6 +1953,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVirtualCircuitExample.java.html">here</a> to see how to use GetVirtualCircuit API.
      */
     GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request);
 
@@ -1723,6 +1963,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVlanExample.java.html">here</a> to see how to use GetVlan API.
      */
     GetVlanResponse getVlan(GetVlanRequest request);
 
@@ -1735,6 +1977,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVnicExample.java.html">here</a> to see how to use GetVnic API.
      */
     GetVnicResponse getVnic(GetVnicRequest request);
 
@@ -1745,6 +1989,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAllowedPeerRegionsForRemotePeeringExample.java.html">here</a> to see how to use ListAllowedPeerRegionsForRemotePeering API.
      */
     ListAllowedPeerRegionsForRemotePeeringResponse listAllowedPeerRegionsForRemotePeering(
             ListAllowedPeerRegionsForRemotePeeringRequest request);
@@ -1756,6 +2002,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListByoipAllocatedRangesExample.java.html">here</a> to see how to use ListByoipAllocatedRanges API.
      */
     ListByoipAllocatedRangesResponse listByoipAllocatedRanges(
             ListByoipAllocatedRangesRequest request);
@@ -1767,6 +2015,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListByoipRangesExample.java.html">here</a> to see how to use ListByoipRanges API.
      */
     ListByoipRangesResponse listByoipRanges(ListByoipRangesRequest request);
 
@@ -1788,6 +2038,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCpeDeviceShapesExample.java.html">here</a> to see how to use ListCpeDeviceShapes API.
      */
     ListCpeDeviceShapesResponse listCpeDeviceShapes(ListCpeDeviceShapesRequest request);
 
@@ -1797,6 +2049,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCpesExample.java.html">here</a> to see how to use ListCpes API.
      */
     ListCpesResponse listCpes(ListCpesRequest request);
 
@@ -1806,6 +2060,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectGroupsExample.java.html">here</a> to see how to use ListCrossConnectGroups API.
      */
     ListCrossConnectGroupsResponse listCrossConnectGroups(ListCrossConnectGroupsRequest request);
 
@@ -1816,6 +2072,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectLocationsExample.java.html">here</a> to see how to use ListCrossConnectLocations API.
      */
     ListCrossConnectLocationsResponse listCrossConnectLocations(
             ListCrossConnectLocationsRequest request);
@@ -1827,6 +2085,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossConnectsExample.java.html">here</a> to see how to use ListCrossConnects API.
      */
     ListCrossConnectsResponse listCrossConnects(ListCrossConnectsRequest request);
 
@@ -1838,6 +2098,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListCrossconnectPortSpeedShapesExample.java.html">here</a> to see how to use ListCrossconnectPortSpeedShapes API.
      */
     ListCrossconnectPortSpeedShapesResponse listCrossconnectPortSpeedShapes(
             ListCrossconnectPortSpeedShapesRequest request);
@@ -1851,6 +2113,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDhcpOptionsExample.java.html">here</a> to see how to use ListDhcpOptions API.
      */
     ListDhcpOptionsResponse listDhcpOptions(ListDhcpOptionsRequest request);
 
@@ -1861,6 +2125,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgAttachmentsExample.java.html">here</a> to see how to use ListDrgAttachments API.
      */
     ListDrgAttachmentsResponse listDrgAttachments(ListDrgAttachmentsRequest request);
 
@@ -1870,6 +2136,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgsExample.java.html">here</a> to see how to use ListDrgs API.
      */
     ListDrgsResponse listDrgs(ListDrgsRequest request);
 
@@ -1885,6 +2153,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListFastConnectProviderServicesExample.java.html">here</a> to see how to use ListFastConnectProviderServices API.
      */
     ListFastConnectProviderServicesResponse listFastConnectProviderServices(
             ListFastConnectProviderServicesRequest request);
@@ -1898,6 +2168,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListFastConnectProviderVirtualCircuitBandwidthShapesExample.java.html">here</a> to see how to use ListFastConnectProviderVirtualCircuitBandwidthShapes API.
      */
     ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
             listFastConnectProviderVirtualCircuitBandwidthShapes(
@@ -1909,6 +2181,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionTunnelsExample.java.html">here</a> to see how to use ListIPSecConnectionTunnels API.
      */
     ListIPSecConnectionTunnelsResponse listIPSecConnectionTunnels(
             ListIPSecConnectionTunnelsRequest request);
@@ -1920,6 +2194,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIPSecConnectionsExample.java.html">here</a> to see how to use ListIPSecConnections API.
      */
     ListIPSecConnectionsResponse listIPSecConnections(ListIPSecConnectionsRequest request);
 
@@ -1930,6 +2206,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInternetGatewaysExample.java.html">here</a> to see how to use ListInternetGateways API.
      */
     ListInternetGatewaysResponse listInternetGateways(ListInternetGatewaysRequest request);
 
@@ -1946,6 +2224,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpv6sExample.java.html">here</a> to see how to use ListIpv6s API.
      */
     ListIpv6sResponse listIpv6s(ListIpv6sRequest request);
 
@@ -1956,6 +2236,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListLocalPeeringGatewaysExample.java.html">here</a> to see how to use ListLocalPeeringGateways API.
      */
     ListLocalPeeringGatewaysResponse listLocalPeeringGateways(
             ListLocalPeeringGatewaysRequest request);
@@ -1967,6 +2249,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNatGatewaysExample.java.html">here</a> to see how to use ListNatGateways API.
      */
     ListNatGatewaysResponse listNatGateways(ListNatGatewaysRequest request);
 
@@ -1976,6 +2260,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupSecurityRulesExample.java.html">here</a> to see how to use ListNetworkSecurityGroupSecurityRules API.
      */
     ListNetworkSecurityGroupSecurityRulesResponse listNetworkSecurityGroupSecurityRules(
             ListNetworkSecurityGroupSecurityRulesRequest request);
@@ -1986,6 +2272,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupVnicsExample.java.html">here</a> to see how to use ListNetworkSecurityGroupVnics API.
      */
     ListNetworkSecurityGroupVnicsResponse listNetworkSecurityGroupVnics(
             ListNetworkSecurityGroupVnicsRequest request);
@@ -1996,6 +2284,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListNetworkSecurityGroupsExample.java.html">here</a> to see how to use ListNetworkSecurityGroups API.
      */
     ListNetworkSecurityGroupsResponse listNetworkSecurityGroups(
             ListNetworkSecurityGroupsRequest request);
@@ -2021,6 +2311,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPrivateIpsExample.java.html">here</a> to see how to use ListPrivateIps API.
      */
     ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request);
 
@@ -2031,6 +2323,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPublicIpPoolsExample.java.html">here</a> to see how to use ListPublicIpPools API.
      */
     ListPublicIpPoolsResponse listPublicIpPools(ListPublicIpPoolsRequest request);
 
@@ -2059,6 +2353,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListPublicIpsExample.java.html">here</a> to see how to use ListPublicIps API.
      */
     ListPublicIpsResponse listPublicIps(ListPublicIpsRequest request);
 
@@ -2069,6 +2365,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListRemotePeeringConnectionsExample.java.html">here</a> to see how to use ListRemotePeeringConnections API.
      */
     ListRemotePeeringConnectionsResponse listRemotePeeringConnections(
             ListRemotePeeringConnectionsRequest request);
@@ -2082,6 +2380,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListRouteTablesExample.java.html">here</a> to see how to use ListRouteTables API.
      */
     ListRouteTablesResponse listRouteTables(ListRouteTablesRequest request);
 
@@ -2092,6 +2392,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListSecurityListsExample.java.html">here</a> to see how to use ListSecurityLists API.
      */
     ListSecurityListsResponse listSecurityLists(ListSecurityListsRequest request);
 
@@ -2102,6 +2404,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListServiceGatewaysExample.java.html">here</a> to see how to use ListServiceGateways API.
      */
     ListServiceGatewaysResponse listServiceGateways(ListServiceGatewaysRequest request);
 
@@ -2112,6 +2416,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListServicesExample.java.html">here</a> to see how to use ListServices API.
      */
     ListServicesResponse listServices(ListServicesRequest request);
 
@@ -2122,6 +2428,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListSubnetsExample.java.html">here</a> to see how to use ListSubnets API.
      */
     ListSubnetsResponse listSubnets(ListSubnetsRequest request);
 
@@ -2131,6 +2439,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVcnsExample.java.html">here</a> to see how to use ListVcns API.
      */
     ListVcnsResponse listVcns(ListVcnsRequest request);
 
@@ -2140,6 +2450,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitBandwidthShapesExample.java.html">here</a> to see how to use ListVirtualCircuitBandwidthShapes API.
      */
     ListVirtualCircuitBandwidthShapesResponse listVirtualCircuitBandwidthShapes(
             ListVirtualCircuitBandwidthShapesRequest request);
@@ -2151,6 +2463,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitPublicPrefixesExample.java.html">here</a> to see how to use ListVirtualCircuitPublicPrefixes API.
      */
     ListVirtualCircuitPublicPrefixesResponse listVirtualCircuitPublicPrefixes(
             ListVirtualCircuitPublicPrefixesRequest request);
@@ -2161,6 +2475,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitsExample.java.html">here</a> to see how to use ListVirtualCircuits API.
      */
     ListVirtualCircuitsResponse listVirtualCircuits(ListVirtualCircuitsRequest request);
 
@@ -2170,6 +2486,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVlansExample.java.html">here</a> to see how to use ListVlans API.
      */
     ListVlansResponse listVlans(ListVlansRequest request);
 
@@ -2186,6 +2504,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ModifyVcnCidrExample.java.html">here</a> to see how to use ModifyVcnCidr API.
      */
     ModifyVcnCidrResponse modifyVcnCidr(ModifyVcnCidrRequest request);
 
@@ -2195,6 +2515,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveNetworkSecurityGroupSecurityRulesExample.java.html">here</a> to see how to use RemoveNetworkSecurityGroupSecurityRules API.
      */
     RemoveNetworkSecurityGroupSecurityRulesResponse removeNetworkSecurityGroupSecurityRules(
             RemoveNetworkSecurityGroupSecurityRulesRequest request);
@@ -2205,6 +2527,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemovePublicIpPoolCapacityExample.java.html">here</a> to see how to use RemovePublicIpPoolCapacity API.
      */
     RemovePublicIpPoolCapacityResponse removePublicIpPoolCapacity(
             RemovePublicIpPoolCapacityRequest request);
@@ -2216,6 +2540,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveVcnCidrExample.java.html">here</a> to see how to use RemoveVcnCidr API.
      */
     RemoveVcnCidrResponse removeVcnCidr(RemoveVcnCidrRequest request);
 
@@ -2225,6 +2551,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateByoipRangeExample.java.html">here</a> to see how to use UpdateByoipRange API.
      */
     UpdateByoipRangeResponse updateByoipRange(UpdateByoipRangeRequest request);
 
@@ -2235,6 +2563,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCpeExample.java.html">here</a> to see how to use UpdateCpe API.
      */
     UpdateCpeResponse updateCpe(UpdateCpeRequest request);
 
@@ -2243,6 +2573,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCrossConnectExample.java.html">here</a> to see how to use UpdateCrossConnect API.
      */
     UpdateCrossConnectResponse updateCrossConnect(UpdateCrossConnectRequest request);
 
@@ -2253,6 +2585,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateCrossConnectGroupExample.java.html">here</a> to see how to use UpdateCrossConnectGroup API.
      */
     UpdateCrossConnectGroupResponse updateCrossConnectGroup(UpdateCrossConnectGroupRequest request);
 
@@ -2265,6 +2599,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDhcpOptionsExample.java.html">here</a> to see how to use UpdateDhcpOptions API.
      */
     UpdateDhcpOptionsResponse updateDhcpOptions(UpdateDhcpOptionsRequest request);
 
@@ -2274,6 +2610,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgExample.java.html">here</a> to see how to use UpdateDrg API.
      */
     UpdateDrgResponse updateDrg(UpdateDrgRequest request);
 
@@ -2284,6 +2622,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDrgAttachmentExample.java.html">here</a> to see how to use UpdateDrgAttachment API.
      */
     UpdateDrgAttachmentResponse updateDrgAttachment(UpdateDrgAttachmentRequest request);
 
@@ -2296,6 +2636,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionExample.java.html">here</a> to see how to use UpdateIPSecConnection API.
      */
     UpdateIPSecConnectionResponse updateIPSecConnection(UpdateIPSecConnectionRequest request);
 
@@ -2316,6 +2658,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionTunnelExample.java.html">here</a> to see how to use UpdateIPSecConnectionTunnel API.
      */
     UpdateIPSecConnectionTunnelResponse updateIPSecConnectionTunnel(
             UpdateIPSecConnectionTunnelRequest request);
@@ -2328,6 +2672,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIPSecConnectionTunnelSharedSecretExample.java.html">here</a> to see how to use UpdateIPSecConnectionTunnelSharedSecret API.
      */
     UpdateIPSecConnectionTunnelSharedSecretResponse updateIPSecConnectionTunnelSharedSecret(
             UpdateIPSecConnectionTunnelSharedSecretRequest request);
@@ -2342,6 +2688,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInternetGatewayExample.java.html">here</a> to see how to use UpdateInternetGateway API.
      */
     UpdateInternetGatewayResponse updateInternetGateway(UpdateInternetGatewayRequest request);
 
@@ -2357,6 +2705,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateIpv6Example.java.html">here</a> to see how to use UpdateIpv6 API.
      */
     UpdateIpv6Response updateIpv6(UpdateIpv6Request request);
 
@@ -2366,6 +2716,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateLocalPeeringGatewayExample.java.html">here</a> to see how to use UpdateLocalPeeringGateway API.
      */
     UpdateLocalPeeringGatewayResponse updateLocalPeeringGateway(
             UpdateLocalPeeringGatewayRequest request);
@@ -2376,6 +2728,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNatGatewayExample.java.html">here</a> to see how to use UpdateNatGateway API.
      */
     UpdateNatGatewayResponse updateNatGateway(UpdateNatGatewayRequest request);
 
@@ -2399,6 +2753,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNetworkSecurityGroupExample.java.html">here</a> to see how to use UpdateNetworkSecurityGroup API.
      */
     UpdateNetworkSecurityGroupResponse updateNetworkSecurityGroup(
             UpdateNetworkSecurityGroupRequest request);
@@ -2409,6 +2765,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateNetworkSecurityGroupSecurityRulesExample.java.html">here</a> to see how to use UpdateNetworkSecurityGroupSecurityRules API.
      */
     UpdateNetworkSecurityGroupSecurityRulesResponse updateNetworkSecurityGroupSecurityRules(
             UpdateNetworkSecurityGroupSecurityRulesRequest request);
@@ -2428,6 +2786,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePrivateIpExample.java.html">here</a> to see how to use UpdatePrivateIp API.
      */
     UpdatePrivateIpResponse updatePrivateIp(UpdatePrivateIpRequest request);
 
@@ -2475,6 +2835,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePublicIpExample.java.html">here</a> to see how to use UpdatePublicIp API.
      */
     UpdatePublicIpResponse updatePublicIp(UpdatePublicIpRequest request);
 
@@ -2484,6 +2846,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdatePublicIpPoolExample.java.html">here</a> to see how to use UpdatePublicIpPool API.
      */
     UpdatePublicIpPoolResponse updatePublicIpPool(UpdatePublicIpPoolRequest request);
 
@@ -2493,6 +2857,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateRemotePeeringConnectionExample.java.html">here</a> to see how to use UpdateRemotePeeringConnection API.
      */
     UpdateRemotePeeringConnectionResponse updateRemotePeeringConnection(
             UpdateRemotePeeringConnectionRequest request);
@@ -2506,6 +2872,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateRouteTableExample.java.html">here</a> to see how to use UpdateRouteTable API.
      */
     UpdateRouteTableResponse updateRouteTable(UpdateRouteTableRequest request);
 
@@ -2519,6 +2887,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateSecurityListExample.java.html">here</a> to see how to use UpdateSecurityList API.
      */
     UpdateSecurityListResponse updateSecurityList(UpdateSecurityListRequest request);
 
@@ -2529,6 +2899,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateServiceGatewayExample.java.html">here</a> to see how to use UpdateServiceGateway API.
      */
     UpdateServiceGatewayResponse updateServiceGateway(UpdateServiceGatewayRequest request);
 
@@ -2538,6 +2910,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateSubnetExample.java.html">here</a> to see how to use UpdateSubnet API.
      */
     UpdateSubnetResponse updateSubnet(UpdateSubnetRequest request);
 
@@ -2549,6 +2923,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateTunnelCpeDeviceConfigExample.java.html">here</a> to see how to use UpdateTunnelCpeDeviceConfig API.
      */
     UpdateTunnelCpeDeviceConfigResponse updateTunnelCpeDeviceConfig(
             UpdateTunnelCpeDeviceConfigRequest request);
@@ -2559,6 +2935,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVcnExample.java.html">here</a> to see how to use UpdateVcn API.
      */
     UpdateVcnResponse updateVcn(UpdateVcnRequest request);
 
@@ -2591,6 +2969,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVirtualCircuitExample.java.html">here</a> to see how to use UpdateVirtualCircuit API.
      */
     UpdateVirtualCircuitResponse updateVirtualCircuit(UpdateVirtualCircuitRequest request);
 
@@ -2602,6 +2982,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVlanExample.java.html">here</a> to see how to use UpdateVlan API.
      */
     UpdateVlanResponse updateVlan(UpdateVlanRequest request);
 
@@ -2611,6 +2993,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVnicExample.java.html">here</a> to see how to use UpdateVnic API.
      */
     UpdateVnicResponse updateVnic(UpdateVnicRequest request);
 
@@ -2621,6 +3005,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ValidateByoipRangeExample.java.html">here</a> to see how to use ValidateByoipRange API.
      */
     ValidateByoipRangeResponse validateByoipRange(ValidateByoipRangeRequest request);
 
@@ -2630,6 +3016,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/WithdrawByoipRangeExample.java.html">here</a> to see how to use WithdrawByoipRange API.
      */
     WithdrawByoipRangeResponse withdrawByoipRange(WithdrawByoipRangeRequest request);
 

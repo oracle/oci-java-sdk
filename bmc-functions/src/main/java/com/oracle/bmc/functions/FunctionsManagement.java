@@ -53,6 +53,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ChangeApplicationCompartmentExample.java.html">here</a> to see how to use ChangeApplicationCompartment API.
      */
     ChangeApplicationCompartmentResponse changeApplicationCompartment(
             ChangeApplicationCompartmentRequest request);
@@ -62,6 +64,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/CreateApplicationExample.java.html">here</a> to see how to use CreateApplication API.
      */
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
 
@@ -70,6 +74,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/CreateFunctionExample.java.html">here</a> to see how to use CreateFunction API.
      */
     CreateFunctionResponse createFunction(CreateFunctionRequest request);
 
@@ -78,6 +84,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/DeleteApplicationExample.java.html">here</a> to see how to use DeleteApplication API.
      */
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
 
@@ -86,6 +94,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/DeleteFunctionExample.java.html">here</a> to see how to use DeleteFunction API.
      */
     DeleteFunctionResponse deleteFunction(DeleteFunctionRequest request);
 
@@ -94,6 +104,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetApplicationExample.java.html">here</a> to see how to use GetApplication API.
      */
     GetApplicationResponse getApplication(GetApplicationRequest request);
 
@@ -102,6 +114,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetFunctionExample.java.html">here</a> to see how to use GetFunction API.
      */
     GetFunctionResponse getFunction(GetFunctionRequest request);
 
@@ -110,6 +124,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListApplicationsExample.java.html">here</a> to see how to use ListApplications API.
      */
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
 
@@ -118,6 +134,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsExample.java.html">here</a> to see how to use ListFunctions API.
      */
     ListFunctionsResponse listFunctions(ListFunctionsRequest request);
 
@@ -126,6 +144,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/UpdateApplicationExample.java.html">here</a> to see how to use UpdateApplication API.
      */
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
 
@@ -134,6 +154,8 @@ public interface FunctionsManagement extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/UpdateFunctionExample.java.html">here</a> to see how to use UpdateFunction API.
      */
     UpdateFunctionResponse updateFunction(UpdateFunctionRequest request);
 

@@ -50,6 +50,8 @@ public interface Mysqlaas extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateConfigurationExample.java.html">here</a> to see how to use CreateConfiguration API.
      */
     CreateConfigurationResponse createConfiguration(CreateConfigurationRequest request);
 
@@ -60,6 +62,8 @@ public interface Mysqlaas extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteConfigurationExample.java.html">here</a> to see how to use DeleteConfiguration API.
      */
     DeleteConfigurationResponse deleteConfiguration(DeleteConfigurationRequest request);
 
@@ -69,6 +73,8 @@ public interface Mysqlaas extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetConfigurationExample.java.html">here</a> to see how to use GetConfiguration API.
      */
     GetConfigurationResponse getConfiguration(GetConfigurationRequest request);
 
@@ -85,6 +91,8 @@ public interface Mysqlaas extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListConfigurationsExample.java.html">here</a> to see how to use ListConfigurations API.
      */
     ListConfigurationsResponse listConfigurations(ListConfigurationsRequest request);
 
@@ -97,6 +105,8 @@ public interface Mysqlaas extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListShapesExample.java.html">here</a> to see how to use ListShapes API.
      */
     ListShapesResponse listShapes(ListShapesRequest request);
 
@@ -108,6 +118,8 @@ public interface Mysqlaas extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListVersionsExample.java.html">here</a> to see how to use ListVersions API.
      */
     ListVersionsResponse listVersions(ListVersionsRequest request);
 
@@ -116,6 +128,8 @@ public interface Mysqlaas extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateConfigurationExample.java.html">here</a> to see how to use UpdateConfiguration API.
      */
     UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request);
 

@@ -52,6 +52,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeFileSystemCompartmentExample.java.html">here</a> to see how to use ChangeFileSystemCompartment API.
      */
     ChangeFileSystemCompartmentResponse changeFileSystemCompartment(
             ChangeFileSystemCompartmentRequest request);
@@ -62,6 +64,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeMountTargetCompartmentExample.java.html">here</a> to see how to use ChangeMountTargetCompartment API.
      */
     ChangeMountTargetCompartmentResponse changeMountTargetCompartment(
             ChangeMountTargetCompartmentRequest request);
@@ -73,6 +77,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateExportExample.java.html">here</a> to see how to use CreateExport API.
      */
     CreateExportResponse createExport(CreateExportRequest request);
 
@@ -110,6 +116,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateFileSystemExample.java.html">here</a> to see how to use CreateFileSystem API.
      */
     CreateFileSystemResponse createFileSystem(CreateFileSystemRequest request);
 
@@ -150,6 +158,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateMountTargetExample.java.html">here</a> to see how to use CreateMountTarget API.
      */
     CreateMountTargetResponse createMountTarget(CreateMountTargetRequest request);
 
@@ -160,6 +170,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateSnapshotExample.java.html">here</a> to see how to use CreateSnapshot API.
      */
     CreateSnapshotResponse createSnapshot(CreateSnapshotRequest request);
 
@@ -169,6 +181,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteExportExample.java.html">here</a> to see how to use DeleteExport API.
      */
     DeleteExportResponse deleteExport(DeleteExportRequest request);
 
@@ -180,6 +194,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteFileSystemExample.java.html">here</a> to see how to use DeleteFileSystem API.
      */
     DeleteFileSystemResponse deleteFileSystem(DeleteFileSystemRequest request);
 
@@ -190,6 +206,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteMountTargetExample.java.html">here</a> to see how to use DeleteMountTarget API.
      */
     DeleteMountTargetResponse deleteMountTarget(DeleteMountTargetRequest request);
 
@@ -199,6 +217,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteSnapshotExample.java.html">here</a> to see how to use DeleteSnapshot API.
      */
     DeleteSnapshotResponse deleteSnapshot(DeleteSnapshotRequest request);
 
@@ -207,6 +227,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetExportExample.java.html">here</a> to see how to use GetExport API.
      */
     GetExportResponse getExport(GetExportRequest request);
 
@@ -215,6 +237,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetExportSetExample.java.html">here</a> to see how to use GetExportSet API.
      */
     GetExportSetResponse getExportSet(GetExportSetRequest request);
 
@@ -223,6 +247,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetFileSystemExample.java.html">here</a> to see how to use GetFileSystem API.
      */
     GetFileSystemResponse getFileSystem(GetFileSystemRequest request);
 
@@ -231,6 +257,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetMountTargetExample.java.html">here</a> to see how to use GetMountTarget API.
      */
     GetMountTargetResponse getMountTarget(GetMountTargetRequest request);
 
@@ -239,6 +267,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetSnapshotExample.java.html">here</a> to see how to use GetSnapshot API.
      */
     GetSnapshotResponse getSnapshot(GetSnapshotRequest request);
 
@@ -248,6 +278,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListExportSetsExample.java.html">here</a> to see how to use ListExportSets API.
      */
     ListExportSetsResponse listExportSets(ListExportSetsRequest request);
 
@@ -259,6 +291,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListExportsExample.java.html">here</a> to see how to use ListExports API.
      */
     ListExportsResponse listExports(ListExportsRequest request);
 
@@ -268,6 +302,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListFileSystemsExample.java.html">here</a> to see how to use ListFileSystems API.
      */
     ListFileSystemsResponse listFileSystems(ListFileSystemsRequest request);
 
@@ -277,6 +313,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListMountTargetsExample.java.html">here</a> to see how to use ListMountTargets API.
      */
     ListMountTargetsResponse listMountTargets(ListMountTargetsRequest request);
 
@@ -286,6 +324,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListSnapshotsExample.java.html">here</a> to see how to use ListSnapshots API.
      */
     ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request);
 
@@ -294,6 +334,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateExportExample.java.html">here</a> to see how to use UpdateExport API.
      */
     UpdateExportResponse updateExport(UpdateExportRequest request);
 
@@ -302,6 +344,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateExportSetExample.java.html">here</a> to see how to use UpdateExportSet API.
      */
     UpdateExportSetResponse updateExportSet(UpdateExportSetRequest request);
 
@@ -312,6 +356,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateFileSystemExample.java.html">here</a> to see how to use UpdateFileSystem API.
      */
     UpdateFileSystemResponse updateFileSystem(UpdateFileSystemRequest request);
 
@@ -320,6 +366,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateMountTargetExample.java.html">here</a> to see how to use UpdateMountTarget API.
      */
     UpdateMountTargetResponse updateMountTarget(UpdateMountTargetRequest request);
 
@@ -328,6 +376,8 @@ public interface FileStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateSnapshotExample.java.html">here</a> to see how to use UpdateSnapshot API.
      */
     UpdateSnapshotResponse updateSnapshot(UpdateSnapshotRequest request);
 

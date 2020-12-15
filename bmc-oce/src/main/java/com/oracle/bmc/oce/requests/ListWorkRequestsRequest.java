@@ -5,7 +5,9 @@
 package com.oracle.bmc.oce.requests;
 
 import com.oracle.bmc.oce.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oce/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequestsRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

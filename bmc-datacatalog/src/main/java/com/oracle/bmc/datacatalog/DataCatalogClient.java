@@ -3316,6 +3316,33 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public ListRulesResponse listRules(ListRulesRequest request) {
+        LOG.trace("Called listRules");
+        final ListRulesRequest interceptedRequest = ListRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRulesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListRulesResponse> transformer =
+                ListRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListTagsResponse listTags(ListTagsRequest request) {
         LOG.trace("Called listTags");
         final ListTagsRequest interceptedRequest = ListTagsConverter.interceptRequest(request);

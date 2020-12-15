@@ -6,40 +6,6 @@ package com.oracle.bmc.audit.model;
 
 /**
  * A container object for response attributes.
- * <p>
- * Example:
- * <p>
- * -----
- *     {
- *       \"status\": \"200\",
- *       \"responseTime\": \"2019-09-18T00:10:59.278Z\",
- *       \"headers\": {
- *         \"ETag\": [
- *           \"<unique_ID>\"
- *         ],
- *         \"Connection\": [
- *           \"close\"
- *         ],
- *         \"Content-Length\": [
- *           \"1828\"
- *         ],
- *         \"opc-request-id\": [
- *           \"<unique_ID>\"
- *         ],
- *         \"Date\": [
- *           \"Wed, 18 Sep 2019 00:10:59 GMT\"
- *         ],
- *         \"Content-Type\": [
- *           \"application/json\"
- *         ]
- *       },
- *       \"payload\": {
- *         \"resourceName\": \"my_instance\",
- *         \"id\": \"ocid1.instance.oc1.phx.<unique_ID>\"
- *       },
- *       \"message\": null
- *     }
- *   -----
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

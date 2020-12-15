@@ -32,6 +32,8 @@ public interface KmsCrypto extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DecryptExample.java.html">here</a> to see how to use Decrypt API.
      */
     DecryptResponse decrypt(DecryptRequest request);
 
@@ -42,6 +44,8 @@ public interface KmsCrypto extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/EncryptExample.java.html">here</a> to see how to use Encrypt API.
      */
     EncryptResponse encrypt(EncryptRequest request);
 
@@ -53,6 +57,8 @@ public interface KmsCrypto extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ExportKeyExample.java.html">here</a> to see how to use ExportKey API.
      */
     ExportKeyResponse exportKey(ExportKeyRequest request);
 
@@ -62,6 +68,8 @@ public interface KmsCrypto extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GenerateDataEncryptionKeyExample.java.html">here</a> to see how to use GenerateDataEncryptionKey API.
      */
     GenerateDataEncryptionKeyResponse generateDataEncryptionKey(
             GenerateDataEncryptionKeyRequest request);

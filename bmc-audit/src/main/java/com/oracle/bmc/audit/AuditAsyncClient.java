@@ -31,7 +31,7 @@ public class AuditAsyncClient implements AuditAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("AUDIT")
                     .serviceEndpointPrefix("audit")
-                    .serviceEndpointTemplate("https://audit.{region}.oraclecloud.com")
+                    .serviceEndpointTemplate("https://audit.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

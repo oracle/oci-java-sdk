@@ -201,6 +201,15 @@ public class DatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabasePointInTimeRecoveryTimestamp")
         private java.util.Date sourceDatabasePointInTimeRecoveryTimestamp;
 
@@ -246,6 +255,7 @@ public class DatabaseSummary {
                             freeformTags,
                             definedTags,
                             connectionStrings,
+                            kmsKeyId,
                             sourceDatabasePointInTimeRecoveryTimestamp,
                             databaseSoftwareImageId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -274,6 +284,7 @@ public class DatabaseSummary {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .connectionStrings(o.getConnectionStrings())
+                            .kmsKeyId(o.getKmsKeyId())
                             .sourceDatabasePointInTimeRecoveryTimestamp(
                                     o.getSourceDatabasePointInTimeRecoveryTimestamp())
                             .databaseSoftwareImageId(o.getDatabaseSoftwareImageId());
@@ -358,7 +369,7 @@ public class DatabaseSummary {
     String dbUniqueName;
 
     /**
-     * Additional information about the current lifecycleState.
+     * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
@@ -459,6 +470,12 @@ public class DatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
     DatabaseConnectionStrings connectionStrings;
+
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     /**
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)

@@ -50,6 +50,8 @@ public interface TransferPackage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/AttachDevicesToTransferPackageExample.java.html">here</a> to see how to use AttachDevicesToTransferPackage API.
      */
     AttachDevicesToTransferPackageResponse attachDevicesToTransferPackage(
             AttachDevicesToTransferPackageRequest request);
@@ -59,6 +61,8 @@ public interface TransferPackage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferPackageExample.java.html">here</a> to see how to use CreateTransferPackage API.
      */
     CreateTransferPackageResponse createTransferPackage(CreateTransferPackageRequest request);
 
@@ -67,6 +71,8 @@ public interface TransferPackage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferPackageExample.java.html">here</a> to see how to use DeleteTransferPackage API.
      */
     DeleteTransferPackageResponse deleteTransferPackage(DeleteTransferPackageRequest request);
 
@@ -75,6 +81,8 @@ public interface TransferPackage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DetachDevicesFromTransferPackageExample.java.html">here</a> to see how to use DetachDevicesFromTransferPackage API.
      */
     DetachDevicesFromTransferPackageResponse detachDevicesFromTransferPackage(
             DetachDevicesFromTransferPackageRequest request);
@@ -84,6 +92,8 @@ public interface TransferPackage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferPackageExample.java.html">here</a> to see how to use GetTransferPackage API.
      */
     GetTransferPackageResponse getTransferPackage(GetTransferPackageRequest request);
 
@@ -92,6 +102,8 @@ public interface TransferPackage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferPackagesExample.java.html">here</a> to see how to use ListTransferPackages API.
      */
     ListTransferPackagesResponse listTransferPackages(ListTransferPackagesRequest request);
 
@@ -100,6 +112,8 @@ public interface TransferPackage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferPackageExample.java.html">here</a> to see how to use UpdateTransferPackage API.
      */
     UpdateTransferPackageResponse updateTransferPackage(UpdateTransferPackageRequest request);
 

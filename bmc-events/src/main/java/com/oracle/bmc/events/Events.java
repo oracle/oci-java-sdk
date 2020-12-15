@@ -54,6 +54,8 @@ public interface Events extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/ChangeRuleCompartmentExample.java.html">here</a> to see how to use ChangeRuleCompartment API.
      */
     ChangeRuleCompartmentResponse changeRuleCompartment(ChangeRuleCompartmentRequest request);
 
@@ -63,6 +65,8 @@ public interface Events extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/CreateRuleExample.java.html">here</a> to see how to use CreateRule API.
      */
     CreateRuleResponse createRule(CreateRuleRequest request);
 
@@ -71,6 +75,8 @@ public interface Events extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/DeleteRuleExample.java.html">here</a> to see how to use DeleteRule API.
      */
     DeleteRuleResponse deleteRule(DeleteRuleRequest request);
 
@@ -79,6 +85,8 @@ public interface Events extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/GetRuleExample.java.html">here</a> to see how to use GetRule API.
      */
     GetRuleResponse getRule(GetRuleRequest request);
 
@@ -88,6 +96,8 @@ public interface Events extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/ListRulesExample.java.html">here</a> to see how to use ListRules API.
      */
     ListRulesResponse listRules(ListRulesRequest request);
 
@@ -97,6 +107,8 @@ public interface Events extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/events/UpdateRuleExample.java.html">here</a> to see how to use UpdateRule API.
      */
     UpdateRuleResponse updateRule(UpdateRuleRequest request);
 

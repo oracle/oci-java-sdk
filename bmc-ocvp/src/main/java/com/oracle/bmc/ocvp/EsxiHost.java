@@ -57,6 +57,8 @@ public interface EsxiHost extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CreateEsxiHostExample.java.html">here</a> to see how to use CreateEsxiHost API.
      */
     CreateEsxiHostResponse createEsxiHost(CreateEsxiHostRequest request);
 
@@ -79,6 +81,8 @@ public interface EsxiHost extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DeleteEsxiHostExample.java.html">here</a> to see how to use DeleteEsxiHost API.
      */
     DeleteEsxiHostResponse deleteEsxiHost(DeleteEsxiHostRequest request);
 
@@ -87,6 +91,8 @@ public interface EsxiHost extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GetEsxiHostExample.java.html">here</a> to see how to use GetEsxiHost API.
      */
     GetEsxiHostResponse getEsxiHost(GetEsxiHostRequest request);
 
@@ -104,6 +110,8 @@ public interface EsxiHost extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListEsxiHostsExample.java.html">here</a> to see how to use ListEsxiHosts API.
      */
     ListEsxiHostsResponse listEsxiHosts(ListEsxiHostsRequest request);
 
@@ -112,6 +120,8 @@ public interface EsxiHost extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateEsxiHostExample.java.html">here</a> to see how to use UpdateEsxiHost API.
      */
     UpdateEsxiHostResponse updateEsxiHost(UpdateEsxiHostRequest request);
 

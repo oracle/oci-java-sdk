@@ -123,6 +123,15 @@ public class DbHome {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("oneOffPatches")
         private java.util.List<String> oneOffPatches;
 
@@ -177,6 +186,7 @@ public class DbHome {
                             dbHomeLocation,
                             lifecycleDetails,
                             timeCreated,
+                            kmsKeyId,
                             oneOffPatches,
                             freeformTags,
                             definedTags,
@@ -199,6 +209,7 @@ public class DbHome {
                             .dbHomeLocation(o.getDbHomeLocation())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
+                            .kmsKeyId(o.getKmsKeyId())
                             .oneOffPatches(o.getOneOffPatches())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
@@ -320,7 +331,7 @@ public class DbHome {
     String dbHomeLocation;
 
     /**
-     * Additional information about the current lifecycleState.
+     * Additional information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
@@ -330,6 +341,12 @@ public class DbHome {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     /**
      * List of one-off patches for Database Homes.

@@ -362,44 +362,6 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **Deprecated.** To create a new Autonomous Data Warehouse, use the {@link #createAutonomousDatabase(CreateAutonomousDatabaseRequest, Consumer, Consumer) createAutonomousDatabase} operation and specify `DW` as the workload type.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<CreateAutonomousDataWarehouseResponse>
-            createAutonomousDataWarehouse(
-                    CreateAutonomousDataWarehouseRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    CreateAutonomousDataWarehouseRequest,
-                                    CreateAutonomousDataWarehouseResponse>
-                            handler);
-
-    /**
-     * **Deprecated.** To create a new Autonomous Data Warehouse backup for a specified database, use the {@link #createAutonomousDatabaseBackup(CreateAutonomousDatabaseBackupRequest, Consumer, Consumer) createAutonomousDatabaseBackup} operation.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<CreateAutonomousDataWarehouseBackupResponse>
-            createAutonomousDataWarehouseBackup(
-                    CreateAutonomousDataWarehouseBackupRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    CreateAutonomousDataWarehouseBackupRequest,
-                                    CreateAutonomousDataWarehouseBackupResponse>
-                            handler);
-
-    /**
      * Creates a new Autonomous Database.
      *
      *
@@ -727,25 +689,6 @@ public interface DatabaseAsync extends AutoCloseable {
             DbNodeActionRequest request,
             com.oracle.bmc.responses.AsyncHandler<DbNodeActionRequest, DbNodeActionResponse>
                     handler);
-
-    /**
-     * **Deprecated.** To delete an Autonomous Data Warehouse, use the {@link #deleteAutonomousDatabase(DeleteAutonomousDatabaseRequest, Consumer, Consumer) deleteAutonomousDatabase} operation.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<DeleteAutonomousDataWarehouseResponse>
-            deleteAutonomousDataWarehouse(
-                    DeleteAutonomousDataWarehouseRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteAutonomousDataWarehouseRequest,
-                                    DeleteAutonomousDataWarehouseResponse>
-                            handler);
 
     /**
      * Deletes the specified Autonomous Database.
@@ -1140,25 +1083,6 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** To create and download a wallet for an Autonomous Data Warehouse, use the {@link #generateAutonomousDatabaseWallet(GenerateAutonomousDatabaseWalletRequest, Consumer, Consumer) generateAutonomousDatabaseWallet} operation.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<GenerateAutonomousDataWarehouseWalletResponse>
-            generateAutonomousDataWarehouseWallet(
-                    GenerateAutonomousDataWarehouseWalletRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    GenerateAutonomousDataWarehouseWalletRequest,
-                                    GenerateAutonomousDataWarehouseWalletResponse>
-                            handler);
-
-    /**
      * Creates and downloads a wallet for the specified Autonomous Database.
      *
      *
@@ -1231,42 +1155,6 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     GetAutonomousContainerDatabaseDataguardAssociationRequest,
                                     GetAutonomousContainerDatabaseDataguardAssociationResponse>
-                            handler);
-
-    /**
-     * **Deprecated.** To get the details of an Autonomous Data Warehouse, use the {@link #getAutonomousDatabase(GetAutonomousDatabaseRequest, Consumer, Consumer) getAutonomousDatabase} operation.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<GetAutonomousDataWarehouseResponse> getAutonomousDataWarehouse(
-            GetAutonomousDataWarehouseRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            GetAutonomousDataWarehouseRequest, GetAutonomousDataWarehouseResponse>
-                    handler);
-
-    /**
-     * **Deprecated.** To get information about a specified Autonomous Data Warehouse backup, use the {@link #getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupRequest, Consumer, Consumer) getAutonomousDatabaseBackup} operation.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<GetAutonomousDataWarehouseBackupResponse>
-            getAutonomousDataWarehouseBackup(
-                    GetAutonomousDataWarehouseBackupRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    GetAutonomousDataWarehouseBackupRequest,
-                                    GetAutonomousDataWarehouseBackupResponse>
                             handler);
 
     /**
@@ -1975,43 +1863,6 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **Deprecated.** To get a list of Autonomous Data Warehouse backups, use the {@link #listAutonomousDatabaseBackups(ListAutonomousDatabaseBackupsRequest, Consumer, Consumer) listAutonomousDatabaseBackups} operation.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<ListAutonomousDataWarehouseBackupsResponse>
-            listAutonomousDataWarehouseBackups(
-                    ListAutonomousDataWarehouseBackupsRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    ListAutonomousDataWarehouseBackupsRequest,
-                                    ListAutonomousDataWarehouseBackupsResponse>
-                            handler);
-
-    /**
-     * **Deprecated.** To get a list of Autonomous Data Warehouses, use the {@link #listAutonomousDatabases(ListAutonomousDatabasesRequest, Consumer, Consumer) listAutonomousDatabases} operation and specify `DW` as the workload type.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<ListAutonomousDataWarehousesResponse> listAutonomousDataWarehouses(
-            ListAutonomousDataWarehousesRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            ListAutonomousDataWarehousesRequest,
-                            ListAutonomousDataWarehousesResponse>
-                    handler);
-
-    /**
      * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
      *
      *
@@ -2550,6 +2401,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFlexComponentsResponse> listFlexComponents(
+            ListFlexComponentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListFlexComponentsRequest, ListFlexComponentsResponse>
+                    handler);
+
+    /**
      * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
      *
      * @param request The request object containing the details to send
@@ -2687,6 +2554,21 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Changes encryption key management from customer-managed, using the [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm), to Oracle-managed.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<MigrateVaultKeyResponse> migrateVaultKey(
+            MigrateVaultKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<MigrateVaultKeyRequest, MigrateVaultKeyResponse>
+                    handler);
+
+    /**
      * Asynchronously registers this Autonomous Database with Data Safe.
      *
      *
@@ -2778,25 +2660,6 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             RestartAutonomousDatabaseRequest, RestartAutonomousDatabaseResponse>
                     handler);
-
-    /**
-     * **Deprecated.** To restore an Autonomous Data Warehouse, use the {@link #restoreAutonomousDatabase(RestoreAutonomousDatabaseRequest, Consumer, Consumer) restoreAutonomousDatabase} operation.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<RestoreAutonomousDataWarehouseResponse>
-            restoreAutonomousDataWarehouse(
-                    RestoreAutonomousDataWarehouseRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    RestoreAutonomousDataWarehouseRequest,
-                                    RestoreAutonomousDataWarehouseResponse>
-                            handler);
 
     /**
      * Restores an Autonomous Database based on the provided request parameters.
@@ -2900,8 +2763,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** To start an Autonomous Data Warehouse, use the {@link #startAutonomousDatabase(StartAutonomousDatabaseRequest, Consumer, Consumer) startAutonomousDatabase} operation.
-     *
+     * Creates a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2910,11 +2772,9 @@ public interface DatabaseAsync extends AutoCloseable {
      *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    java.util.concurrent.Future<StartAutonomousDataWarehouseResponse> startAutonomousDataWarehouse(
-            StartAutonomousDataWarehouseRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            StartAutonomousDataWarehouseRequest,
-                            StartAutonomousDataWarehouseResponse>
+    java.util.concurrent.Future<RotateVaultKeyResponse> rotateVaultKey(
+            RotateVaultKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RotateVaultKeyRequest, RotateVaultKeyResponse>
                     handler);
 
     /**
@@ -2932,23 +2792,6 @@ public interface DatabaseAsync extends AutoCloseable {
             StartAutonomousDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             StartAutonomousDatabaseRequest, StartAutonomousDatabaseResponse>
-                    handler);
-
-    /**
-     * **Deprecated.** To stop an Autonomous Data Warehouse, use the {@link #stopAutonomousDatabase(StopAutonomousDatabaseRequest, Consumer, Consumer) stopAutonomousDatabase} operation.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<StopAutonomousDataWarehouseResponse> stopAutonomousDataWarehouse(
-            StopAutonomousDataWarehouseRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            StopAutonomousDataWarehouseRequest, StopAutonomousDataWarehouseResponse>
                     handler);
 
     /**
@@ -3097,25 +2940,6 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateAutonomousContainerDatabaseRequest,
                                     UpdateAutonomousContainerDatabaseResponse>
-                            handler);
-
-    /**
-     * **Deprecated.** To update the CPU core count and storage size of an Autonomous Data Warehouse, use the {@link #updateAutonomousDatabase(UpdateAutonomousDatabaseRequest, Consumer, Consumer) updateAutonomousDatabase} operation.
-     *
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
-     */
-    java.util.concurrent.Future<UpdateAutonomousDataWarehouseResponse>
-            updateAutonomousDataWarehouse(
-                    UpdateAutonomousDataWarehouseRequest request,
-                    com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateAutonomousDataWarehouseRequest,
-                                    UpdateAutonomousDataWarehouseResponse>
                             handler);
 
     /**

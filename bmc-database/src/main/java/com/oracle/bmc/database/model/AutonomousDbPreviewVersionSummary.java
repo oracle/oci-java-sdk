@@ -127,6 +127,7 @@ public class AutonomousDbPreviewVersionSummary {
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
      * - AJD - indicates an Autonomous JSON Database
+     * - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -134,6 +135,7 @@ public class AutonomousDbPreviewVersionSummary {
         Oltp("OLTP"),
         Dw("DW"),
         Ajd("AJD"),
+        Apex("APEX"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -179,6 +181,7 @@ public class AutonomousDbPreviewVersionSummary {
      * - OLTP - indicates an Autonomous Transaction Processing database
      * - DW - indicates an Autonomous Data Warehouse database
      * - AJD - indicates an Autonomous JSON Database
+     * - APEX - indicates an Autonomous Database with the Oracle Application Express (APEX) workload type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")

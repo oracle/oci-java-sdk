@@ -186,6 +186,15 @@ public class AttributeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedRuleTypes")
+        private java.util.List<RuleType> associatedRuleTypes;
+
+        public Builder associatedRuleTypes(java.util.List<RuleType> associatedRuleTypes) {
+            this.associatedRuleTypes = associatedRuleTypes;
+            this.__explicitlySet__.add("associatedRuleTypes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -209,7 +218,8 @@ public class AttributeSummary {
                             externalDatatypeEntityKey,
                             parentAttributeKey,
                             externalParentAttributeKey,
-                            path);
+                            path,
+                            associatedRuleTypes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -234,7 +244,8 @@ public class AttributeSummary {
                             .externalDatatypeEntityKey(o.getExternalDatatypeEntityKey())
                             .parentAttributeKey(o.getParentAttributeKey())
                             .externalParentAttributeKey(o.getExternalParentAttributeKey())
-                            .path(o.getPath());
+                            .path(o.getPath())
+                            .associatedRuleTypes(o.getAssociatedRuleTypes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -362,6 +373,12 @@ public class AttributeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     String path;
+
+    /**
+     * Rule types associated with attribute.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedRuleTypes")
+    java.util.List<RuleType> associatedRuleTypes;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

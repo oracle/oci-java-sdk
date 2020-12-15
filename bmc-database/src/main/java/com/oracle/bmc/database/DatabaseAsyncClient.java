@@ -1075,99 +1075,6 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<CreateAutonomousDataWarehouseResponse>
-            createAutonomousDataWarehouse(
-                    CreateAutonomousDataWarehouseRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateAutonomousDataWarehouseRequest,
-                                    CreateAutonomousDataWarehouseResponse>
-                            handler) {
-        LOG.trace("Called async createAutonomousDataWarehouse");
-        final CreateAutonomousDataWarehouseRequest interceptedRequest =
-                CreateAutonomousDataWarehouseConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAutonomousDataWarehouseResponse>
-                transformer = CreateAutonomousDataWarehouseConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateAutonomousDataWarehouseRequest, CreateAutonomousDataWarehouseResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateAutonomousDataWarehouseRequest,
-                                CreateAutonomousDataWarehouseResponse>,
-                        java.util.concurrent.Future<CreateAutonomousDataWarehouseResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateAutonomousDataWarehouseRequest, CreateAutonomousDataWarehouseResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateAutonomousDataWarehouseBackupResponse>
-            createAutonomousDataWarehouseBackup(
-                    CreateAutonomousDataWarehouseBackupRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateAutonomousDataWarehouseBackupRequest,
-                                    CreateAutonomousDataWarehouseBackupResponse>
-                            handler) {
-        LOG.trace("Called async createAutonomousDataWarehouseBackup");
-        final CreateAutonomousDataWarehouseBackupRequest interceptedRequest =
-                CreateAutonomousDataWarehouseBackupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateAutonomousDataWarehouseBackupConverter.fromRequest(
-                        client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, CreateAutonomousDataWarehouseBackupResponse>
-                transformer = CreateAutonomousDataWarehouseBackupConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateAutonomousDataWarehouseBackupRequest,
-                        CreateAutonomousDataWarehouseBackupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateAutonomousDataWarehouseBackupRequest,
-                                CreateAutonomousDataWarehouseBackupResponse>,
-                        java.util.concurrent.Future<CreateAutonomousDataWarehouseBackupResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateAutonomousDataWarehouseBackupRequest,
-                    CreateAutonomousDataWarehouseBackupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<CreateAutonomousDatabaseResponse> createAutonomousDatabase(
             CreateAutonomousDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1915,50 +1822,6 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DbNodeActionRequest, DbNodeActionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteAutonomousDataWarehouseResponse>
-            deleteAutonomousDataWarehouse(
-                    DeleteAutonomousDataWarehouseRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteAutonomousDataWarehouseRequest,
-                                    DeleteAutonomousDataWarehouseResponse>
-                            handler) {
-        LOG.trace("Called async deleteAutonomousDataWarehouse");
-        final DeleteAutonomousDataWarehouseRequest interceptedRequest =
-                DeleteAutonomousDataWarehouseConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, DeleteAutonomousDataWarehouseResponse>
-                transformer = DeleteAutonomousDataWarehouseConverter.fromResponse();
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteAutonomousDataWarehouseRequest, DeleteAutonomousDataWarehouseResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteAutonomousDataWarehouseRequest,
-                                DeleteAutonomousDataWarehouseResponse>,
-                        java.util.concurrent.Future<DeleteAutonomousDataWarehouseResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteAutonomousDataWarehouseRequest, DeleteAutonomousDataWarehouseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2929,54 +2792,6 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<GenerateAutonomousDataWarehouseWalletResponse>
-            generateAutonomousDataWarehouseWallet(
-                    GenerateAutonomousDataWarehouseWalletRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GenerateAutonomousDataWarehouseWalletRequest,
-                                    GenerateAutonomousDataWarehouseWalletResponse>
-                            handler) {
-        LOG.trace("Called async generateAutonomousDataWarehouseWallet");
-        final GenerateAutonomousDataWarehouseWalletRequest interceptedRequest =
-                GenerateAutonomousDataWarehouseWalletConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GenerateAutonomousDataWarehouseWalletConverter.fromRequest(
-                        client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GenerateAutonomousDataWarehouseWalletResponse>
-                transformer = GenerateAutonomousDataWarehouseWalletConverter.fromResponse();
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        GenerateAutonomousDataWarehouseWalletRequest,
-                        GenerateAutonomousDataWarehouseWalletResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GenerateAutonomousDataWarehouseWalletRequest,
-                                GenerateAutonomousDataWarehouseWalletResponse>,
-                        java.util.concurrent.Future<GenerateAutonomousDataWarehouseWalletResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GenerateAutonomousDataWarehouseWalletRequest,
-                    GenerateAutonomousDataWarehouseWalletResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<GenerateAutonomousDatabaseWalletResponse>
             generateAutonomousDatabaseWallet(
                     GenerateAutonomousDatabaseWalletRequest request,
@@ -3155,96 +2970,6 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetAutonomousContainerDatabaseDataguardAssociationRequest,
                     GetAutonomousContainerDatabaseDataguardAssociationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetAutonomousDataWarehouseResponse>
-            getAutonomousDataWarehouse(
-                    GetAutonomousDataWarehouseRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetAutonomousDataWarehouseRequest,
-                                    GetAutonomousDataWarehouseResponse>
-                            handler) {
-        LOG.trace("Called async getAutonomousDataWarehouse");
-        final GetAutonomousDataWarehouseRequest interceptedRequest =
-                GetAutonomousDataWarehouseConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousDataWarehouseResponse>
-                transformer = GetAutonomousDataWarehouseConverter.fromResponse();
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetAutonomousDataWarehouseRequest, GetAutonomousDataWarehouseResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAutonomousDataWarehouseRequest,
-                                GetAutonomousDataWarehouseResponse>,
-                        java.util.concurrent.Future<GetAutonomousDataWarehouseResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAutonomousDataWarehouseRequest, GetAutonomousDataWarehouseResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetAutonomousDataWarehouseBackupResponse>
-            getAutonomousDataWarehouseBackup(
-                    GetAutonomousDataWarehouseBackupRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetAutonomousDataWarehouseBackupRequest,
-                                    GetAutonomousDataWarehouseBackupResponse>
-                            handler) {
-        LOG.trace("Called async getAutonomousDataWarehouseBackup");
-        final GetAutonomousDataWarehouseBackupRequest interceptedRequest =
-                GetAutonomousDataWarehouseBackupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAutonomousDataWarehouseBackupConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, GetAutonomousDataWarehouseBackupResponse>
-                transformer = GetAutonomousDataWarehouseBackupConverter.fromResponse();
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetAutonomousDataWarehouseBackupRequest,
-                        GetAutonomousDataWarehouseBackupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAutonomousDataWarehouseBackupRequest,
-                                GetAutonomousDataWarehouseBackupResponse>,
-                        java.util.concurrent.Future<GetAutonomousDataWarehouseBackupResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAutonomousDataWarehouseBackupRequest,
-                    GetAutonomousDataWarehouseBackupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4975,96 +4700,6 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<ListAutonomousDataWarehouseBackupsResponse>
-            listAutonomousDataWarehouseBackups(
-                    ListAutonomousDataWarehouseBackupsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListAutonomousDataWarehouseBackupsRequest,
-                                    ListAutonomousDataWarehouseBackupsResponse>
-                            handler) {
-        LOG.trace("Called async listAutonomousDataWarehouseBackups");
-        final ListAutonomousDataWarehouseBackupsRequest interceptedRequest =
-                ListAutonomousDataWarehouseBackupsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAutonomousDataWarehouseBackupsConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDataWarehouseBackupsResponse>
-                transformer = ListAutonomousDataWarehouseBackupsConverter.fromResponse();
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListAutonomousDataWarehouseBackupsRequest,
-                        ListAutonomousDataWarehouseBackupsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAutonomousDataWarehouseBackupsRequest,
-                                ListAutonomousDataWarehouseBackupsResponse>,
-                        java.util.concurrent.Future<ListAutonomousDataWarehouseBackupsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAutonomousDataWarehouseBackupsRequest,
-                    ListAutonomousDataWarehouseBackupsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAutonomousDataWarehousesResponse>
-            listAutonomousDataWarehouses(
-                    ListAutonomousDataWarehousesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListAutonomousDataWarehousesRequest,
-                                    ListAutonomousDataWarehousesResponse>
-                            handler) {
-        LOG.trace("Called async listAutonomousDataWarehouses");
-        final ListAutonomousDataWarehousesRequest interceptedRequest =
-                ListAutonomousDataWarehousesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAutonomousDataWarehousesConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDataWarehousesResponse>
-                transformer = ListAutonomousDataWarehousesConverter.fromResponse();
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListAutonomousDataWarehousesRequest, ListAutonomousDataWarehousesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAutonomousDataWarehousesRequest,
-                                ListAutonomousDataWarehousesResponse>,
-                        java.util.concurrent.Future<ListAutonomousDataWarehousesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAutonomousDataWarehousesRequest, ListAutonomousDataWarehousesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<ListAutonomousDatabaseBackupsResponse>
             listAutonomousDatabaseBackups(
                     ListAutonomousDatabaseBackupsRequest request,
@@ -6383,6 +6018,45 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListFlexComponentsResponse> listFlexComponents(
+            ListFlexComponentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListFlexComponentsRequest, ListFlexComponentsResponse>
+                    handler) {
+        LOG.trace("Called async listFlexComponents");
+        final ListFlexComponentsRequest interceptedRequest =
+                ListFlexComponentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFlexComponentsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFlexComponentsResponse>
+                transformer = ListFlexComponentsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListFlexComponentsRequest, ListFlexComponentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFlexComponentsRequest, ListFlexComponentsResponse>,
+                        java.util.concurrent.Future<ListFlexComponentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFlexComponentsRequest, ListFlexComponentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGiVersionsResponse> listGiVersions(
             ListGiVersionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6716,6 +6390,46 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<MigrateVaultKeyResponse> migrateVaultKey(
+            MigrateVaultKeyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            MigrateVaultKeyRequest, MigrateVaultKeyResponse>
+                    handler) {
+        LOG.trace("Called async migrateVaultKey");
+        final MigrateVaultKeyRequest interceptedRequest =
+                MigrateVaultKeyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MigrateVaultKeyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, MigrateVaultKeyResponse>
+                transformer = MigrateVaultKeyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<MigrateVaultKeyRequest, MigrateVaultKeyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                MigrateVaultKeyRequest, MigrateVaultKeyResponse>,
+                        java.util.concurrent.Future<MigrateVaultKeyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    MigrateVaultKeyRequest, MigrateVaultKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterAutonomousDatabaseDataSafeResponse>
             registerAutonomousDatabaseDataSafe(
                     RegisterAutonomousDatabaseDataSafeRequest request,
@@ -6934,51 +6648,6 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RestartAutonomousDatabaseRequest, RestartAutonomousDatabaseResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<RestoreAutonomousDataWarehouseResponse>
-            restoreAutonomousDataWarehouse(
-                    RestoreAutonomousDataWarehouseRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    RestoreAutonomousDataWarehouseRequest,
-                                    RestoreAutonomousDataWarehouseResponse>
-                            handler) {
-        LOG.trace("Called async restoreAutonomousDataWarehouse");
-        final RestoreAutonomousDataWarehouseRequest interceptedRequest =
-                RestoreAutonomousDataWarehouseConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RestoreAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, RestoreAutonomousDataWarehouseResponse>
-                transformer = RestoreAutonomousDataWarehouseConverter.fromResponse();
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        RestoreAutonomousDataWarehouseRequest,
-                        RestoreAutonomousDataWarehouseResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RestoreAutonomousDataWarehouseRequest,
-                                RestoreAutonomousDataWarehouseResponse>,
-                        java.util.concurrent.Future<RestoreAutonomousDataWarehouseResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RestoreAutonomousDataWarehouseRequest, RestoreAutonomousDataWarehouseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7252,37 +6921,33 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<StartAutonomousDataWarehouseResponse>
-            startAutonomousDataWarehouse(
-                    StartAutonomousDataWarehouseRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    StartAutonomousDataWarehouseRequest,
-                                    StartAutonomousDataWarehouseResponse>
-                            handler) {
-        LOG.trace("Called async startAutonomousDataWarehouse");
-        final StartAutonomousDataWarehouseRequest interceptedRequest =
-                StartAutonomousDataWarehouseConverter.interceptRequest(request);
+    public java.util.concurrent.Future<RotateVaultKeyResponse> rotateVaultKey(
+            RotateVaultKeyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RotateVaultKeyRequest, RotateVaultKeyResponse>
+                    handler) {
+        LOG.trace("Called async rotateVaultKey");
+        final RotateVaultKeyRequest interceptedRequest =
+                RotateVaultKeyConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StartAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, StartAutonomousDataWarehouseResponse>
-                transformer = StartAutonomousDataWarehouseConverter.fromResponse();
+                RotateVaultKeyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, RotateVaultKeyResponse>
+                transformer = RotateVaultKeyConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
-        com.oracle.bmc.responses.AsyncHandler<
-                        StartAutonomousDataWarehouseRequest, StartAutonomousDataWarehouseResponse>
+        com.oracle.bmc.responses.AsyncHandler<RotateVaultKeyRequest, RotateVaultKeyResponse>
                 handlerToUse = handler;
 
         java.util.function.Function<
                         com.oracle.bmc.responses.AsyncHandler<
-                                StartAutonomousDataWarehouseRequest,
-                                StartAutonomousDataWarehouseResponse>,
-                        java.util.concurrent.Future<StartAutonomousDataWarehouseResponse>>
+                                RotateVaultKeyRequest, RotateVaultKeyResponse>,
+                        java.util.concurrent.Future<RotateVaultKeyResponse>>
                 futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    StartAutonomousDataWarehouseRequest, StartAutonomousDataWarehouseResponse>(
+                    RotateVaultKeyRequest, RotateVaultKeyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7324,50 +6989,6 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     StartAutonomousDatabaseRequest, StartAutonomousDatabaseResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<StopAutonomousDataWarehouseResponse>
-            stopAutonomousDataWarehouse(
-                    StopAutonomousDataWarehouseRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    StopAutonomousDataWarehouseRequest,
-                                    StopAutonomousDataWarehouseResponse>
-                            handler) {
-        LOG.trace("Called async stopAutonomousDataWarehouse");
-        final StopAutonomousDataWarehouseRequest interceptedRequest =
-                StopAutonomousDataWarehouseConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StopAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, StopAutonomousDataWarehouseResponse>
-                transformer = StopAutonomousDataWarehouseConverter.fromResponse();
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        StopAutonomousDataWarehouseRequest, StopAutonomousDataWarehouseResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                StopAutonomousDataWarehouseRequest,
-                                StopAutonomousDataWarehouseResponse>,
-                        java.util.concurrent.Future<StopAutonomousDataWarehouseResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    StopAutonomousDataWarehouseRequest, StopAutonomousDataWarehouseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7732,50 +7353,6 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateAutonomousContainerDatabaseRequest,
                     UpdateAutonomousContainerDatabaseResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateAutonomousDataWarehouseResponse>
-            updateAutonomousDataWarehouse(
-                    UpdateAutonomousDataWarehouseRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateAutonomousDataWarehouseRequest,
-                                    UpdateAutonomousDataWarehouseResponse>
-                            handler) {
-        LOG.trace("Called async updateAutonomousDataWarehouse");
-        final UpdateAutonomousDataWarehouseRequest interceptedRequest =
-                UpdateAutonomousDataWarehouseConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateAutonomousDataWarehouseConverter.fromRequest(client, interceptedRequest);
-        final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, UpdateAutonomousDataWarehouseResponse>
-                transformer = UpdateAutonomousDataWarehouseConverter.fromResponse();
-
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateAutonomousDataWarehouseRequest, UpdateAutonomousDataWarehouseResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateAutonomousDataWarehouseRequest,
-                                UpdateAutonomousDataWarehouseResponse>,
-                        java.util.concurrent.Future<UpdateAutonomousDataWarehouseResponse>>
-                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateAutonomousDataWarehouseRequest, UpdateAutonomousDataWarehouseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

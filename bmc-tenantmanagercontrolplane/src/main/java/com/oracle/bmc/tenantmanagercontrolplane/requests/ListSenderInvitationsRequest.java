@@ -5,7 +5,9 @@
 package com.oracle.bmc.tenantmanagercontrolplane.requests;
 
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListSenderInvitationsExample.java.html">here</a> to see how to use ListSenderInvitationsRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

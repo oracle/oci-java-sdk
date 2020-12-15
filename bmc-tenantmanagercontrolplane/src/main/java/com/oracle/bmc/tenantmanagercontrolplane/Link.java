@@ -50,6 +50,8 @@ public interface Link extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/DeleteLinkExample.java.html">here</a> to see how to use DeleteLink API.
      */
     DeleteLinkResponse deleteLink(DeleteLinkRequest request);
 
@@ -58,6 +60,8 @@ public interface Link extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetLinkExample.java.html">here</a> to see how to use GetLink API.
      */
     GetLinkResponse getLink(GetLinkRequest request);
 
@@ -66,6 +70,8 @@ public interface Link extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListLinksExample.java.html">here</a> to see how to use ListLinks API.
      */
     ListLinksResponse listLinks(ListLinksRequest request);
 

@@ -5,7 +5,9 @@
 package com.oracle.bmc.announcementsservice.requests;
 
 import com.oracle.bmc.announcementsservice.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/ListAnnouncementsExample.java.html">here</a> to see how to use ListAnnouncementsRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

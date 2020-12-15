@@ -56,6 +56,19 @@ public class CreateDatabaseBase {
     String dbVersion;
 
     /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+    String kmsKeyVersionId;
+
+    /**
      * The source of the database:
      * Use `NONE` for creating a new database.
      * Use `DB_BACKUP` for creating a new database by restoring from a backup.

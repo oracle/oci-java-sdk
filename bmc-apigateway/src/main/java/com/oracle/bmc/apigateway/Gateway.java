@@ -53,6 +53,8 @@ public interface Gateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ChangeGatewayCompartmentExample.java.html">here</a> to see how to use ChangeGatewayCompartment API.
      */
     ChangeGatewayCompartmentResponse changeGatewayCompartment(
             ChangeGatewayCompartmentRequest request);
@@ -63,6 +65,8 @@ public interface Gateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/CreateGatewayExample.java.html">here</a> to see how to use CreateGateway API.
      */
     CreateGatewayResponse createGateway(CreateGatewayRequest request);
 
@@ -71,6 +75,8 @@ public interface Gateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/DeleteGatewayExample.java.html">here</a> to see how to use DeleteGateway API.
      */
     DeleteGatewayResponse deleteGateway(DeleteGatewayRequest request);
 
@@ -79,6 +85,8 @@ public interface Gateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/GetGatewayExample.java.html">here</a> to see how to use GetGateway API.
      */
     GetGatewayResponse getGateway(GetGatewayRequest request);
 
@@ -88,6 +96,8 @@ public interface Gateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListGatewaysExample.java.html">here</a> to see how to use ListGateways API.
      */
     ListGatewaysResponse listGateways(ListGatewaysRequest request);
 
@@ -96,6 +106,8 @@ public interface Gateway extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/UpdateGatewayExample.java.html">here</a> to see how to use UpdateGateway API.
      */
     UpdateGatewayResponse updateGateway(UpdateGatewayRequest request);
 

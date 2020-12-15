@@ -54,6 +54,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/AbortMultipartUploadExample.java.html">here</a> to see how to use AbortMultipartUpload API.
      */
     AbortMultipartUploadResponse abortMultipartUpload(AbortMultipartUploadRequest request);
 
@@ -63,6 +65,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CancelWorkRequestExample.java.html">here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -72,6 +76,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CommitMultipartUploadExample.java.html">here</a> to see how to use CommitMultipartUpload API.
      */
     CommitMultipartUploadResponse commitMultipartUpload(CommitMultipartUploadRequest request);
 
@@ -81,6 +87,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CopyObjectExample.java.html">here</a> to see how to use CopyObject API.
      */
     CopyObjectResponse copyObject(CopyObjectRequest request);
 
@@ -91,6 +99,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateBucketExample.java.html">here</a> to see how to use CreateBucket API.
      */
     CreateBucketResponse createBucket(CreateBucketRequest request);
 
@@ -100,6 +110,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateMultipartUploadExample.java.html">here</a> to see how to use CreateMultipartUpload API.
      */
     CreateMultipartUploadResponse createMultipartUpload(CreateMultipartUploadRequest request);
 
@@ -109,6 +121,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreatePreauthenticatedRequestExample.java.html">here</a> to see how to use CreatePreauthenticatedRequest API.
      */
     CreatePreauthenticatedRequestResponse createPreauthenticatedRequest(
             CreatePreauthenticatedRequestRequest request);
@@ -119,6 +133,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateReplicationPolicyExample.java.html">here</a> to see how to use CreateReplicationPolicy API.
      */
     CreateReplicationPolicyResponse createReplicationPolicy(CreateReplicationPolicyRequest request);
 
@@ -129,6 +145,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateRetentionRuleExample.java.html">here</a> to see how to use CreateRetentionRule API.
      */
     CreateRetentionRuleResponse createRetentionRule(CreateRetentionRuleRequest request);
 
@@ -141,6 +159,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteBucketExample.java.html">here</a> to see how to use DeleteBucket API.
      */
     DeleteBucketResponse deleteBucket(DeleteBucketRequest request);
 
@@ -150,6 +170,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteObjectExample.java.html">here</a> to see how to use DeleteObject API.
      */
     DeleteObjectResponse deleteObject(DeleteObjectRequest request);
 
@@ -159,6 +181,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteObjectLifecyclePolicyExample.java.html">here</a> to see how to use DeleteObjectLifecyclePolicy API.
      */
     DeleteObjectLifecyclePolicyResponse deleteObjectLifecyclePolicy(
             DeleteObjectLifecyclePolicyRequest request);
@@ -168,6 +192,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeletePreauthenticatedRequestExample.java.html">here</a> to see how to use DeletePreauthenticatedRequest API.
      */
     DeletePreauthenticatedRequestResponse deletePreauthenticatedRequest(
             DeletePreauthenticatedRequestRequest request);
@@ -178,6 +204,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteReplicationPolicyExample.java.html">here</a> to see how to use DeleteReplicationPolicy API.
      */
     DeleteReplicationPolicyResponse deleteReplicationPolicy(DeleteReplicationPolicyRequest request);
 
@@ -186,6 +214,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteRetentionRuleExample.java.html">here</a> to see how to use DeleteRetentionRule API.
      */
     DeleteRetentionRuleResponse deleteRetentionRule(DeleteRetentionRuleRequest request);
 
@@ -195,6 +225,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetBucketExample.java.html">here</a> to see how to use GetBucket API.
      */
     GetBucketResponse getBucket(GetBucketRequest request);
 
@@ -210,6 +242,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetNamespaceExample.java.html">here</a> to see how to use GetNamespace API.
      */
     GetNamespaceResponse getNamespace(GetNamespaceRequest request);
 
@@ -225,6 +259,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetNamespaceMetadataExample.java.html">here</a> to see how to use GetNamespaceMetadata API.
      */
     GetNamespaceMetadataResponse getNamespaceMetadata(GetNamespaceMetadataRequest request);
 
@@ -234,6 +270,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetObjectExample.java.html">here</a> to see how to use GetObject API.
      */
     GetObjectResponse getObject(GetObjectRequest request);
 
@@ -243,6 +281,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetObjectLifecyclePolicyExample.java.html">here</a> to see how to use GetObjectLifecyclePolicy API.
      */
     GetObjectLifecyclePolicyResponse getObjectLifecyclePolicy(
             GetObjectLifecyclePolicyRequest request);
@@ -252,6 +292,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetPreauthenticatedRequestExample.java.html">here</a> to see how to use GetPreauthenticatedRequest API.
      */
     GetPreauthenticatedRequestResponse getPreauthenticatedRequest(
             GetPreauthenticatedRequestRequest request);
@@ -262,6 +304,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetReplicationPolicyExample.java.html">here</a> to see how to use GetReplicationPolicy API.
      */
     GetReplicationPolicyResponse getReplicationPolicy(GetReplicationPolicyRequest request);
 
@@ -270,6 +314,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetRetentionRuleExample.java.html">here</a> to see how to use GetRetentionRule API.
      */
     GetRetentionRuleResponse getRetentionRule(GetRetentionRuleRequest request);
 
@@ -278,6 +324,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -287,6 +335,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/HeadBucketExample.java.html">here</a> to see how to use HeadBucket API.
      */
     HeadBucketResponse headBucket(HeadBucketRequest request);
 
@@ -296,6 +346,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/HeadObjectExample.java.html">here</a> to see how to use HeadObject API.
      */
     HeadObjectResponse headObject(HeadObjectRequest request);
 
@@ -310,6 +362,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListBucketsExample.java.html">here</a> to see how to use ListBuckets API.
      */
     ListBucketsResponse listBuckets(ListBucketsRequest request);
 
@@ -319,6 +373,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListMultipartUploadPartsExample.java.html">here</a> to see how to use ListMultipartUploadParts API.
      */
     ListMultipartUploadPartsResponse listMultipartUploadParts(
             ListMultipartUploadPartsRequest request);
@@ -329,6 +385,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListMultipartUploadsExample.java.html">here</a> to see how to use ListMultipartUploads API.
      */
     ListMultipartUploadsResponse listMultipartUploads(ListMultipartUploadsRequest request);
 
@@ -342,6 +400,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListObjectVersionsExample.java.html">here</a> to see how to use ListObjectVersions API.
      */
     ListObjectVersionsResponse listObjectVersions(ListObjectVersionsRequest request);
 
@@ -355,6 +415,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListObjectsExample.java.html">here</a> to see how to use ListObjects API.
      */
     ListObjectsResponse listObjects(ListObjectsRequest request);
 
@@ -364,6 +426,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListPreauthenticatedRequestsExample.java.html">here</a> to see how to use ListPreauthenticatedRequests API.
      */
     ListPreauthenticatedRequestsResponse listPreauthenticatedRequests(
             ListPreauthenticatedRequestsRequest request);
@@ -374,6 +438,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListReplicationPoliciesExample.java.html">here</a> to see how to use ListReplicationPolicies API.
      */
     ListReplicationPoliciesResponse listReplicationPolicies(ListReplicationPoliciesRequest request);
 
@@ -383,6 +449,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListReplicationSourcesExample.java.html">here</a> to see how to use ListReplicationSources API.
      */
     ListReplicationSourcesResponse listReplicationSources(ListReplicationSourcesRequest request);
 
@@ -393,6 +461,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListRetentionRulesExample.java.html">here</a> to see how to use ListRetentionRules API.
      */
     ListRetentionRulesResponse listRetentionRules(ListRetentionRulesRequest request);
 
@@ -401,6 +471,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -409,6 +481,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -418,6 +492,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -430,6 +506,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/MakeBucketWritableExample.java.html">here</a> to see how to use MakeBucketWritable API.
      */
     MakeBucketWritableResponse makeBucketWritable(MakeBucketWritableRequest request);
 
@@ -473,6 +551,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectExample.java.html">here</a> to see how to use PutObject API.
      */
     PutObjectResponse putObject(PutObjectRequest request);
 
@@ -482,6 +562,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectLifecyclePolicyExample.java.html">here</a> to see how to use PutObjectLifecyclePolicy API.
      */
     PutObjectLifecyclePolicyResponse putObjectLifecyclePolicy(
             PutObjectLifecyclePolicyRequest request);
@@ -506,6 +588,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ReencryptBucketExample.java.html">here</a> to see how to use ReencryptBucket API.
      */
     ReencryptBucketResponse reencryptBucket(ReencryptBucketRequest request);
 
@@ -523,6 +607,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ReencryptObjectExample.java.html">here</a> to see how to use ReencryptObject API.
      */
     ReencryptObjectResponse reencryptObject(ReencryptObjectRequest request);
 
@@ -535,6 +621,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/RenameObjectExample.java.html">here</a> to see how to use RenameObject API.
      */
     RenameObjectResponse renameObject(RenameObjectRequest request);
 
@@ -545,6 +633,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/RestoreObjectsExample.java.html">here</a> to see how to use RestoreObjects API.
      */
     RestoreObjectsResponse restoreObjects(RestoreObjectsRequest request);
 
@@ -558,6 +648,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateBucketExample.java.html">here</a> to see how to use UpdateBucket API.
      */
     UpdateBucketResponse updateBucket(UpdateBucketRequest request);
 
@@ -573,6 +665,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateNamespaceMetadataExample.java.html">here</a> to see how to use UpdateNamespaceMetadata API.
      */
     UpdateNamespaceMetadataResponse updateNamespaceMetadata(UpdateNamespaceMetadataRequest request);
 
@@ -582,6 +676,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateRetentionRuleExample.java.html">here</a> to see how to use UpdateRetentionRule API.
      */
     UpdateRetentionRuleResponse updateRetentionRule(UpdateRetentionRuleRequest request);
 
@@ -618,6 +714,8 @@ public interface ObjectStorage extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UploadPartExample.java.html">here</a> to see how to use UploadPart API.
      */
     UploadPartResponse uploadPart(UploadPartRequest request);
 

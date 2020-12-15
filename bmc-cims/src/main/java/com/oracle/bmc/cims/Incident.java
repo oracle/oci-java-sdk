@@ -50,6 +50,8 @@ public interface Incident extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/CreateIncidentExample.java.html">here</a> to see how to use CreateIncident API.
      */
     CreateIncidentResponse createIncident(CreateIncidentRequest request);
 
@@ -58,6 +60,8 @@ public interface Incident extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetIncidentExample.java.html">here</a> to see how to use GetIncident API.
      */
     GetIncidentResponse getIncident(GetIncidentRequest request);
 
@@ -66,6 +70,8 @@ public interface Incident extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetStatusExample.java.html">here</a> to see how to use GetStatus API.
      */
     GetStatusResponse getStatus(GetStatusRequest request);
 
@@ -74,6 +80,8 @@ public interface Incident extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentResourceTypesExample.java.html">here</a> to see how to use ListIncidentResourceTypes API.
      */
     ListIncidentResourceTypesResponse listIncidentResourceTypes(
             ListIncidentResourceTypesRequest request);
@@ -83,6 +91,8 @@ public interface Incident extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentsExample.java.html">here</a> to see how to use ListIncidents API.
      */
     ListIncidentsResponse listIncidents(ListIncidentsRequest request);
 
@@ -91,6 +101,8 @@ public interface Incident extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/UpdateIncidentExample.java.html">here</a> to see how to use UpdateIncident API.
      */
     UpdateIncidentResponse updateIncident(UpdateIncidentRequest request);
 
@@ -99,6 +111,8 @@ public interface Incident extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ValidateUserExample.java.html">here</a> to see how to use ValidateUser API.
      */
     ValidateUserResponse validateUser(ValidateUserRequest request);
 

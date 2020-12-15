@@ -65,12 +65,22 @@ public class SearchResultCollection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sortableFields")
+        private java.util.List<String> sortableFields;
+
+        public Builder sortableFields(java.util.List<String> sortableFields) {
+            this.sortableFields = sortableFields;
+            this.__explicitlySet__.add("sortableFields");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SearchResultCollection build() {
             SearchResultCollection __instance__ =
-                    new SearchResultCollection(count, items, query, facetedSearchAggregation);
+                    new SearchResultCollection(
+                            count, items, query, facetedSearchAggregation, sortableFields);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -81,7 +91,8 @@ public class SearchResultCollection {
                     count(o.getCount())
                             .items(o.getItems())
                             .query(o.getQuery())
-                            .facetedSearchAggregation(o.getFacetedSearchAggregation());
+                            .facetedSearchAggregation(o.getFacetedSearchAggregation())
+                            .sortableFields(o.getSortableFields());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -118,6 +129,12 @@ public class SearchResultCollection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("facetedSearchAggregation")
     java.util.List<FacetedSearchAggregation> facetedSearchAggregation;
+
+    /**
+     * A list of fields or properties used in the sorting of a search result.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sortableFields")
+    java.util.List<String> sortableFields;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

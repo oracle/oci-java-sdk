@@ -55,6 +55,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/BackupVaultExample.java.html">here</a> to see how to use BackupVault API.
      */
     BackupVaultResponse backupVault(BackupVaultRequest request);
 
@@ -72,6 +74,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelVaultDeletionExample.java.html">here</a> to see how to use CancelVaultDeletion API.
      */
     CancelVaultDeletionResponse cancelVaultDeletion(CancelVaultDeletionRequest request);
 
@@ -89,6 +93,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ChangeVaultCompartmentExample.java.html">here</a> to see how to use ChangeVaultCompartment API.
      */
     ChangeVaultCompartmentResponse changeVaultCompartment(ChangeVaultCompartmentRequest request);
 
@@ -106,6 +112,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateVaultExample.java.html">here</a> to see how to use CreateVault API.
      */
     CreateVaultResponse createVault(CreateVaultRequest request);
 
@@ -120,6 +128,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetVaultExample.java.html">here</a> to see how to use GetVault API.
      */
     GetVaultResponse getVault(GetVaultRequest request);
 
@@ -129,6 +139,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetVaultUsageExample.java.html">here</a> to see how to use GetVaultUsage API.
      */
     GetVaultUsageResponse getVaultUsage(GetVaultUsageRequest request);
 
@@ -143,6 +155,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListVaultsExample.java.html">here</a> to see how to use ListVaults API.
      */
     ListVaultsResponse listVaults(ListVaultsRequest request);
 
@@ -181,6 +195,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreVaultFromFileExample.java.html">here</a> to see how to use RestoreVaultFromFile API.
      */
     RestoreVaultFromFileResponse restoreVaultFromFile(RestoreVaultFromFileRequest request);
 
@@ -192,6 +208,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/RestoreVaultFromObjectStoreExample.java.html">here</a> to see how to use RestoreVaultFromObjectStore API.
      */
     RestoreVaultFromObjectStoreResponse restoreVaultFromObjectStore(
             RestoreVaultFromObjectStoreRequest request);
@@ -211,6 +229,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleVaultDeletionExample.java.html">here</a> to see how to use ScheduleVaultDeletion API.
      */
     ScheduleVaultDeletionResponse scheduleVaultDeletion(ScheduleVaultDeletionRequest request);
 
@@ -227,6 +247,8 @@ public interface KmsVault extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UpdateVaultExample.java.html">here</a> to see how to use UpdateVault API.
      */
     UpdateVaultResponse updateVault(UpdateVaultRequest request);
 

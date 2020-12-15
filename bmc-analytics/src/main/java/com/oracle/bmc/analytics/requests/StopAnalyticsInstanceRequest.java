@@ -5,7 +5,9 @@
 package com.oracle.bmc.analytics.requests;
 
 import com.oracle.bmc.analytics.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/StopAnalyticsInstanceExample.java.html">here</a> to see how to use StopAnalyticsInstanceRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter

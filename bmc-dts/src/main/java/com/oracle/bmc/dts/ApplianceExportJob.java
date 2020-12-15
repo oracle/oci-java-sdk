@@ -50,6 +50,8 @@ public interface ApplianceExportJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ChangeApplianceExportJobCompartmentExample.java.html">here</a> to see how to use ChangeApplianceExportJobCompartment API.
      */
     ChangeApplianceExportJobCompartmentResponse changeApplianceExportJobCompartment(
             ChangeApplianceExportJobCompartmentRequest request);
@@ -59,6 +61,8 @@ public interface ApplianceExportJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateApplianceExportJobExample.java.html">here</a> to see how to use CreateApplianceExportJob API.
      */
     CreateApplianceExportJobResponse createApplianceExportJob(
             CreateApplianceExportJobRequest request);
@@ -68,6 +72,8 @@ public interface ApplianceExportJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteApplianceExportJobExample.java.html">here</a> to see how to use DeleteApplianceExportJob API.
      */
     DeleteApplianceExportJobResponse deleteApplianceExportJob(
             DeleteApplianceExportJobRequest request);
@@ -77,6 +83,8 @@ public interface ApplianceExportJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetApplianceExportJobExample.java.html">here</a> to see how to use GetApplianceExportJob API.
      */
     GetApplianceExportJobResponse getApplianceExportJob(GetApplianceExportJobRequest request);
 
@@ -85,6 +93,8 @@ public interface ApplianceExportJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListApplianceExportJobsExample.java.html">here</a> to see how to use ListApplianceExportJobs API.
      */
     ListApplianceExportJobsResponse listApplianceExportJobs(ListApplianceExportJobsRequest request);
 
@@ -93,6 +103,8 @@ public interface ApplianceExportJob extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateApplianceExportJobExample.java.html">here</a> to see how to use UpdateApplianceExportJob API.
      */
     UpdateApplianceExportJobResponse updateApplianceExportJob(
             UpdateApplianceExportJobRequest request);

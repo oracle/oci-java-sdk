@@ -78,6 +78,8 @@ public interface FunctionsInvoke extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/InvokeFunctionExample.java.html">here</a> to see how to use InvokeFunction API.
      */
     InvokeFunctionResponse invokeFunction(InvokeFunctionRequest request);
 }

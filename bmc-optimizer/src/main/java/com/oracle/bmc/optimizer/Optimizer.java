@@ -51,6 +51,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/BulkApplyRecommendationsExample.java.html">here</a> to see how to use BulkApplyRecommendations API.
      */
     BulkApplyRecommendationsResponse bulkApplyRecommendations(
             BulkApplyRecommendationsRequest request);
@@ -61,6 +63,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/CreateProfileExample.java.html">here</a> to see how to use CreateProfile API.
      */
     CreateProfileResponse createProfile(CreateProfileRequest request);
 
@@ -70,6 +74,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/DeleteProfileExample.java.html">here</a> to see how to use DeleteProfile API.
      */
     DeleteProfileResponse deleteProfile(DeleteProfileRequest request);
 
@@ -79,6 +85,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetCategoryExample.java.html">here</a> to see how to use GetCategory API.
      */
     GetCategoryResponse getCategory(GetCategoryRequest request);
 
@@ -88,6 +96,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetEnrollmentStatusExample.java.html">here</a> to see how to use GetEnrollmentStatus API.
      */
     GetEnrollmentStatusResponse getEnrollmentStatus(GetEnrollmentStatusRequest request);
 
@@ -97,6 +107,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetProfileExample.java.html">here</a> to see how to use GetProfile API.
      */
     GetProfileResponse getProfile(GetProfileRequest request);
 
@@ -106,6 +118,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetRecommendationExample.java.html">here</a> to see how to use GetRecommendation API.
      */
     GetRecommendationResponse getRecommendation(GetRecommendationRequest request);
 
@@ -115,6 +129,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetResourceActionExample.java.html">here</a> to see how to use GetResourceAction API.
      */
     GetResourceActionResponse getResourceAction(GetResourceActionRequest request);
 
@@ -123,6 +139,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -132,6 +150,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListCategoriesExample.java.html">here</a> to see how to use ListCategories API.
      */
     ListCategoriesResponse listCategories(ListCategoriesRequest request);
 
@@ -141,6 +161,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListEnrollmentStatusesExample.java.html">here</a> to see how to use ListEnrollmentStatuses API.
      */
     ListEnrollmentStatusesResponse listEnrollmentStatuses(ListEnrollmentStatusesRequest request);
 
@@ -151,6 +173,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListHistoriesExample.java.html">here</a> to see how to use ListHistories API.
      */
     ListHistoriesResponse listHistories(ListHistoriesRequest request);
 
@@ -160,6 +184,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListProfilesExample.java.html">here</a> to see how to use ListProfiles API.
      */
     ListProfilesResponse listProfiles(ListProfilesRequest request);
 
@@ -169,6 +195,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListRecommendationsExample.java.html">here</a> to see how to use ListRecommendations API.
      */
     ListRecommendationsResponse listRecommendations(ListRecommendationsRequest request);
 
@@ -178,6 +206,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListResourceActionsExample.java.html">here</a> to see how to use ListResourceActions API.
      */
     ListResourceActionsResponse listResourceActions(ListResourceActionsRequest request);
 
@@ -187,6 +217,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -196,6 +228,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -205,6 +239,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -214,6 +250,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateEnrollmentStatusExample.java.html">here</a> to see how to use UpdateEnrollmentStatus API.
      */
     UpdateEnrollmentStatusResponse updateEnrollmentStatus(UpdateEnrollmentStatusRequest request);
 
@@ -223,6 +261,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateProfileExample.java.html">here</a> to see how to use UpdateProfile API.
      */
     UpdateProfileResponse updateProfile(UpdateProfileRequest request);
 
@@ -237,6 +277,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateRecommendationExample.java.html">here</a> to see how to use UpdateRecommendation API.
      */
     UpdateRecommendationResponse updateRecommendation(UpdateRecommendationRequest request);
 
@@ -251,6 +293,8 @@ public interface Optimizer extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/UpdateResourceActionExample.java.html">here</a> to see how to use UpdateResourceAction API.
      */
     UpdateResourceActionResponse updateResourceAction(UpdateResourceActionRequest request);
 

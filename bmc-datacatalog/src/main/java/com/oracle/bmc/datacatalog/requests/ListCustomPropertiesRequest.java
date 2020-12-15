@@ -5,7 +5,9 @@
 package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCustomPropertiesExample.java.html">here</a> to see how to use ListCustomPropertiesRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
@@ -74,6 +76,8 @@ public class ListCustomPropertiesRequest
         Category("CATEGORY"),
         File("FILE"),
         Bucket("BUCKET"),
+        Message("MESSAGE"),
+        UnrecognizedFile("UNRECOGNIZED_FILE"),
         ;
 
         private final String value;

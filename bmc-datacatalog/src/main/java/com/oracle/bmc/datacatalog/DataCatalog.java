@@ -50,6 +50,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AddDataSelectorPatternsExample.java.html">here</a> to see how to use AddDataSelectorPatterns API.
      */
     AddDataSelectorPatternsResponse addDataSelectorPatterns(AddDataSelectorPatternsRequest request);
 
@@ -58,6 +60,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AssociateCustomPropertyExample.java.html">here</a> to see how to use AssociateCustomProperty API.
      */
     AssociateCustomPropertyResponse associateCustomProperty(AssociateCustomPropertyRequest request);
 
@@ -66,6 +70,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AttachCatalogPrivateEndpointExample.java.html">here</a> to see how to use AttachCatalogPrivateEndpoint API.
      */
     AttachCatalogPrivateEndpointResponse attachCatalogPrivateEndpoint(
             AttachCatalogPrivateEndpointRequest request);
@@ -75,6 +81,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ChangeCatalogCompartmentExample.java.html">here</a> to see how to use ChangeCatalogCompartment API.
      */
     ChangeCatalogCompartmentResponse changeCatalogCompartment(
             ChangeCatalogCompartmentRequest request);
@@ -84,6 +92,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ChangeCatalogPrivateEndpointCompartmentExample.java.html">here</a> to see how to use ChangeCatalogPrivateEndpointCompartment API.
      */
     ChangeCatalogPrivateEndpointCompartmentResponse changeCatalogPrivateEndpointCompartment(
             ChangeCatalogPrivateEndpointCompartmentRequest request);
@@ -93,6 +103,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateAttributeExample.java.html">here</a> to see how to use CreateAttribute API.
      */
     CreateAttributeResponse createAttribute(CreateAttributeRequest request);
 
@@ -101,6 +113,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateAttributeTagExample.java.html">here</a> to see how to use CreateAttributeTag API.
      */
     CreateAttributeTagResponse createAttributeTag(CreateAttributeTagRequest request);
 
@@ -111,6 +125,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateCatalogExample.java.html">here</a> to see how to use CreateCatalog API.
      */
     CreateCatalogResponse createCatalog(CreateCatalogRequest request);
 
@@ -119,6 +135,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateCatalogPrivateEndpointExample.java.html">here</a> to see how to use CreateCatalogPrivateEndpoint API.
      */
     CreateCatalogPrivateEndpointResponse createCatalogPrivateEndpoint(
             CreateCatalogPrivateEndpointRequest request);
@@ -128,6 +146,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateConnectionExample.java.html">here</a> to see how to use CreateConnection API.
      */
     CreateConnectionResponse createConnection(CreateConnectionRequest request);
 
@@ -136,6 +156,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateCustomPropertyExample.java.html">here</a> to see how to use CreateCustomProperty API.
      */
     CreateCustomPropertyResponse createCustomProperty(CreateCustomPropertyRequest request);
 
@@ -144,6 +166,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateDataAssetExample.java.html">here</a> to see how to use CreateDataAsset API.
      */
     CreateDataAssetResponse createDataAsset(CreateDataAssetRequest request);
 
@@ -152,6 +176,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateDataAssetTagExample.java.html">here</a> to see how to use CreateDataAssetTag API.
      */
     CreateDataAssetTagResponse createDataAssetTag(CreateDataAssetTagRequest request);
 
@@ -160,6 +186,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateEntityExample.java.html">here</a> to see how to use CreateEntity API.
      */
     CreateEntityResponse createEntity(CreateEntityRequest request);
 
@@ -168,6 +196,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateEntityTagExample.java.html">here</a> to see how to use CreateEntityTag API.
      */
     CreateEntityTagResponse createEntityTag(CreateEntityTagRequest request);
 
@@ -176,6 +206,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateFolderExample.java.html">here</a> to see how to use CreateFolder API.
      */
     CreateFolderResponse createFolder(CreateFolderRequest request);
 
@@ -184,6 +216,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateFolderTagExample.java.html">here</a> to see how to use CreateFolderTag API.
      */
     CreateFolderTagResponse createFolderTag(CreateFolderTagRequest request);
 
@@ -192,6 +226,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateGlossaryExample.java.html">here</a> to see how to use CreateGlossary API.
      */
     CreateGlossaryResponse createGlossary(CreateGlossaryRequest request);
 
@@ -200,6 +236,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobExample.java.html">here</a> to see how to use CreateJob API.
      */
     CreateJobResponse createJob(CreateJobRequest request);
 
@@ -208,6 +246,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobDefinitionExample.java.html">here</a> to see how to use CreateJobDefinition API.
      */
     CreateJobDefinitionResponse createJobDefinition(CreateJobDefinitionRequest request);
 
@@ -216,6 +256,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateJobExecutionExample.java.html">here</a> to see how to use CreateJobExecution API.
      */
     CreateJobExecutionResponse createJobExecution(CreateJobExecutionRequest request);
 
@@ -224,6 +266,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateNamespaceExample.java.html">here</a> to see how to use CreateNamespace API.
      */
     CreateNamespaceResponse createNamespace(CreateNamespaceRequest request);
 
@@ -232,6 +276,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreatePatternExample.java.html">here</a> to see how to use CreatePattern API.
      */
     CreatePatternResponse createPattern(CreatePatternRequest request);
 
@@ -240,6 +286,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateTermExample.java.html">here</a> to see how to use CreateTerm API.
      */
     CreateTermResponse createTerm(CreateTermRequest request);
 
@@ -248,6 +296,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/CreateTermRelationshipExample.java.html">here</a> to see how to use CreateTermRelationship API.
      */
     CreateTermRelationshipResponse createTermRelationship(CreateTermRelationshipRequest request);
 
@@ -256,6 +306,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteAttributeExample.java.html">here</a> to see how to use DeleteAttribute API.
      */
     DeleteAttributeResponse deleteAttribute(DeleteAttributeRequest request);
 
@@ -264,6 +316,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteAttributeTagExample.java.html">here</a> to see how to use DeleteAttributeTag API.
      */
     DeleteAttributeTagResponse deleteAttributeTag(DeleteAttributeTagRequest request);
 
@@ -272,6 +326,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteCatalogExample.java.html">here</a> to see how to use DeleteCatalog API.
      */
     DeleteCatalogResponse deleteCatalog(DeleteCatalogRequest request);
 
@@ -280,6 +336,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteCatalogPrivateEndpointExample.java.html">here</a> to see how to use DeleteCatalogPrivateEndpoint API.
      */
     DeleteCatalogPrivateEndpointResponse deleteCatalogPrivateEndpoint(
             DeleteCatalogPrivateEndpointRequest request);
@@ -289,6 +347,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteConnectionExample.java.html">here</a> to see how to use DeleteConnection API.
      */
     DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request);
 
@@ -297,6 +357,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteCustomPropertyExample.java.html">here</a> to see how to use DeleteCustomProperty API.
      */
     DeleteCustomPropertyResponse deleteCustomProperty(DeleteCustomPropertyRequest request);
 
@@ -305,6 +367,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteDataAssetExample.java.html">here</a> to see how to use DeleteDataAsset API.
      */
     DeleteDataAssetResponse deleteDataAsset(DeleteDataAssetRequest request);
 
@@ -313,6 +377,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteDataAssetTagExample.java.html">here</a> to see how to use DeleteDataAssetTag API.
      */
     DeleteDataAssetTagResponse deleteDataAssetTag(DeleteDataAssetTagRequest request);
 
@@ -321,6 +387,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteEntityExample.java.html">here</a> to see how to use DeleteEntity API.
      */
     DeleteEntityResponse deleteEntity(DeleteEntityRequest request);
 
@@ -329,6 +397,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteEntityTagExample.java.html">here</a> to see how to use DeleteEntityTag API.
      */
     DeleteEntityTagResponse deleteEntityTag(DeleteEntityTagRequest request);
 
@@ -337,6 +407,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteFolderExample.java.html">here</a> to see how to use DeleteFolder API.
      */
     DeleteFolderResponse deleteFolder(DeleteFolderRequest request);
 
@@ -345,6 +417,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteFolderTagExample.java.html">here</a> to see how to use DeleteFolderTag API.
      */
     DeleteFolderTagResponse deleteFolderTag(DeleteFolderTagRequest request);
 
@@ -353,6 +427,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteGlossaryExample.java.html">here</a> to see how to use DeleteGlossary API.
      */
     DeleteGlossaryResponse deleteGlossary(DeleteGlossaryRequest request);
 
@@ -361,6 +437,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteJobExample.java.html">here</a> to see how to use DeleteJob API.
      */
     DeleteJobResponse deleteJob(DeleteJobRequest request);
 
@@ -369,6 +447,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteJobDefinitionExample.java.html">here</a> to see how to use DeleteJobDefinition API.
      */
     DeleteJobDefinitionResponse deleteJobDefinition(DeleteJobDefinitionRequest request);
 
@@ -377,6 +457,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteNamespaceExample.java.html">here</a> to see how to use DeleteNamespace API.
      */
     DeleteNamespaceResponse deleteNamespace(DeleteNamespaceRequest request);
 
@@ -385,6 +467,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeletePatternExample.java.html">here</a> to see how to use DeletePattern API.
      */
     DeletePatternResponse deletePattern(DeletePatternRequest request);
 
@@ -393,6 +477,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteTermExample.java.html">here</a> to see how to use DeleteTerm API.
      */
     DeleteTermResponse deleteTerm(DeleteTermRequest request);
 
@@ -401,6 +487,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteTermRelationshipExample.java.html">here</a> to see how to use DeleteTermRelationship API.
      */
     DeleteTermRelationshipResponse deleteTermRelationship(DeleteTermRelationshipRequest request);
 
@@ -409,6 +497,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DetachCatalogPrivateEndpointExample.java.html">here</a> to see how to use DetachCatalogPrivateEndpoint API.
      */
     DetachCatalogPrivateEndpointResponse detachCatalogPrivateEndpoint(
             DetachCatalogPrivateEndpointRequest request);
@@ -418,6 +508,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DisassociateCustomPropertyExample.java.html">here</a> to see how to use DisassociateCustomProperty API.
      */
     DisassociateCustomPropertyResponse disassociateCustomProperty(
             DisassociateCustomPropertyRequest request);
@@ -427,6 +519,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ExpandTreeForGlossaryExample.java.html">here</a> to see how to use ExpandTreeForGlossary API.
      */
     ExpandTreeForGlossaryResponse expandTreeForGlossary(ExpandTreeForGlossaryRequest request);
 
@@ -435,6 +529,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ExportGlossaryExample.java.html">here</a> to see how to use ExportGlossary API.
      */
     ExportGlossaryResponse exportGlossary(ExportGlossaryRequest request);
 
@@ -443,6 +539,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetAttributeExample.java.html">here</a> to see how to use GetAttribute API.
      */
     GetAttributeResponse getAttribute(GetAttributeRequest request);
 
@@ -451,6 +549,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetAttributeTagExample.java.html">here</a> to see how to use GetAttributeTag API.
      */
     GetAttributeTagResponse getAttributeTag(GetAttributeTagRequest request);
 
@@ -459,6 +559,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetCatalogExample.java.html">here</a> to see how to use GetCatalog API.
      */
     GetCatalogResponse getCatalog(GetCatalogRequest request);
 
@@ -467,6 +569,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetCatalogPrivateEndpointExample.java.html">here</a> to see how to use GetCatalogPrivateEndpoint API.
      */
     GetCatalogPrivateEndpointResponse getCatalogPrivateEndpoint(
             GetCatalogPrivateEndpointRequest request);
@@ -476,6 +580,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetConnectionExample.java.html">here</a> to see how to use GetConnection API.
      */
     GetConnectionResponse getConnection(GetConnectionRequest request);
 
@@ -484,6 +590,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetCustomPropertyExample.java.html">here</a> to see how to use GetCustomProperty API.
      */
     GetCustomPropertyResponse getCustomProperty(GetCustomPropertyRequest request);
 
@@ -492,6 +600,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetDataAssetExample.java.html">here</a> to see how to use GetDataAsset API.
      */
     GetDataAssetResponse getDataAsset(GetDataAssetRequest request);
 
@@ -500,6 +610,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetDataAssetTagExample.java.html">here</a> to see how to use GetDataAssetTag API.
      */
     GetDataAssetTagResponse getDataAssetTag(GetDataAssetTagRequest request);
 
@@ -508,6 +620,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetEntityExample.java.html">here</a> to see how to use GetEntity API.
      */
     GetEntityResponse getEntity(GetEntityRequest request);
 
@@ -516,6 +630,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetEntityTagExample.java.html">here</a> to see how to use GetEntityTag API.
      */
     GetEntityTagResponse getEntityTag(GetEntityTagRequest request);
 
@@ -524,6 +640,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetFolderExample.java.html">here</a> to see how to use GetFolder API.
      */
     GetFolderResponse getFolder(GetFolderRequest request);
 
@@ -532,6 +650,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetFolderTagExample.java.html">here</a> to see how to use GetFolderTag API.
      */
     GetFolderTagResponse getFolderTag(GetFolderTagRequest request);
 
@@ -540,6 +660,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetGlossaryExample.java.html">here</a> to see how to use GetGlossary API.
      */
     GetGlossaryResponse getGlossary(GetGlossaryRequest request);
 
@@ -548,6 +670,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobExample.java.html">here</a> to see how to use GetJob API.
      */
     GetJobResponse getJob(GetJobRequest request);
 
@@ -556,6 +680,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobDefinitionExample.java.html">here</a> to see how to use GetJobDefinition API.
      */
     GetJobDefinitionResponse getJobDefinition(GetJobDefinitionRequest request);
 
@@ -564,6 +690,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobExecutionExample.java.html">here</a> to see how to use GetJobExecution API.
      */
     GetJobExecutionResponse getJobExecution(GetJobExecutionRequest request);
 
@@ -572,6 +700,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobLogExample.java.html">here</a> to see how to use GetJobLog API.
      */
     GetJobLogResponse getJobLog(GetJobLogRequest request);
 
@@ -580,6 +710,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetJobMetricsExample.java.html">here</a> to see how to use GetJobMetrics API.
      */
     GetJobMetricsResponse getJobMetrics(GetJobMetricsRequest request);
 
@@ -588,6 +720,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetNamespaceExample.java.html">here</a> to see how to use GetNamespace API.
      */
     GetNamespaceResponse getNamespace(GetNamespaceRequest request);
 
@@ -596,6 +730,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetPatternExample.java.html">here</a> to see how to use GetPattern API.
      */
     GetPatternResponse getPattern(GetPatternRequest request);
 
@@ -604,6 +740,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTermExample.java.html">here</a> to see how to use GetTerm API.
      */
     GetTermResponse getTerm(GetTermRequest request);
 
@@ -612,6 +750,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTermRelationshipExample.java.html">here</a> to see how to use GetTermRelationship API.
      */
     GetTermRelationshipResponse getTermRelationship(GetTermRelationshipRequest request);
 
@@ -620,6 +760,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTypeExample.java.html">here</a> to see how to use GetType API.
      */
     GetTypeResponse getType(GetTypeRequest request);
 
@@ -628,6 +770,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -636,6 +780,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportConnectionExample.java.html">here</a> to see how to use ImportConnection API.
      */
     ImportConnectionResponse importConnection(ImportConnectionRequest request);
 
@@ -644,6 +790,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportGlossaryExample.java.html">here</a> to see how to use ImportGlossary API.
      */
     ImportGlossaryResponse importGlossary(ImportGlossaryRequest request);
 
@@ -652,6 +800,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListAggregatedPhysicalEntitiesExample.java.html">here</a> to see how to use ListAggregatedPhysicalEntities API.
      */
     ListAggregatedPhysicalEntitiesResponse listAggregatedPhysicalEntities(
             ListAggregatedPhysicalEntitiesRequest request);
@@ -661,6 +811,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListAttributeTagsExample.java.html">here</a> to see how to use ListAttributeTags API.
      */
     ListAttributeTagsResponse listAttributeTags(ListAttributeTagsRequest request);
 
@@ -669,6 +821,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListAttributesExample.java.html">here</a> to see how to use ListAttributes API.
      */
     ListAttributesResponse listAttributes(ListAttributesRequest request);
 
@@ -678,6 +832,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCatalogPrivateEndpointsExample.java.html">here</a> to see how to use ListCatalogPrivateEndpoints API.
      */
     ListCatalogPrivateEndpointsResponse listCatalogPrivateEndpoints(
             ListCatalogPrivateEndpointsRequest request);
@@ -688,6 +844,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCatalogsExample.java.html">here</a> to see how to use ListCatalogs API.
      */
     ListCatalogsResponse listCatalogs(ListCatalogsRequest request);
 
@@ -696,6 +854,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListConnectionsExample.java.html">here</a> to see how to use ListConnections API.
      */
     ListConnectionsResponse listConnections(ListConnectionsRequest request);
 
@@ -704,6 +864,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCustomPropertiesExample.java.html">here</a> to see how to use ListCustomProperties API.
      */
     ListCustomPropertiesResponse listCustomProperties(ListCustomPropertiesRequest request);
 
@@ -712,6 +874,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDataAssetTagsExample.java.html">here</a> to see how to use ListDataAssetTags API.
      */
     ListDataAssetTagsResponse listDataAssetTags(ListDataAssetTagsRequest request);
 
@@ -720,6 +884,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDataAssetsExample.java.html">here</a> to see how to use ListDataAssets API.
      */
     ListDataAssetsResponse listDataAssets(ListDataAssetsRequest request);
 
@@ -728,6 +894,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDerivedLogicalEntitiesExample.java.html">here</a> to see how to use ListDerivedLogicalEntities API.
      */
     ListDerivedLogicalEntitiesResponse listDerivedLogicalEntities(
             ListDerivedLogicalEntitiesRequest request);
@@ -737,6 +905,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListEntitiesExample.java.html">here</a> to see how to use ListEntities API.
      */
     ListEntitiesResponse listEntities(ListEntitiesRequest request);
 
@@ -745,6 +915,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListEntityTagsExample.java.html">here</a> to see how to use ListEntityTags API.
      */
     ListEntityTagsResponse listEntityTags(ListEntityTagsRequest request);
 
@@ -753,6 +925,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListFolderTagsExample.java.html">here</a> to see how to use ListFolderTags API.
      */
     ListFolderTagsResponse listFolderTags(ListFolderTagsRequest request);
 
@@ -761,6 +935,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListFoldersExample.java.html">here</a> to see how to use ListFolders API.
      */
     ListFoldersResponse listFolders(ListFoldersRequest request);
 
@@ -769,6 +945,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListGlossariesExample.java.html">here</a> to see how to use ListGlossaries API.
      */
     ListGlossariesResponse listGlossaries(ListGlossariesRequest request);
 
@@ -777,6 +955,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobDefinitionsExample.java.html">here</a> to see how to use ListJobDefinitions API.
      */
     ListJobDefinitionsResponse listJobDefinitions(ListJobDefinitionsRequest request);
 
@@ -785,6 +965,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobExecutionsExample.java.html">here</a> to see how to use ListJobExecutions API.
      */
     ListJobExecutionsResponse listJobExecutions(ListJobExecutionsRequest request);
 
@@ -793,6 +975,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobLogsExample.java.html">here</a> to see how to use ListJobLogs API.
      */
     ListJobLogsResponse listJobLogs(ListJobLogsRequest request);
 
@@ -801,6 +985,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobMetricsExample.java.html">here</a> to see how to use ListJobMetrics API.
      */
     ListJobMetricsResponse listJobMetrics(ListJobMetricsRequest request);
 
@@ -809,6 +995,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobsExample.java.html">here</a> to see how to use ListJobs API.
      */
     ListJobsResponse listJobs(ListJobsRequest request);
 
@@ -817,6 +1005,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListNamespacesExample.java.html">here</a> to see how to use ListNamespaces API.
      */
     ListNamespacesResponse listNamespaces(ListNamespacesRequest request);
 
@@ -825,14 +1015,28 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListPatternsExample.java.html">here</a> to see how to use ListPatterns API.
      */
     ListPatternsResponse listPatterns(ListPatternsRequest request);
+
+    /**
+     * Returns a list of all rules of a data entity.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListRulesExample.java.html">here</a> to see how to use ListRules API.
+     */
+    ListRulesResponse listRules(ListRulesRequest request);
 
     /**
      * Returns a list of all user created tags in the system.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTagsExample.java.html">here</a> to see how to use ListTags API.
      */
     ListTagsResponse listTags(ListTagsRequest request);
 
@@ -841,6 +1045,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTermRelationshipsExample.java.html">here</a> to see how to use ListTermRelationships API.
      */
     ListTermRelationshipsResponse listTermRelationships(ListTermRelationshipsRequest request);
 
@@ -849,6 +1055,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTermsExample.java.html">here</a> to see how to use ListTerms API.
      */
     ListTermsResponse listTerms(ListTermsRequest request);
 
@@ -857,6 +1065,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListTypesExample.java.html">here</a> to see how to use ListTypes API.
      */
     ListTypesResponse listTypes(ListTypesRequest request);
 
@@ -866,6 +1076,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -875,6 +1087,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -884,6 +1098,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -892,6 +1108,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ObjectStatsExample.java.html">here</a> to see how to use ObjectStats API.
      */
     ObjectStatsResponse objectStats(ObjectStatsRequest request);
 
@@ -900,6 +1118,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ParseConnectionExample.java.html">here</a> to see how to use ParseConnection API.
      */
     ParseConnectionResponse parseConnection(ParseConnectionRequest request);
 
@@ -908,6 +1128,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RemoveDataSelectorPatternsExample.java.html">here</a> to see how to use RemoveDataSelectorPatterns API.
      */
     RemoveDataSelectorPatternsResponse removeDataSelectorPatterns(
             RemoveDataSelectorPatternsRequest request);
@@ -917,6 +1139,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/SearchCriteriaExample.java.html">here</a> to see how to use SearchCriteria API.
      */
     SearchCriteriaResponse searchCriteria(SearchCriteriaRequest request);
 
@@ -925,6 +1149,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/TestConnectionExample.java.html">here</a> to see how to use TestConnection API.
      */
     TestConnectionResponse testConnection(TestConnectionRequest request);
 
@@ -933,6 +1159,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateAttributeExample.java.html">here</a> to see how to use UpdateAttribute API.
      */
     UpdateAttributeResponse updateAttribute(UpdateAttributeRequest request);
 
@@ -941,6 +1169,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCatalogExample.java.html">here</a> to see how to use UpdateCatalog API.
      */
     UpdateCatalogResponse updateCatalog(UpdateCatalogRequest request);
 
@@ -949,6 +1179,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCatalogPrivateEndpointExample.java.html">here</a> to see how to use UpdateCatalogPrivateEndpoint API.
      */
     UpdateCatalogPrivateEndpointResponse updateCatalogPrivateEndpoint(
             UpdateCatalogPrivateEndpointRequest request);
@@ -958,6 +1190,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateConnectionExample.java.html">here</a> to see how to use UpdateConnection API.
      */
     UpdateConnectionResponse updateConnection(UpdateConnectionRequest request);
 
@@ -966,6 +1200,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateCustomPropertyExample.java.html">here</a> to see how to use UpdateCustomProperty API.
      */
     UpdateCustomPropertyResponse updateCustomProperty(UpdateCustomPropertyRequest request);
 
@@ -974,6 +1210,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateDataAssetExample.java.html">here</a> to see how to use UpdateDataAsset API.
      */
     UpdateDataAssetResponse updateDataAsset(UpdateDataAssetRequest request);
 
@@ -982,6 +1220,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateEntityExample.java.html">here</a> to see how to use UpdateEntity API.
      */
     UpdateEntityResponse updateEntity(UpdateEntityRequest request);
 
@@ -990,6 +1230,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateFolderExample.java.html">here</a> to see how to use UpdateFolder API.
      */
     UpdateFolderResponse updateFolder(UpdateFolderRequest request);
 
@@ -998,6 +1240,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateGlossaryExample.java.html">here</a> to see how to use UpdateGlossary API.
      */
     UpdateGlossaryResponse updateGlossary(UpdateGlossaryRequest request);
 
@@ -1006,6 +1250,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateJobExample.java.html">here</a> to see how to use UpdateJob API.
      */
     UpdateJobResponse updateJob(UpdateJobRequest request);
 
@@ -1014,6 +1260,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateJobDefinitionExample.java.html">here</a> to see how to use UpdateJobDefinition API.
      */
     UpdateJobDefinitionResponse updateJobDefinition(UpdateJobDefinitionRequest request);
 
@@ -1022,6 +1270,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateNamespaceExample.java.html">here</a> to see how to use UpdateNamespace API.
      */
     UpdateNamespaceResponse updateNamespace(UpdateNamespaceRequest request);
 
@@ -1030,6 +1280,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdatePatternExample.java.html">here</a> to see how to use UpdatePattern API.
      */
     UpdatePatternResponse updatePattern(UpdatePatternRequest request);
 
@@ -1038,6 +1290,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateTermExample.java.html">here</a> to see how to use UpdateTerm API.
      */
     UpdateTermResponse updateTerm(UpdateTermRequest request);
 
@@ -1046,6 +1300,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateTermRelationshipExample.java.html">here</a> to see how to use UpdateTermRelationship API.
      */
     UpdateTermRelationshipResponse updateTermRelationship(UpdateTermRelationshipRequest request);
 
@@ -1054,6 +1310,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UploadCredentialsExample.java.html">here</a> to see how to use UploadCredentials API.
      */
     UploadCredentialsResponse uploadCredentials(UploadCredentialsRequest request);
 
@@ -1062,6 +1320,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UsersExample.java.html">here</a> to see how to use Users API.
      */
     UsersResponse users(UsersRequest request);
 
@@ -1070,6 +1330,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ValidateConnectionExample.java.html">here</a> to see how to use ValidateConnection API.
      */
     ValidateConnectionResponse validateConnection(ValidateConnectionRequest request);
 
@@ -1078,6 +1340,8 @@ public interface DataCatalog extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ValidatePatternExample.java.html">here</a> to see how to use ValidatePattern API.
      */
     ValidatePatternResponse validatePattern(ValidatePatternRequest request);
 

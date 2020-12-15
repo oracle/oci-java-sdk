@@ -5,7 +5,9 @@
 package com.oracle.bmc.monitoring.requests;
 
 import com.oracle.bmc.monitoring.model.*;
-
+/**
+ * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/CreateAlarmExample.java.html">here</a> to see how to use CreateAlarmRequest.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
