@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault;
@@ -54,7 +54,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretDeletionExample.java.html">here</a> to see how to use CancelSecretDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretDeletion API.
      */
     CancelSecretDeletionResponse cancelSecretDeletion(CancelSecretDeletionRequest request);
 
@@ -64,7 +64,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretVersionDeletionExample.java.html">here</a> to see how to use CancelSecretVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretVersionDeletion API.
      */
     CancelSecretVersionDeletionResponse cancelSecretVersionDeletion(
             CancelSecretVersionDeletionRequest request);
@@ -79,7 +79,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ChangeSecretCompartmentExample.java.html">here</a> to see how to use ChangeSecretCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ChangeSecretCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSecretCompartment API.
      */
     ChangeSecretCompartmentResponse changeSecretCompartment(ChangeSecretCompartmentRequest request);
 
@@ -92,7 +92,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CreateSecretExample.java.html">here</a> to see how to use CreateSecret API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CreateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSecret API.
      */
     CreateSecretResponse createSecret(CreateSecretRequest request);
 
@@ -102,7 +102,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretExample.java.html">here</a> to see how to use GetSecret API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecret API.
      */
     GetSecretResponse getSecret(GetSecretRequest request);
 
@@ -113,7 +113,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretVersionExample.java.html">here</a> to see how to use GetSecretVersion API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/GetSecretVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSecretVersion API.
      */
     GetSecretVersionResponse getSecretVersion(GetSecretVersionRequest request);
 
@@ -123,7 +123,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretVersionsExample.java.html">here</a> to see how to use ListSecretVersions API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecretVersions API.
      */
     ListSecretVersionsResponse listSecretVersions(ListSecretVersionsRequest request);
 
@@ -133,7 +133,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretsExample.java.html">here</a> to see how to use ListSecrets API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ListSecretsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSecrets API.
      */
     ListSecretsResponse listSecrets(ListSecretsRequest request);
 
@@ -145,7 +145,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretDeletionExample.java.html">here</a> to see how to use ScheduleSecretDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleSecretDeletion API.
      */
     ScheduleSecretDeletionResponse scheduleSecretDeletion(ScheduleSecretDeletionRequest request);
 
@@ -157,7 +157,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretVersionDeletionExample.java.html">here</a> to see how to use ScheduleSecretVersionDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/ScheduleSecretVersionDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleSecretVersionDeletion API.
      */
     ScheduleSecretVersionDeletionResponse scheduleSecretVersionDeletion(
             ScheduleSecretVersionDeletionRequest request);
@@ -174,7 +174,7 @@ public interface Vaults extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/UpdateSecretExample.java.html">here</a> to see how to use UpdateSecret API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/UpdateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSecret API.
      */
     UpdateSecretResponse updateSecret(UpdateSecretRequest request);
 

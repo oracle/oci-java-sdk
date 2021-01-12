@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waas;
@@ -53,7 +53,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/AcceptRecommendationsExample.java.html">here</a> to see how to use AcceptRecommendations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/AcceptRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AcceptRecommendations API.
      */
     AcceptRecommendationsResponse acceptRecommendations(AcceptRecommendationsRequest request);
 
@@ -63,7 +63,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CancelWorkRequestExample.java.html">here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -76,7 +76,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeAddressListCompartmentExample.java.html">here</a> to see how to use ChangeAddressListCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeAddressListCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAddressListCompartment API.
      */
     ChangeAddressListCompartmentResponse changeAddressListCompartment(
             ChangeAddressListCompartmentRequest request);
@@ -89,7 +89,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeCertificateCompartmentExample.java.html">here</a> to see how to use ChangeCertificateCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeCertificateCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCertificateCompartment API.
      */
     ChangeCertificateCompartmentResponse changeCertificateCompartment(
             ChangeCertificateCompartmentRequest request);
@@ -100,7 +100,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeCustomProtectionRuleCompartmentExample.java.html">here</a> to see how to use ChangeCustomProtectionRuleCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeCustomProtectionRuleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCustomProtectionRuleCompartment API.
      */
     ChangeCustomProtectionRuleCompartmentResponse changeCustomProtectionRuleCompartment(
             ChangeCustomProtectionRuleCompartmentRequest request);
@@ -113,7 +113,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeWaasPolicyCompartmentExample.java.html">here</a> to see how to use ChangeWaasPolicyCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ChangeWaasPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeWaasPolicyCompartment API.
      */
     ChangeWaasPolicyCompartmentResponse changeWaasPolicyCompartment(
             ChangeWaasPolicyCompartmentRequest request);
@@ -124,7 +124,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateAddressListExample.java.html">here</a> to see how to use CreateAddressList API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAddressList API.
      */
     CreateAddressListResponse createAddressList(CreateAddressListRequest request);
 
@@ -136,7 +136,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateCertificateExample.java.html">here</a> to see how to use CreateCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCertificate API.
      */
     CreateCertificateResponse createCertificate(CreateCertificateRequest request);
 
@@ -148,7 +148,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateCustomProtectionRuleExample.java.html">here</a> to see how to use CreateCustomProtectionRule API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateCustomProtectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCustomProtectionRule API.
      */
     CreateCustomProtectionRuleResponse createCustomProtectionRule(
             CreateCustomProtectionRuleRequest request);
@@ -171,7 +171,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateWaasPolicyExample.java.html">here</a> to see how to use CreateWaasPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/CreateWaasPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWaasPolicy API.
      */
     CreateWaasPolicyResponse createWaasPolicy(CreateWaasPolicyRequest request);
 
@@ -181,7 +181,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteAddressListExample.java.html">here</a> to see how to use DeleteAddressList API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAddressList API.
      */
     DeleteAddressListResponse deleteAddressList(DeleteAddressListRequest request);
 
@@ -191,7 +191,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteCertificateExample.java.html">here</a> to see how to use DeleteCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCertificate API.
      */
     DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request);
 
@@ -201,7 +201,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteCustomProtectionRuleExample.java.html">here</a> to see how to use DeleteCustomProtectionRule API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteCustomProtectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomProtectionRule API.
      */
     DeleteCustomProtectionRuleResponse deleteCustomProtectionRule(
             DeleteCustomProtectionRuleRequest request);
@@ -212,7 +212,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteWaasPolicyExample.java.html">here</a> to see how to use DeleteWaasPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/DeleteWaasPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWaasPolicy API.
      */
     DeleteWaasPolicyResponse deleteWaasPolicy(DeleteWaasPolicyRequest request);
 
@@ -222,7 +222,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetAddressListExample.java.html">here</a> to see how to use GetAddressList API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAddressList API.
      */
     GetAddressListResponse getAddressList(GetAddressListRequest request);
 
@@ -232,7 +232,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetCertificateExample.java.html">here</a> to see how to use GetCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificate API.
      */
     GetCertificateResponse getCertificate(GetCertificateRequest request);
 
@@ -242,7 +242,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetCustomProtectionRuleExample.java.html">here</a> to see how to use GetCustomProtectionRule API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetCustomProtectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomProtectionRule API.
      */
     GetCustomProtectionRuleResponse getCustomProtectionRule(GetCustomProtectionRuleRequest request);
 
@@ -252,7 +252,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetDeviceFingerprintChallengeExample.java.html">here</a> to see how to use GetDeviceFingerprintChallenge API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetDeviceFingerprintChallengeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDeviceFingerprintChallenge API.
      */
     GetDeviceFingerprintChallengeResponse getDeviceFingerprintChallenge(
             GetDeviceFingerprintChallengeRequest request);
@@ -263,7 +263,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetHumanInteractionChallengeExample.java.html">here</a> to see how to use GetHumanInteractionChallenge API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetHumanInteractionChallengeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHumanInteractionChallenge API.
      */
     GetHumanInteractionChallengeResponse getHumanInteractionChallenge(
             GetHumanInteractionChallengeRequest request);
@@ -274,7 +274,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetJsChallengeExample.java.html">here</a> to see how to use GetJsChallenge API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetJsChallengeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJsChallenge API.
      */
     GetJsChallengeResponse getJsChallenge(GetJsChallengeRequest request);
 
@@ -284,7 +284,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetPolicyConfigExample.java.html">here</a> to see how to use GetPolicyConfig API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetPolicyConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPolicyConfig API.
      */
     GetPolicyConfigResponse getPolicyConfig(GetPolicyConfigRequest request);
 
@@ -294,7 +294,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetProtectionRuleExample.java.html">here</a> to see how to use GetProtectionRule API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetProtectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProtectionRule API.
      */
     GetProtectionRuleResponse getProtectionRule(GetProtectionRuleRequest request);
 
@@ -304,7 +304,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetProtectionSettingsExample.java.html">here</a> to see how to use GetProtectionSettings API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetProtectionSettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProtectionSettings API.
      */
     GetProtectionSettingsResponse getProtectionSettings(GetProtectionSettingsRequest request);
 
@@ -314,7 +314,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWaasPolicyExample.java.html">here</a> to see how to use GetWaasPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWaasPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWaasPolicy API.
      */
     GetWaasPolicyResponse getWaasPolicy(GetWaasPolicyRequest request);
 
@@ -324,7 +324,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWafAddressRateLimitingExample.java.html">here</a> to see how to use GetWafAddressRateLimiting API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWafAddressRateLimitingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWafAddressRateLimiting API.
      */
     GetWafAddressRateLimitingResponse getWafAddressRateLimiting(
             GetWafAddressRateLimitingRequest request);
@@ -335,7 +335,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWafConfigExample.java.html">here</a> to see how to use GetWafConfig API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWafConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWafConfig API.
      */
     GetWafConfigResponse getWafConfig(GetWafConfigRequest request);
 
@@ -345,7 +345,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -356,7 +356,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListAccessRulesExample.java.html">here</a> to see how to use ListAccessRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListAccessRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessRules API.
      */
     ListAccessRulesResponse listAccessRules(ListAccessRulesRequest request);
 
@@ -366,7 +366,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListAddressListsExample.java.html">here</a> to see how to use ListAddressLists API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListAddressListsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAddressLists API.
      */
     ListAddressListsResponse listAddressLists(ListAddressListsRequest request);
 
@@ -377,7 +377,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListCachingRulesExample.java.html">here</a> to see how to use ListCachingRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListCachingRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCachingRules API.
      */
     ListCachingRulesResponse listCachingRules(ListCachingRulesRequest request);
 
@@ -392,7 +392,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListCaptchasExample.java.html">here</a> to see how to use ListCaptchas API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListCaptchasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCaptchas API.
      */
     ListCaptchasResponse listCaptchas(ListCaptchasRequest request);
 
@@ -402,7 +402,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListCertificatesExample.java.html">here</a> to see how to use ListCertificates API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListCertificatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificates API.
      */
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
 
@@ -412,7 +412,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListCustomProtectionRulesExample.java.html">here</a> to see how to use ListCustomProtectionRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListCustomProtectionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomProtectionRules API.
      */
     ListCustomProtectionRulesResponse listCustomProtectionRules(
             ListCustomProtectionRulesRequest request);
@@ -423,7 +423,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListEdgeSubnetsExample.java.html">here</a> to see how to use ListEdgeSubnets API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListEdgeSubnetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEdgeSubnets API.
      */
     ListEdgeSubnetsResponse listEdgeSubnets(ListEdgeSubnetsRequest request);
 
@@ -436,7 +436,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListGoodBotsExample.java.html">here</a> to see how to use ListGoodBots API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListGoodBotsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGoodBots API.
      */
     ListGoodBotsResponse listGoodBots(ListGoodBotsRequest request);
 
@@ -447,7 +447,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListProtectionRulesExample.java.html">here</a> to see how to use ListProtectionRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListProtectionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectionRules API.
      */
     ListProtectionRulesResponse listProtectionRules(ListProtectionRulesRequest request);
 
@@ -460,7 +460,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListRecommendationsExample.java.html">here</a> to see how to use ListRecommendations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListRecommendationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecommendations API.
      */
     ListRecommendationsResponse listRecommendations(ListRecommendationsRequest request);
 
@@ -473,7 +473,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListThreatFeedsExample.java.html">here</a> to see how to use ListThreatFeeds API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListThreatFeedsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListThreatFeeds API.
      */
     ListThreatFeedsResponse listThreatFeeds(ListThreatFeedsRequest request);
 
@@ -483,7 +483,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWaasPoliciesExample.java.html">here</a> to see how to use ListWaasPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWaasPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWaasPolicies API.
      */
     ListWaasPoliciesResponse listWaasPolicies(ListWaasPoliciesRequest request);
 
@@ -493,7 +493,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWaasPolicyCustomProtectionRulesExample.java.html">here</a> to see how to use ListWaasPolicyCustomProtectionRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWaasPolicyCustomProtectionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWaasPolicyCustomProtectionRules API.
      */
     ListWaasPolicyCustomProtectionRulesResponse listWaasPolicyCustomProtectionRules(
             ListWaasPolicyCustomProtectionRulesRequest request);
@@ -504,7 +504,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafBlockedRequestsExample.java.html">here</a> to see how to use ListWafBlockedRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafBlockedRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWafBlockedRequests API.
      */
     ListWafBlockedRequestsResponse listWafBlockedRequests(ListWafBlockedRequestsRequest request);
 
@@ -517,7 +517,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafLogsExample.java.html">here</a> to see how to use ListWafLogs API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWafLogs API.
      */
     ListWafLogsResponse listWafLogs(ListWafLogsRequest request);
 
@@ -530,7 +530,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafRequestsExample.java.html">here</a> to see how to use ListWafRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWafRequests API.
      */
     ListWafRequestsResponse listWafRequests(ListWafRequestsRequest request);
 
@@ -542,7 +542,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafTrafficExample.java.html">here</a> to see how to use ListWafTraffic API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafTrafficExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWafTraffic API.
      */
     ListWafTrafficResponse listWafTraffic(ListWafTrafficRequest request);
 
@@ -552,7 +552,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWhitelistsExample.java.html">here</a> to see how to use ListWhitelists API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWhitelistsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWhitelists API.
      */
     ListWhitelistsResponse listWhitelists(ListWhitelistsRequest request);
 
@@ -562,7 +562,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -573,7 +573,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/PurgeCacheExample.java.html">here</a> to see how to use PurgeCache API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/PurgeCacheExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PurgeCache API.
      */
     PurgeCacheResponse purgeCache(PurgeCacheRequest request);
 
@@ -591,7 +591,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateAccessRulesExample.java.html">here</a> to see how to use UpdateAccessRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateAccessRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAccessRules API.
      */
     UpdateAccessRulesResponse updateAccessRules(UpdateAccessRulesRequest request);
 
@@ -601,7 +601,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateAddressListExample.java.html">here</a> to see how to use UpdateAddressList API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateAddressListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAddressList API.
      */
     UpdateAddressListResponse updateAddressList(UpdateAddressListRequest request);
 
@@ -617,7 +617,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateCachingRulesExample.java.html">here</a> to see how to use UpdateCachingRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateCachingRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCachingRules API.
      */
     UpdateCachingRulesResponse updateCachingRules(UpdateCachingRulesRequest request);
 
@@ -635,7 +635,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateCaptchasExample.java.html">here</a> to see how to use UpdateCaptchas API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateCaptchasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCaptchas API.
      */
     UpdateCaptchasResponse updateCaptchas(UpdateCaptchasRequest request);
 
@@ -645,7 +645,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateCertificateExample.java.html">here</a> to see how to use UpdateCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCertificate API.
      */
     UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request);
 
@@ -655,7 +655,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateCustomProtectionRuleExample.java.html">here</a> to see how to use UpdateCustomProtectionRule API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateCustomProtectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCustomProtectionRule API.
      */
     UpdateCustomProtectionRuleResponse updateCustomProtectionRule(
             UpdateCustomProtectionRuleRequest request);
@@ -670,7 +670,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateDeviceFingerprintChallengeExample.java.html">here</a> to see how to use UpdateDeviceFingerprintChallenge API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateDeviceFingerprintChallengeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDeviceFingerprintChallenge API.
      */
     UpdateDeviceFingerprintChallengeResponse updateDeviceFingerprintChallenge(
             UpdateDeviceFingerprintChallengeRequest request);
@@ -683,7 +683,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateGoodBotsExample.java.html">here</a> to see how to use UpdateGoodBots API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateGoodBotsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGoodBots API.
      */
     UpdateGoodBotsResponse updateGoodBots(UpdateGoodBotsRequest request);
 
@@ -693,7 +693,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateHumanInteractionChallengeExample.java.html">here</a> to see how to use UpdateHumanInteractionChallenge API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateHumanInteractionChallengeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHumanInteractionChallenge API.
      */
     UpdateHumanInteractionChallengeResponse updateHumanInteractionChallenge(
             UpdateHumanInteractionChallengeRequest request);
@@ -704,7 +704,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateJsChallengeExample.java.html">here</a> to see how to use UpdateJsChallenge API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateJsChallengeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJsChallenge API.
      */
     UpdateJsChallengeResponse updateJsChallenge(UpdateJsChallengeRequest request);
 
@@ -714,7 +714,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdatePolicyConfigExample.java.html">here</a> to see how to use UpdatePolicyConfig API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdatePolicyConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePolicyConfig API.
      */
     UpdatePolicyConfigResponse updatePolicyConfig(UpdatePolicyConfigRequest request);
 
@@ -726,7 +726,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateProtectionRulesExample.java.html">here</a> to see how to use UpdateProtectionRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateProtectionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProtectionRules API.
      */
     UpdateProtectionRulesResponse updateProtectionRules(UpdateProtectionRulesRequest request);
 
@@ -736,7 +736,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateProtectionSettingsExample.java.html">here</a> to see how to use UpdateProtectionSettings API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateProtectionSettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProtectionSettings API.
      */
     UpdateProtectionSettingsResponse updateProtectionSettings(
             UpdateProtectionSettingsRequest request);
@@ -747,7 +747,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateThreatFeedsExample.java.html">here</a> to see how to use UpdateThreatFeeds API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateThreatFeedsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateThreatFeeds API.
      */
     UpdateThreatFeedsResponse updateThreatFeeds(UpdateThreatFeedsRequest request);
 
@@ -759,7 +759,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWaasPolicyExample.java.html">here</a> to see how to use UpdateWaasPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWaasPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWaasPolicy API.
      */
     UpdateWaasPolicyResponse updateWaasPolicy(UpdateWaasPolicyRequest request);
 
@@ -769,7 +769,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWaasPolicyCustomProtectionRulesExample.java.html">here</a> to see how to use UpdateWaasPolicyCustomProtectionRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWaasPolicyCustomProtectionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWaasPolicyCustomProtectionRules API.
      */
     UpdateWaasPolicyCustomProtectionRulesResponse updateWaasPolicyCustomProtectionRules(
             UpdateWaasPolicyCustomProtectionRulesRequest request);
@@ -780,7 +780,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWafAddressRateLimitingExample.java.html">here</a> to see how to use UpdateWafAddressRateLimiting API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWafAddressRateLimitingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWafAddressRateLimiting API.
      */
     UpdateWafAddressRateLimitingResponse updateWafAddressRateLimiting(
             UpdateWafAddressRateLimitingRequest request);
@@ -799,7 +799,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWafConfigExample.java.html">here</a> to see how to use UpdateWafConfig API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWafConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWafConfig API.
      */
     UpdateWafConfigResponse updateWafConfig(UpdateWafConfigRequest request);
 
@@ -817,7 +817,7 @@ public interface Waas extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWhitelistsExample.java.html">here</a> to see how to use UpdateWhitelists API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/UpdateWhitelistsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWhitelists API.
      */
     UpdateWhitelistsResponse updateWhitelists(UpdateWhitelistsRequest request);
 

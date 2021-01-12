@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics;
@@ -52,7 +52,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/AddEntityAssociationExample.java.html">here</a> to see how to use AddEntityAssociation API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/AddEntityAssociationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddEntityAssociation API.
      */
     AddEntityAssociationResponse addEntityAssociation(AddEntityAssociationRequest request);
 
@@ -62,7 +62,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/BatchGetBasicInfoExample.java.html">here</a> to see how to use BatchGetBasicInfo API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/BatchGetBasicInfoExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BatchGetBasicInfo API.
      */
     BatchGetBasicInfoResponse batchGetBasicInfo(BatchGetBasicInfoRequest request);
 
@@ -72,7 +72,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CancelQueryWorkRequestExample.java.html">here</a> to see how to use CancelQueryWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CancelQueryWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelQueryWorkRequest API.
      */
     CancelQueryWorkRequestResponse cancelQueryWorkRequest(CancelQueryWorkRequestRequest request);
 
@@ -82,7 +82,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeLogAnalyticsEntityCompartmentExample.java.html">here</a> to see how to use ChangeLogAnalyticsEntityCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeLogAnalyticsEntityCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLogAnalyticsEntityCompartment API.
      */
     ChangeLogAnalyticsEntityCompartmentResponse changeLogAnalyticsEntityCompartment(
             ChangeLogAnalyticsEntityCompartmentRequest request);
@@ -93,7 +93,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeLogAnalyticsLogGroupCompartmentExample.java.html">here</a> to see how to use ChangeLogAnalyticsLogGroupCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeLogAnalyticsLogGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLogAnalyticsLogGroupCompartment API.
      */
     ChangeLogAnalyticsLogGroupCompartmentResponse changeLogAnalyticsLogGroupCompartment(
             ChangeLogAnalyticsLogGroupCompartmentRequest request);
@@ -104,7 +104,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeLogAnalyticsObjectCollectionRuleCompartmentExample.java.html">here</a> to see how to use ChangeLogAnalyticsObjectCollectionRuleCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeLogAnalyticsObjectCollectionRuleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLogAnalyticsObjectCollectionRuleCompartment API.
      */
     ChangeLogAnalyticsObjectCollectionRuleCompartmentResponse
             changeLogAnalyticsObjectCollectionRuleCompartment(
@@ -117,7 +117,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeScheduledTaskCompartmentExample.java.html">here</a> to see how to use ChangeScheduledTaskCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ChangeScheduledTaskCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeScheduledTaskCompartment API.
      */
     ChangeScheduledTaskCompartmentResponse changeScheduledTaskCompartment(
             ChangeScheduledTaskCompartmentRequest request);
@@ -130,7 +130,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CleanExample.java.html">here</a> to see how to use Clean API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CleanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Clean API.
      */
     CleanResponse clean(CleanRequest request);
 
@@ -140,7 +140,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateLogAnalyticsEntityExample.java.html">here</a> to see how to use CreateLogAnalyticsEntity API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateLogAnalyticsEntityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLogAnalyticsEntity API.
      */
     CreateLogAnalyticsEntityResponse createLogAnalyticsEntity(
             CreateLogAnalyticsEntityRequest request);
@@ -151,7 +151,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateLogAnalyticsEntityTypeExample.java.html">here</a> to see how to use CreateLogAnalyticsEntityType API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateLogAnalyticsEntityTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLogAnalyticsEntityType API.
      */
     CreateLogAnalyticsEntityTypeResponse createLogAnalyticsEntityType(
             CreateLogAnalyticsEntityTypeRequest request);
@@ -162,7 +162,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateLogAnalyticsLogGroupExample.java.html">here</a> to see how to use CreateLogAnalyticsLogGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateLogAnalyticsLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLogAnalyticsLogGroup API.
      */
     CreateLogAnalyticsLogGroupResponse createLogAnalyticsLogGroup(
             CreateLogAnalyticsLogGroupRequest request);
@@ -173,7 +173,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateLogAnalyticsObjectCollectionRuleExample.java.html">here</a> to see how to use CreateLogAnalyticsObjectCollectionRule API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateLogAnalyticsObjectCollectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLogAnalyticsObjectCollectionRule API.
      */
     CreateLogAnalyticsObjectCollectionRuleResponse createLogAnalyticsObjectCollectionRule(
             CreateLogAnalyticsObjectCollectionRuleRequest request);
@@ -184,7 +184,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateScheduledTaskExample.java.html">here</a> to see how to use CreateScheduledTask API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/CreateScheduledTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateScheduledTask API.
      */
     CreateScheduledTaskResponse createScheduledTask(CreateScheduledTaskRequest request);
 
@@ -194,7 +194,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteAssociationsExample.java.html">here</a> to see how to use DeleteAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAssociations API.
      */
     DeleteAssociationsResponse deleteAssociations(DeleteAssociationsRequest request);
 
@@ -204,7 +204,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteFieldExample.java.html">here</a> to see how to use DeleteField API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteFieldExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteField API.
      */
     DeleteFieldResponse deleteField(DeleteFieldRequest request);
 
@@ -214,7 +214,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLabelExample.java.html">here</a> to see how to use DeleteLabel API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLabelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLabel API.
      */
     DeleteLabelResponse deleteLabel(DeleteLabelRequest request);
 
@@ -224,7 +224,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLogAnalyticsEntityExample.java.html">here</a> to see how to use DeleteLogAnalyticsEntity API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLogAnalyticsEntityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLogAnalyticsEntity API.
      */
     DeleteLogAnalyticsEntityResponse deleteLogAnalyticsEntity(
             DeleteLogAnalyticsEntityRequest request);
@@ -235,7 +235,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLogAnalyticsEntityTypeExample.java.html">here</a> to see how to use DeleteLogAnalyticsEntityType API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLogAnalyticsEntityTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLogAnalyticsEntityType API.
      */
     DeleteLogAnalyticsEntityTypeResponse deleteLogAnalyticsEntityType(
             DeleteLogAnalyticsEntityTypeRequest request);
@@ -246,7 +246,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLogAnalyticsLogGroupExample.java.html">here</a> to see how to use DeleteLogAnalyticsLogGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLogAnalyticsLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLogAnalyticsLogGroup API.
      */
     DeleteLogAnalyticsLogGroupResponse deleteLogAnalyticsLogGroup(
             DeleteLogAnalyticsLogGroupRequest request);
@@ -259,7 +259,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLogAnalyticsObjectCollectionRuleExample.java.html">here</a> to see how to use DeleteLogAnalyticsObjectCollectionRule API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteLogAnalyticsObjectCollectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLogAnalyticsObjectCollectionRule API.
      */
     DeleteLogAnalyticsObjectCollectionRuleResponse deleteLogAnalyticsObjectCollectionRule(
             DeleteLogAnalyticsObjectCollectionRuleRequest request);
@@ -270,7 +270,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteParserExample.java.html">here</a> to see how to use DeleteParser API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteParserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteParser API.
      */
     DeleteParserResponse deleteParser(DeleteParserRequest request);
 
@@ -280,7 +280,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteScheduledTaskExample.java.html">here</a> to see how to use DeleteScheduledTask API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteScheduledTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteScheduledTask API.
      */
     DeleteScheduledTaskResponse deleteScheduledTask(DeleteScheduledTaskRequest request);
 
@@ -290,7 +290,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteSourceExample.java.html">here</a> to see how to use DeleteSource API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSource API.
      */
     DeleteSourceResponse deleteSource(DeleteSourceRequest request);
 
@@ -302,7 +302,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteUploadExample.java.html">here</a> to see how to use DeleteUpload API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteUploadExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUpload API.
      */
     DeleteUploadResponse deleteUpload(DeleteUploadRequest request);
 
@@ -314,7 +314,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteUploadFileExample.java.html">here</a> to see how to use DeleteUploadFile API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteUploadFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUploadFile API.
      */
     DeleteUploadFileResponse deleteUploadFile(DeleteUploadFileRequest request);
 
@@ -325,7 +325,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteUploadWarningExample.java.html">here</a> to see how to use DeleteUploadWarning API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DeleteUploadWarningExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUploadWarning API.
      */
     DeleteUploadWarningResponse deleteUploadWarning(DeleteUploadWarningRequest request);
 
@@ -336,7 +336,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DisableArchivingExample.java.html">here</a> to see how to use DisableArchiving API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/DisableArchivingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableArchiving API.
      */
     DisableArchivingResponse disableArchiving(DisableArchivingRequest request);
 
@@ -347,7 +347,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EnableArchivingExample.java.html">here</a> to see how to use EnableArchiving API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EnableArchivingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableArchiving API.
      */
     EnableArchivingResponse enableArchiving(EnableArchivingRequest request);
 
@@ -358,7 +358,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EstimatePurgeDataSizeExample.java.html">here</a> to see how to use EstimatePurgeDataSize API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EstimatePurgeDataSizeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EstimatePurgeDataSize API.
      */
     EstimatePurgeDataSizeResponse estimatePurgeDataSize(EstimatePurgeDataSizeRequest request);
 
@@ -368,7 +368,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ExportCustomContentExample.java.html">here</a> to see how to use ExportCustomContent API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ExportCustomContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportCustomContent API.
      */
     ExportCustomContentResponse exportCustomContent(ExportCustomContentRequest request);
 
@@ -378,7 +378,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ExportQueryResultExample.java.html">here</a> to see how to use ExportQueryResult API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ExportQueryResultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportQueryResult API.
      */
     ExportQueryResultResponse exportQueryResult(ExportQueryResultRequest request);
 
@@ -388,7 +388,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ExtractStructuredLogFieldPathsExample.java.html">here</a> to see how to use ExtractStructuredLogFieldPaths API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ExtractStructuredLogFieldPathsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExtractStructuredLogFieldPaths API.
      */
     ExtractStructuredLogFieldPathsResponse extractStructuredLogFieldPaths(
             ExtractStructuredLogFieldPathsRequest request);
@@ -399,7 +399,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ExtractStructuredLogHeaderPathsExample.java.html">here</a> to see how to use ExtractStructuredLogHeaderPaths API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ExtractStructuredLogHeaderPathsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExtractStructuredLogHeaderPaths API.
      */
     ExtractStructuredLogHeaderPathsResponse extractStructuredLogHeaderPaths(
             ExtractStructuredLogHeaderPathsRequest request);
@@ -410,7 +410,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/FilterExample.java.html">here</a> to see how to use Filter API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/FilterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Filter API.
      */
     FilterResponse filter(FilterRequest request);
 
@@ -420,7 +420,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetAssociationSummaryExample.java.html">here</a> to see how to use GetAssociationSummary API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetAssociationSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAssociationSummary API.
      */
     GetAssociationSummaryResponse getAssociationSummary(GetAssociationSummaryRequest request);
 
@@ -430,7 +430,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetColumnNamesExample.java.html">here</a> to see how to use GetColumnNames API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetColumnNamesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetColumnNames API.
      */
     GetColumnNamesResponse getColumnNames(GetColumnNamesRequest request);
 
@@ -440,7 +440,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetConfigWorkRequestExample.java.html">here</a> to see how to use GetConfigWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetConfigWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConfigWorkRequest API.
      */
     GetConfigWorkRequestResponse getConfigWorkRequest(GetConfigWorkRequestRequest request);
 
@@ -450,7 +450,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetFieldExample.java.html">here</a> to see how to use GetField API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetFieldExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetField API.
      */
     GetFieldResponse getField(GetFieldRequest request);
 
@@ -460,7 +460,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetFieldsSummaryExample.java.html">here</a> to see how to use GetFieldsSummary API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetFieldsSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFieldsSummary API.
      */
     GetFieldsSummaryResponse getFieldsSummary(GetFieldsSummaryRequest request);
 
@@ -470,7 +470,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLabelExample.java.html">here</a> to see how to use GetLabel API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLabelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLabel API.
      */
     GetLabelResponse getLabel(GetLabelRequest request);
 
@@ -480,7 +480,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLabelSummaryExample.java.html">here</a> to see how to use GetLabelSummary API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLabelSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLabelSummary API.
      */
     GetLabelSummaryResponse getLabelSummary(GetLabelSummaryRequest request);
 
@@ -490,7 +490,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsEntitiesSummaryExample.java.html">here</a> to see how to use GetLogAnalyticsEntitiesSummary API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsEntitiesSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogAnalyticsEntitiesSummary API.
      */
     GetLogAnalyticsEntitiesSummaryResponse getLogAnalyticsEntitiesSummary(
             GetLogAnalyticsEntitiesSummaryRequest request);
@@ -501,7 +501,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsEntityExample.java.html">here</a> to see how to use GetLogAnalyticsEntity API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsEntityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogAnalyticsEntity API.
      */
     GetLogAnalyticsEntityResponse getLogAnalyticsEntity(GetLogAnalyticsEntityRequest request);
 
@@ -511,7 +511,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsEntityTypeExample.java.html">here</a> to see how to use GetLogAnalyticsEntityType API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsEntityTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogAnalyticsEntityType API.
      */
     GetLogAnalyticsEntityTypeResponse getLogAnalyticsEntityType(
             GetLogAnalyticsEntityTypeRequest request);
@@ -522,7 +522,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsLogGroupExample.java.html">here</a> to see how to use GetLogAnalyticsLogGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogAnalyticsLogGroup API.
      */
     GetLogAnalyticsLogGroupResponse getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupRequest request);
 
@@ -532,7 +532,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsLogGroupsSummaryExample.java.html">here</a> to see how to use GetLogAnalyticsLogGroupsSummary API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsLogGroupsSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogAnalyticsLogGroupsSummary API.
      */
     GetLogAnalyticsLogGroupsSummaryResponse getLogAnalyticsLogGroupsSummary(
             GetLogAnalyticsLogGroupsSummaryRequest request);
@@ -543,7 +543,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsObjectCollectionRuleExample.java.html">here</a> to see how to use GetLogAnalyticsObjectCollectionRule API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetLogAnalyticsObjectCollectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogAnalyticsObjectCollectionRule API.
      */
     GetLogAnalyticsObjectCollectionRuleResponse getLogAnalyticsObjectCollectionRule(
             GetLogAnalyticsObjectCollectionRuleRequest request);
@@ -555,7 +555,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetNamespaceExample.java.html">here</a> to see how to use GetNamespace API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNamespace API.
      */
     GetNamespaceResponse getNamespace(GetNamespaceRequest request);
 
@@ -565,7 +565,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetParserExample.java.html">here</a> to see how to use GetParser API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetParserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetParser API.
      */
     GetParserResponse getParser(GetParserRequest request);
 
@@ -575,7 +575,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetParserSummaryExample.java.html">here</a> to see how to use GetParserSummary API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetParserSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetParserSummary API.
      */
     GetParserSummaryResponse getParserSummary(GetParserSummaryRequest request);
 
@@ -587,7 +587,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetQueryResultExample.java.html">here</a> to see how to use GetQueryResult API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetQueryResultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetQueryResult API.
      */
     GetQueryResultResponse getQueryResult(GetQueryResultRequest request);
 
@@ -597,7 +597,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetQueryWorkRequestExample.java.html">here</a> to see how to use GetQueryWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetQueryWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetQueryWorkRequest API.
      */
     GetQueryWorkRequestResponse getQueryWorkRequest(GetQueryWorkRequestRequest request);
 
@@ -607,7 +607,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetScheduledTaskExample.java.html">here</a> to see how to use GetScheduledTask API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetScheduledTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledTask API.
      */
     GetScheduledTaskResponse getScheduledTask(GetScheduledTaskRequest request);
 
@@ -617,7 +617,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetSourceExample.java.html">here</a> to see how to use GetSource API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSource API.
      */
     GetSourceResponse getSource(GetSourceRequest request);
 
@@ -627,7 +627,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetSourceSummaryExample.java.html">here</a> to see how to use GetSourceSummary API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetSourceSummaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSourceSummary API.
      */
     GetSourceSummaryResponse getSourceSummary(GetSourceSummaryRequest request);
 
@@ -638,7 +638,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetStorageExample.java.html">here</a> to see how to use GetStorage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetStorageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStorage API.
      */
     GetStorageResponse getStorage(GetStorageRequest request);
 
@@ -650,7 +650,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetStorageUsageExample.java.html">here</a> to see how to use GetStorageUsage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetStorageUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStorageUsage API.
      */
     GetStorageUsageResponse getStorageUsage(GetStorageUsageRequest request);
 
@@ -662,7 +662,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetStorageWorkRequestExample.java.html">here</a> to see how to use GetStorageWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetStorageWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStorageWorkRequest API.
      */
     GetStorageWorkRequestResponse getStorageWorkRequest(GetStorageWorkRequestRequest request);
 
@@ -672,7 +672,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetUploadExample.java.html">here</a> to see how to use GetUpload API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetUploadExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUpload API.
      */
     GetUploadResponse getUpload(GetUploadRequest request);
 
@@ -682,7 +682,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -719,7 +719,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ImportCustomContentExample.java.html">here</a> to see how to use ImportCustomContent API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ImportCustomContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportCustomContent API.
      */
     ImportCustomContentResponse importCustomContent(ImportCustomContentRequest request);
 
@@ -729,7 +729,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListAssociatedEntitiesExample.java.html">here</a> to see how to use ListAssociatedEntities API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListAssociatedEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssociatedEntities API.
      */
     ListAssociatedEntitiesResponse listAssociatedEntities(ListAssociatedEntitiesRequest request);
 
@@ -739,7 +739,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListConfigWorkRequestsExample.java.html">here</a> to see how to use ListConfigWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListConfigWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConfigWorkRequests API.
      */
     ListConfigWorkRequestsResponse listConfigWorkRequests(ListConfigWorkRequestsRequest request);
 
@@ -749,7 +749,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListEntityAssociationsExample.java.html">here</a> to see how to use ListEntityAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListEntityAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEntityAssociations API.
      */
     ListEntityAssociationsResponse listEntityAssociations(ListEntityAssociationsRequest request);
 
@@ -759,7 +759,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListEntitySourceAssociationsExample.java.html">here</a> to see how to use ListEntitySourceAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListEntitySourceAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEntitySourceAssociations API.
      */
     ListEntitySourceAssociationsResponse listEntitySourceAssociations(
             ListEntitySourceAssociationsRequest request);
@@ -770,7 +770,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListFieldsExample.java.html">here</a> to see how to use ListFields API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListFieldsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFields API.
      */
     ListFieldsResponse listFields(ListFieldsRequest request);
 
@@ -780,7 +780,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLabelPrioritiesExample.java.html">here</a> to see how to use ListLabelPriorities API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLabelPrioritiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLabelPriorities API.
      */
     ListLabelPrioritiesResponse listLabelPriorities(ListLabelPrioritiesRequest request);
 
@@ -790,7 +790,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLabelSourceDetailsExample.java.html">here</a> to see how to use ListLabelSourceDetails API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLabelSourceDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLabelSourceDetails API.
      */
     ListLabelSourceDetailsResponse listLabelSourceDetails(ListLabelSourceDetailsRequest request);
 
@@ -800,7 +800,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLabelsExample.java.html">here</a> to see how to use ListLabels API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLabelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLabels API.
      */
     ListLabelsResponse listLabels(ListLabelsRequest request);
 
@@ -810,7 +810,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsEntitiesExample.java.html">here</a> to see how to use ListLogAnalyticsEntities API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsEntitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogAnalyticsEntities API.
      */
     ListLogAnalyticsEntitiesResponse listLogAnalyticsEntities(
             ListLogAnalyticsEntitiesRequest request);
@@ -821,7 +821,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsEntityTypesExample.java.html">here</a> to see how to use ListLogAnalyticsEntityTypes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsEntityTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogAnalyticsEntityTypes API.
      */
     ListLogAnalyticsEntityTypesResponse listLogAnalyticsEntityTypes(
             ListLogAnalyticsEntityTypesRequest request);
@@ -832,7 +832,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsLogGroupsExample.java.html">here</a> to see how to use ListLogAnalyticsLogGroups API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsLogGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogAnalyticsLogGroups API.
      */
     ListLogAnalyticsLogGroupsResponse listLogAnalyticsLogGroups(
             ListLogAnalyticsLogGroupsRequest request);
@@ -843,7 +843,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsObjectCollectionRulesExample.java.html">here</a> to see how to use ListLogAnalyticsObjectCollectionRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsObjectCollectionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogAnalyticsObjectCollectionRules API.
      */
     ListLogAnalyticsObjectCollectionRulesResponse listLogAnalyticsObjectCollectionRules(
             ListLogAnalyticsObjectCollectionRulesRequest request);
@@ -854,7 +854,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListMetaSourceTypesExample.java.html">here</a> to see how to use ListMetaSourceTypes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListMetaSourceTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMetaSourceTypes API.
      */
     ListMetaSourceTypesResponse listMetaSourceTypes(ListMetaSourceTypesRequest request);
 
@@ -866,7 +866,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListNamespacesExample.java.html">here</a> to see how to use ListNamespaces API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListNamespacesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNamespaces API.
      */
     ListNamespacesResponse listNamespaces(ListNamespacesRequest request);
 
@@ -876,7 +876,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListParserFunctionsExample.java.html">here</a> to see how to use ListParserFunctions API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListParserFunctionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListParserFunctions API.
      */
     ListParserFunctionsResponse listParserFunctions(ListParserFunctionsRequest request);
 
@@ -886,7 +886,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListParserMetaPluginsExample.java.html">here</a> to see how to use ListParserMetaPlugins API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListParserMetaPluginsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListParserMetaPlugins API.
      */
     ListParserMetaPluginsResponse listParserMetaPlugins(ListParserMetaPluginsRequest request);
 
@@ -896,7 +896,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListParsersExample.java.html">here</a> to see how to use ListParsers API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListParsersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListParsers API.
      */
     ListParsersResponse listParsers(ListParsersRequest request);
 
@@ -906,7 +906,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListQueryWorkRequestsExample.java.html">here</a> to see how to use ListQueryWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListQueryWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListQueryWorkRequests API.
      */
     ListQueryWorkRequestsResponse listQueryWorkRequests(ListQueryWorkRequestsRequest request);
 
@@ -916,7 +916,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListScheduledTasksExample.java.html">here</a> to see how to use ListScheduledTasks API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListScheduledTasksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledTasks API.
      */
     ListScheduledTasksResponse listScheduledTasks(ListScheduledTasksRequest request);
 
@@ -926,7 +926,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceAssociationsExample.java.html">here</a> to see how to use ListSourceAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSourceAssociations API.
      */
     ListSourceAssociationsResponse listSourceAssociations(ListSourceAssociationsRequest request);
 
@@ -936,7 +936,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceExtendedFieldDefinitionsExample.java.html">here</a> to see how to use ListSourceExtendedFieldDefinitions API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceExtendedFieldDefinitionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSourceExtendedFieldDefinitions API.
      */
     ListSourceExtendedFieldDefinitionsResponse listSourceExtendedFieldDefinitions(
             ListSourceExtendedFieldDefinitionsRequest request);
@@ -947,7 +947,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceLabelOperatorsExample.java.html">here</a> to see how to use ListSourceLabelOperators API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceLabelOperatorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSourceLabelOperators API.
      */
     ListSourceLabelOperatorsResponse listSourceLabelOperators(
             ListSourceLabelOperatorsRequest request);
@@ -958,7 +958,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceMetaFunctionsExample.java.html">here</a> to see how to use ListSourceMetaFunctions API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourceMetaFunctionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSourceMetaFunctions API.
      */
     ListSourceMetaFunctionsResponse listSourceMetaFunctions(ListSourceMetaFunctionsRequest request);
 
@@ -968,7 +968,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourcePatternsExample.java.html">here</a> to see how to use ListSourcePatterns API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourcePatternsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSourcePatterns API.
      */
     ListSourcePatternsResponse listSourcePatterns(ListSourcePatternsRequest request);
 
@@ -978,7 +978,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourcesExample.java.html">here</a> to see how to use ListSources API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSources API.
      */
     ListSourcesResponse listSources(ListSourcesRequest request);
 
@@ -988,7 +988,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListStorageWorkRequestErrorsExample.java.html">here</a> to see how to use ListStorageWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListStorageWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStorageWorkRequestErrors API.
      */
     ListStorageWorkRequestErrorsResponse listStorageWorkRequestErrors(
             ListStorageWorkRequestErrorsRequest request);
@@ -1000,7 +1000,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListStorageWorkRequestsExample.java.html">here</a> to see how to use ListStorageWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListStorageWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStorageWorkRequests API.
      */
     ListStorageWorkRequestsResponse listStorageWorkRequests(ListStorageWorkRequestsRequest request);
 
@@ -1010,7 +1010,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSupportedCharEncodingsExample.java.html">here</a> to see how to use ListSupportedCharEncodings API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSupportedCharEncodingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedCharEncodings API.
      */
     ListSupportedCharEncodingsResponse listSupportedCharEncodings(
             ListSupportedCharEncodingsRequest request);
@@ -1021,7 +1021,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSupportedTimezonesExample.java.html">here</a> to see how to use ListSupportedTimezones API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListSupportedTimezonesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedTimezones API.
      */
     ListSupportedTimezonesResponse listSupportedTimezones(ListSupportedTimezonesRequest request);
 
@@ -1031,7 +1031,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListUploadFilesExample.java.html">here</a> to see how to use ListUploadFiles API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListUploadFilesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUploadFiles API.
      */
     ListUploadFilesResponse listUploadFiles(ListUploadFilesRequest request);
 
@@ -1041,7 +1041,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListUploadWarningsExample.java.html">here</a> to see how to use ListUploadWarnings API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListUploadWarningsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUploadWarnings API.
      */
     ListUploadWarningsResponse listUploadWarnings(ListUploadWarningsRequest request);
 
@@ -1053,7 +1053,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListUploadsExample.java.html">here</a> to see how to use ListUploads API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListUploadsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUploads API.
      */
     ListUploadsResponse listUploads(ListUploadsRequest request);
 
@@ -1064,7 +1064,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -1075,7 +1075,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -1086,7 +1086,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -1096,7 +1096,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/OffboardNamespaceExample.java.html">here</a> to see how to use OffboardNamespace API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/OffboardNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use OffboardNamespace API.
      */
     OffboardNamespaceResponse offboardNamespace(OffboardNamespaceRequest request);
 
@@ -1107,7 +1107,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/OnboardNamespaceExample.java.html">here</a> to see how to use OnboardNamespace API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/OnboardNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use OnboardNamespace API.
      */
     OnboardNamespaceResponse onboardNamespace(OnboardNamespaceRequest request);
 
@@ -1117,7 +1117,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ParseQueryExample.java.html">here</a> to see how to use ParseQuery API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ParseQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ParseQuery API.
      */
     ParseQueryResponse parseQuery(ParseQueryRequest request);
 
@@ -1129,7 +1129,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/PurgeStorageDataExample.java.html">here</a> to see how to use PurgeStorageData API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/PurgeStorageDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PurgeStorageData API.
      */
     PurgeStorageDataResponse purgeStorageData(PurgeStorageDataRequest request);
 
@@ -1139,7 +1139,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/PutQueryWorkRequestBackgroundExample.java.html">here</a> to see how to use PutQueryWorkRequestBackground API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/PutQueryWorkRequestBackgroundExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutQueryWorkRequestBackground API.
      */
     PutQueryWorkRequestBackgroundResponse putQueryWorkRequestBackground(
             PutQueryWorkRequestBackgroundRequest request);
@@ -1151,7 +1151,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/QueryExample.java.html">here</a> to see how to use Query API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/QueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Query API.
      */
     QueryResponse query(QueryRequest request);
 
@@ -1162,7 +1162,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RecallArchivedDataExample.java.html">here</a> to see how to use RecallArchivedData API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RecallArchivedDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RecallArchivedData API.
      */
     RecallArchivedDataResponse recallArchivedData(RecallArchivedDataRequest request);
 
@@ -1199,7 +1199,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RegisterLookupExample.java.html">here</a> to see how to use RegisterLookup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RegisterLookupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RegisterLookup API.
      */
     RegisterLookupResponse registerLookup(RegisterLookupRequest request);
 
@@ -1210,7 +1210,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ReleaseRecalledDataExample.java.html">here</a> to see how to use ReleaseRecalledData API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ReleaseRecalledDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReleaseRecalledData API.
      */
     ReleaseRecalledDataResponse releaseRecalledData(ReleaseRecalledDataRequest request);
 
@@ -1220,7 +1220,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RemoveEntityAssociationsExample.java.html">here</a> to see how to use RemoveEntityAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RemoveEntityAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveEntityAssociations API.
      */
     RemoveEntityAssociationsResponse removeEntityAssociations(
             RemoveEntityAssociationsRequest request);
@@ -1234,7 +1234,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RunExample.java.html">here</a> to see how to use Run API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Run API.
      */
     RunResponse run(RunRequest request);
 
@@ -1244,7 +1244,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/SuggestExample.java.html">here</a> to see how to use Suggest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/SuggestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Suggest API.
      */
     SuggestResponse suggest(SuggestRequest request);
 
@@ -1254,7 +1254,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/TestParserExample.java.html">here</a> to see how to use TestParser API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/TestParserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestParser API.
      */
     TestParserResponse testParser(TestParserRequest request);
 
@@ -1264,7 +1264,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsEntityExample.java.html">here</a> to see how to use UpdateLogAnalyticsEntity API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsEntityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLogAnalyticsEntity API.
      */
     UpdateLogAnalyticsEntityResponse updateLogAnalyticsEntity(
             UpdateLogAnalyticsEntityRequest request);
@@ -1275,7 +1275,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsEntityTypeExample.java.html">here</a> to see how to use UpdateLogAnalyticsEntityType API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsEntityTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLogAnalyticsEntityType API.
      */
     UpdateLogAnalyticsEntityTypeResponse updateLogAnalyticsEntityType(
             UpdateLogAnalyticsEntityTypeRequest request);
@@ -1286,7 +1286,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsLogGroupExample.java.html">here</a> to see how to use UpdateLogAnalyticsLogGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLogAnalyticsLogGroup API.
      */
     UpdateLogAnalyticsLogGroupResponse updateLogAnalyticsLogGroup(
             UpdateLogAnalyticsLogGroupRequest request);
@@ -1297,7 +1297,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsObjectCollectionRuleExample.java.html">here</a> to see how to use UpdateLogAnalyticsObjectCollectionRule API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsObjectCollectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLogAnalyticsObjectCollectionRule API.
      */
     UpdateLogAnalyticsObjectCollectionRuleResponse updateLogAnalyticsObjectCollectionRule(
             UpdateLogAnalyticsObjectCollectionRuleRequest request);
@@ -1308,7 +1308,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateScheduledTaskExample.java.html">here</a> to see how to use UpdateScheduledTask API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateScheduledTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateScheduledTask API.
      */
     UpdateScheduledTaskResponse updateScheduledTask(UpdateScheduledTaskRequest request);
 
@@ -1319,7 +1319,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateStorageExample.java.html">here</a> to see how to use UpdateStorage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateStorageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStorage API.
      */
     UpdateStorageResponse updateStorage(UpdateStorageRequest request);
 
@@ -1357,7 +1357,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadLogFileExample.java.html">here</a> to see how to use UploadLogFile API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadLogFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadLogFile API.
      */
     UploadLogFileResponse uploadLogFile(UploadLogFileRequest request);
 
@@ -1367,7 +1367,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertAssociationsExample.java.html">here</a> to see how to use UpsertAssociations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertAssociationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpsertAssociations API.
      */
     UpsertAssociationsResponse upsertAssociations(UpsertAssociationsRequest request);
 
@@ -1377,7 +1377,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertFieldExample.java.html">here</a> to see how to use UpsertField API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertFieldExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpsertField API.
      */
     UpsertFieldResponse upsertField(UpsertFieldRequest request);
 
@@ -1387,7 +1387,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertLabelExample.java.html">here</a> to see how to use UpsertLabel API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertLabelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpsertLabel API.
      */
     UpsertLabelResponse upsertLabel(UpsertLabelRequest request);
 
@@ -1397,7 +1397,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertParserExample.java.html">here</a> to see how to use UpsertParser API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertParserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpsertParser API.
      */
     UpsertParserResponse upsertParser(UpsertParserRequest request);
 
@@ -1407,7 +1407,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertSourceExample.java.html">here</a> to see how to use UpsertSource API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpsertSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpsertSource API.
      */
     UpsertSourceResponse upsertSource(UpsertSourceRequest request);
 
@@ -1417,7 +1417,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateAssociationParametersExample.java.html">here</a> to see how to use ValidateAssociationParameters API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateAssociationParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateAssociationParameters API.
      */
     ValidateAssociationParametersResponse validateAssociationParameters(
             ValidateAssociationParametersRequest request);
@@ -1428,7 +1428,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateFileExample.java.html">here</a> to see how to use ValidateFile API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateFileExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateFile API.
      */
     ValidateFileResponse validateFile(ValidateFileRequest request);
 
@@ -1438,7 +1438,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateSourceExample.java.html">here</a> to see how to use ValidateSource API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateSource API.
      */
     ValidateSourceResponse validateSource(ValidateSourceRequest request);
 
@@ -1448,7 +1448,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateSourceExtendedFieldDetailsExample.java.html">here</a> to see how to use ValidateSourceExtendedFieldDetails API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateSourceExtendedFieldDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateSourceExtendedFieldDetails API.
      */
     ValidateSourceExtendedFieldDetailsResponse validateSourceExtendedFieldDetails(
             ValidateSourceExtendedFieldDetailsRequest request);
@@ -1459,7 +1459,7 @@ public interface LogAnalytics extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateSourceMappingExample.java.html">here</a> to see how to use ValidateSourceMapping API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ValidateSourceMappingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateSourceMapping API.
      */
     ValidateSourceMappingResponse validateSourceMapping(ValidateSourceMappingRequest request);
 

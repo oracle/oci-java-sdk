@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>1.28.0</version>
+    <version>1.29.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -15,7 +15,7 @@
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
   <properties>
-    <resteasy.version>3.6.3.Final</resteasy.version>
+    <resteasy.version>3.13.2.Final</resteasy.version>
   </properties>
 
 
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.28.0</version>
+      <version>1.29.0</version>
     </dependency>
   </dependencies>
 </project>

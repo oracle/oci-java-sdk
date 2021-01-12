@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds;
@@ -326,6 +326,51 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddAutoScalingConfigurationResponse>
+            addAutoScalingConfiguration(
+                    AddAutoScalingConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddAutoScalingConfigurationRequest,
+                                    AddAutoScalingConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async addAutoScalingConfiguration");
+        final AddAutoScalingConfigurationRequest interceptedRequest =
+                AddAutoScalingConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddAutoScalingConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddAutoScalingConfigurationResponse>
+                transformer = AddAutoScalingConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddAutoScalingConfigurationRequest, AddAutoScalingConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddAutoScalingConfigurationRequest,
+                                AddAutoScalingConfigurationResponse>,
+                        java.util.concurrent.Future<AddAutoScalingConfigurationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddAutoScalingConfigurationRequest, AddAutoScalingConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AddBlockStorageResponse> addBlockStorage(
             AddBlockStorageRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -608,6 +653,50 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAutoScalingConfigurationResponse>
+            getAutoScalingConfiguration(
+                    GetAutoScalingConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutoScalingConfigurationRequest,
+                                    GetAutoScalingConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async getAutoScalingConfiguration");
+        final GetAutoScalingConfigurationRequest interceptedRequest =
+                GetAutoScalingConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutoScalingConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutoScalingConfigurationResponse>
+                transformer = GetAutoScalingConfigurationConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAutoScalingConfigurationRequest, GetAutoScalingConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAutoScalingConfigurationRequest,
+                                GetAutoScalingConfigurationResponse>,
+                        java.util.concurrent.Future<GetAutoScalingConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAutoScalingConfigurationRequest, GetAutoScalingConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBdsInstanceResponse> getBdsInstance(
             GetBdsInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -673,6 +762,50 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAutoScalingConfigurationsResponse>
+            listAutoScalingConfigurations(
+                    ListAutoScalingConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutoScalingConfigurationsRequest,
+                                    ListAutoScalingConfigurationsResponse>
+                            handler) {
+        LOG.trace("Called async listAutoScalingConfigurations");
+        final ListAutoScalingConfigurationsRequest interceptedRequest =
+                ListAutoScalingConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutoScalingConfigurationsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutoScalingConfigurationsResponse>
+                transformer = ListAutoScalingConfigurationsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAutoScalingConfigurationsRequest, ListAutoScalingConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAutoScalingConfigurationsRequest,
+                                ListAutoScalingConfigurationsResponse>,
+                        java.util.concurrent.Future<ListAutoScalingConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAutoScalingConfigurationsRequest, ListAutoScalingConfigurationsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -846,6 +979,52 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveAutoScalingConfigurationResponse>
+            removeAutoScalingConfiguration(
+                    RemoveAutoScalingConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveAutoScalingConfigurationRequest,
+                                    RemoveAutoScalingConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async removeAutoScalingConfiguration");
+        final RemoveAutoScalingConfigurationRequest interceptedRequest =
+                RemoveAutoScalingConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveAutoScalingConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveAutoScalingConfigurationResponse>
+                transformer = RemoveAutoScalingConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveAutoScalingConfigurationRequest,
+                        RemoveAutoScalingConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveAutoScalingConfigurationRequest,
+                                RemoveAutoScalingConfigurationResponse>,
+                        java.util.concurrent.Future<RemoveAutoScalingConfigurationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveAutoScalingConfigurationRequest, RemoveAutoScalingConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveCloudSqlResponse> removeCloudSql(
             RemoveCloudSqlRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -858,6 +1037,7 @@ public class BdsAsyncClient implements BdsAsync {
                 RemoveCloudSqlConverter.fromRequest(client, interceptedRequest);
         final com.google.common.base.Function<javax.ws.rs.core.Response, RemoveCloudSqlResponse>
                 transformer = RemoveCloudSqlConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
 
         com.oracle.bmc.responses.AsyncHandler<RemoveCloudSqlRequest, RemoveCloudSqlResponse>
                 handlerToUse = handler;
@@ -911,6 +1091,52 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RestartNodeRequest, RestartNodeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAutoScalingConfigurationResponse>
+            updateAutoScalingConfiguration(
+                    UpdateAutoScalingConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutoScalingConfigurationRequest,
+                                    UpdateAutoScalingConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async updateAutoScalingConfiguration");
+        final UpdateAutoScalingConfigurationRequest interceptedRequest =
+                UpdateAutoScalingConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutoScalingConfigurationConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAutoScalingConfigurationResponse>
+                transformer = UpdateAutoScalingConfigurationConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAutoScalingConfigurationRequest,
+                        UpdateAutoScalingConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAutoScalingConfigurationRequest,
+                                UpdateAutoScalingConfigurationResponse>,
+                        java.util.concurrent.Future<UpdateAutoScalingConfigurationResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAutoScalingConfigurationRequest, UpdateAutoScalingConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

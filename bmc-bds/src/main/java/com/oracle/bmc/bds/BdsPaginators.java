@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds;
@@ -29,6 +29,131 @@ import com.oracle.bmc.bds.responses.*;
 @lombok.RequiredArgsConstructor
 public class BdsPaginators {
     private final Bds client;
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAutoScalingConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAutoScalingConfigurationsResponse>
+            listAutoScalingConfigurationsResponseIterator(
+                    final ListAutoScalingConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutoScalingConfigurationsRequest.Builder, ListAutoScalingConfigurationsRequest,
+                ListAutoScalingConfigurationsResponse>(
+                new com.google.common.base.Supplier<
+                        ListAutoScalingConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListAutoScalingConfigurationsRequest.Builder get() {
+                        return ListAutoScalingConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutoScalingConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListAutoScalingConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutoScalingConfigurationsRequest.Builder>,
+                        ListAutoScalingConfigurationsRequest>() {
+                    @Override
+                    public ListAutoScalingConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutoScalingConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutoScalingConfigurationsRequest,
+                        ListAutoScalingConfigurationsResponse>() {
+                    @Override
+                    public ListAutoScalingConfigurationsResponse apply(
+                            ListAutoScalingConfigurationsRequest request) {
+                        return client.listAutoScalingConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.AutoScalingConfigurationSummary} objects
+     * contained in responses from the listAutoScalingConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.AutoScalingConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.AutoScalingConfigurationSummary>
+            listAutoScalingConfigurationsRecordIterator(
+                    final ListAutoScalingConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutoScalingConfigurationsRequest.Builder, ListAutoScalingConfigurationsRequest,
+                ListAutoScalingConfigurationsResponse,
+                com.oracle.bmc.bds.model.AutoScalingConfigurationSummary>(
+                new com.google.common.base.Supplier<
+                        ListAutoScalingConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListAutoScalingConfigurationsRequest.Builder get() {
+                        return ListAutoScalingConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutoScalingConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListAutoScalingConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutoScalingConfigurationsRequest.Builder>,
+                        ListAutoScalingConfigurationsRequest>() {
+                    @Override
+                    public ListAutoScalingConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutoScalingConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutoScalingConfigurationsRequest,
+                        ListAutoScalingConfigurationsResponse>() {
+                    @Override
+                    public ListAutoScalingConfigurationsResponse apply(
+                            ListAutoScalingConfigurationsRequest request) {
+                        return client.listAutoScalingConfigurations(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutoScalingConfigurationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.bds.model.AutoScalingConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.AutoScalingConfigurationSummary>
+                            apply(ListAutoScalingConfigurationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
 
     /**
      * Creates a new iterable which will iterate over the responses received from the listBdsInstances operation. This iterable

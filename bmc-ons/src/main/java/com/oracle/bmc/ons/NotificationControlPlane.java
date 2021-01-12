@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ons;
@@ -58,7 +58,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ChangeTopicCompartmentExample.java.html">here</a> to see how to use ChangeTopicCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ChangeTopicCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTopicCompartment API.
      */
     ChangeTopicCompartmentResponse changeTopicCompartment(ChangeTopicCompartmentRequest request);
 
@@ -82,7 +82,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/CreateTopicExample.java.html">here</a> to see how to use CreateTopic API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/CreateTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTopic API.
      */
     CreateTopicResponse createTopic(CreateTopicRequest request);
 
@@ -95,7 +95,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/DeleteTopicExample.java.html">here</a> to see how to use DeleteTopic API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/DeleteTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTopic API.
      */
     DeleteTopicResponse deleteTopic(DeleteTopicRequest request);
 
@@ -106,7 +106,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetTopicExample.java.html">here</a> to see how to use GetTopic API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTopic API.
      */
     GetTopicResponse getTopic(GetTopicRequest request);
 
@@ -119,7 +119,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ListTopicsExample.java.html">here</a> to see how to use ListTopics API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/ListTopicsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTopics API.
      */
     ListTopicsResponse listTopics(ListTopicsRequest request);
 
@@ -132,7 +132,7 @@ public interface NotificationControlPlane extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateTopicExample.java.html">here</a> to see how to use UpdateTopic API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/UpdateTopicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTopic API.
      */
     UpdateTopicResponse updateTopic(UpdateTopicRequest request);
 

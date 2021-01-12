@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth.internal;
@@ -46,7 +46,7 @@ public class AuthUtils {
     private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
 
     /**
-     * Gets the fingerprint of a certificate using Sha1. This is the same value that you would get by running,
+     * Gets the fingerprint of a certificate using Sha256. This is the same value that you would get by running,
      * <code>openssl x509 -in certificate.pem -noout -fingerprint</code>
      * @param certificate the certificate
      * @return Fingerprint of the certificate
@@ -56,7 +56,7 @@ public class AuthUtils {
         Preconditions.checkNotNull(certificate);
         try {
             final byte[] encodedCertificate = getEncodedCertificate(certificate);
-            MessageDigest md = MessageDigest.getInstance("SHA-1");
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(encodedCertificate);
             String fingerprint = getHex(md.digest());
 

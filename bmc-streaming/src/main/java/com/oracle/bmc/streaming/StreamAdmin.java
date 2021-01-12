@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.streaming;
@@ -51,7 +51,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeConnectHarnessCompartmentExample.java.html">here</a> to see how to use ChangeConnectHarnessCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeConnectHarnessCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeConnectHarnessCompartment API.
      */
     ChangeConnectHarnessCompartmentResponse changeConnectHarnessCompartment(
             ChangeConnectHarnessCompartmentRequest request);
@@ -65,7 +65,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamCompartmentExample.java.html">here</a> to see how to use ChangeStreamCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeStreamCompartment API.
      */
     ChangeStreamCompartmentResponse changeStreamCompartment(ChangeStreamCompartmentRequest request);
 
@@ -75,7 +75,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamPoolCompartmentExample.java.html">here</a> to see how to use ChangeStreamPoolCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamPoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeStreamPoolCompartment API.
      */
     ChangeStreamPoolCompartmentResponse changeStreamPoolCompartment(
             ChangeStreamPoolCompartmentRequest request);
@@ -88,7 +88,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateConnectHarnessExample.java.html">here</a> to see how to use CreateConnectHarness API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateConnectHarness API.
      */
     CreateConnectHarnessResponse createConnectHarness(CreateConnectHarnessRequest request);
 
@@ -103,7 +103,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamExample.java.html">here</a> to see how to use CreateStream API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStream API.
      */
     CreateStreamResponse createStream(CreateStreamRequest request);
 
@@ -116,7 +116,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamPoolExample.java.html">here</a> to see how to use CreateStreamPool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStreamPool API.
      */
     CreateStreamPoolResponse createStreamPool(CreateStreamPoolRequest request);
 
@@ -131,7 +131,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteConnectHarnessExample.java.html">here</a> to see how to use DeleteConnectHarness API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConnectHarness API.
      */
     DeleteConnectHarnessResponse deleteConnectHarness(DeleteConnectHarnessRequest request);
 
@@ -146,7 +146,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteStreamExample.java.html">here</a> to see how to use DeleteStream API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStream API.
      */
     DeleteStreamResponse deleteStream(DeleteStreamRequest request);
 
@@ -158,7 +158,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteStreamPoolExample.java.html">here</a> to see how to use DeleteStreamPool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/DeleteStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStreamPool API.
      */
     DeleteStreamPoolResponse deleteStreamPool(DeleteStreamPoolRequest request);
 
@@ -168,7 +168,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetConnectHarnessExample.java.html">here</a> to see how to use GetConnectHarness API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConnectHarness API.
      */
     GetConnectHarnessResponse getConnectHarness(GetConnectHarnessRequest request);
 
@@ -178,7 +178,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetStreamExample.java.html">here</a> to see how to use GetStream API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStream API.
      */
     GetStreamResponse getStream(GetStreamRequest request);
 
@@ -188,7 +188,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetStreamPoolExample.java.html">here</a> to see how to use GetStreamPool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStreamPool API.
      */
     GetStreamPoolResponse getStreamPool(GetStreamPoolRequest request);
 
@@ -198,7 +198,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListConnectHarnessesExample.java.html">here</a> to see how to use ListConnectHarnesses API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListConnectHarnessesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConnectHarnesses API.
      */
     ListConnectHarnessesResponse listConnectHarnesses(ListConnectHarnessesRequest request);
 
@@ -208,7 +208,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListStreamPoolsExample.java.html">here</a> to see how to use ListStreamPools API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListStreamPoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreamPools API.
      */
     ListStreamPoolsResponse listStreamPools(ListStreamPoolsRequest request);
 
@@ -222,7 +222,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListStreamsExample.java.html">here</a> to see how to use ListStreams API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListStreamsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStreams API.
      */
     ListStreamsResponse listStreams(ListStreamsRequest request);
 
@@ -233,7 +233,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateConnectHarnessExample.java.html">here</a> to see how to use UpdateConnectHarness API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateConnectHarnessExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConnectHarness API.
      */
     UpdateConnectHarnessResponse updateConnectHarness(UpdateConnectHarnessRequest request);
 
@@ -244,7 +244,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateStreamExample.java.html">here</a> to see how to use UpdateStream API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateStreamExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStream API.
      */
     UpdateStreamResponse updateStream(UpdateStreamRequest request);
 
@@ -255,7 +255,7 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateStreamPoolExample.java.html">here</a> to see how to use UpdateStreamPool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateStreamPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateStreamPool API.
      */
     UpdateStreamPoolResponse updateStreamPool(UpdateStreamPoolRequest request);
 

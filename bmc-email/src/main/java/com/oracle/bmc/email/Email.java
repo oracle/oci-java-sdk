@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email;
@@ -56,7 +56,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeSenderCompartmentExample.java.html">here</a> to see how to use ChangeSenderCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ChangeSenderCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSenderCompartment API.
      */
     ChangeSenderCompartmentResponse changeSenderCompartment(ChangeSenderCompartmentRequest request);
 
@@ -66,7 +66,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateSenderExample.java.html">here</a> to see how to use CreateSender API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSender API.
      */
     CreateSenderResponse createSender(CreateSenderRequest request);
 
@@ -80,7 +80,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateSuppressionExample.java.html">here</a> to see how to use CreateSuppression API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSuppression API.
      */
     CreateSuppressionResponse createSuppression(CreateSuppressionRequest request);
 
@@ -92,7 +92,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteSenderExample.java.html">here</a> to see how to use DeleteSender API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSender API.
      */
     DeleteSenderResponse deleteSender(DeleteSenderRequest request);
 
@@ -104,7 +104,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteSuppressionExample.java.html">here</a> to see how to use DeleteSuppression API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSuppression API.
      */
     DeleteSuppressionResponse deleteSuppression(DeleteSuppressionRequest request);
 
@@ -114,7 +114,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetSenderExample.java.html">here</a> to see how to use GetSender API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSender API.
      */
     GetSenderResponse getSender(GetSenderRequest request);
 
@@ -126,7 +126,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetSuppressionExample.java.html">here</a> to see how to use GetSuppression API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSuppression API.
      */
     GetSuppressionResponse getSuppression(GetSuppressionRequest request);
 
@@ -137,7 +137,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSendersExample.java.html">here</a> to see how to use ListSenders API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSendersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSenders API.
      */
     ListSendersResponse listSenders(ListSendersRequest request);
 
@@ -150,7 +150,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSuppressionsExample.java.html">here</a> to see how to use ListSuppressions API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListSuppressionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSuppressions API.
      */
     ListSuppressionsResponse listSuppressions(ListSuppressionsRequest request);
 
@@ -164,7 +164,7 @@ public interface Email extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateSenderExample.java.html">here</a> to see how to use UpdateSender API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateSenderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSender API.
      */
     UpdateSenderResponse updateSender(UpdateSenderRequest request);
 

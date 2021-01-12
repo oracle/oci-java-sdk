@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -59,7 +59,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeBootVolumeBackupCompartmentExample.java.html">here</a> to see how to use ChangeBootVolumeBackupCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeBootVolumeBackupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBootVolumeBackupCompartment API.
      */
     ChangeBootVolumeBackupCompartmentResponse changeBootVolumeBackupCompartment(
             ChangeBootVolumeBackupCompartmentRequest request);
@@ -73,7 +73,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeBootVolumeCompartmentExample.java.html">here</a> to see how to use ChangeBootVolumeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeBootVolumeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBootVolumeCompartment API.
      */
     ChangeBootVolumeCompartmentResponse changeBootVolumeCompartment(
             ChangeBootVolumeCompartmentRequest request);
@@ -87,7 +87,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeBackupCompartmentExample.java.html">here</a> to see how to use ChangeVolumeBackupCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeBackupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVolumeBackupCompartment API.
      */
     ChangeVolumeBackupCompartmentResponse changeVolumeBackupCompartment(
             ChangeVolumeBackupCompartmentRequest request);
@@ -101,7 +101,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeCompartmentExample.java.html">here</a> to see how to use ChangeVolumeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVolumeCompartment API.
      */
     ChangeVolumeCompartmentResponse changeVolumeCompartment(ChangeVolumeCompartmentRequest request);
 
@@ -114,7 +114,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupBackupCompartmentExample.java.html">here</a> to see how to use ChangeVolumeGroupBackupCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupBackupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVolumeGroupBackupCompartment API.
      */
     ChangeVolumeGroupBackupCompartmentResponse changeVolumeGroupBackupCompartment(
             ChangeVolumeGroupBackupCompartmentRequest request);
@@ -128,7 +128,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupCompartmentExample.java.html">here</a> to see how to use ChangeVolumeGroupCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeVolumeGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeVolumeGroupCompartment API.
      */
     ChangeVolumeGroupCompartmentResponse changeVolumeGroupCompartment(
             ChangeVolumeGroupCompartmentRequest request);
@@ -141,7 +141,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyBootVolumeBackupExample.java.html">here</a> to see how to use CopyBootVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyBootVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CopyBootVolumeBackup API.
      */
     CopyBootVolumeBackupResponse copyBootVolumeBackup(CopyBootVolumeBackupRequest request);
 
@@ -153,7 +153,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyVolumeBackupExample.java.html">here</a> to see how to use CopyVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CopyVolumeBackup API.
      */
     CopyVolumeBackupResponse copyVolumeBackup(CopyVolumeBackupRequest request);
 
@@ -167,7 +167,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateBootVolumeExample.java.html">here</a> to see how to use CreateBootVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBootVolume API.
      */
     CreateBootVolumeResponse createBootVolume(CreateBootVolumeRequest request);
 
@@ -183,7 +183,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateBootVolumeBackupExample.java.html">here</a> to see how to use CreateBootVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateBootVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBootVolumeBackup API.
      */
     CreateBootVolumeBackupResponse createBootVolumeBackup(CreateBootVolumeBackupRequest request);
 
@@ -207,7 +207,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeExample.java.html">here</a> to see how to use CreateVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVolume API.
      */
     CreateVolumeResponse createVolume(CreateVolumeRequest request);
 
@@ -223,7 +223,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupExample.java.html">here</a> to see how to use CreateVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVolumeBackup API.
      */
     CreateVolumeBackupResponse createVolumeBackup(CreateVolumeBackupRequest request);
 
@@ -237,7 +237,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupPolicyExample.java.html">here</a> to see how to use CreateVolumeBackupPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVolumeBackupPolicy API.
      */
     CreateVolumeBackupPolicyResponse createVolumeBackupPolicy(
             CreateVolumeBackupPolicyRequest request);
@@ -251,7 +251,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupPolicyAssignmentExample.java.html">here</a> to see how to use CreateVolumeBackupPolicyAssignment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeBackupPolicyAssignmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVolumeBackupPolicyAssignment API.
      */
     CreateVolumeBackupPolicyAssignmentResponse createVolumeBackupPolicyAssignment(
             CreateVolumeBackupPolicyAssignmentRequest request);
@@ -269,7 +269,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeGroupExample.java.html">here</a> to see how to use CreateVolumeGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVolumeGroup API.
      */
     CreateVolumeGroupResponse createVolumeGroup(CreateVolumeGroupRequest request);
 
@@ -281,7 +281,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeGroupBackupExample.java.html">here</a> to see how to use CreateVolumeGroupBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateVolumeGroupBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVolumeGroupBackup API.
      */
     CreateVolumeGroupBackupResponse createVolumeGroupBackup(CreateVolumeGroupBackupRequest request);
 
@@ -295,7 +295,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeExample.java.html">here</a> to see how to use DeleteBootVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBootVolume API.
      */
     DeleteBootVolumeResponse deleteBootVolume(DeleteBootVolumeRequest request);
 
@@ -305,7 +305,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeBackupExample.java.html">here</a> to see how to use DeleteBootVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBootVolumeBackup API.
      */
     DeleteBootVolumeBackupResponse deleteBootVolumeBackup(DeleteBootVolumeBackupRequest request);
 
@@ -316,7 +316,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeKmsKeyExample.java.html">here</a> to see how to use DeleteBootVolumeKmsKey API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteBootVolumeKmsKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBootVolumeKmsKey API.
      */
     DeleteBootVolumeKmsKeyResponse deleteBootVolumeKmsKey(DeleteBootVolumeKmsKeyRequest request);
 
@@ -330,7 +330,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeExample.java.html">here</a> to see how to use DeleteVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolume API.
      */
     DeleteVolumeResponse deleteVolume(DeleteVolumeRequest request);
 
@@ -340,7 +340,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupExample.java.html">here</a> to see how to use DeleteVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolumeBackup API.
      */
     DeleteVolumeBackupResponse deleteVolumeBackup(DeleteVolumeBackupRequest request);
 
@@ -355,7 +355,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupPolicyExample.java.html">here</a> to see how to use DeleteVolumeBackupPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolumeBackupPolicy API.
      */
     DeleteVolumeBackupPolicyResponse deleteVolumeBackupPolicy(
             DeleteVolumeBackupPolicyRequest request);
@@ -366,7 +366,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupPolicyAssignmentExample.java.html">here</a> to see how to use DeleteVolumeBackupPolicyAssignment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeBackupPolicyAssignmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolumeBackupPolicyAssignment API.
      */
     DeleteVolumeBackupPolicyAssignmentResponse deleteVolumeBackupPolicyAssignment(
             DeleteVolumeBackupPolicyAssignmentRequest request);
@@ -379,7 +379,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeGroupExample.java.html">here</a> to see how to use DeleteVolumeGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolumeGroup API.
      */
     DeleteVolumeGroupResponse deleteVolumeGroup(DeleteVolumeGroupRequest request);
 
@@ -389,7 +389,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeGroupBackupExample.java.html">here</a> to see how to use DeleteVolumeGroupBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeGroupBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolumeGroupBackup API.
      */
     DeleteVolumeGroupBackupResponse deleteVolumeGroupBackup(DeleteVolumeGroupBackupRequest request);
 
@@ -400,7 +400,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeKmsKeyExample.java.html">here</a> to see how to use DeleteVolumeKmsKey API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteVolumeKmsKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVolumeKmsKey API.
      */
     DeleteVolumeKmsKeyResponse deleteVolumeKmsKey(DeleteVolumeKmsKeyRequest request);
 
@@ -410,7 +410,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeExample.java.html">here</a> to see how to use GetBootVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolume API.
      */
     GetBootVolumeResponse getBootVolume(GetBootVolumeRequest request);
 
@@ -420,7 +420,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeBackupExample.java.html">here</a> to see how to use GetBootVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolumeBackup API.
      */
     GetBootVolumeBackupResponse getBootVolumeBackup(GetBootVolumeBackupRequest request);
 
@@ -431,7 +431,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeKmsKeyExample.java.html">here</a> to see how to use GetBootVolumeKmsKey API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeKmsKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolumeKmsKey API.
      */
     GetBootVolumeKmsKeyResponse getBootVolumeKmsKey(GetBootVolumeKmsKeyRequest request);
 
@@ -441,7 +441,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeExample.java.html">here</a> to see how to use GetVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolume API.
      */
     GetVolumeResponse getVolume(GetVolumeRequest request);
 
@@ -451,7 +451,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupExample.java.html">here</a> to see how to use GetVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeBackup API.
      */
     GetVolumeBackupResponse getVolumeBackup(GetVolumeBackupRequest request);
 
@@ -461,7 +461,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyExample.java.html">here</a> to see how to use GetVolumeBackupPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeBackupPolicy API.
      */
     GetVolumeBackupPolicyResponse getVolumeBackupPolicy(GetVolumeBackupPolicyRequest request);
 
@@ -474,7 +474,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssetAssignmentExample.java.html">here</a> to see how to use GetVolumeBackupPolicyAssetAssignment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssetAssignmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeBackupPolicyAssetAssignment API.
      */
     GetVolumeBackupPolicyAssetAssignmentResponse getVolumeBackupPolicyAssetAssignment(
             GetVolumeBackupPolicyAssetAssignmentRequest request);
@@ -485,7 +485,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssignmentExample.java.html">here</a> to see how to use GetVolumeBackupPolicyAssignment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssignmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeBackupPolicyAssignment API.
      */
     GetVolumeBackupPolicyAssignmentResponse getVolumeBackupPolicyAssignment(
             GetVolumeBackupPolicyAssignmentRequest request);
@@ -496,7 +496,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupExample.java.html">here</a> to see how to use GetVolumeGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeGroup API.
      */
     GetVolumeGroupResponse getVolumeGroup(GetVolumeGroupRequest request);
 
@@ -506,7 +506,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupBackupExample.java.html">here</a> to see how to use GetVolumeGroupBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeGroupBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeGroupBackup API.
      */
     GetVolumeGroupBackupResponse getVolumeGroupBackup(GetVolumeGroupBackupRequest request);
 
@@ -517,7 +517,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeKmsKeyExample.java.html">here</a> to see how to use GetVolumeKmsKey API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeKmsKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeKmsKey API.
      */
     GetVolumeKmsKeyResponse getVolumeKmsKey(GetVolumeKmsKeyRequest request);
 
@@ -528,7 +528,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeBackupsExample.java.html">here</a> to see how to use ListBootVolumeBackups API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBootVolumeBackups API.
      */
     ListBootVolumeBackupsResponse listBootVolumeBackups(ListBootVolumeBackupsRequest request);
 
@@ -539,7 +539,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumesExample.java.html">here</a> to see how to use ListBootVolumes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBootVolumes API.
      */
     ListBootVolumesResponse listBootVolumes(ListBootVolumesRequest request);
 
@@ -553,7 +553,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeBackupPoliciesExample.java.html">here</a> to see how to use ListVolumeBackupPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeBackupPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumeBackupPolicies API.
      */
     ListVolumeBackupPoliciesResponse listVolumeBackupPolicies(
             ListVolumeBackupPoliciesRequest request);
@@ -565,7 +565,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeBackupsExample.java.html">here</a> to see how to use ListVolumeBackups API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumeBackups API.
      */
     ListVolumeBackupsResponse listVolumeBackups(ListVolumeBackupsRequest request);
 
@@ -577,7 +577,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupBackupsExample.java.html">here</a> to see how to use ListVolumeGroupBackups API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupBackupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumeGroupBackups API.
      */
     ListVolumeGroupBackupsResponse listVolumeGroupBackups(ListVolumeGroupBackupsRequest request);
 
@@ -589,7 +589,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupsExample.java.html">here</a> to see how to use ListVolumeGroups API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumeGroups API.
      */
     ListVolumeGroupsResponse listVolumeGroups(ListVolumeGroupsRequest request);
 
@@ -600,7 +600,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumesExample.java.html">here</a> to see how to use ListVolumes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumes API.
      */
     ListVolumesResponse listVolumes(ListVolumesRequest request);
 
@@ -610,7 +610,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeExample.java.html">here</a> to see how to use UpdateBootVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBootVolume API.
      */
     UpdateBootVolumeResponse updateBootVolume(UpdateBootVolumeRequest request);
 
@@ -622,7 +622,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeBackupExample.java.html">here</a> to see how to use UpdateBootVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBootVolumeBackup API.
      */
     UpdateBootVolumeBackupResponse updateBootVolumeBackup(UpdateBootVolumeBackupRequest request);
 
@@ -633,7 +633,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeKmsKeyExample.java.html">here</a> to see how to use UpdateBootVolumeKmsKey API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeKmsKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBootVolumeKmsKey API.
      */
     UpdateBootVolumeKmsKeyResponse updateBootVolumeKmsKey(UpdateBootVolumeKmsKeyRequest request);
 
@@ -645,7 +645,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeExample.java.html">here</a> to see how to use UpdateVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolume API.
      */
     UpdateVolumeResponse updateVolume(UpdateVolumeRequest request);
 
@@ -657,7 +657,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeBackupExample.java.html">here</a> to see how to use UpdateVolumeBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeBackup API.
      */
     UpdateVolumeBackupResponse updateVolumeBackup(UpdateVolumeBackupRequest request);
 
@@ -672,7 +672,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeBackupPolicyExample.java.html">here</a> to see how to use UpdateVolumeBackupPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeBackupPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeBackupPolicy API.
      */
     UpdateVolumeBackupPolicyResponse updateVolumeBackupPolicy(
             UpdateVolumeBackupPolicyRequest request);
@@ -689,7 +689,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupExample.java.html">here</a> to see how to use UpdateVolumeGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeGroup API.
      */
     UpdateVolumeGroupResponse updateVolumeGroup(UpdateVolumeGroupRequest request);
 
@@ -699,7 +699,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupBackupExample.java.html">here</a> to see how to use UpdateVolumeGroupBackup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeGroupBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeGroupBackup API.
      */
     UpdateVolumeGroupBackupResponse updateVolumeGroupBackup(UpdateVolumeGroupBackupRequest request);
 
@@ -710,7 +710,7 @@ public interface Blockstorage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeKmsKeyExample.java.html">here</a> to see how to use UpdateVolumeKmsKey API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeKmsKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeKmsKey API.
      */
     UpdateVolumeKmsKeyResponse updateVolumeKmsKey(UpdateVolumeKmsKeyRequest request);
 

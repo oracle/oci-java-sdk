@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -274,7 +274,6 @@ public class BdsInstance {
         Creating("CREATING"),
         Active("ACTIVE"),
         Updating("UPDATING"),
-        UpdatingInfra("UPDATING_INFRA"),
         Suspending("SUSPENDING"),
         Suspended("SUSPENDED"),
         Resuming("RESUMING"),
@@ -395,15 +394,9 @@ public class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("isCloudSqlConfigured")
     Boolean isCloudSqlConfigured;
 
-    /**
-     * Additional configuration of customer's network.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfig")
     NetworkConfig networkConfig;
 
-    /**
-     * Specific info about a Hadoop cluster
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterDetails")
     ClusterDetails clusterDetails;
 
@@ -413,9 +406,6 @@ public class BdsInstance {
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
     java.util.List<Node> nodes;
 
-    /**
-     * The information about added Cloud SQL capability
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudSqlDetails")
     CloudSqlDetails cloudSqlDetails;
 

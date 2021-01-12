@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring;
@@ -57,7 +57,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ChangeAlarmCompartmentExample.java.html">here</a> to see how to use ChangeAlarmCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ChangeAlarmCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAlarmCompartment API.
      */
     ChangeAlarmCompartmentResponse changeAlarmCompartment(ChangeAlarmCompartmentRequest request);
 
@@ -73,7 +73,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/CreateAlarmExample.java.html">here</a> to see how to use CreateAlarm API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/CreateAlarmExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAlarm API.
      */
     CreateAlarmResponse createAlarm(CreateAlarmRequest request);
 
@@ -89,7 +89,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/DeleteAlarmExample.java.html">here</a> to see how to use DeleteAlarm API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/DeleteAlarmExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAlarm API.
      */
     DeleteAlarmResponse deleteAlarm(DeleteAlarmRequest request);
 
@@ -105,7 +105,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/GetAlarmExample.java.html">here</a> to see how to use GetAlarm API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/GetAlarmExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAlarm API.
      */
     GetAlarmResponse getAlarm(GetAlarmRequest request);
 
@@ -121,7 +121,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/GetAlarmHistoryExample.java.html">here</a> to see how to use GetAlarmHistory API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/GetAlarmHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAlarmHistory API.
      */
     GetAlarmHistoryResponse getAlarmHistory(GetAlarmHistoryRequest request);
 
@@ -137,7 +137,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmsExample.java.html">here</a> to see how to use ListAlarms API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAlarms API.
      */
     ListAlarmsResponse listAlarms(ListAlarmsRequest request);
 
@@ -153,7 +153,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmsStatusExample.java.html">here</a> to see how to use ListAlarmsStatus API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmsStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAlarmsStatus API.
      */
     ListAlarmsStatusResponse listAlarmsStatus(ListAlarmsStatusRequest request);
 
@@ -168,7 +168,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListMetricsExample.java.html">here</a> to see how to use ListMetrics API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMetrics API.
      */
     ListMetricsResponse listMetrics(ListMetricsRequest request);
 
@@ -196,7 +196,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/PostMetricDataExample.java.html">here</a> to see how to use PostMetricData API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/PostMetricDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PostMetricData API.
      */
     PostMetricDataResponse postMetricData(PostMetricDataRequest request);
 
@@ -212,7 +212,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/RemoveAlarmSuppressionExample.java.html">here</a> to see how to use RemoveAlarmSuppression API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/RemoveAlarmSuppressionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveAlarmSuppression API.
      */
     RemoveAlarmSuppressionResponse removeAlarmSuppression(RemoveAlarmSuppressionRequest request);
 
@@ -227,7 +227,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/SummarizeMetricsDataExample.java.html">here</a> to see how to use SummarizeMetricsData API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/SummarizeMetricsDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeMetricsData API.
      */
     SummarizeMetricsDataResponse summarizeMetricsData(SummarizeMetricsDataRequest request);
 
@@ -243,7 +243,7 @@ public interface Monitoring extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/UpdateAlarmExample.java.html">here</a> to see how to use UpdateAlarm API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/UpdateAlarmExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAlarm API.
      */
     UpdateAlarmResponse updateAlarm(UpdateAlarmRequest request);
 

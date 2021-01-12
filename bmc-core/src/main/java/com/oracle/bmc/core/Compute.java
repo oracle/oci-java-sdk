@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -56,7 +56,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddImageShapeCompatibilityEntryExample.java.html">here</a> to see how to use AddImageShapeCompatibilityEntry API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddImageShapeCompatibilityEntry API.
      */
     AddImageShapeCompatibilityEntryResponse addImageShapeCompatibilityEntry(
             AddImageShapeCompatibilityEntryRequest request);
@@ -68,7 +68,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachBootVolumeExample.java.html">here</a> to see how to use AttachBootVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachBootVolume API.
      */
     AttachBootVolumeResponse attachBootVolume(AttachBootVolumeRequest request);
 
@@ -81,7 +81,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVnicExample.java.html">here</a> to see how to use AttachVnic API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachVnic API.
      */
     AttachVnicResponse attachVnic(AttachVnicRequest request);
 
@@ -92,7 +92,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVolumeExample.java.html">here</a> to see how to use AttachVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachVolume API.
      */
     AttachVolumeResponse attachVolume(AttachVolumeRequest request);
 
@@ -119,7 +119,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CaptureConsoleHistoryExample.java.html">here</a> to see how to use CaptureConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CaptureConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CaptureConsoleHistory API.
      */
     CaptureConsoleHistoryResponse captureConsoleHistory(CaptureConsoleHistoryRequest request);
 
@@ -132,7 +132,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeImageCapabilitySchemaCompartmentExample.java.html">here</a> to see how to use ChangeComputeImageCapabilitySchemaCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeImageCapabilitySchemaCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeImageCapabilitySchemaCompartment API.
      */
     ChangeComputeImageCapabilitySchemaCompartmentResponse
             changeComputeImageCapabilitySchemaCompartment(
@@ -144,7 +144,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDedicatedVmHostCompartmentExample.java.html">here</a> to see how to use ChangeDedicatedVmHostCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDedicatedVmHostCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDedicatedVmHostCompartment API.
      */
     ChangeDedicatedVmHostCompartmentResponse changeDedicatedVmHostCompartment(
             ChangeDedicatedVmHostCompartmentRequest request);
@@ -158,7 +158,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeImageCompartmentExample.java.html">here</a> to see how to use ChangeImageCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeImageCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeImageCompartment API.
      */
     ChangeImageCompartmentResponse changeImageCompartment(ChangeImageCompartmentRequest request);
 
@@ -174,7 +174,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstanceCompartmentExample.java.html">here</a> to see how to use ChangeInstanceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstanceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeInstanceCompartment API.
      */
     ChangeInstanceCompartmentResponse changeInstanceCompartment(
             ChangeInstanceCompartmentRequest request);
@@ -186,7 +186,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateAppCatalogSubscriptionExample.java.html">here</a> to see how to use CreateAppCatalogSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateAppCatalogSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAppCatalogSubscription API.
      */
     CreateAppCatalogSubscriptionResponse createAppCatalogSubscription(
             CreateAppCatalogSubscriptionRequest request);
@@ -198,7 +198,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeImageCapabilitySchemaExample.java.html">here</a> to see how to use CreateComputeImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeImageCapabilitySchema API.
      */
     CreateComputeImageCapabilitySchemaResponse createComputeImageCapabilitySchema(
             CreateComputeImageCapabilitySchemaRequest request);
@@ -213,7 +213,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDedicatedVmHostExample.java.html">here</a> to see how to use CreateDedicatedVmHost API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDedicatedVmHost API.
      */
     CreateDedicatedVmHostResponse createDedicatedVmHost(CreateDedicatedVmHostRequest request);
 
@@ -246,7 +246,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateImageExample.java.html">here</a> to see how to use CreateImage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateImage API.
      */
     CreateImageResponse createImage(CreateImageRequest request);
 
@@ -261,7 +261,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstanceConsoleConnectionExample.java.html">here</a> to see how to use CreateInstanceConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInstanceConsoleConnection API.
      */
     CreateInstanceConsoleConnectionResponse createInstanceConsoleConnection(
             CreateInstanceConsoleConnectionRequest request);
@@ -272,7 +272,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteAppCatalogSubscriptionExample.java.html">here</a> to see how to use DeleteAppCatalogSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteAppCatalogSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAppCatalogSubscription API.
      */
     DeleteAppCatalogSubscriptionResponse deleteAppCatalogSubscription(
             DeleteAppCatalogSubscriptionRequest request);
@@ -284,7 +284,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeImageCapabilitySchemaExample.java.html">here</a> to see how to use DeleteComputeImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeImageCapabilitySchema API.
      */
     DeleteComputeImageCapabilitySchemaResponse deleteComputeImageCapabilitySchema(
             DeleteComputeImageCapabilitySchemaRequest request);
@@ -295,7 +295,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteConsoleHistoryExample.java.html">here</a> to see how to use DeleteConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConsoleHistory API.
      */
     DeleteConsoleHistoryResponse deleteConsoleHistory(DeleteConsoleHistoryRequest request);
 
@@ -309,7 +309,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDedicatedVmHostExample.java.html">here</a> to see how to use DeleteDedicatedVmHost API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDedicatedVmHost API.
      */
     DeleteDedicatedVmHostResponse deleteDedicatedVmHost(DeleteDedicatedVmHostRequest request);
 
@@ -319,7 +319,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteImageExample.java.html">here</a> to see how to use DeleteImage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteImage API.
      */
     DeleteImageResponse deleteImage(DeleteImageRequest request);
 
@@ -329,7 +329,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInstanceConsoleConnectionExample.java.html">here</a> to see how to use DeleteInstanceConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInstanceConsoleConnection API.
      */
     DeleteInstanceConsoleConnectionResponse deleteInstanceConsoleConnection(
             DeleteInstanceConsoleConnectionRequest request);
@@ -344,7 +344,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachBootVolumeExample.java.html">here</a> to see how to use DetachBootVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachBootVolume API.
      */
     DetachBootVolumeResponse detachBootVolume(DetachBootVolumeRequest request);
 
@@ -364,7 +364,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachVnicExample.java.html">here</a> to see how to use DetachVnic API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachVnic API.
      */
     DetachVnicResponse detachVnic(DetachVnicRequest request);
 
@@ -378,7 +378,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachVolumeExample.java.html">here</a> to see how to use DetachVolume API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachVolume API.
      */
     DetachVolumeResponse detachVolume(DetachVolumeRequest request);
 
@@ -398,7 +398,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ExportImageExample.java.html">here</a> to see how to use ExportImage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ExportImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportImage API.
      */
     ExportImageResponse exportImage(ExportImageRequest request);
 
@@ -408,7 +408,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingExample.java.html">here</a> to see how to use GetAppCatalogListing API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppCatalogListing API.
      */
     GetAppCatalogListingResponse getAppCatalogListing(GetAppCatalogListingRequest request);
 
@@ -418,7 +418,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingAgreementsExample.java.html">here</a> to see how to use GetAppCatalogListingAgreements API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingAgreementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppCatalogListingAgreements API.
      */
     GetAppCatalogListingAgreementsResponse getAppCatalogListingAgreements(
             GetAppCatalogListingAgreementsRequest request);
@@ -429,7 +429,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingResourceVersionExample.java.html">here</a> to see how to use GetAppCatalogListingResourceVersion API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingResourceVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppCatalogListingResourceVersion API.
      */
     GetAppCatalogListingResourceVersionResponse getAppCatalogListingResourceVersion(
             GetAppCatalogListingResourceVersionRequest request);
@@ -440,7 +440,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeAttachmentExample.java.html">here</a> to see how to use GetBootVolumeAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolumeAttachment API.
      */
     GetBootVolumeAttachmentResponse getBootVolumeAttachment(GetBootVolumeAttachmentRequest request);
 
@@ -450,7 +450,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaExample.java.html">here</a> to see how to use GetComputeGlobalImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeGlobalImageCapabilitySchema API.
      */
     GetComputeGlobalImageCapabilitySchemaResponse getComputeGlobalImageCapabilitySchema(
             GetComputeGlobalImageCapabilitySchemaRequest request);
@@ -461,7 +461,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaVersionExample.java.html">here</a> to see how to use GetComputeGlobalImageCapabilitySchemaVersion API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeGlobalImageCapabilitySchemaVersion API.
      */
     GetComputeGlobalImageCapabilitySchemaVersionResponse
             getComputeGlobalImageCapabilitySchemaVersion(
@@ -474,7 +474,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeImageCapabilitySchemaExample.java.html">here</a> to see how to use GetComputeImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeImageCapabilitySchema API.
      */
     GetComputeImageCapabilitySchemaResponse getComputeImageCapabilitySchema(
             GetComputeImageCapabilitySchemaRequest request);
@@ -488,7 +488,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetConsoleHistoryExample.java.html">here</a> to see how to use GetConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistory API.
      */
     GetConsoleHistoryResponse getConsoleHistory(GetConsoleHistoryRequest request);
 
@@ -501,7 +501,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetConsoleHistoryContentExample.java.html">here</a> to see how to use GetConsoleHistoryContent API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetConsoleHistoryContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistoryContent API.
      */
     GetConsoleHistoryContentResponse getConsoleHistoryContent(
             GetConsoleHistoryContentRequest request);
@@ -512,7 +512,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDedicatedVmHostExample.java.html">here</a> to see how to use GetDedicatedVmHost API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDedicatedVmHost API.
      */
     GetDedicatedVmHostResponse getDedicatedVmHost(GetDedicatedVmHostRequest request);
 
@@ -522,7 +522,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetImageExample.java.html">here</a> to see how to use GetImage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImage API.
      */
     GetImageResponse getImage(GetImageRequest request);
 
@@ -532,7 +532,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetImageShapeCompatibilityEntryExample.java.html">here</a> to see how to use GetImageShapeCompatibilityEntry API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImageShapeCompatibilityEntry API.
      */
     GetImageShapeCompatibilityEntryResponse getImageShapeCompatibilityEntry(
             GetImageShapeCompatibilityEntryRequest request);
@@ -543,7 +543,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceExample.java.html">here</a> to see how to use GetInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstance API.
      */
     GetInstanceResponse getInstance(GetInstanceRequest request);
 
@@ -553,7 +553,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceConsoleConnectionExample.java.html">here</a> to see how to use GetInstanceConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceConsoleConnection API.
      */
     GetInstanceConsoleConnectionResponse getInstanceConsoleConnection(
             GetInstanceConsoleConnectionRequest request);
@@ -565,7 +565,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVnicAttachmentExample.java.html">here</a> to see how to use GetVnicAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVnicAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVnicAttachment API.
      */
     GetVnicAttachmentResponse getVnicAttachment(GetVnicAttachmentRequest request);
 
@@ -575,7 +575,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeAttachmentExample.java.html">here</a> to see how to use GetVolumeAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeAttachment API.
      */
     GetVolumeAttachmentResponse getVolumeAttachment(GetVolumeAttachmentRequest request);
 
@@ -587,7 +587,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetWindowsInstanceInitialCredentialsExample.java.html">here</a> to see how to use GetWindowsInstanceInitialCredentials API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetWindowsInstanceInitialCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWindowsInstanceInitialCredentials API.
      */
     GetWindowsInstanceInitialCredentialsResponse getWindowsInstanceInitialCredentials(
             GetWindowsInstanceInitialCredentialsRequest request);
@@ -615,7 +615,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/InstanceActionExample.java.html">here</a> to see how to use InstanceAction API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/InstanceActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstanceAction API.
      */
     InstanceActionResponse instanceAction(InstanceActionRequest request);
 
@@ -664,7 +664,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceExample.java.html">here</a> to see how to use LaunchInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LaunchInstance API.
      */
     LaunchInstanceResponse launchInstance(LaunchInstanceRequest request);
 
@@ -674,7 +674,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogListingResourceVersionsExample.java.html">here</a> to see how to use ListAppCatalogListingResourceVersions API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogListingResourceVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppCatalogListingResourceVersions API.
      */
     ListAppCatalogListingResourceVersionsResponse listAppCatalogListingResourceVersions(
             ListAppCatalogListingResourceVersionsRequest request);
@@ -685,7 +685,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogListingsExample.java.html">here</a> to see how to use ListAppCatalogListings API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogListingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppCatalogListings API.
      */
     ListAppCatalogListingsResponse listAppCatalogListings(ListAppCatalogListingsRequest request);
 
@@ -695,7 +695,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogSubscriptionsExample.java.html">here</a> to see how to use ListAppCatalogSubscriptions API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogSubscriptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppCatalogSubscriptions API.
      */
     ListAppCatalogSubscriptionsResponse listAppCatalogSubscriptions(
             ListAppCatalogSubscriptionsRequest request);
@@ -708,7 +708,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeAttachmentsExample.java.html">here</a> to see how to use ListBootVolumeAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBootVolumeAttachments API.
      */
     ListBootVolumeAttachmentsResponse listBootVolumeAttachments(
             ListBootVolumeAttachmentsRequest request);
@@ -720,7 +720,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGlobalImageCapabilitySchemaVersionsExample.java.html">here</a> to see how to use ListComputeGlobalImageCapabilitySchemaVersions API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGlobalImageCapabilitySchemaVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeGlobalImageCapabilitySchemaVersions API.
      */
     ListComputeGlobalImageCapabilitySchemaVersionsResponse
             listComputeGlobalImageCapabilitySchemaVersions(
@@ -733,7 +733,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGlobalImageCapabilitySchemasExample.java.html">here</a> to see how to use ListComputeGlobalImageCapabilitySchemas API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGlobalImageCapabilitySchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeGlobalImageCapabilitySchemas API.
      */
     ListComputeGlobalImageCapabilitySchemasResponse listComputeGlobalImageCapabilitySchemas(
             ListComputeGlobalImageCapabilitySchemasRequest request);
@@ -745,7 +745,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeImageCapabilitySchemasExample.java.html">here</a> to see how to use ListComputeImageCapabilitySchemas API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeImageCapabilitySchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeImageCapabilitySchemas API.
      */
     ListComputeImageCapabilitySchemasResponse listComputeImageCapabilitySchemas(
             ListComputeImageCapabilitySchemasRequest request);
@@ -757,7 +757,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListConsoleHistoriesExample.java.html">here</a> to see how to use ListConsoleHistories API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListConsoleHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConsoleHistories API.
      */
     ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request);
 
@@ -769,7 +769,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostInstanceShapesExample.java.html">here</a> to see how to use ListDedicatedVmHostInstanceShapes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostInstanceShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHostInstanceShapes API.
      */
     ListDedicatedVmHostInstanceShapesResponse listDedicatedVmHostInstanceShapes(
             ListDedicatedVmHostInstanceShapesRequest request);
@@ -781,7 +781,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostInstancesExample.java.html">here</a> to see how to use ListDedicatedVmHostInstances API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHostInstances API.
      */
     ListDedicatedVmHostInstancesResponse listDedicatedVmHostInstances(
             ListDedicatedVmHostInstancesRequest request);
@@ -793,7 +793,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostShapesExample.java.html">here</a> to see how to use ListDedicatedVmHostShapes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHostShapes API.
      */
     ListDedicatedVmHostShapesResponse listDedicatedVmHostShapes(
             ListDedicatedVmHostShapesRequest request);
@@ -808,7 +808,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostsExample.java.html">here</a> to see how to use ListDedicatedVmHosts API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHosts API.
      */
     ListDedicatedVmHostsResponse listDedicatedVmHosts(ListDedicatedVmHostsRequest request);
 
@@ -818,7 +818,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListImageShapeCompatibilityEntriesExample.java.html">here</a> to see how to use ListImageShapeCompatibilityEntries API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListImageShapeCompatibilityEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImageShapeCompatibilityEntries API.
      */
     ListImageShapeCompatibilityEntriesResponse listImageShapeCompatibilityEntries(
             ListImageShapeCompatibilityEntriesRequest request);
@@ -836,7 +836,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListImagesExample.java.html">here</a> to see how to use ListImages API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImages API.
      */
     ListImagesResponse listImages(ListImagesRequest request);
 
@@ -849,7 +849,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceConsoleConnectionsExample.java.html">here</a> to see how to use ListInstanceConsoleConnections API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceConsoleConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceConsoleConnections API.
      */
     ListInstanceConsoleConnectionsResponse listInstanceConsoleConnections(
             ListInstanceConsoleConnectionsRequest request);
@@ -860,7 +860,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceDevicesExample.java.html">here</a> to see how to use ListInstanceDevices API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceDevicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceDevices API.
      */
     ListInstanceDevicesResponse listInstanceDevices(ListInstanceDevicesRequest request);
 
@@ -873,7 +873,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancesExample.java.html">here</a> to see how to use ListInstances API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstances API.
      */
     ListInstancesResponse listInstances(ListInstancesRequest request);
 
@@ -885,7 +885,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListShapesExample.java.html">here</a> to see how to use ListShapes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListShapes API.
      */
     ListShapesResponse listShapes(ListShapesRequest request);
 
@@ -898,7 +898,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVnicAttachmentsExample.java.html">here</a> to see how to use ListVnicAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVnicAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVnicAttachments API.
      */
     ListVnicAttachmentsResponse listVnicAttachments(ListVnicAttachmentsRequest request);
 
@@ -913,7 +913,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeAttachmentsExample.java.html">here</a> to see how to use ListVolumeAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumeAttachments API.
      */
     ListVolumeAttachmentsResponse listVolumeAttachments(ListVolumeAttachmentsRequest request);
 
@@ -923,7 +923,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveImageShapeCompatibilityEntryExample.java.html">here</a> to see how to use RemoveImageShapeCompatibilityEntry API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveImageShapeCompatibilityEntry API.
      */
     RemoveImageShapeCompatibilityEntryResponse removeImageShapeCompatibilityEntry(
             RemoveImageShapeCompatibilityEntryRequest request);
@@ -942,7 +942,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateInstanceExample.java.html">here</a> to see how to use TerminateInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateInstance API.
      */
     TerminateInstanceResponse terminateInstance(TerminateInstanceRequest request);
 
@@ -953,7 +953,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeImageCapabilitySchemaExample.java.html">here</a> to see how to use UpdateComputeImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeImageCapabilitySchema API.
      */
     UpdateComputeImageCapabilitySchemaResponse updateComputeImageCapabilitySchema(
             UpdateComputeImageCapabilitySchemaRequest request);
@@ -964,7 +964,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateConsoleHistoryExample.java.html">here</a> to see how to use UpdateConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConsoleHistory API.
      */
     UpdateConsoleHistoryResponse updateConsoleHistory(UpdateConsoleHistoryRequest request);
 
@@ -976,7 +976,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDedicatedVmHostExample.java.html">here</a> to see how to use UpdateDedicatedVmHost API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDedicatedVmHost API.
      */
     UpdateDedicatedVmHostResponse updateDedicatedVmHost(UpdateDedicatedVmHostRequest request);
 
@@ -986,7 +986,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateImageExample.java.html">here</a> to see how to use UpdateImage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateImage API.
      */
     UpdateImageResponse updateImage(UpdateImageRequest request);
 
@@ -1003,7 +1003,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceExample.java.html">here</a> to see how to use UpdateInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstance API.
      */
     UpdateInstanceResponse updateInstance(UpdateInstanceRequest request);
 
@@ -1013,7 +1013,7 @@ public interface Compute extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceConsoleConnectionExample.java.html">here</a> to see how to use UpdateInstanceConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstanceConsoleConnection API.
      */
     UpdateInstanceConsoleConnectionResponse updateInstanceConsoleConnection(
             UpdateInstanceConsoleConnectionRequest request);

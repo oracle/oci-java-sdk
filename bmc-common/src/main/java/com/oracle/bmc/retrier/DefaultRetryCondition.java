@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.retrier;
@@ -26,12 +26,20 @@ public class DefaultRetryCondition implements RetryCondition {
                     .put(500, "InternalServerError")
                     .build();
 
+    private static final String PROCESSING_EXCEPTION_MSG = ".*processing(\\s)+exception.*";
+
     @Override
     public boolean shouldBeRetried(@NonNull final BmcException exception) {
         return exception.isClientSide()
                 || exception.isTimeout()
                 || exception.getStatusCode() >= 500
                 || RETRYABLE_SERVICE_ERRORS.containsEntry(
-                        exception.getStatusCode(), exception.getServiceCode());
+                        exception.getStatusCode(), exception.getServiceCode())
+                || isProcessingException(exception);
+    }
+
+    public static boolean isProcessingException(final BmcException exception) {
+        return exception.getStatusCode() == -1
+                && exception.getMessage().toLowerCase().matches(PROCESSING_EXCEPTION_MSG);
     }
 }

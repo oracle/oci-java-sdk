@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -51,7 +51,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverNodeCompartmentExample.java.html">here</a> to see how to use ChangeRoverNodeCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverNodeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRoverNodeCompartment API.
      */
     ChangeRoverNodeCompartmentResponse changeRoverNodeCompartment(
             ChangeRoverNodeCompartmentRequest request);
@@ -63,7 +63,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverNodeExample.java.html">here</a> to see how to use CreateRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoverNode API.
      */
     CreateRoverNodeResponse createRoverNode(CreateRoverNodeRequest request);
 
@@ -73,7 +73,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverNodeExample.java.html">here</a> to see how to use DeleteRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoverNode API.
      */
     DeleteRoverNodeResponse deleteRoverNode(DeleteRoverNodeRequest request);
 
@@ -83,7 +83,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeExample.java.html">here</a> to see how to use GetRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNode API.
      */
     GetRoverNodeResponse getRoverNode(GetRoverNodeRequest request);
 
@@ -93,7 +93,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeCertificateExample.java.html">here</a> to see how to use GetRoverNodeCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNodeCertificate API.
      */
     GetRoverNodeCertificateResponse getRoverNodeCertificate(GetRoverNodeCertificateRequest request);
 
@@ -103,7 +103,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeEncryptionKeyExample.java.html">here</a> to see how to use GetRoverNodeEncryptionKey API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeEncryptionKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNodeEncryptionKey API.
      */
     GetRoverNodeEncryptionKeyResponse getRoverNodeEncryptionKey(
             GetRoverNodeEncryptionKeyRequest request);
@@ -114,7 +114,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeGetRptExample.java.html">here</a> to see how to use GetRoverNodeGetRpt API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverNodeGetRptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverNodeGetRpt API.
      */
     GetRoverNodeGetRptResponse getRoverNodeGetRpt(GetRoverNodeGetRptRequest request);
 
@@ -125,7 +125,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverNodesExample.java.html">here</a> to see how to use ListRoverNodes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverNodesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverNodes API.
      */
     ListRoverNodesResponse listRoverNodes(ListRoverNodesRequest request);
 
@@ -135,7 +135,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeActionSetKeyExample.java.html">here</a> to see how to use RoverNodeActionSetKey API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RoverNodeActionSetKeyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RoverNodeActionSetKey API.
      */
     RoverNodeActionSetKeyResponse roverNodeActionSetKey(RoverNodeActionSetKeyRequest request);
 
@@ -145,7 +145,7 @@ public interface RoverNode extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverNodeExample.java.html">here</a> to see how to use UpdateRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoverNode API.
      */
     UpdateRoverNodeResponse updateRoverNode(UpdateRoverNodeRequest request);
 
