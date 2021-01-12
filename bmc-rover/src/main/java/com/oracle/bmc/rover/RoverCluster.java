@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -51,7 +51,7 @@ public interface RoverCluster extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverClusterCompartmentExample.java.html">here</a> to see how to use ChangeRoverClusterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRoverClusterCompartment API.
      */
     ChangeRoverClusterCompartmentResponse changeRoverClusterCompartment(
             ChangeRoverClusterCompartmentRequest request);
@@ -63,7 +63,7 @@ public interface RoverCluster extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverClusterExample.java.html">here</a> to see how to use CreateRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoverCluster API.
      */
     CreateRoverClusterResponse createRoverCluster(CreateRoverClusterRequest request);
 
@@ -73,7 +73,7 @@ public interface RoverCluster extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverClusterExample.java.html">here</a> to see how to use DeleteRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoverCluster API.
      */
     DeleteRoverClusterResponse deleteRoverCluster(DeleteRoverClusterRequest request);
 
@@ -83,7 +83,7 @@ public interface RoverCluster extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverClusterExample.java.html">here</a> to see how to use GetRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverCluster API.
      */
     GetRoverClusterResponse getRoverCluster(GetRoverClusterRequest request);
 
@@ -93,7 +93,7 @@ public interface RoverCluster extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverClusterCertificateExample.java.html">here</a> to see how to use GetRoverClusterCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverClusterCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverClusterCertificate API.
      */
     GetRoverClusterCertificateResponse getRoverClusterCertificate(
             GetRoverClusterCertificateRequest request);
@@ -105,7 +105,7 @@ public interface RoverCluster extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverClustersExample.java.html">here</a> to see how to use ListRoverClusters API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverClusters API.
      */
     ListRoverClustersResponse listRoverClusters(ListRoverClustersRequest request);
 
@@ -115,7 +115,7 @@ public interface RoverCluster extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverClusterExample.java.html">here</a> to see how to use UpdateRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoverCluster API.
      */
     UpdateRoverClusterResponse updateRoverCluster(UpdateRoverClusterRequest request);
 

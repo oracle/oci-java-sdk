@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.29.0 - 2021-01-12
+### Added
+- Support for auto-scaling in the Big Data service
+- Documentation fixes for the Logging Search service
+
+### Breaking Changes
+- Removed `Starting` and `Stopping` values from enum `LifecycleState` of model `Node` in the Big Data service
+- Removed `UpdatingInfra` value from enum `LifecycleState` of model `BdsInstance` in the Big Data service
+
 ## 1.28.0 - 2020-12-15
 ### Added
 - Support for filtering listKeys based on KeyShape in KeyManagement service

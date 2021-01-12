@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -51,7 +51,7 @@ public interface RoverEntitlement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverEntitlementCompartmentExample.java.html">here</a> to see how to use ChangeRoverEntitlementCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ChangeRoverEntitlementCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRoverEntitlementCompartment API.
      */
     ChangeRoverEntitlementCompartmentResponse changeRoverEntitlementCompartment(
             ChangeRoverEntitlementCompartmentRequest request);
@@ -62,7 +62,7 @@ public interface RoverEntitlement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverEntitlementExample.java.html">here</a> to see how to use CreateRoverEntitlement API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/CreateRoverEntitlementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRoverEntitlement API.
      */
     CreateRoverEntitlementResponse createRoverEntitlement(CreateRoverEntitlementRequest request);
 
@@ -72,7 +72,7 @@ public interface RoverEntitlement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverEntitlementExample.java.html">here</a> to see how to use DeleteRoverEntitlement API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/DeleteRoverEntitlementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRoverEntitlement API.
      */
     DeleteRoverEntitlementResponse deleteRoverEntitlement(DeleteRoverEntitlementRequest request);
 
@@ -82,7 +82,7 @@ public interface RoverEntitlement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverEntitlementExample.java.html">here</a> to see how to use GetRoverEntitlement API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/GetRoverEntitlementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRoverEntitlement API.
      */
     GetRoverEntitlementResponse getRoverEntitlement(GetRoverEntitlementRequest request);
 
@@ -92,7 +92,7 @@ public interface RoverEntitlement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverEntitlementsExample.java.html">here</a> to see how to use ListRoverEntitlements API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverEntitlementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverEntitlements API.
      */
     ListRoverEntitlementsResponse listRoverEntitlements(ListRoverEntitlementsRequest request);
 
@@ -102,7 +102,7 @@ public interface RoverEntitlement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverEntitlementExample.java.html">here</a> to see how to use UpdateRoverEntitlement API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/UpdateRoverEntitlementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRoverEntitlement API.
      */
     UpdateRoverEntitlementResponse updateRoverEntitlement(UpdateRoverEntitlementRequest request);
 

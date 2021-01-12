@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.announcementsservice;
@@ -52,7 +52,7 @@ public interface Announcement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/GetAnnouncementExample.java.html">here</a> to see how to use GetAnnouncement API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/GetAnnouncementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAnnouncement API.
      */
     GetAnnouncementResponse getAnnouncement(GetAnnouncementRequest request);
 
@@ -63,7 +63,7 @@ public interface Announcement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/GetAnnouncementUserStatusExample.java.html">here</a> to see how to use GetAnnouncementUserStatus API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/GetAnnouncementUserStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAnnouncementUserStatus API.
      */
     GetAnnouncementUserStatusResponse getAnnouncementUserStatus(
             GetAnnouncementUserStatusRequest request);
@@ -75,7 +75,7 @@ public interface Announcement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/ListAnnouncementsExample.java.html">here</a> to see how to use ListAnnouncements API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/ListAnnouncementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAnnouncements API.
      */
     ListAnnouncementsResponse listAnnouncements(ListAnnouncementsRequest request);
 
@@ -86,7 +86,7 @@ public interface Announcement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateAnnouncementUserStatusExample.java.html">here</a> to see how to use UpdateAnnouncementUserStatus API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateAnnouncementUserStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAnnouncementUserStatus API.
      */
     UpdateAnnouncementUserStatusResponse updateAnnouncementUserStatus(
             UpdateAnnouncementUserStatusRequest request);

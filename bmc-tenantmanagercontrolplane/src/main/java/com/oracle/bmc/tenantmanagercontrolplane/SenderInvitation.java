@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -51,7 +51,7 @@ public interface SenderInvitation extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/CancelSenderInvitationExample.java.html">here</a> to see how to use CancelSenderInvitation API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/CancelSenderInvitationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSenderInvitation API.
      */
     CancelSenderInvitationResponse cancelSenderInvitation(CancelSenderInvitationRequest request);
 
@@ -61,7 +61,7 @@ public interface SenderInvitation extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/CreateSenderInvitationExample.java.html">here</a> to see how to use CreateSenderInvitation API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/CreateSenderInvitationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSenderInvitation API.
      */
     CreateSenderInvitationResponse createSenderInvitation(CreateSenderInvitationRequest request);
 
@@ -71,7 +71,7 @@ public interface SenderInvitation extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetSenderInvitationExample.java.html">here</a> to see how to use GetSenderInvitation API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetSenderInvitationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSenderInvitation API.
      */
     GetSenderInvitationResponse getSenderInvitation(GetSenderInvitationRequest request);
 
@@ -82,7 +82,7 @@ public interface SenderInvitation extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListSenderInvitationsExample.java.html">here</a> to see how to use ListSenderInvitations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListSenderInvitationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSenderInvitations API.
      */
     ListSenderInvitationsResponse listSenderInvitations(ListSenderInvitationsRequest request);
 
@@ -92,7 +92,7 @@ public interface SenderInvitation extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/UpdateSenderInvitationExample.java.html">here</a> to see how to use UpdateSenderInvitation API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/UpdateSenderInvitationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSenderInvitation API.
      */
     UpdateSenderInvitationResponse updateSenderInvitation(UpdateSenderInvitationRequest request);
 

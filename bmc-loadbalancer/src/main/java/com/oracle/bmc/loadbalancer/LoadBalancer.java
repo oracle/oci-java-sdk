@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer;
@@ -55,7 +55,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ChangeLoadBalancerCompartmentExample.java.html">here</a> to see how to use ChangeLoadBalancerCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ChangeLoadBalancerCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLoadBalancerCompartment API.
      */
     ChangeLoadBalancerCompartmentResponse changeLoadBalancerCompartment(
             ChangeLoadBalancerCompartmentRequest request);
@@ -66,7 +66,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateBackendExample.java.html">here</a> to see how to use CreateBackend API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackend API.
      */
     CreateBackendResponse createBackend(CreateBackendRequest request);
 
@@ -76,7 +76,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateBackendSetExample.java.html">here</a> to see how to use CreateBackendSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackendSet API.
      */
     CreateBackendSetResponse createBackendSet(CreateBackendSetRequest request);
 
@@ -86,7 +86,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateCertificateExample.java.html">here</a> to see how to use CreateCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCertificate API.
      */
     CreateCertificateResponse createCertificate(CreateCertificateRequest request);
 
@@ -98,7 +98,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateHostnameExample.java.html">here</a> to see how to use CreateHostname API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateHostnameExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateHostname API.
      */
     CreateHostnameResponse createHostname(CreateHostnameRequest request);
 
@@ -108,7 +108,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateListenerExample.java.html">here</a> to see how to use CreateListener API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListener API.
      */
     CreateListenerResponse createListener(CreateListenerRequest request);
 
@@ -145,7 +145,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateLoadBalancerExample.java.html">here</a> to see how to use CreateLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLoadBalancer API.
      */
     CreateLoadBalancerResponse createLoadBalancer(CreateLoadBalancerRequest request);
 
@@ -157,7 +157,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreatePathRouteSetExample.java.html">here</a> to see how to use CreatePathRouteSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreatePathRouteSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePathRouteSet API.
      */
     CreatePathRouteSetResponse createPathRouteSet(CreatePathRouteSetRequest request);
 
@@ -169,7 +169,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRuleSetExample.java.html">here</a> to see how to use CreateRuleSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateRuleSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRuleSet API.
      */
     CreateRuleSetResponse createRuleSet(CreateRuleSetRequest request);
 
@@ -179,7 +179,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateSSLCipherSuiteExample.java.html">here</a> to see how to use CreateSSLCipherSuite API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/CreateSSLCipherSuiteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSSLCipherSuite API.
      */
     CreateSSLCipherSuiteResponse createSSLCipherSuite(CreateSSLCipherSuiteRequest request);
 
@@ -189,7 +189,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteBackendExample.java.html">here</a> to see how to use DeleteBackend API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackend API.
      */
     DeleteBackendResponse deleteBackend(DeleteBackendRequest request);
 
@@ -202,7 +202,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteBackendSetExample.java.html">here</a> to see how to use DeleteBackendSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackendSet API.
      */
     DeleteBackendSetResponse deleteBackendSet(DeleteBackendSetRequest request);
 
@@ -212,7 +212,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteCertificateExample.java.html">here</a> to see how to use DeleteCertificate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCertificate API.
      */
     DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request);
 
@@ -223,7 +223,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteHostnameExample.java.html">here</a> to see how to use DeleteHostname API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteHostnameExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteHostname API.
      */
     DeleteHostnameResponse deleteHostname(DeleteHostnameRequest request);
 
@@ -233,7 +233,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteListenerExample.java.html">here</a> to see how to use DeleteListener API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListener API.
      */
     DeleteListenerResponse deleteListener(DeleteListenerRequest request);
 
@@ -243,7 +243,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteLoadBalancerExample.java.html">here</a> to see how to use DeleteLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLoadBalancer API.
      */
     DeleteLoadBalancerResponse deleteLoadBalancer(DeleteLoadBalancerRequest request);
 
@@ -257,7 +257,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeletePathRouteSetExample.java.html">here</a> to see how to use DeletePathRouteSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeletePathRouteSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePathRouteSet API.
      */
     DeletePathRouteSetResponse deletePathRouteSet(DeletePathRouteSetRequest request);
 
@@ -271,7 +271,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteRuleSetExample.java.html">here</a> to see how to use DeleteRuleSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteRuleSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRuleSet API.
      */
     DeleteRuleSetResponse deleteRuleSet(DeleteRuleSetRequest request);
 
@@ -281,7 +281,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteSSLCipherSuiteExample.java.html">here</a> to see how to use DeleteSSLCipherSuite API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/DeleteSSLCipherSuiteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSSLCipherSuite API.
      */
     DeleteSSLCipherSuiteResponse deleteSSLCipherSuite(DeleteSSLCipherSuiteRequest request);
 
@@ -291,7 +291,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendExample.java.html">here</a> to see how to use GetBackend API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackend API.
      */
     GetBackendResponse getBackend(GetBackendRequest request);
 
@@ -301,7 +301,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendHealthExample.java.html">here</a> to see how to use GetBackendHealth API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendHealthExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendHealth API.
      */
     GetBackendHealthResponse getBackendHealth(GetBackendHealthRequest request);
 
@@ -311,7 +311,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendSetExample.java.html">here</a> to see how to use GetBackendSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendSet API.
      */
     GetBackendSetResponse getBackendSet(GetBackendSetRequest request);
 
@@ -321,7 +321,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendSetHealthExample.java.html">here</a> to see how to use GetBackendSetHealth API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetBackendSetHealthExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendSetHealth API.
      */
     GetBackendSetHealthResponse getBackendSetHealth(GetBackendSetHealthRequest request);
 
@@ -331,7 +331,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetHealthCheckerExample.java.html">here</a> to see how to use GetHealthChecker API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetHealthCheckerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHealthChecker API.
      */
     GetHealthCheckerResponse getHealthChecker(GetHealthCheckerRequest request);
 
@@ -341,7 +341,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetHostnameExample.java.html">here</a> to see how to use GetHostname API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetHostnameExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHostname API.
      */
     GetHostnameResponse getHostname(GetHostnameRequest request);
 
@@ -351,7 +351,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetLoadBalancerExample.java.html">here</a> to see how to use GetLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLoadBalancer API.
      */
     GetLoadBalancerResponse getLoadBalancer(GetLoadBalancerRequest request);
 
@@ -361,7 +361,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetLoadBalancerHealthExample.java.html">here</a> to see how to use GetLoadBalancerHealth API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetLoadBalancerHealthExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLoadBalancerHealth API.
      */
     GetLoadBalancerHealthResponse getLoadBalancerHealth(GetLoadBalancerHealthRequest request);
 
@@ -371,7 +371,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetPathRouteSetExample.java.html">here</a> to see how to use GetPathRouteSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetPathRouteSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPathRouteSet API.
      */
     GetPathRouteSetResponse getPathRouteSet(GetPathRouteSetRequest request);
 
@@ -381,7 +381,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetRuleSetExample.java.html">here</a> to see how to use GetRuleSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetRuleSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRuleSet API.
      */
     GetRuleSetResponse getRuleSet(GetRuleSetRequest request);
 
@@ -391,7 +391,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetSSLCipherSuiteExample.java.html">here</a> to see how to use GetSSLCipherSuite API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetSSLCipherSuiteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSSLCipherSuite API.
      */
     GetSSLCipherSuiteResponse getSSLCipherSuite(GetSSLCipherSuiteRequest request);
 
@@ -401,7 +401,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -411,7 +411,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListBackendSetsExample.java.html">here</a> to see how to use ListBackendSets API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListBackendSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackendSets API.
      */
     ListBackendSetsResponse listBackendSets(ListBackendSetsRequest request);
 
@@ -421,7 +421,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListBackendsExample.java.html">here</a> to see how to use ListBackends API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListBackendsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackends API.
      */
     ListBackendsResponse listBackends(ListBackendsRequest request);
 
@@ -431,7 +431,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListCertificatesExample.java.html">here</a> to see how to use ListCertificates API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListCertificatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificates API.
      */
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
 
@@ -441,7 +441,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListHostnamesExample.java.html">here</a> to see how to use ListHostnames API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListHostnamesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHostnames API.
      */
     ListHostnamesResponse listHostnames(ListHostnamesRequest request);
 
@@ -458,7 +458,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListListenerRulesExample.java.html">here</a> to see how to use ListListenerRules API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListListenerRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListenerRules API.
      */
     ListListenerRulesResponse listListenerRules(ListListenerRulesRequest request);
 
@@ -468,7 +468,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListLoadBalancerHealthsExample.java.html">here</a> to see how to use ListLoadBalancerHealths API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListLoadBalancerHealthsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLoadBalancerHealths API.
      */
     ListLoadBalancerHealthsResponse listLoadBalancerHealths(ListLoadBalancerHealthsRequest request);
 
@@ -478,7 +478,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListLoadBalancersExample.java.html">here</a> to see how to use ListLoadBalancers API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListLoadBalancersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLoadBalancers API.
      */
     ListLoadBalancersResponse listLoadBalancers(ListLoadBalancersRequest request);
 
@@ -488,7 +488,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListPathRouteSetsExample.java.html">here</a> to see how to use ListPathRouteSets API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListPathRouteSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPathRouteSets API.
      */
     ListPathRouteSetsResponse listPathRouteSets(ListPathRouteSetsRequest request);
 
@@ -498,7 +498,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListPoliciesExample.java.html">here</a> to see how to use ListPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPolicies API.
      */
     ListPoliciesResponse listPolicies(ListPoliciesRequest request);
 
@@ -508,7 +508,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListProtocolsExample.java.html">here</a> to see how to use ListProtocols API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListProtocolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtocols API.
      */
     ListProtocolsResponse listProtocols(ListProtocolsRequest request);
 
@@ -518,7 +518,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListRuleSetsExample.java.html">here</a> to see how to use ListRuleSets API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListRuleSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuleSets API.
      */
     ListRuleSetsResponse listRuleSets(ListRuleSetsRequest request);
 
@@ -528,7 +528,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListSSLCipherSuitesExample.java.html">here</a> to see how to use ListSSLCipherSuites API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListSSLCipherSuitesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSSLCipherSuites API.
      */
     ListSSLCipherSuitesResponse listSSLCipherSuites(ListSSLCipherSuitesRequest request);
 
@@ -538,7 +538,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListShapesExample.java.html">here</a> to see how to use ListShapes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListShapes API.
      */
     ListShapesResponse listShapes(ListShapesRequest request);
 
@@ -548,7 +548,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -558,7 +558,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateBackendExample.java.html">here</a> to see how to use UpdateBackend API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackend API.
      */
     UpdateBackendResponse updateBackend(UpdateBackendRequest request);
 
@@ -568,7 +568,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateBackendSetExample.java.html">here</a> to see how to use UpdateBackendSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackendSet API.
      */
     UpdateBackendSetResponse updateBackendSet(UpdateBackendSetRequest request);
 
@@ -578,7 +578,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateHealthCheckerExample.java.html">here</a> to see how to use UpdateHealthChecker API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateHealthCheckerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHealthChecker API.
      */
     UpdateHealthCheckerResponse updateHealthChecker(UpdateHealthCheckerRequest request);
 
@@ -590,7 +590,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateHostnameExample.java.html">here</a> to see how to use UpdateHostname API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateHostnameExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHostname API.
      */
     UpdateHostnameResponse updateHostname(UpdateHostnameRequest request);
 
@@ -600,7 +600,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateListenerExample.java.html">here</a> to see how to use UpdateListener API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListener API.
      */
     UpdateListenerResponse updateListener(UpdateListenerRequest request);
 
@@ -610,7 +610,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerExample.java.html">here</a> to see how to use UpdateLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLoadBalancer API.
      */
     UpdateLoadBalancerResponse updateLoadBalancer(UpdateLoadBalancerRequest request);
 
@@ -626,7 +626,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerShapeExample.java.html">here</a> to see how to use UpdateLoadBalancerShape API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateLoadBalancerShapeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLoadBalancerShape API.
      */
     UpdateLoadBalancerShapeResponse updateLoadBalancerShape(UpdateLoadBalancerShapeRequest request);
 
@@ -636,7 +636,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateNetworkSecurityGroupsExample.java.html">here</a> to see how to use UpdateNetworkSecurityGroups API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateNetworkSecurityGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkSecurityGroups API.
      */
     UpdateNetworkSecurityGroupsResponse updateNetworkSecurityGroups(
             UpdateNetworkSecurityGroupsRequest request);
@@ -653,7 +653,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdatePathRouteSetExample.java.html">here</a> to see how to use UpdatePathRouteSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdatePathRouteSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePathRouteSet API.
      */
     UpdatePathRouteSetResponse updatePathRouteSet(UpdatePathRouteSetRequest request);
 
@@ -667,7 +667,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateRuleSetExample.java.html">here</a> to see how to use UpdateRuleSet API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateRuleSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRuleSet API.
      */
     UpdateRuleSetResponse updateRuleSet(UpdateRuleSetRequest request);
 
@@ -677,7 +677,7 @@ public interface LoadBalancer extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateSSLCipherSuiteExample.java.html">here</a> to see how to use UpdateSSLCipherSuite API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loadbalancer/UpdateSSLCipherSuiteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSSLCipherSuite API.
      */
     UpdateSSLCipherSuiteResponse updateSSLCipherSuite(UpdateSSLCipherSuiteRequest request);
 

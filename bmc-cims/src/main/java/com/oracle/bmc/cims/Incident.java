@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims;
@@ -51,7 +51,7 @@ public interface Incident extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/CreateIncidentExample.java.html">here</a> to see how to use CreateIncident API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/CreateIncidentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIncident API.
      */
     CreateIncidentResponse createIncident(CreateIncidentRequest request);
 
@@ -61,7 +61,7 @@ public interface Incident extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetIncidentExample.java.html">here</a> to see how to use GetIncident API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetIncidentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIncident API.
      */
     GetIncidentResponse getIncident(GetIncidentRequest request);
 
@@ -71,7 +71,7 @@ public interface Incident extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetStatusExample.java.html">here</a> to see how to use GetStatus API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStatus API.
      */
     GetStatusResponse getStatus(GetStatusRequest request);
 
@@ -81,7 +81,7 @@ public interface Incident extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentResourceTypesExample.java.html">here</a> to see how to use ListIncidentResourceTypes API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentResourceTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIncidentResourceTypes API.
      */
     ListIncidentResourceTypesResponse listIncidentResourceTypes(
             ListIncidentResourceTypesRequest request);
@@ -92,7 +92,7 @@ public interface Incident extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentsExample.java.html">here</a> to see how to use ListIncidents API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ListIncidentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIncidents API.
      */
     ListIncidentsResponse listIncidents(ListIncidentsRequest request);
 
@@ -102,7 +102,7 @@ public interface Incident extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/UpdateIncidentExample.java.html">here</a> to see how to use UpdateIncident API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/UpdateIncidentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIncident API.
      */
     UpdateIncidentResponse updateIncident(UpdateIncidentRequest request);
 
@@ -112,7 +112,7 @@ public interface Incident extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ValidateUserExample.java.html">here</a> to see how to use ValidateUser API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/ValidateUserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateUser API.
      */
     ValidateUserResponse validateUser(ValidateUserRequest request);
 

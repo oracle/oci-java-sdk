@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -52,7 +52,7 @@ public interface Channels extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateChannelExample.java.html">here</a> to see how to use CreateChannel API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateChannel API.
      */
     CreateChannelResponse createChannel(CreateChannelRequest request);
 
@@ -62,7 +62,7 @@ public interface Channels extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteChannelExample.java.html">here</a> to see how to use DeleteChannel API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteChannel API.
      */
     DeleteChannelResponse deleteChannel(DeleteChannelRequest request);
 
@@ -75,7 +75,7 @@ public interface Channels extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetChannelExample.java.html">here</a> to see how to use GetChannel API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetChannel API.
      */
     GetChannelResponse getChannel(GetChannelRequest request);
 
@@ -85,7 +85,7 @@ public interface Channels extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListChannelsExample.java.html">here</a> to see how to use ListChannels API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListChannelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListChannels API.
      */
     ListChannelsResponse listChannels(ListChannelsRequest request);
 
@@ -97,7 +97,7 @@ public interface Channels extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResetChannelExample.java.html">here</a> to see how to use ResetChannel API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResetChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResetChannel API.
      */
     ResetChannelResponse resetChannel(ResetChannelRequest request);
 
@@ -110,7 +110,7 @@ public interface Channels extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResumeChannelExample.java.html">here</a> to see how to use ResumeChannel API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResumeChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResumeChannel API.
      */
     ResumeChannelResponse resumeChannel(ResumeChannelRequest request);
 
@@ -124,7 +124,7 @@ public interface Channels extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateChannelExample.java.html">here</a> to see how to use UpdateChannel API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateChannel API.
      */
     UpdateChannelResponse updateChannel(UpdateChannelRequest request);
 

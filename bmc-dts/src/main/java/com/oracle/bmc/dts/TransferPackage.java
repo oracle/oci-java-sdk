@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dts;
@@ -51,7 +51,7 @@ public interface TransferPackage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/AttachDevicesToTransferPackageExample.java.html">here</a> to see how to use AttachDevicesToTransferPackage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/AttachDevicesToTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachDevicesToTransferPackage API.
      */
     AttachDevicesToTransferPackageResponse attachDevicesToTransferPackage(
             AttachDevicesToTransferPackageRequest request);
@@ -62,7 +62,7 @@ public interface TransferPackage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferPackageExample.java.html">here</a> to see how to use CreateTransferPackage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTransferPackage API.
      */
     CreateTransferPackageResponse createTransferPackage(CreateTransferPackageRequest request);
 
@@ -72,7 +72,7 @@ public interface TransferPackage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferPackageExample.java.html">here</a> to see how to use DeleteTransferPackage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTransferPackage API.
      */
     DeleteTransferPackageResponse deleteTransferPackage(DeleteTransferPackageRequest request);
 
@@ -82,7 +82,7 @@ public interface TransferPackage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DetachDevicesFromTransferPackageExample.java.html">here</a> to see how to use DetachDevicesFromTransferPackage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DetachDevicesFromTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachDevicesFromTransferPackage API.
      */
     DetachDevicesFromTransferPackageResponse detachDevicesFromTransferPackage(
             DetachDevicesFromTransferPackageRequest request);
@@ -93,7 +93,7 @@ public interface TransferPackage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferPackageExample.java.html">here</a> to see how to use GetTransferPackage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTransferPackage API.
      */
     GetTransferPackageResponse getTransferPackage(GetTransferPackageRequest request);
 
@@ -103,7 +103,7 @@ public interface TransferPackage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferPackagesExample.java.html">here</a> to see how to use ListTransferPackages API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTransferPackages API.
      */
     ListTransferPackagesResponse listTransferPackages(ListTransferPackagesRequest request);
 
@@ -113,7 +113,7 @@ public interface TransferPackage extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferPackageExample.java.html">here</a> to see how to use UpdateTransferPackage API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTransferPackage API.
      */
     UpdateTransferPackageResponse updateTransferPackage(UpdateTransferPackageRequest request);
 

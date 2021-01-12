@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -52,7 +52,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/AddAnalyticsClusterExample.java.html">here</a> to see how to use AddAnalyticsCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/AddAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddAnalyticsCluster API.
      */
     AddAnalyticsClusterResponse addAnalyticsCluster(AddAnalyticsClusterRequest request);
 
@@ -63,7 +63,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateDbSystemExample.java.html">here</a> to see how to use CreateDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDbSystem API.
      */
     CreateDbSystemResponse createDbSystem(CreateDbSystemRequest request);
 
@@ -75,7 +75,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteAnalyticsClusterExample.java.html">here</a> to see how to use DeleteAnalyticsCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAnalyticsCluster API.
      */
     DeleteAnalyticsClusterResponse deleteAnalyticsCluster(DeleteAnalyticsClusterRequest request);
 
@@ -87,7 +87,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteDbSystemExample.java.html">here</a> to see how to use DeleteDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDbSystem API.
      */
     DeleteDbSystemResponse deleteDbSystem(DeleteDbSystemRequest request);
 
@@ -98,7 +98,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateAnalyticsClusterMemoryEstimateExample.java.html">here</a> to see how to use GenerateAnalyticsClusterMemoryEstimate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GenerateAnalyticsClusterMemoryEstimateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateAnalyticsClusterMemoryEstimate API.
      */
     GenerateAnalyticsClusterMemoryEstimateResponse generateAnalyticsClusterMemoryEstimate(
             GenerateAnalyticsClusterMemoryEstimateRequest request);
@@ -109,7 +109,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetAnalyticsClusterExample.java.html">here</a> to see how to use GetAnalyticsCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAnalyticsCluster API.
      */
     GetAnalyticsClusterResponse getAnalyticsCluster(GetAnalyticsClusterRequest request);
 
@@ -121,7 +121,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetAnalyticsClusterMemoryEstimateExample.java.html">here</a> to see how to use GetAnalyticsClusterMemoryEstimate API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetAnalyticsClusterMemoryEstimateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAnalyticsClusterMemoryEstimate API.
      */
     GetAnalyticsClusterMemoryEstimateResponse getAnalyticsClusterMemoryEstimate(
             GetAnalyticsClusterMemoryEstimateRequest request);
@@ -132,7 +132,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetDbSystemExample.java.html">here</a> to see how to use GetDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDbSystem API.
      */
     GetDbSystemResponse getDbSystem(GetDbSystemRequest request);
 
@@ -144,7 +144,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListDbSystemsExample.java.html">here</a> to see how to use ListDbSystems API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListDbSystemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDbSystems API.
      */
     ListDbSystemsResponse listDbSystems(ListDbSystemsRequest request);
 
@@ -154,7 +154,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartAnalyticsClusterExample.java.html">here</a> to see how to use RestartAnalyticsCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartAnalyticsCluster API.
      */
     RestartAnalyticsClusterResponse restartAnalyticsCluster(RestartAnalyticsClusterRequest request);
 
@@ -164,7 +164,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartDbSystemExample.java.html">here</a> to see how to use RestartDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/RestartDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestartDbSystem API.
      */
     RestartDbSystemResponse restartDbSystem(RestartDbSystemRequest request);
 
@@ -174,7 +174,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartAnalyticsClusterExample.java.html">here</a> to see how to use StartAnalyticsCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartAnalyticsCluster API.
      */
     StartAnalyticsClusterResponse startAnalyticsCluster(StartAnalyticsClusterRequest request);
 
@@ -184,7 +184,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartDbSystemExample.java.html">here</a> to see how to use StartDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StartDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartDbSystem API.
      */
     StartDbSystemResponse startDbSystem(StartDbSystemRequest request);
 
@@ -194,7 +194,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopAnalyticsClusterExample.java.html">here</a> to see how to use StopAnalyticsCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopAnalyticsCluster API.
      */
     StopAnalyticsClusterResponse stopAnalyticsCluster(StopAnalyticsClusterRequest request);
 
@@ -207,7 +207,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopDbSystemExample.java.html">here</a> to see how to use StopDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/StopDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopDbSystem API.
      */
     StopDbSystemResponse stopDbSystem(StopDbSystemRequest request);
 
@@ -218,7 +218,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateAnalyticsClusterExample.java.html">here</a> to see how to use UpdateAnalyticsCluster API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateAnalyticsClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAnalyticsCluster API.
      */
     UpdateAnalyticsClusterResponse updateAnalyticsCluster(UpdateAnalyticsClusterRequest request);
 
@@ -236,7 +236,7 @@ public interface DbSystem extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateDbSystemExample.java.html">here</a> to see how to use UpdateDbSystem API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateDbSystemExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDbSystem API.
      */
     UpdateDbSystemResponse updateDbSystem(UpdateDbSystemRequest request);
 

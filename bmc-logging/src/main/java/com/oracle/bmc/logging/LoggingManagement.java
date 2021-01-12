@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging;
@@ -53,7 +53,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ChangeLogGroupCompartmentExample.java.html">here</a> to see how to use ChangeLogGroupCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ChangeLogGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLogGroupCompartment API.
      */
     ChangeLogGroupCompartmentResponse changeLogGroupCompartment(
             ChangeLogGroupCompartmentRequest request);
@@ -65,7 +65,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ChangeLogLogGroupExample.java.html">here</a> to see how to use ChangeLogLogGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ChangeLogLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLogLogGroup API.
      */
     ChangeLogLogGroupResponse changeLogLogGroup(ChangeLogLogGroupRequest request);
 
@@ -77,7 +77,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ChangeLogSavedSearchCompartmentExample.java.html">here</a> to see how to use ChangeLogSavedSearchCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ChangeLogSavedSearchCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLogSavedSearchCompartment API.
      */
     ChangeLogSavedSearchCompartmentResponse changeLogSavedSearchCompartment(
             ChangeLogSavedSearchCompartmentRequest request);
@@ -90,7 +90,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ChangeUnifiedAgentConfigurationCompartmentExample.java.html">here</a> to see how to use ChangeUnifiedAgentConfigurationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ChangeUnifiedAgentConfigurationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeUnifiedAgentConfigurationCompartment API.
      */
     ChangeUnifiedAgentConfigurationCompartmentResponse changeUnifiedAgentConfigurationCompartment(
             ChangeUnifiedAgentConfigurationCompartmentRequest request);
@@ -103,7 +103,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateLogExample.java.html">here</a> to see how to use CreateLog API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateLogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLog API.
      */
     CreateLogResponse createLog(CreateLogRequest request);
 
@@ -115,7 +115,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateLogGroupExample.java.html">here</a> to see how to use CreateLogGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLogGroup API.
      */
     CreateLogGroupResponse createLogGroup(CreateLogGroupRequest request);
 
@@ -126,7 +126,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateLogSavedSearchExample.java.html">here</a> to see how to use CreateLogSavedSearch API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateLogSavedSearchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLogSavedSearch API.
      */
     CreateLogSavedSearchResponse createLogSavedSearch(CreateLogSavedSearchRequest request);
 
@@ -136,7 +136,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateUnifiedAgentConfigurationExample.java.html">here</a> to see how to use CreateUnifiedAgentConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/CreateUnifiedAgentConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUnifiedAgentConfiguration API.
      */
     CreateUnifiedAgentConfigurationResponse createUnifiedAgentConfiguration(
             CreateUnifiedAgentConfigurationRequest request);
@@ -147,7 +147,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteLogExample.java.html">here</a> to see how to use DeleteLog API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteLogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLog API.
      */
     DeleteLogResponse deleteLog(DeleteLogRequest request);
 
@@ -157,7 +157,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteLogGroupExample.java.html">here</a> to see how to use DeleteLogGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLogGroup API.
      */
     DeleteLogGroupResponse deleteLogGroup(DeleteLogGroupRequest request);
 
@@ -167,7 +167,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteLogSavedSearchExample.java.html">here</a> to see how to use DeleteLogSavedSearch API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteLogSavedSearchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLogSavedSearch API.
      */
     DeleteLogSavedSearchResponse deleteLogSavedSearch(DeleteLogSavedSearchRequest request);
 
@@ -177,7 +177,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteUnifiedAgentConfigurationExample.java.html">here</a> to see how to use DeleteUnifiedAgentConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteUnifiedAgentConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUnifiedAgentConfiguration API.
      */
     DeleteUnifiedAgentConfigurationResponse deleteUnifiedAgentConfiguration(
             DeleteUnifiedAgentConfigurationRequest request);
@@ -189,7 +189,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteWorkRequestExample.java.html">here</a> to see how to use DeleteWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/DeleteWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWorkRequest API.
      */
     DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request);
 
@@ -200,7 +200,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogExample.java.html">here</a> to see how to use GetLog API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLog API.
      */
     GetLogResponse getLog(GetLogRequest request);
 
@@ -210,7 +210,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogGroupExample.java.html">here</a> to see how to use GetLogGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogGroup API.
      */
     GetLogGroupResponse getLogGroup(GetLogGroupRequest request);
 
@@ -220,7 +220,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogIncludedSearchExample.java.html">here</a> to see how to use GetLogIncludedSearch API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogIncludedSearchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogIncludedSearch API.
      */
     GetLogIncludedSearchResponse getLogIncludedSearch(GetLogIncludedSearchRequest request);
 
@@ -230,7 +230,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogSavedSearchExample.java.html">here</a> to see how to use GetLogSavedSearch API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetLogSavedSearchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLogSavedSearch API.
      */
     GetLogSavedSearchResponse getLogSavedSearch(GetLogSavedSearchRequest request);
 
@@ -240,7 +240,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetUnifiedAgentConfigurationExample.java.html">here</a> to see how to use GetUnifiedAgentConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetUnifiedAgentConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUnifiedAgentConfiguration API.
      */
     GetUnifiedAgentConfigurationResponse getUnifiedAgentConfiguration(
             GetUnifiedAgentConfigurationRequest request);
@@ -251,7 +251,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -261,7 +261,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogGroupsExample.java.html">here</a> to see how to use ListLogGroups API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogGroups API.
      */
     ListLogGroupsResponse listLogGroups(ListLogGroupsRequest request);
 
@@ -272,7 +272,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogIncludedSearchesExample.java.html">here</a> to see how to use ListLogIncludedSearches API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogIncludedSearchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogIncludedSearches API.
      */
     ListLogIncludedSearchesResponse listLogIncludedSearches(ListLogIncludedSearchesRequest request);
 
@@ -283,7 +283,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogSavedSearchesExample.java.html">here</a> to see how to use ListLogSavedSearches API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogSavedSearchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogSavedSearches API.
      */
     ListLogSavedSearchesResponse listLogSavedSearches(ListLogSavedSearchesRequest request);
 
@@ -293,7 +293,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogsExample.java.html">here</a> to see how to use ListLogs API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLogs API.
      */
     ListLogsResponse listLogs(ListLogsRequest request);
 
@@ -303,7 +303,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListServicesExample.java.html">here</a> to see how to use ListServices API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServices API.
      */
     ListServicesResponse listServices(ListServicesRequest request);
 
@@ -313,7 +313,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListUnifiedAgentConfigurationsExample.java.html">here</a> to see how to use ListUnifiedAgentConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListUnifiedAgentConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUnifiedAgentConfigurations API.
      */
     ListUnifiedAgentConfigurationsResponse listUnifiedAgentConfigurations(
             ListUnifiedAgentConfigurationsRequest request);
@@ -325,7 +325,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -336,7 +336,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -347,7 +347,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -359,7 +359,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateLogExample.java.html">here</a> to see how to use UpdateLog API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateLogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLog API.
      */
     UpdateLogResponse updateLog(UpdateLogRequest request);
 
@@ -371,7 +371,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateLogGroupExample.java.html">here</a> to see how to use UpdateLogGroup API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateLogGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLogGroup API.
      */
     UpdateLogGroupResponse updateLogGroup(UpdateLogGroupRequest request);
 
@@ -382,7 +382,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateLogSavedSearchExample.java.html">here</a> to see how to use UpdateLogSavedSearch API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateLogSavedSearchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLogSavedSearch API.
      */
     UpdateLogSavedSearchResponse updateLogSavedSearch(UpdateLogSavedSearchRequest request);
 
@@ -394,7 +394,7 @@ public interface LoggingManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateUnifiedAgentConfigurationExample.java.html">here</a> to see how to use UpdateUnifiedAgentConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/UpdateUnifiedAgentConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUnifiedAgentConfiguration API.
      */
     UpdateUnifiedAgentConfigurationResponse updateUnifiedAgentConfiguration(
             UpdateUnifiedAgentConfigurationRequest request);

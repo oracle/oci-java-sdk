@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dts;
@@ -51,7 +51,7 @@ public interface TransferDevice extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferDeviceExample.java.html">here</a> to see how to use CreateTransferDevice API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/CreateTransferDeviceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTransferDevice API.
      */
     CreateTransferDeviceResponse createTransferDevice(CreateTransferDeviceRequest request);
 
@@ -61,7 +61,7 @@ public interface TransferDevice extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferDeviceExample.java.html">here</a> to see how to use DeleteTransferDevice API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteTransferDeviceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTransferDevice API.
      */
     DeleteTransferDeviceResponse deleteTransferDevice(DeleteTransferDeviceRequest request);
 
@@ -71,7 +71,7 @@ public interface TransferDevice extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferDeviceExample.java.html">here</a> to see how to use GetTransferDevice API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/GetTransferDeviceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTransferDevice API.
      */
     GetTransferDeviceResponse getTransferDevice(GetTransferDeviceRequest request);
 
@@ -81,7 +81,7 @@ public interface TransferDevice extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferDevicesExample.java.html">here</a> to see how to use ListTransferDevices API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferDevicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTransferDevices API.
      */
     ListTransferDevicesResponse listTransferDevices(ListTransferDevicesRequest request);
 
@@ -91,7 +91,7 @@ public interface TransferDevice extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferDeviceExample.java.html">here</a> to see how to use UpdateTransferDevice API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferDeviceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTransferDevice API.
      */
     UpdateTransferDeviceResponse updateTransferDevice(UpdateTransferDeviceRequest request);
 

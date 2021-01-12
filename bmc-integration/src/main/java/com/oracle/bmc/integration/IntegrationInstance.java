@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.integration;
@@ -52,7 +52,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangeIntegrationInstanceCompartmentExample.java.html">here</a> to see how to use ChangeIntegrationInstanceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ChangeIntegrationInstanceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeIntegrationInstanceCompartment API.
      */
     ChangeIntegrationInstanceCompartmentResponse changeIntegrationInstanceCompartment(
             ChangeIntegrationInstanceCompartmentRequest request);
@@ -64,7 +64,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/CreateIntegrationInstanceExample.java.html">here</a> to see how to use CreateIntegrationInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/CreateIntegrationInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateIntegrationInstance API.
      */
     CreateIntegrationInstanceResponse createIntegrationInstance(
             CreateIntegrationInstanceRequest request);
@@ -75,7 +75,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/DeleteIntegrationInstanceExample.java.html">here</a> to see how to use DeleteIntegrationInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/DeleteIntegrationInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteIntegrationInstance API.
      */
     DeleteIntegrationInstanceResponse deleteIntegrationInstance(
             DeleteIntegrationInstanceRequest request);
@@ -86,7 +86,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetIntegrationInstanceExample.java.html">here</a> to see how to use GetIntegrationInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetIntegrationInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetIntegrationInstance API.
      */
     GetIntegrationInstanceResponse getIntegrationInstance(GetIntegrationInstanceRequest request);
 
@@ -96,7 +96,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetWorkRequestExample.java.html">here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -107,7 +107,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListIntegrationInstancesExample.java.html">here</a> to see how to use ListIntegrationInstances API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListIntegrationInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIntegrationInstances API.
      */
     ListIntegrationInstancesResponse listIntegrationInstances(
             ListIntegrationInstancesRequest request);
@@ -118,7 +118,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestErrorsExample.java.html">here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -128,7 +128,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestLogsExample.java.html">here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -139,7 +139,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestsExample.java.html">here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -150,7 +150,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StartIntegrationInstanceExample.java.html">here</a> to see how to use StartIntegrationInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StartIntegrationInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartIntegrationInstance API.
      */
     StartIntegrationInstanceResponse startIntegrationInstance(
             StartIntegrationInstanceRequest request);
@@ -162,7 +162,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StopIntegrationInstanceExample.java.html">here</a> to see how to use StopIntegrationInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/StopIntegrationInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopIntegrationInstance API.
      */
     StopIntegrationInstanceResponse stopIntegrationInstance(StopIntegrationInstanceRequest request);
 
@@ -172,7 +172,7 @@ public interface IntegrationInstance extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/UpdateIntegrationInstanceExample.java.html">here</a> to see how to use UpdateIntegrationInstance API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/UpdateIntegrationInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateIntegrationInstance API.
      */
     UpdateIntegrationInstanceResponse updateIntegrationInstance(
             UpdateIntegrationInstanceRequest request);

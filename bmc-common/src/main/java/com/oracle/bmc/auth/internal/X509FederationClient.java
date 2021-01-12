@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth.internal;
@@ -48,6 +48,7 @@ public class X509FederationClient implements FederationClient {
     private static final Function<Response, WithHeaders<SecurityToken>> SECURITY_TOKEN_FN =
             new ResponseConversionFunctionFactory().create(SecurityToken.class);
     private static final String DEFAULT_PURPOSE = "DEFAULT";
+    private static final String DEFAULT_FINGERPRINT = "SHA256";
 
     @Getter private final X509CertificateSupplier leafCertificateSupplier;
     @Getter private String tenancyId;
@@ -270,7 +271,8 @@ public class X509FederationClient implements FederationClient {
                             AuthUtils.base64EncodeNoChunking(publicKey),
                             AuthUtils.base64EncodeNoChunking(leafCertificate),
                             intermediateStrings,
-                            purpose);
+                            purpose,
+                            DEFAULT_FINGERPRINT);
 
             WebTarget target = federationHttpClient.getBaseTarget().path("v1").path("x509");
             Builder ib = target.request();
@@ -323,16 +325,19 @@ public class X509FederationClient implements FederationClient {
         private final String certificate;
         private final String publicKey;
         private final String purpose;
+        private final String fingerprintAlgorithm;
 
         public X509FederationRequest(
                 String publicKey,
                 String certificate,
                 Set<String> intermediateCertificates,
-                String purpose) {
+                String purpose,
+                String fingerprintAlgorithm) {
             this.certificate = Preconditions.checkNotNull(certificate);
             this.publicKey = Preconditions.checkNotNull(publicKey);
             this.intermediateCertificates = intermediateCertificates;
             this.purpose = purpose;
+            this.fingerprintAlgorithm = fingerprintAlgorithm;
         }
     }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -55,7 +55,7 @@ public interface Sddc extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ChangeSddcCompartmentExample.java.html">here</a> to see how to use ChangeSddcCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ChangeSddcCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSddcCompartment API.
      */
     ChangeSddcCompartmentResponse changeSddcCompartment(ChangeSddcCompartmentRequest request);
 
@@ -69,7 +69,7 @@ public interface Sddc extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CreateSddcExample.java.html">here</a> to see how to use CreateSddc API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CreateSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSddc API.
      */
     CreateSddcResponse createSddc(CreateSddcRequest request);
 
@@ -85,7 +85,7 @@ public interface Sddc extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DeleteSddcExample.java.html">here</a> to see how to use DeleteSddc API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DeleteSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSddc API.
      */
     DeleteSddcResponse deleteSddc(DeleteSddcRequest request);
 
@@ -95,7 +95,7 @@ public interface Sddc extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GetSddcExample.java.html">here</a> to see how to use GetSddc API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GetSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSddc API.
      */
     GetSddcResponse getSddc(GetSddcRequest request);
 
@@ -107,7 +107,7 @@ public interface Sddc extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSddcsExample.java.html">here</a> to see how to use ListSddcs API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSddcsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSddcs API.
      */
     ListSddcsResponse listSddcs(ListSddcsRequest request);
 
@@ -119,7 +119,7 @@ public interface Sddc extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedVmwareSoftwareVersionsExample.java.html">here</a> to see how to use ListSupportedVmwareSoftwareVersions API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedVmwareSoftwareVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedVmwareSoftwareVersions API.
      */
     ListSupportedVmwareSoftwareVersionsResponse listSupportedVmwareSoftwareVersions(
             ListSupportedVmwareSoftwareVersionsRequest request);
@@ -136,7 +136,7 @@ public interface Sddc extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateSddcExample.java.html">here</a> to see how to use UpdateSddc API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSddc API.
      */
     UpdateSddcResponse updateSddc(UpdateSddcRequest request);
 

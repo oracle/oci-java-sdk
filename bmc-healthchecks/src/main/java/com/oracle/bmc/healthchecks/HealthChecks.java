@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.healthchecks;
@@ -56,7 +56,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ChangeHttpMonitorCompartmentExample.java.html">here</a> to see how to use ChangeHttpMonitorCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ChangeHttpMonitorCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeHttpMonitorCompartment API.
      */
     ChangeHttpMonitorCompartmentResponse changeHttpMonitorCompartment(
             ChangeHttpMonitorCompartmentRequest request);
@@ -69,7 +69,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ChangePingMonitorCompartmentExample.java.html">here</a> to see how to use ChangePingMonitorCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ChangePingMonitorCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePingMonitorCompartment API.
      */
     ChangePingMonitorCompartmentResponse changePingMonitorCompartment(
             ChangePingMonitorCompartmentRequest request);
@@ -83,7 +83,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateHttpMonitorExample.java.html">here</a> to see how to use CreateHttpMonitor API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateHttpMonitorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateHttpMonitor API.
      */
     CreateHttpMonitorResponse createHttpMonitor(CreateHttpMonitorRequest request);
 
@@ -97,7 +97,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateOnDemandHttpProbeExample.java.html">here</a> to see how to use CreateOnDemandHttpProbe API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateOnDemandHttpProbeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOnDemandHttpProbe API.
      */
     CreateOnDemandHttpProbeResponse createOnDemandHttpProbe(CreateOnDemandHttpProbeRequest request);
 
@@ -111,7 +111,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateOnDemandPingProbeExample.java.html">here</a> to see how to use CreateOnDemandPingProbe API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreateOnDemandPingProbeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOnDemandPingProbe API.
      */
     CreateOnDemandPingProbeResponse createOnDemandPingProbe(CreateOnDemandPingProbeRequest request);
 
@@ -124,7 +124,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreatePingMonitorExample.java.html">here</a> to see how to use CreatePingMonitor API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/CreatePingMonitorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePingMonitor API.
      */
     CreatePingMonitorResponse createPingMonitor(CreatePingMonitorRequest request);
 
@@ -136,7 +136,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/DeleteHttpMonitorExample.java.html">here</a> to see how to use DeleteHttpMonitor API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/DeleteHttpMonitorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteHttpMonitor API.
      */
     DeleteHttpMonitorResponse deleteHttpMonitor(DeleteHttpMonitorRequest request);
 
@@ -148,7 +148,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/DeletePingMonitorExample.java.html">here</a> to see how to use DeletePingMonitor API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/DeletePingMonitorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePingMonitor API.
      */
     DeletePingMonitorResponse deletePingMonitor(DeletePingMonitorRequest request);
 
@@ -159,7 +159,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/GetHttpMonitorExample.java.html">here</a> to see how to use GetHttpMonitor API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/GetHttpMonitorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHttpMonitor API.
      */
     GetHttpMonitorResponse getHttpMonitor(GetHttpMonitorRequest request);
 
@@ -170,7 +170,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/GetPingMonitorExample.java.html">here</a> to see how to use GetPingMonitor API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/GetPingMonitorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPingMonitor API.
      */
     GetPingMonitorResponse getPingMonitor(GetPingMonitorRequest request);
 
@@ -181,7 +181,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListHealthChecksVantagePointsExample.java.html">here</a> to see how to use ListHealthChecksVantagePoints API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListHealthChecksVantagePointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHealthChecksVantagePoints API.
      */
     ListHealthChecksVantagePointsResponse listHealthChecksVantagePoints(
             ListHealthChecksVantagePointsRequest request);
@@ -193,7 +193,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListHttpMonitorsExample.java.html">here</a> to see how to use ListHttpMonitors API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListHttpMonitorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHttpMonitors API.
      */
     ListHttpMonitorsResponse listHttpMonitors(ListHttpMonitorsRequest request);
 
@@ -206,7 +206,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListHttpProbeResultsExample.java.html">here</a> to see how to use ListHttpProbeResults API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListHttpProbeResultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHttpProbeResults API.
      */
     ListHttpProbeResultsResponse listHttpProbeResults(ListHttpProbeResultsRequest request);
 
@@ -220,7 +220,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListPingMonitorsExample.java.html">here</a> to see how to use ListPingMonitors API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListPingMonitorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPingMonitors API.
      */
     ListPingMonitorsResponse listPingMonitors(ListPingMonitorsRequest request);
 
@@ -237,7 +237,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListPingProbeResultsExample.java.html">here</a> to see how to use ListPingProbeResults API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListPingProbeResultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPingProbeResults API.
      */
     ListPingProbeResultsResponse listPingProbeResults(ListPingProbeResultsRequest request);
 
@@ -250,7 +250,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/UpdateHttpMonitorExample.java.html">here</a> to see how to use UpdateHttpMonitor API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/UpdateHttpMonitorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHttpMonitor API.
      */
     UpdateHttpMonitorResponse updateHttpMonitor(UpdateHttpMonitorRequest request);
 
@@ -263,7 +263,7 @@ public interface HealthChecks extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/UpdatePingMonitorExample.java.html">here</a> to see how to use UpdatePingMonitor API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/UpdatePingMonitorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePingMonitor API.
      */
     UpdatePingMonitorResponse updatePingMonitor(UpdatePingMonitorRequest request);
 

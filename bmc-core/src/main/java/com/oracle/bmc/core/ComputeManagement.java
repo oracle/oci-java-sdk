@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -57,7 +57,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachLoadBalancerExample.java.html">here</a> to see how to use AttachLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachLoadBalancer API.
      */
     AttachLoadBalancerResponse attachLoadBalancer(AttachLoadBalancerRequest request);
 
@@ -73,7 +73,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeClusterNetworkCompartmentExample.java.html">here</a> to see how to use ChangeClusterNetworkCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeClusterNetworkCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeClusterNetworkCompartment API.
      */
     ChangeClusterNetworkCompartmentResponse changeClusterNetworkCompartment(
             ChangeClusterNetworkCompartmentRequest request);
@@ -97,7 +97,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstanceConfigurationCompartmentExample.java.html">here</a> to see how to use ChangeInstanceConfigurationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstanceConfigurationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeInstanceConfigurationCompartment API.
      */
     ChangeInstanceConfigurationCompartmentResponse changeInstanceConfigurationCompartment(
             ChangeInstanceConfigurationCompartmentRequest request);
@@ -114,7 +114,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstancePoolCompartmentExample.java.html">here</a> to see how to use ChangeInstancePoolCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstancePoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeInstancePoolCompartment API.
      */
     ChangeInstancePoolCompartmentResponse changeInstancePoolCompartment(
             ChangeInstancePoolCompartmentRequest request);
@@ -127,7 +127,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateClusterNetworkExample.java.html">here</a> to see how to use CreateClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateClusterNetwork API.
      */
     CreateClusterNetworkResponse createClusterNetwork(CreateClusterNetworkRequest request);
 
@@ -139,7 +139,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstanceConfigurationExample.java.html">here</a> to see how to use CreateInstanceConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstanceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInstanceConfiguration API.
      */
     CreateInstanceConfigurationResponse createInstanceConfiguration(
             CreateInstanceConfigurationRequest request);
@@ -150,7 +150,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstancePoolExample.java.html">here</a> to see how to use CreateInstancePool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstancePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInstancePool API.
      */
     CreateInstancePoolResponse createInstancePool(CreateInstancePoolRequest request);
 
@@ -160,7 +160,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInstanceConfigurationExample.java.html">here</a> to see how to use DeleteInstanceConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInstanceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInstanceConfiguration API.
      */
     DeleteInstanceConfigurationResponse deleteInstanceConfiguration(
             DeleteInstanceConfigurationRequest request);
@@ -172,7 +172,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachLoadBalancerExample.java.html">here</a> to see how to use DetachLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachLoadBalancer API.
      */
     DetachLoadBalancerResponse detachLoadBalancer(DetachLoadBalancerRequest request);
 
@@ -182,7 +182,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetClusterNetworkExample.java.html">here</a> to see how to use GetClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetClusterNetwork API.
      */
     GetClusterNetworkResponse getClusterNetwork(GetClusterNetworkRequest request);
 
@@ -192,7 +192,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceConfigurationExample.java.html">here</a> to see how to use GetInstanceConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceConfiguration API.
      */
     GetInstanceConfigurationResponse getInstanceConfiguration(
             GetInstanceConfigurationRequest request);
@@ -203,7 +203,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolExample.java.html">here</a> to see how to use GetInstancePool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstancePool API.
      */
     GetInstancePoolResponse getInstancePool(GetInstancePoolRequest request);
 
@@ -214,7 +214,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolLoadBalancerAttachmentExample.java.html">here</a> to see how to use GetInstancePoolLoadBalancerAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolLoadBalancerAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstancePoolLoadBalancerAttachment API.
      */
     GetInstancePoolLoadBalancerAttachmentResponse getInstancePoolLoadBalancerAttachment(
             GetInstancePoolLoadBalancerAttachmentRequest request);
@@ -232,7 +232,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceConfigurationExample.java.html">here</a> to see how to use LaunchInstanceConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LaunchInstanceConfiguration API.
      */
     LaunchInstanceConfigurationResponse launchInstanceConfiguration(
             LaunchInstanceConfigurationRequest request);
@@ -243,7 +243,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListClusterNetworkInstancesExample.java.html">here</a> to see how to use ListClusterNetworkInstances API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListClusterNetworkInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListClusterNetworkInstances API.
      */
     ListClusterNetworkInstancesResponse listClusterNetworkInstances(
             ListClusterNetworkInstancesRequest request);
@@ -254,7 +254,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListClusterNetworksExample.java.html">here</a> to see how to use ListClusterNetworks API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListClusterNetworksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListClusterNetworks API.
      */
     ListClusterNetworksResponse listClusterNetworks(ListClusterNetworksRequest request);
 
@@ -265,7 +265,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceConfigurationsExample.java.html">here</a> to see how to use ListInstanceConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceConfigurations API.
      */
     ListInstanceConfigurationsResponse listInstanceConfigurations(
             ListInstanceConfigurationsRequest request);
@@ -276,7 +276,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancePoolInstancesExample.java.html">here</a> to see how to use ListInstancePoolInstances API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancePoolInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstancePoolInstances API.
      */
     ListInstancePoolInstancesResponse listInstancePoolInstances(
             ListInstancePoolInstancesRequest request);
@@ -287,7 +287,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancePoolsExample.java.html">here</a> to see how to use ListInstancePools API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancePoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstancePools API.
      */
     ListInstancePoolsResponse listInstancePools(ListInstancePoolsRequest request);
 
@@ -299,7 +299,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ResetInstancePoolExample.java.html">here</a> to see how to use ResetInstancePool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ResetInstancePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResetInstancePool API.
      */
     ResetInstancePoolResponse resetInstancePool(ResetInstancePoolRequest request);
 
@@ -311,7 +311,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SoftresetInstancePoolExample.java.html">here</a> to see how to use SoftresetInstancePool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SoftresetInstancePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SoftresetInstancePool API.
      */
     SoftresetInstancePoolResponse softresetInstancePool(SoftresetInstancePoolRequest request);
 
@@ -323,7 +323,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/StartInstancePoolExample.java.html">here</a> to see how to use StartInstancePool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/StartInstancePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartInstancePool API.
      */
     StartInstancePoolResponse startInstancePool(StartInstancePoolRequest request);
 
@@ -335,7 +335,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/StopInstancePoolExample.java.html">here</a> to see how to use StopInstancePool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/StopInstancePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopInstancePool API.
      */
     StopInstancePoolResponse stopInstancePool(StopInstancePoolRequest request);
 
@@ -349,7 +349,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateClusterNetworkExample.java.html">here</a> to see how to use TerminateClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateClusterNetwork API.
      */
     TerminateClusterNetworkResponse terminateClusterNetwork(TerminateClusterNetworkRequest request);
 
@@ -367,7 +367,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateInstancePoolExample.java.html">here</a> to see how to use TerminateInstancePool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateInstancePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateInstancePool API.
      */
     TerminateInstancePoolResponse terminateInstancePool(TerminateInstancePoolRequest request);
 
@@ -378,7 +378,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateClusterNetworkExample.java.html">here</a> to see how to use UpdateClusterNetwork API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateClusterNetworkExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateClusterNetwork API.
      */
     UpdateClusterNetworkResponse updateClusterNetwork(UpdateClusterNetworkRequest request);
 
@@ -388,7 +388,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceConfigurationExample.java.html">here</a> to see how to use UpdateInstanceConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstanceConfiguration API.
      */
     UpdateInstanceConfigurationResponse updateInstanceConfiguration(
             UpdateInstanceConfigurationRequest request);
@@ -402,7 +402,7 @@ public interface ComputeManagement extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstancePoolExample.java.html">here</a> to see how to use UpdateInstancePool API.
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstancePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstancePool API.
      */
     UpdateInstancePoolResponse updateInstancePool(UpdateInstancePoolRequest request);
 

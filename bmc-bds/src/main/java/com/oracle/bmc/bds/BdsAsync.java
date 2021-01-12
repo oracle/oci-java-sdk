@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds;
@@ -47,6 +47,23 @@ public interface BdsAsync extends AutoCloseable {
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
+
+    /**
+     * Add autoscaling configuration.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddAutoScalingConfigurationResponse> addAutoScalingConfiguration(
+            AddAutoScalingConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddAutoScalingConfigurationRequest, AddAutoScalingConfigurationResponse>
+                    handler);
 
     /**
      * Adds storage to existing worker nodes. The same amount of storage will be added to all workers.
@@ -167,6 +184,23 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified autoscaling configuration.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutoScalingConfigurationResponse> getAutoScalingConfiguration(
+            GetAutoScalingConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAutoScalingConfigurationRequest, GetAutoScalingConfigurationResponse>
+                    handler);
+
+    /**
      * Gets a BDS instance by identifier
      *
      * @param request The request object containing the details to send
@@ -195,6 +229,25 @@ public interface BdsAsync extends AutoCloseable {
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
+
+    /**
+     * Gets information about the  autoscaling configuration.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutoScalingConfigurationsResponse>
+            listAutoScalingConfigurations(
+                    ListAutoScalingConfigurationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutoScalingConfigurationsRequest,
+                                    ListAutoScalingConfigurationsResponse>
+                            handler);
 
     /**
      * Returns a list of BDS instances.
@@ -263,6 +316,25 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Remove autoscaling configuration.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveAutoScalingConfigurationResponse>
+            removeAutoScalingConfiguration(
+                    RemoveAutoScalingConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveAutoScalingConfigurationRequest,
+                                    RemoveAutoScalingConfigurationResponse>
+                            handler);
+
+    /**
      * Remove Cloud SQL capability.
      *
      *
@@ -292,6 +364,25 @@ public interface BdsAsync extends AutoCloseable {
     java.util.concurrent.Future<RestartNodeResponse> restartNode(
             RestartNodeRequest request,
             com.oracle.bmc.responses.AsyncHandler<RestartNodeRequest, RestartNodeResponse> handler);
+
+    /**
+     * Updates certain fields on the specified autoscaling configuration, such as the name, the threshold value, and whether the autoscaling configuration is enabled.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAutoScalingConfigurationResponse>
+            updateAutoScalingConfiguration(
+                    UpdateAutoScalingConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutoScalingConfigurationRequest,
+                                    UpdateAutoScalingConfigurationResponse>
+                            handler);
 
     /**
      * Update the BDS instance identified by the id
