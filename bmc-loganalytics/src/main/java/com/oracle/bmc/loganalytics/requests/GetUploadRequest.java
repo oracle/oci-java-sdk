@@ -20,7 +20,7 @@ public class GetUploadRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     private String namespaceName;
 
     /**
-     * Unique internal identifier to refer to upload container
+     * Unique internal identifier to refer upload container.
      */
     private String uploadReference;
 

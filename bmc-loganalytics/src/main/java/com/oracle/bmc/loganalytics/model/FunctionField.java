@@ -112,6 +112,15 @@ public class FunctionField extends AbstractField {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("unitType")
+        private String unitType;
+
+        public Builder unitType(String unitType) {
+            this.unitType = unitType;
+            this.__explicitlySet__.add("unitType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("function")
         private String function;
 
@@ -145,6 +154,7 @@ public class FunctionField extends AbstractField {
                             isDuration,
                             alias,
                             filterQueryString,
+                            unitType,
                             function,
                             arguments);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -163,6 +173,7 @@ public class FunctionField extends AbstractField {
                             .isDuration(o.getIsDuration())
                             .alias(o.getAlias())
                             .filterQueryString(o.getFilterQueryString())
+                            .unitType(o.getUnitType())
                             .function(o.getFunction())
                             .arguments(o.getArguments());
 
@@ -189,6 +200,7 @@ public class FunctionField extends AbstractField {
             Boolean isDuration,
             String alias,
             String filterQueryString,
+            String unitType,
             String function,
             java.util.List<Argument> arguments) {
         super(
@@ -200,7 +212,8 @@ public class FunctionField extends AbstractField {
                 isGroupable,
                 isDuration,
                 alias,
-                filterQueryString);
+                filterQueryString,
+                unitType);
         this.function = function;
         this.arguments = arguments;
     }

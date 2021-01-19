@@ -1451,6 +1451,116 @@ public class LogAnalyticsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listLookups operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListLookupsResponse> listLookupsResponseIterator(
+            final ListLookupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListLookupsRequest.Builder, ListLookupsRequest, ListLookupsResponse>(
+                new com.google.common.base.Supplier<ListLookupsRequest.Builder>() {
+                    @Override
+                    public ListLookupsRequest.Builder get() {
+                        return ListLookupsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListLookupsResponse, String>() {
+                    @Override
+                    public String apply(ListLookupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListLookupsRequest.Builder>,
+                        ListLookupsRequest>() {
+                    @Override
+                    public ListLookupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListLookupsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListLookupsRequest, ListLookupsResponse>() {
+                    @Override
+                    public ListLookupsResponse apply(ListLookupsRequest request) {
+                        return client.listLookups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.LogAnalyticsLookup} objects
+     * contained in responses from the listLookups operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.LogAnalyticsLookup} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.LogAnalyticsLookup> listLookupsRecordIterator(
+            final ListLookupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListLookupsRequest.Builder, ListLookupsRequest, ListLookupsResponse,
+                com.oracle.bmc.loganalytics.model.LogAnalyticsLookup>(
+                new com.google.common.base.Supplier<ListLookupsRequest.Builder>() {
+                    @Override
+                    public ListLookupsRequest.Builder get() {
+                        return ListLookupsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListLookupsResponse, String>() {
+                    @Override
+                    public String apply(ListLookupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListLookupsRequest.Builder>,
+                        ListLookupsRequest>() {
+                    @Override
+                    public ListLookupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListLookupsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListLookupsRequest, ListLookupsResponse>() {
+                    @Override
+                    public ListLookupsResponse apply(ListLookupsRequest request) {
+                        return client.listLookups(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListLookupsResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.LogAnalyticsLookup>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.LogAnalyticsLookup>
+                            apply(ListLookupsResponse response) {
+                        return response.getLogAnalyticsLookupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listMetaSourceTypes operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2025,6 +2135,118 @@ public class LogAnalyticsPaginators {
                     public java.util.List<com.oracle.bmc.loganalytics.model.QueryWorkRequestSummary>
                             apply(ListQueryWorkRequestsResponse response) {
                         return response.getQueryWorkRequestCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRecalledData operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRecalledDataResponse> listRecalledDataResponseIterator(
+            final ListRecalledDataRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRecalledDataRequest.Builder, ListRecalledDataRequest, ListRecalledDataResponse>(
+                new com.google.common.base.Supplier<ListRecalledDataRequest.Builder>() {
+                    @Override
+                    public ListRecalledDataRequest.Builder get() {
+                        return ListRecalledDataRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRecalledDataResponse, String>() {
+                    @Override
+                    public String apply(ListRecalledDataResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRecalledDataRequest.Builder>,
+                        ListRecalledDataRequest>() {
+                    @Override
+                    public ListRecalledDataRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRecalledDataRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRecalledDataRequest, ListRecalledDataResponse>() {
+                    @Override
+                    public ListRecalledDataResponse apply(ListRecalledDataRequest request) {
+                        return client.listRecalledData(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.RecalledData} objects
+     * contained in responses from the listRecalledData operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.RecalledData} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.RecalledData> listRecalledDataRecordIterator(
+            final ListRecalledDataRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRecalledDataRequest.Builder, ListRecalledDataRequest, ListRecalledDataResponse,
+                com.oracle.bmc.loganalytics.model.RecalledData>(
+                new com.google.common.base.Supplier<ListRecalledDataRequest.Builder>() {
+                    @Override
+                    public ListRecalledDataRequest.Builder get() {
+                        return ListRecalledDataRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListRecalledDataResponse, String>() {
+                    @Override
+                    public String apply(ListRecalledDataResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRecalledDataRequest.Builder>,
+                        ListRecalledDataRequest>() {
+                    @Override
+                    public ListRecalledDataRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRecalledDataRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRecalledDataRequest, ListRecalledDataResponse>() {
+                    @Override
+                    public ListRecalledDataResponse apply(ListRecalledDataRequest request) {
+                        return client.listRecalledData(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRecalledDataResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.RecalledData>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.RecalledData> apply(
+                            ListRecalledDataResponse response) {
+                        return response.getRecalledDataCollection().getItems();
                     }
                 });
     }
@@ -3425,6 +3647,116 @@ public class LogAnalyticsPaginators {
                     public java.util.List<com.oracle.bmc.loganalytics.model.UploadSummary> apply(
                             ListUploadsResponse response) {
                         return response.getUploadCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWarnings operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWarningsResponse> listWarningsResponseIterator(
+            final ListWarningsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWarningsRequest.Builder, ListWarningsRequest, ListWarningsResponse>(
+                new com.google.common.base.Supplier<ListWarningsRequest.Builder>() {
+                    @Override
+                    public ListWarningsRequest.Builder get() {
+                        return ListWarningsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWarningsResponse, String>() {
+                    @Override
+                    public String apply(ListWarningsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWarningsRequest.Builder>,
+                        ListWarningsRequest>() {
+                    @Override
+                    public ListWarningsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWarningsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListWarningsRequest, ListWarningsResponse>() {
+                    @Override
+                    public ListWarningsResponse apply(ListWarningsRequest request) {
+                        return client.listWarnings(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.LogAnalyticsWarning} objects
+     * contained in responses from the listWarnings operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.LogAnalyticsWarning} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.LogAnalyticsWarning>
+            listWarningsRecordIterator(final ListWarningsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWarningsRequest.Builder, ListWarningsRequest, ListWarningsResponse,
+                com.oracle.bmc.loganalytics.model.LogAnalyticsWarning>(
+                new com.google.common.base.Supplier<ListWarningsRequest.Builder>() {
+                    @Override
+                    public ListWarningsRequest.Builder get() {
+                        return ListWarningsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWarningsResponse, String>() {
+                    @Override
+                    public String apply(ListWarningsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWarningsRequest.Builder>,
+                        ListWarningsRequest>() {
+                    @Override
+                    public ListWarningsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWarningsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListWarningsRequest, ListWarningsResponse>() {
+                    @Override
+                    public ListWarningsResponse apply(ListWarningsRequest request) {
+                        return client.listWarnings(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWarningsResponse,
+                        java.util.List<com.oracle.bmc.loganalytics.model.LogAnalyticsWarning>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.LogAnalyticsWarning>
+                            apply(ListWarningsResponse response) {
+                        return response.getLogAnalyticsWarningCollection().getItems();
                     }
                 });
     }

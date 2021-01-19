@@ -19,7 +19,7 @@ public class DashxApisClient implements DashxApis {
                     .serviceName("DASHXAPIS")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://managementdashboards.{region}.oci.{secondLevelDomain}")
+                            "https://managementdashboard.{region}.oci.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;

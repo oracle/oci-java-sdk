@@ -132,7 +132,7 @@ public class UpdateLogAnalyticsEntityDetails {
     }
 
     /**
-     * Log analytics entity name. The name must be unique, within the tenancy, and cannot be changed.
+     * Log analytics entity name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

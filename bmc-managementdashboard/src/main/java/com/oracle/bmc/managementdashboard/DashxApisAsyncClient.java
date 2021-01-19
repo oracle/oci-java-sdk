@@ -32,7 +32,7 @@ public class DashxApisAsyncClient implements DashxApisAsync {
                     .serviceName("DASHXAPIS")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate(
-                            "https://managementdashboards.{region}.oci.{secondLevelDomain}")
+                            "https://managementdashboard.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

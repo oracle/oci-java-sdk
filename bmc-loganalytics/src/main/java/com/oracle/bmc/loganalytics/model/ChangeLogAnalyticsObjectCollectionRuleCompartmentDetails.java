@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The new compartment this Object Collection Rule will be moved to.
+ * New compartment details.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -63,7 +63,7 @@ public class ChangeLogAnalyticsObjectCollectionRuleCompartmentDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment into which the rule should be moved.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to which the rule have to be moved.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

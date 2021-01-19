@@ -39,18 +39,28 @@ public class StreamAction extends Action {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("metricExtraction")
+        private MetricExtraction metricExtraction;
+
+        public Builder metricExtraction(MetricExtraction metricExtraction) {
+            this.metricExtraction = metricExtraction;
+            this.__explicitlySet__.add("metricExtraction");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StreamAction build() {
-            StreamAction __instance__ = new StreamAction(savedSearchId);
+            StreamAction __instance__ = new StreamAction(savedSearchId, metricExtraction);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(StreamAction o) {
-            Builder copiedBuilder = savedSearchId(o.getSavedSearchId());
+            Builder copiedBuilder =
+                    savedSearchId(o.getSavedSearchId()).metricExtraction(o.getMetricExtraction());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -65,9 +75,10 @@ public class StreamAction extends Action {
     }
 
     @Deprecated
-    public StreamAction(String savedSearchId) {
+    public StreamAction(String savedSearchId, MetricExtraction metricExtraction) {
         super();
         this.savedSearchId = savedSearchId;
+        this.metricExtraction = metricExtraction;
     }
 
     /**
@@ -75,6 +86,9 @@ public class StreamAction extends Action {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedSearchId")
     String savedSearchId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("metricExtraction")
+    MetricExtraction metricExtraction;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

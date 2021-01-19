@@ -108,6 +108,13 @@ public class AbstractField {
     String filterQueryString;
 
     /**
+     * Field denoting field unit type.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("unitType")
+    String unitType;
+
+    /**
      * Field type classification.
      *
      **/

@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * To update the attributes of an Object Storage based collection rule.
+ * Configuration of the collection rule to be updated.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -72,6 +72,15 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("overrides")
         private java.util.Map<String, java.util.List<PropertyOverride>> overrides;
 
@@ -112,6 +121,7 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
                             logSourceName,
                             entityId,
                             charEncoding,
+                            isEnabled,
                             overrides,
                             definedTags,
                             freeformTags);
@@ -127,6 +137,7 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
                             .logSourceName(o.getLogSourceName())
                             .entityId(o.getEntityId())
                             .charEncoding(o.getCharEncoding())
+                            .isEnabled(o.getIsEnabled())
                             .overrides(o.getOverrides())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags());
@@ -171,13 +182,20 @@ public class UpdateLogAnalyticsObjectCollectionRuleDetails {
 
     /**
      * An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
-     * It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters,
+     * It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
      * and very few alphabets.
      * For e.g. this applies when configuring VCN Flow Logs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("charEncoding")
     String charEncoding;
+
+    /**
+     * Whether or not this rule is currently enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+    Boolean isEnabled;
 
     /**
      * Use this to override some property values which are defined at bucket level to the scope of object.

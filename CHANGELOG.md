@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.30.0 - 2021-01-19
+### Added
+- Support for Logging Analytics as a target in the Service Connector Hub service
+- Support for lookups, agent collection warnings, task commands, and data archive/recall in the Logging Analytics service
+
+### Fixed
+- Fixed a bug in the endpoint used for the Management Dashboard service
+
+### Breaking Changes
+- Parameter `sortBy` in requests `ListMetaSourceTypesRequest`, `ListParserFunctionsRequest`, `ListParserMetaPluginsRequest`, `ListSourceLabelOperatorsRequest`, `ListSourceMetaFunctionsRequest` has changed its datatype from `String` to `SortBy` enum in the Logging Analytics service
+- Parameter `lifecycleState` in `LogAnalyticsObjectCollectionRule` has changed its datatype from `LogAnalyticsObjectCollectionRule.LifecycleState` to `ObjectCollectionRuleLifecycleStates` in the Logging Analytics Service
+- Methods `builder()`, `toBuilder()`, and `get__explicitlySet__()` has been removed from `UpdateScheduledTaskDetails` in the Logging Analytics Service
+- Methods `builder()`, `toBuilder()`, and `get__explicitlySet__()` has been removed from `ScheduledTask` in the Logging Analytics Service
+
 ## 1.29.0 - 2021-01-12
 ### Added
 - Support for auto-scaling in the Big Data service

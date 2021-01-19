@@ -68,13 +68,13 @@ public class UploadFileStatus {
     }
 
     /**
-     * Name of the file
+     * Name of the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileName")
     String fileName;
 
     /**
-     * Is Valid flag
+     * Is Valid flag.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValid")
     Boolean isValid;

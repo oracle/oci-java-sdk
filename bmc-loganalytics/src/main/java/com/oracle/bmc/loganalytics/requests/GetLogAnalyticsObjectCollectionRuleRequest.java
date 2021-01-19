@@ -21,7 +21,7 @@ public class GetLogAnalyticsObjectCollectionRuleRequest
     private String namespaceName;
 
     /**
-     * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Logging Analytics Object Collection Rule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String logAnalyticsObjectCollectionRuleId;
 

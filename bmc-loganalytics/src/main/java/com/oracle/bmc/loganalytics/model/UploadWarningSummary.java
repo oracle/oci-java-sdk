@@ -93,25 +93,25 @@ public class UploadWarningSummary {
     }
 
     /**
-     * Unique internal identifier to refer to upload warning
+     * Unique internal identifier to refer upload warning.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reference")
     String reference;
 
     /**
-     * Status of the upload. Ex - Failed
+     * Status of the upload. Ex - Failed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     String status;
 
     /**
-     * The time when the upload processing started
+     * The time when the upload processing started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * The details about upload processing failure
+     * The details about upload processing failure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     String errorMessage;

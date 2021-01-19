@@ -20,12 +20,12 @@ public class DeleteUploadWarningRequest extends com.oracle.bmc.requests.BmcReque
     private String namespaceName;
 
     /**
-     * Unique internal identifier to refer to upload container
+     * Unique internal identifier to refer upload container.
      */
     private String uploadReference;
 
     /**
-     * Unique internal identifier to refer to upload warning
+     * Unique internal identifier to refer upload warning.
      */
     private String warningReference;
 

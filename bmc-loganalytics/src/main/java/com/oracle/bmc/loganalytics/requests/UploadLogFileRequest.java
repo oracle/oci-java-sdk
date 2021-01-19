@@ -61,7 +61,9 @@ public class UploadLogFileRequest extends com.oracle.bmc.requests.BmcRequest<jav
     private String timezone;
 
     /**
-     * Character Encoding
+     * Character encoding to be used to detect the encoding type of file(s) being uploaded.
+     * When this property is not specified, system detected character encoding will be used.
+     *
      */
     private String charEncoding;
 

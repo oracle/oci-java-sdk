@@ -114,6 +114,15 @@ public class FieldsAddRemoveField extends AbstractField {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("unitType")
+        private String unitType;
+
+        public Builder unitType(String unitType) {
+            this.unitType = unitType;
+            this.__explicitlySet__.add("unitType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
 
@@ -138,6 +147,7 @@ public class FieldsAddRemoveField extends AbstractField {
                             isDuration,
                             alias,
                             filterQueryString,
+                            unitType,
                             operation);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -155,6 +165,7 @@ public class FieldsAddRemoveField extends AbstractField {
                             .isDuration(o.getIsDuration())
                             .alias(o.getAlias())
                             .filterQueryString(o.getFilterQueryString())
+                            .unitType(o.getUnitType())
                             .operation(o.getOperation());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -180,6 +191,7 @@ public class FieldsAddRemoveField extends AbstractField {
             Boolean isDuration,
             String alias,
             String filterQueryString,
+            String unitType,
             Operation operation) {
         super(
                 displayName,
@@ -190,7 +202,8 @@ public class FieldsAddRemoveField extends AbstractField {
                 isGroupable,
                 isDuration,
                 alias,
-                filterQueryString);
+                filterQueryString,
+                unitType);
         this.operation = operation;
     }
 

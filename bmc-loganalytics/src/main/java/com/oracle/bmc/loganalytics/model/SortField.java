@@ -112,6 +112,15 @@ public class SortField extends AbstractField {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("unitType")
+        private String unitType;
+
+        public Builder unitType(String unitType) {
+            this.unitType = unitType;
+            this.__explicitlySet__.add("unitType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("direction")
         private Direction direction;
 
@@ -136,6 +145,7 @@ public class SortField extends AbstractField {
                             isDuration,
                             alias,
                             filterQueryString,
+                            unitType,
                             direction);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -153,6 +163,7 @@ public class SortField extends AbstractField {
                             .isDuration(o.getIsDuration())
                             .alias(o.getAlias())
                             .filterQueryString(o.getFilterQueryString())
+                            .unitType(o.getUnitType())
                             .direction(o.getDirection());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -178,6 +189,7 @@ public class SortField extends AbstractField {
             Boolean isDuration,
             String alias,
             String filterQueryString,
+            String unitType,
             Direction direction) {
         super(
                 displayName,
@@ -188,7 +200,8 @@ public class SortField extends AbstractField {
                 isGroupable,
                 isDuration,
                 alias,
-                filterQueryString);
+                filterQueryString,
+                unitType);
         this.direction = direction;
     }
 

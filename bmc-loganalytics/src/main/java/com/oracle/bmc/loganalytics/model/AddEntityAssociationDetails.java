@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Information about the associations to be added between log analytics entity and other existing entities.
+ * Information about the associations to be added between a source log analytics entity and other existing destination entities.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

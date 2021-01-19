@@ -16,195 +16,26 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
+@lombok.AllArgsConstructor(
+    onConstructor = @__({@Deprecated}),
+    access = lombok.AccessLevel.PROTECTED
+)
 @lombok.Value
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ScheduledTask.Builder.class)
+@lombok.experimental.NonFinal
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind",
+    defaultImpl = ScheduledTask.class
+)
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = StandardTask.class,
+        name = "STANDARD"
+    )
+})
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class ScheduledTask {
-    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
-    public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
-
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-        private String displayName;
-
-        public Builder displayName(String displayName) {
-            this.displayName = displayName;
-            this.__explicitlySet__.add("displayName");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("taskType")
-        private TaskType taskType;
-
-        public Builder taskType(TaskType taskType) {
-            this.taskType = taskType;
-            this.__explicitlySet__.add("taskType");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("schedules")
-        private java.util.List<Schedule> schedules;
-
-        public Builder schedules(java.util.List<Schedule> schedules) {
-            this.schedules = schedules;
-            this.__explicitlySet__.add("schedules");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("action")
-        private Action action;
-
-        public Builder action(Action action) {
-            this.action = action;
-            this.__explicitlySet__.add("action");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("taskStatus")
-        private TaskStatus taskStatus;
-
-        public Builder taskStatus(TaskStatus taskStatus) {
-            this.taskStatus = taskStatus;
-            this.__explicitlySet__.add("taskStatus");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
-        private String workRequestId;
-
-        public Builder workRequestId(String workRequestId) {
-            this.workRequestId = workRequestId;
-            this.__explicitlySet__.add("workRequestId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("numOccurrences")
-        private Long numOccurrences;
-
-        public Builder numOccurrences(Long numOccurrences) {
-            this.numOccurrences = numOccurrences;
-            this.__explicitlySet__.add("numOccurrences");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
-
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-        private java.util.Date timeCreated;
-
-        public Builder timeCreated(java.util.Date timeCreated) {
-            this.timeCreated = timeCreated;
-            this.__explicitlySet__.add("timeCreated");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-        private java.util.Date timeUpdated;
-
-        public Builder timeUpdated(java.util.Date timeUpdated) {
-            this.timeUpdated = timeUpdated;
-            this.__explicitlySet__.add("timeUpdated");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
-
-        public Builder lifecycleState(LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-        public ScheduledTask build() {
-            ScheduledTask __instance__ =
-                    new ScheduledTask(
-                            id,
-                            displayName,
-                            taskType,
-                            schedules,
-                            action,
-                            taskStatus,
-                            workRequestId,
-                            numOccurrences,
-                            compartmentId,
-                            timeCreated,
-                            timeUpdated,
-                            lifecycleState,
-                            freeformTags,
-                            definedTags);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ScheduledTask o) {
-            Builder copiedBuilder =
-                    id(o.getId())
-                            .displayName(o.getDisplayName())
-                            .taskType(o.getTaskType())
-                            .schedules(o.getSchedules())
-                            .action(o.getAction())
-                            .taskStatus(o.getTaskStatus())
-                            .workRequestId(o.getWorkRequestId())
-                            .numOccurrences(o.getNumOccurrences())
-                            .compartmentId(o.getCompartmentId())
-                            .timeCreated(o.getTimeCreated())
-                            .timeUpdated(o.getTimeUpdated())
-                            .lifecycleState(o.getLifecycleState())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
-        }
-    }
-
-    /**
-     * Create a new builder.
-     */
-    public static Builder builder() {
-        return new Builder();
-    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
@@ -390,6 +221,49 @@ public class ScheduledTask {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+    /**
+     * Discriminator.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Kind {
+        Acceleration("ACCELERATION"),
+        Standard("STANDARD"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Kind> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Kind v : Kind.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Kind(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Kind create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Kind', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
 }

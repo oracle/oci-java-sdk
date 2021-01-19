@@ -475,6 +475,69 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public AppendLookupDataResponse appendLookupData(AppendLookupDataRequest request) {
+        LOG.trace("Called appendLookupData");
+        try {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, AppendLookupDataRequest.builder());
+            }
+            final AppendLookupDataRequest interceptedRequest =
+                    AppendLookupDataConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    AppendLookupDataConverter.fromRequest(client, interceptedRequest);
+            com.google.common.base.Function<javax.ws.rs.core.Response, AppendLookupDataResponse>
+                    transformer = AppendLookupDataConverter.fromResponse();
+
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            interceptedRequest.getRetryConfiguration(), retryConfiguration);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest.getAppendLookupFileBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest.getAppendLookupFileBody(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getAppendLookupFileBody());
+        }
+    }
+
+    @Override
     public BatchGetBasicInfoResponse batchGetBasicInfo(BatchGetBasicInfoRequest request) {
         LOG.trace("Called batchGetBasicInfo");
         final BatchGetBasicInfoRequest interceptedRequest =
@@ -1109,6 +1172,36 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public DeleteLookupResponse deleteLookup(DeleteLookupRequest request) {
+        LOG.trace("Called deleteLookup");
+        final DeleteLookupRequest interceptedRequest =
+                DeleteLookupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLookupConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLookupResponse>
+                transformer = DeleteLookupConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteParserResponse deleteParser(DeleteParserRequest request) {
         LOG.trace("Called deleteParser");
         final DeleteParserRequest interceptedRequest =
@@ -1370,6 +1463,72 @@ public class LogAnalyticsClient implements LogAnalytics {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getEstimatePurgeDataSizeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EstimateRecallDataSizeResponse estimateRecallDataSize(
+            EstimateRecallDataSizeRequest request) {
+        LOG.trace("Called estimateRecallDataSize");
+        final EstimateRecallDataSizeRequest interceptedRequest =
+                EstimateRecallDataSizeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EstimateRecallDataSizeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, EstimateRecallDataSizeResponse>
+                transformer = EstimateRecallDataSizeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getEstimateRecallDataSizeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public EstimateReleaseDataSizeResponse estimateReleaseDataSize(
+            EstimateReleaseDataSizeRequest request) {
+        LOG.trace("Called estimateReleaseDataSize");
+        final EstimateReleaseDataSizeRequest interceptedRequest =
+                EstimateReleaseDataSizeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EstimateReleaseDataSizeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, EstimateReleaseDataSizeResponse>
+                transformer = EstimateReleaseDataSizeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getEstimateReleaseDataSizeDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1898,6 +2057,33 @@ public class LogAnalyticsClient implements LogAnalytics {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetLogAnalyticsObjectCollectionRuleResponse>
                 transformer = GetLogAnalyticsObjectCollectionRuleConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetLookupResponse getLookup(GetLookupRequest request) {
+        LOG.trace("Called getLookup");
+        final GetLookupRequest interceptedRequest = GetLookupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLookupConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetLookupResponse> transformer =
+                GetLookupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2692,6 +2878,34 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public ListLookupsResponse listLookups(ListLookupsRequest request) {
+        LOG.trace("Called listLookups");
+        final ListLookupsRequest interceptedRequest =
+                ListLookupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLookupsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListLookupsResponse>
+                transformer = ListLookupsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListMetaSourceTypesResponse listMetaSourceTypes(ListMetaSourceTypesRequest request) {
         LOG.trace("Called listMetaSourceTypes");
         final ListMetaSourceTypesRequest interceptedRequest =
@@ -2842,6 +3056,34 @@ public class LogAnalyticsClient implements LogAnalytics {
                 ListQueryWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListQueryWorkRequestsResponse>
                 transformer = ListQueryWorkRequestsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRecalledDataResponse listRecalledData(ListRecalledDataRequest request) {
+        LOG.trace("Called listRecalledData");
+        final ListRecalledDataRequest interceptedRequest =
+                ListRecalledDataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRecalledDataConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListRecalledDataResponse>
+                transformer = ListRecalledDataConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -3265,6 +3507,34 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public ListWarningsResponse listWarnings(ListWarningsRequest request) {
+        LOG.trace("Called listWarnings");
+        final ListWarningsRequest interceptedRequest =
+                ListWarningsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWarningsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListWarningsResponse>
+                transformer = ListWarningsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
         LOG.trace("Called listWorkRequestErrors");
@@ -3435,6 +3705,35 @@ public class LogAnalyticsClient implements LogAnalytics {
                                                 ib,
                                                 retriedRequest.getParseQueryDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public PauseScheduledTaskResponse pauseScheduledTask(PauseScheduledTaskRequest request) {
+        LOG.trace("Called pauseScheduledTask");
+        final PauseScheduledTaskRequest interceptedRequest =
+                PauseScheduledTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PauseScheduledTaskConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, PauseScheduledTaskResponse>
+                transformer = PauseScheduledTaskConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -3700,6 +3999,35 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public ResumeScheduledTaskResponse resumeScheduledTask(ResumeScheduledTaskRequest request) {
+        LOG.trace("Called resumeScheduledTask");
+        final ResumeScheduledTaskRequest interceptedRequest =
+                ResumeScheduledTaskConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ResumeScheduledTaskConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ResumeScheduledTaskResponse>
+                transformer = ResumeScheduledTaskConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RunResponse run(RunRequest request) {
         LOG.trace("Called run");
         final RunRequest interceptedRequest = RunConverter.interceptRequest(request);
@@ -3760,6 +4088,39 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public SuppressWarningResponse suppressWarning(SuppressWarningRequest request) {
+        LOG.trace("Called suppressWarning");
+        final SuppressWarningRequest interceptedRequest =
+                SuppressWarningConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SuppressWarningConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, SuppressWarningResponse>
+                transformer = SuppressWarningConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getWarningReferenceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public TestParserResponse testParser(TestParserRequest request) {
         LOG.trace("Called testParser");
         final TestParserRequest interceptedRequest = TestParserConverter.interceptRequest(request);
@@ -3785,6 +4146,39 @@ public class LogAnalyticsClient implements LogAnalytics {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getTestParserPayloadDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UnsuppressWarningResponse unsuppressWarning(UnsuppressWarningRequest request) {
+        LOG.trace("Called unsuppressWarning");
+        final UnsuppressWarningRequest interceptedRequest =
+                UnsuppressWarningConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UnsuppressWarningConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UnsuppressWarningResponse>
+                transformer = UnsuppressWarningConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getWarningReferenceDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -3928,6 +4322,102 @@ public class LogAnalyticsClient implements LogAnalytics {
                                 return transformer.apply(response);
                             });
                 });
+    }
+
+    @Override
+    public UpdateLookupResponse updateLookup(UpdateLookupRequest request) {
+        LOG.trace("Called updateLookup");
+        final UpdateLookupRequest interceptedRequest =
+                UpdateLookupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLookupConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLookupResponse>
+                transformer = UpdateLookupConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateLookupMetadataDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateLookupDataResponse updateLookupData(UpdateLookupDataRequest request) {
+        LOG.trace("Called updateLookupData");
+        try {
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UpdateLookupDataRequest.builder());
+            }
+            final UpdateLookupDataRequest interceptedRequest =
+                    UpdateLookupDataConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UpdateLookupDataConverter.fromRequest(client, interceptedRequest);
+            com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLookupDataResponse>
+                    transformer = UpdateLookupDataConverter.fromResponse();
+
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            interceptedRequest.getRetryConfiguration(), retryConfiguration);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest.getUpdateLookupFileBody(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest.getUpdateLookupFileBody(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUpdateLookupFileBody());
+        }
     }
 
     @Override

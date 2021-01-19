@@ -162,6 +162,8 @@ public class CreateStandardTaskDetails extends CreateScheduledTaskDetails {
 
     /**
      * Schedules, typically a single schedule.
+     * Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
     java.util.List<Schedule> schedules;

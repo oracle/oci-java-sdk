@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Possible lifecycle states.
+ * Log analytics entity lifecycle state. Supported states are ACTIVE, DELETED
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")

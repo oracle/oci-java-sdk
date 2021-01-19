@@ -20,7 +20,7 @@ public class ListUploadWarningsRequest extends com.oracle.bmc.requests.BmcReques
     private String namespaceName;
 
     /**
-     * Unique internal identifier to refer to upload container
+     * Unique internal identifier to refer upload container.
      */
     private String uploadReference;
 

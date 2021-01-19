@@ -37,8 +37,42 @@ public class ListParserFunctionsRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * sort by field
      */
-    private String sortBy;
+    private SortBy sortBy;
 
+    /**
+     * sort by field
+     **/
+    public enum SortBy {
+        Name("name"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
     /**
      * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
      *

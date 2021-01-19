@@ -218,7 +218,7 @@ public class UploadFileSummary {
     }
 
     /**
-     * Unique internal identifier to refer to upload file
+     * Unique internal identifier to refer upload file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reference")
     String reference;
@@ -288,37 +288,37 @@ public class UploadFileSummary {
     java.math.BigDecimal totalChunks;
 
     /**
-     * Number of chunks processed
+     * Number of chunks processed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chunksConsumed")
     java.math.BigDecimal chunksConsumed;
 
     /**
-     * Number of chunks processed successfully
+     * Number of chunks processed successfully.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chunksSuccess")
     java.math.BigDecimal chunksSuccess;
 
     /**
-     * Number of chunks failed processing
+     * Number of chunks failed processing.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("chunksFail")
     java.math.BigDecimal chunksFail;
 
     /**
-     * The time when this file processing started
+     * The time when this file processing started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * Name of the log source used for processing this file
+     * Name of the log source used for processing this file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     String sourceName;
 
     /**
-     * Name of the entity type
+     * Name of the entity type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;
@@ -330,7 +330,7 @@ public class UploadFileSummary {
     String entityName;
 
     /**
-     * Log namespace associated with the file.
+     * (Deprecated) Name of the log namespace associated with the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logNamespace")
     String logNamespace;
@@ -342,13 +342,13 @@ public class UploadFileSummary {
     String logGroupId;
 
     /**
-     * Log group name associated with the file.
+     * Name of the log group associated with the file.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupName")
     String logGroupName;
 
     /**
-     * The details about upload processing failure
+     * The details about upload processing failure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureDetails")
     String failureDetails;

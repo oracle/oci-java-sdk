@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Information about the associations to be deleted between entity and other existing entities.
+ * Information about the associations to be deleted between source entity and other existing destination entities.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
