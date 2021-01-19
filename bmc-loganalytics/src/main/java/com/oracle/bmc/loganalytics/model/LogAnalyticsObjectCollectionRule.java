@@ -155,9 +155,9 @@ public class LogAnalyticsObjectCollectionRule {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
+        private ObjectCollectionRuleLifecycleStates lifecycleState;
 
-        public Builder lifecycleState(LifecycleState lifecycleState) {
+        public Builder lifecycleState(ObjectCollectionRuleLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -187,6 +187,15 @@ public class LogAnalyticsObjectCollectionRule {
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
             return this;
         }
 
@@ -233,6 +242,7 @@ public class LogAnalyticsObjectCollectionRule {
                             lifecycleDetails,
                             timeCreated,
                             timeUpdated,
+                            isEnabled,
                             definedTags,
                             freeformTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -260,6 +270,7 @@ public class LogAnalyticsObjectCollectionRule {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
+                            .isEnabled(o.getIsEnabled())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags());
 
@@ -314,8 +325,7 @@ public class LogAnalyticsObjectCollectionRule {
     String osBucketName;
 
     /**
-     * The type of collection.
-     * Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
+     * The type of log collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("collectionType")
@@ -324,16 +334,16 @@ public class LogAnalyticsObjectCollectionRule {
     /**
      * The oldest time of the file in the bucket to consider for collection.
      * Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string.
-     * When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+     * Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pollSince")
     String pollSince;
 
     /**
-     * The oldest time of the file in the bucket to consider for collection.
+     * The newest time of the file in the bucket to consider for collection.
      * Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string.
-     * When collectionType is LIVE, specifying pollTill will result in error.
+     * Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pollTill")
@@ -359,7 +369,7 @@ public class LogAnalyticsObjectCollectionRule {
 
     /**
      * An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
-     * It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters,
+     * It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
      * and very few alphabets.
      * For e.g. this applies when configuring VCN Flow Logs.
      *
@@ -375,59 +385,13 @@ public class LogAnalyticsObjectCollectionRule {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overrides")
     java.util.Map<String, java.util.List<PropertyOverride>> overrides;
-    /**
-     * The current state of the rule.
-     *
-     **/
-    @lombok.extern.slf4j.Slf4j
-    public enum LifecycleState {
-        Active("ACTIVE"),
-        Deleted("DELETED"),
 
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, LifecycleState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        LifecycleState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
     /**
      * The current state of the rule.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
+    ObjectCollectionRuleLifecycleStates lifecycleState;
 
     /**
      * A detailed status of the life cycle state.
@@ -446,6 +410,13 @@ public class LogAnalyticsObjectCollectionRule {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * Whether or not this rule is currently enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+    Boolean isEnabled;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.

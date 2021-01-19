@@ -49,6 +49,10 @@ package com.oracle.bmc.sch.model;
         name = "functions"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = LoggingAnalyticsTargetDetails.class,
+        name = "loggingAnalytics"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = StreamingTargetDetails.class,
         name = "streaming"
     )
@@ -62,11 +66,12 @@ public class TargetDetails {
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Kind {
-        Streaming("streaming"),
-        ObjectStorage("objectStorage"),
-        Monitoring("monitoring"),
         Functions("functions"),
+        LoggingAnalytics("loggingAnalytics"),
+        Monitoring("monitoring"),
         Notifications("notifications"),
+        ObjectStorage("objectStorage"),
+        Streaming("streaming"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

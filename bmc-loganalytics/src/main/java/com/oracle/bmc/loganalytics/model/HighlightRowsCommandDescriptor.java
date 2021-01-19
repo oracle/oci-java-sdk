@@ -78,6 +78,15 @@ public class HighlightRowsCommandDescriptor extends AbstractCommandDescriptor {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("color")
+        private String color;
+
+        public Builder color(String color) {
+            this.color = color;
+            this.__explicitlySet__.add("color");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("keywords")
         private java.util.List<String> keywords;
 
@@ -98,6 +107,7 @@ public class HighlightRowsCommandDescriptor extends AbstractCommandDescriptor {
                             category,
                             referencedFields,
                             declaredFields,
+                            color,
                             keywords);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -111,6 +121,7 @@ public class HighlightRowsCommandDescriptor extends AbstractCommandDescriptor {
                             .category(o.getCategory())
                             .referencedFields(o.getReferencedFields())
                             .declaredFields(o.getDeclaredFields())
+                            .color(o.getColor())
                             .keywords(o.getKeywords());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -132,10 +143,19 @@ public class HighlightRowsCommandDescriptor extends AbstractCommandDescriptor {
             String category,
             java.util.List<AbstractField> referencedFields,
             java.util.List<AbstractField> declaredFields,
+            String color,
             java.util.List<String> keywords) {
         super(displayQueryString, internalQueryString, category, referencedFields, declaredFields);
+        this.color = color;
         this.keywords = keywords;
     }
+
+    /**
+     * User specified color to highlight matches with if found.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("color")
+    String color;
 
     /**
      * List of terms or phrases to find to mark the result row as highlighted.

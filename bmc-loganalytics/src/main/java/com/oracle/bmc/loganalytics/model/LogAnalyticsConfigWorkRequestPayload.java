@@ -53,12 +53,22 @@ public class LogAnalyticsConfigWorkRequestPayload {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
+        private String lookupReferenceString;
+
+        public Builder lookupReferenceString(String lookupReferenceString) {
+            this.lookupReferenceString = lookupReferenceString;
+            this.__explicitlySet__.add("lookupReferenceString");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LogAnalyticsConfigWorkRequestPayload build() {
             LogAnalyticsConfigWorkRequestPayload __instance__ =
-                    new LogAnalyticsConfigWorkRequestPayload(sourceName, entityId, lookupReference);
+                    new LogAnalyticsConfigWorkRequestPayload(
+                            sourceName, entityId, lookupReference, lookupReferenceString);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,7 +78,8 @@ public class LogAnalyticsConfigWorkRequestPayload {
             Builder copiedBuilder =
                     sourceName(o.getSourceName())
                             .entityId(o.getEntityId())
-                            .lookupReference(o.getLookupReference());
+                            .lookupReference(o.getLookupReference())
+                            .lookupReferenceString(o.getLookupReferenceString());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -99,6 +110,12 @@ public class LogAnalyticsConfigWorkRequestPayload {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
     Long lookupReference;
+
+    /**
+     * lookupReference
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
+    String lookupReferenceString;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

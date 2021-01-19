@@ -20,7 +20,7 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
     private String namespaceName;
 
     /**
-     * Unique internal identifier to refer to upload container
+     * Unique internal identifier to refer upload container.
      */
     private String uploadReference;
 
@@ -77,21 +77,26 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeStarted is descending.
+     * timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name, logGroup accordingly.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeStarted is descending.
+     * timeCreated, fileName and logGroup are deprecated. Instead use timestarted, name, logGroup accordingly.
      *
      **/
     public enum SortBy {
+        TimeStarted("timeStarted"),
+        Name("name"),
+        LogGroupName("logGroupName"),
+        SourceName("sourceName"),
+        Status("status"),
         TimeCreated("timeCreated"),
         FileName("fileName"),
         LogGroup("logGroup"),
-        SourceName("sourceName"),
-        Status("status"),
         ;
 
         private final String value;
@@ -122,17 +127,17 @@ public class ListUploadFilesRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
     /**
-     * Search string used to filtering uploads based on file name, log group name and log source name.
+     * This can be used to filter upload files based on the file, log group and log source names.
      */
     private String searchStr;
 
     /**
-     * Upload Status.
+     * Upload File processing state.
      */
     private java.util.List<Status> status;
 
     /**
-     * Upload Status.
+     * Upload File processing state.
      **/
     public enum Status {
         InProgress("IN_PROGRESS"),

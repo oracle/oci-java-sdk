@@ -94,7 +94,7 @@ public class PropertyOverride {
     }
 
     /**
-     * Match Type. Accepted values are: contains
+     * Match Type. Accepted values are: contains.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchType")
@@ -114,7 +114,7 @@ public class PropertyOverride {
     String propertyName;
 
     /**
-     * Value.
+     * Value of the property.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("propertyValue")
     String propertyValue;

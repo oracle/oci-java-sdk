@@ -27,7 +27,7 @@ public class UpdateLogAnalyticsEntityRequest
     private String logAnalyticsEntityId;
 
     /**
-     * The information to be updated.
+     * Log analytics entity information to be updated.
      */
     private UpdateLogAnalyticsEntityDetails updateLogAnalyticsEntityDetails;
 

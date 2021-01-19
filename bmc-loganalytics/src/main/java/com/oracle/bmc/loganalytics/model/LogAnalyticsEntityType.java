@@ -180,7 +180,7 @@ public class LogAnalyticsEntityType {
     String category;
 
     /**
-     * Nature of log analytics entity type.
+     * Log analytics entity type group. That can be CLOUD (OCI) or NON_CLOUD otherwise.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudType")
@@ -194,7 +194,7 @@ public class LogAnalyticsEntityType {
     java.util.List<EntityTypeProperty> properties;
 
     /**
-     * The current state of the log analytics entity.
+     * The current lifecycle state of the log analytics entity.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")

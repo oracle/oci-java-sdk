@@ -20,12 +20,12 @@ public class DeleteUploadFileRequest extends com.oracle.bmc.requests.BmcRequest<
     private String namespaceName;
 
     /**
-     * Unique internal identifier to refer to upload container
+     * Unique internal identifier to refer upload container.
      */
     private String uploadReference;
 
     /**
-     * Unique internal identifier to refer to upload file
+     * Unique internal identifier to refer upload file.
      */
     private String fileReference;
 

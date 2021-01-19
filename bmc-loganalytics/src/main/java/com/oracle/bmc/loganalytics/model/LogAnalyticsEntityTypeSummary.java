@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Summary of an log analytics entity type.
+ * Summary of a log analytics entity type.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -152,14 +152,14 @@ public class LogAnalyticsEntityTypeSummary {
     String category;
 
     /**
-     * Nature of log analytics entity type.
+     * Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudType")
     EntityCloudType cloudType;
 
     /**
-     * The current state of the log analytics entity
+     * The current lifecycle state of the log analytics entity type.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")

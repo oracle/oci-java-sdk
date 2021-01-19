@@ -80,6 +80,24 @@ public class LogAnalyticsLookup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
+        private String lookupReferenceString;
+
+        public Builder lookupReferenceString(String lookupReferenceString) {
+            this.lookupReferenceString = lookupReferenceString;
+            this.__explicitlySet__.add("lookupReferenceString");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private Type type;
+
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -155,6 +173,8 @@ public class LogAnalyticsLookup {
                             editVersion,
                             fields,
                             lookupReference,
+                            lookupReferenceString,
+                            type,
                             name,
                             isBuiltIn,
                             isHidden,
@@ -175,6 +195,8 @@ public class LogAnalyticsLookup {
                             .editVersion(o.getEditVersion())
                             .fields(o.getFields())
                             .lookupReference(o.getLookupReference())
+                            .lookupReferenceString(o.getLookupReferenceString())
+                            .type(o.getType())
                             .name(o.getName())
                             .isBuiltIn(o.getIsBuiltIn())
                             .isHidden(o.getIsHidden())
@@ -226,10 +248,66 @@ public class LogAnalyticsLookup {
     java.util.List<LookupField> fields;
 
     /**
-     * lookupReference
+     * The lookup reference as an integer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lookupReference")
     Long lookupReference;
+
+    /**
+     * The lookup reference as a string.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lookupReferenceString")
+    String lookupReferenceString;
+    /**
+     * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Type {
+        Lookup("Lookup"),
+        Dictionary("Dictionary"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Type> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Type v : Type.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Type(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Type create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    Type type;
 
     /**
      * iname

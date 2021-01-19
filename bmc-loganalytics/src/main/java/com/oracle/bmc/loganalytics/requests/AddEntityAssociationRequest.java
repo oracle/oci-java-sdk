@@ -27,7 +27,7 @@ public class AddEntityAssociationRequest
     private String logAnalyticsEntityId;
 
     /**
-     * This parameter specifies the entity OCIDs with which associations are to be created. Specify destination OCIDs as comma separated string.
+     * This parameter specifies the destination entity OCIDs with which associations are to be created.
      */
     private AddEntityAssociationDetails addEntityAssociationDetails;
 

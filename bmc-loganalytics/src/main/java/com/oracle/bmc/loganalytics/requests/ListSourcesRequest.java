@@ -30,7 +30,7 @@ public class ListSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     private String entityType;
 
     /**
-     * search by source display name or description
+     * Search by source display name or description.
      */
     private String sourceDisplayText;
 

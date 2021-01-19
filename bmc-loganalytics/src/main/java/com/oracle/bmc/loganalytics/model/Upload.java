@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Upload is a container that can be used to optionally put all the relevant and related on-demand upload based log files.
+ * Upload is a container that can be used to put all the relevant and related on-demand upload based log files together.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -129,37 +129,37 @@ public class Upload {
     }
 
     /**
-     * Unique internal identifier to refer to the upload container
+     * Unique internal identifier to refer the upload container.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reference")
     String reference;
 
     /**
-     * The name of the upload container
+     * The name of the upload container.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The time when this upload container is created. An RFC3339 formatted datetime string
+     * The time when this upload container is created. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The latest time when this upload container is modified. An RFC3339 formatted datetime string
+     * The latest time when this upload container is modified. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
 
     /**
-     * This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string
+     * This time represents the earliest time of the log entry in this container. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestLogEntry")
     java.util.Date timeEarliestLogEntry;
 
     /**
-     * This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string
+     * This time represents the latest time of the log entry in this container. An RFC3339 formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestLogEntry")
     java.util.Date timeLatestLogEntry;

@@ -112,6 +112,15 @@ public class Field extends AbstractField {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("unitType")
+        private String unitType;
+
+        public Builder unitType(String unitType) {
+            this.unitType = unitType;
+            this.__explicitlySet__.add("unitType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -126,7 +135,8 @@ public class Field extends AbstractField {
                             isGroupable,
                             isDuration,
                             alias,
-                            filterQueryString);
+                            filterQueryString,
+                            unitType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -142,7 +152,8 @@ public class Field extends AbstractField {
                             .isGroupable(o.getIsGroupable())
                             .isDuration(o.getIsDuration())
                             .alias(o.getAlias())
-                            .filterQueryString(o.getFilterQueryString());
+                            .filterQueryString(o.getFilterQueryString())
+                            .unitType(o.getUnitType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -166,7 +177,8 @@ public class Field extends AbstractField {
             Boolean isGroupable,
             Boolean isDuration,
             String alias,
-            String filterQueryString) {
+            String filterQueryString,
+            String unitType) {
         super(
                 displayName,
                 isDeclared,
@@ -176,7 +188,8 @@ public class Field extends AbstractField {
                 isGroupable,
                 isDuration,
                 alias,
-                filterQueryString);
+                filterQueryString,
+                unitType);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

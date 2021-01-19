@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Nature of log analytics entity type - whether it is a CLOUD or NON_CLOUD (on-premises) type.
+ * Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")

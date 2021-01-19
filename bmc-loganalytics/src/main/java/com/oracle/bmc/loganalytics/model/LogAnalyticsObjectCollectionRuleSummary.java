@@ -91,10 +91,9 @@ public class LogAnalyticsObjectCollectionRuleSummary {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LogAnalyticsObjectCollectionRule.LifecycleState lifecycleState;
+        private ObjectCollectionRuleLifecycleStates lifecycleState;
 
-        public Builder lifecycleState(
-                LogAnalyticsObjectCollectionRule.LifecycleState lifecycleState) {
+        public Builder lifecycleState(ObjectCollectionRuleLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -124,6 +123,15 @@ public class LogAnalyticsObjectCollectionRuleSummary {
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
             return this;
         }
 
@@ -163,6 +171,7 @@ public class LogAnalyticsObjectCollectionRuleSummary {
                             lifecycleDetails,
                             timeCreated,
                             timeUpdated,
+                            isEnabled,
                             definedTags,
                             freeformTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -183,6 +192,7 @@ public class LogAnalyticsObjectCollectionRuleSummary {
                             .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated())
                             .timeUpdated(o.getTimeUpdated())
+                            .isEnabled(o.getIsEnabled())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags());
 
@@ -237,8 +247,7 @@ public class LogAnalyticsObjectCollectionRuleSummary {
     String osBucketName;
 
     /**
-     * The type of collection.
-     * Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
+     * The type of log collection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("collectionType")
@@ -249,7 +258,7 @@ public class LogAnalyticsObjectCollectionRuleSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LogAnalyticsObjectCollectionRule.LifecycleState lifecycleState;
+    ObjectCollectionRuleLifecycleStates lifecycleState;
 
     /**
      * A detailed status of the life cycle state.
@@ -268,6 +277,13 @@ public class LogAnalyticsObjectCollectionRuleSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * Whether or not this rule is currently enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+    Boolean isEnabled;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.

@@ -20,7 +20,7 @@ public class ValidateFileRequest extends com.oracle.bmc.requests.BmcRequest<java
     private String namespaceName;
 
     /**
-     * Location of the log file
+     * Location of the log file.
      */
     private String objectLocation;
 

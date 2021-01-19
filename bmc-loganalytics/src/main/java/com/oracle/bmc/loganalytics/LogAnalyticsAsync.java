@@ -47,7 +47,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Adds association between input source log analytics entity and destination entities.
+     * Adds association between input source log analytics entity and one or more existing destination entities.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -60,6 +60,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             AddEntityAssociationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             AddEntityAssociationRequest, AddEntityAssociationResponse>
+                    handler);
+
+    /**
+     * Append data to a lookup.  The file containing the information to append
+     * must be provided.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AppendLookupDataResponse> appendLookupData(
+            AppendLookupDataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AppendLookupDataRequest, AppendLookupDataResponse>
                     handler);
 
     /**
@@ -131,7 +148,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Move the rule from it's current compartment to given compartment.
+     * Move the rule from it's current compartment to the given compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -233,7 +250,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a configuration to collect logs from object storage bucket.
+     * Creates a rule to collect logs from an object storage bucket.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -327,7 +344,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the log analytics entity type with the given name.
+     * Delete log analytics entity type with the given name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -360,8 +377,8 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a configured object storage bucket based collection rule to stop the log collection of the configured bucket .
-     * It will not delete the already collected log data from the configured bucket.
+     * Deletes the configured object storage bucket based collection rule and stop the log collection.
+     * It will not delete the existing processed data associated with this bucket from logging analytics storage.
      *
      *
      * @param request The request object containing the details to send
@@ -378,6 +395,22 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                                     DeleteLogAnalyticsObjectCollectionRuleRequest,
                                     DeleteLogAnalyticsObjectCollectionRuleResponse>
                             handler);
+
+    /**
+     * Delete the specified lookup.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteLookupResponse> deleteLookup(
+            DeleteLookupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteLookupRequest, DeleteLookupResponse>
+                    handler);
 
     /**
      * delete parser with specified name
@@ -443,8 +476,8 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a specific log file inside an upload by providing upload file reference.
-     * It deletes all the logs in storage asscoiated with the upload file and the corresponding upload metadata.
+     * Deletes a specific log file inside an upload by upload file reference.
+     * It deletes all the logs from storage associated with the file and the corresponding metadata.
      *
      *
      * @param request The request object containing the details to send
@@ -523,6 +556,40 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             EstimatePurgeDataSizeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             EstimatePurgeDataSizeRequest, EstimatePurgeDataSizeResponse>
+                    handler);
+
+    /**
+     * This API gives an active storage usage estimate for archived data to be recalled and the time range of such data.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EstimateRecallDataSizeResponse> estimateRecallDataSize(
+            EstimateRecallDataSizeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EstimateRecallDataSizeRequest, EstimateRecallDataSizeResponse>
+                    handler);
+
+    /**
+     * This API gives an active storage usage estimate for recalled data to be released and the time range of such data.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EstimateReleaseDataSizeResponse> estimateReleaseDataSize(
+            EstimateReleaseDataSizeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EstimateReleaseDataSizeRequest, EstimateReleaseDataSizeResponse>
                     handler);
 
     /**
@@ -713,7 +780,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns log analytics entities count summary.
+     * Returns log analytics entities count summary report.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -813,6 +880,21 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                                     GetLogAnalyticsObjectCollectionRuleRequest,
                                     GetLogAnalyticsObjectCollectionRuleResponse>
                             handler);
+
+    /**
+     * Obtains the lookup with the specified reference.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetLookupResponse> getLookup(
+            GetLookupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetLookupRequest, GetLookupResponse> handler);
 
     /**
      * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
@@ -987,7 +1069,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets an On-Demand Upload info by reference
+     * Gets an On-Demand Upload info by reference.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1205,7 +1287,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets list of configuration details of Object Storage based collection rules.
+     * Gets list of collection rules.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1221,6 +1303,22 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                                     ListLogAnalyticsObjectCollectionRulesRequest,
                                     ListLogAnalyticsObjectCollectionRulesResponse>
                             handler);
+
+    /**
+     * Obtains a list of lookups.  The list is filtered according to the filter criteria
+     * specified by the user, and sorted according to the ordering criteria specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListLookupsResponse> listLookups(
+            ListLookupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListLookupsRequest, ListLookupsResponse> handler);
 
     /**
      * get all meta source types
@@ -1315,6 +1413,22 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             ListQueryWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListQueryWorkRequestsRequest, ListQueryWorkRequestsResponse>
+                    handler);
+
+    /**
+     * This API returns the list of recalled data of a tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRecalledDataResponse> listRecalledData(
+            ListRecalledDataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListRecalledDataRequest, ListRecalledDataResponse>
                     handler);
 
     /**
@@ -1464,7 +1578,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of character encodings supported for log files.
+     * Gets list of character encodings which are supported by on-demand upload.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1480,7 +1594,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets timezones that are supported when performing uploads.
+     * Gets list of timezones which are supported by on-demand upload.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1496,7 +1610,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets list of files in an upload.
+     * Gets list of files in an upload along with its processing state.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1511,7 +1625,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets list of warnings in an upload explaining the failures due to incorrect configuration.
+     * Gets list of warnings in an upload caused by incorrect configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1541,6 +1655,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
     java.util.concurrent.Future<ListUploadsResponse> listUploads(
             ListUploadsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListUploadsRequest, ListUploadsResponse> handler);
+
+    /**
+     * Obtains a list of warnings.  The list is filtered according to the filter criteria
+     * specified by the user, and sorted according to the ordering criteria specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWarningsResponse> listWarnings(
+            ListWarningsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWarningsRequest, ListWarningsResponse>
+                    handler);
 
     /**
      * Return a (paginated) list of errors for a given work request.
@@ -1637,6 +1768,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
     java.util.concurrent.Future<ParseQueryResponse> parseQuery(
             ParseQueryRequest request,
             com.oracle.bmc.responses.AsyncHandler<ParseQueryRequest, ParseQueryResponse> handler);
+
+    /**
+     * Pause the scheduled task specified by {scheduledTaskId}.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PauseScheduledTaskResponse> pauseScheduledTask(
+            PauseScheduledTaskRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PauseScheduledTaskRequest, PauseScheduledTaskResponse>
+                    handler);
 
     /**
      * This API submits a work request to purge data. Only data from log groups that the user has permission to delete
@@ -1754,6 +1902,23 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Resume the scheduled task specified by {scheduledTaskId}.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ResumeScheduledTaskResponse> resumeScheduledTask(
+            ResumeScheduledTaskRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ResumeScheduledTaskRequest, ResumeScheduledTaskResponse>
+                    handler);
+
+    /**
      * Execute the saved search acceleration task in the foreground.
      * The ScheduledTask taskType must be ACCELERATION.
      * Optionally specify time range (timeStart and timeEnd). The default is all time.
@@ -1785,6 +1950,24 @@ public interface LogAnalyticsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<SuggestRequest, SuggestResponse> handler);
 
     /**
+     * Accepts a list of warnings.  Any unsuppressed warnings in the input list will
+     * be suppressed.  Warnings in the input list which are already suppressed will
+     * not be modified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SuppressWarningResponse> suppressWarning(
+            SuppressWarningRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SuppressWarningRequest, SuppressWarningResponse>
+                    handler);
+
+    /**
      * test parser
      *
      * @param request The request object containing the details to send
@@ -1797,6 +1980,25 @@ public interface LogAnalyticsAsync extends AutoCloseable {
     java.util.concurrent.Future<TestParserResponse> testParser(
             TestParserRequest request,
             com.oracle.bmc.responses.AsyncHandler<TestParserRequest, TestParserResponse> handler);
+
+    /**
+     * Accepts a list of warnings.  Any suppressed warnings in the input list will
+     * be unsuppressed.  Warnings in the input list which are unsuppressed will
+     * not be modified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnsuppressWarningResponse> unsuppressWarning(
+            UnsuppressWarningRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UnsuppressWarningRequest, UnsuppressWarningResponse>
+                    handler);
 
     /**
      * Update the log analytics entity with the given id.
@@ -1848,7 +2050,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the rule with the given id.
+     * Updates configuration of the object collection rule for the given id.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1864,6 +2066,39 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                                     UpdateLogAnalyticsObjectCollectionRuleRequest,
                                     UpdateLogAnalyticsObjectCollectionRuleResponse>
                             handler);
+
+    /**
+     * Updates the metadata of the specified lookup, such as the lookup description.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateLookupResponse> updateLookup(
+            UpdateLookupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateLookupRequest, UpdateLookupResponse>
+                    handler);
+
+    /**
+     * Updates the specified lookup with the details provided.  This API will not update
+     * lookup metadata (such as lookup description).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateLookupDataResponse> updateLookupData(
+            UpdateLookupDataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateLookupDataRequest, UpdateLookupDataResponse>
+                    handler);
 
     /**
      * Update the scheduled task. Schedules may be updated only for taskType SAVED_SEARCH and PURGE.
@@ -2006,7 +2241,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Validates a log file to check whether it is eligible to upload or not.
+     * Validates a log file to check whether it is eligible to be uploaded or not.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2054,7 +2289,7 @@ public interface LogAnalyticsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Validates the source mapping for given file and provides match status and parsed representation of log data.
+     * Validates the source mapping for a given file and provides match status and the parsed representation of log data.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Parsed Content
+ * Parsed representation of the log file.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -117,37 +117,37 @@ public class ParsedContent {
     }
 
     /**
-     * Field names
+     * List of field names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
     java.util.List<String> fieldNames;
 
     /**
-     * Display names for fields
+     * List of field display names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayNames")
     java.util.List<String> fieldDisplayNames;
 
     /**
-     * Parsed field values
+     * Parsed field values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldValues")
     java.util.List<ParsedField> parsedFieldValues;
 
     /**
-     * Sample log entries picked up from the given file for validation
+     * Sample log entries picked up from the given file for validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logContent")
     String logContent;
 
     /**
-     * Sample Size taken for validation
+     * Sample Size taken for validation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleSize")
     Integer sampleSize;
 
     /**
-     * Match Status
+     * Match Status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchStatus")
     String matchStatus;

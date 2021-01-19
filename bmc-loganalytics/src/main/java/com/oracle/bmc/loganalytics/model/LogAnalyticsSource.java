@@ -348,6 +348,15 @@ public class LogAnalyticsSource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("eventTypes")
+        private java.util.List<EventType> eventTypes;
+
+        public Builder eventTypes(java.util.List<EventType> eventTypes) {
+            this.eventTypes = eventTypes;
+            this.__explicitlySet__.add("eventTypes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -388,7 +397,8 @@ public class LogAnalyticsSource {
                             entityTypes,
                             isTimezoneOverride,
                             userParsers,
-                            timeUpdated);
+                            timeUpdated,
+                            eventTypes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -430,7 +440,8 @@ public class LogAnalyticsSource {
                             .entityTypes(o.getEntityTypes())
                             .isTimezoneOverride(o.getIsTimezoneOverride())
                             .userParsers(o.getUserParsers())
-                            .timeUpdated(o.getTimeUpdated());
+                            .timeUpdated(o.getTimeUpdated())
+                            .eventTypes(o.getEventTypes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -653,6 +664,12 @@ public class LogAnalyticsSource {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     java.util.Date timeUpdated;
+
+    /**
+     * An array of event types.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("eventTypes")
+    java.util.List<EventType> eventTypes;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

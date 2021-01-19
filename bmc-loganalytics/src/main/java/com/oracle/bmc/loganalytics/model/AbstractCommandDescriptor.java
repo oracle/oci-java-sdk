@@ -74,8 +74,16 @@ package com.oracle.bmc.loganalytics.model;
         name = "FIELD_SUMMARY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MapCommandDescriptor.class,
+        name = "MAP"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EventStatsCommandDescriptor.class,
         name = "EVENT_STATS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HighlightGroupsCommandDescriptor.class,
+        name = "HIGHLIGHT_GROUPS"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = WhereCommandDescriptor.class,
@@ -134,6 +142,10 @@ package com.oracle.bmc.loganalytics.model;
         name = "EXTRACT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = NlpCommandDescriptor.class,
+        name = "NLP"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = BottomCommandDescriptor.class,
         name = "BOTTOM"
     ),
@@ -164,6 +176,10 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = HeadCommandDescriptor.class,
         name = "HEAD"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateViewCommandDescriptor.class,
+        name = "CREATE_VIEW"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AddFieldsCommandDescriptor.class,
@@ -259,6 +275,10 @@ public class AbstractCommandDescriptor {
         MultiSearch("MULTI_SEARCH"),
         Highlight("HIGHLIGHT"),
         HighlightRows("HIGHLIGHT_ROWS"),
+        HighlightGroups("HIGHLIGHT_GROUPS"),
+        CreateView("CREATE_VIEW"),
+        Map("MAP"),
+        Nlp("NLP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

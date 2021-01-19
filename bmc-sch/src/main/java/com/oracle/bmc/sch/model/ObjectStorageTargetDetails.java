@@ -5,7 +5,7 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The object storage target.
+ * The bucket used for the Object Storage target.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -60,12 +60,35 @@ public class ObjectStorageTargetDetails extends TargetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverSizeInMBs")
+        private Integer batchRolloverSizeInMBs;
+
+        public Builder batchRolloverSizeInMBs(Integer batchRolloverSizeInMBs) {
+            this.batchRolloverSizeInMBs = batchRolloverSizeInMBs;
+            this.__explicitlySet__.add("batchRolloverSizeInMBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverTimeInMs")
+        private Integer batchRolloverTimeInMs;
+
+        public Builder batchRolloverTimeInMs(Integer batchRolloverTimeInMs) {
+            this.batchRolloverTimeInMs = batchRolloverTimeInMs;
+            this.__explicitlySet__.add("batchRolloverTimeInMs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectStorageTargetDetails build() {
             ObjectStorageTargetDetails __instance__ =
-                    new ObjectStorageTargetDetails(namespace, bucketName, objectNamePrefix);
+                    new ObjectStorageTargetDetails(
+                            namespace,
+                            bucketName,
+                            objectNamePrefix,
+                            batchRolloverSizeInMBs,
+                            batchRolloverTimeInMs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +98,9 @@ public class ObjectStorageTargetDetails extends TargetDetails {
             Builder copiedBuilder =
                     namespace(o.getNamespace())
                             .bucketName(o.getBucketName())
-                            .objectNamePrefix(o.getObjectNamePrefix());
+                            .objectNamePrefix(o.getObjectNamePrefix())
+                            .batchRolloverSizeInMBs(o.getBatchRolloverSizeInMBs())
+                            .batchRolloverTimeInMs(o.getBatchRolloverTimeInMs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -91,11 +116,17 @@ public class ObjectStorageTargetDetails extends TargetDetails {
 
     @Deprecated
     public ObjectStorageTargetDetails(
-            String namespace, String bucketName, String objectNamePrefix) {
+            String namespace,
+            String bucketName,
+            String objectNamePrefix,
+            Integer batchRolloverSizeInMBs,
+            Integer batchRolloverTimeInMs) {
         super();
         this.namespace = namespace;
         this.bucketName = bucketName;
         this.objectNamePrefix = objectNamePrefix;
+        this.batchRolloverSizeInMBs = batchRolloverSizeInMBs;
+        this.batchRolloverTimeInMs = batchRolloverTimeInMs;
     }
 
     /**
@@ -118,6 +149,20 @@ public class ObjectStorageTargetDetails extends TargetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNamePrefix")
     String objectNamePrefix;
+
+    /**
+     * The batch rollover size in megabytes.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverSizeInMBs")
+    Integer batchRolloverSizeInMBs;
+
+    /**
+     * The batch rollover time in milliseconds.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverTimeInMs")
+    Integer batchRolloverTimeInMs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

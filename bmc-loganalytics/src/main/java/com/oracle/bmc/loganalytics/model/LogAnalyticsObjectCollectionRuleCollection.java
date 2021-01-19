@@ -62,7 +62,7 @@ public class LogAnalyticsObjectCollectionRuleCollection {
     }
 
     /**
-     * list of LogAnalyticsObjectCollectionRuleSummary objects.
+     * List of LogAnalyticsObjectCollectionRuleSummary objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<LogAnalyticsObjectCollectionRuleSummary> items;

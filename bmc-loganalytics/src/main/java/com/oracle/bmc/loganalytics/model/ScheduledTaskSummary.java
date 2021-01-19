@@ -126,6 +126,24 @@ public class ScheduledTaskSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
+        private LastExecutionStatus lastExecutionStatus;
+
+        public Builder lastExecutionStatus(LastExecutionStatus lastExecutionStatus) {
+            this.lastExecutionStatus = lastExecutionStatus;
+            this.__explicitlySet__.add("lastExecutionStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
+        private java.util.Date timeLastExecuted;
+
+        public Builder timeLastExecuted(java.util.Date timeLastExecuted) {
+            this.timeLastExecuted = timeLastExecuted;
+            this.__explicitlySet__.add("timeLastExecuted");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -142,7 +160,9 @@ public class ScheduledTaskSummary {
                             workRequestId,
                             displayName,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            lastExecutionStatus,
+                            timeLastExecuted);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -160,7 +180,9 @@ public class ScheduledTaskSummary {
                             .workRequestId(o.getWorkRequestId())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .lastExecutionStatus(o.getLastExecutionStatus())
+                            .timeLastExecuted(o.getTimeLastExecuted());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -297,6 +319,63 @@ public class ScheduledTaskSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    /**
+     * The most recent task execution status.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum LastExecutionStatus {
+        Failed("FAILED"),
+        Succeeded("SUCCEEDED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, LastExecutionStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LastExecutionStatus v : LastExecutionStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LastExecutionStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LastExecutionStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LastExecutionStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The most recent task execution status.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastExecutionStatus")
+    LastExecutionStatus lastExecutionStatus;
+
+    /**
+     * The date and time the scheduled task last executed, in the format defined by RFC3339.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
+    java.util.Date timeLastExecuted;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -16,84 +16,26 @@ package com.oracle.bmc.loganalytics.model;
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
-@lombok.Value
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateScheduledTaskDetails.Builder.class
+@lombok.AllArgsConstructor(
+    onConstructor = @__({@Deprecated}),
+    access = lombok.AccessLevel.PROTECTED
 )
+@lombok.Value
+@lombok.experimental.NonFinal
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind",
+    defaultImpl = UpdateScheduledTaskDetails.class
+)
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateStandardTaskDetails.class,
+        name = "STANDARD"
+    )
+})
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 public class UpdateScheduledTaskDetails {
-    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    @lombok.experimental.Accessors(fluent = true)
-    public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-        private String displayName;
-
-        public Builder displayName(String displayName) {
-            this.displayName = displayName;
-            this.__explicitlySet__.add("displayName");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("schedules")
-        private java.util.List<Schedule> schedules;
-
-        public Builder schedules(java.util.List<Schedule> schedules) {
-            this.schedules = schedules;
-            this.__explicitlySet__.add("schedules");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-        public UpdateScheduledTaskDetails build() {
-            UpdateScheduledTaskDetails __instance__ =
-                    new UpdateScheduledTaskDetails(
-                            displayName, freeformTags, definedTags, schedules);
-            __instance__.__explicitlySet__.addAll(__explicitlySet__);
-            return __instance__;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdateScheduledTaskDetails o) {
-            Builder copiedBuilder =
-                    displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags())
-                            .schedules(o.getSchedules());
-
-            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
-            return copiedBuilder;
-        }
-    }
-
-    /**
-     * Create a new builder.
-     */
-    public static Builder builder() {
-        return new Builder();
-    }
 
     /**
      * A user-friendly name that is changeable and that does not have to be unique.
@@ -122,12 +64,46 @@ public class UpdateScheduledTaskDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Schedules may be updated for task types SAVED_SEARCH and PURGE
+     * Schedules may be updated for task types SAVED_SEARCH and PURGE.
+     * Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
     java.util.List<Schedule> schedules;
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
-    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+    /**
+     * Discriminator.
+     **/
+    public enum Kind {
+        Acceleration("ACCELERATION"),
+        Standard("STANDARD"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Kind> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Kind v : Kind.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Kind(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Kind create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Kind: " + key);
+        }
+    };
 }

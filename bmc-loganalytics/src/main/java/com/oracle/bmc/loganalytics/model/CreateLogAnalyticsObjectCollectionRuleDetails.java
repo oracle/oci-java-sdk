@@ -5,7 +5,7 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The configuration details of an Object Storage based collection rule to enable automatic log collection.
+ * The configuration details of collection rule to enable automatic log collection from an object storage bucket.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -135,6 +135,15 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("overrides")
         private java.util.Map<String, java.util.List<PropertyOverride>> overrides;
 
@@ -182,6 +191,7 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
                             logSourceName,
                             entityId,
                             charEncoding,
+                            isEnabled,
                             overrides,
                             definedTags,
                             freeformTags);
@@ -204,6 +214,7 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
                             .logSourceName(o.getLogSourceName())
                             .entityId(o.getEntityId())
                             .charEncoding(o.getCharEncoding())
+                            .isEnabled(o.getIsEnabled())
                             .overrides(o.getOverrides())
                             .definedTags(o.getDefinedTags())
                             .freeformTags(o.getFreeformTags());
@@ -254,7 +265,6 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
 
     /**
      * The type of collection.
-     * Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("collectionType")
@@ -263,16 +273,16 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
     /**
      * The oldest time of the file in the bucket to consider for collection.
      * Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string.
-     * When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+     * Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pollSince")
     String pollSince;
 
     /**
-     * The oldest time of the file in the bucket to consider for collection.
+     * The newest time of the file in the bucket to consider for collection.
      * Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string.
-     * When collectionType is LIVE, specifying pollTill will result in error.
+     * Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pollTill")
@@ -298,13 +308,20 @@ public class CreateLogAnalyticsObjectCollectionRuleDetails {
 
     /**
      * An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing.
-     * It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters,
+     * It is recommended to set this value as ISO_8859_1 when configuring content of the objects having more numeric characters,
      * and very few alphabets.
      * For e.g. this applies when configuring VCN Flow Logs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("charEncoding")
     String charEncoding;
+
+    /**
+     * Whether or not this rule is currently enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+    Boolean isEnabled;
 
     /**
      * The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket.

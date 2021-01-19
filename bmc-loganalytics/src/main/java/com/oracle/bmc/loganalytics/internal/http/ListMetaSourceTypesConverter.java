@@ -59,7 +59,7 @@ public class ListMetaSourceTypesConverter {
                     target.queryParam(
                             "sortBy",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getSortBy()));
+                                    request.getSortBy().getValue()));
         }
 
         if (request.getSortOrder() != null) {
