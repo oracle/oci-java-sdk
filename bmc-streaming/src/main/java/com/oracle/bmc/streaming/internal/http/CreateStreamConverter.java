@@ -73,7 +73,9 @@ public class CreateStreamConverter {
                                 com.oracle.bmc.streaming.responses.CreateStreamResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .CreateStreamResponse.builder();
+                                                        .CreateStreamResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.stream(response.getItem());
 

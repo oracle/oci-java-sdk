@@ -84,7 +84,9 @@ public class GetDataGuardAssociationConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .GetDataGuardAssociationResponse.builder();
+                                                        .GetDataGuardAssociationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataGuardAssociation(response.getItem());
 

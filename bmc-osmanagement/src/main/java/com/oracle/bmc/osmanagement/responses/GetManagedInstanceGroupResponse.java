@@ -10,6 +10,10 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetManagedInstanceGroupResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -43,6 +47,7 @@ public class GetManagedInstanceGroupResponse {
          * @return this builder instance
          */
         public Builder copy(GetManagedInstanceGroupResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             retryAfter(o.getRetryAfter());

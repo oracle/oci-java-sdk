@@ -76,8 +76,8 @@ public class GetWafConfigConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.waas.responses.GetWafConfigResponse.Builder builder =
-                                        com.oracle.bmc.waas.responses.GetWafConfigResponse
-                                                .builder();
+                                        com.oracle.bmc.waas.responses.GetWafConfigResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.wafConfig(response.getItem());
 

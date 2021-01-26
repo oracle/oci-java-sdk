@@ -137,7 +137,9 @@ public class ListDetectorRulesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .ListDetectorRulesResponse.builder();
+                                                        .ListDetectorRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.detectorRuleCollection(response.getItem());
 

@@ -76,7 +76,9 @@ public class GetDynamicGroupConverter {
                                 com.oracle.bmc.identity.responses.GetDynamicGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .GetDynamicGroupResponse.builder();
+                                                        .GetDynamicGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dynamicGroup(response.getItem());
 

@@ -82,7 +82,9 @@ public class GetGroupConverter {
                                 com.oracle.bmc.streaming.responses.GetGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses.GetGroupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.group(response.getItem());
 

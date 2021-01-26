@@ -150,7 +150,9 @@ public class ListAnalyticsInstancesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.analytics.responses
-                                                        .ListAnalyticsInstancesResponse.builder();
+                                                        .ListAnalyticsInstancesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

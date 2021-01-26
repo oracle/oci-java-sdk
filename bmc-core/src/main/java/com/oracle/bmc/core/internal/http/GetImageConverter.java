@@ -70,7 +70,8 @@ public class GetImageConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.GetImageResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.GetImageResponse.builder();
+                                        com.oracle.bmc.core.responses.GetImageResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.image(response.getItem());
 

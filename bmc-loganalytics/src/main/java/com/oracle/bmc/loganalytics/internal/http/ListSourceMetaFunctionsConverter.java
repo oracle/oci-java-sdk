@@ -118,7 +118,9 @@ public class ListSourceMetaFunctionsConverter {
                                                 .ListSourceMetaFunctionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListSourceMetaFunctionsResponse.builder();
+                                                        .ListSourceMetaFunctionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsMetaFunctionCollection(response.getItem());
 

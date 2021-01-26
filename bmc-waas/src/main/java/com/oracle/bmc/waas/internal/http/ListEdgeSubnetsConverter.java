@@ -107,7 +107,9 @@ public class ListEdgeSubnetsConverter {
                                 com.oracle.bmc.waas.responses.ListEdgeSubnetsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListEdgeSubnetsResponse.builder();
+                                                        .ListEdgeSubnetsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

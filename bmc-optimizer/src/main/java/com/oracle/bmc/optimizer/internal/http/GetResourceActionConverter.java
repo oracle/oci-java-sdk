@@ -80,7 +80,9 @@ public class GetResourceActionConverter {
                                 com.oracle.bmc.optimizer.responses.GetResourceActionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .GetResourceActionResponse.builder();
+                                                        .GetResourceActionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.resourceAction(response.getItem());
 

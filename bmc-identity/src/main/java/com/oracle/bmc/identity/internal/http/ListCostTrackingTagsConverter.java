@@ -99,7 +99,9 @@ public class ListCostTrackingTagsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListCostTrackingTagsResponse.builder();
+                                                        .ListCostTrackingTagsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

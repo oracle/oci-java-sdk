@@ -88,7 +88,9 @@ public class UpdateResourceActionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .UpdateResourceActionResponse.builder();
+                                                        .UpdateResourceActionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.resourceAction(response.getItem());
 

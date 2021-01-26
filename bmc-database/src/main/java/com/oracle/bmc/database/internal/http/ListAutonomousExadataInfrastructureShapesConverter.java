@@ -122,7 +122,9 @@ public class ListAutonomousExadataInfrastructureShapesConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListAutonomousExadataInfrastructureShapesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

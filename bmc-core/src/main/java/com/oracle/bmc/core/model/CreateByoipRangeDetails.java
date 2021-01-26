@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to create a Byoip Range
+ * The information used to create a `ByoipRange` resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -105,7 +105,7 @@ public class CreateByoipRangeDetails {
     }
 
     /**
-     * The CIDR IP address range of the prefix.
+     * The BYOIP CIDR block. You can assign some or all of it to a public IP pool after it is validated.
      * Example: `10.0.1.0/24`
      *
      **/
@@ -113,7 +113,7 @@ public class CreateByoipRangeDetails {
     String cidrBlock;
 
     /**
-     * The OCID of the compartment to contain the Byoip Range.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

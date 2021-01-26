@@ -148,7 +148,9 @@ public class ListProjectsConverter {
                                 com.oracle.bmc.datascience.responses.ListProjectsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .ListProjectsResponse.builder();
+                                                        .ListProjectsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

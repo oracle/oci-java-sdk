@@ -178,7 +178,9 @@ public class ListPatternsConverter {
                                 com.oracle.bmc.datacatalog.responses.ListPatternsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListPatternsResponse.builder();
+                                                        .ListPatternsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.patternCollection(response.getItem());
 

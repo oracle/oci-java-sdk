@@ -10,6 +10,10 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateProfileResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -35,6 +39,7 @@ public class CreateProfileResponse {
          * @return this builder instance
          */
         public Builder copy(CreateProfileResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             profile(o.getProfile());

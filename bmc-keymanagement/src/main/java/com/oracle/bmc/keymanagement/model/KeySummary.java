@@ -106,6 +106,15 @@ public class KeySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
+        private Algorithm algorithm;
+
+        public Builder algorithm(Algorithm algorithm) {
+            this.algorithm = algorithm;
+            this.__explicitlySet__.add("algorithm");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -120,7 +129,8 @@ public class KeySummary {
                             lifecycleState,
                             timeCreated,
                             vaultId,
-                            protectionMode);
+                            protectionMode,
+                            algorithm);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -136,7 +146,8 @@ public class KeySummary {
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .vaultId(o.getVaultId())
-                            .protectionMode(o.getProtectionMode());
+                            .protectionMode(o.getProtectionMode())
+                            .algorithm(o.getAlgorithm());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -331,6 +342,58 @@ public class KeySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     ProtectionMode protectionMode;
+    /**
+     * The algorithm used by a key's key versions to encrypt or decrypt.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Algorithm {
+        Aes("AES"),
+        Rsa("RSA"),
+        Ecdsa("ECDSA"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Algorithm> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Algorithm v : Algorithm.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Algorithm(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Algorithm create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Algorithm', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The algorithm used by a key's key versions to encrypt or decrypt.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
+    Algorithm algorithm;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

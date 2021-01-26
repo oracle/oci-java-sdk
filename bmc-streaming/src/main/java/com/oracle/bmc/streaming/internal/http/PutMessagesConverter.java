@@ -82,7 +82,9 @@ public class PutMessagesConverter {
                                 com.oracle.bmc.streaming.responses.PutMessagesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .PutMessagesResponse.builder();
+                                                        .PutMessagesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.putMessagesResult(response.getItem());
 

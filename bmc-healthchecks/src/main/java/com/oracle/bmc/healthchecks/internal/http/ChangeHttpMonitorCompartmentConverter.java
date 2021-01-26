@@ -96,7 +96,9 @@ public class ChangeHttpMonitorCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
                                                         .ChangeHttpMonitorCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

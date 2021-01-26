@@ -165,7 +165,9 @@ public class ListTasksConverter {
                                 com.oracle.bmc.dataintegration.responses.ListTasksResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListTasksResponse.builder();
+                                                        .ListTasksResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.taskSummaryCollection(response.getItem());
 

@@ -84,7 +84,9 @@ public class CreateNamespaceConverter {
                                 com.oracle.bmc.datacatalog.responses.CreateNamespaceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateNamespaceResponse.builder();
+                                                        .CreateNamespaceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.namespace(response.getItem());
 

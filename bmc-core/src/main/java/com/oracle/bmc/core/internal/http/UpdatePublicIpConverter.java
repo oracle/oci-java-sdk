@@ -78,7 +78,9 @@ public class UpdatePublicIpConverter {
                                 com.oracle.bmc.core.responses.UpdatePublicIpResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.UpdatePublicIpResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.publicIp(response.getItem());
 

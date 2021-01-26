@@ -137,7 +137,9 @@ public class ListGatewaysConverter {
                                 com.oracle.bmc.apigateway.responses.ListGatewaysResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .ListGatewaysResponse.builder();
+                                                        .ListGatewaysResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.gatewayCollection(response.getItem());
 

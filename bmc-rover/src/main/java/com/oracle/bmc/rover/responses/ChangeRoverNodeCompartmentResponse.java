@@ -10,6 +10,10 @@ import com.oracle.bmc.rover.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ChangeRoverNodeCompartmentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      *
@@ -22,6 +26,7 @@ public class ChangeRoverNodeCompartmentResponse {
          * @return this builder instance
          */
         public Builder copy(ChangeRoverNodeCompartmentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
 
             return this;

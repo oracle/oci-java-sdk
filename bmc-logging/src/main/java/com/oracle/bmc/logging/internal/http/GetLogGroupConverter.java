@@ -77,7 +77,9 @@ public class GetLogGroupConverter {
                                 com.oracle.bmc.logging.responses.GetLogGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.logging.responses.GetLogGroupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logGroup(response.getItem());
 

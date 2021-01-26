@@ -86,7 +86,9 @@ public class DeleteNamespaceConverter {
                                 com.oracle.bmc.datacatalog.responses.DeleteNamespaceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .DeleteNamespaceResponse.builder();
+                                                        .DeleteNamespaceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

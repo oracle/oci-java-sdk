@@ -81,7 +81,9 @@ public class GetPolicyConfigConverter {
                                 com.oracle.bmc.waas.responses.GetPolicyConfigResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .GetPolicyConfigResponse.builder();
+                                                        .GetPolicyConfigResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.policyConfig(response.getItem());
 

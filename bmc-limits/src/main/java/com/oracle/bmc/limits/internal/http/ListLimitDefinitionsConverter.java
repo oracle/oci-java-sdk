@@ -132,7 +132,9 @@ public class ListLimitDefinitionsConverter {
                                 com.oracle.bmc.limits.responses.ListLimitDefinitionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.limits.responses
-                                                        .ListLimitDefinitionsResponse.builder();
+                                                        .ListLimitDefinitionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

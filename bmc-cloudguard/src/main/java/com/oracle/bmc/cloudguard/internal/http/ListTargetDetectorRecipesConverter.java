@@ -141,8 +141,9 @@ public class ListTargetDetectorRecipesConverter {
                                                 .ListTargetDetectorRecipesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .ListTargetDetectorRecipesResponse
-                                                        .builder();
+                                                        .ListTargetDetectorRecipesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.targetDetectorRecipeCollection(response.getItem());
 

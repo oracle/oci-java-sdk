@@ -99,7 +99,9 @@ public class GetTargetDetectorRecipeDetectorRuleConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .GetTargetDetectorRecipeDetectorRuleResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.targetDetectorRecipeDetectorRule(response.getItem());
 

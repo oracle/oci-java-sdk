@@ -92,8 +92,9 @@ public class UpdateAutonomousVmClusterConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .UpdateAutonomousVmClusterResponse
-                                                        .builder();
+                                                        .UpdateAutonomousVmClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousVmCluster(response.getItem());
 

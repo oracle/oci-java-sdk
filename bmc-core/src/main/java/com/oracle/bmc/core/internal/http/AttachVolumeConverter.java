@@ -72,8 +72,8 @@ public class AttachVolumeConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.AttachVolumeResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.AttachVolumeResponse
-                                                .builder();
+                                        com.oracle.bmc.core.responses.AttachVolumeResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.volumeAttachment(response.getItem());
 

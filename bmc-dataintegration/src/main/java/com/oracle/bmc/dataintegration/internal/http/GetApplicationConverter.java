@@ -86,7 +86,9 @@ public class GetApplicationConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .GetApplicationResponse.builder();
+                                                        .GetApplicationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.application(response.getItem());
 

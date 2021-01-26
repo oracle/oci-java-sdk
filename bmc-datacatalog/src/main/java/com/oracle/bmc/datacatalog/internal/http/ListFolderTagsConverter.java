@@ -180,7 +180,9 @@ public class ListFolderTagsConverter {
                                 com.oracle.bmc.datacatalog.responses.ListFolderTagsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListFolderTagsResponse.builder();
+                                                        .ListFolderTagsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.folderTagCollection(response.getItem());
 

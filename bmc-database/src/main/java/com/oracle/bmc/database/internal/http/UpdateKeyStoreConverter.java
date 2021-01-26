@@ -83,7 +83,9 @@ public class UpdateKeyStoreConverter {
                                 com.oracle.bmc.database.responses.UpdateKeyStoreResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .UpdateKeyStoreResponse.builder();
+                                                        .UpdateKeyStoreResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.keyStore(response.getItem());
 

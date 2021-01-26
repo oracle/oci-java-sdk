@@ -105,8 +105,9 @@ public class ListNotebookSessionShapesConverter {
                                                 .ListNotebookSessionShapesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .ListNotebookSessionShapesResponse
-                                                        .builder();
+                                                        .ListNotebookSessionShapesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

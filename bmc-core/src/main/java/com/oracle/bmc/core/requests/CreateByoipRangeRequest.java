@@ -15,7 +15,7 @@ public class CreateByoipRangeRequest
         extends com.oracle.bmc.requests.BmcRequest<CreateByoipRangeDetails> {
 
     /**
-     * Create Byoip Range details.
+     * Details needed to create a BYOIP CIDR block subrange.
      */
     private CreateByoipRangeDetails createByoipRangeDetails;
 

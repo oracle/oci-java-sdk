@@ -135,7 +135,9 @@ public class ListComputeImageCapabilitySchemasConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListComputeImageCapabilitySchemasResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

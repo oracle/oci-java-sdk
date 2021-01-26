@@ -81,7 +81,9 @@ public class CreateMigrationConverter {
                                                 .CreateMigrationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .CreateMigrationResponse.builder();
+                                                        .CreateMigrationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.migration(response.getItem());
 

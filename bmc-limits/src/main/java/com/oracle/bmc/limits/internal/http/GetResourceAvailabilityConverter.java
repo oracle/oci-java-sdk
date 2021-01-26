@@ -103,7 +103,9 @@ public class GetResourceAvailabilityConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.limits.responses
-                                                        .GetResourceAvailabilityResponse.builder();
+                                                        .GetResourceAvailabilityResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.resourceAvailability(response.getItem());
 

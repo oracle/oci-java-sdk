@@ -86,7 +86,9 @@ public class GetListingConverter {
                                 com.oracle.bmc.marketplace.responses.GetListingResponse.Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .GetListingResponse.builder();
+                                                        .GetListingResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.listing(response.getItem());
 

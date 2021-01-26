@@ -99,7 +99,9 @@ public class AddDataSelectorPatternsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .AddDataSelectorPatternsResponse.builder();
+                                                        .AddDataSelectorPatternsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataAsset(response.getItem());
 

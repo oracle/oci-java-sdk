@@ -10,6 +10,10 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteAnalyticsInstanceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -31,6 +35,7 @@ public class DeleteAnalyticsInstanceResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteAnalyticsInstanceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 

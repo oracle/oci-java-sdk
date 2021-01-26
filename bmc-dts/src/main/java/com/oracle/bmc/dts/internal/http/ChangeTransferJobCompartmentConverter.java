@@ -93,7 +93,9 @@ public class ChangeTransferJobCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .ChangeTransferJobCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

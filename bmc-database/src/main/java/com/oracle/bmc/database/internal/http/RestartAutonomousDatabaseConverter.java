@@ -87,8 +87,9 @@ public class RestartAutonomousDatabaseConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .RestartAutonomousDatabaseResponse
-                                                        .builder();
+                                                        .RestartAutonomousDatabaseResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousDatabase(response.getItem());
 

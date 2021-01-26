@@ -99,7 +99,9 @@ public class EstimatePurgeDataSizeConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .EstimatePurgeDataSizeResponse.builder();
+                                                        .EstimatePurgeDataSizeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.estimatePurgeDataSizeResult(response.getItem());
 

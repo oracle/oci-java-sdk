@@ -90,7 +90,9 @@ public class ChangeTopicCompartmentConverter {
                                 com.oracle.bmc.ons.responses.ChangeTopicCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ons.responses
-                                                        .ChangeTopicCompartmentResponse.builder();
+                                                        .ChangeTopicCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

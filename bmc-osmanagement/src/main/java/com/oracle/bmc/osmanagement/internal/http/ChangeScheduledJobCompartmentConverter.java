@@ -96,7 +96,9 @@ public class ChangeScheduledJobCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ChangeScheduledJobCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

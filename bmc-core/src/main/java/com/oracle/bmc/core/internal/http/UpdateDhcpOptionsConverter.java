@@ -81,7 +81,9 @@ public class UpdateDhcpOptionsConverter {
                                 com.oracle.bmc.core.responses.UpdateDhcpOptionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateDhcpOptionsResponse.builder();
+                                                        .UpdateDhcpOptionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dhcpOptions(response.getItem());
 

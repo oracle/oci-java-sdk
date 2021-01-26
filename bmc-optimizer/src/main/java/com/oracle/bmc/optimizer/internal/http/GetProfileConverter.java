@@ -78,7 +78,9 @@ public class GetProfileConverter {
                                 com.oracle.bmc.optimizer.responses.GetProfileResponse.Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .GetProfileResponse.builder();
+                                                        .GetProfileResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.profile(response.getItem());
 

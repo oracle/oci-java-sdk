@@ -153,8 +153,9 @@ public class ListConnectionValidationsConverter {
                                                 .ListConnectionValidationsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListConnectionValidationsResponse
-                                                        .builder();
+                                                        .ListConnectionValidationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.connectionValidationSummaryCollection(response.getItem());
 

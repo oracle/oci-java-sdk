@@ -80,7 +80,9 @@ public class CreateSubscriptionConverter {
                                 com.oracle.bmc.ons.responses.CreateSubscriptionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ons.responses
-                                                        .CreateSubscriptionResponse.builder();
+                                                        .CreateSubscriptionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.subscription(response.getItem());
 

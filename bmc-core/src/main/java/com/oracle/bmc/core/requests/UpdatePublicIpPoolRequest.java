@@ -15,12 +15,12 @@ public class UpdatePublicIpPoolRequest
         extends com.oracle.bmc.requests.BmcRequest<UpdatePublicIpPoolDetails> {
 
     /**
-     * The OCID of the Public Ip Pool object.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.
      */
     private String publicIpPoolId;
 
     /**
-     * Public Ip Pool details.
+     * Public IP pool details.
      */
     private UpdatePublicIpPoolDetails updatePublicIpPoolDetails;
 

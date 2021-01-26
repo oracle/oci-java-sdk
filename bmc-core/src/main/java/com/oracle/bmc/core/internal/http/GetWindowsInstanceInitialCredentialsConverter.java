@@ -84,7 +84,9 @@ public class GetWindowsInstanceInitialCredentialsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetWindowsInstanceInitialCredentialsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instanceCredentials(response.getItem());
 

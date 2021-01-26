@@ -99,7 +99,9 @@ public class UpdateRetentionRuleConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .UpdateRetentionRuleResponse.builder();
+                                                        .UpdateRetentionRuleResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.retentionRule(response.getItem());
 

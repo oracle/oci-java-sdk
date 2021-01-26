@@ -139,7 +139,9 @@ public class ListCatalogPrivateEndpointsConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListCatalogPrivateEndpointsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -105,7 +105,9 @@ public class ScheduleKeyVersionDeletionConverter {
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
                                                         .ScheduleKeyVersionDeletionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.keyVersion(response.getItem());
 

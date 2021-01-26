@@ -118,7 +118,9 @@ public class ListResponderActivitiesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .ListResponderActivitiesResponse.builder();
+                                                        .ListResponderActivitiesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.responderActivityCollection(response.getItem());
 

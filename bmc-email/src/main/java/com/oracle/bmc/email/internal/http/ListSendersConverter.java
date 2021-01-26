@@ -129,8 +129,8 @@ public class ListSendersConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.email.responses.ListSendersResponse.Builder builder =
-                                        com.oracle.bmc.email.responses.ListSendersResponse
-                                                .builder();
+                                        com.oracle.bmc.email.responses.ListSendersResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

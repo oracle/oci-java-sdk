@@ -78,7 +78,9 @@ public class GetNetworkSecurityGroupConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetNetworkSecurityGroupResponse.builder();
+                                                        .GetNetworkSecurityGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.networkSecurityGroup(response.getItem());
 

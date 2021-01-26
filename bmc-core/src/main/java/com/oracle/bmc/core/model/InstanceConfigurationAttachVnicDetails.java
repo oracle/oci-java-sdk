@@ -83,10 +83,6 @@ public class InstanceConfigurationAttachVnicDetails {
         return new Builder();
     }
 
-    /**
-     * Details for creating a new VNIC.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
     InstanceConfigurationCreateVnicDetails createVnicDetails;
 

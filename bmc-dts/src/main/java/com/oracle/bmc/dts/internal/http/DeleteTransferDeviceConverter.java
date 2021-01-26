@@ -79,7 +79,9 @@ public class DeleteTransferDeviceConverter {
                                 com.oracle.bmc.dts.responses.DeleteTransferDeviceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .DeleteTransferDeviceResponse.builder();
+                                                        .DeleteTransferDeviceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

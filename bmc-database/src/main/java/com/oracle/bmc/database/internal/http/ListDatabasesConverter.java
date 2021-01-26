@@ -144,7 +144,9 @@ public class ListDatabasesConverter {
                                 com.oracle.bmc.database.responses.ListDatabasesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListDatabasesResponse.builder();
+                                                        .ListDatabasesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

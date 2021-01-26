@@ -79,7 +79,9 @@ public class UpdateGroupConverter {
                                 com.oracle.bmc.identity.responses.UpdateGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .UpdateGroupResponse.builder();
+                                                        .UpdateGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.group(response.getItem());
 

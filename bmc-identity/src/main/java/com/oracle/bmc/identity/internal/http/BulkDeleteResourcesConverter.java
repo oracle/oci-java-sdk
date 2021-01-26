@@ -86,7 +86,9 @@ public class BulkDeleteResourcesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .BulkDeleteResourcesResponse.builder();
+                                                        .BulkDeleteResourcesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

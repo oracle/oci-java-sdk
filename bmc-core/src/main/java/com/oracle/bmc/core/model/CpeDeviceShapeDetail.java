@@ -102,9 +102,6 @@ public class CpeDeviceShapeDetail {
     @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
     String cpeDeviceShapeId;
 
-    /**
-     * Basic information about this particular CPE device type.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceInfo")
     CpeDeviceInfo cpeDeviceInfo;
 

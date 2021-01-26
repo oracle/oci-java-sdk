@@ -88,7 +88,9 @@ public class UpdatePatternConverter {
                                 com.oracle.bmc.datacatalog.responses.UpdatePatternResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .UpdatePatternResponse.builder();
+                                                        .UpdatePatternResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.pattern(response.getItem());
 

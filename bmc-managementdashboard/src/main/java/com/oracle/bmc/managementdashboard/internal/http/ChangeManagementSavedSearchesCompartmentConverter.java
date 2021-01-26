@@ -104,7 +104,9 @@ public class ChangeManagementSavedSearchesCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.managementdashboard.responses
                                                         .ChangeManagementSavedSearchesCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

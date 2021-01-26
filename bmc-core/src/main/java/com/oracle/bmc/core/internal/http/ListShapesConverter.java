@@ -106,7 +106,8 @@ public class ListShapesConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.ListShapesResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.ListShapesResponse.builder();
+                                        com.oracle.bmc.core.responses.ListShapesResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

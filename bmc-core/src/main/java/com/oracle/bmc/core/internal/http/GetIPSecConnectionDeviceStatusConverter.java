@@ -83,7 +83,9 @@ public class GetIPSecConnectionDeviceStatusConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetIPSecConnectionDeviceStatusResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.iPSecConnectionDeviceStatus(response.getItem());
 

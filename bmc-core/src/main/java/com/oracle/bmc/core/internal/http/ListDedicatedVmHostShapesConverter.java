@@ -118,8 +118,9 @@ public class ListDedicatedVmHostShapesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListDedicatedVmHostShapesResponse
-                                                        .builder();
+                                                        .ListDedicatedVmHostShapesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

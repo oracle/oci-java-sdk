@@ -93,7 +93,9 @@ public class ResumeScheduledTaskConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ResumeScheduledTaskResponse.builder();
+                                                        .ResumeScheduledTaskResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.scheduledTask(response.getItem());

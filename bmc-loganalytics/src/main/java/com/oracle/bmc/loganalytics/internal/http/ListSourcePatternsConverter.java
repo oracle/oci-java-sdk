@@ -129,7 +129,9 @@ public class ListSourcePatternsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListSourcePatternsResponse.builder();
+                                                        .ListSourcePatternsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsSourcePatternCollection(response.getItem());
 

@@ -84,7 +84,8 @@ public class ChangeShapeConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.bds.responses.ChangeShapeResponse.Builder builder =
-                                        com.oracle.bmc.bds.responses.ChangeShapeResponse.builder();
+                                        com.oracle.bmc.bds.responses.ChangeShapeResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

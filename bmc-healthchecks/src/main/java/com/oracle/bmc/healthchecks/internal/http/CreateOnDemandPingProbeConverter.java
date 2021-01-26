@@ -79,7 +79,9 @@ public class CreateOnDemandPingProbeConverter {
                                                 .CreateOnDemandPingProbeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
-                                                        .CreateOnDemandPingProbeResponse.builder();
+                                                        .CreateOnDemandPingProbeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.pingProbe(response.getItem());
 

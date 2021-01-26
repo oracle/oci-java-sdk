@@ -129,7 +129,9 @@ public class ListRoverNodesConverter {
                                 com.oracle.bmc.rover.responses.ListRoverNodesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .ListRoverNodesResponse.builder();
+                                                        .ListRoverNodesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.roverNodeCollection(response.getItem());
 

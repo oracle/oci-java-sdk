@@ -76,7 +76,9 @@ public class CreateJobConverter {
                                 com.oracle.bmc.resourcemanager.responses.CreateJobResponse.Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .CreateJobResponse.builder();
+                                                        .CreateJobResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.job(response.getItem());
 

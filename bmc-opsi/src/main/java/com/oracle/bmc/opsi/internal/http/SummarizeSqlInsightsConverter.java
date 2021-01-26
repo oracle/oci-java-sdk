@@ -143,7 +143,9 @@ public class SummarizeSqlInsightsConverter {
                                 com.oracle.bmc.opsi.responses.SummarizeSqlInsightsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.opsi.responses
-                                                        .SummarizeSqlInsightsResponse.builder();
+                                                        .SummarizeSqlInsightsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.sqlInsightAggregationCollection(response.getItem());
 

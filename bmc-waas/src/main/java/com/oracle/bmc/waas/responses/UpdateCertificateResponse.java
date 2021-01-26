@@ -10,6 +10,10 @@ import com.oracle.bmc.waas.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateCertificateResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -32,6 +36,7 @@ public class UpdateCertificateResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateCertificateResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             certificate(o.getCertificate());

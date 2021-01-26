@@ -83,7 +83,9 @@ public class GetResponderExecutionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .GetResponderExecutionResponse.builder();
+                                                        .GetResponderExecutionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.responderExecution(response.getItem());
 

@@ -97,7 +97,9 @@ public class ListWorkRequestsConverter {
                                 com.oracle.bmc.dataflow.responses.ListWorkRequestsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
-                                                        .ListWorkRequestsResponse.builder();
+                                                        .ListWorkRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequestCollection(response.getItem());
 

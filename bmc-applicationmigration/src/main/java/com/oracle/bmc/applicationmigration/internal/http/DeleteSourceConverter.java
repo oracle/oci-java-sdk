@@ -84,7 +84,9 @@ public class DeleteSourceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .DeleteSourceResponse.builder();
+                                                        .DeleteSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

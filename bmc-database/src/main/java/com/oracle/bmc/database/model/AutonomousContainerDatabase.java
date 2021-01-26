@@ -519,6 +519,7 @@ public class AutonomousContainerDatabase {
         Restarting("RESTARTING"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
         RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        Unavailable("UNAVAILABLE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

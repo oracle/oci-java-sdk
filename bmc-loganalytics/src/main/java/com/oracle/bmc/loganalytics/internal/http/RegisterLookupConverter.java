@@ -129,7 +129,9 @@ public class RegisterLookupConverter {
                                 com.oracle.bmc.loganalytics.responses.RegisterLookupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .RegisterLookupResponse.builder();
+                                                        .RegisterLookupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsLookup(response.getItem());
 

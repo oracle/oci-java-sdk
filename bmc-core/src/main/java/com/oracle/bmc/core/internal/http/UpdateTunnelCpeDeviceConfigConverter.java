@@ -100,7 +100,9 @@ public class UpdateTunnelCpeDeviceConfigConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .UpdateTunnelCpeDeviceConfigResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.tunnelCpeDeviceConfig(response.getItem());
 

@@ -78,7 +78,8 @@ public class UpdateVlanConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.UpdateVlanResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.UpdateVlanResponse.builder();
+                                        com.oracle.bmc.core.responses.UpdateVlanResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.vlan(response.getItem());
 

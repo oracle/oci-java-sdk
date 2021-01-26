@@ -73,8 +73,8 @@ public class CreateRuleConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.events.responses.CreateRuleResponse.Builder builder =
-                                        com.oracle.bmc.events.responses.CreateRuleResponse
-                                                .builder();
+                                        com.oracle.bmc.events.responses.CreateRuleResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.rule(response.getItem());
 

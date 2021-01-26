@@ -42,18 +42,28 @@ public class KeyShape {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("curveId")
+        private CurveId curveId;
+
+        public Builder curveId(CurveId curveId) {
+            this.curveId = curveId;
+            this.__explicitlySet__.add("curveId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public KeyShape build() {
-            KeyShape __instance__ = new KeyShape(algorithm, length);
+            KeyShape __instance__ = new KeyShape(algorithm, length, curveId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(KeyShape o) {
-            Builder copiedBuilder = algorithm(o.getAlgorithm()).length(o.getLength());
+            Builder copiedBuilder =
+                    algorithm(o.getAlgorithm()).length(o.getLength()).curveId(o.getCurveId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -74,6 +84,7 @@ public class KeyShape {
     public enum Algorithm {
         Aes("AES"),
         Rsa("RSA"),
+        Ecdsa("ECDSA"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -120,11 +131,66 @@ public class KeyShape {
     Algorithm algorithm;
 
     /**
-     * The length of the key, expressed as an integer. Values of 16, 24, or 32 are supported.
+     * The length of the key in bytes, expressed as an integer. Values supported:
+     *   - AES: 16, 24 or 32
+     *   - RSA: 256, 384 or 512
+     *   - ECDSA: 32, 48, 66
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     Integer length;
+    /**
+     * Supported curve Ids for ECDSA keys
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum CurveId {
+        NistP256("NIST_P256"),
+        NistP384("NIST_P384"),
+        NistP521("NIST_P521"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, CurveId> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CurveId v : CurveId.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CurveId(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CurveId create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CurveId', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Supported curve Ids for ECDSA keys
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("curveId")
+    CurveId curveId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

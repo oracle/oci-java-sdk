@@ -135,7 +135,9 @@ public class ListManagedInstancesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .ListManagedInstancesResponse.builder();
+                                                        .ListManagedInstancesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

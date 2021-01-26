@@ -87,7 +87,9 @@ public class UpdateWafConfigConverter {
                                 com.oracle.bmc.waas.responses.UpdateWafConfigResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .UpdateWafConfigResponse.builder();
+                                                        .UpdateWafConfigResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

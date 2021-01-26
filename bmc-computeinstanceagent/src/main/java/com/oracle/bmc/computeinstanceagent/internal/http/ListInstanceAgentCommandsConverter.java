@@ -123,8 +123,9 @@ public class ListInstanceAgentCommandsConverter {
                                                 .ListInstanceAgentCommandsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.computeinstanceagent.responses
-                                                        .ListInstanceAgentCommandsResponse
-                                                        .builder();
+                                                        .ListInstanceAgentCommandsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -118,7 +118,8 @@ public class UpdateRRSetConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.UpdateRRSetResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.UpdateRRSetResponse.builder();
+                                        com.oracle.bmc.dns.responses.UpdateRRSetResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.recordCollection(response.getItem());
 

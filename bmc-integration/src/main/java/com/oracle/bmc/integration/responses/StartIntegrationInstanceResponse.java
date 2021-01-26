@@ -10,6 +10,10 @@ import com.oracle.bmc.integration.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class StartIntegrationInstanceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the asynchronous request.
@@ -32,6 +36,7 @@ public class StartIntegrationInstanceResponse {
          * @return this builder instance
          */
         public Builder copy(StartIntegrationInstanceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

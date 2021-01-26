@@ -102,7 +102,9 @@ public class GetExternalPublicationValidationConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .GetExternalPublicationValidationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.externalPublicationValidation(response.getItem());
 

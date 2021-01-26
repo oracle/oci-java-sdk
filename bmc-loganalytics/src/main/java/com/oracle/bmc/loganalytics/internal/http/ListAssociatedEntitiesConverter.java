@@ -150,7 +150,9 @@ public class ListAssociatedEntitiesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListAssociatedEntitiesResponse.builder();
+                                                        .ListAssociatedEntitiesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsAssociatedEntityCollection(response.getItem());
 

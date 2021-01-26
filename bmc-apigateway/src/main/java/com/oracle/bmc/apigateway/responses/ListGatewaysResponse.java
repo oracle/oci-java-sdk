@@ -10,6 +10,10 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListGatewaysResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
@@ -48,6 +52,7 @@ public class ListGatewaysResponse {
          * @return this builder instance
          */
         public Builder copy(ListGatewaysResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());

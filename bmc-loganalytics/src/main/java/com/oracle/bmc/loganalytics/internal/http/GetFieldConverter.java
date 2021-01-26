@@ -85,7 +85,9 @@ public class GetFieldConverter {
                                 com.oracle.bmc.loganalytics.responses.GetFieldResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetFieldResponse.builder();
+                                                        .GetFieldResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsField(response.getItem());
 

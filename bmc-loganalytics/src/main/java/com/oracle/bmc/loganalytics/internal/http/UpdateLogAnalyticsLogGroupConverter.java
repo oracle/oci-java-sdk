@@ -99,7 +99,9 @@ public class UpdateLogAnalyticsLogGroupConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .UpdateLogAnalyticsLogGroupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsLogGroup(response.getItem());
 

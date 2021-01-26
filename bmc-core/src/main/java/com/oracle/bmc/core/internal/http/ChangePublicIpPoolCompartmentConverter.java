@@ -91,7 +91,9 @@ public class ChangePublicIpPoolCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ChangePublicIpPoolCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -76,7 +76,9 @@ public class GetServiceGatewayConverter {
                                 com.oracle.bmc.core.responses.GetServiceGatewayResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetServiceGatewayResponse.builder();
+                                                        .GetServiceGatewayResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.serviceGateway(response.getItem());
 

@@ -73,7 +73,8 @@ public class DeleteCpeConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.DeleteCpeResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.DeleteCpeResponse.builder();
+                                        com.oracle.bmc.core.responses.DeleteCpeResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -10,6 +10,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetConditionMetadataTypeResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -35,6 +39,7 @@ public class GetConditionMetadataTypeResponse {
          * @return this builder instance
          */
         public Builder copy(GetConditionMetadataTypeResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             conditionMetadataType(o.getConditionMetadataType());

@@ -77,7 +77,9 @@ public class DeleteTransferJobConverter {
                                 com.oracle.bmc.dts.responses.DeleteTransferJobResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .DeleteTransferJobResponse.builder();
+                                                        .DeleteTransferJobResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

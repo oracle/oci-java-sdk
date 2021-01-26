@@ -93,8 +93,9 @@ public class ChangeDbSystemCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ChangeDbSystemCompartmentResponse
-                                                        .builder();
+                                                        .ChangeDbSystemCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(

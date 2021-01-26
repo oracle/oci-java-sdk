@@ -79,7 +79,9 @@ public class DeleteConsoleHistoryConverter {
                                 com.oracle.bmc.core.responses.DeleteConsoleHistoryResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteConsoleHistoryResponse.builder();
+                                                        .DeleteConsoleHistoryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

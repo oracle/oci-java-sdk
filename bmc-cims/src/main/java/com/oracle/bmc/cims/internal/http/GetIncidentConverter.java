@@ -90,7 +90,8 @@ public class GetIncidentConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.cims.responses.GetIncidentResponse.Builder builder =
-                                        com.oracle.bmc.cims.responses.GetIncidentResponse.builder();
+                                        com.oracle.bmc.cims.responses.GetIncidentResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.incident(response.getItem());
 

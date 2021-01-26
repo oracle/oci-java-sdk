@@ -104,7 +104,9 @@ public class CreateExternalPublicationValidationConverter {
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
                                                         .CreateExternalPublicationValidationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.externalPublicationValidation(response.getItem());
 

@@ -154,7 +154,9 @@ public class ListDetectorRecipesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .ListDetectorRecipesResponse.builder();
+                                                        .ListDetectorRecipesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.detectorRecipeCollection(response.getItem());
 

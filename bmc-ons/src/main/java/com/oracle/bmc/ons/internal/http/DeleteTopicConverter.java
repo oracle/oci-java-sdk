@@ -77,7 +77,8 @@ public class DeleteTopicConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.ons.responses.DeleteTopicResponse.Builder builder =
-                                        com.oracle.bmc.ons.responses.DeleteTopicResponse.builder();
+                                        com.oracle.bmc.ons.responses.DeleteTopicResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

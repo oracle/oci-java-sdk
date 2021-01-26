@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A Public IP pool, conceptually, is a set of public IP addresses (represented as one or more CIDRs) Users can be allocated addresses from this for internet access.
+ * A public IP pool is a set of public IP addresses represented as one or more IPv4 CIDR blocks. Resources like load balancers and compute instances can be allocated public IP addresses from a public IP pool.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -140,13 +140,13 @@ public class PublicIpPool {
     }
 
     /**
-     * The CIDRs that make up this pool
+     * The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
     java.util.List<String> cidrBlocks;
 
     /**
-     * The OCID of the compartment containing the Public IP Pool
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing this pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -181,12 +181,12 @@ public class PublicIpPool {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The Oracle ID (OCID) of the Public Ip Pool.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * The Public IP Pool's current state.
+     * The public IP pool's current state.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -235,13 +235,13 @@ public class PublicIpPool {
         }
     };
     /**
-     * The Public IP Pool's current state.
+     * The public IP pool's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * The date and time the public IP Pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *

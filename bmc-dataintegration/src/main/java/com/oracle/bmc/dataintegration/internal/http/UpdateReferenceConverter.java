@@ -99,7 +99,9 @@ public class UpdateReferenceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .UpdateReferenceResponse.builder();
+                                                        .UpdateReferenceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.reference(response.getItem());
 

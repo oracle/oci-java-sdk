@@ -89,7 +89,9 @@ public class ChangeStreamCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .ChangeStreamCompartmentResponse.builder();
+                                                        .ChangeStreamCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -122,7 +122,8 @@ public class ListVcnsConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.ListVcnsResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.ListVcnsResponse.builder();
+                                        com.oracle.bmc.core.responses.ListVcnsResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

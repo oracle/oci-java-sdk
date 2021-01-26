@@ -88,7 +88,9 @@ public class PutLogsConverter {
                                 com.oracle.bmc.loggingingestion.responses.PutLogsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loggingingestion.responses
-                                                        .PutLogsResponse.builder();
+                                                        .PutLogsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

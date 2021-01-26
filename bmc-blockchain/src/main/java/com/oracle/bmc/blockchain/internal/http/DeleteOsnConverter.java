@@ -87,7 +87,9 @@ public class DeleteOsnConverter {
                                 com.oracle.bmc.blockchain.responses.DeleteOsnResponse.Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .DeleteOsnResponse.builder();
+                                                        .DeleteOsnResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

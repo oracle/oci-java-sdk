@@ -89,7 +89,9 @@ public class GetManagementAgentInstallKeyConverter {
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
                                                         .GetManagementAgentInstallKeyResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.managementAgentInstallKey(response.getItem());
 

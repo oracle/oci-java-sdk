@@ -106,7 +106,9 @@ public class ListTransferApplianceEntitlementConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .ListTransferApplianceEntitlementResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

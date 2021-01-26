@@ -89,7 +89,9 @@ public class CreateOAuthClientCredentialConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .CreateOAuthClientCredentialResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.oAuth2ClientCredential(response.getItem());
 

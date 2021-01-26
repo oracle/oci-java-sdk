@@ -139,7 +139,9 @@ public class GetJobLogsConverter {
                                 com.oracle.bmc.resourcemanager.responses.GetJobLogsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .GetJobLogsResponse.builder();
+                                                        .GetJobLogsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

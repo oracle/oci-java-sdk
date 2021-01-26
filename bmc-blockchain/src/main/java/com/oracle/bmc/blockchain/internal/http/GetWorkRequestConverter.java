@@ -80,7 +80,9 @@ public class GetWorkRequestConverter {
                                 com.oracle.bmc.blockchain.responses.GetWorkRequestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .GetWorkRequestResponse.builder();
+                                                        .GetWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequest(response.getItem());
 

@@ -81,7 +81,9 @@ public class GetDetectorRecipeConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .GetDetectorRecipeResponse.builder();
+                                                        .GetDetectorRecipeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.detectorRecipe(response.getItem());
 

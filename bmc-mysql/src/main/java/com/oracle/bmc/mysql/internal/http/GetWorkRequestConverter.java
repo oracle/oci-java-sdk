@@ -84,7 +84,9 @@ public class GetWorkRequestConverter {
                                 com.oracle.bmc.mysql.responses.GetWorkRequestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses
-                                                        .GetWorkRequestResponse.builder();
+                                                        .GetWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.workRequest(response.getItem());

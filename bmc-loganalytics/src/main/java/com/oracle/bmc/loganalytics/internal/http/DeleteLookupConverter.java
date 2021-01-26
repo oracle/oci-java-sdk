@@ -98,7 +98,9 @@ public class DeleteLookupConverter {
                                 com.oracle.bmc.loganalytics.responses.DeleteLookupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .DeleteLookupResponse.builder();
+                                                        .DeleteLookupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

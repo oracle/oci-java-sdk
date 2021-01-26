@@ -112,7 +112,9 @@ public class ListWorkRequestsConverter {
                                                 .ListWorkRequestsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .ListWorkRequestsResponse.builder();
+                                                        .ListWorkRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

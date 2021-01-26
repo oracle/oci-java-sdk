@@ -90,7 +90,9 @@ public class DeleteLabelConverter {
                                 com.oracle.bmc.loganalytics.responses.DeleteLabelResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .DeleteLabelResponse.builder();
+                                                        .DeleteLabelResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

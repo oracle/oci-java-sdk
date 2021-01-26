@@ -94,7 +94,9 @@ public class CreateAttributeConverter {
                                 com.oracle.bmc.datacatalog.responses.CreateAttributeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateAttributeResponse.builder();
+                                                        .CreateAttributeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.attribute(response.getItem());
 

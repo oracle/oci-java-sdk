@@ -10,6 +10,10 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListWorkRequestLogsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -43,6 +47,7 @@ public class ListWorkRequestLogsResponse {
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestLogsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             retryAfter(o.getRetryAfter());

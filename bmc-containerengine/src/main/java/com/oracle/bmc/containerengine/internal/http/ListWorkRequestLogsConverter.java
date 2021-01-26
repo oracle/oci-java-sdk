@@ -95,7 +95,9 @@ public class ListWorkRequestLogsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.containerengine.responses
-                                                        .ListWorkRequestLogsResponse.builder();
+                                                        .ListWorkRequestLogsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

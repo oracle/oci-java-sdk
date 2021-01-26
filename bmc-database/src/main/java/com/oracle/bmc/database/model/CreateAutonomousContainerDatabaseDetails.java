@@ -129,6 +129,15 @@ public class CreateAutonomousContainerDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
+        private String peerDbUniqueName;
+
+        public Builder peerDbUniqueName(String peerDbUniqueName) {
+            this.peerDbUniqueName = peerDbUniqueName;
+            this.__explicitlySet__.add("peerDbUniqueName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterId")
         private String autonomousVmClusterId;
 
@@ -254,6 +263,7 @@ public class CreateAutonomousContainerDatabaseDetails {
                             peerAutonomousVmClusterId,
                             peerAutonomousContainerDatabaseCompartmentId,
                             peerAutonomousContainerDatabaseBackupConfig,
+                            peerDbUniqueName,
                             autonomousVmClusterId,
                             compartmentId,
                             patchModel,
@@ -288,6 +298,7 @@ public class CreateAutonomousContainerDatabaseDetails {
                                     o.getPeerAutonomousContainerDatabaseCompartmentId())
                             .peerAutonomousContainerDatabaseBackupConfig(
                                     o.getPeerAutonomousContainerDatabaseBackupConfig())
+                            .peerDbUniqueName(o.getPeerDbUniqueName())
                             .autonomousVmClusterId(o.getAutonomousVmClusterId())
                             .compartmentId(o.getCompartmentId())
                             .patchModel(o.getPatchModel())
@@ -446,6 +457,12 @@ public class CreateAutonomousContainerDatabaseDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousContainerDatabaseBackupConfig")
     PeerAutonomousContainerDatabaseBackupConfig peerAutonomousContainerDatabaseBackupConfig;
+
+    /**
+     * The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDbUniqueName")
+    String peerDbUniqueName;
 
     /**
      * The OCID of the Autonomous VM Cluster.

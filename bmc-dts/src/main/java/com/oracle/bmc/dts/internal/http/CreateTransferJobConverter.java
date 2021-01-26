@@ -80,7 +80,9 @@ public class CreateTransferJobConverter {
                                 com.oracle.bmc.dts.responses.CreateTransferJobResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .CreateTransferJobResponse.builder();
+                                                        .CreateTransferJobResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.transferJob(response.getItem());
 

@@ -97,7 +97,9 @@ public class GetMessagesConverter {
                                 com.oracle.bmc.streaming.responses.GetMessagesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .GetMessagesResponse.builder();
+                                                        .GetMessagesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

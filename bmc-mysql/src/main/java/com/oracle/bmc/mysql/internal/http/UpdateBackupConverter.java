@@ -81,7 +81,9 @@ public class UpdateBackupConverter {
                                 com.oracle.bmc.mysql.responses.UpdateBackupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses.UpdateBackupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.isNotModified(false);

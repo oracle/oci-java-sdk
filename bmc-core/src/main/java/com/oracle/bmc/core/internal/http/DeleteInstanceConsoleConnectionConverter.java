@@ -84,7 +84,9 @@ public class DeleteInstanceConsoleConnectionConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .DeleteInstanceConsoleConnectionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

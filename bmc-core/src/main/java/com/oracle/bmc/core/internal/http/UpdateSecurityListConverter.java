@@ -82,7 +82,9 @@ public class UpdateSecurityListConverter {
                                 com.oracle.bmc.core.responses.UpdateSecurityListResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateSecurityListResponse.builder();
+                                                        .UpdateSecurityListResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.securityList(response.getItem());
 

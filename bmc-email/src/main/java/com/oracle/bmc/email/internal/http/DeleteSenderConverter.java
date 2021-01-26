@@ -80,7 +80,9 @@ public class DeleteSenderConverter {
                                 com.oracle.bmc.email.responses.DeleteSenderResponse.Builder
                                         builder =
                                                 com.oracle.bmc.email.responses.DeleteSenderResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

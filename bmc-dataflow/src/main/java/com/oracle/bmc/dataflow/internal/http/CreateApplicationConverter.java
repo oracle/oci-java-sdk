@@ -80,7 +80,9 @@ public class CreateApplicationConverter {
                                 com.oracle.bmc.dataflow.responses.CreateApplicationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
-                                                        .CreateApplicationResponse.builder();
+                                                        .CreateApplicationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.application(response.getItem());
 

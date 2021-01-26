@@ -83,7 +83,9 @@ public class DeleteMfaTotpDeviceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .DeleteMfaTotpDeviceResponse.builder();
+                                                        .DeleteMfaTotpDeviceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

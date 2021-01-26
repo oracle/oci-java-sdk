@@ -83,7 +83,9 @@ public class UpdateCatalogConverter {
                                 com.oracle.bmc.datacatalog.responses.UpdateCatalogResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .UpdateCatalogResponse.builder();
+                                                        .UpdateCatalogResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.catalog(response.getItem());
 

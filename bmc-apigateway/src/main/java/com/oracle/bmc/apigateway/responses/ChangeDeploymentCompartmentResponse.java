@@ -10,6 +10,10 @@ import com.oracle.bmc.apigateway.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ChangeDeploymentCompartmentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The OCID of the work request. Use
@@ -34,6 +38,7 @@ public class ChangeDeploymentCompartmentResponse {
          * @return this builder instance
          */
         public Builder copy(ChangeDeploymentCompartmentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

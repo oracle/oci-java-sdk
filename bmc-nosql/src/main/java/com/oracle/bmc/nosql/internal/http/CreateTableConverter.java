@@ -73,8 +73,8 @@ public class CreateTableConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.nosql.responses.CreateTableResponse.Builder builder =
-                                        com.oracle.bmc.nosql.responses.CreateTableResponse
-                                                .builder();
+                                        com.oracle.bmc.nosql.responses.CreateTableResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

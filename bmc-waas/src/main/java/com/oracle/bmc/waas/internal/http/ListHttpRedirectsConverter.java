@@ -159,7 +159,9 @@ public class ListHttpRedirectsConverter {
                                 com.oracle.bmc.waas.responses.ListHttpRedirectsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListHttpRedirectsResponse.builder();
+                                                        .ListHttpRedirectsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

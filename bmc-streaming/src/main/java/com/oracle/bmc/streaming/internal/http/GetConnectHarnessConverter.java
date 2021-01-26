@@ -80,7 +80,9 @@ public class GetConnectHarnessConverter {
                                 com.oracle.bmc.streaming.responses.GetConnectHarnessResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .GetConnectHarnessResponse.builder();
+                                                        .GetConnectHarnessResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.connectHarness(response.getItem());
 

@@ -84,7 +84,9 @@ public class ExportQueryResultConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ExportQueryResultResponse.builder();
+                                                        .ExportQueryResultResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.inputStream(response.getItem());
 

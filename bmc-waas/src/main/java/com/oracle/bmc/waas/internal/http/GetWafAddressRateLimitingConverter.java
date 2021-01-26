@@ -83,8 +83,9 @@ public class GetWafAddressRateLimitingConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .GetWafAddressRateLimitingResponse
-                                                        .builder();
+                                                        .GetWafAddressRateLimitingResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.addressRateLimiting(response.getItem());
 

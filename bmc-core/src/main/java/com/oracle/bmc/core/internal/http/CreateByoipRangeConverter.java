@@ -80,7 +80,9 @@ public class CreateByoipRangeConverter {
                                 com.oracle.bmc.core.responses.CreateByoipRangeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreateByoipRangeResponse.builder();
+                                                        .CreateByoipRangeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.byoipRange(response.getItem());
 

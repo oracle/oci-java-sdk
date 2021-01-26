@@ -114,7 +114,8 @@ public class DeleteRRSetConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.DeleteRRSetResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.DeleteRRSetResponse.builder();
+                                        com.oracle.bmc.dns.responses.DeleteRRSetResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

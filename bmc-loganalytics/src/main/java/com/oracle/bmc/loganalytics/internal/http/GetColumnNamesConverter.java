@@ -93,7 +93,9 @@ public class GetColumnNamesConverter {
                                 com.oracle.bmc.loganalytics.responses.GetColumnNamesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetColumnNamesResponse.builder();
+                                                        .GetColumnNamesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.columnNameCollection(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetMessagesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The cursor to use to get the next batch of messages.
@@ -34,6 +38,7 @@ public class GetMessagesResponse {
          * @return this builder instance
          */
         public Builder copy(GetMessagesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextCursor(o.getOpcNextCursor());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());

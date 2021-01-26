@@ -109,7 +109,9 @@ public class ListBackupDestinationConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListBackupDestinationResponse.builder();
+                                                        .ListBackupDestinationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

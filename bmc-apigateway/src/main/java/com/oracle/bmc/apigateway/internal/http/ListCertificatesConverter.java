@@ -129,7 +129,9 @@ public class ListCertificatesConverter {
                                 com.oracle.bmc.apigateway.responses.ListCertificatesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .ListCertificatesResponse.builder();
+                                                        .ListCertificatesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.certificateCollection(response.getItem());
 

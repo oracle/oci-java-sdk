@@ -89,7 +89,9 @@ public class DeleteUploadWarningConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .DeleteUploadWarningResponse.builder();
+                                                        .DeleteUploadWarningResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

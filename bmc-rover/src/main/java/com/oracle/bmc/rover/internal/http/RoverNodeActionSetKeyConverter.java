@@ -96,7 +96,9 @@ public class RoverNodeActionSetKeyConverter {
                                 com.oracle.bmc.rover.responses.RoverNodeActionSetKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .RoverNodeActionSetKeyResponse.builder();
+                                                        .RoverNodeActionSetKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.roverNodeSetKey(response.getItem());
 

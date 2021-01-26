@@ -93,7 +93,9 @@ public class ChangeWaasPolicyCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .ChangeWaasPolicyCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

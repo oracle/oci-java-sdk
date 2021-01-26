@@ -87,7 +87,9 @@ public class ListWorkRequestErrorsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .ListWorkRequestErrorsResponse.builder();
+                                                        .ListWorkRequestErrorsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

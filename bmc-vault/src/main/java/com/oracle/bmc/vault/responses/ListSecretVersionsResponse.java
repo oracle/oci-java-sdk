@@ -10,6 +10,10 @@ import com.oracle.bmc.vault.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListSecretVersionsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -38,6 +42,7 @@ public class ListSecretVersionsResponse {
          * @return this builder instance
          */
         public Builder copy(ListSecretVersionsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());

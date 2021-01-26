@@ -109,7 +109,9 @@ public class ListBootVolumesConverter {
                                 com.oracle.bmc.core.responses.ListBootVolumesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListBootVolumesResponse.builder();
+                                                        .ListBootVolumesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -212,10 +212,6 @@ public class ClusterNetwork {
     @com.fasterxml.jackson.annotation.JsonProperty("instancePools")
     java.util.List<InstancePool> instancePools;
 
-    /**
-     * The placement configuration for the instance pools in the cluster network.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("placementConfiguration")
     ClusterNetworkPlacementConfigurationDetails placementConfiguration;
     /**

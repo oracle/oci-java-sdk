@@ -88,7 +88,9 @@ public class SummarizeStatementConverter {
                                 com.oracle.bmc.nosql.responses.SummarizeStatementResponse.Builder
                                         builder =
                                                 com.oracle.bmc.nosql.responses
-                                                        .SummarizeStatementResponse.builder();
+                                                        .SummarizeStatementResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.statementSummary(response.getItem());
 

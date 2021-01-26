@@ -75,7 +75,9 @@ public class AddUserToGroupConverter {
                                 com.oracle.bmc.identity.responses.AddUserToGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .AddUserToGroupResponse.builder();
+                                                        .AddUserToGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.userGroupMembership(response.getItem());
 

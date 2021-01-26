@@ -84,7 +84,9 @@ public class AcceptRecommendationsConverter {
                                 com.oracle.bmc.waas.responses.AcceptRecommendationsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .AcceptRecommendationsResponse.builder();
+                                                        .AcceptRecommendationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

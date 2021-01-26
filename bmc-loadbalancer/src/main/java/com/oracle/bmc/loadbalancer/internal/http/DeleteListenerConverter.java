@@ -82,7 +82,9 @@ public class DeleteListenerConverter {
                                 com.oracle.bmc.loadbalancer.responses.DeleteListenerResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .DeleteListenerResponse.builder();
+                                                        .DeleteListenerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

@@ -10,6 +10,10 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetCustomPropertyResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
@@ -35,6 +39,7 @@ public class GetCustomPropertyResponse {
          * @return this builder instance
          */
         public Builder copy(GetCustomPropertyResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             customProperty(o.getCustomProperty());

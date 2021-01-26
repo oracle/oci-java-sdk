@@ -78,7 +78,9 @@ public class GetClusterConverter {
                                 com.oracle.bmc.containerengine.responses.GetClusterResponse.Builder
                                         builder =
                                                 com.oracle.bmc.containerengine.responses
-                                                        .GetClusterResponse.builder();
+                                                        .GetClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.cluster(response.getItem());
 

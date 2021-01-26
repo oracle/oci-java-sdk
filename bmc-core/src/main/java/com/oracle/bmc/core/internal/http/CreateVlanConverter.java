@@ -72,7 +72,8 @@ public class CreateVlanConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.CreateVlanResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.CreateVlanResponse.builder();
+                                        com.oracle.bmc.core.responses.CreateVlanResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.vlan(response.getItem());
 

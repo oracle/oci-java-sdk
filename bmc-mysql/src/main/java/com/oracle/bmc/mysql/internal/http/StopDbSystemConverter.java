@@ -87,7 +87,9 @@ public class StopDbSystemConverter {
                                 com.oracle.bmc.mysql.responses.StopDbSystemResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses.StopDbSystemResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

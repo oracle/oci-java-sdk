@@ -118,7 +118,8 @@ public class PatchRRSetConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.PatchRRSetResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.PatchRRSetResponse.builder();
+                                        com.oracle.bmc.dns.responses.PatchRRSetResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.recordCollection(response.getItem());
 

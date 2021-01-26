@@ -75,7 +75,9 @@ public class EncryptConverter {
                                 com.oracle.bmc.keymanagement.responses.EncryptResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .EncryptResponse.builder();
+                                                        .EncryptResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.encryptedData(response.getItem());
 

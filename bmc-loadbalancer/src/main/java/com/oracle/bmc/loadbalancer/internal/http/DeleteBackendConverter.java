@@ -87,7 +87,9 @@ public class DeleteBackendConverter {
                                 com.oracle.bmc.loadbalancer.responses.DeleteBackendResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .DeleteBackendResponse.builder();
+                                                        .DeleteBackendResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

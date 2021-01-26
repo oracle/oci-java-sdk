@@ -100,7 +100,9 @@ public class CancelKeyVersionDeletionConverter {
                                                 .CancelKeyVersionDeletionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .CancelKeyVersionDeletionResponse.builder();
+                                                        .CancelKeyVersionDeletionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.keyVersion(response.getItem());
 

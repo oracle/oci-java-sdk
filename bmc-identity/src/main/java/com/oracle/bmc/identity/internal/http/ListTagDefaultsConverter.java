@@ -121,7 +121,9 @@ public class ListTagDefaultsConverter {
                                 com.oracle.bmc.identity.responses.ListTagDefaultsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListTagDefaultsResponse.builder();
+                                                        .ListTagDefaultsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

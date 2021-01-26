@@ -116,7 +116,9 @@ public class ListSecretVersionsConverter {
                                 com.oracle.bmc.vault.responses.ListSecretVersionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.vault.responses
-                                                        .ListSecretVersionsResponse.builder();
+                                                        .ListSecretVersionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -125,7 +125,9 @@ public class ListLabelSourceDetailsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListLabelSourceDetailsResponse.builder();
+                                                        .ListLabelSourceDetailsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.labelSourceCollection(response.getItem());
 

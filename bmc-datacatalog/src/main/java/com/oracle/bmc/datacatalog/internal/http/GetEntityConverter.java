@@ -97,7 +97,9 @@ public class GetEntityConverter {
                                 com.oracle.bmc.datacatalog.responses.GetEntityResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetEntityResponse.builder();
+                                                        .GetEntityResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.entity(response.getItem());
 

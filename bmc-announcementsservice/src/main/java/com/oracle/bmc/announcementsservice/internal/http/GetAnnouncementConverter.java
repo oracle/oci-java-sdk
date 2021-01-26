@@ -84,7 +84,9 @@ public class GetAnnouncementConverter {
                                                 .GetAnnouncementResponse.Builder
                                         builder =
                                                 com.oracle.bmc.announcementsservice.responses
-                                                        .GetAnnouncementResponse.builder();
+                                                        .GetAnnouncementResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.announcement(response.getItem());
 

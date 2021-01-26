@@ -117,7 +117,9 @@ public class ListWafTrafficConverter {
                                 com.oracle.bmc.waas.responses.ListWafTrafficResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses.ListWafTrafficResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

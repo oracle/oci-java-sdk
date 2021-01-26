@@ -76,7 +76,9 @@ public class CreateApplicationConverter {
                                 com.oracle.bmc.functions.responses.CreateApplicationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.functions.responses
-                                                        .CreateApplicationResponse.builder();
+                                                        .CreateApplicationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.application(response.getItem());
 

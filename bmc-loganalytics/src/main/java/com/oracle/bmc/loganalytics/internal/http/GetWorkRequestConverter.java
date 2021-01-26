@@ -85,7 +85,9 @@ public class GetWorkRequestConverter {
                                 com.oracle.bmc.loganalytics.responses.GetWorkRequestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetWorkRequestResponse.builder();
+                                                        .GetWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequest(response.getItem());
 

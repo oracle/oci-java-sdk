@@ -96,7 +96,9 @@ public class ReinstateDataGuardAssociationConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ReinstateDataGuardAssociationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataGuardAssociation(response.getItem());
 

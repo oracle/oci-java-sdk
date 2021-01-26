@@ -105,7 +105,9 @@ public class ChangeLogAnalyticsEntityCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ChangeLogAnalyticsEntityCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

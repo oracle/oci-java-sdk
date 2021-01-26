@@ -121,7 +121,9 @@ public class ListTableUsageConverter {
                                 com.oracle.bmc.nosql.responses.ListTableUsageResponse.Builder
                                         builder =
                                                 com.oracle.bmc.nosql.responses
-                                                        .ListTableUsageResponse.builder();
+                                                        .ListTableUsageResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.tableUsageCollection(response.getItem());
 

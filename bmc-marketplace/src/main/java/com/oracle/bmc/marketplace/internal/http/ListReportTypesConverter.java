@@ -89,7 +89,9 @@ public class ListReportTypesConverter {
                                 com.oracle.bmc.marketplace.responses.ListReportTypesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .ListReportTypesResponse.builder();
+                                                        .ListReportTypesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.reportTypeCollection(response.getItem());
 

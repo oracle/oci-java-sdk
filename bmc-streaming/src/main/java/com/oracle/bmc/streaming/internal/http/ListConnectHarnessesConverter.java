@@ -141,7 +141,9 @@ public class ListConnectHarnessesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .ListConnectHarnessesResponse.builder();
+                                                        .ListConnectHarnessesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

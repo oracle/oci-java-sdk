@@ -10,6 +10,10 @@ import com.oracle.bmc.oda.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class StopOdaInstanceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of
@@ -33,6 +37,7 @@ public class StopOdaInstanceResponse {
          * @return this builder instance
          */
         public Builder copy(StopOdaInstanceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

@@ -95,7 +95,9 @@ public class ValidateVmClusterNetworkConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ValidateVmClusterNetworkResponse.builder();
+                                                        .ValidateVmClusterNetworkResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.vmClusterNetwork(response.getItem());
 

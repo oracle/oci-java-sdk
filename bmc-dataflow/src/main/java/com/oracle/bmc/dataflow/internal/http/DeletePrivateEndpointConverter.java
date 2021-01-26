@@ -82,7 +82,9 @@ public class DeletePrivateEndpointConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
-                                                        .DeletePrivateEndpointResponse.builder();
+                                                        .DeletePrivateEndpointResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

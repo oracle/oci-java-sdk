@@ -90,7 +90,9 @@ public class GetDataFlowValidationConverter {
                                                 .GetDataFlowValidationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .GetDataFlowValidationResponse.builder();
+                                                        .GetDataFlowValidationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataFlowValidation(response.getItem());
 

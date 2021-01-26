@@ -82,7 +82,9 @@ public class CreateVolumeBackupPolicyConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreateVolumeBackupPolicyResponse.builder();
+                                                        .CreateVolumeBackupPolicyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.volumeBackupPolicy(response.getItem());
 

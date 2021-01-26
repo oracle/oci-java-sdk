@@ -89,7 +89,9 @@ public class DeleteOAuthClientCredentialConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .DeleteOAuthClientCredentialResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

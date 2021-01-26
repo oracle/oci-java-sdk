@@ -10,6 +10,10 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class InstallAllPackageUpdatesOnManagedInstanceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the asynchronous request.
@@ -32,6 +36,7 @@ public class InstallAllPackageUpdatesOnManagedInstanceResponse {
          * @return this builder instance
          */
         public Builder copy(InstallAllPackageUpdatesOnManagedInstanceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

@@ -104,7 +104,9 @@ public class StopWorkspaceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .StopWorkspaceResponse.builder();
+                                                        .StopWorkspaceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

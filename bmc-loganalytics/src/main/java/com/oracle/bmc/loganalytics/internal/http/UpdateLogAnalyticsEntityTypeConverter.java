@@ -95,7 +95,9 @@ public class UpdateLogAnalyticsEntityTypeConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .UpdateLogAnalyticsEntityTypeResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

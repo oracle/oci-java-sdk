@@ -136,7 +136,9 @@ public class ListIntegrationInstancesConverter {
                                                 .ListIntegrationInstancesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.integration.responses
-                                                        .ListIntegrationInstancesResponse.builder();
+                                                        .ListIntegrationInstancesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

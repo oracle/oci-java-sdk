@@ -89,7 +89,9 @@ public class BackupVaultConverter {
                                 com.oracle.bmc.keymanagement.responses.BackupVaultResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .BackupVaultResponse.builder();
+                                                        .BackupVaultResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.vault(response.getItem());
 

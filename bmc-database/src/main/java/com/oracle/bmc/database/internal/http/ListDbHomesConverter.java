@@ -160,7 +160,9 @@ public class ListDbHomesConverter {
                                 com.oracle.bmc.database.responses.ListDbHomesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListDbHomesResponse.builder();
+                                                        .ListDbHomesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

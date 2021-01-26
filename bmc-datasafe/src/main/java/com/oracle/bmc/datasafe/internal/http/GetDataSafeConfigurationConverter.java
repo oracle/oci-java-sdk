@@ -85,7 +85,9 @@ public class GetDataSafeConfigurationConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
-                                                        .GetDataSafeConfigurationResponse.builder();
+                                                        .GetDataSafeConfigurationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataSafeConfiguration(response.getItem());
 

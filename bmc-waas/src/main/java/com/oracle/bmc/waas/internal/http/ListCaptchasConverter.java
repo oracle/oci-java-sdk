@@ -96,8 +96,8 @@ public class ListCaptchasConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.waas.responses.ListCaptchasResponse.Builder builder =
-                                        com.oracle.bmc.waas.responses.ListCaptchasResponse
-                                                .builder();
+                                        com.oracle.bmc.waas.responses.ListCaptchasResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

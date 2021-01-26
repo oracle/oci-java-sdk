@@ -101,7 +101,9 @@ public class GetSteeringPolicyAttachmentConverter {
                                         builder =
                                                 com.oracle.bmc.dns.responses
                                                         .GetSteeringPolicyAttachmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.steeringPolicyAttachment(response.getItem());

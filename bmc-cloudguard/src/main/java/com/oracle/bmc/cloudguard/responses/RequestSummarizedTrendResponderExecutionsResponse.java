@@ -10,6 +10,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class RequestSummarizedTrendResponderExecutionsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -38,6 +42,7 @@ public class RequestSummarizedTrendResponderExecutionsResponse {
          * @return this builder instance
          */
         public Builder copy(RequestSummarizedTrendResponderExecutionsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             responderExecutionTrendAggregationCollection(

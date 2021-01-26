@@ -101,7 +101,9 @@ public class ImportCustomContentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ImportCustomContentResponse.builder();
+                                                        .ImportCustomContentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsImportCustomContent(response.getItem());
 

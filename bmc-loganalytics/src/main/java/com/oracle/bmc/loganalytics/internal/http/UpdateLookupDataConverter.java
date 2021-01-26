@@ -110,7 +110,9 @@ public class UpdateLookupDataConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .UpdateLookupDataResponse.builder();
+                                                        .UpdateLookupDataResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

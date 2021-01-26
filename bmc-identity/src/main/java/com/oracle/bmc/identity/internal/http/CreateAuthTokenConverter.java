@@ -80,7 +80,9 @@ public class CreateAuthTokenConverter {
                                 com.oracle.bmc.identity.responses.CreateAuthTokenResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .CreateAuthTokenResponse.builder();
+                                                        .CreateAuthTokenResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.authToken(response.getItem());
 

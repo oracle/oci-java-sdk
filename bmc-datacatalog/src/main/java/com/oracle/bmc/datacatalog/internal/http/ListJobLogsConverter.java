@@ -180,7 +180,9 @@ public class ListJobLogsConverter {
                                 com.oracle.bmc.datacatalog.responses.ListJobLogsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListJobLogsResponse.builder();
+                                                        .ListJobLogsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.jobLogCollection(response.getItem());
 

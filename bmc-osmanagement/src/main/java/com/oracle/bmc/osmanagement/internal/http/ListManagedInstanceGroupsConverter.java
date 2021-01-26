@@ -145,8 +145,9 @@ public class ListManagedInstanceGroupsConverter {
                                                 .ListManagedInstanceGroupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .ListManagedInstanceGroupsResponse
-                                                        .builder();
+                                                        .ListManagedInstanceGroupsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

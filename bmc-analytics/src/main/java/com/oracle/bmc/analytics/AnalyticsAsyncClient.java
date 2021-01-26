@@ -462,6 +462,91 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePrivateAccessChannelResponse>
+            createPrivateAccessChannel(
+                    CreatePrivateAccessChannelRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreatePrivateAccessChannelRequest,
+                                    CreatePrivateAccessChannelResponse>
+                            handler) {
+        LOG.trace("Called async createPrivateAccessChannel");
+        final CreatePrivateAccessChannelRequest interceptedRequest =
+                CreatePrivateAccessChannelConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePrivateAccessChannelConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreatePrivateAccessChannelResponse>
+                transformer = CreatePrivateAccessChannelConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreatePrivateAccessChannelRequest, CreatePrivateAccessChannelResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreatePrivateAccessChannelRequest,
+                                CreatePrivateAccessChannelResponse>,
+                        java.util.concurrent.Future<CreatePrivateAccessChannelResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreatePrivateAccessChannelRequest, CreatePrivateAccessChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVanityUrlResponse> createVanityUrl(
+            CreateVanityUrlRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateVanityUrlRequest, CreateVanityUrlResponse>
+                    handler) {
+        LOG.trace("Called async createVanityUrl");
+        final CreateVanityUrlRequest interceptedRequest =
+                CreateVanityUrlConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVanityUrlConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVanityUrlResponse>
+                transformer = CreateVanityUrlConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<CreateVanityUrlRequest, CreateVanityUrlResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateVanityUrlRequest, CreateVanityUrlResponse>,
+                        java.util.concurrent.Future<CreateVanityUrlResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateVanityUrlRequest, CreateVanityUrlResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAnalyticsInstanceResponse> deleteAnalyticsInstance(
             DeleteAnalyticsInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -491,6 +576,91 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteAnalyticsInstanceRequest, DeleteAnalyticsInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePrivateAccessChannelResponse>
+            deletePrivateAccessChannel(
+                    DeletePrivateAccessChannelRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeletePrivateAccessChannelRequest,
+                                    DeletePrivateAccessChannelResponse>
+                            handler) {
+        LOG.trace("Called async deletePrivateAccessChannel");
+        final DeletePrivateAccessChannelRequest interceptedRequest =
+                DeletePrivateAccessChannelConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePrivateAccessChannelConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeletePrivateAccessChannelResponse>
+                transformer = DeletePrivateAccessChannelConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeletePrivateAccessChannelRequest, DeletePrivateAccessChannelResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeletePrivateAccessChannelRequest,
+                                DeletePrivateAccessChannelResponse>,
+                        java.util.concurrent.Future<DeletePrivateAccessChannelResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeletePrivateAccessChannelRequest, DeletePrivateAccessChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVanityUrlResponse> deleteVanityUrl(
+            DeleteVanityUrlRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVanityUrlRequest, DeleteVanityUrlResponse>
+                    handler) {
+        LOG.trace("Called async deleteVanityUrl");
+        final DeleteVanityUrlRequest interceptedRequest =
+                DeleteVanityUrlConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVanityUrlConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVanityUrlResponse>
+                transformer = DeleteVanityUrlConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteVanityUrlRequest, DeleteVanityUrlResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteVanityUrlRequest, DeleteVanityUrlResponse>,
+                        java.util.concurrent.Future<DeleteVanityUrlResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteVanityUrlRequest, DeleteVanityUrlResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -571,6 +741,47 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetAnalyticsInstanceRequest, GetAnalyticsInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPrivateAccessChannelResponse> getPrivateAccessChannel(
+            GetPrivateAccessChannelRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPrivateAccessChannelRequest, GetPrivateAccessChannelResponse>
+                    handler) {
+        LOG.trace("Called async getPrivateAccessChannel");
+        final GetPrivateAccessChannelRequest interceptedRequest =
+                GetPrivateAccessChannelConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPrivateAccessChannelConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetPrivateAccessChannelResponse>
+                transformer = GetPrivateAccessChannelConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetPrivateAccessChannelRequest, GetPrivateAccessChannelResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPrivateAccessChannelRequest, GetPrivateAccessChannelResponse>,
+                        java.util.concurrent.Future<GetPrivateAccessChannelResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPrivateAccessChannelRequest, GetPrivateAccessChannelResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -939,6 +1150,91 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateAnalyticsInstanceRequest, UpdateAnalyticsInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivateAccessChannelResponse>
+            updatePrivateAccessChannel(
+                    UpdatePrivateAccessChannelRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdatePrivateAccessChannelRequest,
+                                    UpdatePrivateAccessChannelResponse>
+                            handler) {
+        LOG.trace("Called async updatePrivateAccessChannel");
+        final UpdatePrivateAccessChannelRequest interceptedRequest =
+                UpdatePrivateAccessChannelConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePrivateAccessChannelConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdatePrivateAccessChannelResponse>
+                transformer = UpdatePrivateAccessChannelConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdatePrivateAccessChannelRequest, UpdatePrivateAccessChannelResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdatePrivateAccessChannelRequest,
+                                UpdatePrivateAccessChannelResponse>,
+                        java.util.concurrent.Future<UpdatePrivateAccessChannelResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdatePrivateAccessChannelRequest, UpdatePrivateAccessChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVanityUrlResponse> updateVanityUrl(
+            UpdateVanityUrlRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVanityUrlRequest, UpdateVanityUrlResponse>
+                    handler) {
+        LOG.trace("Called async updateVanityUrl");
+        final UpdateVanityUrlRequest interceptedRequest =
+                UpdateVanityUrlConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVanityUrlConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVanityUrlResponse>
+                transformer = UpdateVanityUrlConverter.fromResponse();
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateVanityUrlRequest, UpdateVanityUrlResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateVanityUrlRequest, UpdateVanityUrlResponse>,
+                        java.util.concurrent.Future<UpdateVanityUrlResponse>>
+                futureSupplier = client.putFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateVanityUrlRequest, UpdateVanityUrlResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

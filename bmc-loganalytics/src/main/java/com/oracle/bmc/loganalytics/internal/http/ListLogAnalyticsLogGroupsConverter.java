@@ -134,8 +134,9 @@ public class ListLogAnalyticsLogGroupsConverter {
                                                 .ListLogAnalyticsLogGroupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListLogAnalyticsLogGroupsResponse
-                                                        .builder();
+                                                        .ListLogAnalyticsLogGroupsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsLogGroupSummaryCollection(response.getItem());
 

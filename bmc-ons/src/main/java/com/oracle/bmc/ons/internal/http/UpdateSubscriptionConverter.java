@@ -86,7 +86,9 @@ public class UpdateSubscriptionConverter {
                                 com.oracle.bmc.ons.responses.UpdateSubscriptionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ons.responses
-                                                        .UpdateSubscriptionResponse.builder();
+                                                        .UpdateSubscriptionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.updateSubscriptionDetails(response.getItem());
 

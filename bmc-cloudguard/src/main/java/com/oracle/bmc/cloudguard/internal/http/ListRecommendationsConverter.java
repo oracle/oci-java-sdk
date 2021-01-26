@@ -155,7 +155,9 @@ public class ListRecommendationsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .ListRecommendationsResponse.builder();
+                                                        .ListRecommendationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recommendationSummaryCollection(response.getItem());
 

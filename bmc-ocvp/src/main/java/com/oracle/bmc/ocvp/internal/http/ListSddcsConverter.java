@@ -133,7 +133,8 @@ public class ListSddcsConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.ocvp.responses.ListSddcsResponse.Builder builder =
-                                        com.oracle.bmc.ocvp.responses.ListSddcsResponse.builder();
+                                        com.oracle.bmc.ocvp.responses.ListSddcsResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.sddcCollection(response.getItem());
 

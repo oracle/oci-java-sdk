@@ -86,7 +86,9 @@ public class StopInstancePoolConverter {
                                 com.oracle.bmc.core.responses.StopInstancePoolResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .StopInstancePoolResponse.builder();
+                                                        .StopInstancePoolResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instancePool(response.getItem());
 

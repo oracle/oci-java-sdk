@@ -87,7 +87,9 @@ public class ChangeSenderCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.email.responses
-                                                        .ChangeSenderCompartmentResponse.builder();
+                                                        .ChangeSenderCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

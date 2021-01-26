@@ -101,7 +101,9 @@ public class DeleteTermRelationshipConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .DeleteTermRelationshipResponse.builder();
+                                                        .DeleteTermRelationshipResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

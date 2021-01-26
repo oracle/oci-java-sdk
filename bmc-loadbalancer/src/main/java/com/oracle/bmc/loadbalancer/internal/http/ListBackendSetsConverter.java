@@ -83,7 +83,9 @@ public class ListBackendSetsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .ListBackendSetsResponse.builder();
+                                                        .ListBackendSetsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

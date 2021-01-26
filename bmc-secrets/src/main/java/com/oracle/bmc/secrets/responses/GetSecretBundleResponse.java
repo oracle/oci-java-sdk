@@ -10,6 +10,10 @@ import com.oracle.bmc.secrets.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetSecretBundleResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -32,6 +36,7 @@ public class GetSecretBundleResponse {
          * @return this builder instance
          */
         public Builder copy(GetSecretBundleResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             secretBundle(o.getSecretBundle());

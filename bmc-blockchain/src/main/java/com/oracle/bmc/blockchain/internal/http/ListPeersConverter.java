@@ -126,7 +126,9 @@ public class ListPeersConverter {
                                 com.oracle.bmc.blockchain.responses.ListPeersResponse.Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .ListPeersResponse.builder();
+                                                        .ListPeersResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.peerCollection(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetConsoleHistoryContentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The number of bytes remaining in the snapshot.
@@ -34,6 +38,7 @@ public class GetConsoleHistoryContentResponse {
          * @return this builder instance
          */
         public Builder copy(GetConsoleHistoryContentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcBytesRemaining(o.getOpcBytesRemaining());
             opcRequestId(o.getOpcRequestId());
             value(o.getValue());

@@ -98,8 +98,9 @@ public class UpdateManagementDashboardConverter {
                                                 .UpdateManagementDashboardResponse.Builder
                                         builder =
                                                 com.oracle.bmc.managementdashboard.responses
-                                                        .UpdateManagementDashboardResponse
-                                                        .builder();
+                                                        .UpdateManagementDashboardResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.managementDashboard(response.getItem());
 

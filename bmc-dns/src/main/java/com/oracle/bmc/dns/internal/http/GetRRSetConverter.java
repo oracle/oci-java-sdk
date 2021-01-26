@@ -139,7 +139,8 @@ public class GetRRSetConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.GetRRSetResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.GetRRSetResponse.builder();
+                                        com.oracle.bmc.dns.responses.GetRRSetResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.rRSet(response.getItem());
 

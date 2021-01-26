@@ -69,7 +69,8 @@ public class GetDrgConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.GetDrgResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.GetDrgResponse.builder();
+                                        com.oracle.bmc.core.responses.GetDrgResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.drg(response.getItem());
 

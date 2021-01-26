@@ -97,7 +97,9 @@ public class ExpandTreeForGlossaryConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ExpandTreeForGlossaryResponse.builder();
+                                                        .ExpandTreeForGlossaryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -86,7 +86,9 @@ public class StartDbSystemConverter {
                                 com.oracle.bmc.mysql.responses.StartDbSystemResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses.StartDbSystemResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

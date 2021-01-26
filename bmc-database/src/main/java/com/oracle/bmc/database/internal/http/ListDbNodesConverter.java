@@ -136,7 +136,9 @@ public class ListDbNodesConverter {
                                 com.oracle.bmc.database.responses.ListDbNodesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListDbNodesResponse.builder();
+                                                        .ListDbNodesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

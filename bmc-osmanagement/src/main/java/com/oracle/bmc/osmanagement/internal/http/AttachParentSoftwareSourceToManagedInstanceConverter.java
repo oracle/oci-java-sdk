@@ -98,7 +98,9 @@ public class AttachParentSoftwareSourceToManagedInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .AttachParentSoftwareSourceToManagedInstanceResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

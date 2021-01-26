@@ -85,7 +85,9 @@ public class GetIntegrationInstanceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.integration.responses
-                                                        .GetIntegrationInstanceResponse.builder();
+                                                        .GetIntegrationInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.integrationInstance(response.getItem());
 

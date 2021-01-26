@@ -88,7 +88,9 @@ public class CreateTermConverter {
                                 com.oracle.bmc.datacatalog.responses.CreateTermResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateTermResponse.builder();
+                                                        .CreateTermResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.term(response.getItem());
 

@@ -86,7 +86,9 @@ public class MakeBucketWritableConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .MakeBucketWritableResponse.builder();
+                                                        .MakeBucketWritableResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcClientRequestIdHeader =

@@ -104,7 +104,9 @@ public class ListWorkRequestsConverter {
                                 com.oracle.bmc.identity.responses.ListWorkRequestsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListWorkRequestsResponse.builder();
+                                                        .ListWorkRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

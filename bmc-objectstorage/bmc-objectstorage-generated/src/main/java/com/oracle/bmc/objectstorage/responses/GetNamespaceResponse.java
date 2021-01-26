@@ -10,6 +10,10 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetNamespaceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The returned String instance.
@@ -22,6 +26,7 @@ public class GetNamespaceResponse {
          * @return this builder instance
          */
         public Builder copy(GetNamespaceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
 
             value(o.getValue());
 

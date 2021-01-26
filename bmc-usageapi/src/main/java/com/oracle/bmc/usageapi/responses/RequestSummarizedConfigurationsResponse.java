@@ -10,6 +10,10 @@ import com.oracle.bmc.usageapi.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class RequestSummarizedConfigurationsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -29,6 +33,7 @@ public class RequestSummarizedConfigurationsResponse {
          * @return this builder instance
          */
         public Builder copy(RequestSummarizedConfigurationsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             configurationAggregation(o.getConfigurationAggregation());
 

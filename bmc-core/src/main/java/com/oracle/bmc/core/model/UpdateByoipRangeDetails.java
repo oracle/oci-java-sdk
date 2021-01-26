@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to update a Byoip Range
+ * The information used to update a `ByoipRange` resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

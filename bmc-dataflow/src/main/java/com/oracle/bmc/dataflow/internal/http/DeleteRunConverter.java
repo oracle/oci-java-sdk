@@ -80,7 +80,9 @@ public class DeleteRunConverter {
                                 com.oracle.bmc.dataflow.responses.DeleteRunResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses.DeleteRunResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

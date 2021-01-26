@@ -86,7 +86,9 @@ public class DeleteBlockchainPlatformConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .DeleteBlockchainPlatformResponse.builder();
+                                                        .DeleteBlockchainPlatformResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

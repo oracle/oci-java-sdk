@@ -141,7 +141,9 @@ public class ListExternalPublicationsConverter {
                                                 .ListExternalPublicationsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListExternalPublicationsResponse.builder();
+                                                        .ListExternalPublicationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.externalPublicationSummaryCollection(response.getItem());
 

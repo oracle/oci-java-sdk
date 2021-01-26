@@ -133,7 +133,8 @@ public class ListVlansConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.ListVlansResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.ListVlansResponse.builder();
+                                        com.oracle.bmc.core.responses.ListVlansResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -87,7 +87,9 @@ public class AddBlockStorageConverter {
                                 com.oracle.bmc.bds.responses.AddBlockStorageResponse.Builder
                                         builder =
                                                 com.oracle.bmc.bds.responses.AddBlockStorageResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -83,7 +83,9 @@ public class UpdateGroupConverter {
                                 com.oracle.bmc.streaming.responses.UpdateGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .UpdateGroupResponse.builder();
+                                                        .UpdateGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

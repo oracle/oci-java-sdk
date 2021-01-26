@@ -10,6 +10,10 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteScheduledJobResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -25,6 +29,7 @@ public class DeleteScheduledJobResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteScheduledJobResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
 
             return this;

@@ -155,7 +155,9 @@ public class ListChannelsConverter {
                                 com.oracle.bmc.mysql.responses.ListChannelsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses.ListChannelsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

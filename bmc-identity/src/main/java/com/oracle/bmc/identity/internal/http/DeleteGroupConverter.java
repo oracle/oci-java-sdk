@@ -77,7 +77,9 @@ public class DeleteGroupConverter {
                                 com.oracle.bmc.identity.responses.DeleteGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .DeleteGroupResponse.builder();
+                                                        .DeleteGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

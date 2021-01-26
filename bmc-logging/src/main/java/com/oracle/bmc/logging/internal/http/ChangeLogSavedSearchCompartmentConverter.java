@@ -96,7 +96,9 @@ public class ChangeLogSavedSearchCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.logging.responses
                                                         .ChangeLogSavedSearchCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

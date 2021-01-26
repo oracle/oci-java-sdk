@@ -79,7 +79,9 @@ public class AdvertiseByoipRangeConverter {
                                 com.oracle.bmc.core.responses.AdvertiseByoipRangeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .AdvertiseByoipRangeResponse.builder();
+                                                        .AdvertiseByoipRangeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

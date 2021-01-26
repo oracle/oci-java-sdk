@@ -84,7 +84,9 @@ public class UpdateCertificateConverter {
                                 com.oracle.bmc.waas.responses.UpdateCertificateResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .UpdateCertificateResponse.builder();
+                                                        .UpdateCertificateResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.certificate(response.getItem());
 

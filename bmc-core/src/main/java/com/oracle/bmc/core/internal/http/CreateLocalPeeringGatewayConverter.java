@@ -78,8 +78,9 @@ public class CreateLocalPeeringGatewayConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreateLocalPeeringGatewayResponse
-                                                        .builder();
+                                                        .CreateLocalPeeringGatewayResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.localPeeringGateway(response.getItem());
 

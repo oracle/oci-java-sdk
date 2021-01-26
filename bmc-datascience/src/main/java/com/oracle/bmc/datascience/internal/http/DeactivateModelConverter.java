@@ -84,7 +84,9 @@ public class DeactivateModelConverter {
                                 com.oracle.bmc.datascience.responses.DeactivateModelResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .DeactivateModelResponse.builder();
+                                                        .DeactivateModelResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.model(response.getItem());
 

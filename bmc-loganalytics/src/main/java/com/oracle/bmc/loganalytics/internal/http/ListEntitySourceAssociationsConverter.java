@@ -167,7 +167,9 @@ public class ListEntitySourceAssociationsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListEntitySourceAssociationsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsAssociationCollection(response.getItem());
 

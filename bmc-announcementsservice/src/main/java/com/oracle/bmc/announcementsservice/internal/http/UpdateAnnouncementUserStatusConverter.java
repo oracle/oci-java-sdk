@@ -92,7 +92,9 @@ public class UpdateAnnouncementUserStatusConverter {
                                         builder =
                                                 com.oracle.bmc.announcementsservice.responses
                                                         .UpdateAnnouncementUserStatusResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

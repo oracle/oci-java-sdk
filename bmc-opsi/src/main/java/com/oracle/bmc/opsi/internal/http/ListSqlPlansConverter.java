@@ -108,8 +108,8 @@ public class ListSqlPlansConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.opsi.responses.ListSqlPlansResponse.Builder builder =
-                                        com.oracle.bmc.opsi.responses.ListSqlPlansResponse
-                                                .builder();
+                                        com.oracle.bmc.opsi.responses.ListSqlPlansResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.sqlPlanCollection(response.getItem());
 

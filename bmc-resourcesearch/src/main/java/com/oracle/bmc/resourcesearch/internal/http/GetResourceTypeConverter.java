@@ -81,7 +81,9 @@ public class GetResourceTypeConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.resourcesearch.responses
-                                                        .GetResourceTypeResponse.builder();
+                                                        .GetResourceTypeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.resourceType(response.getItem());
 

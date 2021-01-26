@@ -93,7 +93,9 @@ public class ListVirtualCircuitPublicPrefixesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListVirtualCircuitPublicPrefixesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

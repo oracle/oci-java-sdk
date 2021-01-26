@@ -90,7 +90,9 @@ public class ChangeLogLogGroupConverter {
                                 com.oracle.bmc.logging.responses.ChangeLogLogGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.logging.responses
-                                                        .ChangeLogLogGroupResponse.builder();
+                                                        .ChangeLogLogGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

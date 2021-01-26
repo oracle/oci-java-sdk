@@ -178,7 +178,9 @@ public class ListNamespacesConverter {
                                 com.oracle.bmc.datacatalog.responses.ListNamespacesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListNamespacesResponse.builder();
+                                                        .ListNamespacesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.namespaceCollection(response.getItem());
 

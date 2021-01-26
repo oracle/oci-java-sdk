@@ -81,7 +81,9 @@ public class DeleteOdaInstanceConverter {
                                 com.oracle.bmc.oda.responses.DeleteOdaInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oda.responses
-                                                        .DeleteOdaInstanceResponse.builder();
+                                                        .DeleteOdaInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

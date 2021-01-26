@@ -84,7 +84,9 @@ public class CreateCatalogPrivateEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .CreateCatalogPrivateEndpointResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

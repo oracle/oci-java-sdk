@@ -110,7 +110,9 @@ public class UpdateTargetResponderRecipeResponderRuleConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .UpdateTargetResponderRecipeResponderRuleResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.targetResponderRecipeResponderRule(response.getItem());
 

@@ -101,7 +101,9 @@ public class IngestSqlTextConverter {
                                 com.oracle.bmc.opsi.responses.IngestSqlTextResponse.Builder
                                         builder =
                                                 com.oracle.bmc.opsi.responses.IngestSqlTextResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.ingestSqlTextResponseDetails(response.getItem());
 

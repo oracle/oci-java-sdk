@@ -89,7 +89,9 @@ public class UpdateFolderConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .UpdateFolderResponse.builder();
+                                                        .UpdateFolderResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.folder(response.getItem());
 

@@ -78,8 +78,8 @@ public class DeleteRuleConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.events.responses.DeleteRuleResponse.Builder builder =
-                                        com.oracle.bmc.events.responses.DeleteRuleResponse
-                                                .builder();
+                                        com.oracle.bmc.events.responses.DeleteRuleResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

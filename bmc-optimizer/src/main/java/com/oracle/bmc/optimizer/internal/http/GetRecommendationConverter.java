@@ -80,7 +80,9 @@ public class GetRecommendationConverter {
                                 com.oracle.bmc.optimizer.responses.GetRecommendationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .GetRecommendationResponse.builder();
+                                                        .GetRecommendationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recommendation(response.getItem());
 

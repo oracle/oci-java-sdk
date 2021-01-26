@@ -83,7 +83,9 @@ public class UpdateExportConverter {
                                 com.oracle.bmc.filestorage.responses.UpdateExportResponse.Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .UpdateExportResponse.builder();
+                                                        .UpdateExportResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.export(response.getItem());
 

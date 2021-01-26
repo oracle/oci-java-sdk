@@ -85,6 +85,31 @@ public interface Analytics extends AutoCloseable {
     CreateAnalyticsInstanceResponse createAnalyticsInstance(CreateAnalyticsInstanceRequest request);
 
     /**
+     * Create an Private access Channel for the Analytics instance. The operation is long-running
+     * and creates a new WorkRequest.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/CreatePrivateAccessChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateAccessChannel API.
+     */
+    CreatePrivateAccessChannelResponse createPrivateAccessChannel(
+            CreatePrivateAccessChannelRequest request);
+
+    /**
+     * Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
+     * for this host.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/CreateVanityUrlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateVanityUrl API.
+     */
+    CreateVanityUrlResponse createVanityUrl(CreateVanityUrlRequest request);
+
+    /**
      * Terminates the specified Analytics instance. The operation is long-running
      * and creates a new WorkRequest.
      *
@@ -95,6 +120,29 @@ public interface Analytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/DeleteAnalyticsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAnalyticsInstance API.
      */
     DeleteAnalyticsInstanceResponse deleteAnalyticsInstance(DeleteAnalyticsInstanceRequest request);
+
+    /**
+     * Delete an Analytics instance's Private access channel with the given unique identifier key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/DeletePrivateAccessChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateAccessChannel API.
+     */
+    DeletePrivateAccessChannelResponse deletePrivateAccessChannel(
+            DeletePrivateAccessChannelRequest request);
+
+    /**
+     * Allows deleting a previously created vanity url.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/DeleteVanityUrlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteVanityUrl API.
+     */
+    DeleteVanityUrlResponse deleteVanityUrl(DeleteVanityUrlRequest request);
 
     /**
      * Cancel a work request that has not started yet.
@@ -117,6 +165,17 @@ public interface Analytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/GetAnalyticsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAnalyticsInstance API.
      */
     GetAnalyticsInstanceResponse getAnalyticsInstance(GetAnalyticsInstanceRequest request);
+
+    /**
+     * Retrieve private access channel in the specified Analytics Instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/GetPrivateAccessChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateAccessChannel API.
+     */
+    GetPrivateAccessChannelResponse getPrivateAccessChannel(GetPrivateAccessChannelRequest request);
 
     /**
      * Get the details of a work request.
@@ -220,6 +279,29 @@ public interface Analytics extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/UpdateAnalyticsInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAnalyticsInstance API.
      */
     UpdateAnalyticsInstanceResponse updateAnalyticsInstance(UpdateAnalyticsInstanceRequest request);
+
+    /**
+     * Update the Private Access Channel with the given unique identifier key in the specified Analytics Instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/UpdatePrivateAccessChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateAccessChannel API.
+     */
+    UpdatePrivateAccessChannelResponse updatePrivateAccessChannel(
+            UpdatePrivateAccessChannelRequest request);
+
+    /**
+     * Allows uploading a new certificate for a vanity url, which will have to be done when the current certificate is expiring.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/analytics/UpdateVanityUrlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVanityUrl API.
+     */
+    UpdateVanityUrlResponse updateVanityUrl(UpdateVanityUrlRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

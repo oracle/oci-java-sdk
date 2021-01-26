@@ -75,9 +75,15 @@ public class WrappedImportKey {
     String keyMaterial;
     /**
      * The wrapping mechanism to use during key import.
+     * RSA_OAEP_AES_SHA256 invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped
+     * by the Vault RSA public wrapping key, creating a wrapped temporary AES key. The temporary AES key is also used to wrap the private key material.
+     * The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing concatenated blob output that jointly represents them.
+     * RSA_OAEP_SHA256 means that the exportable key material is wrapped by the Vault RSA public wrapping key.
+     *
      **/
     public enum WrappingAlgorithm {
         RsaOaepSha256("RSA_OAEP_SHA256"),
+        RsaOaepAesSha256("RSA_OAEP_AES_SHA256"),
         ;
 
         private final String value;
@@ -109,6 +115,11 @@ public class WrappedImportKey {
     };
     /**
      * The wrapping mechanism to use during key import.
+     * RSA_OAEP_AES_SHA256 invokes the RSA AES key wrap mechanism, which generates a temporary AES key. The temporary AES key is wrapped
+     * by the Vault RSA public wrapping key, creating a wrapped temporary AES key. The temporary AES key is also used to wrap the private key material.
+     * The wrapped temporary AES key and the wrapped exportable key material are concatenated, producing concatenated blob output that jointly represents them.
+     * RSA_OAEP_SHA256 means that the exportable key material is wrapped by the Vault RSA public wrapping key.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wrappingAlgorithm")
     WrappingAlgorithm wrappingAlgorithm;

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.30.0</version>
+  <version>1.30.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -34,23 +34,23 @@
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.11.3</jackson.version>
+    <jackson.version>2.12.0</jackson.version>
     <jersey.version>2.32</jersey.version>
-    <guava.version>27.1-jre</guava.version>
-    <junit.version>4.12</junit.version>
+    <guava.version>30.1-jre</guava.version>
+    <junit.version>4.13.1</junit.version>
     <lombok.version>1.18.4</lombok.version>
     <lombok.maven.version>1.18.4.0</lombok.maven.version>
     <jsr305.version>3.0.2</jsr305.version>
     <slf4j.version>1.7.29</slf4j.version>
     <jakarta.ws.rs-api.version>2.1.6</jakarta.ws.rs-api.version>
-    <commons-codec.version>1.13</commons-codec.version>
+    <commons-codec.version>1.15</commons-codec.version>
     <commons-lang3.version>3.8.1</commons-lang3.version>
     <commons-io.version>2.8.0</commons-io.version>
     <!-- Update resilience4jVersion and io.vavr.version together -->
     <resilience4jVersion>1.2.0</resilience4jVersion>
     <io.vavr.version>0.10.2</io.vavr.version>
     <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
-    <bouncycastle.version>1.60</bouncycastle.version>
+    <bouncycastle.version>1.64</bouncycastle.version>
     <mockito.version>1.10.19</mockito.version>
     <powermock.version>1.7.4</powermock.version>
     <excluded.testcases>**/*IntegrationAutoTest.java</excluded.testcases>
@@ -138,7 +138,7 @@
                 <phase>process-sources</phase>
                 <configuration>
                   <target>
-                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.cloud.oracle.com" />
+                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.cloud.oracle.com"/>
                   </target>
                   <failOnError>false</failOnError>
                 </configuration>

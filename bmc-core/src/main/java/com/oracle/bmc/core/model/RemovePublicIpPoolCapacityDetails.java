@@ -5,7 +5,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to remove capacity from a public ip pool
+ * The information needed to remove capacity from a public IP pool.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -62,7 +62,7 @@ public class RemovePublicIpPoolCapacityDetails {
     }
 
     /**
-     * The CIDR IP address range to be removed from the Public Ip Pool
+     * The CIDR block to remove from the  public IP pool.
      * Example: `10.0.1.0/24`
      *
      **/

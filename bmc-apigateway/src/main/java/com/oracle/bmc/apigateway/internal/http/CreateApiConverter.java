@@ -76,7 +76,9 @@ public class CreateApiConverter {
                                 com.oracle.bmc.apigateway.responses.CreateApiResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .CreateApiResponse.builder();
+                                                        .CreateApiResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.api(response.getItem());
 

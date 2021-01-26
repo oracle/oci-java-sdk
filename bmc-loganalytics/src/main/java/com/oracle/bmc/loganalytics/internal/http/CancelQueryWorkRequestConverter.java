@@ -90,7 +90,9 @@ public class CancelQueryWorkRequestConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .CancelQueryWorkRequestResponse.builder();
+                                                        .CancelQueryWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

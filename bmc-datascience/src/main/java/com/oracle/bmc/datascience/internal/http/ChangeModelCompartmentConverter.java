@@ -94,7 +94,9 @@ public class ChangeModelCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .ChangeModelCompartmentResponse.builder();
+                                                        .ChangeModelCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

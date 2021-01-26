@@ -88,7 +88,9 @@ public class CreateBackendConverter {
                                 com.oracle.bmc.loadbalancer.responses.CreateBackendResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .CreateBackendResponse.builder();
+                                                        .CreateBackendResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

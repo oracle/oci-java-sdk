@@ -93,7 +93,9 @@ public class DeleteSteeringPolicyConverter {
                                 com.oracle.bmc.dns.responses.DeleteSteeringPolicyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .DeleteSteeringPolicyResponse.builder();
+                                                        .DeleteSteeringPolicyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

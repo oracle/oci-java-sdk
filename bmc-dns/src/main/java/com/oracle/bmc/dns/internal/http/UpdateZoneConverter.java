@@ -106,7 +106,8 @@ public class UpdateZoneConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.UpdateZoneResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.UpdateZoneResponse.builder();
+                                        com.oracle.bmc.dns.responses.UpdateZoneResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.zone(response.getItem());
 

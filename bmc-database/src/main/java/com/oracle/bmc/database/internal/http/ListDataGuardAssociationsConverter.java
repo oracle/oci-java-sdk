@@ -101,8 +101,9 @@ public class ListDataGuardAssociationsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListDataGuardAssociationsResponse
-                                                        .builder();
+                                                        .ListDataGuardAssociationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

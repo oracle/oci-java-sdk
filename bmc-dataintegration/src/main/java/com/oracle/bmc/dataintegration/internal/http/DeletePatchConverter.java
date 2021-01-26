@@ -91,7 +91,9 @@ public class DeletePatchConverter {
                                 com.oracle.bmc.dataintegration.responses.DeletePatchResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .DeletePatchResponse.builder();
+                                                        .DeletePatchResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -108,7 +108,9 @@ public class ValidateSourceMappingConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ValidateSourceMappingResponse.builder();
+                                                        .ValidateSourceMappingResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.sourceMappingResponse(response.getItem());
 

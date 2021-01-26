@@ -88,7 +88,9 @@ public class RotateVaultKeyConverter {
                                 com.oracle.bmc.database.responses.RotateVaultKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .RotateVaultKeyResponse.builder();
+                                                        .RotateVaultKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.database(response.getItem());
 

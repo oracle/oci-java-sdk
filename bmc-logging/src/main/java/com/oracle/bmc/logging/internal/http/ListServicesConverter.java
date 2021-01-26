@@ -81,7 +81,9 @@ public class ListServicesConverter {
                                 com.oracle.bmc.logging.responses.ListServicesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.logging.responses
-                                                        .ListServicesResponse.builder();
+                                                        .ListServicesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

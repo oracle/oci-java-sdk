@@ -86,7 +86,9 @@ public class GetPathRouteSetConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .GetPathRouteSetResponse.builder();
+                                                        .GetPathRouteSetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.pathRouteSet(response.getItem());
 

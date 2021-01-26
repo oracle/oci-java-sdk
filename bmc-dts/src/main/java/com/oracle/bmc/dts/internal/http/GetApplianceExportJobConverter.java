@@ -81,7 +81,9 @@ public class GetApplianceExportJobConverter {
                                 com.oracle.bmc.dts.responses.GetApplianceExportJobResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .GetApplianceExportJobResponse.builder();
+                                                        .GetApplianceExportJobResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.applianceExportJob(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.database.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateVmClusterNetworkResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
@@ -40,6 +44,7 @@ public class CreateVmClusterNetworkResponse {
          * @return this builder instance
          */
         public Builder copy(CreateVmClusterNetworkResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());

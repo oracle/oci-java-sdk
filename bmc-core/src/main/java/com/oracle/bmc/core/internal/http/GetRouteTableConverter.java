@@ -75,7 +75,9 @@ public class GetRouteTableConverter {
                                 com.oracle.bmc.core.responses.GetRouteTableResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.GetRouteTableResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.routeTable(response.getItem());
 

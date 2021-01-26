@@ -10,6 +10,10 @@ import com.oracle.bmc.dns.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetZoneResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to
@@ -37,6 +41,7 @@ public class GetZoneResponse {
          * @return this builder instance
          */
         public Builder copy(GetZoneResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             eTag(o.getETag());
             zone(o.getZone());

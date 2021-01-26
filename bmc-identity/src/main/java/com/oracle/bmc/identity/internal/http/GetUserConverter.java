@@ -70,7 +70,8 @@ public class GetUserConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.identity.responses.GetUserResponse.Builder builder =
-                                        com.oracle.bmc.identity.responses.GetUserResponse.builder();
+                                        com.oracle.bmc.identity.responses.GetUserResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.user(response.getItem());
 

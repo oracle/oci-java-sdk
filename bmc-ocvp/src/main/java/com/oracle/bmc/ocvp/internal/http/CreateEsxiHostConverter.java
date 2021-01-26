@@ -75,7 +75,9 @@ public class CreateEsxiHostConverter {
                                 com.oracle.bmc.ocvp.responses.CreateEsxiHostResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ocvp.responses.CreateEsxiHostResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

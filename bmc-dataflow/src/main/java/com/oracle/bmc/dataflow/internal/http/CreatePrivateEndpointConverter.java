@@ -82,7 +82,9 @@ public class CreatePrivateEndpointConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
-                                                        .CreatePrivateEndpointResponse.builder();
+                                                        .CreatePrivateEndpointResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.privateEndpoint(response.getItem());
 

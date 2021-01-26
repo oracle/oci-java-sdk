@@ -136,7 +136,9 @@ public class ListInternetGatewaysConverter {
                                 com.oracle.bmc.core.responses.ListInternetGatewaysResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListInternetGatewaysResponse.builder();
+                                                        .ListInternetGatewaysResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -89,7 +89,9 @@ public class UpdateTransferDeviceConverter {
                                 com.oracle.bmc.dts.responses.UpdateTransferDeviceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .UpdateTransferDeviceResponse.builder();
+                                                        .UpdateTransferDeviceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.transferDevice(response.getItem());
 

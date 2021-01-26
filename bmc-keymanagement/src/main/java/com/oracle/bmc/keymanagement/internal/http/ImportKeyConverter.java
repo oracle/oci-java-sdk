@@ -76,7 +76,9 @@ public class ImportKeyConverter {
                                 com.oracle.bmc.keymanagement.responses.ImportKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .ImportKeyResponse.builder();
+                                                        .ImportKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.key(response.getItem());
 

@@ -159,7 +159,9 @@ public class ListAddressListsConverter {
                                 com.oracle.bmc.waas.responses.ListAddressListsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListAddressListsResponse.builder();
+                                                        .ListAddressListsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

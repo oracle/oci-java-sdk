@@ -10,6 +10,10 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpsertParserResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -34,6 +38,7 @@ public class UpsertParserResponse {
          * @return this builder instance
          */
         public Builder copy(UpsertParserResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             logAnalyticsParser(o.getLogAnalyticsParser());

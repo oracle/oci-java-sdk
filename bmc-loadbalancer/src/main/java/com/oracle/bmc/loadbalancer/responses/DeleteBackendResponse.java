@@ -10,6 +10,10 @@ import com.oracle.bmc.loadbalancer.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteBackendResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
@@ -29,6 +33,7 @@ public class DeleteBackendResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteBackendResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

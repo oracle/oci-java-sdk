@@ -80,7 +80,9 @@ public class GetSuppressionConverter {
                                 com.oracle.bmc.email.responses.GetSuppressionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.email.responses
-                                                        .GetSuppressionResponse.builder();
+                                                        .GetSuppressionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.suppression(response.getItem());
 

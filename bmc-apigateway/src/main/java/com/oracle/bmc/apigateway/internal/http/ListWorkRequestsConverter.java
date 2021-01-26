@@ -121,7 +121,9 @@ public class ListWorkRequestsConverter {
                                 com.oracle.bmc.apigateway.responses.ListWorkRequestsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .ListWorkRequestsResponse.builder();
+                                                        .ListWorkRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequestCollection(response.getItem());
 

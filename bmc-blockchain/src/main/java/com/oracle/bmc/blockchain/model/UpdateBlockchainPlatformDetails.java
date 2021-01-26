@@ -62,6 +62,15 @@ public class UpdateBlockchainPlatformDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
+        private BlockchainPlatform.LoadBalancerShape loadBalancerShape;
+
+        public Builder loadBalancerShape(BlockchainPlatform.LoadBalancerShape loadBalancerShape) {
+            this.loadBalancerShape = loadBalancerShape;
+            this.__explicitlySet__.add("loadBalancerShape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -91,6 +100,7 @@ public class UpdateBlockchainPlatformDetails {
                             storageSizeInTBs,
                             replicas,
                             totalOcpuCapacity,
+                            loadBalancerShape,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -104,6 +114,7 @@ public class UpdateBlockchainPlatformDetails {
                             .storageSizeInTBs(o.getStorageSizeInTBs())
                             .replicas(o.getReplicas())
                             .totalOcpuCapacity(o.getTotalOcpuCapacity())
+                            .loadBalancerShape(o.getLoadBalancerShape())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -139,6 +150,12 @@ public class UpdateBlockchainPlatformDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalOcpuCapacity")
     Integer totalOcpuCapacity;
+
+    /**
+     * Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerShape")
+    BlockchainPlatform.LoadBalancerShape loadBalancerShape;
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.

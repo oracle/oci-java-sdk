@@ -95,7 +95,9 @@ public class GetJobDefinitionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetJobDefinitionResponse.builder();
+                                                        .GetJobDefinitionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.jobDefinition(response.getItem());
 

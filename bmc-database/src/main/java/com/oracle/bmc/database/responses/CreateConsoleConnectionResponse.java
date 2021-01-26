@@ -10,6 +10,10 @@ import com.oracle.bmc.database.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateConsoleConnectionResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -34,6 +38,7 @@ public class CreateConsoleConnectionResponse {
          * @return this builder instance
          */
         public Builder copy(CreateConsoleConnectionResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             consoleConnection(o.getConsoleConnection());

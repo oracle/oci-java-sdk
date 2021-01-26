@@ -101,7 +101,9 @@ public class ListSupportedTimezonesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListSupportedTimezonesResponse.builder();
+                                                        .ListSupportedTimezonesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.timezoneCollection(response.getItem());
 

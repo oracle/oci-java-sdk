@@ -76,7 +76,9 @@ public class UpdateConfigurationConverter {
                                 com.oracle.bmc.audit.responses.UpdateConfigurationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.audit.responses
-                                                        .UpdateConfigurationResponse.builder();
+                                                        .UpdateConfigurationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

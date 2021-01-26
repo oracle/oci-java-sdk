@@ -78,7 +78,9 @@ public class GetProjectConverter {
                                 com.oracle.bmc.datascience.responses.GetProjectResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .GetProjectResponse.builder();
+                                                        .GetProjectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.project(response.getItem());
 

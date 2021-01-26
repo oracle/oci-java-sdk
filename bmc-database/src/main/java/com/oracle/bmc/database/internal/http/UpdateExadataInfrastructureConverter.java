@@ -93,7 +93,9 @@ public class UpdateExadataInfrastructureConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .UpdateExadataInfrastructureResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.exadataInfrastructure(response.getItem());
 

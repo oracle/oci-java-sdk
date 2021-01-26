@@ -114,7 +114,9 @@ public class ListWorkRequestLogsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .ListWorkRequestLogsResponse.builder();
+                                                        .ListWorkRequestLogsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequestLogCollection(response.getItem());
 

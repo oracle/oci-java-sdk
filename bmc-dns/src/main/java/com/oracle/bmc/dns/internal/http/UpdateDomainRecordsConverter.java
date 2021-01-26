@@ -119,7 +119,9 @@ public class UpdateDomainRecordsConverter {
                                 com.oracle.bmc.dns.responses.UpdateDomainRecordsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .UpdateDomainRecordsResponse.builder();
+                                                        .UpdateDomainRecordsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recordCollection(response.getItem());
 

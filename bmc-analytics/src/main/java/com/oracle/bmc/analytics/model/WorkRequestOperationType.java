@@ -18,6 +18,12 @@ public enum WorkRequestOperationType {
     ScaleAnalyticsInstance("SCALE_ANALYTICS_INSTANCE"),
     ChangeAnalyticsInstanceCompartment("CHANGE_ANALYTICS_INSTANCE_COMPARTMENT"),
     ChangeAnalyticsInstanceNetworkEndpoint("CHANGE_ANALYTICS_INSTANCE_NETWORK_ENDPOINT"),
+    CreateVanityUrl("CREATE_VANITY_URL"),
+    UpdateVanityUrl("UPDATE_VANITY_URL"),
+    DeleteVanityUrl("DELETE_VANITY_URL"),
+    CreatePrivateAccessChannel("CREATE_PRIVATE_ACCESS_CHANNEL"),
+    UpdatePrivateAccessChannel("UPDATE_PRIVATE_ACCESS_CHANNEL"),
+    DeletePrivateAccessChannel("DELETE_PRIVATE_ACCESS_CHANNEL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

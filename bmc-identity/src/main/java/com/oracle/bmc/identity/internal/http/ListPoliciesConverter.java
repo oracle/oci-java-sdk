@@ -126,7 +126,9 @@ public class ListPoliciesConverter {
                                 com.oracle.bmc.identity.responses.ListPoliciesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListPoliciesResponse.builder();
+                                                        .ListPoliciesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -165,13 +165,15 @@ public class UpdateVlanDetails {
     String routeTableId;
 
     /**
-     * The CIDR IP address block of the Vlan. The CIDR must maintain the following rules -
+     * The CIDR block of the VLAN. The new CIDR block must meet the following criteria:
      * <p>
-     * a. The CIDR block is valid and correctly formatted.
-     * b. The new range is within one of the parent VCN ranges.
-     * c. The old and new CIDR ranges both use the same base address. Example: 10.0.0.0/25 and 10.0.0.0/24.
-     * d. The new CIDR range contains all previously allocated private IP addresses in the old CIDR range.
-     * e. No previously allocated IP address overlaps the broadcast address (the last IP of a subnet CIDR range) of the new CIDR range.
+     * - Must be valid.
+     * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
+     * - The old and new CIDR block ranges must use the same network address. Example: `10.0.0.0/25` and `10.0.0.0/24`.
+     * - Must contain all IP addresses in use in the old CIDR range.
+     * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
+     * <p>
+     **Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for this resource while the update is in progress.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")

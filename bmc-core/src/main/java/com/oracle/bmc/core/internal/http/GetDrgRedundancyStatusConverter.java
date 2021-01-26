@@ -81,7 +81,9 @@ public class GetDrgRedundancyStatusConverter {
                                 com.oracle.bmc.core.responses.GetDrgRedundancyStatusResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetDrgRedundancyStatusResponse.builder();
+                                                        .GetDrgRedundancyStatusResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.drgRedundancyStatus(response.getItem());
 

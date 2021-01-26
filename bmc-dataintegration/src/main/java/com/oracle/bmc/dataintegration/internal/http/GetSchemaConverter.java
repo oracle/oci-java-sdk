@@ -88,7 +88,9 @@ public class GetSchemaConverter {
                                 com.oracle.bmc.dataintegration.responses.GetSchemaResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .GetSchemaResponse.builder();
+                                                        .GetSchemaResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.schema(response.getItem());
 

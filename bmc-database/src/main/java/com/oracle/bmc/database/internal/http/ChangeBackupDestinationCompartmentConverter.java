@@ -97,7 +97,9 @@ public class ChangeBackupDestinationCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ChangeBackupDestinationCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(

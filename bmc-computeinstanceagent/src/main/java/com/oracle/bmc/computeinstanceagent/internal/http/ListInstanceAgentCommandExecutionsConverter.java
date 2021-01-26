@@ -144,7 +144,9 @@ public class ListInstanceAgentCommandExecutionsConverter {
                                         builder =
                                                 com.oracle.bmc.computeinstanceagent.responses
                                                         .ListInstanceAgentCommandExecutionsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

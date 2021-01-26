@@ -78,8 +78,8 @@ public class CreateTsigKeyConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.CreateTsigKeyResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.CreateTsigKeyResponse
-                                                .builder();
+                                        com.oracle.bmc.dns.responses.CreateTsigKeyResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.tsigKey(response.getItem());
 

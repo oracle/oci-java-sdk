@@ -384,10 +384,6 @@ public class IPSecConnectionTunnel {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
-    /**
-     * Information for establishing the tunnel's BGP session.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionInfo")
     BgpSessionInfo bgpSessionInfo;
     /**

@@ -140,7 +140,9 @@ public class ListDerivedLogicalEntitiesConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .ListDerivedLogicalEntitiesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.entityCollection(response.getItem());
 

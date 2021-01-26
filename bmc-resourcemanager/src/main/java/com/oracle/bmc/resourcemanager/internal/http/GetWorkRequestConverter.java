@@ -81,7 +81,9 @@ public class GetWorkRequestConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .GetWorkRequestResponse.builder();
+                                                        .GetWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequest(response.getItem());
 

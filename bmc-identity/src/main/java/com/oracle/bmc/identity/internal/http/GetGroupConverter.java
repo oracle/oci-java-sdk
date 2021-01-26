@@ -71,8 +71,8 @@ public class GetGroupConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.identity.responses.GetGroupResponse.Builder builder =
-                                        com.oracle.bmc.identity.responses.GetGroupResponse
-                                                .builder();
+                                        com.oracle.bmc.identity.responses.GetGroupResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.group(response.getItem());
 

@@ -109,8 +109,8 @@ public class UsersConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.datacatalog.responses.UsersResponse.Builder builder =
-                                        com.oracle.bmc.datacatalog.responses.UsersResponse
-                                                .builder();
+                                        com.oracle.bmc.datacatalog.responses.UsersResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.value(response.getItem());
 

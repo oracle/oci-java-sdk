@@ -79,7 +79,9 @@ public class CreateLoadBalancerConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .CreateLoadBalancerResponse.builder();
+                                                        .CreateLoadBalancerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

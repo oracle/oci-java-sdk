@@ -81,7 +81,9 @@ public class DeleteCatalogConverter {
                                 com.oracle.bmc.datacatalog.responses.DeleteCatalogResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .DeleteCatalogResponse.builder();
+                                                        .DeleteCatalogResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

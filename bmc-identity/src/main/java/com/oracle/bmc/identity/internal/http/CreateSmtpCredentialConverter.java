@@ -85,7 +85,9 @@ public class CreateSmtpCredentialConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .CreateSmtpCredentialResponse.builder();
+                                                        .CreateSmtpCredentialResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.smtpCredential(response.getItem());
 

@@ -81,7 +81,9 @@ public class CancelJobConverter {
                                 com.oracle.bmc.resourcemanager.responses.CancelJobResponse.Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .CancelJobResponse.builder();
+                                                        .CancelJobResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

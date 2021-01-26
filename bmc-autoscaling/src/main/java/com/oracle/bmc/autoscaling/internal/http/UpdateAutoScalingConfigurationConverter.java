@@ -99,7 +99,9 @@ public class UpdateAutoScalingConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.autoscaling.responses
                                                         .UpdateAutoScalingConfigurationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autoScalingConfiguration(response.getItem());
 

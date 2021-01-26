@@ -82,7 +82,9 @@ public class GetModelProvenanceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .GetModelProvenanceResponse.builder();
+                                                        .GetModelProvenanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.modelProvenance(response.getItem());
 

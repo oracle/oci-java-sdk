@@ -10,6 +10,10 @@ import com.oracle.bmc.audit.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetConfigurationResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The returned Configuration instance.
@@ -22,6 +26,7 @@ public class GetConfigurationResponse {
          * @return this builder instance
          */
         public Builder copy(GetConfigurationResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
 
             configuration(o.getConfiguration());
 

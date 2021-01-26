@@ -92,7 +92,9 @@ public class RemovePublicIpPoolCapacityConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .RemovePublicIpPoolCapacityResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.publicIpPool(response.getItem());
 

@@ -74,21 +74,21 @@ public class DrgAttachment {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-        private String routeTableId;
-
-        public Builder routeTableId(String routeTableId) {
-            this.routeTableId = routeTableId;
-            this.__explicitlySet__.add("routeTableId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
             return this;
         }
 
@@ -112,8 +112,8 @@ public class DrgAttachment {
                             drgId,
                             id,
                             lifecycleState,
-                            routeTableId,
                             timeCreated,
+                            routeTableId,
                             vcnId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -127,8 +127,8 @@ public class DrgAttachment {
                             .drgId(o.getDrgId())
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
-                            .routeTableId(o.getRouteTableId())
                             .timeCreated(o.getTimeCreated())
+                            .routeTableId(o.getRouteTableId())
                             .vcnId(o.getVcnId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -223,6 +223,15 @@ public class DrgAttachment {
     LifecycleState lifecycleState;
 
     /**
+     * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: `2016-08-25T21:10:29.600Z`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
+
+    /**
      * The OCID of the route table the DRG attachment is using.
      * <p>
      * For information about why you would associate a route table with a DRG attachment, see:
@@ -235,16 +244,8 @@ public class DrgAttachment {
     String routeTableId;
 
     /**
-     * The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: `2016-08-25T21:10:29.600Z`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
-
-    /**
      * The OCID of the VCN.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

@@ -83,7 +83,9 @@ public class UpdateStackConverter {
                                 com.oracle.bmc.resourcemanager.responses.UpdateStackResponse.Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .UpdateStackResponse.builder();
+                                                        .UpdateStackResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.stack(response.getItem());
 

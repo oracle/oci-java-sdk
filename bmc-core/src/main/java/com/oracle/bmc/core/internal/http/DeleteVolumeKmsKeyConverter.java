@@ -78,7 +78,9 @@ public class DeleteVolumeKmsKeyConverter {
                                 com.oracle.bmc.core.responses.DeleteVolumeKmsKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteVolumeKmsKeyResponse.builder();
+                                                        .DeleteVolumeKmsKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

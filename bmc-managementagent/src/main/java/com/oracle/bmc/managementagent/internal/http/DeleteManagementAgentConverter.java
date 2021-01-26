@@ -85,7 +85,9 @@ public class DeleteManagementAgentConverter {
                                                 .DeleteManagementAgentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
-                                                        .DeleteManagementAgentResponse.builder();
+                                                        .DeleteManagementAgentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

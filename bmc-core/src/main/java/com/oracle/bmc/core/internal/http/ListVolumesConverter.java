@@ -139,7 +139,8 @@ public class ListVolumesConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.ListVolumesResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.ListVolumesResponse.builder();
+                                        com.oracle.bmc.core.responses.ListVolumesResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

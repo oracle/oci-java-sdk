@@ -143,7 +143,9 @@ public class ListCompartmentsConverter {
                                 com.oracle.bmc.identity.responses.ListCompartmentsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListCompartmentsResponse.builder();
+                                                        .ListCompartmentsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -76,7 +76,9 @@ public class GetVolumeAttachmentConverter {
                                 com.oracle.bmc.core.responses.GetVolumeAttachmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetVolumeAttachmentResponse.builder();
+                                                        .GetVolumeAttachmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.volumeAttachment(response.getItem());
 

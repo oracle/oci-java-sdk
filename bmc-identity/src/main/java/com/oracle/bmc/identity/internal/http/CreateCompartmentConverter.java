@@ -76,7 +76,9 @@ public class CreateCompartmentConverter {
                                 com.oracle.bmc.identity.responses.CreateCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .CreateCompartmentResponse.builder();
+                                                        .CreateCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.compartment(response.getItem());
 

@@ -89,7 +89,9 @@ public class TriggerResponderConverter {
                                 com.oracle.bmc.cloudguard.responses.TriggerResponderResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .TriggerResponderResponse.builder();
+                                                        .TriggerResponderResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

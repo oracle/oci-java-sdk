@@ -104,7 +104,9 @@ public class ListDbSystemShapesConverter {
                                 com.oracle.bmc.database.responses.ListDbSystemShapesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListDbSystemShapesResponse.builder();
+                                                        .ListDbSystemShapesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

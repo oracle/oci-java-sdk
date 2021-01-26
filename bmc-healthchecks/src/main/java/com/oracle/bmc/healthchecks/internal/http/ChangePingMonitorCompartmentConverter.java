@@ -96,7 +96,9 @@ public class ChangePingMonitorCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
                                                         .ChangePingMonitorCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

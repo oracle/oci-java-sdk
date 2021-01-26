@@ -88,7 +88,9 @@ public class UpdatePolicyConfigConverter {
                                 com.oracle.bmc.waas.responses.UpdatePolicyConfigResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .UpdatePolicyConfigResponse.builder();
+                                                        .UpdatePolicyConfigResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

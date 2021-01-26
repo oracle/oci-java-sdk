@@ -94,7 +94,9 @@ public class DeleteAcceptedAgreementConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.marketplace.responses
-                                                        .DeleteAcceptedAgreementResponse.builder();
+                                                        .DeleteAcceptedAgreementResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -166,7 +166,9 @@ public class ListDependentObjectsConverter {
                                                 .ListDependentObjectsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListDependentObjectsResponse.builder();
+                                                        .ListDependentObjectsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dependentObjectSummaryCollection(response.getItem());
 

@@ -99,7 +99,9 @@ public class RotateAutonomousDatabaseEncryptionKeyConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .RotateAutonomousDatabaseEncryptionKeyResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousDatabase(response.getItem());
 

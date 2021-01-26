@@ -73,7 +73,8 @@ public class DeleteVcnConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.DeleteVcnResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.DeleteVcnResponse.builder();
+                                        com.oracle.bmc.core.responses.DeleteVcnResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

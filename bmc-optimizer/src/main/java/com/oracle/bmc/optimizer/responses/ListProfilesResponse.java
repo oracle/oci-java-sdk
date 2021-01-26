@@ -10,6 +10,10 @@ import com.oracle.bmc.optimizer.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListProfilesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -44,6 +48,7 @@ public class ListProfilesResponse {
          * @return this builder instance
          */
         public Builder copy(ListProfilesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());

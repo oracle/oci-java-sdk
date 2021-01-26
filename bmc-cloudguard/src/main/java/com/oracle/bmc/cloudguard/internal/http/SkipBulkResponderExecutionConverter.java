@@ -83,7 +83,9 @@ public class SkipBulkResponderExecutionConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .SkipBulkResponderExecutionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

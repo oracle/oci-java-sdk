@@ -78,7 +78,9 @@ public class GetBootVolumeAttachmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetBootVolumeAttachmentResponse.builder();
+                                                        .GetBootVolumeAttachmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.bootVolumeAttachment(response.getItem());
 

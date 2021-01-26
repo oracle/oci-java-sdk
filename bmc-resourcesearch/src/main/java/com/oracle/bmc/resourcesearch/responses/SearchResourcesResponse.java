@@ -10,6 +10,10 @@ import com.oracle.bmc.resourcesearch.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class SearchResourcesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Pagination token
@@ -34,6 +38,7 @@ public class SearchResourcesResponse {
          * @return this builder instance
          */
         public Builder copy(SearchResourcesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             resourceSummaryCollection(o.getResourceSummaryCollection());

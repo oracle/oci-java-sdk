@@ -98,7 +98,9 @@ public class ChangeViewCompartmentConverter {
                                 com.oracle.bmc.dns.responses.ChangeViewCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .ChangeViewCompartmentResponse.builder();
+                                                        .ChangeViewCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

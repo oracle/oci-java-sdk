@@ -10,6 +10,10 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetAppCatalogListingResourceVersionResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -35,6 +39,7 @@ public class GetAppCatalogListingResourceVersionResponse {
          * @return this builder instance
          */
         public Builder copy(GetAppCatalogListingResourceVersionResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             appCatalogListingResourceVersion(o.getAppCatalogListingResourceVersion());

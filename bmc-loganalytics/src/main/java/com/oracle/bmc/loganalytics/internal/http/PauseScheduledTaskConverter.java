@@ -93,7 +93,9 @@ public class PauseScheduledTaskConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .PauseScheduledTaskResponse.builder();
+                                                        .PauseScheduledTaskResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.scheduledTask(response.getItem());

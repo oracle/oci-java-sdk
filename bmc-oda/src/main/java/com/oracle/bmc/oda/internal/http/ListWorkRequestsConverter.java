@@ -124,7 +124,9 @@ public class ListWorkRequestsConverter {
                                 com.oracle.bmc.oda.responses.ListWorkRequestsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oda.responses
-                                                        .ListWorkRequestsResponse.builder();
+                                                        .ListWorkRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

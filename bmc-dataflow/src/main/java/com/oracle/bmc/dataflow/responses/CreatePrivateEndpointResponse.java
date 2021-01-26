@@ -10,6 +10,10 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreatePrivateEndpointResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control.
@@ -48,6 +52,7 @@ public class CreatePrivateEndpointResponse {
          * @return this builder instance
          */
         public Builder copy(CreatePrivateEndpointResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());

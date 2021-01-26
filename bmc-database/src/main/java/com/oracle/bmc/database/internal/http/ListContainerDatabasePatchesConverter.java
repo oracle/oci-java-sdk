@@ -110,7 +110,9 @@ public class ListContainerDatabasePatchesConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListContainerDatabasePatchesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

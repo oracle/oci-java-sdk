@@ -84,7 +84,9 @@ public class ListPathRouteSetsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .ListPathRouteSetsResponse.builder();
+                                                        .ListPathRouteSetsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

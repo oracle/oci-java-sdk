@@ -88,7 +88,9 @@ public class MoveCompartmentConverter {
                                 com.oracle.bmc.identity.responses.MoveCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .MoveCompartmentResponse.builder();
+                                                        .MoveCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

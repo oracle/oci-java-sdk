@@ -100,7 +100,9 @@ public class GenerateOnPremConnectorConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .GenerateOnPremConnectorConfigurationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.inputStream(response.getItem());
 

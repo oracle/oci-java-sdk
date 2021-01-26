@@ -84,7 +84,9 @@ public class GetPingMonitorConverter {
                                 com.oracle.bmc.healthchecks.responses.GetPingMonitorResponse.Builder
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
-                                                        .GetPingMonitorResponse.builder();
+                                                        .GetPingMonitorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.pingMonitor(response.getItem());

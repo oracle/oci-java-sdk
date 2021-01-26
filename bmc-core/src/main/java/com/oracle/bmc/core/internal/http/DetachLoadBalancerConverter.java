@@ -88,7 +88,9 @@ public class DetachLoadBalancerConverter {
                                 com.oracle.bmc.core.responses.DetachLoadBalancerResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DetachLoadBalancerResponse.builder();
+                                                        .DetachLoadBalancerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instancePool(response.getItem());
 

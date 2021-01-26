@@ -82,7 +82,9 @@ public class CreateInstanceConsoleConnectionConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .CreateInstanceConsoleConnectionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instanceConsoleConnection(response.getItem());
 

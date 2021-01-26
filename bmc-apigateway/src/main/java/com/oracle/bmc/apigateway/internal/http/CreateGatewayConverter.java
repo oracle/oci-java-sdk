@@ -77,7 +77,9 @@ public class CreateGatewayConverter {
                                 com.oracle.bmc.apigateway.responses.CreateGatewayResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .CreateGatewayResponse.builder();
+                                                        .CreateGatewayResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.gateway(response.getItem());
 

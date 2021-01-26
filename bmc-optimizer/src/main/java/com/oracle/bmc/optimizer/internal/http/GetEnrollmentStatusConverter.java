@@ -81,7 +81,9 @@ public class GetEnrollmentStatusConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .GetEnrollmentStatusResponse.builder();
+                                                        .GetEnrollmentStatusResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.enrollmentStatus(response.getItem());
 

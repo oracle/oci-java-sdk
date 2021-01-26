@@ -84,7 +84,9 @@ public class DeleteBackupDestinationConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .DeleteBackupDestinationResponse.builder();
+                                                        .DeleteBackupDestinationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

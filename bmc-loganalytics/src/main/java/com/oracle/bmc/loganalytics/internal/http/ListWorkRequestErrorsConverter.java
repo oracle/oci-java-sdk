@@ -106,7 +106,9 @@ public class ListWorkRequestErrorsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListWorkRequestErrorsResponse.builder();
+                                                        .ListWorkRequestErrorsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequestErrorCollection(response.getItem());
 

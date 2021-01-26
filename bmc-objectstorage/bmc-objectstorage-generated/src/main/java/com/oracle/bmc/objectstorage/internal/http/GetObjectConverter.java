@@ -169,7 +169,9 @@ public class GetObjectConverter {
                                 com.oracle.bmc.objectstorage.responses.GetObjectResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .GetObjectResponse.builder();
+                                                        .GetObjectResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.inputStream(response.getItem());

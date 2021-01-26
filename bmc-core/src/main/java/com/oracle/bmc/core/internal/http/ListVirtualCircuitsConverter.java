@@ -128,7 +128,9 @@ public class ListVirtualCircuitsConverter {
                                 com.oracle.bmc.core.responses.ListVirtualCircuitsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListVirtualCircuitsResponse.builder();
+                                                        .ListVirtualCircuitsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

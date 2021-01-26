@@ -93,7 +93,9 @@ public class ChangeCrossConnectGroupCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ChangeCrossConnectGroupCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(

@@ -89,7 +89,9 @@ public class GetAppCatalogListingAgreementsConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetAppCatalogListingAgreementsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.appCatalogListingResourceVersionAgreements(
                                         response.getItem());

@@ -93,7 +93,9 @@ public class ChangeOceInstanceCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.oce.responses
                                                         .ChangeOceInstanceCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

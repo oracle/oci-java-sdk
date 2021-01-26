@@ -87,7 +87,8 @@ public class GetIndexConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.nosql.responses.GetIndexResponse.Builder builder =
-                                        com.oracle.bmc.nosql.responses.GetIndexResponse.builder();
+                                        com.oracle.bmc.nosql.responses.GetIndexResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.index(response.getItem());
 

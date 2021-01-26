@@ -99,7 +99,9 @@ public class QueryConverter {
                                 com.oracle.bmc.loganalytics.responses.QueryResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses.QueryResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.queryAggregation(response.getItem());
 

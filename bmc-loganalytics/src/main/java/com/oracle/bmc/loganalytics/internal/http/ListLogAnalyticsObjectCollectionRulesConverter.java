@@ -149,7 +149,9 @@ public class ListLogAnalyticsObjectCollectionRulesConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListLogAnalyticsObjectCollectionRulesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsObjectCollectionRuleCollection(
                                         response.getItem());

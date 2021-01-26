@@ -85,7 +85,9 @@ public class UpgradeDatabaseConverter {
                                 com.oracle.bmc.database.responses.UpgradeDatabaseResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .UpgradeDatabaseResponse.builder();
+                                                        .UpgradeDatabaseResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.database(response.getItem());
 

@@ -89,7 +89,9 @@ public class DeleteVmClusterNetworkConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .DeleteVmClusterNetworkResponse.builder();
+                                                        .DeleteVmClusterNetworkResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

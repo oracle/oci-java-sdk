@@ -94,7 +94,9 @@ public class ChangeCertificateCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .ChangeCertificateCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -102,7 +102,9 @@ public class ListVirtualCircuitBandwidthShapesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListVirtualCircuitBandwidthShapesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

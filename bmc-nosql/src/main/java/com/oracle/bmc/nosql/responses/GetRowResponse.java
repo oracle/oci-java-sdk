@@ -10,6 +10,10 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetRowResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -36,6 +40,7 @@ public class GetRowResponse {
          * @return this builder instance
          */
         public Builder copy(GetRowResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             row(o.getRow());

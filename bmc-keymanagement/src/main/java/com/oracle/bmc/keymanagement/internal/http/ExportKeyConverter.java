@@ -71,7 +71,9 @@ public class ExportKeyConverter {
                                 com.oracle.bmc.keymanagement.responses.ExportKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .ExportKeyResponse.builder();
+                                                        .ExportKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.exportedKeyData(response.getItem());
 

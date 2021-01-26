@@ -89,7 +89,9 @@ public class InvokeFunctionConverter {
                                 com.oracle.bmc.functions.responses.InvokeFunctionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.functions.responses
-                                                        .InvokeFunctionResponse.builder();
+                                                        .InvokeFunctionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.inputStream(response.getItem());
 

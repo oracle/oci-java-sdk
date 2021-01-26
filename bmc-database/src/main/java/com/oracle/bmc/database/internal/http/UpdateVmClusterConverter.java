@@ -83,7 +83,9 @@ public class UpdateVmClusterConverter {
                                 com.oracle.bmc.database.responses.UpdateVmClusterResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .UpdateVmClusterResponse.builder();
+                                                        .UpdateVmClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.vmCluster(response.getItem());
 

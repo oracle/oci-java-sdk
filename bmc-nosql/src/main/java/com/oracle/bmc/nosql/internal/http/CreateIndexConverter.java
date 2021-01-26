@@ -80,8 +80,8 @@ public class CreateIndexConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.nosql.responses.CreateIndexResponse.Builder builder =
-                                        com.oracle.bmc.nosql.responses.CreateIndexResponse
-                                                .builder();
+                                        com.oracle.bmc.nosql.responses.CreateIndexResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

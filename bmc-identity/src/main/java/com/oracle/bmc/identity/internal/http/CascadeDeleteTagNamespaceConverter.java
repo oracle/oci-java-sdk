@@ -91,8 +91,9 @@ public class CascadeDeleteTagNamespaceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .CascadeDeleteTagNamespaceResponse
-                                                        .builder();
+                                                        .CascadeDeleteTagNamespaceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

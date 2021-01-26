@@ -118,7 +118,9 @@ public class ListKeyVersionsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .ListKeyVersionsResponse.builder();
+                                                        .ListKeyVersionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

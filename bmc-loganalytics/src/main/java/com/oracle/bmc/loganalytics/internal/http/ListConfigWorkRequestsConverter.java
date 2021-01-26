@@ -122,7 +122,9 @@ public class ListConfigWorkRequestsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListConfigWorkRequestsResponse.builder();
+                                                        .ListConfigWorkRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsConfigWorkRequestCollection(response.getItem());
 

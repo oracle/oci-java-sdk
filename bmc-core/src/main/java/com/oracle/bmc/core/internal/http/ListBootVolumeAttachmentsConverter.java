@@ -120,8 +120,9 @@ public class ListBootVolumeAttachmentsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListBootVolumeAttachmentsResponse
-                                                        .builder();
+                                                        .ListBootVolumeAttachmentsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

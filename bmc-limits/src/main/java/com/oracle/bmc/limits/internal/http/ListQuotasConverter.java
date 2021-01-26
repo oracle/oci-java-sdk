@@ -128,8 +128,8 @@ public class ListQuotasConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.limits.responses.ListQuotasResponse.Builder builder =
-                                        com.oracle.bmc.limits.responses.ListQuotasResponse
-                                                .builder();
+                                        com.oracle.bmc.limits.responses.ListQuotasResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

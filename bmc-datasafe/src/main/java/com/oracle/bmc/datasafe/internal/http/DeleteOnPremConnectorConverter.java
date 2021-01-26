@@ -82,7 +82,9 @@ public class DeleteOnPremConnectorConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
-                                                        .DeleteOnPremConnectorResponse.builder();
+                                                        .DeleteOnPremConnectorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

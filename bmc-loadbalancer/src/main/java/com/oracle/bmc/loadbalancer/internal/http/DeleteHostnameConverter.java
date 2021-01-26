@@ -82,7 +82,9 @@ public class DeleteHostnameConverter {
                                 com.oracle.bmc.loadbalancer.responses.DeleteHostnameResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .DeleteHostnameResponse.builder();
+                                                        .DeleteHostnameResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

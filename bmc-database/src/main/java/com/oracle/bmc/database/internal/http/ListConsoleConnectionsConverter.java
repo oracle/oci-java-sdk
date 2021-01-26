@@ -82,7 +82,9 @@ public class ListConsoleConnectionsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListConsoleConnectionsResponse.builder();
+                                                        .ListConsoleConnectionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

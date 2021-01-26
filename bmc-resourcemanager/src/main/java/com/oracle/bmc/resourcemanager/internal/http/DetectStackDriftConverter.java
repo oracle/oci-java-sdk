@@ -89,7 +89,9 @@ public class DetectStackDriftConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .DetectStackDriftResponse.builder();
+                                                        .DetectStackDriftResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -10,6 +10,10 @@ import com.oracle.bmc.email.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListSuppressionsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need
@@ -46,6 +50,7 @@ public class ListSuppressionsResponse {
          * @return this builder instance
          */
         public Builder copy(ListSuppressionsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());

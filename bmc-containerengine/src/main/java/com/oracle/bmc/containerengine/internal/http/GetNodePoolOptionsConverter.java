@@ -92,7 +92,9 @@ public class GetNodePoolOptionsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.containerengine.responses
-                                                        .GetNodePoolOptionsResponse.builder();
+                                                        .GetNodePoolOptionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.nodePoolOptions(response.getItem());
 

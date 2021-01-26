@@ -92,7 +92,9 @@ public class MigrateApplicationConverter {
                                                 .MigrateApplicationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .MigrateApplicationResponse.builder();
+                                                        .MigrateApplicationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

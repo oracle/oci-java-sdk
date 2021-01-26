@@ -81,7 +81,9 @@ public class DeleteWorkRequestConverter {
                                 com.oracle.bmc.nosql.responses.DeleteWorkRequestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.nosql.responses
-                                                        .DeleteWorkRequestResponse.builder();
+                                                        .DeleteWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

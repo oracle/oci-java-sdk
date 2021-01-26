@@ -80,7 +80,9 @@ public class DeleteBudgetConverter {
                                 com.oracle.bmc.budget.responses.DeleteBudgetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.budget.responses.DeleteBudgetResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -145,8 +145,8 @@ public class ListResolversConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.ListResolversResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.ListResolversResponse
-                                                .builder();
+                                        com.oracle.bmc.dns.responses.ListResolversResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

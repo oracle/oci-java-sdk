@@ -91,7 +91,9 @@ public class GetClusterOptionsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.containerengine.responses
-                                                        .GetClusterOptionsResponse.builder();
+                                                        .GetClusterOptionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.clusterOptions(response.getItem());
 

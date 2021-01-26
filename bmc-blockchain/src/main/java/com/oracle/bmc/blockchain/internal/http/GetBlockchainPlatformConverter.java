@@ -83,7 +83,9 @@ public class GetBlockchainPlatformConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .GetBlockchainPlatformResponse.builder();
+                                                        .GetBlockchainPlatformResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.blockchainPlatform(response.getItem());
 

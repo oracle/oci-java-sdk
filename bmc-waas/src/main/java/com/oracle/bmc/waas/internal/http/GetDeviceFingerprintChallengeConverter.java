@@ -87,7 +87,9 @@ public class GetDeviceFingerprintChallengeConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .GetDeviceFingerprintChallengeResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.deviceFingerprintChallenge(response.getItem());
 

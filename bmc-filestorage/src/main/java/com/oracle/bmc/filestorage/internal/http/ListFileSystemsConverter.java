@@ -147,7 +147,9 @@ public class ListFileSystemsConverter {
                                 com.oracle.bmc.filestorage.responses.ListFileSystemsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .ListFileSystemsResponse.builder();
+                                                        .ListFileSystemsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

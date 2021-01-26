@@ -107,7 +107,9 @@ public class SwitchoverAutonomousContainerDatabaseDataguardAssociationConverter 
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousContainerDatabaseDataguardAssociation(
                                         response.getItem());

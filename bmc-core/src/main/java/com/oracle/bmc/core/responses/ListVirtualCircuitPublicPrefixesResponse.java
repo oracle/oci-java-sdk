@@ -10,6 +10,10 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListVirtualCircuitPublicPrefixesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -29,6 +33,7 @@ public class ListVirtualCircuitPublicPrefixesResponse {
          * @return this builder instance
          */
         public Builder copy(ListVirtualCircuitPublicPrefixesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
 

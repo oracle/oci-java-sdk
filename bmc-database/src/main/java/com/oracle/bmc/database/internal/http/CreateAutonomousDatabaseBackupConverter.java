@@ -87,7 +87,9 @@ public class CreateAutonomousDatabaseBackupConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .CreateAutonomousDatabaseBackupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousDatabaseBackup(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.osmanagement.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateSoftwareSourceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * A link to the created Software Source
@@ -41,6 +45,7 @@ public class CreateSoftwareSourceResponse {
          * @return this builder instance
          */
         public Builder copy(CreateSoftwareSourceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());

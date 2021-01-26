@@ -10,6 +10,10 @@ import com.oracle.bmc.loggingsearch.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class SearchLogsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Reserved for future use. Pagination is not supported in this API.
@@ -35,6 +39,7 @@ public class SearchLogsResponse {
          * @return this builder instance
          */
         public Builder copy(SearchLogsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             searchResponse(o.getSearchResponse());

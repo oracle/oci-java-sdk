@@ -212,7 +212,9 @@ public class ListRulesConverter {
                                 com.oracle.bmc.datacatalog.responses.ListRulesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListRulesResponse.builder();
+                                                        .ListRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.ruleCollection(response.getItem());
 

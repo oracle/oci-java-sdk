@@ -81,7 +81,9 @@ public class ListAllowedPeerRegionsForRemotePeeringConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListAllowedPeerRegionsForRemotePeeringResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

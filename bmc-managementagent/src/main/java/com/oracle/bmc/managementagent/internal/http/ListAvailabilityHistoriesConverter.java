@@ -137,8 +137,9 @@ public class ListAvailabilityHistoriesConverter {
                                                 .ListAvailabilityHistoriesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.managementagent.responses
-                                                        .ListAvailabilityHistoriesResponse
-                                                        .builder();
+                                                        .ListAvailabilityHistoriesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

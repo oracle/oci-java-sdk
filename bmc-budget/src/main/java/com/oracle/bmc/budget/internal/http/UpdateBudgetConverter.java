@@ -82,7 +82,9 @@ public class UpdateBudgetConverter {
                                 com.oracle.bmc.budget.responses.UpdateBudgetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.budget.responses.UpdateBudgetResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.budget(response.getItem());
 

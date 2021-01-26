@@ -94,6 +94,14 @@ public class ListKeysConverter {
                                     request.getLength()));
         }
 
+        if (request.getCurveId() != null) {
+            target =
+                    target.queryParam(
+                            "curveId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCurveId().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -138,7 +146,9 @@ public class ListKeysConverter {
                                 com.oracle.bmc.keymanagement.responses.ListKeysResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .ListKeysResponse.builder();
+                                                        .ListKeysResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

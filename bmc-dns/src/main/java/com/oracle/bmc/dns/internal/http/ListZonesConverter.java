@@ -175,7 +175,8 @@ public class ListZonesConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.ListZonesResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.ListZonesResponse.builder();
+                                        com.oracle.bmc.dns.responses.ListZonesResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

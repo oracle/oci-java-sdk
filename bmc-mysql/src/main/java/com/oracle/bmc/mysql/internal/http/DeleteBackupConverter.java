@@ -80,7 +80,9 @@ public class DeleteBackupConverter {
                                 com.oracle.bmc.mysql.responses.DeleteBackupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses.DeleteBackupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

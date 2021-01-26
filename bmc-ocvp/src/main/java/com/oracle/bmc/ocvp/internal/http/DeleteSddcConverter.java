@@ -77,7 +77,8 @@ public class DeleteSddcConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.ocvp.responses.DeleteSddcResponse.Builder builder =
-                                        com.oracle.bmc.ocvp.responses.DeleteSddcResponse.builder();
+                                        com.oracle.bmc.ocvp.responses.DeleteSddcResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

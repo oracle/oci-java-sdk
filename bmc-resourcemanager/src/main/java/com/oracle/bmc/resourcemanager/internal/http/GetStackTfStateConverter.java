@@ -82,7 +82,9 @@ public class GetStackTfStateConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .GetStackTfStateResponse.builder();
+                                                        .GetStackTfStateResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.inputStream(response.getItem());
 

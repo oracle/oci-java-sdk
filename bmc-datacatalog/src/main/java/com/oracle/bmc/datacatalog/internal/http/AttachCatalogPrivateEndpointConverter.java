@@ -96,7 +96,9 @@ public class AttachCatalogPrivateEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
                                                         .AttachCatalogPrivateEndpointResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

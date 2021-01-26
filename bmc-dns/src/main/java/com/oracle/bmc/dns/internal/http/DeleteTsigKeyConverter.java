@@ -90,8 +90,8 @@ public class DeleteTsigKeyConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.DeleteTsigKeyResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.DeleteTsigKeyResponse
-                                                .builder();
+                                        com.oracle.bmc.dns.responses.DeleteTsigKeyResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

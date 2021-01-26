@@ -79,7 +79,9 @@ public class BulkEditTagsConverter {
                                 com.oracle.bmc.identity.responses.BulkEditTagsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .BulkEditTagsResponse.builder();
+                                                        .BulkEditTagsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

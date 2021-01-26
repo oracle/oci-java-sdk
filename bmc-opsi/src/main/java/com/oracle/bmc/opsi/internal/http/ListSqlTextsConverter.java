@@ -103,8 +103,8 @@ public class ListSqlTextsConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.opsi.responses.ListSqlTextsResponse.Builder builder =
-                                        com.oracle.bmc.opsi.responses.ListSqlTextsResponse
-                                                .builder();
+                                        com.oracle.bmc.opsi.responses.ListSqlTextsResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.sqlTextCollection(response.getItem());
 

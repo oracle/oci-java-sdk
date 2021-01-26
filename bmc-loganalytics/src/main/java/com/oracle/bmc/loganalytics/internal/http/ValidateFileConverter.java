@@ -97,7 +97,9 @@ public class ValidateFileConverter {
                                 com.oracle.bmc.loganalytics.responses.ValidateFileResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ValidateFileResponse.builder();
+                                                        .ValidateFileResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.fileValidationResponse(response.getItem());
 

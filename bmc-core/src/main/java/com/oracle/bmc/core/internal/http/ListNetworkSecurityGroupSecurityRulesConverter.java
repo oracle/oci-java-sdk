@@ -127,7 +127,9 @@ public class ListNetworkSecurityGroupSecurityRulesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListNetworkSecurityGroupSecurityRulesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

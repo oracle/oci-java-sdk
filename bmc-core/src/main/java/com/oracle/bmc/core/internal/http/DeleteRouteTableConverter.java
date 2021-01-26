@@ -77,7 +77,9 @@ public class DeleteRouteTableConverter {
                                 com.oracle.bmc.core.responses.DeleteRouteTableResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteRouteTableResponse.builder();
+                                                        .DeleteRouteTableResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

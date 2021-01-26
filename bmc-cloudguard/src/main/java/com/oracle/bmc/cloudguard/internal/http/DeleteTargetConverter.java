@@ -81,7 +81,9 @@ public class DeleteTargetConverter {
                                 com.oracle.bmc.cloudguard.responses.DeleteTargetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .DeleteTargetResponse.builder();
+                                                        .DeleteTargetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

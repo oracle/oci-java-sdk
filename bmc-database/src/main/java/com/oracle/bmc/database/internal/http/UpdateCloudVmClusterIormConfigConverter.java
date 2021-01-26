@@ -94,7 +94,9 @@ public class UpdateCloudVmClusterIormConfigConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .UpdateCloudVmClusterIormConfigResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.exadataIormConfig(response.getItem());
 

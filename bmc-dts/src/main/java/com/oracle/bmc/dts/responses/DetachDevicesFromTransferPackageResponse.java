@@ -10,6 +10,10 @@ import com.oracle.bmc.dts.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DetachDevicesFromTransferPackageResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      *
@@ -27,6 +31,7 @@ public class DetachDevicesFromTransferPackageResponse {
          * @return this builder instance
          */
         public Builder copy(DetachDevicesFromTransferPackageResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
 

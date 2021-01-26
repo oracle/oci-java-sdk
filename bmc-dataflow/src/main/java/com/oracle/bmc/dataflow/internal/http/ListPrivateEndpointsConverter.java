@@ -146,7 +146,9 @@ public class ListPrivateEndpointsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
-                                                        .ListPrivateEndpointsResponse.builder();
+                                                        .ListPrivateEndpointsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.privateEndpointCollection(response.getItem());
 

@@ -102,7 +102,9 @@ public class GetFolderTagConverter {
                                 com.oracle.bmc.datacatalog.responses.GetFolderTagResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .GetFolderTagResponse.builder();
+                                                        .GetFolderTagResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.folderTag(response.getItem());
 

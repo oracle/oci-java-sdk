@@ -131,7 +131,9 @@ public class ListRecalledDataConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListRecalledDataResponse.builder();
+                                                        .ListRecalledDataResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recalledDataCollection(response.getItem());
 

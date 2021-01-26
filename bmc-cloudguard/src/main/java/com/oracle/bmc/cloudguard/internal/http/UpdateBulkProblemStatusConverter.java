@@ -82,7 +82,9 @@ public class UpdateBulkProblemStatusConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .UpdateBulkProblemStatusResponse.builder();
+                                                        .UpdateBulkProblemStatusResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -84,7 +84,9 @@ public class ListCertificatesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .ListCertificatesResponse.builder();
+                                                        .ListCertificatesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

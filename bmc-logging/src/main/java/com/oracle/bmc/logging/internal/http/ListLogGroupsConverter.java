@@ -132,7 +132,9 @@ public class ListLogGroupsConverter {
                                 com.oracle.bmc.logging.responses.ListLogGroupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.logging.responses
-                                                        .ListLogGroupsResponse.builder();
+                                                        .ListLogGroupsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

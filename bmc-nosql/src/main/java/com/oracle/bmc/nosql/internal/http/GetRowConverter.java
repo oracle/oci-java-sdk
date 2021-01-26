@@ -106,7 +106,8 @@ public class GetRowConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.nosql.responses.GetRowResponse.Builder builder =
-                                        com.oracle.bmc.nosql.responses.GetRowResponse.builder();
+                                        com.oracle.bmc.nosql.responses.GetRowResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.row(response.getItem());
 

@@ -132,7 +132,9 @@ public class ListCatalogsConverter {
                                 com.oracle.bmc.datacatalog.responses.ListCatalogsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListCatalogsResponse.builder();
+                                                        .ListCatalogsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

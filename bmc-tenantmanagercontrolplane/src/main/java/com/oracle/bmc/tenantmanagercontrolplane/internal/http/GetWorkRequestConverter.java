@@ -85,7 +85,9 @@ public class GetWorkRequestConverter {
                                                 .GetWorkRequestResponse.Builder
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
-                                                        .GetWorkRequestResponse.builder();
+                                                        .GetWorkRequestResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequest(response.getItem());
 

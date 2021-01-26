@@ -93,7 +93,9 @@ public class UpdateBlockchainPlatformConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .UpdateBlockchainPlatformResponse.builder();
+                                                        .UpdateBlockchainPlatformResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

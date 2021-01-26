@@ -178,17 +178,19 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES is supported.
+     * The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES, RSA and ECDSA are supported.
      *
      */
     private Algorithm algorithm;
 
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES is supported.
+     * The algorithm used by a key's key versions to encrypt or decrypt. Currently, only AES, RSA and ECDSA are supported.
      *
      **/
     public enum Algorithm {
         Aes("AES"),
+        Rsa("RSA"),
+        Ecdsa("ECDSA"),
         ;
 
         private final String value;
@@ -219,10 +221,54 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
     };
     /**
-     * The length of the key in bytes, expressed as an integer. Values of 16, 24, or 32 are supported.
+     * The length of the key in bytes, expressed as an integer. Values of 16, 24, 32 are supported.
      *
      */
     private Integer length;
+
+    /**
+     * The curve Id of the keys in case of ECDSA keys
+     *
+     */
+    private CurveId curveId;
+
+    /**
+     * The curve Id of the keys in case of ECDSA keys
+     *
+     **/
+    public enum CurveId {
+        NistP256("NIST_P256"),
+        NistP384("NIST_P384"),
+        NistP521("NIST_P521"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CurveId> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CurveId v : CurveId.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CurveId(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CurveId create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CurveId: " + key);
+        }
+    };
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<ListKeysRequest, java.lang.Void> {
@@ -267,6 +313,7 @@ public class ListKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             protectionMode(o.getProtectionMode());
             algorithm(o.getAlgorithm());
             length(o.getLength());
+            curveId(o.getCurveId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

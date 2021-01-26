@@ -92,7 +92,9 @@ public class UpdatePeerConverter {
                                 com.oracle.bmc.blockchain.responses.UpdatePeerResponse.Builder
                                         builder =
                                                 com.oracle.bmc.blockchain.responses
-                                                        .UpdatePeerResponse.builder();
+                                                        .UpdatePeerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

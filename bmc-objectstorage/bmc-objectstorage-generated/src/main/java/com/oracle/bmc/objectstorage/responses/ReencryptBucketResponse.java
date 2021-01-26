@@ -10,6 +10,10 @@ import com.oracle.bmc.objectstorage.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ReencryptBucketResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. If you need to contact Oracle about a
@@ -36,6 +40,7 @@ public class ReencryptBucketResponse {
          * @return this builder instance
          */
         public Builder copy(ReencryptBucketResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());

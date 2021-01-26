@@ -128,7 +128,9 @@ public class ListNetworkSourcesConverter {
                                 com.oracle.bmc.identity.responses.ListNetworkSourcesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListNetworkSourcesResponse.builder();
+                                                        .ListNetworkSourcesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

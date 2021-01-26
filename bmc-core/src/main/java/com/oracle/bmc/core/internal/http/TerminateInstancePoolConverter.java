@@ -77,7 +77,9 @@ public class TerminateInstancePoolConverter {
                                 com.oracle.bmc.core.responses.TerminateInstancePoolResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .TerminateInstancePoolResponse.builder();
+                                                        .TerminateInstancePoolResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

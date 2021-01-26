@@ -144,7 +144,9 @@ public class ListAvailableUpdatesForManagedInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListAvailableUpdatesForManagedInstanceResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

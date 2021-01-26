@@ -146,7 +146,8 @@ public class ListImagesConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.ListImagesResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.ListImagesResponse.builder();
+                                        com.oracle.bmc.core.responses.ListImagesResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

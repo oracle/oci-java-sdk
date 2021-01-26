@@ -93,7 +93,9 @@ public class GetCloudVmClusterUpdateHistoryEntryConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetCloudVmClusterUpdateHistoryEntryResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.updateHistoryEntry(response.getItem());
 

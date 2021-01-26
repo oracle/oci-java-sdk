@@ -91,7 +91,9 @@ public class CancelSecretVersionDeletionConverter {
                                         builder =
                                                 com.oracle.bmc.vault.responses
                                                         .CancelSecretVersionDeletionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(

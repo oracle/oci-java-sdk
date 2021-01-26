@@ -82,7 +82,9 @@ public class GetAnalyticsInstanceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.analytics.responses
-                                                        .GetAnalyticsInstanceResponse.builder();
+                                                        .GetAnalyticsInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.analyticsInstance(response.getItem());
 

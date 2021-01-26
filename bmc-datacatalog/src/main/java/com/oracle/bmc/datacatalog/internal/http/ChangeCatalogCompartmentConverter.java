@@ -90,7 +90,9 @@ public class ChangeCatalogCompartmentConverter {
                                                 .ChangeCatalogCompartmentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ChangeCatalogCompartmentResponse.builder();
+                                                        .ChangeCatalogCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

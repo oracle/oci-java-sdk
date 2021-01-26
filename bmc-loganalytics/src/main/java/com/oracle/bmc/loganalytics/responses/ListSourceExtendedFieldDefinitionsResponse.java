@@ -10,6 +10,10 @@ import com.oracle.bmc.loganalytics.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListSourceExtendedFieldDefinitionsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
@@ -45,6 +49,7 @@ public class ListSourceExtendedFieldDefinitionsResponse {
          * @return this builder instance
          */
         public Builder copy(ListSourceExtendedFieldDefinitionsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcPrevPage(o.getOpcPrevPage());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());

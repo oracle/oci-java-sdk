@@ -129,7 +129,9 @@ public class ListByoipRangesConverter {
                                 com.oracle.bmc.core.responses.ListByoipRangesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListByoipRangesResponse.builder();
+                                                        .ListByoipRangesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.byoipRangeCollection(response.getItem());
 

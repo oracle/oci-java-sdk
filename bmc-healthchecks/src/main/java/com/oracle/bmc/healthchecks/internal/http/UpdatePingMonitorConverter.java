@@ -87,7 +87,9 @@ public class UpdatePingMonitorConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.healthchecks.responses
-                                                        .UpdatePingMonitorResponse.builder();
+                                                        .UpdatePingMonitorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.pingMonitor(response.getItem());
 

@@ -82,7 +82,9 @@ public class UpdateEsxiHostConverter {
                                 com.oracle.bmc.ocvp.responses.UpdateEsxiHostResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ocvp.responses.UpdateEsxiHostResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.esxiHost(response.getItem());
 

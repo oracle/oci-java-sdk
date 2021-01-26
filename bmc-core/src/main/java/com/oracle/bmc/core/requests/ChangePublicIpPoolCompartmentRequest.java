@@ -15,12 +15,12 @@ public class ChangePublicIpPoolCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<ChangePublicIpPoolCompartmentDetails> {
 
     /**
-     * The OCID of the Public Ip Pool object.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the public IP pool.
      */
     private String publicIpPoolId;
 
     /**
-     * Request to change the compartment of a Public IP pool.
+     * Request to change the compartment of a public IP pool.
      */
     private ChangePublicIpPoolCompartmentDetails changePublicIpPoolCompartmentDetails;
 

@@ -79,7 +79,9 @@ public class GetBdsInstanceConverter {
                                 com.oracle.bmc.bds.responses.GetBdsInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.bds.responses.GetBdsInstanceResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.bdsInstance(response.getItem());
 

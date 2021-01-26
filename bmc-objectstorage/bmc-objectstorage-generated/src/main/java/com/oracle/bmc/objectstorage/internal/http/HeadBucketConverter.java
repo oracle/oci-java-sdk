@@ -90,7 +90,9 @@ public class HeadBucketConverter {
                                 com.oracle.bmc.objectstorage.responses.HeadBucketResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .HeadBucketResponse.builder();
+                                                        .HeadBucketResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.isNotModified(false);

@@ -90,7 +90,9 @@ public class ListResourceDiscoveryServicesConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .ListResourceDiscoveryServicesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.resourceDiscoveryServiceCollection(response.getItem());
 

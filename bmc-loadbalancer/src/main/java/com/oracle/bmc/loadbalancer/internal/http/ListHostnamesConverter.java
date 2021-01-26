@@ -82,7 +82,9 @@ public class ListHostnamesConverter {
                                 com.oracle.bmc.loadbalancer.responses.ListHostnamesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .ListHostnamesResponse.builder();
+                                                        .ListHostnamesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -120,7 +120,9 @@ public class ListVnicAttachmentsConverter {
                                 com.oracle.bmc.core.responses.ListVnicAttachmentsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListVnicAttachmentsResponse.builder();
+                                                        .ListVnicAttachmentsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

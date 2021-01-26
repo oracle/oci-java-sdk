@@ -79,7 +79,8 @@ public class PurgeCacheConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.waas.responses.PurgeCacheResponse.Builder builder =
-                                        com.oracle.bmc.waas.responses.PurgeCacheResponse.builder();
+                                        com.oracle.bmc.waas.responses.PurgeCacheResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

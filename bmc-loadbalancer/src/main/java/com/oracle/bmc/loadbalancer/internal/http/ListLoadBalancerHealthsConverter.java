@@ -104,7 +104,9 @@ public class ListLoadBalancerHealthsConverter {
                                                 .ListLoadBalancerHealthsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .ListLoadBalancerHealthsResponse.builder();
+                                                        .ListLoadBalancerHealthsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

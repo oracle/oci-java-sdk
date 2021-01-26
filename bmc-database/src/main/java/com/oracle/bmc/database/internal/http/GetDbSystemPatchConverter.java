@@ -79,7 +79,9 @@ public class GetDbSystemPatchConverter {
                                 com.oracle.bmc.database.responses.GetDbSystemPatchResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .GetDbSystemPatchResponse.builder();
+                                                        .GetDbSystemPatchResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.patch(response.getItem());
 

@@ -83,7 +83,9 @@ public class DeleteAnalyticsClusterConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses
-                                                        .DeleteAnalyticsClusterResponse.builder();
+                                                        .DeleteAnalyticsClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

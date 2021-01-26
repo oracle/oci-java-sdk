@@ -99,7 +99,9 @@ public class ListAccessRulesConverter {
                                 com.oracle.bmc.waas.responses.ListAccessRulesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListAccessRulesResponse.builder();
+                                                        .ListAccessRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

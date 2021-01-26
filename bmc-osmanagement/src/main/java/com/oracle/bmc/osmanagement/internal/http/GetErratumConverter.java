@@ -78,7 +78,9 @@ public class GetErratumConverter {
                                 com.oracle.bmc.osmanagement.responses.GetErratumResponse.Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .GetErratumResponse.builder();
+                                                        .GetErratumResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.erratum(response.getItem());
 

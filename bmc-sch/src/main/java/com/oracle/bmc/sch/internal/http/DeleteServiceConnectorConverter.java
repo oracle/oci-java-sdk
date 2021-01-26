@@ -81,7 +81,9 @@ public class DeleteServiceConnectorConverter {
                                 com.oracle.bmc.sch.responses.DeleteServiceConnectorResponse.Builder
                                         builder =
                                                 com.oracle.bmc.sch.responses
-                                                        .DeleteServiceConnectorResponse.builder();
+                                                        .DeleteServiceConnectorResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

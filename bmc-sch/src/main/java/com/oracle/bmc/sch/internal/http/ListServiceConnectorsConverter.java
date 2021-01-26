@@ -129,7 +129,9 @@ public class ListServiceConnectorsConverter {
                                 com.oracle.bmc.sch.responses.ListServiceConnectorsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.sch.responses
-                                                        .ListServiceConnectorsResponse.builder();
+                                                        .ListServiceConnectorsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.serviceConnectorCollection(response.getItem());
 

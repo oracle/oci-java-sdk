@@ -88,7 +88,9 @@ public class GetBackendConverter {
                                 com.oracle.bmc.loadbalancer.responses.GetBackendResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .GetBackendResponse.builder();
+                                                        .GetBackendResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.backend(response.getItem());
 

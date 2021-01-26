@@ -10,6 +10,10 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListShapesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -29,6 +33,7 @@ public class ListShapesResponse {
          * @return this builder instance
          */
         public Builder copy(ListShapesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());
 

@@ -78,7 +78,9 @@ public class GetInstanceConfigurationConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetInstanceConfigurationResponse.builder();
+                                                        .GetInstanceConfigurationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instanceConfiguration(response.getItem());
 

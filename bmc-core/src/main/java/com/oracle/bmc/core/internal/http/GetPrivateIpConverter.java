@@ -71,8 +71,8 @@ public class GetPrivateIpConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.GetPrivateIpResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.GetPrivateIpResponse
-                                                .builder();
+                                        com.oracle.bmc.core.responses.GetPrivateIpResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.privateIp(response.getItem());
 

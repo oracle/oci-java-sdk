@@ -82,7 +82,9 @@ public class GetManagedInstanceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .GetManagedInstanceResponse.builder();
+                                                        .GetManagedInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.managedInstance(response.getItem());
 

@@ -98,7 +98,9 @@ public class ListWorkRequestLogsConverter {
                                 com.oracle.bmc.sch.responses.ListWorkRequestLogsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.sch.responses
-                                                        .ListWorkRequestLogsResponse.builder();
+                                                        .ListWorkRequestLogsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.workRequestLogEntryCollection(response.getItem());
 

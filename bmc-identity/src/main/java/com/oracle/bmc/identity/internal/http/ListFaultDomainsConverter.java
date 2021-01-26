@@ -86,7 +86,9 @@ public class ListFaultDomainsConverter {
                                 com.oracle.bmc.identity.responses.ListFaultDomainsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListFaultDomainsResponse.builder();
+                                                        .ListFaultDomainsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

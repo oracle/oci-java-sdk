@@ -86,7 +86,9 @@ public class ResetInstancePoolConverter {
                                 com.oracle.bmc.core.responses.ResetInstancePoolResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ResetInstancePoolResponse.builder();
+                                                        .ResetInstancePoolResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instancePool(response.getItem());
 

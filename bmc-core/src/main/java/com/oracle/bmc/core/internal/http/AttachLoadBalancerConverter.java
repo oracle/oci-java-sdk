@@ -88,7 +88,9 @@ public class AttachLoadBalancerConverter {
                                 com.oracle.bmc.core.responses.AttachLoadBalancerResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .AttachLoadBalancerResponse.builder();
+                                                        .AttachLoadBalancerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instancePool(response.getItem());
 

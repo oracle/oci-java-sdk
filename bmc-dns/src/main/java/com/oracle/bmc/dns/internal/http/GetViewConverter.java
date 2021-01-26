@@ -89,7 +89,8 @@ public class GetViewConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.GetViewResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.GetViewResponse.builder();
+                                        com.oracle.bmc.dns.responses.GetViewResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.view(response.getItem());

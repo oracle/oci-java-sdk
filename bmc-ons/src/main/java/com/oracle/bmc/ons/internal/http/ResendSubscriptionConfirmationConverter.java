@@ -86,7 +86,9 @@ public class ResendSubscriptionConfirmationConverter {
                                         builder =
                                                 com.oracle.bmc.ons.responses
                                                         .ResendSubscriptionConfirmationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.subscription(response.getItem());
 

@@ -165,7 +165,9 @@ public class GetDomainRecordsConverter {
                                 com.oracle.bmc.dns.responses.GetDomainRecordsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .GetDomainRecordsResponse.builder();
+                                                        .GetDomainRecordsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recordCollection(response.getItem());
 

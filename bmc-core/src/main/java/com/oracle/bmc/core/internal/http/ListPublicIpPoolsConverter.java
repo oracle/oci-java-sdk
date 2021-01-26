@@ -129,7 +129,9 @@ public class ListPublicIpPoolsConverter {
                                 com.oracle.bmc.core.responses.ListPublicIpPoolsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListPublicIpPoolsResponse.builder();
+                                                        .ListPublicIpPoolsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.publicIpPoolCollection(response.getItem());
 

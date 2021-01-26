@@ -82,7 +82,9 @@ public class UpdateTagConverter {
                                 com.oracle.bmc.identity.responses.UpdateTagResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses.UpdateTagResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.tag(response.getItem());
 

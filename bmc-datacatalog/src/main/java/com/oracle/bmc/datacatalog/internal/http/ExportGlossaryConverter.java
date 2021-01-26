@@ -97,7 +97,9 @@ public class ExportGlossaryConverter {
                                 com.oracle.bmc.datacatalog.responses.ExportGlossaryResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ExportGlossaryResponse.builder();
+                                                        .ExportGlossaryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.value(response.getItem());
 

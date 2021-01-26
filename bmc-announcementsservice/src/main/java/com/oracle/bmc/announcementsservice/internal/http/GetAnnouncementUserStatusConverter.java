@@ -88,8 +88,9 @@ public class GetAnnouncementUserStatusConverter {
                                                 .GetAnnouncementUserStatusResponse.Builder
                                         builder =
                                                 com.oracle.bmc.announcementsservice.responses
-                                                        .GetAnnouncementUserStatusResponse
-                                                        .builder();
+                                                        .GetAnnouncementUserStatusResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.announcementUserStatusDetails(response.getItem());
 

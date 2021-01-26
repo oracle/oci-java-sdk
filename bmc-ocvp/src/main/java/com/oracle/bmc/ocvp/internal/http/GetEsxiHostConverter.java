@@ -75,7 +75,8 @@ public class GetEsxiHostConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.ocvp.responses.GetEsxiHostResponse.Builder builder =
-                                        com.oracle.bmc.ocvp.responses.GetEsxiHostResponse.builder();
+                                        com.oracle.bmc.ocvp.responses.GetEsxiHostResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.esxiHost(response.getItem());
 

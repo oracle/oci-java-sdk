@@ -88,7 +88,9 @@ public class UpdateCachingRulesConverter {
                                 com.oracle.bmc.waas.responses.UpdateCachingRulesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .UpdateCachingRulesResponse.builder();
+                                                        .UpdateCachingRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

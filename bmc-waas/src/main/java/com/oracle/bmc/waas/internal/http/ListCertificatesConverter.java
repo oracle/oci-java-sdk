@@ -159,7 +159,9 @@ public class ListCertificatesConverter {
                                 com.oracle.bmc.waas.responses.ListCertificatesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListCertificatesResponse.builder();
+                                                        .ListCertificatesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

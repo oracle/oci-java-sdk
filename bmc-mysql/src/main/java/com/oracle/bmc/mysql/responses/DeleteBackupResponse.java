@@ -10,6 +10,10 @@ import com.oracle.bmc.mysql.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteBackupResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -30,6 +34,7 @@ public class DeleteBackupResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteBackupResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 

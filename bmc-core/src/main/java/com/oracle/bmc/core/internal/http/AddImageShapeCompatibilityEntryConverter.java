@@ -87,7 +87,9 @@ public class AddImageShapeCompatibilityEntryConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .AddImageShapeCompatibilityEntryResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.imageShapeCompatibilityEntry(response.getItem());
 

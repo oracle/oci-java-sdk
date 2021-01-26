@@ -98,7 +98,9 @@ public class ChangeCustomProtectionRuleCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .ChangeCustomProtectionRuleCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

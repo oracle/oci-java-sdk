@@ -81,7 +81,9 @@ public class DeleteSnapshotConverter {
                                 com.oracle.bmc.filestorage.responses.DeleteSnapshotResponse.Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .DeleteSnapshotResponse.builder();
+                                                        .DeleteSnapshotResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

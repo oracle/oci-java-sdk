@@ -132,7 +132,9 @@ public class ListOceInstancesConverter {
                                 com.oracle.bmc.oce.responses.ListOceInstancesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oce.responses
-                                                        .ListOceInstancesResponse.builder();
+                                                        .ListOceInstancesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

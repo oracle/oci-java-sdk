@@ -88,8 +88,9 @@ public class DeleteManagementDashboardConverter {
                                                 .DeleteManagementDashboardResponse.Builder
                                         builder =
                                                 com.oracle.bmc.managementdashboard.responses
-                                                        .DeleteManagementDashboardResponse
-                                                        .builder();
+                                                        .DeleteManagementDashboardResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

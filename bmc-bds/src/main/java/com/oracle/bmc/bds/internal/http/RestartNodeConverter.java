@@ -84,7 +84,8 @@ public class RestartNodeConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.bds.responses.RestartNodeResponse.Builder builder =
-                                        com.oracle.bmc.bds.responses.RestartNodeResponse.builder();
+                                        com.oracle.bmc.bds.responses.RestartNodeResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

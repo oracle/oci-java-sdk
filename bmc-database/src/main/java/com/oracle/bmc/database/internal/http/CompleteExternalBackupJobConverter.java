@@ -93,8 +93,9 @@ public class CompleteExternalBackupJobConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .CompleteExternalBackupJobResponse
-                                                        .builder();
+                                                        .CompleteExternalBackupJobResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.externalBackupJob(response.getItem());
 

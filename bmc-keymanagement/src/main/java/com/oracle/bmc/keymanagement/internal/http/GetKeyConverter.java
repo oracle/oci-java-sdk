@@ -78,7 +78,9 @@ public class GetKeyConverter {
                                 com.oracle.bmc.keymanagement.responses.GetKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .GetKeyResponse.builder();
+                                                        .GetKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.key(response.getItem());
 

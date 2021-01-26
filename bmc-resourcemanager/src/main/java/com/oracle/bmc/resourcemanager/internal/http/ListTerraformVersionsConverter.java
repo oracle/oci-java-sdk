@@ -86,7 +86,9 @@ public class ListTerraformVersionsConverter {
                                                 .ListTerraformVersionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .ListTerraformVersionsResponse.builder();
+                                                        .ListTerraformVersionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.terraformVersionCollection(response.getItem());
 

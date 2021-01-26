@@ -96,7 +96,9 @@ public class DeleteFolderTagConverter {
                                 com.oracle.bmc.datacatalog.responses.DeleteFolderTagResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .DeleteFolderTagResponse.builder();
+                                                        .DeleteFolderTagResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -90,7 +90,9 @@ public class ListListenerRulesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .ListListenerRulesResponse.builder();
+                                                        .ListListenerRulesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

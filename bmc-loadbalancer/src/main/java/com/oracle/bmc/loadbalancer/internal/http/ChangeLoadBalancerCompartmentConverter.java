@@ -95,7 +95,9 @@ public class ChangeLoadBalancerCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
                                                         .ChangeLoadBalancerCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

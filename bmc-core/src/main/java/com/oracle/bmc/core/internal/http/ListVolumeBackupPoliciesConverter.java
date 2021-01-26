@@ -98,7 +98,9 @@ public class ListVolumeBackupPoliciesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListVolumeBackupPoliciesResponse.builder();
+                                                        .ListVolumeBackupPoliciesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

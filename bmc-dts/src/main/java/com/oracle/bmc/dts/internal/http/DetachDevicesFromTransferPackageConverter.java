@@ -87,7 +87,9 @@ public class DetachDevicesFromTransferPackageConverter {
                                         builder =
                                                 com.oracle.bmc.dts.responses
                                                         .DetachDevicesFromTransferPackageResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -112,7 +112,9 @@ public class ListGiVersionsConverter {
                                 com.oracle.bmc.database.responses.ListGiVersionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListGiVersionsResponse.builder();
+                                                        .ListGiVersionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

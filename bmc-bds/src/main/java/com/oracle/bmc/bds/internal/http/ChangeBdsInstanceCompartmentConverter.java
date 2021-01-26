@@ -93,7 +93,9 @@ public class ChangeBdsInstanceCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.bds.responses
                                                         .ChangeBdsInstanceCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

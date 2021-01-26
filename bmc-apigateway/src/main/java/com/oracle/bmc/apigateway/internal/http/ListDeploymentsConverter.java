@@ -137,7 +137,9 @@ public class ListDeploymentsConverter {
                                 com.oracle.bmc.apigateway.responses.ListDeploymentsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .ListDeploymentsResponse.builder();
+                                                        .ListDeploymentsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.deploymentCollection(response.getItem());
 

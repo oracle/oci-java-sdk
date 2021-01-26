@@ -83,7 +83,9 @@ public class UpdateDeploymentConverter {
                                 com.oracle.bmc.apigateway.responses.UpdateDeploymentResponse.Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .UpdateDeploymentResponse.builder();
+                                                        .UpdateDeploymentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

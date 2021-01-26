@@ -82,7 +82,8 @@ public class UpdateRowConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.nosql.responses.UpdateRowResponse.Builder builder =
-                                        com.oracle.bmc.nosql.responses.UpdateRowResponse.builder();
+                                        com.oracle.bmc.nosql.responses.UpdateRowResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.updateRowResult(response.getItem());
 

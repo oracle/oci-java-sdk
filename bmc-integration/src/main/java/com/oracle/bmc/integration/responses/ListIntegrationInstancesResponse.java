@@ -10,6 +10,10 @@ import com.oracle.bmc.integration.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListIntegrationInstancesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If
@@ -42,6 +46,7 @@ public class ListIntegrationInstancesResponse {
          * @return this builder instance
          */
         public Builder copy(ListIntegrationInstancesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPreviousPage(o.getOpcPreviousPage());

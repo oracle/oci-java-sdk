@@ -74,7 +74,8 @@ public class UpdateVnicConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.UpdateVnicResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.UpdateVnicResponse.builder();
+                                        com.oracle.bmc.core.responses.UpdateVnicResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.vnic(response.getItem());
 

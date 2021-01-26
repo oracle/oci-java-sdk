@@ -142,7 +142,9 @@ public class ListSchemasConverter {
                                 com.oracle.bmc.dataintegration.responses.ListSchemasResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListSchemasResponse.builder();
+                                                        .ListSchemasResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.schemaSummaryCollection(response.getItem());
 

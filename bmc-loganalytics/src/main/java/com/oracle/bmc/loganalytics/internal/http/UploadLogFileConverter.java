@@ -165,7 +165,9 @@ public class UploadLogFileConverter {
                                 com.oracle.bmc.loganalytics.responses.UploadLogFileResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .UploadLogFileResponse.builder();
+                                                        .UploadLogFileResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.upload(response.getItem());
 

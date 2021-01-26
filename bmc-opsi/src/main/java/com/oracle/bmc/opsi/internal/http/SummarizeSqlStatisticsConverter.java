@@ -185,7 +185,9 @@ public class SummarizeSqlStatisticsConverter {
                                 com.oracle.bmc.opsi.responses.SummarizeSqlStatisticsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.opsi.responses
-                                                        .SummarizeSqlStatisticsResponse.builder();
+                                                        .SummarizeSqlStatisticsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.sqlStatisticAggregationCollection(response.getItem());
 

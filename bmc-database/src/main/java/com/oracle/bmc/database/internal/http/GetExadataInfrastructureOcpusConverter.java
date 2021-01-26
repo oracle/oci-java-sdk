@@ -86,7 +86,9 @@ public class GetExadataInfrastructureOcpusConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetExadataInfrastructureOcpusResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.oCPUs(response.getItem());
 

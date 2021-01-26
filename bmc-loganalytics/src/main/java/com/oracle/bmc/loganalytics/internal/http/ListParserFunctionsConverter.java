@@ -124,7 +124,9 @@ public class ListParserFunctionsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListParserFunctionsResponse.builder();
+                                                        .ListParserFunctionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsParserFunctionCollection(response.getItem());
 

@@ -5,8 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of Database version for upgrading a database.
- * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ * Details of the Oracle Database software version number for upgrading a database.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

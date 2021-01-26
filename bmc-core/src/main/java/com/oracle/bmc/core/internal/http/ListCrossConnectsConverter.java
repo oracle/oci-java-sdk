@@ -135,7 +135,9 @@ public class ListCrossConnectsConverter {
                                 com.oracle.bmc.core.responses.ListCrossConnectsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListCrossConnectsResponse.builder();
+                                                        .ListCrossConnectsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

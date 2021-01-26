@@ -81,7 +81,9 @@ public class CreateTransferApplianceConverter {
                                 com.oracle.bmc.dts.responses.CreateTransferApplianceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .CreateTransferApplianceResponse.builder();
+                                                        .CreateTransferApplianceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.transferAppliance(response.getItem());
 

@@ -83,8 +83,9 @@ public class GetRoverNodeEncryptionKeyConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .GetRoverNodeEncryptionKeyResponse
-                                                        .builder();
+                                                        .GetRoverNodeEncryptionKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.roverNodeEncryptionKey(response.getItem());
 

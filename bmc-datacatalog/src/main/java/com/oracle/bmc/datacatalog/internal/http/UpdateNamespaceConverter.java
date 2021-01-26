@@ -88,7 +88,9 @@ public class UpdateNamespaceConverter {
                                 com.oracle.bmc.datacatalog.responses.UpdateNamespaceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .UpdateNamespaceResponse.builder();
+                                                        .UpdateNamespaceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.namespace(response.getItem());
 

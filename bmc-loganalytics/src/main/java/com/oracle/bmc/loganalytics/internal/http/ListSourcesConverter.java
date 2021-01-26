@@ -169,7 +169,9 @@ public class ListSourcesConverter {
                                 com.oracle.bmc.loganalytics.responses.ListSourcesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .ListSourcesResponse.builder();
+                                                        .ListSourcesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsSourceCollection(response.getItem());
 

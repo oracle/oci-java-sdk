@@ -163,7 +163,9 @@ public class SummarizeDatabaseInsightResourceUtilizationInsightConverter {
                                         builder =
                                                 com.oracle.bmc.opsi.responses
                                                         .SummarizeDatabaseInsightResourceUtilizationInsightResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder
                                         .summarizeDatabaseInsightResourceUtilizationInsightAggregation(

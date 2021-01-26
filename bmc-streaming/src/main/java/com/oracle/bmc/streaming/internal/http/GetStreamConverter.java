@@ -77,7 +77,9 @@ public class GetStreamConverter {
                                 com.oracle.bmc.streaming.responses.GetStreamResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses.GetStreamResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.stream(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.core.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListComputeImageCapabilitySchemasResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For list pagination. When this header appears in the response, additional pages
@@ -37,6 +41,7 @@ public class ListComputeImageCapabilitySchemasResponse {
          * @return this builder instance
          */
         public Builder copy(ListComputeImageCapabilitySchemasResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());

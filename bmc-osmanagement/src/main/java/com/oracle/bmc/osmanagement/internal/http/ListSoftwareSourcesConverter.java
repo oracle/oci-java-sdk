@@ -134,7 +134,9 @@ public class ListSoftwareSourcesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .ListSoftwareSourcesResponse.builder();
+                                                        .ListSoftwareSourcesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

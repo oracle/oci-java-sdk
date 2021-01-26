@@ -140,7 +140,9 @@ public class RequestSummarizedTrendProblemsConverter {
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
                                                         .RequestSummarizedTrendProblemsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.problemTrendAggregationCollection(response.getItem());
 

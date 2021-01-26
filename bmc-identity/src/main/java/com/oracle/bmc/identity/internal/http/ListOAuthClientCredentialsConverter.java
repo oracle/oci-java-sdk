@@ -110,7 +110,9 @@ public class ListOAuthClientCredentialsConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ListOAuthClientCredentialsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -75,7 +75,9 @@ public class GetNatGatewayConverter {
                                 com.oracle.bmc.core.responses.GetNatGatewayResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.GetNatGatewayResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.natGateway(response.getItem());
 

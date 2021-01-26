@@ -88,7 +88,9 @@ public class UpdateBucketConverter {
                                 com.oracle.bmc.objectstorage.responses.UpdateBucketResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .UpdateBucketResponse.builder();
+                                                        .UpdateBucketResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.bucket(response.getItem());
 

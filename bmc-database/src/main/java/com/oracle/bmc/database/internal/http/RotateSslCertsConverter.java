@@ -89,7 +89,9 @@ public class RotateSslCertsConverter {
                                 com.oracle.bmc.database.responses.RotateSslCertsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .RotateSslCertsResponse.builder();
+                                                        .RotateSslCertsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

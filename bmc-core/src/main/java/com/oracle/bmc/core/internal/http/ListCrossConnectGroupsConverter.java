@@ -128,7 +128,9 @@ public class ListCrossConnectGroupsConverter {
                                 com.oracle.bmc.core.responses.ListCrossConnectGroupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListCrossConnectGroupsResponse.builder();
+                                                        .ListCrossConnectGroupsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -106,7 +106,9 @@ public class ListTaggingWorkRequestsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListTaggingWorkRequestsResponse.builder();
+                                                        .ListTaggingWorkRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

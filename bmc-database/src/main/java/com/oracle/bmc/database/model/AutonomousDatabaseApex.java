@@ -5,7 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Oracle Application Express (APEX) is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features. Autonomous Database with the APEX workload type is optimized to support APEX development.
+ * Oracle APEX Application Development is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features. Autonomous Database with the APEX workload type is optimized to support APEX development.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -72,7 +72,7 @@ public class AutonomousDatabaseApex {
     }
 
     /**
-     * The Oracle Application Express service version.
+     * The Oracle APEX Application Development version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apexVersion")
     String apexVersion;

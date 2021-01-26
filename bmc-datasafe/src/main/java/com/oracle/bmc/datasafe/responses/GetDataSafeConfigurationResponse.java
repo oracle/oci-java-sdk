@@ -10,6 +10,10 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetDataSafeConfigurationResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
@@ -34,6 +38,7 @@ public class GetDataSafeConfigurationResponse {
          * @return this builder instance
          */
         public Builder copy(GetDataSafeConfigurationResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             dataSafeConfiguration(o.getDataSafeConfiguration());

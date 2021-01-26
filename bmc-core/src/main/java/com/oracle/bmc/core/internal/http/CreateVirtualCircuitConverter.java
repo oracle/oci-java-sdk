@@ -77,7 +77,9 @@ public class CreateVirtualCircuitConverter {
                                 com.oracle.bmc.core.responses.CreateVirtualCircuitResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreateVirtualCircuitResponse.builder();
+                                                        .CreateVirtualCircuitResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.virtualCircuit(response.getItem());
 

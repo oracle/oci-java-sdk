@@ -94,7 +94,9 @@ public class UpdateWafAddressRateLimitingConverter {
                                         builder =
                                                 com.oracle.bmc.waas.responses
                                                         .UpdateWafAddressRateLimitingResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

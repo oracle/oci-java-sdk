@@ -91,7 +91,9 @@ public class CancelInstanceAgentCommandConverter {
                                         builder =
                                                 com.oracle.bmc.computeinstanceagent.responses
                                                         .CancelInstanceAgentCommandResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

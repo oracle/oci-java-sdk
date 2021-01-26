@@ -81,7 +81,9 @@ public class DeleteExportConverter {
                                 com.oracle.bmc.filestorage.responses.DeleteExportResponse.Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .DeleteExportResponse.builder();
+                                                        .DeleteExportResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

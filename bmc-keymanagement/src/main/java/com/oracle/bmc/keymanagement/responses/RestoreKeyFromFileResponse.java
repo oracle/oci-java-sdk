@@ -10,6 +10,10 @@ import com.oracle.bmc.keymanagement.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class RestoreKeyFromFileResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -48,6 +52,7 @@ public class RestoreKeyFromFileResponse {
          * @return this builder instance
          */
         public Builder copy(RestoreKeyFromFileResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcContentMd5(o.getOpcContentMd5());
             opcRequestId(o.getOpcRequestId());

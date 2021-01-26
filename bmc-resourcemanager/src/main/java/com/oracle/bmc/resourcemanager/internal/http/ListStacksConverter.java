@@ -140,7 +140,9 @@ public class ListStacksConverter {
                                 com.oracle.bmc.resourcemanager.responses.ListStacksResponse.Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .ListStacksResponse.builder();
+                                                        .ListStacksResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

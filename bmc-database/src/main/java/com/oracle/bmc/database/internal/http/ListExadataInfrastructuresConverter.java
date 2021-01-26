@@ -138,7 +138,9 @@ public class ListExadataInfrastructuresConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListExadataInfrastructuresResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

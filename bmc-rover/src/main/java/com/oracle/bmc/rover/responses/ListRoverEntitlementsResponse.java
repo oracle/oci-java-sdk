@@ -10,6 +10,10 @@ import com.oracle.bmc.rover.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListRoverEntitlementsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      *
@@ -43,6 +47,7 @@ public class ListRoverEntitlementsResponse {
          * @return this builder instance
          */
         public Builder copy(ListRoverEntitlementsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());

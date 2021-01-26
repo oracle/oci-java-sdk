@@ -100,7 +100,9 @@ public class ListShapesConverter {
                                 com.oracle.bmc.loadbalancer.responses.ListShapesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .ListShapesResponse.builder();
+                                                        .ListShapesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

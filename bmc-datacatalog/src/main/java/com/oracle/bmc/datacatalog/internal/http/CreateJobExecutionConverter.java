@@ -93,7 +93,9 @@ public class CreateJobExecutionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateJobExecutionResponse.builder();
+                                                        .CreateJobExecutionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.jobExecution(response.getItem());
 

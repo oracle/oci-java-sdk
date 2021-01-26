@@ -95,7 +95,9 @@ public class ListDbHomePatchesConverter {
                                 com.oracle.bmc.database.responses.ListDbHomePatchesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .ListDbHomePatchesResponse.builder();
+                                                        .ListDbHomePatchesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

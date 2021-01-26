@@ -159,7 +159,9 @@ public class ListUnifiedAgentConfigurationsConverter {
                                         builder =
                                                 com.oracle.bmc.logging.responses
                                                         .ListUnifiedAgentConfigurationsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.unifiedAgentConfigurationCollection(response.getItem());
 

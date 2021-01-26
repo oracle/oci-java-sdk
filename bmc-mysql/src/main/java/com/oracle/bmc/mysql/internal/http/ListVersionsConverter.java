@@ -83,7 +83,9 @@ public class ListVersionsConverter {
                                 com.oracle.bmc.mysql.responses.ListVersionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.mysql.responses.ListVersionsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

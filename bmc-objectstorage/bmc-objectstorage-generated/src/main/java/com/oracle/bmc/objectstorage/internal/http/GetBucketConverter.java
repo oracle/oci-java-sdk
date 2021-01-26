@@ -100,7 +100,9 @@ public class GetBucketConverter {
                                 com.oracle.bmc.objectstorage.responses.GetBucketResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .GetBucketResponse.builder();
+                                                        .GetBucketResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 if (response.getStatusCode() != 304) {
                                     builder.bucket(response.getItem());

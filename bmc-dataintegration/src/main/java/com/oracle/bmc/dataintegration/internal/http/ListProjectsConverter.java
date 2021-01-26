@@ -140,7 +140,9 @@ public class ListProjectsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListProjectsResponse.builder();
+                                                        .ListProjectsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.projectSummaryCollection(response.getItem());
 

@@ -80,7 +80,9 @@ public class CreateAddressListConverter {
                                 com.oracle.bmc.waas.responses.CreateAddressListResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .CreateAddressListResponse.builder();
+                                                        .CreateAddressListResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.addressList(response.getItem());
 

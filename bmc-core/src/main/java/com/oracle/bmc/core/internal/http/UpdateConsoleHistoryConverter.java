@@ -85,7 +85,9 @@ public class UpdateConsoleHistoryConverter {
                                 com.oracle.bmc.core.responses.UpdateConsoleHistoryResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateConsoleHistoryResponse.builder();
+                                                        .UpdateConsoleHistoryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.consoleHistory(response.getItem());
 

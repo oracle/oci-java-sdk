@@ -88,7 +88,9 @@ public class DeleteDataSafePrivateEndpointConverter {
                                         builder =
                                                 com.oracle.bmc.datasafe.responses
                                                         .DeleteDataSafePrivateEndpointResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

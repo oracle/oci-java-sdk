@@ -311,6 +311,8 @@ public interface ResourceManager extends AutoCloseable {
      * Lists drift status details for each resource defined in the specified stack.
      * The drift status details for a given resource indicate differences, if any, between the actual state
      * and the expected (defined) state for that resource.
+     * The drift status details correspond to the specified work request (`workRequestId`).
+     * If no work request is specified, then the drift status details correspond to the latest completed work request for the stack.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

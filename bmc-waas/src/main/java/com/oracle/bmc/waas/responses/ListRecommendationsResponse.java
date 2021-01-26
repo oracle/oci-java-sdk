@@ -10,6 +10,10 @@ import com.oracle.bmc.waas.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListRecommendationsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -37,6 +41,7 @@ public class ListRecommendationsResponse {
          * @return this builder instance
          */
         public Builder copy(ListRecommendationsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());

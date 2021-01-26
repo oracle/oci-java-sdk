@@ -88,7 +88,9 @@ public class GetFastConnectProviderServiceKeyConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetFastConnectProviderServiceKeyResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.fastConnectProviderServiceKey(response.getItem());
 

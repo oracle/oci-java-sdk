@@ -91,7 +91,9 @@ public class ChangeTableCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.nosql.responses
-                                                        .ChangeTableCompartmentResponse.builder();
+                                                        .ChangeTableCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

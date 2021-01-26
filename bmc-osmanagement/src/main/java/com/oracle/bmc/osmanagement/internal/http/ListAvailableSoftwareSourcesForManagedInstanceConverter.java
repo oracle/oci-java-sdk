@@ -146,7 +146,9 @@ public class ListAvailableSoftwareSourcesForManagedInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListAvailableSoftwareSourcesForManagedInstanceResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

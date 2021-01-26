@@ -145,7 +145,9 @@ public class ListPatchChangesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListPatchChangesResponse.builder();
+                                                        .ListPatchChangesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.patchChangeSummaryCollection(response.getItem());
 

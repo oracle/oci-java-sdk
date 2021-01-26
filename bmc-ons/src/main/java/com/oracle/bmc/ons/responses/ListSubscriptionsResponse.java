@@ -10,6 +10,10 @@ import com.oracle.bmc.ons.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListSubscriptionsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. Default value: 10.
@@ -36,6 +40,7 @@ public class ListSubscriptionsResponse {
          * @return this builder instance
          */
         public Builder copy(ListSubscriptionsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             items(o.getItems());

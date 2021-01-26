@@ -91,7 +91,9 @@ public class ChangeRuleCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.events.responses
-                                                        .ChangeRuleCompartmentResponse.builder();
+                                                        .ChangeRuleCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

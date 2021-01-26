@@ -98,7 +98,9 @@ public class GenerateRecommendedVmClusterNetworkConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GenerateRecommendedVmClusterNetworkResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.vmClusterNetworkDetails(response.getItem());
 

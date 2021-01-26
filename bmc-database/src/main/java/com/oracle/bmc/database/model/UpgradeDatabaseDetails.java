@@ -5,8 +5,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for upgrading a database to a specific db version.
- * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ * Details for upgrading a database to a specific Oracle Database version.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -76,7 +75,7 @@ public class UpgradeDatabaseDetails {
     }
 
     /**
-     * action for upgrading database.
+     * The database upgrade action.
      **/
     public enum Action {
         Precheck("PRECHECK"),
@@ -112,7 +111,7 @@ public class UpgradeDatabaseDetails {
         }
     };
     /**
-     * action for upgrading database.
+     * The database upgrade action.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;

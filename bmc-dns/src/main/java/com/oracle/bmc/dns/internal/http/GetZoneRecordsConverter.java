@@ -176,7 +176,9 @@ public class GetZoneRecordsConverter {
                                 com.oracle.bmc.dns.responses.GetZoneRecordsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses.GetZoneRecordsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recordCollection(response.getItem());
 

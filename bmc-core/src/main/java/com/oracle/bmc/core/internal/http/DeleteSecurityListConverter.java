@@ -77,7 +77,9 @@ public class DeleteSecurityListConverter {
                                 com.oracle.bmc.core.responses.DeleteSecurityListResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteSecurityListResponse.builder();
+                                                        .DeleteSecurityListResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

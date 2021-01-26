@@ -76,7 +76,9 @@ public class GetTagNamespaceConverter {
                                 com.oracle.bmc.identity.responses.GetTagNamespaceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .GetTagNamespaceResponse.builder();
+                                                        .GetTagNamespaceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.tagNamespace(response.getItem());
 

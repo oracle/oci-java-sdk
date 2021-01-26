@@ -87,7 +87,9 @@ public class GetHealthCheckerConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .GetHealthCheckerResponse.builder();
+                                                        .GetHealthCheckerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.healthChecker(response.getItem());
 

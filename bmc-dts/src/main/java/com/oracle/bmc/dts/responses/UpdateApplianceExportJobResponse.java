@@ -10,6 +10,10 @@ import com.oracle.bmc.dts.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateApplianceExportJobResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      *
@@ -32,6 +36,7 @@ public class UpdateApplianceExportJobResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateApplianceExportJobResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             applianceExportJob(o.getApplianceExportJob());

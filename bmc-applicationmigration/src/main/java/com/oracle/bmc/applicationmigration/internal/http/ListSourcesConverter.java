@@ -142,7 +142,9 @@ public class ListSourcesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .ListSourcesResponse.builder();
+                                                        .ListSourcesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

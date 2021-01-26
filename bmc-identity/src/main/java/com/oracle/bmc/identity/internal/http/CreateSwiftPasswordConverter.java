@@ -84,7 +84,9 @@ public class CreateSwiftPasswordConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .CreateSwiftPasswordResponse.builder();
+                                                        .CreateSwiftPasswordResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.swiftPassword(response.getItem());
 

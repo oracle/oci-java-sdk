@@ -78,7 +78,9 @@ public class CreateVolumeGroupBackupConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreateVolumeGroupBackupResponse.builder();
+                                                        .CreateVolumeGroupBackupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.volumeGroupBackup(response.getItem());
 

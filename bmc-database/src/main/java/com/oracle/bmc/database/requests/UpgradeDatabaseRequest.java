@@ -20,7 +20,7 @@ public class UpgradeDatabaseRequest
     private String databaseId;
 
     /**
-     * Request to perform database upgrade.
+     * Request to perform a database upgrade.
      */
     private UpgradeDatabaseDetails upgradeDatabaseDetails;
 

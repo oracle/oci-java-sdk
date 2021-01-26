@@ -133,7 +133,9 @@ public class ListInstancesConverter {
                                 com.oracle.bmc.core.responses.ListInstancesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.ListInstancesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

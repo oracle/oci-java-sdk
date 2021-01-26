@@ -79,7 +79,9 @@ public class GetSubscriptionConverter {
                                 com.oracle.bmc.ons.responses.GetSubscriptionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.ons.responses.GetSubscriptionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.subscription(response.getItem());
 

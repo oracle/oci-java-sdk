@@ -87,7 +87,9 @@ public class UpdateMountTargetConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .UpdateMountTargetResponse.builder();
+                                                        .UpdateMountTargetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.mountTarget(response.getItem());
 

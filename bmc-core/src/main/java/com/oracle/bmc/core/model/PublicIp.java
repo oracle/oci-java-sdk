@@ -585,7 +585,7 @@ public class PublicIp {
     java.util.Date timeCreated;
 
     /**
-     * OCID of the pool object created by the current tenancy
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     String publicIpPoolId;

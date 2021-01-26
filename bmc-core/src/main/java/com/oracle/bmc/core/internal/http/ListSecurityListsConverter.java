@@ -135,7 +135,9 @@ public class ListSecurityListsConverter {
                                 com.oracle.bmc.core.responses.ListSecurityListsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListSecurityListsResponse.builder();
+                                                        .ListSecurityListsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

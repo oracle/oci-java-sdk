@@ -76,7 +76,9 @@ public class PostMetricDataConverter {
                                 com.oracle.bmc.monitoring.responses.PostMetricDataResponse.Builder
                                         builder =
                                                 com.oracle.bmc.monitoring.responses
-                                                        .PostMetricDataResponse.builder();
+                                                        .PostMetricDataResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.postMetricDataResponseDetails(response.getItem());
 

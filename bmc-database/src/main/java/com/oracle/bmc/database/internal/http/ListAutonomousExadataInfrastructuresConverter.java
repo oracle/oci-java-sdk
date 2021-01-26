@@ -146,7 +146,9 @@ public class ListAutonomousExadataInfrastructuresConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ListAutonomousExadataInfrastructuresResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

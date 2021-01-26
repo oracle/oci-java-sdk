@@ -185,10 +185,6 @@ public class UpdateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
     IkeVersion ikeVersion;
 
-    /**
-     * Information for establishing a BGP session for the IPSec tunnel.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionConfig")
     UpdateIPSecTunnelBgpSessionDetails bgpSessionConfig;
 

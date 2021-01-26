@@ -77,7 +77,9 @@ public class GetAlarmConverter {
                                 com.oracle.bmc.monitoring.responses.GetAlarmResponse.Builder
                                         builder =
                                                 com.oracle.bmc.monitoring.responses.GetAlarmResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.alarm(response.getItem());
 

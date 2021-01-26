@@ -103,7 +103,9 @@ public class ChangeAutonomousContainerDatabaseCompartmentConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .ChangeAutonomousContainerDatabaseCompartmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(

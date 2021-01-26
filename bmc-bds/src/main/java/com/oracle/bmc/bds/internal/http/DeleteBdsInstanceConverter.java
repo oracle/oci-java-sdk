@@ -81,7 +81,9 @@ public class DeleteBdsInstanceConverter {
                                 com.oracle.bmc.bds.responses.DeleteBdsInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.bds.responses
-                                                        .DeleteBdsInstanceResponse.builder();
+                                                        .DeleteBdsInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

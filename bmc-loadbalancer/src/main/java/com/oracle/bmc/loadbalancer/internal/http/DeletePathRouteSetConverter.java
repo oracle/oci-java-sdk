@@ -84,7 +84,9 @@ public class DeletePathRouteSetConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .DeletePathRouteSetResponse.builder();
+                                                        .DeletePathRouteSetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

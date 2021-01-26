@@ -87,7 +87,9 @@ public class GetDbHomePatchHistoryEntryConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetDbHomePatchHistoryEntryResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.patchHistoryEntry(response.getItem());
 

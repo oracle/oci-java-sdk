@@ -82,7 +82,9 @@ public class GetTransferApplianceConverter {
                                 com.oracle.bmc.dts.responses.GetTransferApplianceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .GetTransferApplianceResponse.builder();
+                                                        .GetTransferApplianceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.transferAppliance(response.getItem());
 

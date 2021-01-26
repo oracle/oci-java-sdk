@@ -89,7 +89,9 @@ public class UpdateTransferPackageConverter {
                                 com.oracle.bmc.dts.responses.UpdateTransferPackageResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .UpdateTransferPackageResponse.builder();
+                                                        .UpdateTransferPackageResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.transferPackage(response.getItem());
 

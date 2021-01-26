@@ -86,7 +86,9 @@ public class UpdateByoipRangeConverter {
                                 com.oracle.bmc.core.responses.UpdateByoipRangeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateByoipRangeResponse.builder();
+                                                        .UpdateByoipRangeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.byoipRange(response.getItem());
 

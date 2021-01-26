@@ -79,7 +79,9 @@ public class DeleteLoadBalancerConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .DeleteLoadBalancerResponse.builder();
+                                                        .DeleteLoadBalancerResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

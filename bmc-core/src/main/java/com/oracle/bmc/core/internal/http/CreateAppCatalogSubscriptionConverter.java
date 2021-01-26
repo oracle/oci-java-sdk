@@ -81,7 +81,9 @@ public class CreateAppCatalogSubscriptionConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .CreateAppCatalogSubscriptionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.appCatalogSubscription(response.getItem());
 

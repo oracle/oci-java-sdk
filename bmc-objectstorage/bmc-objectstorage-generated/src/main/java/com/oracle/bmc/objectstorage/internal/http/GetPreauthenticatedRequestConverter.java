@@ -97,7 +97,9 @@ public class GetPreauthenticatedRequestConverter {
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
                                                         .GetPreauthenticatedRequestResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.preauthenticatedRequestSummary(response.getItem());
 

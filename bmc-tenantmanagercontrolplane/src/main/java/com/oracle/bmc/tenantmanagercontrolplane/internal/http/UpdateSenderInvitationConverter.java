@@ -95,7 +95,9 @@ public class UpdateSenderInvitationConverter {
                                                 .UpdateSenderInvitationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.tenantmanagercontrolplane.responses
-                                                        .UpdateSenderInvitationResponse.builder();
+                                                        .UpdateSenderInvitationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.senderInvitation(response.getItem());
 

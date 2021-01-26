@@ -81,7 +81,9 @@ public class DeleteLogGroupConverter {
                                 com.oracle.bmc.logging.responses.DeleteLogGroupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.logging.responses
-                                                        .DeleteLogGroupResponse.builder();
+                                                        .DeleteLogGroupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

@@ -80,7 +80,9 @@ public class CreateOdaInstanceConverter {
                                 com.oracle.bmc.oda.responses.CreateOdaInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oda.responses
-                                                        .CreateOdaInstanceResponse.builder();
+                                                        .CreateOdaInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.odaInstance(response.getItem());
 

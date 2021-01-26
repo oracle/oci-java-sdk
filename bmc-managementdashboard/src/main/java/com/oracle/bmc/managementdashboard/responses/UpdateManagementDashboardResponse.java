@@ -10,6 +10,10 @@ import com.oracle.bmc.managementdashboard.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateManagementDashboardResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -41,6 +45,7 @@ public class UpdateManagementDashboardResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateManagementDashboardResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());

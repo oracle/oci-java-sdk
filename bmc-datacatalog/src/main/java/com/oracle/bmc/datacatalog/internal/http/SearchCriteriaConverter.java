@@ -145,7 +145,9 @@ public class SearchCriteriaConverter {
                                 com.oracle.bmc.datacatalog.responses.SearchCriteriaResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .SearchCriteriaResponse.builder();
+                                                        .SearchCriteriaResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.searchResultCollection(response.getItem());
 

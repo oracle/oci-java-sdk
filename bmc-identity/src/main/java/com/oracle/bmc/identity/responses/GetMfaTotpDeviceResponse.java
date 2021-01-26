@@ -10,6 +10,10 @@ import com.oracle.bmc.identity.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetMfaTotpDeviceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -34,6 +38,7 @@ public class GetMfaTotpDeviceResponse {
          * @return this builder instance
          */
         public Builder copy(GetMfaTotpDeviceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             mfaTotpDeviceSummary(o.getMfaTotpDeviceSummary());

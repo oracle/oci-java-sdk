@@ -10,6 +10,10 @@ import com.oracle.bmc.datasafe.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateOnPremConnectorResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
@@ -29,6 +33,7 @@ public class UpdateOnPremConnectorResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateOnPremConnectorResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

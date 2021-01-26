@@ -155,7 +155,9 @@ public class ListAvailableWindowsUpdatesForManagedInstanceConverter {
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
                                                         .ListAvailableWindowsUpdatesForManagedInstanceResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

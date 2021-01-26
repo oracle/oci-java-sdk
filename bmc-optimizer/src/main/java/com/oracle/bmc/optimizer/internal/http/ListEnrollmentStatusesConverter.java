@@ -131,7 +131,9 @@ public class ListEnrollmentStatusesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.optimizer.responses
-                                                        .ListEnrollmentStatusesResponse.builder();
+                                                        .ListEnrollmentStatusesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.enrollmentStatusCollection(response.getItem());
 

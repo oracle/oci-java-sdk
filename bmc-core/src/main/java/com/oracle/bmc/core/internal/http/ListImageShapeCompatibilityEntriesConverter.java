@@ -107,7 +107,9 @@ public class ListImageShapeCompatibilityEntriesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .ListImageShapeCompatibilityEntriesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

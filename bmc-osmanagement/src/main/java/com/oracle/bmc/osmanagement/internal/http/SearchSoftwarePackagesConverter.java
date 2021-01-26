@@ -141,7 +141,9 @@ public class SearchSoftwarePackagesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.osmanagement.responses
-                                                        .SearchSoftwarePackagesResponse.builder();
+                                                        .SearchSoftwarePackagesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -118,7 +118,9 @@ public class ListSecretBundleVersionsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.secrets.responses
-                                                        .ListSecretBundleVersionsResponse.builder();
+                                                        .ListSecretBundleVersionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -99,7 +99,9 @@ public class DeleteResolverEndpointConverter {
                                 com.oracle.bmc.dns.responses.DeleteResolverEndpointResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .DeleteResolverEndpointResponse.builder();
+                                                        .DeleteResolverEndpointResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -85,7 +85,9 @@ public class DeleteMigrationConverter {
                                                 .DeleteMigrationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .DeleteMigrationResponse.builder();
+                                                        .DeleteMigrationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -73,7 +73,8 @@ public class DetachVnicConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.DetachVnicResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.DetachVnicResponse.builder();
+                                        com.oracle.bmc.core.responses.DetachVnicResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

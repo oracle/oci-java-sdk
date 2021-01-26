@@ -74,7 +74,8 @@ public class GetSecretConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.vault.responses.GetSecretResponse.Builder builder =
-                                        com.oracle.bmc.vault.responses.GetSecretResponse.builder();
+                                        com.oracle.bmc.vault.responses.GetSecretResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.secret(response.getItem());
 

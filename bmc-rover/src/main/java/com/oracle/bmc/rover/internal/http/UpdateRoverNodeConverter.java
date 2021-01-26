@@ -83,7 +83,9 @@ public class UpdateRoverNodeConverter {
                                 com.oracle.bmc.rover.responses.UpdateRoverNodeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .UpdateRoverNodeResponse.builder();
+                                                        .UpdateRoverNodeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.roverNode(response.getItem());
 

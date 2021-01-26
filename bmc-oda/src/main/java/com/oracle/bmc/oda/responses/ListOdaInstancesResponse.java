@@ -10,6 +10,10 @@ import com.oracle.bmc.oda.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListOdaInstancesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you contact
@@ -37,6 +41,7 @@ public class ListOdaInstancesResponse {
          * @return this builder instance
          */
         public Builder copy(ListOdaInstancesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             items(o.getItems());

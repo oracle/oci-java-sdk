@@ -10,6 +10,10 @@ import com.oracle.bmc.nosql.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListTableUsageResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For pagination of a list of items. When paging through a list,
@@ -40,6 +44,7 @@ public class ListTableUsageResponse {
          * @return this builder instance
          */
         public Builder copy(ListTableUsageResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
             tableUsageCollection(o.getTableUsageCollection());

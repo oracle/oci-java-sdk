@@ -10,6 +10,10 @@ import com.oracle.bmc.dataflow.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListApplicationsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Retrieves the previous page of results.
@@ -44,6 +48,7 @@ public class ListApplicationsResponse {
          * @return this builder instance
          */
         public Builder copy(ListApplicationsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcPrevPage(o.getOpcPrevPage());
             opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());

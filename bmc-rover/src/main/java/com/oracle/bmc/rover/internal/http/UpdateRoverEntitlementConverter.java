@@ -88,7 +88,9 @@ public class UpdateRoverEntitlementConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.rover.responses
-                                                        .UpdateRoverEntitlementResponse.builder();
+                                                        .UpdateRoverEntitlementResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.roverEntitlement(response.getItem());
 

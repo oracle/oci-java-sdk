@@ -115,7 +115,9 @@ public class UpdateZoneRecordsConverter {
                                 com.oracle.bmc.dns.responses.UpdateZoneRecordsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dns.responses
-                                                        .UpdateZoneRecordsResponse.builder();
+                                                        .UpdateZoneRecordsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.recordCollection(response.getItem());
 

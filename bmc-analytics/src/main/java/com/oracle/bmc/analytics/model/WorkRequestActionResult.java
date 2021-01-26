@@ -18,6 +18,12 @@ public enum WorkRequestActionResult {
     Stopped("STOPPED"),
     Scaled("SCALED"),
     NetworkEndpointChanged("NETWORK_ENDPOINT_CHANGED"),
+    VanityUrlCreated("VANITY_URL_CREATED"),
+    VanityUrlUpdated("VANITY_URL_UPDATED"),
+    VanityUrlDeleted("VANITY_URL_DELETED"),
+    PrivateAccessChannelCreated("PRIVATE_ACCESS_CHANNEL_CREATED"),
+    PrivateAccessChannelUpdated("PRIVATE_ACCESS_CHANNEL_UPDATED"),
+    PrivateAccessChannelDeleted("PRIVATE_ACCESS_CHANNEL_DELETED"),
     None("NONE"),
 
     /**

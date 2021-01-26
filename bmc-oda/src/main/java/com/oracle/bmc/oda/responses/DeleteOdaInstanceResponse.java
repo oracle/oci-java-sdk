@@ -10,6 +10,10 @@ import com.oracle.bmc.oda.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class DeleteOdaInstanceResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the asynchronous request. You can use this to
@@ -31,6 +35,7 @@ public class DeleteOdaInstanceResponse {
          * @return this builder instance
          */
         public Builder copy(DeleteOdaInstanceResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
 

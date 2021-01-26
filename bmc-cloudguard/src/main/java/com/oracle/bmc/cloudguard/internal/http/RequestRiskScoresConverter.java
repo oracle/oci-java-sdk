@@ -99,7 +99,9 @@ public class RequestRiskScoresConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .RequestRiskScoresResponse.builder();
+                                                        .RequestRiskScoresResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.riskScoreAggregationCollection(response.getItem());
 

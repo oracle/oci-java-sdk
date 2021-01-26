@@ -96,7 +96,9 @@ public class FailOverAutonomousDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .FailOverAutonomousDatabaseResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousDatabase(response.getItem());
 

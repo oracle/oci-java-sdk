@@ -90,7 +90,9 @@ public class GetJobConverter {
                                 com.oracle.bmc.datacatalog.responses.GetJobResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses.GetJobResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.job(response.getItem());
 

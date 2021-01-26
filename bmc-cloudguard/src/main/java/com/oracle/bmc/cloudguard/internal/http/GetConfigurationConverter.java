@@ -81,7 +81,9 @@ public class GetConfigurationConverter {
                                 com.oracle.bmc.cloudguard.responses.GetConfigurationResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .GetConfigurationResponse.builder();
+                                                        .GetConfigurationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.configuration(response.getItem());
 

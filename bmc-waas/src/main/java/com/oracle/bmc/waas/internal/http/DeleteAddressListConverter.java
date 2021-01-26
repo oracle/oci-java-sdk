@@ -85,7 +85,9 @@ public class DeleteAddressListConverter {
                                 com.oracle.bmc.waas.responses.DeleteAddressListResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .DeleteAddressListResponse.builder();
+                                                        .DeleteAddressListResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

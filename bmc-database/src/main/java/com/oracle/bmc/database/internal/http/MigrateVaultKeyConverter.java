@@ -89,7 +89,9 @@ public class MigrateVaultKeyConverter {
                                 com.oracle.bmc.database.responses.MigrateVaultKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .MigrateVaultKeyResponse.builder();
+                                                        .MigrateVaultKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.database(response.getItem());
 

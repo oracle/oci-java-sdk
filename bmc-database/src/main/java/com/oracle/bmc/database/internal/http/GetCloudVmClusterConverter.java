@@ -80,7 +80,9 @@ public class GetCloudVmClusterConverter {
                                 com.oracle.bmc.database.responses.GetCloudVmClusterResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .GetCloudVmClusterResponse.builder();
+                                                        .GetCloudVmClusterResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.cloudVmCluster(response.getItem());
 

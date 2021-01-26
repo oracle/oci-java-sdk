@@ -103,7 +103,9 @@ public class CleanConverter {
                                 com.oracle.bmc.loganalytics.responses.CleanResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses.CleanResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -10,6 +10,10 @@ import com.oracle.bmc.resourcemanager.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateConfigurationSourceProviderResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique identifier for the request.
@@ -32,6 +36,7 @@ public class UpdateConfigurationSourceProviderResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateConfigurationSourceProviderResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             configurationSourceProvider(o.getConfigurationSourceProvider());

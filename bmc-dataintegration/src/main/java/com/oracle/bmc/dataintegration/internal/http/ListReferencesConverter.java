@@ -127,7 +127,9 @@ public class ListReferencesConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListReferencesResponse.builder();
+                                                        .ListReferencesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.referenceSummaryCollection(response.getItem());
 

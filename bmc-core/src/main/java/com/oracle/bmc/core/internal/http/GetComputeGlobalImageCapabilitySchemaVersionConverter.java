@@ -98,7 +98,9 @@ public class GetComputeGlobalImageCapabilitySchemaVersionConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetComputeGlobalImageCapabilitySchemaVersionResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.computeGlobalImageCapabilitySchemaVersion(
                                         response.getItem());

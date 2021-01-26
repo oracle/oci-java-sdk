@@ -726,7 +726,10 @@ public class ResourceManagerClient implements ResourceManager {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDetectStackDriftDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

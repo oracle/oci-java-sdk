@@ -100,7 +100,9 @@ public class AutonomousDatabaseManualRefreshConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .AutonomousDatabaseManualRefreshResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousDatabase(response.getItem());
 

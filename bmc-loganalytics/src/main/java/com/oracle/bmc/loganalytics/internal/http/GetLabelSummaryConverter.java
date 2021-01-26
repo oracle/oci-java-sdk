@@ -82,7 +82,9 @@ public class GetLabelSummaryConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .GetLabelSummaryResponse.builder();
+                                                        .GetLabelSummaryResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.labelSummaryReport(response.getItem());
 

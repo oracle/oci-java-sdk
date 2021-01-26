@@ -120,7 +120,9 @@ public class ListMultipartUploadPartsConverter {
                                                 .ListMultipartUploadPartsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.objectstorage.responses
-                                                        .ListMultipartUploadPartsResponse.builder();
+                                                        .ListMultipartUploadPartsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

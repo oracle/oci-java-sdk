@@ -105,7 +105,8 @@ public class GetZoneConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.dns.responses.GetZoneResponse.Builder builder =
-                                        com.oracle.bmc.dns.responses.GetZoneResponse.builder();
+                                        com.oracle.bmc.dns.responses.GetZoneResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.zone(response.getItem());
 

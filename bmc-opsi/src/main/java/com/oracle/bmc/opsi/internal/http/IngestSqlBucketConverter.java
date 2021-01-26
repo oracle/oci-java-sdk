@@ -102,7 +102,9 @@ public class IngestSqlBucketConverter {
                                 com.oracle.bmc.opsi.responses.IngestSqlBucketResponse.Builder
                                         builder =
                                                 com.oracle.bmc.opsi.responses
-                                                        .IngestSqlBucketResponse.builder();
+                                                        .IngestSqlBucketResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.ingestSqlBucketResponseDetails(response.getItem());
 

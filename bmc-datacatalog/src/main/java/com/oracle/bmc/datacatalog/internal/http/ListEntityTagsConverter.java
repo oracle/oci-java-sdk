@@ -180,7 +180,9 @@ public class ListEntityTagsConverter {
                                 com.oracle.bmc.datacatalog.responses.ListEntityTagsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListEntityTagsResponse.builder();
+                                                        .ListEntityTagsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.entityTagCollection(response.getItem());
 

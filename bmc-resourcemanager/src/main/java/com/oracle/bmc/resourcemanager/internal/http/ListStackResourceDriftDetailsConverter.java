@@ -41,6 +41,14 @@ public class ListStackResourceDriftDetailsConverter {
                         .path("actions")
                         .path("listResourceDriftDetails");
 
+        if (request.getWorkRequestId() != null) {
+            target =
+                    target.queryParam(
+                            "workRequestId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getWorkRequestId()));
+        }
+
         if (request.getResourceDriftStatus() != null) {
             target =
                     com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
@@ -115,7 +123,9 @@ public class ListStackResourceDriftDetailsConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .ListStackResourceDriftDetailsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.stackResourceDriftCollection(response.getItem());
 

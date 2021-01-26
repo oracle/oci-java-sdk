@@ -107,7 +107,9 @@ public class FailoverAutonomousContainerDatabaseDataguardAssociationConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .FailoverAutonomousContainerDatabaseDataguardAssociationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousContainerDatabaseDataguardAssociation(
                                         response.getItem());

@@ -147,7 +147,9 @@ public class ListLimitValuesConverter {
                                 com.oracle.bmc.limits.responses.ListLimitValuesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.limits.responses
-                                                        .ListLimitValuesResponse.builder();
+                                                        .ListLimitValuesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

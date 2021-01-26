@@ -401,4 +401,72 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
             return futureSupplier.apply(handlerToUse);
         }
     }
+
+    @Override
+    public java.util.concurrent.Future<SignResponse> sign(
+            SignRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SignRequest, SignResponse> handler) {
+        LOG.trace("Called async sign");
+        final SignRequest interceptedRequest = SignConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SignConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, SignResponse> transformer =
+                SignConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<SignRequest, SignResponse> handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<SignRequest, SignResponse>,
+                        java.util.concurrent.Future<SignResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SignRequest, SignResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResponse> verify(
+            VerifyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<VerifyRequest, VerifyResponse> handler) {
+        LOG.trace("Called async verify");
+        final VerifyRequest interceptedRequest = VerifyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                VerifyConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, VerifyResponse>
+                transformer = VerifyConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<VerifyRequest, VerifyResponse> handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<VerifyRequest, VerifyResponse>,
+                        java.util.concurrent.Future<VerifyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    VerifyRequest, VerifyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
 }

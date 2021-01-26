@@ -87,7 +87,9 @@ public class ActivateNotebookSessionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datascience.responses
-                                                        .ActivateNotebookSessionResponse.builder();
+                                                        .ActivateNotebookSessionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

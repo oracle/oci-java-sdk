@@ -82,7 +82,9 @@ public class GetAlertRuleConverter {
                                 com.oracle.bmc.budget.responses.GetAlertRuleResponse.Builder
                                         builder =
                                                 com.oracle.bmc.budget.responses.GetAlertRuleResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.alertRule(response.getItem());
 

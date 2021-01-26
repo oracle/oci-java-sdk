@@ -81,7 +81,9 @@ public class DeleteFunctionConverter {
                                 com.oracle.bmc.functions.responses.DeleteFunctionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.functions.responses
-                                                        .DeleteFunctionResponse.builder();
+                                                        .DeleteFunctionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

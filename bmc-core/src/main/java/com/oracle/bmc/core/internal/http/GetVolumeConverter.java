@@ -70,7 +70,8 @@ public class GetVolumeConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.core.responses.GetVolumeResponse.Builder builder =
-                                        com.oracle.bmc.core.responses.GetVolumeResponse.builder();
+                                        com.oracle.bmc.core.responses.GetVolumeResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.volume(response.getItem());
 

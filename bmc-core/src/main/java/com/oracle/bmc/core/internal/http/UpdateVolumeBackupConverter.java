@@ -82,7 +82,9 @@ public class UpdateVolumeBackupConverter {
                                 com.oracle.bmc.core.responses.UpdateVolumeBackupResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateVolumeBackupResponse.builder();
+                                                        .UpdateVolumeBackupResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.volumeBackup(response.getItem());
 

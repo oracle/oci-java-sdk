@@ -128,7 +128,8 @@ public class ListRulesConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.events.responses.ListRulesResponse.Builder builder =
-                                        com.oracle.bmc.events.responses.ListRulesResponse.builder();
+                                        com.oracle.bmc.events.responses.ListRulesResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

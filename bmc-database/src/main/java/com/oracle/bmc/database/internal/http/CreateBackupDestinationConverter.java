@@ -83,7 +83,9 @@ public class CreateBackupDestinationConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .CreateBackupDestinationResponse.builder();
+                                                        .CreateBackupDestinationResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.backupDestination(response.getItem());
 

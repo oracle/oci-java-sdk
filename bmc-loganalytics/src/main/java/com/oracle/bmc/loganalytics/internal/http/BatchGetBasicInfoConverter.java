@@ -125,7 +125,9 @@ public class BatchGetBasicInfoConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
-                                                        .BatchGetBasicInfoResponse.builder();
+                                                        .BatchGetBasicInfoResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsLabelCollection(response.getItem());
 

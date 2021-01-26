@@ -93,7 +93,9 @@ public class GetDatabaseUpgradeHistoryEntryConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .GetDatabaseUpgradeHistoryEntryResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.databaseUpgradeHistoryEntry(response.getItem());
 

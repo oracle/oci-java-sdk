@@ -97,7 +97,9 @@ public class SwitchoverDataGuardAssociationConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .SwitchoverDataGuardAssociationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataGuardAssociation(response.getItem());
 

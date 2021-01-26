@@ -10,6 +10,10 @@ import com.oracle.bmc.datacatalog.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListAttributeTagsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -35,6 +39,7 @@ public class ListAttributeTagsResponse {
          * @return this builder instance
          */
         public Builder copy(ListAttributeTagsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             attributeTagCollection(o.getAttributeTagCollection());

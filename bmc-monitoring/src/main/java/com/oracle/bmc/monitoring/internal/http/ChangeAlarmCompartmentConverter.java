@@ -93,7 +93,9 @@ public class ChangeAlarmCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.monitoring.responses
-                                                        .ChangeAlarmCompartmentResponse.builder();
+                                                        .ChangeAlarmCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

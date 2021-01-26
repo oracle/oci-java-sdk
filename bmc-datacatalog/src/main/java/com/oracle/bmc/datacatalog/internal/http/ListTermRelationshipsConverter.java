@@ -159,7 +159,9 @@ public class ListTermRelationshipsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListTermRelationshipsResponse.builder();
+                                                        .ListTermRelationshipsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.termRelationshipCollection(response.getItem());
 

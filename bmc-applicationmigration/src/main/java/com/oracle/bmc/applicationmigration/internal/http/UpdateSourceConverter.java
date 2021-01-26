@@ -85,7 +85,9 @@ public class UpdateSourceConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .UpdateSourceResponse.builder();
+                                                        .UpdateSourceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -98,7 +98,9 @@ public class ImportConnectionConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ImportConnectionResponse.builder();
+                                                        .ImportConnectionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.connection(response.getItem());
 

@@ -73,7 +73,9 @@ public class GetPolicyConverter {
                                 com.oracle.bmc.identity.responses.GetPolicyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses.GetPolicyResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.policy(response.getItem());
 

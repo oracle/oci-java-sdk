@@ -80,7 +80,9 @@ public class GetManagedListConverter {
                                 com.oracle.bmc.cloudguard.responses.GetManagedListResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .GetManagedListResponse.builder();
+                                                        .GetManagedListResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.managedList(response.getItem());
 

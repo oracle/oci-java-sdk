@@ -118,7 +118,9 @@ public class ListIdentityProviderGroupsConverter {
                                         builder =
                                                 com.oracle.bmc.identity.responses
                                                         .ListIdentityProviderGroupsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

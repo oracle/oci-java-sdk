@@ -92,7 +92,9 @@ public class ChangeApiCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.apigateway.responses
-                                                        .ChangeApiCompartmentResponse.builder();
+                                                        .ChangeApiCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

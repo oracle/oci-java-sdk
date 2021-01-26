@@ -144,7 +144,9 @@ public class ListMigrationsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.applicationmigration.responses
-                                                        .ListMigrationsResponse.builder();
+                                                        .ListMigrationsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

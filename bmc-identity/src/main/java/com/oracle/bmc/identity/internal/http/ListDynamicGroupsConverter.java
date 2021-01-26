@@ -127,7 +127,9 @@ public class ListDynamicGroupsConverter {
                                 com.oracle.bmc.identity.responses.ListDynamicGroupsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListDynamicGroupsResponse.builder();
+                                                        .ListDynamicGroupsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

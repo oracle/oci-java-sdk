@@ -10,6 +10,10 @@ import com.oracle.bmc.database.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetBackupDestinationResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For optimistic concurrency control. See `if-match`.
@@ -35,6 +39,7 @@ public class GetBackupDestinationResponse {
          * @return this builder instance
          */
         public Builder copy(GetBackupDestinationResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             backupDestination(o.getBackupDestination());

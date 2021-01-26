@@ -86,7 +86,9 @@ public class BulkDeleteVirtualCircuitPublicPrefixesConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .BulkDeleteVirtualCircuitPublicPrefixesResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.oracle.bmc.core.responses
                                                 .BulkDeleteVirtualCircuitPublicPrefixesResponse

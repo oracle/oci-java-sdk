@@ -32,7 +32,7 @@ public final class RetryOptions {
      * read before invalidating mark. Ensure the mark read limit is at least the size of
      * the stream to successfully reset the stream
      */
-    public void setMarkReadLimit(int value) {
+    public synchronized void setMarkReadLimit(int value) {
         if (value > 0 && value <= Integer.MAX_VALUE) {
             this.markReadLimit = value;
         }

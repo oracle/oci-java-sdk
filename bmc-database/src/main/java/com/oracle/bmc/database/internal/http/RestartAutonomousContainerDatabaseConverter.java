@@ -96,7 +96,9 @@ public class RestartAutonomousContainerDatabaseConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .RestartAutonomousContainerDatabaseResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousContainerDatabase(response.getItem());
 

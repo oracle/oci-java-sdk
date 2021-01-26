@@ -83,7 +83,9 @@ public class GetJobLogsContentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
-                                                        .GetJobLogsContentResponse.builder();
+                                                        .GetJobLogsContentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.value(response.getItem());
 

@@ -75,7 +75,9 @@ public class GetPublicIpByIpAddressConverter {
                                 com.oracle.bmc.core.responses.GetPublicIpByIpAddressResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .GetPublicIpByIpAddressResponse.builder();
+                                                        .GetPublicIpByIpAddressResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.publicIp(response.getItem());
 

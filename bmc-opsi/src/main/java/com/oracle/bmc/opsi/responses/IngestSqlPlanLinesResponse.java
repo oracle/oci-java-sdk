@@ -10,6 +10,10 @@ import com.oracle.bmc.opsi.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class IngestSqlPlanLinesResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -35,6 +39,7 @@ public class IngestSqlPlanLinesResponse {
          * @return this builder instance
          */
         public Builder copy(IngestSqlPlanLinesResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             etag(o.getEtag());
             ingestSqlPlanLinesResponseDetails(o.getIngestSqlPlanLinesResponseDetails());

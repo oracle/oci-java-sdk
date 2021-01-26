@@ -83,7 +83,9 @@ public class UpdateInternetGatewayConverter {
                                 com.oracle.bmc.core.responses.UpdateInternetGatewayResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateInternetGatewayResponse.builder();
+                                                        .UpdateInternetGatewayResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.internetGateway(response.getItem());
 

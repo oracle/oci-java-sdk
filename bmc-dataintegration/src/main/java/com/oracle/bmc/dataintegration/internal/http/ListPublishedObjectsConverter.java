@@ -166,7 +166,9 @@ public class ListPublishedObjectsConverter {
                                                 .ListPublishedObjectsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .ListPublishedObjectsResponse.builder();
+                                                        .ListPublishedObjectsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.publishedObjectSummaryCollection(response.getItem());
 

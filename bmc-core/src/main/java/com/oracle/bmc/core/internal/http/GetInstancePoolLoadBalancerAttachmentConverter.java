@@ -91,7 +91,9 @@ public class GetInstancePoolLoadBalancerAttachmentConverter {
                                         builder =
                                                 com.oracle.bmc.core.responses
                                                         .GetInstancePoolLoadBalancerAttachmentResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instancePoolLoadBalancerAttachment(response.getItem());
 

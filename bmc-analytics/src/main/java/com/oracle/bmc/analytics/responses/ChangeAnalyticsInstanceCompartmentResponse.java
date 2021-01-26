@@ -10,6 +10,10 @@ import com.oracle.bmc.analytics.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ChangeAnalyticsInstanceCompartmentResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
@@ -31,6 +35,7 @@ public class ChangeAnalyticsInstanceCompartmentResponse {
          * @return this builder instance
          */
         public Builder copy(ChangeAnalyticsInstanceCompartmentResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             opcWorkRequestId(o.getOpcWorkRequestId());
 

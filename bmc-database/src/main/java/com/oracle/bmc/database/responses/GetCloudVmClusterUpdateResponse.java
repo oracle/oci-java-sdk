@@ -10,6 +10,10 @@ import com.oracle.bmc.database.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class GetCloudVmClusterUpdateResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -29,6 +33,7 @@ public class GetCloudVmClusterUpdateResponse {
          * @return this builder instance
          */
         public Builder copy(GetCloudVmClusterUpdateResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcRequestId(o.getOpcRequestId());
             update(o.getUpdate());
 

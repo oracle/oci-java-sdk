@@ -76,7 +76,9 @@ public class CreateSecurityListConverter {
                                 com.oracle.bmc.core.responses.CreateSecurityListResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .CreateSecurityListResponse.builder();
+                                                        .CreateSecurityListResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.securityList(response.getItem());
 

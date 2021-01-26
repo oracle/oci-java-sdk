@@ -85,7 +85,9 @@ public class DeleteDbHomeConverter {
                                 com.oracle.bmc.database.responses.DeleteDbHomeResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .DeleteDbHomeResponse.builder();
+                                                        .DeleteDbHomeResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

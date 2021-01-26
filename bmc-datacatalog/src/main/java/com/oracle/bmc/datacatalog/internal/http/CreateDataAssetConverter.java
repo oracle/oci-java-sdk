@@ -84,7 +84,9 @@ public class CreateDataAssetConverter {
                                 com.oracle.bmc.datacatalog.responses.CreateDataAssetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .CreateDataAssetResponse.builder();
+                                                        .CreateDataAssetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dataAsset(response.getItem());
 

@@ -83,7 +83,9 @@ public class UpdateTargetConverter {
                                 com.oracle.bmc.cloudguard.responses.UpdateTargetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.cloudguard.responses
-                                                        .UpdateTargetResponse.builder();
+                                                        .UpdateTargetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.target(response.getItem());
 

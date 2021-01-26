@@ -99,7 +99,9 @@ public class UpdateConfigurationSourceProviderConverter {
                                         builder =
                                                 com.oracle.bmc.resourcemanager.responses
                                                         .UpdateConfigurationSourceProviderResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.configurationSourceProvider(response.getItem());
 

@@ -10,6 +10,10 @@ import com.oracle.bmc.streaming.model.*;
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListStreamPoolsResponse {
+    /**
+     * HTTP status code returned by the operation.
+     */
+    private final int __httpStatusCode__;
 
     /**
      * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -39,6 +43,7 @@ public class ListStreamPoolsResponse {
          * @return this builder instance
          */
         public Builder copy(ListStreamPoolsResponse o) {
+            __httpStatusCode__(o.get__httpStatusCode__());
             opcNextPage(o.getOpcNextPage());
             opcPrevPage(o.getOpcPrevPage());
             opcRequestId(o.getOpcRequestId());

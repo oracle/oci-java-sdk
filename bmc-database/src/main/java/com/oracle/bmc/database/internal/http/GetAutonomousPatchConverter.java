@@ -76,7 +76,9 @@ public class GetAutonomousPatchConverter {
                                 com.oracle.bmc.database.responses.GetAutonomousPatchResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .GetAutonomousPatchResponse.builder();
+                                                        .GetAutonomousPatchResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousPatch(response.getItem());
 

@@ -102,7 +102,9 @@ public class RemoveAutoScalingConfigurationConverter {
                                         builder =
                                                 com.oracle.bmc.bds.responses
                                                         .RemoveAutoScalingConfigurationResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

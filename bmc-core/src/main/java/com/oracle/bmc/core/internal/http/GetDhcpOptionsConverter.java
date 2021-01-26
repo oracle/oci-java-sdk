@@ -75,7 +75,9 @@ public class GetDhcpOptionsConverter {
                                 com.oracle.bmc.core.responses.GetDhcpOptionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.GetDhcpOptionsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.dhcpOptions(response.getItem());
 

@@ -151,7 +151,8 @@ public class ListLogsConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.logging.responses.ListLogsResponse.Builder builder =
-                                        com.oracle.bmc.logging.responses.ListLogsResponse.builder();
+                                        com.oracle.bmc.logging.responses.ListLogsResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

@@ -116,7 +116,9 @@ public class ListTransferJobsConverter {
                                 com.oracle.bmc.dts.responses.ListTransferJobsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dts.responses
-                                                        .ListTransferJobsResponse.builder();
+                                                        .ListTransferJobsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

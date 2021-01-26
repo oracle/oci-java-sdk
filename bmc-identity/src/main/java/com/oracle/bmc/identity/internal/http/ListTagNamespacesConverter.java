@@ -112,7 +112,9 @@ public class ListTagNamespacesConverter {
                                 com.oracle.bmc.identity.responses.ListTagNamespacesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ListTagNamespacesResponse.builder();
+                                                        .ListTagNamespacesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

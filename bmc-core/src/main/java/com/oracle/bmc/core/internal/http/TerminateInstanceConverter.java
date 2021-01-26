@@ -85,7 +85,9 @@ public class TerminateInstanceConverter {
                                 com.oracle.bmc.core.responses.TerminateInstanceResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .TerminateInstanceResponse.builder();
+                                                        .TerminateInstanceResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -72,7 +72,9 @@ public class CreateSenderConverter {
                                 com.oracle.bmc.email.responses.CreateSenderResponse.Builder
                                         builder =
                                                 com.oracle.bmc.email.responses.CreateSenderResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.sender(response.getItem());
 

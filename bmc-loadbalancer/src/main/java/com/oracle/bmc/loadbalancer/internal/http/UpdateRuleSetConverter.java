@@ -83,7 +83,9 @@ public class UpdateRuleSetConverter {
                                 com.oracle.bmc.loadbalancer.responses.UpdateRuleSetResponse.Builder
                                         builder =
                                                 com.oracle.bmc.loadbalancer.responses
-                                                        .UpdateRuleSetResponse.builder();
+                                                        .UpdateRuleSetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

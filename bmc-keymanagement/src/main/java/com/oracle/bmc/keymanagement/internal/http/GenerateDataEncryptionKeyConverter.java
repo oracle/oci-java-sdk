@@ -80,8 +80,9 @@ public class GenerateDataEncryptionKeyConverter {
                                                 .GenerateDataEncryptionKeyResponse.Builder
                                         builder =
                                                 com.oracle.bmc.keymanagement.responses
-                                                        .GenerateDataEncryptionKeyResponse
-                                                        .builder();
+                                                        .GenerateDataEncryptionKeyResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.generatedKey(response.getItem());
 

@@ -86,7 +86,9 @@ public class LaunchAutonomousExadataInfrastructureConverter {
                                         builder =
                                                 com.oracle.bmc.database.responses
                                                         .LaunchAutonomousExadataInfrastructureResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.autonomousExadataInfrastructure(response.getItem());
 

@@ -111,7 +111,9 @@ public class ListMetricsConverter {
                                 com.oracle.bmc.monitoring.responses.ListMetricsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.monitoring.responses
-                                                        .ListMetricsResponse.builder();
+                                                        .ListMetricsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

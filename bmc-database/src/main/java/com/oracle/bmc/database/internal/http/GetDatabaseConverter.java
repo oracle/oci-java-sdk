@@ -74,7 +74,9 @@ public class GetDatabaseConverter {
                                 com.oracle.bmc.database.responses.GetDatabaseResponse.Builder
                                         builder =
                                                 com.oracle.bmc.database.responses
-                                                        .GetDatabaseResponse.builder();
+                                                        .GetDatabaseResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.database(response.getItem());
 

@@ -159,7 +159,9 @@ public class ListWaasPoliciesConverter {
                                 com.oracle.bmc.waas.responses.ListWaasPoliciesResponse.Builder
                                         builder =
                                                 com.oracle.bmc.waas.responses
-                                                        .ListWaasPoliciesResponse.builder();
+                                                        .ListWaasPoliciesResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

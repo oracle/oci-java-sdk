@@ -94,7 +94,9 @@ public class CreateLogAnalyticsLogGroupConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .CreateLogAnalyticsLogGroupResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsLogGroup(response.getItem());
 

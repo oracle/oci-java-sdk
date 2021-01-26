@@ -78,7 +78,9 @@ public class ResetIdpScimClientConverter {
                                 com.oracle.bmc.identity.responses.ResetIdpScimClientResponse.Builder
                                         builder =
                                                 com.oracle.bmc.identity.responses
-                                                        .ResetIdpScimClientResponse.builder();
+                                                        .ResetIdpScimClientResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.scimClientCredentials(response.getItem());
 

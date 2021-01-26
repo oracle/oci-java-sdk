@@ -82,7 +82,9 @@ public class DeleteMountTargetConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.filestorage.responses
-                                                        .DeleteMountTargetResponse.builder();
+                                                        .DeleteMountTargetResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

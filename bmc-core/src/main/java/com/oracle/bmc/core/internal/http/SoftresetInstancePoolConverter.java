@@ -86,7 +86,9 @@ public class SoftresetInstancePoolConverter {
                                 com.oracle.bmc.core.responses.SoftresetInstancePoolResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .SoftresetInstancePoolResponse.builder();
+                                                        .SoftresetInstancePoolResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.instancePool(response.getItem());
 

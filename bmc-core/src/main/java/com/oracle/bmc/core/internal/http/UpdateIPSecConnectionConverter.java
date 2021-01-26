@@ -83,7 +83,9 @@ public class UpdateIPSecConnectionConverter {
                                 com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .UpdateIPSecConnectionResponse.builder();
+                                                        .UpdateIPSecConnectionResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.iPSecConnection(response.getItem());
 

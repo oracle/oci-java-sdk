@@ -135,7 +135,9 @@ public class ListDhcpOptionsConverter {
                                 com.oracle.bmc.core.responses.ListDhcpOptionsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .ListDhcpOptionsResponse.builder();
+                                                        .ListDhcpOptionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

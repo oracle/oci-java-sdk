@@ -89,8 +89,9 @@ public class ChangeLogGroupCompartmentConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.logging.responses
-                                                        .ChangeLogGroupCompartmentResponse
-                                                        .builder();
+                                                        .ChangeLogGroupCompartmentResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =

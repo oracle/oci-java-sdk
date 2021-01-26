@@ -129,7 +129,9 @@ public class ListSourceExtendedFieldDefinitionsConverter {
                                         builder =
                                                 com.oracle.bmc.loganalytics.responses
                                                         .ListSourceExtendedFieldDefinitionsResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.logAnalyticsSourceExtendedFieldDefinitionCollection(
                                         response.getItem());

@@ -87,7 +87,9 @@ public class ModifyVcnCidrConverter {
                                 com.oracle.bmc.core.responses.ModifyVcnCidrResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses.ModifyVcnCidrResponse
-                                                        .builder();
+                                                        .builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

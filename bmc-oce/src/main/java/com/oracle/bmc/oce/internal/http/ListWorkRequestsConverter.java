@@ -107,7 +107,9 @@ public class ListWorkRequestsConverter {
                                 com.oracle.bmc.oce.responses.ListWorkRequestsResponse.Builder
                                         builder =
                                                 com.oracle.bmc.oce.responses
-                                                        .ListWorkRequestsResponse.builder();
+                                                        .ListWorkRequestsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.items(response.getItem());
 

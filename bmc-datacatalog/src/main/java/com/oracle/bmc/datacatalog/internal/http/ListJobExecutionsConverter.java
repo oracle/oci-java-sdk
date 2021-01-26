@@ -256,7 +256,9 @@ public class ListJobExecutionsConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.datacatalog.responses
-                                                        .ListJobExecutionsResponse.builder();
+                                                        .ListJobExecutionsResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 builder.jobExecutionCollection(response.getItem());
 

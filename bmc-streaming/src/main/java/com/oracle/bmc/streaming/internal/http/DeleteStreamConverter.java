@@ -81,7 +81,9 @@ public class DeleteStreamConverter {
                                 com.oracle.bmc.streaming.responses.DeleteStreamResponse.Builder
                                         builder =
                                                 com.oracle.bmc.streaming.responses
-                                                        .DeleteStreamResponse.builder();
+                                                        .DeleteStreamResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

@@ -86,7 +86,9 @@ public class DeleteTaskConverter {
                                 com.oracle.bmc.dataintegration.responses.DeleteTaskResponse.Builder
                                         builder =
                                                 com.oracle.bmc.dataintegration.responses
-                                                        .DeleteTaskResponse.builder();
+                                                        .DeleteTaskResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

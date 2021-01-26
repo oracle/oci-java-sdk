@@ -101,7 +101,8 @@ public class RunConverter {
                                         response.getHeaders();
 
                                 com.oracle.bmc.loganalytics.responses.RunResponse.Builder builder =
-                                        com.oracle.bmc.loganalytics.responses.RunResponse.builder();
+                                        com.oracle.bmc.loganalytics.responses.RunResponse.builder()
+                                                .__httpStatusCode__(rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

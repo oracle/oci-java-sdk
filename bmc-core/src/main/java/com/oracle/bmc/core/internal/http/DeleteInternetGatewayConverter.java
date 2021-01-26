@@ -77,7 +77,9 @@ public class DeleteInternetGatewayConverter {
                                 com.oracle.bmc.core.responses.DeleteInternetGatewayResponse.Builder
                                         builder =
                                                 com.oracle.bmc.core.responses
-                                                        .DeleteInternetGatewayResponse.builder();
+                                                        .DeleteInternetGatewayResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =

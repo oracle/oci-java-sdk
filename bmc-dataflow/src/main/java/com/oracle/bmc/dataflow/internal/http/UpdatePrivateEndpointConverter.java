@@ -85,7 +85,9 @@ public class UpdatePrivateEndpointConverter {
                                                 .Builder
                                         builder =
                                                 com.oracle.bmc.dataflow.responses
-                                                        .UpdatePrivateEndpointResponse.builder();
+                                                        .UpdatePrivateEndpointResponse.builder()
+                                                        .__httpStatusCode__(
+                                                                rawResponse.getStatus());
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
